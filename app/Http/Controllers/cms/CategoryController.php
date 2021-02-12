@@ -29,17 +29,11 @@ class CategoryController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view', new Category());
-        $filter     = $request->all();      
-        $query      = Category::query();
-        $query      = empty($filter['name'])? $query : $query->where('name',$filter['name']);
-        $result     = $query->paginate(10);
-        $list['categories'] = Category::all()->pluck('name','name')->unique()->filter()->toArray();
-        $data['list'] = $list;
-        $data['categories'] = $result;
-        return view('cms.category.categories',$data);    
+        // $this->authorize('view', new Category());      
+        $categories = Category::All();
+        return view('cms.category.categoryList',compact('categories'));    
              
     }
 
