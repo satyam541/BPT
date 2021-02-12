@@ -37,39 +37,65 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              {{Form::model($category,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    {{Form::label('name','Name')}}
+                    {{Form::text('name',null,['class'=>'form-control'])}}
+
+                    {{-- <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    {{Form::label('reference','Reference')}}
+                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
+                    {{Form::label('tag_line','Tag Line')}}
+                    {{Form::textarea('tag_line',null,['class'=>'form-control ', 'rows'=>"4"])}}
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+                  <div class="form-group">
+                    {{Form::label('color_code','Color Code')}}
+                    {{Form::text('color_code',null,['class'=>'form-control ','title'=>'Any valid color_code that work for css'])}}
                   </div>
+
+                  <div class="form-group">
+                    {{Form::label('image','Image')}}
+                    {{Form::file('image',null,['class'=>'form-control'])}}
+                    <img src="{{ $category->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('icon','Icon')}}
+                    {{Form::file('icon',null,['class'=>'form-control'])}}
+                    <img src="{{ $category->getIconPath() }}" class=" pad" style="max-width:50%;" />
+                  </div>
+
+                  <div class="form-group">
+                      
+                    {{Form::label('is_online','Is Online',['class'=>'mr-4'])}}
+                    {{Form::checkbox('is_online')}}
+
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('is_technical','Is technical',['class'=>'mr-1'])}}
+                    {{Form::checkbox('is_technical')}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('published','Is Published',['class'=>'mr-1'])}}
+                    {{Form::checkbox('published')}}
+                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-              </form>
+                {{Form::close()}}
             </div>
             <!-- /.card -->
           </div>
