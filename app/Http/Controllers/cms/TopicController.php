@@ -35,18 +35,11 @@ class TopicController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view', new Topic());
-        $filter         = $request->all();
-        $query          = Topic::query();
-        $query          = empty($filter['name'])? $query : $query->where('name',$filter['name']);
-        $result         = $query->paginate(10);
-        $list['topics'] = Topic::all()->pluck('name','name')->unique()->filter()->toArray();
-        $data['list']   = $list;
-        $data['topics'] = $result;
-       
-        return view('cms.topic.topics',$data);
+        // $this->authorize('view', new Topic());
+        $topics=Topic::all();
+        return view('cms.topic.topiclist',compact('topics'));
     }
 
     public function unlinkedTopicList()
@@ -207,7 +200,7 @@ class TopicController extends Controller
     
     public function create()
     {
-        $this->authorize('create', new Topic());
+        // $this->authorize('create', new Topic());
         $data['topic']          = new Topic();
         $data['submitRoute']    = 'insertTopic';
         $data['categorySlug']   = '';
