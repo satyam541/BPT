@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -245,5 +246,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('adminlte/dist/js/demo.js')}}"></script>
+
+<script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
+@yield('footer')
 </body>
 </html>
