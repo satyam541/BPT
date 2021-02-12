@@ -33,6 +33,14 @@
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+     <!-- Left navbar links -->
+     <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <!-- Left navbar links -->
+
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
@@ -249,5 +257,14 @@ $.widget.bridge('uibutton', $.ui.button)
 
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 @yield('footer')
+
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+    
+    });
+  })
+</script>
 </body>
 </html>
