@@ -1,0 +1,265 @@
+<?php
+
+use App\Models\Country;
+use App\Models\WebsiteDetail;
+use App\Models\Category;
+use App\Models\Article;
+use App\Http\Controllers\JWTEnquiryController;
+use App\Models\Course;
+use App\Models\Location;
+use App\Models\Topic;
+use App\Models\SocialMedia;
+use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
+
+if (!function_exists('encodeUrlSlug')) {
+    function encodeUrlSlug($string)
+    {
+        $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $string));
+        return $stringname;
+    }
+    if (!function_exists('country')) {
+        function country()
+        {
+
+            $activeCountry = Country::getActiveCountry();
+            if (empty($activeCountry)) {
+                $country_code = Country::getDefault();
+                $activeCountry = Country::find($country_code);
+                Country::setActiveCountry($activeCountry);
+            }
+            return Country::getActiveCountry();
+        }
+    }
+    if (!function_exists('countries')) {
+        function countries()
+        {
+            return   Country::where('active', '1')->get();
+        }
+    }
+    if (!function_exists('socialmedialinks')) {
+        function socialmedialinks()
+        {
+            return   SocialMedia::all();
+        }
+    }
+    if (!function_exists('websiteDetail')) {
+        function websiteDetail()
+        {
+            $selectedDetail = WebsiteDetail::$selected;
+            if (empty($selectedDetail)) {
+                $selectedDetail = WebsiteDetail::where('country_id', country()->id)->first();
+                if (empty($selectedDetail)) {
+                    $selectedDetail = WebsiteDetail::first();
+                }
+                WebsiteDetail::$selected = $selectedDetail;
+            }
+            return $selectedDetail;
+        }
+    }
+    if (!function_exists('topics')) {
+        function topics()
+        {
+            return Topic::with('courses')->where('priority', 1)->get()->take(4);
+        }
+    }
+    if (!function_exists('capitalizeName')) {
+        function capitalizeName($string)
+        {
+            $string = explode(" ", $string);
+            $newString = array();
+            foreach ($string as $str) {
+                $newString[] = Str::ucfirst($str);
+            }
+            return implode(" ", $newString);
+        }
+    }
+    if (!function_exists('cart')) {
+        function cart()
+        {
+
+            $cartItems = Cart::content();
+
+
+            return $cartItems;
+        }
+    }
+    if (!function_exists('metaData')) {
+
+        function metaData($data)
+        {
+            static $metaData = [
+                'title' => 'Lean Six Sigma Courses | Six Sigma Training',
+                'description' => 'Study our professional Lean Six Sigma courses today delivered by expert trainers in the industry.',
+                'keyword' => 'Lean Six Sigma Courses, Six Sigma Training'
+            ];
+            if (is_array($data)) {
+                $metaData = $data;
+                return $metaData;
+            } elseif (is_string($data)) {
+                return replaceVar($metaData[$data]);
+            }
+            return '';
+        }
+    }
+    if (!function_exists('blogs')) {
+        function blogs()
+        {
+            $blogs = Article::where(['type' => 'blog'])->orderBy('post_date', 'desc')->get();
+            return $blogs;
+        }
+    }
+    if (!function_exists('courses')) {
+        function courses()
+        {
+            $courses = Course::all();
+            return $courses;
+        }
+    }
+    if (!function_exists('formatPrice')) {
+        function formatPrice($price, $decimals = 0, $decimalSeparator = null, $thousandSeparator = null)
+        {
+            return number_format($price, $decimals, $decimalSeparator, $thousandSeparator);
+        }
+    }
+
+    if (!function_exists('storeSelected')) {
+        function storeSelected($data)
+        {
+            $string = empty(json_decode(session('selectedFilter'))->$data) ? null : json_decode(session('selectedFilter'))->$data;
+            return $string;
+        }
+    }
+    if (!function_exists('storeFilterData')) {
+        function storeFilterData($data)
+        {
+            $courses = Course::orderBy('topic_id')->where('display_order', '!=', 99)->orderByRaw('display_order')->get();
+            $locations = Location::all();
+            static $savedData = [
+                "deliveryMethod" =>  [
+                    "Classroom" => '#classroom-booking',
+                    "Virtual" => '#virtual-booking',
+                    "Online" => '#online-booking',
+                    "Onsite" => '#onsite-booking'
+                ],
+            ];
+            if (empty($savedData[$data])) {
+                switch ($data) {
+                    case "courses":
+                        $savedData[$data] = $courses;
+                        return $courses;
+                        break;
+                    case "locations":
+                        $savedData[$data] = $locations;
+                        return $locations;
+                        break;
+                    case "deliveryMethod":
+                        return  [
+                            "Classroom" => '#classroom-booking',
+                            "Virtual" => '#virtual-booking',
+                            "Online" => '#online-booking',
+                            "Onsite" => '#onsite-booking'
+                        ];
+                        break;
+                }
+            } else {
+                return $savedData[$data];
+            }
+        }
+    }
+
+    if (!function_exists('storeVar')) {
+        function storeVar($data)
+        {
+            static $savedData = array();
+            if (is_array($data)) {
+                foreach ($data as $key => $value) {
+                    $savedData[$key] = $value;
+                }
+                return $savedData;
+            } else {
+                if (empty($savedData[$data])) {
+                    switch ($data) {
+                        case "location":
+                            return country()->name;
+                            break;
+                        case "cc":
+                            return country()->country_code;
+                            break;
+                    }
+                } else {
+                    return $savedData[$data];
+                }
+            }
+        }
+    }
+
+    if (!function_exists('replaceVar')) {
+        function replaceVar($content)
+        {
+            $location = storeVar('location');
+            $country_code = storeVar('cc');
+            $content = str_replace('{location}', $location, $content);
+            $content = str_replace('{cc}', $country_code, $content);
+            return $content;
+        }
+    }
+
+    if (!function_exists('MakeJWTEnquiry')) {
+        function MakeJWTEnquiry($input = array())
+        {
+            $JWT = new JWTEnquiryController;
+            if (isset($input['type'])) {
+                if (Str::contains($input['type'], "onsite"))
+                    $JWT->make_enquiry($input, 6);
+                else if (Str::contains($input['type'], "course"))
+                    $JWT->make_enquiry($input, 2);
+                else if (Str::contains($input['type'], "online"))
+                    $JWT->make_enquiry($input, 56);
+                else if (Str::contains($input['type'], "topic"))
+                    $JWT->make_enquiry($input, 39);
+                else if (Str::contains($input['type'], "contact"))
+                    $JWT->make_enquiry($input, 1);
+                else if (Str::contains($input['type'], "top"))
+                    $JWT->make_enquiry($input, 4);
+                else if (Str::contains($input['type'], "other"))
+                    $JWT->make_enquiry($input, 7);
+                else if (Str::contains($input['type'], "search"))
+                    $JWT->make_enquiry($input, 5);
+                else if (Str::contains($input['type'], "client"))
+                    $JWT->make_enquiry($input, 94);
+                else if (Str::contains($input['type'], "landingpage"))
+                    $JWT->make_enquiry($input, 276);
+                else if (Str::contains($input['type'], "Jobsite"))
+                    $JWT->make_enquiry($input, 44);
+                else if (Str::contains($input['type'], "booking"))
+                    $JWT->make_order_enquiry($input, 12);
+                else if (Str::contains($input['type'], "success"))
+                    $JWT->make_order_enquiry($input, 93);
+                else if (Str::contains($input['type'], "declined"))
+                    $JWT->make_order_enquiry($input, 11);
+                else if (Str::contains($input['type'], "incomplete"))
+                    $JWT->make_order_enquiry($input, 10);
+                else
+                    $JWT->make_enquiry($input);
+            }
+        }
+    }
+}
+
+
+if (!function_exists('unlinkedTopic')) {
+    function unlinkedTopic()
+    {
+        $unlinkedCourse = Topic::whereDoesntHave('category')->count();
+        return $unlinkedCourse;
+    }
+}
+
+if (!function_exists('unlinkedCourse')) {
+    function unlinkedCourse()
+    {
+        $unlinkedCourse = Course::whereDoesntHave('topic')->count();
+        return $unlinkedCourse;
+    }
+}
