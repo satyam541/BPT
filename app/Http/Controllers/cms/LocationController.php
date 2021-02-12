@@ -28,12 +28,9 @@ class LocationController extends Controller
 
     public function list()
     {
-        $this->authorize('view', new Location());
-        $data['locations']       = Location::paginate(10);
-        $data['selectedCountry'] = NULL;
-        $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-        $data['list']            = $list;
-        return view('cms.location.locations',$data);
+        // $this->authorize('view', new Location());
+        $locations       = Location::all();
+        return view('cms.location.locationList',compact('locations'));
     }
 
     public function filterList(Request $request)

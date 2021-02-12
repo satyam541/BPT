@@ -24,11 +24,9 @@ class CountryController extends Controller
     public function list()
     {
         
-        $this->authorize('view', new Country());
-        $data['countries'] = Country::paginate(10);
-        $data['selectedCountry'] = NULL;
-        $data['countrylist']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-        return view('cms.country.countries',$data);
+        // $this->authorize('view', new Country());
+        $countries= Country::all();
+        return view('cms.country.countryList',compact('countries'));
     }
     public function filterList(Request $request)
     {

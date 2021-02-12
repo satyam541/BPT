@@ -27,22 +27,14 @@ class VenueController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view', new Venue());
+        // $this->authorize('view', new Venue());
 
         
-        $filter         =    $request->all();
-        $query =  Venue::query();
-        $query = empty($filter['name'])? $query : $query->where('name',$filter['name']);           
-        $result = $query->paginate(10);
-        $list['venues'] = Venue::all()->pluck('name','name')->unique()->filter()->toArray();
-     
-        $data['list'] = $list;
-        $data['venues'] =$result;
+        $venues         =    Venue::all();
 
-       
-        return view('cms.venue.venues',$data);
+        return view('cms.venue.venueList',compact('venues'));
     }
 
     public function create()
