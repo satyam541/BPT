@@ -1,5 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
+Route::get('/','DashboardController@list')->name('CmsIndex');
 Route::get('/dashboard','DashboardController@list')->name('dashboard');
 Route::post('/summernoteimage/upload','DashboardController@ImageUpload')->name('ImageUpload');
 
@@ -156,11 +158,11 @@ Route::post('/onlinecourse/update/{course}','OnlineCourseController@update')->na
 Route::post('/onlinecourse/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
 
 
-Route::get('/course/get/detail',function()
-{
-  $id = Illuminate\Support\Facades\Input::get('course');
-  return App\Models\Course::findOrFail($id)->toJson();
-})->name('courseDetail');
+// Route::get('/course/get/detail',function()
+// {
+//   $id = Illuminate\Support\Facades\Input::get('course');
+//   return App\Models\Course::findOrFail($id)->toJson();
+// })->name('courseDetail');
 
 Route::get('/accreditation','AccreditationController@list')->name('accreditationList');
 Route::get('/accreditation/create','AccreditationController@create')->name('accreditationCreate');
