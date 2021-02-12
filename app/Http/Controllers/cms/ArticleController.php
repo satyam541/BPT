@@ -182,17 +182,10 @@ class ArticleController extends Controller
 
     public function blogList(Request $request)
     { 
-         $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
-         $filter         =    $request->all();
-         $query=Article::query();
-         $query=$query->where('type','blog');
-         $query=empty($filter['title'])?$query:$query->where('title',$filter['title']);
-         $result=$query->paginate(10);
-         $list['articles']  = Article::where(['type'=>'blog'])->get()->pluck('title','title')->toArray();
-         $data['list']       = $list;
-         $data['articles']  = $result;
-        // dd($data);
-        return view('cms.article.article',$data);
+        //  $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
+         $data=Article::where('type','blog')->get();
+         $type='Blog';
+        return view('cms.article.article',compact('blog','type'));
     }
 
     

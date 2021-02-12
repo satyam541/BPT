@@ -36,27 +36,11 @@ class ScheduleController extends ScheduleApi
 
     public function list(Request $request)
     {
-      $this->authorize('view', new Schedule());
+      // $this->authorize('view', new Schedule());
       // use when instead of if else statement here
-      $responseLocation = $request->get('name');
-      $courseId         = $request->get('course');
-      $query            = Schedule::query();
-      if(!empty($responseLocation))
-      {
-        $query->where('response_location',$responseLocation);
-      }
-      if(!empty($courseId))
-      {
-        $query->where('course_id',$courseId);
-      }
-        
-      $data['schedules']  = $query->paginate(10);
-      $request->flash(); // keep data for the next redirect. // try without this
-      $list['courses']    = Course::pluck('name','id')->toArray();
-      $list['countries']  = Country::pluck('name','country_code')->toArray();
-      $list['locations']  = Location::pluck("name","name")->toArray();
-      $data['list']       = $list;
-      return view('cms.schedule.schedules',$data);
+      $schedules            = Schedule::with('course')->where('source','API')->get();
+      
+      return view('cms.schedule.schedules',compact('schedules'));
     }
 
     public function create()
@@ -260,32 +244,8 @@ class ScheduleController extends ScheduleApi
 
     public function manualschedulelist(Request $request)
     { 
-    
-      $locationname = $request->get('location');
-      $courseId     = $request->get('course');
-      // dd($location)
-      $query = Schedule::query();
-      if(!empty($locationname))
-      {
-        $location = Location::where('name',$locationname)->pluck('name')->toArray();
-        $query->where('response_location',$location[0]);
-
-       
-
-      }
-      if(!empty($courseId))
-      {
-        $query->where('course_id',$courseId);
-      }
-        
-      $data['schedules']  = $query->where('source','cms')->paginate(10);
-      $request->flash(); 
-      $list['courses']    = Course::pluck('name','id')->toArray();
-      $list['countries']  = Country::pluck('name','country_code')->toArray();
-      $list['locations']  = Location::pluck("name","id")->toArray();
-      $data['list']       = $list;
-      //  $data['schedules']=Schedule::where('source','cms')->get();
-       return view('cms.schedule.manualschedulelist',$data);
+      $schedules            = Schedule::with('course')->where('source','cms')->get();
+       return view('cms.schedule.manualschedulelist',compact('schedules'));
     }
 
 

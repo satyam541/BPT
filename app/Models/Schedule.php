@@ -27,7 +27,7 @@ class Schedule extends Model
 
     public function location()
     {
-        return Location::where('name',$this->response_location)->first()->id;
+        return Location::where('name',$this->response_location)->first()->name;
     }
 
     public function getEndDateAttribute()
