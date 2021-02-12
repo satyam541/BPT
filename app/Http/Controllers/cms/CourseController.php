@@ -125,7 +125,7 @@ class CourseController extends Controller
     public function create()
     {
 
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
