@@ -1,0 +1,151 @@
+<?php
+
+namespace App\Http\Controllers\cms;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use DB;
+use Carbon\Carbon;
+use App\Models\Country;
+use App\Http\Requests\cms\LocationRequest;
+use App\Models\Location;
+use App\Models\Region;
+
+class LocationController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+    public function __construct()
+    {
+        
+		// $this->middleware('access:role,insert')->only('insertRole');
+    }
+
+    public function list()
+    {
+        $this->authorize('view', new Location());
+        $data['locations']       = Location::paginate(10);
+        $data['selectedCountry'] = NULL;
+        $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
+        $data['list']            = $list;
+        return view('cms.location.locations',$data);
+    }
+
+    public function filterList(Request $request)
+    {
+        $this->authorize('view', new Location());
+        $data['locations']       =  Location::where('country_id',$request['country'])->paginate(10);
+        if($request->country==null){
+            $data['locations'] = Location::paginate(10);
+        }
+        $data['selectedCountry'] = $request['country'];
+        $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
+        $data['list']            = $list;
+        return view('cms.location.locations',$data);
+    }
+
+    public function create()
+    {
+        $this->authorize('create', new Location());
+           
+        $data['locations']      = Location::pluck('name','id')->toArray();
+        $data['location']       = new Location();
+        $data['submitRoute']    = "insertLocation";
+        $data['countries']      = Country::pluck('name','country_code')->toArray();
+        $data['regions']        = Region::pluck('name','id');
+        return view('cms.location.locationForm',$data);
+    }
+
+    public function edit(Location $location)
+    {
+        $this->authorize('update', $location);
+        $data['locations']      = Location::pluck('name','id')->toArray();
+        $data['submitRoute']    = array('updateLocation',$location->id);
+        $data['location']       = $location;
+        $data['countries']      = Country::pluck('name','country_code')->toArray();
+        $data['regions']        = Region::pluck('name','id');
+        return view("cms.location.locationForm",$data);
+    }
+
+    public function insert(LocationRequest $request)
+    {
+        $this->authorize('create', new Location());
+        
+        $inputs                       = $request->except("_token");
+        $location                     = array();
+        $location['name']             = $inputs['name'];
+        $location['country_id']       = $inputs['country_id'];
+        $location['region_id']        = $inputs['region_id'];
+        $location['address']          = $inputs['address'];
+        $location['phone']            = $inputs['phone'];
+        $location['email']            = $inputs['email'];
+        $location['intro']            = $inputs['intro'];
+        $location['meta_title']       = $inputs['meta_title'];
+        $location['meta_description'] = $inputs['meta_description'];
+        $location['meta_keywords']    = $inputs['meta_keywords'];
+        $location['inherit_schedule'] = $inputs['inherit_schedule'];
+        $location['description']      = $inputs['description'];
+        $location['fetch_schedule']   = isset($inputs['fetch_schedule']);
+        $location['longitude']=$inputs['longitude'];
+        $location['latitude']=$inputs['latitude'];
+        $location['reference']='training-locations'.'/'.encodeUrlSlug($inputs['name']);
+
+        if($request->file('image')){
+            $imageName = 'ImageUrl'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(
+                base_path() . '/public/images/', $imageName);
+            $input['image'] = $imageName;
+            $location['image']=$imageName;
+        }
+        $data=Location::updateOrCreate(['id' =>$inputs['id']],$location);
+        $data->reference='training-locations'.'/'.$inputs['reference'];
+        return back()->with('success','Operation done!');
+    }
+
+    public function delete(Location $location)
+    {
+        $this->authorize('delete', $location);
+        $location->delete();
+    }
+
+    /**
+     * @return all regions for country
+     */
+    public function getRegion(Request $request)
+    {
+        $data = Region::pluck('name')->toArray();
+        return response()->json($data);
+    }
+
+        
+   public function locationtrashList()
+   {
+        $this->authorize('view', new Location());
+        $data['trashedLocations'] = Location::onlyTrashed()->get();
+
+        return view('cms.trashed.locationtrashedlist',$data);
+       
+   }
+
+   public function restoreLocation($id)
+   {
+        $this->authorize('restore', new Location());
+        $location = Location::onlyTrashed()->find($id)->restore();
+ 
+        return back()->with('success','Successfully Restored');
+
+   }
+
+   public function forceDeleteLocation($id)
+   {
+        $this->authorize('forceDelete',new Location);
+        $location = Location::onlyTrashed()->find($id)->forceDelete();
+ 
+        return back()->with('success','Permanently Deleted');
+   }
+}
