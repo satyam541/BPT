@@ -37,15 +37,10 @@ class CourseController extends Controller
 
     public function list(Request $request)
     {
-        $this->authorize('view', new Course());
-        $filter         =    $request->all();
-        $query = Course::query();
-        $query = empty($filter['name'])? $query : $query->where('name',$filter['name']);
-        $result = $query->paginate(10);
-        $list['courses'] = Course::all()->pluck('name','name')->unique()->filter()->toArray();
-        $data['list'] = $list;
-        $data['courses'] =$result;
-        return view('cms.course.courses',$data);
+        // $this->authorize('view', new Course());
+        $courses = Course::all();
+
+        return view('cms.course.courseList',compact('courses'));
     }
 
     public function unlinkedCourseList()

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Topics</h1>
+          <h1 class="m-0 text-dark">location</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Topic</a></li>
+            <li class="breadcrumb-item"><a href="#">location</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -39,7 +39,7 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Category</th>
+                  <th>Country</th>
                   <th>Bulletpoints</th>
                   <th>Whatsincluded</th>
                   <th>Actions</th>
@@ -47,10 +47,10 @@
                 </thead>
                 <tbody>
                 
-                    @foreach ($topics as $topic)
+                    @foreach ($locations as $location)
                     <tr>
-                    <td>{{$topic->name}}</td>
-                    <td>{{$topic->category->name}}</td>
+                    <td>{{$location->name}}</td>
+                    <td>{{$location->country->name}}</td>
                     <td> <a href="" class=" fa fa-bullseye"></a></td>
                     <td> <a href="" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
