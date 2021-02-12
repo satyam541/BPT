@@ -101,23 +101,16 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <li class="nav-header">Admin Resources</li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{{Route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+         
           <li class="nav-header">Resources</li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -130,37 +123,37 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{Route('categoryList')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>Category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{Route('topicList')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Topic</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="{{Route('courseList')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Course</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon text-success"></i>
+                <a href="{{Route('onlinecourseList')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon text-primary"></i>
                   <p>Online Course</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                <a href="{{Route('whatsIncludedList')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
+                <a href="{{Route('accreditationList')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accreditation</p>
                 </a>
@@ -174,26 +167,73 @@
               <p>
                 Venues
                 <i class="fas fa-angle-left right"></i>
-                {{-- <span class="badge badge-info right">6</span> --}}
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{Route('countryList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Country</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{Route('locationList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="{{Route('venueList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Venue</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                Schedule
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('countryList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Schedule List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('locationList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Fetch Schedule</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Add Schedule</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Manual Schedule List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Manage Price</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-"></i>
+                  <p>Online Prices</p>
                 </a>
               </li>
             </ul>
