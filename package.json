@@ -1,24 +1,63 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "axios": "^0.21.1",
-        "cross-env": "^7.0",
-        "laravel-mix": "^5.0.1",
-        "lodash": "^4.17.19",
-        "resolve-url-loader": "^3.1.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
-    },
-    "dependencies": {
-        "gulp": "^4.0.2"
-    }
+  "name": "less-compiler",
+  "version": "1.0.0",
+  "description": "compile less with gulp automate process using watch command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"nothing is default\" ",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "Navdeep Dhami",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-less-changed": "^1.4.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch-less": "^1.0.1"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^19.0.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
+    "ckeditor": "^4.12.1",
+    "cross-env": "^7.0.2",
+    "fibers": "^5.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "jquery": "^3.5.1",
+    "laravel-mix": "^5.0.4",
+    "lodash": "^4.17.15",
+    "popper.js": "^1.16.1",
+    "rename": "^1.0.4",
+    "resolve-url-loader": "^3.1.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "v-select2-component": "^0.4.3",
+    "vue": "^2.6.11",
+    "vue-froala-wysiwyg": "^3.1.1-1",
+    "vue-html-editor": "^0.2.1",
+    "vue-multiselect": "^2.1.6",
+    "vue-router": "^3.2.0",
+    "vue-select2": "^0.2.6",
+    "vue-select2-component": "^1.0.1",
+    "vue-simple-uploader": "^0.7.4",
+    "vue-sweetalert2": "^3.0.5",
+    "vue-template-compiler": "^2.6.11",
+    "vue2-editor": "^2.10.2",
+    "vueditor": "^0.3.1",
+    "vuedraggable": "^2.23.2",
+    "vuejs-dialog": "^1.4.1",
+    "vuejs-uploader": "^0.6.5",
+    "vuetify": "^2.2.29",
+    "vuetify-confirm": "^2.0.3"
+  }
 }
