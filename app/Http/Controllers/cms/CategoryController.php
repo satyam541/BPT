@@ -45,7 +45,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $this->authorize('create', new Category());
+        // $this->authorize('create', new Category());
         $data['category']     = new Category();
         $data['submitRoute']  = "insertCategory";
         return view('cms.category.categoryForm',$data);
@@ -53,7 +53,7 @@ class CategoryController extends Controller
 
     public function insert(CategoryRequest $request)
     {
-        $this->authorize('create', new Category());
+        // $this->authorize('create', new Category());
         $input    = $request->except("_token");
         $category = new Category();
         //$country = Country::updateOrCreate( ['name' => $input['name']], $input );
