@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>CMS | Best Practice Training</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -81,7 +81,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{{url('adminlte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Best Practice Training</span>
     </a>
 
     <!-- Sidebar -->
@@ -92,7 +92,7 @@
           <img src="{{url('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Arshdeep Singh</a>
         </div>
       </div>
 
@@ -109,6 +109,36 @@
                 Dashboard
               </p>
             </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User Management
+                <i class="fas fa-angle-left right"></i>
+                {{-- <span class="badge badge-info right">6</span> --}}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('userList')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon text-danger"></i>
+                  <p>User</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('roleList')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon text-warning"></i>
+                  <p>Role</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('permissionList')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon text-success"></i>
+                  <p>Permission</p>
+                </a>
+            </ul>
           </li>
          
           <li class="nav-header">Resources</li>
@@ -237,6 +267,128 @@
                 </a>
               </li>
             </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-fire"></i>
+              <p>
+                Popular
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('popularItems')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>List All</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>
+                Article
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('newsList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>News List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('blogList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Blog List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('tagList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Tag List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('testimonialList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Testimonials</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>
+                Website
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('websiteDashboard')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Webiste Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('websiteDetailList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Website Detail List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('urlRedirectList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>URL Redirect</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('socialmediaList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Social Media List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-header">Extra Resource</li>
+          <li class="nav-item">
+            <a href="{{Route('pageDetailList')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Page Content</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{Route('pageDetailList')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p class="text">Enquiries</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{Route('pageDetailList')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-success"></i>
+              <p class="text">Order List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{Route('pageDetailList')}}" class="nav-link">
+              <i class="nav-icon far fa-circle text-primary"></i>
+              <p class="text">Manual Purchase</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{Route('pageDetailList')}}" class="nav-link">
+              <i class="nav-icon far fa-circle"></i>
+              <p class="text">Resources</p>
+            </a>
           </li>
 
 
