@@ -74,18 +74,18 @@
 
                   <div class="form-group">
                       
-                    {{Form::label('is_online','Is Online')}}
+                    {{Form::label('is_online','Is Online',['class'=>'mr-4'])}}
                     {{Form::checkbox('is_online')}}
 
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('is_technical','Is technical')}}
+                    {{Form::label('is_technical','Is technical',['class'=>'mr-1'])}}
                     {{Form::checkbox('is_technical')}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('published','Is Published')}}
+                    {{Form::label('published','Is Published',['class'=>'mr-1'])}}
                     {{Form::checkbox('published')}}
                   </div>
                   
