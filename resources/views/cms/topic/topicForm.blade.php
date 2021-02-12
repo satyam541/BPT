@@ -9,12 +9,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Category Form</h1>
+          <h1 class="m-0 text-dark">Topic Form</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
+            <li class="breadcrumb-item"><a href="#">Topic</a></li>
             <li class="breadcrumb-item"><a href="#">Form</a></li>
           </ol>
         </div><!-- /.col -->
@@ -33,57 +33,64 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Category Form</h3>
+                <h3 class="card-title">Topic Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($category,['route'=>$submitRoute,"files"=>"true"])}}
+              <input type="hidden" name="categorySlug" value="{{ $categorySlug }}" id="categorySlug">
+              {{Form::model($topic,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
+
                   <div class="form-group">
                     {{Form::label('name','Name')}}
                     {{Form::text('name',null,['class'=>'form-control'])}}
-
-                    {{-- <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
                   </div>
+
                   <div class="form-group">
-                    {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    {{Form::label('category_id','Category')}}
+                    {{Form::select('category_id',$categories,null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
                   <div class="form-group">
-                    {{Form::label('tag_line','Tag Line')}}
-                    {{Form::textarea('tag_line',null,['class'=>'form-control ', 'id'=>'summernote'])}}
+                    {{Form::label('reference','Reference')}}
+                    {{Form::text('reference',null,['class'=>'form-control '])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('color_code','Color Code')}}
-                    {{Form::text('color_code',null,['class'=>'form-control ','title'=>'Any valid color_code that work for css'])}}
+                    {{Form::label('tag_line','Tag Line')}}
+                    {{Form::text('tag_line',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
-                    <img src="{{ $category->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                    <img src="{{ $topic->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                  </div>
+                  
+                  <div class="form-group">
+                    {{Form::label('ip_trademark','Ip Trademark')}}
+                    {{Form::textarea('ip_trademark',null,['class'=>'form-control ', 'id'=>'summernote'])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('icon','Icon')}}
-                    {{Form::file('icon',null,['class'=>'form-control'])}}
-                    <img src="{{ $category->getIconPath() }}" class=" pad" style="max-width:50%;" />
+                    {{Form::label('accreditation_id','Accreditation')}}
+                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
-                      
+                    {{Form::label('accredited','Is Accredited',['class'=>'mr-1'])}}
+                    {{Form::checkbox('accredited')}}
+                  </div>
+
+                  <div class="form-group">
                     {{Form::label('is_online','Is Online',['class'=>'mr-4'])}}
                     {{Form::checkbox('is_online')}}
-
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('is_technical','Is technical',['class'=>'mr-1'])}}
-                    {{Form::checkbox('is_technical')}}
+                    {{Form::label('priority','Has Priority',['class'=>'mr-1'])}}
+                    {{Form::checkbox('priority')}}
                   </div>
-
                   <div class="form-group">
                     {{Form::label('published','Is Published',['class'=>'mr-1'])}}
                     {{Form::checkbox('published')}}

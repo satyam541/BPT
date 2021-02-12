@@ -48,7 +48,7 @@ class LocationController extends Controller
 
     public function create()
     {
-        $this->authorize('create', new Location());
+        // $this->authorize('create', new Location());
            
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['location']       = new Location();

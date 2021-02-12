@@ -42,7 +42,7 @@ class CountryController extends Controller
     public function create()
     {
         
-        $this->authorize('create', new Country());
+        // $this->authorize('create', new Country());
         $data['country'] = new Country();
         $data['submitRoute'] = "insertCountry";
         return view('cms.country.countryForm',$data);
