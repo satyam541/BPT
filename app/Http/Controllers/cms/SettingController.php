@@ -21,12 +21,9 @@ class SettingController extends Controller
 
     public function websiteDetailList()
     {
-        $this->authorize('view', new WebsiteDetail());
+        // $this->authorize('view', new WebsiteDetail());
         $data['websitedetails'] = WebsiteDetail::paginate(10);
-        
       
-        
-       
         return view('cms.websiteContent.websiteDetail',$data);
     }
     public function createWebsiteDetail()
