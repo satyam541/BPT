@@ -36,6 +36,7 @@
             }
             
         }
+        
 
     });
     $('.owl-next').addClass("btn-active");
