@@ -336,7 +336,7 @@ class CourseController extends Controller
    
    public function whatsincludedlist(Request $request)
    {
-        $id = $request->module;
+        $id = $request->module_id;
         // dd($id);
         if(empty($id))
         {

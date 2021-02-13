@@ -107,10 +107,10 @@ class TopicController extends Controller
         
     }
 
-    public function editBulletPoint($module, $id)
+    public function editBulletPoint($id)
     {
-        $data['result']         = BulletPoint::with('module')->find($id);
-        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $module,'courseDetail'=>$id];
+        $data['result']         = BulletPoint::find($id);
+        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 
