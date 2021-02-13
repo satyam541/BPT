@@ -461,7 +461,7 @@ $.widget.bridge('uibutton', $.ui.button)
            $target = $(event.target);
 
           });
-      $('#summernote').summernote({
+      $('.summernote').summernote({
         toolbar:[
           ['cleaner',['cleaner']], // The Button
           ['style',['style']],
