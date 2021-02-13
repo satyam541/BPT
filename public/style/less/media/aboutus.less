@@ -74,14 +74,24 @@
         content: '';
         position: absolute;
         z-index: -1;
-        left: -31px;
-        top: 10px;
+        left: -28px;
+        top: 8px;
         width: 13px;
         height: 13px;
         border-radius: 50%;
         border: 5px solid @lightblueColor;
         background-color: @whiteColor;
      }
+      }
+
+      .about-image{
+          .heading{
+              h2{
+                  &::before{
+                      content: none;
+                  }
+              }
+          }
       }
   
   }

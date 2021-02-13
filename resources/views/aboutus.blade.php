@@ -41,7 +41,7 @@
                           How do we achieve this?</p>
                   </div>
                   <span class="values-info">
-                      <img src="src/img/master/values-info.png" alt="values-info">
+                  <img src="{{url('img/aboutus/values-info.png')}}" alt="values-info">
                   </span>
               </div>
           </div>
@@ -60,29 +60,29 @@
               <div class="testimonial-item">
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and scramble</p>
                   <span>
-                      <img src="src/img/master/client.svg" alt="clients">
+                  <img src="{{url('img/aboutus/client.svg')}}" alt="clients"/>
                   </span>
                   <h3>Harsul Hisham</h3>
                   <p class="designation">WEB DESIGNER</p>
-                  <img src="src/img/master/stars.svg" alt="stars" class="stars">
+                  <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
               </div>
               <div class="testimonial-item">
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and scramble</p>
                   <span>
-                      <img src="src/img/master/client.svg" alt="clients">
+                      <img src="{{url('img/aboutus/client.svg')}}" alt="clients">
                   </span>
                   <h3>Harsul Hisham</h3>
                   <p class="designation">WEB DESIGNER</p>
-                  <img src="src/img/master/stars.svg" alt="stars" class="stars">
+                  <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
               </div>
               <div class="testimonial-item">
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and scramble</p>
                   <span>
-                      <img src="src/img/master/client.svg" alt="clients">
+                  <img src="{{url('img/aboutus/client.svg')}}" alt="clients">
                   </span>
                   <h3>Harsul Hisham</h3>
                   <p class="designation">WEB DESIGNER</p>
-                  <img src="src/img/master/stars.svg" alt="stars" class="stars">
+                  <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
               </div>
           </div>
       </div>
