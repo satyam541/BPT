@@ -26,10 +26,10 @@ class ResourceController extends Controller
     }
     public function create()
     {
-        $this->authorize('create',  new Resource());
+        // $this->authorize('create',  new Resource());
         $data['resources'] = new Resource();
-         $data['submitroute'] = "insertresources";
-        return view('cms.resources.resourcesform',$data);
+         $data['submitRoute'] = "insertresources";
+        return view('cms.resources.resourcesForm',$data);
     }
  
 
@@ -56,7 +56,7 @@ class ResourceController extends Controller
         $this->authorize('update', $resources);
         $data['resources'] = $resources;
         $data['submitroute'] = array('updateresources',$resources->id);  
-        return view("cms.resources.resourcesform",$data);
+        return view("cms.resources.resourcesForm",$data);
     }
 
     public function delete($resources)

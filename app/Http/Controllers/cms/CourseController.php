@@ -367,7 +367,7 @@ class CourseController extends Controller
         $data['whatsincluded'] = new whatsincluded();
         $data['submitRoute'] = 'insertwhatsincluded';
      
-       return view('cms.whatsincluded.whatsincludedform',$data);
+       return view('cms.whatsincluded.whatsIncludedForm',$data);
    }
 
    public function sortWhatsIncluded(Request $request){
