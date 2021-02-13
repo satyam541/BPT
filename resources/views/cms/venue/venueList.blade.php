@@ -58,6 +58,8 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -78,6 +80,14 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
+        
     </script>
 @endsection
