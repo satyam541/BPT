@@ -81,7 +81,7 @@ class TopicController extends Controller
         $data['editbulletpointroute']='topicEditBulletPoint';
         $data['deletebulletpointroute']='topicDeleteBulletPoint';
         $data['insertbulletpointroute']='topicCreateBulletPoint';
-        $data['result'] = BulletPoint::where('module_id',$request->module)->get();
+        $data['module'] = Topic::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }
@@ -107,10 +107,10 @@ class TopicController extends Controller
         
     }
 
-    public function editBulletPoint($module, $id)
+    public function editBulletPoint($id)
     {
-        $data['result']         = BulletPoint::with('module')->find($id);
-        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $module,'courseDetail'=>$id];
+        $data['result']         = BulletPoint::find($id);
+        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 

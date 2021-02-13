@@ -49,8 +49,8 @@
                     @foreach ($categories as $category)
                     <tr>
                     <td>{{$category->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
+                    <td> <a href="{{route('categoryBulletPointList',['module'=>$category->id])}}" class=" fa fa-bullseye"></a></td>
+                    <td> <a href="{{route('categoryWhatsIncludedList',['module'=>$category->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -60,6 +60,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createCategory')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -80,6 +81,13 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
     </script>
 @endsection

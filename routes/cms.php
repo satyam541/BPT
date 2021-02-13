@@ -105,22 +105,22 @@ Route::post('/linkTopic/{id}','CourseController@linkTopic')->name('linkTopicRout
 Route::get('/course/bulletPoint','CourseController@bulletPointList')->name('bulletPointList');
 Route::get('/course/bulletPoint/insert','CourseController@createBulletPoint')->name('createBulletPoint');
 Route::post('/course/bulletPoint/insert/{module}','CourseController@submitBulletPoint')->name('insertBulletPoint');
-Route::get('/course/bulletPoint/update/{module}/{courseDetail}','CourseController@editBulletPoint')->name('editBulletPoint');
-Route::post('/course/bulletPoint/update/{module}/{courseDetail}','CourseController@submitBulletPoint')->name('updateBulletPoint');
-Route::post('/course/bulletPoint/delete/{courseDetail}','CourseController@deleteBulletPoint')->name('deleteBulletPoint');
+Route::get('/course/bulletPoint/update/{id}','CourseController@editBulletPoint')->name('editBulletPoint');
+Route::post('/course/bulletPoint/update/{module}','CourseController@submitBulletPoint')->name('updateBulletPoint');
+Route::any('/course/bulletPoint/delete/{courseDetail}','CourseController@deleteBulletPoint')->name('deleteBulletPoint');
 // Category Bulletpoint
 Route::get('/category/bulletPoint','CategoryController@bulletPointList')->name('categoryBulletPointList');
 Route::get('/category/bulletPoint/insert','CategoryController@createBulletPoint')->name('categoryCreateBulletPoint');
 Route::post('/category/bulletPoint/insert/{module}','CategoryController@submitBulletPoint')->name('categoryInsertBulletPoint');
-Route::get('/category/bulletPoint/update/{module}/{courseDetail}','CategoryController@editBulletPoint')->name('categoryEditBulletPoint');
-Route::post('/category/bulletPoint/update/{module}/{courseDetail}','CategoryController@submitBulletPoint')->name('categoryUpdateBulletPoint');
+Route::get('/category/bulletPoint/update/{id}','CategoryController@editBulletPoint')->name('categoryEditBulletPoint');
+Route::post('/category/bulletPoint/update/{module}','CategoryController@submitBulletPoint')->name('categoryUpdateBulletPoint');
 Route::post('/category/bulletPoint/delete/{courseDetail}','CategoryController@deleteBulletPoint')->name('categoryDeleteBulletPoint');
 // Topic BulletPoint
 Route::get('/topic/bulletPoint','TopicController@bulletPointList')->name('topicBulletPointList');
 Route::get('/topic/bulletPoint/insert','TopicController@createBulletPoint')->name('topicCreateBulletPoint');
 Route::post('/topic/bulletPoint/insert/{module}','TopicController@submitBulletPoint')->name('topicInsertBulletPoint');
-Route::get('/topic/bulletPoint/update/{module}/{courseDetail}','TopicController@editBulletPoint')->name('topicEditBulletPoint');
-Route::post('/topic/bulletPoint/update/{module}/{courseDetail}','TopicController@submitBulletPoint')->name('topicUpdateBulletPoint');
+Route::get('/topic/bulletPoint/update/{id}','TopicController@editBulletPoint')->name('topicEditBulletPoint');
+Route::post('/topic/bulletPoint/update/{module}','TopicController@submitBulletPoint')->name('topicUpdateBulletPoint');
 Route::post('/topic/bulletPoint/delete/{courseDetail}','TopicController@deleteBulletPoint')->name('topicDeleteBulletPoint');
 // Course Whatsincluded
 Route::get('/course/whatsincluded','CourseController@whatsincludedlist')->name('whatsIncludedList');
