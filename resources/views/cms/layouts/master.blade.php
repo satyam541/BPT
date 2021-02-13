@@ -361,6 +361,89 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-trash" style="color: red"></i>
+              <p>
+                Trash
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('scheduleList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Country List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('getSchedule')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Venue List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('createSchedule')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Location List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('manualScheduleList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Category List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('manageCoursePrice')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Topic List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Online Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Resource List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Tag List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Article List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Testimonial List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Accreditation List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
