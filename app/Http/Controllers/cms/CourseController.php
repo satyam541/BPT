@@ -63,7 +63,7 @@ class CourseController extends Controller
 
     public function contentList(Request $request)
     {
-        $this->authorize('view', new Course());
+        // $this->authorize('view', new Course());
         $filter = $request->all();
         $data['selectedCourse'] = empty($filter['course'])? NULL : $filter['course'];
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
