@@ -16,38 +16,36 @@
           </div>
         </div>
       <!-- /.container-fluid -->
-      <div>
         <div class="box box-solid">
             <div class="box-header">
                 <div class="row">
                     <div class="card col-md-12">
                         <div class="card-body">
-                            <form action="" class="form-horizontal">
-                                <div class="col-md-3">
-                                    {{Form::select('moduleName', $module, null, array_merge( ['id'=>'module','class'=>'form-control js-example-basic-multiple'])) }}
+                            <form action="" class="form-inline">
+                                <div class="form-group col-md-4">
+                                    {{Form::select('moduleName', $module, null, array_merge( ['id'=>'module','class'=>'form control js-example-basic-multiple'])) }}
     
                                 </div>
-                                <div class="col-md-3">
-                                    {{Form::select('access', $access, null, array_merge( ['id'=>'access','class'=>'form-control js-example-basic-multiple'])) }}
+                                <div class="form-group col-md-4">
+                                    {{Form::select('access', $access, null, array_merge( ['id'=>'access','class'=>'form control  js-example-basic-multiple'])) }}
     
                                 </div>
-                                <div class="col-md-3">
+                                <div class="form-group col-sm-3">
                                         <button class="btn btn-default">Search</button>
                                 </div>
                             </form>
-                        </div>
+                    
                     </div>
-                        
-                        
-                
                 </div>
             </div>
-        </div>
+    
     
                 <!-- /.card-header -->
+                
                 <div class="box-body no-padding">
                     
-                    <div class="table-responsive ">
+                    <div class="table-responsive" style="background-color: white">
+                
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -79,19 +77,27 @@
                                 
                             </tbody>
                         </table>
-                </div>
-            </section>
-                @endsection
-                @section('footer')
-
-                 <script>
-              $(".js-example-basic-multiple").select2({
+ </div>
+</div>
+<div class="box-footer clear-fix small-pagination">
+    {{-- @can('create',new App\Models\Permission) --}}
+   {{-- <a href="{{ route('createPermission')}}" class="btn btn-github">add new Record</a> --}}
+   {{-- @endcan --}}
+      
+{{ $permissions->links() }}
+   </div>
+</div>
+</div>
+</section>
+ @endsection
+@section('footer')
+<script>
+       $(".js-example-basic-multiple").select2({
                 tags: true,
                 tags: true,
                 theme: "classic",
+                width:'400px',
                 tokenSeparators: [',', ' ']
-               
-            });
-        </script>
-            
+});
+ </script>
 @endsection
