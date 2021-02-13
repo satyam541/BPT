@@ -1,0 +1,97 @@
+@extends('cms.layouts.master')
+@section('content')
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Permission</li>
+            </ol>
+          </div>
+        </div>
+      <!-- /.container-fluid -->
+      <div>
+        <div class="box box-solid">
+            <div class="box-header">
+                <div class="row">
+                    <div class="card col-md-12">
+                        <div class="card-body">
+                            <form action="" class="form-horizontal">
+                                <div class="col-md-3">
+                                    {{Form::select('moduleName', $module, null, array_merge( ['id'=>'module','class'=>'form-control js-example-basic-multiple'])) }}
+    
+                                </div>
+                                <div class="col-md-3">
+                                    {{Form::select('access', $access, null, array_merge( ['id'=>'access','class'=>'form-control js-example-basic-multiple'])) }}
+    
+                                </div>
+                                <div class="col-md-3">
+                                        <button class="btn btn-default">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        
+                        
+                
+                </div>
+            </div>
+        </div>
+    
+                <!-- /.card-header -->
+                <div class="box-body no-padding">
+                    
+                    <div class="table-responsive ">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>module</th>
+                                    <th>access</th>
+                                    <th>Description</th>
+                                    {{-- @can('update',new App\Models\Permission()) --}}
+                                    <th>Edit</th>
+                                    {{-- @endcan --}}
+                                    {{-- @can('delete',new App\Models\Permission()) --}}
+                                    <th>Delete</th>
+                                    {{-- @endcan --}}
+                                </tr>        
+                            </thead>
+                            <tbody>
+                                @foreach($permissions as $permission)
+                                <tr>
+                                    <td>{{$permission->module->name ?? ''}}</td>
+                                    <td>{{$permission->access}}</td>
+                                    <td>{{$permission->description }}</td>
+                                    {{-- @can('update',$permission) --}}
+                                    <td><a href="{{ route('editPermission',['permission'=>$permission->id]) }}"><i class="fa fa-edit"></a></td>
+                                    {{-- @endcan --}}
+                                    {{-- @can('delete',$permission) --}}
+                                     <td><a href="#" onclick="deleteItem(route('deletePermission'),'{{ $permission->id}}')"><i class="fa fa-trash text-red"></i></a></td>
+                                    {{-- @endcan --}}
+                                    </tr>
+                                @endforeach
+                                
+                            </tbody>
+                        </table>
+                </div>
+            </section>
+                @endsection
+                @section('footer')
+
+                 <script>
+              $(".js-example-basic-multiple").select2({
+                tags: true,
+                tags: true,
+                theme: "classic",
+                tokenSeparators: [',', ' ']
+               
+            });
+        </script>
+            
+@endsection

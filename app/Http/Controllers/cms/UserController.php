@@ -255,7 +255,7 @@ class UserController extends Controller
 
     public function permissionList(Request $request)
     {
-        $this->authorize('view', new Permission());
+        // $this->authorize('view', new Permission());
         $filter = $request->all();
         $data['module']=Module::all()->pluck('name','name')->toArray();
         $data['module']=['ALL'=>'ALL']+$data['module'];
