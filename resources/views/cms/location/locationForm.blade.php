@@ -163,9 +163,6 @@
 @endsection
 @section('footerScripts')
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADlk166150RMLLGby78Ayq9kUKyAdHtp0"></script>
 <script src="{{URL('/js/jquery-gmaps-latlon-picker.js?lnkn')}}"></script>
 <script>
