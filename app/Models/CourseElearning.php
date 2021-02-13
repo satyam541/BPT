@@ -13,7 +13,7 @@ class CourseElearning extends Model
     
     function course()
     {
-        return $this->belongsTo("App\Models\Course",'course_id');
+        return $this->belongsTo("App\Models\Course",'course_id','id');
     }
     
     public function whatsIncluded()
