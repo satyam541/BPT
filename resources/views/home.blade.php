@@ -74,13 +74,7 @@
                     </ul>
                 </div>
             </div>
-    </div>
-
- <!-- <div class="heading">
-        <h2>
-            porfessional  <span>skill</span>
-        </h2>
-    </div> -->
+        </div>
 
 </section>
 

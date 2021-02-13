@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('category_id','Category')}}
-                    {{Form::select('category_id',$categories,null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('category_id',$categories,null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
                     
                   </div>
                   <div class="form-group">
@@ -74,7 +74,7 @@
 
                   <div class="form-group">
                     {{Form::label('accreditation_id','Accreditation')}}
-                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -115,5 +115,17 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-    
+@endsection
+@section('footer')
+
+                 <script>
+              $(".js-example-basic-multiple").select2({
+                tags: true,
+                tags: true,
+                theme: "classic",
+                tokenSeparators: [',', ' ']
+               
+            });
+        </script>
+            
 @endsection
