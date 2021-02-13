@@ -22,7 +22,7 @@
     }
     //End Toggle menu//
     //Start Testimonial//
-    $('.owl-carousel').owlCarousel({
+    $('.topic-list').owlCarousel({
         loop: true,
         responsiveClass: true,
         dots: true,
@@ -44,3 +44,29 @@
         $(this).addClass("btn-active").siblings().removeClass("btn-active");
     });
     // End Testimonial//
+
+       //Start aboutus Testimonial//
+       $('.testimonial-content').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: false,
+        nav: true,
+        autoplay: true,
+        navText: ["", ""],
+        responsive: {
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            }
+        }
+        
+
+    });
+    $('.owl-next').addClass("btn-active");
+    $('.owl-prev,.owl-next').click(function () {
+        $(this).addClass("btn-active").siblings().removeClass("btn-active");
+    });
+    // End aboutus Testimonial//
+    
