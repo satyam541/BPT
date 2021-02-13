@@ -441,6 +441,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- datepicker -->
 <script src="{{ url('adminLTE/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ url('cms/common.js?2')}}"></script>
 <!-- Summernote -->
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
