@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">{{$type}}</h1>
+          <h1 class="m-0 text-dark">tag</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">{{$type}}</a></li>
+            <li class="breadcrumb-item"><a href="#">tag</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -39,16 +39,14 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Date</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($data as $item)
+                    @foreach ($tags as $tag)
                     <tr>
-                    <td>{{$item->title}}</td>
-                    <td>{{$item->created_at}}</td>
+                    <td>{{$tag->name}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>

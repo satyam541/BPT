@@ -25,28 +25,10 @@ class ArticleController extends Controller
 
     public function newsList(Request $request)
     {
-        $this->authorize('view', Article::firstOrNew(['type'=>'news']));
-
-     
-   
-        $filter         =    $request->title;
-        if(!empty($filter))
-        {
-           $result = Article::where('title',$filter)->paginate(10);
-         
-
-        }
-        else
-        {
-            $result=Article::where(['type'=>'news'])->paginate(10);
-        }
-
-        
-          $list['articles']  = Article::where(['type'=>'news'])->get()->pluck('title','title')->toArray();
-        $data['list']       = $list;
-        $data['articles']  = $result;
-        // dd($data);
-        return view('cms.article.article',$data);
+        // $this->authorize('view', Article::firstOrNew(['type'=>'news']));
+        $data=Article::where('type','news')->get();
+        $type='News';
+       return view('cms.article.article',compact('data','type'));
     }
 
     public function create()
@@ -185,7 +167,7 @@ class ArticleController extends Controller
         //  $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
          $data=Article::where('type','blog')->get();
          $type='Blog';
-        return view('cms.article.article',compact('blog','type'));
+        return view('cms.article.article',compact('data','type'));
     }
 
     

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">{{$type}}</h1>
+          <h1 class="m-0 text-dark">testimonial</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">{{$type}}</a></li>
+            <li class="breadcrumb-item"><a href="#">testimonial</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,17 +38,21 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>s.no</th>
+                  <th>Author</th>
                   <th>Date</th>
+                  <th>Location</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($data as $item)
+                    @foreach ($testimonials as $testimonial)
                     <tr>
-                    <td>{{$item->title}}</td>
-                    <td>{{$item->created_at}}</td>
+                    <td>{{$testimonial->id}}</td>
+                    <td>{{$testimonial->author}}</td>
+                    <td>{{$testimonial->created_at}}</td>
+                    <td>{{$testimonial->location}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>

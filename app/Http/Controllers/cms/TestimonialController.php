@@ -20,8 +20,8 @@ class TestimonialController extends Controller
 
     public function testimonialList(Request $request)
     {
-        $this->authorize('view', new Testimonial());
-        $data['testimonials'] = Testimonial::get();
+        // $this->authorize('view', new Testimonial());
+        $data['testimonials'] = Testimonial::all();
          
         return view('cms.testimonial.testimonial',$data);
     }
