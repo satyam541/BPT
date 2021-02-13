@@ -33,7 +33,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        $this->authorize('create', Article::firstOrNew(['type'=>'news']));
+        // $this->authorize('create', Article::firstOrNew(['type'=>'news']));
         $data['article'] = new Article();
         $data['submitRoute'] = "insertArticle";
         $data['selectedTags']="";
