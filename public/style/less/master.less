@@ -6,7 +6,7 @@
 @greyBorder: 1px solid #d7d7d7;
 @whiteColor: #FFFFFF;
 @blackColor:#000000;
-@ShadowLight : 0px 0px 10px rgba(0, 0, 0, 0.098);
+@shadowLight : 0px 0px 10px rgba(0, 0, 0, 0.098);
 @sectionPadding : 3rem 1.5rem;
 @sectionPadding-md : 3rem 2rem;
 @sectionPadding-xl : 4rem 0rem;
@@ -105,7 +105,7 @@
         font-weight: 600;
         padding: 12px 18px;
         outline: none;
-        box-shadow: @ShadowLight;
+        box-shadow: @shadowLight;
         min-width: 150px;
         white-space: nowrap;
         border-radius: 50px;
@@ -120,26 +120,26 @@
         }
     }
     //End buttons
-
     // Start heading
     .heading {
         margin-bottom: 1rem;
         width: 100%;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 80px;
+            height: 4px;
+            border-radius: 10px;
+            background-color: @darkblueColor;
+            top: -10px;
+        }
         h2{
             width: 100%;
-            position: relative;
-            z-index: 1;
             font-size: 26px;
-            &::before{
-                content: '';
-                position: absolute;
-                z-index: -1;
-                width: 80px;
-                height: 4px;
-                border-radius: 10px;
-                background-color: @darkblueColor;
-                top: -10px;
-            }
+        
         }
         span{
             color: @lightblueColor;
@@ -147,9 +147,10 @@
         }
     }
     .center-heading {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         h2 {
-            display: flex;
             text-align: center;
             justify-content: center;
         }
@@ -160,7 +161,6 @@
         }
     }
     // End heading
-
     
     // Start navbar //
     .navbar {
@@ -315,7 +315,7 @@
             width: 100%;
             input {
                 width: 88%;
-                box-shadow: @ShadowLight;
+                box-shadow: @shadowLight;
                 padding: 0.8rem .5rem;
                 padding-right: 1.5rem;
                 border: none;
@@ -324,7 +324,7 @@
         button{
             
             width: 82px;
-            box-shadow: @ShadowLight;
+            box-shadow: @shadowLight;
             padding: .5rem;
             background-color: @darkblueColor;
             border-radius: 0;
