@@ -209,7 +209,7 @@ Route::get('/schedule/onlineprice/addons/{online}',"ScheduleController@courseAdd
 
 Route::get('/popular/list',"PopularController@list")->name("popularItems");
 Route::post('/popular/delete/{popular}',"PopularController@delete")->name("deletePopular");
-Route::post('/popular/sort',"PopularController@sort")->name("sortPopular");
+Route::any('/popular/sort',"PopularController@sort")->name("sortPopular");
 
 
 

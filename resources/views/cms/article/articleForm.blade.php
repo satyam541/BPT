@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Venue</a></li>
+            <li class="breadcrumb-item"><a href="#">Article</a></li>
             <li class="breadcrumb-item"><a href="#">Form</a></li>
           </ol>
         </div><!-- /.col -->
@@ -33,7 +33,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Venue Form</h3>
+                <h3 class="card-title"> Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -63,7 +63,7 @@
                   
                   <div class="form-group">
                     {{Form::label('tag','Tag')}}
-                    {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple','multiple'=>'multiple', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -81,7 +81,7 @@
 
                   <div class="form-group">
                     {{Form::label('type','ArticleType')}}
-                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one']); !!}
+                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
                   </div>
 
                   <div class="form-group">
@@ -125,10 +125,8 @@
 <!-- /.content-wrapper -->
     
 @endsection
-@section('footerScripts')
+@section('footer')
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
 <script>
 
 $( function() {
@@ -141,14 +139,14 @@ $( function() {
             });
       } );
         </script>
-
-        
                  <script>
               $(".js-example-basic-multiple").select2({
                 tags: true,
+                tags: true,
                 theme: "classic",
                 tokenSeparators: [',', ' ']
-            })
+               
+            });
         </script>
             
 @endsection

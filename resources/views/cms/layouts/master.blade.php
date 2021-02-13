@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>CMS | Best Practice Training</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -450,7 +452,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('adminlte/dist/js/demo.js')}}"></script>
-
+<script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 @yield('footer')
 <script>
