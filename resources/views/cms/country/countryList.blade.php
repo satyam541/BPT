@@ -39,8 +39,6 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -49,8 +47,6 @@
                     @foreach ($countries as $country)
                     <tr>
                     <td>{{$country->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
