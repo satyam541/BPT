@@ -14,7 +14,7 @@ class RedirectController extends Controller
     
     public function UrlRedirectList(Request $request)
     {
-        $this->authorize('view', new UrlRedirect());    
+        // $this->authorize('view', new UrlRedirect());    
         $source        =    $request->get('source',null);
         $target        =    $request->get('target',null);
          

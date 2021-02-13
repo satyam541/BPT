@@ -23,11 +23,11 @@
                         <div class="card-body">
                             <form action="" class="form-inline">
                                 <div class="form-group col-md-4">
-                                    {{Form::select('moduleName', $module, null, array_merge( ['id'=>'module','class'=>'form control js-example-basic-multiple'])) }}
+                                    {{Form::select('moduleName', $module, $selectedModule, array_merge( ['id'=>'module','class'=>'form control js-example-basic-multiple'])) }}
     
                                 </div>
                                 <div class="form-group col-md-4">
-                                    {{Form::select('access', $access, null, array_merge( ['id'=>'access','class'=>'form control  js-example-basic-multiple'])) }}
+                                    {{Form::select('access', $access, $selectedAccess, array_merge( ['id'=>'access','class'=>'form control  js-example-basic-multiple'])) }}
     
                                 </div>
                                 <div class="form-group col-sm-3">
