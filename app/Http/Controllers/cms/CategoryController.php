@@ -131,7 +131,7 @@ class CategoryController extends Controller
         $data['editbulletpointroute']='categoryEditBulletPoint';
         $data['deletebulletpointroute']='categoryDeleteBulletPoint';
         $data['insertbulletpointroute']='categoryCreateBulletPoint';
-        $data['result'] = BulletPoint::where('module_id',$request->module)->get();
+        $data['module'] = Category::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }
@@ -157,10 +157,10 @@ class CategoryController extends Controller
         
     }
 
-    public function editBulletPoint($module, $id)
+    public function editBulletPoint($id)
     {
-        $data['result']         = BulletPoint::with('module')->find($id);
-        $data['submitRoute']    = ['categoryUpdateBulletPoint','module'=> $module,'courseDetail'=>$id];
+        $data['result']         = BulletPoint::find($id);
+        $data['submitRoute']    = ['categoryUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 
