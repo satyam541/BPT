@@ -40,8 +40,6 @@
                 <tr>
                   <th>Name</th>
                   <th>Country</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -51,8 +49,6 @@
                     <tr>
                     <td>{{$location->name}}</td>
                     <td>{{$location->country->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>

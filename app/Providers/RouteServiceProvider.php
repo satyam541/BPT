@@ -21,7 +21,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/cms';
+
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -72,7 +73,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapCmsRoutes()
     {
         Route::prefix('cms')
-             ->middleware('web')
+             ->middleware(['web','auth'])
              ->namespace($this->namespace.'\cms')
              ->group(base_path('routes/cms.php'));
     }

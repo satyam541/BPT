@@ -38,6 +38,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{Form::model($location,['route'=>$submitRoute,"files"=>"true"])}}
+              <fieldset class="gllpLatlonPicker">
                 <div class="card-body">
                     {{Form::hidden('id',null)}}
                   <div class="form-group">
@@ -107,7 +108,7 @@
 
                   <div class="form-group">
                     {{Form::label('description','Description')}}
-                    {{Form::textarea('description',null,['class'=>'form-control', 'id'=>'summernote'])}}
+                    {{Form::textarea('description',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
@@ -146,6 +147,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+              </fieldset> 
                 {{Form::close()}}
             </div>
             <!-- /.card -->
@@ -161,10 +163,7 @@
 <!-- /.content-wrapper -->
     
 @endsection
-@section('footerScripts')
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
+@section('footer')
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADlk166150RMLLGby78Ayq9kUKyAdHtp0"></script>
 <script src="{{URL('/js/jquery-gmaps-latlon-picker.js?lnkn')}}"></script>

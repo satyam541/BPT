@@ -49,8 +49,8 @@
                     @foreach ($categories as $category)
                     <tr>
                     <td>{{$category->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
+                    <td> <a href="{{route('categoryBulletPointList',['module'=>$category->id])}}" class=" fa fa-bullseye"></a></td>
+                    <td> <a href="{{route('categoryWhatsIncludedList',['module'=>$category->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
