@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">course</h1>
+          <h1 class="m-0 text-dark">accreditations</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">course</a></li>
+            <li class="breadcrumb-item"><a href="#">accreditations</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -39,20 +39,14 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Topic</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($courses as $course)
+                    @foreach ($accreditations as $accreditation)
                     <tr>
-                    <td>{{$course->name}}</td>
-                    <td>{{$course->topic->name}}</td>
-                    <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
+                    <td>{{$accreditation->name}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -62,6 +56,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -82,6 +77,14 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
+        
     </script>
 @endsection

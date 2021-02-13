@@ -167,7 +167,7 @@ class Course extends Model
     }
     public function BulletPoint()
     {
-        return $this->hasMany('App\Models\BulletPoint','module_id')->withTrashed();
+        return $this->hasMany('App\Models\BulletPoint','module_id')->where('module_type','course')->withTrashed();
     }
     public function whatsInclude()
     {
