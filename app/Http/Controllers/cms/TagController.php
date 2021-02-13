@@ -11,10 +11,9 @@ class TagController extends Controller
     
     public function tagList(Request $request)
     {
-        $this->authorize('view', new Tag());
+        // $this->authorize('view', new Tag());
         $data['tags'] = Tag::all();
 
-        // dd($data);
         return view('cms.article.tag',$data);
     }
 
