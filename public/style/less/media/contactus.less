@@ -1,0 +1,286 @@
+@media @size-md {
+  
+      // Start banner section//
+    .banner {
+      .banner-container {
+        width: 100%;
+        padding: 0;
+    
+        .banner-content {
+          padding: @sectionPadding-md;
+          padding-top: 2rem;
+        }
+      }
+      }
+      //End bannner section //
+  
+      // Start Footer Section
+      .contact{
+        padding: @sectionPadding-md;
+        padding-bottom: 1rem;
+        .contact-container{
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          .form{
+            width: 50%;
+          }
+    
+          .contact-info{
+            width: 50%;
+            margin-top: 0;
+            .contact-list{
+              width: 90%;
+              align-self: center;
+            }
+          }
+        }
+      }
+      // End Footer Section
+  
+  
+    }
+  
+  @media @size-lg {
+  
+       //Start banner section//
+       .banner {
+        background-color: transparent;
+        padding: 0;
+        background-image:url(../img/master/banner-bg.png);
+        background-size: 100% 100%;
+        padding: 2rem;
+        .logo-container {
+          .container {
+            .menu {
+              display: none;
+            }
+      
+            .menu-links {
+              width: 78%;
+              display: flex;
+              align-items: center;
+              background: 0 0;
+              max-height: unset;
+              overflow: unset;
+              position: relative;
+              box-shadow: none;
+              justify-content: flex-end;
+      
+              .menu-toggle {
+                display: none;
+              }
+      
+              ul {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin: 0;
+      
+                .links-li {
+                  border-bottom: none;
+                  margin-right: 1rem;
+                  padding: 0;
+                  color: @blackColor;
+                  font-weight: 500;
+                  position: relative;
+                  z-index: 1;
+                  &::before{
+                    content: '';
+                    position: absolute;
+                    background-color: @blackColor;
+                    height: 3px;
+                    width: 0;
+                    left: 0;
+                    bottom: -5px;
+                    z-index: -1;
+                    transition: .6s ease;
+                  }
+                  &:hover{
+                    &::before{
+                      width: 100%;
+                    }
+                  }
+      
+                  &:last-child {
+                    display: flex;
+                    margin-top: 0;
+                    margin-right: 0;
+                  }
+      
+                  .link {
+                    font-weight: 600;
+                    transition: none;
+                    color: @blackColor;
+                    padding: 3px;
+                  }
+                }
+      
+                .buttons {
+                  &::before,&::after{
+                    content: none;
+                  }
+                  .btn-white {
+                    margin-right: 1rem;
+                    padding: .5rem;
+                    min-width: 40px;
+                    height: 40px;
+                    &::before,&::after{
+                      content: none;
+                    }
+                    img{
+                      margin-right: 0;
+                    }
+                    &:last-child{
+                      margin-right: 0;
+                    }
+                  }
+                }
+              }
+            }
+      
+          }
+        }
+      
+        .sticky {
+          .container{
+            border-left: none;
+          }
+      
+          .container {
+      
+            &::before {
+              content: none;
+            }
+      
+            &::after {
+              content: none;
+            }
+          }
+        }
+      
+        .banner-container {
+          flex-direction: row;
+          justify-content: space-between;
+          padding-top: 1.5rem;
+          align-items: center;
+      
+          .banner-content {
+            width: 48%;
+            padding-top: 0;
+          }
+      
+          .banner-info {
+            display: flex !important;
+            flex-direction: column;
+            margin-top: 0;
+            width: 50%;
+      
+            img {
+              width: 100%;
+            }
+      
+          }
+        }
+        }
+        //End banner section//  
+  
+        // Start Footer Section
+        .contact{
+          .contact-container{
+          .form{
+            width: 60%;
+            align-self: flex-start;
+            padding: 2rem;
+            .form-input{
+              flex-wrap: wrap;
+              flex-direction: row;
+              justify-content: space-between;
+              .input-container{
+                width: 48%;
+                &:last-child{
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .contact-info{
+              width: 45%;
+              background-image: url(../img/master/phone-bg.png);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              justify-content: flex-start;
+              align-items: flex-start;
+              padding: 3.5rem;
+              padding-right: 5rem;
+              .contact-list{
+                width: 100%;
+                align-self: center;
+                .item{
+                a{
+                  word-break: keep-all;
+                }
+                }
+              }
+          }
+          }
+          .social{
+            margin-bottom: 3rem;
+            .media-list{
+              width: 90%;
+              align-self: center;
+            }
+          }
+          }
+        // End Footer Section
+    }
+  
+  
+  @media @size-xl {
+  
+      //Start banner section//
+      .banner {
+        padding: @sectionPadding-xl;
+        padding-top: 1rem;
+      .logo-container {
+      .container {
+      .menu-links {
+        ul {
+          .links-li {
+            margin-right: 2rem;
+    
+          }
+        }
+      }
+    
+      }
+      }
+      .sticky{
+        .container{
+          padding: 1rem 0;
+        }
+      }
+      }
+      //End banner section//
+  
+      // Start Footer Section
+      .contact{
+        padding: @sectionPadding-xl;
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+        .contact-container{
+          position: relative;
+          align-items: center;
+          .contact-info{
+            width: 33%;
+            position: absolute;
+            left: 0;
+          }
+          .form{
+            width: 75%;
+            padding-left: 5rem;
+            align-self: center;
+          }
+        }
+      }
+      // End Footer Section
+    }
