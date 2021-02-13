@@ -63,7 +63,7 @@
                   
                   <div class="form-group">
                     {{Form::label('content','Content')}}
-                    {{Form::textarea('content',null,['class'=>'form-control', 'id'=>'summernote'])}}
+                    {{Form::textarea('content',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">

@@ -73,7 +73,7 @@
 
                   <div class="form-group">
                     {{Form::label('ip_trademark','Trademark Text')}}
-                    {{Form::textarea('ip_trademark',null,['class'=>'form-control', 'id'=>'summernote'])}}
+                    {{Form::textarea('ip_trademark',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">

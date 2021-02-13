@@ -39,7 +39,7 @@ class VenueController extends Controller
 
     public function create()
     {
-        $this->authorize('create', Venue::class);
+        // $this->authorize('create', Venue::class);
         $data['venue'] = new Venue();
         $data['submitRoute'] = "insertVenue";
         $data['locations'] = Location::withoutGlobalScope('venues')->get()->pluck('name','id')->toArray();
