@@ -58,7 +58,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
 
             </div>
             <!-- /.card-body -->
