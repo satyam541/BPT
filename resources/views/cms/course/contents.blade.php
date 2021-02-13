@@ -21,24 +21,30 @@
                 <div class="row">
                     <div class="card col-md-12">
                         <div class="card-body">
-                            <form action="" class="form-inline">
-                                <div class="form-group col-md-4">
-                                    {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
-                                
-                                        {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    {{-- <label for="inputCountry" class="col-sm-2 control-label">Country</label> --}}
-                                    {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
-                                    <div class="col-sm-4">
-                                        {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
-                                    </div>
-                                </div>
-                                <div class="form-group col-sm-3">
-                                        <button class="btn btn-default">Search</button>
-                                </div>
-                            </form>
+                            <form action="" class="form-horizontal">
+                <div class="box-header">Filter content</div>
+                <div class="box-body">
+                    <div class="form-group row">
+                        {{-- <label for="inputCourse" class="col-sm-2 control-label">Course</label> --}}
+                        {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
+                        <div class="col-sm-4">
+                            {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        {{-- <label for="inputCountry" class="col-sm-2 control-label">Country</label> --}}
+                        {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
+                        <div class="col-sm-4">
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="col-sm-12 text-right">
+                        <button class="btn btn-default">Search</button>
+                    </div>
+                </div>
+            </form>
                     
                     </div>
                 </div>
