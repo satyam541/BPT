@@ -40,18 +40,10 @@ class OnlineCourseController extends Controller
     public function list(Request $request)
     {
        
-        $filter         =    $request->all();
 
-        $query = courseElearning::query();
-        $query = empty($filter['name'])? $query : $query->where('online_course_name',$filter['name']);
-        
-        $result = $query->paginate(10);
-        $list['onlinecourses'] = courseElearning::all()->pluck('online_course_name','online_course_name');
-         
-        $data['list'] = $list;
-        $data['onlinecourses'] =$result;
+        $onlineCourses = courseElearning::with('course')->get();
       
-        return view('cms.onlinecourse.onlinecourse',$data);
+        return view('cms.onlinecourse.onlinecourse',compact('onlineCourses'));
     }
 
   

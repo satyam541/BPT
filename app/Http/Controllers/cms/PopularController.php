@@ -22,7 +22,7 @@ class PopularController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list(Request $request)
+    public function list()
     {
         // Popular::$module()->module;
         
