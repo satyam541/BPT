@@ -233,37 +233,37 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('countryList')}}" class="nav-link">
+                <a href="{{Route('scheduleList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Schedule List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('locationList')}}" class="nav-link">
+                <a href="{{Route('getSchedule')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Fetch Schedule</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueList')}}" class="nav-link">
+                <a href="{{Route('createSchedule')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Add Schedule</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueList')}}" class="nav-link">
+                <a href="{{Route('manualScheduleList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Manual Schedule List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueList')}}" class="nav-link">
+                <a href="{{Route('manageCoursePrice')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Manage Price</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueList')}}" class="nav-link">
+                <a href="{{Route('onlinePriceList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-"></i>
                   <p>Online Prices</p>
                 </a>
