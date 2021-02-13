@@ -1,0 +1,124 @@
+@media @size-md{
+
+// Start about-us section //
+  .about-us{
+    padding: @sectionPadding-md;
+    .about-container{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .about-content{
+      width: 48%;
+      .heading{
+          h2{
+            text-align: left;
+          }
+          p{
+            text-align: left;
+          }
+      }
+  }
+  .about-image{
+    width: 48%;
+    position: sticky;
+    top: 55px;
+    height: fit-content;
+      .heading{
+          h2{
+            text-align: left;
+          }
+          p{
+            text-align: left;
+          }
+      }
+  }
+    
+}
+// End about-us section //
+
+
+// Start testimonial section//
+  .testimonial{
+    padding: @sectionPadding-md;
+    .testimonial-item{
+        width: 85%;
+    }
+}
+// End testimonial section//
+
+}
+
+@media @size-lg{
+
+// Start about-us section //
+.about-us{
+    .about-content{
+      padding-left: 2rem;
+      position: relative;
+      z-index: 1;
+      &::after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 11px;
+        top: 1px;
+        width: 5px;
+        height: 470px;
+        border-left: 2px dashed @blackColor;
+      }
+    }
+     h2{
+      position: relative;
+      z-index: 1;
+      &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -31px;
+        top: 10px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 5px solid @lightblueColor;
+        background-color: @whiteColor;
+     }
+      }
+  
+  }
+// End about-us section //
+  
+  
+// Start testimonial section//
+.testimonial{
+background-image: url(../img/master/testimonial-bg.png);
+background-size: 100% 95%;
+background-repeat: no-repeat;
+.testimonial-item{
+background: linear-gradient(#00326C 61% , @whiteColor 61%);
+}
+}
+// End testimonial section//
+}
+
+
+@media @size-xl{
+
+    // Start about-us section //
+    .about-us{
+    padding: @sectionPadding-xl;
+    .about-content{
+    &::after{
+    height: 430px;
+    }
+    }
+
+    }
+    // End about-us section //
+
+    // Start testimonial section//
+    .testimonial{
+    padding: @sectionPadding-xl;
+    }
+    // End testimonial section//
+
+}
