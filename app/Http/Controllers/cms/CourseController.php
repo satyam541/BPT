@@ -81,11 +81,12 @@ class CourseController extends Controller
 
     public function bulletPointList(Request $request)
     {
-        $data['selectedCourse'] = $request->module;
+
+        $data['selectedCourse'] = $request->module_id;
         $data['editbulletpointroute']='editBulletPoint';
         $data['deletebulletpointroute']='deleteBulletPoint';
         $data['insertbulletpointroute']='createBulletPoint';
-        $data['result'] = BulletPoint::where('module_id',$request->module)->get();
+        $data['module'] = Course::with('BulletPoint')->find($request->module_id);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }

@@ -16,19 +16,19 @@ class AccreditationController extends Controller
         $this->Image_prefix = "accreditation";
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view',  new Accreditation());
-        $data['accreditations'] = Accreditation::get();
+        // $this->authorize('view',  new Accreditation());
+        $data['accreditations'] = Accreditation::all();
         return view('cms.accreditation.accreditation',$data);
     }
 
     public function create()
     {
-        $this->authorize('create',  new Accreditation());
+        // $this->authorize('create',  new Accreditation());
         $data['accreditation'] = new Accreditation();
         $data['submitRoute'] = "InsertAccreditation";
-        return view('cms.accreditation.accreditationform',$data);
+        return view('cms.accreditation.accreditationForm',$data);
     }
 
     public function insert(AccreditationRequest $request)
@@ -57,7 +57,7 @@ class AccreditationController extends Controller
         $data['accreditation'] = $accreditation;
         $data['submitRoute'] = array('updateAccreditation',$accreditation->id);
      
-        return view("cms.accreditation.accreditationform",$data);
+        return view("cms.accreditation.accreditationForm",$data);
     }
 
    public function update(Accreditation $accreditation,AccreditationRequest $request)

@@ -21,8 +21,8 @@ class SocialMediaController extends Controller
     
     public function socialList()
     {
-        $this->authorize('view', new SocialMedia());
-        $data['socialmedias'] = SocialMedia::paginate(10);   
+        // $this->authorize('view', new SocialMedia());
+        $data['socialmedias'] = SocialMedia::all();   
         return view('cms.socialmedia.socialmedia',$data);
     }
     public function create()

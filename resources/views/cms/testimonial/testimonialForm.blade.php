@@ -9,12 +9,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Category Form</h1>
+          <h1 class="m-0 text-dark">Testimonial Form</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
+            <li class="breadcrumb-item"><a href="#">Testimonial</a></li>
             <li class="breadcrumb-item"><a href="#">Form</a></li>
           </ol>
         </div><!-- /.col -->
@@ -33,66 +33,61 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Category Form</h3>
+                <h3 class="card-title">Testimonial Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($category,['route'=>$submitRoute,"files"=>"true"])}}
+              {{Form::model($testimonial,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
+                    
                   <div class="form-group">
-                    {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
-
-                    {{-- <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
+                    {{Form::label('author','Author')}}
+                    {{Form::text('author',null,['class'=>'form-control'])}}
                   </div>
+
                   <div class="form-group">
-                    {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    {{Form::label('location','Location')}}
+                    {{Form::text('location',null,['class'=>'form-control'])}}
                     
                   </div>
+
                   <div class="form-group">
-                    {{Form::label('tag_line','Tag Line')}}
-                    {{Form::textarea('tag_line',null,['class'=>'form-control  summernote'])}}
+                    {{Form::label('title','Title')}}
+                    {{Form::text('title',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('color_code','Color Code')}}
-                    {{Form::text('color_code',null,['class'=>'form-control ','title'=>'Any valid color_code that work for css'])}}
+                    {{Form::label('designation','Designation')}}
+                    {{Form::text('designation',null,['class'=>'form-control'])}}
+                  </div>
+                  
+                  <div class="form-group">
+                    {{Form::label('content','Content')}}
+                    {{Form::textarea('content',null,['class'=>'form-control summernote'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('post_date','Post Date ')}}
+                    {{Form::date('post_date',null,['class'=>'form-control '])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
-                    <img src="{{ $category->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                    @if(!empty($testimonial->image))
+                    <img src="{{URL($testimonial->image_path.$testimonial->image)}}" class=" pad" style="max-width: 50%" />
+                    @endif
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('icon','Icon')}}
-                    {{Form::file('icon',null,['class'=>'form-control'])}}
-                    <img src="{{ $category->getIconPath() }}" class=" pad" style="max-width:50%;" />
+                    {{Form::label('rating','Rating')}}
+                    {{Form::select('rating',['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5],null,['class'=>'form-control selectJs', 'placeholder'=>'Select Rating..'])}}
                   </div>
 
-                  <div class="form-group">
-                      
-                    {{Form::label('is_online','Is Online',['class'=>'mr-4'])}}
-                    {{Form::checkbox('is_online')}}
-
-                  </div>
-
-                  <div class="form-group">
-                    {{Form::label('is_technical','Is technical',['class'=>'mr-1'])}}
-                    {{Form::checkbox('is_technical')}}
-                  </div>
-
-                  <div class="form-group">
-                    {{Form::label('published','Is Published',['class'=>'mr-1'])}}
-                    {{Form::checkbox('published')}}
-                  </div>
-                  
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
+                <div class="card-footer">   
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 {{Form::close()}}
