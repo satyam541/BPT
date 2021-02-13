@@ -5,6 +5,7 @@
 <!-- Start Banner section  -->
 <section class="flex-container banner">
             <div class="container">
+            @include("layouts.navbar")
                 <div class="banner-container">
                     <div class="banner-content">
                         <h1>Contact Us</h1>
@@ -25,19 +26,19 @@
                         </div>
                         <div class="form-input">
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/name')}}" alt="name" class="black">
-                                <img src="{{url('img/contactus/name-red')}}" alt="name-red" class="red"></span>
+                                <span><img src="{{url('img/contactus/name.svg')}}" alt="name" class="black">
+                                <img src="{{url('img/contactus/name-red.svg')}}" alt="name-red" class="red"></span>
                                 <input type="text" name="f-name" id="f-name" placeholder="First Name*"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/email')}}" alt="email" class="black">
-                                <img src="{{url('img/contactus/email-red')}}" alt="email-red" class="red"></span>
+                                <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
                                 <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/phone-call')}}" alt="phone-call" class="black">
-                                <img src="{{url('img/contactus/phone-callred')}}" alt="phonecall-red" class="red"></span>
+                                <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
+                                <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
                                 <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                 <div class="phonecode-field">
                                     <select class="country-code"></select>
@@ -49,14 +50,14 @@
                                 </div>
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/house')}}" alt="house" class="black">
-                                <img src="{{url('img/contactus/house-red')}}" alt="house-red" class="red"></span>
+                                <span><img src="{{url('img/contactus/house.svg')}}" alt="house" class="black">
+                                <img src="{{url('img/contactus/house-red.svg')}}" alt="house-red" class="red"></span>
                                 <input type="text" name="address" id="adress" placeholder="Address"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/comment')}}" alt="comment" class="black">
-                                <img src="{{url('img/contactus/comment-red')}}" alt="comment-red" class="red"></span>
+                                <span><img src="{{url('img/contactus/comment.svg')}}" alt="comment" class="black">
+                                <img src="{{url('img/contactus/comment-red.svg')}}" alt="comment-red" class="red"></span>
                                 <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
                         <div class="contact-list">
                             <div class="item">
                                     <span>  
-                                    <img src="{{url('img/contactus/email-blue')}}" alt="email-blue">
+                                    <img src="{{url('img/contactus/email-blue.svg')}}" alt="email-blue">
                                 </span>
                                 <div class="item-info">
                                     <h3>Email:</h3>
@@ -103,7 +104,7 @@
                             </div>
                             <div class="item">
                                     <span>
-                                    <img src="{{url('img/contactus/call-blue')}}" alt="call-blue">
+                                    <img src="{{url('img/contactus/call-blue.svg')}}" alt="call-blue">
                                     </span>
                                     <div class="item-info">
                                         <h3>Contact:</h3>
@@ -112,7 +113,7 @@
                             </div>
                             <div class="item">
                                     <span>
-                                        <img src="{{url('img/contactus/address')}}" alt="address">
+                                        <img src="{{url('img/contactus/address.svg')}}" alt="address">
                                     </span>
                                     <div class="item-info">
                                         <h3>Address:</h3>
@@ -122,10 +123,10 @@
                             <div class="social">
                                 <p>Sign Up With Social Platform</p>
                                 <div class="media-list">
-                                    <span><img src="{{url('img/contactus/google-plus')}}" alt="google-plus"></span>
-                                    <span><img src="{{url('img/contactus/twitter')}}" alt="twitter"></span>
-                                    <span><img src="{{url('img/contactus/instagram')}}" alt="instagram"></span>
-                                    <span><img src="{{url('img/contactus/linkedin')}}" alt="linkedin"></span>
+                                    <span><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></span>
+                                    <span><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></span>
+                                    <span><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></span>
+                                    <span><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></span>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +145,7 @@
                     </div>
                     <div class="info-list">
                         <div class="info-content">
-                            <img src="{{url('img/contactus/talk')}}" alt="talk">
+                            <img src="{{url('img/contactus/talk.png')}}" alt="talk">
                             <div class="info-text">
                                 <h3>Talk to Us</h3>
                                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
