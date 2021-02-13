@@ -159,7 +159,7 @@ class Topic extends Model
     }
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->withTrashed();
+        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','topic')->withTrashed();
     }
     public function whatsInclude()
     {

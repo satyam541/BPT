@@ -51,7 +51,7 @@
                     <tr>
                     <td>{{$topic->name}}</td>
                     <td>{{$topic->category->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
+                    <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
                     <td> <a href="" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>

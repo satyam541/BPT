@@ -81,7 +81,7 @@ class TopicController extends Controller
         $data['editbulletpointroute']='topicEditBulletPoint';
         $data['deletebulletpointroute']='topicDeleteBulletPoint';
         $data['insertbulletpointroute']='topicCreateBulletPoint';
-        $data['result'] = BulletPoint::where('module_id',$request->module)->get();
+        $data['module'] = Topic::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }

@@ -86,6 +86,7 @@ class CourseController extends Controller
         $data['editbulletpointroute']='editBulletPoint';
         $data['deletebulletpointroute']='deleteBulletPoint';
         $data['insertbulletpointroute']='createBulletPoint';
+        $data['type']='course';
         $data['module'] = Course::with('BulletPoint')->find($request->module_id);
         return view('cms.bulletPoints.bulletPoints',$data);
         
@@ -98,23 +99,23 @@ class CourseController extends Controller
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 
-    public function submitBulletPoint(BulletPointRequest $request, $course)
+    public function submitBulletPoint(BulletPointRequest $request, $module)
     {
         $input                      = $request->except("_token");
         $data                       = array();
-        $data['module_id']          = $course;
+        $data['module_id']          = $module;
         $data['module_type']        = 'course';
         $data['bullet_point_text']  = $input['bullet_point_text'];
         BulletPoint::updateOrCreate(['id' =>$input['id']],$data);
         
-        return redirect()->route('bulletPointList',['course'=>$data['module_id']])->with('success','Operation done!');
+        return redirect()->route('bulletPointList',['module_id'=>$data['module_id']])->with('success','Operation done!');
         
     }
 
-    public function editBulletPoint($module, $id)
+    public function editBulletPoint($id)
     {
-        $data['result']         = BulletPoint::with('module')->find($id);
-        $data['submitRoute']    = ['updateBulletPoint','module'=> $module,'courseDetail'=>$id];
+        $data['result']         = BulletPoint::find($id);
+        $data['submitRoute']    = ['updateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 

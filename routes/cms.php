@@ -105,9 +105,9 @@ Route::post('/linkTopic/{id}','CourseController@linkTopic')->name('linkTopicRout
 Route::get('/course/bulletPoint','CourseController@bulletPointList')->name('bulletPointList');
 Route::get('/course/bulletPoint/insert','CourseController@createBulletPoint')->name('createBulletPoint');
 Route::post('/course/bulletPoint/insert/{module}','CourseController@submitBulletPoint')->name('insertBulletPoint');
-Route::get('/course/bulletPoint/update/{module}/{courseDetail}','CourseController@editBulletPoint')->name('editBulletPoint');
-Route::post('/course/bulletPoint/update/{module}/{courseDetail}','CourseController@submitBulletPoint')->name('updateBulletPoint');
-Route::post('/course/bulletPoint/delete/{courseDetail}','CourseController@deleteBulletPoint')->name('deleteBulletPoint');
+Route::get('/course/bulletPoint/update/{id}','CourseController@editBulletPoint')->name('editBulletPoint');
+Route::post('/course/bulletPoint/update/{module}','CourseController@submitBulletPoint')->name('updateBulletPoint');
+Route::any('/course/bulletPoint/delete/{courseDetail}','CourseController@deleteBulletPoint')->name('deleteBulletPoint');
 // Category Bulletpoint
 Route::get('/category/bulletPoint','CategoryController@bulletPointList')->name('categoryBulletPointList');
 Route::get('/category/bulletPoint/insert','CategoryController@createBulletPoint')->name('categoryCreateBulletPoint');

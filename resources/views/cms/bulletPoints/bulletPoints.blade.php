@@ -47,9 +47,9 @@
                     @foreach ($module->BulletPoint as $bulletpoint)
                     <tr>
                     <td>{{$bulletpoint->bullet_point_text}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
+                    <td><a href="{{route($editbulletpointroute,['id'=>$bulletpoint->id])}}" class="fa fa-edit"></a>
                         &nbsp;&nbsp;
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                        <a href="#" onclick="deleteItem('{{ route($deletebulletpointroute,['courseDetail'=>$bulletpoint->id] )}}')"><i class="fa fa-trash text-red"></i></a>
                     </td>
                 </tr>
                     @endforeach
@@ -57,7 +57,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{route($insertbulletpointroute,['module'=>$module->id])}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
