@@ -16,10 +16,10 @@ class AccreditationController extends Controller
         $this->Image_prefix = "accreditation";
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view',  new Accreditation());
-        $data['accreditations'] = Accreditation::get();
+        // $this->authorize('view',  new Accreditation());
+        $data['accreditations'] = Accreditation::all();
         return view('cms.accreditation.accreditation',$data);
     }
 
