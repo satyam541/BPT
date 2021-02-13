@@ -13,18 +13,23 @@
             <ul>
                 <li class="links-li">
                     <a data-href="#overview" class="link smoothscroll">Certification</a>
+                    <span></span>
                 </li>
                 <li class="links-li">
                     <a data-href="#course" class="link smoothscroll">Courses</a>
+                    <span></span>
                 </li>
                 <li class="links-li">
                     <a data-href="#choose" class="link smoothscroll">Onsite</a>
+                    <span></span>
                 </li>
                 <li class="links-li">
                     <a data-href="#faq" class="link smoothscroll">About</a>
+                    <span></span>
                 </li>
                 <li class="links-li">
                     <a data-href="#azure-other" class="link smoothscroll">Locations</a>
+                    <span></span>
                 </li>
                 <li class="links-li">
                     <a class="search">
@@ -62,7 +67,7 @@
                 <li class="buttons">
                     <a class="btn-blue">
                         <img src="{{url('img/master/quote.svg')}}" alt="quote">
-                        get a quote
+                        Get a Quote
                     </a>
                 </li>
             </ul>
