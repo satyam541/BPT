@@ -27,9 +27,9 @@ class SocialMediaController extends Controller
     }
     public function create()
     {
-        $this->authorize('create', new SocialMedia());
+        // $this->authorize('create', new SocialMedia());
         $data['socialmedia'] = new SocialMedia();
-         $data['submitroute'] = "insertsocialmedia";
+         $data['submitRoute'] = "insertsocialmedia";
        
         return view('cms.socialmedia.socialmediaForm',$data);
     }

@@ -37,10 +37,10 @@ class RedirectController extends Controller
     }
     public function create()
     {
-        $this->authorize('create', new UrlRedirect());
+        // $this->authorize('create', new UrlRedirect());
         $data['url'] = new UrlRedirect();
-        $data['submitroute'] = "insertUrlRedirect";
-        return view('cms.urlredirect.urlredirectform',$data);
+        $data['submitRoute'] = "insertUrlRedirect";
+        return view('cms.urlredirect.urlRedirectForm',$data);
     }
  
 
@@ -81,7 +81,7 @@ class RedirectController extends Controller
         $this->authorize('update',$url);
         $data['url'] = $url;
         $data['submitroute'] = array('updateUrlRedirect',$url->id);
-        return view("cms.urlredirect.urlredirectform",$data);
+        return view("cms.urlredirect.urlRedirectForm",$data);
     }
 
     public function delete(UrlRedirect $url)
