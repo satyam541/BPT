@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="{{ url('adminLTE/bootstrap-datepicker.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
@@ -436,6 +438,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- datepicker -->
+<script src="{{ url('adminLTE/bootstrap-datepicker.min.js')}}"></script>
 <!-- Summernote -->
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->

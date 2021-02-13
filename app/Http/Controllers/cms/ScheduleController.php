@@ -45,7 +45,7 @@ class ScheduleController extends ScheduleApi
 
     public function create()
     {
-      $this->authorize('create', new Schedule());
+      // $this->authorize('create', new Schedule());
       $data["schedule"]     = new Schedule();
       $data["submitRoute"]  = "insertSchedule";
 
@@ -92,7 +92,7 @@ class ScheduleController extends ScheduleApi
 
     public function edit(Schedule $schedule)
     {
-      $this->authorize('update', $schedule);
+      // $this->authorize('update', $schedule);
       $data['schedule']         = $schedule;
       $data['response_location']=$schedule->location();
       $data["submitRoute"]      = array("updateSchedule",$schedule->id);
