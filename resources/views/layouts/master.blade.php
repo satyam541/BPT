@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
 </head>
 <body>
     @yield("content")

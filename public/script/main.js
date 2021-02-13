@@ -1,25 +1,4 @@
-//Start Testimonial//
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            dots: true,
-            nav: true,
-            autoplay: true,
-            navText: ["", ""],
-            items: 1,
-            responsive: {
-                0: {
-                    items: 1,
-                }
-                
-            }
 
-        });
-        $('.owl-next').addClass("btn-active");
-        $('.owl-prev,.owl-next').click(function () {
-            $(this).addClass("btn-active").siblings().removeClass("btn-active");
-        });
-        // End Testimonial//
     //Start Fixed header
     window.onscroll = function () {
         myFunction()
@@ -42,3 +21,25 @@
         $("#menuToggle").toggleClass('active');
     }
     //End Toggle menu//
+    //Start Testimonial//
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        navText: ["", ""],
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+            }
+            
+        }
+
+    });
+    $('.owl-next').addClass("btn-active");
+    $('.owl-prev,.owl-next').click(function () {
+        $(this).addClass("btn-active").siblings().removeClass("btn-active");
+    });
+    // End Testimonial//
