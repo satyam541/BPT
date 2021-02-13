@@ -6,6 +6,7 @@
 @greyBorder: 1px solid #d7d7d7;
 @whiteColor: #FFFFFF;
 @blackColor:#000000;
+@blueGradient: linear-gradient(#0064D8 ,#1C2848);
 @shadowLight : 0px 0px 10px rgba(0, 0, 0, 0.098);
 @sectionPadding : 3rem 1.5rem;
 @sectionPadding-md : 3rem 2rem;
@@ -36,11 +37,10 @@
     * {
         box-sizing: border-box;
         font-family: Roboto;
-        font-size: 14px;
     }
     p {
         line-height: 1.6;
-        color: @textColor;
+        font-size: 14px;
         margin: 0;
         color: @textColor;
     }
@@ -91,8 +91,8 @@
     align-items: center;
     margin-top: 1rem;
     img {
-        height: 18px;
-        width: 18px;
+        height: 20px;
+        width: 20px;
         margin-right: 5px;
     }
     .btn-blue, 
@@ -195,7 +195,7 @@
                         width: 35px;
                         height: 35px;
                         padding: 6px;
-                        background-color: #1C2848;
+                        background-color: @darkblueColor;
                     }
                     img{
                         width: 100%;
@@ -300,6 +300,30 @@
                 p{
                     color: @textColor;
                     margin-bottom: 1rem;
+                    line-height: 1.8;
+                }
+                button{
+                    width: 82px;
+                    box-shadow: @shadowLight;
+                    padding: .5rem;
+                    background-color: @darkblueColor;
+                    border-radius: 0;
+                    outline: none;
+                    color: @whiteColor;
+                    border: none;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-left: 8px solid transparent;
+                        border-right: 11px solid transparent;
+                        border-bottom: 16px solid @darkblueColor;
+                        transform: rotate(35deg);
+                        left: -9px;
+                    }
+                   
                 }
             }
             
@@ -321,39 +345,18 @@
                 border: none;
             }
         }
-        button{
-            
-            width: 82px;
-            box-shadow: @shadowLight;
-            padding: .5rem;
-            background-color: @darkblueColor;
-            border-radius: 0;
-            outline: none;
-            color: @whiteColor;
-            border: none;
-            position: relative;
-            &::before {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-left: 8px solid transparent;
-                border-right: 11px solid transparent;
-                border-bottom: 16px solid @darkblueColor;
-                transform: rotate(35deg);
-                left: -9px;
-            }
-           
-        }
         .topic-list{
             display: flex;
+            
             margin-top: 2rem;
             ul{
                 display: flex;
                 flex-direction: column;
-                width: 100%;
+                width: 96%;
+                margin: auto;
             }
             li{
+                box-shadow: @shadowLight;
                 &:nth-child(1){
                     a{
                         background-color: rgba(28, 40, 72, 82%);  
@@ -414,6 +417,30 @@
                 }
              
             }
+            
+            .owl-dots{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            
+                .owl-dot{
+                    display: flex;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #C7C7C7;
+                    margin-right: 7px;
+                    outline: none;
+                    border-radius: 18px;
+                }
+                
+                .owl-dot.active{
+                    background-color: @whiteColor;
+                    width: 20px;
+                    height: 20px;
+                }
+            
+                }
         }
     }
     // End banner //
