@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.575" height="30.575" viewBox="0 0 30.575 30.575">
+  <g id="arrow" transform="matrix(0.017, -1, 1, 0.017, 0, 29.806)">
+    <ellipse id="Ellipse_24" data-name="Ellipse 24" cx="15.028" cy="15.028" rx="15.028" ry="15.028" transform="translate(29.811 0.005) rotate(90)" fill="#0064d8"/>
+    <path id="Path_336" data-name="Path 336" d="M1.485,0A1.484,1.484,0,0,0,.435,2.534l4.92,4.92-4.92,4.92a1.484,1.484,0,0,0,2.1,2.1L8.5,8.5a1.484,1.484,0,0,0,0-2.1L2.534.435A1.48,1.48,0,0,0,1.485,0Z" transform="translate(18.941 22.431) rotate(180)" fill="#fff"/>
+  </g>
+</svg>

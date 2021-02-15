@@ -3,26 +3,31 @@
 @section("content")
 
 <!-- Start Banner section  -->
-<section class="flex-container banner">
+<section class="flex-container contact-banner">
             <div class="container">
             @include("layouts.navbar")
                 <div class="banner-container">
                     <div class="banner-content">
                         <h1>Contact Us</h1>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p><div class="breadcrums">
+                    <ul>
+                    <li><a href="">Home </a></li>
+                    <li><a href=""> > Contact </a></li>
+                    </ul>
+        </div>
                     </div>
                 </div>
             </div>
 </section>
 <!-- End Banner section  -->
 
-<!-- Start Footer Section -->
-<section class="flex-container contact" id="contact">
+<!-- Start contact Section -->
+<section class="flex-container contact">
             <div class="container">
                 <div class="contact-container">
                     <form class="form" id="prince2-other">
                         <div class="heading center-heading">
-                            <h2>Get In Touch <span>With us Today</span> </h2>
+                            <h2>Get In Touch <span>With Us Today</span> </h2>
                         </div>
                         <div class="form-input">
                             <div class="input-container">
@@ -134,7 +139,7 @@
                 </div>
             </div>
 </section>
-<!-- End Footer Section --> 
+<!-- End contact Section --> 
 
 <!-- Start informaton section -->
 <section class="flex-container information">
@@ -145,16 +150,127 @@
                     </div>
                     <div class="info-list">
                         <div class="info-content">
-                            <img src="{{url('img/contactus/talk.png')}}" alt="talk">
+                            <span><img src="{{url('img/contactus/talk.png')}}" alt="talk"></span>
                             <div class="info-text">
                                 <h3>Talk to Us</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <span><img src="{{url('img/contactus/team.png')}}" alt="team"></span>
+                            <div class="info-text">
+                                <h3>Enquire Now</h3>
+                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,.</p>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <span><img src="{{url('img/contactus/support.png')}}" alt="support"></span>
+                            <div class="info-text">
+                                <h3>Talk to Us</h3>
+                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 </section>
-<!-- End footer section -->
+<!-- End information section -->
+
+<!-- Start locate section -->
+<section class="flex-container locate">
+    <div class="container">
+        <div class="locate-container">
+            <div class="heading center-heading">
+                <h2>Where to <span>Reach Us</span></h2>
+                <p>Locate Our Office Destination On Google Map</p>
+            </div>
+            <div class="map"></div>
+        </div>
+    </div>
+</section>
+<!-- End locate section -->
+
+<!-- Start FAQ Section -->
+<section class="flex-container faq">
+            <div class="container">
+                <div class="faq-container">
+                    <div class="faq-content">
+                        <div class="heading center-heading">
+                            <h2>Frequently Asked <span>Questions</span></h2>
+                        </div>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="ques">
+                                    <h3>What is Microsoft Azure?</h3>
+                                    <span>
+                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="ques">
+                                    <h3>What is Microsoft Azure?</h3>
+                                    <span>
+                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="ques">
+                                    <h3>What is Microsoft Azure?</h3>
+                                    <span>
+                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="ques">
+                                    <h3>What is Microsoft Azure?</h3>
+                                    <span>
+                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="ques">
+                                    <h3>What is Microsoft Azure?</h3>
+                                    <span>
+                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience">
+                        <div class="experience-info">
+                            <h2>Share your Experience With Us</h2>
+                        </div>
+                        <div class="platforms">
+                            <a><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
+                            <a><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
+                            <a><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
+                            <a><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<!-- End FAQ Section -->
+
 
 @endsection

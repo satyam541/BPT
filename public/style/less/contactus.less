@@ -1,5 +1,5 @@
 // Start Banner section//
-.banner {
+.contact-banner {
     flex-direction: column;
     background-color: @lightblueColor;
 
@@ -13,12 +13,6 @@
             flex-direction: column;
             align-items: flex-start;
 
-            .microsoft {
-                width: 160px;
-                height: 70px;
-                margin-bottom: 0.5rem;
-            }
-
             h1 {
                 display: flex;
                 color: @whiteColor;
@@ -26,32 +20,23 @@
                 margin-bottom: 0.5rem;
                 font-size: 24px;
                 width: 100%;
-                img {
-                    width: 32px;
-                    height: 32px;
-                    margin-right: 10px;
-                }
             }
-
             p {
                 color: @whiteColor;
             }
-
-            h3 {
+            .breadcrums{
                 display: flex;
-                flex-direction: row;
-                color: @whiteColor;
-                align-items: center;
-                margin: 1rem 0;
-                
-                img {
-                    margin-right: 7px;
-                    width: 35px;
-                    height: 35px;
+                margin-top: 1rem;
+                ul{
+                    display: flex;
+                    li{
+                        color: @whiteColor;
+                        font-size: 14px;
+                        &:first-child{
+                            margin-right: .4rem;
+                        }
+                    }
                 }
-            }
-            .buttons{
-                justify-content: flex-start;
             }
         }
     }
@@ -70,11 +55,8 @@
             flex-direction: column;
             align-items: center;
             box-shadow: @shadowLight;
-            padding: 1rem;
+            padding: 1.5rem;
             .heading{
-                span{
-                    color: @lightblueColor;
-                }
                 &::before{
                     content: none;
                 }
@@ -203,6 +185,7 @@
                     display: flex;
                     align-items: center;
                     width: 92%;
+                    font-size: 12px;
                     &:last-child {
                         margin-bottom: 0;
                     }
@@ -304,7 +287,6 @@
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
-        margin-bottom: 1rem;
         p{
             font-weight: 500;
         }
@@ -341,32 +323,40 @@
     .info-list{
         display: flex;
         flex-direction: column;
+    }
         .info-content{
             display: flex;
             flex-direction: column;
             box-shadow: @shadowLight;
-            position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                top: 27%;
-                background-image: url(../img/master/chat.svg);
-                background-size: 100% 100%;
-                height: 50px;
-                width: 50px;
-                left: 10%;
-            }
-            img{
-                width: 100%;
+            background-color: @whiteColor;
+            margin-top: 2rem;
+            &:first-child{
+                margin-top: 1rem;
             }
             span{
                 display: flex;
+                height: 195px;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    background-image: url(../img/contactus/chat.svg);
+                    background-size: 100% 100%;
+                    height: 48px;
+                    width: 50px;
+                    left: 10%;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .info-text{
                 display: flex;
                 flex-direction: column;
                 padding: 1rem;
-                height: 310px;
+                min-height: 180px;
                 position: relative;
                 &::before{
                     content: '01';
@@ -375,7 +365,6 @@
                     bottom: 0;
                     color: #f6f6f6;
                     font-size: 50px;
-                    z-index: -1;
                     
                 }
 
@@ -383,7 +372,148 @@
                     margin-top: .5rem;
                 }
             }
+            &:nth-child(2) {
+                span{
+                    &::before{
+                        background-image: url(../img/contactus/enquire-now.svg);
+                    }
+                }
+                .info-text{
+                    &::before{
+                        content: '02';
+                    }
+                }
+
+            }
+            &:nth-child(3) {
+                span{
+                    &::before{
+                        background-image: url(../img/contactus/chat-support.svg);
+                    }
+                }
+                .info-text{
+                    &::before{
+                        content: '03';
+                    }
+                }
+
+            }
         }
-    }
 }
 //End information section
+
+//Start locate section
+.locate{
+    padding: @sectionPadding;
+    .locate-container{
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        text-align: center;
+    }
+}
+// End locate section
+
+// Start FAQ Section
+.faq{
+    padding: @sectionPadding;
+    .faq-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .faq-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .faq-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .faq-item{
+        display: flex;
+        flex-direction: column;
+        background-color: @whiteColor;
+        box-shadow: @shadowLight;
+        border: 3px solid transparent;
+        border-left: 3px solid @darkblueColor;
+        margin-bottom: 1.2rem;
+        padding: .7rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &.active{
+            .ques{
+                span{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .ques{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        span{
+            display: flex;
+            width: 20px;
+            height: 20px;
+            transition: 0.6s ease-in-out;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h3{
+            font-size: 14px;
+            width: calc(100% - 27px);
+        }
+
+    }
+    .ans{
+        display: none;
+        p{
+            font-size: 13px;
+            padding-top: .5rem;
+            line-height: 1.5;
+        }
+        ul{
+            padding-left: 1rem;
+            li{
+                font-size: 13px;
+                list-style: disc;
+                line-height: 1.5;
+            }
+        }
+    }
+    .experience{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .experience-info{
+        display: flex;
+        flex-direction: column;
+    }
+    h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    .platforms{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    a{
+        display: flex;
+        height: 50px;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;   
+        border: 5px solid @whiteColor; 
+        box-shadow: 0 0 1px 2px @lightblueColor;
+        background-color: @lightblueColor;
+    }
+}
+// End FAQ Section

@@ -1,14 +1,16 @@
 @media @size-md {
   
       // Start banner section//
-    .banner {
+        .contact-banner {
+        padding: @sectionPadding-md;
+        padding-top: 1rem;
       .banner-container {
         width: 100%;
         padding: 0;
     
         .banner-content {
-          padding: @sectionPadding-md;
           padding-top: 2rem;
+          width: 100%
         }
       }
       }
@@ -36,149 +38,102 @@
         }
       }
       // End Footer Section
-  
+
+      //Start information section
+      .information{
+        padding: @sectionPadding-md;
+        background-image: linear-gradient(@darkblueColor 45%,@whiteColor 45%);
+        .heading{
+            &::before{
+                background-color: @whiteColor;
+            }
+            h2{
+                color: @whiteColor;
+            }
+        }
+        .info-list{
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .info-content{
+            width: 32%;
+            margin-top: 0!important;
+        }
+        }
+      //End information section  
+
+    // Start FAQ Section
+    .faq{
+        padding: @sectionPadding-md;
+        .faq-container{
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        .faq-content{
+            width: 50%;
+        }
+        .experience{
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 0;
+            width: 50%;
+            background-image: url(../img/contactus/dotted-map.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .experience-info{
+            align-self: center;
+            background-image: url(../img/contactus/experience-bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 310px;
+            height: 284px;
+            align-items: center;
+            justify-content: center;
+            h2{
+                color: @whiteColor;
+                margin-right: 2rem;
+                width: 45%;
+            }
+        }
+        .platforms{
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 0;
+            transform: translate(-20px, 0px)
+        }
+        a{
+            &:first-child{
+                transform: translate(-66px);
+            }
+            &:last-child{
+                transform: translate(-66px);
+            }
+        }
+    }
+    // End FAQ Section
   
     }
   
   @media @size-lg {
   
        //Start banner section//
-       .banner {
+       .contact-banner {
         background-color: transparent;
-        padding: 0;
-        background-image:url(../img/master/banner-bg.png);
+        background-image:url(../img/contactus/banner-bg.png);
         background-size: 100% 100%;
         padding: 2rem;
-        .logo-container {
-          .container {
-            .menu {
-              display: none;
-            }
-      
-            .menu-links {
-              width: 78%;
-              display: flex;
-              align-items: center;
-              background: 0 0;
-              max-height: unset;
-              overflow: unset;
-              position: relative;
-              box-shadow: none;
-              justify-content: flex-end;
-      
-              .menu-toggle {
-                display: none;
-              }
-      
-              ul {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                margin: 0;
-      
-                .links-li {
-                  border-bottom: none;
-                  margin-right: 1rem;
-                  padding: 0;
-                  color: @blackColor;
-                  font-weight: 500;
-                  position: relative;
-                  z-index: 1;
-                  &::before{
-                    content: '';
-                    position: absolute;
-                    background-color: @blackColor;
-                    height: 3px;
-                    width: 0;
-                    left: 0;
-                    bottom: -5px;
-                    z-index: -1;
-                    transition: .6s ease;
-                  }
-                  &:hover{
-                    &::before{
-                      width: 100%;
-                    }
-                  }
-      
-                  &:last-child {
-                    display: flex;
-                    margin-top: 0;
-                    margin-right: 0;
-                  }
-      
-                  .link {
-                    font-weight: 600;
-                    transition: none;
-                    color: @blackColor;
-                    padding: 3px;
-                  }
-                }
-      
-                .buttons {
-                  &::before,&::after{
-                    content: none;
-                  }
-                  .btn-white {
-                    margin-right: 1rem;
-                    padding: .5rem;
-                    min-width: 40px;
-                    height: 40px;
-                    &::before,&::after{
-                      content: none;
-                    }
-                    img{
-                      margin-right: 0;
-                    }
-                    &:last-child{
-                      margin-right: 0;
-                    }
-                  }
-                }
-              }
-            }
-      
-          }
-        }
-      
-        .sticky {
-          .container{
-            border-left: none;
-          }
-      
-          .container {
-      
-            &::before {
-              content: none;
-            }
-      
-            &::after {
-              content: none;
-            }
-          }
-        }
-      
+        padding-top: 1rem;
         .banner-container {
           flex-direction: row;
           justify-content: space-between;
-          padding-top: 1.5rem;
+          padding-top: 3rem;
           align-items: center;
       
           .banner-content {
-            width: 48%;
+            width: 45%;
             padding-top: 0;
-          }
-      
-          .banner-info {
-            display: flex !important;
-            flex-direction: column;
-            margin-top: 0;
-            width: 50%;
-      
-            img {
-              width: 100%;
-            }
-      
           }
         }
         }
@@ -204,8 +159,8 @@
             }
           }
           .contact-info{
-              width: 45%;
-              background-image: url(../img/master/phone-bg.png);
+              width: 40%;
+              background-image: url(../img/contactus/phone-bg.png);
               background-size: 100% 100%;
               background-repeat: no-repeat;
               justify-content: flex-start;
@@ -232,33 +187,48 @@
           }
           }
         // End Footer Section
+
+        //Start information section
+        .information{
+        .info-list{
+            justify-content: space-around;
+        }
+        .info-content{
+            width: 30%;
+        }
+        .info-text{
+            padding: 2rem;
+        }
+        }
+        //End information section
+
+        // Start FAQ Section
+        .faq{
+            .faq-content{
+                width: 58%;
+            }
+            .experience{
+                width: 45%;
+                height: 350px;
+            }
+            .experience-info{
+                width: 380px;
+                height: 335px;
+                h2{
+                    font-size: 32px;
+                }
+            }
+            }
+        // End FAQ Section
     }
   
   
   @media @size-xl {
   
       //Start banner section//
-      .banner {
+      .contact-banner {
         padding: @sectionPadding-xl;
         padding-top: 1rem;
-      .logo-container {
-      .container {
-      .menu-links {
-        ul {
-          .links-li {
-            margin-right: 2rem;
-    
-          }
-        }
-      }
-    
-      }
-      }
-      .sticky{
-        .container{
-          padding: 1rem 0;
-        }
-      }
       }
       //End banner section//
   
@@ -283,4 +253,21 @@
         }
       }
       // End Footer Section
+
+      //Start information section
+      .information{
+        .info-content{
+            width: 28%;
+        }
+        }
+        //End information section
+
+        // Start FAQ Section
+        .faq{
+            padding: @sectionPadding-xl;
+            .experience{
+                width: 36%;
+            }
+            }
+        // End FAQ Section
     }
