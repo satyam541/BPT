@@ -267,7 +267,7 @@ class ScheduleController extends ScheduleApi
       $list["locations"]    = Location::pluck("name","id")->toArray();
 
       $data['list']         = $list;
-      return view('cms.schedule.editschedule',$data);
+      return view('cms.schedule.editSchedule',$data);
 
     }
 

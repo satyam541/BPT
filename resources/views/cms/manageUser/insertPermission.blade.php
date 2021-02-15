@@ -9,13 +9,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Whats Included Form</h1>
+          <h1 class="m-0 text-dark">Insert Permission</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Whats Included</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="#">Permission</a></li>
+            <li class="breadcrumb-item"><a href="#">Add Permission</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -33,30 +33,34 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Whats Included Form</h3>
+                <h3 class="card-title">Insert Permission</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
+              {{Form::open(['route'=>'insertPermission'])}}
                 <div class="card-body">
-                  {{-- {{dd($course->name)}} --}}
                   <div class="form-group">
-                    {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('moduleName','Module Name')}}
+                    {{Form::text('moduleName',null,['class'=>'form-control','id'=>'autoModule'])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('header_id','Heading')}}
-                    {{Form::select('header_id',$headings,$whatsincluded->header_id ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('access','Access')}}
+                    {{Form::text('access',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('description','Description')}}
+                    {{Form::text('description',null,['class'=>'form-control'])}}
                   </div>
                   
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
-                {{Form::close()}}
+              {{Form::close()}}
             </div>
             <!-- /.card -->
           </div>
@@ -69,5 +73,16 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-    
+@endsection
+@section('footer')
+<script>
+var path = "{{ route('moduleAutoComplete') }}";
+$('#autoModule').typeahead({
+    source:  function (query, process) {
+    return $.get(path, { term: query }, function (data) {
+            return process(data);
+        });
+    }
+});
+</script>
 @endsection

@@ -121,6 +121,7 @@ class CategoryController extends Controller
 
     public function delete(Category $category)
     {
+        dd($category);
         $category->delete();
         return back();
     }
@@ -195,7 +196,6 @@ class CategoryController extends Controller
         $categories = Category::all();
         $course = $categories->where('id', $category_id)->first();
         $data['course'] = $course;
-        
         $data['list'] = $categories->pluck('name','id')->toArray();
         $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
         $data['whatsincluded'] = new whatsincluded();
