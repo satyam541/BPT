@@ -1,0 +1,123 @@
+@extends('cms.layouts.master')
+@section('content')
+
+
+
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">enquiryDetail</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">enquiryDetail</a></li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+           
+          <div class="card">
+
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="table-responsive">
+              <table id="example1">
+                
+                <tbody>
+                    <tr>
+                    <th>Name</th>
+                    
+                    <td>{{$enquiry->name}}</td>
+                 
+                    </tr>
+                    <tr>
+                        <th>Course</th>
+
+                        <td>{{$enquiry->course}}</td>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                    <td>{{$enquiry->country->name}}</td>
+                    </tr>
+                    <tr>
+                            <tr>
+                                    <th>Email</th>
+                                <td>{{$enquiry->email}}</td>
+                                </tr>
+                                <tr>
+                                        <tr>
+                                                <th>Phone</th>
+                                            <td>{{$enquiry->phone}}</td>
+                                            </tr>
+                                            <tr>
+                            <th>Type</th>
+                        <td>{{$enquiry->type}}</td>
+                        </tr>
+                        <tr>
+                                <th>City</th>
+                            <td>{{$enquiry->city}}</td>
+                            </tr>
+                            <tr>
+                                    <th>Address</th>
+                                <td>{{$enquiry->address}}</td>
+                                </tr>
+                                <tr>
+                                        <th>Department</th>
+                                    <td>{{$enquiry->department}}</td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                            <th>Profile</th>
+                                        <td>{{$enquiry->profile_link}}</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Delegates</th>
+                                            <td>{{$enquiry->delegates}}</td>
+                                            </tr>
+                                            <tr>
+                                                    <th>Company</th>
+                                                <td>{{$enquiry->company}}</td>
+                                                </tr>
+                                    <th>Message</th>
+                                <td>{{$enquiry->message}}</td>
+                                </tr>
+                     
+                    </tr>     
+                    
+                </tbody>  
+                
+                
+              </table>
+            </div>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card --> 
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+@endsection

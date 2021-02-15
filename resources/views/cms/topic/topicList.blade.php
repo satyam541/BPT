@@ -62,7 +62,7 @@
                     @endforeach
                   
                 
-                </tfoot>
+                </tbody>
               </table>
               <a id="add" href="{{route('createTopic')}}" class="btn btn-success" style="">Add new Record</a>
             </div>

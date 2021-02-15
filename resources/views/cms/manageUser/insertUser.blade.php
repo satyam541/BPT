@@ -9,13 +9,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Whats Included Form</h1>
+          <h1 class="m-0 text-dark">Insert User</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Whats Included</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item"><a href="#">Add User</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -33,30 +33,39 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Whats Included Form</h3>
+                <h3 class="card-title">Insert User</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
+              {{Form::open(['route'=>'insertUser'])}}
                 <div class="card-body">
-                  {{-- {{dd($course->name)}} --}}
                   <div class="form-group">
-                    {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('name','Name')}}
+                    {{Form::text('name',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('header_id','Heading')}}
-                    {{Form::select('header_id',$headings,$whatsincluded->header_id ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('email','Email')}}
+                    {{Form::text('email',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('password','Password')}}
+                    {{Form::password('password',['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('password_confirmation','Confirm Password')}}
+                    {{Form::password('password_confirmation',['class'=>'form-control'])}}
                   </div>
                   
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
-                {{Form::close()}}
+              {{Form::close()}}
             </div>
             <!-- /.card -->
           </div>
@@ -69,5 +78,4 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-    
 @endsection
