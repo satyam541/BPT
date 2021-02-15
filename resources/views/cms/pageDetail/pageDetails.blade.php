@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">OnlineCourse</h1>
+          <h1 class="m-0 text-dark">pageDetails</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">OnlineCourse</a></li>
+            <li class="breadcrumb-item"><a href="#">pageDetails</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,19 +38,21 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Online Course Name</th>
-                  <th>Date</th>
+                  <th>Page Name</th>
+                  <th>Section</th>
+                  <th>Sub Section</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($trashOnlineCourses as $trashedOnlineCourse)
+                    @foreach ($pageDetails as $pageDetail)
                     <tr>
-                    <td>{{$trashedOnlineCourse->name}}</td>
-                    <td>{{$trashedOnlineCourse->created_at}}</td>
-                    <td><a href="{{ route('restoreOnlineCourse',['id'=>$trashedOnlineCourse->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteOnlineCourse',['id'=>$trashedOnlineCourse->id]) }}" class="fa fa-trash" style="color: red"></a>
+                    <td>{{$pageDetail->page_name}}</td>
+                    <td>{{$pageDetail->section}}</td>
+                    <td>{{$pageDetail->sub_section}}</td>
+                    <td><a href="" class="fa fa-edit"></a>
+                    <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -58,6 +60,8 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -79,11 +83,21 @@
         $(document).ready(function(){
             $('#example1').DataTable({
               "columns": [
-                        { "name": "Online Course Name" },
-                        { "name": "Date",  searching:false },
-                        { "name": "Actions", "sorting":false, searching:false  }
+                        { "name": "Page Name" },
+                        { "name": "Section" },
+                        { "name": "Sub Section" },
+                        { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
+
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
+        
     </script>
 @endsection

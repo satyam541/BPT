@@ -215,7 +215,7 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        $this->authorize('update', $course);
+        // $this->authorize('update', $course);
         // dd($course->whatsInclude()->get());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -229,7 +229,7 @@ class CourseController extends Controller
 
     public function contentEdit(Request $request,CourseContent $courseDetail)
     {
-        $this->authorize('update', $courseDetail->course);
+        // $this->authorize('update', $courseDetail->course);
         $list['courses'] = Course::all()->pluck('name','id')->toArray();
         $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
         $data['list'] = $list;
@@ -241,7 +241,7 @@ class CourseController extends Controller
     public function update(Course $course,CourseRequest $request)
     {
         // dd($request->reference);
-        $this->authorize('update', $course);
+        // $this->authorize('update', $course);
         $inputs = $request->except(["_token","is_popular","reference"]);
         $inputs['accreditation_id']=$request->accreditation_id;
            $reference=null;
@@ -280,7 +280,7 @@ class CourseController extends Controller
 
     public function contentUpdate(CourseContentRequest $request,CourseContent $courseDetail)
     {
-        $this->authorize('update', $courseDetail->course);
+        // $this->authorize('update', $courseDetail->course);
         $inputs              = $request->except("_token");
         // dd($request);
         

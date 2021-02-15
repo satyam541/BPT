@@ -61,7 +61,7 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">{{Auth()->User()->email}}</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="{{route('changePassword')}}" class="dropdown-item">
             <i class="fas fa-key mr-2"></i> Change Password
           </a>
           <div class="dropdown-divider"></div>
@@ -373,73 +373,73 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{Route('countryTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Country List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('venueTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Venue List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('locationTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-success"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Location List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('categoryTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Category List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('topicTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-success"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Topic List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('courseTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Course List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('onlineCourseTrash')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Online Course List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('resourceTrash')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-success"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Resource List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('tagTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Tag List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('articleTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Article List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('testimonialTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-success"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Testimonial List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('accreditationTrashList')}}" class="nav-link">
-                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <i class="nav-icon far fa-circle "></i>
                   <p>Accreditation List</p>
                 </a>
               </li>
@@ -530,6 +530,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="{{ url('cms/tinymce.init.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

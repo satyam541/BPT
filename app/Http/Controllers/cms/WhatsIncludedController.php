@@ -20,7 +20,7 @@ class WhatsIncludedController extends Controller
     {
         $data['whatsincluded'] = new whatsincludedHeaders();
         $data['submitRoute'] = 'insertWhatsIncluded';
-        return view('cms.whatsincluded.whatsincludedformMain',$data);
+        return view('cms.whatsincluded.whatsIncludedFormMain',$data);
     }
     public function insert(Request $request)
     {
@@ -40,7 +40,7 @@ class WhatsIncludedController extends Controller
     {
         $data['whatsincluded'] = $whatsincluded;
         $data['submitRoute'] = 'updateWhatsIncluded';
-        return view('cms.whatsincluded.whatsincludedformMain',$data);
+        return view('cms.whatsincluded.whatsIncludedFormMain',$data);
 
     }
     public function update(Request $request)

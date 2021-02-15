@@ -38,7 +38,7 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>s.no</th>
+                  <th>S No</th>
                   <th>Author</th>
                   <th>Date</th>
                   <th>Location</th>
@@ -49,9 +49,9 @@
                 
                     @foreach ($testimonials as $testimonial)
                     <tr>
-                    <td>{{$testimonial->id}}</td>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{$testimonial->author}}</td>
-                    <td>{{$testimonial->created_at}}</td>
+                    <td>{{$testimonial->post_date}}</td>
                     <td>{{$testimonial->location}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
@@ -81,7 +81,15 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                { "name": "S No"},
+                { "name": "Author"},
+                { "name": "Date", "sorting":false, searching:false  },
+                { "name": "Location"},
+                { "name": "Actions", "sorting":false, searching:false  }
+              ]
+            });
         });
     </script>
 @endsection

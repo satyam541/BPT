@@ -38,16 +38,25 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
+              {{Form::hidden('id',$whatsincluded->id,['class'=>'form-control','readonly'])}}
                 <div class="card-body">
-                    
+
                   <div class="form-group">
-                    {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list,null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('name','Name')}}
+                    {{Form::text('name',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('header_id','Heading')}}
-                    {{Form::select('header_id',$headings,$whatsincluded->header_id ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::label('icon','Icon')}}
+                    {{Form::file('icon',['class'=>'form-control','id'=>'icon'])}}
+                    @if(!empty($whatsincluded->icon))
+                        <img src="{{url('images/'.$whatsincluded->icon)}}" width="150px"/>
+                    @endif
+                    
+                  </div>
+                  <div class="form-group">
+                    {{Form::label('content','Content')}}
+                    {{Form::textarea('content',$whatsincluded->content,['class'=>'form-control'])}}
                   </div>
                   
                 </div>
@@ -63,11 +72,9 @@
           <!-- /.col -->
       </div>
       <!-- /.row -->
-     
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-    
 @endsection

@@ -77,7 +77,13 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Country Name" },
+                        { "name": "Date",  searching:false },
+                        { "name": "Actions", "sorting":false, searching:false  }
+              ]                    
+            });
         });
     </script>
 @endsection

@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">tag</h1>
+          <h1 class="m-0 text-dark">Tag</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -75,7 +75,12 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Actions", "sorting":false, searching:false }
+              ]                    
+            });
         });
     </script>
 @endsection

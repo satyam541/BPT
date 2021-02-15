@@ -100,7 +100,7 @@ class Course extends Model
 
     public function faqs()
     {
-        return $this->morphMany('App\Models\Faq', 'module')->withTrashed();
+        return $this->morphMany('App\Models\Faq', 'module');
     }
 
 

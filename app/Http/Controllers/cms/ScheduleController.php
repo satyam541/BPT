@@ -38,7 +38,7 @@ class ScheduleController extends ScheduleApi
     {
       // $this->authorize('view', new Schedule());
       // use when instead of if else statement here
-      $schedules            = Schedule::with('course')->where('source','API')->get();
+      $schedules = Schedule::with('course','location')->where('source','API')->get();
       
       return view('cms.schedule.schedules',compact('schedules'));
     }

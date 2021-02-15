@@ -8,6 +8,7 @@ class Module extends Model
 {
     protected $table = 'module';
     protected $fillable = array('name');
+    public static $cache = array();
 
     public static function findByName($moduleName)
     {

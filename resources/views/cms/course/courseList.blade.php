@@ -42,7 +42,7 @@
                   <th>Topic</th>
                   <th>Content</th>
                   <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
+                  <th>WhatsIncluded</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -55,7 +55,7 @@
                     <td><a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a></td>
                     <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
                     <td> <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="" class="fa fa-edit"></a>
+                    <td><a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
@@ -84,7 +84,17 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Topic" },
+                        { "name": "Content", "sorting":false, searching:false },
+                        { "name": "Bulletpoints", "sorting":false, searching:false  },
+                        { "name": "WhatsIncluded", "sorting":false, searching:false  },
+                        { "name": "Actions", "sorting":false, searching:false  }
+              ]                    
+            });
+
             $('#add').hover(function(){
                 $(this).removeClass('btn-success');
                 $(this).addClass('btn-primary');

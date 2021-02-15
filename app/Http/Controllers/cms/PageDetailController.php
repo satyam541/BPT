@@ -20,25 +20,10 @@ class PageDetailController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list(Request $request)
+    public function list()
     {
-        $this->authorize('view', new PageDetail());
-        $filter = $request->all();
-        $data['selectedPageName'] = empty($filter['page_name'])? NULL : $filter['page_name'];
-        if(!empty($filter))
-        {
-            $query = PageDetail::query();
-            $query = empty($filter['page_name'])? $query : $query->where('page_name',$filter['page_name']);
-            // $query = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
-            $result = $query->paginate(10);
-        }
-        else{
-            $result = PageDetail::paginate(10);
-        }
-        $list['pages'] = PageDetail::all()->pluck('page_name','id')->unique()->toArray();
-        // $list['countries'] = Country::all()->pluck('name','name')->toArray();
-        
-        $data['pageDetails'] = $result;
+        // $this->authorize('view', new PageDetail());
+        $data['pageDetails']=PageDetail::all();
         return view('cms.pageDetail.pageDetails',$data);
     }
 

@@ -116,18 +116,12 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function roleList(Request $request)
+    public function roleList()
     {
         // $this->authorize('view', new Role());
-        $filter = $request->all();
         
-        $query = Role::query();
-        $data['query']=role::all()->pluck('name','name')->toArray();
-        $data['query']=['ALL'=>'ALL']+$data['query'];
-        $query = $query->select("role.*");
-        $query = empty($filter['name']) || $filter['name']=='ALL'? $query : $query->where('name','like',"%".$filter['name']."%");
-    
-        $roles = $query->paginate(10);
+        $roles= Role::all();
+   
     
     $data['roles'] = $roles;
     
@@ -340,9 +334,9 @@ class UserController extends Controller
 
     public function changePassword(ChangePasswordRequest $request)
     {
-         $current_password = \Auth::User()->password; 
-         $currentPassword=  $request->input('currentPassword');
-      
+        $current_password = \Auth::User()->password; 
+        $currentPassword=  $request->input('currentPassword');
+    
       if(\Hash::check($currentPassword, $current_password))
       {         
            $user_id = \Auth::User()->id;                       
@@ -350,7 +344,7 @@ class UserController extends Controller
             $user->password = \Hash::make($request->input('newPassword'));
             $user->save();
             Auth::logout();
-            return redirect()->route('login');
+            return redirect()->route('login')->with('success','Password Changed!');
         }
         else
         {           
