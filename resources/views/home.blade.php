@@ -161,5 +161,26 @@
         </div>
 
 </section>
+<section class="courses">
+    <div class="container">
+        <div class="courses-container">
+            <div class="heading">
+                <h2>Professional Skills For
+                    <span>
+                        The Digital World
+                    </span>
+                </h2>
+            </div>
+            <div class="courses-list">
+                <div class="courses-name">
+                    <span>
+                        
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
