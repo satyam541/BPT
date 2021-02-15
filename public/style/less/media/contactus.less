@@ -20,29 +20,33 @@
       .contact{
         padding: @sectionPadding-md;
         padding-bottom: 1rem;
-        .contact-container{
-          flex-direction: row-reverse;
-          justify-content: space-between;
-          .form{
-            width: 50%;
-          }
-    
           .contact-info{
-            width: 50%;
             margin-top: 0;
-            .contact-list{
-              width: 90%;
-              align-self: center;
-            }
           }
-        }
+          .item{
+          width: 48%;
+          &:last-child{
+            width: 54%;
+            margin: auto;
+            margin-top: 1rem;
+          }
+          }
+          .social{
+            margin: auto;
+            width: 45%;
+          }
+          .contact-list{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
       }
       // End Footer Section
 
       //Start information section
       .information{
         padding: @sectionPadding-md;
-        background-image: linear-gradient(@darkblueColor 45%,@whiteColor 45%);
+        background-image: linear-gradient(@darkblueColor 58.7%,@whiteColor 45%);
         .heading{
             &::before{
                 background-color: @whiteColor;
@@ -63,56 +67,56 @@
         }
       //End information section  
 
-    // Start FAQ Section
-    .faq{
-        padding: @sectionPadding-md;
-        .faq-container{
-            flex-direction: row-reverse;
-            justify-content: space-between;
-        }
-        .faq-content{
-            width: 50%;
-        }
-        .experience{
-            flex-direction: row;
-            justify-content: space-between;
-            margin-top: 0;
-            width: 50%;
-            background-image: url(../img/contactus/dotted-map.png);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
-        .experience-info{
-            align-self: center;
-            background-image: url(../img/contactus/experience-bg.png);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            width: 310px;
-            height: 284px;
-            align-items: center;
-            justify-content: center;
-            h2{
-                color: @whiteColor;
-                margin-right: 2rem;
-                width: 45%;
-            }
-        }
-        .platforms{
-            flex-direction: column;
-            justify-content: space-around;
-            margin-top: 0;
-            transform: translate(-20px, 0px)
-        }
-        a{
-            &:first-child{
-                transform: translate(-66px);
-            }
-            &:last-child{
-                transform: translate(-66px);
-            }
-        }
-    }
-    // End FAQ Section
+      // Start FAQ Section
+      .faq{
+          padding: @sectionPadding-md;
+          .faq-container{
+              flex-direction: row-reverse;
+              justify-content: space-between;
+          }
+          .faq-content{
+              width: 50%;
+          }
+          .experience{
+              flex-direction: row;
+              justify-content: space-between;
+              margin-top: 0;
+              width: 50%;
+              background-image: url(../img/contactus/dotted-map.png);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+          }
+          .experience-info{
+              align-self: center;
+              background-image: url(../img/contactus/experience-bg.png);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              width: 310px;
+              height: 284px;
+              align-items: center;
+              justify-content: center;
+              h2{
+                  color: @whiteColor;
+                  margin-right: 2rem;
+                  width: 45%;
+              }
+          }
+          .platforms{
+              flex-direction: column;
+              justify-content: space-around;
+              margin-top: 0;
+              transform: translate(-20px, 0px)
+          }
+          a{
+              &:first-child{
+                  transform: translate(-66px);
+              }
+              &:last-child{
+                  transform: translate(-66px);
+              }
+          }
+      }
+      // End FAQ Section
   
     }
   
@@ -142,6 +146,8 @@
         // Start Footer Section
         .contact{
           .contact-container{
+            flex-direction: row-reverse;
+          }
           .form{
             width: 60%;
             align-self: flex-start;
@@ -159,7 +165,7 @@
             }
           }
           .contact-info{
-              width: 40%;
+              width: 36%;
               background-image: url(../img/contactus/phone-bg.png);
               background-size: 100% 100%;
               background-repeat: no-repeat;
@@ -171,15 +177,13 @@
                 width: 100%;
                 align-self: center;
                 .item{
-                a{
-                  word-break: keep-all;
-                }
+                  width: 100%;
                 }
               }
           }
-          }
           .social{
             margin-bottom: 3rem;
+            width: 100%;
             .media-list{
               width: 90%;
               align-self: center;
@@ -194,7 +198,7 @@
             justify-content: space-around;
         }
         .info-content{
-            width: 30%;
+            width: 28%;
         }
         .info-text{
             padding: 2rem;
@@ -241,7 +245,7 @@
           position: relative;
           align-items: center;
           .contact-info{
-            width: 33%;
+            width: 30%;
             position: absolute;
             left: 0;
           }
@@ -257,7 +261,7 @@
       //Start information section
       .information{
         .info-content{
-            width: 28%;
+            width: 25%;
         }
         }
         //End information section

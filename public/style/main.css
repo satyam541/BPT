@@ -722,29 +722,29 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.contact .contact-container .form {
+.contact .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem;
 }
-.contact .contact-container .form .heading::before {
+.contact .form .heading::before {
   content: none;
 }
-.contact .contact-container .form .form-input {
+.contact .form .form-input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
-.contact .contact-container .form .form-input .input-container {
+.contact .form .form-input .input-container {
   display: flex;
   margin-bottom: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   width: 100%;
 }
-.contact .contact-container .form .form-input .input-container span {
+.contact .form .form-input .input-container span {
   display: flex;
   align-items: center;
   background-color: #F6F6F6;
@@ -752,15 +752,15 @@ input::-webkit-inner-spin-button {
   width: 50px;
   padding: 0.8rem;
 }
-.contact .contact-container .form .form-input .input-container span img {
+.contact .form .form-input .input-container span img {
   width: 100%;
   height: 100%;
 }
-.contact .contact-container .form .form-input .input-container span .red {
+.contact .form .form-input .input-container span .red {
   display: none;
 }
-.contact .contact-container .form .form-input .input-container input,
-.contact .contact-container .form .form-input .input-container textarea {
+.contact .form .form-input .input-container input,
+.contact .form .form-input .input-container textarea {
   width: 100%;
   border: none;
   outline: 0;
@@ -768,15 +768,15 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   background-color: transparent;
 }
-.contact .contact-container .form .form-input .input-container textarea {
+.contact .form .form-input .input-container textarea {
   height: 70px;
   resize: none;
   overflow: auto;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field {
+.contact .form .form-input .input-container .phonecode-field {
   display: flex;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field select {
+.contact .form .form-input .input-container .phonecode-field select {
   width: 53px;
   border: none;
   margin: 0.5rem;
@@ -786,64 +786,64 @@ input::-webkit-inner-spin-button {
   box-shadow: none;
   color: #F2F2F2;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field span {
+.contact .form .form-input .input-container .phonecode-field span {
   color: #F2F2F2;
   font-size: 14px;
   background-color: transparent;
   padding: 0;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field .telephone {
+.contact .form .form-input .input-container .phonecode-field .telephone {
   padding: 0px 0px 0px 4px;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field .hidden-field {
+.contact .form .form-input .input-container .phonecode-field .hidden-field {
   z-index: -1;
   width: 0;
   height: 0;
   pointer-events: none;
   overflow: hidden;
 }
-.contact .contact-container .form .form-input .input-container .phonecode-field .hidden-field input {
+.contact .form .form-input .input-container .phonecode-field .hidden-field input {
   border: none;
   padding: 0;
 }
-.contact .contact-container .form .form-input .input-container ::-webkit-input-placeholder {
+.contact .form .form-input .input-container ::-webkit-input-placeholder {
   /* Edge */
   color: #C0C0C0;
 }
-.contact .contact-container .form .form-input .input-container :-ms-input-placeholder {
+.contact .form .form-input .input-container :-ms-input-placeholder {
   /* Edge */
   color: #C0C0C0;
 }
-.contact .contact-container .form .form-input .input-error ::-webkit-input-placeholder {
+.contact .form .form-input .input-error ::-webkit-input-placeholder {
   /* Edge */
   color: red;
 }
-.contact .contact-container .form .form-input .input-error :-ms-input-placeholder {
+.contact .form .form-input .input-error :-ms-input-placeholder {
   /* Edge */
   color: red;
 }
-.contact .contact-container .form .form-input .input-error span .black {
+.contact .form .form-input .input-error span .black {
   display: none;
 }
-.contact .contact-container .form .form-input .input-error span .red {
+.contact .form .form-input .input-error span .red {
   display: flex;
 }
-.contact .contact-container .form .form-consent {
+.contact .form .form-consent {
   display: flex;
   font-size: 12px;
   margin-bottom: 0.4rem;
   width: 100%;
 }
-.contact .contact-container .form .form-consent:last-child {
+.contact .form .form-consent:last-child {
   margin-bottom: 0;
 }
-.contact .contact-container .form .form-consent:last-child {
+.contact .form .form-consent:last-child {
   margin-bottom: 0;
 }
-.contact .contact-container .form .form-consent input {
+.contact .form .form-consent input {
   border: none;
 }
-.contact .contact-container .form .form-consent label {
+.contact .form .form-consent label {
   margin-left: 0.3rem;
   margin-bottom: 0.5rem;
   display: flex;
@@ -851,45 +851,48 @@ input::-webkit-inner-spin-button {
   width: 92%;
   font-size: 12px;
 }
-.contact .contact-container .form .form-consent label:last-child {
+.contact .form .form-consent label:last-child {
   margin-bottom: 0;
 }
-.contact .contact-container .form .form-consent p {
+.contact .form .form-consent p {
   line-height: 1.4;
   font-size: 12px;
 }
-.contact .contact-container .form .form-consent p a {
+.contact .form .form-consent p a {
   color: #0064D8;
   font-weight: bold;
 }
-.contact .contact-container .form .consent-error,
-.contact .contact-container .form .consent-error-other {
+.contact .form .consent-error,
+.contact .form .consent-error-other {
   margin-bottom: 0.5rem;
 }
-.contact .contact-container .form .consent-error p,
-.contact .contact-container .form .consent-error-other p {
+.contact .form .consent-error p,
+.contact .form .consent-error-other p {
   color: red;
   line-height: 1.4;
   font-size: 12px;
 }
-.contact .contact-container .contact-info {
+.contact .contact-info {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   padding: 2rem;
   background-image: linear-gradient(#0064D8, #00326C);
 }
-.contact .contact-container .contact-info .heading {
+.contact .contact-info .heading {
   margin-bottom: 0.5rem;
 }
-.contact .contact-container .contact-info .heading::before {
+.contact .contact-info .heading::before {
   content: none;
 }
-.contact .contact-container .contact-info .contact-list {
+.contact .contact-info .buttons {
+  margin-top: 2rem;
+}
+.contact .contact-list {
   display: flex;
   flex-direction: column;
 }
-.contact .contact-container .contact-info .contact-list .item {
+.contact .contact-list .item {
   display: flex;
   margin-top: 1rem;
   border-radius: 8px;
@@ -897,9 +900,9 @@ input::-webkit-inner-spin-button {
   padding: 0.8rem;
   border: 1px solid #FFFFFF;
 }
-.contact .contact-container .contact-info .contact-list .item h3,
-.contact .contact-container .contact-info .contact-list .item a,
-.contact .contact-container .contact-info .contact-list .item p {
+.contact .contact-list .item h3,
+.contact .contact-list .item a,
+.contact .contact-list .item p {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: bold;
@@ -908,15 +911,15 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0;
   line-height: 1.3;
 }
-.contact .contact-container .contact-info .contact-list .item a,
-.contact .contact-container .contact-info .contact-list .item p {
+.contact .contact-list .item a,
+.contact .contact-list .item p {
   word-break: break-all;
   margin-top: 0.2rem;
 }
-.contact .contact-container .contact-info .contact-list .item:last-child {
+.contact .contact-list .item:last-child {
   margin-bottom: 0;
 }
-.contact .contact-container .contact-info .contact-list .item span {
+.contact .contact-list .item span {
   width: 30px;
   height: 30px;
   min-width: 30px;
@@ -925,18 +928,15 @@ input::-webkit-inner-spin-button {
   margin-right: 1rem;
   padding: 0.4rem;
 }
-.contact .contact-container .contact-info .contact-list .item span img {
+.contact .contact-list .item span img {
   width: 100%;
   height: 100%;
   transform: rotate(-45deg);
 }
-.contact .contact-container .contact-info .contact-list .item .item-info {
+.contact .contact-list .item .item-info {
   display: flex;
   flex-direction: column;
   width: 80%;
-}
-.contact .contact-container .contact-info .buttons {
-  margin-top: 2rem;
 }
 .contact .social {
   display: flex;
@@ -953,7 +953,7 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   padding-top: 1rem;
 }
-.contact .social .media-list span {
+.contact .social .media-list a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -963,7 +963,7 @@ input::-webkit-inner-spin-button {
   border-radius: 50px;
   background-image: linear-gradient(#0064D8, #00326C);
 }
-.contact .social .media-list span img {
+.contact .social .media-list a img {
   width: 100%;
   height: 100%;
 }
@@ -1006,7 +1006,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  min-height: 180px;
+  padding-bottom: 3rem;
   position: relative;
 }
 .information .info-content .info-text::before {
@@ -1154,24 +1154,29 @@ input::-webkit-inner-spin-button {
     padding: 3rem 2rem;
     padding-bottom: 1rem;
   }
-  .contact .contact-container {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-  .contact .contact-container .form {
-    width: 50%;
-  }
-  .contact .contact-container .contact-info {
-    width: 50%;
+  .contact .contact-info {
     margin-top: 0;
   }
-  .contact .contact-container .contact-info .contact-list {
-    width: 90%;
-    align-self: center;
+  .contact .item {
+    width: 48%;
+  }
+  .contact .item:last-child {
+    width: 54%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .contact .social {
+    margin: auto;
+    width: 45%;
+  }
+  .contact .contact-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .information {
     padding: 3rem 2rem;
-    background-image: linear-gradient(#1C2848 45%, #FFFFFF 45%);
+    background-image: linear-gradient(#1C2848 58.7%, #FFFFFF 45%);
   }
   .information .heading::before {
     background-color: #FFFFFF;
@@ -1253,24 +1258,27 @@ input::-webkit-inner-spin-button {
     width: 45%;
     padding-top: 0;
   }
-  .contact .contact-container .form {
+  .contact .contact-container {
+    flex-direction: row-reverse;
+  }
+  .contact .form {
     width: 60%;
     align-self: flex-start;
     padding: 2rem;
   }
-  .contact .contact-container .form .form-input {
+  .contact .form .form-input {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
   }
-  .contact .contact-container .form .form-input .input-container {
+  .contact .form .form-input .input-container {
     width: 48%;
   }
-  .contact .contact-container .form .form-input .input-container:last-child {
+  .contact .form .form-input .input-container:last-child {
     width: 100%;
   }
-  .contact .contact-container .contact-info {
-    width: 40%;
+  .contact .contact-info {
+    width: 36%;
     background-image: url(../img/contactus/phone-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -1279,15 +1287,16 @@ input::-webkit-inner-spin-button {
     padding: 3.5rem;
     padding-right: 5rem;
   }
-  .contact .contact-container .contact-info .contact-list {
+  .contact .contact-info .contact-list {
     width: 100%;
     align-self: center;
   }
-  .contact .contact-container .contact-info .contact-list .item a {
-    word-break: keep-all;
+  .contact .contact-info .contact-list .item {
+    width: 100%;
   }
   .contact .social {
     margin-bottom: 3rem;
+    width: 100%;
   }
   .contact .social .media-list {
     width: 90%;
@@ -1297,7 +1306,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-around;
   }
   .information .info-content {
-    width: 30%;
+    width: 28%;
   }
   .information .info-text {
     padding: 2rem;
@@ -1332,7 +1341,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
   }
   .contact .contact-container .contact-info {
-    width: 33%;
+    width: 30%;
     position: absolute;
     left: 0;
   }
@@ -1342,7 +1351,7 @@ input::-webkit-inner-spin-button {
     align-self: center;
   }
   .information .info-content {
-    width: 28%;
+    width: 25%;
   }
   .faq {
     padding: 4rem 0rem;
