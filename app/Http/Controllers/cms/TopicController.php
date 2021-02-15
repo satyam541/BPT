@@ -256,7 +256,7 @@ class TopicController extends Controller
 
     public function insertFaq(Request $request)
     {
-        $this->authorize('create', new Faq());
+        // $this->authorize('create', new Faq());
         $module_type = $request->get('module_type');
         $module_id   = $request->get('module_id');
         switch($module_type){
@@ -316,13 +316,13 @@ class TopicController extends Controller
     public function deleteFaq(Faq $faq)
     {
 
-        $this->authorize('delete', new Faq());
+        // $this->authorize('delete', new Faq());
         $faq->delete();
     }
 
     public function sortFaq(Request $request)
     {
-        $this->authorize('update', new Faq());
+        // $this->authorize('update', new Faq());
         $ids = $request->get('id');
         foreach($ids as $i => $id)
         {
@@ -332,7 +332,7 @@ class TopicController extends Controller
 
     public function edit($topic)
     {
-        $this->authorize('update', new Topic());
+        // $this->authorize('update', new Topic());
         $data['topic']          = Topic::with('faqs')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
         $data['categorySlug']   = $data['topic']->category->reference;
@@ -344,7 +344,7 @@ class TopicController extends Controller
 
     public function contentEdit(Request $request,TopicContent $topicDetail)
     {
-        $this->authorize('update', $topicDetail->topic);
+        // $this->authorize('update', $topicDetail->topic);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
         $data['list'] = $list;
@@ -356,7 +356,7 @@ class TopicController extends Controller
 
     public function update(Topic $topic,TopicRequest $request)
     {
-        $this->authorize('update', $topic);
+        // $this->authorize('update', $topic);
         $inputs                     = $request->except('reference');
         $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
         $topic->name                = $inputs['name'];
@@ -385,7 +385,7 @@ class TopicController extends Controller
 
     public function contentUpdate(TopicContentRequest $request,TopicContent $topicDetail)
     {
-        $this->authorize('update', $topicDetail->topic);
+        // $this->authorize('update', $topicDetail->topic);
         $inputs              = $request->except("_token");
         
         $content = $topicDetail->update($inputs);
@@ -395,13 +395,13 @@ class TopicController extends Controller
 
     public function delete(Topic $topic)
     {
-        $this->authorize('delete', $topic);
+        // $this->authorize('delete', $topic);
         $topic->delete();
     }
 
     public function contentDelete(Request $request,TopicContent $topicDetail)
     {
-        $this->authorize('delete', $topicDetail->topic);
+        // $this->authorize('delete', $topicDetail->topic);
         $topicDetail->delete();
     }
         
@@ -415,7 +415,7 @@ class TopicController extends Controller
 
    public function restoreTopic($id)
    {
-        $this->authorize('restore', new Topic());
+        // $this->authorize('restore', new Topic());
         $topic = Topic::onlyTrashed()->find($id)->restore();
     
         return back()->with('success','Successfully Restored');
@@ -423,7 +423,7 @@ class TopicController extends Controller
    }
    public function forceDeleteTopic($id)
    {
-        $this->authorize('forceDelete', new Topic());
+        // $this->authorize('forceDelete', new Topic());
         $topic = Topic::onlyTrashed()->find($id)->forceDelete();
     
         return back()->with('success','Permanently Deleted');
