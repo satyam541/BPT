@@ -152,7 +152,7 @@ class TopicController extends Controller
          $data['whatsincluded'] = new whatsincluded();
          $data['submitRoute'] = 'topicInsertWhatsincluded';
       
-        return view('cms.whatsincluded.whatsincludedform',$data);
+        return view('cms.whatsincluded.whatsIncludedForm',$data);
     }
  
     public function sortWhatsIncluded(Request $request){

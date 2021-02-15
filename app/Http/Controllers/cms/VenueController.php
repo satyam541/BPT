@@ -125,7 +125,7 @@ class VenueController extends Controller
     $data['trashedVenues'] = Venue::onlyTrashed()->get();
  
 
-    return  view('cms.trashed.venuetrashedlist',$data);
+    return  view('cms.trashed.venueTrashedList',$data);
        
    }
 

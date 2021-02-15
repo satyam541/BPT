@@ -201,7 +201,7 @@ class CategoryController extends Controller
         $data['whatsincluded'] = new whatsincluded();
         $data['submitRoute'] = 'categoryInsertWhatsincluded';
      
-       return view('cms.whatsincluded.whatsincludedform',$data);
+       return view('cms.whatsincluded.whatsIncludedForm',$data);
    }
 
    public function sortWhatsIncluded(Request $request){
