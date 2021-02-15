@@ -135,7 +135,11 @@ class PurchaseController extends Controller
             return Redirect()->back();
             
     }
-    
+    public function purchaseList(){
+        $purchases=Order::whereNotNull('gateway_order_id')->with('customer')->get();
+        return view('cms.purchase.purchases',compact('purchases'));
+        
+    }
     public function bookingDetail($gatewayorderId)
     {
         $order = Order::where('gateway_order_id',$gatewayorderId)->first();
@@ -171,6 +175,7 @@ class PurchaseController extends Controller
             $emailData['location'] = $orderLineItem->venue;
             $emailData['eventDate'] = $orderLineItem->schedule_date;
             $emailData['currency'] = $emailRequest->currency;
+            dd($emailData);
             return view('cms.purchase.purchaseDetail',$emailData);
     }
 

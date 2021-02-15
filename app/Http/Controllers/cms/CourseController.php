@@ -56,7 +56,7 @@ class CourseController extends Controller
         $course = Course::find($id);
         $course->topic_id         = $request['topic_id'];
         $topic  = Topic::find($request['topic_id']);
-        $course->reference   = $topic->reference.'/'.encodeUrlSlug($course['name']);
+        $course->reference   = $topic->reference.'/'.$this->encodeCourseSlug($course['name']);
         $course->update();
         return back()->with('success','Topic linked');
     }

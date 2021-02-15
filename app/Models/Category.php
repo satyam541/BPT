@@ -58,7 +58,7 @@ class Category extends Model
 
     public function content()
     {
-        return $this->hasMany('App\Models\CategoryContent')->withTrashed();
+        return $this->hasMany('App\Models\CategoryContent');
     }
 
     public function categoryContent()

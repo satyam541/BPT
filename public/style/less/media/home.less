@@ -1,0 +1,52 @@
+@media @size-md{
+    .courses{
+        padding: @sectionPadding-md;
+        .courses-list{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .course-name{
+            width: 48%;
+            flex-direction: row;
+            span{
+                display: flex;
+            }
+        }
+    }
+    .effective{
+        padding: @sectionPadding-md;
+        background: transparent;
+        .effective-container{
+            flex-direction: row;
+            justify-content: space-between;
+            background: @blueGradient;
+        }
+        .content{
+            width: 70%;
+            flex-direction: row;
+        }
+        .buttons{
+            width: 30%;
+            justify-content: flex-end
+
+        }
+    
+    }
+}
+
+@media @size-lg{
+    .courses{
+        .course-name{
+            width: 31%;
+        }
+    }
+    
+}
+
+@media @size-xl{
+    .courses{
+        padding: @sectionPadding-xl;
+    }
+   
+}
