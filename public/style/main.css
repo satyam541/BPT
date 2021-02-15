@@ -1674,60 +1674,61 @@ input::-webkit-inner-spin-button {
 .testimonial-banner .breadcrums ul li:first-child {
   margin-right: 0.5rem;
 }
-.experience {
+.customers {
   padding: 3rem 1.5rem;
 }
-.experience .experience-container {
+.customers .customers-container {
   display: flex;
   flex-direction: column;
 }
-.experience .heading p {
+.customers .heading p {
   font-weight: bold;
 }
-.experience .experience-list {
+.customers .customers-list {
   display: flex;
   flex-direction: column;
 }
-.experience .experience-list .experience-content {
+.customers .customers-list .customers-content {
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 2rem;
+  padding-bottom: 1.5rem;
 }
-.experience .experience-list .experience-content .content {
+.customers .customers-list .customers-content .content {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
-.experience .experience-list .experience-content .content .experience-img {
+.customers .customers-list .customers-content .content .customers-img {
   display: flex;
   height: 50px;
   width: 80px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.experience .experience-list .experience-content .info {
+.customers .customers-list .customers-content .info {
   display: flex;
   background-color: #0064D8;
   padding: 1rem;
   align-items: center;
 }
-.experience .experience-list .experience-content .info span {
+.customers .customers-list .customers-content .info span {
   display: flex;
   width: 70px;
 }
-.experience .experience-list .experience-content .info span img {
+.customers .customers-list .customers-content .info span img {
   width: 100%;
   height: 100%;
 }
-.experience .experience-list .experience-content .info .designation {
+.customers .customers-list .customers-content .info .designation {
   display: flex;
   flex-direction: column;
   width: calc(100% - 80px);
 }
-.experience .experience-list .experience-content .info .designation h3,
-.experience .experience-list .experience-content .info .designation p {
+.customers .customers-list .customers-content .info .designation h3,
+.customers .customers-list .customers-content .info .designation p {
   color: #FFFFFF;
 }
 @media (min-width : 768px) {

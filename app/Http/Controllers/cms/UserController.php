@@ -43,6 +43,18 @@ class UserController extends Controller
         // $this->authorize('view', new User());
         $filter = $request->all();
         
+        $data['selectedName']=null;
+        $data['selectedEmail']=null;
+        $data['selectedRole']=null;
+        if(!empty($filter['name'])){
+            $data['selectedName']=$filter['name'];
+        }
+        if(!empty($filter['email'])){
+            $data['selectedEmail']=$filter['email'];
+        }
+        if(!empty($filter['roleName'])){
+            $data['selectedRole']=$filter['roleName'];
+        }
         if(!empty($filter))
         {
             $query = User::query();
@@ -59,11 +71,12 @@ class UserController extends Controller
         else{
             $users = User::paginate(10);
         }
-        $list['name'] = User::all()->pluck('name')->toArray();
-        $list['email'] = User::all()->pluck('email')->toArray();
-        $list['role'] = Role::All()->pluck('name')->toArray();
+        $list['name'] = User::all()->pluck('name','name')->toArray();
+        $list['email'] = User::all()->pluck('email','email')->toArray();
+        $list['role'] = Role::All()->pluck('name','name')->toArray();
         $data['list'] = $list;
         $data['users'] = $users;
+        // dd($data);
         return view('cms.manageUser.users',$data);
     }
 
@@ -130,13 +143,13 @@ class UserController extends Controller
 }
     public function createRole()
     {
-        $this->authorize('create', new Role());
+        // $this->authorize('create', new Role());
         return view('cms.manageUser.insertRole');
     }
 
     public function insertRole(RoleRequest $request)
     {
-        $this->authorize('create', new Role());
+        // $this->authorize('create', new Role());
         $inputs = $request->all();
         
         $roleName = $request->input('name');
@@ -152,7 +165,7 @@ class UserController extends Controller
 
     public function editRole(Role $role)
     {
-        $this->authorize('update', $role);
+        // $this->authorize('update', $role);
         $data['role']    = $role;
         $data['permissions']   = Permission::all()->load('module')->groupBy('module_name');
         // dd($data);
@@ -162,7 +175,7 @@ class UserController extends Controller
 
     public function updateRole(RoleRequest $request ,Role $role)
     {
-        $this->authorize('update',$role);
+        // $this->authorize('update',$role);
         $inputs = $request->all();
         $role->name = $inputs['name'];
         $role->description = $inputs['description'];
