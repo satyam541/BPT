@@ -14,3 +14,4 @@ composer.lock
 package-lock.json
 /package-lock.json
 /composer.lock
+/public/style/*.css
