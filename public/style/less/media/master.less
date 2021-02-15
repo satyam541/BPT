@@ -7,7 +7,14 @@
 @size-xlllll: ~"(min-width : 1900px)"; // 1900
 
 @media @size-md {
-  
+  //Start buttons
+      .buttons {
+        .btn-blue, .btn-white{
+          font-size: 16px;
+        }
+      }
+  //End buttons
+
     //Start navbar //
   
     .navbar {
@@ -19,10 +26,12 @@
         margin: 0;
         padding: 0.8rem;
         width: 100%;
-        background: linear-gradient(#0064D8 ,#1C2848);
+        background: @blueGradient;
         order: 2;
 
         .links-li {
+          display: flex!important;
+          flex-direction: column;
           border-bottom: none;
           margin-right: 0.5rem;
           padding: 0;
@@ -30,18 +39,46 @@
           font-weight: 500;
 
           &:last-child {
-            display: flex;
             margin-top: 0;
             margin-right: 0;
             margin-left: auto;
             width: 140px;
+            flex-direction: row;
+        
           }
 
           .link {
             font-weight: 600;
             transition: none;
             color: @whiteColor;
-            padding: 3px;
+            padding-bottom: 3px;
+          }
+          span{
+            background-color: @whiteColor;
+            width: 0;
+            height: 3px;
+            position: relative;
+            visibility: hidden;
+            transition: 1s all;
+            &::before {
+              content: none;
+              position: absolute;
+              height: 3px;
+              width: 15px;
+              border-left: 4px solid @darkblueColor ;
+              border-right: 4px solid @darkblueColor ;
+              left: 30px;
+            }
+          }
+          &:hover {
+            span{
+              width: 100%;
+              visibility: visible;
+              transition: 1s all;
+              &::before{
+                content: '';
+              }
+            }
           }
         }
 
@@ -149,16 +186,37 @@
     //Start banner //
     .banner {
       padding: @sectionPadding-md;
+      background-image: url(../img/master/banner-bg.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-color: transparent;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        background-image: url(../img/master/banner-layer.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 36%;
+        left: 0;
+        z-index: 0;
+
+      }
       .banner-container {
         flex-direction: row;
         justify-content: space-between;
         padding: 2rem 0;
+        padding-top: 3rem;
+        z-index: 1;
           .banner-content{
             align-items: flex-start;
             width: 50%;
           }
           .topic-list{
             width: 46%;
+            margin-top: 0;
           }
       }
     } 
@@ -201,8 +259,31 @@
           width: 70%;
           }
       }
-    
     //End navbar //
+    
+    //Start banner //
+    .banner {
+      &::before {
+        height: 56%;
+      }
+      .banner-container {
+          .banner-content{
+            width: 55%;
+          }
+          .topic-list{
+            width: 40%;
+            a{
+              p{
+                width: 70%;
+              }
+            }
+          }
+      }
+      .search {
+          width: 76%;
+      }
+    } 
+    //End banner //
 }
 
 
@@ -213,6 +294,14 @@
       width: 1200px;
       margin: 0 auto;
     }
+    
+  //Start buttons
+  .buttons {
+    .btn-blue, .btn-white{
+      font-size: 18px;
+    }
+  }
+//End buttons
     // Start heading //
     .heading {
       h2{

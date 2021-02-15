@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
@@ -22,6 +23,8 @@
   <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="{{ url('adminLTE/bootstrap-datepicker.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
@@ -48,28 +51,36 @@
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <div class="image">
+            <img src="{{url('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2 mr-1" alt="User Image" width="30">
+            {{Auth()->User()->name}}
+          </div>
+         
+          
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <span class="dropdown-item dropdown-header">{{Auth()->User()->email}}</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+            <i class="fas fa-key mr-2"></i> Change Password
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
+            <i class="fas fa-user mr-2"></i> Update Profile
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
+          <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+        
+            
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          <a href="#" class="dropdown-item dropdown-footer"></a>
         </div>
       </li>
 
@@ -88,15 +99,6 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{url('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Arshdeep Singh</a>
-        </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -360,6 +362,89 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-trash" style="color: red"></i>
+              <p>
+                Trash
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('countryTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Country List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Venue List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('locationTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Location List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('categoryTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Category List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('topicTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Topic List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('courseTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlineCourseTrash')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Online Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('resourceTrash')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Resource List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('tagTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Tag List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('articleTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Article List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('testimonialTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Testimonial List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('accreditationTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Accreditation List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
@@ -369,25 +454,25 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('enquiryList')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
               <p class="text">Enquiries</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('orderList')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-success"></i>
               <p class="text">Order List</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('createPurchase')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-primary"></i>
               <p class="text">Manual Purchase</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('resourcesList')}}" class="nav-link">
               <i class="nav-icon far fa-circle"></i>
               <p class="text">Resources</p>
             </a>
@@ -438,6 +523,9 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- datepicker -->
+<script src="{{ url('adminLTE/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ url('cms/common.js?2')}}"></script>
 <!-- Summernote -->
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
@@ -457,7 +545,7 @@ $.widget.bridge('uibutton', $.ui.button)
            $target = $(event.target);
 
           });
-      $('#summernote').summernote({
+      $('.summernote').summernote({
         toolbar:[
           ['cleaner',['cleaner']], // The Button
           ['style',['style']],

@@ -39,7 +39,7 @@ class VenueController extends Controller
 
     public function create()
     {
-        $this->authorize('create', Venue::class);
+        // $this->authorize('create', Venue::class);
         $data['venue'] = new Venue();
         $data['submitRoute'] = "insertVenue";
         $data['locations'] = Location::withoutGlobalScope('venues')->get()->pluck('name','id')->toArray();
@@ -121,11 +121,11 @@ class VenueController extends Controller
     
    public function venuetrashList()
    {
-    $this->authorize('view', new Venue());
+    // $this->authorize('view', new Venue());
     $data['trashedVenues'] = Venue::onlyTrashed()->get();
  
 
-    return  view('cms.trashed.venuetrashedlist',$data);
+    return  view('cms.trashed.venueTrashedList',$data);
        
    }
 

@@ -72,6 +72,90 @@
                             </a>
                         </li>
                     </ul>
+                    <ul>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
+                            <p>
+                                PRINCE training
+                                <span>prince training</span>
+                            </p>
+                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

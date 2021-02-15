@@ -40,6 +40,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Topic</th>
+                  <th>Content</th>
                   <th>Bulletpoints</th>
                   <th>Whatsincluded</th>
                   <th>Actions</th>
@@ -51,8 +52,9 @@
                     <tr>
                     <td>{{$course->name}}</td>
                     <td>{{$course->topic->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
+                    <td><a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a></td>
+                    <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
+                    <td> <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -62,6 +64,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -82,6 +85,13 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
     </script>
 @endsection

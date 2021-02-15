@@ -11,6 +11,9 @@
 |
 */
 
+Auth::routes(['register'=>false]);
+/* these routes is for login */
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -22,4 +25,7 @@ Route::get('/contactus', function () {
 });
 Route::get('/aboutus', function () {
     return view('aboutus');
+});
+Route::get('/testimonial', function () {
+    return view('testimonial');
 });

@@ -39,8 +39,6 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -49,8 +47,6 @@
                     @foreach ($countries as $country)
                     <tr>
                     <td>{{$country->name}}</td>
-                    <td> <a href="" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -60,6 +56,8 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -80,6 +78,14 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
+        
     </script>
 @endsection

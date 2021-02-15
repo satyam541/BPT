@@ -21,15 +21,15 @@ class SocialMediaController extends Controller
     
     public function socialList()
     {
-        $this->authorize('view', new SocialMedia());
-        $data['socialmedias'] = SocialMedia::paginate(10);   
+        // $this->authorize('view', new SocialMedia());
+        $data['socialmedias'] = SocialMedia::all();   
         return view('cms.socialmedia.socialmedia',$data);
     }
     public function create()
     {
-        $this->authorize('create', new SocialMedia());
+        // $this->authorize('create', new SocialMedia());
         $data['socialmedia'] = new SocialMedia();
-         $data['submitroute'] = "insertsocialmedia";
+         $data['submitRoute'] = "insertsocialmedia";
        
         return view('cms.socialmedia.socialmediaForm',$data);
     }

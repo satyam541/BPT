@@ -44,7 +44,7 @@ class PageDetailController extends Controller
 
     public function create()
     {
-        $this->authorize('create', new Pagedetail());
+        // $this->authorize('create', new Pagedetail());
         $data['pageDetail'] = new PageDetail();
         $data['pages'] = PageDetail::pluck('page_name','id')->unique()->toArray();
         $data['submitRoute'] = "insertPageDetail";

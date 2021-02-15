@@ -61,13 +61,14 @@ class TopicController extends Controller
 
     public function contentList(Request $request)
     {
-        $this->authorize('view', new Topic());
+        // $this->authorize('view', new Topic());
         $filter                 = $request->all();
         $data['selectedTopic']  = empty($filter['topic'])? NULL : $filter['topic'];
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query                  = TopicContent::query();
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
         $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query->whereHas('topic');
         $result                 = $query->paginate(10);
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
         $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
@@ -81,7 +82,7 @@ class TopicController extends Controller
         $data['editbulletpointroute']='topicEditBulletPoint';
         $data['deletebulletpointroute']='topicDeleteBulletPoint';
         $data['insertbulletpointroute']='topicCreateBulletPoint';
-        $data['result'] = BulletPoint::where('module_id',$request->module)->get();
+        $data['module'] = Topic::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }
@@ -107,10 +108,10 @@ class TopicController extends Controller
         
     }
 
-    public function editBulletPoint($module, $id)
+    public function editBulletPoint($id)
     {
-        $data['result']         = BulletPoint::with('module')->find($id);
-        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $module,'courseDetail'=>$id];
+        $data['result']         = BulletPoint::find($id);
+        $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
 
@@ -152,7 +153,7 @@ class TopicController extends Controller
          $data['whatsincluded'] = new whatsincluded();
          $data['submitRoute'] = 'topicInsertWhatsincluded';
       
-        return view('cms.whatsincluded.whatsincludedform',$data);
+        return view('cms.whatsincluded.whatsIncludedForm',$data);
     }
  
     public function sortWhatsIncluded(Request $request){
@@ -406,10 +407,10 @@ class TopicController extends Controller
         
    public function topictrashList()
    {
-        $this->authorize('view', new Topic());
+        // $this->authorize('view', new Topic());
         $data['trashedTopics'] = Topic::onlyTrashed()->get();
     
-        return  view('cms.trashed.topictrashedlist',$data);
+        return  view('cms.trashed.topicTrashedList',$data);
    }
 
    public function restoreTopic($id)

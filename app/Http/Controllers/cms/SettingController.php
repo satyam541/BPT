@@ -21,19 +21,16 @@ class SettingController extends Controller
 
     public function websiteDetailList()
     {
-        $this->authorize('view', new WebsiteDetail());
+        // $this->authorize('view', new WebsiteDetail());
         $data['websitedetails'] = WebsiteDetail::paginate(10);
-        
       
-        
-       
         return view('cms.websiteContent.websiteDetail',$data);
     }
     public function createWebsiteDetail()
     {
-        $this->authorize('create', new WebsiteDetail());
+        // $this->authorize('create', new WebsiteDetail());
         $data['websitedetail'] = new WebsiteDetail();
-         $data['submitroute'] = "insertWebsiteDetail";
+         $data['submitRoute'] = "insertWebsiteDetail";
         //  $data['websites'] = Website::all()->pluck('name','id')->toArray();
          $data['countries'] = Country::all()->pluck('name','country_code')->toArray();
         return view('cms.websiteContent.websiteDetailform',$data);

@@ -28,10 +28,10 @@ class TestimonialController extends Controller
 
     public function create()
     {
-        $this->authorize('create', new Testimonial());
+        // $this->authorize('create', new Testimonial());
         $data['testimonial'] = new Testimonial();
         $data['submitRoute'] = "insertTestimonial";
-        return view('cms.testimonial.testimonialform',$data);
+        return view('cms.testimonial.testimonialForm',$data);
     }
 
     public function insert(TestimonialRequest $request)
@@ -64,7 +64,7 @@ class TestimonialController extends Controller
         $data['testimonial'] = $testimonial;
         $data['submitRoute'] = array('updateTestimonial',$testimonial->id);
      
-        return view("cms.testimonial.testimonialform",$data);
+        return view("cms.testimonial.testimonialForm",$data);
     }
 
    public function update(Testimonial $testimonial,TestimonialRequest $request)
@@ -98,10 +98,10 @@ class TestimonialController extends Controller
        
    public function testimonialtrashList()
    {
-        $this->authorize('view', new Testimonial());
+        // $this->authorize('view', new Testimonial());
         $data['trashedTestimonials'] = Testimonial::onlyTrashed()->get();
     
-        return  view('cms.trashed.testimonialtrashedlist',$data);
+        return  view('cms.trashed.testimonialTrashedList',$data);
        
    }
 
