@@ -450,29 +450,16 @@ input::-webkit-inner-spin-button {
     padding-bottom: 3px;
   }
   .navbar ul .links-li span {
-    background-color: #FFFFFF;
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 49%, rgb(23 50 97) 49%, #056ab9 57%, #ffffff 57%, #ffffff 69%, rgb(23 50 97) 69%, rgb(23 50 97) 77%, #ffffff 77%, #ffffff 88%, rgb(23 50 97) 88%, #ffffff 88%);
     width: 0;
     height: 3px;
-    position: relative;
     visibility: hidden;
     transition: 1s all;
-  }
-  .navbar ul .links-li span::before {
-    content: none;
-    position: absolute;
-    height: 3px;
-    width: 15px;
-    border-left: 4px solid #1C2848;
-    border-right: 4px solid #1C2848;
-    left: 30px;
   }
   .navbar ul .links-li:hover span {
     width: 100%;
     visibility: visible;
     transition: 1s all;
-  }
-  .navbar ul .links-li:hover span::before {
-    content: '';
   }
   .navbar ul .buttons .btn-white {
     margin-right: 1rem;
@@ -659,6 +646,40 @@ input::-webkit-inner-spin-button {
     margin-right: 2rem;
   }
 }
+.courses {
+  padding: 3rem 1.5rem;
+}
+.courses .courses-container {
+  display: flex;
+  flex-direction: column;
+}
+.courses .courses-list {
+  display: flex;
+  flex-direction: column;
+}
+.courses .course-name {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.courses .course-name span {
+  display: flex;
+}
+.courses .course-name span img {
+  width: 40px;
+  height: 40px;
+}
+.courses .course-name .name {
+  display: flex;
+}
+.courses .course-name .name h3 {
+  width: 100%;
+  color: #FFFFFF;
+}
+.courses .course-name .name p {
+  width: 50%;
+  color: #FFFFFF;
+}
 .contact-banner {
   flex-direction: column;
   background-color: #0064D8;
@@ -671,15 +692,10 @@ input::-webkit-inner-spin-button {
 .contact-banner .banner-container .banner-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 .contact-banner .banner-container .banner-content h1 {
-  display: flex;
   color: #FFFFFF;
-  align-items: flex-start;
   margin-bottom: 0.5rem;
-  font-size: 24px;
-  width: 100%;
 }
 .contact-banner .banner-container .banner-content p {
   color: #FFFFFF;
@@ -895,7 +911,7 @@ input::-webkit-inner-spin-button {
 .contact .contact-container .contact-info .contact-list .item a,
 .contact .contact-container .contact-info .contact-list .item p {
   word-break: break-all;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 }
 .contact .contact-container .contact-info .contact-list .item:last-child {
   margin-bottom: 0;
@@ -1005,13 +1021,13 @@ input::-webkit-inner-spin-button {
   margin-top: 0.5rem;
 }
 .information .info-content:nth-child(2) span {
-  background-image: url(../img/contactus/enquire-now.svg);
+  background-image: url(../img/contactus/team.png);
 }
 .information .info-content:nth-child(2) .info-text::before {
   content: '02';
 }
 .information .info-content:nth-child(3) span {
-  background-image: url(../img/contactus/chat-support.svg);
+  background-image: url(../img/contactus/support.png);
 }
 .information .info-content:nth-child(3) .info-text::before {
   content: '03';
@@ -1653,60 +1669,61 @@ input::-webkit-inner-spin-button {
 .testimonial-banner .breadcrums ul li:first-child {
   margin-right: 0.5rem;
 }
-.experience {
+.customers {
   padding: 3rem 1.5rem;
 }
-.experience .experience-container {
+.customers .customers-container {
   display: flex;
   flex-direction: column;
 }
-.experience .heading p {
+.customers .heading p {
   font-weight: bold;
 }
-.experience .experience-list {
+.customers .customers-list {
   display: flex;
   flex-direction: column;
 }
-.experience .experience-list .experience-content {
+.customers .customers-content {
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 2rem;
+  padding-bottom: 1.5rem;
 }
-.experience .experience-list .experience-content .content {
+.customers .content {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
-.experience .experience-list .experience-content .content .experience-img {
+.customers .content .customers-img {
   display: flex;
   height: 50px;
   width: 80px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.experience .experience-list .experience-content .info {
+.customers .info {
   display: flex;
   background-color: #0064D8;
   padding: 1rem;
   align-items: center;
 }
-.experience .experience-list .experience-content .info span {
+.customers span {
   display: flex;
   width: 70px;
 }
-.experience .experience-list .experience-content .info span img {
+.customers span img {
   width: 100%;
   height: 100%;
 }
-.experience .experience-list .experience-content .info .designation {
+.customers .designation {
   display: flex;
   flex-direction: column;
   width: calc(100% - 80px);
 }
-.experience .experience-list .experience-content .info .designation h3,
-.experience .experience-list .experience-content .info .designation p {
+.customers .designation h3,
+.customers .designation p {
   color: #FFFFFF;
 }
 @media (min-width : 768px) {
@@ -1721,5 +1738,40 @@ input::-webkit-inner-spin-button {
   }
   .testimonial-banner .banner-container {
     width: 60%;
+  }
+  .customers {
+    padding: 3rem 2rem;
+  }
+  .customers .customers-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .customers .customers-content {
+    width: 46%;
+    position: relative;
+  }
+  .customers .customers-content .info {
+    transform: translateX(-20px);
+  }
+  .customers .customers-content .info:before,
+  .customers .customers-content .info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+  .customers .customers-content .info::before {
+    border-width: 1.5em;
+    border-right-color: #ccc;
+    border-top-color: #ccc;
+  }
+  .customers .customers-content .info::after {
+    border-radius: 0.4em;
+    border-width: 1.35em;
+    border-right-color: #9baa9b;
+    border-top-color: #0c0;
   }
 }
