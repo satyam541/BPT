@@ -161,7 +161,7 @@
         </div>
 
 </section>
-<section class="courses">
+<section class="flex-container courses">
     <div class="container">
         <div class="courses-container">
             <div class="heading">
@@ -172,11 +172,24 @@
                 </h2>
             </div>
             <div class="courses-list">
-                <div class="courses-name">
+                <div class="course-name">
                     <span>
-                        
+                        <img src="{{url('img/home/topic-icon.svg')}}" alt="topic-icon">
                     </span>
-
+                    <div class="name">
+                        <h3>
+                            Project Management
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
                 </div>
             </div>
         </div>

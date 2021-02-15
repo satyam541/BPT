@@ -1,6 +1,6 @@
 @media @size-md{
     // Start Banner section //
-.testimonial-banner {
+    .testimonial-banner {
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
@@ -11,6 +11,46 @@
     .banner-container {
         width: 60%;
     }
+    }
+    // End Banner section //
+
+    // Start Customers Section
+.customers {
+    padding: @sectionPadding-md;
+    .customers-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .customers-content {
+        width: 46%;
+        position: relative;
+        .info {
+            transform: translateX(-20px);
+           &:before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-color: transparent;
+                border-style: solid;
+            }
+
+            &::before {
+                border-width: 1.5em;
+                border-right-color: #ccc;
+                border-top-color: #ccc;
+            }
+
+            &::after {
+                border-radius: 0.4em;
+                border-width: 1.35em;
+                border-right-color: rgb(155, 170, 155);
+                border-top-color: #0c0;
+            }
+        }
+    }
 }
-// End Banner section //
+// End Customers Section
 }
