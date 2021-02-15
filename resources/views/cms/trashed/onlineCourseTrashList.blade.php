@@ -38,7 +38,7 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>OnlineCourse Name</th>
+                  <th>Online Course Name</th>
                   <th>Date</th>
                   <th>Actions</th>
                 </tr>
@@ -77,7 +77,13 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Online Course Name" },
+                        { "name": "Date",  searching:false },
+                        { "name": "Actions", "sorting":false, searching:false  }
+              ]                    
+            });
         });
     </script>
 @endsection
