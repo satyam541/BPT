@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Whats Included</h1>
+          <h1 class="m-0 text-dark">Unlinked Topics</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Whats Included</a></li>
+            <li class="breadcrumb-item"><a href="#">Topic</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -37,28 +37,30 @@
             <div class="card-body">
               <table id="example1">
                 <thead>
-                <tr>
-                  <th>Course Name</th>
-                  <th>Whats Included</th>
-                  <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($result->whatsIncluded as $whatsIncluded)
+                    @foreach ($topics as $topic)
                     <tr>
-                    <td>{{$result->name}}</td>
-                    <td>{{$whatsIncluded->name}}</td>
-                    <td>&nbsp;&nbsp;
-                        <a href="#" onclick="deleteItem('{{ route($deletewhatsincludedroute,['module'=>$result->id,'whatsincluded'=>$whatsIncluded->id] )}}')"><i class="fa fa-trash text-red"></i></a>
-                    </td>
-                </tr>
+                        <td>{{$topic->name}}</td>
+                        {{Form::model($category,array('route'=>['linkCategoryRoute',['id'=>$topic->id]]))}}
+                        <td>
+                        {{Form::select('category_id',$category,null,['class'=>'select form-control','placeholder'=>'Select Category'])}}
+                        </td>
+                            <td>  <button class="btn btn-primary">Link</button></td>
+                        {{Form::close()}}
+                    </tr>
                     @endforeach
                   
                 
-                </tfoot>
+                </tbody>
               </table>
-              <a id="add" href="{{route($insertwhatsincludedroute,['module'=>$result->id])}}" class="btn btn-success" style="">Add new Record</a>
+              
             </div>
             <!-- /.card-body -->
           </div>
@@ -78,15 +80,13 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Category" },
+                        { "name": "Actions", "sorting":false, searching:false  }
+              ]                    
             });
         });
-        
     </script>
 @endsection

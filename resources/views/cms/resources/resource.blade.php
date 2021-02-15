@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Whats Included</h1>
+          <h1 class="m-0 text-dark">Resource</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Whats Included</a></li>
+            <li class="breadcrumb-item"><a href="#">Resource</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,19 +38,17 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Course Name</th>
-                  <th>Whats Included</th>
+                  <th>Name</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($result->whatsIncluded as $whatsIncluded)
+                    @foreach ($Resources as $Resource)
                     <tr>
-                    <td>{{$result->name}}</td>
-                    <td>{{$whatsIncluded->name}}</td>
-                    <td>&nbsp;&nbsp;
-                        <a href="#" onclick="deleteItem('{{ route($deletewhatsincludedroute,['module'=>$result->id,'whatsincluded'=>$whatsIncluded->id] )}}')"><i class="fa fa-trash text-red"></i></a>
+                    <td>{{$Resource->name}}</td>
+                    <td><a href="" class="fa fa-edit"></a>
+                    &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -58,7 +56,8 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="{{route($insertwhatsincludedroute,['module'=>$result->id])}}" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -78,13 +77,11 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Actions", "sorting":false, searching:false }
+              ]                    
             });
         });
         
