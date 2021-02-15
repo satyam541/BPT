@@ -24,30 +24,20 @@
     }
     .customers-content {
         width: 46%;
-        position: relative;
         .info {
             transform: translateX(-20px);
-           &:before,
+            position: relative;
+            z-index: 1;
             &::after {
                 content: '';
+                z-index: -1;
                 position: absolute;
-                top: 0;
-                right: 0;
-                border-color: transparent;
-                border-style: solid;
-            }
-
-            &::before {
-                border-width: 1.5em;
-                border-right-color: #ccc;
-                border-top-color: #ccc;
-            }
-
-            &::after {
-                border-radius: 0.4em;
-                border-width: 1.35em;
-                border-right-color: rgb(155, 170, 155);
-                border-top-color: #0c0;
+                bottom: -35px;
+                left: 0px;
+                width: 0;
+                height: 0;
+                border-top: 35px solid red;
+                border-left: 35px solid transparent; 
             }
         }
     }
