@@ -1654,7 +1654,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.customers .customers-list .customers-content {
+.customers .customers-content {
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
@@ -1662,39 +1662,39 @@ input::-webkit-inner-spin-button {
   margin-top: 2rem;
   padding-bottom: 1.5rem;
 }
-.customers .customers-list .customers-content .content {
+.customers .content {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
-.customers .customers-list .customers-content .content .customers-img {
+.customers .content .customers-img {
   display: flex;
   height: 50px;
   width: 80px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.customers .customers-list .customers-content .info {
+.customers .info {
   display: flex;
   background-color: #0064D8;
   padding: 1rem;
   align-items: center;
 }
-.customers .customers-list .customers-content .info span {
+.customers span {
   display: flex;
   width: 70px;
 }
-.customers .customers-list .customers-content .info span img {
+.customers span img {
   width: 100%;
   height: 100%;
 }
-.customers .customers-list .customers-content .info .designation {
+.customers .designation {
   display: flex;
   flex-direction: column;
   width: calc(100% - 80px);
 }
-.customers .customers-list .customers-content .info .designation h3,
-.customers .customers-list .customers-content .info .designation p {
+.customers .designation h3,
+.customers .designation p {
   color: #FFFFFF;
 }
 @media (min-width : 768px) {
@@ -1709,5 +1709,40 @@ input::-webkit-inner-spin-button {
   }
   .testimonial-banner .banner-container {
     width: 60%;
+  }
+  .customers {
+    padding: 3rem 2rem;
+  }
+  .customers .customers-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .customers .customers-content {
+    width: 46%;
+    position: relative;
+  }
+  .customers .customers-content .info {
+    transform: translateX(-20px);
+  }
+  .customers .customers-content .info:before,
+  .customers .customers-content .info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+  .customers .customers-content .info::before {
+    border-width: 1.5em;
+    border-right-color: #ccc;
+    border-top-color: #ccc;
+  }
+  .customers .customers-content .info::after {
+    border-radius: 0.4em;
+    border-width: 1.35em;
+    border-right-color: #9baa9b;
+    border-top-color: #0c0;
   }
 }
