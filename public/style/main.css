@@ -730,22 +730,24 @@ body {
 .contact .contact-container .form .form-input .input-container .phonecode-field select {
   width: 53px;
   border: none;
-  padding-right: 0;
+  margin: 0.5rem;
+  margin-left: 0;
   outline: 0;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #d7d7d7;
   box-shadow: none;
+  color: #F2F2F2;
 }
 .contact .contact-container .form .form-input .input-container .phonecode-field span {
-  display: flex;
-  align-items: center;
-  color: #868686;
+  color: #F2F2F2;
   font-size: 14px;
   background-color: transparent;
+  padding: 0;
 }
 .contact .contact-container .form .form-input .input-container .phonecode-field .telephone {
-  padding: 0px 0px 0px 8px;
+  padding: 0px 0px 0px 4px;
 }
 .contact .contact-container .form .form-input .input-container .phonecode-field .hidden-field {
+  z-index: -1;
   width: 0;
   height: 0;
   pointer-events: none;
@@ -834,11 +836,6 @@ body {
 .contact .contact-container .contact-info .heading::before {
   content: none;
 }
-.contact .contact-container .contact-info p {
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 1.5;
-}
 .contact .contact-container .contact-info .contact-list {
   display: flex;
   flex-direction: column;
@@ -899,6 +896,8 @@ body {
 }
 .contact .social p {
   font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
 }
 .contact .social .media-list {
   display: flex;
@@ -944,20 +943,15 @@ body {
   display: flex;
   height: 195px;
   position: relative;
-}
-.information .info-content span::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  background-image: url(../img/contactus/chat.svg);
+  background-image: url(../img/contactus/talk.png);
+  padding: 1rem;
   background-size: 100% 100%;
-  height: 48px;
-  width: 50px;
-  left: 10%;
+  align-items: flex-end;
+  padding-bottom: 0;
 }
 .information .info-content span img {
-  width: 100%;
-  height: 100%;
+  width: 50px;
+  height: 50px;
 }
 .information .info-content .info-text {
   display: flex;
@@ -977,13 +971,13 @@ body {
 .information .info-content .info-text p {
   margin-top: 0.5rem;
 }
-.information .info-content:nth-child(2) span::before {
+.information .info-content:nth-child(2) span {
   background-image: url(../img/contactus/enquire-now.svg);
 }
 .information .info-content:nth-child(2) .info-text::before {
   content: '02';
 }
-.information .info-content:nth-child(3) span::before {
+.information .info-content:nth-child(3) span {
   background-image: url(../img/contactus/chat-support.svg);
 }
 .information .info-content:nth-child(3) .info-text::before {

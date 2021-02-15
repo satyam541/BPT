@@ -95,7 +95,6 @@
                         <div class="heading center-heading white-heading">
                             <h2>Contact Us</h2>
                         </div>
-                        <p>If you have more questions or need any assistance while booking your PRINCE2® training, you can quickly access our 24/7 support using Email, Phone Number, or by filling this form.</p>
                         <div class="contact-list">
                             <div class="item">
                                     <span>  
@@ -150,21 +149,21 @@
                     </div>
                     <div class="info-list">
                         <div class="info-content">
-                            <span><img src="{{url('img/contactus/talk.png')}}" alt="talk"></span>
+                            <span><img src="{{url('img/contactus/chat.svg')}}" alt="talk"></span>
                             <div class="info-text">
                                 <h3>Talk to Us</h3>
                                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
                             </div>
                         </div>
                         <div class="info-content">
-                            <span><img src="{{url('img/contactus/team.png')}}" alt="team"></span>
+                            <span><img src="{{url('img/contactus/enquire-now.svg')}}" alt="team"></span>
                             <div class="info-text">
                                 <h3>Enquire Now</h3>
                                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,.</p>
                             </div>
                         </div>
                         <div class="info-content">
-                            <span><img src="{{url('img/contactus/support.png')}}" alt="support"></span>
+                            <span><img src="{{url('img/contactus/chat-support.svg')}}" alt="support"></span>
                             <div class="info-text">
                                 <h3>Talk to Us</h3>
                                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
