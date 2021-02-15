@@ -646,6 +646,40 @@ input::-webkit-inner-spin-button {
     margin-right: 2rem;
   }
 }
+.courses {
+  padding: 3rem 1.5rem;
+}
+.courses .courses-container {
+  display: flex;
+  flex-direction: column;
+}
+.courses .courses-list {
+  display: flex;
+  flex-direction: column;
+}
+.courses .course-name {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.courses .course-name span {
+  display: flex;
+}
+.courses .course-name span img {
+  width: 40px;
+  height: 40px;
+}
+.courses .course-name .name {
+  display: flex;
+}
+.courses .course-name .name h3 {
+  width: 100%;
+  color: #FFFFFF;
+}
+.courses .course-name .name p {
+  width: 50%;
+  color: #FFFFFF;
+}
 .contact-banner {
   flex-direction: column;
   background-color: #0064D8;
