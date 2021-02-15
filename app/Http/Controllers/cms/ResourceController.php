@@ -20,8 +20,8 @@ class ResourceController extends Controller
     
     public function resourceList()
     {
-        $this->authorize('view',  new Resource());
-        $data['resources'] = Resource::paginate(10);   
+        // $this->authorize('view',  new Resource());
+        $data['Resources'] = Resource::paginate(10);   
         return view('cms.resources.resource',$data);
     }
     public function create()
