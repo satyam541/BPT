@@ -167,7 +167,7 @@ class ScheduleController extends ScheduleApi
 
     public function manageCoursePrice()
     {
-      $this->authorize('update', new Schedule());
+      // $this->authorize('update', new Schedule());
       $data['courses'] = Course::with('customSchedulePrice')->get();
       return view('cms.schedule.managePrice',$data);
     }
@@ -215,7 +215,7 @@ class ScheduleController extends ScheduleApi
 
     public function onlinePrices()
     {
-      $this->authorize('create', new Schedule());
+      // $this->authorize('create', new Schedule());
       $data['onlinePrices'] = OnlinePrice::all();
       return view('cms.schedule.onlinePrices',$data);
     }

@@ -217,7 +217,7 @@ Route::post('/purchase/store', ['as' => 'purchaseResponse', 'uses' => 'PurchaseC
 Route::get('/purchase/list',['as'=>'purchaseList', 'uses'=>'PurchaseController@purchaseList']);
 Route::get('/booking/detail/{id}',['as'=>"BookingDetail","uses"=>"PurchaseController@bookingDetail"]);
 Route::get('/purchase',['as'=>'createPurchase', 'uses'=>'PurchaseController@index']);
-// Route::get('/purchase/view', ['as' => 'AdminPurchase', 'uses' => 'PurchaseController@viewDetails']);
+Route::get('/purchase/view', ['as' => 'AdminPurchase', 'uses' => 'PurchaseController@viewDetails']);
 Route::post('/purchase/add', ['as' => 'insertPurchase', 'uses' => 'PurchaseController@addPurchase']);
 Route::post('/purchase/venue', ['as' => 'purchase_fetch_venue', 'uses' => 'PurchaseController@getVenueDetails']);
 Route::post('/purchase/schedule', ['as' => 'purchase_fetch_schedule', 'uses' => 'PurchaseController@getSchedule']);		
