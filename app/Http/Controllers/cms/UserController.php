@@ -265,9 +265,10 @@ class UserController extends Controller
     {
         // $this->authorize('view', new Permission());
         $filter = $request->all();
+        // dd($filter);
         $data['selectedModule']=null;
         $data['selectedAccess']=null;
-        if(!empty($filter)){
+        if(!empty($filter['moduleName']) || !empty($filter['access'])){
         $data['selectedModule']=$filter['moduleName'];
         $data['selectedAccess']=$filter['access'];
         }
