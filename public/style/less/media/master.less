@@ -59,21 +59,25 @@
             height: 3px;
             position: relative;
             visibility: hidden;
-            transform: 1s all;
+            transition: 1s all;
             &::before {
-              content: '';
+              content: none;
               position: absolute;
               height: 3px;
-              width: 4px;
+              width: 15px;
+              border-left: 4px solid @darkblueColor ;
+              border-right: 4px solid @darkblueColor ;
               left: 30px;
-              background-color: @darkblueColor;
             }
           }
           &:hover {
             span{
               width: 100%;
               visibility: visible;
-              transform: 1s all;
+              transition: 1s all;
+              &::before{
+                content: '';
+              }
             }
           }
         }
@@ -268,6 +272,11 @@
           }
           .topic-list{
             width: 40%;
+            a{
+              p{
+                width: 70%;
+              }
+            }
           }
       }
       .search {
