@@ -48,7 +48,7 @@
                     @foreach ($data as $item)
                     <tr>
                     <td>{{$item->title}}</td>
-                    <td>{{$item->created_at}}</td>
+                    <td>{{$item->post_date}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -77,7 +77,13 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Date", searching:false },
+                        { "name": "Actions", "sorting":false, searching:false }
+              ]                    
+            });
         });
     </script>
 @endsection

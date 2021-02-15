@@ -122,10 +122,10 @@ class LocationController extends Controller
         
    public function locationtrashList()
    {
-        $this->authorize('view', new Location());
+        // $this->authorize('view', new Location());
         $data['trashedLocations'] = Location::onlyTrashed()->get();
 
-        return view('cms.trashed.locationtrashedlist',$data);
+        return view('cms.trashed.locationTrashedList',$data);
        
    }
 

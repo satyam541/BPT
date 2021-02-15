@@ -61,13 +61,14 @@ class TopicController extends Controller
 
     public function contentList(Request $request)
     {
-        $this->authorize('view', new Topic());
+        // $this->authorize('view', new Topic());
         $filter                 = $request->all();
         $data['selectedTopic']  = empty($filter['topic'])? NULL : $filter['topic'];
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query                  = TopicContent::query();
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
         $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query->whereHas('topic');
         $result                 = $query->paginate(10);
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
         $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
@@ -406,10 +407,10 @@ class TopicController extends Controller
         
    public function topictrashList()
    {
-        $this->authorize('view', new Topic());
+        // $this->authorize('view', new Topic());
         $data['trashedTopics'] = Topic::onlyTrashed()->get();
     
-        return  view('cms.trashed.topictrashedlist',$data);
+        return  view('cms.trashed.topicTrashedList',$data);
    }
 
    public function restoreTopic($id)

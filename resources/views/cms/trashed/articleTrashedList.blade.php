@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">country</h1>
+          <h1 class="m-0 text-dark">article</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">country</a></li>
+            <li class="breadcrumb-item"><a href="#">article</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,17 +38,21 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Article Name</th>
+                  <th>Type</th>
+                  <th>Date</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($countries as $country)
+                    @foreach ($trashedArticles as $trashedarticle)
                     <tr>
-                    <td>{{$country->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td>{{$trashedarticle->title}}</td>
+                    <td>{{$trashedarticle->type}}</td>
+                    <td>{{$trashedarticle->created_at}}</td>
+                    <td><a href="{{ route('restoreArticle',['id'=>$trashedarticle->id]) }}" class="fa fa-refresh fa-spin"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteArticle',['id'=>$trashedarticle->id])}}" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -56,8 +60,6 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
-
             </div>
             <!-- /.card-body -->
           </div>
@@ -77,21 +79,7 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable({
-              "columns": [
-                        { "name": "Name" },
-                        { "name": "Actions", "sorting":false, searching:false }
-              ]                    
-            });
-
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+            $('#example1').DataTable();
         });
-        
     </script>
 @endsection

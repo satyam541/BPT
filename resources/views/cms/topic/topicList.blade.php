@@ -52,7 +52,7 @@
                     <tr>
                     <td>{{$topic->name}}</td>
                     <td>{{$topic->category->name}}</td>
-                    <td><a href="" class="fa fa-list"></a></td>
+                    <td><a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a></td>
                     <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
                     <td> <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
@@ -84,7 +84,17 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Category" },
+                        { "name": "Content", "sorting":false, searching:false },
+                        { "name": "Bulletpoints", "sorting":false, searching:false  },
+                        { "name": "Whatsincluded", "sorting":false, searching:false  },
+                        { "name": "Actions", "sorting":false, searching:false  }
+              ]                    
+            });
+
             $('#add').hover(function(){
                 $(this).removeClass('btn-success');
                 $(this).addClass('btn-primary');

@@ -28,13 +28,12 @@
       <div class="row">
         <!-- left column -->
         @foreach($popularItems as $type => $items)
-        <div class="col-xs-12 col-md-6">
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <i class="fa fa-list-ul"></i>
-                    <h3 class="box-title">{{ ucfirst($type) }}</h3>
+        <div class="col-xs-6 col-md-6">
+            <div class="card card-primary ">
+                <div class="card-header">
+                    <div class="card-title">{{ ucfirst($type) }}</div>
                 </div>
-                <div class="box-body no-padding">
+                <div class="card-body">
                     
                     <table class="table table-hover sortable" data-module="{{ $type }}">
                             <thead>

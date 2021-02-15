@@ -86,11 +86,11 @@ class AccreditationController extends Controller
        
    public function accreditationtrashList()
    {
-        $this->authorize('view',  new Accreditation());
+        // $this->authorize('view',  new Accreditation());
     
-        $data['trashedAccreditation'] = Accreditation::onlyTrashed()->get();
+        $data['trashedAccreditations'] = Accreditation::onlyTrashed()->get();
  
-        return  view('cms.trashed.accreditationtrashedlist',$data);
+        return  view('cms.trashed.accreditationTrashedList',$data);
        
    }
 
