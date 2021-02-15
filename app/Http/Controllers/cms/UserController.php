@@ -334,9 +334,9 @@ class UserController extends Controller
 
     public function changePassword(ChangePasswordRequest $request)
     {
-         $current_password = \Auth::User()->password; 
-         $currentPassword=  $request->input('currentPassword');
-      
+        $current_password = \Auth::User()->password; 
+        $currentPassword=  $request->input('currentPassword');
+    
       if(\Hash::check($currentPassword, $current_password))
       {         
            $user_id = \Auth::User()->id;                       
@@ -344,7 +344,7 @@ class UserController extends Controller
             $user->password = \Hash::make($request->input('newPassword'));
             $user->save();
             Auth::logout();
-            return redirect()->route('login');
+            return redirect()->route('login')->with('success','Password Changed!');
         }
         else
         {           
