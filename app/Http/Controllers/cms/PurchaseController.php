@@ -175,6 +175,7 @@ class PurchaseController extends Controller
             $emailData['location'] = $orderLineItem->venue;
             $emailData['eventDate'] = $orderLineItem->schedule_date;
             $emailData['currency'] = $emailRequest->currency;
+            dd($emailData);
             return view('cms.purchase.purchaseDetail',$emailData);
     }
 
