@@ -371,73 +371,73 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('scheduleList')}}" class="nav-link">
+                <a href="{{Route('countryTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Country List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('getSchedule')}}" class="nav-link">
+                <a href="{{Route('venueTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Venue List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('createSchedule')}}" class="nav-link">
+                <a href="{{Route('locationTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Location List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('manualScheduleList')}}" class="nav-link">
+                <a href="{{Route('categoryTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Category List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('manageCoursePrice')}}" class="nav-link">
+                <a href="{{Route('topicTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Topic List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('courseTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Course List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('onlineCourseTrash')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Online Course List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('resourceTrash')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Resource List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('tagTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Tag List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('articleTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Article List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('testimonialTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Testimonial List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('accreditationTrashList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Accreditation List</p>
                 </a>
