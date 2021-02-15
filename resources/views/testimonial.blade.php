@@ -124,4 +124,49 @@
     </div>
 </section>
 <!-- End Customers Section -->
+
+<!-- Start Services Section -->
+<section class="flex-container services">
+    <div class="container">
+        <div class="services-container">
+            <span class="phone">
+                <img src="{{url('img/testimonial/call.svg')}}" alt="call">
+            </span>
+            <div class="heading">
+                <h2>Do You Still Have a Question <span>Regarding Our Services?</span></h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+            </div>
+            <div class="buttons">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Contact Us">
+                        <img src="{{url('img/testimonial/call-white.svg')}}" alt="call">Contact Us
+                    </a>
+                </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->
+
+<!-- Start Testimonial Section -->
+<section class="flex-container testimonial">
+    <div class="container">
+        <div class="testimonial-container">
+            <div class="heading center-heading white-heading">
+                <h2>People Tell it the Best</h2>
+                <p>Client Quotes</p>
+            </div>
+            <div class="testimonial-list">
+                <div class="testimonial-info">
+                    <span>
+                        <img src="{{url('img/testimonial/client.svg')}}" alt="client">
+                    </span>
+                    <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    <h3>Christan Perry</h3>
+                    <h4>Web Developer</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Testimonial Section -->
+
 @endsection

@@ -15,32 +15,149 @@
     // End Banner section //
 
     // Start Customers Section
-.customers {
-    padding: @sectionPadding-md;
-    .customers-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .customers-content {
-        width: 46%;
-        .info {
-            transform: translateX(-20px);
+    .customers {
+        padding: @sectionPadding-md;
+        .customers-container {
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-image: url(../img/testimonial/box.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 70px;
+                width: 80px;
+            }
+        }
+        p {
+            width: 58%;
+        }
+        .customers-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            &::before,
+            &::after {
+                content: none;
+                position: absolute;
+                z-index: -1;
+                background-image: url(../img/testimonial/curve.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &::before {
+                height: 178px;
+                width: 177px;
+                top: 291px;
+                right: -42px;
+            }
+            &::after {
+                height: 136px;
+                width: 124px;
+                bottom: 161px;
+                left: -129px;
+                transform: rotate(45deg);
+            }
+        }
+        .customers-content {
+            width: 46%;
             position: relative;
             z-index: 1;
             &::after {
                 content: '';
                 z-index: -1;
                 position: absolute;
-                bottom: -35px;
-                left: 0px;
-                width: 0;
-                height: 0;
-                border-top: 35px solid red;
-                border-left: 35px solid transparent; 
+                bottom: 16px;
+                left: -35px;
+                width: 45px;
+                height: 25px;
+                transform: rotate(90deg);
+                background-image: url(../img/testimonial/triangle.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .info {
+                transform: translate(-20px, -5px);
+                box-shadow:  9px 10px 10px rgba(0, 0, 0, 0.098)
             }
         }
     }
+    // End Customers Section
+
+    // Start Services Section
+    .services {
+        padding: @sectionPadding-md;
+        .phone {
+            display: none;
+        }
+    }
+    // End Services Section
 }
-// End Customers Section
+
+@media @size-lg{
+
+    // Start Customers Section
+    .customers {
+        .customers-content {
+            width: 30%;
+        }
+    }
+    // End Customers Section
+
+    // Start Services Section
+    .services {
+        .services-container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .phone {
+            display: flex;
+            margin-bottom: 0;
+        }
+        .heading {
+            width: 66%;
+            align-items: flex-start;
+            h2, p {
+                text-align: left;
+            }
+        }
+        .buttons {
+            width: 16%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 0;
+        }
+    }
+    // End Services Section
+}
+
+@media @size-xl{
+
+    // Start Customers Section
+    .customers {
+        padding: @sectionPadding-xl;
+        p {
+            width: 43%;
+        }
+        .customers-list {
+            &::before,
+            &::after {
+                content: '';
+            }
+
+        }
+    }
+    // End Customers Section
+
+    // Start Services Section
+    .services {
+        padding: @sectionPadding-xl;
+    }
+    // End Services Section
 }
