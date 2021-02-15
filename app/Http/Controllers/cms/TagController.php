@@ -44,7 +44,7 @@ class TagController extends Controller
 
    public function tagtrashList()
    {
-    $this->authorize('view', new Tag());
+    // $this->authorize('view', new Tag());
     $data['trashedTags'] = Tag::onlyTrashed()->get();
  
 
