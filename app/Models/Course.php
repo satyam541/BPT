@@ -110,7 +110,7 @@ class Course extends Model
         if ($this->hasLogo()) {
             return $imageLink;
         } else {
-            return url('img/default/online-course.svg');
+            return url('adminlte/dist/img/online-course.svg');
         }  
     }
 

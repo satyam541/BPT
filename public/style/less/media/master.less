@@ -207,6 +207,20 @@
     } 
     //End banner //
 
+    //Start footer
+    .footer{
+      padding: @sectionPadding-md;
+      .footer-content{
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      .content{
+          width: 48%;
+      }
+  }
+    //End footer
+
 }
 
 @media @size-lg {
@@ -269,6 +283,33 @@
       }
     } 
     //End banner //
+
+    //Start footer
+    .footer{
+      background: linear-gradient(0deg, @darkblueColor 80%, @whiteColor 48%);
+      padding-top: 0;
+    
+      .content{
+          width: 25%;
+          padding-right: 1.2rem;
+          margin-bottom: 0;
+          &:last-child{
+              padding-right: 0;
+          }
+      }
+      .footer-content{
+          background-image: url('../../../img/master/footer-bg.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: top;
+          background-color: transparent;
+          padding: 0rem 2rem;
+          padding-top: 5rem;
+          padding-bottom: 2rem;
+      }
+  }
+    //End footer
+
 }
 
 
@@ -308,4 +349,48 @@
       }
       }
     //End navbar//
+      
+    //Start footer
+    .footer{
+      padding: 0;
+      .footer-content{
+          padding-top: 6rem;
+          padding-bottom: 3rem;
+
+      }
+      .links,.blog{
+          width: 20%;
+      }
+      .contact-us{
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 30%;
+          &::before,&::after{
+              content: '';
+              background-image: url('../../../img/master/footer-circle.png');
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              position: absolute;
+              
+          }
+          &::after{
+              background-image: url('../../../img/master/footer-circle-outer.png');
+          }
+          h2{
+              font-size: 32px;
+          }
+          ul{
+              width: 80%;
+              margin: 0 auto;
+          }
+      }
+  }
+    //End footer
+
 }

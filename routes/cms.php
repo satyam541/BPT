@@ -214,6 +214,7 @@ Route::any('/popular/sort',"PopularController@sort")->name("sortPopular");
 
 
 Route::post('/purchase/store', ['as' => 'purchaseResponse', 'uses' => 'PurchaseController@storeDetails']);
+Route::get('/purchase/list',['as'=>'purchaseList', 'uses'=>'PurchaseController@purchaseList']);
 Route::get('/booking/detail/{id}',['as'=>"BookingDetail","uses"=>"PurchaseController@bookingDetail"]);
 Route::get('/purchase',['as'=>'createPurchase', 'uses'=>'PurchaseController@index']);
 // Route::get('/purchase/view', ['as' => 'AdminPurchase', 'uses' => 'PurchaseController@viewDetails']);

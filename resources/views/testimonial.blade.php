@@ -19,19 +19,94 @@
 </section>
 <!-- End Banner Section -->
 
-<!-- Start Experience Section -->
-<section class="flex-container experience">
+<!-- Start Customers Section -->
+<section class="flex-container customers">
     <div class="container">
-        <div class="experience-container">
+        <div class="customers-container">
             <div class="heading">
                 <h2>Customer <span>Experience</span></h2>
                 <p>Client knows best</p>
             </div>
             <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
-            <div class="experience-list">
-                <div class="experience-content">
+            <div class="customers-list">
+                <div class="customers-content">
                     <div class="content">
-                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="experience-img">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <img src="{{url('img/testimonial/customer.svg')}}" alt="customer">
+                        </span>
+                        <div class="designation">
+                            <h3>Harshul Hisham</h3>
+                            <p>WEB DESIGNER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-content">
+                    <div class="content">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <img src="{{url('img/testimonial/customer.svg')}}" alt="customer">
+                        </span>
+                        <div class="designation">
+                            <h3>Harshul Hisham</h3>
+                            <p>WEB DESIGNER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-content">
+                    <div class="content">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <img src="{{url('img/testimonial/customer.svg')}}" alt="customer">
+                        </span>
+                        <div class="designation">
+                            <h3>Harshul Hisham</h3>
+                            <p>WEB DESIGNER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-content">
+                    <div class="content">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <img src="{{url('img/testimonial/customer.svg')}}" alt="customer">
+                        </span>
+                        <div class="designation">
+                            <h3>Harshul Hisham</h3>
+                            <p>WEB DESIGNER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-content">
+                    <div class="content">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    </div>
+                    <div class="info">
+                        <span>
+                            <img src="{{url('img/testimonial/customer.svg')}}" alt="customer">
+                        </span>
+                        <div class="designation">
+                            <h3>Harshul Hisham</h3>
+                            <p>WEB DESIGNER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-content">
+                    <div class="content">
+                        <img src="{{url('img/testimonial/quotes.png')}}" alt="quotes" class="customers-img">
                         <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
                     </div>
                     <div class="info">
@@ -48,5 +123,5 @@
         </div>
     </div>
 </section>
-<!-- End Experience Section -->
+<!-- End Customers Section -->
 @endsection

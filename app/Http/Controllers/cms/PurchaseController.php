@@ -135,7 +135,11 @@ class PurchaseController extends Controller
             return Redirect()->back();
             
     }
-    
+    public function purchaseList(){
+        $purchases=Order::whereNotNull('gateway_order_id')->with('customer')->get();
+        return view('cms.purchase.purchases',compact('purchases'));
+        
+    }
     public function bookingDetail($gatewayorderId)
     {
         $order = Order::where('gateway_order_id',$gatewayorderId)->first();
