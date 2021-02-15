@@ -44,6 +44,8 @@ class User extends Authenticatable
     ];
 
     private $userPermissions;
+    private $permissionsCache; // related user permissions cache
+    private $rolesCache;  
 
     private $userRoles;
 
@@ -94,70 +96,68 @@ class User extends Authenticatable
      * use this function to find user access
      * @return boolean
      */
-    public function hasPermission($moduleName,$access = null)
+    public function hasPermission($moduleName, $access = null)
     {
         // do not check for permission if the user is admin
-        if($this->hasRole('admin'))
-        {
+        if ($this->hasRole('admin')) {
             return TRUE;
         }
+        if (empty(Module::$cache)) {
+            Module::$cache = Module::all()->map(function ($item) {
+                $item->name = strtolower($item->name);
+                return $item;
+            });
+        }
+        $module = Module::$cache->where('name', strtolower($moduleName))->first();
+        $module_id = empty($module) ? null : $module->id;
 
-        $module = Module::findByName($moduleName);
         $permissions = $this->permissions();
-        if(empty($module) || $permissions->isEmpty())
-        {
+        if (empty($module_id) || $permissions->isEmpty()) {
             return FALSE;
         }
-        if(empty($access))
-        {
-            $result = $permissions->where('module_id',$module->id);
+        $result = $permissions->where('module_id', $module_id);
+        if (!empty($access)) {
+            $result = $result->where('access', strtolower($access));
         }
-        else
-        {
-            $result = $permissions->where('module_id',$module->id)->where('access',$access);
-        }
-        
-        if(!$result->isEmpty())
-        {
+
+        if (!$result->isEmpty()) {
             return TRUE;
         }
-        
+
         return FALSE;
     }
-
     /** similar to hasPermission method
      *  works on role instead of access.
      */
     public function hasRole($roleName)
     {
-        foreach($this->roles as $role)
-        {
-            if(strcasecmp($role->name,$roleName) == 0)
-            return TRUE;
+        //mysql (utf8mb4_unicode_ci) is case insensitive
+        if (empty($this->rolesCache)) {
+            $this->rolesCache = $this->roles->map(function ($item, $key) {
+                $item->name = strtolower($item->name);
+                return $item;
+            });
         }
-        return FALSE;
+        $roleName = strtolower($roleName);
+        return $this->rolesCache->where("name", $roleName)->isNotEmpty();
     }
 
     /** retrieve all the access given to the users
      * @return array of access
      */
+    
     private function permissions()
-    {// return array of all actions
-
+    {
         // using actions method only once per page
         //testing required here .............................................................
-        if(!empty($this->userPermissions))
-        {
-            return $this->userPermissions;
+        if (empty($this->permissionsCache)) {
+            $this->permissionsCache = $this->roles->load("permissions")->pluck("permissions")
+                ->collapse()->map(function ($item) {
+                    $item->access = strtolower($item->access);
+                    return $item;
+                });
         }
-        $result = new Collection();
-        $testDuplicate = array();
-        $modules = Module::whereNotNull('id')->pluck('name', 'id')->toArray();
-        foreach($this->roles as $role)
-        {
-            $result = $result->merge($role->permissions);
-        }
-        return $result;
+        return $this->permissionsCache;
     }
 
 }

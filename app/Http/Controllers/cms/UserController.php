@@ -143,13 +143,13 @@ class UserController extends Controller
 }
     public function createRole()
     {
-        $this->authorize('create', new Role());
+        // $this->authorize('create', new Role());
         return view('cms.manageUser.insertRole');
     }
 
     public function insertRole(RoleRequest $request)
     {
-        $this->authorize('create', new Role());
+        // $this->authorize('create', new Role());
         $inputs = $request->all();
         
         $roleName = $request->input('name');
@@ -165,7 +165,7 @@ class UserController extends Controller
 
     public function editRole(Role $role)
     {
-        $this->authorize('update', $role);
+        // $this->authorize('update', $role);
         $data['role']    = $role;
         $data['permissions']   = Permission::all()->load('module')->groupBy('module_name');
         // dd($data);
@@ -175,7 +175,7 @@ class UserController extends Controller
 
     public function updateRole(RoleRequest $request ,Role $role)
     {
-        $this->authorize('update',$role);
+        // $this->authorize('update',$role);
         $inputs = $request->all();
         $role->name = $inputs['name'];
         $role->description = $inputs['description'];

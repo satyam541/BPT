@@ -1,0 +1,273 @@
+@media @size-md {
+  
+      // Start banner section//
+        .contact-banner {
+        padding: @sectionPadding-md;
+        padding-top: 1rem;
+      .banner-container {
+        width: 100%;
+        padding: 0;
+    
+        .banner-content {
+          padding-top: 2rem;
+          width: 100%
+        }
+      }
+      }
+      //End bannner section //
+  
+      // Start Footer Section
+      .contact{
+        padding: @sectionPadding-md;
+        padding-bottom: 1rem;
+        .contact-container{
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          .form{
+            width: 50%;
+          }
+    
+          .contact-info{
+            width: 50%;
+            margin-top: 0;
+            .contact-list{
+              width: 90%;
+              align-self: center;
+            }
+          }
+        }
+      }
+      // End Footer Section
+
+      //Start information section
+      .information{
+        padding: @sectionPadding-md;
+        background-image: linear-gradient(@darkblueColor 45%,@whiteColor 45%);
+        .heading{
+            &::before{
+                background-color: @whiteColor;
+            }
+            h2{
+                color: @whiteColor;
+            }
+        }
+        .info-list{
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .info-content{
+            width: 32%;
+            margin-top: 0!important;
+        }
+        }
+      //End information section  
+
+    // Start FAQ Section
+    .faq{
+        padding: @sectionPadding-md;
+        .faq-container{
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        .faq-content{
+            width: 50%;
+        }
+        .experience{
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 0;
+            width: 50%;
+            background-image: url(../img/contactus/dotted-map.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .experience-info{
+            align-self: center;
+            background-image: url(../img/contactus/experience-bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 310px;
+            height: 284px;
+            align-items: center;
+            justify-content: center;
+            h2{
+                color: @whiteColor;
+                margin-right: 2rem;
+                width: 45%;
+            }
+        }
+        .platforms{
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 0;
+            transform: translate(-20px, 0px)
+        }
+        a{
+            &:first-child{
+                transform: translate(-66px);
+            }
+            &:last-child{
+                transform: translate(-66px);
+            }
+        }
+    }
+    // End FAQ Section
+  
+    }
+  
+  @media @size-lg {
+  
+       //Start banner section//
+       .contact-banner {
+        background-color: transparent;
+        background-image:url(../img/contactus/banner-bg.png);
+        background-size: 100% 100%;
+        padding: 2rem;
+        padding-top: 1rem;
+        .banner-container {
+          flex-direction: row;
+          justify-content: space-between;
+          padding-top: 3rem;
+          align-items: center;
+      
+          .banner-content {
+            width: 45%;
+            padding-top: 0;
+          }
+        }
+        }
+        //End banner section//  
+  
+        // Start Footer Section
+        .contact{
+          .contact-container{
+          .form{
+            width: 60%;
+            align-self: flex-start;
+            padding: 2rem;
+            .form-input{
+              flex-wrap: wrap;
+              flex-direction: row;
+              justify-content: space-between;
+              .input-container{
+                width: 48%;
+                &:last-child{
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .contact-info{
+              width: 40%;
+              background-image: url(../img/contactus/phone-bg.png);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              justify-content: flex-start;
+              align-items: flex-start;
+              padding: 3.5rem;
+              padding-right: 5rem;
+              .contact-list{
+                width: 100%;
+                align-self: center;
+                .item{
+                a{
+                  word-break: keep-all;
+                }
+                }
+              }
+          }
+          }
+          .social{
+            margin-bottom: 3rem;
+            .media-list{
+              width: 90%;
+              align-self: center;
+            }
+          }
+          }
+        // End Footer Section
+
+        //Start information section
+        .information{
+        .info-list{
+            justify-content: space-around;
+        }
+        .info-content{
+            width: 30%;
+        }
+        .info-text{
+            padding: 2rem;
+        }
+        }
+        //End information section
+
+        // Start FAQ Section
+        .faq{
+            .faq-content{
+                width: 58%;
+            }
+            .experience{
+                width: 45%;
+                height: 350px;
+            }
+            .experience-info{
+                width: 380px;
+                height: 335px;
+                h2{
+                    font-size: 32px;
+                }
+            }
+            }
+        // End FAQ Section
+    }
+  
+  
+  @media @size-xl {
+  
+      //Start banner section//
+      .contact-banner {
+        padding: @sectionPadding-xl;
+        padding-top: 1rem;
+      }
+      //End banner section//
+  
+      // Start Footer Section
+      .contact{
+        padding: @sectionPadding-xl;
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+        .contact-container{
+          position: relative;
+          align-items: center;
+          .contact-info{
+            width: 33%;
+            position: absolute;
+            left: 0;
+          }
+          .form{
+            width: 75%;
+            padding-left: 5rem;
+            align-self: center;
+          }
+        }
+      }
+      // End Footer Section
+
+      //Start information section
+      .information{
+        .info-content{
+            width: 28%;
+        }
+        }
+        //End information section
+
+        // Start FAQ Section
+        .faq{
+            padding: @sectionPadding-xl;
+            .experience{
+                width: 36%;
+            }
+            }
+        // End FAQ Section
+    }

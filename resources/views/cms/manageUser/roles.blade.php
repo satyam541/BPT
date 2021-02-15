@@ -49,7 +49,7 @@
                     <tr>
                     <td>{{$role->name}}</td>
                     <td>{{$role->description}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
+                    <td><a href="{{ route('editRole',['role'=>$role->id]) }}" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>

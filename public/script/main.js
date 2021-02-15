@@ -69,4 +69,13 @@
         $(this).addClass("btn-active").siblings().removeClass("btn-active");
     });
     // End aboutus Testimonial//
+
+    // Start FAQ
+   $(".faq-item").click(function () {
+    $(this).toggleClass("active");
+    $(this).find('.ans').slideToggle();
+    $(this).siblings(".faq-item").removeClass("active").find('.ans').slideUp();
+});
+
+// End FAQ
     
