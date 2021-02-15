@@ -46,6 +46,7 @@ class UserController extends Controller
         $data['selectedName']=null;
         $data['selectedEmail']=null;
         $data['selectedRole']=null;
+        $data['active']=null;
         if(!empty($filter['name'])){
             $data['selectedName']=$filter['name'];
         }
@@ -55,22 +56,21 @@ class UserController extends Controller
         if(!empty($filter['roleName'])){
             $data['selectedRole']=$filter['roleName'];
         }
+        if(isset($filter['active'])){
+            $data['active']=1;
+        }
+            $query = User::query();
         if(!empty($filter))
         {
-            $query = User::query();
-            $query = $query->select("user.*");
-            $query = $query->leftJoin('role_user','user_id','role_id');
-            $query = $query->leftJoin('role','role.id','role_user.role_id');
-            $query = empty($filter['name'])? $query : $query->where('user.name',$filter['name']);
-            $query = empty($filter['email'])? $query : $query->where('user.email',$filter['email']);
-            $query = empty($filter['roleName'])? $query : $query->where('role.name',$filter['roleName']);
-            $query = empty($filter['active'])? $query : $query->where('user.active',1);
-            $users = $query->paginate(10);
-            //dd(DB::getQueryLog());
+
+            $query = empty($filter['name'])? $query : $query->where('name',$filter['name']);
+            $query = empty($filter['email'])? $query : $query->where('email',$filter['email']);
+            $query = empty($filter['active'])? $query : $query->where('active',1);
+            $query = empty($filter['roleName'])? $query : $query->whereHas('roles', function($q)use($filter){
+                $q->where('name',$filter['roleName']);
+            });
         }
-        else{
-            $users = User::paginate(10);
-        }
+        $users = $query->paginate(10);
         $list['name'] = User::all()->pluck('name','name')->toArray();
         $list['email'] = User::all()->pluck('email','email')->toArray();
         $list['role'] = Role::All()->pluck('name','name')->toArray();

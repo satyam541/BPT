@@ -46,7 +46,7 @@
                         <div class="col-sm-offset-2 col-sm-4">
                             <div class="checkbox">
                                 <label>
-                                <input type="checkbox" name="active"> Active only
+                                <input type="checkbox" name="active" value="{{$active}}"> Active only
                                 </label>
                             </div>
                         </div>
