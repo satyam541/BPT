@@ -17,20 +17,42 @@ class Role extends Model
         return $this->belongsToMany('App\Models\Permission','permission_role','role_id','permission_id');
     }
 
-    public function hasPermission($moduleName,$access)
+    public function hasPermission($moduleName, $access = null)
     {
-        //$modules = Module::pluck('name', 'id')->toArray();
-        $module = Module::findByName($moduleName);
-        foreach($this->permissions as $permission)
+        
+        if(empty(Module::$cache))
         {
-            //if($item->module() == $module && $item->action == $action)
-            if  (
-                (strcasecmp($permission->module_id,$module->id) == 0) && 
-                (strcasecmp($permission->access,$access) == 0)
-                )
-                return TRUE;
+            Module::$cache = Module::all()->map(function($item,$key){
+                $item->name = strtolower($item->name);
+                return $item;
+            });
         }
-        return FALSE;
+        
+        $module = Module::$cache->where('name', strtolower($moduleName))->first();
+        $module_id = empty($module)? null : $module->id;
+
+        // $module_id = Module::where('name', $moduleName)->value('id');
+
+        $permissions = $this->permissions->map(function ($item, $key) {
+            $item->access = strtolower($item->access);
+            return $item;
+        });;
+
+        if(empty($module_id) || $permissions->isEmpty())
+        {
+            return FALSE;
+        }
+        $result = $permissions->where('module_id', $module_id);
+        if(!empty($access))
+        {
+            $result = $result->where('access', strtolower($access));
+        }
+        
+        if($result->isEmpty())
+        {
+            return False;
+        }
+        return true;
     }
 
     public function users()
