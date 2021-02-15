@@ -899,6 +899,7 @@ input::-webkit-inner-spin-button {
 }
 .courses .course-name .name p {
   width: 50%;
+  color: #C0C0C0;
 }
 .courses .course-name a {
   display: none;
@@ -917,15 +918,35 @@ input::-webkit-inner-spin-button {
   width: 25px;
   height: 25px;
 }
-.courses .course-name:hover {
-  background: linear-gradient(#0064D8, #1C2848);
-}
 .courses .course-name:hover .name h3,
 .courses .course-name:hover .name p {
   color: #FFFFFF;
 }
 .courses .course-name:hover a {
   display: flex;
+}
+.effective {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.effective .effective-container {
+  display: flex;
+  flex-direction: column;
+}
+.effective .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.effective .content img {
+  width: 60px;
+  height: 60px;
+}
+.effective .content p {
+  color: #FFFFFF;
+  margin-top: 1rem;
+  font-size: 16px;
 }
 @media (min-width : 768px) {
   .courses {
@@ -942,6 +963,33 @@ input::-webkit-inner-spin-button {
   }
   .courses .course-name span {
     display: flex;
+  }
+  .effective {
+    padding: 3rem 2rem;
+    background: transparent;
+  }
+  .effective .effective-container {
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(#0064D8, #1C2848);
+  }
+  .effective .content {
+    width: 70%;
+    flex-direction: row;
+  }
+  .effective .buttons {
+    width: 30%;
+    justify-content: flex-end;
+  }
+}
+@media (min-width : 1024px) {
+  .courses .course-name {
+    width: 31%;
+  }
+}
+@media (min-width : 1366px) {
+  .courses {
+    padding: 4rem 0rem;
   }
 }
 .contact-banner {

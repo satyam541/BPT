@@ -174,7 +174,7 @@
             <div class="courses-list">
                 <div class="course-name">
                     <span>
-                        <img src="{{url('img/home/topic-icon.svg')}}" alt="topic-icon">
+                        <img src="{{url('img/home/management.svg')}}" alt="management">
                     </span>
                     <div class="name">
                         <h3>
@@ -191,7 +191,176 @@
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
                     </a>
                 </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/analysis.svg')}}" alt="analysis">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            Business Analysis
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/improvement.svg')}}" alt="improvement">
+                    </span>
+                    <div class="name">
+                        <h3>
+                        Business Improvement
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/it-service.svg')}}" alt="it-service">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            IT Service Management
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/it-security.svg')}}" alt="it-security">
+                    </span>
+                    <div class="name">
+                        <h3>
+                        IT Security
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/protection.svg')}}" alt="protection">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            Data Protection
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/applications.svg')}}" alt="applications">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            Office Applications
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/skills.svg')}}" alt="skills">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            Business Skills
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
+                <div class="course-name">
+                    <span>
+                        <img src="{{url('img/home/database.svg')}}" alt="database">
+                    </span>
+                    <div class="name">
+                        <h3>
+                            Programming & Database
+                        </h3>
+                        <p>
+                            5 Topics
+                        </p>
+                        <p>
+                            10 Courses
+                        </p>
+                    </div>
+                    <a>
+                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                    </a>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="flex-container effective">
+    <div class="container">
+        <div class="effective-container">
+            <div class="content">
+                <img src="{{url('img/home/call-us.svg')}}" alt="call-us">
+                <p>Call us for Professional, flexible and cost-effective Courses</p>
+            </div>
+            <div class="buttons">
+                <a class="btn-blue">
+                    <img src="http://bpt.local/img/master/quote.svg" alt="quote">
+                    Get a Quote
+                </a>
+            </div>
+
         </div>
     </div>
 </section>

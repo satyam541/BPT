@@ -9,7 +9,7 @@
       <stop offset="1" stop-color="#1c2848"/>
     </linearGradient>
   </defs>
-  <g id="Topic-icon" transform="translate(-400.951 -360.665)">
+  <g id="management" transform="translate(-400.951 -360.665)">
     <path id="Path_28390" data-name="Path 28390" d="M40.356,0l22.16,48.52S50.138,57.876,40.574,61.376,24.26,62.516,24.26,62.516L0,0Z" transform="matrix(0.998, 0.07, -0.07, 0.998, 415.97, 371.734)" opacity="0.1" fill="url(#linear-gradient)"/>
     <g id="Group_80" data-name="Group 80" transform="translate(462.338 380.962)">
       <path id="Polygon_1" data-name="Polygon 1" d="M7.11,1.592a1,1,0,0,1,1.752,0L10.682,4.9a1,1,0,0,0,.394.394L14.381,7.11a1,1,0,0,1,0,1.752l-3.305,1.819a1,1,0,0,0-.394.394L8.862,14.381a1,1,0,0,1-1.752,0L5.291,11.076a1,1,0,0,0-.394-.394L1.592,8.862a1,1,0,0,1,0-1.752L4.9,5.291A1,1,0,0,0,5.291,4.9Z" fill="#ffd73b"/>
