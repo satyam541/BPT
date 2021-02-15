@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">country</h1>
+          <h1 class="m-0 text-dark">Dashboard</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">country</a></li>
+            <li class="breadcrumb-item"><a href="#">Website Detail List</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,15 +38,24 @@
               <table id="example1">
                 <thead>
                 <tr>
+                  <th>Country</th>
                   <th>Name</th>
+                  <th>Contact_Number</th>
+                  <th>Contact_Email</th>
+                  <th>Address</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($countries as $country)
+                    @foreach ($websitedetails as $websitedetail)
                     <tr>
-                    <td>{{$country->name}}</td>
+                        <td>{{$websitedetail->country->name}}</td>
+                        <td>{{$websitedetail->name}}</td>
+                        <td>{{$websitedetail->contact_number}}</td>
+                         
+                        <td>{{$websitedetail->contact_email}}</td>
+                        <td>{{$websitedetail->address}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -56,8 +65,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
-
+              <a id="add" href="{{route('createwebsiteDetail')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -86,6 +94,5 @@
                 $(this).addClass('btn-success');
             });
         });
-        
     </script>
 @endsection

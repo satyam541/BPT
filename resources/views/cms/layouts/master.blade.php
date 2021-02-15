@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
@@ -357,6 +358,89 @@
                 <a href="{{Route('socialmediaList')}}" class="nav-link">
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Social Media List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-trash" style="color: red"></i>
+              <p>
+                Trash
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('countryTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Country List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('venueTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Venue List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('locationTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Location List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('categoryTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Category List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('topicTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Topic List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('courseTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('onlineCourseTrash')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-primary"></i>
+                  <p>Online Course List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('resourceTrash')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Resource List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('tagTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Tag List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('articleTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Article List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('testimonialTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-success"></i>
+                  <p>Testimonial List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('accreditationTrashList')}}" class="nav-link">
+                  <i class="nav-icon far fa-circle text-danger"></i>
+                  <p>Accreditation List</p>
                 </a>
               </li>
             </ul>

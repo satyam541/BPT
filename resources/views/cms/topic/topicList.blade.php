@@ -40,6 +40,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Category</th>
+                  <th>Content</th>
                   <th>Bulletpoints</th>
                   <th>Whatsincluded</th>
                   <th>Actions</th>
@@ -51,6 +52,7 @@
                     <tr>
                     <td>{{$topic->name}}</td>
                     <td>{{$topic->category->name}}</td>
+                    <td><a href="" class="fa fa-list"></a></td>
                     <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
                     <td> <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="" class="fa fa-edit"></a>
@@ -62,6 +64,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createTopic')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -82,6 +85,13 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
+            $('#add').hover(function(){
+                $(this).removeClass('btn-success');
+                $(this).addClass('btn-primary');
+            },function(){
+                $(this).removeClass('btn-primary');
+                $(this).addClass('btn-success');
+            });
         });
     </script>
 @endsection
