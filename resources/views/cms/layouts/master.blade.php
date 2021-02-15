@@ -454,25 +454,25 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('enquiryList')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
               <p class="text">Enquiries</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('orderList')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-success"></i>
               <p class="text">Order List</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('createPurchase')}}" class="nav-link">
               <i class="nav-icon far fa-circle text-primary"></i>
               <p class="text">Manual Purchase</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('resourcesList')}}" class="nav-link">
               <i class="nav-icon far fa-circle"></i>
               <p class="text">Resources</p>
             </a>
