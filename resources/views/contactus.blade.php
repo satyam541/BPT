@@ -124,16 +124,16 @@
                                         <p>Reflex, Cain Road, Bracknell, Berkshire RG12 1HL, United Kingdom</p>
                                     </div>
                             </div>
+                        </div>
                             <div class="social">
                                 <p>Sign Up With Social Platform</p>
                                 <div class="media-list">
-                                    <span><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></span>
-                                    <span><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></span>
-                                    <span><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></span>
-                                    <span><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></span>
+                                    <a><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
+                                    <a><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
+                                    <a><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
+                                    <a><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

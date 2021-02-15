@@ -39,10 +39,10 @@
               <!-- form start -->
               {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
-                    
+                  {{-- {{dd($course->name)}} --}}
                   <div class="form-group">
                     {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list,null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">

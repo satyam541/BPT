@@ -486,3 +486,163 @@
     }
     // End banner //
 
+    //Start footer
+
+    .footer{
+        background-color: @darkblueColor;
+        padding: @sectionPadding;
+        .polygon-img{
+            width: 18px;
+            height: 18px;
+        }
+        .terms{
+            text-align: center;
+            padding-top: 1rem;
+            padding-bottom: 0;
+            color: @whiteColor;
+        }
+        h2{
+            color: @whiteColor;
+        }
+        .heading{
+            margin-bottom: 2rem;
+            &::before{
+                bottom: -10px;
+                background-image: url('../../img/master/white-line.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-color: transparent;
+                top: initial;
+            }
+        }
+        .footer-main{
+           
+            .date{
+                font-size: 10px;
+                padding: 0;
+            }
+           
+        }
+        .footer-content{
+            padding:1rem;
+            background-color: @lightblueColor;
+            display: flex;
+            flex-direction: column;
+            p{
+                color:@whiteColor;
+                font-size: 14px;
+                padding: 0.5rem 0;
+            }
+        }
+        .content{
+            margin-bottom: 2rem;
+            img{
+    
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+            
+        }
+        .social-media{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:45px;
+                height:45px;
+                border-radius: 50%;
+                background-color: @whiteColor;
+                margin-right: .5rem;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:nth-child(2){
+                    border: 2px solid #003C93;
+                }
+                &:nth-child(3){
+                    border: 2px solid #0097D8;
+                }
+                &:nth-child(4){
+                    border: 2px solid #FF1B1B;
+                }
+                &:nth-child(5){
+                    border: 2px solid #1856FF;
+                }
+            }
+            img{
+                width: 20px;
+                height: 20px;
+            }
+            p{
+                font-weight: 700;
+                width: 100%;
+            }
+        }
+        .links{
+                li{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: -8px;
+                        width: 100%;
+                        border-bottom: 1px dashed @whiteColor;  
+                    }
+                   
+                }
+        }
+        ul{
+            li{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-bottom: 1rem;
+                img{
+                    width: 8px;
+                    margin-right: 0.5rem;
+                }
+                span{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 1.8rem;
+                    img{
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                a{
+                    color:@whiteColor;
+                    font-size: 14px;
+                  
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .logo-image{
+            width:205px;
+        }
+        .contact-us{
+            h2{
+                font-size: 26px;
+                margin-bottom: 1rem;
+            }
+            img{
+                width: 15px;
+                height: 15px;
+            }
+            p{
+                width: 88%;
+                padding: 0;
+            }
+        }
+       
+    }
+
+    //End footer
+

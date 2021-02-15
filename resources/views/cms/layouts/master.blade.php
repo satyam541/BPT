@@ -144,11 +144,42 @@
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Permission</p>
                 </a>
+              </li>
+              
             </ul>
+            
           </li>
+
          
           <li class="nav-header">Resources</li>
+
           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Unlinked Data
+                <i class="fas fa-angle-left right"></i>
+                {{-- <span class="badge badge-info right">6</span> --}}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('unlinkTopic')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>Topics</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('unlinkCourse')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>Courses</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+           
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -513,7 +544,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- datepicker -->
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{ url('cms/common.js?2')}}"></script>
+<script src="{{ url('cms/common.js')}}"></script>
 <!-- Summernote -->
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
