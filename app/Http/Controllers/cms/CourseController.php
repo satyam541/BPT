@@ -311,9 +311,9 @@ class CourseController extends Controller
     } 
    public function coursetrashList()
    {
-    $this->authorize('view', new Course());
+    // $this->authorize('view', new Course());
     $data['trashedCourses'] = Course::onlyTrashed()->get();
-    return  view('cms.trashed.coursetrashedlist',$data);
+    return  view('cms.trashed.courseTrashedList',$data);
        
    }
 

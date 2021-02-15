@@ -137,14 +137,14 @@ class Category extends Model
             $this->popular->delete();
         }
         $this->Bulletpoint()->delete();
-        $this->whatIncludes()->delete();
+        // $this->whatIncludes()->delete();
         return parent::delete();
     }
 
     public function restore()
     {
         $this->Bulletpoint()->restore();
-        $this->whatIncludes()->restore();
+        // $this->whatIncludes()->restore();
         return parent::restore();
     }
 

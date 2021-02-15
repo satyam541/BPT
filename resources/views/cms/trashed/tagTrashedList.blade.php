@@ -49,8 +49,8 @@
                     <tr>
                     <td>{{$trashedTag->name}}</td>
                     <td>{{$trashedTag->created_at}}</td>
-                    <td><a href="" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('restoreTag',['id'=>$trashedTag->id]) }}" class="fa fa-refresh fa-spin"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteTag',['id'=>$trashedTag->id]) }}" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

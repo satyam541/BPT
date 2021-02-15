@@ -233,9 +233,9 @@ class CategoryController extends Controller
    }
    public function categorytrashList()
    {
-     $this->authorize('view', new Category());
+    //  $this->authorize('view', new Category());
      $data['trashedCategories'] = Category::onlyTrashed()->get();
-     return  view('cms.trashed.categorytrashedlist',$data);
+     return  view('cms.trashed.categoryTrashedList',$data);
        
    }
 

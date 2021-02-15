@@ -98,10 +98,10 @@ class TestimonialController extends Controller
        
    public function testimonialtrashList()
    {
-        $this->authorize('view', new Testimonial());
+        // $this->authorize('view', new Testimonial());
         $data['trashedTestimonials'] = Testimonial::onlyTrashed()->get();
     
-        return  view('cms.trashed.testimonialtrashedlist',$data);
+        return  view('cms.trashed.testimonialTrashedList',$data);
        
    }
 

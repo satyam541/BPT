@@ -121,7 +121,7 @@ class VenueController extends Controller
     
    public function venuetrashList()
    {
-    $this->authorize('view', new Venue());
+    // $this->authorize('view', new Venue());
     $data['trashedVenues'] = Venue::onlyTrashed()->get();
  
 

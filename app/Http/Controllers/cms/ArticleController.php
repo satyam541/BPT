@@ -181,11 +181,11 @@ class ArticleController extends Controller
         
    public function articletrashList()
    {
-     $this->authorize('view', Article::firstOrNew(['type'=>'news']));
+    //  $this->authorize('view', Article::firstOrNew(['type'=>'news']));
     $data['trashedArticles'] = Article::onlyTrashed()->get();
  
 
-    return  view('cms.trashed.articletrashedlist',$data);
+    return  view('cms.trashed.articleTrashedList',$data);
        
    }
 

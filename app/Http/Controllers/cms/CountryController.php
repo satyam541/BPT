@@ -149,10 +149,10 @@ class CountryController extends Controller
 
     public function countrytrashList()
     {
-        $this->authorize('view', new Country());
+        // $this->authorize('view', new Country());
         $data['trashedCountries'] = Country::onlyTrashed()->get();
  
-        return  view('cms.trashed.countrytrashedlist',$data);
+        return  view('cms.trashed.countryTrashedList',$data);
        
     }
 

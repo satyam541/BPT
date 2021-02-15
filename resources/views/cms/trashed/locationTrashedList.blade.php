@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Topics</h1>
+          <h1 class="m-0 text-dark">location</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Topic</a></li>
+            <li class="breadcrumb-item"><a href="#">location</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,25 +38,19 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Content</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
+                  <th>location Name</th>
+                  <th>Date</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($topics as $topic)
+                    @foreach ($trashedLocations as $trashedLocation)
                     <tr>
-                    <td>{{$topic->name}}</td>
-                    <td>{{$topic->category->name}}</td>
-                    <td><a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a></td>
-                    <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td>{{$trashedlocation->name}}</td>
+                    <td>{{$trashedlocation->created_at}}</td>
+                    <td><a href="{{ route('restoreLocation',['id'=>$trashedLocation->id]) }}" class="fa fa-refresh fa-spin"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteLocation',['id'=>$trashedLocation->id])}}" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -64,7 +58,6 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="{{route('createTopic')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -85,13 +78,6 @@
     <script>
         $(document).ready(function(){
             $('#example1').DataTable();
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
         });
     </script>
 @endsection
