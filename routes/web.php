@@ -26,3 +26,6 @@ Route::get('/contactus', function () {
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
+Route::get('/testimonial', function () {
+    return view('testimonial');
+});

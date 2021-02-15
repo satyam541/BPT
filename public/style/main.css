@@ -312,18 +312,18 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .banner .topic-list li:nth-child(1) a {
-  background-color: rgba(28, 40, 72, 0.82);
+  background-color: rgba(28, 40, 72, 0.8);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 .banner .topic-list li:nth-child(2) a {
-  background-color: rgba(28, 40, 72, 0.85);
+  background-color: rgba(28, 40, 72, 0.83);
 }
 .banner .topic-list li:nth-child(3) a {
-  background-color: rgba(28, 40, 72, 0.9);
+  background-color: rgba(28, 40, 72, 0.89);
 }
 .banner .topic-list li:nth-child(4) a {
-  background-color: rgba(28, 40, 72, 0.95);
+  background-color: rgba(28, 40, 72, 0.92);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -420,20 +420,24 @@ body {
     height: 3px;
     position: relative;
     visibility: hidden;
-    transform: 1s all;
+    transition: 1s all;
   }
   .navbar ul .links-li span::before {
-    content: '';
+    content: none;
     position: absolute;
     height: 3px;
-    width: 4px;
+    width: 15px;
+    border-left: 4px solid #1C2848;
+    border-right: 4px solid #1C2848;
     left: 30px;
-    background-color: #1C2848;
   }
   .navbar ul .links-li:hover span {
     width: 100%;
     visibility: visible;
-    transform: 1s all;
+    transition: 1s all;
+  }
+  .navbar ul .links-li:hover span::before {
+    content: '';
   }
   .navbar ul .buttons .btn-white {
     margin-right: 1rem;
@@ -595,6 +599,9 @@ body {
   }
   .banner .banner-container .topic-list {
     width: 40%;
+  }
+  .banner .banner-container .topic-list a p {
+    width: 70%;
   }
   .banner .search {
     width: 76%;
