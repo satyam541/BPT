@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Topics</h1>
+          <h1 class="m-0 text-dark">Unlinked Topics</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -37,34 +37,30 @@
             <div class="card-body">
               <table id="example1">
                 <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Content</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
-                  <th>Actions</th>
-                </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($topics as $topic)
                     <tr>
-                    <td>{{$topic->name}}</td>
-                    <td>{{$topic->category->name}}</td>
-                    <td><a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a></td>
-                    <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                        <td>{{$topic->name}}</td>
+                        {{Form::model($category,array('route'=>['linkCategoryRoute',['id'=>$topic->id]]))}}
+                        <td>
+                        {{Form::select('category_id',$category,null,['class'=>'select form-control','placeholder'=>'Select Category'])}}
+                        </td>
+                            <td>  <button class="btn btn-primary">Link</button></td>
+                        {{Form::close()}}
+                    </tr>
                     @endforeach
                   
                 
                 </tbody>
               </table>
-              <a id="add" href="{{route('createTopic')}}" class="btn btn-success" style="">Add new Record</a>
+              
             </div>
             <!-- /.card-body -->
           </div>
@@ -88,19 +84,8 @@
               "columns": [
                         { "name": "Name" },
                         { "name": "Category" },
-                        { "name": "Content", "sorting":false, searching:false },
-                        { "name": "Bulletpoints", "sorting":false, searching:false  },
-                        { "name": "Whatsincluded", "sorting":false, searching:false  },
                         { "name": "Actions", "sorting":false, searching:false  }
               ]                    
-            });
-
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
             });
         });
     </script>
