@@ -674,15 +674,10 @@ input::-webkit-inner-spin-button {
 .contact-banner .banner-container .banner-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 .contact-banner .banner-container .banner-content h1 {
-  display: flex;
   color: #FFFFFF;
-  align-items: flex-start;
   margin-bottom: 0.5rem;
-  font-size: 24px;
-  width: 100%;
 }
 .contact-banner .banner-container .banner-content p {
   color: #FFFFFF;
@@ -898,7 +893,7 @@ input::-webkit-inner-spin-button {
 .contact .contact-container .contact-info .contact-list .item a,
 .contact .contact-container .contact-info .contact-list .item p {
   word-break: break-all;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 }
 .contact .contact-container .contact-info .contact-list .item:last-child {
   margin-bottom: 0;
@@ -1008,13 +1003,13 @@ input::-webkit-inner-spin-button {
   margin-top: 0.5rem;
 }
 .information .info-content:nth-child(2) span {
-  background-image: url(../img/contactus/enquire-now.svg);
+  background-image: url(../img/contactus/team.png);
 }
 .information .info-content:nth-child(2) .info-text::before {
   content: '02';
 }
 .information .info-content:nth-child(3) span {
-  background-image: url(../img/contactus/chat-support.svg);
+  background-image: url(../img/contactus/support.png);
 }
 .information .info-content:nth-child(3) .info-text::before {
   content: '03';
