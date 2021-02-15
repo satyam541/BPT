@@ -141,7 +141,10 @@
           <!-- /.col -->
       </div>
       <!-- /.row -->
-     
+      @if(!empty($course->id))
+      @php $faqModule = $course; $module_type='course'; @endphp
+          @include('cms.layouts.faqForm')
+      @endif
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
