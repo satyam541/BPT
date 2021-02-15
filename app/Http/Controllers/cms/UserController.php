@@ -43,6 +43,18 @@ class UserController extends Controller
         // $this->authorize('view', new User());
         $filter = $request->all();
         
+        $data['selectedName']=null;
+        $data['selectedEmail']=null;
+        $data['selectedRole']=null;
+        if(!empty($filter['name'])){
+            $data['selectedName']=$filter['name'];
+        }
+        if(!empty($filter['email'])){
+            $data['selectedEmail']=$filter['email'];
+        }
+        if(!empty($filter['roleName'])){
+            $data['selectedRole']=$filter['roleName'];
+        }
         if(!empty($filter))
         {
             $query = User::query();
@@ -59,11 +71,12 @@ class UserController extends Controller
         else{
             $users = User::paginate(10);
         }
-        $list['name'] = User::all()->pluck('name')->toArray();
-        $list['email'] = User::all()->pluck('email')->toArray();
-        $list['role'] = Role::All()->pluck('name')->toArray();
+        $list['name'] = User::all()->pluck('name','name')->toArray();
+        $list['email'] = User::all()->pluck('email','email')->toArray();
+        $list['role'] = Role::All()->pluck('name','name')->toArray();
         $data['list'] = $list;
         $data['users'] = $users;
+        // dd($data);
         return view('cms.manageUser.users',$data);
     }
 
