@@ -48,7 +48,7 @@ class TagController extends Controller
     $data['trashedTags'] = Tag::onlyTrashed()->get();
  
 
-    return  view('cms.trashed.tagtrashedlist',$data);
+    return  view('cms.trashed.tagTrashedList',$data);
        
    }
 
