@@ -24,11 +24,13 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="{{ url('adminLTE/bootstrap-datepicker.min.css')}}">
+  <link rel="stylesheet" href="{{ url('adminlte/bootstrap-datepicker.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.css')}}">
+    {{-- Toastr css  --}}
+    <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
@@ -509,38 +511,34 @@ $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
-<script src="{{url('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{url('adminlte/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{url('adminlte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{url('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{url('adminlte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{url('adminlte/plugins/moment/moment.min.js')}}"></script>
-<script src="{{url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{url('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- datepicker -->
-<script src="{{ url('adminLTE/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{ url('cms/common.js?2')}}"></script>
 <!-- Summernote -->
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<script src="{{ url('cms/tinymce.init.js')}}"></script>
+{{-- <script src="{{ url('cms/tinymce.init.js')}}"></script> --}}
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{url('adminlte/dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{url('adminlte/dist/js/demo.js')}}"></script>
+{{-- <script src="{{url('adminlte/dist/js/pages/dashboard.js')}}"></script> --}}
 <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
+<script src="{{url('cms/summernote-cleaner.js')}}"></script>
+{{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
+{{-- Toastr js --}}
+<script src="{{Url('adminlte/plugins/toastr/toastr.min.js')}}"></script>
 @yield('footer')
 <script>
+  $(function () {
+      @if($message = Session::get('success'))
+      toastr.success('{{$message}}');
+      @endif
+      
+  });
+
+
   $(document).ready(function() {
     $(document).on('click', function (event) {
            $target = $(event.target);
