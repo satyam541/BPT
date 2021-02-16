@@ -43,11 +43,6 @@ h3,
 h4 {
   margin: 0;
 }
-h2 {
-  font-size: 32px;
-  font-weight: 600;
-  font-style: normal;
-}
 ul,
 li {
   padding: 0;
@@ -521,6 +516,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   margin-left: 1.8rem;
+  width: 100%;
 }
 .footer ul li span img {
   width: 15px;
