@@ -54,8 +54,8 @@
                     <tr>
                     <td>{{$venue->name}}</td>
                     <td>{{$venue->location->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editVenue',['venue'=>$venue->id]) }}" class="fa fa-edit"></a>
+                    <a href="" onclick="deleteItem('{{ route('deleteVenue',['venue'=>$venue->id])}}')"class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
