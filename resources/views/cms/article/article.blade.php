@@ -49,8 +49,8 @@
                     <tr>
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
+                    <a href="#" onclick="deleteItem('{{ route('deleteArticle',['article'=>$item->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -58,6 +58,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createNews')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>

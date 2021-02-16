@@ -26,7 +26,7 @@ function deleteItem(path)
         headers: { 'X-CSRF-TOKEN': $("meta[name='token']").attr('content') },
         dataType : 'html',
         success: function (response) {
-            // location.reload();       
+            location.reload();       
             toastr.success('Successfully Deleted');    
         },
         error: function(response) {

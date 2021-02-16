@@ -15,7 +15,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">tag</a></li>
+            <li class="breadcrumb-item"><a href="#">Tag</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -47,8 +47,8 @@
                     @foreach ($tags as $tag)
                     <tr>
                     <td>{{$tag->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('updateTag',$tag->id) }}" class="fa fa-edit"></a>
+                    <a href="#" onclick="deleteItem('{{ route('deleteTag',$tag->id)}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

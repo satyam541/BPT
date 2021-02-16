@@ -137,7 +137,7 @@ class CountryController extends Controller
     public function delete(Country $country_code)
     {
         $country = $country_code;
-        $this->authorize('delete',$country);
+        // $this->authorize('delete',$country);
         $country->delete();
     }
 
@@ -157,12 +157,13 @@ class CountryController extends Controller
        
     }
 
-    public function restoreCountry($id)
+    public function restoreCountry($country_code)
     {
-        $this->authorize('restore', new Country());
-        $country = Country::onlyTrashed()->find($id)->restore();
- 
-       return back()->with('success','successfully restored');
+        // dd($country_code);
+        // $this->authorize('restore', new Country());
+        $country = Country::onlyTrashed()->find($country_code)->restore();
+        dd($country);
+        return back()->with('success','Successfully Restored');
 
     }
     public function forceDeleteCountry($id)
@@ -170,7 +171,7 @@ class CountryController extends Controller
         $this->authorize('forceDelete', new Country());
         $country = Country::onlyTrashed()->find($id)->forceDelete();
  
-        return back()->with('success','permanently deleted');
+        return back()->with('success','Permanently Deleted');
 
 
     }
