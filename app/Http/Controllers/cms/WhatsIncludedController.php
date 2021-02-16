@@ -12,7 +12,7 @@ class WhatsIncludedController extends Controller
 {
     public function list()
     {
-        $whatsincluded = whatsIncludedHeaders::paginate(10);
+        $whatsincluded = whatsIncludedHeaders::all();
         $data['whatsincluded'] = $whatsincluded;
         return view('cms.whatsincluded.whatsincludedMain', $data);
     }

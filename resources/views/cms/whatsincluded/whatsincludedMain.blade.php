@@ -38,15 +38,15 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($countries as $country)
+                    @foreach ($whatsincluded as $data)
                     <tr>
-                    <td>{{$country->name}}</td>
+                    <td>{{$data->name}}</td>
                     <td><a href="" class="fa fa-edit"></a>
                     &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
@@ -79,7 +79,7 @@
         $(document).ready(function(){
             $('#example1').DataTable({
               "columns": [
-                        { "name": "Name" },
+                        { "name": "Whats Included" },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
