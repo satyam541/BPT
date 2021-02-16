@@ -218,9 +218,6 @@ class TopicController extends Controller
         $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
         $topic                      = new Topic();
         $topic->reference           = 'training-courses'.'/'.$category.'/'.$inputs['reference'];
-        if(isset($inputs['is_online'])){
-            $topic->reference           = 'online-courses'.'/'.$category.'/'.$inputs['reference'];
-        }
         $topic->name                = $inputs['name'];
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
@@ -361,9 +358,6 @@ class TopicController extends Controller
         $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
         $topic->name                = $inputs['name'];
         $topic->reference           = 'training-courses'.'/'.$category.'/'.encodeUrlSlug($inputs['name']);
-        if(isset($inputs['is_online'])){
-            $topic->reference           = 'online-courses'.'/'.$category.'/'.encodeUrlSlug($inputs['name']);;
-        }
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
         $topic->accredited          = isset($inputs['accredited']);

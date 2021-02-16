@@ -31,10 +31,15 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Venue
+              </div>
+            </div>
 
-            <!-- /.card-header -->
-            <div class="card-body">
+              <!-- /.card-header -->
+              <div class="card-body">
               <table id="example1">
                 <thead>
                 <tr>
@@ -50,7 +55,7 @@
                     <td>{{$venue->name}}</td>
                     <td>{{$venue->location->name}}</td>
                     <td><a href="{{ route('editVenue',['venue'=>$venue->id]) }}" class="fa fa-edit"></a>
-                    <a href="" onclick="deleteItem('{{ route('deleteVenue',['venue'=>$venue->id])}}')"class="fa fa-trash" style="color: red"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="" onclick="deleteItem('{{ route('deleteVenue',['venue'=>$venue->id])}}')"class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

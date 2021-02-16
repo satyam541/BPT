@@ -140,7 +140,8 @@
                 $obj.init( $(this) );
             });
         }
-    });
+
+
 
     });
     $(document).bind("location_changed", function(event, object) {

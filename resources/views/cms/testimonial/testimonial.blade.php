@@ -28,14 +28,18 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-           
-          <div class="card">
 
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1">
+        <!-- left column -->
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                testimonial
+              </div>
+            </div>
+
+              <!-- /.card-header -->
+              <div class="card-body">      <table id="example1">
                 <thead>
                 <tr>
                   <th>S No</th>
