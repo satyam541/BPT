@@ -33,7 +33,7 @@ class AccreditationController extends Controller
 
     public function insert(AccreditationRequest $request)
     {
-        $this->authorize('create',  new Accreditation());
+        // $this->authorize('create',  new Accreditation());
         $accreditation=new Accreditation();
         $accreditation->name         = $request->name;
          
@@ -53,7 +53,7 @@ class AccreditationController extends Controller
     
     public function edit(Accreditation $accreditation)
     {
-        $this->authorize('update', $accreditation);
+        // $this->authorize('update', $accreditation);
         $data['accreditation'] = $accreditation;
         $data['submitRoute'] = array('updateAccreditation',$accreditation->id);
      
@@ -63,7 +63,7 @@ class AccreditationController extends Controller
    public function update(Accreditation $accreditation,AccreditationRequest $request)
    {
 
-        $this->authorize('update', $accreditation);
+        // $this->authorize('update', $accreditation);
         $accreditation->name         = $request->name;
     
         if($request->hasFile('image')){
