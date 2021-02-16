@@ -161,8 +161,8 @@ class CountryController extends Controller
     {
         // dd($country_code);
         // $this->authorize('restore', new Country());
-        $country = Country::onlyTrashed()->find($country_code)->restore();
-        dd($country);
+        $country = Country::onlyTrashed()->where('country_code', $country_code)->restore();
+        // dd($country);
         return back()->with('success','Successfully Restored');
 
     }
