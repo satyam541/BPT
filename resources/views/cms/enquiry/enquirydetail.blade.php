@@ -31,10 +31,14 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
-            <!-- /.card-header -->
-            <div class="card-body">
+         
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <div class="card-title">
+                    enquiry Detail
+                    </div>
+                </div>
+                <div class="card-body">
                 <div class="table-responsive">
               <table id="example1">
                 
