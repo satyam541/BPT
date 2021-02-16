@@ -2,28 +2,34 @@
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Dashboard</h1>
+    <div class="content-header">
+        {{-- <div class="container-fluid"> --}}
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark"></h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="#">Content</a></li>
+              </ol>
+            </div><!-- /.col -->
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Content</li>
-            </ol>
-          </div>
-        </div>
+      
       <!-- /.container-fluid -->
         <div class="box box-solid">
             <div class="box-header">
                 <div class="row">
                     <div class="card col-md-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    Filter
+                                </div>
+                            </div>
                         <div class="card-body">
-                            <form action="" class="form-horizontal">
-                <div class="box-header">Filter content</div>
-                <div class="box-body">
+                            <form action="" class="">
+                
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
@@ -45,7 +51,7 @@
             </form>
                     
            </div>
-    
+                    
     
                 <!-- /.card-header -->
                 
@@ -74,21 +80,29 @@
                                 
                             </tbody>
                         </table>
- </div>
-</div>
+                    </div>
+                </div>
+
 <div class="box-footer clear-fix small-pagination">
     {{-- @can('create',new App\Models\Permission) --}}
     <a id="add" href="" class="btn btn-success" style="">Add new record</a>
    {{-- @endcan --}}
-      
 {{ $contents->links() }}
-   </div>
 </div>
+</div>
+    </div>
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
 
+</div><!-- /.container-fluid -->
 </section>
+<!-- /.content -->
 </div>
- @endsection
-
+</div>
+<!-- /.content-wrapper -->
+@endsection
  @section('footer')
 <script>
        $(".selectJS").select2({

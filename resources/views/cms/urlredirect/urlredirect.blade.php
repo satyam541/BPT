@@ -5,35 +5,35 @@
 
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0 text-dark">url redirect</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">url redirect</a></li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        {{-- <div class="container-fluid"> --}}
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Url redirect</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="#">Url redirect</a></li>
+              </ol>
+            </div><!-- /.col -->
+          </div>
   <!-- /.content-header -->
 
   <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="card col-md-12">
-            <div class="box box-solid">
-            <form action="" class="form-horizontal">
-                <div class="box-header">Filter content</div>
-                <div class="box-body">
-
+  <div class="box box-solid">
+    <div class="box-header">
+        <div class="row">
+            <div class="card col-md-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <div class="card-title">
+                            Filter
+                        </div>
+                    </div>
+                <div class="card-body">
+                    <form action="" class="">
                     
                      <div class="form-group row">
                         <label for="inputCountry" class="col-sm-2 control-label">Sourch URL</label>
@@ -64,22 +64,16 @@
                 </div>
                 <div class="box-footer">
                     <div class="col-sm-12 text-right">
-                        <button class="btn btn-github">Search</button>
+                        <button class="btn btn-primary btn-sm">Search</button>
+
                     </div>
                 </div>
             </form>
             </div>
-            <div class="row">
-                <div class="card col-md-12">
-                    <div class="box box-solid">
+            <div class="table-responsive" style="background-color: white;margin-left: 10px;">
 
-                        <div class="box-header">
+                <table class="table table-hover">
                             <p class="no-margin small">Total : {{ $urls->total() }}</p>
-                        </div>
-                        <div class="box-body no-padding">
-                            
-                            <div class="table-responsive ">
-                                <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>Source Url</th>
@@ -100,10 +94,11 @@
                                             <td>{{$url->source_url}}</td>
                                             <td>{{$url->target_url}}</td>
                                             {{-- @can('update',$url) --}}
-                                            <td><a href="{{ route('editUrlRedirect',['url'=>$url->id]) }}"> <button class="btn-xs btn-primary">Edit</button></a></td> 
+                                            <td><a href="{{ route('editUrlRedirect',['url'=>$url->id]) }}"><i class="fa fa-edit"></a></td>
+ 
                                             {{-- @endcan --}}
                                             {{-- @can('delete',$url) --}}
-                                            <td><a href="#" onclick="deleteItem('{{ route('deleteUrlRedirect',['url'=>$url->id])}}')"><button class="btn-xs btn-danger">Delete</button></a></td>
+                                            <td><a href="#" onclick="deleteItem('{{ route('deleteUrlRedirect',['url'=>$url->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                             {{-- @endcan --}}
                                         </tr>
                                         @endforeach
@@ -119,19 +114,19 @@
                             {{ $urls->appends(request()->query())->links() }}
                         </div>
                     </div>
-                </div>
-            </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-    </div><!-- /.container-fluid -->
-  </section>
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-
-@endsection
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    
+                    </div><!-- /.container-fluid -->
+                    </section>
+                    <!-- /.content -->
+                    </div>
+                    </div>
+                    <!-- /.content-wrapper -->
+                    @endsection
 @section('footer')
     <script>
         $(document).ready(function(){

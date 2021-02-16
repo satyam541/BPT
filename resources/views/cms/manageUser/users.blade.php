@@ -2,28 +2,33 @@
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
+    <div class="content-header">
+      {{-- <div class="container-fluid"> --}}
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Dashboard</h1>
-          </div>
+            <h1 class="m-0 text-dark">Dashboard</h1>
+          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Content</li>
+              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="#">User</a></li>
             </ol>
-          </div>
+          </div><!-- /.col -->
         </div>
       <!-- /.container-fluid -->
         <div class="box box-solid">
             <div class="box-header">
                 <div class="row">
                     <div class="card col-md-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    Filter
+                                </div>
+                            </div>
                         <div class="card-body">
-                            <form action="" class="form-horizontal">
-                <div class="box-header">Filter content</div>
-                <div class="box-body">
+                            <form action="" class="">
+                
                     <div class="form-group row">
                         {{Form::label('inputName','Name',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
@@ -46,7 +51,7 @@
                         <div class="col-sm-offset-2 col-sm-4">
                             <div class="checkbox">
                                 <label>
-                                <input type="checkbox" name="active" value='1'@if($active!=null)checked @endif> Active only
+                                <input type="checkbox" name="active" value="{{$active}}"> Active only
                                 </label>
                             </div>
                         </div>
@@ -64,11 +69,10 @@
     
                 <!-- /.card-header -->
                 
-                <div class="box-body no-padding">
-                    
-                    <div class="table-responsive" style="background-color: white">
                 
-                        <table class="table table-hover">
+                <div class="table-responsive" style="background-color: white">
+
+                    <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -101,13 +105,21 @@
    {{-- @endcan --}}
       
    {{ $users->links() }}  
-   </div>
 </div>
+</div>
+    </div>
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
 
+</div><!-- /.container-fluid -->
 </section>
+<!-- /.content -->
 </div>
- @endsection
-
+</div>
+<!-- /.content-wrapper -->
+@endsection
  @section('footer')
 <script>
        $(".selectJS").select2({
