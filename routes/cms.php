@@ -142,7 +142,7 @@ Route::post('/topic/whatsincluded/insert','TopicController@whatsincludedinsert')
 Route::post('/topic/whatsincluded/delete/{module}/{whatsincluded}','TopicController@whatsincludeddelete')->name('topicDeleteWhatsincluded');
 
 // whatsIncluded
-Route::get('/whatsincluded','WhatsIncludedController@list')->name('whatsincludedList');
+Route::get('/whatsincluded','WhatsIncludedController@list')->name('whatsincludedListRoute');
 Route::get('/whatsincluded/insert','WhatsIncludedController@form')->name('createWhatsIncluded');
 Route::post('/whatsincluded/insert','WhatsIncludedController@insert')->name('insertWhatsIncluded');
 Route::get('/whatsincluded/update/{whatsincluded}','WhatsIncludedController@edit')->name('editWhatsIncluded');
