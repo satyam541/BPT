@@ -16,13 +16,18 @@
           </div>
         </div>
       <!-- /.container-fluid -->
-        <div class="box box-solid">
-            <div class="box-header">
-                <div class="row">
-                    <div class="card col-md-12">
-                        <div class="card-body">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card card-primary card-outline">
+
+                <div class="card-header">
+                    <div class="card-title">
+                        Filter content
+                    </div>
+                </div>
+                <div class="card-body">
                             <form action="" class="form-horizontal">
-                <div class="box-header">Filter content</div>
+                
                 <div class="box-body">
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
@@ -43,23 +48,27 @@
                             </div>
                         </div>
                 </div>
-                <div class="box-footer">
-                    <div class="col-sm-12 text-right">
-                        <button class="btn btn-default">Search</button>
-                    </div>
+                <div class="col-sm-12 text-right">
+                    <button class="btn btn-primary" style="margin-bottom:20px">Search</button>
                 </div>
-            </form>
-                    
-           </div>
-    
+           </form>
+        </div>
+    </div>
+</div>
+</div>
     
                 <!-- /.card-header -->
                 
-                <div class="box-body no-padding">
-                    
-                    <div class="table-responsive" style="background-color: white">
-                
-                        <table class="table table-hover">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <div class="card-title">
+                            Enquiry List
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="background-color: white">
+                                <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Date</th>
