@@ -50,35 +50,35 @@ class OnlineCourseController extends Controller
     public function create()
     {
        
-        $list['courses'] = Course::all()->pluck('name','id')->toArray();
+        $list['courses']        = Course::all()->pluck('name','id')->toArray();
        
-        $data['list'] = $list;
-        $data['onlinecourse'] = new courseElearning();
-        $data['submitRoute'] = 'insertOnlineCourse';
-        $data['categorySlug'] = '';
+        $data['list']           = $list;
+        $data['onlinecourse']   = new courseElearning();
+        $data['submitRoute']    = 'insertOnlineCourse';
+        $data['categorySlug']   = '';
         return view('cms.onlinecourse.onlinecourseForm',$data);
     }
 
 
     public function insert(Request $request)
     {
-        $onlinecourse=new courseElearning();
-         $reference=encodeUrlSlug(Course::find($request->course_id)->name);
-        $onlinecourse->reference='online-courses'.'/'.$reference.'/'.$request->reference;
-        $onlinecourse->online_course_name=$request->online_course_name;
-        $onlinecourse->course_id=$request->course_id;
-        $onlinecourse->summary=$request->summary;
-        $onlinecourse->outline=$request->outline;
-        $onlinecourse->whats_included=$request->whats_included;
-        $onlinecourse->duration=$request->duration;
-        $onlinecourse->tag_line=$request->tag_line;
-        $onlinecourse->overview=$request->overview;
-        $onlinecourse->video = $request->video;
-        $onlinecourse->thumbnail=$request->thumbnail;
-        $onlinecourse->heading=$request->heading;
-        $onlinecourse->meta_title=$request->meta_title;
-        $onlinecourse->meta_keywords=$request->meta_keywords;
-        $onlinecourse->meta_description=$request->meta_description;
+        $onlinecourse                   =   new courseElearning();
+        $reference                      =   encodeUrlSlug(Course::find($request->course_id)->name);
+        $onlinecourse->reference        =   'online-courses'.'/'.$reference.'/'.$request->reference;
+        $onlinecourse->online_course_name=  $request->online_course_name;
+        $onlinecourse->course_id        =   $request->course_id;
+        $onlinecourse->summary          =   $request->summary;
+        $onlinecourse->outline          =   $request->outline;
+        $onlinecourse->whats_included   =   $request->whats_included;
+        $onlinecourse->duration         =   $request->duration;
+        $onlinecourse->tag_line         =   $request->tag_line;
+        $onlinecourse->overview         =   $request->overview;
+        $onlinecourse->video            =   $request->video;
+        $onlinecourse->thumbnail        =   $request->thumbnail;
+        $onlinecourse->heading          =   $request->heading;
+        $onlinecourse->meta_title       =   $request->meta_title;
+        $onlinecourse->meta_keywords    =   $request->meta_keywords;
+        $onlinecourse->meta_description =   $request->meta_description;
         if($request->hasFile('thumbnail')){
            
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('thumbnail')->getClientOriginalExtension();
@@ -89,7 +89,7 @@ class OnlineCourseController extends Controller
         $onlinecourse->save();
         if(!empty($onlinecourse->id))
         {
-        \Session::flash('success', 'Course created!'); 
+        \Session::flash('success', 'Online Course created!'); 
         }
         else
         {
@@ -97,7 +97,7 @@ class OnlineCourseController extends Controller
         
         }
 
-        return redirect()->back();
+        return back();
     }
 
  
@@ -106,35 +106,33 @@ class OnlineCourseController extends Controller
      
         // dd($course);
         // $list['topics'] = Topic::all()->pluck('name','id')->toArray();
-        $list['courses'] = Course::all()->pluck('name','id')->toArray();
+        $list['courses']        = Course::all()->pluck('name','id')->toArray();
         
-        $data['list'] = $list;
-        $data['submitRoute'] = array('updateOnlineCourse',$course->id);
-        $data['onlinecourse'] = $course;
+        $data['list']           = $list;
+        $data['submitRoute']    = array('updateOnlineCourse',$course->id);
+        $data['onlinecourse']   = $course;
        
-      
-        // dd($course->getAttributes()['reference']);
         return view("cms.onlinecourse.onlinecourseForm",$data);
     }
 
 
     public function update(courseElearning $course,Request $request)
     {
-        $reference=encodeUrlSlug(Course::find($request->course_id)->name);
-        $course->reference='online-courses'.'/'.$reference.'/'.encodeUrlSlug($request->online_course_name);
-        $course->online_course_name=$request->online_course_name;
-        $course->course_id=$request->course_id;
-        $course->summary=$request->summary;
-        $course->outline=$request->outline;
-        $course->whats_included=$request->whats_included;
-        $course->duration=$request->duration;
-        $course->overview=$request->overview;
-        $course->tag_line=$request->tag_line;
-        $course->video = $request->video;
-        $course->heading=$request->heading;
-        $course->meta_title=$request->meta_title;
-        $course->meta_keywords=$request->meta_keywords;
-        $course->meta_description=$request->meta_description;
+        $reference                  =   encodeUrlSlug(Course::find($request->course_id)->name);
+        $course->reference          =   'online-courses'.'/'.$reference.'/'.encodeUrlSlug($request->online_course_name);
+        $course->online_course_name =   $request->online_course_name;
+        $course->course_id          =   $request->course_id;
+        $course->summary            =   $request->summary;
+        $course->outline            =   $request->outline;
+        $course->whats_included     =   $request->whats_included;
+        $course->duration           =   $request->duration;
+        $course->overview           =   $request->overview;
+        $course->tag_line           =   $request->tag_line;
+        $course->video              =   $request->video;
+        $course->heading            =   $request->heading;
+        $course->meta_title         =   $request->meta_title;
+        $course->meta_keywords      =   $request->meta_keywords;
+        $course->meta_description   =   $request->meta_description;
         if($request->hasFile('thumbnail')){
            
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('thumbnail')->getClientOriginalExtension();
@@ -147,11 +145,10 @@ class OnlineCourseController extends Controller
  
             if(!empty($course->id))
             \Session::flash('success', 'Online Course updated!'); 
-        return redirect()->back();
+        return back();
     }
 
    
-
     public function delete(courseElearning $course)
     {
         
