@@ -38,7 +38,7 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Course Name</th>
+                  <th>{{$module}} Name</th>
                   <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>

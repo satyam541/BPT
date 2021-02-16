@@ -58,7 +58,7 @@
 
                   <div class="form-group">
                     {{Form::label('tag_line','Tag Line')}}
-                    {{Form::text('tag_line',null,['class'=>'form-control'])}}
+                    {{Form::textarea('tag_line',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">

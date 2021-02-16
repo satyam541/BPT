@@ -147,7 +147,7 @@ class TopicController extends Controller
          $topics = Topic::all();
          $course = $topics->where('id', $topic_id)->first();
          $data['course'] = $course;
-         
+         $data['module'] = 'Topic';
          $data['list'] = $topics->pluck('name','id')->toArray();
          $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
          $data['whatsincluded'] = new whatsincluded();
@@ -186,7 +186,7 @@ class TopicController extends Controller
     public function contentCreate(Request $request)
     {
        
-        $this->authorize('create', new Topic());
+        // $this->authorize('create', new Topic());
         $filter             = $request->all();
         $selectedTopic      = empty($filter['topic'])? NULL : $filter['topic'];
         $selectedCountry    = empty($filter['country'])? NULL : $filter['country'];
@@ -213,7 +213,7 @@ class TopicController extends Controller
 
     public function insert(TopicRequest $request)
     {
-        $this->authorize('create', new Topic());
+        // $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
         $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
         $topic                      = new Topic();
@@ -244,7 +244,7 @@ class TopicController extends Controller
 
     public function contentInsert(TopicContentRequest $request)
     {
-        $this->authorize('create', new Topic());
+        // $this->authorize('create', new Topic());
         $inputs              = $request->except("_token");
         $content             = TopicContent::firstOrCreate(
             ['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']]
