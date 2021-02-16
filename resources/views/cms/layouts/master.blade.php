@@ -630,7 +630,7 @@ $.widget.bridge('uibutton', $.ui.button)
             $.ajax({
                 url:"{{route('ImageUpload')}}",
                 headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
                   },
                 cache: false,
                 contentType: false,

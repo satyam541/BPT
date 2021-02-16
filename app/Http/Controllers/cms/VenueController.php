@@ -78,7 +78,7 @@ class VenueController extends Controller
 
     public function edit(Venue $venue)
     {
-        $this->authorize('update',$venue);
+        // $this->authorize('update',$venue);
         $data['venue'] = $venue;
         $data['submitRoute'] = array('updateVenue',$venue->id);
         $data['locations'] = Location::withoutGlobalScope("venues")->get()->pluck('name','id')->toArray();
@@ -87,7 +87,7 @@ class VenueController extends Controller
 
     public function update(Venue $venue,VenueRequest $request)
     {
-        $this->authorize('update', $venue);
+        // $this->authorize('update', $venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];
