@@ -32,3 +32,6 @@ Route::get('/testimonial', function () {
 Route::get('/onsite', function () {
     return view('onsite');
 });
+Route::get('/location', function () {
+    return view('location');
+});
