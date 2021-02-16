@@ -48,7 +48,7 @@
                     <tr>
                     <td>{{$country->name}}</td>
                     <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -56,7 +56,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{route('createCountry')}}" class="btn btn-success" style="">Add new Record</a>
 
             </div>
             <!-- /.card-body -->
@@ -84,13 +84,6 @@
               ]                    
             });
 
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
         });
         
     </script>

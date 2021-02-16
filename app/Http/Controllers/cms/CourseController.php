@@ -139,7 +139,7 @@ class CourseController extends Controller
     
     public function contentCreate(Request $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $filter = $request->all();
         $selectedCourse = empty($filter['course'])? NULL : $filter['course'];
         $selectedCountry = empty($filter['country'])? NULL : $filter['country'];
@@ -154,7 +154,7 @@ class CourseController extends Controller
 
     public function insert(CourseRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $inputs = $request->except(["_token",'is_popular']);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
@@ -189,12 +189,12 @@ class CourseController extends Controller
         }
         
           
-        return redirect()->back();
+        return redirect()->route('courseList');
     }
 
     public function contentInsert(CourseContentRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $inputs              = $request->except("_token");
       
         $content               = CourseContent::firstOrNew(
@@ -210,7 +210,7 @@ class CourseController extends Controller
                 \Session::flash('failure', 'Duplicate Data Found!'); 
             }
 
-        return redirect()->back();
+        return back();
     }
 
     public function edit(Course $course)
@@ -286,9 +286,9 @@ class CourseController extends Controller
         
         $content = $courseDetail->update($inputs);
             if(!empty($content))
-        \Session::flash('success', 'Content udpated!'); 
+        \Session::flash('success', 'Content Updated!'); 
 
-        return redirect()->back();
+        return back();
     }
 
     public function delete(Course $course)

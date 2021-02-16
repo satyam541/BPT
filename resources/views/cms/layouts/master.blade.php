@@ -214,7 +214,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsIncludedList')}}" class="nav-link">
+                <a href="{{Route('whatsincludedListRoute')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
@@ -518,7 +518,25 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
+      @if ($errors->any())
+       <div class="container">
+        
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            
+              <ul class="">
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>
+  
+      
+  @endif
+    
 @yield('content')
 
 <footer class="main-footer">

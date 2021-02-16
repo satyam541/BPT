@@ -52,7 +52,7 @@
                   </div>
                   <div class="form-group">
                     {{Form::label('tag_line','Tag Line')}}
-                    {{Form::textarea('tag_line',null,['class'=>'form-control  summernote'])}}
+                    {{Form::textarea('tag_line',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
@@ -102,6 +102,10 @@
           <!-- /.col -->
       </div>
       <!-- /.row -->
+      @if(!empty($category->id))
+      @php $faqModule = $category; $module_type='category'; @endphp
+          @include('cms.layouts.faqForm')
+      @endif
      
     </div><!-- /.container-fluid -->
   </section>

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Course</h1>
+          <h1 class="m-0 text-dark">Whats Included</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Course</a></li>
+            <li class="breadcrumb-item"><a href="#">Whats Included</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -38,25 +38,17 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Topic</th>
-                  <th>Content</th>
-                  <th>Bulletpoints</th>
-                  <th>WhatsIncluded</th>
+                  <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($courses as $course)
+                    @foreach ($whatsincluded as $data)
                     <tr>
-                    <td>{{$course->name}}</td>
-                    <td>{{$course->topic->name}}</td>
-                    <td><a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a></td>
-                    <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td>{{$data->name}}</td>
+                    <td><a href="{{ route('editWhatsIncluded',['whatsincluded'=>$data->id])}}" class="fa fa-edit"></a>
+                    &nbsp;&nbsp;&nbsp;<a href="#" onclick="deleteItem('{{ route('deleteWhatsIncluded',['whatsincluded'=>$data->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -64,7 +56,8 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="{{route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{route('createWhatsIncluded')}}" class="btn btn-success" style="">Add new Record</a>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -86,22 +79,12 @@
         $(document).ready(function(){
             $('#example1').DataTable({
               "columns": [
-                        { "name": "Name" },
-                        { "name": "Topic" },
-                        { "name": "Content", "sorting":false, searching:false },
-                        { "name": "Bulletpoints", "sorting":false, searching:false  },
-                        { "name": "WhatsIncluded", "sorting":false, searching:false  },
-                        { "name": "Actions", "sorting":false, searching:false  }
+                        { "name": "Whats Included" },
+                        { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
 
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
         });
+        
     </script>
 @endsection

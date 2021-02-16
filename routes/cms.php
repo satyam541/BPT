@@ -33,7 +33,7 @@ Route::post('/permission/delete/{permission}','UserController@deletePermission')
 Route::post('/role/assign','UserController@assignRoles')->name('assignRole'); // was updateRoles
 Route::post('/permission/assign','UserController@assignPermission')->name('assignPermission');
 Route::get('/module/auto-complete','UserController@loadModules')->name('moduleAutoComplete');// autocomplete module
-
+// country routes
 Route::get('/country','CountryController@list')->name('countryList');
 Route::post('/country','CountryController@filterList')->name('countryList');
 Route::get('/country/insert','CountryController@create')->name('createCountry');
@@ -53,7 +53,7 @@ Route::get('/location/update/{location}','LocationController@edit')->name('editL
 Route::post('/location/update/{location}','LocationController@insert')->name('updateLocation');
 Route::post('/location/delete/{location}','LocationController@delete')->name('deleteLocation');
 Route::get('location/region/fetch','LocationController@getRegion')->name('autoRegion');
-
+// venue routes
 Route::get('/venue','VenueController@list')->name('venueList');
 Route::get('/venue/insert','VenueController@create')->name('createVenue');
 Route::post('/venue/insert','VenueController@insert')->name('insertVenue');
@@ -142,7 +142,7 @@ Route::post('/topic/whatsincluded/insert','TopicController@whatsincludedinsert')
 Route::post('/topic/whatsincluded/delete/{module}/{whatsincluded}','TopicController@whatsincludeddelete')->name('topicDeleteWhatsincluded');
 
 // whatsIncluded
-Route::get('/whatsincluded','WhatsIncludedController@list')->name('whatsincludedList');
+Route::get('/whatsincluded','WhatsIncludedController@list')->name('whatsincludedListRoute');
 Route::get('/whatsincluded/insert','WhatsIncludedController@form')->name('createWhatsIncluded');
 Route::post('/whatsincluded/insert','WhatsIncludedController@insert')->name('insertWhatsIncluded');
 Route::get('/whatsincluded/update/{whatsincluded}','WhatsIncludedController@edit')->name('editWhatsIncluded');
