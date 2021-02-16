@@ -21,6 +21,7 @@
         $("#menuToggle").toggleClass('active');
     }
     //End Toggle menu//
+    
     //Start Testimonial//
     $('.topic-list').owlCarousel({
         loop: true,
@@ -69,6 +70,30 @@
         $(this).addClass("btn-active").siblings().removeClass("btn-active");
     });
     // End aboutus Testimonial//
+
+    //Start Testimonial//
+    $('.testimonial-list').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        navText: ["", ""],
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+            }
+            
+        }
+        
+
+    });
+    $('.owl-next').addClass("btn-active");
+    $('.owl-prev,.owl-next').click(function () {
+        $(this).addClass("btn-active").siblings().removeClass("btn-active");
+    });
+    // End Testimonial//
 
     // Start FAQ
    $(".faq-item").click(function () {
