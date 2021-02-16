@@ -33,8 +33,8 @@ class WhatsIncludedController extends Controller
             $whatsincluded->icon = 'whatsinclude/'.$iconName;
         }
         $whatsincluded->save();
-        \Session::flash('success','WhatsIncluded Added');
-        return redirect()->back();
+        
+        return redirect()->route('whatsincludedListRoute')->with('success','WhatsIncluded Added');
     }
     public function edit(whatsIncludedHeaders $whatsincluded)
     {
@@ -54,8 +54,8 @@ class WhatsIncludedController extends Controller
             $whatsincluded->icon = "whatsinclude/".$iconName;
         }
         $whatsincluded->save();
-        \Session::flash('success','WhatsIncluded Added');
-        return redirect()->back();
+        
+        return redirect()->route('whatsincludedListRoute')->with('success','WhatsIncluded Updated');
     }
     public function delete(whatsIncludedHeaders $whatsincluded)
     {
