@@ -44,6 +44,6 @@ function deleteItem(path)
 function convertUrl(str)
 {
     str = str.toLowerCase();
-    str = str.replace(/(?![a-z0-9 ])./gi, "");
-    return str.replace(/(?![a-z0-9])./gi, "-");
+    
+    return str.replace(/[^a-zA-Z0-9]+/, "-");
 }
