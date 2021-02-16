@@ -28,10 +28,12 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-           
-          <div class="card">
+        <!-- left column -->
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            
+          </div>
 
             <!-- /.card-header -->
             <div class="card-body">
