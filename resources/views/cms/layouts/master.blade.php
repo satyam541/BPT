@@ -214,7 +214,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsIncludedList')}}" class="nav-link">
+                <a href="{{Route('whatsincludedListRoute')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
