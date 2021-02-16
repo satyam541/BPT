@@ -49,8 +49,8 @@
                     <tr>
                     <td>{{$location->name}}</td>
                     <td>{{$location->country->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
+                      &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -58,7 +58,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{route('createLocation')}}" class="btn btn-success" style="">Add new Record</a>
 
             </div>
             <!-- /.card-body -->

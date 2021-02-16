@@ -48,7 +48,7 @@ class VenueController extends Controller
 
     public function insert(VenueRequest $request)
     {
-        $this->authorize('create', Venue::class);
+        // $this->authorize('create', Venue::class);
         $inputs = $request->except("_token");
         $venue = new Venue();
         $venue->name                = $inputs["name"];
