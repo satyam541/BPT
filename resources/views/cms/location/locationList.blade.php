@@ -55,7 +55,7 @@
                     <td>{{$location->name}}</td>
                     <td>{{$location->country->name}}</td>
                     <td><a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
-                      &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
+                      &nbsp;&nbsp;&nbsp;<a href=""onclick="deleteItem('{{ route('deleteLocation',['location'=>$location->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
