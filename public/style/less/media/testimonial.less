@@ -30,6 +30,7 @@
                 background-size: contain;
                 height: 70px;
                 width: 80px;
+                animation: rotate 13s linear infinite;
             }
         }
         p {
@@ -97,6 +98,32 @@
         }
     }
     // End Services Section
+
+    // Start Testimonial Section
+    .testimonial {
+        padding: @sectionPadding-md;
+        background: url(../img/testimonial/testimonial-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    // End Testimonial Section
+
+    // Start Facts Section
+    .facts {
+        padding: @sectionPadding-md;
+        .facts-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .facts-content {
+            width: 47%;
+            &:first-child {
+                margin-right: 2rem;
+            }
+        }
+    }
+    // End Facts Section
 }
 
 @media @size-lg{
@@ -135,6 +162,32 @@
         }
     }
     // End Services Section
+
+    // Start Testimonial Section
+    .testimonial {
+        .testimonial-info {
+            padding: 1rem 3rem;
+            width: 85%;
+        }
+    }
+    // End Testimonial Section
+
+    // Start Facts Section
+    .facts {
+        .heading {
+            p {
+                width: 65%;
+            }
+        }
+        .facts-content {
+            width: 30%;
+            margin-right: 2rem;
+            &:last-child(2) {
+                margin-right: 0rem;
+            }
+        }
+    }
+    // End Facts Section
 }
 
 @media @size-xl{
@@ -143,7 +196,7 @@
     .customers {
         padding: @sectionPadding-xl;
         p {
-            width: 43%;
+            width: 63%;
         }
         .customers-list {
             &::before,
@@ -160,4 +213,19 @@
         padding: @sectionPadding-xl;
     }
     // End Services Section
+
+    // Start Testimonial Section
+    .testimonial {
+        padding: @sectionPadding-xl;
+        .testimonial-info {
+            padding: 2rem 3rem;
+        }
+    }
+    // End Testimonial Section
+
+    // Start Facts Section
+    .facts {
+        padding: @sectionPadding-xl;
+    }
+    // End Facts Section
 }

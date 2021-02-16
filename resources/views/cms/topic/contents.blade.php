@@ -67,8 +67,8 @@
                                 <tr>
                                     <td>{{$content->topic->name}}</td>
                                     <td>{{$content->country->name}}</td>
-                                    <td><a href="{{ route('editCourseContent',['courseDetail'=>$content->id]) }}"><i class="fa fa-edit"></a></td>
-                                    <td><a href="#" onclick="deleteItem('{{ route('deleteCourseContent',['courseDetail'=>$content->id] )}}')"><i class="fa fa-trash text-red"></i></a></td>
+                                    <td><a href="{{ route('editTopicContent',['topicDetail'=>$content->id]) }}"><i class="fa fa-edit"></a></td>
+                                    <td><a href="#" onclick="deleteItem('{{ route('deleteTopicContent',['topicDetail'=>$content->id] )}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
                                 @endforeach
                                 
