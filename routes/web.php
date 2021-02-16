@@ -29,3 +29,6 @@ Route::get('/aboutus', function () {
 Route::get('/testimonial', function () {
     return view('testimonial');
 });
+Route::get('/onsite', function () {
+    return view('onsite');
+});
