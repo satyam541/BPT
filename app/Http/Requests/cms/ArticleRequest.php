@@ -30,11 +30,11 @@ class ArticleRequest extends FormRequest
               $id = $article->id;
           }
         return [
-            'title'                  => ['required', 'max:100','unique:article,title,'.$id.',id'],
-            'reference'              =>['required','unique:article,reference,'.$id.',id'],
-            'image'                  =>['mimes:jpeg,png,jpg,svg','max:500'],
-            'meta_title'             =>['max:100','required'],
-            'meta_description'       =>['max:250','required'],
+            'title'                  => 'required|max:100|unique:article,title,'.$id.',id',
+            'reference'              => 'required|unique:article,reference,'.$id.',id',
+            'image'                  => 'mimes:jpeg,png,jpg,svg|max:500',
+            'meta_title'             => 'max:100|required',
+            'meta_description'       => 'max:250|required',
         ];
     }
 }
