@@ -6,7 +6,7 @@
         {{-- <div class="container-fluid"> --}}
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark"></h1>
+              <h1 class="m-0 text-dark">Content</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -14,20 +14,18 @@
                 <li class="breadcrumb-item"><a href="#">Content</a></li>
               </ol>
             </div><!-- /.col -->
-          </div>
-      
+          </div><!-- /.col -->
       <!-- /.container-fluid -->
-        <div class="box box-solid">
-            <div class="box-header">
-                <div class="row">
-                    <div class="card col-md-12">
-                        <div class="card card-primary card-outline">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    Filter
-                                </div>
-                            </div>
-                        <div class="card-body">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card card-primary card-outline">
+    
+                <div class="card-header">
+                    <div class="card-title">
+                        Filter content
+                    </div>
+                </div>
+                <div class="card-body">
                             <form action="" class="">
                 
                     <div class="form-group row">
@@ -43,22 +41,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="box-footer">
-                    <div class="col-sm-12 text-right">
-                        <button class="btn btn-default">Search</button>
+                <div class="col-sm-12 text-right">
+                    <button class="btn btn-primary" style="margin-bottom:20px">Search</button>
+                </div>
+           </form>
+        </div>
+    </div>
+</div>
+</div>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <div class="card-title">
+                    Content List
                     </div>
                 </div>
-            </form>
-                    
-           </div>
-                    
-    
-                <!-- /.card-header -->
-                
-                <div class="box-body no-padding">
-                    
+                <div class="card-body">
                     <div class="table-responsive" style="background-color: white">
-                
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -77,36 +76,25 @@
                                     <td><a href="#" onclick="deleteItem('{{ route('deleteCourseContent',['courseDetail'=>$content->id] )}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
                                 @endforeach
-                                
                             </tbody>
                         </table>
                     </div>
-                </div>
-
-<div class="box-footer clear-fix small-pagination">
-    {{-- @can('create',new App\Models\Permission) --}}
-    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
-   {{-- @endcan --}}
-{{ $contents->links() }}
-</div>
-</div>
+                <div class="box-footer clear-fix small-pagination">
+                    {{-- @can('create',new App\Models\Permission) --}}
+                    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+                   {{-- @endcan --}}
+                {{ $contents->links() }}
+            </div>
+        </div>
     </div>
-</div>
-<!-- /.col -->
-</div>
-<!-- /.row -->
-
-</div><!-- /.container-fluid -->
+ </div>
 </section>
-<!-- /.content -->
-</div>
-</div>
-<!-- /.content-wrapper -->
+    </div>
 @endsection
+
  @section('footer')
 <script>
        $(".selectJS").select2({
-                tags: true,
                 tags: true,
                 theme: "classic",
                 width:'400px',

@@ -1,9 +1,5 @@
 @extends('cms.layouts.master')
 @section('content')
-
-
-
- <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -22,57 +18,54 @@
   <!-- /.content-header -->
 
   <!-- Main content -->
-  <div class="box box-solid">
-    <div class="box-header">
-        <div class="row">
-            <div class="card col-md-12">
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <div class="card-title">
-                            Filter
-                        </div>
-                    </div>
-                <div class="card-body">
-                    <form action="" class="">
-                    
-                     <div class="form-group row">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="card card-primary card-outline">
+
+            <div class="card-header">
+                <div class="card-title">
+                    Filter content
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="" class="form-horizontal">
+                    <div class="form-group row">
                         <label for="inputCountry" class="col-sm-2 control-label">Sourch URL</label>
                         <div class="col-sm-10">
                                 {{Form::text('source',null,['class'=>'form-control'])}}
                         </div>
                     </div>
-
-                    
                      <div class="form-group row">
                         <label for="inputCountry" class="col-sm-2 control-label">Target URL</label>
                         <div class="col-sm-10">
                                 {{Form::text('target',null,['class'=>'form-control'])}}
                         </div>
                     </div>
-                    
-                    
                     <div class="form-group row">
                         <label for="exact" class="col-sm-2 control-label">Find Exact Match</label>
                         <div class="col-sm-10">
                             {{Form::checkbox('exact_match',null,['class'=>'col-md-3 col-form-label text-right'])}}
                         </div>
                     </div>
-                    
-                    
-                   
-                   
-                </div>
-                <div class="box-footer">
+                    </div>
                     <div class="col-sm-12 text-right">
-                        <button class="btn btn-primary btn-sm">Search</button>
-
+                        <button class="btn btn-primary" style="margin-bottom:20px">Search</button>
+                    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <div class="card-title">
+                        Url List
                     </div>
                 </div>
-            </form>
-            </div>
-            <div class="table-responsive" style="background-color: white;margin-left: 10px;">
-
-                <table class="table table-hover">
+                <div class="card-body">
+                    <div class="table-responsive" style="background-color: white">
+                        <table class="table table-hover">
                             <p class="no-margin small">Total : {{ $urls->total() }}</p>
                                     <thead>
                                         <tr>
@@ -84,11 +77,9 @@
                                             {{-- @can('delete',new App\Models\UrlRedirect()) --}}
                                             <th>Delete</th>
                                             {{-- @endcan --}}
-                                           
                                         </tr>        
                                     </thead>
                                     <tbody>
-                                   
                                      @foreach($urls as $url)
                                         <tr>
                                             <td>{{$url->source_url}}</td>
@@ -102,31 +93,23 @@
                                             {{-- @endcan --}}
                                         </tr>
                                         @endforeach
-                                         
+    
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="box-footer clear-fix small-pagination">
-                       {{-- @can('create',new App\Models\UrlRedirect()) --}}
-                        <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
-                        {{-- @endcan --}}
+                        <div class="card-footer clear-fix small-pagination">
+                            {{-- @can('create',new App\Models\UrlRedirect()) --}}
+                            <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
+                            {{-- @endcan --}}
                             {{ $urls->appends(request()->query())->links() }}
                         </div>
                     </div>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                    
-                    </div><!-- /.container-fluid -->
-                    </section>
-                    <!-- /.content -->
-                    </div>
-                    </div>
-                    <!-- /.content-wrapper -->
-                    @endsection
+                </div>
+        </section>
+            </div>
+@endsection
+
 @section('footer')
     <script>
         $(document).ready(function(){
