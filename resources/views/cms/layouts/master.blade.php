@@ -28,7 +28,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote.min.css')}}">
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- SweetAlert2 -->
@@ -567,13 +567,12 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{ url('cms/common.js')}}"></script>
 <!-- Summernote -->
-<script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{url('adminlte/plugins/summernote/summernote.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-{{-- <script src="{{url('adminlte/dist/js/pages/dashboard.js')}}"></script> --}}
+<!-- AdminLTE select 2 -->
 <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
 <script src="{{url('cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
