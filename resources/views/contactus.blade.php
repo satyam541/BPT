@@ -183,7 +183,9 @@
                 <h2>Where to <span>Reach Us</span></h2>
                 <p>Locate Our Office Destination On Google Map</p>
             </div>
-            <div class="map"></div>
+            <div class="map">
+            <img src="{{url('img/contactus/map.png')}}" alt="map">
+            </div>
         </div>
     </div>
 </section>

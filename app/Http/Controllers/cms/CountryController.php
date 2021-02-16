@@ -50,8 +50,9 @@ class CountryController extends Controller
 
     public function insert(CountryRequest $request)
     {
-        $this->authorize('create', new Country());
+        // $this->authorize('create', new Country());
         $inputs = $request->except("_token");
+        dd($inputs);
         $country = Country::firstOrNew(['name' => $inputs['name']]);
         //$country = Country::updateOrCreate( ['name' => $inputs['name']], $inputs );
         $country->name                  = $inputs['name'];
@@ -79,6 +80,7 @@ class CountryController extends Controller
             }
 
             $country->save();
+            dd($country);
             \Session::flash('success', 'Country created!'); 
         }
         else{// updation not allowed inside insert function
