@@ -47,8 +47,8 @@
                     @foreach ($countries as $country)
                     <tr>
                     <td>{{$country->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{route('editCountry',['country_code'=>$country->country_code])}}" class="fa fa-edit"></a>
+                    &nbsp;&nbsp;&nbsp;<a href=""onclick="deleteItem('{{ route('deleteCountry',['country_code'=>$country->country_code])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

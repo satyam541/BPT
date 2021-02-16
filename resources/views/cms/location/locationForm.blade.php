@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{Form::select('country_id',$countries,$location->country_id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('country_id',$countries,strToLower($location->country_id),['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
 
@@ -82,9 +82,9 @@
                     {{Form::label('intro','Intro')}}
                     {{Form::textarea('intro',null,['class'=>'form-control', 'rows'=>'4'])}}
                   </div>
-
+                  {{Form::label('image','Image',)}}
                   <div class="form-group">
-                    {{Form::label('image','Image',['class'=>'form-control'])}}
+                    
                     {!!Form::file('image')!!}
                     <br/>
                     @if($location['image']=='')
@@ -138,7 +138,7 @@
 
                   <div class="form-group">
                     {{Form::label('is_popular','Is Popular',['class'=>'mr-1'])}}
-                    {{Form::checkbox('is_popular')}}
+                    <input type="checkbox" name="is_popular" @if($popular==true)checked @endif>
                   </div>
                   
                 </div>
@@ -169,7 +169,7 @@
 <script src="{{URL('/js/jquery-gmaps-latlon-picker.js?lnkn')}}"></script>
 <script>
     $(document).ready( function() {
-
+      
         if (!$.gMapsLatLonPickerNoAutoInit) {
             $(".gllpLatlonPicker").each(function () {
                 $obj = $(document).gMapsLatLonPicker($('#gllpLatitudeId').val(),$('#gllpLongitudeId').val());
@@ -191,26 +191,9 @@
         console.log("changed: " + $(object).attr('id') );
     });
 </script>
-<script type="text/javascript">
 
-    var url = "{{ route('autoRegion') }}";
-
-    $('.autoRegion').typeahead({
-
-        source:  function (query, process) {
-
-        return $.get(url, { query: query }, function (data) {
-
-                return process(data);
-
-            });
-
-        }
-
-    });
-</script>
     <script>
-              $(".js-example-basic-multiple").select2({
+              $(".selectJS").select2({
                 tags: true,
                 theme: "classic",
                 tokenSeparators: [',', ' ']

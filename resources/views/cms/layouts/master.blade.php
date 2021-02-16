@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <meta name="token" content="{{ csrf_token() }}">
   <title>CMS | Best Practice Training</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -593,62 +593,62 @@ $.widget.bridge('uibutton', $.ui.button)
            $target = $(event.target);
 
           });
-      $('.summernote').summernote({
-        toolbar:[
-          ['cleaner',['cleaner']], // The Button
-          ['style',['style']],
-          ['font',['bold','italic','underline','clear']],
-          ['fontname',['fontname']],
-          ['color',['color']],
-          ['para',['ul','ol','paragraph']],
-          ['height',['height']],
-          ['table',['table']],
-          ['insert',['media','link','hr']],
-          ['view',['fullscreen','codeview']],
-          ['help',['help']],
-          ['picture']
-      ],
-      cleaner:{
-            action: 'button', // both|button|paste 'button' only cleans via toolbar button, 'paste' only clean when pasting content, both does both options.
-            newline: '<br>', // Summernote's default is to use '<p><br></p>'
-            notStyle: 'position:absolute;top:0;left:0;right:0', // Position of Notification
-            icon: '<i class="note-icon">clean</i>',
-            keepHtml: true, // Remove all Html formats
-            keepOnlyTags: ['<p>', '<ul>', '<li>', '<a>','<h3>','<h4>','<h5>','<img>','<ol>','<span>'], // If keepHtml is true, remove all tags except these
-            keepClasses: true, // Remove Classes
-            badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'html'], // Remove full tags with contents
-            badAttributes: ['style', 'start','color','bgcolor'], // Remove attributes from remaining tags
-            limitChars: false, // 0/false|# 0/false disables option
-            limitDisplay: 'both', // text|html|both
-            limitStop: false // true/false
-      },
-        height: 200,
-        callbacks: {
-            onImageUpload: function(image) {
-              var data = new FormData();
-              data.append("image", image[0]);
-              $.ajax({
-                  url:"{{route('ImageUpload')}}",
-                  headers: {
-                        'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-                    },
-                  cache: false,
-                  contentType: false,
-                  processData: false,
-                  data: data,
-                  type: "post",
-                  success: function(url) {
-
-                    var imagetag = $('<img>').attr('src',url);
-                    $($target).summernote("insertNode", imagetag[0]);
+          $('.summernote').summernote({
+      toolbar:[
+        ['cleaner',['cleaner']], // The Button
+        ['style',['style']],
+        ['font',['bold','italic','underline','clear']],
+        ['fontname',['fontname']],
+        ['color',['color']],
+        ['para',['ul','ol','paragraph']],
+        ['height',['height']],
+        ['table',['table']],
+        ['insert',['media','link','hr']],
+        ['view',['fullscreen','codeview']],
+        ['help',['help']],
+        ['picture']
+    ],
+    cleaner:{
+          action: 'button', // both|button|paste 'button' only cleans via toolbar button, 'paste' only clean when pasting content, both does both options.
+          newline: '<br>', // Summernote's default is to use '<p><br></p>'
+          notStyle: 'position:absolute;top:0;left:0;right:0', // Position of Notification
+          icon: '<i class="note-icon">clean</i>',
+          keepHtml: true, // Remove all Html formats
+          keepOnlyTags: ['<p>', '<ul>', '<li>', '<a>','<h3>','<h4>','<h5>','<img>','<ol>','<span>'], // If keepHtml is true, remove all tags except these
+          keepClasses: true, // Remove Classes
+          badTags: ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'html'], // Remove full tags with contents
+          badAttributes: ['style', 'start','color','bgcolor'], // Remove attributes from remaining tags
+          limitChars: false, // 0/false|# 0/false disables option
+          limitDisplay: 'both', // text|html|both
+          limitStop: false // true/false
+    },
+      height: 200,
+      callbacks: {
+          onImageUpload: function(image) {
+            var data = new FormData();
+            data.append("image", image[0]);
+            $.ajax({
+                url:"{{route('ImageUpload')}}",
+                headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   },
-                  error: function(data) {
-                      console.log(data);
-                  }
-              });
-            }
-        }
-      });
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                  
+                  var imagetag = $('<img>').attr('src',url);
+                  $($target).summernote("insertNode", imagetag[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+          }
+      }
+    });
 
     });
     </script>

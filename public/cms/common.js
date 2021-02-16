@@ -40,3 +40,10 @@ function deleteItem(path)
     });
     return true;
 }
+
+function convertUrl(str)
+{
+    str = str.toLowerCase();
+    str = str.replace(/(?![a-z0-9 ])./gi, "");
+    return str.replace(/(?![a-z0-9])./gi, "-");
+}

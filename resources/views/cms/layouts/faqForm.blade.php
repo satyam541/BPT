@@ -50,17 +50,17 @@
                                         </div>
                                         <div class="form-group row">
                                             {{ Form::hidden('faq_id[]', $faq->id) }}
-                                            {{ Form::label('question', 'Question', ['class' => 'col-md-3 col-form-label text-right']) }}
+                                            {{ Form::label('question', 'Question', ['class' => 'col-md-3 col-form-label text-right','required'=>'required']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('question[]', $faq->question ?? null, ['class' =>'summernote']) }}
+                                                {{ Form::textarea('question[]', $faq->question ?? null) }}
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            {{ Form::label('answer', 'Answer', ['class' => 'col-md-3 col-form-label text-right']) }}
+                                            {{ Form::label('answer', 'Answer', ['class' => 'col-md-3 col-form-label text-right','required'=>'required']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('answer[]', $faq->answer ?? null, ['class' =>'summernote']) }}
+                                                {{ Form::textarea('answer[]', $faq->answer ?? null) }}
                                             </div>
                                         </div>
                                     </div>
@@ -94,18 +94,18 @@
             </div>
             <div class="form-group row">
                     {{ Form::hidden('faq_id[]',NULL )}}
-                {{Form::label('question','Question',['class'=>'col-md-3 col-form-label text-right'])}}
+                {{Form::label('question','Question',['class'=>'col-md-3 col-form-label text-right','required'=>'required'])}}
 
                 <div class="col-md-9">
-                    {{Form::textarea('question[]',null,['class'=>'form-control summernote','required'=>'required'])}}
+                    {{Form::textarea('question[]',null,['class'=>'form-control '])}}
                 </div>
             </div>
             
             <div class="form-group row">
-                {{Form::label('answer','Answer',['class'=>'col-md-3 col-form-label text-right'])}}
+                {{Form::label('answer','Answer',['class'=>'col-md-3 col-form-label text-right','required'=>'required'])}}
 
                 <div class="col-md-9">
-                {{Form::textarea('answer[]',null,['class'=>'form-control summernote '])}}
+                {{Form::textarea('answer[]',null,['class'=>'form-control  '])}}
                 </div>
             </div>
         </div>
@@ -117,11 +117,13 @@
     <!-- new faq add and remove script -->
     <script>
         function addQASet() {
+
             faqTemplate = $('#qa-set').clone();
             faqContainer = $("#faq-container");
             faqTemplate.attr('id', '');
-            var textarea = faqTemplate.find('textarea').addClass('summernote');
+            var textarea = faqTemplate.find('textarea');
             faqTemplate.appendTo(faqContainer);
+            
         }
 
         function removeQASet(element, deleteUrl = null) {
