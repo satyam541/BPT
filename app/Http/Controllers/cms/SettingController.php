@@ -39,7 +39,7 @@ class SettingController extends Controller
 
     public function insertWebsiteDetail(WebsitedetailRequest $request)
     {
-        $this->authorize('create', new WebsiteDetail());
+        // $this->authorize('create', new WebsiteDetail());
         
         $websitedetail=new WebsiteDetail();
         // $websitedetail->web_id         = $request->website;
@@ -71,19 +71,19 @@ class SettingController extends Controller
     }
     public function  editWebsiteDetail(WebsiteDetail $websitedetail)
     {
-        $this->authorize('update', $websitedetail);
+        // $this->authorize('update', $websitedetail);
         $data['websitedetail'] = $websitedetail;
         
         // $data['websites'] = Website::all()->pluck('name','id')->toArray();
         $data['countries'] = Country::all()->pluck('name','country_code')->toArray();
-       $data['submitroute'] = array('updateWebsiteDetail',$websitedetail->id);
+       $data['submitRoute'] = array('updateWebsiteDetail',$websitedetail->id);
       
         return view("cms.websiteContent.websiteDetailform",$data);
     }
 
     public function deleteWebsiteDetail(WebsiteDetail $websitedetail)
     {
-        $this->authorize('delete',$websitedetail);
+        // $this->authorize('delete',$websitedetail);
       $websitedetail->delete();
 
     }
@@ -91,8 +91,7 @@ class SettingController extends Controller
     
     public function updateWebsiteDetail(WebsiteDetail $websitedetail,WebsiteDetailRequest $request)
     {
-        $this->authorize('update', $websitedetail);
-
+        // $this->authorize('update', $websitedetail);
         // $websitedetail->web_id             = $request->website;
         $websitedetail->country_id         = $request->country;
         $websitedetail->contact_number     = $request->contact_number;
