@@ -31,8 +31,12 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Country Trash
+              </div>
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">
@@ -44,13 +48,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                
                     @foreach ($trashedCountries as $trashedCountry)
                     <tr>
                     <td>{{$trashedCountry->name}}</td>
                     <td>{{$trashedCountry->created_at}}</td>
-                    <td><a href="{{ route('restoreCountry',['id'=>$trashedCountry->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteCountry',['id'=>$trashedCountry->id])}}" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('restoreCountry',['country_code'=>$trashedCountry->country_code]) }}" class="fa fa-refresh fa-spin"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteCountry',['country_code'=>$trashedCountry->country_code])}}" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

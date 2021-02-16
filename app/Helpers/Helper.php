@@ -15,7 +15,9 @@ use Illuminate\Support\Arr;
 if (!function_exists('encodeUrlSlug')) {
     function encodeUrlSlug($string)
     {
-        $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $string));
+        $name = str_replace("&", " and", "$string");
+        $name = str_replace("+", " plus", "$name");
+        $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
         return $stringname;
     }
     if (!function_exists('country')) {

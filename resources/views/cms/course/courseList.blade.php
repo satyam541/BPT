@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">course</h1>
+          <h1 class="m-0 text-dark">Course</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">course</a></li>
+            <li class="breadcrumb-item"><a href="#">Course</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -31,10 +31,15 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Course
+              </div>
+            </div>
 
-            <!-- /.card-header -->
-            <div class="card-body">
+              <!-- /.card-header -->
+              <div class="card-body">
               <table id="example1">
                 <thead>
                 <tr>
@@ -56,7 +61,7 @@
                     <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
                     <td> <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a></td>
                     <td><a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$course->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

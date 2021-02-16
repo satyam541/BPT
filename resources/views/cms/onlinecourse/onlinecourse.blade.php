@@ -15,7 +15,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">venue</a></li>
+            <li class="breadcrumb-item"><a href="#">Online Courses</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -47,17 +47,18 @@
                 
                     @foreach ($onlineCourses as $onlineCourse)
                     <tr>
-                    <td>{{$onlineCourse->online_course_name}}</td>
-                    <td>{{$onlineCourse->course->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$onlineCourse->online_course_name}}</td>
+                      <td>{{$onlineCourse->course->name}}</td>
+                      <td><a href="{{ route('editOnlineCourse',['course'=>$onlineCourse->id]) }}" class="fa fa-edit"></a>
+                      <a href="#" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse ->id])}}')" class="fa fa-trash" style="color: red"></a>
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{ route('createOnlineCourse')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>

@@ -279,8 +279,8 @@ Route::get('/venue/deletevenue/{id}','VenueController@forceDeleteVenue')->name('
 
 
 Route::get('/countrytrash','CountryController@countrytrashList')->name('countryTrashList');
-Route::get('/country/restorevenue/{id}','CountryController@restoreCountry')->name('restoreCountry');
-Route::get('/country/deletecountry/{id}','CountryController@forceDeleteCountry')->name('forceDeleteCountry');
+Route::get('/country/restorevenue/{country_code}','CountryController@restoreCountry')->name('restoreCountry');
+Route::get('/country/deletecountry/{country_code}','CountryController@forceDeleteCountry')->name('forceDeleteCountry');
 
 Route::get('/locationtrash','LocationController@locationtrashList')->name('locationTrashList');
 Route::get('/location/restorelocation/{id}','LocationController@restoreLocation')->name('restoreLocation');

@@ -79,7 +79,7 @@ class AccreditationController extends Controller
 
    public function delete(Accreditation $accreditation)
    {
-        $this->authorize('delete', $accreditation);
+        // $this->authorize('delete', $accreditation);
         $accreditation->delete();
    }
 
@@ -96,7 +96,7 @@ class AccreditationController extends Controller
 
    public function restoreAccreditation($id)
    {
-        $this->authorize('restore', new Accreditation());
+        // $this->authorize('restore', new Accreditation());
         $accreditation = Accreditation::onlyTrashed()->find($id)->restore();
  
        return back()->with('success','Successfully Restored');
@@ -104,7 +104,7 @@ class AccreditationController extends Controller
    }
    public function forceDeleteAccreditation($id)
    {
-        $this->authorize('forceDelete', new Accreditation());
+        // $this->authorize('forceDelete', new Accreditation());
         $accreditation = Accreditation::onlyTrashed()->find($id)->forceDelete();
         
         return back()->with('success','Permanently Deleted');

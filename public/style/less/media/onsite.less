@@ -8,6 +8,16 @@
     }
     }
     // End Banner section //
+
+    // Start training section
+    .training{
+        padding:@sectionPadding-md;
+        .training-map{
+            width: 75%;
+            align-self: center;
+        }
+    }
+    // End training section
 }
 
 @media @size-lg{
@@ -22,6 +32,36 @@
         }
     }
     // End banner section
+
+    // Start training section
+    .training{
+        .training-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .training-info{
+            width: 45%;
+            align-items: flex-start;
+            .heading{
+                align-items: flex-start;
+                h2{
+                    text-align: left;
+                }
+            }
+        }
+        p{
+            text-align: left;
+        }
+        .delegate{
+            width: 47%;
+            margin-top: 0;
+            align-self: flex-start;
+        }
+        .training-map{
+            width: 100%;
+        }
+    }
+    // End training section
 }
 
 @media @size-xl{
@@ -34,4 +74,15 @@
         }
     }
     // End banner section
+    // Start training section
+    .training{
+        padding: @sectionPadding-xl;
+        .training-info{
+            width: 48%;
+        }
+        .delegate{
+            width: 46%;
+        }
+    }
+    // End training section
 }

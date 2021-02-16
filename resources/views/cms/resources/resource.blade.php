@@ -31,9 +31,12 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
-            <!-- /.card-header -->
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Resource
+              </div>
+            </div>
             <div class="card-body">
               <table id="example1">
                 <thead>
@@ -47,8 +50,8 @@
                     @foreach ($Resources as $Resource)
                     <tr>
                     <td>{{$Resource->name}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    &nbsp;&nbsp;&nbsp;<a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editresources',['id'=>$Resource->id]) }}" class="fa fa-edit"></a>
+                    &nbsp;&nbsp;&nbsp;<a href="#" onclick="deleteItem('{{ route('deleteresources',['id'=>$Resource->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

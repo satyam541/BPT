@@ -48,7 +48,7 @@ class VenueController extends Controller
 
     public function insert(VenueRequest $request)
     {
-        $this->authorize('create', Venue::class);
+        // $this->authorize('create', Venue::class);
         $inputs = $request->except("_token");
         $venue = new Venue();
         $venue->name                = $inputs["name"];
@@ -78,7 +78,7 @@ class VenueController extends Controller
 
     public function edit(Venue $venue)
     {
-        $this->authorize('update',$venue);
+        // $this->authorize('update',$venue);
         $data['venue'] = $venue;
         $data['submitRoute'] = array('updateVenue',$venue->id);
         $data['locations'] = Location::withoutGlobalScope("venues")->get()->pluck('name','id')->toArray();
@@ -87,7 +87,7 @@ class VenueController extends Controller
 
     public function update(Venue $venue,VenueRequest $request)
     {
-        $this->authorize('update', $venue);
+        // $this->authorize('update', $venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];
@@ -131,20 +131,18 @@ class VenueController extends Controller
 
    public function restoreVenue($id)
    {
-    $this->authorize('restore', new Venue());
-   $venue = Venue::onlyTrashed()->find($id);
+    // $this->authorize('restore', new Venue());
+        $venue = Venue::onlyTrashed()->find($id)->restore();
  
-       $venue->restore();
-       return redirect()->back()->with('success','successfully restored');
+       return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteVenue($id)
    {
-    $this->authorize('forceDelete', new Venue());
-   $venue = Venue::onlyTrashed()->find($id);
+    // $this->authorize('forceDelete', new Venue());
+        $venue = Venue::onlyTrashed()->find($id)->forceDelete();
  
-       $venue->forceDelete();
-       return redirect()->back()->with('success','permanently deleted');
+       return back()->with('success','Permanently Deleted');
 
 
    }

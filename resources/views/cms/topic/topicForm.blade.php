@@ -43,7 +43,7 @@
 
                   <div class="form-group">
                     {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
+                    {{Form::text('name',null,['id'=>'name','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control '])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control '])}}
                   </div>
 
                   <div class="form-group">
@@ -119,13 +119,25 @@
 @section('footer')
 
                  <script>
-              $(".js-example-basic-multiple").select2({
-                tags: true,
+                    $(document).ready( function() {
+        $("#name").on('focusout',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var location = $("#name").val();
+    var slug = convertUrl(location);
+    $("#reference").val(slug);
+    
+}
+$(".js-example-basic-multiple").select2({
                 tags: true,
                 theme: "classic",
                 tokenSeparators: [',', ' ']
                
             });
+      });
+              
         </script>
             
 @endsection

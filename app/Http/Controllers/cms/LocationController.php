@@ -52,6 +52,7 @@ class LocationController extends Controller
            
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['location']       = new Location();
+        $data['popular']=false;
         $data['submitRoute']    = "insertLocation";
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
@@ -60,10 +61,11 @@ class LocationController extends Controller
 
     public function edit(Location $location)
     {
-        $this->authorize('update', $location);
+        // $this->authorize('update', $location);
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
+        $data['popular']=$location->isPopular();
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
@@ -71,7 +73,7 @@ class LocationController extends Controller
 
     public function insert(LocationRequest $request)
     {
-        $this->authorize('create', new Location());
+        // $this->authorize('create', new Location());
         
         $inputs                       = $request->except("_token");
         $location                     = array();
@@ -100,13 +102,16 @@ class LocationController extends Controller
             $location['image']=$imageName;
         }
         $data=Location::updateOrCreate(['id' =>$inputs['id']],$location);
-        $data->reference='training-locations'.'/'.$inputs['reference'];
+        if($request->has('is_popular'))
+        {
+            $data->popular()->save($data->popular);
+        }
         return back()->with('success','Operation done!');
     }
 
     public function delete(Location $location)
     {
-        $this->authorize('delete', $location);
+        // $this->authorize('delete', $location);
         $location->delete();
     }
 
@@ -131,7 +136,7 @@ class LocationController extends Controller
 
    public function restoreLocation($id)
    {
-        $this->authorize('restore', new Location());
+        // $this->authorize('restore', new Location());
         $location = Location::onlyTrashed()->find($id)->restore();
  
         return back()->with('success','Successfully Restored');
@@ -140,7 +145,7 @@ class LocationController extends Controller
 
    public function forceDeleteLocation($id)
    {
-        $this->authorize('forceDelete',new Location);
+        // $this->authorize('forceDelete',new Location);
         $location = Location::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');

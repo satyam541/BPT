@@ -139,7 +139,7 @@ class CourseController extends Controller
     
     public function contentCreate(Request $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $filter = $request->all();
         $selectedCourse = empty($filter['course'])? NULL : $filter['course'];
         $selectedCountry = empty($filter['country'])? NULL : $filter['country'];
@@ -154,7 +154,7 @@ class CourseController extends Controller
 
     public function insert(CourseRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $inputs = $request->except(["_token",'is_popular']);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
@@ -163,18 +163,17 @@ class CourseController extends Controller
         ,$inputs);
         $topic=Topic::where('id',$request->topic_id)->first();
         $topic->reference=substr($topic->reference, strpos( $topic->reference, '/'));
-        $reference='online-courses'.$topic->reference."/".$request->reference;
         if(!isset($request['is_online'])){
             $course['is_online']=0;
-            $reference='training-courses'.$topic->reference."/".$request->reference;
         }
+        $reference='training-courses'.$topic->reference."/".$request->reference;
         $course['reference']=$reference;
         if(empty($course->created_at))
         {                    
             if($request->hasFile('logo')){
                 $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('logo')->getClientOriginalExtension();
                 $request->file('logo')->move(public_path($course->logo_path), $imageName);
-                $course->logo = $imageName;
+                $course->image = $imageName;
             }
             // dd($course);
             $course->save();
@@ -189,12 +188,12 @@ class CourseController extends Controller
         }
         
           
-        return redirect()->back();
+        return redirect()->route('courseList');
     }
 
     public function contentInsert(CourseContentRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $inputs              = $request->except("_token");
       
         $content               = CourseContent::firstOrNew(
@@ -210,7 +209,7 @@ class CourseController extends Controller
                 \Session::flash('failure', 'Duplicate Data Found!'); 
             }
 
-        return redirect()->back();
+        return back();
     }
 
     public function edit(Course $course)
@@ -250,17 +249,16 @@ class CourseController extends Controller
         $done = $course->update($inputs);
         $topic=Topic::where('id',$request->topic_id)->first();
         $topic->reference=substr($topic->reference, strpos( $topic->reference, '/'));
-            $reference='online-courses'.$topic->reference."/".$this->encodeCourseSlug($request->name);
             if(!isset($request['is_online'])){
                 $course['is_online']=0;
-                $reference='training-courses'.$topic->reference."/".$this->encodeCourseSlug($request->name);
             }
+            $reference='training-courses'.$topic->reference."/".$this->encodeCourseSlug($request->name);
             $course['reference']=$reference;
             $course->save();
-        if($request->hasFile('logo')){
-            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('logo')->getClientOriginalExtension();
-            $request->file('logo')->move(public_path($course->logo_path), $imageName);
-            $course->logo = $imageName;
+        if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($course->logo_path), $imageName);
+            $course->image = $imageName;
             $course->save();
         }
         
@@ -286,14 +284,14 @@ class CourseController extends Controller
         
         $content = $courseDetail->update($inputs);
             if(!empty($content))
-        \Session::flash('success', 'Content udpated!'); 
+        \Session::flash('success', 'Content Updated!'); 
 
-        return redirect()->back();
+        return back();
     }
 
     public function delete(Course $course)
     {
-        $this->authorize('delete', $course);
+        // $this->authorize('delete', $course);
         $course->delete();
     }
 
@@ -319,19 +317,19 @@ class CourseController extends Controller
 
    public function restoreCourse($id)
    {
-   $course= Course::onlyTrashed()->find($id);
-   $this->authorize('restore', $course);
+        $course= Course::onlyTrashed()->find($id);
+//    $this->authorize('restore', $course);
    
        $course->restore();
-       return redirect()->back()->with('success','successfully restored');
+       return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCourse($id)
    {
-   $course = Course::onlyTrashed()->find($id);
-   $this->authorize('forceDelete', $course);
+        $course = Course::onlyTrashed()->find($id);
+//    $this->authorize('forceDelete', $course);
        $course->forceDelete();
-       return redirect()->back()->with('success','permanently deleted');
+       return back()->with('success','Permanently Deleted');
    }
    
    public function whatsincludedlist(Request $request)

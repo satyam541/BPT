@@ -38,7 +38,8 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{Form::model($venue,['route'=>$submitRoute,"files"=>"true"])}}
-                <div class="card-body">
+              <fieldset class="gllpLatlonPicker">  
+              <div class="card-body">
                     
                   <div class="form-group">
                     {{Form::label('name','Name')}}
@@ -110,6 +111,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+              </fieldset>
                 {{Form::close()}}
             </div>
             <!-- /.card -->
@@ -124,4 +126,35 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADlk166150RMLLGby78Ayq9kUKyAdHtp0"></script>
+<script src="{{URL('/js/jquery-gmaps-latlon-picker.js?lnkn')}}"></script>
+<script>
+    $(document).ready( function() {
+      
+        if (!$.gMapsLatLonPickerNoAutoInit) {
+            $(".gllpLatlonPicker").each(function () {
+                $obj = $(document).gMapsLatLonPicker($('#gllpLatitudeId').val(),$('#gllpLongitudeId').val());
+                $obj.init( $(this) );
+            });
+        }
+
+
+
+    });
+    $(document).bind("location_changed", function(event, object) {
+        console.log("changed: " + $(object).attr('id') );
+    });
+</script>
+
+    <script>
+              $(".selectJS").select2({
+                tags: true,
+                theme: "classic",
+                tokenSeparators: [',', ' ']
+            })
+        </script>
+
 @endsection

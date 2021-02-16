@@ -19,7 +19,12 @@
       // Start Footer Section
       .contact{
         padding: @sectionPadding-md;
-        padding-bottom: 1rem;
+        .input-container{
+          width: 48%;
+          &:last-child{
+            width: 100%;
+          }
+        }
           .contact-info{
             margin-top: 0;
           }
@@ -46,7 +51,7 @@
       //Start information section
       .information{
         padding: @sectionPadding-md;
-        background-image: linear-gradient(@darkblueColor 58.7%,@whiteColor 45%);
+        background-image: linear-gradient(@darkblueColor 56.1%,@whiteColor 45%);
         .heading{
             &::before{
                 background-color: @whiteColor;
@@ -88,18 +93,19 @@
               flex-direction: row;
               justify-content: space-between;
               margin-top: 0;
-              width: 50%;
+              width: 48%;
               background-image: url(../img/contactus/dotted-map.png);
-              background-size: 100% 100%;
+              background-size: contain;
               background-repeat: no-repeat;
+              background-position: center;
           }
           .experience-info{
               align-self: center;
               background-image: url(../img/contactus/experience-bg.png);
               background-size: 100% 100%;
               background-repeat: no-repeat;
-              width: 300px;
-              height: 284px;
+              width: 287px;
+              height: 255px;
               align-items: center;
               justify-content: center;
               h2{
@@ -116,10 +122,10 @@
           }
           a{
               &:first-child{
-                  transform: translate(-66px);
+                  transform: translate(-62px,14px);
               }
               &:last-child{
-                  transform: translate(-66px);
+                  transform: translate(-62px,-14px);
               }
           }
       }
@@ -133,7 +139,8 @@
        .contact-banner {
         background-color: transparent;
         background-image:url(../img/contactus/banner-bg.png);
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
         padding: 2rem;
         padding-top: 1rem;
         .banner-container {
@@ -159,17 +166,6 @@
             width: 60%;
             align-self: flex-start;
             padding: 2rem;
-            .form-input{
-              flex-wrap: wrap;
-              flex-direction: row;
-              justify-content: space-between;
-              .input-container{
-                width: 48%;
-                &:last-child{
-                  width: 100%;
-                }
-              }
-            }
           }
           .contact-info{
               width: 36%;
@@ -189,18 +185,16 @@
               }
           }
           .social{
-            margin-bottom: 3rem;
+            margin: 2.5rem 0;
             width: 100%;
-            .media-list{
-              width: 90%;
-              align-self: center;
-            }
+            padding-top: 0;
           }
           }
         // End Footer Section
 
         //Start information section
         .information{
+          background-image: linear-gradient(#1c2848 58.1%,#fff 45%);
         .info-list{
             justify-content: space-around;
         }
@@ -215,8 +209,11 @@
 
         // Start FAQ Section
         .faq{
+          .faq-container{
+            align-items: center;
+          }
             .faq-content{
-                width: 58%;
+                width: 56%;
             }
             .experience{
                 width: 45%;
@@ -225,6 +222,17 @@
             .experience-info{
                 width: 380px;
                 height: 335px;
+                h2{
+                  font-size: 32px;
+                }
+            }
+            a{
+              &:first-child{
+                transform: translate(-62px,-5px);
+              }
+              &:last-child{
+                transform: translate(-62px,5px);
+              }
             }
             }
         // End FAQ Section
@@ -243,8 +251,8 @@
       // Start Footer Section
       .contact{
         padding: @sectionPadding-xl;
-        padding-top: 12rem;
-        padding-bottom: 12rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
         .contact-container{
           position: relative;
           align-items: center;
@@ -252,6 +260,7 @@
             width: 30%;
             position: absolute;
             left: 0;
+            top: -40px;
           }
           .form{
             width: 75%;
@@ -264,6 +273,7 @@
 
       //Start information section
       .information{
+        padding: @sectionPadding-xl;
         .info-content{
             width: 25%;
         }
@@ -274,7 +284,11 @@
         .faq{
             padding: @sectionPadding-xl;
             .experience{
-                width: 36%;
+                width: 40%;
+            }
+            .experience-info{
+              width: 430px;
+              height: 370px;
             }
             }
         // End FAQ Section

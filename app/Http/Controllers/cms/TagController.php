@@ -27,18 +27,17 @@ class TagController extends Controller
 
    public function update(Tag $tag,Request $request)
    {
-    $this->authorize('update', $tag);
-       $tag->name                     = $request->name;
+    // $this->authorize('update', $tag);
+       $tag->name  = $request->name;
        
        $tag->save();
        
-      
-       return redirect()->back();
+       return back()->with('success','Successfully Updated!');
    }
 
    public function delete(Tag $tag)
    {
-    $this->authorize('delete', $tag);
+    // $this->authorize('delete', $tag);
        $tag->delete();
    }
 
@@ -54,21 +53,18 @@ class TagController extends Controller
 
    public function restoreTag($id)
    {
-    $this->authorize('restore', new Tag());
-   $tag = Tag::onlyTrashed()->find($id);
+        // $this->authorize('restore', new Tag());
+        $tag = Tag::onlyTrashed()->find($id)->restore();
  
-       $tag->restore();
-       return redirect()->back()->with('success','successfully restored');
+        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteTag($id)
    {
-    $this->authorize('forceDelete', new Tag());
-   $tag = Tag::onlyTrashed()->find($id);
+        // $this->authorize('forceDelete', new Tag());
+        $tag = Tag::onlyTrashed()->find($id)->forceDelete();
  
-       $tag->forceDelete();
-       return redirect()->back()->with('success','permanently deleted');
-
+        return back()->with('success','Permanently Deleted');
 
    }
 }

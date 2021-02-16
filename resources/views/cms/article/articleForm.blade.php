@@ -9,7 +9,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark"> Form</h1>
+          <h1 class="m-0 text-dark">Article Form</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -42,7 +42,7 @@
                     
                   <div class="form-group">
                     {{Form::label('title','Title')}}
-                    {{Form::text('title',null,['class'=>'form-control'])}}
+                    {{Form::text('title',null,['id'=>'title','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -63,7 +63,12 @@
                   
                   <div class="form-group">
                     {{Form::label('tag','Tag')}}
-                    {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple', 'required'=>'required', 'placeholder'=>'Choose one'])}}
+                    @error('tag[]')
+                            <span class="invalid-feedback bg-danger text-sm" role="alert">
+                                <span>{{ $message }}</span>
+                            </span>
+                        @enderror
                   </div>
 
                   <div class="form-group">
@@ -81,12 +86,12 @@
 
                   <div class="form-group">
                     {{Form::label('type','ArticleType')}}
-                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
+                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['id'=>'type','class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control colorInputJs'])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control colorInputJs'])}}
                   </div>
 
                   <div class="form-group">
@@ -128,7 +133,19 @@
 @section('footer')
 
 <script>
-
+ $(document).ready( function() {
+        $("#title,#type").on('input',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var article = $("#title").val();
+    var type= $("#type").val();
+    var slug = type+'/'+convertUrl(article);
+    $("#reference").val(slug);
+    
+}
+ });
 $( function() {
             
             $( "#autoTag" ).autocomplete({
