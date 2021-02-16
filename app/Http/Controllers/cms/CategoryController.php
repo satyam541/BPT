@@ -55,9 +55,6 @@ class CategoryController extends Controller
         $category->tag_line             = $input['tag_line'];
         // $category->display_order        = $input['display_order'];
         $category->reference            = 'training-courses'.'/'.$input['reference'];
-        if(isset($input['is_online'])){
-            $category->reference            = 'online-courses'.'/'.$input['reference'];
-        }
         $category->color_code           = $input['color_code'];
         $category->published            = isset($input['published']);
         $category->is_online            = isset($input['is_online']);
@@ -94,9 +91,6 @@ class CategoryController extends Controller
         $category->tag_line         = $input['tag_line'];
         // $category->display_order    = $input['display_order'];
         $category->reference            = 'training-courses'.'/'.encodeUrlSlug($input['name']);
-        if(isset($input['is_online'])){
-            $category->reference            = 'online-courses'.'/'.encodeUrlSlug($input['name']);
-        }
         $category->color_code       = $input['color_code'];
         $category->published        = isset($input['published']);
         $category->is_online        = isset($input['is_online']);
@@ -121,7 +115,6 @@ class CategoryController extends Controller
 
     public function delete(Category $category)
     {
-        dd($category);
         $category->delete();
         return back();
     }
