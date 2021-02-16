@@ -25,7 +25,7 @@
 <section class="flex-container contact">
             <div class="container">
                 <div class="contact-container">
-                    <form class="form" id="prince2-other">
+                    <form class="form" id="contact-us">
                         <div class="heading center-heading">
                             <h2>Get In Touch <span>With Us Today</span> </h2>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="form-consent">
-                            <p>The information you provide shall be processed by Pearce mayfield – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
+                            <p>The information you provide shall be processed by Best Practice Training Limited – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
                             </p>
                         </div>
                         <div class="form-consent">
@@ -128,10 +128,10 @@
                             <div class="social">
                                 <p>Sign Up With Social Platform</p>
                                 <div class="media-list">
-                                    <a><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
-                                    <a><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
-                                    <a><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
-                                    <a><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
+                                    <a href="javascript:void"><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
+                                    <a href="javascript:void"><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
+                                    <a href="javascript:void"><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
+                                    <a href="javascript:void"><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
                                 </div>
                             </div>
                     </div>
@@ -145,7 +145,7 @@
             <div class="container">
                 <div class="information-container">
                     <div class="heading center-heading">
-                        <h2>Get More information</h2>
+                        <h2>Get More Information</h2>
                     </div>
                     <div class="info-list">
                         <div class="info-content">
@@ -262,10 +262,10 @@
                             <h2>Share your Experience With Us</h2>
                         </div>
                         <div class="platforms">
-                            <a><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
-                            <a><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
-                            <a><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
-                            <a><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
+                            <a href="javascript:void"><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
+                            <a href="javascript:void"><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
+                            <a href="javascript:void"><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
+                            <a href="javascript:void"><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
                         </div>
                     </div>
                 </div>

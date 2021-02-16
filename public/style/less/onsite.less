@@ -27,3 +27,47 @@
         }
     }
 }
+// End banner section
+
+// Start training section
+.training{
+    padding: @sectionPadding;
+    .training-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .training-info{
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        text-align: center;
+    }
+    .delegate{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        box-shadow: @shadowLight;
+        padding: 1rem;
+        background-image: url(../img/onsite/map-bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        .heading{
+            &::before{
+                content: none;
+            }
+        }
+    }
+    .training-map{
+        display: flex;
+        margin-top: 1rem;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+// End training section
+
+

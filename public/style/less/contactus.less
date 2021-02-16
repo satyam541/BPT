@@ -38,10 +38,13 @@
 }
 // End Banner section//
 
-// Start Footer Section
+// Start contact Section
 .contact{
     padding: @sectionPadding;
-    padding-bottom: 1rem;
+    background-image: url(../img/contactus/contactus-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
     .contact-container{
         display: flex;
         flex-direction: column;
@@ -51,6 +54,7 @@
         flex-direction: column;
         align-items: center;
         box-shadow: @shadowLight;
+        background-color: @whiteColor;
         padding: 1.5rem;
         .heading{
             &::before{
@@ -62,84 +66,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
-            .input-container {
-                display: flex;
-                margin-bottom: 1rem;
-                box-shadow: @shadowLight;
-                width: 100%;
-                span{
-                    display: flex;
-                    align-items: center;
-                    background-color: @bgColor;
-                    height: 100%;
-                    width: 50px;
-                    padding: .8rem;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .red{
-                        display: none;
-                    }
-                }
-                input,
-                textarea {
-                    width: 100%;
-                    border: none;
-                    outline: 0;
-                    font-weight: 500;
-                    padding: 1rem;
-                    background-color: transparent;
-                }
-                textarea {
-                    height: 70px;
-                    resize: none;
-                    overflow: auto;
-                }
-                .phonecode-field{
-                    display: flex;
-                    select{
-                        width: 53px;
-                        border: none; 
-                        margin: .5rem;
-                        margin-left: 0;
-                        outline: 0;
-                        border-right: @greyBorder;
-                        box-shadow: none;
-                        color: @greyColor;
-                    }
-                    span{
-                    color: @greyColor;
-                    font-size: 14px;
-                    background-color: transparent;
-                    padding: 0;
-                    }
-                    .telephone{
-                        padding: 0px 0px 0px 4px;
-                    }
- 
-                    .hidden-field{
-                        z-index:-1;
-                        width: 0;
-                        height: 0;
-                        pointer-events: none;
-                        overflow: hidden;
-                        input{
-                            border: none;
-                            padding: 0;
-                        }
-                    }
-                }
-
-                ::-webkit-input-placeholder {
-                    /* Edge */
-                    color: #C0C0C0;
-                }
-                :-ms-input-placeholder {
-                    /* Edge */
-                    color: #C0C0C0;
-                }
-            }
 
             .input-error {
 
@@ -211,6 +137,84 @@
             }
         }
     }
+    .input-container {
+        display: flex;
+        margin-bottom: 1rem;
+        box-shadow: @shadowLight;
+        width: 100%;
+        span{
+            display: flex;
+            align-items: center;
+            background-color: @bgColor;
+            height: 100%;
+            width: 50px;
+            padding: .8rem 1rem;
+            img{
+                width: 20px;
+                height: 20px;
+            }
+            .red{
+                display: none;
+            }
+        }
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            outline: 0;
+            font-weight: 500;
+            padding: .8rem 1rem;
+            background-color: transparent;
+        }
+        textarea {
+            height: 70px;
+            resize: none;
+            overflow: auto;
+        }
+        .phonecode-field{
+            display: flex;
+            select{
+                width: 53px;
+                border: none; 
+                margin: .5rem;
+                margin-left: 0;
+                outline: 0;
+                border-right: @greyBorder;
+                box-shadow: none;
+                color: @greyColor;
+            }
+            span{
+            color: @greyColor;
+            font-size: 14px;
+            background-color: transparent;
+            padding: 0;
+            }
+            .telephone{
+                padding: 0px 10px 0px 4px;
+            }
+
+            .hidden-field{
+                z-index:-1;
+                width: 0;
+                height: 0;
+                pointer-events: none;
+                overflow: hidden;
+                input{
+                    border: none;
+                    padding: 0;
+                }
+            }
+        }
+
+        ::-webkit-input-placeholder {
+            /* Edge */
+            color: #C0C0C0;
+        }
+        :-ms-input-placeholder {
+            /* Edge */
+            color: #C0C0C0;
+        }
+    }
     .contact-info{
         display: flex;
         flex-direction: column;
@@ -233,15 +237,12 @@
         .item{
             display: flex;
             margin-top: 1rem;
-            border-radius: 8px;
             align-items: flex-start;
             padding: .8rem;
             border: 1px solid @whiteColor;
             h3,a,p{
                 color: @whiteColor;
                 font-size: 14px;
-                font-weight: bold;
-                width: 85%;
                 text-align: left;
                 margin-bottom: 0;
                 line-height: 1.3;
@@ -254,13 +255,13 @@
                 margin-bottom: 0;
             }
             span{
-                width: 30px;
-                height: 30px;
-                min-width: 30px;
+                width: 25px;
+                height: 25px;
+                min-width: 25px;
                 background-color: @whiteColor;
                 transform: rotate(45deg);
                 margin-right: 1rem;
-                padding: .4rem;
+                padding: .3rem;
 
                 img{
                     width: 100%;
@@ -289,6 +290,8 @@
             display: flex;
             justify-content: space-between;
             padding-top: 1rem;
+            width: 210px;
+            align-self: center;
             a{
                 display: flex;
                 align-items: center;
@@ -306,7 +309,7 @@
         }
     }
 }
-// End Footer Section
+// End contact Section
 
 //Start information section
 .information{
@@ -318,6 +321,7 @@
     .info-list{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
         .info-content{
             display: flex;
@@ -325,21 +329,22 @@
             box-shadow: @shadowLight;
             background-color: @whiteColor;
             margin-top: 2rem;
+            width: 272px;
             &:first-child{
                 margin-top: 1rem;
             }
             span{
                 display: flex;
                 height: 195px;
-                position: relative;
                 background-image: url(../img/contactus/talk.png);
+                background-repeat: no-repeat;
+                background-size: cover;
                 padding: 1rem;
-                background-size: 100% 100%;
-                align-items: flex-end;
                 padding-bottom: 0;
+                align-items: flex-end;
                 img{
                     width: 50px;
-                    height: 50px;
+                    height: 48px;
                 }
             }
             .info-text{
@@ -391,6 +396,7 @@
 //Start locate section
 .locate{
     padding: @sectionPadding;
+    background-color: @bgColor;
     .locate-container{
         display: flex;
         flex-direction: column;
@@ -493,7 +499,7 @@
     }
     .platforms{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-top: 2rem;
     }
     a{
