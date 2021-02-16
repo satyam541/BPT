@@ -362,7 +362,7 @@ class CourseController extends Controller
         $courses = Course::all();
         $course = $courses->where('id', $course_id)->first();
         $data['course'] = $course;
-        
+        $data['module'] = 'Course';
         $data['list'] = $courses->pluck('name','id')->toArray();
         $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
         $data['whatsincluded'] = new whatsincluded();
