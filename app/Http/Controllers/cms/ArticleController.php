@@ -58,20 +58,13 @@ class ArticleController extends Controller
         $article->meta_keywords        =$request->meta_keywords;
         $article->summary              =$request->summary;
         
-        $input['reference']=substr($request->reference, strpos( $request->reference, '/'));
-        if($request['type'] == 'blog'){  
-                $request['reference'] = 'blog/'.encodeUrlSlug($input['reference']);
-        }
-
-        else{
-                $request['reference'] = 'news/'.encodeUrlSlug($input['reference']);
-        }
+   
        
-        $article->reference      = $request['reference'];
+        $article->reference      = $request->reference;
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path($article->image_path), "large_".$imageName);
+            $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
         }
         
@@ -126,31 +119,13 @@ class ArticleController extends Controller
         $article->meta_keywords           =$request->meta_keywords;
         $article->summary                =$request->summary;
         
-        $input['reference']=substr($request->reference, strpos( $request->reference, '/'));
-        if($request['type'] == 'blog'){
-
-            if($request['reference']){
-                $request['reference'] = 'blog/'.encodeUrlSlug($input['reference']);
-            }
-            else{
-                $request['reference'] = 'blog/'.encodeUrlSlug($request['title']);
-            }
-        }
-        else{
-            if($request['reference'])
-            {
-                $request['reference'] = 'news/'.encodeUrlSlug($input['reference']);
-            }
-            else{
-            $request['reference'] = 'news/'.encodeUrlSlug($request['title']);
-            }
-        }
+      
        
-        $article->reference      = $request['reference'];
+        $article->reference      = $request->reference;
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->move(public_path($article->image_path), "large_".$imageName);
+            $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
         }
         
