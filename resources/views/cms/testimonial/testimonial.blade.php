@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">testimonial</h1>
+          <h1 class="m-0 text-dark">Testimonial</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">testimonial</a></li>
+            <li class="breadcrumb-item"><a href="#">Testimonial</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -28,14 +28,18 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-           
-          <div class="card">
 
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1">
+        <!-- left column -->
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                testimonial
+              </div>
+            </div>
+
+              <!-- /.card-header -->
+              <div class="card-body">      <table id="example1">
                 <thead>
                 <tr>
                   <th>S No</th>
@@ -53,8 +57,8 @@
                     <td>{{$testimonial->author}}</td>
                     <td>{{$testimonial->post_date}}</td>
                     <td>{{$testimonial->location}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editTestimonial',$testimonial->id) }}" class="fa fa-edit"></a>
+                    <a href="#" onclick="deleteItem('{{ route('deleteTestimonial',$testimonial->id)}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -62,6 +66,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createTestimonial')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>

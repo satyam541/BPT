@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Dashboard</h1>
+                        <h1>Permission</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -30,13 +30,13 @@
                                         <form action="">
                                             <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
                                                         {{ Form::select('moduleName', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control js-example-basic-multiple select2-danger'])) }}
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
                                                         {{ Form::select('access', $access, $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  js-example-basic-multiple'])) }}
                                                     </div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
                                                         <button class="btn btn-primary btn-sm">Search</button>
                                                     </div>
                                                 </div>

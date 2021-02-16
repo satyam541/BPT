@@ -38,19 +38,18 @@ class ArticleController extends Controller
         $data['submitRoute'] = "insertArticle";
         $data['selectedTags']="";
         $list['tag'] = Tag::pluck('name','name')->toArray();
-            $data['tag']=Tag::all(); 
-         $data['list'] = $list;
+        $data['tag']=Tag::all(); 
+        $data['list'] = $list;
         $data['articleRoute']="newsList";
         return view('cms.article.articleForm',$data);
     }
 
     public function insert(ArticleRequest $request)
     {
-        $this->authorize('create', Article::firstOrNew(['type'=>$request->type]));
+        // $this->authorize('create', Article::firstOrNew(['type'=>$request->type]));
         $article=new Article();
         $article->title                = $request->title;
         $article->content              = $request->content;
-        $article->reference            = $request->reference;
         $article->post_date            = $request->post_date;
         $article->type                 = $request->type;
         $article->author               = $request->author;
@@ -59,7 +58,16 @@ class ArticleController extends Controller
         $article->meta_keywords        =$request->meta_keywords;
         $article->summary              =$request->summary;
         
-         
+        $input['reference']=substr($request->reference, strpos( $request->reference, '/'));
+        if($request['type'] == 'blog'){  
+                $request['reference'] = 'blog/'.encodeUrlSlug($input['reference']);
+        }
+
+        else{
+                $request['reference'] = 'news/'.encodeUrlSlug($input['reference']);
+        }
+       
+        $article->reference      = $request['reference'];
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -91,7 +99,7 @@ class ArticleController extends Controller
 
      public function edit(Article $article)
      {
-        $this->authorize('update', $article);
+        // $this->authorize('update', $article);
          $data['article'] = $article;
          $list['tag'] = Tag::all()->pluck('name','name')->toArray();
         $data['list'] = $list;
@@ -107,20 +115,39 @@ class ArticleController extends Controller
 
     public function update(Article $article,ArticleRequest $request)
     {
-        $this->authorize('update', $article);
+        // $this->authorize('update', $article);
         $article->title                     = $request->title;
         $article->content                  = $request->content;
-        $article->reference                = $request->reference;
         $article->post_date                = $request->post_date;
         $article->type                     = $request->type;
         $article->author                   =$request->author;
         $article->meta_title               =$request->meta_title;
         $article->meta_description        =$request->meta_description;
         $article->meta_keywords           =$request->meta_keywords;
-         $article->summary                =$request->summary;
-          
-    //    dd($article);
-    
+        $article->summary                =$request->summary;
+        
+        $input['reference']=substr($request->reference, strpos( $request->reference, '/'));
+        if($request['type'] == 'blog'){
+
+            if($request['reference']){
+                $request['reference'] = 'blog/'.encodeUrlSlug($input['reference']);
+            }
+            else{
+                $request['reference'] = 'blog/'.encodeUrlSlug($request['title']);
+            }
+        }
+        else{
+            if($request['reference'])
+            {
+                $request['reference'] = 'news/'.encodeUrlSlug($input['reference']);
+            }
+            else{
+            $request['reference'] = 'news/'.encodeUrlSlug($request['title']);
+            }
+        }
+       
+        $article->reference      = $request['reference'];
+        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($article->image_path), "large_".$imageName);
@@ -158,7 +185,7 @@ class ArticleController extends Controller
 
     public function delete(Article $article)
     {
-         $this->authorize('delete', $article);
+        //  $this->authorize('delete', $article);
         $article->delete();
     }
 

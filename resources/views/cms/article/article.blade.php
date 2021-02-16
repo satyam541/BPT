@@ -28,10 +28,12 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-           
-          <div class="card">
+        <!-- left column -->
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            
+          </div>
 
             <!-- /.card-header -->
             <div class="card-body">
@@ -49,8 +51,8 @@
                     <tr>
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
+                    <a href="#" onclick="deleteItem('{{ route('deleteArticle',['article'=>$item->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -58,6 +60,7 @@
                 
                 </tfoot>
               </table>
+              <a id="add" href="{{route('createNews')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>

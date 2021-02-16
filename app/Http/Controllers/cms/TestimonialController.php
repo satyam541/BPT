@@ -36,7 +36,7 @@ class TestimonialController extends Controller
 
     public function insert(TestimonialRequest $request)
     {
-        $this->authorize('create', new Testimonial());
+        // $this->authorize('create', new Testimonial());
         $testimonial=new Testimonial();
         $testimonial->author        = $request->author;
         $testimonial->location      = $request->location;
@@ -60,7 +60,7 @@ class TestimonialController extends Controller
     
     public function edit(Testimonial $testimonial)
     {
-        $this->authorize('update', $testimonial);
+        // $this->authorize('update', $testimonial);
         $data['testimonial'] = $testimonial;
         $data['submitRoute'] = array('updateTestimonial',$testimonial->id);
      
@@ -69,7 +69,7 @@ class TestimonialController extends Controller
 
    public function update(Testimonial $testimonial,TestimonialRequest $request)
    {
-        $this->authorize('update', $testimonial);
+        // $this->authorize('update', $testimonial);
         $testimonial->author        = $request->author;
         $testimonial->location      = $request->location;
         $testimonial->title         = $request->title;
@@ -91,7 +91,7 @@ class TestimonialController extends Controller
 
    public function delete(Testimonial $testimonial)
    {
-        $this->authorize('delete', $testimonial);
+        // $this->authorize('delete', $testimonial);
        $testimonial->delete();
    }
 
@@ -107,7 +107,7 @@ class TestimonialController extends Controller
 
    public function restoreTestimonial($id)
    {
-        $this->authorize('restore', new Testimonial());
+        // $this->authorize('restore', new Testimonial());
         $testimonial = Testimonial::onlyTrashed()->find($id)->restore();
  
        return back()->with('success','Successfully Restored');

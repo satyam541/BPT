@@ -26,7 +26,7 @@ function deleteItem(path)
         headers: { 'X-CSRF-TOKEN': $("meta[name='token']").attr('content') },
         dataType : 'html',
         success: function (response) {
-            // location.reload();       
+            location.reload();       
             toastr.success('Successfully Deleted');    
         },
         error: function(response) {
@@ -39,4 +39,11 @@ function deleteItem(path)
         }
     });
     return true;
+}
+
+function convertUrl(str)
+{
+    str = str.toLowerCase();
+    str = str.replace(/(?![a-z0-9 ])./gi, "");
+    return str.replace(/(?![a-z0-9])./gi, "-");
 }
