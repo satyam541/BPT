@@ -102,7 +102,7 @@
                                 </span>
                                 <div class="item-info">
                                     <h3>Email:</h3>
-                                    <a href="mailTo:info@prince2training.co.uk">info@prince2training.co.uk</a>
+                                    <a href="mailTo:info@bestpratice.co.uk">info@bestpratice.co.uk</a>
 
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                     </span>
                                     <div class="item-info">
                                         <h3>Contact:</h3>
-                                        <a href="tel:01344 203999">01344 203999</a>
+                                        <a href="tel:02380001008">023 8000 1008</a>
                                     </div>
                             </div>
                             <div class="item">
@@ -121,7 +121,9 @@
                                     </span>
                                     <div class="item-info">
                                         <h3>Address:</h3>
-                                        <p>Reflex, Cain Road, Bracknell, Berkshire RG12 1HL, United Kingdom</p>
+                                        <p>Wessex House, Upper 
+                                            Market Street, Eastleigh, 
+                                            Hampshire, SO50 9FD.</p>
                                     </div>
                             </div>
                         </div>

@@ -139,7 +139,8 @@
        .contact-banner {
         background-color: transparent;
         background-image:url(../img/contactus/banner-bg.png);
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center;
         padding: 2rem;
         padding-top: 1rem;
         .banner-container {
@@ -184,8 +185,9 @@
               }
           }
           .social{
-            margin-bottom: 3rem;
+            margin: 2.5rem 0;
             width: 100%;
+            padding-top: 0;
           }
           }
         // End Footer Section
@@ -207,8 +209,11 @@
 
         // Start FAQ Section
         .faq{
+          .faq-container{
+            align-items: center;
+          }
             .faq-content{
-                width: 54%;
+                width: 56%;
             }
             .experience{
                 width: 45%;
@@ -217,6 +222,9 @@
             .experience-info{
                 width: 380px;
                 height: 335px;
+                h2{
+                  font-size: 32px;
+                }
             }
             a{
               &:first-child{
@@ -252,6 +260,7 @@
             width: 30%;
             position: absolute;
             left: 0;
+            top: -40px;
           }
           .form{
             width: 75%;
@@ -265,7 +274,6 @@
       //Start information section
       .information{
         padding: @sectionPadding-xl;
-        background-image: linear-gradient(#1c2848 60.1%,#fff 45%);
         .info-content{
             width: 25%;
         }
@@ -276,7 +284,11 @@
         .faq{
             padding: @sectionPadding-xl;
             .experience{
-                width: 36%;
+                width: 40%;
+            }
+            .experience-info{
+              width: 430px;
+              height: 370px;
             }
             }
         // End FAQ Section

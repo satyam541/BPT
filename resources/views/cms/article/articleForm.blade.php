@@ -42,7 +42,7 @@
                     
                   <div class="form-group">
                     {{Form::label('title','Title')}}
-                    {{Form::text('title',null,['class'=>'form-control'])}}
+                    {{Form::text('title',null,['id'=>'title','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -81,12 +81,12 @@
 
                   <div class="form-group">
                     {{Form::label('type','ArticleType')}}
-                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
+                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['id'=>'type','class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control colorInputJs'])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control colorInputJs'])}}
                   </div>
 
                   <div class="form-group">
@@ -128,7 +128,19 @@
 @section('footer')
 
 <script>
-
+ $(document).ready( function() {
+        $("#title,#type").on('input',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var article = $("#title").val();
+    var type= $("#type").val();
+    var slug = type+'/'+convertUrl(article);
+    $("#reference").val(slug);
+    
+}
+ });
 $( function() {
             
             $( "#autoTag" ).autocomplete({

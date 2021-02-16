@@ -106,7 +106,7 @@ class Course extends Model
 
     public function getLogoPath()
     {// check file exist then return default image.
-        $imageLink = url($this->logo_path.$this->logo);
+        $imageLink = url($this->logo_path.$this->image);
         if ($this->hasLogo()) {
             return $imageLink;
         } else {
@@ -116,8 +116,8 @@ class Course extends Model
 
     public function hasLogo()
     {
-        if(empty($this->logo)) return FALSE;
-        if (file_exists(public_path($this->logo_path.$this->logo))) {
+        if(empty($this->image)) return FALSE;
+        if (file_exists(public_path($this->logo_path.$this->image))) {
             return TRUE;
         }
         return FALSE;

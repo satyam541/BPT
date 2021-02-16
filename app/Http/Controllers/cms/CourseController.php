@@ -173,7 +173,7 @@ class CourseController extends Controller
             if($request->hasFile('logo')){
                 $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('logo')->getClientOriginalExtension();
                 $request->file('logo')->move(public_path($course->logo_path), $imageName);
-                $course->logo = $imageName;
+                $course->image = $imageName;
             }
             // dd($course);
             $course->save();
@@ -255,10 +255,10 @@ class CourseController extends Controller
             $reference='training-courses'.$topic->reference."/".$this->encodeCourseSlug($request->name);
             $course['reference']=$reference;
             $course->save();
-        if($request->hasFile('logo')){
-            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('logo')->getClientOriginalExtension();
-            $request->file('logo')->move(public_path($course->logo_path), $imageName);
-            $course->logo = $imageName;
+        if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($course->logo_path), $imageName);
+            $course->image = $imageName;
             $course->save();
         }
         
@@ -291,7 +291,7 @@ class CourseController extends Controller
 
     public function delete(Course $course)
     {
-        $this->authorize('delete', $course);
+        // $this->authorize('delete', $course);
         $course->delete();
     }
 

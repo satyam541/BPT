@@ -1263,6 +1263,8 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0;
 }
 .contact .contact-list .item span {
+  display: flex;
+  align-items: center;
   width: 25px;
   height: 25px;
   min-width: 25px;
@@ -1331,6 +1333,7 @@ input::-webkit-inner-spin-button {
   background-color: #FFFFFF;
   margin-top: 2rem;
   width: 272px;
+  min-height: 378px;
 }
 .information .info-content:first-child {
   margin-top: 1rem;
@@ -1607,7 +1610,8 @@ input::-webkit-inner-spin-button {
   .contact-banner {
     background-color: transparent;
     background-image: url(../img/contactus/banner-bg.png);
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
     padding-top: 1rem;
   }
@@ -1647,8 +1651,9 @@ input::-webkit-inner-spin-button {
     width: 100%;
   }
   .contact .social {
-    margin-bottom: 3rem;
+    margin: 2.5rem 0;
     width: 100%;
+    padding-top: 0;
   }
   .information {
     background-image: linear-gradient(#1c2848 58.1%, #fff 45%);
@@ -1662,8 +1667,11 @@ input::-webkit-inner-spin-button {
   .information .info-text {
     padding: 2rem;
   }
+  .faq .faq-container {
+    align-items: center;
+  }
   .faq .faq-content {
-    width: 54%;
+    width: 56%;
   }
   .faq .experience {
     width: 45%;
@@ -1672,6 +1680,9 @@ input::-webkit-inner-spin-button {
   .faq .experience-info {
     width: 380px;
     height: 335px;
+  }
+  .faq .experience-info h2 {
+    font-size: 32px;
   }
   .faq a:first-child {
     transform: translate(-62px, -5px);
@@ -1698,6 +1709,7 @@ input::-webkit-inner-spin-button {
     width: 30%;
     position: absolute;
     left: 0;
+    top: -40px;
   }
   .contact .contact-container .form {
     width: 75%;
@@ -1706,7 +1718,6 @@ input::-webkit-inner-spin-button {
   }
   .information {
     padding: 4rem 0rem;
-    background-image: linear-gradient(#1c2848 60.1%, #fff 45%);
   }
   .information .info-content {
     width: 25%;
@@ -1715,7 +1726,11 @@ input::-webkit-inner-spin-button {
     padding: 4rem 0rem;
   }
   .faq .experience {
-    width: 36%;
+    width: 40%;
+  }
+  .faq .experience-info {
+    width: 430px;
+    height: 370px;
   }
 }
 .about-us {
