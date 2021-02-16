@@ -1,0 +1,292 @@
+@media @size-md{
+    // Start Banner section //
+    .location-banner {
+        background: none;
+        background-image: url(../img/location/banner-bg.png);
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        box-shadow: @shadowLight;
+        &::before {
+            content: none;
+        }
+        .banner-container {
+            width: 60%;
+            background-image: url(../img/location/dotted-map.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: 100% 100%;
+        }
+        h1,p {
+            color: @blackColor;
+        }
+        .breadcrums {
+            ul {
+                li {
+                    color: @blackColor;
+                }
+            }
+        }
+    }
+    // End Banner section //
+
+    // Start Convenient section //
+    .convenient {
+        padding: @sectionPadding-md;
+        padding-bottom: 6rem;
+        .convenient-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        .convenient-content {
+            width: 42%;
+            padding: 1rem;
+            span {
+                transform: rotate(45deg) translate(-31px, 32px);
+            }
+        }
+        .largest {
+            background: none;
+            background-image: url(../img/location/largest-bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 325px;
+            width: 340px;
+            padding: 3rem;
+            align-self: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 6rem;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                height: 430px;
+                width: 430px;
+                bottom: -51px;
+                left: -40px;
+                background-image: url(../img/location/arc-circle.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                animation: rotate 30s linear infinite;
+            }
+        }
+    }
+    // End Convenient section //
+
+    // Start Find section //
+    .find {
+        padding: @sectionPadding-md;
+        .find-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        span {
+            margin-bottom: 0rem;
+        }
+        .content {
+            width: 60%;
+            h2, p {
+                text-align: left;
+            }
+            h2 {
+                margin-bottom: .5rem;
+            }
+        }
+        .buttons {
+            margin-top: 0;
+            width: 22%;
+        }
+    }
+    // End Find section //
+
+    // Start Popular Section
+    .popular {
+        padding: @sectionPadding-md;
+        .popular-info {
+            flex-direction: row;
+            justify-content: space-between;
+            h2 {
+                width: auto;
+            }
+        }
+        .search {
+            width: 80%;
+        }
+        .popular-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .popular-content {
+            width: 44%;
+            margin-right: 3rem;
+            position: relative;
+            z-index: 1;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                background-image: url(../img/location/polygon.png);
+                background-size: cover;
+                height: 79px;
+                width: 88px;
+                top: -9px;
+                left: -27px;
+            }
+        }
+    }
+    // End Popular Section
+
+    // Start Buy Section
+    .buy {
+        display: flex;
+        padding: @sectionPadding-md;
+        .buy-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .img {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    // End Buy Section
+}
+
+@media @size-lg{
+    // Start Banner section //
+    .location-banner {
+        background-size: 60% 100%;
+        p {
+            width: 61%;
+        }
+        h1 {
+            font-size: 32px;
+        }
+    }
+    // End Banner section //
+
+    // Start Convenient section //
+    .convenient {
+        padding-bottom: 3rem;
+        .convenient-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                background-image: url(../img/location/dotted-circle.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                height: 423px;
+                width: 413px;
+                right: -19px;
+                top: 0;
+            }
+        }
+        .convenient-list {
+            width: 64%;
+            padding-right: 0;
+        }
+        .convenient-content {
+            width: 45%;
+        }
+        .largest {
+            width: 34%;
+            margin-top: 0;
+            &::before {
+                content: none;
+            }
+        }
+    }
+    // End Convenient section //
+
+    // Start Find section //
+    .find {
+        .find-container {
+            width: 74%;
+            margin: 0 auto;
+        }
+    }
+    // End Find section //
+
+    // Start Popular Section
+    .popular {
+        .popular-content {
+            width: 30%;
+            &:nth-child(even) {
+                margin-right: 3rem;
+            }
+            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(12),&:nth-child(15),&:nth-child(18),&:nth-child(20) {
+                margin-right: 0;
+            }
+        }
+    }
+    // End Popular Section
+    
+}
+
+@media @size-xl {
+
+    // Start Convenient section //
+    .convenient {
+        padding: @sectionPadding-xl;
+        .convenient-container {
+            &::before {
+                height: 497px;
+                width: 446px;
+                right: -68px;
+                top: -32px;
+            }
+        }
+        .convenient-content {
+            width: 45%;
+        }
+        .largest {
+            width: 28%;
+            &::before {
+                content: '';
+                animation: none;
+            }
+        }
+    }
+    // End Convenient section //
+
+    // Start Popular Section
+    .popular {
+        .popular-content {
+            width: 22%;
+            &:nth-child(even) {
+                margin-right: 3rem;
+            }
+            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(15),&:nth-child(18) {
+                margin-right: 3rem;
+            }
+            &:nth-child(4),&:nth-child(8),&:nth-child(12),&:nth-child(16), &:nth-child(20) {
+                margin-right: 0;
+            }
+        }
+    }
+    // End Popular Section
+
+    // Start Buy Section
+    .buy {
+        padding: @sectionPadding-xl;
+    }
+    // End Buy Section
+}
