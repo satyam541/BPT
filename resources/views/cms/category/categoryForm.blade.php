@@ -41,13 +41,13 @@
                 <div class="card-body">
                   <div class="form-group">
                     {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
+                    {{Form::text('name',null,['id'=>'name','class'=>'form-control'])}}
 
                     {{-- <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> --}}
                   </div>
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control'])}}
                     
                   </div>
                   <div class="form-group">
@@ -113,4 +113,20 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+      $(document).ready( function() {
+        $("#name").on('focusout',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var location = $("#name").val();
+    var slug = convertUrl(location);
+    $("#reference").val(slug);
+    
+}
+      });
+    </script>
 @endsection
