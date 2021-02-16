@@ -53,20 +53,18 @@ class TagController extends Controller
 
    public function restoreTag($id)
    {
-        $this->authorize('restore', new Tag());
-        $tag = Tag::onlyTrashed()->find($id);
+        // $this->authorize('restore', new Tag());
+        $tag = Tag::onlyTrashed()->find($id)->restore();
  
-        $tag->restore();
-        return back()->with('success','successfully restored');
+        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteTag($id)
    {
-        $this->authorize('forceDelete', new Tag());
-        $tag = Tag::onlyTrashed()->find($id);
+        // $this->authorize('forceDelete', new Tag());
+        $tag = Tag::onlyTrashed()->find($id)->forceDelete();
  
-        $tag->forceDelete();
-        return back()->with('success','permanently deleted');
+        return back()->with('success','Permanently Deleted');
 
    }
 }

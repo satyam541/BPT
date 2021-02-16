@@ -131,20 +131,18 @@ class VenueController extends Controller
 
    public function restoreVenue($id)
    {
-    $this->authorize('restore', new Venue());
-   $venue = Venue::onlyTrashed()->find($id);
+    // $this->authorize('restore', new Venue());
+        $venue = Venue::onlyTrashed()->find($id)->restore();
  
-       $venue->restore();
-       return redirect()->back()->with('success','successfully restored');
+       return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteVenue($id)
    {
-    $this->authorize('forceDelete', new Venue());
-   $venue = Venue::onlyTrashed()->find($id);
+    // $this->authorize('forceDelete', new Venue());
+        $venue = Venue::onlyTrashed()->find($id)->forceDelete();
  
-       $venue->forceDelete();
-       return redirect()->back()->with('success','permanently deleted');
+       return back()->with('success','Permanently Deleted');
 
 
    }

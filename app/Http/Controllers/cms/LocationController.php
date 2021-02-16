@@ -136,7 +136,7 @@ class LocationController extends Controller
 
    public function restoreLocation($id)
    {
-        $this->authorize('restore', new Location());
+        // $this->authorize('restore', new Location());
         $location = Location::onlyTrashed()->find($id)->restore();
  
         return back()->with('success','Successfully Restored');
@@ -145,7 +145,7 @@ class LocationController extends Controller
 
    public function forceDeleteLocation($id)
    {
-        $this->authorize('forceDelete',new Location);
+        // $this->authorize('forceDelete',new Location);
         $location = Location::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');
