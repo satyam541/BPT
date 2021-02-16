@@ -39,9 +39,8 @@
               <!-- form start -->
               {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
-                  {{-- {{dd($course->name)}} --}}
                   <div class="form-group">
-                    {{Form::label('course_id','Course')}}
+                    {{Form::label('course_id',$module)}}
                     {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 

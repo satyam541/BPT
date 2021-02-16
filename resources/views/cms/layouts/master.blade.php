@@ -155,7 +155,7 @@
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="fa fa-unlink"></i>
               <p>
                 Unlinked Data
                 <i class="fas fa-angle-left right"></i>
@@ -214,7 +214,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsIncludedList')}}" class="nav-link">
+                <a href="{{Route('whatsincludedListRoute')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
