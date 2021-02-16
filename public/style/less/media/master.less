@@ -355,6 +355,15 @@
     //Start footer
     .footer{
       padding: 0;
+      h2{
+        font-size: 26px;
+      }
+      .logo-image {
+        width: 260px;
+      }
+      .terms{
+        padding: 1rem 0;
+      }
       .footer-content{
           padding-top: 6rem;
           padding-bottom: 3rem;
@@ -362,6 +371,11 @@
       }
       .links,.blog{
           width: 20%;
+      }
+      .links{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .contact-us{
           align-items: center;
@@ -371,9 +385,9 @@
           position: relative;
           width: 30%;
           padding: 4rem 2rem;
-          &:last-child{
-            padding-right: 2rem;
-          }
+          // &:last-child{
+          //   padding-right: 2rem;
+          // }
           &::before,&::after{
               content: '';
               background-image: url('../../../img/master/footer-circle.png');
@@ -394,13 +408,12 @@
               height: 100%;
               top: 0px;
           }
-          h2{
-              font-size: 32px;
-          }
+       
           ul{
               width: 70%;
               margin: 0 auto;
               z-index: 1;
+            
           }
           li{
             margin-bottom: 0.5rem;
