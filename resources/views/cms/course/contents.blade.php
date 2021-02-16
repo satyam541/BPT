@@ -58,7 +58,7 @@
                                 <tr>
                                     <th>Course</th>
                                     <th>Country</th>
-                                    <th>edit</th>
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>        
                             </thead>
@@ -77,9 +77,8 @@
  </div>
 </div>
 <div class="box-footer clear-fix small-pagination">
-    {{-- @can('create',new App\Models\Permission) --}}
-    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
-   {{-- @endcan --}}
+    <a id="add" href="{{ route('createCourseContent',['course'=>$selectedCourse,'country'=>$selectedCountry])}}" class="btn btn-success" style="">Add new record</a>
+   
       
 {{ $contents->links() }}
    </div>
