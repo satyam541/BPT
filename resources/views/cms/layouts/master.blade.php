@@ -29,8 +29,10 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.css')}}">
-    {{-- Toastr css  --}}
-    <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
+  {{-- Toastr css  --}}
+  <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
@@ -518,24 +520,25 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-      @if ($errors->any())
-       <div class="container">
-        
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            
-              <ul class="">
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-        </div>
+  @if ($errors->any())
   
-      
-  @endif
+  <div id="toastsContainerTopRight" class="toasts-top-right fixed p-2">
+    @foreach ($errors->all() as $error)
+    <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="mr-auto text-white">{{ $error }}</strong>
+       
+        <button type="button" class=" ml-2 mb-2 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">x</span></button>
+        
+        
+      </div>
+  
+     
+    </div>
+    @endforeach
+  </div>
+@endif
     
 @yield('content')
 
@@ -567,7 +570,6 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-{{-- <script src="{{ url('cms/tinymce.init.js')}}"></script> --}}
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -578,6 +580,8 @@ $.widget.bridge('uibutton', $.ui.button)
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 {{-- Toastr js --}}
 <script src="{{Url('adminlte/plugins/toastr/toastr.min.js')}}"></script>
+<!-- SweetAlert2 -->
+<script src="{{Url('adinlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @yield('footer')
 <script>
   $(function () {
@@ -592,8 +596,9 @@ $.widget.bridge('uibutton', $.ui.button)
     $(document).on('click', function (event) {
            $target = $(event.target);
 
-          });
-          $('.summernote').summernote({
+    });
+      
+    $('.summernote').summernote({
       toolbar:[
         ['cleaner',['cleaner']], // The Button
         ['style',['style']],

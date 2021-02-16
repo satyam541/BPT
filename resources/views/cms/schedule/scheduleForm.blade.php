@@ -169,6 +169,13 @@ function updateDuration()
         $("#inputDates").multiDatesPicker({
             dateFormat: "yy-m-d",
         });
+        $(".selectJS").select2({
+                tags: true,
+                theme: "classic",
+                tokenSeparators: [',', ' ']
+               
+          
+      });
     });
 </script>
 @endsection

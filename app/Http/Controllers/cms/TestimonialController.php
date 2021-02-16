@@ -115,7 +115,7 @@ class TestimonialController extends Controller
    }
    public function forceDeleteTestimonial($id)
    {
-        $this->authorize('forceDelete', new Testimonial());
+        // $this->authorize('forceDelete', new Testimonial());
         $testimonial = Testimonial::onlyTrashed()->find($id)->forceDelete();
  
        return back()->with('success','Permanently Deleted');

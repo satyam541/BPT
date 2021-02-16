@@ -159,17 +159,15 @@ class CountryController extends Controller
 
     public function restoreCountry($country_code)
     {
-        // dd($country_code);
         // $this->authorize('restore', new Country());
         $country = Country::onlyTrashed()->where('country_code', $country_code)->restore();
-        // dd($country);
         return back()->with('success','Successfully Restored');
 
     }
-    public function forceDeleteCountry($id)
+    public function forceDeleteCountry($country_code)
     {
-        $this->authorize('forceDelete', new Country());
-        $country = Country::onlyTrashed()->find($id)->forceDelete();
+        // $this->authorize('forceDelete', new Country());
+        $country = Country::onlyTrashed()->where('country_code', $country_code)->forceDelete();
  
         return back()->with('success','Permanently Deleted');
 

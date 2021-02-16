@@ -21,7 +21,7 @@ class ResourceController extends Controller
     public function resourceList()
     {
         // $this->authorize('view',  new Resource());
-        $data['Resources'] = Resource::paginate(10);   
+        $data['Resources'] = Resource::all();   
         return view('cms.resources.resource',$data);
     }
     public function create()
@@ -62,7 +62,7 @@ class ResourceController extends Controller
     public function delete($resources)
     {
         $resources=Resource::where('id',$resources)->first();
-        $this->authorize('delete', $resources);
+        // $this->authorize('delete', $resources);
         $resources->delete();
 
     }

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">OnlineCourse</h1>
+          <h1 class="m-0 text-dark">Online Course</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">OnlineCourse</a></li>
+            <li class="breadcrumb-item"><a href="#">Online Course</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -31,8 +31,12 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Online Course Trash
+              </div>
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">
@@ -44,10 +48,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                
                     @foreach ($trashOnlineCourses as $trashedOnlineCourse)
                     <tr>
-                    <td>{{$trashedOnlineCourse->name}}</td>
+                    <td>{{$trashedOnlineCourse->online_course_name}}</td>
                     <td>{{$trashedOnlineCourse->created_at}}</td>
                     <td><a href="{{ route('restoreOnlineCourse',['id'=>$trashedOnlineCourse->id]) }}" class="fa fa-refresh fa-spin"></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteOnlineCourse',['id'=>$trashedOnlineCourse->id]) }}" class="fa fa-trash" style="color: red"></a>

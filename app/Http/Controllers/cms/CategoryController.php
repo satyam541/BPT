@@ -236,13 +236,13 @@ class CategoryController extends Controller
 
    public function restoreCategory($id)
    {
-       $category = Category::onlyTrashed()->find($id)->restore();
+       $category = Category::onlyTrashed()->where('id',$id)->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
-       $category = Category::onlyTrashed()->find($id)->forceDelete();
+       $category = Category::onlyTrashed()->where('id',$id)->forceDelete();
        return back()->with('success','Permanently Deleted');
    }
 }

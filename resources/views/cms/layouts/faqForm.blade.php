@@ -53,14 +53,14 @@
                                             {{ Form::label('question', 'Question', ['class' => 'col-md-3 col-form-label text-right','required'=>'required']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('question[]', $faq->question ?? null) }}
+                                                {{ Form::textarea('question[]', $faq->question ,['class'=>'form-control summernote ']) }}
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             {{ Form::label('answer', 'Answer', ['class' => 'col-md-3 col-form-label text-right','required'=>'required']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('answer[]', $faq->answer ?? null) }}
+                                                {{ Form::textarea('answer[]', $faq->answer,['class'=>'form-control summernote ']) }}
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                 {{Form::label('question','Question',['class'=>'col-md-3 col-form-label text-right','required'=>'required'])}}
 
                 <div class="col-md-9">
-                    {{Form::textarea('question[]',null,['class'=>'form-control '])}}
+                    {{Form::textarea('question[]',null,['class'=>'form-control summernote'])}}
                 </div>
             </div>
             
@@ -105,7 +105,7 @@
                 {{Form::label('answer','Answer',['class'=>'col-md-3 col-form-label text-right','required'=>'required'])}}
 
                 <div class="col-md-9">
-                {{Form::textarea('answer[]',null,['class'=>'form-control  '])}}
+                {{Form::textarea('answer[]',null,['class'=>'form-control summernote '])}}
                 </div>
             </div>
         </div>
