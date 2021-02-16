@@ -15,22 +15,10 @@ use Illuminate\Support\Arr;
 if (!function_exists('encodeUrlSlug')) {
     function encodeUrlSlug($string)
     {
-        $coursename = str_replace(" ", "-", "$string");
-        $coursename = str_replace("®","","$coursename");
-        $coursename = str_replace("&reg;","","$coursename");
-        $coursename = str_replace("&#174;", "", "$coursename");
-        $coursename = str_replace("&", "and", "$coursename");
-        $coursename = str_replace("+", "plus", "$coursename");
-        $coursename = str_replace("/", "-", "$coursename");
-        $coursename = str_replace(".", "-", "$coursename");
-        $coursename = str_replace(",", "", "$coursename");
-        $coursename = str_replace("_", "", "$coursename");
-        $coursename = str_replace("(", "", "$coursename");
-        $coursename = str_replace(")", "", "$coursename");
-        $coursename = str_replace(":", "", "$coursename");
-        $coursename = str_replace("--", "-", "$coursename");
-        $coursename = str_replace("--", "-", "$coursename");
-        return strtolower($coursename);
+        $name = str_replace("&", " and", "$string");
+        $name = str_replace("+", " plus", "$name");
+        $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
+        return $stringname;
     }
     if (!function_exists('country')) {
         function country()
