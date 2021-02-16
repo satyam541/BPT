@@ -1254,6 +1254,8 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0;
 }
 .contact .contact-list .item span {
+  display: flex;
+  align-items: center;
   width: 25px;
   height: 25px;
   min-width: 25px;
@@ -1598,7 +1600,8 @@ input::-webkit-inner-spin-button {
   .contact-banner {
     background-color: transparent;
     background-image: url(../img/contactus/banner-bg.png);
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
     padding-top: 1rem;
   }
