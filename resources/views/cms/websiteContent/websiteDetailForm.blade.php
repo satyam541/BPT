@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         {{Form::label('country','Country')}}
-                        {{Form::select('country_id',$countries,$websitedetail->country->country_code ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        {{Form::select('country_id',$countries,$websitedetail->country->country_code ,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                     </div>
                       
