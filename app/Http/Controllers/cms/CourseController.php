@@ -243,17 +243,15 @@ class CourseController extends Controller
     {
         // dd($request->reference);
         // $this->authorize('update', $course);
-        $inputs = $request->except(["_token","is_popular","reference"]);
+        $inputs = $request->except(["_token","is_popular"]);
         $inputs['accreditation_id']=$request->accreditation_id;
-           $reference=null;
+
     
         $inputs['accredited'] = isset($inputs['accredited']);
         $done = $course->update($inputs);
             if(!isset($request['is_online'])){
                 $course['is_online']=0;
             }
-            $reference=$inputs['reference'];
-            $course['reference']=$reference;
             $course->save();
         if($request->hasFile('image')){
             $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
