@@ -1397,10 +1397,6 @@ input::-webkit-inner-spin-button {
 .locate .map {
   display: flex;
 }
-.locate .map img {
-  width: 100%;
-  height: 100%;
-}
 .faq {
   padding: 3rem 1.5rem;
 }
@@ -1667,6 +1663,10 @@ input::-webkit-inner-spin-button {
   }
   .information .info-text {
     padding: 2rem;
+  }
+  .locate .map iframe {
+    width: 572px;
+    height: 500;
   }
   .faq .faq-container {
     align-items: center;
@@ -2602,8 +2602,7 @@ input::-webkit-inner-spin-button {
 }
 .doorstep .info .item {
   display: flex;
-  align-items: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 .doorstep .info .item span {
   display: flex;
@@ -2637,6 +2636,9 @@ input::-webkit-inner-spin-button {
   margin-left: 1.3rem;
   width: 70%;
 }
+.doorstep .info .item-info p {
+  margin-top: 0.5rem;
+}
 @media (min-width : 768px) {
   .onsite-banner {
     padding: 3rem 2rem;
@@ -2653,7 +2655,13 @@ input::-webkit-inner-spin-button {
     align-self: center;
   }
   .doorstep {
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
+  }
+  .doorstep .form {
+    padding: 2rem;
+  }
+  .doorstep .input-container {
+    width: 48%;
   }
   .doorstep .info .info-list {
     flex-direction: row;
@@ -2702,6 +2710,27 @@ input::-webkit-inner-spin-button {
   .training .training-map {
     width: 100%;
   }
+  .doorstep .doorstep-container {
+    flex-direction: row;
+  }
+  .doorstep .form {
+    width: 50%;
+  }
+  .doorstep .info {
+    padding: 3rem 1.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    align-self: center;
+    width: 50%;
+    background-image: url(../img/onsite/information-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-top: 0;
+  }
+  .doorstep .info .item {
+    width: 100%;
+    margin-top: 2.5rem;
+  }
 }
 @media (min-width : 1366px) {
   .onsite-banner {
@@ -2713,12 +2742,38 @@ input::-webkit-inner-spin-button {
   }
   .training {
     padding: 4rem 0rem;
+    padding-bottom: 5rem;
   }
   .training .training-info {
     width: 48%;
   }
   .training .delegate {
     width: 46%;
+  }
+  .doorstep {
+    padding: 4rem 0rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 4rem;
+    padding-left: 5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    background-image: url(../img/onsite/information-bg.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  .doorstep .container {
+    width: 100%;
+  }
+  .doorstep .form {
+    transform: scale(1.1);
+    width: 44%;
+  }
+  .doorstep .info {
+    box-shadow: none;
+    padding: 0;
+    padding-left: 5rem;
+    background-image: none;
   }
 }
 .location-banner {

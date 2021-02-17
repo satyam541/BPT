@@ -186,7 +186,7 @@
                 <p>Locate Our Office Destination On Google Map</p>
             </div>
             <div class="map">
-            <img src="{{url('img/contactus/map.png')}}" alt="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15558.879620295998!2d80.06831631679779!3d12.861358924309759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f6386034e917%3A0x67d53e7b0950780d!2sSenthil%20Nagar%2C%20Urapakkam%2C%20Chennai%2C%20Tamil%20Nadu%20601301!5e0!3m2!1sen!2sin!4v1613538677717!5m2!1sen!2sin" width="272" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>

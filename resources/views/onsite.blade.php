@@ -52,7 +52,7 @@
                 <div class="doorstep-container">
                     <form class="form" id="contact-us">
                         <div class="heading center-heading white-heading">
-                            <h2>Get In Touch With Us Today</h2>
+                            <h2>World Class Training At Your Doorstep</h2>
                         </div>
                         <div class="form-input">
                             <div class="input-container">

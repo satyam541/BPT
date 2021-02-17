@@ -20,23 +20,29 @@
     // End training section
 
     // Start doorstep section
-.doorstep{
-    padding: @sectionPadding;
-    .info{
-        .info-list{
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap;
+    .doorstep{
+        padding: @sectionPadding-md;
+        .form{
+            padding: 2rem;
         }
-        .item{
+        .input-container{
             width: 48%;
         }
-        .item-info{
-            width: 100%;
+        .info{
+            .info-list{
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .item{
+                width: 48%;
+            }
+            .item-info{
+                width: 100%;
+            }
         }
     }
-}
-// End doorstep section
+    // End doorstep section
 }
 
 @media @size-lg{
@@ -81,6 +87,32 @@
         }
     }
     // End training section
+
+    // Start doorstep section
+    .doorstep{
+        .doorstep-container{
+            flex-direction: row;
+        }
+        .form{
+            width: 50%;
+        }
+        .info{
+            padding: 3rem 1.5rem;
+            box-shadow: @shadowLight;
+            align-self: center;
+            width: 50%;
+            background-image: url(../img/onsite/information-bg.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            margin-top: 0;
+            .item{
+                width: 100%;
+                margin-top: 2.5rem;
+            }
+        }
+    }
+    // End doorstep section
 }
 
 @media @size-xl{
@@ -93,9 +125,11 @@
         }
     }
     // End banner section
+
     // Start training section
     .training{
         padding: @sectionPadding-xl;
+        padding-bottom: 5rem;
         .training-info{
             width: 48%;
         }
@@ -104,4 +138,31 @@
         }
     }
     // End training section
+    
+    // Start doorstep section
+    .doorstep{
+        padding: @sectionPadding-xl;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 4rem;
+        padding-left: 5rem;
+        box-shadow: @shadowLight;
+        background-image: url(../img/onsite/information-bg.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        .container{
+            width: 100%;
+        }
+        .form{
+            transform: scale(1.1);
+            width: 44%;
+        }
+        .info{
+            box-shadow: none;
+            padding: 0;
+            padding-left: 5rem;
+            background-image: none;
+        }
+    }
 }
