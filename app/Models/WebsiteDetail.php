@@ -11,21 +11,22 @@ class WebsiteDetail extends Model
     protected   $table='website_country';
     protected $primaryKey = "id";
     public static $selected = null;
-    public $logo_path = "uploads/course/";
+    public $logo_path = "uploads/websiteDetail/";
 
     public function getLogoPath()
     {// check file exist then return default image.
-        $imageLink = url($this->logo_path.$this->logo);
+        $imageLink = url($this->logo_path.$this->image);
         if ($this->hasLogo()) {
             return $imageLink;
         } else {
-            return url('img/default/online-course.svg');
+            return url('adminlte/dist/img/online-course.svg');
         }  
     }
+
     public function hasLogo()
     {
-        if(empty($this->logo)) return FALSE;
-        if (file_exists(public_path($this->logo_path.$this->logo))) {
+        if(empty($this->image)) return FALSE;
+        if (file_exists(public_path($this->logo_path.$this->image))) {
             return TRUE;
         }
         return FALSE;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\cms;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
@@ -63,7 +63,11 @@ class SettingController extends Controller
          $websitedetail->reviews           =$request->reviews;
          $websitedetail->learners            =$request->learners;
          $websitedetail->locations            =$request->locations;
-         
+         if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
+            $websitedetail->image = $imageName;
+        }
        
         $websitedetail->save();
         return redirect()->back();
@@ -110,7 +114,11 @@ class SettingController extends Controller
         $websitedetail->reviews           =$request->reviews;
         $websitedetail->learners            =$request->learners;
         $websitedetail->locations            =$request->locations;
-
+        if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
+            $websitedetail->image = $imageName;
+        }
         $websitedetail->save();
       
         return redirect()->back();
