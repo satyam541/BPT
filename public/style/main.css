@@ -100,6 +100,24 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 1s;
+  height: auto;
+  z-index: 2;
+}
+.sticky .top-bar {
+  display: none!important;
+}
+.sticky .bpt-logo {
+  padding: 0.8rem !important;
+}
+.sticky .bpt-logo img {
+  width: 196px!important;
+}
 .buttons {
   display: flex;
   justify-content: center;
@@ -139,6 +157,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
   position: relative;
   z-index: 1;
+  padding-top: 1rem;
 }
 .heading::before {
   content: '';
@@ -148,7 +167,7 @@ input::-webkit-inner-spin-button {
   height: 4px;
   border-radius: 10px;
   background-color: #1C2848;
-  top: -10px;
+  top: 0px;
 }
 .heading h2 {
   width: 100%;
@@ -166,6 +185,9 @@ input::-webkit-inner-spin-button {
 .center-heading h2 {
   text-align: center;
   justify-content: center;
+}
+.white-heading::before {
+  background-color: #FFFFFF;
 }
 .white-heading h2 {
   color: #FFFFFF;
@@ -1004,7 +1026,7 @@ input::-webkit-inner-spin-button {
     font-size: 32px;
   }
   .navbar ul .links-li {
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
   .footer {
     padding: 0;
