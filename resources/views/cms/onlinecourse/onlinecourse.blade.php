@@ -31,8 +31,12 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Online Course List
+              </div>
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">

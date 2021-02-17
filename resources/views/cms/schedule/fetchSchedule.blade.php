@@ -42,7 +42,7 @@
                                         <label for="inputCountry" class="col-sm-2 control-label  text-right">select
                                             Country</label>
                                         <div class="col-sm-4">
-                                            {{ Form::select('country', $list['countries'], null, ['id' => 'inputCountry', 'class' => 'form-control selectJS', 'title' => 'Choose one']) }}
+                                            {{ Form::select('country', $list['countries'], null, ['tabindex'=>'-1','id' => 'inputCountry', 'class' => 'form-control selectJS', 'title' => 'Choose one']) }}
                                         </div>
                                     </div>
 

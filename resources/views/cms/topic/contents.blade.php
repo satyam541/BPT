@@ -32,13 +32,13 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Topic',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('topic',$list['topics'],$selectedTopic,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('topic',$list['topics'],$selectedTopic,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL','tabindex'=>'-1'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL','tabindex'=>'-1'])}}
                         </div>
                     </div>
                 </div>

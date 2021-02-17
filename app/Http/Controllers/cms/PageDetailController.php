@@ -73,7 +73,7 @@ class PageDetailController extends Controller
 
     public function edit(PageDetail $pageDetail)
     {
-        $this->authorize('update', $pageDetail);
+        // $this->authorize('update', $pageDetail);
         $data['pageDetail'] = $pageDetail;
         $data['submitRoute'] = array('updatePageDetail',$pageDetail->id);
         return view("cms.pageDetail.pageDetailForm",$data);
