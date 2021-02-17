@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\whatsIncluded;
 use App\Models\whatsIncludedHeaders;
 use Carbon\Carbon;
+use App\Http\Requests\cms\WhatsIncludedMainRequest;
 
 class WhatsIncludedController extends Controller
 {
@@ -22,7 +23,7 @@ class WhatsIncludedController extends Controller
         $data['submitRoute'] = 'insertWhatsIncluded';
         return view('cms.whatsincluded.whatsIncludedFormMain',$data);
     }
-    public function insert(Request $request)
+    public function insert(WhatsIncludedMainRequest $request)
     {
         $inputs = $request->input();
         $whatsincluded = whatsIncludedHeaders::firstOrNew(['name'=>$inputs['name']]);
@@ -43,7 +44,7 @@ class WhatsIncludedController extends Controller
         return view('cms.whatsincluded.whatsIncludedFormMain',$data);
 
     }
-    public function update(Request $request)
+    public function update(WhatsIncludedMainRequest $request)
     {
         $inputs = $request->input();
         $whatsincluded = whatsIncludedHeaders::firstOrNew(['id'=>$inputs['id']]);
