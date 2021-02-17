@@ -112,9 +112,6 @@ input::-webkit-inner-spin-button {
 .sticky .top-bar {
   display: none!important;
 }
-.sticky .bpt-logo {
-  padding: 0.8rem !important;
-}
 .sticky .bpt-logo img {
   width: 196px!important;
 }
@@ -876,7 +873,7 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
   }
   .navbar .bpt-logo {
-    padding: 1rem;
+    padding: 0.8rem;
     align-items: center;
     display: flex;
     justify-content: center;
