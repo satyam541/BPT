@@ -11,8 +11,7 @@ use App\Models\Topic;
 use App\Models\CourseContent;
 use App\Models\Country;
 use App\Models\Accreditation;
-use App\Http\Requests\cms\CourseContentRequest;
-use App\Http\Requests\cms\CourseRequest;
+use App\Http\Requests\cms\OnlineCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\UploadedFile;
 use Pion\Laravel\ChunkUpload\Exceptions\UploadMissingFileException;
@@ -60,7 +59,7 @@ class OnlineCourseController extends Controller
     }
 
 
-    public function insert(Request $request)
+    public function insert(OnlineCourseRequest $request)
     {
         $onlinecourse                   =   new courseElearning();
         $reference                      =   encodeUrlSlug(Course::find($request->course_id)->name);
@@ -116,7 +115,7 @@ class OnlineCourseController extends Controller
     }
 
 
-    public function update(courseElearning $course,Request $request)
+    public function update(courseElearning $course,OnlineCourseRequest $request)
     {
         $reference                  =   encodeUrlSlug(Course::find($request->course_id)->name);
         $course->reference          =   'online-courses'.'/'.$reference.'/'.encodeUrlSlug($request->online_course_name);

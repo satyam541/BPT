@@ -4,7 +4,7 @@ namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class WhatsIncludedRequest extends FormRequest
+class OnlineCourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,17 @@ class WhatsIncludedRequest extends FormRequest
     public function rules()
     {
         return [
-            'header_id' => 'required',
+            'online_course_name'  =>  'required',
+            'course_id'           =>  'required',
+            'reference'           =>  'required',
+            'duration'            =>  'required',
         ];
     }
     public function attributes()
     {
         return[
-            'header_id' => 'Header',
+            'online_course_name' => 'name',
+            'course_id'          => 'course',
         ];
     }
 }
