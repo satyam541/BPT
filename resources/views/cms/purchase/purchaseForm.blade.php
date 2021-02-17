@@ -84,7 +84,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
                 <div class="card-body">
 
                     <div class="form-group">

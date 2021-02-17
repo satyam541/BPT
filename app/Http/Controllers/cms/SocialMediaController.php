@@ -91,7 +91,7 @@ class SocialMediaController extends Controller
             $socialmedia->image = $imageName;
         }
         $socialmedia->save();
-        return back()->with('success','Successfully Updated');
+        return back()->with('success','Successfully Updated ');
 
     }
 }

@@ -35,7 +35,7 @@ class ResourceController extends Controller
 
     public function insert(Request $request)
     {
-        $this->authorize('create',  new Resource());
+        // $this->authorize('create',  new Resource());
         
         $resources=new Resource();
      
@@ -55,7 +55,7 @@ class ResourceController extends Controller
         $resources=Resource::where('id',$resources)->first();
         // $this->authorize('update', $resources);
         $data['resources'] = $resources;
-        $data['submitroute'] = array('updateresources',$resources->id);  
+        $data['submitRoute'] = array('updateresources',$resources->id);  
         return view("cms.resources.resourcesForm",$data);
     }
 
@@ -72,7 +72,7 @@ class ResourceController extends Controller
     {
        
         $resources=Resource::where('id',$resources)->first();
-        $this->authorize('update', $resources);
+        // $this->authorize('update', $resources);
         $resources->name            = $request->name;
         $resources->content         = $request->content;
         $resources->reference       = $request->reference;
@@ -80,7 +80,7 @@ class ResourceController extends Controller
         $resources->meta_desc       = $request->meta_desc;
         $resources->meta_keyword    = $request->meta_keyword;
         $resources->save();
-        return redirect()->back()->with('success', 'Resource updated!');
+        return back()->with('success', 'Resource updated!');
     }
 
     public function trashList()
