@@ -65,10 +65,10 @@
                     {{Form::label('tag','Tag')}}
                     {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple', 'required'=>'required', 'placeholder'=>'Choose one'])}}
                     @error('tag[]')
-                            <span class="invalid-feedback bg-danger text-sm" role="alert">
-                                <span>{{ $message }}</span>
-                            </span>
-                        @enderror
+                      <span class="invalid-feedback bg-danger text-sm" role="alert">
+                          <span>{{ $message }}</span>
+                      </span>
+                    @enderror
                   </div>
 
                   <div class="form-group">

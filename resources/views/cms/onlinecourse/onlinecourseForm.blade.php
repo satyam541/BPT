@@ -47,7 +47,7 @@
 
                   <div class="form-group">
                     {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list['courses'],$onlinecourse->course_id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','id'=>'course-name'])}}
+                    {{Form::select('course_id',$list['courses'],$onlinecourse->course_id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','id'=>'course-name','tabindex'=>'-1'])}}
                     
                   </div>
                   <div class="form-group">

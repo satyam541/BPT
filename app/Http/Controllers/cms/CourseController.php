@@ -16,6 +16,7 @@ use App\Models\Accreditation;
 use App\Http\Requests\cms\CourseContentRequest;
 use App\Http\Requests\cms\BulletPointRequest;
 use App\Http\Requests\cms\CourseRequest;
+use App\Http\Requests\cms\WhatsIncludedRequest;
 use App\Models\WhatsIncluded as ModelsWhatsIncluded;
 use App\Models\whatsIncludedHeaders;
 
@@ -297,7 +298,7 @@ class CourseController extends Controller
 
     public function contentDelete(Request $request,CourseContent $courseDetail)
     {
-        $this->authorize('delete', $courseDetail->course);
+        // $this->authorize('delete', $courseDetail->course);
         $courseDetail->delete();
     }
 
@@ -381,11 +382,11 @@ class CourseController extends Controller
         }
         return "success";
    }
-   public function whatsincludedinsert(Request $request)
+   public function whatsincludedinsert(WhatsIncludedRequest $request)
    {
        $course_id = $request->course_id;
        $header_id = $request->header_id;
-
+// dd($request->all());
        Course::find($course_id)->WhatsIncluded()->syncWithoutDetaching([$header_id=>['module_id'=> $course_id, 'module_type' => 'Course']]);
 
         \Session::flash('success', 'WhatsIncluded Added!'); 

@@ -146,3 +146,13 @@
 <!-- /.content-wrapper -->
     
 @endsection
+
+@section('footer')
+    <script>
+      $(".selectJS").select2({
+          tags: true,
+          theme: "classic",
+          tokenSeparators: [',', ' ']
+        });
+    </script>
+@endsection

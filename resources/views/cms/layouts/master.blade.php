@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}"> --}}
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -32,11 +32,17 @@
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
+   <link rel="stylesheet" href="{{ url('adminlte/plugins/select2/css/select2.min.css')}}"/>
 </head>
+<style>
+  .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 19px;
+}
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -521,7 +527,6 @@
     <!-- /.sidebar -->
   </aside>
   @if ($errors->any())
-  
   <div id="toastsContainerTopRight" class="toasts-top-right fixed p-2">
     @foreach ($errors->all() as $error)
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -561,6 +566,8 @@
 <script>
 $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- datepicker -->
@@ -573,14 +580,14 @@ $.widget.bridge('uibutton', $.ui.button)
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE select 2 -->
-<script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
+{{-- <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script> --}}
 <script src="{{url('cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 {{-- Toastr js --}}
 <script src="{{Url('adminlte/plugins/toastr/toastr.min.js')}}"></script>
 <!-- SweetAlert2 -->
-<script src="{{Url('adinlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @yield('footer')
 <script>
   $(function () {
@@ -596,6 +603,12 @@ $.widget.bridge('uibutton', $.ui.button)
            $target = $(event.target);
 
     });
+    
+        $(".selectJS").select2({
+            width:'100%',
+            placeholder:'Choose one',
+        });
+
       
     $('.summernote').summernote({
       toolbar:[

@@ -31,13 +31,13 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                            {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     </div>
                 <div class="box-footer clear-fix small-pagination">
                     {{-- @can('create',new App\Models\Permission) --}}
-                    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+                    <a id="add" href="{{route('createCourseContent',['course'=>$selectedCourse,'country'=>$selectedCountry])}}" class="btn btn-success" style="">Add new record</a>
                    {{-- @endcan --}}
                 {{ $contents->links() }}
             </div>

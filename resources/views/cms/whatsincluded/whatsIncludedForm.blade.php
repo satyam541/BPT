@@ -41,12 +41,12 @@
                 <div class="card-body">
                   <div class="form-group">
                     {{Form::label('course_id',$module)}}
-                    {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','tabindex'=>'-1'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('header_id','Heading')}}
-                    {{Form::select('header_id',$headings,$whatsincluded->header_id ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('header_id',$headings,$whatsincluded->header_id ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','tabindex'=>'-1'])}}
                   </div>
                   
                 </div>
@@ -68,5 +68,8 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+    
+@endsection
+@section('footer')
     
 @endsection
