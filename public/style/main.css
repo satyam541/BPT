@@ -100,6 +100,27 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 1s;
+  height: auto;
+  z-index: 2;
+}
+.sticky .top-bar {
+  display: none!important;
+}
+.sticky .bpt-logo img {
+  width: 196px!important;
+}
+.sticky-up {
+  top: -100px;
+}
+.sticky-down {
+  z-index: 4;
+}
 .buttons {
   display: flex;
   justify-content: center;
@@ -124,7 +145,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   min-width: 150px;
   white-space: nowrap;
-  border-radius: 50px;
+  border-radius: 100px;
 }
 .buttons .btn-blue {
   background: #0064D8;
@@ -139,6 +160,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
   position: relative;
   z-index: 1;
+  padding-top: 1rem;
 }
 .heading::before {
   content: '';
@@ -148,7 +170,7 @@ input::-webkit-inner-spin-button {
   height: 4px;
   border-radius: 10px;
   background-color: #1C2848;
-  top: -10px;
+  top: 0px;
 }
 .heading h2 {
   width: 100%;
@@ -166,6 +188,9 @@ input::-webkit-inner-spin-button {
 .center-heading h2 {
   text-align: center;
   justify-content: center;
+}
+.white-heading::before {
+  background-color: #FFFFFF;
 }
 .white-heading h2 {
   color: #FFFFFF;
@@ -578,7 +603,6 @@ input::-webkit-inner-spin-button {
   height: 18px;
 }
 .footer .terms {
-  text-align: center;
   padding-top: 1rem;
   padding-bottom: 0;
   color: #FFFFFF;
@@ -587,6 +611,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
 }
 .footer .heading {
+  padding-top: 0;
   margin-bottom: 2rem;
 }
 .footer .heading::before {
@@ -597,6 +622,11 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
   top: initial;
 }
+.footer .footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .footer .footer-main .date {
   font-size: 10px;
   padding: 0;
@@ -606,6 +636,7 @@ input::-webkit-inner-spin-button {
   background-color: #0064D8;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .footer .footer-content p {
   color: #FFFFFF;
@@ -784,9 +815,6 @@ input::-webkit-inner-spin-button {
     margin-top: 0;
     margin-left: auto;
   }
-  .navbar .top-bar .buttons .btn-blue {
-    border-radius: 20px;
-  }
   .navbar .top-bar li {
     display: flex;
     align-items: center;
@@ -829,7 +857,7 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
   }
   .navbar .bpt-logo {
-    padding: 1rem;
+    padding: 0.8rem;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -885,6 +913,10 @@ input::-webkit-inner-spin-button {
   }
   .footer {
     padding: 3rem 2rem;
+  }
+  .footer .terms {
+    width: 80%;
+    text-align: center;
   }
   .footer .footer-content {
     flex-direction: row;
@@ -979,7 +1011,7 @@ input::-webkit-inner-spin-button {
     font-size: 32px;
   }
   .navbar ul .links-li {
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
   .footer {
     padding: 0;

@@ -23,10 +23,26 @@ class VenueRequest extends FormRequest
      */
     public function rules()
     {
+        $venue=request()->route('venue',0);
+        
+          $id = 0;
+          if(!empty($venue)){
+              $id = $venue;
+          }
+
         return [
-            'name'                  => ['required', 'string', 'max:100'],
-            'image'                 => ['image','mimes:jpeg,png,jpg,svg','max:500'],
-            'location_id'          => ['required'],
+            'name'                  => 'required|string|max:100',
+            'image'                 => 'image|mimes:jpeg,png,jpg,svg|max:500',
+            'location_id'           => 'required',
+            'reference'             => 'required|unique:venue,reference,' . $id . ',id',
+            'phone'                 => 'required',
+            'email'                 => 'required|string|max:255|regex:/^[a-zA-Z0-9.]+@[a-zA-Z]+[.]{1}[a-z]+$/',
+        ];
+    }
+    public function attributes()
+    {
+        return[
+            'location_id'       =>   'location',
         ];
     }
 }

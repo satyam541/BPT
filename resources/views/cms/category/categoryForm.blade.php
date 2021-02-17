@@ -117,7 +117,7 @@
 @section('footer')
     <script>
       $(document).ready( function() {
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
         });
         function updateSlug()

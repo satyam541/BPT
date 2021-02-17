@@ -4,7 +4,7 @@ namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TestimonialRequest extends FormRequest
+class ResourceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,18 @@ class TestimonialRequest extends FormRequest
      */
     public function rules()
     {
+        $resource=request()->route('id',0);
+        
+          $id = 0;
+          if(!empty($resource)){
+              $id = $resource;
+            
+          }
+          
         return [
-            'author'    => 'required',
-            'location'  => 'required',
-            'post_date' => 'required',
-            'rating'    => 'required'
+            'name'          =>  'required',
+            'reference'     =>  'required|unique:resource,reference,'.$id.',id',
+            'content'       =>  'required',
         ];
     }
 }

@@ -24,9 +24,9 @@ class PageDetailRequest extends FormRequest
     public function rules()
     {
         return [
-            'page_name'                  => ['required', 'string', 'max:50'],
-            'section'                 => ['required'],
-            'content'                 => ['required']
+            'page_name'               => 'required|string|max:50',
+            'section'                 => 'required',
+            'content'                 => 'required'
         ];
     }
 }

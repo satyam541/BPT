@@ -31,14 +31,21 @@ class WebsiteDetailRequest extends FormRequest
             $id=$websiteDetail->id;
         }
         return [
-            'country_id' => ['required','max:5','unique:website_country,country_id,'.$id],
-            'contact_number'=>['required','string'],
-            'contact_email'=>['email'],
-            'contact_footer'=>['nullable','string'],
-            'address'=>['nullable','string'],
-            'facebook' => ['nullable','string'],
-            'twitter' => ['nullable','string'],
-            'linkedin'=> ['nullable','string'],
+            'country_id'        =>  'required|max:5|unique:website_country,country_id,'.$id,
+            'name'              =>  'required',
+            'address'           =>  'required|string',
+            'contact_number'    =>  'required|string',
+            'contact_email'     =>  'required',
+            'contact_footer'    =>  'nullable|string',
+            'facebook'          =>  'nullable|string',
+            'twitter'           =>  'nullable|string',
+            'linkedin'          =>  'nullable|string',
             ];
+    }
+    public function attributes()
+    {
+        return[
+            'country_id'        =>  'country',
+        ];
     }
 }

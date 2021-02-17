@@ -37,7 +37,6 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <input type="hidden" name="categorySlug" value="{{ $categorySlug }}" id="categorySlug">
               {{Form::model($topic,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
 
@@ -48,7 +47,7 @@
 
                   <div class="form-group">
                     {{Form::label('category_id','Category')}}
-                    {{Form::select('category_id',$categories,null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('category_id',$categories,null,['tabindex'=>'-1','id'=>'categoryName','class'=>'form-control selectJS','onchange'=>'updateSlug()', 'placeholder'=>'Choose one'])}}
                     
                   </div>
                   <div class="form-group">
@@ -120,13 +119,21 @@
 
                  <script>
                     $(document).ready( function() {
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
         });
+      });
         function updateSlug()
 {
     var location = $("#name").val();
-    var slug = '/'+convertUrl(location);
+    var slug = '/'+convertUrl(location);  
+    var selectedCategory=$('#categoryName').select2("val");
+    var categories=<?php echo json_encode($categorySlugs); ?>;
+    if(selectedCategory in categories){
+      categoryslug=categories[selectedCategory];
+      slug=categoryslug+slug;
+    }
+    
     $("#reference").val(slug);
     
 }

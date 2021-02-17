@@ -23,10 +23,17 @@ class TopicRequest extends FormRequest
      */
     public function rules()
     {
+        $topic=request()->route('topic',0);
+        
+          $id = 0;
+          if(!empty($topic)){
+              $id = $topic->id;
+          }
+        
         return [
             'name'                  => 'required|string|max:100',
             'category_id'           => 'required',
-            'reference'             => 'required',
+            'reference'             => 'required|unique:topic,reference,'.$id.',id',
             'image'                 => 'mimes:jpeg,png,jpg,svg|max:500',
         ];
     }

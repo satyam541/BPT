@@ -205,7 +205,7 @@ class TopicController extends Controller
         // $this->authorize('create', new Topic());
         $data['topic']          = new Topic();
         $data['submitRoute']    = 'insertTopic';
-        $data['categorySlug']   = '';
+        $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list']           = $list;
@@ -216,9 +216,8 @@ class TopicController extends Controller
     {
         // $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
-        $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
         $topic                      = new Topic();
-        $topic->reference           = 'training-courses'.'/'.$category.'/'.$inputs['reference'];
+        $topic->reference           = $inputs['reference'];
         $topic->name                = $inputs['name'];
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
@@ -281,7 +280,7 @@ class TopicController extends Controller
         $questions = $request->get('question');
         $answers   = $request->get('answer');
 
-        foreach($questions as $i => $question)
+        foreach($questions as $i)
         {
             // save faq if id is not 
             if(empty($faq_id[$i]))
@@ -333,7 +332,7 @@ class TopicController extends Controller
         // $this->authorize('update', new Topic());
         $data['topic']          = Topic::with('faqs')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
-        $data['categorySlug']   = $data['topic']->category->reference;
+        $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list']           = $list;
@@ -355,19 +354,17 @@ class TopicController extends Controller
     public function update(Topic $topic,TopicRequest $request)
     {
         // $this->authorize('update', $topic);
-        $inputs                     = $request->except('reference');
-        $category=encodeUrlSlug(Category::find($inputs['category_id'])->name);
+        $inputs                     = $request->all();
         $topic->name                = $inputs['name'];
-        $topic->reference           = 'training-courses'.'/'.$category.'/'.encodeUrlSlug($inputs['name']);
+        $topic->reference           = $inputs['reference'];
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
-        $topic->accredited          = isset($inputs['accredited']);
-        $topic->published           = isset($inputs['published']);
-        $topic->is_online           = isset($inputs['is_online']);
-        $topic->priority            = isset($inputs['priority']);
+        $topic->accredited          = isset($inputs['accredited']) ? 1:0;
+        $topic->published           = isset($inputs['published'])? 1:0;
+        $topic->is_online           = isset($inputs['is_online'])? 1:0;
+        $topic->priority            = isset($inputs['priority'])? 1:0;
         $topic->category_id         = $inputs['category_id'];
         $topic->ip_trademark        = $inputs['ip_trademark'];
-
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($topic->image_path), $imageName);
@@ -451,7 +448,7 @@ class TopicController extends Controller
                 return back();
             }
 
-            foreach($questions as $i => $question)
+            foreach($questions as $i)
             {
                 $module->faqs()->create([
                     'question' => $questions[$i],

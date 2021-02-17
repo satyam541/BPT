@@ -34,7 +34,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Resource
+                Resource List
               </div>
             </div>
             <div class="card-body">

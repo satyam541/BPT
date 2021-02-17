@@ -100,7 +100,7 @@ class LocationController extends Controller
         $location['fetch_schedule']   = isset($inputs['fetch_schedule']);
         $location['longitude']=$inputs['longitude'];
         $location['latitude']=$inputs['latitude'];
-        $location['reference']='training-locations'.'/'.encodeUrlSlug($inputs['name']);
+        $location['reference']=$inputs['reference'];
 
         if($request->file('image')){
             $imageName = 'ImageUrl'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();

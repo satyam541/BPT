@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">socialmedia</h1>
+          <h1 class="m-0 text-dark">Social Media</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">socialmedia</a></li>
+            <li class="breadcrumb-item"><a href="#">Social Media</a></li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,7 +34,7 @@
             <div class="card card-primary card-outline">
                 <div class="card-header">
                     <div class="card-title">
-                    socialmedia
+                    Social Media List
                     </div>
                 </div>
                 <div class="card-body">
