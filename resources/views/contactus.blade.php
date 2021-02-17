@@ -9,12 +9,14 @@
                 <div class="banner-container">
                     <div class="banner-content">
                         <h1>Contact Us</h1>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p><div class="breadcrums">
-                    <ul>
-                    <li><a href="">Home </a></li>
-                    <li><a href=""> > Contact </a></li>
-                    </ul>
-        </div>
+                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                        <div class="breadcrums">
+                            <ul>
+                                <li><a href="">Home</a></li>
+                                <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                                <li><a href="">Contact</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

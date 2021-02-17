@@ -18,6 +18,7 @@ use App\Models\whatsIncludedHeaders;
 use App\Models\Accreditation;
 use App\Http\Requests\cms\TopicContentRequest;
 use App\Http\Requests\cms\TopicRequest;
+use App\Http\Requests\cms\WhatsIncludedRequest;
 
 class TopicController extends Controller
 {
@@ -167,7 +168,7 @@ class TopicController extends Controller
          }
          return "success";
     }
-    public function whatsincludedinsert(Request $request)
+    public function whatsincludedinsert(WhatsIncludedRequest $request)
     {
         $topic_id = $request->course_id;
         $header_id = $request->header_id;
@@ -350,7 +351,7 @@ class TopicController extends Controller
         
         return view('cms.topic.contentForm',$data);
     }
-
+    
     public function update(Topic $topic,TopicRequest $request)
     {
         // $this->authorize('update', $topic);

@@ -42,12 +42,12 @@
 
                   <div class="form-group">
                     {{Form::label('topic_id','Topic Name')}}
-                    {{Form::select('topic_id',$list['topics'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('topic_id',$list['topics'],null,['class'=>'form-control selectJS', 'placeholder'=>'','tabindex'=>'-1'])}}
                   </div>
                       
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{ Form::select('country_id',$list['countries'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('country_id',$list['countries'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','tabindex'=>'-1'])}}
                   </div>
 
                   <div class="form-group">

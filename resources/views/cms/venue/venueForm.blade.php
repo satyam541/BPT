@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('location_id','Location')}}
-                    {{Form::select('location_id',$locations,null ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('location_id',$locations,null ,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
 
@@ -149,12 +149,5 @@
     });
 </script>
 
-    <script>
-              $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-            })
-        </script>
-
+    
 @endsection
