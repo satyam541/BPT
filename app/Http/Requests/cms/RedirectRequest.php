@@ -23,9 +23,15 @@ class RedirectRequest extends FormRequest
      */
     public function rules()
     {
+        $url=request()->route('url',0);
+        
+          $id = 0;
+          if(!empty($url)){
+              $id = $url->id;
+          }
             return [
-                'source_url'       => ['unique:url_redirect,source_url','required'],
-                'target_url'      => ['required']
+                'source_url'       => 'required|unique:url_redirect,source_url,'.$id.'id',
+                'target_url'       => 'required'
             ];
  
     }

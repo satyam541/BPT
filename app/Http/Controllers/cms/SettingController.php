@@ -44,29 +44,28 @@ class SettingController extends Controller
         $websitedetail=new WebsiteDetail();
         // $websitedetail->web_id         = $request->website;
         $websitedetail->country_id         = $request->country_id;
-        $websitedetail->address        = $request->address;
-        $websitedetail->contact_number        = $request->contact_number;
-        // $websitedetail->name        = $request->name;
-        
-        $websitedetail->contact_email         = $request->contact_email ;
+        $websitedetail->address            = $request->address;
+        $websitedetail->contact_number     = $request->contact_number;
+        $websitedetail->name               = $request->name;
+        $websitedetail->contact_email      = $request->contact_email ;
 
-        $websitedetail->contact_footer         = $request->contact_footer ;
+        $websitedetail->contact_footer     = $request->contact_footer ;
 
-        $websitedetail->copyright_footer        = $request->copyright_footer;
-        $websitedetail->opening_hours                  = $request->opening_hours;
-         $websitedetail->opening_days                  = $request  ->opening_days;
-         $websitedetail->twitter            =$request->twitter;
-         $websitedetail->facebook           =$request->facebook;
-         $websitedetail->linkedin            =$request->linkedin;
-         $websitedetail->courses           =$request->courses;
-         $websitedetail->trainers           =$request->trainers;
-         $websitedetail->reviews           =$request->reviews;
-         $websitedetail->learners            =$request->learners;
-         $websitedetail->locations            =$request->locations;
+        $websitedetail->copyright_footer   = $request->copyright_footer;
+        $websitedetail->opening_hours      = $request->opening_hours;
+        $websitedetail->opening_days       = $request  ->opening_days;
+        $websitedetail->twitter            = $request->twitter;
+        $websitedetail->facebook           = $request->facebook;
+        $websitedetail->linkedin           = $request->linkedin;
+        $websitedetail->courses            = $request->courses;
+        $websitedetail->trainers           = $request->trainers;
+        $websitedetail->reviews            = $request->reviews;
+        $websitedetail->learners           = $request->learners;
+        $websitedetail->locations          = $request->locations;
          
        
         $websitedetail->save();
-        return redirect()->back();
+        return back()->with('success','Successfully Added');
 
     }
     public function  editWebsiteDetail(WebsiteDetail $websitedetail)
@@ -93,26 +92,27 @@ class SettingController extends Controller
     {
         // $this->authorize('update', $websitedetail);
         // $websitedetail->web_id             = $request->website;
-        $websitedetail->country_id         = $request->country;
+        // dd($request->all());
+        $websitedetail->country_id         = $request->country_id;
         $websitedetail->contact_number     = $request->contact_number;
         $websitedetail->address            = $request->address;
         $websitedetail->contact_email      = $request->contact_email ;
         $websitedetail->contact_footer     = $request->contact_footer ;
         $websitedetail->copyright_footer   = $request->copyright_footer;
-        $websitedetail->opening_hours       = $request->opening_hours;
-        // $websitedetail->name                = $request->name;
-        $websitedetail->opening_days       = $request  ->opening_days;
-        $websitedetail->twitter            =$request->twitter;
-        $websitedetail->facebook           =$request->facebook;
-        $websitedetail->linkedin            =$request->linkedin;
-        $websitedetail->courses           =$request->courses;
-        $websitedetail->trainers           =$request->trainers;
-        $websitedetail->reviews           =$request->reviews;
-        $websitedetail->learners            =$request->learners;
-        $websitedetail->locations            =$request->locations;
+        $websitedetail->opening_hours      = $request->opening_hours;
+        $websitedetail->name               = $request->name;
+        $websitedetail->opening_days       = $request->opening_days;
+        $websitedetail->twitter            = $request->twitter;
+        $websitedetail->facebook           = $request->facebook;
+        $websitedetail->linkedin           = $request->linkedin;
+        $websitedetail->courses            = $request->courses;
+        $websitedetail->trainers           = $request->trainers;
+        $websitedetail->reviews            = $request->reviews;
+        $websitedetail->learners           = $request->learners;
+        $websitedetail->locations          = $request->locations;
 
         $websitedetail->save();
       
-        return redirect()->back();
+        return back()->with('success','Successfully Updated');
     }
 }
