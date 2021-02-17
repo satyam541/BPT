@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Resource;
 use Carbon\Carbon;
-
+use App\Http\Requests\cms\ResourceRequest;
 
 class ResourceController extends Controller
 {
@@ -33,7 +33,7 @@ class ResourceController extends Controller
     }
  
 
-    public function insert(Request $request)
+    public function insert(ResourceRequest $request)
     {
         // $this->authorize('create',  new Resource());
         
@@ -47,7 +47,7 @@ class ResourceController extends Controller
         $resources->meta_keyword    = $request->meta_keyword;
        
         $resources->save();
-        return back()->with('success', 'Resource Added!');
+        return redirect()->route('resourcesList')->with('success', 'Resource Added!');
 
     }
     public function  edit($resources)
@@ -68,7 +68,7 @@ class ResourceController extends Controller
     }
 
     
-    public function update( $resources,Request $request)
+    public function update( $resources,ResourceRequest $request)
     {
        
         $resources=Resource::where('id',$resources)->first();
@@ -80,7 +80,7 @@ class ResourceController extends Controller
         $resources->meta_desc       = $request->meta_desc;
         $resources->meta_keyword    = $request->meta_keyword;
         $resources->save();
-        return back()->with('success', 'Resource updated!');
+        return redirect()->route('resourcesList')->with('success', 'Resource updated!');
     }
 
     public function trashList()

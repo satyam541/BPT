@@ -92,8 +92,8 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('logo','Logo')}}
-                    {{Form::file('logo',null,['class'=>'form-control'])}}
+                    {{Form::label('image','Logo')}}
+                    {{Form::file('image',null,['class'=>'form-control'])}}
                     <img src="{{ $websitedetail->getLogoPath() }}" class=" pad" style="max-width:50%"/>
                   </div>
 

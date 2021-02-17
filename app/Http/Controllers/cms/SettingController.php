@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\cms;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
@@ -51,6 +51,24 @@ class SettingController extends Controller
 
         $websitedetail->contact_footer     = $request->contact_footer ;
 
+<<<<<<< HEAD
+        $websitedetail->copyright_footer        = $request->copyright_footer;
+        $websitedetail->opening_hours                  = $request->opening_hours;
+         $websitedetail->opening_days                  = $request  ->opening_days;
+         $websitedetail->twitter            =$request->twitter;
+         $websitedetail->facebook           =$request->facebook;
+         $websitedetail->linkedin            =$request->linkedin;
+         $websitedetail->courses           =$request->courses;
+         $websitedetail->trainers           =$request->trainers;
+         $websitedetail->reviews           =$request->reviews;
+         $websitedetail->learners            =$request->learners;
+         $websitedetail->locations            =$request->locations;
+         if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
+            $websitedetail->image = $imageName;
+        }
+=======
         $websitedetail->copyright_footer   = $request->copyright_footer;
         $websitedetail->opening_hours      = $request->opening_hours;
         $websitedetail->opening_days       = $request  ->opening_days;
@@ -63,6 +81,7 @@ class SettingController extends Controller
         $websitedetail->learners           = $request->learners;
         $websitedetail->locations          = $request->locations;
          
+>>>>>>> 37e7c803d9c15ca2939e1d748b6af2bc28617113
        
         $websitedetail->save();
         return back()->with('success','Successfully Added');
@@ -99,6 +118,24 @@ class SettingController extends Controller
         $websitedetail->contact_email      = $request->contact_email ;
         $websitedetail->contact_footer     = $request->contact_footer ;
         $websitedetail->copyright_footer   = $request->copyright_footer;
+<<<<<<< HEAD
+        $websitedetail->opening_hours       = $request->opening_hours;
+        // $websitedetail->name                = $request->name;
+        $websitedetail->opening_days       = $request  ->opening_days;
+        $websitedetail->twitter            =$request->twitter;
+        $websitedetail->facebook           =$request->facebook;
+        $websitedetail->linkedin            =$request->linkedin;
+        $websitedetail->courses           =$request->courses;
+        $websitedetail->trainers           =$request->trainers;
+        $websitedetail->reviews           =$request->reviews;
+        $websitedetail->learners            =$request->learners;
+        $websitedetail->locations            =$request->locations;
+        if($request->hasFile('image')){
+            $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
+            $websitedetail->image = $imageName;
+        }
+=======
         $websitedetail->opening_hours      = $request->opening_hours;
         $websitedetail->name               = $request->name;
         $websitedetail->opening_days       = $request->opening_days;
@@ -111,6 +148,7 @@ class SettingController extends Controller
         $websitedetail->learners           = $request->learners;
         $websitedetail->locations          = $request->locations;
 
+>>>>>>> 37e7c803d9c15ca2939e1d748b6af2bc28617113
         $websitedetail->save();
       
         return back()->with('success','Successfully Updated');
