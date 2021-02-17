@@ -47,7 +47,6 @@ class CourseController extends Controller
     public function unlinkedCourseList()
     {
         $data['courses']     = Course::with('topic')->whereDoesntHave('topic')->get();
-        // dd();
         $data['topics']      = Topic::pluck('name','id');
         return view('cms.course.unlinkedCourses',$data);
     }
@@ -57,7 +56,7 @@ class CourseController extends Controller
         $course = Course::find($id);
         $course->topic_id         = $request['topic_id'];
         $topic  = Topic::find($request['topic_id']);
-        $course->reference   = $topic->reference.'/'.$this->encodeCourseSlug($course['name']);
+        $course->reference   = $topic->reference.'/'.encodeUrlSlug($course['name']);
         $course->update();
         return back()->with('success','Topic linked');
     }
@@ -135,7 +134,6 @@ class CourseController extends Controller
         $data['list'] = $list;
         $data['course'] = new Course();
         $data['submitRoute'] = 'insertCourse';
-        $data['categorySlug'] = '';
         return view('cms.course.courseForm',$data);
     }
     
@@ -176,7 +174,6 @@ class CourseController extends Controller
                 $request->file('image')->move(public_path($course->logo_path), $imageName);
                 $course->image = $imageName;
             }
-            // dd($course);
             $course->save();
             \Session::flash('success', 'Course created!'); 
         }
@@ -187,8 +184,7 @@ class CourseController extends Controller
         {
             $course->popular()->save($course->popular);
         }
-        
-          
+
         return redirect()->route('courseList');
     }
 
@@ -216,15 +212,12 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         // $this->authorize('update', $course);
-        // dd($course->whatsInclude()->get());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['submitRoute'] = array('updateCourse',$course->id);
         $data['course'] = $course;
-        $data['categorySlug'] = $course->topic->category->reference;
-        // dd($course->getAttributes()['reference']);
         return view("cms.course.courseForm",$data);
     }
 
@@ -241,7 +234,6 @@ class CourseController extends Controller
 
     public function update(Course $course,CourseRequest $request)
     {
-        // dd($request->reference);
         // $this->authorize('update', $course);
         $inputs = $request->except(["_token","is_popular"]);
         $inputs['accreditation_id']=$request->accreditation_id;
@@ -278,7 +270,6 @@ class CourseController extends Controller
     {
         // $this->authorize('update', $courseDetail->course);
         $inputs              = $request->except("_token");
-        // dd($request);
         
         $content = $courseDetail->update($inputs);
             if(!empty($content))
@@ -300,11 +291,6 @@ class CourseController extends Controller
     }
 
 
-    public function encodeCourseSlug($course)
-    {
-        $coursename = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $course));
-        return $coursename;
-    } 
    public function coursetrashList()
    {
     // $this->authorize('view', new Course());
@@ -383,7 +369,6 @@ class CourseController extends Controller
    {
        $course_id = $request->course_id;
        $header_id = $request->header_id;
-// dd($request->all());
        Course::find($course_id)->WhatsIncluded()->syncWithoutDetaching([$header_id=>['module_id'=> $course_id, 'module_type' => 'Course']]);
 
         \Session::flash('success', 'WhatsIncluded Added!'); 

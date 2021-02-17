@@ -37,7 +37,6 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <input type="hidden" name="categorySlug" value="{{ $categorySlug }}" id="categorySlug">
               {{Form::model($course,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
 
