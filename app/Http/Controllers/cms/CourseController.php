@@ -206,7 +206,7 @@ class CourseController extends Controller
                 \Session::flash('failure', 'Duplicate Data Found!'); 
             }
 
-        return back();
+        return redirect()->back();
     }
 
     public function edit(Course $course)
@@ -275,7 +275,7 @@ class CourseController extends Controller
             if(!empty($content))
         \Session::flash('success', 'Content Updated!'); 
 
-        return back();
+        return redirect()->back();
     }
 
     public function delete(Course $course)

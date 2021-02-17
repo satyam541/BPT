@@ -98,11 +98,18 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card-footer clear-fix small-pagination">
-                            {{-- @can('create',new App\Models\UrlRedirect()) --}}
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{-- @can('create',new App\Models\UrlRedirect()) --}}
                             <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
                             {{-- @endcan --}}
-                            {{ $urls->appends(request()->query())->links() }}
+                                </div>
+                            <div class="col-md-6">
+                            <div class="float-sm-right"> {{ $urls->appends(request()->query())->links() }}</div>
+                     </div>
+                    
+                    </div>
                         </div>
                     </div>
                 </div>

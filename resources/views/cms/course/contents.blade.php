@@ -79,11 +79,20 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="box-footer clear-fix small-pagination">
-                    {{-- @can('create',new App\Models\Permission) --}}
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{-- @can('create',new App\Models\Permission) --}}
                     <a id="add" href="{{route('createCourseContent',['course'=>$selectedCourse,'country'=>$selectedCountry])}}" class="btn btn-success" style="">Add new record</a>
-                   {{-- @endcan --}}
-                {{ $contents->links() }}
+                    {{-- @endcan --}}
+                            </div>
+                 <div class="col-md-6">
+                     <div class="float-sm-right"> {{ $contents->links() }}</div>
+                 </div>
+                
+                </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
