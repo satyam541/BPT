@@ -380,6 +380,9 @@ input::-webkit-inner-spin-button {
 .navbar .top-bar {
   display: none;
 }
+.navbar .info p {
+  color: #181818;
+}
 .navbar .container {
   display: flex;
   align-items: center;
@@ -434,6 +437,28 @@ input::-webkit-inner-spin-button {
   width: 15px;
   height: 15px;
   margin-right: 5px;
+}
+.breadcrums {
+  display: flex;
+  margin-top: 1rem;
+}
+.breadcrums img {
+  width: 8px;
+  height: 8px;
+}
+.breadcrums ul {
+  display: flex;
+  align-items: center;
+}
+.breadcrums li {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.breadcrums li:first-child {
+  margin-right: 0.4rem;
+}
+.breadcrums li:last-child {
+  margin-left: 0.4rem;
 }
 .banner {
   display: flex;
@@ -815,7 +840,7 @@ input::-webkit-inner-spin-button {
     padding: 0;
     position: relative;
     z-index: 1;
-    align-items: initial;
+    align-items: inherit;
   }
   .navbar .container::before {
     content: '';
@@ -896,6 +921,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1024px) {
+  .navbar ul .links-li .link {
+    padding-bottom: 0;
+  }
   .navbar .top-bar li:first-child {
     margin-right: 1.5rem;
   }
@@ -1200,20 +1228,6 @@ input::-webkit-inner-spin-button {
 }
 .contact-banner .banner-container .banner-content p {
   color: #FFFFFF;
-}
-.contact-banner .banner-container .banner-content .breadcrums {
-  display: flex;
-  margin-top: 1rem;
-}
-.contact-banner .banner-container .banner-content .breadcrums ul {
-  display: flex;
-}
-.contact-banner .banner-container .banner-content .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.contact-banner .banner-container .banner-content .breadcrums ul li:first-child {
-  margin-right: 0.4rem;
 }
 .contact {
   padding: 3rem 1.5rem;
