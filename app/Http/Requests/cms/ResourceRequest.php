@@ -4,7 +4,7 @@ namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PageDetailRequest extends FormRequest
+class ResourceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,18 @@ class PageDetailRequest extends FormRequest
      */
     public function rules()
     {
+        $resource=request()->route('id',0);
+        
+          $id = 0;
+          if(!empty($resource)){
+              $id = $resource;
+            
+          }
+          
         return [
-            'page_name'               => 'required|string|max:50',
-            'section'                 => 'required',
-            'content'                 => 'required'
+            'name'          =>  'required',
+            'reference'     =>  'required|unique:resource,reference,'.$id.',id',
+            'content'       =>  'required',
         ];
     }
 }

@@ -86,9 +86,10 @@ class VenueController extends Controller
         return view("cms.venue.venueForm",$data);
     }
 
-    public function update(Venue $venue,VenueRequest $request)
+    public function update($venue,VenueRequest $request)
     {
         // $this->authorize('update', $venue);
+        $venue=Venue::find($venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];

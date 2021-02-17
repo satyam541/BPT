@@ -37,17 +37,17 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($resources,['route'=>$submitroute,"files"=>"true"])}}
+              {{Form::model($resources,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
                     
                   <div class="form-group">
                     {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
+                    {{Form::text('name',null,['id'=>'name','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control'])}}
                     
                   </div>
 
@@ -91,4 +91,20 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+       $(document).ready( function() {
+        $("#name").on('input',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var article = $("#name").val();
+    var slug = 'resources'+'/'+convertUrl(article);
+    $("#reference").val(slug);
+    
+}
+ });
+    </script>
 @endsection
