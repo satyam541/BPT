@@ -171,9 +171,9 @@ class CourseController extends Controller
         $course['reference']=$reference;
         if(empty($course->created_at))
         {                    
-            if($request->hasFile('logo')){
-                $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('logo')->getClientOriginalExtension();
-                $request->file('logo')->move(public_path($course->logo_path), $imageName);
+            if($request->hasFile('image')){
+                $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+                $request->file('image')->move(public_path($course->logo_path), $imageName);
                 $course->image = $imageName;
             }
             // dd($course);
@@ -271,7 +271,7 @@ class CourseController extends Controller
         
         if(!empty($done))
         \Session::flash('success', 'Course updated!'); 
-        return redirect()->back();
+        return redirect()->route('courseList');
     }
 
     public function contentUpdate(CourseContentRequest $request,CourseContent $courseDetail)

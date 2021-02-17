@@ -63,7 +63,7 @@ class OnlineCourseController extends Controller
     {
         $onlinecourse                   =   new courseElearning();
         $reference                      =   encodeUrlSlug(Course::find($request->course_id)->name);
-        $onlinecourse->reference        =   'online-courses'.'/'.$reference.'/'.$request->reference;
+        $onlinecourse->reference        =   $request->reference;
         $onlinecourse->online_course_name=  $request->online_course_name;
         $onlinecourse->course_id        =   $request->course_id;
         $onlinecourse->summary          =   $request->summary;
@@ -117,8 +117,7 @@ class OnlineCourseController extends Controller
 
     public function update(courseElearning $course,OnlineCourseRequest $request)
     {
-        $reference                  =   encodeUrlSlug(Course::find($request->course_id)->name);
-        $course->reference          =   'online-courses'.'/'.$reference.'/'.encodeUrlSlug($request->online_course_name);
+        $course->reference          =   $request->reference;
         $course->online_course_name =   $request->online_course_name;
         $course->course_id          =   $request->course_id;
         $course->summary            =   $request->summary;

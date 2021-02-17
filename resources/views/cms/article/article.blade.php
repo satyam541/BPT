@@ -32,7 +32,9 @@
         <!-- left column -->
         <div class="card card-primary card-outline">
           <div class="card-header">
-            
+            <div class="card-title">
+              {{$type}} List
+            </div>
           </div>
 
             <!-- /.card-header -->

@@ -144,7 +144,7 @@
             });
         }
 
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
     });
 

@@ -25,11 +25,11 @@ class ScheduleRequest extends FormRequest
     {
         return [
             //
-        'course_id'      => ['required'],
-        'location'       => ['required'],
-        'duration'       => ['required'],
-        'event_time'     => ['required'],
-        'event_price'    => ['required']
+        'course_id'      => 'required',
+        'location'       => 'required',
+        'duration'       => 'required',
+        'event_time'     => 'required',
+        'event_price'    => 'required'
         ];
     }
     
