@@ -205,7 +205,7 @@ class TopicController extends Controller
         // $this->authorize('create', new Topic());
         $data['topic']          = new Topic();
         $data['submitRoute']    = 'insertTopic';
-        $data['categorySlug']   = '';
+        $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list']           = $list;
@@ -333,7 +333,7 @@ class TopicController extends Controller
         // $this->authorize('update', new Topic());
         $data['topic']          = Topic::with('faqs')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
-        $data['categorySlug']   = $data['topic']->category->reference;
+        $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list']           = $list;
