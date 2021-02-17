@@ -129,7 +129,7 @@
        padding: 0;
        position: relative;
        z-index: 1;
-       align-items: initial;
+       align-items: inherit;
        
        &::before{
          content: '';
@@ -228,7 +228,16 @@
 @media @size-lg {
       //Start navbar //
       .navbar {
+        ul{
+          .links-li{
+            .link{
+              padding-bottom: 0;
+
+            }
+          }
+        }
           .top-bar{
+            
             li{
               &:first-child{
                 margin-right: 1.5rem;
