@@ -603,6 +603,12 @@ $.widget.bridge('uibutton', $.ui.button)
            $target = $(event.target);
 
     });
+    
+        $(".selectJS").select2({
+            width:'100%',
+            placeholder:'Choose one',
+        });
+
       
     $('.summernote').summernote({
       toolbar:[

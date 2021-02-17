@@ -161,7 +161,7 @@
         function updateSlug()
 {
     var location = $("#name").val();
-    var slug = convertUrl(location);
+    var slug = '/'+convertUrl(location);
     $("#reference").val(slug);
     
 }
