@@ -21,18 +21,65 @@
             flex-direction: row;
             justify-content: space-between;
             background: @blueGradient;
+            padding: .5rem 1rem;
+            border-radius: 100px;
         }
         .content{
             width: 70%;
-            flex-direction: row;
+            flex-direction: row; 
+            text-align: left;
+            p {
+                margin-top: 0;
+            }
+            img {
+                width: 80px;
+                height: 80px;
+                margin-right: 2rem;
+                transform: translate(10px, -48px);
+            }
         }
         .buttons{
             width: 30%;
-            justify-content: flex-end
-
+            justify-content: flex-end;
+            margin-top: 0;
         }
     
     }
+    .whychoose{
+        padding: @sectionPadding-md;
+        .choose-list{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .item{
+            width: 30%;
+            padding: 2rem;
+        
+        }
+    }
+    
+.ways{
+    padding: @sectionPadding-md;
+    .ways-container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ways-content{
+        width: 52%;
+    }
+    .ways-image{
+        width: 40%;
+        margin-top: 0;
+
+    }
+    .item{
+        &::before{
+            top: 20%;
+        }
+
+    }
+}
 }
 
 @media @size-lg{
@@ -41,11 +88,63 @@
             width: 31%;
         }
     }
+    .effective{
+        .effective-container{
+            width: 90%;
+            margin: auto;
+            padding: 0 4rem;
+        }
+        .content{
+            img{
+                width: 100px;
+                height: 100px;
+                transform: translate(10px,-30px);
+            }
+        }
+    }
+    .ways{
+        background-image: url(../img/home/ways-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: transparent;
+        .ways-content{
+
+        }
+        .ways-list{
+            background-color: @darkblueColor;
+        }
+        .ways-image{
+
+        }
+        .item{
+            margin: 0;
+            padding-top: 1rem;
+            flex-direction: row;
+            &:first-child{
+                padding-top: 0;
+            }
+            span{
+                 margin-right: 1rem;
+            }
+        }
+        .content{
+            width: 70%;
+        }
+        h3{
+            margin-top: 0;
+        }
+    }
     
 }
 
 @media @size-xl{
     .courses{
+        padding: @sectionPadding-xl;
+    }
+    .effective{
+        padding: @sectionPadding-xl;
+    }
+    .whychoose{
         padding: @sectionPadding-xl;
     }
    

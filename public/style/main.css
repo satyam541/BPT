@@ -1100,12 +1100,18 @@ input::-webkit-inner-spin-button {
   width: 25px;
   height: 25px;
 }
+.courses .course-name:hover {
+  background: linear-gradient(#0064D8, #1C2848);
+}
 .courses .course-name:hover .name h3,
 .courses .course-name:hover .name p {
   color: #FFFFFF;
 }
 .courses .course-name:hover a {
   display: flex;
+}
+.courses .buttons {
+  margin-top: 2rem;
 }
 .effective {
   padding: 3rem 1.5rem;
@@ -1129,6 +1135,107 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   margin-top: 1rem;
   font-size: 16px;
+  font-weight: 700;
+}
+.whychoose {
+  padding: 3rem 1.5rem;
+}
+.whychoose .whychoose-container {
+  display: flex;
+  flex-direction: column;
+}
+.whychoose .choose-list {
+  display: flex;
+  flex-direction: column;
+}
+.whychoose .item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.whychoose .item img {
+  width: 50px;
+  height: 50px;
+}
+.whychoose .item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.whychoose h3 {
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+.whychoose p {
+  text-align: center;
+}
+.ways {
+  padding: 3rem 1.5rem;
+  background-color: #1C2848;
+}
+.ways .ways-container {
+  display: flex;
+  flex-direction: column;
+}
+.ways .ways-content {
+  display: flex;
+  flex-direction: column;
+}
+.ways .ways-image {
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+}
+.ways .ways-image img {
+  width: 100%;
+  height: 100%;
+}
+.ways .ways-list {
+  display: flex;
+  flex-direction: column;
+}
+.ways .item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  position: relative;
+}
+.ways .item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  border: 5px solid #1C2848;
+  box-shadow: 0 0 1px 1px #FFFFFF;
+  z-index: 1;
+}
+.ways .item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 15%;
+  background-color: #FFFFFF;
+  z-index: 0;
+  opacity: 0.3;
+}
+.ways .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.ways h3 {
+  margin: 1rem 0 0.5rem 0;
+  color: #FFFFFF;
+}
+.ways p {
+  color: #FFFFFF;
 }
 @media (min-width : 768px) {
   .courses {
@@ -1154,23 +1261,107 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     justify-content: space-between;
     background: linear-gradient(#0064D8, #1C2848);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
   }
   .effective .content {
     width: 70%;
     flex-direction: row;
+    text-align: left;
+  }
+  .effective .content p {
+    margin-top: 0;
+  }
+  .effective .content img {
+    width: 80px;
+    height: 80px;
+    margin-right: 2rem;
+    transform: translate(10px, -48px);
   }
   .effective .buttons {
     width: 30%;
     justify-content: flex-end;
+    margin-top: 0;
+  }
+  .whychoose {
+    padding: 3rem 2rem;
+  }
+  .whychoose .choose-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .whychoose .item {
+    width: 30%;
+    padding: 2rem;
+  }
+  .ways {
+    padding: 3rem 2rem;
+  }
+  .ways .ways-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ways .ways-content {
+    width: 52%;
+  }
+  .ways .ways-image {
+    width: 40%;
+    margin-top: 0;
+  }
+  .ways .item::before {
+    top: 20%;
   }
 }
 @media (min-width : 1024px) {
   .courses .course-name {
     width: 31%;
   }
+  .effective .effective-container {
+    width: 90%;
+    margin: auto;
+    padding: 0 4rem;
+  }
+  .effective .content img {
+    width: 100px;
+    height: 100px;
+    transform: translate(10px, -30px);
+  }
+  .ways {
+    background-image: url(../img/home/ways-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+  }
+  .ways .ways-list {
+    background-color: #1C2848;
+  }
+  .ways .item {
+    margin: 0;
+    padding-top: 1rem;
+    flex-direction: row;
+  }
+  .ways .item:first-child {
+    padding-top: 0;
+  }
+  .ways .item span {
+    margin-right: 1rem;
+  }
+  .ways .content {
+    width: 70%;
+  }
+  .ways h3 {
+    margin-top: 0;
+  }
 }
 @media (min-width : 1366px) {
   .courses {
+    padding: 4rem 0rem;
+  }
+  .effective {
+    padding: 4rem 0rem;
+  }
+  .whychoose {
     padding: 4rem 0rem;
   }
 }
