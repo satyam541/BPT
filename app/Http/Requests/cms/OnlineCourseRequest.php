@@ -33,7 +33,7 @@ class OnlineCourseRequest extends FormRequest
         return [
             'online_course_name'  =>  'required',
             'course_id'           =>  'required',
-            'reference'           =>  'required|unique:course,reference,'.$id.',id',
+            'reference'           =>  'required|unique:course_elearning,reference,'.$id.',id',
             'duration'            =>  'required',
         ];
     }
