@@ -102,4 +102,5 @@
 <script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
 <script src="{{url('script/owl.carousel.min.js')}}"></script>
 <script src="{{url('script/main.js')}}"></script>
+<script src="{{url('script/count.js')}}"></script>
 </html>
