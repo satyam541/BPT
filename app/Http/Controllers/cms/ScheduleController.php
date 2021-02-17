@@ -61,7 +61,7 @@ class ScheduleController extends ScheduleApi
 
     public function insert(ScheduleRequest $request)
     {
-      $this->authorize('create', new Schedule());
+      // $this->authorize('create', new Schedule());
       $inputs   = $request->all();
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
