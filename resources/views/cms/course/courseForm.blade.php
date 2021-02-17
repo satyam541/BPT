@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('topic_id','Topic')}}
-                    {{Form::select('topic_id',$list['topics'],$course->topic_id,['class'=>'form-control js-example-basic-multiple','id'=>'topicName', 'placeholder'=>'Choose one','onchange'=>'updateSlug()'])}}
+                    {{Form::select('topic_id',$list['topics'],$course->topic_id,['tabindex'=>'-1','class'=>'form-control selectJS','id'=>'topicName', 'placeholder'=>'Choose one','onchange'=>'updateSlug()'])}}
                     
                   </div>
                   <div class="form-group">
@@ -93,7 +93,7 @@
 
                   <div class="form-group">
                     {{Form::label('difficulty','Difficulty')}}
-                    {{Form::select('difficulty',array('Beginner'=>"Beginner","Intermediate"=>"Intermediate","Advance"=>"Advance"),null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('difficulty',array('Beginner'=>"Beginner","Intermediate"=>"Intermediate","Advance"=>"Advance"),null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -105,7 +105,7 @@
 
                   <div class="form-group">
                     {{Form::label('accreditation_id','Accreditation')}}
-                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('accreditation_id',$list['accreditations'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
