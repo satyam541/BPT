@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}"> --}}
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -36,7 +36,13 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
+   <link rel="stylesheet" href="{{ url('adminlte/plugins/select2/css/select2.min.css')}}"/>
 </head>
+<style>
+  .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 19px;
+}
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -561,6 +567,8 @@
 <script>
 $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- datepicker -->
@@ -573,7 +581,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE select 2 -->
-<script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
+{{-- <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script> --}}
 <script src="{{url('cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
