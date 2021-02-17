@@ -25,14 +25,20 @@ class CourseRequest extends FormRequest
     {
         return [
             'name'                  => 'required|string|max:100',
+            'topic_id'              => 'required',
+            'reference'             => 'required',
             'tag_line'              => 'required',
             'tka_name'              => 'required',
-            'reference'             => 'required',
-            'accreditation_id'      => 'nullable',
-            'topic_id'              => 'required',
             'duration'              => 'required',
-            'duration_global'       => 'nullable',
+            // 'duration_global'       => 'nullable',
+            // 'accreditation_id'      => 'nullable',
             'logo'                  => 'mimes:jpeg,png,jpg,svg|max:500',
+        ];
+    }
+    public function attributes()
+    {
+        return[
+            'topic_id'          =>  'Topic',
         ];
     }
 }
