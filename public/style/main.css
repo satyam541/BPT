@@ -115,6 +115,12 @@ input::-webkit-inner-spin-button {
 .sticky .bpt-logo img {
   width: 196px!important;
 }
+.sticky-up {
+  top: -100px;
+}
+.sticky-down {
+  z-index: 4;
+}
 .buttons {
   display: flex;
   justify-content: center;
@@ -139,7 +145,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   min-width: 150px;
   white-space: nowrap;
-  border-radius: 50px;
+  border-radius: 100px;
 }
 .buttons .btn-blue {
   background: #0064D8;
@@ -622,7 +628,6 @@ input::-webkit-inner-spin-button {
   height: 18px;
 }
 .footer .terms {
-  text-align: center;
   padding-top: 1rem;
   padding-bottom: 0;
   color: #FFFFFF;
@@ -631,6 +636,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
 }
 .footer .heading {
+  padding-top: 0;
   margin-bottom: 2rem;
 }
 .footer .heading::before {
@@ -641,6 +647,11 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
   top: auto;
 }
+.footer .footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .footer .footer-main .date {
   font-size: 10px;
   padding: 0;
@@ -650,6 +661,7 @@ input::-webkit-inner-spin-button {
   background-color: #0064D8;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .footer .footer-content p {
   color: #FFFFFF;
@@ -828,9 +840,6 @@ input::-webkit-inner-spin-button {
     margin-top: 0;
     margin-left: auto;
   }
-  .navbar .top-bar .buttons .btn-blue {
-    border-radius: 20px;
-  }
   .navbar .top-bar li {
     display: flex;
     align-items: center;
@@ -929,6 +938,10 @@ input::-webkit-inner-spin-button {
   }
   .footer {
     padding: 3rem 2rem;
+  }
+  .footer .terms {
+    width: 80%;
+    text-align: center;
   }
   .footer .footer-content {
     flex-direction: row;
