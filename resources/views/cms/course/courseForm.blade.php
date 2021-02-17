@@ -155,7 +155,7 @@
 
                  <script>
                     $(document).ready( function() {
-        $("#name,#topicName").on('focusout',function(){
+        $("#name,#topicName").on('input',function(){
         updateSlug();
         });
 
