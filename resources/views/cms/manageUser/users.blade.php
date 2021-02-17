@@ -107,7 +107,7 @@
                     </div>
                     <div class="card-footer clear-fix small-pagination">
                         {{-- @can('create', new App\Models\Permission()) --}}
-                        <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+                        <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
                         {{-- @endcan --}}
 
                         {{ $users->links() }}

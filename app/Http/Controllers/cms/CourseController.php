@@ -130,6 +130,7 @@ class CourseController extends Controller
 
         // $this->authorize('create', new Course());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
+        $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['course'] = new Course();
@@ -156,18 +157,17 @@ class CourseController extends Controller
     public function insert(CourseRequest $request)
     {
         // $this->authorize('create', new Course());
+
         $inputs = $request->except(["_token",'is_popular']);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
         $course = Course::firstOrNew( 
             ['topic_id'=>$inputs['topic_id'],'name'=>$inputs['name']]
         ,$inputs);
-        $topic=Topic::where('id',$request->topic_id)->first();
-        $topic->reference=substr($topic->reference, strpos( $topic->reference, '/'));
         if(!isset($request['is_online'])){
             $course['is_online']=0;
         }
-        $reference='training-courses'.$topic->reference."/".$request->reference;
+        $reference=$inputs['reference'];
         $course['reference']=$reference;
         if(empty($course->created_at))
         {                    
@@ -218,6 +218,7 @@ class CourseController extends Controller
         // $this->authorize('update', $course);
         // dd($course->whatsInclude()->get());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
+        $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['submitRoute'] = array('updateCourse',$course->id);
@@ -242,19 +243,15 @@ class CourseController extends Controller
     {
         // dd($request->reference);
         // $this->authorize('update', $course);
-        $inputs = $request->except(["_token","is_popular","reference"]);
+        $inputs = $request->except(["_token","is_popular"]);
         $inputs['accreditation_id']=$request->accreditation_id;
-           $reference=null;
+
     
         $inputs['accredited'] = isset($inputs['accredited']);
         $done = $course->update($inputs);
-        $topic=Topic::where('id',$request->topic_id)->first();
-        $topic->reference=substr($topic->reference, strpos( $topic->reference, '/'));
             if(!isset($request['is_online'])){
                 $course['is_online']=0;
             }
-            $reference='training-courses'.$topic->reference."/".$this->encodeCourseSlug($request->name);
-            $course['reference']=$reference;
             $course->save();
         if($request->hasFile('image')){
             $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();

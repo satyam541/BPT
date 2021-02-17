@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('topic_id','Topic')}}
-                    {{Form::select('topic_id',$list['topics'],$course->topic_id,['class'=>'form-control js-example-basic-multiple','id'=>'topic-name', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('topic_id',$list['topics'],$course->topic_id,['tabindex'=>'-1','class'=>'form-control selectJS','id'=>'topicName', 'placeholder'=>'Choose one','onchange'=>'updateSlug()'])}}
                     
                   </div>
                   <div class="form-group">
@@ -93,7 +93,7 @@
 
                   <div class="form-group">
                     {{Form::label('difficulty','Difficulty')}}
-                    {{Form::select('difficulty',array('Beginner'=>"Beginner","Intermediate"=>"Intermediate","Advance"=>"Advance"),null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('difficulty',array('Beginner'=>"Beginner","Intermediate"=>"Intermediate","Advance"=>"Advance"),null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -105,7 +105,7 @@
 
                   <div class="form-group">
                     {{Form::label('accreditation_id','Accreditation')}}
-                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('accreditation_id',$list['accreditations'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -155,23 +155,32 @@
 
                  <script>
                     $(document).ready( function() {
-        $("#name").on('focusout',function(){
+        $("#name,#topicName").on('focusout',function(){
         updateSlug();
         });
-        function updateSlug()
-{
-    var location = $("#name").val();
-    var slug = '/'+convertUrl(location);
-    $("#reference").val(slug);
-    
-}
+
 $(".js-example-basic-multiple").select2({
                 tags: true,
                 theme: "classic",
                 tokenSeparators: [',', ' ']
                
             });
+  
       });
+      function updateSlug()
+{
+    var location = $("#name").val();
+    var slug = '/'+convertUrl(location);  
+    var selectedTopic=$('#topicName').select2("val");
+    var topics=<?php echo json_encode($list['slugs']); ?>;
+    if(selectedTopic in topics){
+      topicslug=topics[selectedTopic];
+      slug=topicslug+slug;
+    }
+    
+    $("#reference").val(slug);
+    
+}
               
         </script>
             

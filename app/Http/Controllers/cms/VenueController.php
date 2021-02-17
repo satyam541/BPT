@@ -62,6 +62,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
+        $venue->reference=$inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -100,6 +101,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
+        $venue->reference=$inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
