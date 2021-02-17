@@ -53,7 +53,7 @@ class ResourceController extends Controller
     public function  edit($resources)
     {
         $resources=Resource::where('id',$resources)->first();
-        $this->authorize('update', $resources);
+        // $this->authorize('update', $resources);
         $data['resources'] = $resources;
         $data['submitroute'] = array('updateresources',$resources->id);  
         return view("cms.resources.resourcesForm",$data);

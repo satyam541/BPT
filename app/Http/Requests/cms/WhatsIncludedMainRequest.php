@@ -4,7 +4,7 @@ namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class WhatsIncludedRequest extends FormRequest
+class WhatsIncludedMainRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,8 @@ class WhatsIncludedRequest extends FormRequest
     public function rules()
     {
         return [
-            'header_id' => 'required',
-        ];
-    }
-    public function attributes()
-    {
-        return[
-            'header_id' => 'Header',
+            'name'      =>  'required',
+            'content'   =>  'required',
         ];
     }
 }

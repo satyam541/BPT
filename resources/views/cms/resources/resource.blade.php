@@ -59,7 +59,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+              <a id="add" href="{{route('createresources')}}" class="btn btn-success" style="">Add new record</a>
 
             </div>
             <!-- /.card-body -->

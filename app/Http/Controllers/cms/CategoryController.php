@@ -11,6 +11,7 @@ use App\Models\whatsIncluded;
 use App\Models\BulletPoint;
 use App\Models\whatsIncludedHeaders;
 use App\Http\Requests\cms\CategoryRequest;
+use App\Http\Requests\cms\WhatsIncludedRequest;
 
 class CategoryController extends Controller
 {
@@ -209,7 +210,7 @@ class CategoryController extends Controller
         }
         return "success";
    }
-   public function whatsincludedinsert(Request $request)
+   public function whatsincludedinsert(WhatsIncludedRequest $request)
    {
        $category_id = $request->course_id;
        $header_id = $request->header_id;

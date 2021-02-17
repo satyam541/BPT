@@ -11,7 +11,8 @@
             <div class="breadcrums">
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">> Testimonial</a></li>
+                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                    <li><a href="">Testimonial</a></li>
                 </ul>
             </div>
         </div>

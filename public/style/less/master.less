@@ -36,7 +36,7 @@
 
     * {
         box-sizing: border-box;
-        font-family: Roboto;
+        font-family: Roboto,sans-serif;
     }
     p {
         line-height: 1.6;
@@ -447,7 +447,11 @@
         .top-bar{
             display: none;
         }
-
+        .info{
+            p{
+                color: @textColor;
+            }           
+        }
         .container {
             display: flex;
             align-items: center;
@@ -514,6 +518,35 @@
 
     }
     // End navbar //
+
+    //Start Breadcrums
+
+    .breadcrums{
+        display: flex;
+        margin-top: 1rem;
+        img{
+            width: 8px;
+            height: 8px;    
+        }
+        ul{
+            display: flex;        
+            align-items: center;   
+        }
+        li{
+            color: @whiteColor;
+            font-size: 14px;
+           
+            &:first-child{
+                margin-right: .4rem;
+            }
+            &:last-child{
+                margin-left: .4rem;
+            }
+        }
+    }
+
+    //End Breadcrums
+
  
     // Start banner//
     .banner {
@@ -703,7 +736,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-color: transparent;
-                top: initial;
+                top: auto;
             }
         }
         .footer-main{
