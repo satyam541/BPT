@@ -350,7 +350,7 @@ class TopicController extends Controller
         
         return view('cms.topic.contentForm',$data);
     }
-
+    
     public function update(Topic $topic,TopicRequest $request)
     {
         // $this->authorize('update', $topic);

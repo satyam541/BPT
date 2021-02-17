@@ -45,7 +45,15 @@ class LocationController extends Controller
         $data['list']            = $list;
         return view('cms.location.locations',$data);
     }
+    // public function demo(){
 
+    //     $courses=Location::all();
+    //     foreach($courses as $course){
+    //         $course->reference=substr($course->reference, strpos($course->reference, '/'));
+    //         $course->save();
+    //     }
+    //     dd('done');
+    // }
     public function create()
     {
         // $this->authorize('create', new Location());

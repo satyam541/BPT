@@ -171,7 +171,7 @@ Route::get('/accreditation/create','AccreditationController@create')->name('accr
  Route::get('/accreditation/update/{accreditation}','AccreditationController@edit')->name('editAccreditation');
  Route::post('/accreditation/update/{accreditation}','AccreditationController@update')->name('updateAccreditation');
  Route::post('/accreditation/delete/{accreditation}','AccreditationController@delete')->name('deleteAccreditation');
-
+// Route::get('/demo','LocationController@demo');
 Route::get('/course/content','CourseController@contentList')->name('courseContentList');
 Route::get('/course/content/insert','CourseController@contentCreate')->name('createCourseContent');
 Route::post('/course/content/insert','CourseController@contentInsert')->name('insertCourseContent');
