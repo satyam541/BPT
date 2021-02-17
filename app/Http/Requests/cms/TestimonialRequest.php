@@ -26,7 +26,8 @@ class TestimonialRequest extends FormRequest
         return [
             'author'    => 'required',
             'location'  => 'required',
-            'post_date' => 'required'
+            'post_date' => 'required',
+            'rating'    => 'required'
         ];
     }
 }
