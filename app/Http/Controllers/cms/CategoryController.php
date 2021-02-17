@@ -11,6 +11,7 @@ use App\Models\whatsIncluded;
 use App\Models\BulletPoint;
 use App\Models\whatsIncludedHeaders;
 use App\Http\Requests\cms\CategoryRequest;
+use App\Http\Requests\cms\WhatsIncludedRequest;
 
 class CategoryController extends Controller
 {
@@ -44,7 +45,7 @@ class CategoryController extends Controller
         $data['submitRoute']  = "insertCategory";
         return view('cms.category.categoryForm',$data);
     }
-
+    
     public function insert(CategoryRequest $request)
     {
         // $this->authorize('create', new Category());
@@ -54,8 +55,7 @@ class CategoryController extends Controller
         $category->name                 = $input['name'];
         $category->tag_line             = $input['tag_line'];
         // $category->display_order        = $input['display_order'];
-        $category->reference            = 'training-courses'.'/'.encodeUrlSlug($input['name']);
-        dd($category);
+        $category->reference            = '/'.encodeUrlSlug($input['name']);
         $category->color_code           = $input['color_code'];
         $category->published            = isset($input['published']);
         $category->is_online            = isset($input['is_online']);
@@ -91,7 +91,7 @@ class CategoryController extends Controller
         $category->name             = $input['name'];
         $category->tag_line         = $input['tag_line'];
         // $category->display_order    = $input['display_order'];
-        $category->reference            = 'training-courses'.'/'.encodeUrlSlug($input['name']);
+        $category->reference            = '/'.encodeUrlSlug($input['name']);
         $category->color_code       = $input['color_code'];
         $category->published        = isset($input['published']);
         $category->is_online        = isset($input['is_online']);
@@ -210,7 +210,7 @@ class CategoryController extends Controller
         }
         return "success";
    }
-   public function whatsincludedinsert(Request $request)
+   public function whatsincludedinsert(WhatsIncludedRequest $request)
    {
        $category_id = $request->course_id;
        $header_id = $request->header_id;
