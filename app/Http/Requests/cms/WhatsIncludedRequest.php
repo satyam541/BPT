@@ -27,4 +27,10 @@ class WhatsIncludedRequest extends FormRequest
             'header_id' => 'required',
         ];
     }
+    public function attributes()
+    {
+        return[
+            'header_id' => 'Header',
+        ];
+    }
 }
