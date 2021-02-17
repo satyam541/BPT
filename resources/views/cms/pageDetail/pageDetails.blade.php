@@ -54,7 +54,7 @@
                     <td>{{$pageDetail->page_name}}</td>
                     <td>{{$pageDetail->section}}</td>
                     <td>{{$pageDetail->sub_section}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
+                    <td><a href="{{route('editPageDetail',['pageDetail'=>$pageDetail->id])  }}" class="fa fa-edit"></a>
                     <a href="" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
@@ -63,7 +63,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+              <a id="add" href="{{route('createPageDetail')}}" class="btn btn-success" style="">Add new record</a>
 
             </div>
             <!-- /.card-body -->

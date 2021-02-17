@@ -31,10 +31,10 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
-                                                        {{ Form::select('moduleName', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control js-example-basic-multiple','tabindex'=>'-1'])) }}
+                                                        {{ Form::select('moduleName', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control selectJS','tabindex'=>'-1'])) }}
                                                     </div>
                                                     <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
-                                                        {{ Form::select('access', $access, $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  js-example-basic-multiple','tabindex'=>'-1'])) }}
+                                                        {{ Form::select('access', $access, $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  selectJS','tabindex'=>'-1'])) }}
                                                     </div>
                                                     <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
                                                         <button class="btn btn-primary btn-sm">Search</button>
