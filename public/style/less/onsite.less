@@ -70,4 +70,100 @@
 }
 // End training section
 
+// Start doorstep section
+.doorstep{
+    padding: @sectionPadding;
+    .doorstep-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .form{
+        background-image: url(../img/onsite/form-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        p,label{
+            color: @whiteColor;
+        }
+        input[type=checkbox] {
+            background-color: @whiteColor;
+            border-radius: 0;
+        }
+    }
+    .form-consent{
+        p{
+        a{
+            color: @whiteColor;
+            font-weight: bold;
+        }
+    }
+    }
+    .input-container{
+        background-color:#4B5773;
+        .phonecode-field{
+            span{
+                background-color: transparent;
+            }
+            select{
+                background-color: transparent;
+            }
+        }
+        span{
+            background-color: #6B7996;
+        }
+        ::placeholder{
+            color: @whiteColor;
+        }
+        input,textarea{
+            color: @whiteColor;
+        }
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        .info-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: @blueGradient;
+                height: 50px;
+                width: 50px;
+                min-width: 50px;
+                border-radius: 5px;
+                padding: .5rem;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 5px;
+                    transform: rotate(45deg);
+                    background:linear-gradient(#0064D8,#267BDD);
+                    z-index: -1;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .item-info{
+            display: flex;
+            flex-direction: column;
+            margin-left: 1.3rem;
+            width: 70%;
+        }
+    }
+}
+// End doorstep section
+
 
