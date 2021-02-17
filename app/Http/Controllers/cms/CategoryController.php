@@ -54,7 +54,8 @@ class CategoryController extends Controller
         $category->name                 = $input['name'];
         $category->tag_line             = $input['tag_line'];
         // $category->display_order        = $input['display_order'];
-        $category->reference            = 'training-courses'.'/'.$input['reference'];
+        $category->reference            = 'training-courses'.'/'.encodeUrlSlug($input['name']);
+        dd($category);
         $category->color_code           = $input['color_code'];
         $category->published            = isset($input['published']);
         $category->is_online            = isset($input['is_online']);
@@ -235,13 +236,13 @@ class CategoryController extends Controller
 
    public function restoreCategory($id)
    {
-       $category = Category::onlyTrashed()->find($id)->restore();
+       $category = Category::onlyTrashed()->where('id',$id)->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
-       $category = Category::onlyTrashed()->find($id)->forceDelete();
+       $category = Category::onlyTrashed()->where('id',$id)->forceDelete();
        return back()->with('success','Permanently Deleted');
    }
 }

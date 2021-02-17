@@ -23,10 +23,16 @@ class CategoryRequest extends FormRequest
      */
     public function rules()
     {
+        $category=request()->route('category',0);
+        
+          $id = 0;
+          if(!empty($category)){
+              $id = $category->id;
+          }
+          
         return [
             'name'          => 'required|string|max:100',
-            'reference'     => 'required',
-            // 'color_code'    => 'required',
+            'reference'     => 'required|unique:category,reference,'.$id.',id',
             'image'         => 'image|mimes:jpeg,png,jpg,svg|max:500',
             'icon'          => 'mimes:jpeg,png,jpg,svg|max:500',
         ];

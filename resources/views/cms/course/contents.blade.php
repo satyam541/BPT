@@ -81,7 +81,7 @@
                     </div>
                 <div class="box-footer clear-fix small-pagination">
                     {{-- @can('create',new App\Models\Permission) --}}
-                    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+                    <a id="add" href="{{route('createCourseContent')}}" class="btn btn-success" style="">Add new record</a>
                    {{-- @endcan --}}
                 {{ $contents->links() }}
             </div>

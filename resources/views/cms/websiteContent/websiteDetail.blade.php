@@ -59,8 +59,8 @@
                          
                         <td>{{$websitedetail->contact_email}}</td>
                         <td>{{$websitedetail->address}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editWebsiteDetail',['websitedetail'=>$websitedetail->id]) }}" class="fa fa-edit"></a>
+                    <a href="" onclick="deleteItem('{{ route('deleteWebsiteDetail',['websitedetail'=>$websitedetail->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

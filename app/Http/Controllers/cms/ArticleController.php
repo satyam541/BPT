@@ -194,7 +194,7 @@ class ArticleController extends Controller
    public function restoreArticle($id)
    {
         $article = Article::onlyTrashed()->find($id);
-        $this->authorize('restore', $article);
+        // $this->authorize('restore', $article);
         $article->restore();
 
         return back()->with('success','Successfully Restored');
@@ -203,7 +203,7 @@ class ArticleController extends Controller
    public function forceDeleteArticle($id)
    {
         $article = Article::onlyTrashed()->find($id);
-        $this->authorize('forceDelete', $article);
+        // $this->authorize('forceDelete', $article);
         $article->forceDelete();
         
         return back()->with('success','Permanently Deleted!');

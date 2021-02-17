@@ -52,8 +52,8 @@
                     <tr>
                     <td>{{$socialmedia->website}}</td>
                     <td>{{$socialmedia->link}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{ route('editsocialmedia',['id'=>$socialmedia->id]) }}" class="fa fa-edit"></a>
+                    <a href=""onclick="deleteItem('{{ route('deletesocialmedia',['id'=>$socialmedia->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -61,7 +61,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{ route('createsocialmedia')}}" class="btn btn-success" style="">Add new Record</a>
             </div>
             <!-- /.card-body -->
           </div>
