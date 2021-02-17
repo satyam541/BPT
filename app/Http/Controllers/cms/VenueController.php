@@ -142,7 +142,7 @@ class VenueController extends Controller
    public function forceDeleteVenue($id)
    {
     // $this->authorize('forceDelete', new Venue());
-        $venue = Venue::onlyTrashed()->find($id)->forceDelete();
+    Venue::onlyTrashed()->find($id)->forceDelete();
  
        return back()->with('success','Permanently Deleted');
 

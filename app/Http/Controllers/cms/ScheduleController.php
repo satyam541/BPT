@@ -75,7 +75,10 @@ class ScheduleController extends ScheduleApi
           // $schedule->response_venue_id          = $location->venues->first()->id;
           // $schedule->venue_id                   = $location->venues->first()->id;
           $schedule->response_location          = $location->name;
-          $schedule->response_date              = trim($date);
+          $date=date_create($date);
+          $date->setTimestamp(1534694400);
+          $schedule->response_date              =  $date->format('Y-m-d');;
+          dd($schedule);
           $schedule->response_price             = $inputs['event_price'];
           $schedule->response_discounted_price  = $inputs['event_price'];
           $schedule->country_id                 = $inputs['country_id'];
@@ -110,7 +113,7 @@ class ScheduleController extends ScheduleApi
 
     public function update(ScheduleRequest $request,Schedule $schedule)
     { 
-      $this->authorize('update', $schedule);
+      // $this->authorize('update', $schedule);
       $inputs   = $request->all();
 
       $course   = Course::find($inputs['course_id']);
