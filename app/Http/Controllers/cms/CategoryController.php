@@ -55,11 +55,11 @@ class CategoryController extends Controller
         $category->name                 = $input['name'];
         $category->tag_line             = $input['tag_line'];
         // $category->display_order        = $input['display_order'];
-        $category->reference            = '/'.encodeUrlSlug($input['name']);
+        $category->reference            = $input['reference'];
         $category->color_code           = $input['color_code'];
-        $category->published            = isset($input['published']);
-        $category->is_online            = isset($input['is_online']);
-        $category->is_technical         = isset($input['is_technical']);
+        $category->published            = isset($input['published'])?1:0;
+        $category->is_online            = isset($input['is_online'])?1:0;
+        $category->is_technical         = isset($input['is_technical'])?1:0;
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
