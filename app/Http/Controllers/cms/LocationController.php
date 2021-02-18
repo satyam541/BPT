@@ -28,7 +28,7 @@ class LocationController extends Controller
 
     public function list()
     {
-        // $this->authorize('view', new Location());
+        $this->authorize('view', new Location());
         $locations       = Location::all();
         return view('cms.location.locationList',compact('locations'));
     }
@@ -58,7 +58,7 @@ class LocationController extends Controller
     // }
     public function create()
     {
-        // $this->authorize('create', new Location());
+        $this->authorize('create', new Location());
            
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['location']       = new Location();
@@ -71,7 +71,7 @@ class LocationController extends Controller
 
     public function edit(Location $location)
     {
-        // $this->authorize('update', $location);
+        $this->authorize('update', $location);
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
@@ -83,7 +83,7 @@ class LocationController extends Controller
 
     public function insert(LocationRequest $request)
     {
-        // $this->authorize('create', new Location());
+        $this->authorize('create', new Location());
         
         $inputs                       = $request->except("_token");
         $location                     = array();
@@ -121,7 +121,7 @@ class LocationController extends Controller
 
     public function delete(Location $location)
     {
-        // $this->authorize('delete', $location);
+        $this->authorize('delete', $location);
         $location->delete();
     }
 

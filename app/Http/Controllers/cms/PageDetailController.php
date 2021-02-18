@@ -22,14 +22,14 @@ class PageDetailController extends Controller
 
     public function list()
     {
-        // $this->authorize('view', new PageDetail());
+        $this->authorize('view', new PageDetail());
         $data['pageDetails']=PageDetail::all();
         return view('cms.pageDetail.pageDetails',$data);
     }
 
     public function create()
     {
-        // $this->authorize('create', new Pagedetail());
+        $this->authorize('create', new Pagedetail());
         $data['pageDetail'] = new PageDetail();
         $data['pages'] = PageDetail::pluck('page_name','id')->unique()->toArray();
         $data['submitRoute'] = "insertPageDetail";
@@ -38,7 +38,7 @@ class PageDetailController extends Controller
 
     public function insert(PageDetailRequest $request)
     {
-        // $this->authorize('create', new Pagedetail());
+        $this->authorize('create', new Pagedetail());
         $inputs = $request->except(["_token",'image']);
         $pageDetail = pageDetail::firstOrNew(
             [
@@ -73,7 +73,7 @@ class PageDetailController extends Controller
 
     public function edit(PageDetail $pageDetail)
     {
-        // $this->authorize('update', $pageDetail);
+        $this->authorize('update', $pageDetail);
         $data['pageDetail'] = $pageDetail;
         $data['submitRoute'] = array('updatePageDetail',$pageDetail->id);
         return view("cms.pageDetail.pageDetailForm",$data);
@@ -81,7 +81,7 @@ class PageDetailController extends Controller
 
     public function update(PageDetail $pageDetail,PageDetailRequest $request)
     {
-        // $this->authorize('update', $pageDetail);
+        $this->authorize('update', $pageDetail);
         $inputs = $request->except(["_token",'image']);
         $image_prefix = $inputs['page_name'];
          $img_alt  = $request->img_alt;
@@ -122,7 +122,7 @@ class PageDetailController extends Controller
 
     public function delete(PageDetail $pageDetail)
     {
-        // $this->authorize('delete', $pageDetail);
+        $this->authorize('delete', $pageDetail);
         $pageDetail->delete();
     }
 }

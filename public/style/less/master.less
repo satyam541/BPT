@@ -353,7 +353,7 @@
             background-color: @bgColor;
             height: 100%;
             width: 50px;
-            padding: .8rem 1rem;
+            padding: .7rem;
             img{
                 width: 20px;
                 height: 20px;
@@ -379,7 +379,7 @@
         .phonecode-field{
             display: flex;
             select{
-                width: 53px;
+                width: 40px;
                 border: none; 
                 margin: .5rem;
                 margin-left: 0;
@@ -388,6 +388,9 @@
                 box-shadow: none;
                 color: @greyColor;
             }
+            option{
+                color: @textColor;
+            }
             span{
             color: @greyColor;
             font-size: 14px;
@@ -395,7 +398,7 @@
             padding: 0;
             }
             .telephone{
-                padding: 0px 10px 0px 4px;
+                padding: 0px 10px 0px 2px;
             }
 
             .hidden-field{
@@ -424,6 +427,37 @@
      
     //End inputfields
     
+    //Start breadcrums
+
+    .breadcrums {
+        display: flex;
+        margin-top: 1rem;
+        ul {
+            display: flex;
+            align-items: center;
+        
+        }
+        li {
+            color: @whiteColor;
+            font-size: 14px;
+            &:first-child {
+                margin-right: .4rem;
+            }
+            &:last-child {
+                margin-left: .4rem;
+            }
+        }
+        
+        img {
+            width: 8px;
+            height: 8px;
+        }
+       
+    }
+
+    //End breadcrums
+
+
     // Start navbar //
     .navbar {
         display: flex;

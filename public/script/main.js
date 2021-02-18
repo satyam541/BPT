@@ -134,4 +134,44 @@ span.textContent=percent+"%";
 svg.append(span);
 }
 
+ //phone code start
+ var datajson = [{
+    "name": "Afghanistan",
+    "dial_code": "+93",
+    "code": "AF"
+},
+{
+    "name": "Aland Islands",
+    "dial_code": "+358",
+    "code": "AX"
+},
+{
+    "name": "Albania",
+    "dial_code": "+355",
+    "code": "AL"
+},
+];
+
+var options = "";
+$.each(datajson, function (index, value) {
+    options += "<option data-index=" + index + ' value="' + value.code + '" data-phone-code="' + value.dial_code + '" data-country-id="' + index + '" data-country-name="' + value.name + '">' + value.code + '&emsp;&emsp; - &emsp;&emsp;' + value.name + '</option>';
+});
+$('.country-code').html(options);
+$(".country-code").on('change', function (e) {
+    var phonecode = $(this).find(':selected').data('phone-code');
+    var countrycode = $(this).find(':selected').val();
+    $(this).closest('.phonecode-field').find('span.prefix').text(phonecode);
+    // $('input#phonenumber').val(phonecode);
+});
+$('input.telephone').on('focusout', function (event) {
+    var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
+    var data = $(this).val();
+    if (data.startsWith('0')) {
+        data = data.substring(1, data.length);
+    }
+    var number = prefix + data;
+    $(this).closest('.phonecode-field').find('input.phonenumber').val(number);
+});
+//phone code
+
     
