@@ -38,7 +38,7 @@ class CourseController extends Controller
 
     public function list(Request $request)
     {
-        $this->authorize('view', new Course());
+        // $this->authorize('view', new Course());
         $courses = Course::all();
 
         return view('cms.course.courseList',compact('courses'));
@@ -63,7 +63,7 @@ class CourseController extends Controller
 
     public function contentList(Request $request)
     {
-        $this->authorize('view', new Course());
+        // $this->authorize('view', new Course());
         $filter = $request->all();
         $data['selectedCourse'] = empty($filter['course'])? NULL : $filter['course'];
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
@@ -71,7 +71,7 @@ class CourseController extends Controller
         $query = empty($filter['course'])? $query : $query->where('course_id',$filter['course']);
         $query = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
         $query->whereHas('course');
-        $result = $query->get();
+        $result = $query->paginate(10);
         $list['courses'] = Course::all()->pluck('name','id')->toArray();
         $list['countries'] = Country::all()->pluck('name','country_code')->toArray();   
         $data['list'] = $list;
@@ -81,7 +81,7 @@ class CourseController extends Controller
 
     public function bulletPointList(Request $request)
     {
-        $this->authorize('view', new Course());
+
         $data['selectedCourse'] = $request->module_id;
         $data['editbulletpointroute']='editBulletPoint';
         $data['deletebulletpointroute']='deleteBulletPoint';
@@ -127,7 +127,7 @@ class CourseController extends Controller
     public function create()
     {
 
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -139,7 +139,7 @@ class CourseController extends Controller
     
     public function contentCreate(Request $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $filter = $request->all();
         $selectedCourse = empty($filter['course'])? NULL : $filter['course'];
         $selectedCountry = empty($filter['country'])? NULL : $filter['country'];
@@ -154,7 +154,7 @@ class CourseController extends Controller
 
     public function insert(CourseRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
 
         $inputs = $request->except(["_token",'is_popular']);
         $inputs['accreditation_id']=$request->accreditation_id;
@@ -190,7 +190,7 @@ class CourseController extends Controller
 
     public function contentInsert(CourseContentRequest $request)
     {
-        $this->authorize('create', new Course());
+        // $this->authorize('create', new Course());
         $inputs              = $request->except("_token");
       
         $content               = CourseContent::firstOrNew(
@@ -211,7 +211,7 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        $this->authorize('update', $course);
+        // $this->authorize('update', $course);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -223,7 +223,7 @@ class CourseController extends Controller
 
     public function contentEdit(Request $request,CourseContent $courseDetail)
     {
-        $this->authorize('update', $courseDetail->course);
+        // $this->authorize('update', $courseDetail->course);
         $list['courses'] = Course::all()->pluck('name','id')->toArray();
         $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
         $data['list'] = $list;
@@ -234,7 +234,7 @@ class CourseController extends Controller
 
     public function update(Course $course,CourseRequest $request)
     {
-        $this->authorize('update', $course);
+        // $this->authorize('update', $course);
         $inputs = $request->except(["_token","is_popular"]);
         $inputs['accreditation_id']=$request->accreditation_id;
 
@@ -268,7 +268,7 @@ class CourseController extends Controller
 
     public function contentUpdate(CourseContentRequest $request,CourseContent $courseDetail)
     {
-        $this->authorize('update', $courseDetail->course);
+        // $this->authorize('update', $courseDetail->course);
         $inputs              = $request->except("_token");
         
         $content = $courseDetail->update($inputs);
@@ -280,13 +280,13 @@ class CourseController extends Controller
 
     public function delete(Course $course)
     {
-        $this->authorize('delete', $course);
+        // $this->authorize('delete', $course);
         $course->delete();
     }
 
     public function contentDelete(Request $request,CourseContent $courseDetail)
     {
-        $this->authorize('delete', $courseDetail->course);
+        // $this->authorize('delete', $courseDetail->course);
         $courseDetail->delete();
     }
 
@@ -301,10 +301,9 @@ class CourseController extends Controller
 
    public function restoreCourse($id)
    {
-        $course= Course::onlyTrashed()->find($id);
+        Course::onlyTrashed()->find($id)->restore();
 //    $this->authorize('restore', $course);
    
-       $course->restore();
        return back()->with('success','Successfully Restored');
 
    }
@@ -318,9 +317,8 @@ class CourseController extends Controller
    
    public function whatsincludedlist(Request $request)
    {
-        $this->authorize('view', new Course());
         $id = $request->module_id;
-        
+        // dd($id);
         if(empty($id))
         {
             $url = route('courseList');
@@ -356,7 +354,7 @@ class CourseController extends Controller
 
    public function sortWhatsIncluded(Request $request){
         $inputs     =   $request->input();
-        
+        // dd($inputs);
         $sort       =   $inputs['sort'];
         foreach($sort as $index=>$id)
         {
