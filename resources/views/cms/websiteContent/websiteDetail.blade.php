@@ -46,7 +46,11 @@
                   <th>Contact_Number</th>
                   <th>Contact_Email</th>
                   <th>Address</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Websitedetail())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>

@@ -45,7 +45,11 @@
                   <th>Name</th>
                   <th>Type</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Article())
+                    Actions
+                    @endcan
+                </th>                
                 </tr>
                 </thead>
                 <tbody>
@@ -55,8 +59,14 @@
                     <td>{{$trashedarticle->title}}</td>
                     <td>{{$trashedarticle->type}}</td>
                     <td>{{$trashedarticle->created_at}}</td>
-                    <td><a href="{{ route('restoreArticle',['id'=>$trashedarticle->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteArticle',['id'=>$trashedarticle->id])}}" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('restore',$trashedarticle)
+                      <a href="{{ route('restoreArticle',['id'=>$trashedarticle->id]) }}" class="fa fa-refresh fa-spin"></a>
+                    ``@endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedarticle)
+                      <a href="{{ route('forceDeleteArticle',['id'=>$trashedarticle->id])}}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach

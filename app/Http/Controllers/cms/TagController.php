@@ -43,7 +43,7 @@ class TagController extends Controller
 
    public function tagtrashList()
    {
-    // $this->authorize('view', new Tag());
+    $this->authorize('view', new Tag());
     $data['trashedTags'] = Tag::onlyTrashed()->get();
  
 
@@ -53,7 +53,7 @@ class TagController extends Controller
 
    public function restoreTag($id)
    {
-        // $this->authorize('restore', new Tag());
+        $this->authorize('restore', new Tag());
         $tag = Tag::onlyTrashed()->find($id)->restore();
  
         return back()->with('success','Successfully Restored');
@@ -61,7 +61,7 @@ class TagController extends Controller
    }
    public function forceDeleteTag($id)
    {
-        // $this->authorize('forceDelete', new Tag());
+        $this->authorize('forceDelete', new Tag());
         $tag = Tag::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');
