@@ -375,7 +375,7 @@
 <section class="flex-container form-map">
     <div class="container">
         <div class="form-container">
-            <form class="form" id="prince2-other">
+            <form class="form" id="location-form">
                 <div class="heading center-heading">
                     <h2>Get In Touch With <span>Us</span></h2>
                 </div>
@@ -395,7 +395,7 @@
                         <span><img src="{{url('img/location/phone-call.svg')}}" alt="phone-call" class="black">
                         <img src="{{url('img/location/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
                         <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                        <div class="phonecode-field">
+                        <div class="phonecode-field field-black">
                             <select class="country-code"></select>
                             <span class="prefix"></span>
                             <input type="number" class="telephone" placeholder="Phone Number*">

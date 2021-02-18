@@ -284,18 +284,18 @@
                     content: '';
                     position: absolute;
                     z-index: -1;
-                    right: -18px;
+                    right: -16px;
                     width: 0;
                     height: 0;
-                    border-right: 18px solid transparent;
+                    border-right: 16px solid transparent;
                 }
                 &::before {
                     top: 0;
-                    border-bottom: 18px solid #C0C0C0;
+                    border-bottom: 16px solid #C0C0C0;
                 }
                 &::after {
                     bottom: 0;
-                    border-top: 18px solid #C0C0C0;
+                    border-top: 16px solid #C0C0C0;
                 }
             }
             .map {
@@ -361,6 +361,22 @@
     // Start Form-Map Section
     .form-map {
         padding: @sectionPadding-xl;
+        .form-container {
+            form {
+                &::before, &::after {
+                    right: -14px;
+                    border-right: 14px solid transparent;
+                }
+                &::before {
+                    top: -1px;
+                    border-bottom: 14px solid #C0C0C0;
+                }
+                &::after {
+                    bottom: -1px;
+                    border-top: 14px solid #C0C0C0;
+                }
+            }
+        }
     }
     // End Form-Map Section
 }
