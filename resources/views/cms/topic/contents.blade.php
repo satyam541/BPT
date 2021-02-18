@@ -22,7 +22,7 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-               
+
                 <!-- /.card-header -->
 
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -64,16 +64,16 @@
                             {{-- @can('create', new App\Models\Permission()) --}}
                             <div class="text-left col-sm-6">
                                 <a id="add"
-                                href="{{ Route('createTopicContent', ['topic' => $selectedTopic, 'country' => $selectedCountry]) }}"
-                                class="btn btn-success" style="">Add new record</a>
+                                    href="{{ Route('createTopicContent', ['topic' => $selectedTopic, 'country' => $selectedCountry]) }}"
+                                    class="btn btn-success" style="">Add new record</a>
                             </div>
-                            
+
                             {{-- @endcan --}}
                             <div class="text-right col-sm-6">
                                 {{-- {{ $contents->links() }} --}}
                             </div>
 
-                            
+
                         </div>
                     </div>
                 </div>
@@ -91,43 +91,55 @@
             tokenSeparators: [',', ' ']
         });
         $(document).ready(function() {
-           
-    $('#example').DataTable( {
-        ordering:false,
-         columns: [
-                    { "name": "Topic"},
-                    { "name": "Country"},
-                    { "name": "edit", sorting:false, searching:false },
-                    { "name": "Delete", sorting:false, searching:false }
-              ],           
-        
-        initComplete: function () {
-            var data = this;
-            this.api().columns([0,1]).every( function () {
-                var column = this;
-                var columnName = $(column.header()).text();
-                var select = $('<select class="selectJS" data-placeholder="Select '+columnName+'"><option value=""></option></select>')
-                    .appendTo( $(column.header()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
-                        if(val == "all")
-                        {
-                            val = "";
-                        }
-                        column
-                            .search( val ? '^'+val+'$' : '', true, true )
-                            .draw();
-                    } );
-                    select.append( '<option value="all">All</option>' )
-                column.data().unique().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-        }
-    } );
-} );
+
+            $('#example').DataTable({
+                ordering: false,
+                columns: [{
+                        "name": "Topic"
+                    },
+                    {
+                        "name": "Country"
+                    },
+                    {
+                        "name": "edit",
+                        sorting: false,
+                        searching: false
+                    },
+                    {
+                        "name": "Delete",
+                        sorting: false,
+                        searching: false
+                    }
+                ],
+
+                initComplete: function() {
+                    var data = this;
+                    this.api().columns([0, 1]).every(function() {
+                        var column = this;
+                        var columnName = $(column.header()).text();
+                        var select = $('<select class="selectJS" data-placeholder="Select ' +
+                                columnName + '"><option value=""></option></select>')
+                            .appendTo($(column.header()).empty())
+                            .on('change', function() {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+                                if (val == "all") {
+                                    val = "";
+                                }
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, true)
+                                    .draw();
+                            });
+                        select.append('<option value="all">All</option>')
+                        column.data().unique().each(function(d, j) {
+                            select.append('<option value="' + d + '">' + d +
+                                '</option>')
+                        });
+                    });
+                }
+            });
+        });
 
     </script>
 @endsection
