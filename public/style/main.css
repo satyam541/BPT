@@ -293,7 +293,7 @@ input::-webkit-inner-spin-button {
   background-color: #F6F6F6;
   height: 100%;
   width: 50px;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem;
 }
 .input-container span img {
   width: 20px;
@@ -320,7 +320,7 @@ input::-webkit-inner-spin-button {
   display: flex;
 }
 .input-container .phonecode-field select {
-  width: 53px;
+  width: 40px;
   border: none;
   margin: 0.5rem;
   margin-left: 0;
@@ -329,6 +329,9 @@ input::-webkit-inner-spin-button {
   box-shadow: none;
   color: #F2F2F2;
 }
+.input-container .phonecode-field option {
+  color: #181818;
+}
 .input-container .phonecode-field span {
   color: #F2F2F2;
   font-size: 14px;
@@ -336,7 +339,7 @@ input::-webkit-inner-spin-button {
   padding: 0;
 }
 .input-container .phonecode-field .telephone {
-  padding: 0px 10px 0px 4px;
+  padding: 0px 10px 0px 2px;
 }
 .input-container .phonecode-field .hidden-field {
   z-index: -1;
@@ -356,6 +359,28 @@ input::-webkit-inner-spin-button {
 .input-container :-ms-input-placeholder {
   /* Edge */
   color: #C0C0C0;
+}
+.breadcrums {
+  display: flex;
+  margin-top: 1rem;
+}
+.breadcrums ul {
+  display: flex;
+  align-items: center;
+}
+.breadcrums li {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.breadcrums li:first-child {
+  margin-right: 0.4rem;
+}
+.breadcrums li:last-child {
+  margin-left: 0.4rem;
+}
+.breadcrums img {
+  width: 8px;
+  height: 8px;
 }
 .navbar {
   display: flex;
@@ -2159,21 +2184,6 @@ input::-webkit-inner-spin-button {
 .about-banner .banner-container .banner-content p {
   color: #FFFFFF;
 }
-.about-banner .banner-container .banner-content .breadcrums {
-  display: flex;
-  margin-top: 1rem;
-}
-.about-banner .banner-container .banner-content .breadcrums ul {
-  display: flex;
-}
-.about-banner .banner-container .banner-content .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: bold;
-}
-.about-banner .banner-container .banner-content .breadcrums ul li:first-child {
-  margin-right: 0.4rem;
-}
 .about-us {
   padding: 3rem 1.5rem;
 }
@@ -2706,9 +2716,6 @@ input::-webkit-inner-spin-button {
   .about-banner .banner-container .banner-content p {
     color: #181818;
   }
-  .about-banner .banner-container .banner-content .breadcrums ul li {
-    color: #181818;
-  }
   .about-us .about-content {
     padding-left: 2rem;
     position: relative;
@@ -2972,10 +2979,11 @@ input::-webkit-inner-spin-button {
 }
 .customers .content .customers-img {
   display: flex;
-  height: 50px;
-  width: 80px;
+  height: 40px;
+  width: 50px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  margin-bottom: 1rem;
 }
 .customers .info {
   display: flex;
@@ -2986,6 +2994,8 @@ input::-webkit-inner-spin-button {
 .customers .info span {
   display: flex;
   width: 70px;
+  height: 70px;
+  margin-right: 0.5rem;
 }
 .customers .info span img {
   width: 100%;
@@ -3000,6 +3010,9 @@ input::-webkit-inner-spin-button {
 .customers .designation p {
   width: 100%;
   color: #FFFFFF;
+}
+.customers .designation p {
+  font-size: 12px;
 }
 .services {
   padding: 3rem 1.5rem;
@@ -3023,7 +3036,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 .services .phone {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   height: 85px;
@@ -3046,12 +3059,16 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
+.testimonial .heading h2 {
+  margin-bottom: 0.5rem;
+}
 .testimonial .heading::before {
   background-color: #FFFFFF;
 }
 .testimonial .heading p {
   color: #FFFFFF;
   text-align: center;
+  font-weight: bold;
 }
 .testimonial p,
 .testimonial h3,
@@ -3061,6 +3078,10 @@ input::-webkit-inner-spin-button {
 .testimonial h3,
 .testimonial h4 {
   margin-top: 0.5rem;
+}
+.testimonial h4 {
+  font-size: 14px;
+  font-weight: 400;
 }
 .testimonial .testimonial-list {
   display: flex;
@@ -3094,7 +3115,7 @@ input::-webkit-inner-spin-button {
 .testimonial .owl-nav {
   display: flex !important;
   justify-content: space-between;
-  width: 140px;
+  width: 118px;
   margin: 0 auto;
   margin-top: 1.5rem;
 }
@@ -3105,8 +3126,8 @@ input::-webkit-inner-spin-button {
   background-size: contain!important;
   background-position: center!important;
   opacity: 0.5;
-  width: 33px;
-  height: 33px;
+  width: 25px;
+  height: 25px;
   background-color: transparent !important;
   border-radius: 50%;
   outline: none;
@@ -3123,12 +3144,12 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  transform: translateY(-29px);
+  transform: translateY(-25px);
 }
 .testimonial .owl-dots .owl-dot {
   display: flex;
-  width: 27px;
-  height: 27px;
+  width: 25px;
+  height: 25px;
   background-color: transparent;
   border: 2px solid #FFFFFF;
   margin-right: 7px;
@@ -3140,8 +3161,6 @@ input::-webkit-inner-spin-button {
 }
 .testimonial .owl-dots .owl-dot.active {
   background-color: #FFFFFF;
-  width: 27px;
-  height: 27px;
 }
 .facts {
   padding: 3rem 1.5rem;
@@ -3166,7 +3185,7 @@ input::-webkit-inner-spin-button {
 .facts .facts-content {
   display: flex;
   justify-content: space-between;
-  border-color: #FFFFFF;
+  background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
   border-left: 4px solid #1C2848;
@@ -3219,7 +3238,7 @@ input::-webkit-inner-spin-button {
     animation: rotate 13s linear infinite;
   }
   .customers p {
-    width: 58%;
+    width: 90%;
   }
   .customers .customers-list {
     flex-direction: row;
@@ -3275,9 +3294,6 @@ input::-webkit-inner-spin-button {
   .services {
     padding: 3rem 2rem;
   }
-  .services .phone {
-    display: none;
-  }
   .testimonial {
     padding: 3rem 2rem;
     background: url(../img/testimonial/testimonial-bg.png);
@@ -3306,7 +3322,6 @@ input::-webkit-inner-spin-button {
   .services .services-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
   }
   .services .phone {
     display: flex;
@@ -3315,6 +3330,10 @@ input::-webkit-inner-spin-button {
   .services .heading {
     width: 66%;
     align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .services .heading h2 {
+    margin-bottom: 0.5rem;
   }
   .services .heading h2,
   .services .heading p {
@@ -3329,6 +3348,11 @@ input::-webkit-inner-spin-button {
   .testimonial .testimonial-info {
     padding: 1rem 3rem;
     width: 85%;
+  }
+  .facts {
+    background-image: url(../img/testimonial/facts-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .facts .heading p {
     width: 65%;
@@ -3379,20 +3403,6 @@ input::-webkit-inner-spin-button {
 }
 .onsite-banner .banner-container p {
   margin-top: 0.5rem;
-}
-.onsite-banner .breadcrums {
-  display: flex;
-  margin-top: 1rem;
-}
-.onsite-banner .breadcrums ul {
-  display: flex;
-}
-.onsite-banner .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.onsite-banner .breadcrums ul li:first-child {
-  margin-right: 0.5rem;
 }
 .training {
   padding: 3rem 1.5rem;
@@ -3993,10 +4003,10 @@ input::-webkit-inner-spin-button {
   .location-banner {
     background-size: 60% 100%;
   }
-  .location-banner p {
+  .location-banner .banner-container p {
     width: 61%;
   }
-  .location-banner h1 {
+  .location-banner .banner-container h1 {
     font-size: 32px;
   }
   .convenient {
