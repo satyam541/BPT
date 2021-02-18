@@ -35,6 +35,11 @@ Route::get('/onsite', function () {
 Route::get('/location', function () {
     return view('location');
 });
+<<<<<<< HEAD
+Route::get('/location-detail', function () {
+    return view('location-detail');
+=======
 Route::get('/offer', function () {
     return view('offer');
+>>>>>>> b90f164d390d5b82293b2eb249addf4c633177f8
 });
