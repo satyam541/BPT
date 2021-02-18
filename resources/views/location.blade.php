@@ -376,7 +376,7 @@
         <div class="form-container">
         <form class="form" id="prince2-other">
             <div class="heading center-heading">
-                <h2>Get In Touch With <span>Us</span> </h2>
+                <h2>Get In Touch With <span>Us</span></h2>
             </div>
             <div class="form-input">
                 <div class="input-container">
@@ -440,6 +440,7 @@
                 </button>
             </div>
         </form>
+        <div class="map"></div>
         </div>
     </div>
 </section>

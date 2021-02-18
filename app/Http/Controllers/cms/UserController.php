@@ -41,26 +41,26 @@ class UserController extends Controller
 
     public function userList(Request $request)
     {
-        // $this->authorize('view', new User());
+        $this->authorize('view', new User());
         $filter = $request->all();
         
-        $data['selectedName']=null;
-        $data['selectedEmail']=null;
-        $data['selectedRole']=null;
-        $data['active']=null;
+        $data['selectedName']   =   null;
+        $data['selectedEmail']  =   null;
+        $data['selectedRole']   =   null;
+        $data['active']         =   null;
         if(!empty($filter['name'])){
-            $data['selectedName']=$filter['name'];
+            $data['selectedName']   =   $filter['name'];
         }
         if(!empty($filter['email'])){
-            $data['selectedEmail']=$filter['email'];
+            $data['selectedEmail']  =   $filter['email'];
         }
         if(!empty($filter['roleName'])){
-            $data['selectedRole']=$filter['roleName'];
+            $data['selectedRole']   =   $filter['roleName'];
         }
         if(isset($filter['active'])){
-            $data['active']=1;
+            $data['active']     =   1;
         }
-            $query = User::query();
+            $query  =   User::query();
         if(!empty($filter))
         {
 
@@ -72,12 +72,12 @@ class UserController extends Controller
             });
         }
         $users = $query->paginate(10);
-        $list['name'] = User::all()->pluck('name','name')->toArray();
-        $list['email'] = User::all()->pluck('email','email')->toArray();
-        $list['role'] = Role::All()->pluck('name','name')->toArray();
-        $data['list'] = $list;
-        $data['users'] = $users;
-        // dd($data);
+        $list['name']   = User::all()->pluck('name','name')->toArray();
+        $list['email']  = User::all()->pluck('email','email')->toArray();
+        $list['role']   = Role::All()->pluck('name','name')->toArray();
+        $data['list']   = $list;
+        $data['users']  = $users;
+        
         return view('cms.manageUser.users',$data);
     }
 
@@ -92,21 +92,19 @@ class UserController extends Controller
         $this->authorize('create', new User());
         $data = $request->all();
         $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name'      => $data['name'],
+            'email'     => $data['email'],
+            'password'  => Hash::make($data['password']),
         ]);
-        if(!empty($user->id))
-        \Session::flash('success', 'user created!'); 
-
-        return redirect()->back();
+        
+        return back()->with('success', 'User Created!');
     }
 
     public function editUser(User $user)
     {
-        // $this->authorize('update', $user);
-        $data['user'] = $user;
-        $data['roles']   = Role::all();
+        $this->authorize('update', $user);
+        $data['user']   = $user;
+        $data['roles']  = Role::all();
        
         return view('cms.manageUser.updateUser',$data);
     }
@@ -114,75 +112,66 @@ class UserController extends Controller
     public function updateUser(User $user,UserRequest $request)
     {
         
-        // $this->authorize('update', $user);
-        $inputs = $request->all();
-            // dd($inputs);
-        $user->name = $inputs['name'];
-        $user->email = $inputs['email'];
-        // dd($user);
-        $user->active = empty($inputs['active'])? 0 : 1;
+        $this->authorize('update', $user);
+        $inputs     = $request->all();
+        $user->name     = $inputs['name'];
+        $user->email    = $inputs['email'];
+        
+        $user->active   = empty($inputs['active'])? 0 : 1;
         $user->save();
         if(isset($inputs['resetPwd']))
         {
             $user->resetPassword();
         }
-        \Session::flash('success', 'user updated successfully!'); 
-        return redirect()->back();
+        return back()->with('success', 'User Updated Successfully!');
     }
 
     public function roleList()
     {
-        // $this->authorize('view', new Role());
+        $this->authorize('view', new Role());
         
         $roles= Role::all();
-   
-    
-    $data['roles'] = $roles;
-    
-    return view('cms.manageUser.roles',$data);
-    
+        $data['roles'] = $roles;
+        
+        return view('cms.manageUser.roles',$data);
+        
 }
     public function createRole()
     {
-        // $this->authorize('create', new Role());
+        $this->authorize('create', new Role());
         return view('cms.manageUser.insertRole');
     }
 
     public function insertRole(RoleRequest $request)
     {
-        // $this->authorize('create', new Role());
+        $this->authorize('create', new Role());
         $inputs = $request->all();
         
-        $roleName = $request->input('name');
-        $description = $request->input('desc');
+        $roleName       = $request->input('name');
+        $description    = $request->input('desc');
 
         $done = Role::create(['name'=> $roleName,'description'=>$description]);
-        if($done)
-        {
-            $request->session()->flash('success', 'New role created successfully.!');
-        }
-        return redirect()->back();
+        
+        return back('success', 'New role created successfully.!');
     }
 
     public function editRole(Role $role)
     {
-        // $this->authorize('update', $role);
+        $this->authorize('update', $role);
         $data['role']    = $role;
         $data['permissions']   = Permission::all()->load('module')->groupBy('module_name');
-        // dd($data);
-        // dd($data);
         return view('cms.manageUser.updateRole',$data);
     }
 
     public function updateRole(RoleRequest $request ,Role $role)
     {
-        // $this->authorize('update',$role);
-        $inputs = $request->all();
-        $role->name = $inputs['name'];
-        $role->description = $inputs['description'];
+        $this->authorize('update',$role);
+        $inputs     = $request->all();
+        $role->name         = $inputs['name'];
+        $role->description  = $inputs['description'];
         $role->save();
-        \Session::flash('success', 'Role updated successfully!'); 
-        return redirect()->back();
+        
+        return back()->with('success', 'Role Updated Successfully!');
     }
 
     public function assignRoles(Request $request)
@@ -190,53 +179,49 @@ class UserController extends Controller
 
         $userid = $request->input('user');
         // $authUser = Auth::user();
-        $user = User::find($userid);
-        $roles = $request->input('role'); // array of role ids
+        $user   = User::find($userid);
+        $roles  = $request->input('role'); // array of role ids
         if(empty($roles))
         {
             $roles = array();
         }
         $user->roles()->sync($roles);
         
-        $request->session()->flash('success', 'role assigned successful!');
-        return redirect()->back();
+        return back()->with('success', 'Role Assigned Successfully!');
     }
 
     public function assignPermission(Request $request)
     {
         $roleID = $request->input('role');
-        $role = Role::find($roleID);
+        $role   = Role::find($roleID);
         $permissions = $request->input('permission');// return array of permission id
         $role->permissions()->sync($permissions);
         
-        $request->session()->flash('success', 'permission assigned successful!');
-        return redirect()->back();
+        return back()->with('success', 'Permission Assigned Successful!');
     }
 
     public function createPermission()
     {
-        // $this->authorize('create', new Permission());
+        $this->authorize('create', new Permission());
         return view('cms.manageUser.insertPermission');
     }
 
     public function insertPermission(Request $request)
     {
-
-        
-        // $this->authorize('create', new Permission());
-        $moduleName = $request->input('moduleName');
-        $access = $request->input('access');
-        $description = $request->input('description');
-        $module = Module::where('name',$moduleName)->first();
+        $this->authorize('create', new Permission());
+        $moduleName     = $request->input('moduleName');
+        $access         = $request->input('access');
+        $description    = $request->input('description');
+        $module         = Module::where('name',$moduleName)->first();
         if(empty($module->id))
         {
-            $module = new Module();
-            $module->name = $moduleName;
+            $module         = new Module();
+            $module->name   = $moduleName;
             $module->save();
         }
-        $permission = new Permission();
-        $permission->module_id = $module->id;
-        $permission->access = $access;
+        $permission             = new Permission();
+        $permission->module_id  = $module->id;
+        $permission->access     = $access;
         $permission->description = $description;
         try{
             $permission->save();
@@ -254,37 +239,35 @@ class UserController extends Controller
                 //return $ex;
             }
         }
-        if(!empty($permission->id) && !empty($module->id))
-        {
-            $request->session()->flash('success', 'New permission created successfully.!');
-        }
-        return redirect()->back();
+        
+        return back()->with('success', 'New Permission Created Successfully.!');
     }
 
     public function permissionList(Request $request)
     {
-        // $this->authorize('view', new Permission());
+        $this->authorize('view', new Permission());
         $filter = $request->all();
-        // dd($filter);
-        $data['selectedModule']=null;
-        $data['selectedAccess']=null;
-        if(!empty($filter['moduleName']) || !empty($filter['access'])){
-        $data['selectedModule']=$filter['moduleName'];
-        $data['selectedAccess']=$filter['access'];
+        
+        $data['selectedModule'] =   null;
+        $data['selectedAccess'] =   null;
+        if(!empty($filter['moduleName']) || !empty($filter['access']))
+        {
+            $data['selectedModule'] =   $filter['moduleName'];
+            $data['selectedAccess'] =   $filter['access'];
         }
-        $data['module']=Module::all()->pluck('name','name')->toArray();
-        $data['module']=['ALL'=>'ALL']+$data['module'];
-        $data['access']=Permission::all()->pluck('access','access')->toArray();
-        $data['access']=['ALL'=>'ALL']+$data['access'];
-            $query = Permission::query();
-            $query = $query->select("permission.*");
-            if(!empty($filter['moduleName']) && $filter['moduleName']!='ALL')
-            {
-                $module = Module::where('name','like',"%".$filter['moduleName']."%")->first();
-                $query = $query->where('module_id',$module->id);
-            }
-            $query = empty($filter['access'])||$filter['access']=='ALL' ? $query : $query->where('access',$filter['access']);
-            $result = $query->paginate(10);
+        $data['module'] =   Module::all()->pluck('name','name')->toArray();
+        $data['module'] =   ['ALL'=>'ALL']+$data['module'];
+        $data['access'] =   Permission::all()->pluck('access','access')->toArray();
+        $data['access'] =   ['ALL'=>'ALL']+$data['access'];
+        $query      =   Permission::query();
+        $query      =   $query->select("permission.*");
+        if(!empty($filter['moduleName']) && $filter['moduleName']!='ALL')
+        {
+            $module = Module::where('name','like',"%".$filter['moduleName']."%")->first();
+            $query  = $query->where('module_id',$module->id);
+        }
+        $query  = empty($filter['access'])||$filter['access']=='ALL' ? $query : $query->where('access',$filter['access']);
+        $result = $query->paginate(10);
 
         $data['permissions'] = $result;
     
@@ -292,29 +275,29 @@ class UserController extends Controller
     }
     public function editPermission(Permission $permission)
     {
-        // $this->authorize('update', $permission);
+        $this->authorize('update', $permission);
         $data['permission']    = $permission;
         return view('cms.manageUser.updatePermission',$data);
     }
 
     public function updatePermission(Request $request ,Permission $permission)
     {
-        // $this->authorize('update', $permission);
-        $inputs = $request->all();
+        $this->authorize('update', $permission);
+        $inputs     = $request->all();
         $moduleName = $request->input('moduleName');
-        $module = Module::where('name',$moduleName)->first();
+        $module     = Module::where('name',$moduleName)->first();
         if(empty($module->id))
         {
             $module = new Module();
             $module->name = $moduleName;
             $module->save();
         }
-        $permission->module_id = $module->id;
-        $permission->access = $inputs['access'];
+        $permission->module_id  = $module->id;
+        $permission->access     = $inputs['access'];
         $permission->description = $inputs['description'];
         $permission->save();
-        \Session::flash('success', 'Permission updated successfully!'); 
-        return redirect()->back();
+        
+        return back()->with('success', 'Permission Updated Successfully!');
     }
 
     public function deleteUser(Request $request,User $user)
