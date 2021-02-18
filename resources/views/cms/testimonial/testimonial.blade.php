@@ -47,7 +47,9 @@
                   <th>Author</th>
                   <th>Date</th>
                   <th>Location</th>
+                  @can('update',new App\Models\Testimonial())
                   <th>Actions</th>
+                  @endcan
                 </tr>
                 </thead>
                 <tbody>

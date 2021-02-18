@@ -21,13 +21,13 @@ class SocialMediaController extends Controller
     
     public function socialList()
     {
-        // $this->authorize('view', new SocialMedia());
+        $this->authorize('view', new SocialMedia());
         $data['socialmedias'] = SocialMedia::all();   
         return view('cms.socialmedia.socialmedia',$data);
     }
     public function create()
     {
-        // $this->authorize('create', new SocialMedia());
+        $this->authorize('create', new SocialMedia());
         $data['socialmedia'] = new SocialMedia();
          $data['submitRoute'] = "insertsocialmedia";
        
@@ -37,7 +37,7 @@ class SocialMediaController extends Controller
 
     public function insert(SocialMediaRequest $request)
     {
-        // $this->authorize('create', new SocialMedia());
+        $this->authorize('create', new SocialMedia());
         
         $socialmedia=new SocialMedia();
         // $websitedetail->web_id         = $request->website;
@@ -57,7 +57,7 @@ class SocialMediaController extends Controller
     {
         $socialmedia=SocialMedia::where('id',$socialmedia)->first();
        
-        // $this->authorize('update', $socialmedia);
+        $this->authorize('update', $socialmedia);
         $data['socialmedia'] = $socialmedia;
         $data['submitRoute'] = array('updatesocialmedia',$socialmedia->id);
         
@@ -72,7 +72,7 @@ class SocialMediaController extends Controller
         
        
         $socialmedia=SocialMedia::where('id',$socialmedia)->first();
-        // $this->authorize('delete', $socialmedia);
+        $this->authorize('delete', $socialmedia);
         $socialmedia->delete();
 
     }
@@ -82,7 +82,7 @@ class SocialMediaController extends Controller
     {
        
         $socialmedia=SocialMedia::where('id',$socialmedia)->first();
-        // $this->authorize('update', $socialmedia);
+        $this->authorize('update', $socialmedia);
         $socialmedia->website         = $request->website;
         $socialmedia->link        = $request->link;
         if($request->hasFile('image')){

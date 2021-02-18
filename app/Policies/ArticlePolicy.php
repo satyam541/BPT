@@ -54,13 +54,13 @@ class ArticlePolicy
      */
     public function update(User $user, Article $article)
     {
-        if($article->type == "blog"){
+        // if($article->type == "blog"){
             return $user->hasPermission("blog",'update');
-        }
-        if ($article->type == "news"){
-            return $user->hasPermission('news','update');
-        }
-        return false;
+        // }
+        // if ($article->type == "news"){
+            // return $user->hasPermission('news','update');
+        // }
+        // return false;
     }
 
     /**
