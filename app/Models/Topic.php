@@ -173,10 +173,28 @@ class Topic extends Model
             $this->popular->delete();
         }
         $this->whatsInclude()->delete();
-
+        $this->faqs()->delete();
+        $this->content()->delete();
+        $this->Bulletpoint()->delete();
+        
         return parent::delete();
     }
 
-    
+    public function restore()
+    {
+        
+
+        // if($this->isPopular())
+        // {
+        //     $this->popular->restore();
+        // }
+        // dd($this->whatsInclude());
+        // $this->whatsInclude()->restore();
+        // $this->faqs()->restore();
+        // $this->content()->restore();
+        $this->BulletPoint()->restore();
+        return parent::restore();
+    }
+
 
 }
