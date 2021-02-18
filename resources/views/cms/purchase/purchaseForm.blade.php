@@ -13,9 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Purchase</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Purchase Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -84,12 +83,12 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
                 <div class="card-body">
 
                     <div class="form-group">
                         {{Form::label('courseId','Course')}}
-                        <select class="form-control js-example-basic-multiple selectJS" id="coursesSelect" name="courseId" required="true" title="Please Select Course">
+                        <select class="form-control selectJS" id="coursesSelect" tabindex="-1" name="courseId" required="true" title="Please Select Course">
                                 
                         @foreach($courses as $course)
                         
@@ -100,7 +99,7 @@
 
                     <div class="form-group">
                         {{Form::label('country','Country')}}
-                        <select class="form-control js-example-basic-multiple selectJS" id="countrySelect" name="country" required="true" title="Please Select Country">
+                        <select class="form-control selectJS" id="countrySelect" tabindex="-1" name="country" required="true" title="Please Select Country">
                             
                         @foreach($countries as $country)
                         <option value="{{ $country->id }}">{{$country->name}}</option>
@@ -181,9 +180,7 @@
 @section('footer')
 
 <script>
-    // $(document).ready(function() {
-    //     $('.js-example-basic-multiple').select2();
-    // });
+    
 </script>
 <script type="text/javascript">
 

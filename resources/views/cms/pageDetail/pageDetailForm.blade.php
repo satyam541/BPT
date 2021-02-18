@@ -13,9 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Page Content</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Page Content Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -51,11 +50,6 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('image_alt','Image Alt')}}
-                    {{Form::text('image_alt',null,['class'=>'form-control'])}}
-                  </div>
-
-                  <div class="form-group">
                     {{Form::label('sub_section','Sub Section')}}
                     {{Form::text('sub_section',null,['class'=>'form-control'])}}
                   </div>
@@ -71,11 +65,8 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('image','Image')}}
-                    {{Form::file('image',null,['class'=>'form-control'])}}
-                    @if(!empty($pageDetail->image))
-                        <img src="{{URL($pageDetail->image_path.$pageDetail->image)}}" class=" pad" style="max-width:50%"/>
-                    @endif
+                    {{Form::label('page_tag_line','Page Tag Line')}}
+                    {{Form::text('page_tag_line',null,['class'=>'form-control'])}}
                   </div>
                   
                 </div>

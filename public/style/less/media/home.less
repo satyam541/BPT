@@ -21,17 +21,125 @@
             flex-direction: row;
             justify-content: space-between;
             background: @blueGradient;
+            padding: .5rem 1rem;
+            border-radius: 100px;
         }
         .content{
             width: 70%;
-            flex-direction: row;
+            flex-direction: row; 
+            text-align: left;
+            p {
+                margin-top: 0;
+            }
+            img {
+                width: 80px;
+                height: 80px;
+                margin-right: 2rem;
+                transform: translate(10px, -48px);
+            }
         }
         .buttons{
             width: 30%;
-            justify-content: flex-end
-
+            justify-content: flex-end;
+            margin-top: 0;
         }
     
+    }
+    .whychoose{
+        padding: @sectionPadding-md;
+        .choose-list{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .item{
+            width: 30%;
+            padding: 2rem;
+        
+        }
+    }
+    .ways{
+        padding: @sectionPadding-md;
+        .ways-container{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ways-content{
+            width: 52%;
+        }
+        .ways-image{
+            width: 40%;
+            margin-top: 0;
+
+        }
+        .item{
+            &::before{
+                top: 20%;
+            }
+
+        }
+    }
+    
+    .delivery{
+        padding: @sectionPadding-md;
+        .delivery-list{
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .item{
+            width: 48%;
+            height: 290px;
+            justify-content: flex-end;
+            padding: 2rem;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-color: transparent;
+            background-blend-mode: soft-light;
+            &:hover{
+                align-items: center;
+                p{
+                    text-align: center;
+                }
+                img{
+                    transition: 1s all;
+                    width: 96px;
+                    height: 96px;
+                }
+                &:nth-child(1){
+                    background-image: url(../img/home/classroom-bg.png), @blueGradient;
+    
+                }
+                &:nth-child(2){
+                    background-image: url(../img/home/led-bg.png), @blueGradient;
+    
+                }
+                &:nth-child(3){
+                    background-image: url(../img/home/paced-bg.png), @blueGradient;
+    
+                }
+                &:nth-child(4){
+                    background-image: url(../img/home/onsite-bg.png), @blueGradient;
+    
+                }
+            }
+            &:nth-child(1){
+                background-image: url(../img/home/classroom-bg.png), linear-gradient(#000000,#575757);
+
+            }
+            &:nth-child(2){
+                background-image: url(../img/home/led-bg.png), linear-gradient(#000000,#575757);
+
+            }
+            &:nth-child(3){
+                background-image: url(../img/home/paced-bg.png), linear-gradient(#000000,#575757);
+
+            }
+            &:nth-child(4){
+                background-image: url(../img/home/onsite-bg.png), linear-gradient(#000000,#575757);
+
+            }
+        }
     }
 }
 
@@ -41,6 +149,88 @@
             width: 31%;
         }
     }
+    .effective{
+        .effective-container{
+            width: 90%;
+            margin: auto;
+            padding: 0 4rem;
+        }
+        .content{
+            img{
+                width: 100px;
+                height: 100px;
+                transform: translate(10px,-30px);
+            }
+        }
+    }
+    .ways{
+        background-image: url(../img/home/ways-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: transparent;
+        padding-top: 6rem !important;
+        padding-bottom: 6rem !important;
+        .ways-content{
+            width: 60%;
+            align-items: flex-end;
+            background-image: url(../img/home/professionals.png);
+            background-repeat: no-repeat;
+            background-size: 42% 72%;
+            background-position: left top;
+
+        }
+        .heading{
+            width: 54%;
+        }
+        .ways-image{
+            width: 35%;
+            margin-top: 2rem;
+        }
+        .ways-list{
+            background-color: @darkblueColor;
+            padding: 1.5rem;
+            position: relative;
+            width: 75%;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 100%;
+                top: 0;
+                background-color: @whiteColor;
+                z-index: 0;
+                opacity: 0.3;
+                left: 11%;
+            }
+        }
+        .item{
+            margin: 0;
+            padding-top: 1.5rem;
+            flex-direction: row;
+            &:first-child{
+                padding-top: 0;
+            }
+            span{
+                 margin-right: 1rem;
+            }
+            &::before{
+                content: none;
+            }
+        }
+        .content{
+            width: 82%;
+        }
+        h3{
+            margin-top: 0;
+            font-size: 18px;
+        }
+    }
+    .delivery{
+        .item{
+            width: 24%;
+            height: 320px;
+        }
+    } 
     
 }
 
@@ -48,5 +238,35 @@
     .courses{
         padding: @sectionPadding-xl;
     }
+    .effective{
+        padding: @sectionPadding-xl;
+    }
+    .whychoose{
+        padding: @sectionPadding-xl;
+    }
+    .ways{
+        padding: @sectionPadding-xl;
+        .ways-content{
+
+        }
+        .ways-list{
+            &::before{
+                left: 9%;
+            }
+        }
+        .content{
+            width: 86%;
+        }
+    }
+    .delivery{
+        padding: @sectionPadding-xl;
+        .item{
+            width: 22%;
+            height: 290px;
+        }
+        h3{
+            font-size: 18px;
+        }
+    } 
    
 }

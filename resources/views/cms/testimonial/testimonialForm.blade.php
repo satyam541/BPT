@@ -81,7 +81,7 @@
 
                   <div class="form-group">
                     {{Form::label('rating','Rating')}}
-                    {{Form::select('rating',['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5],null,['class'=>'form-control selectJs', 'placeholder'=>'Select Rating..'])}}
+                    {{Form::select('rating',['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Select Rating..'])}}
                   </div>
 
                 </div>

@@ -50,7 +50,7 @@ class SocialMediaController extends Controller
             $socialmedia->image = $imageName;
         }
         $socialmedia->save();
-        return redirect()->back();
+        return back()->with('success','Successfully Added');
 
     }
     public function  edit($socialmedia)
@@ -91,7 +91,7 @@ class SocialMediaController extends Controller
             $socialmedia->image = $imageName;
         }
         $socialmedia->save();
-        return redirect()->back();
+        return back()->with('success','Successfully Updated ');
 
     }
 }

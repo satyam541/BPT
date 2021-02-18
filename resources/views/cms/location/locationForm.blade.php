@@ -48,13 +48,13 @@
 
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{Form::select('country_id',$countries,strToLower($location->country_id),['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('country_id',$countries,strToLower($location->country_id),['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
 
                   <div class="form-group">
                     {{Form::label('region_id','Region')}}
-                    {{Form::select('region_id',$regions,null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('region_id',$regions,null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
 
@@ -133,7 +133,7 @@
 
                   <div class="form-group">
                     {{Form::label('inherit_schedule','Inherit Schedule')}}
-                    {{Form::select('inherit_schedule',$locations,null,['class'=>'form-control selectJS','placeholder'=>'Select Location'])}}
+                    {{Form::select('inherit_schedule',$locations,null,['tabindex'=>'-1','class'=>'form-control selectJS','placeholder'=>'Select Location'])}}
                   </div>
 
                   <div class="form-group">
@@ -176,13 +176,13 @@
                 $obj.init( $(this) );
             });
         }
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
     });
     function updateSlug()
 {
     var location = $("#name").val();
-    var slug = convertUrl(location);
+    var slug = '/'+convertUrl(location);
     $("#reference").val(slug);
     
 }
@@ -192,12 +192,5 @@
     });
 </script>
 
-    <script>
-              $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-            })
-        </script>
-
+    
 @endsection

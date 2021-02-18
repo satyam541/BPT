@@ -47,10 +47,10 @@ class RedirectController extends Controller
     public function insert(RedirectRequest $request)
     {
         $url=new UrlRedirect();
-        $this->authorize('create',$url);
+        // $this->authorize('create',$url);
         $source= $request->source_url;
          $target=$request->target_url;
-        if(ends_with($source,'/')  or ends_with($source,'\\') or Str::contains($source,'?') )
+        if(Str::endsWith($source,'/')  or Str::endsWith($source,'\\') or Str::contains($source,'?') )
         {
             \Session::flash('failure', 'error in source url');
             $validator = Validator::make([],[]);
@@ -58,7 +58,7 @@ class RedirectController extends Controller
             throw new \Illuminate\Validation\ValidationException($validator);
         }
         
-       if(ends_with($target,'/')  or ends_with($target,'\\'))
+       if(Str::endsWith($target,'/')  or Str::endsWith($target,'\\'))
         {
             \Session::flash('failure', 'error in target url');
             $validator = Validator::make([],[]);
@@ -73,30 +73,30 @@ class RedirectController extends Controller
         $url->save();
         if(!empty($url->id))
         \Session::flash('success', 'Url created!');
-        return redirect()->back();
+        return back()->with('success','URL Created');
 
     }
     public function  edit(UrlRedirect $url)
     {
-        $this->authorize('update',$url);
+        // $this->authorize('update',$url);
         $data['url'] = $url;
-        $data['submitroute'] = array('updateUrlRedirect',$url->id);
+        $data['submitRoute'] = array('updateUrlRedirect',$url->id);
         return view("cms.urlredirect.urlRedirectForm",$data);
     }
 
     public function delete(UrlRedirect $url)
     {
-        $this->authorize('delete',$url);
+        // $this->authorize('delete',$url);
         $url->delete();
 
     }
 
     
-    public function update(UrlRedirect $url,Request $request)
+    public function update(UrlRedirect $url,RedirectRequest $request)
     {
-        $this->authorize('update',$url);
+        // $this->authorize('update',$url);
         $source = $request->source_url;
-        if(ends_with($source,'/')  or ends_with($source,'\\') or Str::contains($source,'?') )
+        if(Str::endsWith($source,'/')  or Str::endsWith($source,'\\') or Str::contains($source,'?') )
         {
             $validator = Validator::make([],[]);
             $validator->errors()->add("source_url",'Url cannot ends with slash or contain ?');
@@ -105,8 +105,8 @@ class RedirectController extends Controller
         $url->source_url=$request->source_url;
         $url->target_url=$request->target_url;
         $url->save();
-        if(!empty($url->id))
-        \Session::flash('success', 'Url Updated !');
-        return redirect()->back();
+        // if(!empty($url->id))
+        // \Session::flash('success', 'Url Updated !');
+        return back()->with('success','URL Updated');
     }
 }

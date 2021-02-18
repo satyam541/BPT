@@ -34,7 +34,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Bullet Points
+                Bullet Points List
               </div>
             </div>
 

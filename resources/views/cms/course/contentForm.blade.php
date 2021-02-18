@@ -42,13 +42,13 @@
 
                     <div class="form-group">
                         {{Form::label('course_id','Course Name')}}
-                        {{Form::select('course_id',$list['courses'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        {{Form::select('course_id',$list['courses'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                     </div>
                       
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{ Form::select('country_id',$list['countries'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('country_id',$list['countries'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -146,13 +146,7 @@
 <!-- /.content-wrapper -->
     
 @endsection
-<script>
-  $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-               
-            });
-      
-              
-        </script>
+
+@section('footer')
+    
+@endsection

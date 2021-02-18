@@ -34,12 +34,13 @@
         <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                testimonial
+                Testimonial List
               </div>
             </div>
 
               <!-- /.card-header -->
-              <div class="card-body">      <table id="example1">
+              <div class="card-body">      
+                <table id="example1">
                 <thead>
                 <tr>
                   <th>S No</th>

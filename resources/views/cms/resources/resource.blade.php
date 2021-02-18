@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Resource</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Resource</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,7 +34,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Resource
+                Resource List
               </div>
             </div>
             <div class="card-body">
@@ -59,7 +59,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+              <a id="add" href="{{route('createresources')}}" class="btn btn-success" style="">Add new record</a>
 
             </div>
             <!-- /.card-body -->

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">pageDetails</h1>
+          <h1 class="m-0 text-dark">Page Details</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">pageDetails</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Page Details</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,7 +34,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                pageDetail
+                Page Detail
               </div>
             </div>
             <div class="card-body">
@@ -54,8 +54,8 @@
                     <td>{{$pageDetail->page_name}}</td>
                     <td>{{$pageDetail->section}}</td>
                     <td>{{$pageDetail->sub_section}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{route('editPageDetail',['pageDetail'=>$pageDetail->id])  }}" class="fa fa-edit"></a>
+                    <a href="#" onclick="deleteItem('{{ route('deletePageDetail',['pageDetail'=>$pageDetail->id])}}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -63,7 +63,7 @@
                 
                 </tfoot>
               </table>
-              <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+              <a id="add" href="{{route('createPageDetail')}}" class="btn btn-success" style="">Add new record</a>
 
             </div>
             <!-- /.card-body -->

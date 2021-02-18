@@ -63,12 +63,12 @@
                   
                   <div class="form-group">
                     {{Form::label('tag','Tag')}}
-                    {{Form::select('tag[]',$list['tag'],$selectedTags,['class'=>' form-control js-example-basic-multiple', 'required'=>'required', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('tag[]',$list['tag'],$selectedTags,['tabindex'=>'-1','class'=>' form-control selectJS', 'required'=>'required', 'placeholder'=>'Choose one'])}}
                     @error('tag[]')
-                            <span class="invalid-feedback bg-danger text-sm" role="alert">
-                                <span>{{ $message }}</span>
-                            </span>
-                        @enderror
+                      <span class="invalid-feedback bg-danger text-sm" role="alert">
+                          <span>{{ $message }}</span>
+                      </span>
+                    @enderror
                   </div>
 
                   <div class="form-group">
@@ -76,6 +76,7 @@
                     {{Form::text('author',null,['class'=>'form-control'])}}
                   </div>
 
+                  
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
@@ -86,7 +87,7 @@
 
                   <div class="form-group">
                     {{Form::label('type','ArticleType')}}
-                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['id'=>'type','class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one']); !!}
+                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['tabindex'=>'-1','id'=>'type','class'=>'form-control selectJS', 'placeholder'=>'Choose one']); !!}
                   </div>
 
                   <div class="form-group">
@@ -155,15 +156,8 @@ $( function() {
               }
             });
       } );
-        </script>
-                 <script>
-              $(".js-example-basic-multiple").select2({
-                tags: true,
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-               
-            });
-        </script>
+      
+        
+</script>
             
 @endsection

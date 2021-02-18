@@ -43,12 +43,12 @@
                     
                   <div class="form-group">
                     {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
+                    {{Form::text('name',null,['id'=>'name','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('location_id','Location')}}
-                    {{Form::select('location_id',$locations,null ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('location_id',$locations,null ,['id'=>'locationName','onchange'=>'updateSlug()','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
 
@@ -56,7 +56,10 @@
                     {{Form::label('address','Address')}}
                     {{Form::textarea('address',null,['class'=>'form-control ', 'rows'=>'4'])}}
                   </div>
-
+                  <div class="form-group">
+                    {{Form::label('reference','Reference')}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control'])}}
+                  </div>
                   <div class="form-group">
                     {{Form::label('phone','Phone')}}
                     {{Form::text('phone',null,['class'=>'form-control'])}}
@@ -141,20 +144,29 @@
             });
         }
 
-
+        $("#name").on('input',function(){
+        updateSlug();
+    });
 
     });
+    function updateSlug()
+{
+    var venue = $("#name").val();
+    var slug = '/'+convertUrl(venue);  
+    var selectedLocation=$('#locationName').val();
+    var locations=<?php echo json_encode($locations); ?>;
+    if(selectedLocation in locations){
+      venueslug=locations[selectedLocation];
+      slug=convertUrl(venueslug)+slug;
+    }
+    
+    $("#reference").val(slug);
+    
+}
     $(document).bind("location_changed", function(event, object) {
         console.log("changed: " + $(object).attr('id') );
     });
 </script>
 
-    <script>
-              $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-            })
-        </script>
-
+    
 @endsection

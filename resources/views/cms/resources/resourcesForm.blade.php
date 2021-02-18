@@ -13,9 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Resource</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Resource Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,12 +41,12 @@
                     
                   <div class="form-group">
                     {{Form::label('name','Name')}}
-                    {{Form::text('name',null,['class'=>'form-control'])}}
+                    {{Form::text('name',null,['id'=>'name','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('reference','Reference')}}
-                    {{Form::text('reference',null,['class'=>'form-control'])}}
+                    {{Form::text('reference',null,['id'=>'reference','class'=>'form-control'])}}
                     
                   </div>
 
@@ -91,4 +90,20 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+       $(document).ready( function() {
+        $("#name").on('input',function(){
+        updateSlug();
+        });
+        function updateSlug()
+{
+    var article = $("#name").val();
+    var slug = 'resources'+'/'+convertUrl(article);
+    $("#reference").val(slug);
+    
+}
+ });
+    </script>
 @endsection

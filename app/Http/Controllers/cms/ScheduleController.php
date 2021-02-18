@@ -61,7 +61,7 @@ class ScheduleController extends ScheduleApi
 
     public function insert(ScheduleRequest $request)
     {
-      $this->authorize('create', new Schedule());
+      // $this->authorize('create', new Schedule());
       $inputs   = $request->all();
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
@@ -74,8 +74,10 @@ class ScheduleController extends ScheduleApi
           $schedule->response_course_name       = $course->name;
           // $schedule->response_venue_id          = $location->venues->first()->id;
           // $schedule->venue_id                   = $location->venues->first()->id;
+          $date=date_create($date);
+          $date=date_format($date,"Y-m-d");
           $schedule->response_location          = $location->name;
-          $schedule->response_date              = trim($date);
+          $schedule->response_date              = $date;
           $schedule->response_price             = $inputs['event_price'];
           $schedule->response_discounted_price  = $inputs['event_price'];
           $schedule->country_id                 = $inputs['country_id'];
@@ -87,7 +89,7 @@ class ScheduleController extends ScheduleApi
         }
       }
       
-      return back()->with('success','New Schedule created!');
+      return redirect()->route('scheduleList')->with('success','New Schedule created!');
     }
 
     public function edit(Schedule $schedule)
@@ -110,7 +112,7 @@ class ScheduleController extends ScheduleApi
 
     public function update(ScheduleRequest $request,Schedule $schedule)
     { 
-      $this->authorize('update', $schedule);
+      // $this->authorize('update', $schedule);
       $inputs   = $request->all();
 
       $course   = Course::find($inputs['course_id']);
@@ -244,7 +246,7 @@ class ScheduleController extends ScheduleApi
 
     public function manualschedulelist(Request $request)
     { 
-      $schedules            = Schedule::with('course')->where('source','cms')->get();
+      $schedules            = Schedule::whereHas('course')->with('course')->where('source','cms')->get();
        return view('cms.schedule.manualschedulelist',compact('schedules'));
     }
 
