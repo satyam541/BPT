@@ -31,8 +31,8 @@
                 <p>Best Practice training helps you to take flexible and cost-effective training at a location of your choice. From a single team or department to everyone in the organisation, we will provide a consistent learning experience with real-world and mission-specific examples for ensuring project’s success. It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the delegates. Our onsite training program ensures a comfortable learning environment at your workplace. Fill the following form and we will get back to you.Best Practice training helps you to take flexible and cost-effective training at a location of your choice. From a single team or department to everyone in the organisation, we will provide a consistent learning experience with real-world and mission-specific examples for ensuring project’s success. It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the
                 and other expenses for the  </p>
                 <div class="buttons">
-                <div class="btn-blue"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
-                    </div>
+                <a class="btn-blue"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
+                </a>
             </div>
             <div class="delegate">
                 <div class="heading center-heading">
