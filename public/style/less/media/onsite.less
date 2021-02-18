@@ -43,6 +43,44 @@
         }
     }
     // End doorstep section
+
+    // Start choose section
+    .choose {
+        padding: @sectionPadding-md;
+        .choose-list{
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .choose-item{
+            width: 48%;
+        }
+    }
+    // End choose section
+
+    //Start solution section
+    .solution{
+        padding: @sectionPadding-md;
+        background-image: url(../img/onsite/solution-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        .solution-list{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            background-image: url(../img/onsite/bg-line.png);
+            background-size: 75% 35%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .solution-item{
+            width: 25%;
+        }
+
+    }
+    // End solution section
+
 }
 
 @media @size-lg{
@@ -113,6 +151,26 @@
         }
     }
     // End doorstep section
+
+    // Start choose section
+    .choose {
+        .choose-item{
+            width: 33%;
+            &:last-child{
+                margin-right: auto;
+            }
+        }
+    }
+    // End choose section
+
+    //Start solution section
+    .solution{
+        .solution-list{
+            background-size: 70% 35%;
+        }
+
+    }
+    // End solution section
 }
 
 @media @size-xl{
@@ -165,4 +223,20 @@
             background-image: none;
         }
     }
+    // End doorstep section
+
+    // Start choose section
+    .choose {
+        padding: @sectionPadding-xl;
+        .choose-item{
+            width: 25%;
+        }
+    }
+    // End choose section
+
+    //Start solution section
+    .solution{
+        padding: @sectionPadding-xl;
+    }
+    // End solution section
 }

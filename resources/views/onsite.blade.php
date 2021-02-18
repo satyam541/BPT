@@ -158,4 +158,81 @@
 </section>
 <!-- End contact Section --> 
 
+<!-- Start choose section -->
+<section class="choose">
+    <div class="container">
+        <div class="choose-container">
+            <div class="heading center-heading">
+                <h2>Why Choose <span>Onsite Training</span></h2>
+            </div>
+            <div class="choose-list">
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/budget.svg')}}" alt="budget"></span>
+                    <p>Maximise your training budget</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/solid.svg')}}" alt="solid"></span>
+                    <p>Tailored learning experience</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/monitor.svg')}}" alt="monitor"></span>
+                    <p>Monitor your employees' progress</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/group.svg')}}" alt="group"></span>
+                    <p>Team building opportunity</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/save-money.svg')}}" alt="save-money"></span>
+                    <p>Save on travel costs</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/elastic.svg')}}" alt="elastic"></span>
+                    <p>Maximum flexibility</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/page.svg')}}" alt="page"></span>
+                    <p>Ensure employees gain qualifications</p>
+                </div>
+                <div class="choose-item">
+                    <span><img src="{{url('img/onsite/statistics.svg')}}" alt="statistics"></span>
+                    <p>Make your business more efficient</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End choose section -->
+
+<!-- Start solution section -->
+<section class="solution">
+    <div class="container">
+        <div class="solution-container">
+            <div class="heading center-heading">
+                <h2>Our High-Quality Tailor Made <span>Solutions Include</span></h2>
+            </div>
+            <div class="solution-list">
+                <div class="solution-item">
+                    <span><img src="{{url('img/onsite/customize.svg')}}" alt="customize"></span>
+                    <h3>Customised Courses</h3>
+                </div>
+                <div class="solution-item">
+                    <span><img src="{{url('img/onsite/location.svg')}}" alt="location"></span>
+                    <h3>Flexible Location</h3>
+                </div>
+                <div class="solution-item">
+                    <span><img src="{{url('img/onsite/presentation.svg')}}" alt="presentation"></span>
+                    <h3>Experienced Trainer</h3>
+                </div>
+                <div class="solution-item">
+                    <span><img src="{{url('img/onsite/test.svg')}}" alt="test"></span>
+                    <h3>Exam Included</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
