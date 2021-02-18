@@ -29,9 +29,8 @@ class VenueController extends Controller
 
     public function list()
     {
-        // $this->authorize('view', new Venue());
+        $this->authorize('view', new Venue());
 
-        
         $venues         =    Venue::all();
 
         return view('cms.venue.venueList',compact('venues'));
@@ -39,7 +38,7 @@ class VenueController extends Controller
 
     public function create()
     {
-        // $this->authorize('create', Venue::class);
+        $this->authorize('create', Venue::class);
         $data['venue'] = new Venue();
         $data['submitRoute'] = "insertVenue";
         $data['locations'] = Location::withoutGlobalScope('venues')->get()->pluck('name','id')->toArray();
@@ -48,9 +47,9 @@ class VenueController extends Controller
 
     public function insert(VenueRequest $request)
     {
-        // $this->authorize('create', Venue::class);
+        $this->authorize('create', Venue::class);
         $inputs = $request->except("_token");
-        $venue = new Venue();
+        $venue  = new Venue();
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];
         $venue->address             = $inputs['address'];
@@ -62,7 +61,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
-        $venue->reference=$inputs['reference'];
+        $venue->reference           = $inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -71,25 +70,23 @@ class VenueController extends Controller
         }
 
         $venue->save();
-        if(!empty($venue->id))
-        \Session::flash('success', 'Venue created!');
-
-        return redirect()->back();
+        
+        return back()->with('success', 'Venue created!');
     }
 
     public function edit(Venue $venue)
     {
-        // $this->authorize('update',$venue);
-        $data['venue'] = $venue;
-        $data['submitRoute'] = array('updateVenue',$venue->id);
-        $data['locations'] = Location::withoutGlobalScope("venues")->get()->pluck('name','id')->toArray();
+        $this->authorize('update',$venue);
+        $data['venue']          = $venue;
+        $data['submitRoute']    = array('updateVenue',$venue->id);
+        $data['locations']      = Location::withoutGlobalScope("venues")->get()->pluck('name','id')->toArray();
         return view("cms.venue.venueForm",$data);
     }
 
     public function update($venue,VenueRequest $request)
     {
-        // $this->authorize('update', $venue);
-        $venue=Venue::find($venue);
+        $this->authorize('update', $venue);
+        $venue  = Venue::find($venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];
@@ -102,7 +99,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
-        $venue->reference=$inputs['reference'];
+        $venue->reference           = $inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -110,10 +107,8 @@ class VenueController extends Controller
             $venue->image = $imageName;
         }
         $venue->save();
-        if(!empty($venue->id))
-        \Session::flash('success', 'Venue updated!'); 
-
-        return redirect()->back();
+        
+        return back()->with('success', 'Venue updated!');
     }
 
     public function delete(Venue $venue)
@@ -127,7 +122,6 @@ class VenueController extends Controller
     // $this->authorize('view', new Venue());
     $data['trashedVenues'] = Venue::onlyTrashed()->get();
  
-
     return  view('cms.trashed.venueTrashedList',$data);
        
    }

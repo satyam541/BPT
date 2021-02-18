@@ -24,25 +24,25 @@ class CountryController extends Controller
     public function list()
     {
         
-        // $this->authorize('view', new Country());
+        $this->authorize('view', new Country());
         $countries= Country::all();
         return view('cms.country.countryList',compact('countries'));
     }
-    public function filterList(Request $request)
-    {
-        $this->authorize('view', new Country());
-        $data['countries']       = Country::where('country_code',$request['country'])->paginate(10);
-        if($request->country==null){
-            $data['countries'] = Country::paginate(10);
-        }
-        $data['selectedCountry'] = $request['country'];
-        $data['countrylist']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-        return view('cms.country.countries',$data);
-    }
+    // public function filterList(Request $request)
+    // {
+    //     $this->authorize('view', new Country());
+    //     $data['countries']       = Country::where('country_code',$request['country'])->paginate(10);
+    //     if($request->country==null){
+    //         $data['countries'] = Country::paginate(10);
+    //     }
+    //     $data['selectedCountry'] = $request['country'];
+    //     $data['countrylist']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
+    //     return view('cms.country.countries',$data);
+    // }
     public function create()
     {
         
-        // $this->authorize('create', new Country());
+        $this->authorize('create', new Country());
         $data['country'] = new Country();
         $data['submitRoute'] = "insertCountry";
         return view('cms.country.countryForm',$data);
@@ -50,7 +50,7 @@ class CountryController extends Controller
 
     public function insert(CountryRequest $request)
     {
-        // $this->authorize('create', new Country());
+        $this->authorize('create', new Country());
         $inputs = $request->except("_token");
         $country = Country::firstOrNew(['name' => $inputs['name']]);
         //$country = Country::updateOrCreate( ['name' => $inputs['name']], $inputs );
@@ -92,7 +92,7 @@ class CountryController extends Controller
     public function edit(Country $country_code)
     {
         $country = $country_code;
-        // $this->authorize('update',$country);
+        $this->authorize('update',$country);
         $data['submitRoute'] = array('updateCountry',$country->id);
         $data['country'] = $country;
         return view("cms.country.countryForm",$data);
@@ -101,7 +101,7 @@ class CountryController extends Controller
     public function update(Country $country_code,CountryRequest $request)
     {
         $country = $country_code;
-        // $this->authorize('update', $country);
+        $this->authorize('update', $country);
         $inputs = $request->all();
         $country->name                  = $inputs['name'];
         $country->country_code          = $inputs['country_code'];
@@ -137,7 +137,7 @@ class CountryController extends Controller
     public function delete(Country $country_code)
     {
         $country = $country_code;
-        // $this->authorize('delete',$country);
+        $this->authorize('delete',$country);
         $country->delete();
     }
 
