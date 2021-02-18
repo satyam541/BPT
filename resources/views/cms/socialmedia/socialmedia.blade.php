@@ -43,9 +43,11 @@
                 <tr>
                   <th>Website</th>
                   <th>Link</th>
-                  @can('update',new App\Models\socialmedia())
-                  <th>Actions</th>
-                  @endcan
+                  <th>
+                    @can('restore',new App\Models\socialmedia())
+                    Actions
+                    @endcan
+                </th>
 
                 </tr>
                 </thead>
