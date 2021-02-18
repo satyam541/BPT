@@ -2719,9 +2719,9 @@ input::-webkit-inner-spin-button {
     position: absolute;
     z-index: -1;
     left: 11px;
-    top: 1px;
+    top: 7px;
     width: 5px;
-    height: 427px;
+    height: 480px;
     border-left: 2px dashed #000000;
   }
   .about-us h2 {
@@ -2836,7 +2836,7 @@ input::-webkit-inner-spin-button {
     padding: 4rem 0rem;
   }
   .about-us .about-container .about-content::after {
-    height: 405px;
+    height: 455px;
   }
   .about-us .about-container .about-content .heading h2::before {
     top: 10px;
@@ -3808,6 +3808,7 @@ input::-webkit-inner-spin-button {
   background-size: 100% 100%;
   background-position: center;
   padding: 1.3rem;
+  position: relative;
 }
 .popular .popular-content .img {
   display: flex;
@@ -3836,6 +3837,9 @@ input::-webkit-inner-spin-button {
 }
 .buy {
   display: none;
+}
+.form-map {
+  padding: 3rem 1.5rem;
 }
 @media (min-width : 768px) {
   .location-banner {
@@ -3951,7 +3955,6 @@ input::-webkit-inner-spin-button {
   .popular .popular-content {
     width: 44%;
     margin-right: 3rem;
-    position: relative;
     z-index: 1;
   }
   .popular .popular-content:nth-child(even) {
