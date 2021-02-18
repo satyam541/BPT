@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                     
-                    <table class="table table-hover sortable" data-module="{{ $type }}">
+                    <table class="table table-hover" data-module="{{ $type }}">
                             <thead>
                                 <tr>
                                     <th>Move</th>
@@ -43,7 +43,7 @@
                                     <th>Del</th>
                                 </tr>        
                             </thead>
-                            <tbody>
+                            <tbody class="sortable">
                                 @foreach($items as $item)
                                     @if(empty($item->module))
                                     @continue
