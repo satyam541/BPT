@@ -425,7 +425,7 @@
                         02 
                     </span>
                     <div class="content">
-                        <h3>Best Choice Of Dates For Classroom o</h3>
+                        <h3>Best Choice Of Dates For Classroom</h3>
                         <p>A variety of delivery methods are available depending on your learning preference.</p>
                     </div>
                 </div>
@@ -444,6 +444,88 @@
             <div class="ways-image">
                 <img src="{{url('img/home/ways-info.png')}}" alt="ways-info">
             </div>
+        </div>
+    </div>
+</section>
+<section class="flex-container delivery">
+    <div class="container">
+        <div class="delivery-container">
+            <div class="heading center-heading">
+                <h2>Expert Training In A Classroom,
+                    <span>
+                     Online Or From Home!
+                    </span>
+                </h2>
+            </div>
+            <div class="delivery-list">
+                <div class="item">
+                    <img src="{{url('img/home/classroom.svg')}}" alt="classroom">
+                    <h3>Classroom Training</h3>
+                    <p>A variety of delivery methods are available depending on your learning preference.</p>
+                    <a href="">Enquire Now</a>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/led.svg')}}" alt="led">
+                    <h3>Online Instructor-Led</h3>
+                    <p>A variety of delivery methods are available depending on your learning preference.</p>
+                    <a href="">Enquire Now</a>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/paced.svg')}}" alt="paced">
+                    <h3>Online Self-Paced</h3>
+                    <p>A variety of delivery methods are available depending on your learning preference.</p>
+                    <a href="">Enquire Now</a>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/onsite.svg')}}" alt="onsite">
+                    <h3>Onsite Training</h3>
+                    <p>A variety of delivery methods are available depending on your learning preference.</p>
+                    <a href="">Enquire Now</a>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section class="flex-container facts">
+    <div class="container">
+        <div class="facts-container">
+            <div class="fact-content">
+                <h2>Our Amazing Facts and Figures</h2>
+                <p>We are the Largest Global Accredited Training Provider. We successfully run 100+ Courses Daily in 490+ locations worldwide.</p>
+            </div>
+            <div class="facts-list">
+                <div class="item">
+                    <img src="{{url('img/home/running.svg')}}" alt="running">
+                    <div class="fact-count">
+                    <h3 class="count-number" data-to="230" data-speed="3000">230</h3><span>+</span>
+                    </div>
+                    <p>Courses Running  Daily</p>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/locations.svg')}}" alt="running">
+                    <div class="fact-count">
+                    <h3 class="count-number" data-to="150" data-speed="3000">150</h3><span>+</span>
+                    </div>
+                    <p>Locations Worldwide</p>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/event.svg')}}" alt="event">
+                    <div class="fact-count">
+                    <h3 class="count-number" data-to="670" data-speed="3000">670</h3><span>+</span>
+                    </div>
+                    <p>EVENTS</p>
+                </div>
+                <div class="item">
+                    <img src="{{url('img/home/countries.svg')}}" alt="countries">
+                    <div class="fact-count">
+                    <h3 class="count-number" data-to="80" data-speed="3000">80</h3><span>+</span>
+                    </div>
+                    <p>COUNTRIES</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
