@@ -45,26 +45,37 @@
                 <tr>
                   <th>Name</th>
                   <th>Location</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('update',new App\Models\Venue())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($venues as $venue)
                     <tr>
-                    <td>{{$venue->name}}</td>
-                    <td>{{$venue->location->name}}</td>
-                    <td><a href="{{ route('editVenue',['venue'=>$venue->id]) }}" class="fa fa-edit"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="" onclick="deleteItem('{{ route('deleteVenue',['venue'=>$venue->id])}}')"class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$venue->name}}</td>
+                      <td>{{$venue->location->name}}</td>
+                      <td>
+                        @can('update',$venue)
+                        <a href="{{ route('editVenue',['venue'=>$venue->id]) }}" class="fa fa-edit"></a>
+                        @endcan
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        @can('delete',$venue)
+                        <a href="" onclick="deleteItem('{{ route('deleteVenue',['venue'=>$venue->id])}}')"class="fa fa-trash" style="color: red"></a>
+                        @endcan
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',App\Models\Venue::class )
               <a id="add" href="{{route('createVenue')}}" class="btn btn-success" style="">Add new record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>
