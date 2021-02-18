@@ -44,7 +44,11 @@
                 <tr>
                   <th>Venue Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Venue())
+                    Actions
+                    @endcan
+
                 </tr>
                 </thead>
                 <tbody>
@@ -53,9 +57,15 @@
                     <tr>
                     <td>{{$trashedVenue->name}}</td>
                     <td>{{$trashedVenue->created_at}}</td>
-                    <td><a href="{{ route('restoreVenue',['id'=>$trashedVenue->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteVenue',['id'=>$trashedVenue->id]) }}" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    <td>
+                      @can('restore',$trashedVenue)
+                      <a href="{{ route('restoreVenue',['id'=>$trashedVenue->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedVenue)
+                      <a href="{{ route('forceDeleteVenue',['id'=>$trashedVenue->id]) }}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
+                  </td>
                 </tr>
                     @endforeach
                   

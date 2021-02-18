@@ -564,16 +564,18 @@
   </aside>
   @if ($errors->any())
   <div id="toastsContainerTopRight" class="toasts-top-right fixed p-2">
-    @foreach ($errors->all() as $error)
+    @foreach ($errors->all() as $key => $error)
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <strong class="mr-auto text-white">{{ $error }}</strong>
-       
-        <button type="button" class=" ml-2 mb-2 close" data-dismiss="toast" aria-label="Close">
+        @php
+          $data = explode('The ', $error);
+          $data = explode('field ', $data[1]);
+        @endphp
+        <strong class="mr-auto text-white">{{ ucfirst($data[0]) }}</strong>
+        <button type="button" class="close px-2" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">x</span></button>
-        
-        
       </div>
+      <div class="toast-body text-white">{{$error}}</div>
   
      
     </div>
@@ -626,6 +628,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @yield('footer')
 <script>
+  $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
       toastr.success('{{$message}}');

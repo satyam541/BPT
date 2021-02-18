@@ -55,21 +55,40 @@
                 
                     @foreach ($topics as $topic)
                     <tr>
-                    <td>{{$topic->name}}</td>
-                    <td>{{$topic->category->name}}</td>
-                    <td><a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a></td>
-                    <td> <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="{{ route('editTopic',['topic'=>$topic->id]) }}" class="fa fa-edit"></a>
-                    <a href="#" onclick="deleteItem('{{ route('deleteTopic',['topic'=>$topic->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$topic->name}}</td>
+                      <td>{{$topic->category->name}}</td>
+                      <td>
+                        @can('update',$topic)
+                        <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>
+                        @endcan
+                      </td>
+                      <td> 
+                        @can('update',$topic)
+                        <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a>
+                        @endcan
+                      </td>
+                      <td> 
+                        @can('update',$topic)
+                        <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a>
+                        @endcan
+                      </td>
+                      <td>
+                        @can('update',$topic)
+                        <a href="{{ route('editTopic',['topic'=>$topic->id]) }}" class="fa fa-edit"></a>
+                        @endcan
+                        @can('delete',$topic)
+                        <a href="#" onclick="deleteItem('{{ route('deleteTopic',['topic'=>$topic->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        @endcan
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tbody>
               </table>
+              @can('create',new App\Models\Topic())
               <a id="add" href="{{route('createTopic')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

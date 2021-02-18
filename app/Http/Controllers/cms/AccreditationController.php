@@ -18,14 +18,14 @@ class AccreditationController extends Controller
 
     public function list()
     {
-        // $this->authorize('view',  new Accreditation());
+        $this->authorize('view',  new Accreditation());
         $data['accreditations'] = Accreditation::all();
         return view('cms.accreditation.accreditation',$data);
     }
 
     public function create()
     {
-        // $this->authorize('create',  new Accreditation());
+        $this->authorize('create',  new Accreditation());
         $data['accreditation'] = new Accreditation();
         $data['submitRoute'] = "InsertAccreditation";
         return view('cms.accreditation.accreditationForm',$data);
@@ -33,7 +33,7 @@ class AccreditationController extends Controller
 
     public function insert(AccreditationRequest $request)
     {
-        // $this->authorize('create',  new Accreditation());
+        $this->authorize('create',  new Accreditation());
         $accreditation=new Accreditation();
         $accreditation->name         = $request->name;
          
@@ -53,7 +53,7 @@ class AccreditationController extends Controller
     
     public function edit(Accreditation $accreditation)
     {
-        // $this->authorize('update', $accreditation);
+        $this->authorize('update', $accreditation);
         $data['accreditation'] = $accreditation;
         $data['submitRoute'] = array('updateAccreditation',$accreditation->id);
      
@@ -63,7 +63,7 @@ class AccreditationController extends Controller
    public function update(Accreditation $accreditation,AccreditationRequest $request)
    {
 
-        // $this->authorize('update', $accreditation);
+        $this->authorize('update', $accreditation);
         $accreditation->name         = $request->name;
     
         if($request->hasFile('image')){
@@ -79,10 +79,11 @@ class AccreditationController extends Controller
 
    public function delete(Accreditation $accreditation)
    {
-        // $this->authorize('delete', $accreditation);
+        $this->authorize('delete', $accreditation);
         $accreditation->delete();
    }
 
+       
        
    public function accreditationtrashList()
    {

@@ -43,8 +43,12 @@
                 <thead>
                 <tr>
                   <th>Online course Name</th>
-                  <th>course Name</th>
-                  <th>Actions</th>
+                  <th>Course Name</th>
+                  <th>
+                    @can('update',new App\Models\CourseElearning())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,8 +57,13 @@
                     <tr>
                       <td>{{$onlineCourse->online_course_name}}</td>
                       <td>{{$onlineCourse->course->name}}</td>
-                      <td><a href="{{ route('editOnlineCourse',['course'=>$onlineCourse->id]) }}" class="fa fa-edit"></a>
-                      <a href="#" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse ->id])}}')" class="fa fa-trash" style="color: red"></a>
+                      <td>
+                        @can('update',$onlineCourse)
+                        <a href="{{ route('editOnlineCourse',['course'=>$onlineCourse->id]) }}" class="fa fa-edit"></a>
+                        @endcan
+                        @can('delete',$onlineCourse)
+                        <a href="#" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse ->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        @endcan
                       </td>
                     </tr>
                     @endforeach
@@ -62,7 +71,9 @@
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\CourseElearning())
               <a id="add" href="{{ route('createOnlineCourse')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

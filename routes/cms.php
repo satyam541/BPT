@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Support\Facades\Route;
-
 Route::get('/','DashboardController@list')->name('CmsIndex');
 Route::get('/dashboard','DashboardController@list')->name('dashboard');
 Route::post('/summernoteimage/upload','DashboardController@ImageUpload')->name('ImageUpload');

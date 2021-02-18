@@ -119,7 +119,7 @@ class VenueController extends Controller
     
    public function venuetrashList()
    {
-    // $this->authorize('view', new Venue());
+    $this->authorize('view', new Venue());
     $data['trashedVenues'] = Venue::onlyTrashed()->get();
  
     return  view('cms.trashed.venueTrashedList',$data);
@@ -128,7 +128,7 @@ class VenueController extends Controller
 
    public function restoreVenue($id)
    {
-    // $this->authorize('restore', new Venue());
+    $this->authorize('restore', new Venue());
         $venue = Venue::onlyTrashed()->find($id)->restore();
  
        return back()->with('success','Successfully Restored');
@@ -136,7 +136,7 @@ class VenueController extends Controller
    }
    public function forceDeleteVenue($id)
    {
-    // $this->authorize('forceDelete', new Venue());
+    $this->authorize('forceDelete', new Venue());
     Venue::onlyTrashed()->find($id)->forceDelete();
  
        return back()->with('success','Permanently Deleted');
