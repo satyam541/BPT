@@ -21,14 +21,14 @@ class SettingController extends Controller
 
     public function websiteDetailList()
     {
-        // $this->authorize('view', new WebsiteDetail());
+        $this->authorize('view', new WebsiteDetail());
         $data['websitedetails'] = WebsiteDetail::paginate(10);
       
         return view('cms.websiteContent.websiteDetail',$data);
     }
     public function createWebsiteDetail()
     {
-        // $this->authorize('create', new WebsiteDetail());
+        $this->authorize('create', new WebsiteDetail());
         $data['websitedetail'] = new WebsiteDetail();
          $data['submitRoute'] = "insertWebsiteDetail";
         //  $data['websites'] = Website::all()->pluck('name','id')->toArray();
@@ -39,7 +39,7 @@ class SettingController extends Controller
 
     public function insertWebsiteDetail(WebsitedetailRequest $request)
     {
-        // $this->authorize('create', new WebsiteDetail());
+        $this->authorize('create', new WebsiteDetail());
         
         $websitedetail=new WebsiteDetail();
         // $websitedetail->web_id         = $request->website;
@@ -74,7 +74,7 @@ class SettingController extends Controller
     }
     public function  editWebsiteDetail(WebsiteDetail $websitedetail)
     {
-        // $this->authorize('update', $websitedetail);
+        $this->authorize('update', $websitedetail);
         $data['websitedetail'] = $websitedetail;
         
         // $data['websites'] = Website::all()->pluck('name','id')->toArray();
@@ -86,7 +86,7 @@ class SettingController extends Controller
 
     public function deleteWebsiteDetail(WebsiteDetail $websitedetail)
     {
-        // $this->authorize('delete',$websitedetail);
+        $this->authorize('delete',$websitedetail);
       $websitedetail->delete();
 
     }
@@ -94,7 +94,7 @@ class SettingController extends Controller
     
     public function updateWebsiteDetail(WebsiteDetail $websitedetail,WebsiteDetailRequest $request)
     {
-        // $this->authorize('update', $websitedetail);
+        $this->authorize('update', $websitedetail);
         // $websitedetail->web_id             = $request->website;
         // dd($request->all());
         $websitedetail->country_id         = $request->country_id;

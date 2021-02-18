@@ -33,18 +33,20 @@ class LocationController extends Controller
         return view('cms.location.locationList',compact('locations'));
     }
 
-    public function filterList(Request $request)
-    {
-        $this->authorize('view', new Location());
-        $data['locations']       =  Location::where('country_id',$request['country'])->paginate(10);
-        if($request->country==null){
-            $data['locations'] = Location::paginate(10);
-        }
-        $data['selectedCountry'] = $request['country'];
-        $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-        $data['list']            = $list;
-        return view('cms.location.locations',$data);
-    }
+    // public function filterList(Request $request)
+    // {
+    //     $this->authorize('view', new Location());
+    //     $data['locations']       =  Location::where('country_id',$request['country'])->paginate(10);
+    //     if($request->country==null){
+    //         $data['locations'] = Location::paginate(10);
+    //     }
+    //     $data['selectedCountry'] = $request['country'];
+    //     $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
+    //     $data['list']            = $list;
+    //     return view('cms.location.locations',$data);
+    // }
+
+    
     // public function demo(){
 
     //     $courses=Location::all();

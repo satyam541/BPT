@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">roles</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Roles</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,7 +44,9 @@
                 <tr>
                   <th>Name</th>
                   <th>Description</th>
+                  @can('update',new App\Models\Role())
                   <th>Actions</th>
+                  @endcan
                 </tr>
                 </thead>
                 <tbody>
@@ -53,17 +55,23 @@
                     <tr>
                     <td>{{$role->name}}</td>
                     <td>{{$role->description}}</td>
-                    <td><a href="{{ route('editRole',['role'=>$role->id]) }}" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('update',$role)
+                      <a href="{{ route('editRole',['role'=>$role->id]) }}" class="fa fa-edit"></a>
+                      @endcan
+                      @can('delete',$role)
+                      <a href="" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
-                </tr>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',Auth::user(),App\Models\Role::class)
               <a id="add" href="{{route('createRole')}}" class="btn btn-success" style="">Add new record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

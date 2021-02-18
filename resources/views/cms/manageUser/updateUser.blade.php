@@ -13,9 +13,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#">User</a></li>
-                            <li class="breadcrumb-item"><a href="#">Edit User</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('userList')}}">User</a></li>
+                            <li class="breadcrumb-item active">Edit User</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

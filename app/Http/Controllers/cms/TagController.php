@@ -11,7 +11,7 @@ class TagController extends Controller
     
     public function tagList(Request $request)
     {
-        // $this->authorize('view', new Tag());
+        $this->authorize('view', new Tag());
         $data['tags'] = Tag::all();
 
         return view('cms.article.tag',$data);
@@ -19,7 +19,7 @@ class TagController extends Controller
 
     public function edit(Tag $tag)
     {
-        // $this->authorize('update', $tag);
+        $this->authorize('update', $tag);
         $data['tag'] = $tag;
         $data['submitroute'] = array('updateTag',$tag->id);
         return view("cms.article.tagForm",$data);
@@ -27,7 +27,7 @@ class TagController extends Controller
 
    public function update(Tag $tag,Request $request)
    {
-    // $this->authorize('update', $tag);
+    $this->authorize('update', $tag);
        $tag->name  = $request->name;
        
        $tag->save();
@@ -37,7 +37,7 @@ class TagController extends Controller
 
    public function delete(Tag $tag)
    {
-    // $this->authorize('delete', $tag);
+    $this->authorize('delete', $tag);
        $tag->delete();
    }
 
