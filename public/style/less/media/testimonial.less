@@ -34,7 +34,7 @@
             }
         }
         p {
-            width: 58%;
+            width: 90%;
         }
         .customers-list {
             flex-direction: row;
@@ -93,9 +93,6 @@
     // Start Services Section
     .services {
         padding: @sectionPadding-md;
-        .phone {
-            display: none;
-        }
     }
     // End Services Section
 
@@ -141,7 +138,6 @@
         .services-container {
             flex-direction: row;
             justify-content: space-between;
-            align-items: flex-start;
         }
         .phone {
             display: flex;
@@ -150,6 +146,10 @@
         .heading {
             width: 66%;
             align-items: flex-start;
+            margin-bottom: 0;
+            h2 {
+                margin-bottom: .5rem;
+            }
             h2, p {
                 text-align: left;
             }
@@ -174,6 +174,9 @@
 
     // Start Facts Section
     .facts {
+        background-image: url(../img/testimonial/facts-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         .heading {
             p {
                 width: 65%;
