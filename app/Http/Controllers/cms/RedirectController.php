@@ -39,7 +39,7 @@ class RedirectController extends Controller
     {
         // $this->authorize('create', new UrlRedirect());
         $data['url'] = new UrlRedirect();
-        $data['R'] = "insertUrlRedirect";
+        $data['submitRoute'] = "insertUrlRedirect";
         return view('cms.urlredirect.urlRedirectForm',$data);
     }
  
