@@ -104,25 +104,34 @@
 
 // End FAQ
 
+// circleProgress();
+// function circleProgress(){                                                              
+//     setProgress(98,$('.circle .first'));
+//     setProgress(86,$('.circle .second'));
+//     setProgress(92,$('.circle .third'));
+//     setProgress(94,$('.circle .fourth'));
+// }
+
 circleProgress();
 function circleProgress(){
-    setProgress(98,$('.difference-list .first'));
-    setProgress(86,$('.difference-list .second'));
-    setProgress(92,$('.difference-list .third'));
-    setProgress(94,$('.difference-list .fourth'));
+    setProgress(98,$('.circle .first'),45);
+    setProgress(86,$('.circle .second'),45);
+    setProgress(92,$('.circle .third'),45);
+    setProgress(94,$('.circle .fourth'),45);
 }
-function setProgress(percent, svg,radius=45) {
-    var circumference = radius * 2 * Math.PI;
-    var firstcircle = svg.find('circle').last();
-    firstcircle.css('strokeDasharray', `${circumference}`);
-    firstcircle.css('strokeDashoffset', `${circumference}`);
-    const firstoffset = circumference - percent / 100 * circumference;
-    firstcircle.css('strokeDashoffset' , firstoffset);
-    var span = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    span.setAttribute('x', radius-12);
-    span.setAttribute('y', radius+12);
-    span.setAttribute('fill', '#000');
-    span.textContent=percent+"%";
-    svg.append(span);
+function setProgress(percent, svg, radius) {
+var circumference = radius * 2 * Math.PI;
+var firstcircle = svg.find('circle').last();
+firstcircle.css({'strokeDasharray':circumference});
+firstcircle.css('strokeDashoffset',circumference);
+const firstoffset = circumference - percent / 100 * circumference;
+firstcircle.css('strokeDashoffset' , firstoffset);
+var span = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+span.setAttribute('x', radius-12);
+span.setAttribute('y', radius+12);
+span.setAttribute('fill', '#000');
+span.textContent=percent+"%";
+svg.append(span);
 }
+
     

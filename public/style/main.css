@@ -2177,10 +2177,6 @@ input::-webkit-inner-spin-button {
 .about-us {
   padding: 3rem 1.5rem;
 }
-.about-us .about-container {
-  display: flex;
-  flex-direction: column;
-}
 .about-us .about-content {
   display: flex;
   flex-direction: column;
@@ -2188,6 +2184,7 @@ input::-webkit-inner-spin-button {
 .about-us .about-image {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .about-us .heading {
   margin-bottom: 2rem;
@@ -2203,7 +2200,6 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 .about-us .values-info {
-  display: flex;
   height: 100%;
 }
 .about-us .values-info img {
@@ -2535,7 +2531,8 @@ input::-webkit-inner-spin-button {
 .skills .skills-item h3 {
   margin: 0.5rem 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  width: 100%;
 }
 .skills .skills-item p {
   text-align: center;
@@ -2581,7 +2578,7 @@ input::-webkit-inner-spin-button {
     padding: 3rem 2rem;
   }
   .about-us .about-container {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
   }
   .about-us .about-content {
@@ -2649,8 +2646,7 @@ input::-webkit-inner-spin-button {
   }
   .skills {
     padding: 3rem 2rem;
-    padding-bottom: 5rem;
-    overflow: hidden;
+    padding-top: 1rem;
   }
   .skills .skills-list {
     flex-direction: row;
@@ -2658,7 +2654,6 @@ input::-webkit-inner-spin-button {
     justify-content: space-around;
   }
   .skills p {
-    width: 79%;
     font-size: 12px;
   }
   .skills span {
@@ -2666,32 +2661,11 @@ input::-webkit-inner-spin-button {
     height: 45px;
   }
   .skills .skills-item {
-    width: 34%;
+    width: 31%;
     transform: rotate(0deg);
-    margin-top: 4rem;
-    padding: 0.5rem;
-    position: relative;
-    z-index: 1;
     border-radius: 10px;
-  }
-  .skills .skills-item::before,
-  .skills .skills-item::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFF;
-    left: 0;
-    top: 0;
-    transform: rotate(45deg);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-    border-radius: 10px;
-    z-index: -1;
-  }
-  .skills .skills-item::after {
-    background-color: #F6F6F6;
-    z-index: -2;
-    transform: rotate(75deg);
+    margin-top: 0.5rem;
+    padding: 1rem 0.6rem;
   }
   .difference {
     padding: 3rem 2rem;
@@ -2837,16 +2811,8 @@ input::-webkit-inner-spin-button {
   .contact-form .contact-info .contact-list .item {
     width: 100%;
   }
-  .skills .skills-list {
-    justify-content: space-between;
-    width: 94%;
-    align-self: center;
-  }
-  .skills h3 {
-    font-size: 15px;
-  }
   .skills .skills-item {
-    width: 26%;
+    width: 24%;
   }
   .clients {
     padding-left: 0;
@@ -2899,15 +2865,40 @@ input::-webkit-inner-spin-button {
     padding-left: 7rem;
     align-self: center;
   }
+  .skills {
+    padding: 4rem 0rem;
+  }
   .skills .skills-list {
     width: 100%;
-    justify-content: space-around;
   }
   .skills .skills-item {
     width: 20%;
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+  }
+  .skills .skills-item::before,
+  .skills .skills-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    border-radius: 10px;
+    z-index: -1;
   }
   .skills .skills-item::after {
-    animation: skills-rotate 20s linear infinite;
+    background-color: #F6F6F6;
+    z-index: -2;
+    transform: rotate(75deg);
+    animation: skill-rotate 20s linear infinite;
+  }
+  .skills .skills-item p {
+    width: 80%;
   }
   .clients {
     padding: 4rem 0rem;
