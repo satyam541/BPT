@@ -198,18 +198,21 @@ class OnlineCourseController extends Controller
  
     public function trashList()
     {
+        $this->authorize('view', new CourseElearning());
         $data['trashOnlineCourses'] = courseElearning::onlyTrashed()->get();
         return view('cms.trashed.onlineCourseTrashList',$data);
     }
 
     public function restore($id)
     {
+        $this->authorize('restore', new CourseElearning());
         $data = courseElearning::onlyTrashed()->find($id)->restore();
         return back()->with('success','Successfully Restored');
     }
 
     public function forceDelete($id)
     {
+        $this->authorize('forceDelete', new CourseElearning());
         $data = courseElearning::onlyTrashed()->find($id)->forceDelete();
         return back()->with('success','Permanently Deleted!');
     }

@@ -44,7 +44,11 @@
                 <tr>
                   <th>Accreditation Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                  @can('restore',new App\Models\Accreditation())
+                  Actions
+                  @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,8 +57,14 @@
                     <tr>
                     <td>{{$trashedaccreditation->name}}</td>
                     <td>{{$trashedaccreditation->created_at}}</td>
-                    <td><a href="{{ route('restoreAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('restore',$trashedaccreditation)
+                      <a href="{{ route('restoreAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedaccreditation)
+                      <a href="{{ route('forceDeleteAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach

@@ -66,7 +66,7 @@
                         </td>                          
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('manageSchedulePrice',$item->id )}}" class="btn btn-warning">Locations</a>
+                                <a href="{{ route('manageSchedulePrice',$item->id)}}" class="btn btn-warning">Locations</a>
                             </div>
                         </td>
                         <td>

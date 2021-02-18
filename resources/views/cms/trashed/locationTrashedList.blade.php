@@ -44,10 +44,11 @@
                 <tr>
                   <th>Location Name</th>
                   <th>Date</th>
+                  <th>
                   @can('restore',new App\Models\location())
                     Actions
                     @endcan
-
+                  </th>
                 </tr>
                 </thead>
                 <tbody>

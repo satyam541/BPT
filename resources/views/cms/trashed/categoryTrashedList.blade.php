@@ -44,10 +44,11 @@
                 <tr>
                   <th>Category Name</th>
                   <th>Date</th>
+                  <th>
                   @can('restore',new App\Models\Category())
                   Actions
                   @endcan
-
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,11 +58,11 @@
                     <td>{{$trashedcategory->name}}</td>
                     <td>{{$trashedcategory->created_at}}</td>
                     <td>
-                      @can('restore',$trashedCategory)
+                      @can('restore',$trashedcategory)
                       <a href="{{ route('restoreCategory',['id'=>$trashedcategory->id]) }}" class="fa fa-refresh fa-spin"></a>
                       @endcan
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                      @can('forceDelete',$trashedCategory)
+                      @can('forceDelete',$trashedcategory)
                       <a href="{{ route('forceDeleteCategory',['id'=>$trashedcategory->id])}}" class="fa fa-trash" style="color: red"></a>
                       @endcan
                     </td>

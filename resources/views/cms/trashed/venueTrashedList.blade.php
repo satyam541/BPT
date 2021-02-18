@@ -48,7 +48,7 @@
                     @can('restore',new App\Models\Venue())
                     Actions
                     @endcan
-
+                  </th>
                 </tr>
                 </thead>
                 <tbody>

@@ -87,7 +87,7 @@ class AccreditationController extends Controller
        
    public function accreditationtrashList()
    {
-        // $this->authorize('view',  new Accreditation());
+        $this->authorize('view',  new Accreditation());
     
         $data['trashedAccreditations'] = Accreditation::onlyTrashed()->get();
  
@@ -97,7 +97,7 @@ class AccreditationController extends Controller
 
    public function restoreAccreditation($id)
    {
-        // $this->authorize('restore', new Accreditation());
+        $this->authorize('restore', new Accreditation());
         $accreditation = Accreditation::onlyTrashed()->find($id)->restore();
  
        return back()->with('success','Successfully Restored');
@@ -105,7 +105,7 @@ class AccreditationController extends Controller
    }
    public function forceDeleteAccreditation($id)
    {
-        // $this->authorize('forceDelete', new Accreditation());
+        $this->authorize('forceDelete', new Accreditation());
         $accreditation = Accreditation::onlyTrashed()->find($id)->forceDelete();
         
         return back()->with('success','Permanently Deleted');

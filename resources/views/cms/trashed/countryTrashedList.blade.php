@@ -48,6 +48,7 @@
                     @can('restore',new App\Models\Country())
                     Actions
                     @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,11 +57,11 @@
                     <td>{{$trashedCountry->name}}</td>
                     <td>{{$trashedCountry->created_at}}</td>
                     <td>
-                      @can('restore',new App\Models\Country())
+                      @can('restore',$trashedCountry)
                       <a href="{{ route('restoreCountry',['country_code'=>$trashedCountry->country_code]) }}" class="fa fa-refresh fa-spin"></a>
                       @endcan
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                    @can('forceDelete',new App\Models\Country())
+                    @can('forceDelete',$trashedCountry)
                     <a href="{{ route('forceDeleteCountry',['country_code'=>$trashedCountry->country_code])}}" class="fa fa-trash" style="color: red"></a>
                     @endcan
                   </td>
