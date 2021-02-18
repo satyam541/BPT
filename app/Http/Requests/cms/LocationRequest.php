@@ -38,4 +38,10 @@ class LocationRequest extends FormRequest
             'email'                 => 'required|string|max:255|regex:/^[a-zA-Z0-9.]+@[a-zA-Z]+[.]{1}[a-z]+$/',
         ];
     }
+    public function attributes()
+    {
+        return[
+            'country_id'       =>   'country',
+        ];
+    }
 }

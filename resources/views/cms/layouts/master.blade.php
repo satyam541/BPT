@@ -125,7 +125,11 @@
             </a>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['userList','roleList','permissionList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
@@ -136,19 +140,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('userList')}}" class="nav-link">
+                <a href="{{Route('userList')}}" @if(Route::currentRouteName()=='userList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>User</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('roleList')}}" class="nav-link">
+                <a href="{{Route('roleList')}}" @if(Route::currentRouteName()=='roleList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Role</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('permissionList')}}" class="nav-link">
+                <a href="{{Route('permissionList')}}" @if(Route::currentRouteName()=='permissionList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Permission</p>
                 </a>
@@ -161,7 +165,11 @@
          
           <li class="nav-header">Resources</li>
 
-          <li class="nav-item has-treeview">
+                   <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="fa fa-unlink"></i>
               <p>
@@ -172,13 +180,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('unlinkTopic')}}" class="nav-link">
+                <a href="{{Route('unlinkTopic')}}"@if(Route::currentRouteName()=='unlinkTopic')class="nav-link active" @else class="nav-link" @endif >
                   <i class="far fa-circle nav-icon "></i>
                   <p>Topics</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('unlinkCourse')}}" class="nav-link">
+                <a href="{{Route('unlinkCourse')}}"@if(Route::currentRouteName()=='unlinkCourse')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon "></i>
                   <p>Courses</p>
                 </a>
@@ -186,7 +194,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
            
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -198,37 +210,37 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('categoryList')}}" class="nav-link">
+                <a href="{{Route('categoryList')}}" @if(Route::currentRouteName()=='categoryList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>Category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('topicList')}}" class="nav-link">
+                <a href="{{Route('topicList')}}" @if(Route::currentRouteName()=='topicList')class="nav-link active" @else class="nav-link" @endif">
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Topic</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('courseList')}}" class="nav-link">
+                <a href="{{Route('courseList')}}" @if(Route::currentRouteName()=='courseList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Course</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinecourseList')}}" class="nav-link">
+                <a href="{{Route('onlinecourseList')}}" @if(Route::currentRouteName()=='onlinecourseList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-primary"></i>
                   <p>Online Course</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsincludedListRoute')}}" class="nav-link">
+                <a href="{{Route('whatsincludedListRoute')}}" @if(Route::currentRouteName()=='whatsincludedListRoute')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('accreditationList')}}" class="nav-link">
+                <a href="{{Route('accreditationList')}}" @if(Route::currentRouteName()=='accreditationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accreditation</p>
                 </a>
@@ -236,7 +248,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-map-marker-alt"></i>
               <p>
@@ -246,19 +262,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('countryList')}}" class="nav-link">
+                <a href="{{Route('countryList')}}" @if(Route::currentRouteName()=='countryList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Country</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('locationList')}}" class="nav-link">
+                <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueList')}}" class="nav-link">
+                <a href="{{Route('venueList')}}" @if(Route::currentRouteName()=='venueList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Venue</p>
                 </a>
@@ -266,7 +282,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['scheduleList','getSchedule','manualScheduleList','manageCoursePrice','onlinePriceList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
@@ -276,13 +296,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('scheduleList')}}" class="nav-link">
+                <a href="{{Route('scheduleList')}}" @if(Route::currentRouteName()=='scheduleList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Schedule List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('getSchedule')}}" class="nav-link">
+                <a href="{{Route('getSchedule')}}" @if(Route::currentRouteName()=='getSchedule')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Fetch Schedule</p>
                 </a>
@@ -294,19 +314,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('manualScheduleList')}}" class="nav-link">
+                <a href="{{Route('manualScheduleList')}}" @if(Route::currentRouteName()=='manualScheduleList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Manual Schedule List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('manageCoursePrice')}}" class="nav-link">
+                <a href="{{Route('manageCoursePrice')}}" @if(Route::currentRouteName()=='manageCoursePrice')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Manage Price</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlinePriceList')}}" class="nav-link">
+                <a href="{{Route('onlinePriceList')}}" @if(Route::currentRouteName()=='onlinePriceList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-"></i>
                   <p>Online Prices</p>
                 </a>
@@ -314,7 +334,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['popularItems']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-fire"></i>
               <p>
@@ -324,7 +348,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('popularItems')}}" class="nav-link">
+                <a href="{{Route('popularItems')}}" @if(Route::currentRouteName()=='popularItems')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>List All</p>
                 </a>
@@ -332,7 +356,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['newsList','blogList','tagList','testimonialList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
@@ -342,25 +370,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('newsList')}}" class="nav-link">
+                <a href="{{Route('newsList')}}" @if(Route::currentRouteName()=='newsList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>News List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('blogList')}}" class="nav-link">
+                <a href="{{Route('blogList')}}" @if(Route::currentRouteName()=='blogList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Blog List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('tagList')}}" class="nav-link">
+                <a href="{{Route('tagList')}}" @if(Route::currentRouteName()=='tagList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Tag List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('testimonialList')}}" class="nav-link">
+                <a href="{{Route('testimonialList')}}" @if(Route::currentRouteName()=='testimonialList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Testimonials</p>
                 </a>
@@ -368,7 +396,11 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['websiteDashboard','websiteDetailList','urlRedirectList','socialmediaList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-globe"></i>
               <p>
@@ -378,32 +410,36 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('websiteDashboard')}}" class="nav-link">
+                <a href="{{Route('websiteDashboard')}}" @if(Route::currentRouteName()=='websiteDashboard')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Webiste Dashboard</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('websiteDetailList')}}" class="nav-link">
+                <a href="{{Route('websiteDetailList')}}" @if(Route::currentRouteName()=='websiteDetailList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Website Detail List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('urlRedirectList')}}" class="nav-link">
+                <a href="{{Route('urlRedirectList')}}" @if(Route::currentRouteName()=='urlRedirectList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>URL Redirect</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('socialmediaList')}}" class="nav-link">
+                <a href="{{Route('socialmediaList')}}" @if(Route::currentRouteName()=='socialmediaList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Social Media List</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li @if(in_array(Route::currentRouteName(),['accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-trash" style="color: red"></i>
               <p>
@@ -413,73 +449,73 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{Route('countryTrashList')}}" class="nav-link">
+                <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Country List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('venueTrashList')}}" class="nav-link">
+                <a href="{{Route('venueTrashList')}}" @if(Route::currentRouteName()=='venueTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Venue List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('locationTrashList')}}" class="nav-link">
+                <a href="{{Route('locationTrashList')}}" @if(Route::currentRouteName()=='locationTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Location List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('categoryTrashList')}}" class="nav-link">
+                <a href="{{Route('categoryTrashList')}}" @if(Route::currentRouteName()=='categoryTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Category List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('topicTrashList')}}" class="nav-link">
+                <a href="{{Route('topicTrashList')}}" @if(Route::currentRouteName()=='topicTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Topic List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('courseTrashList')}}" class="nav-link">
+                <a href="{{Route('courseTrashList')}}" @if(Route::currentRouteName()=='courseTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Course List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlineCourseTrash')}}" class="nav-link">
+                <a href="{{Route('onlineCourseTrash')}}" @if(Route::currentRouteName()=='onlineCourseTrash')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Online Course List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('resourceTrash')}}" class="nav-link">
+                <a href="{{Route('resourceTrash')}}" @if(Route::currentRouteName()=='resourceTrash')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Resource List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('tagTrashList')}}" class="nav-link">
+                <a href="{{Route('tagTrashList')}}" @if(Route::currentRouteName()=='tagTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Tag List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('articleTrashList')}}" class="nav-link">
+                <a href="{{Route('articleTrashList')}}" @if(Route::currentRouteName()=='articleTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Article List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('testimonialTrashList')}}" class="nav-link">
+                <a href="{{Route('testimonialTrashList')}}" @if(Route::currentRouteName()=='testimonialTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Testimonial List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('accreditationTrashList')}}" class="nav-link">
+                <a href="{{Route('accreditationTrashList')}}" @if(Route::currentRouteName()=='accreditationTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Accreditation List</p>
                 </a>
@@ -489,31 +525,31 @@
 
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
-            <a href="{{Route('pageDetailList')}}" class="nav-link">
+            <a href="{{Route('pageDetailList')}}" @if(Route::currentRouteName()=='pageDetailList')class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Page Content</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('enquiryList')}}" class="nav-link">
+            <a href="{{Route('enquiryList')}}" @if(Route::currentRouteName()=='enquiryList')class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-warning"></i>
               <p class="text">Enquiries</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('orderList')}}" class="nav-link">
+            <a href="{{Route('orderList')}}" @if(Route::currentRouteName()=='orderList')class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-success"></i>
               <p class="text">Order List</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('createPurchase')}}" class="nav-link">
+            <a href="{{Route('createPurchase')}}" @if(Route::currentRouteName()=='createPurchase')class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-primary"></i>
               <p class="text">Manual Purchase</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{Route('resourcesList')}}" class="nav-link">
+            <a href="{{Route('resourcesList')}}" @if(Route::currentRouteName()=='resourcesList')class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle"></i>
               <p class="text">Resources</p>
             </a>

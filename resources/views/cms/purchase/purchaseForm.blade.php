@@ -13,9 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Purchase</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Purchase Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -84,7 +83,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-            <div class="card card-primary">
+            <div class="card card-primary card-outline">
                 <div class="card-body">
 
                     <div class="form-group">

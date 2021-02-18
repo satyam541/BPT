@@ -31,37 +31,41 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                Purchase Detail
+              </div>
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">
                 <thead>
-                <tr>
-                    <th data-breakpoints="xs" data-type="number">ID</th>
-                    <th>Email</th>
-                    <th>Course Name</th>
-                    <th>Course Duration</th>
-                    <th data-breakpoints="xs">Price</th>
-                    <th data-breakpoints="xs sm">Country</th>
-                    <th data-breakpoints="xs sm">Location</th>
-                    <th data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Event Date & Time</th>
-                </tr>
+                  <tr>
+                      <th data-breakpoints="xs" data-type="number">ID</th>
+                      <th>Email</th>
+                      <th>Course Name</th>
+                      <th>Course Duration</th>
+                      <th data-breakpoints="xs">Price</th>
+                      <th data-breakpoints="xs sm">Country</th>
+                      <th data-breakpoints="xs sm">Location</th>
+                      <th data-breakpoints="xs sm" data-type="date" data-format-string="MMMM Do YYYY">Event Date & Time</th>
+                  </tr>
                 </thead>
                 <tbody>
                 
                     @foreach($courses as $course)
-                    <tr>
-                        <td>{{$course->id}}</td>
-                        <td>{{$course->email}}</td>
-                        <td>{{$course->courseDisplayName}}</td>
-                        <td>{{$course->courseDuration}}</td>
-                        <td>{{$course->price}}</td>
-                        <td>{{json_decode($course->country)->name}}</td>
-                        <td>{{$course->location}}</td>
-                        <td>{{date('M d Y H:i A', strtotime($course->event_date." ".$course->event_time))}}</td>
-                    </tr>
-                            @endforeach
+                      <tr>
+                          <td>{{$course->id}}</td>
+                          <td>{{$course->email}}</td>
+                          <td>{{$course->courseDisplayName}}</td>
+                          <td>{{$course->courseDuration}}</td>
+                          <td>{{$course->price}}</td>
+                          <td>{{json_decode($course->country)->name}}</td>
+                          <td>{{$course->location}}</td>
+                          <td>{{date('M d Y H:i A', strtotime($course->event_date." ".$course->event_time))}}</td>
+                      </tr>
+                    @endforeach
                   
                 
                 </tfoot>
