@@ -8,23 +8,6 @@
     h1,p {
         color: @whiteColor;
     }
-    .breadcrums {
-        display: flex;
-        margin-top: 1rem;
-        ul {
-            display: flex;
-            align-items: center;
-            li {
-                color: @whiteColor;
-                font-size: 14px;
-            }
-            img {
-                width: 10px;
-                height: 10px;
-                margin: 0 .5rem;
-            }
-        }
-    }
 }
 // End Banner section //
 
@@ -249,5 +232,17 @@
 // Start Form-Map Section
 .form-map {
     padding: @sectionPadding;
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .map {
+        display: flex;
+        margin-top: 2rem;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 // End Form-Map Section

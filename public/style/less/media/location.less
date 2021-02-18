@@ -161,6 +161,27 @@
         }
     }
     // End Buy Section
+
+    // Start Form-Map Section
+    .form-map {
+        padding: @sectionPadding-md;
+        .form-container {
+            form {
+                .form-input {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .input-container {
+                        width: 48%;
+                        &:last-child {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // End Form-Map Section
 }
 
 @media @size-lg{
@@ -239,6 +260,46 @@
         }
     }
     // End Popular Section
+
+    // Start Form-Map Section
+    .form-map {
+        .form-container {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            form {
+                width: 50%;
+                position: relative;
+                z-index: 1;
+                background-image: url(../img/location/form-img.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    right: -18px;
+                    width: 0;
+                    height: 0;
+                    border-right: 18px solid transparent;
+                }
+                &::before {
+                    top: 0;
+                    border-bottom: 18px solid #C0C0C0;
+                }
+                &::after {
+                    bottom: 0;
+                    border-top: 18px solid #C0C0C0;
+                }
+            }
+            .map {
+                width: 50%;
+                margin-top: 0;
+                height: 490px;
+            }
+        }
+    }
+    // End Form-Map Section
     
 }
 
@@ -290,4 +351,10 @@
         padding: @sectionPadding-xl;
     }
     // End Buy Section
+
+    // Start Form-Map Section
+    .form-map {
+        padding: @sectionPadding-xl;
+    }
+    // End Form-Map Section
 }
