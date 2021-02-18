@@ -228,7 +228,7 @@ class CategoryController extends Controller
    }
    public function categorytrashList()
    {
-    //  $this->authorize('view', new Category());
+     $this->authorize('view', new Category());
      $data['trashedCategories'] = Category::onlyTrashed()->get();
      return  view('cms.trashed.categoryTrashedList',$data);
        
@@ -236,12 +236,14 @@ class CategoryController extends Controller
 
    public function restoreCategory($id)
    {
+       $this->authorize('restore', new Category());
        $category = Category::onlyTrashed()->where('id',$id)->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
+       $this->authorize('forceDelete', new Category());
        $category = Category::onlyTrashed()->where('id',$id)->forceDelete();
        return back()->with('success','Permanently Deleted');
    }
