@@ -14,7 +14,7 @@ class OrderController extends Controller
     
     public function orderList()
     {
-        // $this->authorize('view', new Order());
+        $this->authorize('view', new Order());
 
         // $data['orderlineitems']=OrderLineItem::with(['order.customer'])->paginate(10);
         $data['orders']  = Order::with('customer')->whereNotNull('gateway_order_id')->orderBy("created_at",'DESC')->paginate(10);

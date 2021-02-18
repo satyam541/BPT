@@ -44,7 +44,10 @@
                   <th>Page Name</th>
                   <th>Section</th>
                   <th>Sub Section</th>
+                  @can('update',new App\Models\PageDetail())
                   <th>Actions</th>
+                  @endcan
+
                 </tr>
                 </thead>
                 <tbody>
@@ -54,8 +57,13 @@
                     <td>{{$pageDetail->page_name}}</td>
                     <td>{{$pageDetail->section}}</td>
                     <td>{{$pageDetail->sub_section}}</td>
-                    <td><a href="{{route('editPageDetail',['pageDetail'=>$pageDetail->id])  }}" class="fa fa-edit"></a>
-                    <a href="#" onclick="deleteItem('{{ route('deletePageDetail',['pageDetail'=>$pageDetail->id])}}')" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('update',$pageDetail)
+                      <a href="{{route('editPageDetail',['pageDetail'=>$pageDetail->id])  }}" class="fa fa-edit"></a>
+                    @endcan
+                    @can('update',$pageDetail)
+                      <a href="#" onclick="deleteItem('{{ route('deletePageDetail',['pageDetail'=>$pageDetail->id])}}')" class="fa fa-trash" style="color: red"></a>
+                    @endcan
                     </td>
                 </tr>
                     @endforeach
@@ -63,8 +71,9 @@
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\PageDetail())
               <a id="add" href="{{route('createPageDetail')}}" class="btn btn-success" style="">Add new record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

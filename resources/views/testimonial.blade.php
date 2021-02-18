@@ -192,7 +192,7 @@
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>
@@ -202,7 +202,7 @@
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>
@@ -212,7 +212,7 @@
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>

@@ -11,7 +11,7 @@ class EnquiryController extends Controller
 {
     public function enquiryList(Request $request)
     {
-        // $this->authorize('view', new Enquiry());
+        $this->authorize('view', new Enquiry());
         $filter = $request->all();
         $query = Enquiry::query();
         $data['selectedCourse'] = empty($filter['course'])? NULL : $filter['course'];
