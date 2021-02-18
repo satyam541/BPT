@@ -3012,6 +3012,8 @@ input::-webkit-inner-spin-button {
   content: '';
   height: 50px;
   width: 50px;
+  top: 0;
+  left: 0;
   border-radius: 5px;
   transform: rotate(45deg);
   background: linear-gradient(#0064D8, #267BDD);
@@ -3236,7 +3238,6 @@ input::-webkit-inner-spin-button {
   .training .delegate {
     width: 47%;
     margin-top: 0;
-    align-self: flex-start;
   }
   .training .training-map {
     width: 100%;
@@ -3818,4 +3819,33 @@ input::-webkit-inner-spin-button {
   .buy {
     padding: 4rem 0rem;
   }
+}
+.offer-banner {
+  background-color: #1C2848;
+}
+.offer-banner .banner-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+.offer-banner .banner-container h1,
+.offer-banner .banner-container p {
+  color: #FFFFFF;
+}
+.offer-banner .banner-container p {
+  margin-top: 0.5rem;
+}
+.offer-banner .breadcrums {
+  display: flex;
+  margin-top: 1rem;
+}
+.offer-banner .breadcrums ul {
+  display: flex;
+}
+.offer-banner .breadcrums ul li {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.offer-banner .breadcrums ul li:first-child {
+  margin-right: 0.5rem;
 }

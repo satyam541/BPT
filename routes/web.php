@@ -35,3 +35,6 @@ Route::get('/onsite', function () {
 Route::get('/location', function () {
     return view('location');
 });
+Route::get('/offer', function () {
+    return view('offer');
+});
