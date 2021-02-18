@@ -43,11 +43,11 @@
                 <tr>
                   <th>Page Name</th>
                   <th>Section</th>
-                  <th>Sub Section</th>
-                  @can('update',new App\Models\PageDetail())
-                  <th>Actions</th>
-                  @endcan
-
+                  <th>
+                    @can('restore',new App\Models\PageDetail())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>

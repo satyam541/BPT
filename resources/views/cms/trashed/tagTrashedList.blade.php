@@ -44,7 +44,11 @@
                 <tr>
                   <th>Tag Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Tag())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,9 +57,15 @@
                     <tr>
                     <td>{{$trashedTag->name}}</td>
                     <td>{{$trashedTag->created_at}}</td>
-                    <td><a href="{{ route('restoreTag',['id'=>$trashedTag->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteTag',['id'=>$trashedTag->id]) }}" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    <td>
+                      @can('restore',$trashedTag)
+                      <a href="{{ route('restoreTag',['id'=>$trashedTag->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedTag)
+                      <a href="{{ route('forceDeleteTag',['id'=>$trashedTag->id]) }}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
+                   </td>
                 </tr>
                     @endforeach
                   

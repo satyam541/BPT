@@ -44,9 +44,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  @can('update',new App\Models\Tag())
-                  <th>Actions</th>
-                  @endcan
+                  <th>
+                    @can('restore',new App\Models\Tag())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>

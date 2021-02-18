@@ -42,10 +42,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  @can('update',new App\Models\Resource())
-                  <th>Actions</th>
-                  @endcan
-
+                  <th>
+                    @can('restore',new App\Models\Resource())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>

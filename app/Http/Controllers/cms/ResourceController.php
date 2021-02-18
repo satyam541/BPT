@@ -85,18 +85,21 @@ class ResourceController extends Controller
 
     public function trashList()
     {
+        $this->authorize('view', new Resource());
         $data['trashResources'] = Resource::onlyTrashed()->get();
         return view('cms.trashed.resourceTrashList',$data);
     }
 
     public function restore($id)
     {
+        $this->authorize('restore', new Resource());
         Resource::onlyTrashed()->find($id)->restore();
         return back()->with('success','Successfully Restored');
     }
 
     public function forceDelete($id)
     {
+        $this->authorize('forceDelete', new Resource());
         Resource::onlyTrashed()->find($id)->forceDelete();
         return back()->with('success','Permanently Deleted!');
     }
