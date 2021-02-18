@@ -51,24 +51,24 @@
             <div class="container">
                 <div class="doorstep-container">
                     <form class="form" id="contact-us">
-                        <div class="heading center-heading">
-                            <h2>Get In Touch <span>With Us Today</span> </h2>
+                        <div class="heading center-heading white-heading">
+                            <h2>Get In Touch With Us Today</h2>
                         </div>
                         <div class="form-input">
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/name.svg')}}" alt="name" class="black">
-                                <img src="{{url('img/contactus/name-red.svg')}}" alt="name-red" class="red"></span>
+                                <span><img src="{{url('img/onsite/name.svg')}}" alt="name" class="black">
+                                <img src="{{url('img/onsite/name-red.svg')}}" alt="name-red" class="red"></span>
                                 <input type="text" name="f-name" id="f-name" placeholder="First Name*"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
-                                <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                <span><img src="{{url('img/onsite/email.svg')}}" alt="email" class="black">
+                                <img src="{{url('img/onsite/email-red.svg')}}" alt="email-red" class="red"></span>
                                 <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
-                                <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                                <span><img src="{{url('img/onsite/phone-call.svg')}}" alt="phone-call" class="black">
+                                <img src="{{url('img/onsite/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
                                 <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                 <div class="phonecode-field">
                                     <select class="country-code"></select>
@@ -80,14 +80,14 @@
                                 </div>
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/house.svg')}}" alt="house" class="black">
-                                <img src="{{url('img/contactus/house-red.svg')}}" alt="house-red" class="red"></span>
+                                <span><img src="{{url('img/onsite/house.svg')}}" alt="house" class="black">
+                                <img src="{{url('img/onsite/house-red.svg')}}" alt="house-red" class="red"></span>
                                 <input type="text" name="address" id="adress" placeholder="Address"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/comment.svg')}}" alt="comment" class="black">
-                                <img src="{{url('img/contactus/comment-red.svg')}}" alt="comment-red" class="red"></span>
+                                <span><img src="{{url('img/onsite/comment.svg')}}" alt="comment" class="black">
+                                <img src="{{url('img/onsite/comment-red.svg')}}" alt="comment-red" class="red"></span>
                                 <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
                             </div>
                         </div>
@@ -118,7 +118,8 @@
                     </form>
                     <div class="info">
                         <div class="heading">
-                            <h2>Information at Your Fingertips</h2>
+                            <h2>Information at Your
+                                <span>Fingertips</span></h2>
                         </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum dicta numquam quibusdam alias sunt expedita voluptates optio, aperiam commodi quis, suscipit, quae ut et enim. Officia quaerat perferendis quis aliquam!</p>
                         <div class="info-list">

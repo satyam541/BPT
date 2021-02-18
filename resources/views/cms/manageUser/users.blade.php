@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Users</li>
                         </ol>
                     </div>
@@ -31,19 +31,19 @@
                                     <div class="form-group row">
                                         {{ Form::label('inputName', 'Name', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('name', $list['name'], $selectedName, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL']) }}
+                                            {{ Form::select('name', $list['name'], $selectedName, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         {{ Form::label('inputEmail', 'Email', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('email', $list['email'], $selectedEmail, ['id' => 'inputEmail', 'class' => 'form-control selectJS', 'placeholder' => 'ALL']) }}
+                                            {{ Form::select('email', $list['email'], $selectedEmail, ['id' => 'inputEmail', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         {{ Form::label('inputRole', 'Role', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('roleName', $list['role'], $selectedRole, ['id' => 'inputRole', 'class' => 'form-control selectJS', 'placeholder' => 'ALL']) }}
+                                            {{ Form::select('roleName', $list['role'], $selectedRole, ['id' => 'inputRole', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -107,7 +107,7 @@
                     </div>
                     <div class="card-footer clear-fix small-pagination">
                         {{-- @can('create', new App\Models\Permission()) --}}
-                        <a id="add" href="" class="btn btn-success" style="">Add new record</a>
+                        <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
                         {{-- @endcan --}}
 
                         {{ $users->links() }}
@@ -121,12 +121,4 @@
 @endsection
 
 @section('footer')
-    <script>
-        $(".selectJS").select2({
-            tags: true,
-            theme: "classic",
-            tokenSeparators: [',', ' ']
-        });
-
-    </script>
 @endsection

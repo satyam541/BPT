@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Topic</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('topicList')}}">Topic</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -37,7 +37,6 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <input type="hidden" name="categorySlug" value="{{ $categorySlug }}" id="categorySlug">
               {{Form::model($topic,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
 
@@ -48,7 +47,7 @@
 
                   <div class="form-group">
                     {{Form::label('category_id','Category')}}
-                    {{Form::select('category_id',$categories,null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('category_id',$categories,null,['tabindex'=>'-1','id'=>'categoryName','class'=>'form-control selectJS','onchange'=>'updateSlug()', 'placeholder'=>'Choose one'])}}
                     
                   </div>
                   <div class="form-group">
@@ -74,7 +73,7 @@
 
                   <div class="form-group">
                     {{Form::label('accreditation_id','Accreditation')}}
-                    {{ Form::select('accreditation_id',$list['accreditations'],null,['class'=>'form-control js-example-basic-multiple', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('accreditation_id',$list['accreditations'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -120,23 +119,25 @@
 
                  <script>
                     $(document).ready( function() {
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
         });
+      });
         function updateSlug()
 {
     var location = $("#name").val();
-    var slug = convertUrl(location);
+    var slug = '/'+convertUrl(location);  
+    var selectedCategory=$('#categoryName').select2("val");
+    var categories=<?php echo json_encode($categorySlugs); ?>;
+    if(selectedCategory in categories){
+      categoryslug=categories[selectedCategory];
+      slug=categoryslug+slug;
+    }
+    
     $("#reference").val(slug);
     
 }
-$(".js-example-basic-multiple").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-               
-            });
-      });
+
               
         </script>
             

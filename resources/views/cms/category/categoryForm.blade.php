@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('categoryList')}}">Category</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -117,13 +117,13 @@
 @section('footer')
     <script>
       $(document).ready( function() {
-        $("#name").on('focusout',function(){
+        $("#name").on('input',function(){
         updateSlug();
         });
         function updateSlug()
 {
     var location = $("#name").val();
-    var slug = convertUrl(location);
+    var slug = '/'+convertUrl(location);
     $("#reference").val(slug);
     
 }

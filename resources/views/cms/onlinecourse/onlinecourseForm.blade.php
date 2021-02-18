@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Online Course</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('onlinecourseList')}}">Online Course</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -47,7 +47,7 @@
 
                   <div class="form-group">
                     {{Form::label('course_id','Course')}}
-                    {{Form::select('course_id',$list['courses'],$onlinecourse->course_id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','id'=>'course-name'])}}
+                    {{Form::select('course_id',$list['courses'],$onlinecourse->course_id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>'updateSlug()','id'=>'courseName','tabindex'=>'-1'])}}
                     
                   </div>
                   <div class="form-group">
@@ -143,7 +143,7 @@
         
         
 $(document).ready(function(){
-    $("#name").on('focusout',function(){
+    $("#name").on('input',function(){
         updateSlug();
     });
    
@@ -155,8 +155,15 @@ $(document).ready(function(){
 
 function updateSlug()
 {
-    var course = $("#name").val();
-    var slug = convertUrl(course);
+    var venue = $("#name").val();
+    var slug = '/'+convertUrl(venue);  
+    var selectedCourse=$('#courseName').val();
+    var courses=<?php echo json_encode($list['courses']); ?>;
+    if(selectedCourse in courses){
+      courseslug=courses[selectedCourse];
+      slug=convertUrl(courseslug)+slug;
+    }
+    
     $("#reference").val(slug);
     
 }

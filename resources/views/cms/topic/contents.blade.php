@@ -10,8 +10,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">Content</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Topic Content</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.col -->
@@ -32,13 +32,13 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Topic',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('topic',$list['topics'],$selectedTopic,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('topic',$list['topics'],$selectedTopic,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL','tabindex'=>'-1'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL','tabindex'=>'-1'])}}
                         </div>
                     </div>
                 </div>

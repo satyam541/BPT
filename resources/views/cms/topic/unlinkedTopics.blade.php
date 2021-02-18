@@ -14,8 +14,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Topic</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('topicList')}}">Topic</a></li>
+            <li class="breadcrumb-item active">Unlinked</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,7 +35,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
                 <div class="card-title">
-                unlinked Topics
+                Unlinked Topics
                 </div>
             </div>
             <div class="card-body">

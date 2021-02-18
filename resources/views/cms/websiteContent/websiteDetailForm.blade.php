@@ -13,9 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Website Detail</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Website Detail Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,7 +41,7 @@
 
                     <div class="form-group">
                         {{Form::label('country','Country')}}
-                        {{Form::select('country_id',$countries,$websitedetail->country->country_code ,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        {{Form::select('country_id',$countries,$websitedetail->country->country_code ,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                     </div>
                       
@@ -58,12 +57,12 @@
 
                   <div class="form-group">
                     {{Form::label('contact_number','Contact Number')}}
-                    {{Form::text('contact_number',null,['class'=>'form-control'])}}
+                    {{Form::number('contact_number',null,['class'=>'form-control'])}}
                   </div>
                   
                   <div class="form-group">
                     {{Form::label('contact_email','Contact Email')}}
-                    {{Form::text('contact_email',null,['class'=>'form-control'])}}
+                    {{Form::email('contact_email',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -92,8 +91,8 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('logo','Logo')}}
-                    {{Form::file('logo',null,['class'=>'form-control'])}}
+                    {{Form::label('image','Logo')}}
+                    {{Form::file('image',null,['class'=>'form-control'])}}
                     <img src="{{ $websitedetail->getLogoPath() }}" class=" pad" style="max-width:50%"/>
                   </div>
 
@@ -109,7 +108,7 @@
 
                   <div class="form-group">
                     {{Form::label('opening_hours','Opening Hours')}}
-                    {{Form::text('opening_hours',null,['class'=>'form-control summernote'])}}
+                    {{Form::text('opening_hours',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">

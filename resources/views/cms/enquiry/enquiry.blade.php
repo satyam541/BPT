@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item active">Enquiry</li>
             </ol>
           </div>
@@ -32,19 +32,19 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('course',$list['courses'],$selectedCourse,['tabindex'=>'-1','id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['tabindex'=>'-1','id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputType','Type',['class'=>'col-sm-2 control-label'])}}
                             <div class="col-sm-4">
-                                {{ Form::select('type',$list['types'],$selectedType,['id'=>'inputType','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                                {{ Form::select('type',$list['types'],$selectedType,['tabindex'=>'-1','id'=>'inputType','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                             </div>
                         </div>
                 </div>
@@ -116,13 +116,4 @@
  @endsection
 
  @section('footer')
-<script>
-       $(".selectJS").select2({
-                tags: true,
-                tags: true,
-                theme: "classic",
-                width:'400px',
-                tokenSeparators: [',', ' ']
-});
- </script>
 @endsection

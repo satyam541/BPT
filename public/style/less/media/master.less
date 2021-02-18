@@ -94,9 +94,7 @@
             display: flex;
             margin-top: 0;
             margin-left: auto;
-            .btn-blue{
-            border-radius: 20px;
-            }
+            
         }
         li{
           display: flex;
@@ -129,7 +127,7 @@
        padding: 0;
        position: relative;
        z-index: 1;
-       align-items: initial;
+       align-items: inherit;
        
        &::before{
          content: '';
@@ -144,7 +142,7 @@
        }
       }
       .bpt-logo{
-          padding: 1rem;
+          padding: 0.8rem;
           align-items: center;
           display: flex;
           justify-content: center;
@@ -212,6 +210,10 @@
     //Start footer
     .footer{
       padding: @sectionPadding-md;
+      .terms{
+        width: 80%;
+        text-align: center;
+      }
       .footer-content{
           flex-direction: row;
           flex-wrap: wrap;
@@ -228,7 +230,16 @@
 @media @size-lg {
       //Start navbar //
       .navbar {
+        ul{
+          .links-li{
+            .link{
+              padding-bottom: 0;
+
+            }
+          }
+        }
           .top-bar{
+            
             li{
               &:first-child{
                 margin-right: 1.5rem;
@@ -345,7 +356,7 @@
       
       ul {
         .links-li {
-          margin-right: 2rem;
+          margin-right: 1rem;
   
         }
       }
@@ -384,10 +395,10 @@
           flex-direction: column;
           position: relative;
           width: 30%;
-          padding: 4rem 2rem;
-          // &:last-child{
-          //   padding-right: 2rem;
-          // }
+          padding: 3.5rem 2rem;
+          &:last-child{
+            padding-right: 2rem;
+          }
           &::before,&::after{
               content: '';
               background-image: url('../../../img/master/footer-circle.png');
@@ -407,7 +418,13 @@
               width: 100%;
               height: 100%;
               top: 0px;
+              right: 0 ;
           }
+          &::before {
+              right: 17px ;
+          }
+        
+      
        
           ul{
               width: 70%;

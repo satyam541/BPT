@@ -62,6 +62,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
+        $venue->reference=$inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -85,9 +86,10 @@ class VenueController extends Controller
         return view("cms.venue.venueForm",$data);
     }
 
-    public function update(Venue $venue,VenueRequest $request)
+    public function update($venue,VenueRequest $request)
     {
         // $this->authorize('update', $venue);
+        $venue=Venue::find($venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];
         $venue->location_id         = $inputs['location_id'];
@@ -100,6 +102,7 @@ class VenueController extends Controller
         $venue->description         = $inputs['description'];
         $venue->meta_title          = $inputs['meta_title'];
         $venue->meta_description    = $inputs['meta_description'];
+        $venue->reference=$inputs['reference'];
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -140,7 +143,7 @@ class VenueController extends Controller
    public function forceDeleteVenue($id)
    {
     // $this->authorize('forceDelete', new Venue());
-        $venue = Venue::onlyTrashed()->find($id)->forceDelete();
+    Venue::onlyTrashed()->find($id)->forceDelete();
  
        return back()->with('success','Permanently Deleted');
 

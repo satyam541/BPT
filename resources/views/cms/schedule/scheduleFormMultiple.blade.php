@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Schedule</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('scheduleList')}}">Schedule</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,12 +42,12 @@
                     
                   <div class="form-group">
                     {{Form::label('course_id','Course Name')}}
-                    {{ Form::select('course_id',$list['courses'],null,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateDuration()"])}}
+                    {{ Form::select('course_id',$list['courses'],null,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateDuration()",'tabindex'=>'-1'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{ Form::select('country_id',$list['countries'],null,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateLocations()"])}}
+                    {{ Form::select('country_id',$list['countries'],null,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateLocations()",'tabindex'=>'-1'])}}
                     
                   </div>
 
@@ -178,13 +178,9 @@ function updateDuration()
         });
     });
     $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                tokenSeparators: [',', ' ']
-               
-          
-      });
-              
+      width:'100%'
+      
+    });
         
 </script>
 @endsection

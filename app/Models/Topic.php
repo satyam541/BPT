@@ -86,12 +86,12 @@ class Topic extends Model
 
     public function courses()
     {
-        return $this->hasMany('App\Models\Course')->withTrashed();
+        return $this->hasMany('App\Models\Course');
     }
 
     public function content()
     {
-        return $this->hasMany('App\Models\TopicContent')->withTrashed();
+        return $this->hasMany('App\Models\TopicContent');
     }
 
     public function topicContent()
@@ -155,11 +155,11 @@ class Topic extends Model
     }    
     public function whatsIncluded()
     {
-        return $this->belongsToMany("App\Models\WhatsIncludedHeaders",'whats_included', 'module_id','header_id' )->where('module_type', 'topic')->withTrashed();
+        return $this->belongsToMany("App\Models\WhatsIncludedHeaders",'whats_included', 'module_id','header_id' )->where('module_type', 'topic');
     }
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','topic')->withTrashed();
+        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','topic');
     }
     public function whatsInclude()
     {

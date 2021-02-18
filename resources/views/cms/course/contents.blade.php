@@ -10,8 +10,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">Content</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active">CourseContent</a></li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.col -->
@@ -31,13 +31,13 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('course',$list['courses'],$selectedCourse,['id'=>'inputCourse','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                            {{ Form::select('course',$list['courses'],$selectedCourse,['tabindex'=>'-1','id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                         </div>
                     </div>
                     <div class="form-group row">
                         {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['id'=>'inputCountry','class'=>'form-control selectJS', 'title'=>'Choose one'])}}
+                            {{ Form::select('country',$list['countries'],$selectedCountry,['tabindex'=>'-1','id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                         </div>
                     </div>
                 </div>
@@ -79,11 +79,20 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="box-footer clear-fix small-pagination">
-                    {{-- @can('create',new App\Models\Permission) --}}
-                    <a id="add" href="" class="btn btn-success" style="">Add new record</a>
-                   {{-- @endcan --}}
-                {{ $contents->links() }}
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{-- @can('create',new App\Models\Permission) --}}
+                    <a id="add" href="{{route('createCourseContent',['course'=>$selectedCourse,'country'=>$selectedCountry])}}" class="btn btn-success" style="">Add new record</a>
+                    {{-- @endcan --}}
+                            </div>
+                 <div class="col-md-6">
+                     <div class="float-sm-right"> {{ $contents->links() }}</div>
+                 </div>
+                
+                </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -93,12 +102,5 @@
 @endsection
 
  @section('footer')
-<script>
-       $(".selectJS").select2({
-                tags: true,
-                theme: "classic",
-                width:'400px',
-                tokenSeparators: [',', ' ']
-});
- </script>
+
 @endsection

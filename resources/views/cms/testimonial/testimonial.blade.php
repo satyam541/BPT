@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Testimonial</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Testimonial</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,12 +34,13 @@
         <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                testimonial
+                Testimonial List
               </div>
             </div>
 
               <!-- /.card-header -->
-              <div class="card-body">      <table id="example1">
+              <div class="card-body">      
+                <table id="example1">
                 <thead>
                 <tr>
                   <th>S No</th>
@@ -57,16 +58,22 @@
                     <td>{{$testimonial->author}}</td>
                     <td>{{$testimonial->post_date}}</td>
                     <td>{{$testimonial->location}}</td>
+                    @can('update',$testimonial)
                     <td><a href="{{ route('editTestimonial',$testimonial->id) }}" class="fa fa-edit"></a>
+                      @endcan
+                      @can('delete',$testimonial)
                     <a href="#" onclick="deleteItem('{{ route('deleteTestimonial',$testimonial->id)}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                  @endcan  
+                  </td>
                 </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Testimonial())
               <a id="add" href="{{route('createTestimonial')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

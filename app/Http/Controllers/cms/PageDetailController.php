@@ -38,14 +38,14 @@ class PageDetailController extends Controller
 
     public function insert(PageDetailRequest $request)
     {
-        $this->authorize('create', new Pagedetail());
+        // $this->authorize('create', new Pagedetail());
         $inputs = $request->except(["_token",'image']);
         $pageDetail = pageDetail::firstOrNew(
             [
                 "page_name"     => $inputs['page_name'],
                 "section"       => $inputs['section'],
                 "sub_section"   => $inputs['sub_section'],
-                "image_alt"        => $inputs['image_alt']
+                // "image_alt"        => $inputs['image_alt']
             ],
             $inputs
         );
@@ -54,11 +54,11 @@ class PageDetailController extends Controller
         if(empty($pageDetail->created_at))
         {
             /* save image file */
-            if($request->hasFile('image')){
-                $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-                $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
-                $pageDetail->image = $imageName;
-            }
+            // if($request->hasFile('image')){
+            //     $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            //     $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
+            //     $pageDetail->image = $imageName;
+            // }
 
             $pageDetail->save();
             \Session::flash('success', 'Page Content Saved!'); 
@@ -73,7 +73,7 @@ class PageDetailController extends Controller
 
     public function edit(PageDetail $pageDetail)
     {
-        $this->authorize('update', $pageDetail);
+        // $this->authorize('update', $pageDetail);
         $data['pageDetail'] = $pageDetail;
         $data['submitRoute'] = array('updatePageDetail',$pageDetail->id);
         return view("cms.pageDetail.pageDetailForm",$data);
@@ -81,7 +81,7 @@ class PageDetailController extends Controller
 
     public function update(PageDetail $pageDetail,PageDetailRequest $request)
     {
-        $this->authorize('update', $pageDetail);
+        // $this->authorize('update', $pageDetail);
         $inputs = $request->except(["_token",'image']);
         $image_prefix = $inputs['page_name'];
          $img_alt  = $request->img_alt;
@@ -122,7 +122,7 @@ class PageDetailController extends Controller
 
     public function delete(PageDetail $pageDetail)
     {
-        $this->authorize('delete', $pageDetail);
+        // $this->authorize('delete', $pageDetail);
         $pageDetail->delete();
     }
 }

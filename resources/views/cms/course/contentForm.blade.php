@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Course Content</a></li>
-            <li class="breadcrumb-item"><a href="#">Form</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('courseContentList')}}">Course Content</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,13 +42,13 @@
 
                     <div class="form-group">
                         {{Form::label('course_id','Course Name')}}
-                        {{Form::select('course_id',$list['courses'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        {{Form::select('course_id',$list['courses'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                     </div>
                       
                   <div class="form-group">
                     {{Form::label('country_id','Country')}}
-                    {{ Form::select('country_id',$list['countries'],null,['class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    {{ Form::select('country_id',$list['countries'],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                   </div>
 
                   <div class="form-group">
@@ -144,5 +144,9 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+    
+@endsection
+
+@section('footer')
     
 @endsection
