@@ -47,7 +47,7 @@
                                 <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
                                 <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
                                 <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                                <div class="phonecode-field">
+                                <div class="phonecode-field field-black">
                                     <select class="country-code"></select>
                                     <span class="prefix"></span>
                                     <input type="number" class="telephone" placeholder="Phone Number*">
