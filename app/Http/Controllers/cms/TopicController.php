@@ -280,13 +280,13 @@ class TopicController extends Controller
         $questions = $request->get('question');
         $answers   = $request->get('answer');
 
-        foreach($questions as $i)
+        foreach($questions as $i=>$q)
         {
             // save faq if id is not 
             if(empty($faq_id[$i]))
             {
                 $module->faqs()->create([
-                    'question' => $questions[$i],
+                    'question' => $q,
                     'answer'    => $answers[$i],
                     'display_order' => $module->faqs()->count()+1
                 ]);
@@ -298,7 +298,7 @@ class TopicController extends Controller
                 $faq = Faq::find($faq_id[$i]);
                 if(!empty($faq))
                 {
-                    $faq->question = $questions[$i];
+                    $faq->question = $q;
                     $faq->answer   = $answers[$i];
                     $faq->save();
                 }
