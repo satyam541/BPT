@@ -20,4 +20,49 @@
 </section>
 <!-- End Banner Section -->
 
+<!-- Start bundle section -->
+<section class="flex-container bundle">
+    <div class="container">
+        <div class="bundle-container">
+            <div class="range">
+                <div class="heading">
+                    <h2>We Offer a Wide Range <span>of Bundles</span></h2>
+                </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                </p>
+                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="bundle-list">
+                <div class="project-bundle">
+                    <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
+                    <h3>Our Project Management Bundles</h3>
+                </div>
+                <div class="project-bundle">
+                    <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
+                    <h3>Our Business Analysis Bundles</h3>
+                </div>
+                <div class="project-bundle">
+                    <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
+                    <h3>Our ITIL Bundles</h3>
+                </div>
+                <div class="project-bundle">
+                    <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
+                    <h3>Our IT Security Bundles</h3>
+                </div>
+                </div>
+                <div class="buttons">
+                    <a class="btn-blue"><img src="{{url('img/offer/enquire.svg')}}" alt="enquire">Need Help</a>
+                </div>
+                </div>
+                <div class="top-bundles">
+                    <div class="heading">
+                        <h2>Sale of Top bundles</h2>
+                    </div>
+                    <div class="bundles-info">
+                    <img src="{{url('img/offer/top-bundles.svg')}}" alt="top-bundles">
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
