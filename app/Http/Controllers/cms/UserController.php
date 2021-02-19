@@ -123,7 +123,7 @@ class UserController extends Controller
         {
             $user->resetPassword();
         }
-        return back()->with('success', 'User Updated Successfully!');
+        return redirect()->route('userList')->with('success', 'User Updated Successfully!');
     }
 
     public function roleList()
@@ -152,7 +152,8 @@ class UserController extends Controller
 
         $done = Role::create(['name'=> $roleName,'description'=>$description]);
         
-        return back('success', 'New role created successfully.!');
+        return redirect()->route('roleList')->with('success', 'Role Updated Successfully!');
+
     }
 
     public function editRole(Role $role)
@@ -171,7 +172,7 @@ class UserController extends Controller
         $role->description  = $inputs['description'];
         $role->save();
         
-        return back()->with('success', 'Role Updated Successfully!');
+        return redirect()->route('roleList')->with('success', 'Role Updated Successfully!');
     }
 
     public function assignRoles(Request $request)
@@ -240,7 +241,7 @@ class UserController extends Controller
             }
         }
         
-        return back()->with('success', 'New Permission Created Successfully.!');
+        return redirect()->route('permissionList')->with('success', 'New Permission Created Successfully.!');
     }
 
     public function permissionList(Request $request)
@@ -297,7 +298,7 @@ class UserController extends Controller
         $permission->description = $inputs['description'];
         $permission->save();
         
-        return back()->with('success', 'Permission Updated Successfully!');
+        return redirect()->route('permissionList')->with('success', 'Permission Updated Successfully!');
     }
 
     public function deleteUser(Request $request,User $user)

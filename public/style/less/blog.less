@@ -101,6 +101,121 @@
     }
     // End popular-blog Section //
 
+    // Start our-blogs section //
+    .our-blog{
+    padding: @sectionPadding;
+        .para{
+            text-align: center;
+        }
+
+        .our-list{
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            &::before{
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 0;               
+                top: 25px;
+                width: 5px;
+                height: 100%;
+                border-left: 2px solid #C0C0C0;
+            }
+
+            .buttons{
+                justify-content: flex-start;
+            }
+        }
+
+        .our-item{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            margin-bottom: 2rem;
+            height: 475px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+           
+        }
+        .our-circle{
+            width: 15px;
+            height: 15px;
+            background-color: @darkblueColor;
+            border: 3px solid @whiteColor;
+             box-shadow: 0 0 0 2px #c0c0c0;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+    top: 17px;
+        }
+        .our-content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            box-shadow: @shadowLight;
+            border-radius: 10px;
+            width: 220px;
+            position: absolute;
+            bottom: 0;
+            .our-image{
+                width: 100%;
+                height: 100%;
+            }
+
+            .our-info{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 0.7rem;
+                margin-bottom: 0.7rem;
+            }
+            .name{
+                display: flex;
+                font-size: 13px;
+                align-items: center;
+                font-weight: 800;
+                img{
+                    margin-right: 0.3rem;
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+            .designation{
+                display: flex;
+                font-size: 12px;
+                font-weight: 800;
+                margin-left: 1.2rem;
+
+            }
+            h3{
+                margin-bottom: 0.5rem;
+            }
+            p{
+                font-size: 13px;
+            }
+        }
+
+        .date{
+    padding: 0.5rem;
+    width: 110px;
+    border: 1px solid #C0C0C0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50px;
+    top: 10px;
+
+        }
+
+    }
+    // End our-blogs section //
+
     // Start ideal section //
     .ideal{
         padding: @sectionPadding;

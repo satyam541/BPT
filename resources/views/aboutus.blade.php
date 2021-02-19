@@ -12,15 +12,14 @@
                 <p>As a leading training provider in the industry, our main objectives are to deliver the highest
                     standard of training to you.As a leading training provider in the industry, our main objectives are
                     to deliver the highest standard of training to you.</p>
-                <div class="breadcrums">
                     <div class="breadcrums">
                         <ul>
                             <li><a href="">Home</a></li>
-                            <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                            <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white">
+                            <img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow"class="black"></li>
                             <li><a href="">About-Us</a></li>
                         </ul>
                     </div>
-                </div>
             </div>
         </div>
     </div>
