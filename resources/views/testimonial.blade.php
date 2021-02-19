@@ -1,6 +1,5 @@
 @extends("layouts.master")
 @section("content")
-
 <!-- Start Banner Section -->
 <section class="flex-container banner testimonial-banner">
     <div class="container">
