@@ -70,7 +70,7 @@ class SettingController extends Controller
         }
        
         $websitedetail->save();
-        return back()->with('success','Successfully Added');
+        return redirect()->route('websiteDetailList')->with('success','Successfully Added');
 
     }
     public function  editWebsiteDetail(WebsiteDetail $websitedetail)
@@ -121,7 +121,8 @@ class SettingController extends Controller
             $websitedetail->image = $imageName;
         }
         $websitedetail->save();
+        return redirect()->route('websiteDetailList')->with('success','Successfully Added');
       
-        return back()->with('success','Successfully Updated');
+        // return back()->with('success','Successfully Updated');
     }
 }

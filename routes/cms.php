@@ -104,7 +104,6 @@ Route::get('/unlinkedTopic','TopicController@unlinkedTopicList')->name('unlinkTo
 Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCategoryRoute');
 
 Route::get('/course','CourseController@list')->name('courseList');
-Route::get('/couse/addon','CourseController@addonList')->name('coursesAddonList');
 Route::get('/course/insert','CourseController@create')->name('createCourse');
 Route::post('/course/insert','CourseController@insert')->name('insertCourse');
 Route::get('/course/update/{course}','CourseController@edit')->name('editCourse');
@@ -161,7 +160,7 @@ Route::post('/whatsincluded/insert','WhatsIncludedController@insert')->name('ins
 Route::get('/whatsincluded/update/{whatsincluded}','WhatsIncludedController@edit')->name('editWhatsIncluded');
 Route::post('/whatsincluded/update','WhatsIncludedController@update')->name('updateWhatsIncluded');
 Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@delete')->name('deleteWhatsIncluded');
-
+// Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
 Route::post('/upload-video','OnlineCourseController@uploadVideo')->name('uploadVideo');
 Route::get('/onlinecourse/insert','OnlineCourseController@create')->name('createOnlineCourse');
@@ -170,6 +169,13 @@ Route::get('/onlinecourse/update/{course}','OnlineCourseController@edit')->name(
 Route::post('/onlinecourse/update/{course}','OnlineCourseController@update')->name('updateOnlineCourse');
 Route::post('/onlinecourse/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
 
+// Addon Routes
+Route::get('/course/addon','AddonController@index')->name('AddonList');
+Route::get('courseaddon/create','AddonController@create')->name('AddonCreate');
+Route::post('courseaddon/store','AddonController@store')->name('AddonStore');
+Route::get('courseaddon/edit/{id}','AddonController@edit')->name('AddonEdit');
+Route::post('courseaddon/update','AddonController@update')->name('AddonUpdate');
+Route::post('/courseaddon/delete/{courseAddon}','AddonController@delete')->name('AddonDelete');
 
 Route::get('/course/get/detail',function()
 {

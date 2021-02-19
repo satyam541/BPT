@@ -2781,6 +2781,7 @@ input::-webkit-inner-spin-button {
     background-size: 100% 50%;
     background-repeat: no-repeat;
     background-color: transparent;
+    padding-top: 1rem;
   }
   .difference .difference-content {
     width: 70%;
@@ -2788,7 +2789,7 @@ input::-webkit-inner-spin-button {
   }
   .difference .difference-content p {
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     color: #FFFFFF;
   }
   .difference .difference-content .heading {
@@ -2884,7 +2885,7 @@ input::-webkit-inner-spin-button {
   .difference {
     padding: 4rem 0rem;
     background-size: 100% 53%;
-    padding-top: 2.4rem;
+    padding-top: 3rem;
   }
   .difference .difference-list {
     margin-top: 5rem;
@@ -4685,6 +4686,18 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+  .our-blog {
+    padding: 3rem 2rem;
+  }
+  .our-blog .our-list::before {
+    left: 50%;
+  }
+  .our-blog .our-circle {
+    left: 49%;
+  }
+  .our-blog .date {
+    left: 42%;
   }
   .ideal {
     padding: 3rem 2rem;

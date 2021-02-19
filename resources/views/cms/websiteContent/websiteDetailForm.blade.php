@@ -113,21 +113,21 @@
 
                   <div class="form-group">
                     {{Form::label('opening_days','Opening Days')}}
-                    {{Form::textarea('opening_days',null,['class'=>'form-control summernote '])}}
+                    {{Form::text('opening_days',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('twitter','Twitter')}}
-                    {{Form::textarea('twitter',null,['class'=>'form-control summernote'])}}
+                    {{Form::text('twitter',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('facebook','Facebook')}}
-                    {{Form::textarea('facebook',null,['class'=>'form-control summernote'])}}
+                    {{Form::text('facebook',null,['class'=>'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{Form::label('linkedin','Linkedin')}}
-                    {{Form::textarea('linkedin',null,['class'=>'form-control summernote'])}}
+                    {{Form::text('linkedin',null,['class'=>'form-control'])}}
                   </div>
                   
                 </div>

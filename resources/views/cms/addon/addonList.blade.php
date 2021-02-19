@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Roles</h1>
+          <h1 class="m-0 text-dark">Addon List</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Roles</li>
+            <li class="breadcrumb-item active">Addon</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -34,43 +34,47 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Roles
+                CourseAddon List
               </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">
                 <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  @can('update',new App\Models\Role())
-                  <th>Actions</th>
-                  @endcan
-                </tr>
-                </thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>
+                      {{-- @can('update',new App\Models\CourseElearning()) --}}
+                      Actions
+                      {{-- @endcan --}}
+                    </th>
+                  </tr>
+                  </thead>
                 <tbody>
                 
-                    @foreach ($roles as $role)
+                    @foreach ($courseAddons as $courseAddon)
                     <tr>
-                    <td>{{$role->name}}</td>
-                    <td>{{$role->description}}</td>
-                    <td>
-                      @can('update',$role)
-                      <a href="{{ route('editRole',['role'=>$role->id]) }}" class="fa fa-edit"></a>
-                      @endcan
-                      @can('delete',$role)
-                      <a href="#"  onclick="deleteItem('{{route('deleteRole',[$role->id]) }}')" ><i class="fa fa-trash text-red"></i></a>
-                      @endcan
-                    </td>
+                      <td>{{$courseAddon->name}}</td>
+                      <td>{{$courseAddon->addon_type}}</td>
+                      
+                      
+                      <td class=" text-center">
+                        {{-- @can('update',$courseAddon) --}}
+                        <a href="{{Route('AddonEdit',['id'=>$courseAddon->id])}}" class="fa fa-edit"></a>
+                        {{-- @endcan --}}
+                        {{-- @can('delete',$courseAddon) --}}
+                        <a href="#" onclick="deleteItem('{{ route('AddonDelete',[$courseAddon->id])}}')"><i class="fa fa-trash" style="color: red"></i></a>
+                        {{-- @endcan --}}
+                      </td>
                     </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
-              @can('create',Auth::user(),App\Models\Role::class)
-              <a id="add" href="{{route('createRole')}}" class="btn btn-success" style="">Add new record</a>
+              @can('create',new App\Models\CourseElearning())
+              <a id="add" href="{{ route('AddonCreate')}}" class="btn btn-success" style="">Add new Record</a>
               @endcan
             </div>
             <!-- /.card-body -->
@@ -94,19 +98,10 @@
             $('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
-                        { "name": "Description" },
+                        { "name": "Type" },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
-
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
         });
-        
     </script>
 @endsection
