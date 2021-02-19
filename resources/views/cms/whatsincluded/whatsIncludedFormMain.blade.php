@@ -48,7 +48,7 @@
 
                   <div class="form-group">
                     {{Form::label('icon','Icon')}}
-                    {{Form::file('icon',['class'=>'form-control','id'=>'icon'])}}
+                    {{Form::file('icon',['id'=>'icon'])}}
                     @if(!empty($whatsincluded->icon))
                         <img src="{{url('images/'.$whatsincluded->icon)}}" width="150px"/>
                     @endif

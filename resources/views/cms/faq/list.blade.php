@@ -8,12 +8,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Popular</h1>
+          <h1 class="m-0 text-dark">FAQ's</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Popular</li>
+            <li class="breadcrumb-item"><a href="{{route($type.'List')}}  ">{{ucfirst($type)}}</a></li>
+            <li class="breadcrumb-item active">FAQ's</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -27,49 +28,52 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <!-- left column -->
-        @foreach($popularItems as $type => $items)
-        <div class="col-xs-6 col-md-6">
+        <div class="col-xs-12 col-md-12 ">
             <div class="card card-primary ">
                 <div class="card-header">
-                    <div class="card-title">{{ ucfirst($type) }}</div>
+                    <div class="card-title">
+                        {{$data->name}}
+                    </div>
                 </div>
                 <div class="card-body">
                     <span class="message" id="success_type"></span>
                     <span class="message" id="error_type"></span>
-                    <table class="table table-hover" data-module="{{ $type }}">
+                    <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Move</th>
-                                    <th>Name</th>
-                                    <th>Del</th>
+                                    <th>Question</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>        
                             </thead>
-                            <tbody class="sortable">
-                                @foreach($items as $item)
-                                    @if(empty($item->module))
+                            <tbody class="sortable" data-module="{{ $type }}">
+                                @foreach($data->faqs as $faq)
+                                {{-- {{dd($faq)}} --}}
+                                    @if(empty($faq))
                                     @continue
                                     @endif
-                                <tr id="id_{{$item['id']}}">
+                                <tr id="id_{{$faq['id']}}">
                                     <td class="sortable-handle">
                                         <span class="fa fa-sort"></span>
-                                        @if(!empty($item->module->category))
-                                        <span class="fa fa-tag" style="color:{{$item->module->category->color_code}}"></span>
+                                        @if(!empty($faq->display_order))
+                                        <span class="fa fa-tag" style="color:black"></span>
                                         @endif
                                     </td>
-                                    <td>{{$item->module->name}}</td>
-                                    <td><a href="#" onclick="deleteItem('{{ route('deletePopular',['popular'=>$item->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
+                                    <td>{!!$faq->question!!}</td>
+                                    <td><a href="{{route('editFaq',['faq'=>$faq->id])}}"><i class="fa fa-edit text-red"></i></a></td>
+                                    <td><a href="#" onclick="deleteItem('{{ route('deleteFaq',['faq'=>$faq->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
                                 @endforeach
                                 
                             </tbody>
                         </table>
                 </div>
-                <div class="box-footer clear-fix small-pagination">
-                    
+                <div class="card-footer">
+                    <a id="add" href="{{route('createFaq', ['type' => $type, 'id'=>$data->id])}}" class="btn btn-success" style="">Add new Record</a>
                 </div>
             </div>
         </div>
-        @endforeach
         <!-- /.col -->
       </div>
       <!-- /.row -->
@@ -86,10 +90,11 @@
      var changePosition = function(requestData){
         success = $('#success_type');
         error = $("#error_type");
-        success.find('span').html(requestData.module+" sort saved !");
-        error.find('span').html(requestData.module+" sort fail !");
+        console.log(requestData);
+        success.find('.message').html(requestData.module+" sort saved !");
+        error.find('.message').html(requestData.module+" sort fail !");
             $.ajax({
-                url: '{{ route("sortPopular") }}',
+                url: '{{ route("sortFaq") }}',
                 type: 'POST',
                 data: requestData.data,
                 headers: { 'X-CSRF-TOKEN': $("meta[name='token']").attr('content') },

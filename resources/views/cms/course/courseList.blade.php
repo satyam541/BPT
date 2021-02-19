@@ -52,6 +52,11 @@
                   </th>
                   <th>
                     @can('update',new App\Models\Course())
+                    FAQ's
+                    @endcan
+                  </th>
+                  <th>
+                    @can('update',new App\Models\Course())
                     Bulletpoints
                     @endcan
                   </th>
@@ -72,26 +77,32 @@
                     @foreach ($courses as $course)
                     <tr>
                       <td>{{$course->name}}</td>
-                      <td>{{$course->topic->name}}</td>
-                      <td>
+                      <td>{{$course->topic->name ?? null}}</td>
+                      <td class=" text-center">
                         @can('update',$course)
                         <a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a>
                         @endcan
                       </td>
+
+                      <td class=" text-center">
+                        @can('update',$course)
+                        <a href="{{ route('faqList',['type'=>'course','id'=>$course->id]) }}" class="far fa-question-circle"></a>
+                        @endcan
+                      </td>
                       
-                      <td> 
+                      <td class=" text-center"> 
                         @can('update',$course)
                         <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a>
                         @endcan
                       </td>
                       
-                      <td> 
+                      <td class=" text-center"> 
                         @can('update',$course)
-                        <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a>
+                        <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fas fa-puzzle-piece"></a>
                         @endcan
                       </td>
                       
-                      <td>
+                      <td class=" text-center">
                         @can('update',$course)
                         <a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
                         @endcan
@@ -130,6 +141,7 @@
                         { "name": "Name" },
                         { "name": "Topic" },
                         { "name": "Content", "sorting":false, searching:false },
+                        { "name": "Faq", "sorting":false, searching:false },
                         { "name": "Bulletpoints", "sorting":false, searching:false  },
                         { "name": "WhatsIncluded", "sorting":false, searching:false  },
                         { "name": "Actions", "sorting":false, searching:false  }

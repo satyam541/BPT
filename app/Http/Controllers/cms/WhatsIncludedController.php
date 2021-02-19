@@ -67,4 +67,21 @@ class WhatsIncludedController extends Controller
         }
         $whatsincluded->delete();
     }
+    public function whatsIncludedTrashList()
+    {
+        $data['trashedWhatsIncluded'] = whatsIncludedHeaders::onlyTrashed()->get();
+    
+        return  view('cms.trashed.whatsIncludedTrashedList',$data);
+        
+    }
+    public function restoreWhatsInclude($id)
+    {
+        whatsIncludedHeaders::onlyTrashed()->find($id)->restore();
+        return back()->with('success','Successfully Restored');
+    }
+    public function forceDeleteWhatsInclude($id)
+    {
+        whatsIncludedHeaders::onlyTrashed()->find($id)->forceDelete();
+        return back()->with('success','Permanently Deleted!');
+    }
 }

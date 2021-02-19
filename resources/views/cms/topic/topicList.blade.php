@@ -46,6 +46,7 @@
                   <th>Name</th>
                   <th>Category</th>
                   <th>Content</th>
+                  <th>FAQ's</th>
                   <th>Bulletpoints</th>
                   <th>Whatsincluded</th>
                   <th>Actions</th>
@@ -56,23 +57,29 @@
                     @foreach ($topics as $topic)
                     <tr>
                       <td>{{$topic->name}}</td>
-                      <td>{{$topic->category->name ?? '' }}</td>
-                      <td>
+                      <td>{{$topic->category->name}}</td>
+                      <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>
                         @endcan
                       </td>
-                      <td> 
+                      <td class=" text-center">
+                        @can('update',$topic)
+                        <a href="{{ route('faqList',['type'=>'topic','id'=>$topic->id]) }}" class="far fa-question-circle"></a>
+                        @endcan
+                      </td>
+                      
+                      <td class=" text-center"> 
                         @can('update',$topic)
                         <a href="{{route('topicBulletPointList',['module'=>$topic->id])}}" class=" fa fa-bullseye"></a>
                         @endcan
                       </td>
-                      <td> 
+                      <td class=" text-center"> 
                         @can('update',$topic)
                         <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a>
                         @endcan
                       </td>
-                      <td>
+                      <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('editTopic',['topic'=>$topic->id]) }}" class="fa fa-edit"></a>
                         @endcan
@@ -113,6 +120,7 @@
                         { "name": "Name" },
                         { "name": "Category" },
                         { "name": "Content", "sorting":false, searching:false },
+                        { "name": "Faq", "sorting":false, searching:false },
                         { "name": "Bulletpoints", "sorting":false, searching:false  },
                         { "name": "Whatsincluded", "sorting":false, searching:false  },
                         { "name": "Actions", "sorting":false, searching:false  }
