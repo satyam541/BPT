@@ -97,7 +97,7 @@ class UserController extends Controller
             'password'  => Hash::make($data['password']),
         ]);
         
-        return back()->with('success', 'User Created!');
+        return redirect()->route('userList')->with('success', 'User Created!');
     }
 
     public function editUser(User $user)
