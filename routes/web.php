@@ -44,3 +44,6 @@ Route::get('/offer', function () {
 Route::get('/location-detail', function () {
     return view('location-detail');
 });
+Route::get('/certification', function () {
+    return view('certification');
+});

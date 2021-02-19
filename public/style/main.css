@@ -3996,6 +3996,7 @@ input::-webkit-inner-spin-button {
 .find .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .find .content p,
 .find .content h2 {
@@ -4053,6 +4054,8 @@ input::-webkit-inner-spin-button {
   background-position: center;
   padding: 1.3rem;
   position: relative;
+  width: 272px;
+  align-self: center;
 }
 .popular .popular-content .img {
   display: flex;
