@@ -183,6 +183,12 @@ display: none;
         .breadcrums{
           li{
             color: @textColor;
+            .white{
+              display: none;
+            }
+            .black{
+              display: flex;
+            }
           }
       }
         
@@ -343,8 +349,8 @@ background: linear-gradient(#00326C 61% , @whiteColor 61%);
     padding-right: 0;
     .clients-container {
     box-shadow: none;
-background-color: @bgColor;
-justify-content: space-around;
+    background-color: @bgColor;
+    justify-content: space-around;
     }
     }
     // End Clients Section

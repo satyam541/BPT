@@ -70,22 +70,90 @@
 <section class="flex-container our-blog">
 <div class="container">
     <div class="our-container">
-        <div class="heading">
+        <div class="heading center-heading">
             <h2>Our <span>Blogs</span></h2>
-            <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
         </div>
+        <p class="para">Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
         <div class="our-list">
-        <div class="dates-list">
-            <span class="dates">14 July, 2017</span>
-            <span class="dates">14 July, 2017</span>
-            <span class="dates">14 July, 2017</span>
-            <span class="dates">14 July, 2017</span>
-            <span class="dates">Load More</span>
+
+        <div class="our-item">
+         <span class="our-circle"></span>
+           <p class="date">14 July, 2017</p>
+           <div class="our-content">
+               <img src="{{url('img/blog/our-image.png')}}" alt="our-image" class="our-image">
+               <div class="our-info">
+                   <p class="name"><img src="{{url('img/blog/author.svg')}}" alt="author"> by - David Baker</p>
+                   <p class="designation">Web Development</p>
+               </div>
+               <h3>About Best Practice Training</h3>
+               <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
+               <div class="buttons">
+                   <a class="btn-blue">
+                       Read More
+                   </a>
+               </div>
+           </div>
         </div>
         <div class="our-item">
-            <img src="" alt="">
+         <span class="our-circle"></span>
+           <p class="date">14 July, 2017</p>
+           <div class="our-content">
+               <img src="{{url('img/blog/our-image.png')}}" alt="our-image" class="our-image">
+               <div class="our-info">
+                   <p class="name"><img src="{{url('img/blog/author.svg')}}" alt="author"> by - David Baker</p>
+                   <p class="designation">Web Development</p>
+               </div>
+               <h3>About Best Practice Training</h3>
+               <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
+               <div class="buttons">
+                   <a class="btn-blue">
+                       Read More
+                   </a>
+               </div>
+           </div>
         </div>
+        <div class="our-item">
+         <span class="our-circle"></span>
+           <p class="date">14 July, 2017</p>
+           <div class="our-content">
+               <img src="{{url('img/blog/our-image.png')}}" alt="our-image" class="our-image">
+               <div class="our-info">
+                   <p class="name"><img src="{{url('img/blog/author.svg')}}" alt="author"> by - David Baker</p>
+                   <p class="designation">Web Development</p>
+               </div>
+               <h3>About Best Practice Training</h3>
+               <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
+               <div class="buttons">
+                   <a class="btn-blue">
+                       Read More
+                   </a>
+               </div>
+           </div>
         </div>
+        <div class="our-item">
+         <span class="our-circle"></span>
+           <p class="date">14 July, 2017</p>
+           <div class="our-content">
+               <img src="{{url('img/blog/our-image.png')}}" alt="our-image" class="our-image">
+               <div class="our-info">
+                   <p class="name"><img src="{{url('img/blog/author.svg')}}" alt="author"> by - David Baker</p>
+                   <p class="designation">Web Development</p>
+               </div>
+               <h3>About Best Practice Training</h3>
+               <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
+               <div class="buttons">
+                   <a class="btn-blue">
+                       Read More
+                   </a>
+               </div>
+           </div>
+           
+        </div>
+        <div class="buttons">
+               <a class="btn-blue">
+                   Load More
+               </a>
+           </div>
     </div>
 </div>
 </section>
