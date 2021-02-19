@@ -298,7 +298,9 @@ class CourseController extends Controller
     return  view('cms.trashed.courseTrashedList',$data);
        
    }
-
+   public function addonList(){
+       
+   }
    public function restoreCourse($id)
    {
         $course= Course::onlyTrashed()->find($id);

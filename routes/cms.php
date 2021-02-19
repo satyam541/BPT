@@ -99,6 +99,7 @@ Route::get('/unlinkedTopic','TopicController@unlinkedTopicList')->name('unlinkTo
 Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCategoryRoute');
 
 Route::get('/course','CourseController@list')->name('courseList');
+Route::get('/couse/addon','CourseController@addonList')->name('coursesAddonList');
 Route::get('/course/insert','CourseController@create')->name('createCourse');
 Route::post('/course/insert','CourseController@insert')->name('insertCourse');
 Route::get('/course/update/{course}','CourseController@edit')->name('editCourse');
