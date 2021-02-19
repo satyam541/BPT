@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Faq extends Model
 {
-    //
+    use SoftDeletes;
     protected $table = 'frequently_asked_question';
     protected $guarded = array('id');
 

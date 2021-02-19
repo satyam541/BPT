@@ -1,0 +1,84 @@
+@media @size-md{
+    // Start Location-Main Section
+.location-main {
+    padding: @sectionPadding-md;
+    .location-main-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .location-content {
+        width: 40%;
+    }
+    .location-contact {
+        width: 55%;
+        .content {
+            padding: 1rem;
+            width: 80%;
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+    }
+    .contact-top {
+        flex-direction: row;
+        justify-content: center;
+        .contact-info {
+            width: 50%;
+        }
+    }
+    .city {
+        width: 50%;
+        height: 297px;
+        z-index: 0;
+    }
+    .address {
+        z-index: 1;
+        transform: translate(-55px, 0px);
+    }
+}
+// End Location-Main Section
+}
+
+@media @size-lg{
+    // Start Location-Main Section
+    .location-main {
+        .location-content {
+            width: 45%;
+        }
+        .location-contact {
+            width: 50%;
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                bottom: -41px;
+                right: -17px;
+                background-image: url(../img/location-detail/dotted-box.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 70px;
+                width: 70px;
+            }
+        }
+    }
+    // End Location-Main Section
+}
+
+@media @size-xl{
+    // Start Location-Main Section
+    .location-main {
+        padding: @sectionPadding-xl;
+        .location-content {
+            width: 50%;
+        }
+        .location-contact {
+            width: 40%;
+            &::before {
+                bottom: -44px;
+                right: -34px;
+            }
+        }
+    }
+    // End Location-Main Section
+}

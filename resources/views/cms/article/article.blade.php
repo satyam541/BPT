@@ -44,7 +44,11 @@
                 <tr>
                   <th>Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Article())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,16 +57,23 @@
                     <tr>
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
-                    <td><a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
+                    <td>
+                    @can('update',$item)
+                    <a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
+                    @endcan
+                    @can('delete',$item)
                     <a href="#" onclick="deleteItem('{{ route('deleteArticle',['article'=>$item->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    @endcan  
+                  </td>
                 </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Article())
               <a id="add" href="{{route('createNews')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

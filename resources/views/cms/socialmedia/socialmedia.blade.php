@@ -43,7 +43,12 @@
                 <tr>
                   <th>Website</th>
                   <th>Link</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\socialmedia())
+                    Actions
+                    @endcan
+                </th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -52,8 +57,13 @@
                     <tr>
                     <td>{{$socialmedia->website}}</td>
                     <td>{{$socialmedia->link}}</td>
-                    <td><a href="{{ route('editsocialmedia',['id'=>$socialmedia->id]) }}" class="fa fa-edit"></a>
-                    <a href=""onclick="deleteItem('{{ route('deletesocialmedia',['id'=>$socialmedia->id])}}')" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('update',$socialmedia)
+                      <a href="{{ route('editsocialmedia',['id'=>$socialmedia->id]) }}" class="fa fa-edit"></a>
+                      @endcan
+                      @can('delete',$socialmedia)
+                      <a href=""onclick="deleteItem('{{ route('deletesocialmedia',['id'=>$socialmedia->id])}}')" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach
@@ -61,7 +71,9 @@
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\socialmedia())
               <a id="add" href="{{ route('createsocialmedia')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

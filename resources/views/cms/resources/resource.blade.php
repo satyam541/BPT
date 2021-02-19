@@ -42,7 +42,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Resource())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>

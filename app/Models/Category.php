@@ -100,10 +100,10 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Bulletpoint','module_id','id');
     }
-    // public function whatIncludes()
-    // {
-    //     return $this->hasMany('App\Models\WhatsIncluded','module_id','id');
-    // }
+    public function whatIncludes()
+    {
+        return $this->hasMany('App\Models\WhatsIncluded','module_id','id');
+    }
 
     public function isPopular()
     {
@@ -137,14 +137,16 @@ class Category extends Model
             $this->popular->delete();
         }
         $this->Bulletpoint()->delete();
-        // $this->whatIncludes()->delete();
+        $this->faqs()->delete();
+        $this->whatIncludes()->delete();
         return parent::delete();
     }
 
     public function restore()
     {
         $this->Bulletpoint()->restore();
-        // $this->whatIncludes()->restore();
+        $this->faqs()->restore();
+        $this->whatIncludes()->restore();
         return parent::restore();
     }
 

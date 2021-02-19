@@ -60,12 +60,12 @@
                                             <th>Module</th>
                                             <th>Access</th>
                                             <th>Description</th>
-                                            {{-- @can('update', new App\Models\Permission()) --}}
+                                            @can('update', new App\Models\Permission())
                                             <th>Edit</th>
-                                            {{-- @endcan --}}
-                                            {{-- @can('delete', new App\Models\Permission()) --}}
+                                            @endcan
+                                            @can('delete', new App\Models\Permission())
                                             <th>Delete</th>
-                                            {{-- @endcan --}}
+                                            @endcan
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -74,16 +74,12 @@
                                                 <td>{{ $permission->module->name ?? '' }}</td>
                                                 <td>{{ $permission->access }}</td>
                                                 <td>{{ $permission->description }}</td>
-                                                {{-- @can('update', $permission) --}}
-                                                <td><a
-                                                        href="{{ route('editPermission', ['permission' => $permission->id]) }}"><i
-                                                            class="fa fa-edit"></a></td>
-                                                {{-- @endcan --}}
-                                                {{-- @can('delete', $permission) --}}
-                                                <td><a href="#"
-                                                        onclick="deleteItem(route('deletePermission'),'{{ $permission->id }}')"><i
-                                                            class="fa fa-trash text-red"></i></a></td>
-                                                {{-- @endcan --}}
+                                                @can('update', $permission)
+                                                <td><a href="{{ route('editPermission', ['permission' => $permission->id]) }}"><i class="fa fa-edit"></a></td>
+                                                @endcan
+                                                @can('delete', $permission)
+                                                <td><a href="#" onclick="deleteItem(route('deletePermission'),'{{ $permission->id }}')"><i class="fa fa-trash text-red"></i></a></td>
+                                                @endcan
                                             </tr>
                                         @endforeach
 
@@ -93,10 +89,9 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        {{-- @can('create', new App\Models\Permission()) --}}
-                                        <a href="{{ route('createPermission') }}" class="btn btn-primary">add new
-                                            Record</a>
-                                        {{-- @endcan --}}
+                                        @can('create', new App\Models\Permission())
+                                        <a href="{{ route('createPermission') }}" class="btn btn-primary">Add new Record</a>
+                                        @endcan
                                     </div>
                                     <div class="col-md-6">
                                         <div class="float-sm-right">{{ $permissions->links() }}</div>

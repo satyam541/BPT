@@ -84,7 +84,9 @@
                                         <th>Email</th>
                                         <th>Active</th>
                                         <th>Role</th>
+                                        @can('update',new App\User())
                                         <th>Edit</th>
+                                        @endcan
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,10 +96,10 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->active }}</td>
                                             <td>{{ $user->roles->implode('name', ', ') }}</td>
-                                            {{-- @can('update', Auth::user(), App\Models\Article::class) --}}
-                                            <td><a href="{{ route('editUser', ['user' => $user->id]) }}" class="href"><i
-                                                        class="fa fa-edit"></a></td>
-                                            {{-- @endcan --}}
+                                            <td>
+                                            @can('update',$user)
+                                            <a href="{{ route('editUser', ['user' => $user->id]) }}" class="href"><i class="fa fa-edit"></a></td>
+                                            @endcan
                                         </tr>
                                     @endforeach
 
@@ -106,9 +108,9 @@
                         </div>
                     </div>
                     <div class="card-footer clear-fix small-pagination">
-                        {{-- @can('create', new App\Models\Permission()) --}}
+                        @can('create',Auth::user(),App\User::class)
                         <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
-                        {{-- @endcan --}}
+                        @endcan
 
                         {{ $users->links() }}
                     </div>

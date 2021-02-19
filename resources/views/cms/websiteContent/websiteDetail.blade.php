@@ -46,7 +46,11 @@
                   <th>Contact_Number</th>
                   <th>Contact_Email</th>
                   <th>Address</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Websitedetail())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -59,8 +63,13 @@
                          
                         <td>{{$websitedetail->contact_email}}</td>
                         <td>{{$websitedetail->address}}</td>
-                    <td><a href="{{ route('editWebsiteDetail',['websitedetail'=>$websitedetail->id]) }}" class="fa fa-edit"></a>
-                    <a href="" onclick="deleteItem('{{ route('deleteWebsiteDetail',['websitedetail'=>$websitedetail->id])}}')" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('update',$websitedetail)
+                      <a href="{{ route('editWebsiteDetail',['websitedetail'=>$websitedetail->id]) }}" class="fa fa-edit"></a>
+                      @endcan
+                      @can('delete',$websitedetail)
+                      <a href="" onclick="deleteItem('{{ route('deleteWebsiteDetail',['websitedetail'=>$websitedetail->id])}}')" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach
@@ -68,7 +77,9 @@
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Websitedetail())
               <a id="add" href="{{route('createwebsiteDetail')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

@@ -32,7 +32,7 @@ class CategoryController extends Controller
 
     public function list()
     {
-        // $this->authorize('view', new Category());      
+        $this->authorize('view', new Category());      
         $categories = Category::All();
         return view('cms.category.categoryList',compact('categories'));    
              
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        // $this->authorize('create', new Category());
+        $this->authorize('create', new Category());
         $data['category']     = new Category();
         $data['submitRoute']  = "insertCategory";
         return view('cms.category.categoryForm',$data);
@@ -48,7 +48,7 @@ class CategoryController extends Controller
     
     public function insert(CategoryRequest $request)
     {
-        // $this->authorize('create', new Category());
+        $this->authorize('create', new Category());
         $input    = $request->except("_token");
         $category = new Category();
         //$country = Country::updateOrCreate( ['name' => $input['name']], $input );
@@ -80,6 +80,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
+        $this->authorize('update', $category);
         $data['category']    = $category;
         $data['submitRoute'] = array('updateCategory',$category->id);
         return view("cms.category.categoryForm",$data);
@@ -87,6 +88,7 @@ class CategoryController extends Controller
 
     public function update(Category $category,CategoryRequest $request)
     {
+        $this->authorize('update', $category);
         $input = $request->all();
         $category->name             = $input['name'];
         $category->tag_line         = $input['tag_line'];
@@ -116,6 +118,7 @@ class CategoryController extends Controller
 
     public function delete(Category $category)
     {
+        $this->authorize('delete', $category);
         $category->delete();
         return back();
     }
@@ -228,7 +231,7 @@ class CategoryController extends Controller
    }
    public function categorytrashList()
    {
-    //  $this->authorize('view', new Category());
+     $this->authorize('view', new Category());
      $data['trashedCategories'] = Category::onlyTrashed()->get();
      return  view('cms.trashed.categoryTrashedList',$data);
        
@@ -236,12 +239,14 @@ class CategoryController extends Controller
 
    public function restoreCategory($id)
    {
+       $this->authorize('restore', new Category());
        $category = Category::onlyTrashed()->where('id',$id)->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
+       $this->authorize('forceDelete', new Category());
        $category = Category::onlyTrashed()->where('id',$id)->forceDelete();
        return back()->with('success','Permanently Deleted');
    }

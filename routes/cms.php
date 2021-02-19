@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Support\Facades\Route;
-
 Route::get('/','DashboardController@list')->name('CmsIndex');
 Route::get('/dashboard','DashboardController@list')->name('dashboard');
 Route::post('/summernoteimage/upload','DashboardController@ImageUpload')->name('ImageUpload');
@@ -67,6 +66,7 @@ Route::post('/category/insert','CategoryController@insert')->name('insertCategor
 Route::get('/category/update/{category}','CategoryController@edit')->name('editCategory');
 Route::post('/category/update/{category}','CategoryController@update')->name('updateCategory');
 Route::post('/category/delete/{category}','CategoryController@delete')->name('deleteCategory');
+Route::get('/category/content','CategoryController@contentList')->name('categoryContentList');
 
 Route::get('/topic','TopicController@list')->name('topicList');
 Route::get('/topic/insert','TopicController@create')->name('createTopic');

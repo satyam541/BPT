@@ -34,7 +34,7 @@
             }
         }
         p {
-            width: 58%;
+            width: 90%;
         }
         .customers-list {
             flex-direction: row;
@@ -93,9 +93,6 @@
     // Start Services Section
     .services {
         padding: @sectionPadding-md;
-        .phone {
-            display: none;
-        }
     }
     // End Services Section
 
@@ -109,14 +106,14 @@
     // End Testimonial Section
 
     // Start Facts Section
-    .facts {
+    .fact {
         padding: @sectionPadding-md;
-        .facts-list {
+        .fact-list {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
         }
-        .facts-content {
+        .fact-content {
             width: 47%;
             &:first-child {
                 margin-right: 2rem;
@@ -141,7 +138,6 @@
         .services-container {
             flex-direction: row;
             justify-content: space-between;
-            align-items: flex-start;
         }
         .phone {
             display: flex;
@@ -150,6 +146,10 @@
         .heading {
             width: 66%;
             align-items: flex-start;
+            margin-bottom: 0;
+            h2 {
+                margin-bottom: .5rem;
+            }
             h2, p {
                 text-align: left;
             }
@@ -173,13 +173,16 @@
     // End Testimonial Section
 
     // Start Facts Section
-    .facts {
+    .fact {
+        background-image: url(../img/testimonial/facts-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         .heading {
             p {
                 width: 65%;
             }
         }
-        .facts-content {
+        .fact-content {
             width: 30%;
             margin-right: 2rem;
             &:last-child(2) {
@@ -224,7 +227,7 @@
     // End Testimonial Section
 
     // Start Facts Section
-    .facts {
+    .fact {
         padding: @sectionPadding-xl;
     }
     // End Facts Section

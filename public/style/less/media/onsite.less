@@ -20,23 +20,67 @@
     // End training section
 
     // Start doorstep section
-.doorstep{
-    padding: @sectionPadding;
-    .info{
-        .info-list{
+    .doorstep{
+        padding: @sectionPadding-md;
+        .form{
+            padding: 2rem;
+        }
+        .input-container{
+            width: 48%;
+        }
+        .info{
+            .info-list{
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .item{
+                width: 48%;
+            }
+            .item-info{
+                width: 100%;
+            }
+        }
+    }
+    // End doorstep section
+
+    // Start choose section
+    .choose {
+        padding: @sectionPadding-md;
+        .choose-list{
             flex-direction: row;
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        .item{
+        .choose-item{
             width: 48%;
         }
-        .item-info{
-            width: 100%;
-        }
     }
-}
-// End doorstep section
+    // End choose section
+
+    //Start solution section
+    .solution{
+        padding: @sectionPadding-md;
+        background-image: url(../img/onsite/solution-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        .solution-list{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            background-image: url(../img/onsite/bg-line.png);
+            background-size: 75% 35%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .solution-item{
+            width: 25%;
+        }
+
+    }
+    // End solution section
+
 }
 
 @media @size-lg{
@@ -74,13 +118,58 @@
         .delegate{
             width: 47%;
             margin-top: 0;
-            align-self: flex-start;
         }
         .training-map{
             width: 100%;
         }
     }
     // End training section
+
+    // Start doorstep section
+    .doorstep{
+        .doorstep-container{
+            flex-direction: row;
+        }
+        .form{
+            width: 50%;
+        }
+        .info{
+            padding: 3rem 1.5rem;
+            box-shadow: @shadowLight;
+            align-self: center;
+            width: 50%;
+            background-image: url(../img/onsite/information-bg.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            margin-top: 0;
+            .item{
+                width: 100%;
+                margin-top: 2.5rem;
+            }
+        }
+    }
+    // End doorstep section
+
+    // Start choose section
+    .choose {
+        .choose-item{
+            width: 33%;
+            &:last-child{
+                margin-right: auto;
+            }
+        }
+    }
+    // End choose section
+
+    //Start solution section
+    .solution{
+        .solution-list{
+            background-size: 70% 35%;
+        }
+
+    }
+    // End solution section
 }
 
 @media @size-xl{
@@ -93,9 +182,11 @@
         }
     }
     // End banner section
+
     // Start training section
     .training{
         padding: @sectionPadding-xl;
+        padding-bottom: 5rem;
         .training-info{
             width: 48%;
         }
@@ -104,4 +195,47 @@
         }
     }
     // End training section
+    
+    // Start doorstep section
+    .doorstep{
+        padding: @sectionPadding-xl;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 4rem;
+        padding-left: 5rem;
+        box-shadow: @shadowLight;
+        background-image: url(../img/onsite/information-bg.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        .container{
+            width: 100%;
+        }
+        .form{
+            transform: scale(1.1);
+            width: 44%;
+        }
+        .info{
+            box-shadow: none;
+            padding: 0;
+            padding-left: 5rem;
+            background-image: none;
+        }
+    }
+    // End doorstep section
+
+    // Start choose section
+    .choose {
+        padding: @sectionPadding-xl;
+        .choose-item{
+            width: 25%;
+        }
+    }
+    // End choose section
+
+    //Start solution section
+    .solution{
+        padding: @sectionPadding-xl;
+    }
+    // End solution section
 }

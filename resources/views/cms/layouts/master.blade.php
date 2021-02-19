@@ -28,7 +28,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- SweetAlert2 -->
@@ -564,16 +564,18 @@
   </aside>
   @if ($errors->any())
   <div id="toastsContainerTopRight" class="toasts-top-right fixed p-2">
-    @foreach ($errors->all() as $error)
+    @foreach ($errors->all() as $key => $error)
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <strong class="mr-auto text-white">{{ $error }}</strong>
-       
-        <button type="button" class=" ml-2 mb-2 close" data-dismiss="toast" aria-label="Close">
+        @php
+          $data = explode('The ', $error);
+          $data = explode('field ', $data[1]);
+        @endphp
+        <strong class="mr-auto text-white">{{ ucfirst($data[0]) }}</strong>
+        <button type="button" class="close px-2" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">x</span></button>
-        
-        
       </div>
+      <div class="toast-body text-white">{{$error}}</div>
   
      
     </div>
@@ -610,7 +612,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{ url('cms/common.js')}}"></script>
 <!-- Summernote -->
-<script src="{{url('adminlte/plugins/summernote/summernote.min.js')}}"></script>
+<script src="{{ url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
@@ -626,6 +628,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @yield('footer')
 <script>
+  $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
       toastr.success('{{$message}}');
@@ -633,20 +636,8 @@ $.widget.bridge('uibutton', $.ui.button)
       
   });
 
-
-  $(document).ready(function() {
-    $(document).on('click', function (event) {
-           $target = $(event.target);
-
-    });
-    
-        $(".selectJS").select2({
-            width:'100%',
-            placeholder:'Choose one',
-        });
-
-      
-    $('.summernote').summernote({
+  function summernoteload(elm){
+    $(elm).summernote({
       toolbar:[
         ['cleaner',['cleaner']], // The Button
         ['style',['style']],
@@ -691,9 +682,8 @@ $.widget.bridge('uibutton', $.ui.button)
                 data: data,
                 type: "post",
                 success: function(url) {
-                  
-                  var imagetag = $('<img>').attr('src',url);
-                  $($target).summernote("insertNode", imagetag[0]);
+                  var imagetag = $('<img>').attr('src', url);
+                  $('.summernote').summernote("insertNode", imagetag[0]);
                 },
                 error: function(data) {
                     console.log(data);
@@ -702,8 +692,25 @@ $.widget.bridge('uibutton', $.ui.button)
           }
       }
     });
+  }
+
+  $(document).ready(function() {
+    $(document).on('click', function (event) {
+           $target = $(event.target);
 
     });
+    
+        $(".selectJS").select2({
+            width:'100%',
+            placeholder:'Choose one',
+        });
+
+    
+      summernoteload('.summernote');
+
+
+    });
+
     </script>
 </body>
 </html>

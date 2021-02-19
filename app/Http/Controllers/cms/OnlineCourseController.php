@@ -38,17 +38,16 @@ class OnlineCourseController extends Controller
 
     public function list(Request $request)
     {
-       
+        $this->authorize('view',new CourseElearning());
 
         $onlineCourses = courseElearning::with('course')->get();
-      
         return view('cms.onlinecourse.onlinecourse',compact('onlineCourses'));
     }
 
   
     public function create()
     {
-       
+        $this->authorize('create',  new CourseElearning());
         $list['courses']        = Course::all()->pluck('name','id')->toArray();
        
         $data['list']           = $list;
@@ -61,6 +60,7 @@ class OnlineCourseController extends Controller
 
     public function insert(OnlineCourseRequest $request)
     {
+        $this->authorize('create',  new CourseElearning());
         $onlinecourse                   =   new courseElearning();
         $reference                      =   encodeUrlSlug(Course::find($request->course_id)->name);
         $onlinecourse->reference        =   $request->reference;
@@ -102,8 +102,8 @@ class OnlineCourseController extends Controller
  
     public function edit(courseElearning $course)
     {
-     
-        // dd($course);
+        $this->authorize('update', $course);
+        
         // $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['courses']        = Course::all()->pluck('name','id')->toArray();
         
@@ -117,6 +117,7 @@ class OnlineCourseController extends Controller
 
     public function update(courseElearning $course,OnlineCourseRequest $request)
     {
+        $this->authorize('update', $course);
         $course->reference          =   $request->reference;
         $course->online_course_name =   $request->online_course_name;
         $course->course_id          =   $request->course_id;
@@ -149,7 +150,7 @@ class OnlineCourseController extends Controller
    
     public function delete(courseElearning $course)
     {
-        
+        $this->authorize('delete', $course);
         $course->delete();
     }
     public function uploadVideo(FileReceiver $receiver)
@@ -197,18 +198,21 @@ class OnlineCourseController extends Controller
  
     public function trashList()
     {
+        $this->authorize('view', new CourseElearning());
         $data['trashOnlineCourses'] = courseElearning::onlyTrashed()->get();
         return view('cms.trashed.onlineCourseTrashList',$data);
     }
 
     public function restore($id)
     {
+        $this->authorize('restore', new CourseElearning());
         $data = courseElearning::onlyTrashed()->find($id)->restore();
         return back()->with('success','Successfully Restored');
     }
 
     public function forceDelete($id)
     {
+        $this->authorize('forceDelete', new CourseElearning());
         $data = courseElearning::onlyTrashed()->find($id)->forceDelete();
         return back()->with('success','Permanently Deleted!');
     }

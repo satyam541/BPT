@@ -98,12 +98,12 @@
 
                   <div class="form-group">
                     {{Form::label('contact_footer','Contact Footer')}}
-                    {{Form::text('contact_footer',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('contact_footer',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('copyright_footer','Copyright Footer')}}
-                    {{Form::text('copyright_footer',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('copyright_footer',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
@@ -113,21 +113,21 @@
 
                   <div class="form-group">
                     {{Form::label('opening_days','Opening Days')}}
-                    {{Form::number('opening_days',null,['class'=>'form-control summernote '])}}
+                    {{Form::textarea('opening_days',null,['class'=>'form-control summernote '])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('twitter','Twitter')}}
-                    {{Form::text('twitter',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('twitter',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('facebook','Facebook')}}
-                    {{Form::text('facebook',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('facebook',null,['class'=>'form-control summernote'])}}
                   </div>
                   <div class="form-group">
                     {{Form::label('linkedin','Linkedin')}}
-                    {{Form::text('linkedin',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('linkedin',null,['class'=>'form-control summernote'])}}
                   </div>
                   
                 </div>
