@@ -23,9 +23,16 @@ class CountryRequest extends FormRequest
      */
     public function rules()
     {
+        $country=request()->route('country_code',0);
+        
+          $id = 0;
+          if(!empty($country)){
+              $id = $country->id;
+          }
+
         return [
             'name'                  => 'required|string|max:100',
-            'country_code'          => 'required|string',  'max:3',
+            'country_code'          => 'required|string|max:3|unique:country,country_code,'.$id.',country_id',
             'description'           => 'required|string',
             'iso3'                  => 'nullable|string|max:3',
             'currency'              => 'nullable|string|max:3',
