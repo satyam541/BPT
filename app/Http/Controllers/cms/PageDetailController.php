@@ -39,13 +39,13 @@ class PageDetailController extends Controller
     public function insert(PageDetailRequest $request)
     {
         $this->authorize('create', new Pagedetail());
-        $inputs = $request->except(["_token",'image']);
+        $inputs = $request->except(["_token",'image', 'icon']);
         $pageDetail = pageDetail::firstOrNew(
             [
                 "page_name"     => $inputs['page_name'],
                 "section"       => $inputs['section'],
                 "sub_section"   => $inputs['sub_section'],
-                // "image_alt"        => $inputs['image_alt']
+                "image_alt"     => $inputs['image_alt']
             ],
             $inputs
         );
@@ -54,11 +54,18 @@ class PageDetailController extends Controller
         if(empty($pageDetail->created_at))
         {
             /* save image file */
-            // if($request->hasFile('image')){
-            //     $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            //     $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
-            //     $pageDetail->image = $imageName;
-            // }
+            if($request->hasFile('image')){
+                $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+                $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
+                $pageDetail->image = $imageName;
+            }
+
+             /* save image file */
+             if($request->hasFile('icon')){
+                $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+                $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
+                $pageDetail->image = $imageName;
+            }
 
             $pageDetail->save();
             \Session::flash('success', 'Page Content Saved!'); 
@@ -68,7 +75,7 @@ class PageDetailController extends Controller
         }
         
 
-        return redirect()->back();
+        return redirect()->route('pageDetailList');
     }
 
     public function edit(PageDetail $pageDetail)
@@ -117,7 +124,7 @@ class PageDetailController extends Controller
             \Session::flash('failure', 'Error'); 
         }
 
-        return redirect()->back();
+        return redirect()->route('pageDetailList');
     }
 
     public function delete(PageDetail $pageDetail)

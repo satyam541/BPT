@@ -58,15 +58,35 @@
                     {{Form::label('heading','Heading')}}
                     {{Form::text('heading',null,['class'=>'form-control'])}}
                   </div>
-
+                  
                   <div class="form-group">
                     {{Form::label('content','Content')}}
-                    {{Form::textarea('content',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('content',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('page_tag_line','Page Tag Line')}}
                     {{Form::text('page_tag_line',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('image','Image')}}
+                    {{Form::file('image')}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('image_alt','Image Alt')}}
+                    {{Form::text('image_alt',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('icon','Icon')}}
+                    {{Form::file('icon')}}
+                  </div>
+                  
+                  <div class="form-group">
+                    {{Form::label('image_alt','Image Alt')}}
+                    {{Form::text('image_alt',null,['class'=>'form-control'])}}
                   </div>
                   
                 </div>
