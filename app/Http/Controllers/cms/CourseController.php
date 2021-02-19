@@ -301,13 +301,8 @@ class CourseController extends Controller
 
    public function restoreCourse($id)
    {
-<<<<<<< HEAD
         $course= Course::onlyTrashed()->find($id);
    $this->authorize('restore', $course);
-=======
-        Course::onlyTrashed()->find($id)->restore();
-//    $this->authorize('restore', $course);
->>>>>>> 8b9acbce82db4fba2493b2804e3c806ef4337695
    
        return back()->with('success','Successfully Restored');
 
