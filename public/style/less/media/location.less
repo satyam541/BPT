@@ -1,12 +1,7 @@
 @media @size-md{
     // Start Banner section //
     .location-banner {
-        background: none;
-        background-image: url(../img/location/banner-bg.png);
-        background-size: 50% 100%;
-        background-repeat: no-repeat;
-        background-position: right;
-        box-shadow: @shadowLight;
+       
         &::before {
             content: none;
         }
@@ -16,22 +11,6 @@
             background-repeat: no-repeat;
             background-position: left;
             background-size: 100% 100%;
-        }
-        h1,p {
-            color: @blackColor;
-        }
-        .breadcrums {
-            .black {
-                display: flex;
-            }
-            .white {
-                display: none;
-            }
-            ul {
-                li {
-                    color: @blackColor;
-                }
-            }
         }
     }
     // End Banner section //
@@ -193,13 +172,34 @@
 @media @size-lg{
     // Start Banner section //
     .location-banner {
+        background: none;
+        background-image: url(../img/location/banner-bg.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        box-shadow: @shadowLight;
         background-size: 60% 100%;
-       .banner-container {
-        p {
-            width: 61%;
+        h1,p {
+            color: @blackColor;
         }
         h1 {
             font-size: 32px;
+        }
+        .breadcrums {
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
+            ul {
+                li {
+                    color: @blackColor;
+                }
+            }
+        }
+       .banner-container {
+        p {
+            width: 61%;
         }
        }
     }
