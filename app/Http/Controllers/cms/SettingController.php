@@ -39,7 +39,7 @@ class SettingController extends Controller
 
     public function insertWebsiteDetail(WebsitedetailRequest $request)
     {
-        dd($request->all());
+        
         $this->authorize('create', new WebsiteDetail());
         
         $websitedetail=new WebsiteDetail();
@@ -95,10 +95,9 @@ class SettingController extends Controller
     
     public function updateWebsiteDetail(WebsiteDetail $websitedetail,WebsiteDetailRequest $request)
     {
-        dd($request->all());
+        
         $this->authorize('update', $websitedetail);
         // $websitedetail->web_id             = $request->website;
-        // dd($request->all());
         $websitedetail->country_id         = $request->country_id;
         $websitedetail->contact_number     = $request->contact_number;
         $websitedetail->address            = $request->address;
