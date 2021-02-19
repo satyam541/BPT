@@ -445,7 +445,7 @@
               </li>
             </ul>
           </li>
-          <li @if(in_array(Route::currentRouteName(),['accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          <li @if(in_array(Route::currentRouteName(),['WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -522,6 +522,12 @@
                 <a href="{{Route('testimonialTrashList')}}" @if(Route::currentRouteName()=='testimonialTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Testimonial List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('WhatsIncludedTrashList')}}" @if(Route::currentRouteName()=='WhatsIncludedTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Whats Included List</p>
                 </a>
               </li>
               <li class="nav-item">

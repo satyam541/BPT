@@ -313,7 +313,9 @@ Route::get('/topictrash','TopicController@topictrashList')->name('topicTrashList
 Route::get('/topic/restoretopic/{id}','TopicController@restoreTopic')->name('restoreTopic');
 Route::get('/topic/deletetopic/{id}','TopicController@forceDeleteTopic')->name('forceDeleteTopic');
 
-
+Route::get('/whatsincludedtrash','WhatsIncludedController@whatsIncludedTrashList')->name('WhatsIncludedTrashList');
+Route::get('/whatsincluded/restorewhatsincluded/{id}','WhatsIncludedController@restoreWhatsInclude')->name('restoreWhatsIncluded');
+Route::get('/whatsincluded/deletewhatsincluded/{id}','WhatsIncludedController@forceDeleteWhatsInclude')->name('forceDeleteWhatsIncluded');
 
 Route::get('/articletrash','ArticleController@articletrashList')->name('articleTrashList');
 Route::get('/article/restorearticle/{id}','ArticleController@restoreArticle')->name('restoreArticle');
