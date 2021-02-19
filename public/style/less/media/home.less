@@ -79,7 +79,6 @@
 
         }
     }
-    
     .delivery{
         padding: @sectionPadding-md;
         .delivery-list{
@@ -138,6 +137,55 @@
             &:nth-child(4){
                 background-image: url(../img/home/onsite-bg.png), linear-gradient(#000000,#575757);
 
+            }
+        }
+    }
+    .facts{
+        padding: @sectionPadding-md;
+        .item{
+            width: 25%;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/home/facts-arrow.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 50px;
+                height: 14px;
+                right: -23px;
+                top: 30px;
+            
+            }
+            &:last-child{
+                &::before{
+                    content: none;
+                }
+            }
+        }
+    } 
+    .locations{
+        .locations-container{
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .content{
+            width: 50%;
+        }
+        .location-name{
+            width: 22%;
+            height: 150px;
+            justify-content: space-between;
+            span{
+                font-size: 48px;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            p{
+                font-size: 16px;
             }
         }
     }
@@ -231,6 +279,23 @@
             height: 320px;
         }
     } 
+    .facts{
+        .facts-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .fact-content{
+            width: 30%;
+        }
+        .facts-list{
+            width: 68%;
+            align-items: center;
+        }
+        .item{
+            margin-top: 0;
+        }
+    } 
+
     
 }
 
@@ -246,9 +311,6 @@
     }
     .ways{
         padding: @sectionPadding-xl;
-        .ways-content{
-
-        }
         .ways-list{
             &::before{
                 left: 9%;
@@ -268,5 +330,24 @@
             font-size: 18px;
         }
     } 
-   
+    .facts{
+        padding: @sectionPadding-xl !important;
+        background-image: url(../img/home/facts-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .fact-content{
+            background: transparent;
+            padding: 0;
+            p{
+                text-align: left;
+            }
+        }
+        h2{
+            text-align: left;
+        }
+        .facts-list{
+            width: 62%;
+
+        }
+    } 
 }

@@ -515,19 +515,100 @@
                     <div class="fact-count">
                     <h3 class="count-number" data-to="670" data-speed="3000">670</h3><span>+</span>
                     </div>
-                    <p>EVENTS</p>
+                    <p>Events</p>
                 </div>
                 <div class="item">
                     <img src="{{url('img/home/countries.svg')}}" alt="countries">
                     <div class="fact-count">
                     <h3 class="count-number" data-to="80" data-speed="3000">80</h3><span>+</span>
                     </div>
-                    <p>COUNTRIES</p>
+                    <p>countries</p>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+<section class="flex-container locations">
+    <div class="container">
+        <div class="locations-container">
+            <div class="content">
+                <div class="heading">
+                    <h2>Organisations Locations
+                        <span>
+                            Around The Globe
+                        </span>
+                    </h2>
+                </div>
+                <p>
+                    We are committed to providing our customers with exceptional service while offering our employees 
+                    the best training.We are committed to providing our customers with exceptional service while offering our employees the best 
+                    training.We are committed to providing our customers with exceptional service while offering our employees the best training.
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    01
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    02
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    03
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    04
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    05
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+            <div class="location-name">
+                <span>
+                    06
+                </span>
+                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
+                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <p>
+                    London
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 @endsection
