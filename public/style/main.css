@@ -2200,21 +2200,24 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   height: 100%;
 }
-.about-us .heading {
+.about-us .about-item {
   margin-bottom: 2rem;
+}
+.about-us p {
+  text-align: center;
+}
+.about-us .heading {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 .about-us .heading h2 {
   text-align: center;
 }
-.about-us .heading p {
-  margin-top: 0.5rem;
-  text-align: center;
-}
 .about-us .values-info {
   height: 100%;
+  margin-top: 1rem;
 }
 .about-us .values-info img {
   width: 100%;
@@ -2222,8 +2225,9 @@ input::-webkit-inner-spin-button {
 }
 .difference {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
 }
-.difference .heading p {
+.difference .difference-content p {
   text-align: center;
 }
 .difference .difference-list {
@@ -2598,10 +2602,10 @@ input::-webkit-inner-spin-button {
   .about-us .about-content {
     width: 48%;
   }
-  .about-us .about-content .heading h2 {
+  .about-us .about-content .about-item p {
     text-align: left;
   }
-  .about-us .about-content .heading p {
+  .about-us .about-content .heading h2 {
     text-align: left;
   }
   .about-us .about-image {
@@ -2610,10 +2614,10 @@ input::-webkit-inner-spin-button {
     top: 55px;
     height: fit-content;
   }
-  .about-us .about-image .heading h2 {
+  .about-us .about-image .values-content p {
     text-align: left;
   }
-  .about-us .about-image .heading p {
+  .about-us .about-image .heading h2 {
     text-align: left;
   }
   .about-us .heading {
@@ -2759,22 +2763,25 @@ input::-webkit-inner-spin-button {
   }
   .difference {
     background-image: url(../img/aboutus/difference-bg.png);
-    background-size: 100% 48%;
+    background-size: 100% 50%;
     background-repeat: no-repeat;
   }
-  .difference .heading {
+  .difference .difference-content {
     width: 70%;
     margin-left: auto;
   }
-  .difference .heading::before {
-    background-color: #FFFFFF;
-  }
-  .difference .heading p {
+  .difference .difference-content p {
     text-align: center;
     font-size: 13px;
+    color: #FFFFFF;
   }
-  .difference .heading p,
-  .difference .heading h2 {
+  .difference .difference-content .heading {
+    margin-bottom: 0.5rem;
+  }
+  .difference .difference-content .heading::before {
+    background-color: #FFFFFF;
+  }
+  .difference .difference-content .heading h2 {
     color: #FFFFFF;
   }
   .difference .difference-list {
@@ -2857,10 +2864,7 @@ input::-webkit-inner-spin-button {
   }
   .difference {
     padding: 4rem 0rem;
-    background-size: 100% 50%;
-  }
-  .difference .difference-list {
-    margin-top: 6rem;
+    background-size: 100% 53%;
   }
   .reviews {
     padding: 4rem 0rem;
@@ -5000,17 +5004,17 @@ input::-webkit-inner-spin-button {
 .offer-banner .banner-container p {
   margin-top: 0.5rem;
 }
-.offer-banner .breadcrums {
-  display: flex;
-  margin-top: 1rem;
+@media (min-width : 768px) {
+  .offer-banner {
+    padding: 3rem 2rem;
+    padding-top: 1rem;
+  }
 }
-.offer-banner .breadcrums ul {
-  display: flex;
-}
-.offer-banner .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.offer-banner .breadcrums ul li:first-child {
-  margin-right: 0.5rem;
+@media (min-width : 1024px) {
+  .offer-banner {
+    background-image: url(../img/offer/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
 }

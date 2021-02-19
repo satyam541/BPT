@@ -26,13 +26,16 @@
     }
     .about-content{
       width: 48%;
+      .about-item{
+        p{
+          text-align: left;
+        }
+      }
       .heading{
           h2{
             text-align: left;
           }
-          p{
-            text-align: left;
-          }
+         
       }
   }
   .about-image{
@@ -40,13 +43,16 @@
     position: sticky;
     top: 55px;
     height: fit-content;
+    .values-content{
+      p{
+        text-align: left;
+      }
+    }
       .heading{
           h2{
             text-align: left;
           }
-          p{
-            text-align: left;
-          }
+         
       }
   }
   .heading{
@@ -140,6 +146,7 @@
       margin-bottom: 0;
     }
    }
+  
 }
 // End differece section //
 
@@ -239,26 +246,30 @@ display: none;
   // Start difference section//
   .difference {
     background-image: url(../img/aboutus/difference-bg.png);
-    background-size: 100% 48%;
+    background-size: 100% 50%;
     background-repeat: no-repeat;
   
-    .heading{
+    .difference-content{
       width: 70%;
-     margin-left: auto;
-     &::before{
-       background-color: @whiteColor;
-     }
-        p{
-            text-align: center;
-            font-size: 13px;
-        }
-        p,h2{
-          color: @whiteColor;
-        }
+      margin-left: auto;
+      p{
+        text-align: center;
+        font-size: 13px;
+        color: @whiteColor;
     }
+      .heading{
+        margin-bottom: 0.5rem;
+        &::before{
+          background-color: @whiteColor;
+        }
+           h2{
+             color: @whiteColor;
+           }
+       }
+    }
+   
   
     .difference-list{
-     
     margin-top: 3rem;
         .count{
     width: 25%;
@@ -377,10 +388,7 @@ justify-content: space-around;
    // Start difference section//
    .difference {
    padding: @sectionPadding-xl;
-   background-size: 100% 50%;
-    .difference-list{
-    margin-top: 6rem;
-    }
+   background-size: 100% 53%;
   }
   // End differece section //
 
