@@ -1,8 +1,6 @@
 @extends('cms.layouts.master')
 @section('content')
 
-
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -14,7 +12,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Category</li>
                         </ol>
                     </div><!-- /.col -->
@@ -32,11 +30,11 @@
                     <div class="col-md-12">
 
                         <div class="card card-primary card-outline">
-                          <div class="card-header">
-                            <div class="card-title">
-                              Category List
+                            <div class="card-header">
+                                <div class="card-title">
+                                    Category List
+                                </div>
                             </div>
-                          </div>
 
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -44,24 +42,29 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>
-                                                @can('update',new App\Models\Category())
-                                                Content
+                                            <th class=" text-center">
+                                                @can('update', new App\Models\Category())
+                                                    Content
                                                 @endcan
                                             </th>
-                                            <th>
-                                                @can('update',new App\Models\Category())
-                                                Bulletpoints
+                                            <th class=" text-center">
+                                                @can('update', new App\Models\Category())
+                                                    Faq's
                                                 @endcan
                                             </th>
-                                            <th>
-                                                @can('update',new App\Models\Category())
-                                                Whats Included
+                                            <th class=" text-center">
+                                                @can('update', new App\Models\Category())
+                                                    Bulletpoints
                                                 @endcan
                                             </th>
-                                            <th>
-                                                @can('update',new App\Models\Category())
-                                                Actions
+                                            <th class=" text-center">
+                                                @can('update', new App\Models\Category())
+                                                    Whats Included
+                                                @endcan
+                                            </th>
+                                            <th class=" text-center">
+                                                @can('update', new App\Models\Category())
+                                                    Actions
                                                 @endcan
                                             </th>
                                         </tr>
@@ -71,26 +74,38 @@
                                         @foreach ($categories as $category)
                                             <tr>
                                                 <td>{{ $category->name }}</td>
-                                                <td>
-                                                    @can('update',$category) 
-                                                    <a href="{{ route('categoryContentList',['category'=>$category->id]) }}" class=" fa fa-list"></a>
+                                                <td class=" text-center">
+                                                    @can('update', $category)
+                                                        <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
+                                                            class=" fa fa-list"></a>
                                                     @endcan
                                                 </td>
-                                                 <td>
-                                                    @can('update',$category)
-                                                    <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}" class=" fa fa-bullseye"></a>
+                                                <td class=" text-center">
+                                                    @can('update', $category)
+                                                        <a href="{{ route('faqList', ['type' => 'category', 'id' => $category->id]) }}"
+                                                            class="far fa-question-circle"></a>
                                                     @endcan
                                                 </td>
-                                                    @can('update',$category)
-                                                    <td> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}" class=" fa fa-list"></a>
+                                                <td class=" text-center">
+                                                    @can('update', $category)
+                                                        <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}"
+                                                            class=" fa fa-bullseye"></a>
                                                     @endcan
                                                 </td>
-                                                <td>
-                                                    @can('update',$category)
-                                                    <a href="{{ Route('editCategory', ['category' => $category->id]) }}" class="fa fa-edit"></a>
+                                                @can('update', $category)
+                                                    <td class=" text-center"> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}"
+                                                            class=" fa fa-list"></a>
                                                     @endcan
-                                                    @can('delete',$category)  
-                                                    <a href="#" onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')" class="fa fa-trash" style="color: red"></a>
+                                                </td>
+                                                <td class=" text-center">
+                                                    @can('update', $category)
+                                                        <a href="{{ Route('editCategory', ['category' => $category->id]) }}"
+                                                            class="fa fa-edit"></a>
+                                                    @endcan
+                                                    @can('delete', $category)
+                                                        <a href="#"
+                                                            onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')"
+                                                            class="fa fa-trash" style="color: red"></a>
                                                     @endcan
                                                 </td>
                                             </tr>
@@ -101,8 +116,9 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                @can('create',new App\Models\Category())
-                                <a id="add" href="{{ route('createCategory') }}" class="btn btn-success" style="">Add new Record</a>
+                                @can('create', new App\Models\Category())
+                                    <a id="add" href="{{ route('createCategory') }}" class="btn btn-success" style="">Add new
+                                        Record</a>
                                 @endcan
                             </div>
                         </div>
@@ -128,6 +144,11 @@
                     },
                     {
                         "name": "Content",
+                        "sorting": false,
+                        searching: false
+                    },
+                    {
+                        "name": "Faq",
                         "sorting": false,
                         searching: false
                     },

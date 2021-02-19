@@ -127,11 +127,9 @@ class CountryController extends Controller
         }
         
         $country->save();
-
         if(!empty($country->name))
         \Session::flash('success', 'Country updated!'); 
-
-        return redirect()->back();
+        return redirect()->route('countryList');
     }
 
     public function delete(Country $country_code)

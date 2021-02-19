@@ -243,88 +243,12 @@ class TopicController extends Controller
     {
         // $this->authorize('create', new Topic());
         $inputs              = $request->except("_token");
-        $content             = TopicContent::firstOrCreate(
+        $content             = TopcContent::firstOrCreate(
             ['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']]
             ,$inputs);
         
         return back()->with('success','Content Added');
 
-    }
-
-    public function insertFaq(Request $request)
-    {
-        // $this->authorize('create', new Faq());
-        $module_type = $request->get('module_type');
-        $module_id   = $request->get('module_id');
-        switch($module_type){
-
-            case "topic":
-            $module = Topic::find($module_id);
-            break;
-
-            case "course":
-            $module = Course::find($module_id);
-            break;
-
-            case "category":
-            $module = Category::find($module_id);
-            break;
-
-            default:
-            \Session::flash('failure', 'unknown faq module!'); 
-            return back();
-            break;
-        }
-
-        $faq_id    = $request->get('faq_id');
-        $questions = $request->get('question');
-        $answers   = $request->get('answer');
-
-        foreach($questions as $i=>$q)
-        {
-            // save faq if id is not 
-            if(empty($faq_id[$i]))
-            {
-                $module->faqs()->create([
-                    'question' => $q,
-                    'answer'    => $answers[$i],
-                    'display_order' => $module->faqs()->count()+1
-                ]);
-                    $message = 'Added';
-            }
-            else
-            {
-                // update existing faq
-                $faq = Faq::find($faq_id[$i]);
-                if(!empty($faq))
-                {
-                    $faq->question = $q;
-                    $faq->answer   = $answers[$i];
-                    $faq->save();
-                }
-                $message = 'Updated';
-            }
-        }
-
-        return back()->with('success',"FAQ $message!");
-
-    }
-
-    public function deleteFaq(Faq $faq)
-    {
-
-        // $this->authorize('delete', new Faq());
-        $faq->delete();
-    }
-
-    public function sortFaq(Request $request)
-    {
-        // $this->authorize('update', new Faq());
-        $ids = $request->get('id');
-        foreach($ids as $i => $id)
-        {
-            Faq::where('id',$id)->update(['display_order'=>$i+1]);
-        }
     }
 
     public function edit($topic)

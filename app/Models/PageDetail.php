@@ -24,9 +24,7 @@ class PageDetail extends Model
     {
         // using laravel app method to create php stdClass
         $app = app();
-
         $pageDetails = self::where('page_name',$page_name)->get();
-
         // creating a standered object to store the result
         $result = $app->make('stdClass');
         foreach($pageDetails as $row)
