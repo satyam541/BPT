@@ -127,6 +127,11 @@
                         "name": "Name"
                     },
                     {
+                        "name": "Content",
+                        "sorting": false,
+                        searching: false
+                    },
+                    {
                         "name": "Bulletpoints",
                         "sorting": false,
                         searching: false
