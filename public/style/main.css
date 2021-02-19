@@ -3969,6 +3969,9 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   text-align: center;
 }
+.convenient .largest h2 {
+  margin-bottom: 0.5rem;
+}
 .find {
   padding: 3rem 1.5rem;
   background-color: #1C2848;
@@ -4054,13 +4057,14 @@ input::-webkit-inner-spin-button {
   position: relative;
   width: 272px;
   align-self: center;
+  border-radius: 40px 0px 0px 40px;
 }
 .popular .popular-content .img {
   display: flex;
   height: 69px;
   width: 69px;
   position: absolute;
-  left: -18px;
+  left: -5px;
   top: -4px;
 }
 .popular .popular-content .img img {
@@ -4107,7 +4111,6 @@ input::-webkit-inner-spin-button {
     content: none;
   }
   .location-banner .banner-container {
-    width: 60%;
     background-image: url(../img/location/dotted-map.png);
     background-repeat: no-repeat;
     background-position: left;
@@ -4201,7 +4204,6 @@ input::-webkit-inner-spin-button {
   .popular .popular-content {
     width: 44%;
     margin-right: 3rem;
-    z-index: 1;
   }
   .popular .popular-content:nth-child(even) {
     margin-right: 0;
@@ -4215,7 +4217,11 @@ input::-webkit-inner-spin-button {
     height: 79px;
     width: 88px;
     top: -9px;
-    left: -27px;
+    left: -16px;
+  }
+  .popular .popular-content .img {
+    left: -6px;
+    z-index: 1;
   }
   .buy {
     display: flex;
@@ -4275,7 +4281,7 @@ input::-webkit-inner-spin-button {
     color: #000000;
   }
   .location-banner .banner-container p {
-    width: 61%;
+    width: 44%;
   }
   .convenient {
     padding-bottom: 3rem;
@@ -4318,7 +4324,7 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
   }
   .popular .popular-content {
-    width: 30%;
+    width: 28%;
   }
   .popular .popular-content:nth-child(even) {
     margin-right: 3rem;
@@ -4392,6 +4398,9 @@ input::-webkit-inner-spin-button {
   .popular .popular-content {
     width: 22%;
   }
+  .popular .popular-content::before {
+    left: -13px;
+  }
   .popular .popular-content:nth-child(even) {
     margin-right: 3rem;
   }
@@ -4408,6 +4417,9 @@ input::-webkit-inner-spin-button {
   .popular .popular-content:nth-child(16),
   .popular .popular-content:nth-child(20) {
     margin-right: 0;
+  }
+  .popular .popular-content .img {
+    left: -3px;
   }
   .buy {
     padding: 4rem 0rem;
@@ -4949,8 +4961,8 @@ input::-webkit-inner-spin-button {
 }
 .location-main .reach span {
   display: flex;
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
 }
 .location-main .reach span img {
   height: 100%;
@@ -4991,6 +5003,7 @@ input::-webkit-inner-spin-button {
 }
 .location-main .contact-bottom h2 {
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 .location-main .contact-bottom span {
   display: flex;
@@ -5029,6 +5042,8 @@ input::-webkit-inner-spin-button {
   margin-top: 1.5rem;
   padding: 1rem;
   align-items: center;
+  width: 272px;
+  align-self: center;
 }
 .key .key-content:nth-child(1) {
   border-top: 21px solid #CF2DCA;
@@ -5048,6 +5063,9 @@ input::-webkit-inner-spin-button {
 }
 .key .key-content p {
   text-align: center;
+}
+.key .key-content h3 {
+  margin: 0.8rem 0 0.5rem;
 }
 .key .key-content span {
   display: flex;
@@ -5104,6 +5122,7 @@ input::-webkit-inner-spin-button {
   }
   .key .key-content {
     width: 48%;
+    align-self: inherit;
   }
 }
 @media (min-width : 1024px) {
@@ -5216,4 +5235,34 @@ input::-webkit-inner-spin-button {
 .certification-banner h1,
 .certification-banner p {
   color: #FFFFFF;
+}
+.certification-banner .breadcrums .black {
+  display: none;
+}
+.certification-banner .breadcrums .white {
+  display: flex;
+}
+@media (min-width : 768px) {
+  .certification-banner::before {
+    content: none;
+  }
+}
+@media (min-width : 1024px) {
+  .certification-banner {
+    background: linear-gradient(125deg, #1C2848 60%, transparent 40%), url(../img/certification/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  .certification-banner .banner-container {
+    background: linear-gradient(125deg, #FFFFFF 56%, transparent 44%);
+    padding: 2rem;
+  }
+  .certification-banner .banner-container h1 {
+    color: #000000;
+  }
+  .certification-banner .banner-container p {
+    color: #000000;
+    width: 55%;
+  }
 }
