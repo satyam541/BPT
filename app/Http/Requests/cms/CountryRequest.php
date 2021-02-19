@@ -24,10 +24,10 @@ class CountryRequest extends FormRequest
     public function rules()
     {
         $country=request()->route('country_code',0);
-        
+
           $id = 0;
           if(!empty($country)){
-              $id = $country->id;
+              $id = $country->country_id;
           }
 
         return [
