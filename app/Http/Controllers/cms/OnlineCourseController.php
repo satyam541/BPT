@@ -3,14 +3,9 @@
 namespace App\Http\Controllers\cms;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Models\CourseElearning;
-use App\Models\Topic;
-use App\Models\CourseContent;
-use App\Models\Country;
-use App\Models\Accreditation;
 use App\Http\Requests\cms\OnlineCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\UploadedFile;
@@ -40,10 +35,14 @@ class OnlineCourseController extends Controller
     {
         $this->authorize('view',new CourseElearning());
 
-        $onlineCourses = courseElearning::with('course')->get();
+        $onlineCourses = Course::where('is_online',1)->get();
         return view('cms.onlinecourse.onlinecourse',compact('onlineCourses'));
     }
-
+    public function addonList(){
+        $this->authorize('view',new CourseElearning());
+        $courseAddons=CourseAddon::all();
+        return view('cms.addon.addonList',compact('courseAddons'));
+    }
   
     public function create()
     {

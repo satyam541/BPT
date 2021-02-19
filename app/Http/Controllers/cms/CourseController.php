@@ -299,7 +299,7 @@ class CourseController extends Controller
        
    }
    public function addonList(){
-       
+
    }
    public function restoreCourse($id)
    {

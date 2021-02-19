@@ -204,7 +204,7 @@
             </ul>
           </li>
 
-          <li @if(in_array(Route::currentRouteName(),['coursesAddonList','categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
+          <li @if(in_array(Route::currentRouteName(),['AddonList','categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -250,7 +250,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('coursesAddonList')}}" @if(Route::currentRouteName()=='coursesAddonList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('AddonList')}}" @if(Route::currentRouteName()=='AddonList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Course Addon</p>
                 </a>
