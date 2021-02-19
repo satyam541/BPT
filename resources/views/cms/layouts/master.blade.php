@@ -28,7 +28,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- SweetAlert2 -->
@@ -612,7 +612,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{ url('cms/common.js')}}"></script>
 <!-- Summernote -->
-<script src="{{url('adminlte/plugins/summernote/summernote.min.js')}}"></script>
+<script src="{{ url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
@@ -636,20 +636,8 @@ $.widget.bridge('uibutton', $.ui.button)
       
   });
 
-
-  $(document).ready(function() {
-    $(document).on('click', function (event) {
-           $target = $(event.target);
-
-    });
-    
-        $(".selectJS").select2({
-            width:'100%',
-            placeholder:'Choose one',
-        });
-
-      
-    $('.summernote').summernote({
+  function summernoteload(elm){
+    $(elm).summernote({
       toolbar:[
         ['cleaner',['cleaner']], // The Button
         ['style',['style']],
@@ -694,9 +682,8 @@ $.widget.bridge('uibutton', $.ui.button)
                 data: data,
                 type: "post",
                 success: function(url) {
-                  
-                  var imagetag = $('<img>').attr('src',url);
-                  $($target).summernote("insertNode", imagetag[0]);
+                  var imagetag = $('<img>').attr('src', url);
+                  $('.summernote').summernote("insertNode", imagetag[0]);
                 },
                 error: function(data) {
                     console.log(data);
@@ -705,8 +692,25 @@ $.widget.bridge('uibutton', $.ui.button)
           }
       }
     });
+  }
+
+  $(document).ready(function() {
+    $(document).on('click', function (event) {
+           $target = $(event.target);
 
     });
+    
+        $(".selectJS").select2({
+            width:'100%',
+            placeholder:'Choose one',
+        });
+
+    
+      summernoteload('.summernote');
+
+
+    });
+
     </script>
 </body>
 </html>

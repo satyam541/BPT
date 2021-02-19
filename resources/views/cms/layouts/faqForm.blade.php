@@ -18,16 +18,16 @@
                 {{ Form::hidden('module_type', $module_type) }}
                 <div class="card-body">
 
-                    <div id="faq-container" class="sortable">
+                    <div id="faq-container" class="">
                         @foreach ($faqModule->faqs as $faq)
                             <div class=" qa-set-row" id="id_{{ $faq->id }}">
 
                                 <div class="panel card card-primary card-outline ">
                                     {{-- @can('view', new App\Models\Faq()) --}}
-                                        <div class="card-header with-border">
+                                        <div class="card-header with-border sortable">
                                             
                                             <div class="card-title sortable-handle">
-                                                <i class="fa fa-ellipsis-v btn-sm btn sortable-handle" aria-hidden="true"></i>
+                                                {{-- <i class="fa fa-ellipsis-v btn-sm btn sortable-handle" aria-hidden="true"></i> --}}
                                                 {!! $faq->question !!}
                                             </div>
                                             <div class="card-tools pull-right">
@@ -53,14 +53,14 @@
                                             {{ Form::label('question', 'Question', ['class' => 'col-md-3 col-form-label text-right']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('question[]', $faq->question ,['class'=>'form-control ']) }}
+                                                {{ Form::textarea('question[]', $faq->question ,['class'=>'form-control summernote']) }}
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             {{ Form::label('answer', 'Answer', ['class' => 'col-md-3 col-form-label text-right']) }}
 
                                             <div class="col-md-9">
-                                                {{ Form::textarea('answer[]', $faq->answer,['class'=>'form-control ']) }}
+                                                {{ Form::textarea('answer[]', $faq->answer,['class'=>'form-control summernote']) }}
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                 {{Form::label('question','Question',['class'=>'col-md-3 col-form-label text-right'])}}
 
                 <div class="col-md-9">
-                    {{Form::textarea('question[]',null,['class'=>'form-control'])}}
+                    {{Form::textarea('question[]',null,['class'=>'form-control summernoteJS'])}}
                 </div>
             </div>
             
@@ -105,7 +105,7 @@
                 {{Form::label('answer','Answer',['class'=>'col-md-3 col-form-label text-right'])}}
 
                 <div class="col-md-9">
-                {{Form::textarea('answer[]',null,['class'=>'form-control '])}}
+                {{Form::textarea('answer[]',null,['class'=>'form-control summernoteJS'])}}
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
             faqTemplate.attr('id', '');
             var textarea = faqTemplate.find('textarea');
             faqTemplate.appendTo(faqContainer);
-            
+            summernoteload('.summernoteJS');
         }
 
         function removeQASet(element, deleteUrl = null) {
@@ -137,6 +137,7 @@
                 $(element).closest('.qa-set-row').remove();
         }
 
+        
         function changePosition(requestData) {
             success = $('#success_type');
             error = $("#error_type");
