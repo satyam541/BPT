@@ -89,11 +89,16 @@ Route::get('/topic/content/update/{topicDetail}','TopicController@contentEdit')-
 Route::post('/topic/content/update/{topicDetail}','TopicController@contentUpdate')->name('updateTopicContent');
 Route::post('/topic/content/delete/{topicDetail}','TopicController@contentDelete')->name('deleteTopicContent');
 
-Route::post('/faq/insert','TopicController@insertFaq')->name('insertFaq');
+Route::get('/faq/list/{type}/{id}','FaqController@index')->name('faqList');
+Route::get('/faq/insert/{type}/{id}','FaqController@createFaq')->name('createFaq');
+Route::get('/faq/edit/{faq}','FaqController@editFaq')->name('editFaq');
+Route::post('/faq/insert','FaqController@insertFaq')->name('insertFaq');
+Route::post('/faq/delete/{faq}','FaqController@deleteFaq')->name('deleteFaq');
+Route::post('/faq/sort','FaqController@sortFaq')->name('sortFaq');
+
 Route::get('/faq/multiple','TopicController@multipleFaq')->name('insertMultipleFaq');
 Route::post('/faq/insertmultiple','TopicController@insertMultipleFaq')->name('insertMultipleFaq');
-Route::post('/faq/delete/{faq}','TopicController@deleteFaq')->name('deleteFaq');
-Route::post('/faq/sort','TopicController@sortFaq')->name('sortFaq');
+
 
 Route::get('/unlinkedTopic','TopicController@unlinkedTopicList')->name('unlinkTopic');
 Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCategoryRoute');
@@ -155,7 +160,7 @@ Route::post('/whatsincluded/insert','WhatsIncludedController@insert')->name('ins
 Route::get('/whatsincluded/update/{whatsincluded}','WhatsIncludedController@edit')->name('editWhatsIncluded');
 Route::post('/whatsincluded/update','WhatsIncludedController@update')->name('updateWhatsIncluded');
 Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@delete')->name('deleteWhatsIncluded');
-
+// Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
 Route::post('/upload-video','OnlineCourseController@uploadVideo')->name('uploadVideo');
 Route::get('/onlinecourse/insert','OnlineCourseController@create')->name('createOnlineCourse');
@@ -164,6 +169,13 @@ Route::get('/onlinecourse/update/{course}','OnlineCourseController@edit')->name(
 Route::post('/onlinecourse/update/{course}','OnlineCourseController@update')->name('updateOnlineCourse');
 Route::post('/onlinecourse/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
 
+// Addon Routes
+Route::get('/course/addon','AddonController@index')->name('AddonList');
+Route::get('courseaddon/create','AddonController@create')->name('AddonCreate');
+Route::post('courseaddon/store','AddonController@store')->name('AddonStore');
+Route::get('courseaddon/edit/{id}','AddonController@edit')->name('AddonEdit');
+Route::post('courseaddon/update','AddonController@update')->name('AddonUpdate');
+Route::post('/courseaddon/delete/{courseAddon}','AddonController@delete')->name('AddonDelete');
 
 Route::get('/course/get/detail',function()
 {
@@ -308,7 +320,9 @@ Route::get('/topictrash','TopicController@topictrashList')->name('topicTrashList
 Route::get('/topic/restoretopic/{id}','TopicController@restoreTopic')->name('restoreTopic');
 Route::get('/topic/deletetopic/{id}','TopicController@forceDeleteTopic')->name('forceDeleteTopic');
 
-
+Route::get('/whatsincludedtrash','WhatsIncludedController@whatsIncludedTrashList')->name('WhatsIncludedTrashList');
+Route::get('/whatsincluded/restorewhatsincluded/{id}','WhatsIncludedController@restoreWhatsInclude')->name('restoreWhatsIncluded');
+Route::get('/whatsincluded/deletewhatsincluded/{id}','WhatsIncludedController@forceDeleteWhatsInclude')->name('forceDeleteWhatsIncluded');
 
 Route::get('/articletrash','ArticleController@articletrashList')->name('articleTrashList');
 Route::get('/article/restorearticle/{id}','ArticleController@restoreArticle')->name('restoreArticle');

@@ -36,6 +36,22 @@
     }
 }
 // End Location-Main Section
+
+// Start Key Section
+.key {
+    padding: @sectionPadding-md;
+
+    .key-list {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .key-content {
+        width: 48%;
+        align-self: inherit;
+    }
+}
+// End Key Section
 }
 
 @media @size-lg{
@@ -63,6 +79,31 @@
         }
     }
     // End Location-Main Section
+
+    // Start Key Section
+    .key {
+        background: none;
+        background-image: url(../img/location-detail/key-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .key-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .info {
+            width: 20%;
+            align-self: center;
+        }
+
+        .key-list {
+            width: 77%;
+        }
+        .key-content {
+            width: 23%;
+            margin-top: 0;
+        }
+    }
+    // End Key Section
 }
 
 @media @size-xl{
@@ -81,4 +122,21 @@
         }
     }
     // End Location-Main Section
+
+    // Start Key Section
+    .key {
+        padding: @sectionPadding-xl;
+        .key-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .info {
+            width: 17%;
+        }
+
+        .key-list {
+            width: 81%;
+        }
+    }
+    // End Key Section
 }

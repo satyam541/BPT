@@ -60,7 +60,7 @@
                       <a href="{{ route('editRole',['role'=>$role->id]) }}" class="fa fa-edit"></a>
                       @endcan
                       @can('delete',$role)
-                      <a href="" class="fa fa-trash" style="color: red"></a>
+                      <a href="#"  onclick="deleteItem('{{route('deleteRole',[$role->id]) }}')" ><i class="fa fa-trash text-red"></i></a>
                       @endcan
                     </td>
                     </tr>

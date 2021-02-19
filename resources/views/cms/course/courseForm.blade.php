@@ -140,10 +140,7 @@
           <!-- /.col -->
       </div>
       <!-- /.row -->
-      @if(!empty($course->id))
-      @php $faqModule = $course; $module_type='course'; @endphp
-          @include('cms.layouts.faqForm')
-      @endif
+
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
@@ -167,19 +164,19 @@ $(".js-example-basic-multiple").select2({
   
       });
       function updateSlug()
-{
-    var location = $("#name").val();
-    var slug = '/'+convertUrl(location);  
-    var selectedTopic=$('#topicName').select2("val");
-    var topics=<?php echo json_encode($list['slugs']); ?>;
-    if(selectedTopic in topics){
-      topicslug=topics[selectedTopic];
-      slug=topicslug+slug;
-    }
-    
-    $("#reference").val(slug);
-    
-}
+      {
+        var location = $("#name").val();
+        var slug = '/'+convertUrl(location);  
+        var selectedTopic=$('#topicName').select2("val");
+        var topics=<?php echo json_encode($list['slugs']); ?>;
+        if(selectedTopic in topics){
+          topicslug=topics[selectedTopic];
+          slug=topicslug+slug;
+        }
+
+      $("#reference").val(slug);
+
+      }
               
         </script>
             

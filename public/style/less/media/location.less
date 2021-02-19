@@ -1,37 +1,15 @@
 @media @size-md{
     // Start Banner section //
     .location-banner {
-        background: none;
-        background-image: url(../img/location/banner-bg.png);
-        background-size: 50% 100%;
-        background-repeat: no-repeat;
-        background-position: right;
-        box-shadow: @shadowLight;
+       
         &::before {
             content: none;
         }
         .banner-container {
-            width: 60%;
             background-image: url(../img/location/dotted-map.png);
             background-repeat: no-repeat;
             background-position: left;
             background-size: 100% 100%;
-        }
-        h1,p {
-            color: @blackColor;
-        }
-        .breadcrums {
-            .black {
-                display: flex;
-            }
-            .white {
-                display: none;
-            }
-            ul {
-                li {
-                    color: @blackColor;
-                }
-            }
         }
     }
     // End Banner section //
@@ -129,7 +107,6 @@
         .popular-content {
             width: 44%;
             margin-right: 3rem;
-            z-index: 1;
             &:nth-child(even) {
                 margin-right: 0;
             }
@@ -142,7 +119,11 @@
                 height: 79px;
                 width: 88px;
                 top: -9px;
-                left: -27px;
+                left: -16px;
+            }
+            .img {
+                left: -6px;
+                z-index: 1;
             }
         }
     }
@@ -193,13 +174,34 @@
 @media @size-lg{
     // Start Banner section //
     .location-banner {
+        background: none;
+        background-image: url(../img/location/banner-bg.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        box-shadow: @shadowLight;
         background-size: 60% 100%;
-       .banner-container {
-        p {
-            width: 61%;
+        h1,p {
+            color: @blackColor;
         }
         h1 {
             font-size: 32px;
+        }
+        .breadcrums {
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
+            ul {
+                li {
+                    color: @blackColor;
+                }
+            }
+        }
+       .banner-container {
+        p {
+            width: 44%;
         }
        }
     }
@@ -256,7 +258,7 @@
     // Start Popular Section
     .popular {
         .popular-content {
-            width: 30%;
+            width: 28%;
             &:nth-child(even) {
                 margin-right: 3rem;
             }
@@ -339,6 +341,9 @@
     .popular {
         .popular-content {
             width: 22%;
+            &::before {
+                left: -13px;
+            }
             &:nth-child(even) {
                 margin-right: 3rem;
             }
@@ -347,6 +352,9 @@
             }
             &:nth-child(4),&:nth-child(8),&:nth-child(12),&:nth-child(16), &:nth-child(20) {
                 margin-right: 0;
+            }
+            .img {
+                left: -3px;
             }
         }
     }

@@ -11,7 +11,7 @@ class Course extends Model
     use SoftDeletes;
     protected $table = 'course';
     protected $guarded = array('id');
-    protected $appends = ['url'];
+    // protected $appends = ['url'];
     public $logo_path = "uploads/course/";
 
     public $combinedAttributes = array();

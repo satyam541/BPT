@@ -204,7 +204,7 @@
             </ul>
           </li>
 
-          <li @if(in_array(Route::currentRouteName(),['categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
+          <li @if(in_array(Route::currentRouteName(),['AddonList','categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -247,6 +247,12 @@
                 <a href="{{Route('whatsincludedListRoute')}}" @if(Route::currentRouteName()=='whatsincludedListRoute')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('AddonList')}}" @if(Route::currentRouteName()=='AddonList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Course Addon</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -445,7 +451,7 @@
               </li>
             </ul>
           </li>
-          <li @if(in_array(Route::currentRouteName(),['accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          <li @if(in_array(Route::currentRouteName(),['WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -522,6 +528,12 @@
                 <a href="{{Route('testimonialTrashList')}}" @if(Route::currentRouteName()=='testimonialTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Testimonial List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('WhatsIncludedTrashList')}}" @if(Route::currentRouteName()=='WhatsIncludedTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Whats Included List</p>
                 </a>
               </li>
               <li class="nav-item">

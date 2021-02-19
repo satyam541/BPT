@@ -85,10 +85,16 @@ class ArticleController extends Controller
         
              $article->tags()->attach($tag->id);
         }
-        if(!empty($article->id))
-        \Session::flash('success', 'Article created!'); 
-        return redirect()->back();
-    }
+        if($article->type=='news')
+        {
+            return redirect()->route('newsList')->with('success', 'News Inserted Successfully!');
+        }
+        else
+        {
+            return redirect()->route('blogList')->with('success', 'Blog Inserted Successfully!');
+            
+        }
+   }
 
      public function edit(Article $article)
      {
@@ -153,9 +159,15 @@ class ArticleController extends Controller
 
         $tags = Tag::wherein('name',$tagNames)->get();
            $article->tags()->sync($tags); 
-        if(!empty($article->title))
-        \Session::flash('success', 'Article updated!'); 
-        return redirect()->back();
+           if($article->type == 'news')
+           {
+               return redirect()->route('newsList')->with('success', 'News Updated Successfully!');
+           }
+           else
+           {
+               return redirect()->route('blogList')->with('success', 'Blog Updated Successfully!');
+               
+           }   
     }
 
     public function delete(Article $article)

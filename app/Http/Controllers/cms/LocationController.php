@@ -116,7 +116,7 @@ class LocationController extends Controller
         {
             $data->popular()->save($data->popular);
         }
-        return back()->with('success','Operation done!');
+        return redirect()->route('locationList')->with('success','Operation done!');
     }
 
     public function delete(Location $location)

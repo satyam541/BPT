@@ -52,6 +52,8 @@
         text-decoration: none;
         color: inherit;
         cursor: pointer;
+        font-size: 14px;
+        font-weight: normal;
     }
     h1,h2,h3,h4 {
         margin: 0;
@@ -227,6 +229,11 @@
             text-align: center;
             justify-content: center;
         }
+        &::before{
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
     }
     .white-heading{
         &::before{
@@ -382,11 +389,13 @@
             select{
                 width: 40px;
                 border: none; 
-                margin: .5rem;
+                margin: .5rem 0;
                 outline: 0;
                 border-right: @greyBorder;
                 box-shadow: none;
                 color: @greyColor;
+                background-color: transparent;
+
             }
             option{
                 color: @textColor;
@@ -445,17 +454,15 @@
         li {
             color: @whiteColor;
             font-size: 14px;
-            &:first-child {
-                margin-right: .4rem;
-            }
-            &:last-child {
-                margin-left: .4rem;
-            }
         }
         
-        img {
+        .white,.black {
             width: 8px;
             height: 8px;
+            margin: 0 .4rem;
+        }
+        .black {
+            display: none;
         }
        
     }
@@ -775,7 +782,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-color: transparent;
-                top: initial;
+                top: inherit;
             }
         }
         .footer-main{

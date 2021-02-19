@@ -34,7 +34,8 @@
                     <div class="card-title">{{ ucfirst($type) }}</div>
                 </div>
                 <div class="card-body">
-                    
+                    <span class="message" id="success_type"></span>
+                    <span class="message" id="error_type"></span>
                     <table class="table table-hover" data-module="{{ $type }}">
                             <thead>
                                 <tr>
