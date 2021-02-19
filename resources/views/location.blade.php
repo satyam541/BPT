@@ -12,7 +12,7 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
-                    <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                    <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                     <li><a href="">Locations</a></li>
                 </ul>
             </div>
@@ -381,19 +381,19 @@
                 </div>
                 <div class="form-input">
                     <div class="input-container">
-                        <span><img src="{{url('img/location/name.svg')}}" alt="name" class="black">
-                        <img src="{{url('img/location/name-red.svg')}}" alt="name-red" class="red"></span>
+                        <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                        <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
                         <input type="text" name="f-name" id="f-name" placeholder="First Name*"
                             autocomplete="off">
                     </div>
                     <div class="input-container">
-                        <span><img src="{{url('img/location/email.svg')}}" alt="email" class="black">
-                        <img src="{{url('img/location/email-red.svg')}}" alt="email-red" class="red"></span>
+                        <span><img src="{{url('img/master/email-black.svg')}}" alt="email" class="black">
+                        <img src="{{url('img/master/email-red.svg')}}" alt="email-red" class="red"></span>
                         <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
                     </div>
                     <div class="input-container">
-                        <span><img src="{{url('img/location/phone-call.svg')}}" alt="phone-call" class="black">
-                        <img src="{{url('img/location/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                        <span><img src="{{url('img/master/phone-callblack.svg')}}" alt="phone-call" class="black">
+                        <img src="{{url('img/master/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
                         <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                         <div class="phonecode-field field-black">
                             <select class="country-code"></select>
@@ -405,14 +405,14 @@
                         </div>
                     </div>
                     <div class="input-container">
-                        <span><img src="{{url('img/location/house.svg')}}" alt="house" class="black">
-                        <img src="{{url('img/location/house-red.svg')}}" alt="house-red" class="red"></span>
+                        <span><img src="{{url('img/master/house-black.svg')}}" alt="house" class="black">
+                        <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
                         <input type="text" name="address" id="adress" placeholder="Address"
                             autocomplete="off">
                     </div>
                     <div class="input-container">
-                        <span><img src="{{url('img/location/comment.svg')}}" alt="comment" class="black">
-                        <img src="{{url('img/location/comment-red.svg')}}" alt="comment-red" class="red"></span>
+                        <span><img src="{{url('img/master/comment-black.svg')}}" alt="comment" class="black">
+                        <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                         <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
                     </div>
                 </div>
