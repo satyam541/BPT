@@ -73,7 +73,7 @@ class RedirectController extends Controller
         $url->save();
         if(!empty($url->id))
         \Session::flash('success', 'Url created!');
-        return back()->with('success','URL Created');
+        return redirect()->route('urlRedirectList')->with('success','URL Created');
 
     }
     public function  edit(UrlRedirect $url)
@@ -105,8 +105,7 @@ class RedirectController extends Controller
         $url->source_url=$request->source_url;
         $url->target_url=$request->target_url;
         $url->save();
-        // if(!empty($url->id))
-        // \Session::flash('success', 'Url Updated !');
-        return back()->with('success','URL Updated');
+        return redirect()->route('urlRedirectList')->with('success','URL Updated');
+        
     }
 }
