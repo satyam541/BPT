@@ -247,7 +247,7 @@ class TopicController extends Controller
             ['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']]
             ,$inputs);
         
-        return redirect()->route('topicContentList')->with('success','Content Added');
+        return back()->with('success','Content Added');
 
     }
 
@@ -382,7 +382,7 @@ class TopicController extends Controller
         
         $content = $topicDetail->update($inputs);
         
-        return redirect()->route('topicContentList')->with('success','Content Updated');
+        return back()->with('success','Content Updated');
     }
 
     public function delete(Topic $topic)
