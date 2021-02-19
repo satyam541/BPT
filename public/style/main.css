@@ -5105,3 +5105,14 @@ input::-webkit-inner-spin-button {
     background-position: right;
   }
 }
+.certification-banner {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.certification-banner .banner-container {
+  display: flex;
+  flex-direction: column;
+}
+.certification-banner h1,
+.certification-banner p {
+  color: #FFFFFF;
+}

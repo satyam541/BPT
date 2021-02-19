@@ -19,7 +19,7 @@
         </div>
     </div>
 </section>
-<!-- End Banner Section -->  
+<!-- End Banner Section -->
 
 <!-- Start Convenient Section -->
 <section class="flex-container convenient">
