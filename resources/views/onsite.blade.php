@@ -9,11 +9,11 @@
             <h1>Best Practice Onsite Training </h1>
             <p>Onsite programmes are our speciality. Any of our courses can be delivered onsite at your offices or a venue of your choice. Best Practice training helps you to take flexible and cost-effective training at a location of your choice.  It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the delegates.  </p>
             <div class="breadcrums">
-                            <ul>
-                                <li><a href="">Home</a></li>
-                                <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
-                                <li><a href="">Contact</a></li>
-                            </ul>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
             </div>
         </div>
     </div>
