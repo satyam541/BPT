@@ -22,7 +22,7 @@ class AboutController extends Controller
         }
         $data['pageDetail'] = PageDetail::getContent('about-us');
 
-        return view('about',$data);
+        return view('aboutus',$data);
     }
 
     /**

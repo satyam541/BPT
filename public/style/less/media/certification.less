@@ -1,0 +1,32 @@
+@media @size-md{
+    // Start Banner section //
+    .certification-banner {
+        
+        &::before {
+            content: none;
+        }
+    }
+    // End Banner section //
+}
+
+@media @size-lg{
+    // Start Banner section //
+    .certification-banner {
+        background: linear-gradient(125deg, @darkblueColor 60%, transparent 40%), url(../img/certification/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        .banner-container {
+            background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
+            padding: 2rem;
+            h1 {
+                color: @blackColor;
+            }
+            p {
+                color: @blackColor;
+                width: 55%;
+            }
+        }
+    }
+    // End Banner section //
+}

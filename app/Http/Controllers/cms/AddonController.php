@@ -90,8 +90,9 @@ class AddonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CourseAddon $courseAddon)
+    public function delete(Request $request, CourseAddon $courseAddon)
     {
+        // dd($courseAddon);
         $courseAddon->delete();
     }
 }
