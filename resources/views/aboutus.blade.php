@@ -217,7 +217,7 @@
                             <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red"
                                 class="red"></span>
                         <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                        <div class="phonecode-field">
+                        <div class="phonecode-field field-black">
                             <select class="country-code"></select>
                             <span class="prefix"></span>
                             <input type="number" class="telephone" placeholder="Phone Number*">
@@ -273,7 +273,7 @@
                 <div class="contact-list">
                     <div class="item">
                         <span>
-                            <img src="{{url('img/contactus/email-blue.svg')}}" alt="email-blue">
+                            <img src="{{url('img/aboutus/about-mail.svg')}}" alt="about-email">
                         </span>
                         <div class="item-info">
                             <h3>Email:</h3>
@@ -283,7 +283,7 @@
                     </div>
                     <div class="item">
                         <span>
-                            <img src="{{url('img/contactus/call-blue.svg')}}" alt="call-blue">
+                            <img src="{{url('img/aboutus/about-call.svg')}}" alt="about-call">
                         </span>
                         <div class="item-info">
                             <h3>Phone:</h3>
@@ -292,7 +292,7 @@
                     </div>
                     <div class="item">
                         <span>
-                            <img src="{{url('img/contactus/address.svg')}}" alt="address">
+                            <img src="{{url('img/aboutus/about-address.svg')}}" alt="aboutaddress">
                         </span>
                         <div class="item-info">
                             <h3>Address:</h3>

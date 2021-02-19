@@ -81,8 +81,8 @@
     }
   }
     .contact-info{
-      margin-top: 0;
       .heading{
+        padding-top: 0;
         h2,p{
           text-align: center;
         }
@@ -96,14 +96,11 @@
       margin-top: 1rem;
     }
     }
-    .social{
-      margin: auto;
-      width: 45%;
-    }
     .contact-list{
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+
     }
 }
 // End Footer Section
@@ -111,7 +108,6 @@
 // Start skills section //
 .skills{
   padding: @sectionPadding-md;
-  padding-top: 1rem;
   .skills-list{
     flex-direction: row;
     flex-wrap: wrap;
@@ -248,7 +244,7 @@ display: none;
     background-image: url(../img/aboutus/difference-bg.png);
     background-size: 100% 50%;
     background-repeat: no-repeat;
-  
+    background-color: transparent;
     .difference-content{
       width: 70%;
       margin-left: auto;
@@ -272,7 +268,7 @@ display: none;
     .difference-list{
     margin-top: 3rem;
         .count{
-    width: 25%;
+    width: 24%;
         }
     }
   }
@@ -309,6 +305,10 @@ background: linear-gradient(#00326C 61% , @whiteColor 61%);
     background-size: 100% 100%;
     background-color: transparent;
     background-repeat: no-repeat;
+
+    .heading{
+      padding-top: 0;
+    }
   }
   .contact-info{
     width: 34%;
@@ -389,6 +389,10 @@ justify-content: space-around;
    .difference {
    padding: @sectionPadding-xl;
    background-size: 100% 53%;
+   padding-top: 2.4rem;
+   .difference-list{
+     margin-top: 5rem;
+   }
   }
   // End differece section //
 
@@ -468,5 +472,18 @@ justify-content: space-around;
       }
       }
       // End Clients Section
+
+}
+
+@media @size-xlll{
+
+  .difference{
+    background-size: 100% 55%;
+    padding-top: 4rem;
+
+    .difference-list{
+      margin-top: 8rem;
+    }
+  }
 
 }

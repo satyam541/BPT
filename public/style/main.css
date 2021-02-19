@@ -2318,8 +2318,7 @@ input::-webkit-inner-spin-button {
   position: absolute;
 }
 .difference .difference-list .count .txt-name {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
   color: #000000;
   margin-top: 0.5rem;
   margin-bottom: 0;
@@ -2451,6 +2450,7 @@ input::-webkit-inner-spin-button {
 }
 .contact-form {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
 }
 .contact-form .contact-container {
   display: flex;
@@ -2509,17 +2509,12 @@ input::-webkit-inner-spin-button {
   align-items: center;
   width: 25px;
   height: 25px;
-  min-width: 25px;
-  background-color: #FFFFFF;
-  transform: rotate(45deg);
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
-  padding: 0.3rem;
 }
 .contact-form .contact-list .item span img {
   width: 100%;
   height: 100%;
-  transform: rotate(-45deg);
 }
 .contact-form .contact-list .item .item-info {
   display: flex;
@@ -2638,8 +2633,8 @@ input::-webkit-inner-spin-button {
   .contact-form .input-container:last-child {
     width: 100%;
   }
-  .contact-form .contact-info {
-    margin-top: 0;
+  .contact-form .contact-info .heading {
+    padding-top: 0;
   }
   .contact-form .contact-info .heading h2,
   .contact-form .contact-info .heading p {
@@ -2653,10 +2648,6 @@ input::-webkit-inner-spin-button {
     margin: auto;
     margin-top: 1rem;
   }
-  .contact-form .social {
-    margin: auto;
-    width: 45%;
-  }
   .contact-form .contact-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -2664,7 +2655,6 @@ input::-webkit-inner-spin-button {
   }
   .skills {
     padding: 3rem 2rem;
-    padding-top: 1rem;
   }
   .skills .skills-list {
     flex-direction: row;
@@ -2765,6 +2755,7 @@ input::-webkit-inner-spin-button {
     background-image: url(../img/aboutus/difference-bg.png);
     background-size: 100% 50%;
     background-repeat: no-repeat;
+    background-color: transparent;
   }
   .difference .difference-content {
     width: 70%;
@@ -2788,7 +2779,7 @@ input::-webkit-inner-spin-button {
     margin-top: 3rem;
   }
   .difference .difference-list .count {
-    width: 25%;
+    width: 24%;
   }
   .reviews {
     background-image: url(../img/aboutus/testimonial-bg.png);
@@ -2816,6 +2807,9 @@ input::-webkit-inner-spin-button {
     background-size: 100% 100%;
     background-color: transparent;
     background-repeat: no-repeat;
+  }
+  .contact-form .form .heading {
+    padding-top: 0;
   }
   .contact-form .contact-info {
     width: 34%;
@@ -2865,6 +2859,10 @@ input::-webkit-inner-spin-button {
   .difference {
     padding: 4rem 0rem;
     background-size: 100% 53%;
+    padding-top: 2.4rem;
+  }
+  .difference .difference-list {
+    margin-top: 5rem;
   }
   .reviews {
     padding: 4rem 0rem;
@@ -2930,6 +2928,15 @@ input::-webkit-inner-spin-button {
     justify-content: space-around;
     background-color: transparent;
     padding: 0;
+  }
+}
+@media (min-width : 1600px) {
+  .difference {
+    background-size: 100% 55%;
+    padding-top: 4rem;
+  }
+  .difference .difference-list {
+    margin-top: 8rem;
   }
 }
 .testimonial-banner {
@@ -4889,6 +4896,7 @@ input::-webkit-inner-spin-button {
 }
 .key .info h2 {
   color: #FFFFFF;
+  text-align: center;
 }
 .key .key-list {
   display: flex;
