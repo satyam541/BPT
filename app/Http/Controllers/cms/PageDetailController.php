@@ -93,12 +93,18 @@ class PageDetailController extends Controller
     {
         $this->authorize('update', $pageDetail);
         $inputs = $request->except(["_token",'image']);
-        $image_prefix = $inputs['page_name'];
+        $image_prefix = $inputs['page_name'].'_image_';
+        $icon_prefix = $inputs['page_name'].'_icon_';
          $img_alt  = $request->img_alt;
         if($request->hasFile('image')){
             $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $action = $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
             $inputs["image"] = $imageName;
+        }
+        if($request->hasFile('icon')){
+            $imageName = $icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+            $action = $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
+            $inputs["icon"] = $imageName;
         }
 
         try
