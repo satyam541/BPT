@@ -227,6 +227,11 @@
             text-align: center;
             justify-content: center;
         }
+        &::before{
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
     }
     .white-heading{
         &::before{
@@ -445,17 +450,15 @@
         li {
             color: @whiteColor;
             font-size: 14px;
-            &:first-child {
-                margin-right: .4rem;
-            }
-            &:last-child {
-                margin-left: .4rem;
-            }
         }
         
-        img {
+        .white,.black {
             width: 8px;
             height: 8px;
+            margin: 0 .4rem;
+        }
+        .black {
+            display: none;
         }
        
     }
@@ -775,7 +778,7 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-color: transparent;
-                top: initial;
+                top: inherit;
             }
         }
         .footer-main{

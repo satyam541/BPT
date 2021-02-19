@@ -7,10 +7,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\cms\BulletPointRequest;
 use Carbon\Carbon;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\whatsIncluded;
 use App\Models\BulletPoint;
+use App\Models\CategoryContent;
+use App\Http\Requests\cms\CategoryContentRequest;
 use App\Models\whatsIncludedHeaders;
 use App\Http\Requests\cms\CategoryRequest;
+
 use App\Http\Requests\cms\WhatsIncludedRequest;
 
 class CategoryController extends Controller
@@ -229,6 +233,84 @@ class CategoryController extends Controller
         Category::find($course)->WhatsIncluded()->detach($whatsincluded);
     
    }
+   public function contentList(Request $request)
+    {
+        // $this->authorize('view', new Topic());
+        $filter                 = $request->all();
+        $data['selectedCategory']  = empty($filter['category'])? NULL : $filter['category'];
+        $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
+        $query                  = CategoryContent::query();
+        $query                  = empty($filter['category'])? $query : $query->where('category_id',$filter['category']);
+        $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query->whereHas('category');
+        $result                 = $query->get();
+        $list['category']       = Category::all()->pluck('name','id')->toArray();
+        $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
+        $data['list']           = $list;
+        $data['contents']       = $result;
+        return view('cms.category.contents',$data);
+    }
+    public function contentCreate(Request $request)
+    {
+        // $this->authorize('create', new Course());
+        $filter = $request->all();
+        $selectedCategory = empty($filter['category'])? NULL : $filter['category'];
+        $selectedCountry = empty($filter['country'])? NULL : $filter['country'];
+        $categoryDetail = CategoryContent::firstOrNew(array('category_id'=>$selectedCategory,'country_id'=>$selectedCountry));
+        $list['category'] = Category::all()->pluck('name','id')->toArray();
+        $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
+        $data['list'] = $list;
+        $data['categoryDetail'] = $categoryDetail;
+        $data['submitRoute'] = 'insertCategoryContent';
+        return view('cms.category.contentForm',$data);
+    }
+    public function contentInsert(CategoryContentRequest $request)
+    {
+        // $this->authorize('create', new Course());
+        $inputs              = $request->except("_token");
+      
+        $content               = CategoryContent::firstOrNew(
+            ['category_id'=>$inputs['category_id'],'country_id'=>$inputs['country_id']]
+            ,$inputs);
+            if(empty($content->created_at))
+            {
+                $content->save();
+                \Session::flash('success', 'Content added!'); 
+            }
+            else
+            {
+                \Session::flash('failure', 'Duplicate Data Found!'); 
+            }
+
+        return redirect()->route('categoryContentList',['category'=>$inputs['category_id']]);
+    }
+    public function contentEdit(Request $request,CategoryContent $categoryDetail)
+    {
+        // $this->authorize('update', $courseDetail->course);
+        $list['category'] = Category::all()->pluck('name','id')->toArray();
+        $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
+        $data['list'] = $list;
+        $data['categoryDetail'] = $categoryDetail;
+        $data['submitRoute'] = array('updateCategoryContent',$categoryDetail->id);
+        return view('cms.category.contentForm',$data);
+    }
+    public function contentUpdate(CategoryContentRequest $request,CategoryContent $categoryDetail)
+    {
+        // $this->authorize('update', $courseDetail->course);
+        $inputs              = $request->except("_token");
+        
+        $content = $categoryDetail->update($inputs);
+            if(!empty($content))
+        \Session::flash('success', 'Content Updated!'); 
+
+        return redirect()->route('categoryContentList',['category'=>$inputs['category_id']]);
+
+    }
+    public function contentDelete(Request $request,CategoryContent $categoryDetail)
+    {
+        // $this->authorize('delete', $courseDetail->course);
+        $categoryDetail->delete();
+    }
    public function categorytrashList()
    {
      $this->authorize('view', new Category());
