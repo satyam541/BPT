@@ -5003,7 +5003,7 @@ input::-webkit-inner-spin-button {
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;
-    padding-top: 1rem;
+    padding-top: 1rem!important;
   }
 }
 @media (min-width : 1024px) {
@@ -5012,5 +5012,13 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
+  }
+  .offer-banner .banner-container {
+    width: 50%;
+  }
+}
+@media (min-width : 1366px) {
+  .offer-banner {
+    padding: 4rem 0rem;
   }
 }
