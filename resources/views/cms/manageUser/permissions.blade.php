@@ -78,7 +78,7 @@
                                                 <td><a href="{{ route('editPermission', ['permission' => $permission->id]) }}"><i class="fa fa-edit"></a></td>
                                                 @endcan
                                                 @can('delete', $permission)
-                                                <td><a href="#" onclick="deleteItem(route('deletePermission'),'{{ $permission->id }}')"><i class="fa fa-trash text-red"></i></a></td>
+                                                <td><a href="#" onclick="deleteItem('{{route('deletePermission', [$permission->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                                 @endcan
                                             </tr>
                                         @endforeach

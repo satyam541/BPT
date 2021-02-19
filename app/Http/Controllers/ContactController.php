@@ -20,6 +20,6 @@ class ContactController extends Controller
         $data['courses']=Course::all();
         $data['socialmedias']=SocialMedia::all();
         $data['pageDetail'] = PageDetail::getContent('contact-us');
-        return view('contact',$data);
+        return view('contactus',$data);
     }
 }

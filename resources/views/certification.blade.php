@@ -12,6 +12,7 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                    <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                     <li><a href="">Technical IT Certifications</a></li>
                 </ul>
             </div>
