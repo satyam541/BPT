@@ -41,3 +41,6 @@ Route::get('/blog', function () {
 Route::get('/offer', function () {
     return view('offer');
 });
+Route::get('/location-detail', function () {
+    return view('location-detail');
+});
