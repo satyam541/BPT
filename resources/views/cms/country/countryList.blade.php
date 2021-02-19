@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{route('')}}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Country</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Country</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,27 +42,38 @@
               <div class="card-body">
               <table id="example1">
                 <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Actions</th>
-                </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th>
+                      @can('update',new App\Models\Country())
+                      Actions
+                      @endcan
+                    </th>   
+                  </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($countries as $country)
                     <tr>
-                    <td>{{$country->name}}</td>
-                    <td><a href="{{route('editCountry',['country_code'=>$country->country_code])}}" class="fa fa-edit"></a>
-                    &nbsp;&nbsp;&nbsp;<a href=""onclick="deleteItem('{{ route('deleteCountry',['country_code'=>$country->country_code])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$country->name}}</td>
+                      <td>
+                      @can('update',$country)
+                      <a href="{{route('editCountry',['country_code'=>$country->country_code])}}" class="fa fa-edit"></a>
+                      &nbsp;&nbsp;&nbsp;
+                      @endcan
+                      @can('delete',$country)
+                      <a href=""onclick="deleteItem('{{ route('deleteCountry',['country_code'=>$country->country_code])}}')" class="fa fa-trash" style="color: red"></a>
+                      @endcan
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Country())
               <a id="add" href="{{route('createCountry')}}" class="btn btn-success" style="">Add new Record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

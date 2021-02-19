@@ -293,7 +293,7 @@ class CourseController extends Controller
 
    public function coursetrashList()
    {
-    // $this->authorize('view', new Course());
+    $this->authorize('view', new Course());
     $data['trashedCourses'] = Course::onlyTrashed()->get();
     return  view('cms.trashed.courseTrashedList',$data);
        
@@ -302,16 +302,15 @@ class CourseController extends Controller
    public function restoreCourse($id)
    {
         $course= Course::onlyTrashed()->find($id);
-//    $this->authorize('restore', $course);
+   $this->authorize('restore', $course);
    
-       $course->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCourse($id)
    {
         $course = Course::onlyTrashed()->find($id);
-//    $this->authorize('forceDelete', $course);
+   $this->authorize('forceDelete', $course);
        $course->forceDelete();
        return back()->with('success','Permanently Deleted');
    }

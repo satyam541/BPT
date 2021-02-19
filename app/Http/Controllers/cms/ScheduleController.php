@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Venue;
-use App\CustomSchedulePrice;
+use App\Models\CustomSchedulePrice;
 use Carbon\Carbon;
 use App\Models\Schedule;
 use App\Models\Country;
@@ -89,7 +89,7 @@ class ScheduleController extends ScheduleApi
         }
       }
       
-      return redirect()->route('scheduleList')->with('success','New Schedule created!');
+      return redirect()->route('manualScheduleList')->with('success','New Schedule created!');
     }
 
     public function edit(Schedule $schedule)

@@ -1,10 +1,27 @@
 @media @size-md{
 
+  // Start banner section//
+  .about-banner {
+    padding: @sectionPadding-md;
+    padding-top: 1rem;
+  .banner-container {
+    width: 100%;
+    padding: 0;
+
+    .banner-content {
+      padding-top: 2rem;
+      width: 100%;  
+    }
+  }
+  
+  }
+  //End bannner section //
+
 // Start about-us section //
   .about-us{
     padding: @sectionPadding-md;
     .about-container{
-      flex-direction: row;
+      display: flex;
       justify-content: space-between;
     }
     .about-content{
@@ -32,50 +49,139 @@
           }
       }
   }
+  .heading{
+    align-items: flex-start;
+  }
     
 }
 // End about-us section //
 
-
-// Start testimonial section//
-  .testimonial{
+// Start reviews section//
+  .reviews{
     padding: @sectionPadding-md;
     .testimonial-item{
         width: 85%;
     }
 }
-// End testimonial section/
+// End reviews section/
+
+// Start Footer Section
+.contact-form{
+  padding: @sectionPadding-md;
+  .input-container{
+    width: 48%;
+    &:last-child{
+      width: 100%;
+    }
+  }
+    .contact-info{
+      margin-top: 0;
+      .heading{
+        h2,p{
+          text-align: center;
+        }
+      }
+    }
+    .item{
+    width: 48%;
+    &:last-child{
+      width: 54%;
+      margin: auto;
+      margin-top: 1rem;
+    }
+    }
+    .social{
+      margin: auto;
+      width: 45%;
+    }
+    .contact-list{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+}
+// End Footer Section
 
 // Start skills section //
 .skills{
-
-  overflow: hidden;
+  padding: @sectionPadding-md;
+  padding-top: 1rem;
   .skills-list{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-
-  .skills-content{
-    transform: rotate(45deg);
+  
     p{
-      width: 80%;
+    font-size: 12px;
     }
-    h3{
-      font-size: 15px;
+    span{
+      width: 45px;
+      height: 45px;
     }
-  }
+    
   .skills-item{
-    width: 34%;
-    transform: rotate(-46deg);
-    margin-top: 4rem;
+    width: 31%;
+    transform: rotate(0deg);
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    padding: 1rem 0.6rem;
+  
   }
 }
 // End skills section //
 
+// Start difference section//
+.difference {
+    padding: @sectionPadding-md;
+   .difference-list{
+    .count{
+      width: 22%;
+      margin-bottom: 0;
+    }
+   }
+}
+// End differece section //
+
+// Start Clients Section
+.clients {
+padding: @sectionPadding-md;
+padding-top: 0;
+.heading{
+display: none;
+}
+}
+// End Clients Sectio
+
 }
 
 @media @size-lg{
+
+  //Start banner section//
+  .about-banner {
+    background-color: transparent;
+    background-image:url(../img/aboutus/banner-bg.png);
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 2rem;
+    padding-top: 1rem;
+    .banner-container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      align-items: center;
+      .banner-content {
+        width: 45%;
+        padding-top: 0;
+        h1,p{
+          color: @textColor;
+        }
+        
+      }
+    }
+    }
+    //End banner section//
 
 // Start about-us section //
 .about-us{
@@ -88,9 +194,9 @@
         position: absolute;
         z-index: -1;
         left: 11px;
-        top: 1px;
+        top: 7px;
         width: 5px;
-    height: 427px;
+        height: 480px;
         border-left: 2px dashed @blackColor;
       }
     }
@@ -101,7 +207,7 @@
         content: '';
         position: absolute;
         z-index: -1;
-        left: -28px;
+        left: -31px;
         top: 8px;
         width: 13px;
         height: 13px;
@@ -123,10 +229,42 @@
   
   }
 // End about-us section //
+
+
+  // Start difference section//
+  .difference {
+    background-image: url(../img/aboutus/difference-bg.png);
+    background-size: 100% 48%;
+    background-repeat: no-repeat;
+  
+    .heading{
+      width: 70%;
+     margin-left: auto;
+     &::before{
+       background-color: @whiteColor;
+     }
+        p{
+            text-align: center;
+            font-size: 13px;
+        }
+        p,h2{
+          color: @whiteColor;
+        }
+    }
+  
+    .difference-list{
+     
+    margin-top: 3rem;
+        .count{
+    width: 25%;
+        }
+    }
+  }
+  // End differece section //
   
   
-// Start testimonial section//
-.testimonial{
+// Start reviews section//
+.reviews{
 background-image: url(../img/aboutus/testimonial-bg.png);
 background-size: 100% 95%;
 background-repeat: no-repeat;
@@ -134,33 +272,188 @@ background-repeat: no-repeat;
 background: linear-gradient(#00326C 61% , @whiteColor 61%);
 }
 }
-// End testimonial section//
+// End reviews section//
+
+
+// Start Footer Section
+.contact-form{
+  background-image: url(../img/aboutus/contact-form.png);
+  background-size: 100% 100%;
+  .contact-container{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form{
+    width: 63%;
+    align-self: flex-start;
+    padding: 4rem;
+    box-shadow: none;
+    background-image: url(../img/aboutus/form-bg.png);
+    background-size: 100% 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+  }
+  .contact-info{
+    width: 34%;
+      background: none;
+      .heading{
+        h2,p{
+          text-align: left;
+        }
+      }
+      .contact-list{
+        width: 100%;
+        align-self: center;
+        .item{
+          width: 100%;
+        }
+      }
+  }
+  }
+// End Footer Section
+
+// Start skills section //
+.skills{
+  .skills-item{
+    width: 24%;
+  }
+}
+// End skills section //
+
+  // Start Clients Section
+  .clients {
+    padding-left: 0;
+    padding-right: 0;
+    .clients-container {
+    box-shadow: none;
+background-color: @bgColor;
+justify-content: space-around;
+    }
+    }
+    // End Clients Section
 }
 
 
 @media @size-xl{
 
-    // Start about-us section //
-    .about-us{
+  //Start banner section//
+  .about-banner {
     padding: @sectionPadding-xl;
+    padding-top: 1rem;
+    .banner-container{
+      padding-bottom: 0;
+    }
+  }
+  //End banner section//
+
+  // Start about-us section //
+  .about-us{
+  padding: @sectionPadding-xl;
+  .about-container{
     .about-content{
-    h2{
-        &::after{
-            height: 390px;
-            }
-            &::before{
-                top: 10px;
-            }
-    }
-    }
+      &::after{
+      height: 455px;
+        }
+      .heading{
+        h2{
+          &::before{
+              top: 10px;
+          }
+      }
+      }
+      }
+  }
+   
+  }
+  // End about-us section //
 
-    }
-    // End about-us section //
 
-    // Start testimonial section//
-    .testimonial{
+   // Start difference section//
+   .difference {
+   padding: @sectionPadding-xl;
+   background-size: 100% 50%;
+    .difference-list{
+    margin-top: 6rem;
+    }
+  }
+  // End differece section //
+
+
+  // Start reviews section//
+  .reviews{
+  padding: @sectionPadding-xl;
+  }
+  // End reviews section//
+
+  // Start Footer Section
+  .contact-form{
     padding: @sectionPadding-xl;
+    .contact-container{
+      align-items: center;
+      .contact-info{
+        width: 27%;
+      }
+      .form{
+      width: 68%;
+      padding-left: 7rem;
+      align-self: center;
+      }
     }
-    // End testimonial section//
+  }
+  // End Footer Section 
+
+  // Start skills section //
+  .skills{
+    padding: @sectionPadding-xl;
+  .skills-list{
+  width: 100%;
+  }
+  .skills-item{
+  width: 20%;
+  position: relative;
+  z-index: 1;
+  margin-top: 4rem;
+  &::before,&::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: @whiteColor;
+      left: 0;
+      top: 0;
+      transform: rotate(45deg);
+      box-shadow: @shadowLight;
+      border-radius: 10px;
+      z-index: -1;
+  } 
+  &::after{
+    background-color: #F6F6F6;
+    z-index: -2;
+    transform: rotate(75deg);
+    animation: skill-rotate 20s linear infinite;
+  }
+  p{
+    width: 80%;
+  }
+  }
+  }
+  // End skills section //
+
+    // Start Clients Section
+    .clients {
+      padding: @sectionPadding-xl;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 3rem;
+     margin-top: 2rem;
+      background-color: @bgColor;
+      .clients-container {
+      justify-content:space-around;
+      background-color: transparent;
+      padding: 0;
+      }
+      }
+      // End Clients Section
 
 }

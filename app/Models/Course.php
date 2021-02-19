@@ -85,9 +85,29 @@ class Course extends Model
         {
             $this->popular->delete();
         }
-       $this->whatsInclude()->delete();
+        $this->whatsInclude()->delete();
+        $this->faqs()->delete();
+        $this->content()->delete();
+        $this->BulletPoint()->delete();
         return parent::delete();
     }
+
+    public function restore()
+    {
+        
+
+        // if($this->isPopular())
+        // {
+        //     $this->popular->restore();
+        // }
+        // dd($this->whatsInclude());
+        // $this->whatsInclude()->restore();
+        // $this->faqs()->restore();
+        // $this->content()->restore();
+        // $this->BulletPoint()->restore();
+        return parent::restore();
+    }
+
 
     public function countryContent(){
         // return $this->hasOne('App\Models\CourseContent')->where('country_id',country()->id);
@@ -95,7 +115,7 @@ class Course extends Model
     }
     public function content()
     {
-        return $this->hasMany('App\Models\CourseContent')->withTrashed();
+        return $this->hasMany('App\Models\CourseContent');
     }
 
     public function faqs()

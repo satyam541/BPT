@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Testimonial</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Testimonial</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,7 +44,11 @@
                 <tr>
                   <th>Author Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Testimonial())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,9 +57,15 @@
                     <tr>
                     <td>{{$trashedtestimonial->author}}</td>
                     <td>{{$trashedtestimonial->created_at}}</td>
-                    <td><a href="{{ route('restoreTestimonial',['id'=>$trashedtestimonial->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeletetestimonialRoute',$trashedtestimonial->id)}}" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    <td>
+                      @can('restore',$trashedtestimonial)
+                      <a href="{{ route('restoreTestimonial',['id'=>$trashedtestimonial->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedtestimonial)
+                    <a href="{{ route('forceDeletetestimonialRoute',$trashedtestimonial->id)}}" class="fa fa-trash" style="color: red"></a>
+                      @endcan  
+                  </td>
                 </tr>
                     @endforeach
                   

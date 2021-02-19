@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Location</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Location</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -45,26 +45,37 @@
                 <tr>
                   <th>Name</th>
                   <th>Country</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('update',new App\Models\Location())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($locations as $location)
                     <tr>
-                    <td>{{$location->name}}</td>
-                    <td>{{$location->country->name}}</td>
-                    <td><a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
-                      &nbsp;&nbsp;&nbsp;<a href=""onclick="deleteItem('{{ route('deleteLocation',['location'=>$location->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$location->name}}</td>
+                      <td>{{$location->country->name}}</td>
+                      <td>
+                        @can('update',$location)
+                        <a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
+                        &nbsp;&nbsp;&nbsp;
+                        @endcan
+                        @can('delete',$location)
+                        <a href=""onclick="deleteItem('{{ route('deleteLocation',['location'=>$location->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        @endcan
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Location())
               <a id="add" href="{{route('createLocation')}}" class="btn btn-success" style="">Add new Record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

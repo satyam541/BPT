@@ -25,7 +25,7 @@ class ArticleController extends Controller
 
     public function newsList(Request $request)
     {
-        // $this->authorize('view', Article::firstOrNew(['type'=>'news']));
+        $this->authorize('view', Article::firstOrNew(['type'=>'news']));
         $data=Article::where('type','news')->get();
         $type='News';
        return view('cms.article.article',compact('data','type'));
@@ -33,7 +33,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-        // $this->authorize('create', Article::firstOrNew(['type'=>'news']));
+        $this->authorize('create', Article::firstOrNew(['type'=>'news']));
         $data['article'] = new Article();
         $data['submitRoute'] = "insertArticle";
         $data['selectedTags']="";
@@ -46,7 +46,7 @@ class ArticleController extends Controller
 
     public function insert(ArticleRequest $request)
     {
-        // $this->authorize('create', Article::firstOrNew(['type'=>$request->type]));
+        $this->authorize('create', Article::firstOrNew(['type'=>$request->type]));
         $article=new Article();
         $article->title                = $request->title;
         $article->content              = $request->content;
@@ -92,7 +92,7 @@ class ArticleController extends Controller
 
      public function edit(Article $article)
      {
-        // $this->authorize('update', $article);
+        $this->authorize('update', $article);
          $data['article'] = $article;
          $list['tag'] = Tag::all()->pluck('name','name')->toArray();
         $data['list'] = $list;
@@ -108,7 +108,7 @@ class ArticleController extends Controller
 
     public function update(Article $article,ArticleRequest $request)
     {
-        // $this->authorize('update', $article);
+        $this->authorize('update', $article);
         $article->title                     = $request->title;
         $article->content                  = $request->content;
         $article->post_date                = $request->post_date;
@@ -160,7 +160,7 @@ class ArticleController extends Controller
 
     public function delete(Article $article)
     {
-        //  $this->authorize('delete', $article);
+         $this->authorize('delete', $article);
         $article->delete();
     }
 
@@ -183,7 +183,7 @@ class ArticleController extends Controller
         
    public function articletrashList()
    {
-    //  $this->authorize('view', Article::firstOrNew(['type'=>'news']));
+     $this->authorize('view', Article::firstOrNew(['type'=>'news']));
     $data['trashedArticles'] = Article::onlyTrashed()->get();
  
 
@@ -194,7 +194,7 @@ class ArticleController extends Controller
    public function restoreArticle($id)
    {
         $article = Article::onlyTrashed()->find($id);
-        // $this->authorize('restore', $article);
+        $this->authorize('restore', $article);
         $article->restore();
 
         return back()->with('success','Successfully Restored');
@@ -203,7 +203,7 @@ class ArticleController extends Controller
    public function forceDeleteArticle($id)
    {
         $article = Article::onlyTrashed()->find($id);
-        // $this->authorize('forceDelete', $article);
+        $this->authorize('forceDelete', $article);
         $article->forceDelete();
         
         return back()->with('success','Permanently Deleted!');

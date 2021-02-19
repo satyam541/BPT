@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Resource</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Resource</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -42,7 +42,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Resource())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,17 +54,25 @@
                     @foreach ($Resources as $Resource)
                     <tr>
                     <td>{{$Resource->name}}</td>
-                    <td><a href="{{ route('editresources',['id'=>$Resource->id]) }}" class="fa fa-edit"></a>
-                    &nbsp;&nbsp;&nbsp;<a href="#" onclick="deleteItem('{{ route('deleteresources',['id'=>$Resource->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    
+                    <td>
+                      @can('update',$Resource)
+                      <a href="{{ route('editresources',['id'=>$Resource->id]) }}" class="fa fa-edit"></a>
+                      @endcan
+                    &nbsp;&nbsp;&nbsp;
+                    @can('delete',$Resource)
+                    <a href="#" onclick="deleteItem('{{ route('deleteresources',['id'=>$Resource->id])}}')" class="fa fa-trash" style="color: red"></a>
+                     @endcan  
+                  </td>
                 </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Resource())
               <a id="add" href="{{route('createresources')}}" class="btn btn-success" style="">Add new record</a>
-
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

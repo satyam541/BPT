@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Manage Price</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Manage Price</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -66,7 +66,7 @@
                         </td>                          
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('manageSchedulePrice',$item->id )}}" class="btn btn-warning">Locations</a>
+                                <a href="{{ route('manageSchedulePrice',$item->id)}}" class="btn btn-warning">Locations</a>
                             </div>
                         </td>
                         <td>

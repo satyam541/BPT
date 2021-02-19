@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Tag</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tag</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,7 +44,11 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Tag())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,8 +56,12 @@
                     @foreach ($tags as $tag)
                     <tr>
                     <td>{{$tag->name}}</td>
+                    @can('update',$tag)
                     <td><a href="{{ route('updateTag',$tag->id) }}" class="fa fa-edit"></a>
-                    <a href="#" onclick="deleteItem('{{ route('deleteTag',$tag->id)}}')" class="fa fa-trash" style="color: red"></a>
+                    @endcan
+                    @can('delete',$tag)
+                      <a href="#" onclick="deleteItem('{{ route('deleteTag',$tag->id)}}')" class="fa fa-trash" style="color: red"></a>
+                    @endcan
                     </td>
                 </tr>
                     @endforeach

@@ -14,7 +14,7 @@ class RedirectController extends Controller
     
     public function UrlRedirectList(Request $request)
     {
-        // $this->authorize('view', new UrlRedirect());    
+        $this->authorize('view', new UrlRedirect());    
         $source        =    $request->get('source',null);
         $target        =    $request->get('target',null);
          
@@ -37,9 +37,9 @@ class RedirectController extends Controller
     }
     public function create()
     {
-        // $this->authorize('create', new UrlRedirect());
+        $this->authorize('create', new UrlRedirect());
         $data['url'] = new UrlRedirect();
-        $data['R'] = "insertUrlRedirect";
+        $data['submitRoute'] = "insertUrlRedirect";
         return view('cms.urlredirect.urlRedirectForm',$data);
     }
  
@@ -47,7 +47,7 @@ class RedirectController extends Controller
     public function insert(RedirectRequest $request)
     {
         $url=new UrlRedirect();
-        // $this->authorize('create',$url);
+        $this->authorize('create',$url);
         $source= $request->source_url;
          $target=$request->target_url;
         if(Str::endsWith($source,'/')  or Str::endsWith($source,'\\') or Str::contains($source,'?') )
@@ -78,7 +78,7 @@ class RedirectController extends Controller
     }
     public function  edit(UrlRedirect $url)
     {
-        // $this->authorize('update',$url);
+        $this->authorize('update',$url);
         $data['url'] = $url;
         $data['submitRoute'] = array('updateUrlRedirect',$url->id);
         return view("cms.urlredirect.urlRedirectForm",$data);
@@ -86,7 +86,7 @@ class RedirectController extends Controller
 
     public function delete(UrlRedirect $url)
     {
-        // $this->authorize('delete',$url);
+        $this->authorize('delete',$url);
         $url->delete();
 
     }
@@ -94,7 +94,7 @@ class RedirectController extends Controller
     
     public function update(UrlRedirect $url,RedirectRequest $request)
     {
-        // $this->authorize('update',$url);
+        $this->authorize('update',$url);
         $source = $request->source_url;
         if(Str::endsWith($source,'/')  or Str::endsWith($source,'\\') or Str::contains($source,'?') )
         {

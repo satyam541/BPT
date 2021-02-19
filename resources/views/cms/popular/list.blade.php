@@ -12,8 +12,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Popular</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Popular</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                     
-                    <table class="table table-hover sortable" data-module="{{ $type }}">
+                    <table class="table table-hover" data-module="{{ $type }}">
                             <thead>
                                 <tr>
                                     <th>Move</th>
@@ -43,7 +43,7 @@
                                     <th>Del</th>
                                 </tr>        
                             </thead>
-                            <tbody>
+                            <tbody class="sortable">
                                 @foreach($items as $item)
                                     @if(empty($item->module))
                                     @continue

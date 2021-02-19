@@ -14,7 +14,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item active">Course</li>
           </ol>
         </div><!-- /.col -->
@@ -45,31 +45,67 @@
                 <tr>
                   <th>Name</th>
                   <th>Topic</th>
-                  <th>Content</th>
-                  <th>Bulletpoints</th>
-                  <th>WhatsIncluded</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('update',new App\Models\Course())
+                    Content
+                    @endcan
+                  </th>
+                  <th>
+                    @can('update',new App\Models\Course())
+                    Bulletpoints
+                    @endcan
+                  </th>
+                  <th>
+                    @can('update',new App\Models\Course())
+                    WhatsIncluded
+                    @endcan
+                  </th>
+                  <th>
+                    @can('update',new App\Models\Course())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($courses as $course)
                     <tr>
-                    <td>{{$course->name}}</td>
-                    <td>{{$course->topic->name}}</td>
-                    <td><a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a></td>
-                    <td> <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a></td>
-                    <td> <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a></td>
-                    <td><a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
-                    <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$course->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$course->name}}</td>
+                      <td>{{$course->topic->name}}</td>
+                      <td>
+                        @can('update',$course)
+                        <a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a>
+                        @endcan
+                      </td>
+                      
+                      <td> 
+                        @can('update',$course)
+                        <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a>
+                        @endcan
+                      </td>
+                      
+                      <td> 
+                        @can('update',$course)
+                        <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fa fa-list"></a>
+                        @endcan
+                      </td>
+                      
+                      <td>
+                        @can('update',$course)
+                        <a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
+                        @endcan
+                        @can('delete',$course)
+                        <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$course->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        @endcan
+                      </td>
+                    </tr>
                     @endforeach
-                  
-                
-                </tfoot>
+                </tbody>
               </table>
+              @can('create',new App\Models\Course())
               <a id="add" href="{{route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

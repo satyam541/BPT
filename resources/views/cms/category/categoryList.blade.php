@@ -14,8 +14,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#">Category</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Category</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -44,9 +44,14 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
+                                            <th>Content</th>
                                             <th>Bulletpoints</th>
                                             <th>Whats Included</th>
-                                            <th>Actions</th>
+                                            <th>
+                                                @can('update',new App\Models\Category())
+                                                Actions
+                                                @endcan
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -54,26 +59,28 @@
                                         @foreach ($categories as $category)
                                             <tr>
                                                 <td>{{ $category->name }}</td>
-                                                <td> <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}"
-                                                        class=" fa fa-bullseye"></a></td>
-                                                <td> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}"
-                                                        class=" fa fa-list"></a></td>
-                                                <td><a href="{{ Route('editCategory', ['category' => $category->id]) }}"
-                                                        class="fa fa-edit"></a>
-                                                    <a href="#"
-                                                        onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')"
-                                                        class="fa fa-trash" style="color: red"></a>
+                                                <td> <a href="" class=" fa fa-list"></a></td>
+                                                <td> <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}" class=" fa fa-bullseye"></a></td>
+                                                <td> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}" class=" fa fa-list"></a></td>
+                                                <td>
+                                                    @can('update',$category)
+                                                    <a href="{{ Route('editCategory', ['category' => $category->id]) }}" class="fa fa-edit"></a>
+                                                    @endcan
+                                                    @can('delete',$category)  
+                                                    <a href="#" onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')" class="fa fa-trash" style="color: red"></a>
+                                                    @endcan
                                                 </td>
                                             </tr>
                                         @endforeach
 
-
-                                        </tfoot>
+                                    </tbody>
                                 </table>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                              <a id="add" href="{{ route('createCategory') }}" class="btn btn-success" style="">Add new Record</a>
+                                @can('create',new App\Models\Category())
+                                <a id="add" href="{{ route('createCategory') }}" class="btn btn-success" style="">Add new Record</a>
+                                @endcan
                             </div>
                         </div>
                         <!-- /.card -->

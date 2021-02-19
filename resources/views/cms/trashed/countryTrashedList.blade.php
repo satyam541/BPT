@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Country</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item">Country</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,7 +44,11 @@
                 <tr>
                   <th>Country Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Country())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,9 +56,15 @@
                     <tr>
                     <td>{{$trashedCountry->name}}</td>
                     <td>{{$trashedCountry->created_at}}</td>
-                    <td><a href="{{ route('restoreCountry',['country_code'=>$trashedCountry->country_code]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteCountry',['country_code'=>$trashedCountry->country_code])}}" class="fa fa-trash" style="color: red"></a>
-                    </td>
+                    <td>
+                      @can('restore',$trashedCountry)
+                      <a href="{{ route('restoreCountry',['country_code'=>$trashedCountry->country_code]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                    @can('forceDelete',$trashedCountry)
+                    <a href="{{ route('forceDeleteCountry',['country_code'=>$trashedCountry->country_code])}}" class="fa fa-trash" style="color: red"></a>
+                    @endcan
+                  </td>
                 </tr>
                     @endforeach
                   

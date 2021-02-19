@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">location</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item ative">location</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,7 +44,11 @@
                 <tr>
                   <th>Location Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                  @can('restore',new App\Models\location())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,8 +56,14 @@
                     <tr>
                     <td>{{$trashedLocation->name}}</td>
                     <td>{{$trashedLocation->created_at}}</td>
-                    <td><a href="{{ route('restoreLocation',['id'=>$trashedLocation->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteLocation',['id'=>$trashedLocation->id])}}" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('restore',$trashedLocation)
+                      <a href="{{ route('restoreLocation',['id'=>$trashedLocation->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedLocation)
+                      <a href="{{ route('forceDeleteLocation',['id'=>$trashedLocation->id])}}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach

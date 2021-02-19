@@ -21,6 +21,12 @@
             color: @blackColor;
         }
         .breadcrums {
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
             ul {
                 li {
                     color: @blackColor;
@@ -123,7 +129,6 @@
         .popular-content {
             width: 44%;
             margin-right: 3rem;
-            position: relative;
             z-index: 1;
             &:nth-child(even) {
                 margin-right: 0;
@@ -162,18 +167,41 @@
         }
     }
     // End Buy Section
+
+    // Start Form-Map Section
+    .form-map {
+        padding: @sectionPadding-md;
+        .form-container {
+            form {
+                .form-input {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .input-container {
+                        width: 48%;
+                        &:last-child {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // End Form-Map Section
 }
 
 @media @size-lg{
     // Start Banner section //
     .location-banner {
         background-size: 60% 100%;
+       .banner-container {
         p {
             width: 61%;
         }
         h1 {
             font-size: 32px;
         }
+       }
     }
     // End Banner section //
 
@@ -238,6 +266,46 @@
         }
     }
     // End Popular Section
+
+    // Start Form-Map Section
+    .form-map {
+        .form-container {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            form {
+                width: 50%;
+                position: relative;
+                z-index: 1;
+                background-image: url(../img/location/form-img.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    right: -16px;
+                    width: 0;
+                    height: 0;
+                    border-right: 16px solid transparent;
+                }
+                &::before {
+                    top: 0;
+                    border-bottom: 16px solid #C0C0C0;
+                }
+                &::after {
+                    bottom: 0;
+                    border-top: 16px solid #C0C0C0;
+                }
+            }
+            .map {
+                width: 50%;
+                margin-top: 0;
+                height: 490px;
+            }
+        }
+    }
+    // End Form-Map Section
     
 }
 
@@ -289,4 +357,26 @@
         padding: @sectionPadding-xl;
     }
     // End Buy Section
+
+    // Start Form-Map Section
+    .form-map {
+        padding: @sectionPadding-xl;
+        .form-container {
+            form {
+                &::before, &::after {
+                    right: -14px;
+                    border-right: 14px solid transparent;
+                }
+                &::before {
+                    top: -1px;
+                    border-bottom: 14px solid #C0C0C0;
+                }
+                &::after {
+                    bottom: -1px;
+                    border-top: 14px solid #C0C0C0;
+                }
+            }
+        }
+    }
+    // End Form-Map Section
 }

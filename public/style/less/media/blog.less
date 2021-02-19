@@ -1,0 +1,247 @@
+@media @size-md{
+
+    // Start banner section//
+    .blog-banner {
+    padding: @sectionPadding-md;
+    padding-top: 1rem;
+    .banner-container {
+    width: 100%;
+    padding: 0;
+
+    .banner-content {
+    padding-top: 2rem;
+    width: 100%;  
+    }
+    }
+
+    }
+    //End bannner section //
+
+    // Start popular-blog Section //
+    .popular-blog{
+    padding: @sectionPadding-md;
+    .popular-item{
+    width: 352px;
+    }
+    .popular-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+    }
+    // End popular-blog Section //
+
+    // Start ideal section //
+    .ideal{
+    padding: @sectionPadding-md;
+
+    }
+    // End ideal section //
+
+}
+
+@media @size-lg{
+
+    //Start banner section//
+    .blog-banner {
+    background-color: transparent;
+    background-image:url(../img/blog/banner-bg.png);
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 2rem;
+    padding-top: 1rem;
+    .banner-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    .banner-content {
+    width: 45%;
+    padding-top: 0;
+    }
+    }
+    }
+    //End banner section//
+
+    // Start popular-blog Section //
+    .popular-blog{
+    padding: 3rem 0;
+    .popular-item{
+    width: 256px;
+    }
+    .popular-list{
+    justify-content: space-between;
+    }
+    }
+    // End popular-blog Section //
+
+    // Start ideal section //
+    .ideal{
+    background-image: url(../img/blog/ideal-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .heading{
+    width: 28%;
+    align-items: flex-start;
+    h2,p{
+        text-align: left;
+    }
+    }
+
+    .ideal-container{
+    display: flex;
+    justify-content: space-around;
+    }
+
+    .clients-inner{
+
+    width: 47%;
+    position: relative;
+    }
+
+    .image{
+    width: 90px;
+    height: 90px;
+    padding: 1.8rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    position: absolute;
+    margin-top: 0;
+    &:nth-child(1){
+        width: 220px;
+        padding: 2rem;
+    height: 193px;
+        border-radius: 33px;
+    left: 0;
+    }
+    &:nth-child(2){
+        bottom: 0;
+        left: 120px;
+    }
+    &:nth-child(3){
+    right: 115px;
+    }
+    &:nth-child(4){
+        padding: 0.5rem;
+        bottom: 0;
+        right: 115px;
+    }
+    &:nth-child(5){
+        top: 103px;
+        bottom: 0;
+        right: 115px;
+    }
+    &:nth-child(6){
+        bottom: 0;
+        right: 0;
+    }
+    &:nth-child(7){
+        bottom: 103px;
+        right: 0;
+    }
+    }
+    }
+    // End ideal section //
+}
+
+@media @size-xl{
+
+    //Start banner section//
+    .blog-banner {
+    padding: @sectionPadding-xl;
+    padding-top: 1rem;
+    .banner-container{
+    padding-bottom: 0;
+    }
+    }
+    //End banner section//
+
+    // Start popular-blog Section //
+    .popular-blog{
+    padding: @sectionPadding-xl;
+    .container{
+        width: 100%;
+    }
+    .popular-item{
+        width: 337px;
+        &:nth-child(odd){
+        &::after{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 85%;
+            height: 150%;
+            top: 0;
+            right: -290px;
+            background-color: @bgColor; 
+            transition: 0.5s all;
+            opacity: 0.4;
+        }
+        }
+        &:nth-child(even){
+            &::after{
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 85%;
+            height: 150%;
+            top: 0;
+            right: 340px;
+            background-color: @bgColor; 
+            transition: 0.5s all;
+            opacity: 0.4;
+            }
+        }
+        &:hover{
+            &:nth-child(odd){
+            &::after{
+                right: -140px;
+        transform: rotate(35deg);
+        transition: 0.5s all;
+            }
+            }
+            &:nth-child(even){
+            &::after{
+                right: 140px;
+        transform: rotate(-35deg);
+        transition: 0.5s all;
+            }
+            }
+        }
+        &:nth-child(2){
+        width: 338px;
+        }
+
+    }
+    }
+    // End popular-blog Section //
+
+    // Start ideal section //
+    .ideal{
+    padding: @sectionPadding-xl;
+
+    .ideal-container{
+        justify-content: space-evenly;
+    }
+
+    .heading{
+    width: 27%;
+    }
+
+    .clients-inner{
+        width: 41%;
+
+        .image{
+            &:nth-child(1){
+                width: 260px;
+                padding: 3rem;
+            }
+            &:nth-child(2){
+            left: 175px;
+            }
+        }
+    }
+    }
+    // End ideal section //
+}

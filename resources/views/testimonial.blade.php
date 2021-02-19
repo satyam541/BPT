@@ -179,40 +179,40 @@
 <!-- End Testimonial Section -->
 
 <!-- Start Facts Section -->
-<section class="flex-container facts">
+<section class="flex-container fact">
     <div class="container">
-        <div class="facts-container">
+        <div class="fact-container">
             <div class="heading center-heading">
                 <h2>Some Facts About <span>Us</span></h2>
                 <p>our rich history guides our growth and the possibilities are limitless in terms of the company we are yet to become.our rich history guides our growth and the possibilities are limitless in terms of the company we are yet to</p>
             </div>
-            <div class="facts-list">
-                <div class="facts-content">
+            <div class="fact-list">
+                <div class="fact-content">
                     <span class="img">
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>
                 </div>
-                <div class="facts-content">
+                <div class="fact-content">
                     <span class="img">
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>
                 </div>
-                <div class="facts-content">
+                <div class="fact-content">
                     <span class="img">
                     <img src="{{url('img/testimonial/glass.svg')}}" alt="glass">
                     </span>
                     <div class="content">
-                        <h3>1200</h3>
+                        <h2>1200</h2>
                         <h3>Project</h3>
                         <p>our rich history guides our growth and the possibilities arelimitless in terms of</p>
                     </div>

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">schedule</h1>
+          <h1 class="m-0 text-dark">Schedule</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">schedule</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Schedule</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -31,8 +31,12 @@
         <!-- left column -->
         <div class="col-md-12">
            
-          <div class="card">
-
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+                <div class="card-title">
+               Manual Schedule List
+                </div>
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1">
@@ -53,8 +57,8 @@
                     <td>{{$schedule->response_price}}</td>
                     <td>{{$schedule->location()}}</td>
                     <td>{{$schedule->response_date}}</td>
-                    <td><a href="" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td><a href="{{route('editManualSchedule',['schedule'=>$schedule->id])}}" class="fa fa-edit"></a>
+                    <a href="#"onclick="deleteItem('{{ route('deleteManualSchedule',['schedule'=>$schedule->id]) }}')" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach

@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Accreditation</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Accreditation</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,24 +44,35 @@
                 <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('update',new App\Models\Accreditation())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
                 
                     @foreach ($accreditations as $accreditation)
                     <tr>
-                    <td>{{$accreditation->name}}</td>
-                    <td><a href="{{ route('editAccreditation',['accreditation'=>$accreditation->id]) }}" class="fa fa-edit"></a>
-                    <a href="#" onclick="deleteItem('{{ route('deleteAccreditation',['accreditation'=>$accreditation->id])}}')" class="fa fa-trash" style="color: red"></a>
-                    </td>
-                </tr>
+                      <td>{{$accreditation->name}}</td>
+                      <td>
+                        @can('update',$accreditation)
+                        <a href="{{ route('editAccreditation',['accreditation'=>$accreditation->id]) }}" class="fa fa-edit"></a>
+                        @endcan
+                        @can('delete',$accreditation)
+                        <a href="#" onclick="deleteItem('{{ route('deleteAccreditation',['accreditation'=>$accreditation->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        @endcan
+                      </td>
+                    </tr>
                     @endforeach
                   
                 
                 </tfoot>
               </table>
+              @can('create',new App\Models\Accreditation())
               <a id="add" href="{{ route('accreditationCreate')}}" class="btn btn-success" style="">Add new Record</a>
+              @endcan
             </div>
             <!-- /.card-body -->
           </div>

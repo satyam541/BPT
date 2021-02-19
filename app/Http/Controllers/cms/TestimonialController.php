@@ -20,7 +20,7 @@ class TestimonialController extends Controller
 
     public function testimonialList(Request $request)
     {
-        // $this->authorize('view', new Testimonial());
+        $this->authorize('view', new Testimonial());
         $data['testimonials'] = Testimonial::all();
          
         return view('cms.testimonial.testimonial',$data);
@@ -28,7 +28,7 @@ class TestimonialController extends Controller
 
     public function create()
     {
-        // $this->authorize('create', new Testimonial());
+        $this->authorize('create', new Testimonial());
         $data['testimonial'] = new Testimonial();
         $data['submitRoute'] = "insertTestimonial";
         return view('cms.testimonial.testimonialForm',$data);
@@ -36,7 +36,7 @@ class TestimonialController extends Controller
 
     public function insert(TestimonialRequest $request)
     {
-        // $this->authorize('create', new Testimonial());
+        $this->authorize('create', new Testimonial());
         $testimonial=new Testimonial();
         $testimonial->author        = $request->author;
         $testimonial->location      = $request->location;
@@ -60,7 +60,7 @@ class TestimonialController extends Controller
     
     public function edit(Testimonial $testimonial)
     {
-        // $this->authorize('update', $testimonial);
+        $this->authorize('update', $testimonial);
         $data['testimonial'] = $testimonial;
         $data['submitRoute'] = array('updateTestimonial',$testimonial->id);
      
@@ -69,7 +69,7 @@ class TestimonialController extends Controller
 
    public function update(Testimonial $testimonial,TestimonialRequest $request)
    {
-        // $this->authorize('update', $testimonial);
+        $this->authorize('update', $testimonial);
         $testimonial->author        = $request->author;
         $testimonial->location      = $request->location;
         $testimonial->title         = $request->title;
@@ -91,14 +91,14 @@ class TestimonialController extends Controller
 
    public function delete(Testimonial $testimonial)
    {
-        // $this->authorize('delete', $testimonial);
+        $this->authorize('delete', $testimonial);
        $testimonial->delete();
    }
 
        
    public function testimonialtrashList()
    {
-        // $this->authorize('view', new Testimonial());
+        $this->authorize('view', new Testimonial());
         $data['trashedTestimonials'] = Testimonial::onlyTrashed()->get();
     
         return  view('cms.trashed.testimonialTrashedList',$data);
@@ -107,7 +107,7 @@ class TestimonialController extends Controller
 
    public function restoreTestimonial($id)
    {
-        // $this->authorize('restore', new Testimonial());
+        $this->authorize('restore', new Testimonial());
         $testimonial = Testimonial::onlyTrashed()->find($id)->restore();
  
        return back()->with('success','Successfully Restored');
@@ -115,7 +115,7 @@ class TestimonialController extends Controller
    }
    public function forceDeleteTestimonial($id)
    {
-        // $this->authorize('forceDelete', new Testimonial());
+        $this->authorize('forceDelete', new Testimonial());
         $testimonial = Testimonial::onlyTrashed()->find($id)->forceDelete();
  
        return back()->with('success','Permanently Deleted');

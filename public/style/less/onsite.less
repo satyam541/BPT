@@ -12,20 +12,7 @@
             margin-top: .5rem;
         }
     }
-    .breadcrums {
-        display: flex;
-        margin-top: 1rem;
-        ul {
-            display: flex;
-            li {
-                color: @whiteColor;
-                font-size: 14px;
-                &:first-child {
-                    margin-right: .5rem;
-                }
-            }
-        }
-    }
+ 
 }
 // End banner section
 
@@ -127,8 +114,7 @@
         }
         .item{
             display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             span{
                 display: flex;
                 align-items: center;
@@ -145,6 +131,8 @@
                     content: '';
                     height: 50px;
                     width: 50px;
+                    top: 0;
+                    left: 0;
                     border-radius: 5px;
                     transform: rotate(45deg);
                     background:linear-gradient(#0064D8,#267BDD);
@@ -161,9 +149,130 @@
             flex-direction: column;
             margin-left: 1.3rem;
             width: 70%;
+            p{
+                margin-top: .5rem;
+            }
         }
     }
 }
 // End doorstep section
+
+// Start choose section
+.choose {
+    padding: @sectionPadding;
+    .choose-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .choose-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .choose-item{
+        display: flex;
+        margin-top: 1.5rem;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 80px;
+            position: relative;
+            right: -16px;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: #0064D8;
+                height: 50%;
+                width: 100%;
+                border-bottom-left-radius: 100px;
+                border-bottom-right-radius: 100px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: linear-gradient(#0064d8,#00326c);
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                z-index: -2;
+            }
+            img{
+                width: 30px;
+                height: 30px;
+                z-index: 1;
+            }
+        }
+        p{
+            box-shadow: @shadowLight;
+            padding: 1rem;
+            padding-left: 2.5rem;
+            background-color: white;
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            font-weight: bold;
+        }
+    }
+}
+// End choose section
+
+//Start solution section
+.solution{
+    padding: @sectionPadding;
+    background-color: @bgColor;
+    .solution-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .solution-list{
+    display: flex;
+    flex-direction: column;
+    }
+    .solution-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        z-index: 1;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 60px;
+            padding: .8rem;
+            background-color: @whiteColor;
+            border-radius: 15px;
+            box-shadow: @shadowLight;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 36px;
+                height: 20px;
+                border-radius: 6px;
+                background-color: #1c2848;
+                left: 12px;
+                top: -4px;
+                z-index: -1;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h3{
+            margin-top: 1rem;
+            font-size: 16px;
+        }
+    }
+
+}
+// End solution section
+
 
 

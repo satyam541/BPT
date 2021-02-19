@@ -28,23 +28,25 @@ class LocationController extends Controller
 
     public function list()
     {
-        // $this->authorize('view', new Location());
+        $this->authorize('view', new Location());
         $locations       = Location::all();
         return view('cms.location.locationList',compact('locations'));
     }
 
-    public function filterList(Request $request)
-    {
-        $this->authorize('view', new Location());
-        $data['locations']       =  Location::where('country_id',$request['country'])->paginate(10);
-        if($request->country==null){
-            $data['locations'] = Location::paginate(10);
-        }
-        $data['selectedCountry'] = $request['country'];
-        $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-        $data['list']            = $list;
-        return view('cms.location.locations',$data);
-    }
+    // public function filterList(Request $request)
+    // {
+    //     $this->authorize('view', new Location());
+    //     $data['locations']       =  Location::where('country_id',$request['country'])->paginate(10);
+    //     if($request->country==null){
+    //         $data['locations'] = Location::paginate(10);
+    //     }
+    //     $data['selectedCountry'] = $request['country'];
+    //     $list['countries']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
+    //     $data['list']            = $list;
+    //     return view('cms.location.locations',$data);
+    // }
+
+    
     // public function demo(){
 
     //     $courses=Location::all();
@@ -56,7 +58,7 @@ class LocationController extends Controller
     // }
     public function create()
     {
-        // $this->authorize('create', new Location());
+        $this->authorize('create', new Location());
            
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['location']       = new Location();
@@ -69,7 +71,7 @@ class LocationController extends Controller
 
     public function edit(Location $location)
     {
-        // $this->authorize('update', $location);
+        $this->authorize('update', $location);
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
@@ -81,7 +83,7 @@ class LocationController extends Controller
 
     public function insert(LocationRequest $request)
     {
-        // $this->authorize('create', new Location());
+        $this->authorize('create', new Location());
         
         $inputs                       = $request->except("_token");
         $location                     = array();
@@ -119,7 +121,7 @@ class LocationController extends Controller
 
     public function delete(Location $location)
     {
-        // $this->authorize('delete', $location);
+        $this->authorize('delete', $location);
         $location->delete();
     }
 
@@ -135,7 +137,7 @@ class LocationController extends Controller
         
    public function locationtrashList()
    {
-        // $this->authorize('view', new Location());
+        $this->authorize('view', new Location());
         $data['trashedLocations'] = Location::onlyTrashed()->get();
 
         return view('cms.trashed.locationTrashedList',$data);
@@ -144,7 +146,7 @@ class LocationController extends Controller
 
    public function restoreLocation($id)
    {
-        // $this->authorize('restore', new Location());
+        $this->authorize('restore', new Location());
         $location = Location::onlyTrashed()->find($id)->restore();
  
         return back()->with('success','Successfully Restored');
@@ -153,7 +155,7 @@ class LocationController extends Controller
 
    public function forceDeleteLocation($id)
    {
-        // $this->authorize('forceDelete',new Location);
+        $this->authorize('forceDelete',new Location);
         $location = Location::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');

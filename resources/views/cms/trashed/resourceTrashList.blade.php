@@ -14,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Resource</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Resource</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -44,17 +44,26 @@
                 <tr>
                   <th>Resource Name</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('restore',new App\Models\Resource())
+                    Actions
+                    @endcan
+                </th>
                 </tr>
                 </thead>
                 <tbody>
-                
                     @foreach ($trashResources as $trashedresource)
                     <tr>
                     <td>{{$trashedresource->name}}</td>
                     <td>{{$trashedresource->created_at}}</td>
-                    <td><a href="{{ route('restoreResourceRoute',['id'=>$trashedresource->id]) }}" class="fa fa-refresh fa-spin"></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('forceDeleteResource',['id'=>$trashedresource->id]) }}" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('restore',$trashedresource)
+                      <a href="{{ route('restoreResourceRoute',['id'=>$trashedresource->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      @endcan
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      @can('forceDelete',$trashedresource)
+                      <a href="{{ route('forceDeleteResource',['id'=>$trashedresource->id]) }}" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach

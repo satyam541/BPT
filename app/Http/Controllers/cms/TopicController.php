@@ -70,7 +70,7 @@ class TopicController extends Controller
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
         $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
         $query->whereHas('topic');
-        $result                 = $query->paginate(10);
+        $result                 = $query->get();
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
         $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
         $data['list']           = $list;
@@ -280,13 +280,13 @@ class TopicController extends Controller
         $questions = $request->get('question');
         $answers   = $request->get('answer');
 
-        foreach($questions as $i)
+        foreach($questions as $i=>$q)
         {
             // save faq if id is not 
             if(empty($faq_id[$i]))
             {
                 $module->faqs()->create([
-                    'question' => $questions[$i],
+                    'question' => $q,
                     'answer'    => $answers[$i],
                     'display_order' => $module->faqs()->count()+1
                 ]);
@@ -298,7 +298,7 @@ class TopicController extends Controller
                 $faq = Faq::find($faq_id[$i]);
                 if(!empty($faq))
                 {
-                    $faq->question = $questions[$i];
+                    $faq->question = $q;
                     $faq->answer   = $answers[$i];
                     $faq->save();
                 }

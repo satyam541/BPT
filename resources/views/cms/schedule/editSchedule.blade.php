@@ -13,9 +13,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">Schedule</a></li>
-            <li class="breadcrumb-item"><a href="#">Edit Schedule</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('scheduleList')}}">Schedule</a></li>
+            <li class="breadcrumb-item active">Edit Schedule</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -63,7 +63,7 @@
                   
                   <div class="form-group">
                     {{Form::label('response_date','Event Date')}}
-                    {{Form::date('response_date',null,['id'=>'inputDate','class'=>'form-control'])}}
+                    {{Form::date('response_date',$schedule->response_date,['id'=>'inputDate','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">

@@ -10,8 +10,8 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">Url redirect</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Url redirect</li>
               </ol>
             </div><!-- /.col -->
           </div>
@@ -71,12 +71,12 @@
                                         <tr>
                                             <th>Source Url</th>
                                             <th>Destination Url</th>
-                                            {{-- @can('update',new App\Models\UrlRedirect()) --}}
+                                            @can('update',new App\Models\UrlRedirect())
                                             <th>Edit</th>
-                                            {{-- @endcan --}}
-                                            {{-- @can('delete',new App\Models\UrlRedirect()) --}}
+                                            @endcan
+                                            @can('delete',new App\Models\UrlRedirect())
                                             <th>Delete</th>
-                                            {{-- @endcan --}}
+                                            @endcan
                                         </tr>        
                                     </thead>
                                     <tbody>
@@ -84,13 +84,13 @@
                                         <tr>
                                             <td>{{$url->source_url}}</td>
                                             <td>{{$url->target_url}}</td>
-                                            {{-- @can('update',$url) --}}
+                                            @can('update',$url)
                                             <td><a href="{{ route('editUrlRedirect',['url'=>$url->id]) }}"><i class="fa fa-edit"></a></td>
  
-                                            {{-- @endcan --}}
-                                            {{-- @can('delete',$url) --}}
+                                            @endcan
+                                            @can('delete',$url)
                                             <td><a href="#" onclick="deleteItem('{{ route('deleteUrlRedirect',['url'=>$url->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
-                                            {{-- @endcan --}}
+                                            @endcan
                                         </tr>
                                         @endforeach
     
@@ -101,9 +101,9 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-md-6">
-                                    {{-- @can('create',new App\Models\UrlRedirect()) --}}
+                                    @can('create',new App\Models\UrlRedirect())
                             <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
-                            {{-- @endcan --}}
+                            @endcan
                                 </div>
                             <div class="col-md-6">
                             <div class="float-sm-right"> {{ $urls->appends(request()->query())->links() }}</div>
