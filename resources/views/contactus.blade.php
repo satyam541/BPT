@@ -13,7 +13,7 @@
                         <div class="breadcrums">
                             <ul>
                                 <li><a href="">Home</a></li>
-                                <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                                <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                                 <li><a href="">Contact</a></li>
                             </ul>
                         </div>
