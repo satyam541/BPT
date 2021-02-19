@@ -5060,6 +5060,57 @@ input::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
 }
+.management {
+  padding: 3rem 1.5rem;
+}
+.management .management-container {
+  display: flex;
+  flex-direction: column;
+}
+.management .management-bundles {
+  display: flex;
+  flex-direction: column;
+}
+.management .bundle-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.management h3 {
+  width: 42%;
+}
+.management span {
+  width: 45%;
+  text-align: center;
+}
+.management ul {
+  width: 100%;
+}
+.management ul li {
+  margin-top: 0.5rem;
+  font-size: 12px;
+  padding-left: 1.2rem;
+  position: relative;
+  font-weight: 500;
+}
+.management ul li:first-child {
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 0;
+}
+.management ul li:first-child::before {
+  content: none;
+}
+.management ul li::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/offer/star.svg);
+  background-size: contain;
+  height: 15px;
+  width: 15px;
+  left: 0;
+  top: 2px;
+}
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;

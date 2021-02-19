@@ -67,4 +67,64 @@
 // End bundle section
 
 
+// Start management section
+.management{
+    padding: @sectionPadding;
+    .management-container{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .management-bundles{
+        display: flex;
+        flex-direction: column;
+    }
+    .bundle-info{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // background-image: url(../img/offer/bundle-bg.png);
+        // background-position: center;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+    }
+    h3{
+        width: 42%;
+    }
+    span{
+        width: 45%;
+        text-align: center;
+    }
+    ul{
+        width: 100%;
+        li{
+            &:first-child{
+                font-weight: bold;
+                font-size: 14px;
+                padding-left: 0;
+                &::before{
+                    content: none;
+                }
+            }
+            margin-top: .5rem;
+            font-size: 12px;
+            padding-left: 1.2rem;
+            position: relative;
+            font-weight: 500;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/offer/star.svg);
+                background-size: contain;
+                height: 15px;
+                width: 15px;
+                left: 0;
+                top: 2px;
+
+            }
+        }
+    }
+
+}
+// End management section
 

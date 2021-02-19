@@ -64,5 +64,34 @@
         </div>
     </div>
 </section>
+<!-- End bundle section -->
+
+<!-- Start management section -->
+<section class="flex-container management">
+<div class="container">
+    <div class="management-container">
+        <div class="heading center-heading">
+            <h2>Our Project <span>Management Bundles</span></h2>
+        </div>
+        <div class="management-bundles">
+            <div class="bundle-info">
+                <h3>PRINCE2® & Agile Bundle </h3>
+                <span>Up to 15% off with this bundle</span>
+                <ul>
+                    <li>Courses included</li>
+                    <li>PRINCE2® Foundation & Practitioner</li>
+                    <li>AgilePM® Foundation & Practitioner</li>
+                </ul>
+                <div class="buttons">
+                    <a class="btn-blue">
+                            <img src="{{url('img/offer/email.svg')}}" alt="email">
+                            Get a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
 @endsection

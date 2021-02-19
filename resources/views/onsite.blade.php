@@ -83,7 +83,25 @@
                             <div class="input-container">
                                 <span><img src="{{url('img/onsite/house.svg')}}" alt="house" class="black">
                                 <img src="{{url('img/onsite/house-red.svg')}}" alt="house-red" class="red"></span>
-                                <input type="text" name="address" id="adress" placeholder="Address"
+                                <input type="text" name="company" id="address" placeholder="Company"
+                                    autocomplete="off">
+                            </div>
+                            <div class="input-container">
+                                <span><img src="{{url('img/onsite/book.svg')}}" alt="book" class="black">
+                                <img src="{{url('img/onsite/house-red.svg')}}" alt="house-red" class="red"></span>
+                                <input type="text" name="course" id="course" placeholder="Course*"
+                                    autocomplete="off">
+                            </div>
+                            <div class="input-container">
+                                <span><img src="{{url('img/onsite/position.svg')}}" alt="position" class="black">
+                                <img src="{{url('img/onsite/house-red.svg')}}" alt="house-red" class="red"></span>
+                                <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
+                                    autocomplete="off">
+                            </div>
+                            <div class="input-container">
+                                <span><img src="{{url('img/onsite/house.svg')}}" alt="house" class="black">
+                                <img src="{{url('img/onsite/house-red.svg')}}" alt="house-red" class="red"></span>
+                                <input type="text" name="address" id="address" placeholder="Address"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
