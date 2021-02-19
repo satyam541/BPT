@@ -14,21 +14,20 @@
 Auth::routes(['register'=>false]);
 /* these routes is for login */
 
+
+Route::get('/contact-us', 'ContactController@index')->name('contactUs');
+Route::get('/about-us', 'AboutController@index')->name('aboutUs');
+Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/contactus', function () {
-    return view('contactus');
-});
-Route::get('/aboutus', function () {
-    return view('aboutus');
-});
-Route::get('/testimonial', function () {
-    return view('testimonial');
-});
+
 Route::get('/onsite', function () {
     return view('onsite');
 });
