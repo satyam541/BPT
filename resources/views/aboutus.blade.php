@@ -70,52 +70,52 @@
 
 <!-- Start difference section -->
 <section class="flex-container difference">
-<div class="container">
-    <div class="difference-container">
-    <div class="heading center-heading">
-        <h2>What Makes Us Different?</h2>
-        <p>We pride ourselves on delivering training courses of the highest quality. We use interactive training materials to ensure a hands-on approach for all delegates. Courses have typically less than ten delegates to ensure that all delegates have the chance to participate and ask questions thereby maximising their learning experience.</p>
+    <div class="container">
+        <div class="difference-container">
+        <div class="heading center-heading">
+            <h2>What Makes Us Different?</h2>
+            <p>We pride ourselves on delivering training courses of the highest quality. We use interactive training materials to ensure a hands-on approach for all delegates. Courses have typically less than ten delegates to ensure that all delegates have the chance to participate and ask questions thereby maximising their learning experience.</p>
+        </div>
+        <div class="difference-list">
+        <div class="count">
+                <div class="circle">
+                    <svg class="progress-ring first"  width="95" height="95">
+                            <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
+                            <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
+                    </svg>
+                </div>
+                <p class="txt-name">Industry average for pass rates for PRINCE2 Courses</p>
+        </div>
+        <div class="count">
+                <div class="circle">
+                    <svg class="progress-ring second"  width="95" height="95">
+                            <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
+                            <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
+                    </svg>
+                </div>
+                <p class="txt-name">Industry standard for Agile Training Pass Rates </p>
+        </div>
+        <div class="count">
+                <div class="circle">
+                    <svg class="progress-ring third"  width="95" height="95">
+                            <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
+                            <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
+                    </svg>
+                </div>
+                <p class="txt-name"> ITIL Foundation average pass rate in the training Industry.</p>
+        </div>
+        <div class="count">
+                <div class="circle">
+                    <svg class="progress-ring fourth"  width="95" height="95">
+                            <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
+                            <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
+                    </svg>
+                </div>
+                <p class="txt-name">Lean Six Sigma training average pass rates in the industry.</p>
+        </div>
+        </div>
+        </div>
     </div>
-    <div class="difference-list">
-    <div class="count">
-            <div class="circle">
-                <svg class="progress-ring first"  width="95" height="95">
-                        <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
-                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
-                </svg>
-            </div>
-            <p class="txt-name">Industry average for pass rates for PRINCE2 Courses</p>
-    </div>
-    <div class="count">
-            <div class="circle">
-                <svg class="progress-ring second"  width="95" height="95">
-                        <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
-                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
-                </svg>
-            </div>
-            <p class="txt-name">Industry standard for Agile Training Pass Rates </p>
-    </div>
-    <div class="count">
-            <div class="circle">
-                <svg class="progress-ring third"  width="95" height="95">
-                        <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
-                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
-                </svg>
-            </div>
-            <p class="txt-name"> ITIL Foundation average pass rate in the training Industry.</p>
-    </div>
-    <div class="count">
-            <div class="circle">
-                <svg class="progress-ring fourth"  width="95" height="95">
-                        <circle class="circle-default" fill="white" r="43" cx="47.5"cy="47.5"/>
-                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5"cy="47.5"/>
-                </svg>
-            </div>
-            <p class="txt-name">Lean Six Sigma training average pass rates in the industry.</p>
-    </div>
-    </div>
-    </div>
-</div>
 </section>
 <!-- End difference section -->
 
