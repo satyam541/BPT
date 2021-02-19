@@ -89,16 +89,22 @@ Route::get('/topic/content/update/{topicDetail}','TopicController@contentEdit')-
 Route::post('/topic/content/update/{topicDetail}','TopicController@contentUpdate')->name('updateTopicContent');
 Route::post('/topic/content/delete/{topicDetail}','TopicController@contentDelete')->name('deleteTopicContent');
 
-Route::post('/faq/insert','TopicController@insertFaq')->name('insertFaq');
+Route::get('/faq/list/{type}/{id}','FaqController@index')->name('faqList');
+Route::get('/faq/insert/{type}/{id}','FaqController@createFaq')->name('createFaq');
+Route::get('/faq/edit/{faq}','FaqController@editFaq')->name('editFaq');
+Route::post('/faq/insert','FaqController@insertFaq')->name('insertFaq');
+Route::post('/faq/delete/{faq}','FaqController@deleteFaq')->name('deleteFaq');
+Route::post('/faq/sort','FaqController@sortFaq')->name('sortFaq');
+
 Route::get('/faq/multiple','TopicController@multipleFaq')->name('insertMultipleFaq');
 Route::post('/faq/insertmultiple','TopicController@insertMultipleFaq')->name('insertMultipleFaq');
-Route::post('/faq/delete/{faq}','TopicController@deleteFaq')->name('deleteFaq');
-Route::post('/faq/sort','TopicController@sortFaq')->name('sortFaq');
+
 
 Route::get('/unlinkedTopic','TopicController@unlinkedTopicList')->name('unlinkTopic');
 Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCategoryRoute');
 
 Route::get('/course','CourseController@list')->name('courseList');
+Route::get('/couse/addon','CourseController@addonList')->name('coursesAddonList');
 Route::get('/course/insert','CourseController@create')->name('createCourse');
 Route::post('/course/insert','CourseController@insert')->name('insertCourse');
 Route::get('/course/update/{course}','CourseController@edit')->name('editCourse');
@@ -308,7 +314,9 @@ Route::get('/topictrash','TopicController@topictrashList')->name('topicTrashList
 Route::get('/topic/restoretopic/{id}','TopicController@restoreTopic')->name('restoreTopic');
 Route::get('/topic/deletetopic/{id}','TopicController@forceDeleteTopic')->name('forceDeleteTopic');
 
-
+Route::get('/whatsincludedtrash','WhatsIncludedController@whatsIncludedTrashList')->name('WhatsIncludedTrashList');
+Route::get('/whatsincluded/restorewhatsincluded/{id}','WhatsIncludedController@restoreWhatsInclude')->name('restoreWhatsIncluded');
+Route::get('/whatsincluded/deletewhatsincluded/{id}','WhatsIncludedController@forceDeleteWhatsInclude')->name('forceDeleteWhatsIncluded');
 
 Route::get('/articletrash','ArticleController@articletrashList')->name('articleTrashList');
 Route::get('/article/restorearticle/{id}','ArticleController@restoreArticle')->name('restoreArticle');

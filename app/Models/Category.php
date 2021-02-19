@@ -98,7 +98,7 @@ class Category extends Model
     } 
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id');
+        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','category');
     }
     public function whatIncludes()
     {
@@ -136,6 +136,7 @@ class Category extends Model
         {
             $this->popular->delete();
         }
+        $this->content()->delete();
         $this->Bulletpoint()->delete();
         $this->faqs()->delete();
         $this->whatIncludes()->delete();
@@ -144,6 +145,7 @@ class Category extends Model
 
     public function restore()
     {
+        $this->content()->restore();
         $this->Bulletpoint()->restore();
         $this->faqs()->restore();
         $this->whatIncludes()->restore();

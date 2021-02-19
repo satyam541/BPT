@@ -43,6 +43,7 @@
                 <tr>
                   <th>Page Name</th>
                   <th>Section</th>
+                  <th>Sub Section</th>
                   <th>
                     @can('restore',new App\Models\PageDetail())
                     Actions
