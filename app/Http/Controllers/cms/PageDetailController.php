@@ -44,13 +44,16 @@ class PageDetailController extends Controller
             [
                 "page_name"     => $inputs['page_name'],
                 "section"       => $inputs['section'],
-                "sub_section"   => $inputs['sub_section'],
-                "image_alt"     => $inputs['image_alt']
+                "sub_section"   => $inputs['sub_section']
+
+
             ],
             $inputs
         );
      
-        $image_prefix = $inputs['page_name'];
+        $image_prefix = $inputs['page_name'].'_image_';
+        $icon_prefix = $inputs['page_name'].'_icon_';
+
         if(empty($pageDetail->created_at))
         {
             /* save image file */
@@ -62,9 +65,9 @@ class PageDetailController extends Controller
 
              /* save image file */
              if($request->hasFile('icon')){
-                $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+                $imageName = $icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
                 $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
-                $pageDetail->image = $imageName;
+                $pageDetail->icon = $imageName;
             }
 
             $pageDetail->save();
