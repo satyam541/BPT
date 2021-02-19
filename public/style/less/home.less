@@ -252,27 +252,45 @@
         flex-direction: column;
     }
     .fact-content{
-        
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-image: @blueGradient;
+        border-radius: 10px;
+    }
+    h2{
+        text-align: center;
+        color: @whiteColor;
+        margin-bottom: .5rem;
+    }
+    p{
+        text-align: center;
+        color: @whiteColor;
     }
     .facts-list{
         display: flex;
         flex-direction: column;
+        p{
+            font-weight: 700;
+            color: @blackColor;
+        }
     }
     .item{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 2rem;
         img{
             width: 38px;
             height: 38px;
         }
     }
+    .fact-count{
+        display: flex;
+        margin: .5rem 0;
+    }
     h3{
         color: @darkblueColor;
-        text-align: center;
-    }
-    p{
-        font-weight: 700;
         text-align: center;
     }
 }

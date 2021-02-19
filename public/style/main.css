@@ -1354,25 +1354,46 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
+.facts .fact-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-image: linear-gradient(#0064D8, #1C2848);
+  border-radius: 10px;
+}
+.facts h2 {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+.facts p {
+  text-align: center;
+  color: #FFFFFF;
+}
 .facts .facts-list {
   display: flex;
   flex-direction: column;
+}
+.facts .facts-list p {
+  font-weight: 700;
+  color: #000000;
 }
 .facts .item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 }
 .facts .item img {
   width: 38px;
   height: 38px;
 }
+.facts .fact-count {
+  display: flex;
+  margin: 0.5rem 0;
+}
 .facts h3 {
   color: #1C2848;
-  text-align: center;
-}
-.facts p {
-  font-weight: 700;
   text-align: center;
 }
 @media (min-width : 768px) {
