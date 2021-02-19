@@ -43,6 +43,6 @@ class Venue extends Model
      */
     public function customSchedulePrice()
     {
-        return $this->hasMany('App\Models\CustomSchedulePrice');
+        return $this->hasMany('App\Models\CustomSchedulePrice','venue_id','id');
     }
 }

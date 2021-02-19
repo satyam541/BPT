@@ -49,11 +49,11 @@
                     <tbody>
                     
                     @foreach($locations as $location)
-              
                         <tr>
                             {{Form::open(['route' => array('updateCustomPrice',$course->id,$location->venue->id)])}}
                             <td>{{ $location->name }}</td>
                             <td>
+                                
                                 {{ Form::select('method',
                                 [null => 'choose one','Increment'=>'Fixed Increment','Percentage'=>'Fixed %age','Price'=>'Fixed Price'],
                                 $location->customCoursePrice($course->id)->method,

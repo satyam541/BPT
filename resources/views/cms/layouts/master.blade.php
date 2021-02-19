@@ -175,20 +175,30 @@
               <p>
                 Unlinked Data
                 <i class="fas fa-angle-left right"></i>
-                {{-- <span class="badge badge-info right">6</span> --}}
+                @if (unlinkedTopic()>0 || unlinkedCourse() > 0)
+                <span class="right badge badge-danger">New</span>
+                @endif
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{Route('unlinkTopic')}}"@if(Route::currentRouteName()=='unlinkTopic')class="nav-link active" @else class="nav-link" @endif >
                   <i class="far fa-circle nav-icon "></i>
-                  <p>Topics</p>
+                  <p>Topics
+                    @if (unlinkedTopic()>0)
+                    <span class="right badge" style="background-color:rgb(212, 11, 11) !important">{{unlinkedTopic()}}</span>
+                    @endif
+                  </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{Route('unlinkCourse')}}"@if(Route::currentRouteName()=='unlinkCourse')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon "></i>
-                  <p>Courses</p>
+                  <p>Courses
+                    @if (unlinkedCourse()>0)
+                    <span class="right badge badge-danger" style="background-color: rgb(212, 11, 11) !important">{{unlinkedCourse()}}</span>
+                    @endif
+                  </p>
                 </a>
               </li>
             </ul>
