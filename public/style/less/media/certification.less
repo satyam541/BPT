@@ -7,24 +7,73 @@
         }
     }
     // End Banner section //
+
+    // Start Cisco Section
+.cisco {
+    padding: @sectionPadding-md;
+    .cisco-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .cisco-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 27px;
+            width: 97%;
+            height: 100%;
+            background-color: @blackColor;
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 25px;
+        }
+    }
+    h3 {
+        width: 70%;
+        text-align: left;
+    }
+    .buttons {
+        width: 28%;
+        margin-top: 0;
+    }
+}
+// End Cisco Section 
 }
 
 @media @size-lg{
     // Start Banner section //
     .certification-banner {
-        background: linear-gradient(125deg, @darkblueColor 60%, transparent 40%), url(../img/certification/banner-bg.png);
+        background: linear-gradient(125deg, @darkblueColor 64%, transparent 36%), url(../img/certification/banner-bg.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
         .banner-container {
             background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
             padding: 2rem;
-            h1 {
-                color: @blackColor;
+            margin-top: 2rem;
+        }
+        h1, p {
+            color: @blackColor;
+        }
+        p {
+            width: 55%;
+        }
+        .breadcrums {
+            ul {
+                li {
+                    color: @blackColor;
+                }
             }
-            p {
-                color: @blackColor;
-                width: 55%;
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
             }
         }
     }
