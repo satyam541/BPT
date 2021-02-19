@@ -304,17 +304,17 @@ class CourseController extends Controller
    public function restoreCourse($id)
    {
         $course= Course::onlyTrashed()->find($id);
-   $this->authorize('restore', $course);
-   
-       return back()->with('success','Successfully Restored');
+        $this->authorize('restore', $course);
+        $course->restore();
+        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCourse($id)
    {
         $course = Course::onlyTrashed()->find($id);
-   $this->authorize('forceDelete', $course);
-       $course->forceDelete();
-       return back()->with('success','Permanently Deleted');
+        $this->authorize('forceDelete', $course);
+        $course->forceDelete();
+        return back()->with('success','Permanently Deleted');
    }
    
    public function whatsincludedlist(Request $request)
