@@ -16,7 +16,7 @@
                         <ul>
                             <li><a href="">Home</a></li>
                             <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white">
-                            <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"class="black"></li>
+                            <img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow"class="black"></li>
                             <li><a href="">About-Us</a></li>
                         </ul>
                     </div>
