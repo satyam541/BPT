@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*this is created to fetch data from old msp please dont remove or hit this route*/
+
+Route::get('fetchapi/locations', 'TestController@locations');
+Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
+
 
 Auth::routes(['register'=>false]);
 /* these routes is for login */
