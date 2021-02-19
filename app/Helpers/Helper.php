@@ -91,9 +91,9 @@ if (!function_exists('encodeUrlSlug')) {
         function metaData($data)
         {
             static $metaData = [
-                'title' => 'Lean Six Sigma Courses | Six Sigma Training',
-                'description' => 'Study our professional Lean Six Sigma courses today delivered by expert trainers in the industry.',
-                'keyword' => 'Lean Six Sigma Courses, Six Sigma Training'
+                'title' => 'Best Practice Training Courses | Best Practice Training',
+                'description' => 'Study our professional Best Practice Training courses today delivered by expert trainers in the industry.',
+                'keyword' => 'Best Practice Training Courses, Best Practice Training'
             ];
             if (is_array($data)) {
                 $metaData = $data;
