@@ -56,7 +56,7 @@
                     @foreach ($onlineCourses as $onlineCourse)
                     <tr>
                       <td>{{$onlineCourse->online_course_name}}</td>
-                      <td>{{$onlineCourse->course->name}}</td>
+                      <td>{{$onlineCourse->course->name ?? ''}}</td>
                       <td>
                         @can('update',$onlineCourse)
                         <a href="{{ route('editOnlineCourse',['course'=>$onlineCourse->id]) }}" class="fa fa-edit"></a>
