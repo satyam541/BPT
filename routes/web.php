@@ -38,3 +38,6 @@ Route::get('/location', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
+Route::get('/offer', function () {
+    return view('offer');
+});

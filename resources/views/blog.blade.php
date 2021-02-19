@@ -24,7 +24,6 @@
 <!-- End Banner section  -->
 
 <!-- Start popular-blog section -->
-
 <section class="flex-container popular-blog">
     <div class="container">
         <div class="popular-container">
@@ -64,8 +63,34 @@
         </div>
     </div>
 </section>
-
 <!-- End popular-blog section -->
+
+<!-- Start our-blogs section -->
+
+<section class="flex-container our-blog">
+<div class="container">
+    <div class="our-container">
+        <div class="heading">
+            <h2>Our <span>Blogs</span></h2>
+            <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
+        </div>
+        <div class="our-list">
+        <div class="dates-list">
+            <span class="dates">14 July, 2017</span>
+            <span class="dates">14 July, 2017</span>
+            <span class="dates">14 July, 2017</span>
+            <span class="dates">14 July, 2017</span>
+            <span class="dates">Load More</span>
+        </div>
+        <div class="our-item">
+            <img src="" alt="">
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- End our-blog section -->
 
 
 <!-- Start ideal section -->

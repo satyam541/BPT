@@ -15,10 +15,10 @@ const MinifiedExtension = '.min.css';
   // body omitted
   return gulp.src('public/style/less/main.less')
         .pipe(less())    // convert to css
-		.pipe(gulp.dest(OutputPath))
-        .pipe(cleanCss())
-        .pipe(gulpRename({ extname: MinifiedExtension }))
-        .pipe(gulp.dest(OutputPath));
+		.pipe(gulp.dest(OutputPath));
+        // .pipe(cleanCss())
+        // .pipe(gulpRename({ extname: MinifiedExtension }))
+        // .pipe(gulp.dest(OutputPath));
 }
 
 function watchstyle()

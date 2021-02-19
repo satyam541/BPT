@@ -48,5 +48,6 @@ function deleteItem(path)
         str=str.replaceAll('+',' plus');
         str=str.replace(/[^\w\s]/gi, '');
         str = str.replace(/\s\s+/g, " ");
+        str= str.replace(/^\s+|\s+$/gm,'');
         return str.replace(/(?![a-z0-9])./gi, "-");
     }

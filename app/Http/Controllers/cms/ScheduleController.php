@@ -182,7 +182,7 @@ class ScheduleController extends ScheduleApi
       $list['courses']    = Course::pluck('name','id')->toArray();
       $list['countries']  = Country::pluck('name','country_code')->toArray();
 
-      $data['locations']  = Location::with("venue.customSchedulePrice")->where("country_id",$selectedCountry)->get();
+      $data['locations']  = Location::whereHas('venue')->with("venue.customSchedulePrice")->where("country_id",$selectedCountry)->get();
       $data['course']     = Course::find($courseId);
       $data['selectedCourse']   = $selectedCourse; 
       $data['selectedCountry']  = $selectedCountry; 
