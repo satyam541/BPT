@@ -2,9 +2,30 @@
         // Start offer-Banner section //
         .offer-banner {
             padding: @sectionPadding-md;
-            padding-top: 1rem;
+            padding-top: 1rem!important;
         }
         // End offer-banner section
+
+        // Start bundle section
+        .bundle{
+            padding: @sectionPadding-md;
+            .bundle-list{
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .project-bundle{
+                width: 48%;
+            }
+            .bundles-info{
+                display: flex;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        // End bundle section
 
 }
 
@@ -16,11 +37,49 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
+        .banner-container{
+            width: 50%;
+        }
         
     } 
     // End offer-banner section
+
+    // Start bundle section
+    .bundle{
+        .bundle-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .range{
+            width: 50%;
+        }
+        .top-bundles{
+            margin-top: 0;
+            width: 45%;
+        }
+    }
+    // End bundle section
 }
 
 @media @size-xl{
+
+    // Start offer-Banner section //
+    .offer-banner {
+        padding: @sectionPadding-xl;
+        
+    } 
+    // End offer-banner section
+
+    // Start bundle section
+    .bundle{
+        padding: @sectionPadding-xl;
+        .range{
+            width: 55%;
+        }
+        .top-bundles{
+            width: 40%;
+        }
+    }
+    // End bundle section
 
 }
