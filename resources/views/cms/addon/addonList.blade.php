@@ -64,7 +64,7 @@
                         <a href="{{Route('AddonEdit',['id'=>$courseAddon->id])}}" class="fa fa-edit"></a>
                         {{-- @endcan --}}
                         {{-- @can('delete',$courseAddon) --}}
-                        <a href="" onclick="deleteItem('{{ route('AddonDelete',['id'=>$courseAddon->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        <a href="#" onclick="deleteItem('{{ route('AddonDelete',[$courseAddon->id])}}')"><i class="fa fa-trash" style="color: red"></i></a>
                         {{-- @endcan --}}
                       </td>
                     </tr>

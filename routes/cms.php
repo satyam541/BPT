@@ -175,7 +175,7 @@ Route::get('courseaddon/create','AddonController@create')->name('AddonCreate');
 Route::post('courseaddon/store','AddonController@store')->name('AddonStore');
 Route::get('courseaddon/edit/{id}','AddonController@edit')->name('AddonEdit');
 Route::post('courseaddon/update','AddonController@update')->name('AddonUpdate');
-Route::post('/courseaddon/delete/{id}','AddonController@delete')->name('AddonDelete');
+Route::post('/courseaddon/delete/{courseAddon}','AddonController@delete')->name('AddonDelete');
 
 Route::get('/course/get/detail',function()
 {
