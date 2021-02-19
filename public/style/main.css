@@ -2975,20 +2975,6 @@ input::-webkit-inner-spin-button {
 .testimonial-banner p {
   color: #FFFFFF;
 }
-.testimonial-banner .breadcrums {
-  display: flex;
-  margin-top: 1rem;
-}
-.testimonial-banner .breadcrums ul {
-  display: flex;
-}
-.testimonial-banner .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.testimonial-banner .breadcrums ul li:first-child {
-  margin-right: 0.5rem;
-}
 .customers {
   padding: 3rem 1.5rem;
 }
