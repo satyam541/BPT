@@ -5000,17 +5000,17 @@ input::-webkit-inner-spin-button {
 .offer-banner .banner-container p {
   margin-top: 0.5rem;
 }
-.offer-banner .breadcrums {
-  display: flex;
-  margin-top: 1rem;
+@media (min-width : 768px) {
+  .offer-banner {
+    padding: 3rem 2rem;
+    padding-top: 1rem;
+  }
 }
-.offer-banner .breadcrums ul {
-  display: flex;
-}
-.offer-banner .breadcrums ul li {
-  color: #FFFFFF;
-  font-size: 14px;
-}
-.offer-banner .breadcrums ul li:first-child {
-  margin-right: 0.5rem;
+@media (min-width : 1024px) {
+  .offer-banner {
+    background-image: url(../img/offer/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
 }
