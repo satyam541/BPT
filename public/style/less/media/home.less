@@ -105,6 +105,18 @@
             flex-direction: row;
             justify-content: space-between;
             flex-wrap: wrap;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 74%;
+                height: 2px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-color: #ebebeb;
+                bottom: -48px;
+            }
         }
         .item{
             width: 48%;
@@ -115,6 +127,27 @@
             background-size: 100% 100%;
             background-color: transparent;
             background-blend-mode: soft-light;
+            position: relative;
+            &::before, &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                bottom: -55px;
+            }
+            &:before{
+                width: 2px;
+                background-color: #ebebeb;
+                height: 54px;
+            }
+            &::after{
+                width: 12px;
+                height: 12px;
+                background-color: @lightblueColor;
+                border: 4px solid #ebebeb;
+                border-radius: 50%;
+            }
             &:hover{
                 align-items: center;
                 p{
