@@ -41,10 +41,10 @@
                         </div>
                         <ul>
                             <li><a href="{{route('aboutUs')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">About Us</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Contact Us</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Locations</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Testimonials</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Onsite</a></li>
+                            <li><a href="{{route('contactUs')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Contact Us</a></li>
+                            <li><a href="{{route('locations')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Locations</a></li>
+                            <li><a href="{{route('testimonials')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Testimonials</a></li>
+                            <li><a href="{{route('onsite')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Onsite</a></li>
                         </ul>
                     </div>
                     <div class="content blog">
