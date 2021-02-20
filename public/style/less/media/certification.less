@@ -102,15 +102,21 @@
     // Start Enquiry Section
     .enquiry {
         padding: @sectionPadding-md;
+        .enquiry-content {
+            align-items: flex-start;
+        }
         .contact-list {
             background-image: url(../img/certification/contact-img.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             flex-direction: row;
+            width: 100%;
+            margin-top: 1.5rem;
         }
         .contact {
             box-shadow: none;
-            padding: 1rem 0rem 2rem 3rem;
+            padding: 2rem 3rem;
+            margin-top: 0;
             &:nth-child(1) {
                 background-color: transparent;
             }
@@ -139,32 +145,17 @@
             
         }
         .enquiry-img {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 1;
-            &::before, &::after {
-                content: '';
-                position: absolute;
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
             &::before {
-                top: 32%;
-                left: 11%;
-                background-image: url(../img/certification/enquiry-lines.svg);
-                height: 28px;
-                width: 40px;
+                top: 33%;
+                left: 13%;
+                height: 31px;
+                width: 45px;
             }
-            &::after {
-                bottom: 13%;
-                right: 0%;
-                background-image: url(../img/certification/dotted-square.svg);
-                height: 47px;
-                width: 83px;
-                z-index: -1;
+            &::after {       
+            bottom: 13%;
+            right: -2%;
+            height: 90px;
+            width: 175px;
             }
             img {
                 height: 100%;
@@ -179,19 +170,18 @@
     // Start Banner section //
     .certification-banner {
         background: linear-gradient(125deg, @darkblueColor 64%, transparent 36%), url(../img/certification/banner-bg.png);
-        background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
         .banner-container {
             background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
             padding: 2rem;
             margin-top: 2rem;
+            p {
+                width: 55%;
+            }
         }
         h1, p {
             color: @blackColor;
-        }
-        p {
-            width: 55%;
         }
         .breadcrums {
             ul {
@@ -236,8 +226,17 @@
             flex-direction: row;
             justify-content: space-between;
         }
+        .contact {
+            width: 40%;
+            &:first-child {
+                padding-right: 0;
+            }
+            &:last-child {
+                padding-left: 0;
+            }
+        }
         .enquiry-content {
-            width: 50%;
+            width: 53%;
         }
         .enquiry-img {
             width: 40%;
@@ -297,4 +296,16 @@
         }
     }
     // End Method Section
+
+    // Start Enquiry Section
+    .enquiry {
+        padding: @sectionPadding-xl;
+        .enquiry-img {
+            &::after {
+                height: 61px;
+                width: 104px;
+            }
+        }
+    }
+    // End Enquiry Section
 }

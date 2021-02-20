@@ -74,7 +74,7 @@
                <div class="contact-bottom">
                    <h2>{{$pageDetail->contact_bottom['contact_bottom']->heading}}</h2>
                   <span>
-                  <img src="{{ url($pageDetail->instance->image_path.$pageDetail->contact_bottom['contact_bottom']->image) }}" alt="map">
+                  <img src="{{ url($pageDetail->contact_bottom['contact_bottom']->getImagePath()) }}" alt="{{$pageDetail->contact_bottom['contact_bottom']->image_alt}}">
                   </span>
                </div>
             </div>
@@ -101,7 +101,7 @@
                 @foreach($pageDetail->key_list as $keylist)
                 <div class="key-content">
                     <span>
-                        <img src="{{url($keylist->getIconPath())}}" alt="clock">
+                        <img src="{{url($keylist->getIconPath())}}" alt="{{$keylist->icon_alt}}">
                     </span>
                     <h3>{{$keylist->heading}}</h3>
                     <p>{{$keylist->content}}</p>

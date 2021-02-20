@@ -38,7 +38,7 @@
                     <div class="content">
                         <h3>{{$popularLocation->name}}</h3>
                         <div class="buttons">
-                            <a  class="btn-blue open-popup enquiryJS" data-quote="View Details">
+                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue open-popup enquiryJS" data-quote="View Details">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
@@ -66,7 +66,7 @@
     <div class="container">
         <div class="find-container">
             <span>
-            <img src="{{ url($pageDetail->instance->image_path.$pageDetail->find['find_container']->icon) }}" alt="route">
+            <img src="{{ url($pageDetail->find['find_container']->getIconPath()) }}" alt="{{$pageDetail->find['find_container']->icon_alt}}">
             </span>
             <div class="content">
                 <h2>{{$pageDetail->find['find_container']->heading}}</h2>
@@ -125,7 +125,7 @@
                 <h2>{!! heading_split($pageDetail->buy['buy_container']->heading) !!}  </h2>
             </div>
             <span class="img">
-                <img src="{{ url($pageDetail->instance->image_path.$pageDetail->buy['buy_container']->image) }}" alt="buy">
+                <img src="{{ url($pageDetail->buy['buy_container']->getImagePath()) }}" alt="{{$pageDetail->buy['buy_container']->image_alt}}">
             </span>
         </div>
     </div>

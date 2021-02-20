@@ -2,7 +2,7 @@
 
 @section("content")
 
-<section class="flex-container banner">
+<section class="flex-container banner home-banner">
     
     <div class="container">
             @include("layouts.navbar")
@@ -522,7 +522,7 @@
                     <div class="fact-count">
                     <h3 class="count-number" data-to="80" data-speed="3000">80</h3><span>+</span>
                     </div>
-                    <p>countries</p>
+                    <p>Countries</p>
                 </div>
             </div>
 
@@ -688,7 +688,7 @@
 <div class="flex-container partners">
     <div class="container">
         <div class="partners-container">
-            <div class="heading">
+            <div class="heading center-heading">
                         <h2>Our Courses Are Accredited By The Leading Learning
                             <span>
                             Institutions Across The Globe
