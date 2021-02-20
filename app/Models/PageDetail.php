@@ -19,17 +19,17 @@ class PageDetail extends Model
         File::delete(public_path($this->image_path.$this->image));
         return parent::delete();
     }
-    public function getLogoPath()
+    public function getIconPath()
     {// check file exist then return default image.
         $imageLink = url($this->image_path.$this->icon);
-        if ($this->hasLogo()) {
+        if ($this->hasIcon()) {
             return $imageLink;
         } else {
             return url('adminlte/dist/img/online-course.svg');
         }  
     }
 
-    public function hasLogo()
+    public function hasIcon()
     {
         if(empty($this->icon)) return FALSE;
         if (file_exists(public_path($this->image_path.$this->icon))) {
