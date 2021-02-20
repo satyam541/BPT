@@ -40,7 +40,7 @@
                             <h2>Useful Links</h2>
                         </div>
                         <ul>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">About Us</a></li>
+                            <li><a href="{{route('aboutUs')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">About Us</a></li>
                             <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Contact Us</a></li>
                             <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Locations</a></li>
                             <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Testimonials</a></li>
