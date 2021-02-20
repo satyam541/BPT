@@ -1534,11 +1534,11 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0;
 }
 @media (min-width : 768px) {
-  .banner {
+  .home-banner {
     background-image: url(../img/master/banner-bg.png);
     position: relative;
   }
-  .banner::before {
+  .home-banner::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1550,7 +1550,7 @@ input::-webkit-inner-spin-button {
     left: 0;
     z-index: 0;
   }
-  .banner .banner-container {
+  .home-banner .banner-container {
     justify-content: space-between;
     z-index: 1;
   }

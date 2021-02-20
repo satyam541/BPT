@@ -2,7 +2,7 @@
 
 @section("content")
 
-<section class="flex-container banner">
+<section class="flex-container banner home-banner">
     
     <div class="container">
             @include("layouts.navbar")
