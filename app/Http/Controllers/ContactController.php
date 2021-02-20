@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $pageDetail = PageDetail::where(['page_name'=>'contact-us','section'=>'metas'])->get();
+        $pageDetail = PageDetail::where(['page_name'=>'contact_us','section'=>'metas'])->get();
         if(!$pageDetail->isEmpty())
         {
             $data['title'] = $pageDetail->where('sub_section','title')->first()->heading;
@@ -19,7 +19,7 @@ class ContactController extends Controller
         }
         $data['courses']=Course::all();
         $data['socialmedias']=SocialMedia::all();
-        $data['pageDetail'] = PageDetail::getContent('contact-us');
+        $data['pageDetail'] = PageDetail::getContent('contact_us');
         return view('contactus',$data);
     }
 }
