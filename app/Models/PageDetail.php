@@ -12,24 +12,24 @@ class PageDetail extends Model
     protected $table = 'page_detail';
     protected $guarded = array('id');
     protected $primaryKey = "id";
-    public $image_path = 'storage/uploads/page/';
+    public $image_path = 'uploads/page/';
 
     public function delete()
     {
         File::delete(public_path($this->image_path.$this->image));
         return parent::delete();
     }
-    public function getLogoPath()
+    public function getIconPath()
     {// check file exist then return default image.
         $imageLink = url($this->image_path.$this->icon);
-        if ($this->hasLogo()) {
+        if ($this->hasIcon()) {
             return $imageLink;
         } else {
             return url('adminlte/dist/img/online-course.svg');
         }  
     }
 
-    public function hasLogo()
+    public function hasIcon()
     {
         if(empty($this->icon)) return FALSE;
         if (file_exists(public_path($this->image_path.$this->icon))) {

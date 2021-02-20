@@ -153,18 +153,19 @@
                     </div>
                     <div class="info-list">
 
+                        
                         @foreach ($pageDetail->get_more_information as $information)
 
                             <div class="info-content">
-                                {{dd($information->image)}}
-                                <span style="background-image: url({{url($information->image)}})">
-                                    <img src="{{url($information->icon)}}" alt="talk"></span>
+                                <span style="background-image: url({{url($information->getImagePath())}})">
+                                    <img src="{{url($information->getLogoPath())}}" alt="talk"></span>
                                 <div class="info-text">
                                     <h3>{{$information->heading}}</h3>
                                     <p>{{$information->content}}</p>
                                 </div>
                             </div>
                         @endforeach
+                        
                     </div>
                 </div>
             </div>
@@ -196,61 +197,21 @@
                             <h2>Frequently Asked <span>Questions</span></h2>
                         </div>
                         <div class="faq-list">
+                            @php unset($pageDetail->faq['heading'])@endphp
+                            @foreach ($pageDetail->faq as $faq)
                             <div class="faq-item">
                                 <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
+                                    <h3>{{$faq->heading}}</h3>
                                     <span>
                                     <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
                                     </span>
                                 </div>
                                 <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                    <p>{{$faq->content}}</p>
                                 </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
+                            </div> 
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="experience">
