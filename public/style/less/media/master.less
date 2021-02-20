@@ -171,30 +171,13 @@
     //Start banner //
     .banner {
       padding: @sectionPadding-md;
-      background-image: url(../img/master/banner-bg.png);
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-color: transparent;
-      position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        background-image: url(../img/master/banner-layer.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 100%;
-        height: 36%;
-        left: 0;
-        z-index: 0;
-
-      }
       .banner-container {
         flex-direction: row;
-        justify-content: space-between;
         padding: 2rem 0;
         padding-top: 3rem;
-        z-index: 1;
           .banner-content{
             align-items: flex-start;
             width: 50%;

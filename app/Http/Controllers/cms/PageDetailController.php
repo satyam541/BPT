@@ -77,8 +77,8 @@ class PageDetailController extends Controller
             \Session::flash('failure','Duplicate data found!');
         }
         
-
-        return redirect()->route('pageDetailList');
+        return back();
+        // return redirect()->route('pageDetailList');
     }
 
     public function edit(PageDetail $pageDetail)

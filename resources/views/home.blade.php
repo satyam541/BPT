@@ -615,6 +615,102 @@
         </div>
     </div>
 </section>
+<section class="flex-container looking">
+    <div class="container">
+        <div class="looking-container">
+            <div class="looking-for">
+                <h2>    
+                    Didn't Find What You're Looking For?
+                </h2>
+                <p>
+                    If you didn't find your ideal course or facing any difficulty to choose which course suits you best, we are here to help you.
+                </p>
+                <div class="buttons">
+                    <a class="btn-blue">
+                        <img src="{{url('img/home/phone-call.svg')}}" alt="phone-call">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="clients-reviews">
+                <div class="heading white-heading">
+                    <h2>What Our Clients Say About Us</h2>
+                </div>
+                <div class="reviews-outer owl-carousel">
+                    <div class="reviews-inner">
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
+                        </p>
+                        <h3>
+                            Harsul Hisham
+                        </h3>
+                        <span>
+                            WEB DESIGNER
+                        </span>
+                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                    </div>
+                    <div class="reviews-inner">
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
+                        </p>
+                        <h3>
+                            Harsul Hisham
+                        </h3>
+                        <span>
+                            WEB DESIGNER
+                        </span>
+                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                    </div>
+                    <div class="reviews-inner">
+                        <p>
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
+                        </p>
+                        <h3>
+                            Harsul Hisham
+                        </h3>
+                        <span>
+                            WEB DESIGNER
+                        </span>
+                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div class="flex-container partners">
+    <div class="container">
+        <div class="partners-container">
+            <div class="heading">
+                        <h2>Our Courses Are Accredited By The Leading Learning
+                            <span>
+                            Institutions Across The Globe
+                            </span>
+                        </h2>
+            </div>
+            <p>
+                Leading bodies including AXELOS, APMG, BCS, PeopleCert, PMI, CompTIA and Microsoft 
+                have accredited our courses, materials and trainers, certifying that they reach the 
+                high standards that they require from their training partners., materials and trainers, 
+                certifying that they reach the high standards that they require from their training partners.
+            </p>
+            <div class="partners-images">
+                <img src="{{url('img/home/prince2.png')}}" alt="prince2">
+                <img src="{{url('img/home/itil.png')}}" alt="itil">
+                <img src="{{url('img/home/agile.png')}}" alt="agile">
+                <img src="{{url('img/home/change-mgt.png')}}" alt="change-mgt">
+                <img src="{{url('img/home/ms.png')}}" alt="ms">
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection

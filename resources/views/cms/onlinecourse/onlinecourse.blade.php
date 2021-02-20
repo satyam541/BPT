@@ -46,6 +46,11 @@
                     <th>Topic</th>
                     <th>
                       @can('update',new App\Models\CourseElearning())
+                      Addon
+                      @endcan
+                    </th>
+                    <th>
+                      @can('update',new App\Models\CourseElearning())
                       Content
                       @endcan
                     </th>
@@ -77,6 +82,11 @@
                     <tr>
                       <td>{{$onlineCourse->name}}</td>
                       <td>{{$onlineCourse->topic->name ?? null}}</td>
+                      <td class=" text-center">
+                        @can('update',$onlineCourse)
+                        <a href="" class="fa fa-list"></a>
+                        @endcan
+                      </td>
                       <td class=" text-center">
                         @can('update',$onlineCourse)
                         <a href="{{ route('courseContentList',['course'=>$onlineCourse->id]) }}" class="fa fa-list"></a>

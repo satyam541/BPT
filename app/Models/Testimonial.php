@@ -10,7 +10,7 @@ class Testimonial extends Model
     use SoftDeletes;
     protected   $table='testimonial';
     protected $primaryKey = "id";
-    public $image_path = "storage/uploads/testimonial/";
+    public $image_path = "uploads/testimonial/";
 
 
 public function getImagePath()

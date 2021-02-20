@@ -29,4 +29,26 @@ class LocationController extends Controller
     return view('location',$data);
 
     }
+
+    public function detail(Request $request)
+    {
+        $location = $request->route('location');
+        
+        $location = Location::where('reference', $location)->first();
+        if(empty($location))
+        {
+            abort('404');
+        }
+        $data['description'] = $location->meta_description;
+        $data['keyword'] = $location->meta_keywords; 
+        $data['title'] = $location->meta_title; 
+
+        metaData($data);
+        $data['pageDetail'] = PageDetail::getContent('location_detail');  
+        $data['location']=$location;
+        return view('location-detail',$data);
+
+       
+    
+    }
 }
