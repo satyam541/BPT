@@ -72,7 +72,7 @@
     // End aboutus Testimonial//
 
     //Start Testimonial//
-    $('.testimonial-list').owlCarousel({
+    $('.testimonial-list' ).owlCarousel({
         loop: true,
         responsiveClass: true,
         dots: true,
@@ -94,6 +94,30 @@
         $(this).addClass("btn-active").siblings().removeClass("btn-active");
     });
     // End Testimonial//
+
+    
+    //Start home Testimonial//
+    $('.reviews-outer' ).owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        navText: ["", ""],
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+            }
+            
+        }
+
+    });
+    $('.owl-next').addClass("btn-active");
+    $('.owl-prev,.owl-next').click(function () {
+        $(this).addClass("btn-active").siblings().removeClass("btn-active");
+    });
+    // End home Testimonial//
 
     // Start FAQ
    $(".faq-item").click(function () {
