@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PageDetail;
 use App\Models\Location;
+use App\Models\Popular;
 class LocationController extends Controller
 {
     public function index(){
+
         $pageDetail = PageDetail::where(['page_name'=>'locations','section'=>'metas'])->get();
         
     if(!$pageDetail->isEmpty())
@@ -21,10 +23,10 @@ class LocationController extends Controller
     $country = country();
     $countryId = country()->id;
     $locations = $country->locations;
-    // $popular = Popular::locations()->where('country_id', $countryId);
-    $popular = Location::where('country_id','gb')->get()->take(4);
+    $popular = Popular::locations()->where('country_id', $countryId)->take('6');
     $data['popularLocations'] = $popular;
     $data['locations'] = $locations;
     return view('location',$data);
+
     }
 }
