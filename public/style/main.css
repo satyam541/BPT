@@ -142,7 +142,7 @@ input::-webkit-inner-spin-button {
   border: none;
   font-size: 14px;
   font-weight: 600;
-  padding: 12px 18px;
+  padding: 10px 18px;
   outline: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   min-width: 150px;
@@ -1925,6 +1925,12 @@ input::-webkit-inner-spin-button {
   }
   .looking .reviews-outer .owl-nav .btn-active {
     opacity: 1;
+  }
+  .partners {
+    background-image: url(../img/home/dotted-globe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
   }
   .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
