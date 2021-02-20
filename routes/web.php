@@ -25,6 +25,7 @@ Auth::routes(['register'=>false]);
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+Route::get('/training-locations', 'LocationController@index')->name('locations');
 
 
 
