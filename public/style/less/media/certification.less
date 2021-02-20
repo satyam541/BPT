@@ -100,79 +100,79 @@
     // End Method Section
 
     // Start Enquiry Section
-.enquiry {
-    padding: @sectionPadding-md;
-    .contact-list {
-        background-image: url(../img/certification/contact-img.png);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        flex-direction: row;
-    }
-    .contact {
-        box-shadow: none;
-        padding: 1rem 0rem 2rem 3rem;
-        &:nth-child(1) {
-            background-color: transparent;
+    .enquiry {
+        padding: @sectionPadding-md;
+        .contact-list {
+            background-image: url(../img/certification/contact-img.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            flex-direction: row;
         }
-        &:nth-child(2) {
-            background: none;
+        .contact {
+            box-shadow: none;
+            padding: 1rem 0rem 2rem 3rem;
+            &:nth-child(1) {
+                background-color: transparent;
+            }
+            &:nth-child(2) {
+                background: none;
+            }
         }
-    }
-    .content {
-        display: flex;
-        margin-bottom: .5rem;
-        align-items: center;
-        span {
+        .content {
             display: flex;
-            justify-content: center;
+            margin-bottom: .5rem;
             align-items: center;
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            padding: .5rem;
-            margin-right: .5rem;
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                padding: .5rem;
+                margin-right: .5rem;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            
+        }
+        .enquiry-img {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &::before {
+                top: 32%;
+                left: 11%;
+                background-image: url(../img/certification/enquiry-lines.svg);
+                height: 28px;
+                width: 40px;
+            }
+            &::after {
+                bottom: 13%;
+                right: 0%;
+                background-image: url(../img/certification/dotted-square.svg);
+                height: 47px;
+                width: 83px;
+                z-index: -1;
+            }
             img {
                 height: 100%;
                 width: 100%;
             }
         }
-        
     }
-    .enquiry-img {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        margin-top: 2rem;
-        position: relative;
-        z-index: 1;
-        &::before, &::after {
-            content: '';
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        &::before {
-            top: 32%;
-            left: 11%;
-            background-image: url(../img/certification/enquiry-lines.svg);
-            height: 28px;
-            width: 40px;
-        }
-        &::after {
-            bottom: 13%;
-            right: 0%;
-            background-image: url(../img/certification/dotted-square.svg);
-            height: 47px;
-            width: 83px;
-            z-index: -1;
-        }
-        img {
-            height: 100%;
-            width: 100%;
-        }
-    }
-}
-// End Enquiry Section
+    // End Enquiry Section
 }
 
 @media @size-lg{
@@ -228,7 +228,47 @@
             width: 37%;
         }
     }
-    // End Cisco Section 
+    // End Cisco Section
+
+    // Start Enquiry Section
+    .enquiry {
+        .enquiry-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .enquiry-content {
+            width: 50%;
+        }
+        .enquiry-img {
+            width: 40%;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &::before {
+                top: 32%;
+                left: 11%;
+                background-image: url(../img/certification/enquiry-lines.svg);
+                height: 28px;
+                width: 40px;
+            }
+            &::after {
+                bottom: 13%;
+                right: 0%;
+                background-image: url(../img/certification/dotted-square.svg);
+                height: 47px;
+                width: 83px;
+                z-index: -1;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    // End Enquiry Section
 }
 
 @media @size-xl{
