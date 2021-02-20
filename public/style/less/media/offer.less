@@ -3,13 +3,6 @@
         .offer-banner {
             padding: @sectionPadding-md;
             padding-top: 1rem!important;
-            background-image: none;
-            &::before{
-                content: none;
-            }
-            .banner-container{
-                flex-direction: column;
-            }
         }
         // End offer-banner section
 
@@ -43,17 +36,10 @@
                 flex-wrap: wrap;
             }
             .bundle-info{
-                width: 45%;
-                background-image: url(../img/offer/bundle-bg.png);
-                background-position: center;
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
+                width: 48%;
             }
             ul{
-                width: 50%;
-            }
-            .buttons{
-                margin-top: 0;
+                width: 100%;
             }
         }
         // End management section
@@ -63,6 +49,14 @@
             padding: @sectionPadding-md;
             background-color: transparent;
             background-image: url(../img/offer/recommend-bg.png);
+            .heading{
+                &::before{
+                    right: inherit;
+                }
+                h2{
+                    text-align: left;
+                }
+            }
             .recommend-info{
                 flex-direction: row;
                 justify-content: space-between;
@@ -74,8 +68,59 @@
             input{
                 width: 35%;
             }
+            .buttons{
+                margin-top: 0;
+            }
         }
         // End recommend section
+
+        //Start new-bundle section
+.new-bundle{
+    padding: @sectionPadding-md;
+    .new-bundle-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .inform-us{
+        display: flex;
+        .inform-content{
+            display: flex;
+        }
+        p{
+            font-weight: bold;
+        }
+        .inform-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .inform-item{
+            display: flex;
+            margin-top: .7rem;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: @blueGradient;
+                height: 40px;
+                width: 40px;
+                border-radius: 50px;
+                padding: .6rem;
+                margin-right: .5rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .latest-bundles{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        align-items: flex-start;
+    }
+}
+// End new-bundle section
 
 }
 
@@ -124,6 +169,45 @@
         }
     }
     // End recommend section
+    
+    // Start management section
+    .management{
+        .bundle-info{
+            width: 48%;
+            background-image: url(../img/offer/bundle-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 4rem 3rem;
+            box-shadow: none;
+            position: relative;
+            span{
+                position: absolute;
+                background-image: url(../img/offer/offer-bg.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 140px;
+                height: 110px;
+                color: @whiteColor;
+                padding: 1rem 1.5rem;
+                right: 0;
+                top: 0;
+            }
+        }
+        h3{
+            width: 62%;
+        }
+        ul{
+            width: 55%;
+        }
+        .buttons{
+            width: 42%;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: 0;
+        
+        }
+    }
+    // End management section
 }
 
 @media @size-xl{
@@ -153,4 +237,12 @@
     }
     // End recommend section
 
+    // Start management section
+    .management{
+        padding: @sectionPadding-xl;
+        .bundle-info{
+            padding-left: 4rem;
+        }
+    } 
+    // End management section
 }

@@ -4119,8 +4119,8 @@ input::-webkit-inner-spin-button {
     width: 45%;
     align-items: flex-start;
   }
-  .training .training-info .heading {
-    align-items: flex-start;
+  .training .training-info .heading::before {
+    right: inherit;
   }
   .training .training-info .heading h2 {
     text-align: left;
@@ -5639,6 +5639,8 @@ input::-webkit-inner-spin-button {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
+  box-shadow: 0 0 10px grey;
+  padding: 1rem;
 }
 .management .bundle-info span {
   width: 45%;
@@ -5715,19 +5717,49 @@ input::-webkit-inner-spin-button {
 }
 .new-bundle .inform-us {
   display: flex;
-  background-image: url();
+  order: 2;
+  margin-top: 2rem;
+}
+.new-bundle .inform-us p {
+  font-weight: bold;
+}
+.new-bundle .inform-us .inform-list {
+  display: flex;
+  flex-direction: column;
+}
+.new-bundle .inform-us .inform-item {
+  display: flex;
+  margin-top: 0.7rem;
+}
+.new-bundle .inform-us .inform-item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#0064D8, #1C2848);
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  padding: 0.6rem;
+  margin-right: 0.5rem;
+}
+.new-bundle .inform-us .inform-item span img {
+  width: 100%;
+  height: 100%;
+}
+.new-bundle .inform-content {
+  display: flex;
+  flex-direction: column;
+}
+.new-bundle .latest-bundles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 1;
 }
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
-    background-image: none;
-  }
-  .offer-banner::before {
-    content: none;
-  }
-  .offer-banner .banner-container {
-    flex-direction: column;
   }
   .bundle {
     padding: 3rem 2rem;
@@ -5756,22 +5788,21 @@ input::-webkit-inner-spin-button {
     flex-wrap: wrap;
   }
   .management .bundle-info {
-    width: 45%;
-    background-image: url(../img/offer/bundle-bg.png);
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    width: 48%;
   }
   .management ul {
-    width: 50%;
-  }
-  .management .buttons {
-    margin-top: 0;
+    width: 100%;
   }
   .recommend {
     padding: 3rem 2rem;
     background-color: transparent;
     background-image: url(../img/offer/recommend-bg.png);
+  }
+  .recommend .heading::before {
+    right: inherit;
+  }
+  .recommend .heading h2 {
+    text-align: left;
   }
   .recommend .recommend-info {
     flex-direction: row;
@@ -5783,6 +5814,54 @@ input::-webkit-inner-spin-button {
   }
   .recommend input {
     width: 35%;
+  }
+  .recommend .buttons {
+    margin-top: 0;
+  }
+  .new-bundle {
+    padding: 3rem 2rem;
+  }
+  .new-bundle .new-bundle-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .new-bundle .inform-us {
+    display: flex;
+  }
+  .new-bundle .inform-us .inform-content {
+    display: flex;
+  }
+  .new-bundle .inform-us p {
+    font-weight: bold;
+  }
+  .new-bundle .inform-us .inform-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .new-bundle .inform-us .inform-item {
+    display: flex;
+    margin-top: 0.7rem;
+  }
+  .new-bundle .inform-us .inform-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#0064D8, #1C2848);
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+  }
+  .new-bundle .inform-us .inform-item span img {
+    width: 100%;
+    height: 100%;
+  }
+  .new-bundle .latest-bundles {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: flex-start;
   }
 }
 @media (min-width : 1024px) {
@@ -5816,6 +5895,39 @@ input::-webkit-inner-spin-button {
   .recommend input {
     width: 35%;
   }
+  .management .bundle-info {
+    width: 48%;
+    background-image: url(../img/offer/bundle-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 4rem 3rem;
+    box-shadow: none;
+    position: relative;
+  }
+  .management .bundle-info span {
+    position: absolute;
+    background-image: url(../img/offer/offer-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 140px;
+    height: 110px;
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    right: 0;
+    top: 0;
+  }
+  .management h3 {
+    width: 62%;
+  }
+  .management ul {
+    width: 55%;
+  }
+  .management .buttons {
+    width: 42%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 0;
+  }
 }
 @media (min-width : 1366px) {
   .offer-banner {
@@ -5832,6 +5944,12 @@ input::-webkit-inner-spin-button {
   }
   .recommend {
     padding: 4rem 0rem;
+  }
+  .management {
+    padding: 4rem 0rem;
+  }
+  .management .bundle-info {
+    padding-left: 4rem;
   }
 }
 .certification-banner {

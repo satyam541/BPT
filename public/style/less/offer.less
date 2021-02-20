@@ -58,7 +58,6 @@
 }
 // End bundle section
 
-
 // Start management section
 .management{
     padding: @sectionPadding;
@@ -76,10 +75,8 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin-top: 2rem;
-        // background-image: url(../img/offer/bundle-bg.png);
-        // background-position: center;
-        // background-size: contain;
-        // background-repeat: no-repeat;
+        box-shadow: 0 0 10px grey;
+        padding: 1rem;
     span{
         width: 45%;
         text-align: center;
@@ -165,7 +162,45 @@
     }
     .inform-us{
         display: flex;
-        background-image: url();
+        order: 2;
+        margin-top: 2rem;
+        p{
+            font-weight: bold;
+        }
+        .inform-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .inform-item{
+            display: flex;
+            margin-top: .7rem;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: @blueGradient;
+                height: 40px;
+                width: 40px;
+                border-radius: 50px;
+                padding: .6rem;
+                margin-right: .5rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .inform-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .latest-bundles{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        order: 1;
     }
 }
+// End new-bundle section
 

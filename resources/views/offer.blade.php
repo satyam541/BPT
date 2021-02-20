@@ -166,12 +166,12 @@
     <div class="container">
         <div class="new-bundle-container">
     <div class="inform-us">
-            <div class="Inform-content">
+            <div class="inform-content">
                 <p>Need more information on Bundles? We're a click away</p>
                 <div class="inform-list">
                     <div class="inform-item">
                     <span>
-                        <img src="{{url('img/master/call-us.svg')}}" alt="call us">
+                        <img src="{{url('img/offer/telephone.svg')}}" alt="call us">
                     </span>
                     <div class="info">
                         <p>Call Us:</p>
@@ -180,11 +180,11 @@
                     </div>
                 <div class="inform-item">
                     <span>
-                        <img src="{{url('img/master/email.svg')}}" alt="email">
+                        <img src="{{url('img/offer/mail.svg')}}" alt="mail">
                     </span>
                     <div class="info">
-                        <p>Send Us Mail:</p>
-                        <a>info@thebestpracticetraining.com</a>
+                        <p>Email Us:</p>
+                        <a>info@thebestpractice.co.uk</a>
                     </div>
                     </div>
                 </div>
