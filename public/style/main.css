@@ -344,7 +344,7 @@ input::-webkit-inner-spin-button {
   color: #F2F2F2;
   font-size: 14px;
   background-color: transparent;
-  padding: 0;
+  padding: 0.4rem;
 }
 .input-container .phonecode-field .telephone {
   padding: 0px 10px 0px 2px;
@@ -1516,6 +1516,9 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
+.partners p {
+  text-align: center;
+}
 .partners .partners-images {
   display: flex;
   flex-wrap: wrap;
@@ -1771,9 +1774,6 @@ input::-webkit-inner-spin-button {
   .partners {
     padding: 3rem 2rem;
   }
-  .partners .partners-images {
-    margin-top: 2rem;
-  }
   .partners .partners-images img {
     margin: 0 !important;
   }
@@ -1926,10 +1926,12 @@ input::-webkit-inner-spin-button {
   .looking .reviews-outer .owl-nav .btn-active {
     opacity: 1;
   }
-  .partners {
+  .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    padding: 7rem;
+    margin-top: 0;
   }
 }
 @media (min-width : 1366px) {

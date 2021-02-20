@@ -688,7 +688,7 @@
 <div class="flex-container partners">
     <div class="container">
         <div class="partners-container">
-            <div class="heading">
+            <div class="heading center-heading">
                         <h2>Our Courses Are Accredited By The Leading Learning
                             <span>
                             Institutions Across The Globe
