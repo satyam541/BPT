@@ -72,6 +72,7 @@
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image')}}
+                    <img src="{{ $pageDetail->getImagePath() }}" class=" pad" style="max-width:50%"/>
                   </div>
 
                   <div class="form-group">
@@ -82,6 +83,7 @@
                   <div class="form-group">
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon')}}
+                    <img src="{{ $pageDetail->getLogoPath() }}" class=" pad" style="max-width:50%"/>
                   </div>
                   
                   <div class="form-group">

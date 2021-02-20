@@ -19,7 +19,42 @@ class PageDetail extends Model
         File::delete(public_path($this->image_path.$this->image));
         return parent::delete();
     }
+    public function getLogoPath()
+    {// check file exist then return default image.
+        $imageLink = url($this->image_path.$this->icon);
+        if ($this->hasLogo()) {
+            return $imageLink;
+        } else {
+            return url('adminlte/dist/img/online-course.svg');
+        }  
+    }
 
+    public function hasLogo()
+    {
+        if(empty($this->icon)) return FALSE;
+        if (file_exists(public_path($this->image_path.$this->icon))) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+    public function getImagePath()
+    {// check file exist then return default image.
+        $imageLink = url($this->image_path.$this->image);
+        if ($this->hasImage()) {
+            return $imageLink;
+        } else {
+            return url('adminlte/dist/img/online-course.svg');
+        }  
+    }
+
+    public function hasImage()
+    {
+        if(empty($this->image)) return FALSE;
+        if (file_exists(public_path($this->image_path.$this->image))) {
+            return TRUE;
+        }
+        return FALSE;
+    }
     public static function getContent($page_name)
     {
         // using laravel app method to create php stdClass
