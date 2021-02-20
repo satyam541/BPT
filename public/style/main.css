@@ -5385,19 +5385,11 @@ input::-webkit-inner-spin-button {
   }
 }
 .offer-banner {
-  background-color: #1C2848;
+  background-color: #1C2848 !important;
 }
-.offer-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1rem;
-}
-.offer-banner .banner-container h1,
-.offer-banner .banner-container p {
+.offer-banner h1,
+.offer-banner p {
   color: #FFFFFF;
-}
-.offer-banner .banner-container p {
-  margin-top: 0.5rem;
 }
 .bundle {
   padding: 3rem 1.5rem;
@@ -5530,10 +5522,28 @@ input::-webkit-inner-spin-button {
 .recommend ::placeholder {
   color: #FFFFFF;
 }
+.new-bundle {
+  padding: 3rem 1.5rem;
+}
+.new-bundle .new-bundle-container {
+  display: flex;
+  flex-direction: column;
+}
+.new-bundle .inform-us {
+  display: flex;
+  background-image: url();
+}
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
+    background-image: none;
+  }
+  .offer-banner::before {
+    content: none;
+  }
+  .offer-banner .banner-container {
+    flex-direction: column;
   }
   .bundle {
     padding: 3rem 2rem;

@@ -2,7 +2,7 @@
 @section("content")
 
 <!-- Start Banner Section -->
-<section class="flex-container offer-banner">
+<section class="flex-container banner offer-banner">
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
@@ -165,9 +165,44 @@
 <section class="flex-container new-bundle">
     <div class="container">
         <div class="new-bundle-container">
-            <div class="inform-us">
-                <div class="inform-content"></div>
+    <div class="inform-us">
+            <div class="Inform-content">
+                <p>Need more information on Bundles? We're a click away</p>
+                <div class="inform-list">
+                    <div class="inform-item">
+                    <span>
+                        <img src="{{url('img/master/call-us.svg')}}" alt="call us">
+                    </span>
+                    <div class="info">
+                        <p>Call Us:</p>
+                        <a>023 8000 1008</a>
+                    </div>
+                    </div>
+                <div class="inform-item">
+                    <span>
+                        <img src="{{url('img/master/email.svg')}}" alt="email">
+                    </span>
+                    <div class="info">
+                        <p>Send Us Mail:</p>
+                        <a>info@thebestpracticetraining.com</a>
+                    </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+    <div class="latest-bundles">
+        <div class="heading">
+        <h2>New Bundles To Begin 2021</h2>
+        </div>
+        <p>Enquire now and be the first to grab the opportunity</p>
+        <p>Enquire now and be the first to grab the opportunity Wanted to buy number of courses in a single package? We offer in-hand developed bundle of trending courses to provide you with the best way to gain necessary knowledge and skills required for succeeding in your career. We value your precious time and money. 
+        </p>
+        <p>Enquire now and be the first to grab the opportunity Wanted to buy number of courses in a single package? We offer in-hand developed bundle of trending courses to provide you with the best way to gain necessary knowledge and skills required for succeeding in your career. We value your precious time and money. 
+        </p>
+            <div class="buttons">
+        <a class="btn-blue"><img src="{{url('img/offer/email.svg')}}" alt="email">Have any Question</a>
             </div>
+    </div>
         </div>
     </div>
 </section>

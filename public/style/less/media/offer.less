@@ -3,6 +3,13 @@
         .offer-banner {
             padding: @sectionPadding-md;
             padding-top: 1rem!important;
+            background-image: none;
+            &::before{
+                content: none;
+            }
+            .banner-container{
+                flex-direction: column;
+            }
         }
         // End offer-banner section
 
