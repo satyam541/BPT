@@ -107,7 +107,7 @@
         .popular-content {
             width: 44%;
             margin-right: 3rem;
-            &:nth-child(even) {
+            &:nth-child(2n) {
                 margin-right: 0;
             }
             &::before {
@@ -133,6 +133,8 @@
     .buy {
         display: flex;
         padding: @sectionPadding-md;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         .buy-container {
             display: flex;
             flex-direction: column;
@@ -169,6 +171,17 @@
         }
     }
     // End Form-Map Section
+}
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Convenient section //
+    .convenient {
+        .convenient-content {
+            span {
+                transform: rotate(45deg) translate(-41px, 42px);
+            }
+        }
+    }
+    // End Convenient section //
 }
 
 @media @size-lg{
@@ -259,10 +272,14 @@
     .popular {
         .popular-content {
             width: 28%;
-            &:nth-child(even) {
+            margin-right: 3rem;
+            &:nth-child(2n) {
                 margin-right: 3rem;
             }
-            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(12),&:nth-child(15),&:nth-child(18),&:nth-child(20) {
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -344,13 +361,10 @@
             &::before {
                 left: -13px;
             }
-            &:nth-child(even) {
+            &:nth-child(3n) {
                 margin-right: 3rem;
             }
-            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(15),&:nth-child(18) {
-                margin-right: 3rem;
-            }
-            &:nth-child(4),&:nth-child(8),&:nth-child(12),&:nth-child(16), &:nth-child(20) {
+            &:nth-child(4n) {
                 margin-right: 0;
             }
             .img {
@@ -363,6 +377,8 @@
     // Start Buy Section
     .buy {
         padding: @sectionPadding-xl;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     // End Buy Section
 
