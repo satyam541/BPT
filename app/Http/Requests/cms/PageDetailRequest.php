@@ -25,8 +25,7 @@ class PageDetailRequest extends FormRequest
     {
         return [
             'page_name'               => 'required|string|max:50',
-            'section'                 => 'required',
-            'content'                 => 'required'
+            'section'                 => 'required'
         ];
     }
 }

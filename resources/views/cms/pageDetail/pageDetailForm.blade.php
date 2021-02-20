@@ -83,7 +83,7 @@
                   <div class="form-group">
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon')}}
-                    <img src="{{ $pageDetail->getLogoPath() }}" class=" pad" style="max-width:50%"/>
+                    <img src="{{ $pageDetail->getIconPath() }}" class=" pad" style="max-width:50%"/>
                   </div>
                   
                   <div class="form-group">
