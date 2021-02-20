@@ -1,4 +1,24 @@
 @media @size-md{
+    .home-banner{
+        background-image: url(../img/master/banner-bg.png);
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          background-image: url(../img/master/banner-layer.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          width: 100%;
+          height: 36%;
+          left: 0;
+          z-index: 0;
+        }
+        .banner-container{
+        justify-content: space-between;
+        z-index: 1;
+        }
+    }
     .courses{
         padding: @sectionPadding-md;
         .courses-list{
@@ -85,6 +105,18 @@
             flex-direction: row;
             justify-content: space-between;
             flex-wrap: wrap;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 74%;
+                height: 2px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-color: #ebebeb;
+                bottom: -48px;
+            }
         }
         .item{
             width: 48%;
@@ -95,6 +127,27 @@
             background-size: 100% 100%;
             background-color: transparent;
             background-blend-mode: soft-light;
+            position: relative;
+            &::before, &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                bottom: -55px;
+            }
+            &:before{
+                width: 2px;
+                background-color: #ebebeb;
+                height: 54px;
+            }
+            &::after{
+                width: 12px;
+                height: 12px;
+                background-color: @lightblueColor;
+                border: 4px solid #ebebeb;
+                border-radius: 50%;
+            }
             &:hover{
                 align-items: center;
                 p{
@@ -195,6 +248,53 @@
                 font-size: 16px;
                 width: 100%;
             }
+        }
+    }
+    .looking{
+        padding: @sectionPadding-md;
+        background-size: 100% 72%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url(../img/home/triangles.png);
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 382px;
+            height: 318px;
+            right: 0;
+            z-index: 0;
+            top: 62px;
+
+        }
+        .looking-container{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .looking-for{
+            width: 350px;
+            border-radius: 100%;
+            height: 350px;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .clients-reviews{
+            width: 46%;
+            margin-top: 0;
+        }
+    }
+    .partners{
+        padding: @sectionPadding-md;
+        .partners-images{
+            img{
+                margin: 0 !important;
+            }
+    
         }
     }
 }
@@ -303,6 +403,77 @@
             margin-top: 0;
         }
     } 
+    .looking{
+        .looking-for{
+            background-image: url(../img/home/moon.png);
+            background-size: 100% 50%;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            margin-left: 2rem;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/home/circles.png);
+                background-size: 100% 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: 0;
+                width: 400px;
+                height: 385px;
+                left: -16px;
+            }
+        }
+        .clients-reviews{
+            width: 50%;
+            padding: 0 1rem;
+            margin-top: 3rem;
+        }
+        .reviews-outer{
+            .owl-nav {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                transform: translateY(-142px);
+
+                .owl-prev, .owl-next{
+                    background-repeat: no-repeat;
+                    width: 32px;
+                    height: 30px;
+                    background-size: contain;
+                    outline: none;
+                    opacity: .5;
+                    span {
+                        display: none;
+                    }
+                }
+                .owl-prev {
+                    background-image: url('../img/home/left-arrow.png');
+                    transform: translateX(-48px);
+                }
+                .owl-next {
+                    background-image: url('../img/home/right-arrow.png');
+                    transform: translateX(32px);
+                }
+                .btn-active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .partners{
+        background-image: url(../img/home/dotted-globe.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        .partners-images{
+            background-image: url(../img/home/partners-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 7rem;
+            margin-top: 0;
+        }
+    }
 
     
 }
@@ -361,4 +532,14 @@
     .locations{
         padding: @sectionPadding-xl;
     }
+    .looking{
+        padding: @sectionPadding-xl;
+        .reviews-outer{
+            .owl-nav{
+                .owl-next{
+                    transform: translateX(46px);
+                }
+            }
+        } 
+    } 
 }
