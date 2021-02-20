@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="592" viewBox="0 0 640 592">
+  <defs>
+    <filter id="Rectangle_1106" x="0" y="0" width="640" height="473" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1108" x="1" y="436" width="235" height="156" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1107" x="0" y="432" width="236" height="157" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1108-2" x="203" y="436" width="235" height="156" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1107-2" x="203" y="432" width="235" height="157" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1108-3" x="405" y="436" width="235" height="156" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1107-3" x="404" y="432" width="236" height="157" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="top-bundles" transform="translate(-1055 -925)">
+    <g id="Group_7709" data-name="Group 7709" transform="translate(1085 955)">
+      <g transform="matrix(1, 0, 0, 1, -30, -30)" filter="url(#Rectangle_1106)">
+        <rect id="Rectangle_1106-2" data-name="Rectangle 1106" width="580" height="413" transform="translate(30 30)" fill="#fff"/>
+      </g>
+      <g id="Group_7708" data-name="Group 7708" transform="translate(9.766 20.169)">
+        <g id="Group_7700" data-name="Group 7700" transform="translate(76.234 -0.169)">
+          <rect id="Rectangle_1099" data-name="Rectangle 1099" width="472.12" height="297.197" rx="3.31" transform="translate(0.021)" fill="#f5f7ff"/>
+          <g id="Group_7701" data-name="Group 7701" transform="translate(0.021 16.498)">
+            <rect id="Rectangle_1100" data-name="Rectangle 1100" width="472.12" height="1.959" transform="translate(0 233.101)" fill="#fff"/>
+            <rect id="Rectangle_1101" data-name="Rectangle 1101" width="472.12" height="1.959" transform="translate(0 186.472)" fill="#fff"/>
+            <rect id="Rectangle_1102" data-name="Rectangle 1102" width="472.12" height="1.959" transform="translate(0 139.865)" fill="#fff"/>
+            <rect id="Rectangle_1103" data-name="Rectangle 1103" width="472.12" height="1.959" transform="translate(0 93.236)" fill="#fff"/>
+            <rect id="Rectangle_1104" data-name="Rectangle 1104" width="472.12" height="1.959" transform="translate(0 46.628)" fill="#fff"/>
+            <rect id="Rectangle_1105" data-name="Rectangle 1105" width="472.12" height="1.959" fill="#fff"/>
+          </g>
+          <g id="Group_7700-2" data-name="Group 7700" transform="translate(0 64.117)" opacity="0.22">
+            <path id="Path_29104" data-name="Path 29104" d="M1313.26,631.3c-25.861,0-23.655-139.679-53.1-139.679s-27.593,92.246-52.836,92.246-26.666-46.608-53.351-46.608-26.934,60.322-53.083,60.322S1071.353,706.7,1047.8,706.7s-25.428-98.536-53.1-98.536-30.233,40.978-53.083,40.978-23.9,28.027-53.1,28.027H852.75v47.618h472.12v-93.3Z" transform="translate(-852.75 -491.62)" fill="#739eff"/>
+          </g>
+          <g id="Group_7703" data-name="Group 7703" transform="translate(1.155 36.832)">
+            <path id="Path_29105" data-name="Path 29105" d="M1324.276,679.572h-11.611c-13.24,0-19.22-16.251-25.552-33.45s-13.055-35.451-27.552-35.451-21.448,8.868-27.9,17.468c-6.043,8.022-12.373,16.333-24.933,16.333-13.054,0-20.025-13.281-26.81-26.129s-13.694-26.129-26.6-26.129c-14.209,0-20.829-27.263-27.841-56.156-6.414-26.418-13.034-53.743-25.243-53.743-12.642,0-19.984,24.747-27.078,48.856s-13.776,46.608-26.005,46.608c-11.755,0-18.561-6.682-24.953-13.158-7.012-6.991-14.23-14.188-28.151-14.188s-21.365,14.086-28.521,27.7c-6.723,12.807-13.075,24.913-24.562,24.913-11.013,0-17.055-3.506-23.448-7.239a51.083,51.083,0,0,0-29.656-8.393H853.31v-2.062h34.605a53.289,53.289,0,0,1,30.749,8.682c6.187,3.568,11.961,6.95,22.417,6.95s16.313-11.569,22.685-23.8c7.424-14.168,15.117-28.872,30.336-28.872,14.766,0,22.314,7.507,29.594,14.786,6.5,6.455,12.6,12.559,23.51,12.559s17.468-22.933,24.026-45.123c7.3-24.748,14.869-50.341,29.058-50.341,13.817,0,20.355,26.81,27.243,55.331,6.516,26.81,13.26,54.568,25.84,54.568,14.168,0,21.407,13.838,28.419,27.222,6.764,12.869,13.137,25.036,24.933,25.036s17.282-7.548,23.283-15.508c6.764-8.992,13.755-18.293,29.552-18.293s22.829,18.705,29.491,36.812c6.187,16.5,11.817,32.089,23.613,32.089h11.611Z" transform="translate(-853.31 -476.478)" fill="#739eff"/>
+            <g id="Group_7702" data-name="Group 7702" transform="translate(29.779)">
+              <path id="Path_29106" data-name="Path 29106" d="M877.4,534.155a4.805,4.805,0,1,1-1.415-3.405A4.826,4.826,0,0,1,877.4,534.155Z" transform="translate(-867.75 -424.256)" fill="#005cff"/>
+              <path id="Path_29107" data-name="Path 29107" d="M928.86,516.236a4.805,4.805,0,1,1-1.4-3.411,4.805,4.805,0,0,1,1.4,3.411Z" transform="translate(-813.042 -443.313)" fill="#005cff"/>
+              <path id="Path_29108" data-name="Path 29108" d="M954.632,529.475a4.826,4.826,0,1,1-4.805-4.805A4.827,4.827,0,0,1,954.632,529.475Z" transform="translate(-785.709 -429.227)" fill="#005cff"/>
+              <path id="Path_29109" data-name="Path 29109" d="M980.35,483.2a4.805,4.805,0,1,1-4.805-4.805A4.805,4.805,0,0,1,980.35,483.2Z" transform="translate(-758.344 -478.39)" fill="#005cff"/>
+              <path id="Path_29110" data-name="Path 29110" d="M1006.121,536.475a4.826,4.826,0,1,1-4.826-4.805,4.826,4.826,0,0,1,4.826,4.805Z" transform="translate(-731.012 -421.791)" fill="#005cff"/>
+              <path id="Path_29111" data-name="Path 29111" d="M1031.971,561.836a4.826,4.826,0,1,1-4.826-4.826A4.826,4.826,0,0,1,1031.971,561.836Z" transform="translate(-703.551 -394.873)" fill="#005cff"/>
+              <path id="Path_29112" data-name="Path 29112" d="M1057.611,545.486a4.826,4.826,0,1,1-4.826-4.826A4.826,4.826,0,0,1,1057.611,545.486Z" transform="translate(-676.314 -412.241)" fill="#005cff"/>
+              <path id="Path_29113" data-name="Path 29113" d="M1083.352,578.845a4.826,4.826,0,1,1-4.805-4.805,4.826,4.826,0,0,1,4.805,4.805Z" transform="translate(-648.971 -376.782)" fill="#005cff"/>
+              <circle id="Ellipse_9" data-name="Ellipse 9" cx="4.805" cy="4.805" r="4.805" transform="translate(53.125 120.727)" fill="#005cff"/>
+            </g>
+          </g>
+        </g>
+        <g id="Group_7706" data-name="Group 7706" transform="translate(0 9.443)">
+          <text id="Sale" transform="matrix(0.017, -1, 1, 0.017, -0.227, 163.38)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">Sale</tspan></text>
+          <g id="Group_7704" data-name="Group 7704" transform="translate(38.226 0)">
+            <text id="_10_" data-name="10%" transform="translate(0.008 244.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">10%</tspan></text>
+            <text id="_20_" data-name="20%" transform="translate(0.008 200.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">20%</tspan></text>
+            <text id="_30_" data-name="30%" transform="translate(0.008 153.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">30%</tspan></text>
+            <text id="_40_" data-name="40%" transform="translate(0.008 108.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">40%</tspan></text>
+            <text id="_50_" data-name="50%" transform="translate(0.008 60.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">50%</tspan></text>
+            <text id="_60_" data-name="60%" transform="translate(0.008 14.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">60%</tspan></text>
+          </g>
+        </g>
+        <g id="Group_7707" data-name="Group 7707" transform="translate(81.113 306.587)">
+          <text id="Name_of_Bundles" data-name="Name of Bundles" transform="translate(154.121 65.244)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Name of Bundles</tspan></text>
+          <g id="Group_7705" data-name="Group 7705" transform="translate(0 0)">
+            <text id="PRINCE2_Agile" data-name="PRINCE2® 
+&amp; Agile" transform="translate(28.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-35.52" y="0">PRINCE2® </tspan><tspan x="-22.176" y="16">&amp; Agile</tspan></text>
+            <text id="Project_Programme" data-name="Project &amp; 
+Programme" transform="translate(120.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-30.259" y="0">Project &amp; </tspan><tspan x="-36.849" y="16">Programme</tspan></text>
+            <text id="Programme_Change" data-name="Programme 
+&amp; Change" transform="translate(216.121 12.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-38.592" y="0">Programme </tspan><tspan x="-30.078" y="15">&amp; Change</tspan></text>
+            <text id="Professional_Project_Manager" data-name="Professional 
+Project Manager" transform="translate(326.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-41.163" y="0">Professional </tspan><tspan x="-51.823" y="16">Project Manager</tspan></text>
+            <text id="ITIL_PRINCE2_" data-name="ITIL &amp; 
+PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-19.848" y="0">ITIL &amp; </tspan><tspan x="-33.776" y="16">PRINCE2®</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Group_7713" data-name="Group 7713" transform="translate(1085 1386.931)">
+      <g id="Group_7712" data-name="Group 7712" transform="translate(0 0)">
+        <g transform="matrix(1, 0, 0, 1, -30, -461.93)" filter="url(#Rectangle_1108)">
+          <rect id="Rectangle_1108-4" data-name="Rectangle 1108" width="175" height="96" rx="8" transform="translate(31 466)" fill="#fd7a03"/>
+        </g>
+        <g id="Group_7710" data-name="Group 7710" transform="translate(0 0)">
+          <g transform="matrix(1, 0, 0, 1, -30, -461.93)" filter="url(#Rectangle_1107)">
+            <rect id="Rectangle_1107-4" data-name="Rectangle 1107" width="176" height="97" rx="8" transform="translate(30 462)" fill="#fff"/>
+          </g>
+          <g id="Group_7711" data-name="Group 7711" transform="translate(13.203 24.6)">
+            <g id="Group_7710-2" data-name="Group 7710" transform="translate(0 0.469)">
+              <text id="_34_152" data-name="£34,152" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">£34,15</tspan></text>
+              <text id="Total_Revenue" data-name="Total Revenue" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Total Revenue</tspan></text>
+            </g>
+            <g id="statistics_2_" data-name="statistics (2)" transform="translate(108.563 8.469)">
+              <path id="Path_29115" data-name="Path 29115" d="M44.788,179.919H43.346V151.352A1.351,1.351,0,0,0,41.994,150H36.587a1.351,1.351,0,0,0-1.352,1.352v28.567h-2.7V159.462a1.351,1.351,0,0,0-1.352-1.352H25.773a1.351,1.351,0,0,0-1.352,1.352v20.456h-2.7v-9.642a1.351,1.351,0,0,0-1.352-1.352H14.959a1.351,1.351,0,0,0-1.352,1.352v9.642H10.9V164.869a1.351,1.351,0,0,0-1.352-1.352H4.145a1.351,1.351,0,0,0-1.352,1.352v15.049H1.352a1.352,1.352,0,0,0,0,2.7H44.788a1.352,1.352,0,1,0,0-2.7Zm0,0" transform="translate(0 -150)" fill="#005cff"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Group_7712-2" data-name="Group 7712" transform="translate(203.202 0)">
+        <g transform="matrix(1, 0, 0, 1, -233.2, -461.93)" filter="url(#Rectangle_1108-2)">
+          <rect id="Rectangle_1108-5" data-name="Rectangle 1108" width="175" height="96" rx="8" transform="translate(233 466)" fill="#f2ce1e"/>
+        </g>
+        <g id="Group_7710-3" data-name="Group 7710" transform="translate(0 0)">
+          <g transform="matrix(1, 0, 0, 1, -233.2, -461.93)" filter="url(#Rectangle_1107-2)">
+            <rect id="Rectangle_1107-5" data-name="Rectangle 1107" width="175" height="97" rx="8" transform="translate(233 462)" fill="#fff"/>
+          </g>
+          <g id="Group_7711-2" data-name="Group 7711" transform="translate(12.626 25.017)">
+            <g id="Group_7710-4" data-name="Group 7710" transform="translate(0 0)">
+              <text id="_5_643" data-name="5,643" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">5,643</tspan></text>
+              <text id="Orders" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Order</tspan></text>
+            </g>
+          </g>
+          <g id="Group_6778" data-name="Group 6778" transform="translate(121.13 27.518)">
+            <path id="Path_21819" data-name="Path 21819" d="M25.8,231.524a20.556,20.556,0,1,1,8.025-1.621,20.556,20.556,0,0,1-8.025,1.621Zm0-39.675A19.053,19.053,0,1,0,44.831,210.9,19.053,19.053,0,0,0,25.8,191.849Z" transform="translate(-3.818 -188.923)" fill="#a7a7aa"/>
+            <path id="Path_21820" data-name="Path 21820" d="M21.979,228.958a21.979,21.979,0,1,1,0-43.958v4.28a17.69,17.69,0,1,0,13,5.69l3.146-2.9a21.979,21.979,0,0,1-16.141,36.892Z" transform="translate(0 -185)" fill="#e2c11c"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_7712-3" data-name="Group 7712" transform="translate(404.361 0)">
+        <g transform="matrix(1, 0, 0, 1, -434.36, -461.93)" filter="url(#Rectangle_1108-3)">
+          <rect id="Rectangle_1108-6" data-name="Rectangle 1108" width="175" height="96" rx="8" transform="translate(435 466)" fill="#80ca46"/>
+        </g>
+        <g id="Group_7710-5" data-name="Group 7710" transform="translate(0 0)">
+          <g transform="matrix(1, 0, 0, 1, -434.36, -461.93)" filter="url(#Rectangle_1107-3)">
+            <rect id="Rectangle_1107-6" data-name="Rectangle 1107" width="176" height="97" rx="8" transform="translate(434 462)" fill="#fff"/>
+          </g>
+          <g id="Group_7711-3" data-name="Group 7711" transform="translate(13.257 25.017)">
+            <g id="Group_7710-6" data-name="Group 7710" transform="translate(0 0)">
+              <text id="_45_254" data-name="45,254" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">45,254</tspan></text>
+              <text id="Customers" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Customers</tspan></text>
+            </g>
+            <path id="Path_29117" data-name="Path 29117" d="M913.344,510c-3.4,0-3.113-18.379-6.987-18.379s-3.631,12.138-6.952,12.138-3.509-6.133-7.02-6.133-3.544,7.937-6.985,7.937-3.886,14.358-6.985,14.358-3.346-12.966-6.987-12.966-3.978,5.392-6.985,5.392-3.145,3.688-6.987,3.688H852.75V522.3h62.122V510.023Z" transform="translate(-761.196 -482.448)" fill="#78bd41"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
