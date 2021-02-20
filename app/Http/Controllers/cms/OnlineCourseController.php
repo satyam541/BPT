@@ -34,14 +34,23 @@ class OnlineCourseController extends Controller
         $onlineCourses = Course::where('is_online',1)->get();
         return view('cms.onlinecourse.onlinecourse',compact('onlineCourses'));
     }
-  public function courseAddonForm(Course $course){
+  public function courseAddonForm($course){
     $data['courseAddons']=CourseAddon::all();
-    $data['model']=$course;
+    $data['model']=Course::find($course);
+    $Addons=Course::with('courseAddon')->find($course);
+    $selectedAddons=[];
+    foreach($Addons->courseAddon as $selectedAddon){
+        $selectedAddons=$selectedAddon->pluck('id','id')->toArray();
+    }
+    $data['selectedAddons']=$selectedAddons;
     $data['submitRoute']='courseAddonAssigned';
     return view('cms.addon.courseAddonForm',$data);
   }
 public function courseAddonassigned(Request $request){
-    // $course
+    $course=Course::find($request->id);
+    $course->courseAddon()->sync($request->name);
+    $course->save();
+    return redirect()->route('onlinecourseList')->with('success','Addons assigned successfully');
 }
 
     

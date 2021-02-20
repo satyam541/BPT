@@ -6,8 +6,8 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Best Practice Onsite Training </h1>
-            <p>Onsite programmes are our speciality. Any of our courses can be delivered onsite at your offices or a venue of your choice. Best Practice training helps you to take flexible and cost-effective training at a location of your choice.  It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the delegates.  </p>
+            <h1>{!!$pageDetail->banner['header']->heading!!}</h1>
+            <p>{!!$pageDetail->banner['header']->content!!}</p>
             <div class="breadcrums">
                 <ul>
                     <li><a href="">Home</a></li>
@@ -26,20 +26,20 @@
         <div class="training-container">
             <div class="training-info">
                 <div class="heading center-heading">
-                    <h2>Let's Bring the Training <span>to You !</span></h2>
+                    {{-- <h2>Let's Bring the Training <span>to You !</span></h2> --}}
+                    <h2>{!!$pageDetail->main['heading']->heading!!}</h2>
                 </div>
-                <p>Best Practice training helps you to take flexible and cost-effective training at a location of your choice. From a single team or department to everyone in the organisation, we will provide a consistent learning experience with real-world and mission-specific examples for ensuring project’s success. It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the delegates. Our onsite training program ensures a comfortable learning environment at your workplace. Fill the following form and we will get back to you.Best Practice training helps you to take flexible and cost-effective training at a location of your choice. From a single team or department to everyone in the organisation, we will provide a consistent learning experience with real-world and mission-specific examples for ensuring project’s success. It helps in eliminating the costs of travel, hotel, venue, etc. and other expenses for the
-                and other expenses for the  </p>
+                <p>{!!$pageDetail->main['heading']->content!!}</p>
                 <div class="buttons">
                 <a class="btn-blue"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
                 </a>
             </div>
             <div class="delegate">
                 <div class="heading center-heading">
-                    <h2>Number of Delegates Choose Onsite Training</h2>
+                    <h2>{!!$pageDetail->main['heading']->page_tag_line!!}</h2>
                 </div>
                 <div class="training-map">
-                <img src="{{url('img/onsite/training-map.png')}}" alt="training-map">
+                    <img src="{{$pageDetail->main['heading']->getImagePath()}}" alt="training-map">
                 </div>
             </div>
         </div>
@@ -137,39 +137,24 @@
                     </form>
                     <div class="info">
                         <div class="heading">
-                            <h2>Information at Your
-                                <span>Fingertips</span></h2>
+                            {{-- <h2>Information at Your <span>Fingertips</span></h2> --}}
+                            <h2>{!!$pageDetail->fingertips['heading']->heading!!}</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum dicta numquam quibusdam alias sunt expedita voluptates optio, aperiam commodi quis, suscipit, quae ut et enim. Officia quaerat perferendis quis aliquam!</p>
+                        <p>{!!$pageDetail->fingertips['heading']->content!!}</p>
+                        @php unset($pageDetail->fingertips['heading'])@endphp
                         <div class="info-list">
+                            @foreach ($pageDetail->fingertips as $item)
                             <div class="item">
                                     <span>  
-                                    <img src="{{url('img/onsite/company.svg')}}" alt="company">
+                                    <img src="{{$item->getIconPath()}}" alt="{{$item->image_alt}}">
                                 </span>
                                 <div class="item-info">
-                                    <h3>Explore Our Training Courses</h3>
-                                    <p>See  what we have to offer. </p>
+                                    <h3>{!!$item->heading!!}</h3>
+                                    <p>{!!$item->content!!}</p>
 
                                 </div>
                             </div>
-                            <div class="item">
-                                    <span>
-                                    <img src="{{url('img/onsite/practice.svg')}}" alt="call-blue">
-                                    </span>
-                                    <div class="item-info">
-                                        <h3>Business Training Works</h3>
-                                        <p>Learn about us.</p>
-                                    </div>
-                            </div>
-                            <div class="item">
-                                    <span>
-                                        <img src="{{url('img/onsite/email.svg')}}" alt="email">
-                                    </span>
-                                    <div class="item-info">
-                                        <h3>Start a Conversation</h3>
-                                        <p>Contact us to connect.</p>
-                                    </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -182,43 +167,17 @@
     <div class="container">
         <div class="choose-container">
             <div class="heading center-heading">
-                <h2>Why Choose <span>Onsite Training</span></h2>
+                {{-- <h2>Why Choose <span>Onsite Training</span></h2> --}}
+                <h2>{!!$pageDetail->why_choose['heading']->heading!!}</h2>
             </div>
+            @php unset($pageDetail->why_choose['heading'])@endphp
             <div class="choose-list">
+                @foreach ($pageDetail->why_choose as $item)
                 <div class="choose-item">
-                    <span><img src="{{url('img/onsite/budget.svg')}}" alt="budget"></span>
-                    <p>Maximise your training budget</p>
+                    <span><img src="{{$item->getIconPath()}}" alt="{{$item->icon_alt}}"></span>
+                    <p>{{$item->heading}}</p>
                 </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/solid.svg')}}" alt="solid"></span>
-                    <p>Tailored learning experience</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/monitor.svg')}}" alt="monitor"></span>
-                    <p>Monitor your employees' progress</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/group.svg')}}" alt="group"></span>
-                    <p>Team building opportunity</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/save-money.svg')}}" alt="save-money"></span>
-                    <p>Save on travel costs</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/elastic.svg')}}" alt="elastic"></span>
-                    <p>Maximum flexibility</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/page.svg')}}" alt="page"></span>
-                    <p>Ensure employees gain qualifications</p>
-                </div>
-                <div class="choose-item">
-                    <span><img src="{{url('img/onsite/statistics.svg')}}" alt="statistics"></span>
-                    <p>Make your business more efficient</p>
-                </div>
-                
-                
+                @endforeach                
             </div>
         </div>
     </div>
@@ -230,25 +189,17 @@
     <div class="container">
         <div class="solution-container">
             <div class="heading center-heading">
-                <h2>Our High-Quality Tailor Made <span>Solutions Include</span></h2>
+                {{-- <h2>Our High-Quality Tailor Made <span>Solutions Include</span></h2> --}}
+                <h2>{!!$pageDetail->overlay['heading']->heading!!}</h2>
             </div>
+            @php unset($pageDetail->overlay['heading'])@endphp
             <div class="solution-list">
+                @foreach ($pageDetail->overlay as $item)
                 <div class="solution-item">
-                    <span><img src="{{url('img/onsite/customize.svg')}}" alt="customize"></span>
-                    <h3>Customised Courses</h3>
+                    <span><img src="{{$item->getIconPath()}}" alt="{{$item->icon_alt}}"></span>
+                    <h3>{{$item->heading}}</h3>
                 </div>
-                <div class="solution-item">
-                    <span><img src="{{url('img/onsite/location.svg')}}" alt="location"></span>
-                    <h3>Flexible Location</h3>
-                </div>
-                <div class="solution-item">
-                    <span><img src="{{url('img/onsite/presentation.svg')}}" alt="presentation"></span>
-                    <h3>Experienced Trainer</h3>
-                </div>
-                <div class="solution-item">
-                    <span><img src="{{url('img/onsite/test.svg')}}" alt="test"></span>
-                    <h3>Exam Included</h3>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

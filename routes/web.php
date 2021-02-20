@@ -27,7 +27,7 @@ Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
 Route::get('/training-locations', 'LocationController@index')->name('locations');
 Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
-Route::get('/onsite', 'OnsiteController@detail')->name('onsite');
+Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 
 
 
@@ -41,8 +41,8 @@ Route::get('/home', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
-Route::get('/blogDetail', function () {
-    return view('blogDetail');
+Route::get('/blog-detail', function () {
+    return view('blog-detail');
 });
 Route::get('/offer', function () {
     return view('offer');
@@ -54,3 +54,18 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+Route::get('/privacy-policy',function(){
+
+})->name('privacy-policy');
+
+Route::get('/terms-and-conditions',function(){
+
+})->name('terms-and-conditions');
+Route::get('/third-party-trademarks',function(){
+
+})->name('third-party');
+
+Route::get('/cookies',function(){
+    
+})->name('cookies');
+
