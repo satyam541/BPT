@@ -1,5 +1,5 @@
 @media @size-md{
-    .banner{
+    .home-banner{
         background-image: url(../img/master/banner-bg.png);
         position: relative;
         &::before {
@@ -258,7 +258,6 @@
     .partners{
         padding: @sectionPadding-md;
         .partners-images{
-            margin-top: 2rem;
             img{
                 margin: 0 !important;
             }
@@ -430,9 +429,17 @@
         }
     }
     .partners{
-        background-image: url(../img/home/partners-bg.png);
+        background-image: url(../img/home/dotted-globe.png);
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: contain;
+        background-position: right;
+        .partners-images{
+            background-image: url(../img/home/partners-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 7rem;
+            margin-top: 0;
+        }
     }
 
     
