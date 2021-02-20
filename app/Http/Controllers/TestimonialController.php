@@ -17,6 +17,7 @@ class TestimonialController extends Controller
         }
         $data['pageDetail'] = PageDetail::getContent('testimonial');
         $data['testimonials']=Testimonial::all();
+        // dd($data['testimonials']);
         return view('testimonial',$data);
     }
 }

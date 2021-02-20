@@ -10,7 +10,7 @@ class SocialMedia extends Model
 {
     protected   $table='social_media';
     protected $primaryKey = "id";
-    public $image_path = "storage/uploads/socialmedia/";
+    public $image_path = "uploads/socialmedia/";
   
     public function getImagePath()
     {// check file exist then return default image.

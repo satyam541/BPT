@@ -26,7 +26,7 @@ Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
 Route::get('/training-locations', 'LocationController@index')->name('locations');
-Route::get('/training-locations/{location}', 'LocationController@detail')->name('locations');
+Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
 
 
 
@@ -35,7 +35,7 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 // });
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/onsite', function () {
     return view('onsite');

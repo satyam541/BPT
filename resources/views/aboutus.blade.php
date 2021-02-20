@@ -8,10 +8,8 @@
         @include("layouts.navbar")
         <div class="banner-container">
             <div class="banner-content">
-                <h1>About Us</h1>
-                <p>As a leading training provider in the industry, our main objectives are to deliver the highest
-                    standard of training to you.As a leading training provider in the industry, our main objectives are
-                    to deliver the highest standard of training to you.</p>
+                <h1>{!!$pageDetail->banner['header']->heading!!}</h1>
+                <p>{!!$pageDetail->banner['header']->content!!}</p>
                     <div class="breadcrums">
                         <ul>
                             <li><a href="">Home</a></li>
@@ -31,49 +29,28 @@
     <div class="container">
         <div class="about-container">
             <div class="about-content">
+                @foreach ($pageDetail->intro as $item)
                 <div class="about-item">
                     <div class="heading">
-                        <h2>Who We <span> Are</span></h2>
+                        {{-- <h2>Who We <span> Are</span></h2> --}}
+                        <h2>{!!$item->heading!!}</h2>
                     </div>
-                    <p>Best Practice Training is an independent provider of project management and IT service
-                        management training courses. Since our formation in 2011, we have successfully delivered
-                        training courses to both the public and private sectors throughout the UK and
-                        internationally.</p>
+                    <p>{!!$item->content!!}</p>
                 </div>
-                <div class="about-item">
-                    <div class="heading">
-                        <h2>
-                            What We <span> Aim To Do</span>
-                        </h2>
-                    </div>
-                    <p>We aim to have enduring relationships with our customers. Best Practice Training provides
-                        authorised certification from highly reputed certification bodies. What matter to us is
-                        teaching to bring real and long-lasting benefit to your work. Our main objectives is to
-                        provide the highest quality of training so that you can enhance your career in your
-                        industry.</p>
-                </div>
-                <div class="about-item">
-                    <div class="heading">
-                        <h2>What Do <span> We Provide?</span> </h2>
-                    </div>
-                    <p>Best practice Training provides you with a large variety of professional courses to help
-                        you develop your skills. We will help you to implement learned skills effectively in
-                        your business. The variety of courses that we deliver range from Project Management,
-                        Technical IT, Systems Architecture, Business Skills, Cyber Security and much more.
-                    </p>
-                </div>
+                
+                @endforeach
+                
             </div>
             <div class="about-image">
                 <div class="values-content">
                 <div class="heading">
-                    <h2>Our <span>Values</span> </h2>
+                    {{-- <h2>Our <span>Values</span> </h2> --}}
+                    <h2>{!!$pageDetail->intro_right['our_values']->heading!!}</h2>
                 </div>
-                <p>Our main goal is to make a positive difference to your organisation. What you learn
-                    should have a direct, lasting impact on your future at a business and personal level.
-                    How do we achieve this?</p>
+                <p>{!!$pageDetail->intro_right['our_values']->content!!}</p>
                 </div>
                 <span class="values-info">
-                    <img src="{{url('img/aboutus/values-info.png')}}" alt="values-info">
+                    <img src="{{url($pageDetail->intro_right['our_values']->getImagePath())}}" alt="{{$pageDetail->intro_right['our_values']->image_alt}}">
                 </span>
             </div>
         </div>
@@ -87,12 +64,9 @@
         <div class="difference-container">
             <div class="difference-content">
             <div class="heading center-heading">
-                <h2>What Makes Us Different?</h2>
+                <h2>{!!$pageDetail->overlay['what_makes_us_different']->heading!!}</h2>
             </div>
-            <p>We pride ourselves on delivering training courses of the highest quality. We use interactive training
-                    materials to ensure a hands-on approach for all delegates. Courses have typically less than ten
-                    delegates to ensure that all delegates have the chance to participate and ask questions thereby
-                    maximising their learning experience.</p>
+            <p>{!!$pageDetail->overlay['what_makes_us_different']->content!!}</p>
             </div>
  
             <div class="difference-list">
@@ -104,7 +78,7 @@
                         </svg>
                     </div>
                     <p class="txt-name">Industry average for pass rates for PRINCE2 Courses</p>
-                </div>
+                </div>     
                 <div class="count">
                     <div class="circle">
                         <svg class="progress-ring second" width="95" height="95">
@@ -144,48 +118,22 @@
     <div class="container">
         <div class="testimonial-container">
             <div class="heading center-heading">
-                <h2>What Our Clients Say <span> About Us</span></h2>
+                {{-- <h2>What Our Clients Say <span> About Us</span></h2> --}}
+                <h2>{!!$pageDetail->testimonials['heading']->heading!!}</h2>
             </div>
             <div class="testimonial-content owl-carousel">
+                @foreach ($testimonials as $testimonial)
                 <div class="testimonial-item">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and
-                        scramble</p>
+                    <p>{!!$testimonial->content!!}</p>
                     <span>
-                        <img src="{{url('img/aboutus/client.svg')}}" alt="clients" />
+                        <img src="{{$testimonial->getImagePath()}}" alt="clients" />
                     </span>
-                    <h3>Harsul Hisham</h3>
-                    <p class="designation">WEB DESIGNER</p>
+                    <h3>{!!$testimonial->author!!}</h3>
+                    <p class="designation">{!!$testimonial->designation!!}</p>
                     <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
                 </div>
-                <div class="testimonial-item">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and
-                        scramble</p>
-                    <span>
-                        <img src="{{url('img/aboutus/client.svg')}}" alt="clients">
-                    </span>
-                    <h3>Harsul Hisham</h3>
-                    <p class="designation">WEB DESIGNER</p>
-                    <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
-                </div>
-                <div class="testimonial-item">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to maLorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has cke a type specimen bookunknown printer took a galley of type and
-                        scramble</p>
-                    <span>
-                        <img src="{{url('img/aboutus/client.svg')}}" alt="clients">
-                    </span>
-                    <h3>Harsul Hisham</h3>
-                    <p class="designation">WEB DESIGNER</p>
-                    <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </div>
@@ -266,8 +214,8 @@
             </form>
             <div class="contact-info">
                 <div class="heading white-heading">
-                    <h2>Contact Us</h2>
-                    <p>If you have some questions, please feel free to contact us.</p>
+                    <h2>{!!$pageDetail->contact_us['heading']->heading!!}</h2>
+                    <p>{!!$pageDetail->contact_us['heading']->content!!}</p>
                 </div>
                 <div class="contact-list">
                     <div class="item">
@@ -276,7 +224,7 @@
                         </span>
                         <div class="item-info">
                             <h3>Email:</h3>
-                            <a href="mailTo:info@bestpratice.co.uk">info@bestpratice.co.uk</a>
+                            <a href="{{'mailTo:'.$websiteDetail->contact_email}}">{!!$websiteDetail->contact_email!!}</a>
 
                         </div>
                     </div>
@@ -286,7 +234,7 @@
                         </span>
                         <div class="item-info">
                             <h3>Phone:</h3>
-                            <a href="tel:02380001008">023 8000 1008</a>
+                            <a href="{{'tel:'.$websiteDetail->contact_number}}">{!!$websiteDetail->contact_number!!}</a>
                         </div>
                     </div>
                     <div class="item">
@@ -295,9 +243,7 @@
                         </span>
                         <div class="item-info">
                             <h3>Address:</h3>
-                            <p>Wessex House, Upper
-                                Market Street, Eastleigh,
-                                Hampshire, SO50 9FD.</p>
+                            <p>{!!$websiteDetail->address!!}</p>
                         </div>
                     </div>
                 </div>
@@ -312,33 +258,20 @@
     <div class="container">
         <div class="skills-container">
             <div class="heading center-heading">
-                <h2>Why Choose Best Practice Training for <span>Your Tech Skills Needs?</span></h2>
+                {{-- <h2>Why Choose Best Practice Training for <span>Your Tech Skills Needs?</span></h2> --}}
+                <h2>{!!$pageDetail->tech_skills_needs['heading']->heading!!}</h2>
             </div>
+            @php unset($pageDetail->tech_skills_needs['heading'])@endphp
             <div class="skills-list">
+                @foreach ($pageDetail->tech_skills_needs as $item)
                 <div class="skills-item">
                     <span>
-                        <img src="{{url('img/aboutus/skills-verification.svg')}}" alt="varification">
+                        <img src="{{url($item->getImagePath())}}" alt="{{$item->image_alt}}">
                     </span>
-                    <h3>Comprehensive curriculum, high pass rates</h3>
-                    <p>Whether you're looking for an individual course or a full certification programme, we offer a
-                        complete range of business and IT training, including official </p>
+                    <h3>{!!$item->heading!!}</h3>
+                    <p>{!!$item->content!!} </p>
                 </div>
-                <div class="skills-item">
-                    <span>
-                        <img src="{{url('img/aboutus/skills-lesson.svg')}}" alt="lesson">
-                    </span>
-                    <h3>Virtual training and UK-wide learning centres</h3>
-                    <p>We offer top-quality virtual classroom and online courses so you can train wherever you are, yet
-                        get the best learning experience.We also have 20 learning centres </p>
-                </div>
-                <div class="skills-item">
-                    <span>
-                        <img src="{{url('img/aboutus/skills-team.svg')}}" alt="teams">
-                    </span>
-                    <h3>Award-winning training teams</h3>
-                    <p>Our learning professionals are among the best in the world, each with extensive experience and a
-                        proven track record of delivering the skills that transform performance.</p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -349,16 +282,14 @@
 <section class="flex-container clients">
     <div class="container">
         <div class="heading center-heading">
-            <h2>Our Clients</h2>
+            <h2>{!!$pageDetail->partners['heading']->heading!!}</h2>
             <span class="overlay"></span>
         </div>
+        @php unset($pageDetail->partners['heading']) @endphp
         <div class="clients-container">
-            <img src="{{url('img/aboutus/nhs.svg')}}" alt="nhs">
-            <img src="{{url('img/aboutus/imperial.svg')}}" alt="imperial">
-            <img src="{{url('img/aboutus/hdh.svg')}}" alt="hdh">
-            <img src="{{url('img/aboutus/banco.svg')}}" alt="banco">
-            <img src="{{url('img/aboutus/deloitte.svg')}}" alt="deloitte">
-            <img src="{{url('img/aboutus/cardiff.svg')}}" alt="cardiff">
+            @foreach ($pageDetail->partners as $item)
+            <img src="{{url($item->getImagePath())}}" alt="{{$item->image_alt}}">
+            @endforeach
         </div>
     </div>
 
