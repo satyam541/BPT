@@ -27,6 +27,49 @@
         }
         // End bundle section
 
+        // Start management section
+        .management{
+            padding: @sectionPadding;
+            .management-bundles{
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .bundle-info{
+                width: 45%;
+                background-image: url(../img/offer/bundle-bg.png);
+                background-position: center;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+            ul{
+                width: 50%;
+            }
+            .buttons{
+                margin-top: 0;
+            }
+        }
+        // End management section
+
+        //Start recommend section
+        .recommend{
+            padding: @sectionPadding-md;
+            background-color: transparent;
+            background-image: url(../img/offer/recommend-bg.png);
+            .recommend-info{
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            p{
+                text-align: left;
+                width: 38%;
+            }
+            input{
+                width: 35%;
+            }
+        }
+        // End recommend section
+
 }
 
 @media @size-lg{
@@ -35,7 +78,7 @@
     .offer-banner {
         background-image: url(../img/offer/banner-bg.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 50% 100%;
         background-position: right;
         .banner-container{
             width: 50%;
@@ -59,6 +102,21 @@
         }
     }
     // End bundle section
+
+    //Start recommend section
+    .recommend{
+        .heading{
+            justify-content: flex-start;
+            align-items: flex-start;
+            h2{
+                text-align: left;
+            }
+        }
+        input{
+            width: 35%;
+        }
+    }
+    // End recommend section
 }
 
 @media @size-xl{
@@ -81,5 +139,11 @@
         }
     }
     // End bundle section
+
+    //Start recommend section
+    .recommend{
+        padding: @sectionPadding-xl;
+    }
+    // End recommend section
 
 }

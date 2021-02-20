@@ -11,7 +11,7 @@
             <div class="breadcrums">
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow"></li>
+                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                     <li><a href="">Offer</a></li>
                 </ul>
             </div>
@@ -68,7 +68,7 @@
 
 <!-- Start management section -->
 <section class="flex-container management">
-<div class="container">
+    <div class="container">
     <div class="management-container">
         <div class="heading center-heading">
             <h2>Our Project <span>Management Bundles</span></h2>
@@ -89,9 +89,87 @@
                     </a>
                 </div>
             </div>
+            <div class="bundle-info">
+                <h3>PRINCE2® & Agile Bundle </h3>
+                <span>Up to 15% off with this bundle</span>
+                <ul>
+                    <li>Courses included</li>
+                    <li>PRINCE2® Foundation & Practitioner</li>
+                    <li>AgilePM® Foundation & Practitioner</li>
+                </ul>
+                <div class="buttons">
+                    <a class="btn-blue">
+                            <img src="{{url('img/offer/email.svg')}}" alt="email">
+                            Get a Quote
+                    </a>
+                </div>
+            </div>
+            <div class="bundle-info">
+                <h3>PRINCE2® & Agile Bundle </h3>
+                <span>Up to 15% off with this bundle</span>
+                <ul>
+                    <li>Courses included</li>
+                    <li>PRINCE2® Foundation & Practitioner</li>
+                    <li>AgilePM® Foundation & Practitioner</li>
+                </ul>
+                <div class="buttons">
+                    <a class="btn-blue">
+                            <img src="{{url('img/offer/email.svg')}}" alt="email">
+                            Get a Quote
+                    </a>
+                </div>
+            </div>
+            <div class="bundle-info">
+                <h3>PRINCE2® & Agile Bundle </h3>
+                <span>Up to 15% off with this bundle</span>
+                <ul>
+                    <li>Courses included</li>
+                    <li>PRINCE2® Foundation & Practitioner</li>
+                    <li>AgilePM® Foundation & Practitioner</li>
+                </ul>
+                <div class="buttons">
+                    <a class="btn-blue">
+                            <img src="{{url('img/offer/email.svg')}}" alt="email">
+                            Get a Quote
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    </div>
+</section>
+<!-- End management section -->
+
+<!-- Start recommend section -->
+<section class="flex-container recommend">
+    <div class="container">
+        <div class="recommend-container">
+            <div class="heading center-heading white-heading">
+                <h2>Stay in Touch</h2>
+            </div>
+            <div class="recommend-info">
+            <p>Get personalized course recommendations, track subjects and courses with reminders and more Get personalized course recommendations, </p>
+                                <input type="text" name="email" id="email" placeholder="Your Email Address"
+                                    autocomplete="off">
+                            <div class="buttons">
+                                <a class="btn-blue"><img src="{{url('img/offer/email.svg')}}" alt="email">
+                                Enquire Now</a>
+                            </div>
+    </div>
+        </div>
+    </div>
+</section>
+<!-- End recommend section -->
+
+<!-- Start new-bundle section -->
+<section class="flex-container new-bundle">
+    <div class="container">
+        <div class="new-bundle-container">
+            <div class="inform-us">
+                <div class="inform-content"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 @endsection

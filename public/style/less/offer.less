@@ -83,17 +83,19 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-top: 2rem;
         // background-image: url(../img/offer/bundle-bg.png);
         // background-position: center;
         // background-size: contain;
         // background-repeat: no-repeat;
-    }
-    h3{
-        width: 42%;
-    }
     span{
         width: 45%;
         text-align: center;
+        font-weight: bold;
+    }
+    }
+    h3{
+        width: 42%;
     }
     ul{
         width: 100%;
@@ -105,7 +107,7 @@
                 &::before{
                     content: none;
                 }
-                
+
             }
             margin-top: .5rem;
             font-size: 12px;
@@ -128,4 +130,37 @@
 
 }
 // End management section
+
+//Start recommend section
+.recommend{
+    padding: @sectionPadding;
+    background-color: @darkblueColor;
+    .recommend-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .recommend-info{
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        text-align: center;
+        color: @whiteColor;
+    }
+    input{
+        background-color: transparent;
+        border: none;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+        color: @whiteColor;
+        outline: none;
+        border-bottom: 1px solid @whiteColor;
+        width: 80%;
+        align-self: center;
+    }
+    ::placeholder{
+        color: @whiteColor;
+    }
+}
+// End recommend section
 

@@ -5290,13 +5290,15 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 2rem;
+}
+.management .bundle-info span {
+  width: 45%;
+  text-align: center;
+  font-weight: bold;
 }
 .management h3 {
   width: 42%;
-}
-.management span {
-  width: 45%;
-  text-align: center;
 }
 .management ul {
   width: 100%;
@@ -5326,6 +5328,36 @@ input::-webkit-inner-spin-button {
   left: 0;
   top: 2px;
 }
+.recommend {
+  padding: 3rem 1.5rem;
+  background-color: #1C2848;
+}
+.recommend .recommend-container {
+  display: flex;
+  flex-direction: column;
+}
+.recommend .recommend-info {
+  display: flex;
+  flex-direction: column;
+}
+.recommend p {
+  text-align: center;
+  color: #FFFFFF;
+}
+.recommend input {
+  background-color: transparent;
+  border: none;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  color: #FFFFFF;
+  outline: none;
+  border-bottom: 1px solid #FFFFFF;
+  width: 80%;
+  align-self: center;
+}
+.recommend ::placeholder {
+  color: #FFFFFF;
+}
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;
@@ -5349,12 +5381,49 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: 100%;
   }
+  .management {
+    padding: 3rem 1.5rem;
+  }
+  .management .management-bundles {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .management .bundle-info {
+    width: 45%;
+    background-image: url(../img/offer/bundle-bg.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .management ul {
+    width: 50%;
+  }
+  .management .buttons {
+    margin-top: 0;
+  }
+  .recommend {
+    padding: 3rem 2rem;
+    background-color: transparent;
+    background-image: url(../img/offer/recommend-bg.png);
+  }
+  .recommend .recommend-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .recommend p {
+    text-align: left;
+    width: 38%;
+  }
+  .recommend input {
+    width: 35%;
+  }
 }
 @media (min-width : 1024px) {
   .offer-banner {
     background-image: url(../img/offer/banner-bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 50% 100%;
     background-position: right;
   }
   .offer-banner .banner-container {
@@ -5371,6 +5440,16 @@ input::-webkit-inner-spin-button {
     margin-top: 0;
     width: 45%;
   }
+  .recommend .heading {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .recommend .heading h2 {
+    text-align: left;
+  }
+  .recommend input {
+    width: 35%;
+  }
 }
 @media (min-width : 1366px) {
   .offer-banner {
@@ -5384,6 +5463,9 @@ input::-webkit-inner-spin-button {
   }
   .bundle .top-bundles {
     width: 40%;
+  }
+  .recommend {
+    padding: 4rem 0rem;
   }
 }
 .certification-banner {
