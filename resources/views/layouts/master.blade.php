@@ -40,10 +40,10 @@
                             <h2>Useful Links</h2>
                         </div>
                         <ul>
-                            <li><a href="{{route('aboutUs')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">About Us</a></li>
-                            <li><a href="{{route('contactUs')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Contact Us</a></li>
-                            <li><a href="{{route('locations')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Locations</a></li>
-                            <li><a href="{{route('testimonials')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Testimonials</a></li>
+                            <li><a href="{{route('privacy-policy')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
+                            <li><a href="{{route('terms-and-conditions')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Terms & Conditions</a></li>
+                            <li><a href="{{route('third-party')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Third Party Trademarks</a></li>
+                            <li><a href="{{route('cookies')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Cookies</a></li>
                             <li><a href="{{route('onsite')}}"><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Onsite</a></li>
                         </ul>
                     </div>

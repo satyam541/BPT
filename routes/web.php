@@ -54,3 +54,18 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+Route::get('/privacy-policy',function(){
+
+})->name('privacy-policy');
+
+Route::get('/terms-and-conditions',function(){
+
+})->name('terms-and-conditions');
+Route::get('/third-party-trademarks',function(){
+
+})->name('third-party');
+
+Route::get('/cookies',function(){
+    
+})->name('cookies');
+
