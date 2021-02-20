@@ -29,9 +29,10 @@ Route::get('/training-locations', 'LocationController@index')->name('locations')
 
 
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 Route::get('/home', function () {
     return view('home');
 });
