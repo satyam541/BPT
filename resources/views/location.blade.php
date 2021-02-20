@@ -38,7 +38,7 @@
                     <div class="content">
                         <h3>{{$popularLocation->name}}</h3>
                         <div class="buttons">
-                            <a  class="btn-blue open-popup enquiryJS" data-quote="View Details">
+                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue open-popup enquiryJS" data-quote="View Details">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
