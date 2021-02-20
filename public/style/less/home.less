@@ -361,4 +361,76 @@
 
 
 }
+.looking{
+    padding: @sectionPadding;
+    background-image: @blueGradient;
+    .looking-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .looking-for{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 0 10px grey;
+        background-color: @whiteColor;
+        p, h2{
+            text-align: center;
+        }
+        p{
+            margin-top: 1rem;
+        }
+    }
+    .clients-reviews{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
 
+    }
+    .reviews-outer{
+        display: flex;
+        flex-direction: column;
+    }
+    .reviews-inner{
+        display: flex;
+        flex-direction: column;
+        p{
+            color: @whiteColor;
+            margin-bottom: .5rem;
+        }
+        h3{
+            color: @whiteColor;
+            margin-bottom: 0.2rem;
+        }
+        span{
+            color: @whiteColor;
+            font-size: 12px;
+        }
+        img{ 
+            width: 120px !important;
+            height: 30px;
+        }
+    }
+}
+.partners{
+    padding: @sectionPadding;
+    .partners-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .partners-images{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        img{
+            width: 128px;
+            height: auto;
+            margin-bottom: 1rem;
+            &:last-child{
+                margin: auto;
+                margin-bottom: 0;
+            }
+        }
+
+    }
+}
