@@ -4563,7 +4563,6 @@ input::-webkit-inner-spin-button {
   .popular .popular-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .popular .popular-content {
     width: 44%;
@@ -4808,8 +4807,10 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.blog-banner h1,
-.blog-banner p {
+.blog-banner .banner-container p {
+  color: #FFFFFF;
+}
+.blog-banner h1 {
   color: #FFFFFF;
 }
 .blog-banner .breadcrums .black {
@@ -4958,12 +4959,12 @@ input::-webkit-inner-spin-button {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .blog-banner::before {
-    content: none;
-  }
   .blog-banner .banner-container {
     padding-top: 2rem;
     padding-bottom: 0;
+  }
+  .blog-banner::before {
+    content: none;
   }
   .popular-blog {
     padding: 3rem 2rem;
@@ -5073,32 +5074,14 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1024px) {
-  .certification-banner {
-    background: linear-gradient(125deg, #1C2848 64%, transparent 36%), url(../img/certification/banner-bg.png);
+  .blog-banner {
+    background-image: url(../img/blog/banner-bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
+    background-size: 100% 100%;
+    padding-top: 1rem;
   }
-  .certification-banner .banner-container {
-    background: linear-gradient(125deg, #FFFFFF 56%, transparent 44%);
-    padding: 2rem;
-    margin-top: 2rem;
-  }
-  .certification-banner h1,
-  .certification-banner p {
-    color: #000000;
-  }
-  .certification-banner p {
-    width: 55%;
-  }
-  .certification-banner .breadcrums ul li {
-    color: #000000;
-  }
-  .certification-banner .breadcrums .black {
-    display: flex;
-  }
-  .certification-banner .breadcrums .white {
-    display: none;
+  .blog-banner .banner-container {
+    width: 42%;
   }
   .popular-blog {
     padding: 3rem 0;
@@ -5255,6 +5238,10 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
+  .blog-banner {
+    padding: 4rem 0rem;
+    padding-top: 1rem;
+  }
   .popular-blog {
     padding: 4rem 0rem;
   }
