@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Http\Controllers\JWTEnquiryController;
 use App\Models\Course;
 use App\Models\Location;
+use App\Models\PageDetail;
 use App\Models\Topic;
 use App\Models\SocialMedia;
 use Illuminate\Support\Str;
@@ -74,6 +75,11 @@ if (!function_exists('encodeUrlSlug')) {
                 $newString[] = Str::ucfirst($str);
             }
             return implode(" ", $newString);
+        }
+    }
+    if (!function_exists('footer')){
+        function footer(){
+            return PageDetail::getContent('home');
         }
     }
     if (!function_exists('cart')) {

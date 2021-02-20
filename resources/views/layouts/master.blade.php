@@ -17,20 +17,20 @@
             <div class="footer-main">
                 <div class="footer-content">
                     <div class="content">
-                        <img src="{{url('img/master/white-bpt-logo.png')}}" alt="white-logo" class="logo-image">
-                        <p>Based in the UK, Best Practice Training offers more than 1000 courses at 100+ locations. Our blended learning program includes on-line training, on-site training and classroom training.</p>
+                        <img src="{{footer()->footer['heading']->getImagePath()}}" alt="white-logo" class="logo-image">
+                        <p>{{footer()->footer['heading']->content}}</p>
                         <div class="social-media">
                             <p>Follow Us On:</p>
-                            <a href="">
+                            <a href="{{ socialmedialinks()->where('website','Facebook')->first()->link ?? ''}}">
                                 <img src="{{url('img/master/facebook.svg')}}" alt="facebook">
                             </a>
-                            <a href="">
+                            <a href="{{ socialmedialinks()->where('website','Twitter')->first()->link ?? ''}}">
                                 <img src="{{url('img/master/twitter.svg')}}" alt="twitter">
                             </a>
-                            <a href="">
+                            <a href="{{ socialmedialinks()->where('website','Google')->first()->link ?? ''}}">
                                 <img src="{{url('img/master/google-plus.svg')}}" alt="google-plus">
                             </a>
-                            <a href="">
+                            <a href="{{ socialmedialinks()->where('website','Linkedin')->first()->link ?? ''}}">
                                 <img src="{{url('img/master/linked-in.svg')}}" alt="linked-in">
                             </a>
                         </div>
@@ -40,11 +40,11 @@
                             <h2>Useful Links</h2>
                         </div>
                         <ul>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
-                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Our Privacy Policy</a></li>
+                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">About Us</a></li>
+                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Contact Us</a></li>
+                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Locations</a></li>
+                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Testimonials</a></li>
+                            <li><a href=""><img src="{{url('img/master/right-arrow.svg')}}" alt="right-arrow">Onsite</a></li>
                         </ul>
                     </div>
                     <div class="content blog">
@@ -52,48 +52,36 @@
                             <h2>Recent Blogs</h2>
                         </div>
                         <ul>
+                            @foreach(blogs()->take(3) as $blog)
                             <li><img src="{{url('img/master/polygon.svg')}}" alt="polygon" class="polygon-img">
-                                <a href="">When did Agile start?</a>
+                                <a href="{{$blog->reference}}">{{$blog->title}}</a>
                                 <span>
                                     <img src="{{url('img/master/time.svg')}}" alt="time">
-                                    <p class="date">Aug 23, 2019</p>
+                                    <p class="date">{{$blog->post_date}}</p>
                                 </span>
                             </li>
-                            <li><img src="{{url('img/master/polygon.svg')}}" alt="polygon" class="polygon-img">
-                                <a href="">When did Agile start?</a>
-                                <span>
-                                    <img src="{{url('img/master/time.svg')}}" alt="time">
-                                    <p class="date">Aug 23, 2019</p>
-                                </span>
-                            </li>
-                            <li><img src="{{url('img/master/polygon.svg')}}" alt="polygon"class="polygon-img">
-                                <a href="">When did Agile start?</a>
-                                <span>
-                                    <img src="{{url('img/master/time.svg')}}" alt="time">
-                                    <p class="date">Aug 23, 2019</p>
-                                </span>
-                            </li>
+                            @endforeach
                            
                         </ul>
                     </div>
+                    {{-- {{dd(websiteDetail())}} --}}
                     <div class="content contact-us">
+                        {{-- {{dd(blogs())}} --}}
                             <h2>Contact Info</h2>
                         <ul>
                             <li><img src="{{url('img/master/white-call.svg')}}" alt="call">
-                                <a href="">023 8000 1008</a>
+                                <a href="">{{websiteDetail()->contact_number}}</a>
                             </li>
                             <li><img src="{{url('img/master/white-email.svg')}}" alt="email">
-                                <a href="">info@bestpratice.co.uk</a>
+                                <a href="">{{websiteDetail()->contact_email}}</a>
                             </li>
                             <li><img src="{{url('img/master/location.svg')}}" alt="location">
-                                <p>Wessex House, Upper Market Street, Eastleigh, Hampshire, SO50 9FD.</p>
+                                <p>{{websiteDetail()->address}}</p>
                             </li>                           
                         </ul>
                     </div>
                 </div>
-                <p class="terms">ITIL®, PRINCE2®, PRINCE2 Agile®, MSP®, M_o_R®, P3O®, MoP®, MoV®, RESILIA® courses on this website are offered by The Knowledge Academy, ATO of AXELOS Limited.
-                ITIL®, PRINCE2®, PRINCE2 Agile®, MSP®, M_o_R®, P3O®, MoP®, MoV®, RESILIA® are registered trade marks of AXELOS Limited. All rights reserved.
-                Best Practice Training Limited. Company No. 07504204 Vat Registration No. 128747290</p>
+                <p class="terms">{{websiteDetail()->copyright_footer}}</p>
             </div>
         </div>
     </footer>

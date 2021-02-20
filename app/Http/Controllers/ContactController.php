@@ -17,7 +17,7 @@ class ContactController extends Controller
             $data['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($data);
         }
-        $data['socialmedias']=SocialMedia::all();
+        $data['socialmedias']=SocialMedia::where('website','<>','Facebook')->get();
         $data['websiteDetail']=websiteDetail();
         $data['pageDetail'] = PageDetail::getContent('contact_us');
         return view('contactus',$data);
