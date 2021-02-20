@@ -43,10 +43,11 @@ class SocialMediaController extends Controller
         // $websitedetail->web_id         = $request->website;
         $socialmedia->website         = $request->website;
         $socialmedia->link        = $request->link;
-        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($socialmedia->image_path), $imageName);
+
+        
             $socialmedia->image = $imageName;
         }
         $socialmedia->save();
