@@ -41,8 +41,8 @@ Route::get('/home', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
-Route::get('/blogDetail', function () {
-    return view('blogDetail');
+Route::get('/blog-detail', function () {
+    return view('blog-detail');
 });
 Route::get('/offer', function () {
     return view('offer');
