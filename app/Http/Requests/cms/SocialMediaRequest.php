@@ -29,7 +29,7 @@ class SocialMediaRequest extends FormRequest
         return  [
                     'website'       => ['required','unique:social_media,website,'.$social_media],
                     'link'          => ['required'],
-                    'image'         => ['nullable','mimes:jpeg,jpg,png,gif']
+                    'image'         => ['nullable']
                 ];
     }
 }
