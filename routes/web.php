@@ -44,7 +44,7 @@ Route::get('/onsite', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
-Route::get('/blogDetail', function () {
+Route::get('/blog-detail', function () {
     return view('blogDetail');
 });
 Route::get('/offer', function () {
