@@ -51,26 +51,6 @@
                     </th>
                     <th>
                       @can('update',new App\Models\CourseElearning())
-                      Content
-                      @endcan
-                    </th>
-                    <th>
-                      @can('update',new App\Models\CourseElearning())
-                      FAQ's
-                      @endcan
-                    </th>
-                    <th>
-                      @can('update',new App\Models\CourseElearning())
-                      Bulletpoints
-                      @endcan
-                    </th>
-                    <th>
-                      @can('update',new App\Models\CourseElearning())
-                      WhatsIncluded
-                      @endcan
-                    </th>
-                    <th>
-                      @can('update',new App\Models\CourseElearning())
                       Actions
                       @endcan
                     </th>
@@ -84,30 +64,7 @@
                       <td>{{$onlineCourse->topic->name ?? null}}</td>
                       <td class=" text-center">
                         @can('update',$onlineCourse)
-                        <a href="" class="fa fa-list"></a>
-                        @endcan
-                      </td>
-                      <td class=" text-center">
-                        @can('update',$onlineCourse)
-                        <a href="{{ route('courseContentList',['course'=>$onlineCourse->id]) }}" class="fa fa-list"></a>
-                        @endcan
-                      </td>
-
-                      <td class=" text-center">
-                        @can('update',$onlineCourse)
-                        <a href="{{ route('faqList',['type'=>'course','id'=>$onlineCourse->id]) }}" class="far fa-question-circle"></a>
-                        @endcan
-                      </td>
-                      
-                      <td class=" text-center"> 
-                        @can('update',$onlineCourse)
-                        <a href="{{Route('bulletPointList',['module_id'=>$onlineCourse->id])}}" class=" fa fa-bullseye"></a>
-                        @endcan
-                      </td>
-                      
-                      <td class=" text-center"> 
-                        @can('update',$onlineCourse)
-                        <a href="{{route('whatsIncludedList',['module_id'=>$onlineCourse->id])}}" class=" fas fa-puzzle-piece"></a>
+                        <a href="{{ route('courseAddonForm',['course'=>$onlineCourse->id]) }}" class="fa fa-list"></a>
                         @endcan
                       </td>
                       
@@ -116,7 +73,7 @@
                         <a href="{{Route('editCourse',['course'=>$onlineCourse->id])}}" class="fa fa-edit"></a>
                         @endcan
                         @can('delete',$onlineCourse)
-                        <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$onlineCourse->id])}}')" class="fa fa-trash" style="color: red"></a>
+                        <a href="" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse->id])}}')" class="fa fa-trash" style="color: red"></a>
                         @endcan
                       </td>
                     </tr>
@@ -126,7 +83,7 @@
                 </tfoot>
               </table>
               @can('create',new App\Models\CourseElearning())
-              <a id="add" href="{{ route('createOnlineCourse')}}" class="btn btn-success" style="">Add new Record</a>
+              <a id="add" href="{{ route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
               @endcan
             </div>
             <!-- /.card-body -->
