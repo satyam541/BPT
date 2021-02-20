@@ -2,12 +2,12 @@
 
     // Start banner section//
     .blog-banner {
-    &::before{
-        content: none;
-    }
     .banner-container{
         padding-top: 2rem;
         padding-bottom: 0;
+    }
+    &::before{
+        content: none;
     }
 
     }
@@ -153,34 +153,13 @@
 @media @size-lg{
 
     // Start Banner section //
-    .certification-banner {
-        background: linear-gradient(125deg, @darkblueColor 64%, transparent 36%), url(../img/certification/banner-bg.png);
+    .blog-banner {
+        background-image:url(../img/blog/banner-bg.png);
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: right;
+        background-size:100% 100%;
+        padding-top: 1rem;
         .banner-container {
-            background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-        h1, p {
-            color: @blackColor;
-        }
-        p {
-            width: 55%;
-        }
-        .breadcrums {
-            ul {
-                li {
-                    color: @blackColor;
-                }
-            }
-            .black {
-                display: flex;
-            }
-            .white {
-                display: none;
-            }
+         width: 42%;
         }
     }
     // End Banner section //
@@ -378,7 +357,12 @@
 
 @media @size-xl{
 
-   
+    // Start blog-banner section //
+    .blog-banner{
+        padding:@sectionPadding-xl;
+        padding-top: 1rem;
+    }
+    // End blog-banner section//
 
     // Start popular-blog Section //
     .popular-blog{
