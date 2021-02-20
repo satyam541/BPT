@@ -522,7 +522,7 @@
                     <div class="fact-count">
                     <h3 class="count-number" data-to="80" data-speed="3000">80</h3><span>+</span>
                     </div>
-                    <p>countries</p>
+                    <p>Countries</p>
                 </div>
             </div>
 
