@@ -162,12 +162,10 @@ Route::post('/whatsincluded/update','WhatsIncludedController@update')->name('upd
 Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@delete')->name('deleteWhatsIncluded');
 // Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
-Route::post('/upload-video','OnlineCourseController@uploadVideo')->name('uploadVideo');
-Route::get('/onlinecourse/insert','OnlineCourseController@create')->name('createOnlineCourse');
-Route::post('/onlinecourse/insert','OnlineCourseController@insert')->name('insertOnlineCourse');
-Route::get('/onlinecourse/update/{course}','OnlineCourseController@edit')->name('editOnlineCourse');
-Route::post('/onlinecourse/update/{course}','OnlineCourseController@update')->name('updateOnlineCourse');
-Route::post('/onlinecourse/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
+Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonForm')->name('courseAddonForm');
+Route::post('/courseassignAddon','OnlineCourseController@courseAddonassigned')->name('courseAddonAssigned');
+Route::post('/online-course/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
+
 
 // Addon Routes
 Route::get('/course/addon','AddonController@index')->name('AddonList');
