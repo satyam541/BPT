@@ -24,7 +24,7 @@
                         </div>
                         <div class="buttons">
                                 <a class="btn-blue">
-                                    <img src="{{url('img/master/book.svg')}}" alt="book">
+                                    <img src="{{url('img/home/book.svg')}}" alt="book">
                                     Course catalogue
                                 </a>
                         </div>
