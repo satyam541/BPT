@@ -152,27 +152,19 @@
                         <h2>Get More Information</h2>
                     </div>
                     <div class="info-list">
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/chat.svg')}}" alt="talk"></span>
-                            <div class="info-text">
-                                <h3>Talk to Us</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
+
+                        @foreach ($pageDetail->get_more_information as $information)
+
+                            <div class="info-content">
+                                {{dd($information->image)}}
+                                <span style="background-image: url({{url($information->image)}})">
+                                    <img src="{{url($information->icon)}}" alt="talk"></span>
+                                <div class="info-text">
+                                    <h3>{{$information->heading}}</h3>
+                                    <p>{{$information->content}}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/enquire-now.svg')}}" alt="team"></span>
-                            <div class="info-text">
-                                <h3>Enquire Now</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,.</p>
-                            </div>
-                        </div>
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/chat-support.svg')}}" alt="support"></span>
-                            <div class="info-text">
-                                <h3>Talk to Us</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
