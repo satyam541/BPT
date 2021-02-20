@@ -25,7 +25,7 @@
                 <div class="role-content">
                     <div class="content">
                         <span>
-                            <img src="{{url('img/master/conferencing.svg')}}" alt="conferencing">
+                            <img src="{{url('img/courses/conference.svg')}}" alt="conference">
                         </span>
                         <h2>Video Conferencing</h2>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="role-content">
                     <div class="content">
                         <span>
-                            <img src="{{url('img/master/whiteboards.svg')}}" alt="whiteboards">
+                            <img src="{{url('img/courses/whiteboard.svg')}}" alt="whiteboard">
                         </span>
                         <h2>Digital Whiteboards</h2>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="role-content">
                     <div class="content">
                         <span>
-                            <img src="{{url('img/master/messaging.svg')}}" alt="messaging">
+                            <img src="{{url('img/courses/messaging.svg')}}" alt="messaging">
                         </span>
                         <h2>Instant Messaging</h2>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="role-content">
                     <div class="content">
                         <span>
-                            <img src="{{url('img/master/control.svg')}}" alt="control">
+                            <img src="{{url('img/courses/control.svg')}}" alt="control">
                         </span>
                         <h2>Participation Controls</h2>
                     </div>
