@@ -51,3 +51,6 @@ Route::get('/offer', function () {
 Route::get('/certification', function () {
     return view('certification');
 });
+Route::get('/courses', function () {
+    return view('courses');
+});

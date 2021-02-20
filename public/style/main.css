@@ -4257,8 +4257,8 @@ input::-webkit-inner-spin-button {
   margin-left: 3rem;
 }
 .popular .popular-content .content img {
-  width: 30px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
 }
 .buy {
   display: none;
@@ -5736,6 +5736,7 @@ input::-webkit-inner-spin-button {
   background-image: url(../img/certification/enquiry-lines.svg);
   height: 28px;
   width: 40px;
+  animation: rotate 12s linear infinite;
 }
 .enquiry .enquiry-img::after {
   bottom: 13%;
@@ -5744,6 +5745,8 @@ input::-webkit-inner-spin-button {
   height: 47px;
   width: 83px;
   z-index: -1;
+  animation: rotate 12s linear infinite;
+  animation-delay: 2s;
 }
 .enquiry .enquiry-img img {
   height: 100%;
@@ -5838,15 +5841,21 @@ input::-webkit-inner-spin-button {
   .enquiry {
     padding: 3rem 2rem;
   }
+  .enquiry .enquiry-content {
+    align-items: flex-start;
+  }
   .enquiry .contact-list {
     background-image: url(../img/certification/contact-img.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     flex-direction: row;
+    width: 100%;
+    margin-top: 1.5rem;
   }
   .enquiry .contact {
     box-shadow: none;
-    padding: 1rem 0rem 2rem 3rem;
+    padding: 2rem 3rem;
+    margin-top: 0;
   }
   .enquiry .contact:nth-child(1) {
     background-color: transparent;
@@ -5873,35 +5882,17 @@ input::-webkit-inner-spin-button {
     height: 100%;
     width: 100%;
   }
-  .enquiry .enquiry-img {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    margin-top: 2rem;
-    position: relative;
-    z-index: 1;
-  }
-  .enquiry .enquiry-img::before,
-  .enquiry .enquiry-img::after {
-    content: '';
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
   .enquiry .enquiry-img::before {
-    top: 32%;
-    left: 11%;
-    background-image: url(../img/certification/enquiry-lines.svg);
-    height: 28px;
-    width: 40px;
+    top: 33%;
+    left: 13%;
+    height: 31px;
+    width: 45px;
   }
   .enquiry .enquiry-img::after {
     bottom: 13%;
-    right: 0%;
-    background-image: url(../img/certification/dotted-square.svg);
-    height: 47px;
-    width: 83px;
-    z-index: -1;
+    right: -2%;
+    height: 90px;
+    width: 175px;
   }
   .enquiry .enquiry-img img {
     height: 100%;
@@ -5911,7 +5902,6 @@ input::-webkit-inner-spin-button {
 @media (min-width : 1024px) {
   .certification-banner {
     background: linear-gradient(125deg, #1C2848 64%, transparent 36%), url(../img/certification/banner-bg.png);
-    background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
   }
@@ -5920,12 +5910,12 @@ input::-webkit-inner-spin-button {
     padding: 2rem;
     margin-top: 2rem;
   }
+  .certification-banner .banner-container p {
+    width: 55%;
+  }
   .certification-banner h1,
   .certification-banner p {
     color: #000000;
-  }
-  .certification-banner p {
-    width: 55%;
   }
   .certification-banner .breadcrums ul li {
     color: #000000;
@@ -5958,8 +5948,17 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     justify-content: space-between;
   }
+  .enquiry .contact {
+    width: 40%;
+  }
+  .enquiry .contact:first-child {
+    padding-right: 0;
+  }
+  .enquiry .contact:last-child {
+    padding-left: 0;
+  }
   .enquiry .enquiry-content {
-    width: 50%;
+    width: 53%;
   }
   .enquiry .enquiry-img {
     width: 40%;
@@ -6010,5 +6009,12 @@ input::-webkit-inner-spin-button {
   }
   .method .method-list {
     background-size: 87% 42%;
+  }
+  .enquiry {
+    padding: 4rem 0rem;
+  }
+  .enquiry .enquiry-img::after {
+    height: 61px;
+    width: 104px;
   }
 }
