@@ -75,52 +75,22 @@
         // End recommend section
 
         //Start new-bundle section
-.new-bundle{
-    padding: @sectionPadding-md;
-    .new-bundle-container{
-        display: flex;
-        flex-direction: row;
-    }
-    .inform-us{
-        display: flex;
-        .inform-content{
-            display: flex;
-        }
-        p{
-            font-weight: bold;
-        }
-        .inform-list{
-            display: flex;
-            flex-direction: column;
-        }
-        .inform-item{
-            display: flex;
-            margin-top: .7rem;
-            span{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: @blueGradient;
-                height: 40px;
-                width: 40px;
-                border-radius: 50px;
-                padding: .6rem;
-                margin-right: .5rem;
-                img{
+        .new-bundle{
+            padding: @sectionPadding-md;
+            .inform-us{
+                width: 64%;
+                .inform-content{
                     width: 100%;
-                    height: 100%;
+                    box-shadow: @shadowLight;
+                    padding: 1.5rem;
                 }
+            .inform-list{
+                flex-direction: row;
+                justify-content: space-between;
             }
         }
-    }
-    .latest-bundles{
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
-        align-items: flex-start;
-    }
-}
-// End new-bundle section
+        }
+        // End new-bundle section
 
 }
 
@@ -208,6 +178,34 @@
         }
     }
     // End management section
+
+    //Start new-bundle section
+    .new-bundle{
+        .new-bundle-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .inform-us{
+            order: 1;
+            background-image: url(../img/offer/inform-bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            justify-content: flex-end;
+            width: 52%;
+            margin-top: 0;
+            .inform-content{
+                align-self: flex-end;
+                border-radius: 15px;
+                background-color: @whiteColor;
+                width: 85%;
+            }
+    }
+        .latest-bundles{
+            order: 2;
+            width: 45%;
+        }
+    }
+    // End new-bundle section
 }
 
 @media @size-xl{
@@ -245,4 +243,16 @@
         }
     } 
     // End management section
+
+    //Start new-bundle section
+    .new-bundle{
+        padding: @sectionPadding-xl;
+        .inform-us{
+            width: 42%;
+    }
+        .latest-bundles{
+            width: 52%;
+        }
+    }
+    // End new-bundle section
 }

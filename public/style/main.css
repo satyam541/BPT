@@ -5893,6 +5893,7 @@ input::-webkit-inner-spin-button {
 }
 .new-bundle .inform-us p {
   font-weight: bold;
+  font-size: 16px;
 }
 .new-bundle .inform-us .inform-list {
   display: flex;
@@ -5926,6 +5927,14 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: flex-start;
   order: 1;
+}
+.new-bundle .latest-bundles p {
+  margin-top: 0.5rem;
+}
+.new-bundle .latest-bundles p:nth-child(2) {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 0;
 }
 @media (min-width : 768px) {
   .offer-banner {
@@ -5992,47 +6001,17 @@ input::-webkit-inner-spin-button {
   .new-bundle {
     padding: 3rem 2rem;
   }
-  .new-bundle .new-bundle-container {
-    display: flex;
-    flex-direction: row;
-  }
   .new-bundle .inform-us {
-    display: flex;
+    width: 64%;
   }
   .new-bundle .inform-us .inform-content {
-    display: flex;
-  }
-  .new-bundle .inform-us p {
-    font-weight: bold;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    padding: 1.5rem;
   }
   .new-bundle .inform-us .inform-list {
-    display: flex;
-    flex-direction: column;
-  }
-  .new-bundle .inform-us .inform-item {
-    display: flex;
-    margin-top: 0.7rem;
-  }
-  .new-bundle .inform-us .inform-item span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(#0064D8, #1C2848);
-    height: 40px;
-    width: 40px;
-    border-radius: 50px;
-    padding: 0.6rem;
-    margin-right: 0.5rem;
-  }
-  .new-bundle .inform-us .inform-item span img {
-    width: 100%;
-    height: 100%;
-  }
-  .new-bundle .latest-bundles {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 @media (min-width : 1024px) {
@@ -6099,6 +6078,29 @@ input::-webkit-inner-spin-button {
     align-items: flex-end;
     margin-top: 0;
   }
+  .new-bundle .new-bundle-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .new-bundle .inform-us {
+    order: 1;
+    background-image: url(../img/offer/inform-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-content: flex-end;
+    width: 52%;
+    margin-top: 0;
+  }
+  .new-bundle .inform-us .inform-content {
+    align-self: flex-end;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    width: 85%;
+  }
+  .new-bundle .latest-bundles {
+    order: 2;
+    width: 45%;
+  }
 }
 @media (min-width : 1366px) {
   .offer-banner {
@@ -6121,6 +6123,15 @@ input::-webkit-inner-spin-button {
   }
   .management .bundle-info {
     padding-left: 4rem;
+  }
+  .new-bundle {
+    padding: 4rem 0rem;
+  }
+  .new-bundle .inform-us {
+    width: 42%;
+  }
+  .new-bundle .latest-bundles {
+    width: 52%;
   }
 }
 .certification-banner {

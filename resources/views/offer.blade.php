@@ -200,7 +200,7 @@
         <p>Enquire now and be the first to grab the opportunity Wanted to buy number of courses in a single package? We offer in-hand developed bundle of trending courses to provide you with the best way to gain necessary knowledge and skills required for succeeding in your career. We value your precious time and money. 
         </p>
             <div class="buttons">
-        <a class="btn-blue"><img src="{{url('img/offer/email.svg')}}" alt="email">Have any Question</a>
+        <a class="btn-blue"><img src="{{url('img/offer/question.svg')}}" alt="question">Have any Question?</a>
             </div>
     </div>
         </div>
