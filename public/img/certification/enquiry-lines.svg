@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="44.707" viewBox="0 0 65 44.707">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="65" height="44.707" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="enquiry-lines" clip-path="url(#clip-path)">
+    <g transform="translate(-981.5 -2644.5)">
+      <line id="enquiry-lines-2" data-name="enquiry-lines" x2="61" transform="translate(983.5 2646.5)" fill="none" stroke="#0064d8" stroke-linecap="round" stroke-width="4"/>
+    </g>
+    <g transform="translate(-981.5 -2635.5)">
+      <line id="enquiry-lines-3" data-name="enquiry-lines" x2="61" transform="translate(983.5 2646.5)" fill="none" stroke="#0064d8" stroke-linecap="round" stroke-width="4"/>
+    </g>
+    <g transform="translate(-981.5 -2626.5)">
+      <line id="enquiry-lines-4" data-name="enquiry-lines" x2="61" transform="translate(983.5 2646.5)" fill="none" stroke="#0064d8" stroke-linecap="round" stroke-width="4"/>
+    </g>
+    <g transform="translate(-981.5 -2617.5)">
+      <line id="enquiry-lines-5" data-name="enquiry-lines" x2="61" transform="translate(983.5 2646.5)" fill="none" stroke="#0064d8" stroke-linecap="round" stroke-width="4"/>
+    </g>
+    <g transform="translate(-981.5 -2608.5)">
+      <line id="enquiry-lines-6" data-name="enquiry-lines" x2="61" transform="translate(983.5 2646.5)" fill="none" stroke="#0064d8" stroke-linecap="round" stroke-width="4"/>
+    </g>
+  </g>
+</svg>
