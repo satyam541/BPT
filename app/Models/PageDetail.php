@@ -12,7 +12,7 @@ class PageDetail extends Model
     protected $table = 'page_detail';
     protected $guarded = array('id');
     protected $primaryKey = "id";
-    public $image_path = 'storage/uploads/page/';
+    public $image_path = 'uploads/page/';
 
     public function delete()
     {
