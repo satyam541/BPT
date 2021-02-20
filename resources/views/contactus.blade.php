@@ -9,7 +9,7 @@
                 <div class="banner-container">
                     <div class="banner-content">
                         <h1>Contact Us</h1>
-                        <p>{{$pageDetail->banner['banner']->content}}</p>
+                        <p>{!!$pageDetail->banner['banner']->content!!}</p>
                         <div class="breadcrums">
                             <ul>
                                 <li><a href="">Home</a></li>
@@ -104,7 +104,7 @@
                                 </span>
                                 <div class="item-info">
                                     <h3>Email:</h3>
-                                    <a href="mailTo:info@bestpratice.co.uk">info@bestpratice.co.uk</a>
+                                    <a href="{{'mailTo:'.$websiteDetail->contact_email}}">{!!$websiteDetail->contact_email!!}</a>
 
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                     </span>
                                     <div class="item-info">
                                         <h3>Contact:</h3>
-                                        <a href="tel:02380001008">023 8000 1008</a>
+                                        <a href="{{'tel:'.$websiteDetail->contact_number}}">{!!$websiteDetail->contact_number!!}</a>
                                     </div>
                             </div>
                             <div class="item">
@@ -123,19 +123,16 @@
                                     </span>
                                     <div class="item-info">
                                         <h3>Address:</h3>
-                                        <p>Wessex House, Upper 
-                                            Market Street, Eastleigh, 
-                                            Hampshire, SO50 9FD.</p>
+                                        <p>{!!$websiteDetail->address!!}</p>
                                     </div>
                             </div>
                         </div>
                             <div class="social">
                                 <p>Sign Up With Social Platform</p>
                                 <div class="media-list">
-                                    <a href="javascript:void"><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
-                                    <a href="javascript:void"><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
-                                    <a href="javascript:void"><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
-                                    <a href="javascript:void"><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
+                                    @foreach ($socialmedias as $socialmedia)
+                                    <a href="{{$socialmedia->link}}"><img src="{{url($socialmedia->getImagePath())}}" alt="linkedin"></a>    
+                                    @endforeach
                                 </div>
                             </div>
                     </div>
@@ -158,10 +155,10 @@
 
                             <div class="info-content">
                                 <span style="background-image: url({{url($information->getImagePath())}})">
-                                    <img src="{{url($information->getLogoPath())}}" alt="talk"></span>
+                                    <img src="{{url($information->getIconPath())}}" alt="talk"></span>
                                 <div class="info-text">
-                                    <h3>{{$information->heading}}</h3>
-                                    <p>{{$information->content}}</p>
+                                    <h3>{!!$information->heading!!}</h3>
+                                    <p>{!!$information->content!!}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -178,7 +175,8 @@
         <div class="locate-container">
             <div class="heading center-heading">
                 <h2>Where to <span>Reach Us</span></h2>
-                <p>Locate Our Office Destination On Google Map</p>
+                {{-- <h2>{!!$pageDetail->reach_us['heading']->heading!!}</h2> --}}
+                <p>{!!$pageDetail->reach_us['heading']->content!!}</p>
             </div>
             <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15558.879620295998!2d80.06831631679779!3d12.861358924309759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f6386034e917%3A0x67d53e7b0950780d!2sSenthil%20Nagar%2C%20Urapakkam%2C%20Chennai%2C%20Tamil%20Nadu%20601301!5e0!3m2!1sen!2sin!4v1613538677717!5m2!1sen!2sin" width="272" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -215,14 +213,13 @@
                         </div>
                     </div>
                     <div class="experience">
-                        <div class="experience-info">
-                            <h2>Share your Experience With Us</h2>
+                        <div class="experience-info"  style="background-image: url({{url($pageDetail->faq['experience_us']->getImagePath())}})">
+                            <h2>{{$pageDetail->faq['experience_us']->heading}}</h2>
                         </div>
                         <div class="platforms">
-                            <a href="javascript:void"><img src="{{url('img/contactus/linkedin.svg')}}" alt="linkedin"></a>
-                            <a href="javascript:void"><img src="{{url('img/contactus/instagram.svg')}}" alt="instagram"></a>
-                            <a href="javascript:void"><img src="{{url('img/contactus/twitter.svg')}}" alt="twitter"></a>
-                            <a href="javascript:void"><img src="{{url('img/contactus/google-plus.svg')}}" alt="google-plus"></a>
+                            @foreach ($socialmedias as $socialmedia)
+                            <a href="{{$socialmedia->link}}"><img src="{{url($socialmedia->getImagePath())}}" alt="linkedin"></a>    
+                            @endforeach
                         </div>
                     </div>
                 </div>
