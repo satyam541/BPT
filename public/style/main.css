@@ -5430,6 +5430,157 @@ input::-webkit-inner-spin-button {
 .cisco h3 {
   text-align: center;
 }
+.method {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.method .method-container {
+  display: flex;
+  flex-direction: column;
+}
+.method .method-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.method .method-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  width: 48%;
+  z-index: 1;
+}
+.method span {
+  display: flex;
+  height: 93px;
+  width: 93px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 1.6rem;
+  margin-bottom: 2.5rem;
+  background-image: url(../img/certification/method-img.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  position: relative;
+}
+.method span img {
+  width: 100%;
+  height: 100%;
+}
+.method span::before {
+  content: '';
+  position: absolute;
+  bottom: -35px;
+  left: 34px;
+  background-image: url(../img/certification//method-arrow.svg);
+  height: 60px;
+  width: 25px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.method p {
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.enquiry {
+  padding: 3rem 1.5rem;
+}
+.enquiry .enquiry-container {
+  display: flex;
+  flex-direction: column;
+}
+.enquiry .enquiry-content {
+  display: flex;
+  flex-direction: column;
+}
+.enquiry .contact-list {
+  display: flex;
+  flex-direction: column;
+}
+.enquiry .contact {
+  display: flex;
+  flex-direction: column;
+  background-image: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-repeat: no-repeat;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 272px;
+  align-self: center;
+}
+.enquiry .contact:nth-child(1) {
+  background-color: #FFFFFF;
+}
+.enquiry .contact:nth-child(1) span {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.enquiry .contact:nth-child(2) {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.enquiry .contact:nth-child(2) span {
+  background-color: #FFFFFF;
+}
+.enquiry .contact:nth-child(2) p,
+.enquiry .contact:nth-child(2) a {
+  color: #FFFFFF;
+}
+.enquiry .content {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+.enquiry .content span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.enquiry .content span img {
+  height: 100%;
+  width: 100%;
+}
+.enquiry .enquiry-img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.enquiry .enquiry-img::before,
+.enquiry .enquiry-img::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.enquiry .enquiry-img::before {
+  top: 32%;
+  left: 11%;
+  background-image: url(../img/certification/enquiry-lines.svg);
+  height: 28px;
+  width: 40px;
+}
+.enquiry .enquiry-img::after {
+  bottom: 13%;
+  right: 0%;
+  background-image: url(../img/certification/dotted-square.svg);
+  height: 47px;
+  width: 83px;
+  z-index: -1;
+}
+.enquiry .enquiry-img img {
+  height: 100%;
+  width: 100%;
+}
 @media (min-width : 768px) {
   .certification-banner::before {
     content: none;
@@ -5446,6 +5597,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
     padding: 1.5rem;
     position: relative;
+    width: 100%;
   }
   .cisco .cisco-content::before {
     content: '';
@@ -5459,6 +5611,34 @@ input::-webkit-inner-spin-button {
     z-index: -1;
     border-radius: 25px;
   }
+  .cisco .cisco-content::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 28px;
+    height: 35px;
+    width: 4px;
+    background-color: #0064D8;
+    transition: 1s ease-in-out;
+  }
+  .cisco .cisco-content:hover::after {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 25px;
+  }
+  .cisco .cisco-content:hover h3,
+  .cisco .cisco-content:hover .buttons {
+    z-index: 1;
+  }
+  .cisco .cisco-content:hover h3 {
+    color: #FFFFFF;
+    transition: 1s ease-in-out;
+  }
+  .cisco .cisco-content:hover .buttons .btn-blue {
+    box-shadow: 0px 0px 10px rgb(255 249 12.45%);
+  }
   .cisco h3 {
     width: 70%;
     text-align: left;
@@ -5466,6 +5646,98 @@ input::-webkit-inner-spin-button {
   .cisco .buttons {
     width: 28%;
     margin-top: 0;
+    justify-content: flex-end;
+  }
+  .method {
+    padding: 3rem 2rem;
+    background: none;
+    background-image: url(../img/certification/method-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .method .method-list {
+    background-image: url(../img/certification/dotted-curve.png);
+    background-repeat: no-repeat;
+    background-size: 79% 42%;
+    background-position: 81px 41px;
+  }
+  .method .method-content {
+    width: 19%;
+  }
+  .method .method-content:nth-child(odd) {
+    margin-top: 3.5rem;
+  }
+  .enquiry {
+    padding: 3rem 2rem;
+  }
+  .enquiry .contact-list {
+    background-image: url(../img/certification/contact-img.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-direction: row;
+  }
+  .enquiry .contact {
+    box-shadow: none;
+    padding: 1rem 0rem 2rem 3rem;
+  }
+  .enquiry .contact:nth-child(1) {
+    background-color: transparent;
+  }
+  .enquiry .contact:nth-child(2) {
+    background: none;
+  }
+  .enquiry .content {
+    display: flex;
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
+  .enquiry .content span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .enquiry .content span img {
+    height: 100%;
+    width: 100%;
+  }
+  .enquiry .enquiry-img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .enquiry .enquiry-img::before,
+  .enquiry .enquiry-img::after {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .enquiry .enquiry-img::before {
+    top: 32%;
+    left: 11%;
+    background-image: url(../img/certification/enquiry-lines.svg);
+    height: 28px;
+    width: 40px;
+  }
+  .enquiry .enquiry-img::after {
+    bottom: 13%;
+    right: 0%;
+    background-image: url(../img/certification/dotted-square.svg);
+    height: 47px;
+    width: 83px;
+    z-index: -1;
+  }
+  .enquiry .enquiry-img img {
+    height: 100%;
+    width: 100%;
   }
 }
 @media (min-width : 1024px) {
@@ -5495,5 +5767,44 @@ input::-webkit-inner-spin-button {
   }
   .certification-banner .breadcrums .white {
     display: none;
+  }
+  .cisco {
+    background-image: url(../img/certification/cisco-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .cisco .cisco-content {
+    width: 47%;
+    margin-right: 2.5rem;
+  }
+  .cisco .cisco-content:nth-child(even) {
+    margin-right: 0;
+  }
+  .cisco h3 {
+    width: 61%;
+  }
+  .cisco .buttons {
+    width: 37%;
+  }
+}
+@media (min-width : 1366px) {
+  .cisco {
+    padding: 4rem 0rem;
+  }
+  .cisco .cisco-content {
+    width: 48%;
+    margin-right: 2.5rem;
+  }
+  .cisco h3 {
+    width: 61%;
+  }
+  .cisco .buttons {
+    width: 39%;
+  }
+  .method {
+    padding: 4rem 0rem;
+  }
+  .method .method-list {
+    background-size: 87% 42%;
   }
 }
