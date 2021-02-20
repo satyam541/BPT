@@ -249,7 +249,27 @@ if (!function_exists('encodeUrlSlug')) {
     }
 }
 
+if(!function_exists('heading_split'))
+{
 
+    function heading_split($str)
+    {
+        $string=trim($str);
+        $name = explode(" ", $string);
+        if(sizeOf($name)>1)
+        {
+        $last=end($name);
+        $final="<span>".$last."<span>";
+        array_pop($name);
+        array_push($name,$final);
+        $final_str=implode(" ",$name);
+         return $final_str;
+        }
+        
+        return $str;
+        
+    }
+}
 if (!function_exists('unlinkedTopic')) {
     function unlinkedTopic()
     {

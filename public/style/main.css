@@ -1365,31 +1365,114 @@ input::-webkit-inner-spin-button {
 }
 .facts {
   padding: 3rem 1.5rem;
+  padding-top: 0rem !important;
 }
 .facts .facts-container {
   display: flex;
   flex-direction: column;
 }
-.facts .facts-list {
+.facts .fact-content {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  background: linear-gradient(#0064D8, #1C2848);
+  border-radius: 10px;
+}
+.facts h2 {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+.facts p {
+  text-align: center;
+  color: #FFFFFF;
+}
+.facts .facts-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.facts .facts-list p {
+  font-weight: 700;
+  color: #000000;
 }
 .facts .item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+  width: 48%;
 }
 .facts .item img {
   width: 38px;
   height: 38px;
 }
+.facts .fact-count {
+  display: flex;
+  margin: 0.5rem 0;
+}
 .facts h3 {
   color: #1C2848;
   text-align: center;
 }
-.facts p {
+.locations {
+  padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
+}
+.locations .locations-container {
+  display: flex;
+  flex-direction: column;
+}
+.locations .content {
+  display: flex;
+  flex-direction: column;
+}
+.locations .location-name {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  margin-top: 1rem;
+  align-items: center;
+  background-image: linear-gradient(143deg, #ffffff 0%, #ffffff 77%, #d6d6d6 77%);
+  border-radius: 10px;
+}
+.locations .location-name span {
+  width: 10%;
   font-weight: 700;
-  text-align: center;
+  color: #F2F2F2;
+}
+.locations .location-name img {
+  width: 30px;
+  height: 30px;
+  margin: 0 0.5rem;
+}
+.locations .location-name .blue {
+  display: flex;
+}
+.locations .location-name .white {
+  display: none;
+}
+.locations .location-name p {
+  width: 63%;
+  font-weight: 700;
+}
+.locations .location-name:hover {
+  background: linear-gradient(143deg, #0064d8 0%, #0064d8 77%, #2047af 78%);
+}
+.locations .location-name:hover span,
+.locations .location-name:hover p {
+  color: #FFFFFF;
+}
+.locations .location-name:hover .blue {
+  display: none;
+}
+.locations .location-name:hover .white {
+  display: flex;
+}
+.locations .buttons {
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 2rem;
 }
 @media (min-width : 768px) {
   .courses {
@@ -1519,6 +1602,59 @@ input::-webkit-inner-spin-button {
   .delivery .item:nth-child(4) {
     background-image: url(../img/home/onsite-bg.png), linear-gradient(#000000, #575757);
   }
+  .facts {
+    padding: 3rem 2rem;
+  }
+  .facts .item {
+    width: 25%;
+    position: relative;
+  }
+  .facts .item::before {
+    content: '';
+    position: absolute;
+    background-image: url(../img/home/facts-arrow.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50px;
+    height: 14px;
+    right: -23px;
+    top: 30px;
+  }
+  .facts .item:last-child::before {
+    content: none;
+  }
+  .locations {
+    background-image: url(../img/home/map.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .locations .locations-container {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .locations .content {
+    width: 50%;
+  }
+  .locations .location-name {
+    width: 22%;
+    height: 150px;
+    justify-content: space-between;
+  }
+  .locations .location-name span {
+    font-size: 48px;
+    width: 54%;
+  }
+  .locations .location-name img {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+  .locations .location-name p {
+    font-size: 16px;
+    width: 100%;
+  }
 }
 @media (min-width : 1024px) {
   .courses .course-name {
@@ -1599,6 +1735,20 @@ input::-webkit-inner-spin-button {
     width: 24%;
     height: 320px;
   }
+  .facts .facts-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .facts .fact-content {
+    width: 30%;
+  }
+  .facts .facts-list {
+    width: 68%;
+    align-items: center;
+  }
+  .facts .item {
+    margin-top: 0;
+  }
 }
 @media (min-width : 1366px) {
   .courses {
@@ -1628,6 +1778,28 @@ input::-webkit-inner-spin-button {
   }
   .delivery h3 {
     font-size: 18px;
+  }
+  .facts {
+    padding: 4rem 0rem !important;
+    background-image: url(../img/home/facts-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .facts .fact-content {
+    background: transparent;
+    padding: 0;
+  }
+  .facts .fact-content p {
+    text-align: left;
+  }
+  .facts h2 {
+    text-align: left;
+  }
+  .facts .facts-list {
+    width: 62%;
+  }
+  .locations {
+    padding: 4rem 0rem;
   }
 }
 .contact-banner {

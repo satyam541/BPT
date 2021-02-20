@@ -9,7 +9,7 @@
                 <div class="banner-container">
                     <div class="banner-content">
                         <h1>Contact Us</h1>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                        <p>{{$pageDetail->banner['banner']->content}}</p>
                         <div class="breadcrums">
                             <ul>
                                 <li><a href="">Home</a></li>
@@ -152,27 +152,20 @@
                         <h2>Get More Information</h2>
                     </div>
                     <div class="info-list">
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/chat.svg')}}" alt="talk"></span>
-                            <div class="info-text">
-                                <h3>Talk to Us</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
+
+                        
+                        @foreach ($pageDetail->get_more_information as $information)
+
+                            <div class="info-content">
+                                <span style="background-image: url({{url($information->getImagePath())}})">
+                                    <img src="{{url($information->getLogoPath())}}" alt="talk"></span>
+                                <div class="info-text">
+                                    <h3>{{$information->heading}}</h3>
+                                    <p>{{$information->content}}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/enquire-now.svg')}}" alt="team"></span>
-                            <div class="info-text">
-                                <h3>Enquire Now</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,.</p>
-                            </div>
-                        </div>
-                        <div class="info-content">
-                            <span><img src="{{url('img/contactus/chat-support.svg')}}" alt="support"></span>
-                            <div class="info-text">
-                                <h3>Talk to Us</h3>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security,</p>
-                            </div>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>
@@ -204,61 +197,21 @@
                             <h2>Frequently Asked <span>Questions</span></h2>
                         </div>
                         <div class="faq-list">
+                            @php unset($pageDetail->faq['heading'])@endphp
+                            @foreach ($pageDetail->faq as $faq)
                             <div class="faq-item">
                                 <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
+                                    <h3>{{$faq->heading}}</h3>
                                     <span>
                                     <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
                                     </span>
                                 </div>
                                 <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
+                                    <p>{{$faq->content}}</p>
                                 </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="ques">
-                                    <h3>What is Microsoft Azure?</h3>
-                                    <span>
-                                    <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
-                                    </span>
-                                </div>
-                                <div class="ans">
-                                    <p>Microsoft Azure is a cloud computing service developed by Microsoft, allowing users to build, manage, and deploy applications on a massive network using their own choice of tools and frameworks.</p>
-                                </div>
-                            </div>
+                            </div> 
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="experience">
