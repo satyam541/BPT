@@ -38,7 +38,7 @@
                     <div class="content">
                         <h3>{{$popularLocation->name}}</h3>
                         <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
+                            <a  class="btn-blue open-popup enquiryJS" data-quote="View Details">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
@@ -100,7 +100,7 @@
             
             <div class="popular-list">
                 @foreach($locations as $location)
-                <a href="javascript:void(0);" class="popular-content">
+                <a href="{{route('locationDetail',['location'=>$location->reference])}}" class="popular-content">
                     <span class="img">
                         <img src="{{url('img/location/around.svg')}}" alt="around">
                     </span>

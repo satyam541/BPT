@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PageDetail;
+use App\Models\Testimonial;
+
 class AboutController extends Controller
 {
     /**
@@ -20,7 +22,9 @@ class AboutController extends Controller
             $meta['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($meta);
         }
-        $data['pageDetail'] = PageDetail::getContent('about-us');
+        $data['testimonials'] = Testimonial::limit(6)->get();
+        $data['websiteDetail'] = websiteDetail();
+        $data['pageDetail'] = PageDetail::getContent('about_us');
 
         return view('aboutus',$data);
     }
