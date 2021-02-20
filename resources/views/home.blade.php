@@ -606,6 +606,12 @@
                     London
                 </p>
             </div>
+            <div class="buttons">
+                <a class="btn-blue">
+                    <img src="{{url('img/home/location-white.svg')}}" alt="call">
+                    View All Locations
+                </a>
+            </div>
         </div>
     </div>
 </section>

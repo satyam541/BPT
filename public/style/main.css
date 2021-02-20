@@ -1416,6 +1416,7 @@ input::-webkit-inner-spin-button {
 }
 .locations {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
 }
 .locations .locations-container {
   display: flex;
@@ -1467,6 +1468,11 @@ input::-webkit-inner-spin-button {
 }
 .locations .location-name:hover .white {
   display: flex;
+}
+.locations .buttons {
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 2rem;
 }
 @media (min-width : 768px) {
   .courses {
@@ -1617,6 +1623,12 @@ input::-webkit-inner-spin-button {
   .facts .item:last-child::before {
     content: none;
   }
+  .locations {
+    background-image: url(../img/home/map.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
   .locations .locations-container {
     flex-direction: row;
     justify-content: space-between;
@@ -1632,13 +1644,16 @@ input::-webkit-inner-spin-button {
   }
   .locations .location-name span {
     font-size: 48px;
+    width: 54%;
   }
   .locations .location-name img {
     width: 40px;
     height: 40px;
+    margin: 0;
   }
   .locations .location-name p {
     font-size: 16px;
+    width: 100%;
   }
 }
 @media (min-width : 1024px) {
@@ -1782,6 +1797,9 @@ input::-webkit-inner-spin-button {
   }
   .facts .facts-list {
     width: 62%;
+  }
+  .locations {
+    padding: 4rem 0rem;
   }
 }
 .contact-banner {

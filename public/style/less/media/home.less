@@ -165,6 +165,10 @@
         }
     } 
     .locations{
+        background-image: url(../img/home/map.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
         .locations-container{
             flex-direction: row;
             justify-content: space-between;
@@ -178,14 +182,18 @@
             height: 150px;
             justify-content: space-between;
             span{
-                font-size: 48px;
+                font-size: 48px;    
+                width: 54%;
             }
             img{
                 width: 40px;
                 height: 40px;
+                margin: 0;
+            
             }
             p{
                 font-size: 16px;
+                width: 100%;
             }
         }
     }
@@ -350,4 +358,7 @@
 
         }
     } 
+    .locations{
+        padding: @sectionPadding-xl;
+    }
 }
