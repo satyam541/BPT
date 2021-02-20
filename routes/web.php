@@ -10,40 +10,44 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*this is created to fetch data from old msp please dont remove or hit this route*/
+
+Route::get('fetchapi/locations', 'TestController@locations');
+Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
+
 
 Auth::routes(['register'=>false]);
 /* these routes is for login */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
+Route::get('/contact-us', 'ContactController@index')->name('contactUs');
+Route::get('/about-us', 'AboutController@index')->name('aboutUs');
+Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+Route::get('/training-locations', 'LocationController@index')->name('locations');
+Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
+
+
+
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 Route::get('/home', function () {
     return view('home');
-});
-Route::get('/contactus', function () {
-    return view('contactus');
-});
-Route::get('/aboutus', function () {
-    return view('aboutus');
-});
-Route::get('/testimonial', function () {
-    return view('testimonial');
-});
+})->name('home');
+
 Route::get('/onsite', function () {
     return view('onsite');
 });
-Route::get('/location', function () {
-    return view('location');
-});
+
 Route::get('/blog', function () {
     return view('blog');
 });
 Route::get('/offer', function () {
     return view('offer');
 });
-Route::get('/location-detail', function () {
-    return view('location-detail');
-});
+
 Route::get('/certification', function () {
     return view('certification');
 });

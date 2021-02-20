@@ -39,26 +39,36 @@ class PageDetailController extends Controller
     public function insert(PageDetailRequest $request)
     {
         $this->authorize('create', new Pagedetail());
-        $inputs = $request->except(["_token",'image']);
+        $inputs = $request->except(["_token",'image', 'icon']);
         $pageDetail = pageDetail::firstOrNew(
             [
                 "page_name"     => $inputs['page_name'],
                 "section"       => $inputs['section'],
-                "sub_section"   => $inputs['sub_section'],
-                // "image_alt"        => $inputs['image_alt']
+                "sub_section"   => $inputs['sub_section']
+
+
             ],
             $inputs
         );
      
-        $image_prefix = $inputs['page_name'];
+        $image_prefix = $inputs['page_name'].'_image_';
+        $icon_prefix = $inputs['page_name'].'_icon_';
+
         if(empty($pageDetail->created_at))
         {
             /* save image file */
-            // if($request->hasFile('image')){
-            //     $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            //     $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
-            //     $pageDetail->image = $imageName;
-            // }
+            if($request->hasFile('image')){
+                $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+                $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
+                $pageDetail->image = $imageName;
+            }
+
+             /* save image file */
+             if($request->hasFile('icon')){
+                $imageName = $icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+                $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
+                $pageDetail->icon = $imageName;
+            }
 
             $pageDetail->save();
             \Session::flash('success', 'Page Content Saved!'); 
@@ -67,8 +77,8 @@ class PageDetailController extends Controller
             \Session::flash('failure','Duplicate data found!');
         }
         
-
-        return redirect()->back();
+        return back();
+        // return redirect()->route('pageDetailList');
     }
 
     public function edit(PageDetail $pageDetail)
@@ -83,12 +93,18 @@ class PageDetailController extends Controller
     {
         $this->authorize('update', $pageDetail);
         $inputs = $request->except(["_token",'image']);
-        $image_prefix = $inputs['page_name'];
+        $image_prefix = $inputs['page_name'].'_image_';
+        $icon_prefix = $inputs['page_name'].'_icon_';
          $img_alt  = $request->img_alt;
         if($request->hasFile('image')){
             $imageName = $image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $action = $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
             $inputs["image"] = $imageName;
+        }
+        if($request->hasFile('icon')){
+            $imageName = $icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+            $action = $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
+            $inputs["icon"] = $imageName;
         }
 
         try
@@ -117,7 +133,7 @@ class PageDetailController extends Controller
             \Session::flash('failure', 'Error'); 
         }
 
-        return redirect()->back();
+        return redirect()->route('pageDetailList');
     }
 
     public function delete(PageDetail $pageDetail)

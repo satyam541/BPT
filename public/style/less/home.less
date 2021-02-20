@@ -247,33 +247,190 @@
 }
 .facts{
     padding: @sectionPadding;
+    padding-top: 0rem !important;
     .facts-container{
         display: flex;
         flex-direction: column;
     }
     .fact-content{
-        
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background: @blueGradient;
+        border-radius: 10px;
+    }
+    h2{
+        text-align: center;
+        color: @whiteColor;
+        margin-bottom: .5rem;
+    }
+    p{
+        text-align: center;
+        color: @whiteColor;
     }
     .facts-list{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+    
+        p{
+            font-weight: 700;
+            color: @blackColor;
+        }
     }
     .item{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 2rem;
+        width: 48%;
+    
         img{
             width: 38px;
             height: 38px;
         }
     }
+    .fact-count{
+        display: flex;
+        margin: .5rem 0;
+    }
     h3{
         color: @darkblueColor;
         text-align: center;
     }
-    p{
-        font-weight: 700;
-        text-align: center;
+}
+.locations{
+    padding: @sectionPadding;
+    background-color: @bgColor;
+    .locations-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .location-name{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        box-shadow: @shadowLight;
+        margin-top: 1rem;
+        align-items: center;
+        background-image: linear-gradient(143deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 77%, #d6d6d6 77%);
+        border-radius: 10px;
+        span{
+            width: 10%;
+            font-weight: 700;
+            color: @greyColor;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            margin: 0 .5rem;
+        }
+        .blue{
+            display: flex;
+        }
+        .white{
+            display: none;
+        }
+        p{
+            width: 63%;
+            font-weight: 700;
+        }
+        &:hover{
+            background: linear-gradient(143deg , rgba(0,100,216,1) 0%, rgba(0,100,216,1) 77%, rgba(32,71,175,1) 78%);
+            span, p{
+                color: @whiteColor;
+            }
+            .blue{
+                display: none;
+            }
+            .white{
+                display: flex;
+            }
+            
+
+        }
+    }
+    .buttons{
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 2rem;
+    }
+
+
+}
+.looking{
+    padding: @sectionPadding;
+    background-image: @blueGradient;
+    .looking-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .looking-for{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 0 10px grey;
+        background-color: @whiteColor;
+        p, h2{
+            text-align: center;
+        }
+        p{
+            margin-top: 1rem;
+        }
+    }
+    .clients-reviews{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+
+    }
+    .reviews-outer{
+        display: flex;
+        flex-direction: column;
+    }
+    .reviews-inner{
+        display: flex;
+        flex-direction: column;
+        p{
+            color: @whiteColor;
+            margin-bottom: .5rem;
+        }
+        h3{
+            color: @whiteColor;
+            margin-bottom: 0.2rem;
+        }
+        span{
+            color: @whiteColor;
+            font-size: 12px;
+        }
+        img{ 
+            width: 120px !important;
+            height: 30px;
+        }
     }
 }
+.partners{
+    padding: @sectionPadding;
+    .partners-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .partners-images{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        img{
+            width: 128px;
+            height: auto;
+            margin-bottom: 1rem;
+            &:last-child{
+                margin: auto;
+                margin-bottom: 0;
+            }
+        }
 
+    }
+}

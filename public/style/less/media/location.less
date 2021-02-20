@@ -6,7 +6,6 @@
             content: none;
         }
         .banner-container {
-            width: 60%;
             background-image: url(../img/location/dotted-map.png);
             background-repeat: no-repeat;
             background-position: left;
@@ -108,8 +107,7 @@
         .popular-content {
             width: 44%;
             margin-right: 3rem;
-            z-index: 1;
-            &:nth-child(even) {
+            &:nth-child(2n) {
                 margin-right: 0;
             }
             &::before {
@@ -121,7 +119,11 @@
                 height: 79px;
                 width: 88px;
                 top: -9px;
-                left: -27px;
+                left: -16px;
+            }
+            .img {
+                left: -6px;
+                z-index: 1;
             }
         }
     }
@@ -131,6 +133,8 @@
     .buy {
         display: flex;
         padding: @sectionPadding-md;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         .buy-container {
             display: flex;
             flex-direction: column;
@@ -168,6 +172,17 @@
     }
     // End Form-Map Section
 }
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Convenient section //
+    .convenient {
+        .convenient-content {
+            span {
+                transform: rotate(45deg) translate(-41px, 42px);
+            }
+        }
+    }
+    // End Convenient section //
+}
 
 @media @size-lg{
     // Start Banner section //
@@ -199,7 +214,7 @@
         }
        .banner-container {
         p {
-            width: 61%;
+            width: 44%;
         }
        }
     }
@@ -256,11 +271,15 @@
     // Start Popular Section
     .popular {
         .popular-content {
-            width: 30%;
-            &:nth-child(even) {
+            width: 28%;
+            margin-right: 3rem;
+            &:nth-child(2n) {
                 margin-right: 3rem;
             }
-            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(12),&:nth-child(15),&:nth-child(18),&:nth-child(20) {
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -339,14 +358,17 @@
     .popular {
         .popular-content {
             width: 22%;
-            &:nth-child(even) {
+            &::before {
+                left: -13px;
+            }
+            &:nth-child(3n) {
                 margin-right: 3rem;
             }
-            &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(15),&:nth-child(18) {
-                margin-right: 3rem;
-            }
-            &:nth-child(4),&:nth-child(8),&:nth-child(12),&:nth-child(16), &:nth-child(20) {
+            &:nth-child(4n) {
                 margin-right: 0;
+            }
+            .img {
+                left: -3px;
             }
         }
     }
@@ -355,6 +377,8 @@
     // Start Buy Section
     .buy {
         padding: @sectionPadding-xl;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     // End Buy Section
 

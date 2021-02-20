@@ -12,14 +12,49 @@ class PageDetail extends Model
     protected $table = 'page_detail';
     protected $guarded = array('id');
     protected $primaryKey = "id";
-    public $image_path = 'storage/uploads/page/';
+    public $image_path = 'uploads/page/';
 
     public function delete()
     {
         File::delete(public_path($this->image_path.$this->image));
         return parent::delete();
     }
+    public function getIconPath()
+    {// check file exist then return default image.
+        $imageLink = url($this->image_path.$this->icon);
+        if ($this->hasIcon()) {
+            return $imageLink;
+        } else {
+            return url('adminlte/dist/img/online-course.svg');
+        }  
+    }
 
+    public function hasIcon()
+    {
+        if(empty($this->icon)) return FALSE;
+        if (file_exists(public_path($this->image_path.$this->icon))) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+    public function getImagePath()
+    {// check file exist then return default image.
+        $imageLink = url($this->image_path.$this->image);
+        if ($this->hasImage()) {
+            return $imageLink;
+        } else {
+            return url('adminlte/dist/img/online-course.svg');
+        }  
+    }
+
+    public function hasImage()
+    {
+        if(empty($this->image)) return FALSE;
+        if (file_exists(public_path($this->image_path.$this->image))) {
+            return TRUE;
+        }
+        return FALSE;
+    }
     public static function getContent($page_name)
     {
         // using laravel app method to create php stdClass

@@ -6,11 +6,11 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Best Practice Training Locations</h1>
-            <p>We utilise present day, work - accommodating spaces in every single significant city, with a great vehicle, joins and close by convenience. We likewise carry the classroom to your location of choice with our onsite training.</p>
+            <h1>{{ $pageDetail->banner['header']->heading}}</h1>
+            <p>{{ $pageDetail->banner['header']->content}}</p>
             <div class="breadcrums">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{url('home')}}">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                     <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                     <li><a href="">Locations</a></li>
@@ -29,94 +29,27 @@
         </div>
         <div class="convenient-container">
             <div class="convenient-list">
+                @foreach($popularLocations as $popularLocation)
                 <div class="convenient-content">
                     <span>
                     <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
                         <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
                     </span>
                     <div class="content">
-                        <h3>London</h3>
+                        <h3>{{$popularLocation->name}}</h3>
                         <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
+                            <a  class="btn-blue open-popup enquiryJS" data-quote="View Details">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="convenient-content">
-                    <span>
-                    <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
-                        <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
-                    </span>
-                    <div class="content">
-                        <h3>Manchester</h3>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="convenient-content">
-                    <span>
-                    <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
-                        <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
-                    </span>
-                    <div class="content">
-                        <h3>Cardiff</h3>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="convenient-content">
-                    <span>
-                    <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
-                        <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
-                    </span>
-                    <div class="content">
-                        <h3>Birminghamon</h3>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="convenient-content">
-                    <span>
-                    <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
-                        <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
-                    </span>
-                    <div class="content">
-                        <h3>Bristol</h3>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="convenient-content">
-                    <span>
-                    <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
-                        <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
-                    </span>
-                    <div class="content">
-                        <h3>Leeds</h3>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="View Details">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+           
             </div>
             <div class="largest">
-                <h2>Largest Location</h2>
-                <p>Southampton is the largest city located in England. The city is situated 69 miles south-west of London and 15 miles west north-west of Portsmouth. Southampton is the main port and neigh bouring city.</p>
+                <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
+                <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-blue">
                     <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
@@ -133,11 +66,11 @@
     <div class="container">
         <div class="find-container">
             <span>
-            <img src="{{url('img/location/route.svg')}}" alt="route">
+            <img src="{{ url($pageDetail->instance->image_path.$pageDetail->find['find_container']->icon) }}" alt="route">
             </span>
             <div class="content">
-                <h2>Can't Find a Suitable Location?</h2>
-                <p>We are always looking to expand our reach, so let us know where you are and we'll do our best to offer an ideal location.</p>
+                <h2>{{$pageDetail->find['find_container']->heading}}</h2>
+                <p>{{$pageDetail->find['find_container']->content}}</p>
             </div>
             <div class="buttons">
                 <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire">
@@ -166,190 +99,18 @@
             </div>
             
             <div class="popular-list">
-                <a href="javascript:void(0);" class="popular-content">
+                @foreach($locations as $location)
+                <a href="{{route('locationDetail',['location'=>$location->reference])}}" class="popular-content">
                     <span class="img">
                         <img src="{{url('img/location/around.svg')}}" alt="around">
                     </span>
                     <span class="content">
-                        Southampton
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
+                       {{$location->name}}
+                        <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums">
                     </span>
-                    <span class="content">
-                        Manchester
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
                 </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Kingston Upon Hall
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Birmingham
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Southampton
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Manchester
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Kingston Upon Hall
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Birmingham
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Southampton
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Manchester
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Kingston Upon Hall
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Birmingham
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Southampton
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Manchester
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Kingston Upon Hall
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Birmingham
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Southampton
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Manchester
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Kingston Upon Hall
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
-                <a href="javascript:void(0);" class="popular-content">
-                    <span class="img">
-                        <img src="{{url('img/location/around.svg')}}" alt="around">
-                    </span>
-                    <span class="content">
-                        Birmingham
-                        <img src="{{url('img/location/breadcrum-black.svg')}}" alt="breadcrums">
-                    </a>
-                </a>
+                @endforeach
+          
             </div>
         </div>
     </div>
@@ -361,10 +122,10 @@
     <div class="container">
         <div class="buy-container">
             <div class="heading center-heading">
-                <h2>Number Of User Buys Our Courses <span>In The World</span></h2>
+                <h2>{!! heading_split($pageDetail->buy['buy_container']->heading) !!}  </h2>
             </div>
             <span class="img">
-                <img src="{{url('img/location/buy-bg.png')}}" alt="buy">
+                <img src="{{ url($pageDetail->instance->image_path.$pageDetail->buy['buy_container']->image) }}" alt="buy">
             </span>
         </div>
     </div>

@@ -1,0 +1,300 @@
+@media @size-md{
+    // Start Banner section //
+    .certification-banner {
+        
+        &::before {
+            content: none;
+        }
+    }
+    // End Banner section //
+
+    // Start Cisco Section
+    .cisco {
+        padding: @sectionPadding-md;
+        .cisco-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .cisco-content {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1.5rem;
+            position: relative;
+            width: 100%;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 27px;
+                width: 97%;
+                height: 100%;
+                background-color: @blackColor;
+                opacity: 0.2;
+                z-index: -1;
+                border-radius: 25px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 28px;
+                height: 35px;
+                width: 4px;
+                background-color: @lightblueColor;
+                transition: 1s ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    border-radius: 25px;
+                }
+                h3,.buttons {
+                    z-index: 1;
+                }
+                h3 {
+                    color: @whiteColor;
+                    transition: 1s ease-in-out;
+                }
+                .buttons {
+                    .btn-blue {
+                        box-shadow: 0px 0px 10px rgb(255 249 249 / 20%);
+                    }
+                }
+            }
+        }
+        h3 {
+            width: 70%;
+            text-align: left;
+        }
+        .buttons {
+            width: 28%;
+            margin-top: 0;
+            justify-content: flex-end;
+        }
+    }
+    // End Cisco Section
+
+    // Start Method Section
+    .method {
+        padding: @sectionPadding-md;
+        background: none;
+        background-image: url(../img/certification/method-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .method-list {
+            background-image: url(../img/certification/dotted-curve.png);
+            background-repeat: no-repeat;
+            background-size: 79% 42%;
+            background-position: 81px 41px;
+        }
+        .method-content {
+            width: 19%;
+            &:nth-child(odd) {
+                margin-top: 3.5rem;
+            }
+        }
+    }
+    // End Method Section
+
+    // Start Enquiry Section
+    .enquiry {
+        padding: @sectionPadding-md;
+        .contact-list {
+            background-image: url(../img/certification/contact-img.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            flex-direction: row;
+        }
+        .contact {
+            box-shadow: none;
+            padding: 1rem 0rem 2rem 3rem;
+            &:nth-child(1) {
+                background-color: transparent;
+            }
+            &:nth-child(2) {
+                background: none;
+            }
+        }
+        .content {
+            display: flex;
+            margin-bottom: .5rem;
+            align-items: center;
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                padding: .5rem;
+                margin-right: .5rem;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            
+        }
+        .enquiry-img {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &::before {
+                top: 32%;
+                left: 11%;
+                background-image: url(../img/certification/enquiry-lines.svg);
+                height: 28px;
+                width: 40px;
+            }
+            &::after {
+                bottom: 13%;
+                right: 0%;
+                background-image: url(../img/certification/dotted-square.svg);
+                height: 47px;
+                width: 83px;
+                z-index: -1;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    // End Enquiry Section
+}
+
+@media @size-lg{
+    // Start Banner section //
+    .certification-banner {
+        background: linear-gradient(125deg, @darkblueColor 64%, transparent 36%), url(../img/certification/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        .banner-container {
+            background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        h1, p {
+            color: @blackColor;
+        }
+        p {
+            width: 55%;
+        }
+        .breadcrums {
+            ul {
+                li {
+                    color: @blackColor;
+                }
+            }
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
+        }
+    }
+    // End Banner section //
+
+    // Start Cisco Section
+    .cisco {
+        background-image: url(../img/certification/cisco-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .cisco-content {
+            width: 47%;
+            margin-right: 2.5rem;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+        h3 {
+            width: 61%;
+        }
+        .buttons {
+            width: 37%;
+        }
+    }
+    // End Cisco Section
+
+    // Start Enquiry Section
+    .enquiry {
+        .enquiry-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .enquiry-content {
+            width: 50%;
+        }
+        .enquiry-img {
+            width: 40%;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &::before {
+                top: 32%;
+                left: 11%;
+                background-image: url(../img/certification/enquiry-lines.svg);
+                height: 28px;
+                width: 40px;
+            }
+            &::after {
+                bottom: 13%;
+                right: 0%;
+                background-image: url(../img/certification/dotted-square.svg);
+                height: 47px;
+                width: 83px;
+                z-index: -1;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    // End Enquiry Section
+}
+
+@media @size-xl{
+
+    // Start Cisco Section
+    .cisco {
+        padding: @sectionPadding-xl;
+        .cisco-content {
+            width: 48%;
+            margin-right: 2.5rem;
+        }
+        h3 {
+            width: 61%;
+        }
+        .buttons {
+            width: 39%;
+        }
+    }
+    // End Cisco Section
+
+    // Start Method Section
+    .method {
+        padding: @sectionPadding-xl;
+        .method-list {
+            background-size: 87% 42%;
+        }
+    }
+    // End Method Section
+}
