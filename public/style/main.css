@@ -4563,7 +4563,6 @@ input::-webkit-inner-spin-button {
   .popular .popular-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .popular .popular-content {
     width: 44%;
