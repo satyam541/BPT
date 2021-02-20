@@ -914,30 +914,14 @@ input::-webkit-inner-spin-button {
   }
   .banner {
     padding: 3rem 2rem;
-    background-image: url(../img/master/banner-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
-    position: relative;
-  }
-  .banner::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    background-image: url(../img/master/banner-layer.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
-    height: 36%;
-    left: 0;
-    z-index: 0;
   }
   .banner .banner-container {
     flex-direction: row;
-    justify-content: space-between;
     padding: 2rem 0;
     padding-top: 3rem;
-    z-index: 1;
   }
   .banner .banner-container .banner-content {
     align-items: flex-start;
@@ -1547,6 +1531,26 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0;
 }
 @media (min-width : 768px) {
+  .banner {
+    background-image: url(../img/master/banner-bg.png);
+    position: relative;
+  }
+  .banner::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background-image: url(../img/master/banner-layer.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 36%;
+    left: 0;
+    z-index: 0;
+  }
+  .banner .banner-container {
+    justify-content: space-between;
+    z-index: 1;
+  }
   .courses {
     padding: 3rem 2rem;
   }
