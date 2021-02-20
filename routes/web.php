@@ -42,7 +42,7 @@ Route::get('/blog', function () {
     return view('blog');
 });
 Route::get('/blog-detail', function () {
-    return view('blogDetail');
+    return view('blog-detail');
 });
 Route::get('/offer', function () {
     return view('offer');
