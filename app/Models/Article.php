@@ -16,13 +16,27 @@ class Article extends Model
     // protected $dates = ['post_date'];
 
 
-
-
-
-
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag',"article_tag",'article_id','tag_id');
+    }
+
+    public function isPopular()
+    {
+        $popular = $this->popular;
+        return empty($popular->id)? FALSE : TRUE;
+    }
+
+    public function popular()
+    {
+        return $this->morphOne('App\Models\Popular', 'module')->withDefault(
+            ["country_id" => 'gb',
+            "display_order" => Popular::courses()->count()+1]
+        );
+    }
+    public function hasPopular()
+    {
+        return $this->morphOne('App\Models\Popular', 'module');
     }
  
     public function getImagePath()

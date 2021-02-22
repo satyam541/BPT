@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
             'course'   => 'App\Models\Course',
             'location' => 'App\Models\Location',
             'venue'    => 'App\Models\Venue',
+            'article'  => 'App\Models\Article',
             
         ]);
     }
