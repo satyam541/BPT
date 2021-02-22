@@ -57,6 +57,9 @@ Route::get('/courses', function () {
 Route::get('/emptycart', function () {
     return view('emptycart');
 });
+Route::get('/404', function () {
+    return view('404');
+});
 Route::get('/privacy-policy',function(){
 
 })->name('privacy-policy');

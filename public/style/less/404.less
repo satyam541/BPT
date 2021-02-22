@@ -1,0 +1,38 @@
+// Start cart-banner section
+.error-banner{
+    background-color: @darkblueColor;
+    h1,p{
+        color: @whiteColor;
+    }
+}
+// End cart-banner section
+
+// Start error section
+.error{
+    padding: @sectionPadding;
+    .error-container{
+        display: flex;
+        flex-direction: column;
+        box-shadow: @shadowLight;
+        padding: 1.5rem;
+    }
+    .page-error{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .heading{
+        &::before{
+            content: none;
+        }
+    }
+    .error-image{
+        display: flex;
+        margin-top: 2rem;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+// End error section

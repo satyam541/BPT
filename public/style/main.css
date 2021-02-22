@@ -7388,3 +7388,81 @@ input::-webkit-inner-spin-button {
     background-size: cover;
   }
 }
+.error-banner {
+  background-color: #1C2848;
+}
+.error-banner h1,
+.error-banner p {
+  color: #FFFFFF;
+}
+.error {
+  padding: 3rem 1.5rem;
+}
+.error .error-container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem;
+}
+.error .page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.error .heading::before {
+  content: none;
+}
+.error .error-image {
+  display: flex;
+  margin-top: 2rem;
+}
+.error .error-image img {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width : 768px) {
+  .error-banner {
+    padding-top: 1rem!important;
+  }
+  .error-banner .banner-container {
+    flex-direction: column;
+  }
+  .error {
+    padding: 3rem 2rem;
+  }
+  .error .error-container {
+    padding: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url(../img/404/error-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    align-items: center;
+  }
+  .error .page-error {
+    width: 50%;
+  }
+  .error .error-image {
+    width: 48%;
+    margin-top: 0;
+  }
+}
+@media (min-width : 1024px) {
+  .error-banner {
+    background-image: url(../img/404/banner-bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50% 100%;
+  }
+  .error-banner .banner-container {
+    width: 50%;
+  }
+  .error .error-image {
+    width: 40%;
+  }
+}
+@media (min-width : 1366px) {
+  .error-banner {
+    padding: 4rem 0rem;
+  }
+}
