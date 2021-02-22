@@ -40,7 +40,8 @@ Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('vali
 /*End Enquiry Routes*/
 
 
-
+Route::get('search','SearchController@search')->name('SearchCourse');
+Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseAutoComplete');
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
