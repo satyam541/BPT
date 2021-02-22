@@ -1506,6 +1506,7 @@ input::-webkit-inner-spin-button {
 .looking .looking-for p,
 .looking .looking-for h2 {
   text-align: center;
+  width: 100%;
 }
 .looking .looking-for p {
   margin-top: 1rem;
@@ -1682,6 +1683,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+    z-index: 1;
   }
   .delivery .delivery-list::before {
     content: '';
@@ -1702,9 +1704,9 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
-    background-blend-mode: soft-light;
     background-size: cover;
     position: relative;
+    z-index: 1;
   }
   .delivery .item::before,
   .delivery .item::after {
@@ -1727,8 +1729,23 @@ input::-webkit-inner-spin-button {
     border: 4px solid #ebebeb;
     border-radius: 50%;
   }
+  .delivery .item:nth-child(1) {
+    background-image: url(../img/home/classroom-bg.png);
+  }
+  .delivery .item:nth-child(2) {
+    background-image: url(../img/home/led-bg.png);
+  }
+  .delivery .item:nth-child(3) {
+    background-image: url(../img/home/paced-bg.png);
+  }
+  .delivery .item:nth-child(4) {
+    background-image: url(../img/home/onsite-bg.png);
+  }
   .delivery .item:hover {
     align-items: center;
+  }
+  .delivery .item:hover .overlay {
+    background: linear-gradient(#0064D8, #1C2848);
   }
   .delivery .item:hover p {
     text-align: center;
@@ -1738,29 +1755,15 @@ input::-webkit-inner-spin-button {
     width: 96px;
     height: 96px;
   }
-  .delivery .item:hover:nth-child(1) {
-    background-image: url(../img/home/classroom-bg.png), linear-gradient(#0064D8, #1C2848);
-  }
-  .delivery .item:hover:nth-child(2) {
-    background-image: url(../img/home/led-bg.png), linear-gradient(#0064D8, #1C2848);
-  }
-  .delivery .item:hover:nth-child(3) {
-    background-image: url(../img/home/paced-bg.png), linear-gradient(#0064D8, #1C2848);
-  }
-  .delivery .item:hover:nth-child(4) {
-    background-image: url(../img/home/onsite-bg.png), linear-gradient(#0064D8, #1C2848);
-  }
-  .delivery .item:nth-child(1) {
-    background-image: url(../img/home/classroom-bg.png), linear-gradient(#000000, #575757);
-  }
-  .delivery .item:nth-child(2) {
-    background-image: url(../img/home/led-bg.png), linear-gradient(#000000, #575757);
-  }
-  .delivery .item:nth-child(3) {
-    background-image: url(../img/home/paced-bg.png), linear-gradient(#000000, #575757);
-  }
-  .delivery .item:nth-child(4) {
-    background-image: url(../img/home/onsite-bg.png), linear-gradient(#000000, #575757);
+  .delivery .overlay {
+    background: linear-gradient(#000000, #575757);
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
   }
   .facts {
     padding: 3rem 2rem;
@@ -1973,6 +1976,7 @@ input::-webkit-inner-spin-button {
     width: 400px;
     height: 385px;
     left: -16px;
+    top: -18px;
   }
   .looking .clients-reviews {
     width: 50%;

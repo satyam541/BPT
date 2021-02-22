@@ -116,6 +116,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
             position: relative;
+            z-index: 1;
             &::before{
                 content: '';
                 position: absolute;
@@ -136,9 +137,9 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-color: transparent;
-            background-blend-mode: soft-light;
             background-size: cover;
             position: relative;
+            z-index: 1;
             &::before, &::after{
                 content: '';
                 position: absolute;
@@ -159,8 +160,27 @@
                 border: 4px solid #ebebeb;
                 border-radius: 50%;
             }
+            &:nth-child(1){
+                background-image: url(../img/home/classroom-bg.png);
+
+            }
+            &:nth-child(2){
+                background-image: url(../img/home/led-bg.png);
+
+            }
+            &:nth-child(3){
+                background-image: url(../img/home/paced-bg.png);
+
+            }
+            &:nth-child(4){
+                background-image: url(../img/home/onsite-bg.png);
+
+            }
             &:hover{
                 align-items: center;
+                .overlay{
+                    background: @blueGradient;
+                }
                 p{
                     text-align: center;
                 }
@@ -169,40 +189,19 @@
                     width: 96px;
                     height: 96px;
                 }
-                &:nth-child(1){
-                    background-image: url(../img/home/classroom-bg.png), @blueGradient;
-    
-                }
-                &:nth-child(2){
-                    background-image: url(../img/home/led-bg.png), @blueGradient;
-    
-                }
-                &:nth-child(3){
-                    background-image: url(../img/home/paced-bg.png), @blueGradient;
-    
-                }
-                &:nth-child(4){
-                    background-image: url(../img/home/onsite-bg.png), @blueGradient;
-    
-                }
-            }
-            &:nth-child(1){
-                background-image: url(../img/home/classroom-bg.png), linear-gradient(#000000,#575757);
-
-            }
-            &:nth-child(2){
-                background-image: url(../img/home/led-bg.png), linear-gradient(#000000,#575757);
-
-            }
-            &:nth-child(3){
-                background-image: url(../img/home/paced-bg.png), linear-gradient(#000000,#575757);
-
-            }
-            &:nth-child(4){
-                background-image: url(../img/home/onsite-bg.png), linear-gradient(#000000,#575757);
-
             }
         }
+        
+        .overlay{
+            background:  linear-gradient(#000000,#575757);
+            opacity: .8;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+     }
     }
     .facts{
         padding: @sectionPadding-md;
@@ -435,6 +434,7 @@
                 width: 400px;
                 height: 385px;
                 left: -16px;
+                top: -18px;
             }
         }
         .clients-reviews{

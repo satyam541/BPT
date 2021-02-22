@@ -468,24 +468,32 @@
             </div>
             <div class="delivery-list">
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/classroom.svg')}}" alt="classroom">
                     <h3>Classroom Training</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/led.svg')}}" alt="led">
                     <h3>Online Instructor-Led</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/paced.svg')}}" alt="paced">
                     <h3>Online Self-Paced</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/onsite.svg')}}" alt="onsite">
                     <h3>Onsite Training</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
