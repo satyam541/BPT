@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
 class Course extends Model
 {
     use SoftDeletes;
@@ -122,7 +121,9 @@ class Course extends Model
     {
         return $this->morphMany('App\Models\Faq', 'module');
     }
-
+    public function courseAddon(){
+        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
+    }
 
     public function getLogoPath()
     {// check file exist then return default image.

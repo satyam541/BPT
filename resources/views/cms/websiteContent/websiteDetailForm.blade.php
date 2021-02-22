@@ -103,7 +103,7 @@
 
                   <div class="form-group">
                     {{Form::label('copyright_footer','Copyright Footer')}}
-                    {{Form::textarea('copyright_footer',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('copyright_footer',null,['class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">

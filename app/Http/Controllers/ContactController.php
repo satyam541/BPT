@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\PageDetail;
-use App\Models\Course;
-use App\Models\Socialmedia;
+use App\Models\SocialMedia;
 class ContactController extends Controller
 {
     public function index()
     {
         $pageDetail = PageDetail::where(['page_name'=>'contact_us','section'=>'metas'])->get();
-        if(!$pageDetail->isEmpty())
+        if($pageDetail->isNotEmpty())
         {
             $data['title'] = $pageDetail->where('sub_section','title')->first()->heading;
             $data['description'] = $pageDetail->where('sub_section','description')->first()->heading;
