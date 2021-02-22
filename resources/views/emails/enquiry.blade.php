@@ -18,101 +18,101 @@
                 Enquiry Details
             </div>
                     <table style="width:100%">
-					@unless(empty($Name)) 
+					@unless(empty($enquiry->name)) 
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Name:
                             </td>
                             <td style="width:70%">
-                                {{ $Name }}
+                                {{ $enquiry->name }}
                             </td>
                         </tr>
                        @endunless
-					   @unless(empty($Phone))
+					   @unless(empty($enquiry->phone))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Phone:
                             </td>
                             <td style="width:70%">
-                             {{ $Phone }}
+                             {{ $enquiry->phone }}
                             </td>
                         </tr>
 						@endunless
-						@unless(empty($Email))
+						@unless(empty($enquiry->email))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Email:
                             </td>
                             <td style="width:70%">
-                             {{ $Email }}
+                             {{ $enquiry->email }}
                             </td>
                         </tr>
 						@endunless
 
-                        @unless(empty($prefferedContactMethod))
+                        @unless(empty($enquiry->prefferedContactMethod))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                  Preferred Method Chosen:
                             </td>
                             <td style="width:70%">
-                             {{ $prefferedContactMethod }}
+                             {{ $enquiry->prefferedContactMethod }}
                             </td>
                         </tr>
                         @endunless
 
-						@unless(empty($Delegates))
+						@unless(empty($enquiry->delegates))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Delegates:
                             </td>
                             <td style="width:70%">
-                             {{ $Delegates }}
+                             {{ $enquiry->delegates }}
                             </td>
                         </tr>
 						@endunless
-						@unless(empty($Company))
+						@unless(empty($enquiry->company))
 						 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Company:
                             </td>
                             <td style="width:70%">
-                             {{ $Company }}
+                             {{ $enquiry->company }}
                             </td>
                         </tr>
 						@endunless
-						@unless(empty($Address))
+						@unless(empty($enquiry->address))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Address:
                             </td>
                             <td style="width:70%">
-                             {{ $Address }}
+                             {{ $enquiry->address }}
                             </td>
                         </tr>
 						@endunless
-						@unless(empty($Message))
+						@unless(empty($enquiry->message))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Message:
                             </td>
                             <td style="width:70%">
-                             {{ $Message }}
+                             {{ $enquiry->message }}
                             </td>
                         </tr>
 						@endunless
 
-                        @unless(empty($Course))
+                        @unless(empty($enquiry->course))
                         <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                             <td style="width:30%;float:left">
                                 Course Name:
                             </td>
                             <td style="width:70%">
-                             {{ $Course }}
+                             {{ $enquiry->course }}
                             </td>
                         </tr>
                         @endunless
 
-                        @unless(empty($Package))
+                        @unless(empty($enquiry->Package))
                         @php $Package = json_decode($Package) @endphp
                             <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                                 <td style="width:30%;float:left">

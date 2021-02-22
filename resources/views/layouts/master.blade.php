@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
    @yield('header')
 </head>
 <body>
@@ -173,7 +174,7 @@
   </script>
 <script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
 <script src="{{url('script/owl.carousel.min.js')}}"></script>
-
+<script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
 @yield('footerscripts')
