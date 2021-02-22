@@ -1,3 +1,8 @@
+.home-banner{
+    .banner-container{
+        box-shadow: @shadowLight;
+    }
+}
 .courses{
     padding: @sectionPadding;
     .courses-container{
@@ -17,7 +22,7 @@
         position: relative;
         margin-top: 2rem;
         
-        span{
+        .icon{
             display: none;
             width: 50px;
             height: 50px;
@@ -25,6 +30,12 @@
             img{
                 width: 100%;
                 height: 100%;
+                &:first-child{
+                    display: flex;
+                }
+                &:last-child{
+                    display: none;
+                }
             }
         }
         .name{
@@ -40,7 +51,7 @@
                 color: #C0C0C0;
             }
         }
-        a{
+        .arrow{
             display: none;
             align-items: center;
             justify-content: center;
@@ -59,12 +70,22 @@
         }
         &:hover{
             background: @blueGradient;
+            .icon{
+                img{
+                    &:first-child{
+                        display: none;
+                    }
+                    &:last-child{
+                        display: flex;
+                    }
+                }
+            }
             .name{
                 h3, p{
                     color: @whiteColor;
                 }
             }
-            a{
+            .arrow{
                 display: flex;
             }
         }
@@ -115,10 +136,10 @@
         padding: 1rem;
         border-radius: 10px;
         align-items: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
         img{
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
         &:hover{
             box-shadow: @shadowLight;
@@ -177,7 +198,7 @@
             background-color: @whiteColor;
             border-radius: 50%;
             border: 5px solid @darkblueColor;
-            box-shadow: 0 0 1px 1px @whiteColor;
+            box-shadow: 0 0 1px 1px #cfcfcf;
             z-index: 1;
         }
         &::before{
@@ -293,6 +314,8 @@
     .fact-count{
         display: flex;
         margin: .5rem 0;
+        align-items: center;
+        font-size: 26px;
     }
     h3{
         color: @darkblueColor;
@@ -412,6 +435,10 @@
             height: 30px;
         }
     }
+    .author-name{
+        display: flex;
+        flex-direction: column;
+    }
 }
 .partners{
     padding: @sectionPadding;
@@ -426,13 +453,15 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        width: 275px;
+        align-self: center;
+        align-items: center;
         img{
             width: 128px;
             height: auto;
-            margin-bottom: 1rem;
+            margin-top: 1rem !important;
             &:last-child{
                 margin: auto;
-                margin-bottom: 0;
             }
         }
 
