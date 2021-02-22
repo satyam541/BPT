@@ -100,14 +100,17 @@
     $('.reviews-outer' ).owlCarousel({
         loop: true,
         responsiveClass: true,
-        dots: true,
-        nav: true,
+        dots: false,
+        nav: false,
         autoplay: true,
         navText: ["", ""],
         items: 1,
         responsive: {
             0: {
                 items: 1,
+            },
+            1024: {
+                nav: true,
             }
             
         }
