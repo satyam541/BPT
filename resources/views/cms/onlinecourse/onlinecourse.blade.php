@@ -103,8 +103,15 @@
 @endsection
 @section('footer')
     <script>
-        $(document).ready(function(){
-            $('#example1').DataTable();
+  $(document).ready(function(){
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Topic" },
+                        { "name": "Actions", "sorting":false, searching:false },
+                        { "name": "Addon", "sorting":false, searching:false }
+              ]                    
+            });
         });
     </script>
 @endsection

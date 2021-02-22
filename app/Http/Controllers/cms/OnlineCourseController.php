@@ -20,12 +20,7 @@ class OnlineCourseController extends Controller
 
     private $Video_prefix;
 
-    public function __construct()
-    {
-        $this->Video_prefix = "Video";
-        $this->Image_prefix = "onlinecourseImage";
-		// $this->middleware('access:role,insert')->only('insertRole');
-    }
+    
 
     public function list(Request $request)
     {
@@ -39,8 +34,8 @@ class OnlineCourseController extends Controller
     $data['model']=Course::find($course);
     $Addons=Course::with('courseAddon')->find($course);
     $selectedAddons=[];
-    foreach($Addons->courseAddon as $selectedAddon){
-        $selectedAddons=$selectedAddon->pluck('id','id')->toArray();
+    foreach($Addons->courseAddon->toArray() as $selectedAddon){
+        $selectedAddons[]=$selectedAddon['id'];
     }
     $data['selectedAddons']=$selectedAddons;
     $data['submitRoute']='courseAddonAssigned';
@@ -58,6 +53,7 @@ public function courseAddonassigned(Request $request){
     {
         $this->authorize('delete', $course);
         $course->is_online=0;
+        $course->courseAddon()->detach();
         $course->save();
     }
     
@@ -65,19 +61,5 @@ public function courseAddonassigned(Request $request){
     //save file
     
  
-    public function trashList()
-    {
-        $this->authorize('view', new CourseElearning());
-        $data['trashOnlineCourses'] = courseElearning::onlyTrashed()->get();
-        return view('cms.trashed.onlineCourseTrashList',$data);
-    }
-
-    public function restore($id)
-    {
-        $this->authorize('restore', new CourseElearning());
-        $data = courseElearning::onlyTrashed()->find($id)->restore();
-        return back()->with('success','Successfully Restored');
-    }
-
 
 }

@@ -501,12 +501,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('onlineCourseTrash')}}" @if(Route::currentRouteName()=='onlineCourseTrash')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Online Course List</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{Route('resourceTrash')}}" @if(Route::currentRouteName()=='resourceTrash')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Resource List</p>
