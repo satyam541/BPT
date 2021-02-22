@@ -255,6 +255,7 @@ if (!function_exists('encodeUrlSlug')) {
     }
 }
 
+
 if(!function_exists('heading_split'))
 {
 
@@ -262,20 +263,19 @@ if(!function_exists('heading_split'))
     {
         $string=trim($str);
         $name = explode(" ", $string);
-        if(sizeOf($name)>1)
-        {
-        $last=end($name);
-        $final="<span>".$last."<span>";
-        array_pop($name);
-        array_push($name,$final);
-        $final_str=implode(" ",$name);
-         return $final_str;
-        }
-        
-        return $str;
+        $position=(count($name)/2)+1;
+        $position=ceil($position);
+        $array1 = array_slice($name, 0,$position);
+        $result=array_diff($name,$array1);
+        $ar1=implode(" ",$array1);
+        $ar2=implode(" ",$result);
+        $ar2 ="<span>".$ar2."</span>";
+        $final=$ar1." ".$ar2;
+        return $final;   
         
     }
 }
+
 if (!function_exists('unlinkedTopic')) {
     function unlinkedTopic()
     {
