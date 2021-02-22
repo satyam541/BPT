@@ -16,6 +16,41 @@
         }
     }
     // End Unable Section
+
+    // Start virtual Section
+    .virtual {
+        padding: @sectionPadding-md;
+        .virtual-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .virtual-content {
+            width: 43%;
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+        .virtual-img {
+            width: 55%;
+            align-self: center;
+        }
+    }
+    // End virtual Section
+
+    // Start Work Section
+    .work {
+        padding: @sectionPadding-md;
+        .work-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content {
+            width: 32%;
+        }
+    }
+    // End Work Section
 }
 
 @media @size-lg{
@@ -26,6 +61,74 @@
         }
     }
     // End Unable Section
+
+    // Start virtual Section
+    .virtual {
+        .virtual-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .virtual-list {
+            width: 64%;
+        }
+        .virtual-content {
+            width: 43%;
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+            .content {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: .5rem;
+                span {
+                    display: flex;
+                    height: 50px;
+                    width: 50px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                h2 {
+                    width: calc(100% - 60px);
+                }
+            }
+        }
+        .virtual-img {
+            width: 35%;
+            align-self: flex-start;
+            margin-top: 0;
+        }
+    }
+    // End virtual Section
+
+    // Start Work Section
+    .work {
+        .work-container {
+            flex-direction: row;
+        }
+        .work-content {
+            width: 26%;
+        }
+        .work-list {
+            align-items: flex-end;
+            width: 73%;
+            justify-content: center;
+        }
+        .content {
+            width: 33%;
+            margin-top: 0;
+            &:nth-child(2) {
+                transform: translateY(-45px);
+            }
+            &:last-child {
+                transform: translateY(-73px);
+            }
+        }
+    }
+    // End Work Section
+
+
 }
 
 @media @size-xl{
@@ -34,4 +137,28 @@
         padding: @sectionPadding-xl;
     }
     // End Unable Section
+
+    // Start virtual Section
+    .virtual {
+        padding: @sectionPadding-xl;
+        .virtual-list {
+            width: 68%;
+        }
+        .virtual-img {
+            width: 30%;
+        }
+    }
+    // End virtual Section
+
+    // Start Work Section
+    .work {
+        padding: @sectionPadding-xl;
+        .work-content {
+            width: 26%;
+        }
+        .work-list {
+            width: 73%;
+        }
+    }
+    // End Work Section
 }
