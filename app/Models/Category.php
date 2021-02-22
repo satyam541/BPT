@@ -145,10 +145,10 @@ class Category extends Model
 
     public function restore()
     {
-        $this->content()->restore();
-        $this->Bulletpoint()->restore();
-        $this->faqs()->restore();
-        $this->whatIncludes()->restore();
+        $this->content()->withTrashed()->restore();
+        $this->Bulletpoint()->withTrashed()->restore();
+        $this->faqs()->withTrashed()->restore();
+        $this->whatIncludes()->withTrashed()->restore();
         return parent::restore();
     }
 
