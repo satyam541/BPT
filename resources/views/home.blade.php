@@ -36,7 +36,7 @@
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
                                 PRINCE training
-                                <span>prince training</span>
+                                <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
@@ -46,7 +46,7 @@
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
                                 PRINCE training
-                                <span>prince training</span>
+                                <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
@@ -172,9 +172,10 @@
                 </h2>
             </div>
             <div class="courses-list">
-                <div class="course-name">
-                    <span>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/management.svg')}}" alt="management">
+                        <img src="{{url('img/home/management-white.svg')}}" alt="management-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -187,13 +188,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/analysis.svg')}}" alt="analysis">
+                        <img src="{{url('img/home/analysis-white.svg')}}" alt="analysis-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -206,13 +208,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/improvement.svg')}}" alt="improvement">
+                        <img src="{{url('img/home/improvement-white.svg')}}" alt="improvement-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -225,13 +228,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
-                        <img src="{{url('img/home/it-service.svg')}}" alt="it-service">
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
+                        <img src="{{url('img/home/service.svg')}}" alt="service">
+                        <img src="{{url('img/home/service-white.svg')}}" alt="service-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -244,13 +248,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
-                        <img src="{{url('img/home/it-security.svg')}}" alt="it-security">
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
+                        <img src="{{url('img/home/security.svg')}}" alt="security">
+                        <img src="{{url('img/home/security-white.svg')}}" alt="security-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -263,13 +268,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/protection.svg')}}" alt="protection">
+                        <img src="{{url('img/home/protection-white.svg')}}" alt="protection-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -282,13 +288,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/applications.svg')}}" alt="applications">
+                        <img src="{{url('img/home/applications-white.svg')}}" alt="applications-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -301,13 +308,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/skills.svg')}}" alt="skills">
+                        <img src="{{url('img/home/skills-white.svg')}}" alt="skills-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -320,13 +328,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/database.svg')}}" alt="database">
+                        <img src="{{url('img/home/database-white.svg')}}" alt="database-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -339,10 +348,10 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
+                    </span>
+                </a>
             </div>
             <div class="buttons">
                 <a class="btn-blue">
@@ -643,41 +652,15 @@
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                             when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
                         </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                    </div>
-                    <div class="reviews-inner">
-                        <p>
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
-                        </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                    </div>
-                    <div class="reviews-inner">
-                        <p>
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
-                        </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        <div class="author-name">
+                            <h3>
+                                Harsul Hisham
+                            </h3>
+                            <span>
+                                WEB DESIGNER
+                            </span>
+                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        </div>
                     </div>
                 </div>
 

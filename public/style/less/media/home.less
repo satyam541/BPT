@@ -16,8 +16,10 @@
           z-index: -1;
         }
         .banner-container{
+        flex-direction: row;
         justify-content: space-between;
         z-index: 1;
+        box-shadow: none;
         }
     }
     .courses{
@@ -30,7 +32,7 @@
         .course-name{
             width: 48%;
             flex-direction: row;
-            span{
+            .icon{
                 display: flex;
             }
         }
@@ -48,6 +50,7 @@
             background: @blueGradient;
             padding: .5rem 1rem;
             border-radius: 100px;
+            height: 82px;
         }
         .content{
             width: 70%;
@@ -60,7 +63,7 @@
                 width: 80px;
                 height: 80px;
                 margin-right: 2rem;
-                transform: translate(10px, -48px);
+                transform: translate(10px, -30px);
             }
         }
         .buttons{
@@ -78,7 +81,7 @@
             justify-content: space-between;
         }
         .item{
-            width: 30%;
+            width: 35%;
             padding: 2rem;
             margin-top: 1rem;
         
@@ -134,6 +137,7 @@
             background-size: 100% 100%;
             background-color: transparent;
             background-blend-mode: soft-light;
+            background-size: cover;
             position: relative;
             &::before, &::after{
                 content: '';
@@ -298,8 +302,11 @@
     .partners{
         padding: @sectionPadding-md;
         .partners-images{
+            width: 100%;
             img{
-                margin: 0 !important;
+                &:last-child{
+                 margin: inherit;
+                }
             }
     
         }
@@ -322,7 +329,6 @@
             img{
                 width: 100px;
                 height: 100px;
-                transform: translate(10px,-30px);
             }
         }
     }
@@ -477,8 +483,11 @@
             background-image: url(../img/home/partners-bg.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            padding: 7rem;
+            padding: 4rem 7rem;
             margin-top: 0;
+            img{
+                margin-top: 0 !important;
+            }
         }
     }
 

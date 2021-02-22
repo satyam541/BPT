@@ -161,7 +161,6 @@ input::-webkit-inner-spin-button {
   margin-bottom: 1rem;
   width: 100%;
   position: relative;
-  z-index: 1;
   padding-top: 1rem;
 }
 .heading::before {
@@ -514,7 +513,7 @@ input::-webkit-inner-spin-button {
 .banner .banner-container {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 .banner .banner-container .banner-content {
   display: flex;
@@ -621,6 +620,7 @@ input::-webkit-inner-spin-button {
 .banner .topic-list a span {
   font-size: 14px;
   line-height: normal;
+  font-weight: normal;
 }
 .banner .topic-list .owl-dots {
   display: flex;
@@ -639,6 +639,7 @@ input::-webkit-inner-spin-button {
 }
 .banner .topic-list .owl-dots .owl-dot.active {
   background-color: #FFFFFF;
+  box-shadow: 0 0 10px #b4b4b4;
   width: 20px;
   height: 20px;
 }
@@ -931,9 +932,8 @@ input::-webkit-inner-spin-button {
     background-color: transparent;
   }
   .banner .banner-container {
-    flex-direction: row;
-    padding: 2rem 0;
-    padding-top: 3rem;
+    padding: 0;
+    padding-top: 2rem;
   }
   .banner .banner-container .banner-content {
     align-items: flex-start;
@@ -1123,6 +1123,9 @@ input::-webkit-inner-spin-button {
     margin-bottom: 0.5rem;
   }
 }
+.home-banner .banner-container {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
 .courses {
   padding: 3rem 1.5rem;
 }
@@ -1143,15 +1146,21 @@ input::-webkit-inner-spin-button {
   position: relative;
   margin-top: 2rem;
 }
-.courses .course-name span {
+.courses .course-name .icon {
   display: none;
   width: 50px;
   height: 50px;
   margin-right: 0.5rem;
 }
-.courses .course-name span img {
+.courses .course-name .icon img {
   width: 100%;
   height: 100%;
+}
+.courses .course-name .icon img:first-child {
+  display: flex;
+}
+.courses .course-name .icon img:last-child {
+  display: none;
 }
 .courses .course-name .name {
   display: flex;
@@ -1166,7 +1175,7 @@ input::-webkit-inner-spin-button {
   width: 50%;
   color: #C0C0C0;
 }
-.courses .course-name a {
+.courses .course-name .arrow {
   display: none;
   align-items: center;
   justify-content: center;
@@ -1179,18 +1188,24 @@ input::-webkit-inner-spin-button {
   top: 30%;
   box-shadow: 0 0 10px grey;
 }
-.courses .course-name a img {
+.courses .course-name .arrow img {
   width: 25px;
   height: 25px;
 }
 .courses .course-name:hover {
   background: linear-gradient(#0064D8, #1C2848);
 }
+.courses .course-name:hover .icon img:first-child {
+  display: none;
+}
+.courses .course-name:hover .icon img:last-child {
+  display: flex;
+}
 .courses .course-name:hover .name h3,
 .courses .course-name:hover .name p {
   color: #FFFFFF;
 }
-.courses .course-name:hover a {
+.courses .course-name:hover .arrow {
   display: flex;
 }
 .courses .buttons {
@@ -1237,11 +1252,11 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   border-radius: 10px;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .whychoose .item img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 .whychoose .item:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -1296,7 +1311,7 @@ input::-webkit-inner-spin-button {
   background-color: #FFFFFF;
   border-radius: 50%;
   border: 5px solid #1C2848;
-  box-shadow: 0 0 1px 1px #FFFFFF;
+  box-shadow: 0 0 1px 1px #cfcfcf;
   z-index: 1;
 }
 .ways .item::before {
@@ -1406,6 +1421,8 @@ input::-webkit-inner-spin-button {
 .facts .fact-count {
   display: flex;
   margin: 0.5rem 0;
+  align-items: center;
+  font-size: 26px;
 }
 .facts h3 {
   color: #1C2848;
@@ -1522,6 +1539,10 @@ input::-webkit-inner-spin-button {
   width: 120px !important;
   height: 30px;
 }
+.looking .author-name {
+  display: flex;
+  flex-direction: column;
+}
 .partners {
   padding: 3rem 1.5rem;
 }
@@ -1536,15 +1557,17 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 275px;
+  align-self: center;
+  align-items: center;
 }
 .partners .partners-images img {
   width: 128px;
   height: auto;
-  margin-bottom: 1rem;
+  margin-top: 1rem !important;
 }
 .partners .partners-images img:last-child {
   margin: auto;
-  margin-bottom: 0;
 }
 @media (min-width : 768px) {
   .home-banner {
@@ -1565,8 +1588,10 @@ input::-webkit-inner-spin-button {
     z-index: -1;
   }
   .home-banner .banner-container {
+    flex-direction: row;
     justify-content: space-between;
     z-index: 1;
+    box-shadow: none;
   }
   .courses {
     padding: 3rem 2rem;
@@ -1580,7 +1605,7 @@ input::-webkit-inner-spin-button {
     width: 48%;
     flex-direction: row;
   }
-  .courses .course-name span {
+  .courses .course-name .icon {
     display: flex;
   }
   .effective {
@@ -1597,6 +1622,7 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(#0064D8, #1C2848);
     padding: 0.5rem 1rem;
     border-radius: 100px;
+    height: 82px;
   }
   .effective .content {
     width: 70%;
@@ -1610,7 +1636,7 @@ input::-webkit-inner-spin-button {
     width: 80px;
     height: 80px;
     margin-right: 2rem;
-    transform: translate(10px, -48px);
+    transform: translate(10px, -30px);
   }
   .effective .buttons {
     width: 30%;
@@ -1626,7 +1652,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
   }
   .whychoose .item {
-    width: 30%;
+    width: 35%;
     padding: 2rem;
     margin-top: 1rem;
   }
@@ -1677,6 +1703,7 @@ input::-webkit-inner-spin-button {
     background-size: 100% 100%;
     background-color: transparent;
     background-blend-mode: soft-light;
+    background-size: cover;
     position: relative;
   }
   .delivery .item::before,
@@ -1828,8 +1855,11 @@ input::-webkit-inner-spin-button {
   .partners {
     padding: 3rem 2rem;
   }
-  .partners .partners-images img {
-    margin: 0 !important;
+  .partners .partners-images {
+    width: 100%;
+  }
+  .partners .partners-images img:last-child {
+    margin: inherit;
   }
 }
 @media (min-width : 1024px) {
@@ -1844,7 +1874,6 @@ input::-webkit-inner-spin-button {
   .effective .content img {
     width: 100px;
     height: 100px;
-    transform: translate(10px, -30px);
   }
   .ways {
     background-image: url(../img/home/ways-bg.png);
@@ -1990,8 +2019,11 @@ input::-webkit-inner-spin-button {
     background-image: url(../img/home/partners-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 7rem;
+    padding: 4rem 7rem;
     margin-top: 0;
+  }
+  .partners .partners-images img {
+    margin-top: 0 !important;
   }
 }
 @media (min-width : 1366px) {
