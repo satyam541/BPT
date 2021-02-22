@@ -7341,8 +7341,8 @@ input::-webkit-inner-spin-button {
 .cart-banner {
   background-color: #1C2848;
 }
-.cart-banner h1,
-.cart-banner p {
+.cart-banner .banner-container h1,
+.cart-banner .banner-container p {
   color: #FFFFFF;
 }
 .empty {
@@ -7359,12 +7359,6 @@ input::-webkit-inner-spin-button {
 }
 .empty span {
   display: flex;
-  height: 150px;
-  width: 100%;
-  background-image: url(../img/emptycart/cart-img.svg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
 }
 .empty span img {
   width: 100%;
@@ -7385,9 +7379,6 @@ input::-webkit-inner-spin-button {
   .cart-banner {
     padding-top: 1rem!important;
   }
-  .cart-banner .banner-container {
-    flex-direction: column;
-  }
   .empty {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
@@ -7397,7 +7388,6 @@ input::-webkit-inner-spin-button {
   }
   .empty span {
     width: 575px;
-    height: 300px;
   }
 }
 @media (min-width : 1024px) {
@@ -7423,8 +7413,8 @@ input::-webkit-inner-spin-button {
 .error-banner {
   background-color: #1C2848;
 }
-.error-banner h1,
-.error-banner p {
+.error-banner .banner-container h1,
+.error-banner .banner-container p {
   color: #FFFFFF;
 }
 .error {
@@ -7495,6 +7485,9 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width : 1366px) {
   .error-banner {
+    padding: 4rem 0rem;
+  }
+  .error {
     padding: 4rem 0rem;
   }
 }

@@ -25,7 +25,7 @@
     <div class="container">
         <div class="empty-container">
             <div class="empty-content">
-            <span></span>
+            <span><img src="{{url('img/emptycart/cart-img.svg')}}" alt="cart-img"></span>
             <h3>Your Cart Is Empty</h3>
             <p>Fill it with some training courses - take a look at our catalogue.</p>
             <div class="buttons">
