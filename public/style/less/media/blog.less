@@ -41,15 +41,25 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+           
+                    &:last-child{
+                        .buttons{
+                        width: 100%;
+                    }
+                }
            &::before{
-            top: 85px;
-            height: 93%;
+            top: 0;
+            height: 100%;
            }
+          
 
         }
 
         .our-item {
             width: 40%;
+            &:nth-child(1),&:nth-child(2){
+                margin-top: 0;
+            }
 
             &::before {
                 content: '';
@@ -204,12 +214,6 @@
                 }
             }
 
-        }
-        .our-list{
-            &::before{
-                top: 80px;
-                height: 94%;
-            }
         }
 
     }
