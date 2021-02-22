@@ -63,4 +63,49 @@
 </section>
 <!-- End ideal section -->
 
+
+<!-- start intro section  -->
+
+<section class="flex-container intro">
+    <div class="container">
+        <div class="intro-container">
+            <div class="intro-content">
+                <span>
+                    <img src="{{url('img/blog-detail/detail.png')}}" alt="detail">
+                </span>
+                <div class="intro-detail">
+                    <div class="detail">
+                        <p>
+                            <img src="{{url('img/blog-detail/name.svg')}}" alt="name">
+                            By Sarah Jordan
+                        </p>
+                        <p>
+                            14 July, 2017
+                        </p>
+                        <p>
+                            Web Developer
+                        </p>
+                    </div>
+                    <h3>An Introduction To Agile Software Development</h3>
+                    <p>In The State Of Utah At A Ski Resort, In February Of 2001, 17 Project Management Industry Experts Gathered For Two Days. And As A Result, They Conceived The Agile Software Development Manifesto.</p>
+                    <p>In The State Of Utah At A Ski Resort, In February Of 2001, 17 Project Management Industry Experts Gathered For Two Days. And As A Result, They Conceived The Agile Software Development Manifesto.</p>
+                    <div class="points">
+                        <img src="{{url('img/blog-detail/list-detail.png')}}" alt="list-detail">
+                        <ul>
+                            <li>Extreme Programming</li>
+                            <li>Crystal</li>
+                            <li>Scrum</li>
+                            <li>DSDM</li>
+                            <li>FDD</li>
+                            <li>Adaptive Software Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End intro section -->
+
 @endsection

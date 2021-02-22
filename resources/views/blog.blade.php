@@ -79,10 +79,6 @@
                 </h2>
             </div>
             <div class="our-list">
-                <p class="dates">14 July, 2017</p>
-                <p class="dates">14 July, 2017</p>
-                <p class="dates">14 July, 2017</p>
-                <p class="dates">14 July, 2017</p>
                 <div class="our-item">
                     <img src="{{url('img/blog/our-image.png')}}" alt="our-image">
                     <div class="our-info">
@@ -95,7 +91,7 @@
                         </p>
                     </div>
                     <h3>About Best Practice Training</h3>
-                    <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
+                    <p class="item-text">Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
                         Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
 
                     <div class="buttons">
@@ -103,6 +99,8 @@
                             Read More
                         </a>
                     </div>
+                    
+                <p class="date">14 July, 2017</p>
                 </div>
                 <div class="our-item">
                     <img src="{{url('img/blog/our-image.png')}}" alt="our-image">
@@ -116,7 +114,7 @@
                         </p>
                     </div>
                     <h3>About Best Practice Training</h3>
-                    <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
+                    <p class="item-text">Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
                         Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
 
                     <div class="buttons">
@@ -124,6 +122,8 @@
                             Read More
                         </a>
                     </div>
+                    
+                <p class="date">14 July, 2017</p>
                 </div>
                 <div class="our-item">
                     <img src="{{url('img/blog/our-image.png')}}" alt="our-image">
@@ -137,7 +137,7 @@
                         </p>
                     </div>
                     <h3>About Best Practice Training</h3>
-                    <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
+                    <p class="item-text">Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
                         Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
 
                     <div class="buttons">
@@ -145,6 +145,7 @@
                             Read More
                         </a>
                     </div>
+                       <p class="date">14 July, 2017</p>
                 </div>
                 <div class="our-item">
                     <img src="{{url('img/blog/our-image.png')}}" alt="our-image">
@@ -158,7 +159,7 @@
                         </p>
                     </div>
                     <h3>About Best Practice Training</h3>
-                    <p>Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
+                    <p class="item-text">Lorem Ipsum. Proin Gravida Nibh Vel Velit Auctor Aliquet. Aenean Sollicitudin, Lorem Quis
                         Bibendum Auctor, Nisi Elit Consequat Ipsum, Nec Sagittis Sem Nibh Id Elit. </p>
 
                     <div class="buttons">
@@ -166,6 +167,8 @@
                             Read More
                         </a>
                     </div>
+                    
+                    <p class="date">14 July, 2017</p>
                 </div>
             </div>
             <div class="buttons load-more">
