@@ -4,6 +4,9 @@
     h1,p {
         color: @whiteColor;
     }
+    .banner-container{
+        flex-direction: column;
+    }
 }
 // End offer-banner section
 
@@ -212,4 +215,72 @@
     }
 }
 // End new-bundle section
+
+// Start pass section
+.pass{
+    padding: @sectionPadding;
+    background-color: @darkblueColor;
+    .pass-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .pass-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .pass-content{
+        display: flex;
+        flex-direction: column;
+        background-color: @whiteColor;
+        border-radius: 12px;
+        box-shadow: @shadowLight;
+        padding: 1.5rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        &:last-child{
+            margin-bottom: 0;
+            .btn-blue{
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+        }
+
+    }
+    .pass-heading{
+        display: flex;
+        margin-bottom: 1rem;
+        width: 100%;
+        justify-content: space-between;
+        .id-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            padding: .5rem;
+            background: @blueGradient;
+            margin-right: .5rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }   
+        }
+    }
+    .heading-content{
+        display: flex;
+        align-items: center;
+    }
+    .circle-img{
+        display: flex;
+        height: 70px;
+        width: 70px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// End pass section
 

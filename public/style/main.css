@@ -5758,6 +5758,9 @@ input::-webkit-inner-spin-button {
 .offer-banner p {
   color: #FFFFFF;
 }
+.offer-banner .banner-container {
+  flex-direction: column;
+}
 .bundle {
   padding: 3rem 1.5rem;
 }
@@ -5948,6 +5951,70 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   margin-top: 0;
 }
+.pass {
+  padding: 3rem 1.5rem;
+  background-color: #1C2848;
+}
+.pass .pass-container {
+  display: flex;
+  flex-direction: column;
+}
+.pass .pass-list {
+  display: flex;
+  flex-direction: column;
+}
+.pass .pass-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.pass .pass-content:last-child {
+  margin-bottom: 0;
+}
+.pass .pass-content:last-child .btn-blue {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.pass .pass-heading {
+  display: flex;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.pass .pass-heading .id-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background: linear-gradient(#0064D8, #1C2848);
+  margin-right: 0.5rem;
+}
+.pass .pass-heading .id-card img {
+  width: 100%;
+  height: 100%;
+}
+.pass .heading-content {
+  display: flex;
+  align-items: center;
+}
+.pass .circle-img {
+  display: flex;
+  height: 70px;
+  width: 70px;
+}
+.pass .circle-img img {
+  width: 100%;
+  height: 100%;
+}
 @media (min-width : 768px) {
   .offer-banner {
     padding: 3rem 2rem;
@@ -6006,6 +6073,7 @@ input::-webkit-inner-spin-button {
   }
   .recommend input {
     width: 35%;
+    margin-top: 0;
   }
   .recommend .buttons {
     margin-top: 0;
@@ -6024,6 +6092,42 @@ input::-webkit-inner-spin-button {
   .new-bundle .inform-us .inform-list {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .pass {
+    padding: 3rem 2rem;
+    background-color: transparent;
+    background: url(../img/offer/pass-bg.png);
+    background-size: 100% 55%;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  .pass .pass-list {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .pass .pass-heading {
+    margin-bottom: 0.5rem;
+  }
+  .pass .pass-content {
+    width: 48%;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+  .pass .pass-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 5%;
+    width: 90%;
+    height: calc(100% + 40px);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    z-index: -1;
+  }
+  .pass p {
+    min-height: 220px;
   }
 }
 @media (min-width : 1024px) {
@@ -6113,6 +6217,12 @@ input::-webkit-inner-spin-button {
     order: 2;
     width: 45%;
   }
+  .pass .circle-img {
+    width: 90px;
+  }
+  .pass p {
+    min-height: 161px;
+  }
 }
 @media (min-width : 1366px) {
   .offer-banner {
@@ -6144,6 +6254,12 @@ input::-webkit-inner-spin-button {
   }
   .new-bundle .latest-bundles {
     width: 52%;
+  }
+  .pass {
+    padding: 4rem 0rem;
+  }
+  .pass p {
+    min-height: 132px;
   }
 }
 .certification-banner {

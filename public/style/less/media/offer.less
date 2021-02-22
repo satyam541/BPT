@@ -67,6 +67,7 @@
             }
             input{
                 width: 35%;
+                margin-top: 0;
             }
             .buttons{
                 margin-top: 0;
@@ -91,6 +92,46 @@
         }
         }
         // End new-bundle section
+        
+        // Start pass section
+        .pass{
+            padding: @sectionPadding-md;
+            background-color: transparent;
+            background: url(../img/offer/pass-bg.png);
+            background-size: 100% 55%;
+            background-repeat: no-repeat;
+            background-position: top;
+            .pass-list{
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 2rem;
+            }
+            .pass-heading{
+                margin-bottom: .5rem;
+            }
+            .pass-content{
+                width: 48%;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 0;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: -20px;
+                    left: 5%;
+                    width: 90%;
+                    height: calc(100% + 40px);
+                    border-radius: 12px;
+                    background-color: @whiteColor;
+                    z-index: -1;
+
+                }
+            }
+            p{
+                min-height: 220px;
+            }
+        }
+        // End pass section
 
 }
 
@@ -206,6 +247,17 @@
         }
     }
     // End new-bundle section
+
+    // Start pass section
+    .pass{
+        .circle-img{
+            width: 90px;
+        }
+        p{
+            min-height: 161px;
+        }
+    }
+    // End pass section
 }
 
 @media @size-xl{
@@ -255,4 +307,13 @@
         }
     }
     // End new-bundle section
+
+    // Start pass section
+    .pass{
+        padding: @sectionPadding-xl;
+        p{
+            min-height: 132px;
+        }
+    }
+    // End pass section
 }

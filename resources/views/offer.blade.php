@@ -206,5 +206,45 @@
         </div>
     </div>
 </section>
+<!-- End new-bundle section -->
+
+<!-- Start pass section -->
+<section class="flex-container pass">
+    <div class="container">
+        <div class="pass-container">
+            <div class="heading center-heading white-heading">
+                <h2>Our Passes</h2>
+            </div>
+            <div class="pass-list">
+                <div class="pass-content">
+                    <div class="pass-heading">
+                        <div class="heading-content">
+                        <span class="id-card"><img src="{{url('img/offer/id-card.svg')}}" alt="id-card"></span>
+                        <h3>FlexiPass</h3>
+                    </div>
+                    <span class="circle-img"><img src="{{url('img/offer/double-circles.png')}}" alt="double-circles"></span>
+                    </div>
+                    <p>A pre-paid training voucher that enables the delegates to book and attend the training program anywhere within the time period of 6 months. Having agreed with your training provider on the financial issues involved, you will be provided an account to book your course. Besides, you will also come to know about the performance of others through various reports you receive. </p>
+                    <div class="buttons">
+                    <a class="btn-blue"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The FlexiPass</a>
+                    </div>
+                </div>
+                <div class="pass-content">
+                    <div class="pass-heading">
+                        <div class="heading-content">
+                        <span class="id-card"><img src="{{url('img/offer/id-card.svg')}}" alt="id-card"></span>
+                        <h3>Knowledge Pass</h3>
+                    </div>
+                    <span class="circle-img"><img src="{{url('img/offer/double-circles.png')}}" alt="double-circles"></span>
+                    </div>
+                    <p>You can use your training budget more effectively with the Knowledge Pass. After setting budget, you can book any course in your preferred location within 12 months. This pass is best suited for the audience who have flexible requirements for the business. To get the knowledge pass, you can contact one of our speacialist learning consultant to set up your account so that you can book course throughout the year.</p>
+                    <div class="buttons">
+                    <a class="btn-blue"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The Knowledge Pass</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
