@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Country;
+use App\Models\Country;
 
 class JWTEnquiryController extends JWT
 {
@@ -21,7 +21,7 @@ class JWTEnquiryController extends JWT
 		$courses   =  $lineItems->implode('course_name', ', ');
 		$venues    =  $lineItems->implode('venue', ', ');
 		$dates     =  $lineItems->implode('schedule_date', ', ');
-		$country = Country::find($data['country_id'] ?? "gb");
+		$country   =  Country::find($data['country_id'] ?? "gb");
 		$this->data = [
 				    'name' 			            => (isset($customer['firstname']) ? $customer['firstname'].' '.$customer['lastname'] : ''),
         			'mobile' 		            => (isset($customer['mobile']) ? $customer['mobile'] : ''),
@@ -124,12 +124,13 @@ class JWTEnquiryController extends JWT
 		//return false;
 		if(in_array($this->data['email'],config('mail.testing_email')))
 		{
+			dd($this->data);
 			return false;
 		}
 		
-
+		dd('hi');
 		$this->data['iss']    = isset($_SERVER['HTTP_HOST'])?$_SERVER['HTTP_HOST']:"";
-		$this->data['source'] = "Six Sigma";
+		$this->data['source'] = "Best Practice Training";
 		$this->data['sub']    = "Enquiry";
 		$this->data['aud']    = "theknowledgeacademy.com";
 		$this->data['iat']    = time();
