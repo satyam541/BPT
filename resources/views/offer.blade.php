@@ -246,5 +246,6 @@
         </div>
     </div>
 </section>
+<!-- End pass section -->
 
 @endsection
