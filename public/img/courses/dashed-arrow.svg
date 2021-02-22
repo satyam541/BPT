@@ -1,0 +1,10 @@
+<svg id="dashed-arrow" xmlns="http://www.w3.org/2000/svg" width="28.333" height="17.681" viewBox="0 0 28.333 17.681">
+  <g id="Group_7627" data-name="Group 7627" transform="translate(0 0)">
+    <g id="Group_7626" data-name="Group 7626" transform="translate(0 0)">
+      <path id="Path_29047" data-name="Path 29047" d="M.82,69.448h10.4V65.133A.647.647,0,0,1,12.34,64.7l8.025,8.2a.561.561,0,0,1,0,.863l-8.025,8.2a.69.69,0,0,1-.475.216h-.259a.69.69,0,0,1-.388-.647V77.645H.82A.992.992,0,0,1,0,76.782v-6.9C0,69.534.432,69.448.82,69.448Z" transform="translate(7.766 -64.494)" fill="#fff"/>
+      <path id="Path_29048" data-name="Path 29048" d="M265.368,121.86a.647.647,0,0,1,.647.647v6.9a.647.647,0,1,1-1.294,0v-6.9A.647.647,0,0,1,265.368,121.86Z" transform="translate(-259.544 -117.123)" fill="#fff"/>
+      <path id="Path_29049" data-name="Path 29049" d="M296.715,121.86a.647.647,0,0,1,.647.647v6.9a.647.647,0,1,1-1.294,0v-6.9A.647.647,0,0,1,296.715,121.86Z" transform="translate(-293.479 -117.123)" fill="#fff"/>
+      <path id="Path_29050" data-name="Path 29050" d="M328.062,121.86a.647.647,0,0,1,.647.647v6.9a.647.647,0,1,1-1.294,0v-6.9A.647.647,0,0,1,328.062,121.86Z" transform="translate(-327.415 -117.123)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

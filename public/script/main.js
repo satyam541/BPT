@@ -21,6 +21,18 @@
         $("#menuToggle").toggleClass('active');
     }
     //End Toggle menu//
+
+    //Start Delivery method script//
+   $(".tab-content").hide();
+   $(".tab-content").first().css("display", "flex");
+   $(".tab-click").click(function () {
+      var target = $(this).data("target");
+      $(".tab-content").hide();
+      $("#" + target).css("display", "flex");
+      $(".tab-click").removeClass('active');
+      $(this).addClass("active");
+   });
+ //End Delivery method script//
     
     //Start Testimonial//
     $('.topic-list').owlCarousel({
