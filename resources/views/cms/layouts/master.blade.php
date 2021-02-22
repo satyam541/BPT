@@ -204,38 +204,6 @@
             </ul>
           </li>
 
-          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList']))
-          class="nav-item has-treeview menu-open"
-          @else
-          class="nav-item has-treeview"
-          @endif>
-            <a href="#" class="nav-link">
-              <i class="fas fa-copy"></i>
-              <p>
-                Certifications
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
-                  <i class="far fa-circle nav-icon "></i>
-                  <p>
-                    Category
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{Route('certificationCourseList')}}"@if(Route::currentRouteName()=='certificationCourseList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="far fa-circle nav-icon "></i>
-                  <p>
-                    Courses
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
           <li @if(in_array(Route::currentRouteName(),['AddonList','categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
           class="nav-item has-treeview menu-open"
           @else
@@ -291,6 +259,38 @@
                 <a href="{{Route('accreditationList')}}" @if(Route::currentRouteName()=='accreditationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accreditation</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
+            <a href="#" class="nav-link">
+              <i class="fas fa-certificate"></i>
+              <p>
+                Certifications
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>
+                    Category
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('certificationCourseList')}}"@if(Route::currentRouteName()=='certificationCourseList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>
+                    Courses
+                  </p>
                 </a>
               </li>
             </ul>
