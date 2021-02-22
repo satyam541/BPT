@@ -20,4 +20,20 @@
 </section>
 <!-- End Banner Section -->
 
+<!-- Start empty section -->
+<section class="flex-container empty">
+    <div class="container">
+        <div class="empty-container">
+            <div class="empty-content">
+            <span></span>
+            <h3>Your Cart Is Empty</h3>
+            <p>Fill it with some training courses - take a look at our catalogue.</p>
+            <div class="buttons">
+                <a class="btn-blue">Have a Look<img src="{{url('img/emptycart/right-arrow.svg')}}" alt="right-arrow"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
 @endsection

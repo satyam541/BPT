@@ -1,5 +1,5 @@
 @media @size-md{
-    // Start cart-banner section
+// Start cart-banner section
 .cart-banner{
     padding-top: 1rem!important;
     .banner-container{
@@ -8,10 +8,49 @@
 }
 // End cart-banner section
 
+// Start  empty section
+.empty{
+    padding: @sectionPadding-md;
+    padding-top: 1rem!important;
+    background-image: url(../img/emptycart/cart-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    span{
+        width: 575px;
+        height: 300px;
+    }
+}
+// End empty section
+
 }
 
 @media @size-lg{
+
+    // Start cart-banner section
+    .cart-banner{
+        background-color: transparent;
+        background-image: url(../img/emptycart/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .banner-container{
+            width: 50%;
+        }
+    }
+    // End cart-banner section
 }
 
 @media @size-xl{
+
+    // Start cart-banner section
+    .cart-banner{
+        padding: @sectionPadding-xl;
+    }
+    // End cart-banner section
+
+    // Start  empty section
+    .empty{
+        padding: @sectionPadding-xl;
+        background-size: cover;
+    }
+    // End empty section
 }
