@@ -69,7 +69,6 @@
 <!-- Start our-blog section -->
 
 <section class="flex-container our-blog">
-
     <div class="container">
         <div class="our-container">
             <div class="heading center-heading">
@@ -170,12 +169,13 @@
                     
                     <p class="date">14 July, 2017</p>
                 </div>
-            </div>
-            <div class="buttons load-more">
-                <a class="btn-blue">
+                <div class="buttons">
+                <a class="btn-blue load-more">
                     Load More
                 </a>
             </div>
+            </div>
+            
         </div>
     </div>
 </section>
