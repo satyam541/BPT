@@ -166,7 +166,7 @@ input::-webkit-inner-spin-button {
 .heading::before {
   content: '';
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 80px;
   height: 4px;
   border-radius: 10px;
@@ -1744,7 +1744,7 @@ input::-webkit-inner-spin-button {
   .delivery .item:hover {
     align-items: center;
   }
-  .delivery .item:hover .overlay {
+  .delivery .item:hover r .overlay {
     background: linear-gradient(#0064D8, #1C2848);
   }
   .delivery .item:hover p {
