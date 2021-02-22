@@ -5134,19 +5134,6 @@ input::-webkit-inner-spin-button {
   .blog-banner .banner-container {
     width: 42%;
   }
-  .blog-banner h1,
-  .blog-banner p {
-    color: #000000;
-  }
-  .blog-banner .breadcrums ul li {
-    color: #000000;
-  }
-  .blog-banner .breadcrums .black {
-    display: flex;
-  }
-  .blog-banner .breadcrums .white {
-    display: none;
-  }
   .popular-blog {
     padding: 3rem 0;
   }
