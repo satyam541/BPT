@@ -158,6 +158,29 @@ span.textContent=percent+"%";
 svg.append(span);
 }
 
+//enquiry form consent check
+function checkConsent(button)
+{
+    var form = button.closest('form');
+    var checkbox = $(form).find("input[name='contactConsent']");
+    if(checkbox.length == 0)
+    {
+        console.log('contact consent field not found');
+        return false;
+    }
+    var error = checkbox.closest('form').find('.consent-error');
+    if(checkbox.is(":checked"))
+    {
+        error.hide();
+        return true;
+    }
+    error.show();
+    console.log('contact consent is not checked');
+    event.preventDefault();
+    return false;
+}
+
+
  //phone code start
 
 

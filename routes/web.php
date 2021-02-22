@@ -30,6 +30,15 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 
 
+/*Enquiry Routes*/
+
+Route::post('/send/enquiry','EnquiryController@insertEnquiry')->name('sendEnquiry');
+
+Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('validateEnquiry');
+
+/*End Enquiry Routes*/
+
+
 
 // Route::get('/welcome', function () {
 //     return view('welcome');
