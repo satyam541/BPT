@@ -503,7 +503,7 @@ input::-webkit-inner-spin-button {
 .banner .banner-container {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 .banner .banner-container .banner-content {
   display: flex;
@@ -921,8 +921,8 @@ input::-webkit-inner-spin-button {
   }
   .banner .banner-container {
     flex-direction: row;
-    padding: 2rem 0;
-    padding-top: 3rem;
+    padding: 0;
+    padding-top: 2rem;
   }
   .banner .banner-container .banner-content {
     align-items: flex-start;
@@ -1554,6 +1554,7 @@ input::-webkit-inner-spin-button {
     z-index: -1;
   }
   .home-banner .banner-container {
+    flex-direction: row;
     justify-content: space-between;
     z-index: 1;
   }
