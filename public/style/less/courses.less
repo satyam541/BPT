@@ -16,16 +16,125 @@
 }
 // End Unable Section
 
-// Start Role Section
-.role {
+// Start virtual Section
+.virtual {
     padding: @sectionPadding;
-    .role-container {
+    .virtual-container {
         display: flex;
         flex-direction: column;
     }
-    .role-list {
+    .virtual-list {
         display: flex;
         flex-direction: column;
+    }
+    .virtual-content {
+        display: flex;
+        flex-direction: column;
+        background-color: @whiteColor;
+        box-shadow: @shadowLight;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        border-radius: 30px 30px 0px 30px;
+        width: 272px;
+        align-self: center;
+        &:first-child {
+            margin-top: 0;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: .5rem;
+            span {
+                display: flex;
+                height: 50px;
+                width: 50px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            h2 {
+                width: calc(100% - 60px);
+            }
+        }
+    }
+    .virtual-img {
+        display: flex;
+        flex-direction: column;
+        background: @blueGradient;
+        padding: 2rem;
+        padding-bottom: 0;
+        border-radius: 15px;
+        align-items: center;
+        margin-top: 2rem;
+        h2 {
+            color: @whiteColor;
+            margin-bottom: 2rem;
+            text-align: center;
+
+        }
+        span {
+            display: flex;
+            height: 145px;
+            width: 145px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
-// End Role Section
+// End virtual Section
+
+// Start Work Section
+.work {
+    padding: @sectionPadding;
+    .work-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .work-content {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        background-color: #f6f6f6;
+        .heading {
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+    .work-list {
+        display: flex;
+        flex-direction: column;
+        h3, p {
+            color: @whiteColor;
+        }
+        h3 {
+            margin: 1rem 0;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        background-color: @lightblueColor;
+        padding: 1.7rem;
+        margin-top: 2rem;
+        &:nth-child(2) {
+            background-color: #0057BD;
+        }
+        &:last-child {
+            background-color: #004596;
+        }
+        span {
+            display: flex;
+            height: 40px;
+            width: 40px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+// End Work Section

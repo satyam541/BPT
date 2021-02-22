@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PageDetail;
-use App\Models\Course;
-use App\Models\Socialmedia;
+use App\Models\SocialMedia;
 class ContactController extends Controller
 {
     public function index()
