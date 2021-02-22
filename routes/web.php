@@ -28,6 +28,7 @@ Route::get('/testimonials', 'TestimonialController@index')->name('testimonials')
 Route::get('/training-locations', 'LocationController@index')->name('locations');
 Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
+Route::get('/blog', 'BlogController@index')->name('blog');
 
 
 /*Enquiry Routes*/
@@ -47,9 +48,9 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+// Route::get('/blog', function () {
+//     return view('blog');
+// });
 Route::get('/blog-detail', function () {
     return view('blog-detail');
 });
@@ -66,9 +67,7 @@ Route::get('/courses', function () {
 Route::get('/emptycart', function () {
     return view('emptycart');
 });
-Route::get('/404', function () {
-    return view('404');
-});
+
 Route::get('/privacy-policy',function(){
 
 })->name('privacy-policy');
@@ -84,3 +83,7 @@ Route::get('/cookies',function(){
     
 })->name('cookies');
 
+Route::fallback(function(){
+    return  redirect()->route('404');
+  })->name('fallback');
+  Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
