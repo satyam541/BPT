@@ -932,7 +932,6 @@ input::-webkit-inner-spin-button {
     background-color: transparent;
   }
   .banner .banner-container {
-    flex-direction: row;
     padding: 0;
     padding-top: 2rem;
   }
