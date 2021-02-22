@@ -159,43 +159,57 @@ svg.append(span);
 }
 
  //phone code start
- var datajson = [{
-    "name": "Afghanistan",
-    "dial_code": "+93",
-    "code": "AF"
-},
-{
-    "name": "Aland Islands",
-    "dial_code": "+358",
-    "code": "AX"
-},
-{
-    "name": "Albania",
-    "dial_code": "+355",
-    "code": "AL"
-},
-];
 
-var options = "";
-$.each(datajson, function (index, value) {
-    options += "<option data-index=" + index + ' value="' + value.code + '" data-phone-code="' + value.dial_code + '" data-country-id="' + index + '" data-country-name="' + value.name + '">' + value.code + '&emsp;&emsp; - &emsp;&emsp;' + value.name + '</option>';
+
+$.ajax({
+    url: countryjsonurl,
+    type:'get',
+    dataType: 'json',
+    success: function(response)
+    {
+        var options = "";
+        $.each(response, function(index, value){
+            options += "<option data-index="+index+' value="'+value.code+'" data-phone-code="'+value.dial_code+'" data-country-id="'+index+'" data-country-name="'+value.name+'">'+value.code+'&emsp;&emsp; - &emsp;&emsp;'+value.name+'</option>';
+        });
+        $('select.country-code').html(options).trigger('change');
+    }
 });
-$('.country-code').html(options);
-$(".country-code").on('change', function (e) {
+ 
+$("select.country-code").on('change', function(e){
     var phonecode = $(this).find(':selected').data('phone-code');
-    var countrycode = $(this).find(':selected').val();
     $(this).closest('.phonecode-field').find('span.prefix').text(phonecode);
-    // $('input#phonenumber').val(phonecode);
-});
-$('input.telephone').on('focusout', function (event) {
     var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
+    $(this).closest('.phonecode-field').find('input.telephone').val('').trigger('change');
+    $(this).closest('.phonecode-field').find('input.phonenumber').val(prefix);
+    $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
+});
+$('input.telephone').on('focusout', function(event){
+    var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
+    var phonecode =  $(this).closest('.phonecode-field').find(':selected').data('phone-code');
     var data = $(this).val();
-    if (data.startsWith('0')) {
-        data = data.substring(1, data.length);
+    if(data.startsWith('0'))
+    {
+        data = data.substring(1,data.length);
     }
     var number = prefix + data;
     $(this).closest('.phonecode-field').find('input.phonenumber').val(number);
+    $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
 });
-//phone code
 
+ //phone code end
+
+// honeytrap start
+ function addInputField()
+ {
+         $.each($('form'), function(index, form){
+             $(form).append('\
+         <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;">\
+             <input type="text" name="email_address" class="email"  tabindex="-1">\
+         </div>\
+         ');
+         });
+ }
+ $(document).ready(addInputField());
+
+//  honeytrap end
     

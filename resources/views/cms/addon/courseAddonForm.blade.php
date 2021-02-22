@@ -61,7 +61,6 @@
                                             </td>    
                                             <td>
                                                 <input type="checkbox" name="name[]" value="{{$courseAddon->id}}" @if (in_array($courseAddon->id,$selectedAddons))checked @endif>
-                                                {{-- {{ Form::checkbox('name[]', $courseAddon->id, ['class' => 'form-control']) }}     --}}
 
                                             </td>
                                         </tr>
