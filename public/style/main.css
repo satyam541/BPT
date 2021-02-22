@@ -6976,3 +6976,18 @@ input::-webkit-inner-spin-button {
     width: 73%;
   }
 }
+.cart-banner {
+  background-color: #1C2848;
+}
+.cart-banner h1,
+.cart-banner p {
+  color: #FFFFFF;
+}
+@media (min-width : 768px) {
+  .cart-banner {
+    padding-top: 1rem!important;
+  }
+  .cart-banner .banner-container {
+    flex-direction: column;
+  }
+}

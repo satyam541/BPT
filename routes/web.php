@@ -54,6 +54,9 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+Route::get('/emptycart', function () {
+    return view('emptycart');
+});
 Route::get('/privacy-policy',function(){
 
 })->name('privacy-policy');
