@@ -1,16 +1,11 @@
 // Start offer-Banner section //
 .offer-banner {
-    background-color: @darkblueColor;
-    .banner-container {
-        display: flex;
+    background-color: @darkblueColor!important;
+    h1,p {
+        color: @whiteColor;
+    }
+    .banner-container{
         flex-direction: column;
-        padding: 2rem 1rem;
-        h1,p {
-            color: @whiteColor;
-        }
-        p{
-            margin-top: .5rem;
-        }
     }
 }
 // End offer-banner section
@@ -66,7 +61,6 @@
 }
 // End bundle section
 
-
 // Start management section
 .management{
     padding: @sectionPadding;
@@ -83,17 +77,17 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        // background-image: url(../img/offer/bundle-bg.png);
-        // background-position: center;
-        // background-size: contain;
-        // background-repeat: no-repeat;
-    }
-    h3{
-        width: 42%;
-    }
+        margin-top: 2rem;
+        box-shadow: 0 0 10px grey;
+        padding: 1rem;
     span{
         width: 45%;
         text-align: center;
+        font-weight: bold;
+    }
+    }
+    h3{
+        width: 42%;
     }
     ul{
         width: 100%;
@@ -105,7 +99,7 @@
                 &::before{
                     content: none;
                 }
-                
+
             }
             margin-top: .5rem;
             font-size: 12px;
@@ -128,4 +122,165 @@
 
 }
 // End management section
+
+//Start recommend section
+.recommend{
+    padding: @sectionPadding;
+    background-color: @darkblueColor;
+    .recommend-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .recommend-info{
+        display: flex;
+        flex-direction: column;
+    }
+    p{
+        text-align: center;
+        color: @whiteColor;
+    }
+    input{
+        background-color: transparent;
+        border: none;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+        color: @whiteColor;
+        outline: none;
+        border-bottom: 1px solid @whiteColor;
+        width: 80%;
+        align-self: center;
+    }
+    ::placeholder{
+        color: @whiteColor;
+    }
+}
+// End recommend section
+
+//Start new-bundle section
+.new-bundle{
+    padding: @sectionPadding;
+    .new-bundle-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .inform-us{
+        display: flex;
+        order: 2;
+        margin-top: 2rem;
+        p{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .inform-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .inform-item{
+            display: flex;
+            margin-top: .7rem;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: @blueGradient;
+                height: 40px;
+                width: 40px;
+                border-radius: 50px;
+                padding: .6rem;
+                margin-right: .5rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .inform-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .latest-bundles{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        order: 1;
+        p{
+            margin-top: .5rem;
+            &:nth-child(2){
+                font-weight: bold;
+                font-size: 16px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+// End new-bundle section
+
+// Start pass section
+.pass{
+    padding: @sectionPadding;
+    background-color: @darkblueColor;
+    .pass-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .pass-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .pass-content{
+        display: flex;
+        flex-direction: column;
+        background-color: @whiteColor;
+        border-radius: 12px;
+        box-shadow: @shadowLight;
+        padding: 1.5rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        &:last-child{
+            margin-bottom: 0;
+            .btn-blue{
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+        }
+
+    }
+    .pass-heading{
+        display: flex;
+        margin-bottom: 1rem;
+        width: 100%;
+        justify-content: space-between;
+        .id-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            padding: .5rem;
+            background: @blueGradient;
+            margin-right: .5rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }   
+        }
+    }
+    .heading-content{
+        display: flex;
+        align-items: center;
+    }
+    .circle-img{
+        display: flex;
+        height: 70px;
+        width: 70px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// End pass section
 

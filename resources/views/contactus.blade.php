@@ -27,7 +27,13 @@
 <section class="flex-container contact">
             <div class="container">
                 <div class="contact-container">
-                    <form class="form" id="contact-us">
+                    {{-- <form class="form" id="contact-us"> --}}
+                        <form class="form sixsigma-co-uk-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
+                        
+                        @csrf
+                        <input type="hidden" name="type" value="contact"> 
+                        <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
+
                         <div class="heading center-heading">
                             <h2>Get In Touch <span>With Us Today</span> </h2>
                         </div>
@@ -35,7 +41,7 @@
                             <div class="input-container">
                                 <span><img src="{{url('img/contactus/name.svg')}}" alt="name" class="black">
                                 <img src="{{url('img/contactus/name-red.svg')}}" alt="name-red" class="red"></span>
-                                <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                <input type="text" name="name" id="f-name" placeholder="Name*"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
@@ -50,9 +56,9 @@
                                 <div class="phonecode-field field-black">
                                     <select class="country-code"></select>
                                     <span class="prefix"></span>
-                                    <input type="number" class="telephone" placeholder="Phone Number*">
+                                    <input type="number" class="telephone" placeholder="Phone Number*" min=0>
                                     <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                        <input type="text" name="Phone" class="phonenumber">
+                                        <input type="text" name="phone" class="phonenumber" tabindex="-1">
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +82,7 @@
                             <p>Please click <a>here</a> for privacy policy. </p>
                         </div>
                         <div class="form-consent">
-                            <input type="checkbox" id="checkConsent">
+                            <input type="checkbox" id="checkConsent" name="contactConsent">
                             <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most suitable manner (by phone or email) in order to respond to my enquiry.</label>
                         </div>
                         <div class="consent-error" style="display: none;">
@@ -88,9 +94,8 @@
                             <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
                         </div>
                         <div class="buttons">
-                            <button class="btn-blue">
-                                Submit
-                            </button>
+                            <button class="btn-blue" onclick="EnquiryFormSubmit('enquiry',this)">Submit</button>
+                            {{-- <button class="btn-blue">Submit</button> --}}
                         </div>
                     </form>
                     <div class="contact-info">
