@@ -51,6 +51,72 @@
         }
     }
     // End Work Section
+
+    // Start Language Section
+    .language {
+        padding: @sectionPadding-md;
+        .language-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .language-img {
+            width: 55%;
+            align-self: center;
+        }
+        .buy {
+            padding: 0;
+        }
+        .language-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .content {
+                width: 48%;
+                background-size: 23% 100%;
+            }
+        }
+    }
+    // End Language Section
+
+    // Start Skill Section
+    .skill {
+        padding: @sectionPadding-md;
+        .heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                text-align: center;
+            }
+        }
+        .skill-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .skill-content {
+            width: 46%;
+        }
+    }
+    // End Skill Section
+
+    // Start Related Section
+    .related {
+        padding: @sectionPadding-md;
+        .related-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .related-content {
+            width: 48%;
+            margin-right: 1.5rem;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+    // End Related Section
 }
 
 @media @size-lg{
@@ -128,6 +194,88 @@
     }
     // End Work Section
 
+    // Start Language Section
+    .language {
+        background-image: url(../img/courses/building.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 15% 44%;
+        .language-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .language-img {
+            width: 36%;
+            align-self: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+        .price {
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -26px;
+                right: -28px;
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background-color: @lightblueColor;
+                opacity: .26;
+                z-index: -1;
+                animation: size 4s linear infinite
+            }
+        }
+        .language-content {
+            width: 58%;
+            margin-top: 0;
+        }
+        .language-list {
+            .content {
+                background-size: 29% 100%;
+            }
+        }
+    }
+    // End Language Section
+
+    // Start Skill Section
+    .skill {
+        .skill-list {
+            justify-content: center;
+        }
+        .skill-content {
+            width: 25%;
+            align-items: flex-start;
+            h3 {
+                min-height: 50px;
+            }
+            p {
+                text-align: left;
+                min-height: 66px;
+            }
+        }
+    }
+    // End Skill Section
+
+    // Start Related Section
+    .related {
+        background: none;
+        background-image: url(../img/courses/related-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .related-content {
+            width: 31%;
+            &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+                margin-right: 1.5rem;
+            }
+            &:nth-child(3), &:nth-child(5) {
+                margin-right: 0;
+            }
+            &:nth-child(4),&:nth-child(5) {
+                width: 35%;
+            }
+        }
+    }
+    // End Related Section
 
 }
 
@@ -157,8 +305,62 @@
             width: 26%;
         }
         .work-list {
-            width: 73%;
+            width: 63%;
         }
     }
     // End Work Section
+
+    // Start Language Section
+    .language {
+        padding: @sectionPadding-xl;
+        .language-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .language-img {
+            width: 32%;
+        }
+        .language-content {
+            width: 62%;
+        }
+        .language-list {
+            .content {
+                background-size: 22% 100%;
+            }
+        }
+    }
+    // End Language Section
+
+    // Start Skill Section
+    .skill {
+        padding: @sectionPadding-xl;
+        .skill-content {
+            width: 22%;
+            h3 {
+                min-height: auto;
+            }
+            p {
+                min-height: 66px;
+            }
+        }
+    }
+    // End Skill Section
+
+    // Start Related Section
+    .related {
+        padding: @sectionPadding-xl;
+        .related-content {
+            width: 31%;
+            &:nth-child(2), &:nth-child(4), &:nth-child(6) {
+                margin-right: 1.5rem;
+            }
+            &:nth-child(3), &:nth-child(5) {
+                margin-right: 0;
+            }
+            &:nth-child(4),&:nth-child(5) {
+                width: 35%;
+            }
+        }
+    }
+    // End Related Section
 }
