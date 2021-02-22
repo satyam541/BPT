@@ -42,6 +42,10 @@ class Popular extends Model
     {
         return self::with('module')->where('module_type',"location")->get()->pluck('module');
     }
+    public static function article()
+    {
+        return self::with('module')->where('module_type',"blog")->get()->pluck('module');
+    }
     public function getTypeAttribute()
     {
         return $this->module_type;

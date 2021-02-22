@@ -1,11 +1,7 @@
 // Start Banner section //
 .blog-banner {
     background: @blueGradient;
-
     .banner-container {
-        display: flex;
-        flex-direction: column;
-
         p {
             color: @whiteColor;
         }
@@ -49,16 +45,8 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
-
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background-color: @blackColor;
-            opacity: 0.5;
-        }
+        background-color: #00000094;
+        background-blend-mode: color;
 
         p {
             background-color: @lightblueColor;
@@ -108,13 +96,29 @@
 // Start our-blog section //
 .our-blog {
     padding: @sectionPadding;
-
+    padding-top: 1rem;
     .our-container {
         .load-more {
-            .btn-blue {
                 border: 4px solid @whiteColor;
                 box-shadow: 0 0 0 2px @lightblueColor;
-            }
+        }
+    }
+
+    .our-list{
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 2px;
+            height: 99%;
+            background-color: #C0C0C0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -19px;
         }
     }
 
@@ -125,17 +129,30 @@
         align-items: flex-start;
         box-shadow: @shadowLight;
         border-radius: 10px;
-        margin-top: 2rem;
+        margin-top: 5rem;
         background-color: @whiteColor;
+        position: relative;
+        z-index: 1;
 
         img {
             width: 100%;
             height: 100%;
+            border-radius: 10px;
         }
-
-        p {
-            height: 55%;
-        }
+    }
+    .date {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 20px;
+        border: 2px solid #C0C0C0;
+        position: absolute;
+        width: 115px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: -60px;
+        background-color: @whiteColor;
     }
 
     .our-info {
@@ -151,6 +168,8 @@
             font-size: 13px;
             width: 48%;
             font-weight: bold;
+            margin-top: 0;
+            margin-right: auto;
 
             img {
                 width: 15px;
@@ -163,11 +182,15 @@
             width: 45%;
             font-size: 13px;
             font-weight: bold;
+            margin-top: 0;
         }
     }
 
     .dates {
         display: none;
+    }
+    .item-text{
+        margin-top: 0.5rem;
     }
 
 }
@@ -177,6 +200,7 @@
 // Start ideal section //
 .ideal {
     padding: @sectionPadding;
+    padding-top: 1rem;
 
     .heading {
         p {
@@ -196,7 +220,7 @@
         width: 70px;
         height: 70px;
         box-shadow: @shadowLight;
-        padding: 0.5rem;
+        padding: 0.8rem;
         margin-top: 1rem;
         border-radius: 10px;
         background-color: @whiteColor;

@@ -1,7 +1,19 @@
 @extends("layouts.master")
 
 @section("content")
-
+<style>
+    .ui-autocomplete .ui-autocomplete-category {
+  color: #000080;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+.ui-autocomplete .ui-menu-item {
+  padding: 3px;
+}
+</style>
 <section class="flex-container banner home-banner">
     
     <div class="container">
@@ -17,7 +29,7 @@
 
                         </p>
                         <div class="search">
-                            <input type="text" placeholder="Search your training course here....">
+                            <input type="text" class="auto-complete-course auto-redirect" placeholder="Search your training course here....">
                             <button>
                                 Search
                             </button>
@@ -36,7 +48,7 @@
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
                                 PRINCE training
-                                <span>prince training</span>
+                                <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
@@ -46,7 +58,7 @@
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
                                 PRINCE training
-                                <span>prince training</span>
+                                <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
@@ -172,9 +184,10 @@
                 </h2>
             </div>
             <div class="courses-list">
-                <div class="course-name">
-                    <span>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/management.svg')}}" alt="management">
+                        <img src="{{url('img/home/management-white.svg')}}" alt="management-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -187,13 +200,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/analysis.svg')}}" alt="analysis">
+                        <img src="{{url('img/home/analysis-white.svg')}}" alt="analysis-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -206,13 +220,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/improvement.svg')}}" alt="improvement">
+                        <img src="{{url('img/home/improvement-white.svg')}}" alt="improvement-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -225,13 +240,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
-                        <img src="{{url('img/home/it-service.svg')}}" alt="it-service">
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
+                        <img src="{{url('img/home/service.svg')}}" alt="service">
+                        <img src="{{url('img/home/service-white.svg')}}" alt="service-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -244,13 +260,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
-                        <img src="{{url('img/home/it-security.svg')}}" alt="it-security">
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
+                        <img src="{{url('img/home/security.svg')}}" alt="security">
+                        <img src="{{url('img/home/security-white.svg')}}" alt="security-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -263,13 +280,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/protection.svg')}}" alt="protection">
+                        <img src="{{url('img/home/protection-white.svg')}}" alt="protection-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -282,13 +300,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/applications.svg')}}" alt="applications">
+                        <img src="{{url('img/home/applications-white.svg')}}" alt="applications-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -301,13 +320,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/skills.svg')}}" alt="skills">
+                        <img src="{{url('img/home/skills-white.svg')}}" alt="skills-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -320,13 +340,14 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
-                <div class="course-name">
-                    <span>
+                    </span>
+                </a>
+                <a class="course-name">
+                    <span class="icon">
                         <img src="{{url('img/home/database.svg')}}" alt="database">
+                        <img src="{{url('img/home/database-white.svg')}}" alt="database-white">
                     </span>
                     <div class="name">
                         <h3>
@@ -339,10 +360,10 @@
                             10 Courses
                         </p>
                     </div>
-                    <a>
+                    <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </a>
-                </div>
+                    </span>
+                </a>
             </div>
             <div class="buttons">
                 <a class="btn-blue">
@@ -459,24 +480,32 @@
             </div>
             <div class="delivery-list">
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/classroom.svg')}}" alt="classroom">
                     <h3>Classroom Training</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/led.svg')}}" alt="led">
                     <h3>Online Instructor-Led</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/paced.svg')}}" alt="paced">
                     <h3>Online Self-Paced</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
                     <a href="">Enquire Now</a>
                 </div>
                 <div class="item">
+                    <div class="overlay">
+                    </div>
                     <img src="{{url('img/home/onsite.svg')}}" alt="onsite">
                     <h3>Onsite Training</h3>
                     <p>A variety of delivery methods are available depending on your learning preference.</p>
@@ -643,41 +672,15 @@
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                             when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
                         </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                    </div>
-                    <div class="reviews-inner">
-                        <p>
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
-                        </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                    </div>
-                    <div class="reviews-inner">
-                        <p>
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
-                        </p>
-                        <h3>
-                            Harsul Hisham
-                        </h3>
-                        <span>
-                            WEB DESIGNER
-                        </span>
-                        <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        <div class="author-name">
+                            <h3>
+                                Harsul Hisham
+                            </h3>
+                            <span>
+                                WEB DESIGNER
+                            </span>
+                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        </div>
                     </div>
                 </div>
 
@@ -713,4 +716,82 @@
 </div>
 
 
+@endsection
+@section('footerscripts')
+  <script>
+       $(".auto-complete-course").focus(function()
+    {
+      $(this).removeClass("error");
+      $(this).attr("placeholder","");
+    });
+    function getquery(elm)
+   {
+      var query = $(elm).prev().val();
+      if(query.length >= 1)
+         {window.location.href = window.origin+"/search?q="+query;}
+      $(elm).prev().attr("placeholder","Add Course to Search");
+      $(elm).prev().addClass("error");
+   }
+
+
+var autoCompleteCourseUrl = "{{route('courseAutoComplete')}}";
+$( function() {
+                 
+                  
+                  $.widget( "custom.catcomplete", $.ui.autocomplete, {
+                        _create: function() {
+                        this._super();
+                        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+                        },
+                        _renderMenu: function( ul, items ) {
+                              var that = this,
+                              currentTopic = "";
+                              console.log(items);
+                              $.each( items, function( index, item ) {
+                                    var li;
+                                    
+                                    if ( item.topic.name != currentTopic ) {
+                                          ul.append( "<li class='ui-autocomplete-category'>" + item.topic.name + "</li>" );
+                                          currentTopic = item.topic.name;
+                                    }
+                                    li = that._renderItemData( ul, item );
+                                    if ( item.topic.name ) {
+                                          li.attr( "aria-label", item.topic.name + " : " + item.label );
+                                    }
+                              });
+                        }
+
+                  } );
+                  $( ".auto-complete-course.auto-redirect" ).catcomplete({
+                        delay: 0,
+                        source: autoCompleteCourseUrl,
+                        select: function(event,ui)
+                        {
+                              location.href = ui.item.url;
+                        }
+                  });
+
+                  $(".auto-complete-course").catcomplete({
+                     source: function (request, response)
+                     {
+                           $.ajax(
+                           {
+                              global: false,
+                              source: autoCompleteCourseUrl,
+                              url: autoCompleteCourseUrl,
+                              dataType: "json",
+                              data:
+                              {
+                                 term: request.term
+                              },
+                              success: function (data)
+                              {
+                                 response(data);
+                              }
+                           });
+                     },
+                  });
+                  
+            } );
+    </script>  
 @endsection

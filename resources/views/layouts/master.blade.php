@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
    @yield('header')
 </head>
 <body>
@@ -87,12 +88,93 @@
     </footer>
 
 </body>
+<!--enquiry submit script start-->
+<script>
+    
+    var formValidationUrl = '{{ route("validateEnquiry") }}';
+    var formSubmitUrl = '{{ route("sendEnquiry") }}';
+
+    function EnquiryFormSubmit(formType, button) {
+        if (button != null) {
+            consentValidation = checkConsent(button);
+            if (consentValidation == false) {
+                return false;
+            }
+        }
+    }
+
+    function processEnquiry(formData)
+    {
+    
+        $.ajax({
+            url:formSubmitUrl,
+            data:formData,
+            type:"post",
+            global:false,
+            success:function(response){
+                
+            }
+        });
+    }
+
+    function submitEnquiry(formElement)
+    { 
+        console.log(formElement);
+        button = $(formElement).find('button').first();
+        event.preventDefault();
+        if (checkConsent(button) == false) {
+            return false;
+    }
+    
+    formData = $(formElement).serialize();
+    
+    console.log(formData);
+    $.ajax({
+        url:formValidationUrl,
+        data:formData,
+        type:"post",
+        beforeSend:function(){
+            $(formElement).find(".error").removeClass('error');
+            $(formElement).find("input,button").prop('disabled',true);
+        },
+        complete:function(){
+            $(formElement).find("input,button").prop('disabled',false);
+        },
+        success:function(response){
+            if(response == "done"){
+                
+                // $('#modal3').modal('show'); 
+                $(formElement).find('input').not('input[name="_token"],input[name="type"],input[name="url"]').val("");
+                $(formElement).find('textarea').val("");
+                $(formElement).find("input[type='checkbox']").attr("checked",false);
+
+                processEnquiry(formData);
+            }
+            else{
+                alert("failed");
+                return false;
+            }
+        },
+        error:function(err){
+            
+            $(formElement).find("button,input").attr('disabled',false);
+            errors = err.responseJSON.errors;
+
+            $.each(errors,function(index,value){
+                $(formElement).find("input[name='"+index+"']").addClass('error').attr('title',value[0]);
+            });
+            console.log(errors);
+        }
+    });
+    }
+</script>
+<!--enquiry submit script end-->
 <script>
     var countryjsonurl = "{{url('json/countries.json')}}";
   </script>
 <script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
 <script src="{{url('script/owl.carousel.min.js')}}"></script>
-
+<script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
 @yield('footerscripts')
