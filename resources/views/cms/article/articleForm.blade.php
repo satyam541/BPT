@@ -36,6 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              {{-- {{dd($article)}} --}}
               {{Form::model($article,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
                     
@@ -107,6 +108,11 @@
                   <div class="form-group">
                     {{Form::label('meta_keywords','Meta Keywords')}}
                     {{Form::text('meta_keywords',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('is_popular','Is Popular')}}
+                    <input type="checkbox" name="is_popular"@if($article->hasPopular!=null) checked @endif>
                   </div>
                   
                 </div>

@@ -86,12 +86,13 @@ class EnquiryController extends Controller
         $enquiry                        =   $enquiry->toArray();
         $enquiry['Url']                 =   $input['Url'] ?? null;
         $enquiry['searchTerm']          =   $input['searchTerm'] ?? null;
+        // dd($enquiry);
         if(config('app.env') != "local")
         {
             MakeJWTEnquiry($enquiry);
-            Mail::to($enquiry['email'])->send(new EnquiryMail($data['enquiry']));
-        //   Mail::to("saurav.sharma@theknowledgeacademy.com")->cc(["jyoti.tura@theknowledgeacademy.com","dheeraj.arora@theknowledgeacademy.com"])->send(new EnquiryMail($data['enquiry']));
+           
         }
+        Mail::to($enquiry['email'])->send(new EnquiryMail($data['enquiry']));
         // Mail::to($email)->cc(config('mail.from.address'))->send(new EnquiryMail($enquiry));
         Session::flash('message', 'Thank you Enquiry');
         // // return "done";
@@ -105,6 +106,6 @@ class EnquiryController extends Controller
 
     public function template()
     {
-        return view('email.enquiry');
+        return view('emails.enquiry');
     }
 }
