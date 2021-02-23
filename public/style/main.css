@@ -8416,3 +8416,207 @@ input::-webkit-inner-spin-button {
     padding: 4rem 0rem;
   }
 }
+.search-banner {
+  background-color: #1C2848;
+  background-color: #0064D8;
+}
+.search-banner .banner-container h1,
+.search-banner .banner-container p {
+  color: #FFFFFF;
+}
+.search-banner .banner-container .search {
+  background-color: #FFFFFF;
+  border-radius: 100px;
+  justify-content: space-between;
+  border: 2px solid white;
+  padding: 0;
+  margin-top: 1rem;
+}
+.search-banner .banner-container .search input {
+  width: 70%;
+  background-color: transparent;
+  box-shadow: none;
+}
+.search-banner .banner-container .search button {
+  width: 82px;
+  padding: 0.5rem;
+  background-color: #1C2848;
+  border-radius: 50px;
+  outline: none;
+  color: #FFFFFF;
+  border: none;
+}
+.search {
+  padding: 3rem 1.5rem;
+}
+.search .search-container {
+  display: flex;
+  flex-direction: column;
+}
+.search .search-list {
+  display: flex;
+  flex-direction: column;
+}
+.search .search-info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+.search .search-info span {
+  display: flex;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 13px;
+}
+.search .search-info span img {
+  height: 18px;
+  width: 18px;
+  margin-right: 0.5rem;
+}
+.search h3,
+.search p {
+  margin-top: 0.5rem;
+}
+.result {
+  padding: 3rem 1.5rem;
+  padding-top: 0!important;
+}
+.result .result-container {
+  display: flex;
+  flex-direction: column;
+}
+.result .result-list {
+  display: flex;
+  flex-direction: column;
+}
+.result .result-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  margin-top: 2rem;
+}
+.result .buttons {
+  flex-direction: column;
+}
+.result .btn-blue {
+  margin-bottom: 1rem;
+}
+.result .filter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem;
+}
+.result .filter h2 {
+  border-bottom: 2px solid #B7B7B7;
+  padding-bottom: 0.5rem;
+}
+.result .filter .search-catagories {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #B7B7B7;
+  padding-bottom: 1rem;
+}
+.result .filter .search-catagories:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.result .filter p {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.result .filter li {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.result .filter input {
+  margin-right: 0.5rem;
+  border: 1px solid #0064D8;
+  border-radius: 0;
+}
+@media (min-width : 768px) {
+  .search-banner {
+    padding-top: 1rem!important;
+  }
+  .search-banner .search {
+    width: 65%;
+  }
+  .search {
+    padding: 3rem 2rem;
+  }
+  .search .search-list {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .search .search-info {
+    width: 48%;
+  }
+  .result {
+    padding: 3rem 2rem;
+  }
+  .result .result-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .result .result-list {
+    width: 60%;
+  }
+  .result .buttons {
+    flex-direction: row;
+  }
+  .result .btn-blue {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+  .result .filter {
+    width: 32%;
+    align-self: flex-start;
+    position: sticky;
+    top: 70px;
+    height: fit-content;
+  }
+}
+@media (min-width : 1024px) {
+  .search-banner {
+    background-color: transparent;
+    background-image: url(../img/search/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .search-banner .banner-container {
+    width: 50%;
+  }
+  .search-banner .search {
+    width: 100%;
+  }
+  .search .search-info {
+    width: 23%;
+  }
+}
+@media (min-width : 1366px) {
+  .search-banner {
+    padding: 4rem 0rem;
+  }
+  .search {
+    padding: 4rem 0rem;
+  }
+  .search .search-list {
+    justify-content: space-between;
+  }
+  .result {
+    padding: 4rem 0rem;
+  }
+  .result .result-list {
+    width: 65%;
+  }
+  .result .filter {
+    width: 24%;
+  }
+}
