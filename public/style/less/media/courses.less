@@ -1,4 +1,47 @@
 @media @size-md{
+    // Start Banner section //
+    .courses-banner {
+        .banner-container {
+            .banner-content {
+                width: 100%;
+            }
+        }
+        .banner-points {
+            ul {
+                li {
+                    width: 47%;
+                }
+            }
+        }
+    }
+    // End Banner section //
+
+    // Start Foundation Section
+    .foundation {
+        padding: @sectionPadding-md;
+        .tab-links {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .tab-click {
+                width: 46%;
+                &:first-child {
+                    margin-top: 3rem;
+                }
+            }
+        }
+        .included-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .included-content {
+            width: 24%;
+            margin-bottom: 0;
+        }
+    }
+    // End Foundation Section
+
     // Start Unable Section
     .unable {
         padding: @sectionPadding-md;
@@ -117,9 +160,163 @@
         }
     }
     // End Related Section
+
+    // Start Popular-Location Section
+    .popular-location {
+        padding: @sectionPadding-md;
+        .popular-content {
+            background-color: transparent;
+            padding: 4.5rem 4rem;
+            background-image: url(../img/courses/largest-bg.png);
+            background-repeat: no-repeat;
+            background-size: 96% 100%;
+            box-shadow: none;
+            width: 60%;
+            align-self: center;
+            position: relative;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                height: 380px;
+                width: 360px;
+                background-image: url(../img/courses/polygon-blue.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                top: -23px;
+                left: 23px;
+                animation: rotate 15s linear infinite;
+            }
+        }
+        .location-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content {
+            width: 44%;
+            .image {
+                margin-right: 1rem;
+            }
+            h3 {
+                width: calc(100% - 100px);
+            }
+            .arrow {
+                transform: translateX(34px);
+            }
+        }
+    }
+    // End Popular-Location Section
 }
 
 @media @size-lg{
+
+    // Start Banner section //
+    .courses-banner {
+        background: none;
+        background-image: url(../img/courses/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: @shadowLight;
+        .banner-container {
+            flex-direction: row;
+            justify-content: space-between;
+            .banner-content {
+                width: 46%;
+                h1,p {
+                    color: @blackColor;
+                }
+            }
+        }
+        .banner-points {
+            width: 38%;
+            margin-top: 0;
+            align-items: center;
+            h2 {
+                text-align: center;
+            }
+            ul {
+                li {
+                    width: 47%;
+                }
+            }
+        }
+        .breadcrums {
+            margin-bottom: 1rem;
+            ul {
+                li {
+                    color: @lightblueColor;
+                    &:last-child {
+                        color: @blackColor;
+                    }
+                }
+            }
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
+        }
+    }
+    // End Banner section //
+
+    // Start Foundation Section
+    .foundation {
+        .tabs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .tab-links {
+            flex-direction: column;
+            justify-content: center;
+            width: 27%;
+            align-self: flex-start;
+            .tab-click {
+                width: 100%;
+            }
+        }
+        .tab-content {
+            width: 65%;
+            margin-top: 0 !important;
+        }
+        #overview {
+            background-color: @whiteColor;
+            box-shadow: @shadowLight;
+            padding: 1rem 2rem;
+            position: relative;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                height: 60px;
+                width: 60px;
+                background-image: url(../img/courses/dotted-box.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        #included {
+            .heading {
+                display: flex;
+                align-items: flex-start;
+                &::before {
+                    right: initial;
+                }
+                h2 {
+                    text-align-last: left;
+                }
+            }
+        }
+        .included-content {
+            width: 22%;
+            margin-bottom: 0;
+        }
+    }
+    // End Foundation Section
+
     // Start Unable Section
     .unable {
         p {
@@ -184,11 +381,28 @@
         .content {
             width: 33%;
             margin-top: 0;
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: -55px;
+                left: 130px;
+                background-image: url(../img/courses/curved-arrow.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 54px;
+                width: 90px;
+            }
             &:nth-child(2) {
-                transform: translateY(-45px);
+                transform: translateY(-35px);
             }
             &:last-child {
-                transform: translateY(-73px);
+                transform: translateY(-72px);
+                &::before {
+                    content: none;
+                }
             }
         }
     }
@@ -277,9 +491,71 @@
     }
     // End Related Section
 
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .popular-content {
+            width: 40%;
+            align-self: flex-start;
+            &::before {
+                width: 330px;
+                top: -23px;
+                left: 20px;
+            }
+        }
+        .location-content {
+            margin-top: 0;
+            width: 60%;
+        }
+    }
+    // End Popular-Location Section
+
 }
 
 @media @size-xl{
+
+    // Start Foundation Section
+    .foundation {
+        padding: @sectionPadding-xl;
+        .tabs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .tab-links {
+            flex-direction: column;
+            justify-content: center;
+            width: 27%;
+            align-self: flex-start;
+            .tab-click {
+                width: 100%;
+            }
+        }
+        .tab-content {
+            width: 65%;
+            margin-top: 0 !important;
+        }
+        #included {
+            .heading {
+                display: flex;
+                align-items: flex-start;
+                &::before {
+                    right: initial;
+                }
+                h2 {
+                    text-align-last: left;
+                }
+            }
+        }
+        .included-content {
+            width: 22%;
+            margin-bottom: 0;
+        }
+    }
+    // End Foundation Section
+
     // Start Unable Section
     .unable {
         padding: @sectionPadding-xl;
@@ -363,4 +639,19 @@
         }
     }
     // End Related Section
+
+    // Start Popular-Location Section
+    .popular-location {
+        padding: @sectionPadding-xl;
+        .popular-content {
+            width: 30%;
+            &::before {
+                left: 30px;
+            }
+        }
+        .location-content {
+            width: 65%;
+        }
+    }
+    // End Popular-Location Section
 }

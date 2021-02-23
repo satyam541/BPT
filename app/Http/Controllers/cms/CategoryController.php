@@ -76,14 +76,18 @@ class CategoryController extends Controller
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
-
         $category->save();
+        if($request->has('is_popular'))
+        {
+            $category->popular()->save($category->popular);
+        }
         
         return redirect()->route('categoryList')->with('success','Successfully Added');
     }
 
-    public function edit(Category $category)
+    public function edit($category)
     {
+        $category = Category::with('hasPopular')->find($category);
         $this->authorize('update', $category);
         $data['category']    = $category;
         $data['submitRoute'] = array('updateCategory',$category->id);
@@ -114,8 +118,15 @@ class CategoryController extends Controller
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
-        
         $category->save();
+        if($request->has('is_popular'))
+        {
+            $category->popular()->save($category->popular);
+        }
+        else if($category->isPopular())
+        {
+            $category->popular->delete();
+        }
         
         return redirect()->route('categoryList')->with('success','Successfully Updated');
     }
@@ -322,14 +333,14 @@ class CategoryController extends Controller
    public function restoreCategory($id)
    {
        $this->authorize('restore', new Category());
-       $category = Category::onlyTrashed()->where('id',$id)->restore();
+       $category = Category::withTrashed()->find($id)->restore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
        $this->authorize('forceDelete', new Category());
-       $category = Category::onlyTrashed()->where('id',$id)->forceDelete();
+       $category = Category::onlyTrashed()->find($id)->forceDelete();
        return back()->with('success','Permanently Deleted');
    }
 }

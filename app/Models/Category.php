@@ -120,7 +120,9 @@ class Category extends Model
     {
         return $this->courses()->has('popular');
     }
-
+    public function hasPopular(){
+        return $this->morphOne('App\Models\Popular', 'module'); 
+    }
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
@@ -128,6 +130,7 @@ class Category extends Model
             "display_order" => Popular::categories()->count()+1]
         );
     }
+   
 
     public function delete()
     {
@@ -145,10 +148,10 @@ class Category extends Model
 
     public function restore()
     {
-        $this->content()->restore();
-        $this->Bulletpoint()->restore();
-        $this->faqs()->restore();
-        $this->whatIncludes()->restore();
+        $this->content()->withTrashed()->restore();
+        $this->Bulletpoint()->withTrashed()->restore();
+        $this->faqs()->withTrashed()->restore();
+        $this->whatIncludes()->withTrashed()->restore();
         return parent::restore();
     }
 

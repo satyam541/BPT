@@ -36,7 +36,7 @@ class ScheduleController extends ScheduleApi
 
     public function list(Request $request)
     {
-      // $this->authorize('view', new Schedule());
+      $this->authorize('view', new Schedule());
       // use when instead of if else statement here
       $schedules = Schedule::with('course','location')->where('source','API')->get();
       
@@ -45,7 +45,7 @@ class ScheduleController extends ScheduleApi
 
     public function create()
     {
-      // $this->authorize('create', new Schedule());
+      $this->authorize('create', new Schedule());
       $data["schedule"]     = new Schedule();
       $data["submitRoute"]  = "insertSchedule";
 
@@ -61,7 +61,7 @@ class ScheduleController extends ScheduleApi
 
     public function insert(ScheduleRequest $request)
     {
-      // $this->authorize('create', new Schedule());
+      $this->authorize('create', new Schedule());
       $inputs   = $request->all();
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
@@ -94,7 +94,7 @@ class ScheduleController extends ScheduleApi
 
     public function edit(Schedule $schedule)
     {
-      // $this->authorize('update', $schedule);
+      $this->authorize('update', $schedule);
       $data['schedule']         = $schedule;
       $data['response_location']=$schedule->location();
       $data["submitRoute"]      = array("updateSchedule",$schedule->id);
@@ -112,7 +112,7 @@ class ScheduleController extends ScheduleApi
 
     public function update(ScheduleRequest $request,Schedule $schedule)
     { 
-      // $this->authorize('update', $schedule);
+      $this->authorize('update', $schedule);
       $inputs   = $request->all();
 
       $course   = Course::find($inputs['course_id']);
@@ -190,7 +190,7 @@ class ScheduleController extends ScheduleApi
       return view('cms.schedule.manageSchedulePrice',$data);
     }
 
-    public function updateCustomPrice(Request $request,$courseId, $venue = null)
+    public function updateCustomPrice(Request $request,$courseId, $venue=null)
     {
       $input = $request->all();
       $customize = CustomSchedulePrice::firstOrNew(array('course_id'=>$courseId,'venue_id'=>$venue));

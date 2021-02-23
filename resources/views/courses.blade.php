@@ -1,6 +1,205 @@
 @extends("layouts.master")
 @section("content")
 
+<!-- Start Banner Section -->
+<section class="flex-container banner courses-banner">
+    <div class="container">
+        @include("layouts.navbar")
+        <div class="banner-container">
+            <div class="banner-content">
+                <h1>PRINCE2® Foundation And Practitioner </h1>
+                <div class="breadcrums">
+                    <ul>
+                        <li><a href="javascript:void(0);">Home</a></li>
+                        <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                        <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                        <li><a href="javascript:void(0)">PRINCE2® Training</a></li>
+                        <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                        <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                        <li><a href="javascript:void(0)">PRINCE2® Foundation and Practitioner</a></li>
+                    </ul>
+                </div>
+                <p>It is widely used by the UK government as well as internationally and in private sector. PRINCE2® Foundation and Practitioner is a combined course which helps you to achieve both the PRINCE2® Foundation and PRINCE2® Practitioner certifications.</p>
+            </div>
+            <div class="banner-points">
+                <h2>Key Points</h2>
+                <ul>
+                    <li>Duration: 5 Days*</li>
+                    <li>Certificate(s): Included</li>
+                    <li>Exam(s): Included</li>
+                    <li>Support: 24/7</li>
+                </ul>
+                <div class="buttons">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <img src="{{url('img/courses/email.svg')}}" alt="email">Enquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Section -->
+
+<!-- Start Foundation Section -->
+<section class="flex-container foundation">
+    <div class="container">
+        <div class="foundation-container">
+            <div class="heading">
+                <h2>PRINCE2® Foundation <span>And Practitioner</span></h2>
+            </div>
+            <div class="tabs-container">
+                <ul class="tab-links">
+                    <li class="tab-click" data-target="overview">
+                        <span class="image">
+                            <img src="{{url('img/courses/overview.svg')}}" alt="overview">
+                        </span>
+                        <p class="tab">
+                        Overview
+                        </p>
+                        <div class="number">01</div>
+                    </li>
+
+                    <li class="tab-click" data-target="course">
+                        <span class="image">
+                            <img src="{{url('img/courses/content.svg')}}" alt="content">
+                        </span>
+                        <p class="tab">
+                        Course Content
+                        </p>
+                        <div class="number">02</div>
+                    </li>
+
+                    <li class="tab-click" data-target="faq">
+                        <span class="image">
+                            <img src="{{url('img/courses/faq.svg')}}" alt="faq">
+                        </span>
+                        <p class="tab">
+                        FAQs
+                        </p>
+                        <div class="number">03</div>
+                    </li>
+
+                    <li class="tab-click" data-target="included">
+                        <span class="image">
+                            <img src="{{url('img/courses/included.svg')}}" alt="included">
+                        </span>
+                        <p class="tab">
+                        What's Included
+                        </p>
+                        <div class="number">04</div>
+                    </li>
+                </ul>
+                <div class="tab-content" id="overview">
+                    <h2>Course Overview</h2>
+                    <p>PRINCE2 2017 is now available! This PRINCE2 Foundation and Practitioner is a combined training course based on the 2017 syllabus, which enables delegates to attain the full certification all at once. Both the Foundation and Practitioner exam is included with this PRINCE2 training course. PRINCE2® is a product or process based approach used for management of almost all types of projects. This PeopleCert accredited training course introduces delegates to various project management methodologies and provides a thorough understanding of roles, principles, processes and themes that form the structure of PRINCE2®.</p>
+                    <ul>
+                        <li>Holding PRINCE2® Foundation and Practitioner certification allows you to excel in your career and make use of upcoming opportunities.</li>
+                        <li>Learn thoroughly about the importance of this methodology and other related theoretical concepts in the Foundation level and then its practical applications in the Practitioner level.</li>
+                        <li>By considering the factors involved in any project like costs, timescales, quality, scope, risk and benefits allows the project manager to address planning, monitoring and deploying projects by making use of PRINCE2® framework and themes.</li>
+                    </ul>
+                    <h2>PRINCE2 Foundation and Practitioner Training Course Structure</h2>
+                    <p>The duration of the training course is five days.</p>
+                    <p>The training course is split into two sections:</p>
+                    <p>During the first three days, delegates will prepare for and complete the PRINCE2 Foundation exam.</p>
+                    <p>During the final two days, delegates will prepare for and complete the PRINCE2 Practitioner exam.</p>
+                    <div class="buttons">
+                        <a href="javascript:void(0);" class="btn-blue">
+                            Show More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="faq">
+                    <div class="heading">
+                        <h2>Frequently Asked <span>Questions</span></h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="ques">
+                            <h3>What is Tableau? </h3>
+                            <span>
+                            </span>
+                            </div>
+                            <div class="ans">
+                            <p>Tableau software is the fastest adopted data visualisation tool whose purpose is to help users to
+                                see raw data and converts into an exact format.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="ques">
+                            <h3>What are the benefits of Tableau for data visualisation?</h3>
+                            <span>
+                            </span>
+                            </div>
+                            <div class="ans">
+                            <p>There are various benefits of Tableau for data visualisation, such as high performance, easy usage,
+                                unique visualisation capabilities, multiple data source connections, mobile-friendly, and more.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="ques">
+                            <h3>What is the scope of Tableau software?</h3>
+                            <span>
+                            </span>
+                            </div>
+                            <div class="ans">
+                            <p>Nowadays, Tableau software is developing as the trend for professionals in Business Intelligence.
+                                Tableau experience is necessary for the data visualisation tool as it is gaining more popularity in
+                                all kinds of businesses.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="ques">
+                            <h3>What will you learn in The Knowledge Academy's Tableau course?</h3>
+                            <span>
+                            </span>
+                            </div>
+                            <div class="ans">
+                            <p>In Tableau Training course, you will learn various basic and advanced concepts such as introduction
+                                to Tableau software, features and benefits, data analysis and extraction, Tableau desktop role, and
+                                how to use joins in this software.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="included">
+                    <div class="heading center-heading">
+                        <h2>What's Included <span>Us</span></h2>
+                    </div>
+                    <div class="included-list">
+                            <div class="included-content">
+                                <span>
+                                    <img src="{{url('img/courses/exam.svg')}}" alt="exam">
+                                </span>
+                                <h3>Exam Included</h3>
+                            </div>
+                            <div class="included-content">
+                                <span>
+                                    <img src="{{url('img/courses/tutor.svg')}}" alt="tutor">
+                                </span>
+                                <h3>Tutor Support</h3>
+                            </div>
+                            <div class="included-content">
+                                <span>
+                                    <img src="{{url('img/courses/points.svg')}}" alt="points">
+                                </span>
+                                <h3>Key Learning Points</h3>
+                            </div>
+                            <div class="included-content">
+                                <span>
+                                    <img src="{{url('img/courses/certificate.svg')}}" alt="certificate">
+                                </span>
+                                <h3>Certificates</h3>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Foundation Section -->
+
 <!-- Start Unable Section -->
 <section class="flex-container unable">
     <div class="container">
@@ -16,6 +215,55 @@
     </div>
 </section>
 <!-- End Unable Section -->
+
+<!-- Start Training Section -->
+<section class="flex-container training">
+    <div class="container">
+        <div class="training-container">
+            <div class="heading center-heading">
+                <h2>PRINCE2® Foundation And Practitioner <span>Training Calender</span></h2>
+            </div>
+            <div class="filter-top">
+                <div class="heading">
+                    <h2>Filters</h2>
+                </div>
+                <form class="form">
+                    <div class="select-dropdown">
+                        <p>Select Your Course:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Choose a Location:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Select a Delivery Format:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="buttons">
+                <a href="javascript:void(0);" class="btn-blue">Explore Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Training Section -->
 
 <!-- Start Virtual Section -->
 <section class="flex-container virtual">
@@ -286,5 +534,83 @@
     </div>
 </div>
 <!-- End Related Section -->
+
+<!-- Start Popular-Location Section -->
+<section class="flex-container popular-location">
+    <div class="popular-container">
+        <div class="popular-content">
+            <h2>Largest  Location</h2>
+            <p>Southampton is the largest city located in England. The city is situated 69 miles south-west of London and 15 miles west north-west of Portsmouth. Southampton is the main port and neigh bouring city.</p>
+            <div class="buttons">
+            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                <img src="{{url('img/courses/learn.svg')}}" alt="learn">
+                Learn More
+            </a>
+            </div>
+        </div>
+        <div class="location-content">
+            <div class="heading">
+                <h2>Find The Most Convenient <span>Location For You</span></h2>
+            </div>
+            <div class="location-list">
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>London</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>Birminghamon</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>Manchester</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>Cardiff</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>Bristol</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+                <div class="content">
+                    <span class="image">
+                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                    </span>
+                    <h3>Leeds</h3>
+                    <span class="arrow">
+                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Popular-Location Section -->
 
 @endsection

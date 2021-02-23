@@ -1,7 +1,19 @@
 @extends("layouts.master")
 
 @section("content")
-
+<style>
+    .ui-autocomplete .ui-autocomplete-category {
+  color: #000080;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+.ui-autocomplete .ui-menu-item {
+  padding: 3px;
+}
+</style>
 <section class="flex-container banner home-banner">
     
     <div class="container">
@@ -9,15 +21,11 @@
             <div class="banner-container">
                 <div class="banner-content">
                         <h1>
-                            Whatever Your Training Needs, Find Your Ideal Course with Us
+                            {!!$pageDetail->banner['banner-content']->heading!!}
                         </h1>
-                        <p>
-                            Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. 
-                            Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.
-
-                        </p>
+                        <p>{!!$pageDetail->banner['banner-content']->content!!}</p>
                         <div class="search">
-                            <input type="text" placeholder="Search your training course here....">
+                            <input type="text" class="auto-complete-course auto-redirect" placeholder="Search your training course here....">
                             <button>
                                 Search
                             </button>
@@ -172,186 +180,34 @@
                 </h2>
             </div>
             <div class="courses-list">
+                @foreach ($categories->take(9) as $category)
+
                 <a class="course-name">
                     <span class="icon">
-                        <img src="{{url('img/home/management.svg')}}" alt="management">
-                        <img src="{{url('img/home/management-white.svg')}}" alt="management-white">
+                        <img src="{{$category->getImagePath()}}" alt="management">
+                        <img src="{{$category->getIconPath()}}" alt="management-white">
                     </span>
                     <div class="name">
                         <h3>
-                            Project Management
+                            {{$category->name}}
                         </h3>
                         <p>
-                            5 Topics
+                            {{$category->topics->count()}} Topics
                         </p>
+                        @foreach ($category->topics as $topic)
+                        @php $totalCourses+=$topic->courses->count() @endphp
+                    @endforeach
                         <p>
-                            10 Courses
+                            {{$totalCourses}} Courses
                         </p>
                     </div>
                     <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
                     </span>
                 </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/analysis.svg')}}" alt="analysis">
-                        <img src="{{url('img/home/analysis-white.svg')}}" alt="analysis-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Business Analysis
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/improvement.svg')}}" alt="improvement">
-                        <img src="{{url('img/home/improvement-white.svg')}}" alt="improvement-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                        Business Improvement
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/service.svg')}}" alt="service">
-                        <img src="{{url('img/home/service-white.svg')}}" alt="service-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            IT Service Management
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/security.svg')}}" alt="security">
-                        <img src="{{url('img/home/security-white.svg')}}" alt="security-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                        IT Security
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/protection.svg')}}" alt="protection">
-                        <img src="{{url('img/home/protection-white.svg')}}" alt="protection-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Data Protection
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/applications.svg')}}" alt="applications">
-                        <img src="{{url('img/home/applications-white.svg')}}" alt="applications-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Office Applications
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/skills.svg')}}" alt="skills">
-                        <img src="{{url('img/home/skills-white.svg')}}" alt="skills-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Business Skills
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/database.svg')}}" alt="database">
-                        <img src="{{url('img/home/database-white.svg')}}" alt="database-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Programming & Database
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
+                    
+                @endforeach
+
             </div>
             <div class="buttons">
                 <a class="btn-blue">
@@ -704,4 +560,82 @@
 </div>
 
 
+@endsection
+@section('footerscripts')
+  <script>
+       $(".auto-complete-course").focus(function()
+    {
+      $(this).removeClass("error");
+      $(this).attr("placeholder","");
+    });
+    function getquery(elm)
+   {
+      var query = $(elm).prev().val();
+      if(query.length >= 1)
+         {window.location.href = window.origin+"/search?q="+query;}
+      $(elm).prev().attr("placeholder","Add Course to Search");
+      $(elm).prev().addClass("error");
+   }
+
+
+var autoCompleteCourseUrl = "{{route('courseAutoComplete')}}";
+$( function() {
+                 
+                  
+                  $.widget( "custom.catcomplete", $.ui.autocomplete, {
+                        _create: function() {
+                        this._super();
+                        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+                        },
+                        _renderMenu: function( ul, items ) {
+                              var that = this,
+                              currentTopic = "";
+                              console.log(items);
+                              $.each( items, function( index, item ) {
+                                    var li;
+                                    
+                                    if ( item.topic.name != currentTopic ) {
+                                          ul.append( "<li class='ui-autocomplete-category'>" + item.topic.name + "</li>" );
+                                          currentTopic = item.topic.name;
+                                    }
+                                    li = that._renderItemData( ul, item );
+                                    if ( item.topic.name ) {
+                                          li.attr( "aria-label", item.topic.name + " : " + item.label );
+                                    }
+                              });
+                        }
+
+                  } );
+                  $( ".auto-complete-course.auto-redirect" ).catcomplete({
+                        delay: 0,
+                        source: autoCompleteCourseUrl,
+                        select: function(event,ui)
+                        {
+                              location.href = ui.item.url;
+                        }
+                  });
+
+                  $(".auto-complete-course").catcomplete({
+                     source: function (request, response)
+                     {
+                           $.ajax(
+                           {
+                              global: false,
+                              source: autoCompleteCourseUrl,
+                              url: autoCompleteCourseUrl,
+                              dataType: "json",
+                              data:
+                              {
+                                 term: request.term
+                              },
+                              success: function (data)
+                              {
+                                 response(data);
+                              }
+                           });
+                     },
+                  });
+                  
+            } );
+    </script>  
 @endsection

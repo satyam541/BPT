@@ -89,6 +89,11 @@
                                     {{ Form::checkbox('published') }}
                                 </div>
 
+                                <div class="form-group">
+                                    {{Form::label('is_popular','Is Popular')}}
+                                    <input type="checkbox" name="is_popular"@if($category->hasPopular!=null) checked @endif>
+                                </div>
+
                             </div>
                             <!-- /.card-body -->
 

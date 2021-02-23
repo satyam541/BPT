@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
-  {{-- <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}"> --}}
+  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -165,13 +165,13 @@
          
           <li class="nav-header">Resources</li>
 
-                   <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse']))
+          <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
           @endif>
             <a href="#" class="nav-link">
-              <i class="fa fa-unlink"></i>
+              <i class="nav-icon fa fa-unlink"></i>
               <p>
                 Unlinked Data
                 <i class="fas fa-angle-left right"></i>
@@ -259,6 +259,38 @@
                 <a href="{{Route('accreditationList')}}" @if(Route::currentRouteName()=='accreditationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accreditation</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList']))
+          class="nav-item has-treeview menu-open"
+          @else
+          class="nav-item has-treeview"
+          @endif>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-certificate"></i>
+              <p>
+                Certifications
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>
+                    Category
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('certificationCourseList')}}"@if(Route::currentRouteName()=='certificationCourseList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>
+                    Courses
+                  </p>
                 </a>
               </li>
             </ul>
@@ -451,7 +483,7 @@
               </li>
             </ul>
           </li>
-          <li @if(in_array(Route::currentRouteName(),['WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          <li @if(in_array(Route::currentRouteName(),['certificationTrashList','WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -480,6 +512,12 @@
                 <a href="{{Route('locationTrashList')}}" @if(Route::currentRouteName()=='locationTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Location List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('certificationTrashList')}}" @if(Route::currentRouteName()=='certificationTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Certification List</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -634,7 +672,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE select 2 -->
-{{-- <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script> --}}
+<script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
 <script src="{{url('cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
@@ -718,6 +756,7 @@ $.widget.bridge('uibutton', $.ui.button)
     
         $(".selectJS").select2({
             width:'100%',
+
             // placeholder:'Choose one',
         });
 
