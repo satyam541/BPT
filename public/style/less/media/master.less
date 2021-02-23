@@ -297,7 +297,6 @@
     .footer{
       background: linear-gradient(0deg, @darkblueColor 80%, @whiteColor 48%);
       padding-top: 0;
-    
       .content{
           width: 25%;
           padding-right: 1.2rem;
@@ -315,6 +314,12 @@
           padding: 0rem 2rem;
           padding-top: 5rem;
           padding-bottom: 2rem;
+      }
+      .links{
+        width: 23%;
+      }
+      .blog{
+        width: 27%;
       }
   }
     //End footer
@@ -376,13 +381,17 @@
           padding-bottom: 3rem;
 
       }
-      .links,.blog{
-          width: 20%;
-      }
       .links{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: 20%;
+        a{
+          width: 100%;
+        }
+      }
+      .blog{
+        width: 25%;
       }
       .contact-us{
           align-items: center;

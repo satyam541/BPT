@@ -263,7 +263,11 @@ if(!function_exists('heading_split'))
     {
         $string=trim($str);
         $name = explode(" ", $string);
-        $position=(count($name)/2)+1;
+        
+        $position=(count($name)/2);
+        if ($position >= 2) {
+            $position= $position+1;
+        }
         $position=ceil($position);
         $array1 = array_slice($name, 0,$position);
         $result=array_diff($name,$array1);

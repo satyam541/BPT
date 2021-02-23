@@ -83,6 +83,7 @@ class TopicController extends Controller
         $data['editbulletpointroute']='topicEditBulletPoint';
         $data['deletebulletpointroute']='topicDeleteBulletPoint';
         $data['insertbulletpointroute']='topicCreateBulletPoint';
+        $data['type']   ='topic';
         $data['module'] = Topic::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
@@ -90,6 +91,8 @@ class TopicController extends Controller
     public function createBulletPoint(Request $request)
     {
         $data['result']         = new BulletPoint;
+        $data['type']           = 'topic';
+        $data['module_id']      = $request->module;
         $data['submitRoute']    = ['topicInsertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -112,6 +115,8 @@ class TopicController extends Controller
     public function editBulletPoint($id)
     {
         $data['result']         = BulletPoint::find($id);
+        $data['type']           = 'topic';
+        $data['module_id']      = $data['result']->module_id;
         $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -129,7 +134,7 @@ class TopicController extends Controller
              $url = route('courseList');
              return redirect($url,302);
          }
-         $data['module'] = 'Topic';
+         $data['module'] = 'topic';
          $data['result'] = Topic::with('whatsIncluded')->find($id);
          $data['deletewhatsincludedroute']='topicDeleteWhatsincluded';
          $data['insertwhatsincludedroute']='topicCreateWhatsincluded';
@@ -148,7 +153,7 @@ class TopicController extends Controller
          $topics = Topic::all();
          $course = $topics->where('id', $topic_id)->first();
          $data['course'] = $course;
-         $data['module'] = 'Topic';
+         $data['module'] = 'topic';
          $data['list'] = $topics->pluck('name','id')->toArray();
          $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
          $data['whatsincluded'] = new whatsincluded();
