@@ -30,7 +30,7 @@ class EnquiryMail extends Mailable
     public function build()
     {
         $data['enquiry']    = $this->enquiry;
-        return $this->subject('Thanks For Your Enquiry')->view('email.enquiry',$data);
+        return $this->subject('Thanks For Your Enquiry')->view('emails.enquiry',$data);
         // return $this->subject('Enquiry Mail')
         // ->from('arorad750@gmail.com')
         // ->to('arorad750@gmail.com')->view('contactmail');

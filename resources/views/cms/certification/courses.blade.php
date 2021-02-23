@@ -43,19 +43,26 @@
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th> Certification Name</th>
+                                            <th> Course Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- {{dd($certifications)}} --}}
+                                        
                                         @foreach ($courses as $course)
                                             <tr>
+                                                @foreach ($course->certifications as $certification)
+                                                    {{-- {{dd($certifications)}} --}}
+                                                    <td>{{ $certification->name }}</td>
+                                                @endforeach
                                                 <td>{{ $course->name  }}</td>
+                                                
+                                                
                                                 <td>
                                                     <a href="{{Route('editCourse',['course'=>$course->id])}}" class="fa fa-edit"></a>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$course->id])}}')" class="fa fa-trash" style="color: red"></a>
+                                                    {{-- &nbsp;&nbsp;&nbsp;
+                                                    <a href="" onclick="deleteItem('{{ route('deleteCourse',['course'=>$course->id])}}')" class="fa fa-trash" style="color: red"></a> --}}
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -85,7 +92,10 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [{
-                        "name": "Name"
+                        "name": "Certification Name"
+                    },
+                    {
+                        "name": "Course Name"
                     },
                     {
                         "name": "Actions",

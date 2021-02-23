@@ -209,9 +209,10 @@ class CourseController extends Controller
         return redirect()->back();
     }
 
-    public function edit(Course $course)
+    public function edit($course)
     {
         // $this->authorize('update', $course);
+        $course = Course::with('hasPopular')->find($course);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -303,8 +304,8 @@ class CourseController extends Controller
    }
    public function restoreCourse($id)
    {
-        $course= Course::onlyTrashed()->find($id);
-        $this->authorize('restore', $course);
+        $course= Course::onlyTrashed()->where('id',$id);
+        // $this->authorize('restore', $course);
         $course->restore();
         return back()->with('success','Successfully Restored');
 

@@ -85,6 +85,11 @@ class Location extends Model
             "display_order" => Popular::locations()->count()+1]
         );
     }
+
+    public function hasPopular()
+    {
+        return $this->morphOne('App\Models\Popular', 'module');
+    }
     
     public function delete()
     {

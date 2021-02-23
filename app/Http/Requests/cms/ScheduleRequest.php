@@ -26,19 +26,19 @@ class ScheduleRequest extends FormRequest
         if(FormRequest::route()->uri == 'cms/schedule/update/{scheduleid}')
         {
             return [
-                'fk_venueId'    =>  'required',
-                'responseDate'  =>  'required',
-                'eventPrice'    =>  'required',
-                'duration'      =>  'required'
+                'fk_venueId'     =>  'required',
+                'response_date'  =>  'required',
+                'event_price'    =>  'required',
+                'duration'       =>  'required'
             ];
         }
         else{
             return [
-                'courseList'    =>  'required',
-                'venueList'     =>  'required',
-                'responseDate'  =>  'required',
-                'eventPrice'    =>  'required',
-                'eventTime'     =>  'required'
+                'course_id'      =>  'required',
+                'country_id'     =>  'required',
+                'response_date'  =>  'required',
+                'event_price'    =>  'required',
+                'event_time'     =>  'required'
             ];
         }
     }

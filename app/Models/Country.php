@@ -103,7 +103,8 @@ class Country extends Model
 
     public function restore()
     {
-        $this->locations()->restore();
+        $this->locations()->withTrashed()->restore();
+      
         return parent::restore();
     }
 }
