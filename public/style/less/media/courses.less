@@ -17,9 +17,8 @@
     // End Banner section //
 
     // Start Foundation Section
-.foundation {
-    padding: @sectionPadding-md;
-    .foundation-container {
+    .foundation {
+        padding: @sectionPadding-md;
         .tab-links {
             flex-direction: row;
             flex-wrap: wrap;
@@ -41,8 +40,7 @@
             margin-bottom: 0;
         }
     }
-}
-// End Foundation Section
+    // End Foundation Section
 
     // Start Unable Section
     .unable {
@@ -263,6 +261,62 @@
     }
     // End Banner section //
 
+    // Start Foundation Section
+    .foundation {
+        .tabs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .tab-links {
+            flex-direction: column;
+            justify-content: center;
+            width: 27%;
+            align-self: flex-start;
+            .tab-click {
+                width: 100%;
+            }
+        }
+        .tab-content {
+            width: 65%;
+            margin-top: 0 !important;
+        }
+        #overview {
+            background-color: @whiteColor;
+            box-shadow: @shadowLight;
+            padding: 1rem 2rem;
+            position: relative;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                height: 60px;
+                width: 60px;
+                background-image: url(../img/courses/dotted-box.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        #included {
+            .heading {
+                display: flex;
+                align-items: flex-start;
+                &::before {
+                    right: initial;
+                }
+                h2 {
+                    text-align-last: left;
+                }
+            }
+        }
+        .included-content {
+            width: 22%;
+            margin-bottom: 0;
+        }
+    }
+    // End Foundation Section
+
     // Start Unable Section
     .unable {
         p {
@@ -462,6 +516,46 @@
 }
 
 @media @size-xl{
+
+    // Start Foundation Section
+    .foundation {
+        padding: @sectionPadding-xl;
+        .tabs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .tab-links {
+            flex-direction: column;
+            justify-content: center;
+            width: 27%;
+            align-self: flex-start;
+            .tab-click {
+                width: 100%;
+            }
+        }
+        .tab-content {
+            width: 65%;
+            margin-top: 0 !important;
+        }
+        #included {
+            .heading {
+                display: flex;
+                align-items: flex-start;
+                &::before {
+                    right: initial;
+                }
+                h2 {
+                    text-align-last: left;
+                }
+            }
+        }
+        .included-content {
+            width: 22%;
+            margin-bottom: 0;
+        }
+    }
+    // End Foundation Section
+
     // Start Unable Section
     .unable {
         padding: @sectionPadding-xl;
