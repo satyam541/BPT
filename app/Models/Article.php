@@ -22,11 +22,12 @@ class Article extends Model
         return $this->belongsToMany('App\Models\Tag',"article_tag",'article_id','tag_id');
     }
 
-    public function isPopular()
-    {
-        $popular = $this->popular;
-        return empty($popular->id)? FALSE : TRUE;
-    }
+    // use has('popular') instead
+    // public function isPopular()
+    // {
+    //     $popular = $this->popular;
+    //     return empty($popular->id)? FALSE : TRUE;
+    // }
 
     public function popular()
     {
@@ -35,10 +36,10 @@ class Article extends Model
             "display_order" => Popular::courses()->count()+1]
         );
     }
-    public function hasPopular()
-    {
-        return $this->morphOne('App\Models\Popular', 'module');
-    }
+    // public function hasPopular()
+    // {
+    //     return $this->morphOne('App\Models\Popular', 'module');
+    // }
  
     public function getImagePath()
     {
@@ -62,8 +63,9 @@ class Article extends Model
         }
     }
 
-    public function getPublishDateAttribute()
-    {
-        return \Carbon\Carbon::parse($this->post_date);
-    }
+    // add post_date attribute to dates mutator
+    // public function getPublishDateAttribute()
+    // {
+    //     return \Carbon\Carbon::parse($this->post_date);
+    // }
 }
