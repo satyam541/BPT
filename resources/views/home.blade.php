@@ -161,41 +161,28 @@
         <div class="ways-container">
             <div class="ways-content">
             <div class="heading white-heading">
-                <h2>Professional Training, The Way It Should Be Done.</h2>
+                <h2>{!!$pageDetail->ways['heading']->heading!!}</h2>
             </div>
             <div class="ways-list">
+                @php unset($pageDetail->ways['heading']) @endphp
+                @foreach ($pageDetail->ways as $ways)
                 <div class="item">
                     <span>
-                        01 
+                        0{{$loop->iteration}}
                     </span>
                     <div class="content">
-                        <h3>Largest Global Course Portfolio</h3>
-                        <p>You won’t find better value in the marketplace. If you do find a lower price, we will beat it.</p>
+                        <h3>{!!$ways->heading!!}</h3>
+                        <p>{!!$ways->content!!}</p>
                     </div>
                 </div>
-                <div class="item">
-                    <span>
-                        02 
-                    </span>
-                    <div class="content">
-                        <h3>Best Choice Of Dates For Classroom</h3>
-                        <p>A variety of delivery methods are available depending on your learning preference.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <span>
-                        03 
-                    </span>
-                    <div class="content">
-                        <h3>Most Venues Globally</h3>
-                        <p>We have locations stretching the entire globe, allowing flexible training wherever you need it.</p>
-                    </div>
-                </div>
+                @endforeach
+              
+                
             </div>
 
             </div>
             <div class="ways-image">
-                <img src="{{url('img/home/ways-info.png')}}" alt="ways-info">
+                <img src="{{$Detail->ways['heading']->getImagePath()}}" alt="ways-info">
             </div>
         </div>
     </div>
@@ -211,38 +198,19 @@
                 </h2>
             </div>
             <div class="delivery-list">
+                @php unset($pageDetail->delivery_list['heading']) @endphp
+                @foreach ($pageDetail->delivery_list as $delivery)
                 <div class="item">
                     <div class="overlay">
                     </div>
-                    <img src="{{url('img/home/classroom.svg')}}" alt="classroom">
-                    <h3>Classroom Training</h3>
-                    <p>A variety of delivery methods are available depending on your learning preference.</p>
+                    <img src="{{$delivery->getImagePath()}}" alt="classroom">
+                    <h3>{!!$delivery->heading!!}</h3>
+                    <p>{!!$delivery->content!!}</p>
                     <a href="">Enquire Now</a>
-                </div>
-                <div class="item">
-                    <div class="overlay">
-                    </div>
-                    <img src="{{url('img/home/led.svg')}}" alt="led">
-                    <h3>Online Instructor-Led</h3>
-                    <p>A variety of delivery methods are available depending on your learning preference.</p>
-                    <a href="">Enquire Now</a>
-                </div>
-                <div class="item">
-                    <div class="overlay">
-                    </div>
-                    <img src="{{url('img/home/paced.svg')}}" alt="paced">
-                    <h3>Online Self-Paced</h3>
-                    <p>A variety of delivery methods are available depending on your learning preference.</p>
-                    <a href="">Enquire Now</a>
-                </div>
-                <div class="item">
-                    <div class="overlay">
-                    </div>
-                    <img src="{{url('img/home/onsite.svg')}}" alt="onsite">
-                    <h3>Onsite Training</h3>
-                    <p>A variety of delivery methods are available depending on your learning preference.</p>
-                    <a href="">Enquire Now</a>
-                </div>
+                </div>     
+                @endforeach
+                
+                
 
             </div>
             
@@ -301,72 +269,24 @@
                         </span>
                     </h2>
                 </div>
-                <p>
-                    We are committed to providing our customers with exceptional service while offering our employees 
-                    the best training.We are committed to providing our customers with exceptional service while offering our employees the best 
-                    training.We are committed to providing our customers with exceptional service while offering our employees the best training.
-                </p>
+                <p> {!!$pageDetail->locations['heading']->content!!} </p>
             </div>
+            @foreach ($locations as $location)
             <div class="location-name">
                 <span>
-                    01
+                    0{{$loop->iteration}}
                 </span>
                 <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
                 <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
                 <p>
-                    London
+                    {!!$location->name!!}
                 </p>
-            </div>
-            <div class="location-name">
-                <span>
-                    02
-                </span>
-                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
-                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <p>
-                    London
-                </p>
-            </div>
-            <div class="location-name">
-                <span>
-                    03
-                </span>
-                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
-                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <p>
-                    London
-                </p>
-            </div>
-            <div class="location-name">
-                <span>
-                    04
-                </span>
-                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
-                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <p>
-                    London
-                </p>
-            </div>
-            <div class="location-name">
-                <span>
-                    05
-                </span>
-                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
-                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <p>
-                    London
-                </p>
-            </div>
-            <div class="location-name">
-                <span>
-                    06
-                </span>
-                <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
-                <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <p>
-                    London
-                </p>
-            </div>
+            </div>                
+            @endforeach
+
+            
+            
+            
             <div class="buttons">
                 <a class="btn-blue">
                     <img src="{{url('img/home/location-white.svg')}}" alt="call">
@@ -381,10 +301,10 @@
         <div class="looking-container">
             <div class="looking-for">
                 <h2>    
-                    Didn't Find What You're Looking For?
+                    {!!$pageDetail->looking_for['heading']->heading!!}
                 </h2>
                 <p>
-                    If you didn't find your ideal course or facing any difficulty to choose which course suits you best, we are here to help you.
+                    {!!$pageDetail->looking_for['heading']->content!!}
                 </p>
                 <div class="buttons">
                     <a class="btn-blue">
@@ -400,16 +320,14 @@
                 <div class="reviews-outer owl-carousel">
                     <div class="reviews-inner">
                         <p>
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to maLorem Ipsum is simply."
+                            {!!$testimonial->content!!}
                         </p>
                         <div class="author-name">
                             <h3>
-                                Harsul Hisham
+                                {!!$testimonial->author!!}
                             </h3>
                             <span>
-                                WEB DESIGNER
+                                {!!$testimonial->designation!!}
                             </span>
                             <img src="{{url('img/home/stars.svg')}}" alt="stars">
                         </div>
@@ -431,17 +349,14 @@
                         </h2>
             </div>
             <p>
-                Leading bodies including AXELOS, APMG, BCS, PeopleCert, PMI, CompTIA and Microsoft 
-                have accredited our courses, materials and trainers, certifying that they reach the 
-                high standards that they require from their training partners., materials and trainers, 
-                certifying that they reach the high standards that they require from their training partners.
+                {!!$pageDetail->accredited['heading']->content!!}
             </p>
             <div class="partners-images">
-                <img src="{{url('img/home/prince2.png')}}" alt="prince2">
-                <img src="{{url('img/home/itil.png')}}" alt="itil">
-                <img src="{{url('img/home/agile.png')}}" alt="agile">
-                <img src="{{url('img/home/change-mgt.png')}}" alt="change-mgt">
-                <img src="{{url('img/home/ms.png')}}" alt="ms">
+                @php unset($pageDetail->accredited['heading']) @endphp
+                @foreach ($pageDetail->accredited as $accredited)
+
+                <img src="{{$accredited->getImagePath()}}" alt="{{$accredited->image_alt}}">    
+                @endforeach
             </div>
         </div>
     </div>
