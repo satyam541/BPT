@@ -7,16 +7,14 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Blog</h1>
-            <p>Choose from over 200 courses which cover all aspects of business and
-                personal training, including Project Management, IT Security, Business
-                and many more. Our courses cater to every training need, from</p>
+            <h1>Blog Detail</h1>
+            <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from</p>
             <div class="breadcrums">
                 <ul>
                     <li><a href="">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                     <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
-                    <li><a href="">Blog</a></li>
+                    <li><a href="">Blog Detail</a></li>
                 </ul>
             </div>
         </div>
