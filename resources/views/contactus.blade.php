@@ -8,7 +8,7 @@
             @include("layouts.navbar")
                 <div class="banner-container">
                     <div class="banner-content">
-                        <h1>Contact Us</h1>
+                        <h1>{!!$pageDetail->banner['banner']->heading!!}</h1>
                         <p>{!!$pageDetail->banner['banner']->content!!}</p>
                         <div class="breadcrums">
                             <ul>

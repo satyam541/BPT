@@ -21,13 +21,9 @@
             <div class="banner-container">
                 <div class="banner-content">
                         <h1>
-                            Whatever Your Training Needs, Find Your Ideal Course with Us
+                            {!!$pageDetail->banner['banner-content']->heading!!}
                         </h1>
-                        <p>
-                            Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. 
-                            Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.
-
-                        </p>
+                        <p>{!!$pageDetail->banner['banner-content']->content!!}</p>
                         <div class="search">
                             <input type="text" class="auto-complete-course auto-redirect" placeholder="Search your training course here....">
                             <button>
@@ -42,132 +38,24 @@
                         </div>
                 </div>
                 <div class="topic-list owl-carousel">
-                    <ul>
+
+                    @foreach (array_chunk($topics,4) as $topic)
+                        <ul>
+                        @foreach ($topic as $item)
                         <li>
                             <a>
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
-                                PRINCE training
+                                {{$item['name']}}
                                 <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
                         </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>Browse Related Courses</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
-                    <ul>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                    </ul>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
@@ -184,186 +72,34 @@
                 </h2>
             </div>
             <div class="courses-list">
+                @foreach ($categories->take(9) as $category)
+
                 <a class="course-name">
                     <span class="icon">
-                        <img src="{{url('img/home/management.svg')}}" alt="management">
-                        <img src="{{url('img/home/management-white.svg')}}" alt="management-white">
+                        <img src="{{$category->getImagePath()}}" alt="management">
+                        <img src="{{$category->getIconPath()}}" alt="management-white">
                     </span>
                     <div class="name">
                         <h3>
-                            Project Management
+                            {{$category->name}}
                         </h3>
                         <p>
-                            5 Topics
+                            {{$category->topics->count()}} Topics
                         </p>
+                        @foreach ($category->topics as $topic)
+                        @php $totalCourses+=$topic->courses->count() @endphp
+                    @endforeach
                         <p>
-                            10 Courses
+                            {{$totalCourses}} Courses
                         </p>
                     </div>
                     <span class="arrow">
                         <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
                     </span>
                 </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/analysis.svg')}}" alt="analysis">
-                        <img src="{{url('img/home/analysis-white.svg')}}" alt="analysis-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Business Analysis
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/improvement.svg')}}" alt="improvement">
-                        <img src="{{url('img/home/improvement-white.svg')}}" alt="improvement-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                        Business Improvement
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/service.svg')}}" alt="service">
-                        <img src="{{url('img/home/service-white.svg')}}" alt="service-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            IT Service Management
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/security.svg')}}" alt="security">
-                        <img src="{{url('img/home/security-white.svg')}}" alt="security-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                        IT Security
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/protection.svg')}}" alt="protection">
-                        <img src="{{url('img/home/protection-white.svg')}}" alt="protection-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Data Protection
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/applications.svg')}}" alt="applications">
-                        <img src="{{url('img/home/applications-white.svg')}}" alt="applications-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Office Applications
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/skills.svg')}}" alt="skills">
-                        <img src="{{url('img/home/skills-white.svg')}}" alt="skills-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Business Skills
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
-                <a class="course-name">
-                    <span class="icon">
-                        <img src="{{url('img/home/database.svg')}}" alt="database">
-                        <img src="{{url('img/home/database-white.svg')}}" alt="database-white">
-                    </span>
-                    <div class="name">
-                        <h3>
-                            Programming & Database
-                        </h3>
-                        <p>
-                            5 Topics
-                        </p>
-                        <p>
-                            10 Courses
-                        </p>
-                    </div>
-                    <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
-                    </span>
-                </a>
+                    
+                @endforeach
+
             </div>
             <div class="buttons">
                 <a class="btn-blue">
@@ -379,12 +115,12 @@
         <div class="effective-container">
             <div class="content">
                 <img src="{{url('img/home/call-us.svg')}}" alt="call-us">
-                <p>Call us for Professional, flexible and cost-effective Courses</p>
+                <p>{!!$pageDetail->banner['content']->heading!!}</p>
             </div>
             <div class="buttons">
                 <a class="btn-white" href="tel: 02380001008">
                     <img src="{{url('img/master/call.svg')}}" alt="call">
-                    02380001008
+                    {{websiteDetail()->contact_number}}
                 </a>
             </div>
 
@@ -400,23 +136,19 @@
                         Choose  Us
                     </span>
                 </h2>
+                {{-- <h1>{{$pageDetail->choose_us['heading']->heading}}</h1> --}}
             </div>
             <div class="choose-list">
+                @php unset($pageDetail->choose_us['heading'])@endphp
+                @foreach ($pageDetail->choose_us as $item)
                 <div class="item">
-                    <img src="{{url('img/home/price.svg')}}" alt="price">
-                    <h3>Best Price Guarantee</h3>
-                    <p>You won’t find a better value in the marketplace. If you do find a lower price, send us the offer, and we’ll beat it.</p>
-                </div>
-                <div class="item">
-                    <img src="{{url('img/home/run.svg')}}" alt="run">
-                    <h3>Guaranteed to Run</h3>
-                    <p>All our courses are 100% Guaranteed to Run on the dates provided, whether they are a classroom, virtual or in-house.</p>
-                </div>
-                <div class="item">
-                    <img src="{{url('img/home/back.svg')}}" alt="back">
-                    <h3>100% Money Back Guarantee</h3>
-                    <p>We are so confident in our courses and the skills of our instructor that we offer a money-back guarantee if you do not pass the exam.</p>
-                </div>
+                    <img src="{{$item->getImagePath()}}" alt="price">
+                    <h3>{!!$item->heading!!}</h3>
+                    <p>{!!$item->content!!}</p>
+                </div>    
+                @endforeach
+                
+
             </div>
 
 
