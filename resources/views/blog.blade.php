@@ -32,13 +32,14 @@
                 </div>
                 <div class="popular-list">
                     @foreach ($popularBlogs->take(4) as $blog)
-                    <a class="popular-item">
-                        <p>{{$blog->publish_date->format('d M, Y')}}</p>
-                        <div class="info">
-                            <p>by - {{$blog->author}}</p>
-                            <h3>{{$blog->title}}</h3>
-                        </div>
-                    </a>
+                        <a class="popular-item">
+                            <img src="{{url('../img/blog/popular-1.png')}}" alt="popular-1">
+                            <p>{{$blog->publish_date->format('d M, Y')}}</p>
+                            <div class="info">
+                                <p>by - {{$blog->author}}</p>
+                                <h3>{{$blog->title}}</h3>
+                            </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -59,6 +60,7 @@
                     @foreach ($blogs as $blog)
                     {{-- {{dd($blog)}} --}}
                     <div class="our-item">
+                        
                         {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
                         <div class="our-info">
