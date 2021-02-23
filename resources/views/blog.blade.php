@@ -31,7 +31,7 @@
                     <h2>{!! $pageDetail->main['heading']->heading !!}</h2>
                 </div>
                 <div class="popular-list">
-                    @foreach ($blogs->take(4) as $blog)
+                    @foreach ($popularBlogs->take(4) as $blog)
                     <a class="popular-item">
                         <p>{{$blog->publish_date->format('d M, Y')}}</p>
                         <div class="info">
@@ -57,6 +57,7 @@
                 </div>
                 <div class="our-list">
                     @foreach ($blogs as $blog)
+                    {{-- {{dd($blog)}} --}}
                     <div class="our-item">
                         {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
@@ -69,8 +70,8 @@
                                 Web Development
                             </p>
                         </div>
-                        <h3>{{$blog->title}}</h3>
-                        <p class="item-text">{{$blog->summary}} </p>
+                        <h3 >{{$blog->title}}</h3>
+                        <p class="item-text">{!!$blog->summary!!}</p>
 
                         <div class="buttons">
                             <a class="btn-blue">
