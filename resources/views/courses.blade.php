@@ -216,6 +216,55 @@
 </section>
 <!-- End Unable Section -->
 
+<!-- Start Training Section -->
+<section class="flex-container training">
+    <div class="container">
+        <div class="training-container">
+            <div class="heading center-heading">
+                <h2>PRINCE2® Foundation And Practitioner <span>Training Calender</span></h2>
+            </div>
+            <div class="filter-top">
+                <div class="heading">
+                    <h2>Filters</h2>
+                </div>
+                <form class="form">
+                    <div class="select-dropdown">
+                        <p>Select Your Course:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Choose a Location:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Select a Delivery Format:</p>
+                        <select name="course">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="buttons">
+                <a href="javascript:void(0);" class="btn-blue">Explore Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Training Section -->
+
 <!-- Start Virtual Section -->
 <section class="flex-container virtual">
     <div class="container">
