@@ -130,10 +130,7 @@ class Category extends Model
             "display_order" => Popular::categories()->count()+1]
         );
     }
-    public function hasPopular()
-    {
-        return $this->morphOne('App\Models\Popular', 'module');
-    }
+   
 
     public function delete()
     {
