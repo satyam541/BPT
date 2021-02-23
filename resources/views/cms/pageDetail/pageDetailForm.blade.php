@@ -88,7 +88,7 @@
                   </div>
                   
                   <div class="form-group">
-                    {{Form::label('image_alt','Image Alt')}}
+                    {{Form::label('icon_alt','icon Alt')}}
                     {{Form::text('icon_alt',null,['class'=>'form-control'])}}
                   </div>
                   
