@@ -273,13 +273,15 @@
             </div>
             @foreach ($locations as $location)
             <div class="location-name">
+                
                 <span>
                     0{{$loop->iteration}}
                 </span>
                 <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
                 <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
+                <a href="{{route('locationDetail',['location'=>$location->reference])}}">
                 <p>
-                    {!!$location->name!!}
+                    {!!$location->name!!}</a>
                 </p>
             </div>                
             @endforeach
@@ -363,82 +365,4 @@
 </div>
 
 
-@endsection
-@section('footerscripts')
-  <script>
-       $(".auto-complete-course").focus(function()
-    {
-      $(this).removeClass("error");
-      $(this).attr("placeholder","");
-    });
-    function getquery(elm)
-   {
-      var query = $(elm).prev().val();
-      if(query.length >= 1)
-         {window.location.href = window.origin+"/search?q="+query;}
-      $(elm).prev().attr("placeholder","Add Course to Search");
-      $(elm).prev().addClass("error");
-   }
-
-
-var autoCompleteCourseUrl = "{{route('courseAutoComplete')}}";
-$( function() {
-                 
-                  
-                  $.widget( "custom.catcomplete", $.ui.autocomplete, {
-                        _create: function() {
-                        this._super();
-                        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
-                        },
-                        _renderMenu: function( ul, items ) {
-                              var that = this,
-                              currentTopic = "";
-                              console.log(items);
-                              $.each( items, function( index, item ) {
-                                    var li;
-                                    
-                                    if ( item.topic.name != currentTopic ) {
-                                          ul.append( "<li class='ui-autocomplete-category'>" + item.topic.name + "</li>" );
-                                          currentTopic = item.topic.name;
-                                    }
-                                    li = that._renderItemData( ul, item );
-                                    if ( item.topic.name ) {
-                                          li.attr( "aria-label", item.topic.name + " : " + item.label );
-                                    }
-                              });
-                        }
-
-                  } );
-                  $( ".auto-complete-course.auto-redirect" ).catcomplete({
-                        delay: 0,
-                        source: autoCompleteCourseUrl,
-                        select: function(event,ui)
-                        {
-                              location.href = ui.item.url;
-                        }
-                  });
-
-                  $(".auto-complete-course").catcomplete({
-                     source: function (request, response)
-                     {
-                           $.ajax(
-                           {
-                              global: false,
-                              source: autoCompleteCourseUrl,
-                              url: autoCompleteCourseUrl,
-                              dataType: "json",
-                              data:
-                              {
-                                 term: request.term
-                              },
-                              success: function (data)
-                              {
-                                 response(data);
-                              }
-                           });
-                     },
-                  });
-                  
-            } );
-    </script>  
 @endsection

@@ -33,7 +33,7 @@ class ArticleRequest extends FormRequest
             'title'                  => 'required|max:100',
             'post_date'              => 'required',
             'type'                   => 'required',
-            'reference'              => 'required',
+            'reference'              => 'required|unique:article,reference,'.$id.',id',
             'image'                  => 'mimes:jpeg,png,jpg,svg|max:500',
             'meta_title'             => 'max:100|required',
             'meta_description'       => 'max:250|required',
