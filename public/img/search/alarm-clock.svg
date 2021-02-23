@@ -1,0 +1,14 @@
+<svg id="alarm-clock" xmlns="http://www.w3.org/2000/svg" width="19.802" height="20.448" viewBox="0 0 19.802 20.448">
+  <path id="Path_12022" data-name="Path 12022" d="M51.129,134.6a.634.634,0,0,1-.5-.239l-7.625-9.549-7.625,9.549a.635.635,0,1,1-.993-.793l8.121-10.17a.635.635,0,0,1,.993,0l8.121,10.17a.635.635,0,0,1-.5,1.032Z" transform="translate(-32.999 -114.148)" fill="#f4efed"/>
+  <circle id="Ellipse_63" data-name="Ellipse 63" cx="9.717" cy="9.717" r="9.717" transform="translate(0.185 0.185)" fill="#d5cece"/>
+  <path id="Path_12027" data-name="Path 12027" d="M123.461,27.528c-.155,0-.308,0-.461.011a9.717,9.717,0,0,1,0,19.411q.229.011.461.011a9.717,9.717,0,0,0,0-19.433Z" transform="translate(-113.56 -27.343)" fill="silver"/>
+  <path id="Path_12028" data-name="Path 12028" d="M32.4,46.962q.232,0,.461-.011a9.717,9.717,0,0,1,0-19.411q-.229-.011-.461-.011a9.717,9.717,0,0,0,0,19.434Z" transform="translate(-22.5 -27.343)" fill="silver"/>
+  <path id="Path_12029" data-name="Path 12029" d="M30.586,45.331a9.9,9.9,0,1,1,9.9-9.9A9.912,9.912,0,0,1,30.586,45.331Zm0-19.434a9.532,9.532,0,1,0,9.532,9.532A9.543,9.543,0,0,0,30.586,25.9Z" transform="translate(-20.685 -25.528)" fill="#bbb"/>
+  <circle id="Ellipse_64" data-name="Ellipse 64" cx="7.993" cy="7.993" r="7.993" transform="translate(1.908 1.908)" fill="#f4efed"/>
+  <path id="Path_12030" data-name="Path 12030" d="M47.546,60.568a8.177,8.177,0,1,1,8.177-8.177A8.187,8.187,0,0,1,47.546,60.568Zm0-15.986a7.808,7.808,0,1,0,7.808,7.808A7.817,7.817,0,0,0,47.546,44.582Z" transform="translate(-37.645 -42.489)" fill="#bbb"/>
+  <g id="Group_94" data-name="Group 94" transform="translate(9.717 2.855)">
+    <path id="Path_12034" data-name="Path 12034" d="M131.239,63.7h-5.054a.185.185,0,0,1-.185-.185V56.653a.185.185,0,0,1,.369,0V63.33h4.87a.185.185,0,0,1,0,.369Z" transform="translate(-126 -56.468)" fill="silver"/>
+  </g>
+  <circle id="Ellipse_65" data-name="Ellipse 65" cx="1.231" cy="1.231" r="1.231" transform="matrix(0.742, -0.671, 0.671, 0.742, 8.168, 9.821)" fill="silver"/>
+  <path id="Path_12038" data-name="Path 12038" d="M114.071,120.331a1.416,1.416,0,1,1,1.416-1.416A1.417,1.417,0,0,1,114.071,120.331Zm0-2.463a1.047,1.047,0,1,0,1.047,1.047A1.048,1.048,0,0,0,114.071,117.868Z" transform="translate(-104.17 -109.013)" fill="silver"/>
+</svg>

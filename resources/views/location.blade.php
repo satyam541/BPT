@@ -91,7 +91,7 @@
                     <h2>Popular <span>Locations</span></h2>
                 </div>
                 <div class="search">
-                    <input type="text" placeholder="Search location here....">
+                    <input type="text" name="filter" id="locationFilter" placeholder="Search location here....">
                     <button>
                         Search
                     </button>
@@ -104,8 +104,8 @@
                     <span class="img">
                         <img src="{{url('img/location/around.svg')}}" alt="around">
                     </span>
-                    <span class="content">
-                       {{$location->name}}
+                    <span class="content text-name">
+                        {{$location->name}}
                         <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums">
                     </span>
                 </a>
@@ -209,5 +209,38 @@
     </div>
 </section>
 <!-- End Form-Map Section -->
+
+@endsection
+
+@section('footerscripts')
+    
+<script>
+ 
+    $("#locationFilter").on('keyup',function(){
+       
+       var input = $(this).val();
+       var locations = $(".popular-list .popular-content");
+       locations.hide();
+    //    alert(input);
+       $.each(locations, function( index, location ) {
+           location = $(location);
+           var locationName = location.find('.text-name').text().trim();
+           console.log(locationName);
+           regex = new RegExp('^(' + input + ')', 'i');
+           if (regex.test(locationName)) 
+           {
+               location.show();
+           }
+       });
+ 
+   }).on('keypress',function(e){
+       // prevent form submit on enter key
+       if(e.keyCode === 13 || e.which === 13)
+       {
+           event.preventDefault();
+           return false;
+       }
+   });
+    </script>
 
 @endsection

@@ -2,7 +2,15 @@
 
 .blog-intro{
     padding: @sectionPadding;
+
+    .intro-container{
+        display: flex;
+        flex-direction: column;
+    }
     .content-left{
+        display: flex;
+        flex-direction: column;
+        order: 1;
         span{
             img{
                 width: 100%;
@@ -145,6 +153,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
+        order: 3;
     }
     .search-bar{
         display: flex;
@@ -289,6 +298,9 @@
             margin-top: 0.5rem;
             font-size: 11px;
         }
+        h2{
+            width: 100%;
+        }
     }
 
     .previous-nav,.next-nav{
@@ -333,6 +345,8 @@
     .blog-navs{
         display: flex;
         justify-content: space-between;
+        order: 2;
+        margin-top: 2rem;
     }
 
 }

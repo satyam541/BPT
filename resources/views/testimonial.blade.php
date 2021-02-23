@@ -24,8 +24,7 @@
     <div class="container">
         <div class="customers-container">
             <div class="heading">
-                {{-- <h2>Customer <span>Experience</span></h2> --}}
-                <h2>{!!$pageDetail->customer_experience['review']->heading!!}</h2>
+                <h2>{!! heading_split($pageDetail->customer_experience['review']->heading) !!}</h2>
                 <p>{!!$pageDetail->customer_experience['review']->page_tag_line!!}</p>
             </div>
             <p>{!!$pageDetail->customer_experience['review']->content!!}</p>
@@ -61,8 +60,7 @@
                 <img src="{{url('img/testimonial/call.svg')}}" alt="call">
             </span>
             <div class="heading">
-                {{-- <h2>Do You Still Have a Question <span>Regarding Our Services?</span></h2> --}}
-                <h2>{!!$pageDetail->overlay['regarding_our_services']->heading!!}</h2>
+                <h2>{!! heading_split($pageDetail->overlay['regarding_our_services']->heading) !!}</h2>
                 <p>{!!$pageDetail->overlay['regarding_our_services']->content!!}</p>
             </div>
             <div class="buttons">
@@ -105,8 +103,7 @@
     <div class="container">
         <div class="fact-container">
             <div class="heading center-heading">
-                {{-- <h2>Some Facts About <span>Us</span></h2> --}}
-                <h2>{!!$pageDetail->insights['heading']->heading!!}</h2>
+                <h2>{!! heading_split($pageDetail->insights['heading']->heading) !!}</h2>
                 <p>{!!$pageDetail->insights['heading']->content!!}</p>
             </div>
             @php unset($pageDetail->insights['heading']) @endphp

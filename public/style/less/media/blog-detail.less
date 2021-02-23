@@ -4,7 +4,7 @@
     .blog-intro{
 
         .intro-container{
-            display: flex;
+            flex-direction: row;
             justify-content: space-between;
              flex-wrap: wrap;
         }
@@ -50,6 +50,7 @@
             position: sticky;
             top: 68px;
             height:fit-content;
+            order: 2;
         }
 
         .detail{
@@ -75,6 +76,8 @@
             }
         }
         .blog-navs{
+            order: 3;
+            margin-top: 0;
             .next-nav{
                 .btn-blue{
                     min-width: 168px;
@@ -117,6 +120,8 @@
                 .btn-blue{
                     position: absolute;
                     bottom: -17px;
+                    margin: auto;
+                    left: 15px;
                 }
             }
              .next-nav{
@@ -150,6 +155,11 @@
                     padding:  2rem;
                     width: 30%;
                  }
+                 .buttons{
+                    .btn-blue{
+                        left: 30px;
+                    }
+                }
             }
         
      }
