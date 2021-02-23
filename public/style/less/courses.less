@@ -28,6 +28,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
             li {
                 color: @whiteColor;
                 font-size: 14px;
@@ -162,24 +163,39 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        position: relative;
-        z-index: 1;
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            height: 5px;
+        .buttons {
+            position: relative;
             width: 100%;
-            border-radius: 10px;
-            bottom: 15px;
-            left: 0;
-            background-color: #c0c0c0;
+            justify-content: flex-end;
+            z-index: 1;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                border-radius: 10px;
+                height: 5px;
+                bottom: 15px;
+                left: 0;
+            }
+            &::before {
+                width: 100%;
+                background-color: #c0c0c0;
+            }
+            &::after {
+                width: 33%;
+                background-color: @lightblueColor;
+            }
         }
         .overview-content {
             display: flex;
             flex-direction: column;
-            height: 600px;
+            max-height: 600px;
             overflow: hidden;
+            width: 100%;
+        }
+        .toggle {
+            max-height: 100% !important;
+            transition: all 0.3s ease-in, color 0s ease-in-out;
         }
         h2 {
             margin-top: 2rem;
@@ -401,6 +417,7 @@
     }
     h2 {
         margin-bottom: 1rem;
+        width: 100%;
     }
 }
 // End Unable Section
@@ -739,7 +756,7 @@
             color: @whiteColor;
             margin-bottom: 2rem;
             text-align: center;
-
+            width: 100%;
         }
         span {
             display: flex;
@@ -862,6 +879,7 @@
     .buy {
         display: flex;
         align-items: center;
+        width: 100%;
         span {
             display: flex;
             align-items: center;

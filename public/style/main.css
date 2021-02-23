@@ -7211,6 +7211,7 @@ input::-webkit-inner-spin-button {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .courses-banner .banner-points ul li {
   color: #FFFFFF;
@@ -7336,25 +7337,41 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.foundation #overview .buttons {
   position: relative;
+  width: 100%;
+  justify-content: flex-end;
   z-index: 1;
 }
-.foundation #overview::before {
+.foundation #overview .buttons::before,
+.foundation #overview .buttons::after {
   content: '';
   position: absolute;
   z-index: -1;
-  height: 5px;
-  width: 100%;
   border-radius: 10px;
+  height: 5px;
   bottom: 15px;
   left: 0;
+}
+.foundation #overview .buttons::before {
+  width: 100%;
   background-color: #c0c0c0;
+}
+.foundation #overview .buttons::after {
+  width: 33%;
+  background-color: #0064D8;
 }
 .foundation #overview .overview-content {
   display: flex;
   flex-direction: column;
-  height: 600px;
+  max-height: 600px;
   overflow: hidden;
+  width: 100%;
+}
+.foundation #overview .toggle {
+  max-height: 100% !important;
+  transition: all 0.3s ease-in, color 0s ease-in-out;
 }
 .foundation #overview h2 {
   margin-top: 2rem;
@@ -7557,6 +7574,7 @@ input::-webkit-inner-spin-button {
 }
 .unable h2 {
   margin-bottom: 1rem;
+  width: 100%;
 }
 .training {
   padding: 3rem 1.5rem;
@@ -7888,6 +7906,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   margin-bottom: 2rem;
   text-align: center;
+  width: 100%;
 }
 .virtual .virtual-img span {
   display: flex;
@@ -8003,6 +8022,7 @@ input::-webkit-inner-spin-button {
 .language .buy {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .language .buy span {
   display: flex;
@@ -8489,6 +8509,21 @@ input::-webkit-inner-spin-button {
     transform: translateX(34px);
   }
 }
+@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .training .date p::before {
+    left: -4px;
+    width: 95px;
+  }
+  .language {
+    padding: 3rem 2rem;
+  }
+  .language .language-list .content {
+    background-size: 21% 100%;
+  }
+  .popular-location .popular-content {
+    width: 50%;
+  }
+}
 @media (min-width : 1024px) {
   .courses-banner {
     background: none;
@@ -8540,6 +8575,19 @@ input::-webkit-inner-spin-button {
   .foundation .tabs-container {
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+  }
+  .foundation .tabs-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    height: 60px;
+    width: 60px;
+    background-image: url(../img/courses/dotted-box.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   .foundation .tab-links {
     flex-direction: column;
@@ -8558,19 +8606,6 @@ input::-webkit-inner-spin-button {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
-    position: relative;
-  }
-  .foundation #overview::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    height: 60px;
-    width: 60px;
-    background-image: url(../img/courses/dotted-box.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
   }
   .foundation #included .heading {
     display: flex;
@@ -8837,6 +8872,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
+  .courses-banner .banner-points {
+    width: 32%;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -8981,9 +9019,6 @@ input::-webkit-inner-spin-button {
   }
   .popular-location .popular-content::before {
     left: 30px;
-  }
-  .popular-location .location-content {
-    width: 65%;
   }
 }
 @media (min-width : 1500px) {
