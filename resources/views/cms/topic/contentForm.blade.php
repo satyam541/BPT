@@ -14,7 +14,8 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{route('topicContentList')}}">Topic Content</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('topicList') }}">Topic</a></li>
+            <li class="breadcrumb-item"><a href="{{route('topicContentList',['topic'=>$topicDetail->topic_id])}}">Content</a></li>
             <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
