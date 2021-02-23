@@ -13,13 +13,15 @@ class BlogController extends Controller
         $pageDetail = PageDetail::where(['page_name'=>'blog','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())
         {
-            $data['title'] = $pageDetail->where('sub_section','title')->first()->heading;
-            $data['description'] = $pageDetail->where('sub_section','description')->first()->heading;
-            $data['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
+            $data['title']          = $pageDetail->where('sub_section','title')->first()->heading;
+            $data['description']    = $pageDetail->where('sub_section','description')->first()->heading;
+            $data['keyword']        = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($data);
         }
-        $data['blogs']      = Article::where('type', 'blog')->get();
-        $data['pageDetail'] = PageDetail::getContent('blog');
+        $article                = Article::where('type', 'blog');
+        $data['blogs']          = $article->get();
+        $data['popularBlogs']   = $article->has('popular')->get();
+        $data['pageDetail']     = PageDetail::getContent('blog');
         return view('blog',$data);
     }
 }

@@ -106,6 +106,10 @@
 @endsection
 @section('footer')
 <script>
+  $(".selectJS").select2({
+      width:'100%'
+      
+    });
     $('#checkAll').on('click', function(){
         checkAll($(this).is(':checked'));
     });
@@ -169,18 +173,15 @@ function updateDuration()
 }
 
 </script>
-
-<script src="https://cdn.rawgit.com/dubrox/Multiple-Dates-Picker-for-jQuery-UI/master/jquery-ui.multidatespicker.js"></script>
 <script>
     $(document).ready(function () {
-        $("#inputDates").multiDatesPicker({
+        $("#inputDates").datepicker({
             dateFormat: "yy-m-d",
+            multidate:true
+            
         });
     });
-    $(".selectJS").select2({
-      width:'100%'
-      
-    });
+    
         
 </script>
 @endsection

@@ -69,9 +69,12 @@
                         <li>Maintain motivated individuals and provide a supportive environment for them</li>
                         <li>Promote a sustainable development.</li>
                     </ul>
-                    <p class="feedback">
-                    Praesent Tempus Cursus Magna, Eget Placerat Nibh Cursus Non. Sed Accumsan Maximus Hendrerit. Suspendisse Ullamcorper Auctor Nisl Suscipit Malesuada.
-                    </p>
+                    <div class="feedback">
+                    <p>Praesent Tempus Cursus Magna, Eget Placerat Nibh Cursus Non. Sed Accumsan Maximus Hendrerit. Suspendisse Ullamcorper Auctor Nisl Suscipit Malesuada.</p>
+                    <h3 class="feedback-name">
+                    John Doe
+                        </h3>
+                    </div>
 
                     <p>Agile Training Is Simple In Its Approach And Focuses On Continual Iterative Feedback At Regular Intervals Of The Project Thus Allowing For Continual Improvement And Refinement Of A Project. This Approach Is Thought To Maximise Customer Satisfaction, Improve The Flexibility Of A Project, Minimise Uncertainty And Boost Time To Market.</p>
                 </div>
@@ -84,15 +87,34 @@
                     </div>
                     <span>
                         <input type="text" placeholder="Search....." autocompleat="off" > 
-                        <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
+                       <div class="button">
+                       <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
+                       </div>
                     </span>
                 </div>
-                <div class="blog-review">
-                    <div class="review-outter">
+                <div class="blog-review owl-carousel">
+                    <div class="review-inner">
                             <span>
                                     <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
                             </span>
+                            <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
 
+                            <h3 class="author">CHRISTIAN PERRY</h3>
+                            <p>Web Developer</p>
+                    </div>
+                    <div class="review-inner">
+                            <span>
+                                    <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
+                            </span>
+                            <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
+
+                            <h3 class="author">CHRISTIAN PERRY</h3>
+                            <p>Web Developer</p>
+                    </div>
+                    <div class="review-inner">
+                            <span>
+                                    <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
+                            </span>
                             <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
 
                             <h3 class="author">CHRISTIAN PERRY</h3>
@@ -105,6 +127,26 @@
                     <p>info@thebestpracticetraining.com</p>
                 </div>
                
+            </div>
+            <div class="blog-navs">
+                <div class="previous-nav">
+                When Did Agile Start?
+                    <div class="buttons">
+                        <a class="btn-blue">
+                        <img src="{{url('img/blog-detail/prev-nav.svg')}}" alt="prev-nav">
+                            Previous Post
+                        </a>
+                    </div>  
+                </div>
+                <div class="next-nav">
+                     When Did Agile Start?
+                     <div class="buttons">
+                        <a class="btn-blue">
+                            Next Post
+                            <img src="{{url('img/blog-detail/next-nav.svg')}}" alt="next-nav">
+                        </a>
+                    </div>  
+                </div>
             </div>
         </div>
     </div>

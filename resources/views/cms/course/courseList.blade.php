@@ -92,13 +92,13 @@
                       
                       <td class=" text-center"> 
                         @can('update',$course)
-                        <a href="{{Route('bulletPointList',['module_id'=>$course->id])}}" class=" fa fa-bullseye"></a>
+                        <a href="{{Route('courseBulletPointList',['module'=>$course->id])}}" class=" fa fa-bullseye"></a>
                         @endcan
                       </td>
                       
                       <td class=" text-center"> 
                         @can('update',$course)
-                        <a href="{{route('whatsIncludedList',['module_id'=>$course->id])}}" class=" fas fa-puzzle-piece"></a>
+                        <a href="{{route('courseWhatsIncludedList',['module'=>$course->id])}}" class=" fas fa-puzzle-piece"></a>
                         @endcan
                       </td>
                       

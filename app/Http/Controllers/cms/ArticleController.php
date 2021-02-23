@@ -70,22 +70,22 @@ class ArticleController extends Controller
         }
         
         $article->save();
-        $tagNames              =          $request->input('tag');
-        foreach($tagNames as $tagName)
-        {
-            $tag = Tag::where('name',$tagName)->first();
+        // $tagNames              =          $request->input('tag');
+        // foreach($tagNames as $tagName)
+        // {
+        //     $tag = Tag::where('name',$tagName)->first();
            
-            if(empty($tag->id))
-            {
-                $tag = new Tag();
-                $tag->name = $tagName;
-                // dd($tag);
-                $tag->save();
-            }
+        //     if(empty($tag->id))
+        //     {
+        //         $tag = new Tag();
+        //         $tag->name = $tagName;
+        //         // dd($tag);
+        //         $tag->save();
+        //     }
                   
         
-             $article->tags()->attach($tag->id);
-        }
+        //      $article->tags()->attach($tag->id);
+        // }
 
         if($request->has('is_popular'))
         {
@@ -143,25 +143,25 @@ class ArticleController extends Controller
         
         $article->save();
        
-        $tagNames              =          $request->input('tag');
+        // $tagNames              =          $request->input('tag');
       
-        foreach($tagNames as $tagName)
-        {
-            $tag = Tag::where('name',$tagName)->first();
+        // foreach($tagNames as $tagName)
+        // {
+        //     $tag = Tag::where('name',$tagName)->first();
 
            
-            if(empty($tag->id))
-            {
-                $tag = new Tag();
-                $tag->name = $tagName;
+        //     if(empty($tag->id))
+        //     {
+        //         $tag = new Tag();
+        //         $tag->name = $tagName;
                   
-                $tag->save();
-            }
+        //         $tag->save();
+        //     }
          
-            // $article->tags()->sync($tag->id); 
-        }
-            $tags = Tag::wherein('name',$tagNames)->get();
-            $article->tags()->sync($tags); 
+        //     // $article->tags()->sync($tag->id); 
+        // }
+        //     $tags = Tag::wherein('name',$tagNames)->get();
+        //     $article->tags()->sync($tags); 
 
         if($request->has('is_popular'))
         {

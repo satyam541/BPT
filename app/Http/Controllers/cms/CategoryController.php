@@ -144,6 +144,7 @@ class CategoryController extends Controller
         $data['editbulletpointroute']='categoryEditBulletPoint';
         $data['deletebulletpointroute']='categoryDeleteBulletPoint';
         $data['insertbulletpointroute']='categoryCreateBulletPoint';
+        $data['type']='category';
         $data['module'] = Category::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
@@ -151,6 +152,8 @@ class CategoryController extends Controller
     public function createBulletPoint(Request $request)
     {
         $data['result']         = new BulletPoint;
+        $data['type']           = 'category';
+        $data['module_id']      = $request->module;
         $data['submitRoute']    = ['categoryInsertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -173,6 +176,8 @@ class CategoryController extends Controller
     public function editBulletPoint($id)
     {
         $data['result']         = BulletPoint::find($id);
+        $data['type']           = 'category';
+        $data['module_id']      = $data['result']->module_id;
         $data['submitRoute']    = ['categoryUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -190,7 +195,7 @@ class CategoryController extends Controller
             return redirect($url,302);
         }
         $data['result'] = Category::with('whatsIncluded')->find($id);
-        $data['module'] = 'Category';
+        $data['module'] = 'category';
         $data['deletewhatsincludedroute']='categoryDeleteWhatsincluded';
         $data['insertwhatsincludedroute']='categoryCreateWhatsincluded';
         return view('cms.whatsincluded.whatsincluded',$data);
@@ -208,7 +213,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         $course = $categories->where('id', $category_id)->first();
         $data['course'] = $course;
-        $data['module'] = 'Category';
+        $data['module'] = 'category';
         $data['list'] = $categories->pluck('name','id')->toArray();
         $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
         $data['whatsincluded'] = new whatsincluded();

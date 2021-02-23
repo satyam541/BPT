@@ -33,7 +33,7 @@ class FaqController extends Controller
         $result['data'] = new Faq();
         $result['data']['module_type'] = $type;
         $result['data']['module_id'] = $id;
-       
+        
         return view('cms.faq.faqForm', $result);
     }
 
