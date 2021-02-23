@@ -41,6 +41,7 @@ class ArticleController extends Controller
         $data['tag']=Tag::all(); 
         $data['list'] = $list;
         $data['articleRoute']="newsList";
+        
         return view('cms.article.articleForm',$data);
     }
 
@@ -85,6 +86,12 @@ class ArticleController extends Controller
         
              $article->tags()->attach($tag->id);
         }
+
+        if($request->has('is_popular'))
+        {
+            $article->popular()->save($article->popular);
+        }
+
         if($article->type=='news')
         {
             return redirect()->route('newsList')->with('success', 'News Inserted Successfully!');
@@ -96,38 +103,37 @@ class ArticleController extends Controller
         }
    }
 
-     public function edit(Article $article)
-     {
+    public function edit($article)
+    {
+        $article    =   Article::with('hasPopular')->find($article);
         $this->authorize('update', $article);
-         $data['article'] = $article;
-         $list['tag'] = Tag::all()->pluck('name','name')->toArray();
-        $data['list'] = $list;
-        $data['articleRoute']="blogList";
-
-        $data['tag']=Tag::all(); 
-        $data['selectedTags']=$article->tags->pluck('name')->toArray();
-         $data['submitRoute'] = array('updateArticle',$article->id);
-         $data['route']=$article->type."List";
-         $data['value']=$article->type;
-         return view("cms.article.articleForm",$data);
-     }
+        $data['article']        =   $article;
+        $list['tag']            =   Tag::all()->pluck('name','name')->toArray();
+        $data['list']           =   $list;
+        $data['articleRoute']   =   "blogList";
+        
+        $data['tag']            =   Tag::all(); 
+        $data['selectedTags']   =   $article->tags->pluck('name')->toArray();
+        $data['submitRoute']    =   array('updateArticle',$article->id);
+        $data['route']          =   $article->type."List";
+        $data['value']          =   $article->type;
+        
+        return view("cms.article.articleForm",$data);
+    }
 
     public function update(Article $article,ArticleRequest $request)
     {
         $this->authorize('update', $article);
-        $article->title                     = $request->title;
-        $article->content                  = $request->content;
-        $article->post_date                = $request->post_date;
-        $article->type                     = $request->type;
-        $article->author                   =$request->author;
-        $article->meta_title               =$request->meta_title;
-        $article->meta_description        =$request->meta_description;
-        $article->meta_keywords           =$request->meta_keywords;
-        $article->summary                =$request->summary;
-        
-      
-       
-        $article->reference      = $request->reference;
+        $article->title                 = $request->title;
+        $article->content               = $request->content;
+        $article->post_date             = $request->post_date;
+        $article->type                  = $request->type;
+        $article->author                = $request->author;
+        $article->meta_title            = $request->meta_title;
+        $article->meta_description      = $request->meta_description;
+        $article->meta_keywords         = $request->meta_keywords;
+        $article->summary               = $request->summary;
+        $article->reference             = $request->reference;
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -137,7 +143,6 @@ class ArticleController extends Controller
         
         $article->save();
        
-     
         $tagNames              =          $request->input('tag');
       
         foreach($tagNames as $tagName)
@@ -154,20 +159,28 @@ class ArticleController extends Controller
             }
          
             // $article->tags()->sync($tag->id); 
-        
+        }
+            $tags = Tag::wherein('name',$tagNames)->get();
+            $article->tags()->sync($tags); 
+
+        if($request->has('is_popular'))
+        {
+            $article->popular()->save($article->popular);
+        }
+        else if($article->isPopular())
+        {
+            $article->popular->delete();
         }
 
-        $tags = Tag::wherein('name',$tagNames)->get();
-           $article->tags()->sync($tags); 
-           if($article->type == 'news')
-           {
-               return redirect()->route('newsList')->with('success', 'News Updated Successfully!');
-           }
-           else
-           {
-               return redirect()->route('blogList')->with('success', 'Blog Updated Successfully!');
-               
-           }   
+        if($article->type == 'news')
+        {
+            return redirect()->route('newsList')->with('success', 'News Updated Successfully!');
+        }
+        else
+        {
+            return redirect()->route('blogList')->with('success', 'Blog Updated Successfully!');
+            
+        }   
     }
 
     public function delete(Article $article)

@@ -43,7 +43,7 @@
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Certification Name</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
