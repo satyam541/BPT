@@ -142,7 +142,7 @@
                 @php unset($pageDetail->choose_us['heading'])@endphp
                 @foreach ($pageDetail->choose_us as $item)
                 <div class="item">
-                    <img src="{{$item->getImagePath()}}" alt="price">
+                    <img src="{{$item->getImagePath()}}" alt="{{$item->image_alt}}">
                     <h3>{!!$item->heading!!}</h3>
                     <p>{!!$item->content!!}</p>
                 </div>    
@@ -182,7 +182,7 @@
 
             </div>
             <div class="ways-image">
-                <img src="{{$Detail->ways['heading']->getImagePath()}}" alt="ways-info">
+                <img src="{{$Detail->ways['heading']->getImagePath()}}" alt="{{$Detail->ways['heading']->image_alt}}">
             </div>
         </div>
     </div>
@@ -203,7 +203,7 @@
                 <div class="item">
                     <div class="overlay">
                     </div>
-                    <img src="{{$delivery->getImagePath()}}" alt="classroom">
+                    <img src="{{$delivery->getImagePath()}}" alt="{{$delivery->image_alt}}">
                     <h3>{!!$delivery->heading!!}</h3>
                     <p>{!!$delivery->content!!}</p>
                     <a href="">Enquire Now</a>
