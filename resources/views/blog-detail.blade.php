@@ -69,7 +69,7 @@
                         <li>Maintain motivated individuals and provide a supportive environment for them</li>
                         <li>Promote a sustainable development.</li>
                     </ul>
-                    <p class="blog-reviews">
+                    <p class="feedback">
                     Praesent Tempus Cursus Magna, Eget Placerat Nibh Cursus Non. Sed Accumsan Maximus Hendrerit. Suspendisse Ullamcorper Auctor Nisl Suscipit Malesuada.
                     </p>
 
@@ -79,14 +79,13 @@
             </div>
             <div class="content-right">
                 <div class="search-bar">
-                    <div class="heading">
+                    <div class="heading center-heading">
                         <h2>Search</h2>
                     </div>
                     <span>
                         <input type="text" placeholder="Search....." autocompleat="off" > 
                         <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
                     </span>
-
                 </div>
                 <div class="blog-review">
                     <div class="review-outter">
