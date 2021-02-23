@@ -15,6 +15,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route($module.'List')}}">{{ucfirst($module)}}</a></li>
             <li class="breadcrumb-item active">Whats Included</li>
           </ol>
         </div><!-- /.col -->
@@ -43,7 +44,7 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>{{$module}} Name</th>
+                  <th>{{ucfirst($module)}} Name</th>
                   <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>

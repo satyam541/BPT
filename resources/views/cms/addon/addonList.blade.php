@@ -34,7 +34,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                CourseAddon List
+                Course Addon List
               </div>
             </div>
             <!-- /.card-header -->

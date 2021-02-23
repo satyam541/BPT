@@ -81,13 +81,13 @@ class CourseController extends Controller
 
     public function bulletPointList(Request $request)
     {
-
-        $data['selectedCourse'] = $request->module_id;
+        $data['selectedCourse'] = $request->module;
         $data['editbulletpointroute']='editBulletPoint';
         $data['deletebulletpointroute']='deleteBulletPoint';
         $data['insertbulletpointroute']='createBulletPoint';
         $data['type']='course';
-        $data['module'] = Course::with('BulletPoint')->find($request->module_id);
+        $data['module'] = Course::with('BulletPoint')->find($request->module);
+        
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }
@@ -95,6 +95,8 @@ class CourseController extends Controller
     public function createBulletPoint(Request $request)
     {
         $data['result']         = new BulletPoint;
+        $data['type']           = 'course';
+        $data['module_id']      = $request->module;
         $data['submitRoute']    = ['insertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -108,13 +110,15 @@ class CourseController extends Controller
         $data['bullet_point_text']  = $input['bullet_point_text'];
         BulletPoint::updateOrCreate(['id' =>$input['id']],$data);
         
-        return redirect()->route('bulletPointList',['module_id'=>$data['module_id']])->with('success','Operation done!');
+        return redirect()->route('courseBulletPointList',['module'=>$data['module_id']])->with('success','Operation done!');
         
     }
 
     public function editBulletPoint($id)
     {
         $data['result']         = BulletPoint::find($id);
+        $data['type']           = 'course';
+        $data['module_id']      = $data['result']->module_id;
         $data['submitRoute']    = ['updateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -320,14 +324,14 @@ class CourseController extends Controller
    
    public function whatsincludedlist(Request $request)
    {
-        $id = $request->module_id;
+        $id = $request->module;
         // dd($id);
         if(empty($id))
         {
             $url = route('courseList');
             return redirect($url,302);
         }
-        $data['module'] = 'Course';
+        $data['module'] = 'course';
         $data['result'] = course::with('whatsIncluded')->find($id);
         $data['deletewhatsincludedroute']='deletewhatsincluded';
         $data['insertwhatsincludedroute']='createwhatsincluded';
@@ -346,7 +350,7 @@ class CourseController extends Controller
         $courses = Course::all();
         $course = $courses->where('id', $course_id)->first();
         $data['course'] = $course;
-        $data['module'] = 'Course';
+        $data['module'] = 'course';
         $data['list'] = $courses->pluck('name','id')->toArray();
         $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
         $data['whatsincluded'] = new whatsincluded();

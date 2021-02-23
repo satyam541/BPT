@@ -123,7 +123,7 @@ Route::get('/unlinkedCourse','CourseController@unlinkedCourseList')->name('unlin
 Route::post('/linkTopic/{id}','CourseController@linkTopic')->name('linkTopicRoute');
 
 // Course Bulletpoint
-Route::get('/course/bulletPoint','CourseController@bulletPointList')->name('bulletPointList');
+Route::get('/course/bulletPoint','CourseController@bulletPointList')->name('courseBulletPointList');
 Route::get('/course/bulletPoint/insert','CourseController@createBulletPoint')->name('createBulletPoint');
 Route::post('/course/bulletPoint/insert/{module}','CourseController@submitBulletPoint')->name('insertBulletPoint');
 Route::get('/course/bulletPoint/update/{id}','CourseController@editBulletPoint')->name('editBulletPoint');
@@ -144,7 +144,7 @@ Route::get('/topic/bulletPoint/update/{id}','TopicController@editBulletPoint')->
 Route::post('/topic/bulletPoint/update/{module}','TopicController@submitBulletPoint')->name('topicUpdateBulletPoint');
 Route::post('/topic/bulletPoint/delete/{courseDetail}','TopicController@deleteBulletPoint')->name('topicDeleteBulletPoint');
 // Course Whatsincluded
-Route::get('/course/whatsincluded','CourseController@whatsincludedlist')->name('whatsIncludedList');
+Route::get('/course/whatsincluded','CourseController@whatsincludedlist')->name('courseWhatsIncludedList');
 Route::get('/course/whatsincluded/insert','CourseController@whatsincludedcreate')->name('createwhatsincluded');
 Route::get('/course/whatsincluded/sort','CourseController@sortWhatsIncluded')->name('sortWhatsIncluded');
 Route::post('/course/whatsincluded/insert','CourseController@whatsincludedinsert')->name('insertwhatsincluded');
