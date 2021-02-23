@@ -5404,6 +5404,209 @@ input::-webkit-inner-spin-button {
     width: 339px;
   }
 }
+.blog-intro {
+  padding: 3rem 1.5rem;
+}
+.blog-intro .content-left span img {
+  width: 100%;
+  height: 100%;
+}
+.blog-intro .detail {
+  display: flex;
+  flex-wrap: wrap;
+}
+.blog-intro .detail p {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.blog-intro .detail p:nth-child(1) {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.blog-intro .detail p:nth-child(3) {
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+.blog-intro .detail p:nth-child(2) {
+  margin-bottom: 0;
+}
+.blog-intro .detail p img {
+  width: 30px;
+  margin-right: 0.5rem;
+}
+.blog-intro .intro-detail p {
+  margin-bottom: 0.5rem;
+}
+.blog-intro .intro-detail p:last-child {
+  margin-bottom: 0;
+}
+.blog-intro .intro-detail p:nth-last-child(2) {
+  margin-top: 0.5rem;
+}
+.blog-intro .img-content {
+  display: flex;
+  flex-direction: column;
+}
+.blog-intro .img-content img {
+  width: 100%;
+}
+.blog-intro ul li {
+  margin-top: 0.5rem;
+  padding-left: 1.7rem;
+  position: relative;
+  z-index: 1;
+}
+.blog-intro ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  background-image: url(../img/blog-detail/polygon.svg);
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.blog-intro .feedback {
+  padding: 1.5rem;
+  background-color: #F6F6F6;
+  position: relative;
+  z-index: 1;
+}
+.blog-intro .feedback::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 3px;
+  height: 50%;
+  left: 0;
+  top: 40px;
+  background-color: #0064D8;
+}
+.blog-intro h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.blog-intro .content-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.blog-intro .search-bar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #F6F6F6;
+}
+.blog-intro .search-bar span {
+  display: flex;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 0.5rem;
+  background-color: #FFFFFF;
+}
+.blog-intro .search-bar span img {
+  width: 50px;
+  height: 40px;
+}
+.blog-intro .search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.blog-intro .review-outter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  background-image: url(../img/blog-detail/blog-review.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 1;
+}
+.blog-intro .review-outter::before {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-image: url(../img/blog-detail/blog-quotes.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.blog-intro .review-outter span {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+}
+.blog-intro .review-outter span img {
+  width: 100%;
+  height: 100%;
+}
+.blog-intro .review-outter p {
+  text-align: center;
+}
+.blog-intro .review-outter h3 {
+  margin-bottom: 0.2rem;
+}
+.blog-intro .blog-question {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  padding-top: 10rem;
+  background-image: url(../img/blog-detail/question-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.blog-intro .blog-question::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#181818, #0064D8);
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+}
+.blog-intro .blog-question h2,
+.blog-intro .blog-question p,
+.blog-intro .blog-question a {
+  text-align: center;
+  color: #FFFFFF;
+}
+.blog-intro .blog-question a {
+  margin-top: 2rem;
+  font-size: 25px;
+  position: relative;
+  z-index: 1;
+}
+.blog-intro .blog-question a::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 145px;
+  height: 2px;
+  left: 40px;
+  top: -15px;
+  background-color: #FFFFFF;
+}
+.blog-intro .blog-question p {
+  margin-top: 0.5rem;
+  font-size: 11px;
+}
 .location-main {
   padding: 3rem 1.5rem;
 }
