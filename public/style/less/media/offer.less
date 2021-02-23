@@ -1,7 +1,6 @@
 @media @size-md{
         // Start offer-Banner section //
         .offer-banner {
-            padding: @sectionPadding-md;
             padding-top: 1rem!important;
         }
         // End offer-banner section
@@ -13,16 +12,14 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-between;
+                width: 100%;
             }
             .project-bundle{
                 width: 48%;
             }
-            .bundles-info{
-                display: flex;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
+            .top-bundles{
+                width: 70%;
+                align-self: center;
             }
         }
         // End bundle section
@@ -30,6 +27,7 @@
         // Start management section
         .management{
             padding: @sectionPadding;
+            padding-top: 0!important;
             .management-bundles{
                 flex-direction: row;
                 justify-content: space-between;
@@ -79,11 +77,19 @@
         .new-bundle{
             padding: @sectionPadding-md;
             .inform-us{
-                width: 64%;
+                width: 69%;
+                position: relative;
+                margin: auto;
+                margin-top: 2rem;
                 .inform-content{
-                    width: 100%;
                     box-shadow: @shadowLight;
+                    background-color: #FFFFFF;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0px;
+                    border-radius: 15px;
                     padding: 1.5rem;
+                    width: 89%;
                 }
             .inform-list{
                 flex-direction: row;
@@ -114,6 +120,12 @@
                 width: 48%;
                 position: relative;
                 margin-bottom: 0;
+                &:last-child{
+                    .btn-blue{
+                        font-size: 14px;
+                        padding: 10px 18px;
+                    }
+                }
                 &::before{
                     content: '';
                     position: absolute;
@@ -141,7 +153,6 @@
     // Start offer-Banner section //
     .offer-banner {
         background-image: url(../img/offer/banner-bg.png);
-        background-repeat: no-repeat;
         background-size: 50% 100%;
         background-position: right;
         .banner-container{
@@ -229,16 +240,9 @@
         }
         .inform-us{
             order: 1;
-            background-image: url(../img/offer/inform-bg.png);
-            background-repeat: no-repeat;
-            background-size: contain;
-            justify-content: flex-end;
             width: 52%;
-            margin-top: 0;
+            margin: 0;
             .inform-content{
-                align-self: flex-end;
-                border-radius: 15px;
-                background-color: @whiteColor;
                 width: 85%;
             }
     }
@@ -275,6 +279,9 @@
         padding: @sectionPadding-xl;
         .range{
             width: 55%;
+        }
+        .bundle-list{
+            width: 76%;
         }
         .top-bundles{
             width: 40%;

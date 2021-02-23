@@ -1,0 +1,111 @@
+@media @size-md{
+    // Start cart-banner section
+    .search-banner{
+        padding-top: 1rem!important;
+        .search{
+            width: 65%;
+        }
+    }
+    // End cart-banner section
+    
+    // Start search section
+    .search{
+        padding: @sectionPadding-md;
+        .search-list{
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .search-info{
+            width: 48%;
+        }
+    }
+    // End search section
+
+    // Start result section
+    .result{
+        padding: @sectionPadding-md;
+        .result-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .result-list{
+            width: 60%;
+        }
+        .buttons{
+            flex-direction: row;
+        }
+        .btn-blue{
+            margin-bottom: 0;
+            margin-right: 1rem;
+        }
+        .filter{
+            width: 32%;
+            align-self: flex-start;
+            position: sticky;
+            top: 70px;
+            height: fit-content;
+        }
+    }
+    // End result section
+    
+    
+    }
+    
+    @media @size-lg{
+    
+        // Start cart-banner section
+        .search-banner{
+            background-color: transparent;
+            background-image: url(../img/search/banner-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            .banner-container{
+                width: 50%;
+            }
+            .search{
+                width: 100%;
+            }
+        }
+        // End cart-banner section
+    
+        // Start search section
+        .search{
+            .search-info{
+                width: 23%;
+            }
+        }
+        // End search section
+
+    }
+    
+    @media @size-xl{
+    
+        // Start cart-banner section
+        .search-banner{
+            padding: @sectionPadding-xl;
+        }
+        // End cart-banner section
+    
+        // Start search section
+        .search{
+            padding: @sectionPadding-xl;
+            .search-list{
+                justify-content: space-between;
+            }
+        }
+        // End search section
+
+        // Start result section
+    .result{
+        padding: @sectionPadding-xl;
+        .result-list{
+            width: 65%;
+        }
+        .filter{
+            width: 24%;
+        }
+    }
+    // End result section
+    
+    }

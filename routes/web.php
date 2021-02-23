@@ -67,6 +67,10 @@ Route::get('/emptycart', function () {
     return view('emptycart');
 });
 
+Route::get('/search', function () {
+    return view('search');
+});
+
 Route::get('/privacy-policy',function(){
 
 })->name('privacy-policy');
