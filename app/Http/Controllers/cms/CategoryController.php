@@ -76,14 +76,18 @@ class CategoryController extends Controller
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
-
         $category->save();
+        if($request->has('is_popular'))
+        {
+            $category->popular()->save($category->popular);
+        }
         
         return redirect()->route('categoryList')->with('success','Successfully Added');
     }
 
-    public function edit(Category $category)
+    public function edit($category)
     {
+        $category = Category::with('hasPopular')->find($category);
         $this->authorize('update', $category);
         $data['category']    = $category;
         $data['submitRoute'] = array('updateCategory',$category->id);
@@ -114,8 +118,15 @@ class CategoryController extends Controller
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
-        
         $category->save();
+        if($request->has('is_popular'))
+        {
+            $category->popular()->save($category->popular);
+        }
+        else if($category->isPopular())
+        {
+            $category->popular->delete();
+        }
         
         return redirect()->route('categoryList')->with('success','Successfully Updated');
     }

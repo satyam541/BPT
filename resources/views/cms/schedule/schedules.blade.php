@@ -46,7 +46,11 @@
                   <th>Price</th>
                   <th>Location</th>
                   <th>Date</th>
-                  <th>Actions</th>
+                  <th>
+                    @can('update',new App\Models\Schedule())
+                    Actions
+                    @endcan
+                  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,8 +61,13 @@
                     <td>{{$schedule->response_price}}</td>
                     <td>{{$schedule->location->name}}</td>
                     <td>{{$schedule->response_date}}</td>
-                    <td><a href="{{Route('editSchedule',['schedule'=>$schedule->id])}}" class="fa fa-edit"></a>
-                    <a href="" class="fa fa-trash" style="color: red"></a>
+                    <td>
+                      @can('update',$schedule)
+                      <a href="{{Route('editSchedule',['schedule'=>$schedule->id])}}" class="fa fa-edit"></a>
+                      @endcan
+                      @can('delete',$schedule)
+                      <a href="#" onclick="deleteItem('{{ route('deleteSchedule',['schedule'=>$schedule->id])}}')" class="fa fa-trash" style="color: red"></a>
+                      @endcan
                     </td>
                 </tr>
                     @endforeach

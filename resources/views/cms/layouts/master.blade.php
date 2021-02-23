@@ -171,7 +171,7 @@
           class="nav-item has-treeview"
           @endif>
             <a href="#" class="nav-link">
-              <i class="fa fa-unlink"></i>
+              <i class="nav-icon fa fa-unlink"></i>
               <p>
                 Unlinked Data
                 <i class="fas fa-angle-left right"></i>
@@ -270,7 +270,7 @@
           class="nav-item has-treeview"
           @endif>
             <a href="#" class="nav-link">
-              <i class="fas fa-certificate"></i>
+              <i class="nav-icon fas fa-certificate"></i>
               <p>
                 Certifications
                 <i class="fas fa-angle-left right"></i>

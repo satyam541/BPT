@@ -235,6 +235,10 @@ class TopicController extends Controller
         }
 
         $topic->save();
+        if($request->has('is_popular'))
+        {
+            $topic->popular()->save($topic->popular);
+        }
         
         return redirect()->route('topicList')->with('success','Successfully Added');
     }
@@ -243,7 +247,7 @@ class TopicController extends Controller
     {
         // $this->authorize('create', new Topic());
         $inputs              = $request->except("_token");
-        $content             = TopcContent::firstOrCreate(
+        $content             = TopicContent::firstOrCreate(
             ['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']]
             ,$inputs);
         
@@ -254,7 +258,7 @@ class TopicController extends Controller
     public function edit($topic)
     {
         // $this->authorize('update', new Topic());
-        $data['topic']          = Topic::with('faqs')->find($topic);
+        $data['topic']          = Topic::with('faqs','hasPopular')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
         $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
@@ -295,6 +299,14 @@ class TopicController extends Controller
             $topic->image = $imageName;
         }
         $topic->save();
+        if($request->has('is_popular'))
+        {
+            $topic->popular()->save($topic->popular);
+        }
+        else if($topic->isPopular())
+        {
+            $topic->popular->delete();
+        }
        
         return redirect()->route('topicList')->with('success','Successfully Updated');
     }
