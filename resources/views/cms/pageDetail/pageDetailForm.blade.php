@@ -14,7 +14,8 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Page Content Form</li>
+            <li class="breadcrumb-item"><a href="{{route('pageDetailList')}}">Page Detail</a></li>
+            <li class="breadcrumb-item active">Form</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -87,7 +88,7 @@
                   </div>
                   
                   <div class="form-group">
-                    {{Form::label('image_alt','Image Alt')}}
+                    {{Form::label('icon_alt','icon Alt')}}
                     {{Form::text('icon_alt',null,['class'=>'form-control'])}}
                   </div>
                   

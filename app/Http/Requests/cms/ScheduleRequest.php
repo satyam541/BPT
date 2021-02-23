@@ -38,7 +38,8 @@ class ScheduleRequest extends FormRequest
                 'country_id'     =>  'required',
                 'response_date'  =>  'required',
                 'event_price'    =>  'required',
-                'event_time'     =>  'required'
+                'event_time'     =>  'required',
+                'location'       =>   'required'   
             ];
         }
     }

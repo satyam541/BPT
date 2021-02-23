@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51.667" height="52.5" viewBox="0 0 51.667 52.5">
+  <g id="course-onsite" transform="translate(-2 -2)">
+    <rect id="Rectangle_465" data-name="Rectangle 465" width="12" height="30" rx="1" transform="translate(39 24)" fill="#fff" stroke="#181818" stroke-width="1"/>
+    <rect id="Rectangle_466" data-name="Rectangle 466" width="4" height="5" rx="1" transform="translate(44 28)" fill="#181818"/>
+    <rect id="Rectangle_467" data-name="Rectangle 467" width="4" height="6" rx="1" transform="translate(44 34)" fill="#181818"/>
+    <rect id="Rectangle_468" data-name="Rectangle 468" width="12" height="30" rx="1" transform="translate(5 24)" fill="#fff" stroke="#181818" stroke-width="1"/>
+    <rect id="Rectangle_469" data-name="Rectangle 469" width="4" height="5" rx="1" transform="translate(8 28)" fill="#181818"/>
+    <rect id="Rectangle_470" data-name="Rectangle 470" width="4" height="6" rx="1" transform="translate(8 34)" fill="#181818"/>
+    <path id="Path_28408" data-name="Path 28408" d="M.923,0H24.911a.923.923,0,0,1,.923.923v36.9a.923.923,0,0,1-.923.923H.923A.923.923,0,0,1,0,37.827V.923A.923.923,0,0,1,.923,0Z" transform="translate(14.917 14.917)" fill="#0064d8"/>
+    <g id="Group_7467" data-name="Group 7467" transform="translate(17.685 18.607)">
+      <rect id="Rectangle_472" data-name="Rectangle 472" width="4" height="4" rx="1" transform="translate(0.315 0.393)" fill="#fff"/>
+      <rect id="Rectangle_473" data-name="Rectangle 473" width="6" height="4" rx="1" transform="translate(7.315 0.393)" fill="#fff"/>
+      <rect id="Rectangle_474" data-name="Rectangle 474" width="5" height="4" rx="1" transform="translate(15.315 0.393)" fill="#fff"/>
+      <rect id="Rectangle_475" data-name="Rectangle 475" width="4" height="6" rx="1" transform="translate(0.315 6.393)" fill="#fff"/>
+      <rect id="Rectangle_476" data-name="Rectangle 476" width="6" height="6" rx="1" transform="translate(7.315 6.393)" fill="#fff"/>
+      <rect id="Rectangle_477" data-name="Rectangle 477" width="5" height="6" rx="1" transform="translate(15.315 6.393)" fill="#fff"/>
+      <rect id="Rectangle_478" data-name="Rectangle 478" width="4" height="5" rx="1" transform="translate(0.315 13.393)" fill="#fff"/>
+      <rect id="Rectangle_479" data-name="Rectangle 479" width="6" height="5" rx="1" transform="translate(7.315 13.393)" fill="#fff"/>
+      <rect id="Rectangle_480" data-name="Rectangle 480" width="5" height="5" rx="1" transform="translate(15.315 13.393)" fill="#fff"/>
+    </g>
+    <path id="Path_28401" data-name="Path 28401" d="M37.639,46.722H23.861a.861.861,0,0,1,0-1.722H37.639a.861.861,0,0,1,0,1.722Z" transform="translate(-2.917 -5.972)" fill="#2980b9"/>
+    <path id="Path_28402" data-name="Path 28402" d="M26,46H36.333V58.917H26Z" transform="translate(-3.333 -6.111)" fill="#fff"/>
+    <path id="Path_28403" data-name="Path 28403" d="M36.194,45H25.861a.861.861,0,0,0-.861.861V58.778a.861.861,0,0,0,.861.861H36.194a.861.861,0,0,0,.861-.861V45.861A.861.861,0,0,0,36.194,45Zm-9.472,1.722h3.444V57.917H26.722Zm8.611,11.194H31.889V46.722h3.444Z" transform="translate(-3.194 -5.972)" fill="#2980b9"/>
+    <path id="Path_28404" data-name="Path 28404" d="M52.806,61.722H2.861a.861.861,0,0,1,0-1.722H52.806a.861.861,0,0,1,0,1.722Z" transform="translate(0 -8.056)" fill="#333"/>
+    <path id="Path_28405" data-name="Path 28405" d="M34.107,14.222a.867.867,0,0,1-.3-.055,6.757,6.757,0,0,0-4.752,0,.861.861,0,1,1-.6-1.613,8.486,8.486,0,0,1,5.961,0,.861.861,0,0,1-.3,1.668Z" transform="translate(-3.596 -1.391)" fill="#181818"/>
+    <path id="Path_28406" data-name="Path 28406" d="M36.176,10a.861.861,0,0,1-.4-.1,10.333,10.333,0,0,0-9.507,0,.861.861,0,1,1-.792-1.528,12.056,12.056,0,0,1,11.091,0,.861.861,0,0,1-.4,1.625Z" transform="translate(-3.194 -0.697)" fill="#181818"/>
+    <path id="Path_28407" data-name="Path 28407" d="M38.209,5.847a.861.861,0,0,1-.446-.125,13.685,13.685,0,0,0-14.244,0,.861.861,0,0,1-.894-1.473,15.4,15.4,0,0,1,16.032,0,.861.861,0,0,1-.448,1.6Z" transform="translate(-2.807 0)" fill="#181818"/>
+  </g>
+</svg>

@@ -11,8 +11,8 @@ class Category extends Model
     use SoftDeletes;
     protected $table = 'category';
     protected $guarded = array('id');
-    public $image_path = "storage/uploads/category/";
-    public $icon_path = "storage/uploads/category/";
+    public $image_path = "/uploads/category/";
+    public $icon_path = "/uploads/category/";
     public  static $selected= NULL;
 
     public function topics()

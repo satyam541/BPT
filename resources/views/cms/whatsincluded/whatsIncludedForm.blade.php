@@ -14,7 +14,9 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Whats Included Form</li>
+            <li class="breadcrumb-item"><a href="{{route($module.'List')}}">{{ucfirst($module)}}</a></li>
+            <li class="breadcrumb-item"><a href="{{route($module.'WhatsIncludedList',['module' => $course->id])}}">Whats Included</a></li>
+            <li class="breadcrumb-item active">Form</li>
             
           </ol>
         </div><!-- /.col -->
@@ -40,7 +42,7 @@
               {{Form::model($whatsincluded,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
                   <div class="form-group">
-                    {{Form::label('course_id',$module)}}
+                    {{Form::label('course_id',ucfirst($module))}}
                     {{Form::select('course_id',$list,$course->id,['class'=>'form-control selectJS', 'placeholder'=>'Choose one','tabindex'=>'-1'])}}
                   </div>
 
