@@ -45,9 +45,7 @@ Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseA
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/blog', function () {
 //     return view('blog');
