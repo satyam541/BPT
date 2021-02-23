@@ -61,15 +61,15 @@
                     {{Form::date('post_date',null,['class'=>'form-control '])}}
                   </div>
                   
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     {{Form::label('tag','Tag')}}
-                    {{Form::select('tag[]',$list['tag'],$selectedTags,['tabindex'=>'-1','class'=>' form-control selectJS', 'required'=>'required', 'placeholder'=>'Choose one'])}}
+                    {{Form::select('tag[]',$list['tag'],$selectedTags,['tabindex'=>'-1','class'=>' form-control selectJS', 'placeholder'=>'Choose one'])}}
                     @error('tag[]')
                       <span class="invalid-feedback bg-danger text-sm" role="alert">
                           <span>{{ $message }}</span>
                       </span>
                     @enderror
-                  </div>
+                  </div> --}}
 
                   <div class="form-group">
                     {{Form::label('author','Author ')}}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\PageDetail;
+use App\Models\Topic;
 class HomeController extends Controller
 {
     /**
@@ -21,7 +22,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data['categories']=Category::whereHas('hasPopular')->with('topics','topics.courses')->get();  
+        $data['categories']=Category::whereHas('hasPopular')->with('topics','topics.courses')->get();
+        $data['topics']=Topic::whereHas('hasPopular')->get()->toArray();
+
+        
         $data['totalCourses']=null;
         $pageDetail = PageDetail::where(['page_name'=>'home','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())

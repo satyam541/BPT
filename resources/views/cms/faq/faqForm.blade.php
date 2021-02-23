@@ -14,8 +14,9 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('courseList') }}">Course</a></li>
-                            <li class="breadcrumb-item active">Faq Form</li>
+                            <li class="breadcrumb-item"><a href="{{route($data->module_type.'List')}}">{{ucfirst($data->module_type)}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('faqList', ['type' => $data->module_type, 'id' => $data->module_id]) }}">FAQ's</a></li>
+                            <li class="breadcrumb-item active">Form</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

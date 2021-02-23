@@ -10,7 +10,7 @@ class Article extends Model
     use SoftDeletes;
     protected   $table='article';
     protected $primaryKey = "id";
-    public $image_path = "storage/uploads/article/";
+    public $image_path = "/uploads/article/";
     protected $guarded = array('id');
     public $imageprefix="large_";
     public $appends = ['publish_date'];
@@ -45,9 +45,9 @@ class Article extends Model
         
         if($this->type=='blog')
         {
-            $imageLink = url($this->image_path.$this->imageprefix.$this->image);
+            $imageLink = url($this->image_path.$this->image);
         
-            if (!empty($this->image) && file_exists(public_path($this->image_path.$this->imageprefix.$this->image))) {
+            if (!empty($this->image) && file_exists(public_path($this->image_path.$this->image))) {
                 return $imageLink;
             } else {
                 if($this->type=='news')
