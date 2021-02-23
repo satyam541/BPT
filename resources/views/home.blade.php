@@ -38,132 +38,24 @@
                         </div>
                 </div>
                 <div class="topic-list owl-carousel">
-                    <ul>
+
+                    @foreach (array_chunk($topics,4) as $topic)
+                        <ul>
+                        @foreach ($topic as $item)
                         <li>
                             <a>
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
-                                PRINCE training
+                                {{$item['name']}}
                                 <span>Browse Related Courses</span>
                             </p>
                             <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
                             </a>
                         </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>Browse Related Courses</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
-                    <ul>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                            <img src="{{url('img/master/open-book.svg')}}" alt="book">
-                            <p>
-                                PRINCE training
-                                <span>prince training</span>
-                            </p>
-                            <img src="{{url('img/master/arrow.svg')}}" alt="arrow">
-                            </a>
-                        </li>
-                    </ul>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
@@ -223,12 +115,12 @@
         <div class="effective-container">
             <div class="content">
                 <img src="{{url('img/home/call-us.svg')}}" alt="call-us">
-                <p>Call us for Professional, flexible and cost-effective Courses</p>
+                <p>{!!$pageDetail->banner['content']->heading!!}</p>
             </div>
             <div class="buttons">
                 <a class="btn-white" href="tel: 02380001008">
                     <img src="{{url('img/master/call.svg')}}" alt="call">
-                    02380001008
+                    {{websiteDetail()->contact_number}}
                 </a>
             </div>
 
@@ -244,23 +136,19 @@
                         Choose  Us
                     </span>
                 </h2>
+                {{-- <h1>{{$pageDetail->choose_us['heading']->heading}}</h1> --}}
             </div>
             <div class="choose-list">
+                @php unset($pageDetail->choose_us['heading'])@endphp
+                @foreach ($pageDetail->choose_us as $item)
                 <div class="item">
-                    <img src="{{url('img/home/price.svg')}}" alt="price">
-                    <h3>Best Price Guarantee</h3>
-                    <p>You won’t find a better value in the marketplace. If you do find a lower price, send us the offer, and we’ll beat it.</p>
-                </div>
-                <div class="item">
-                    <img src="{{url('img/home/run.svg')}}" alt="run">
-                    <h3>Guaranteed to Run</h3>
-                    <p>All our courses are 100% Guaranteed to Run on the dates provided, whether they are a classroom, virtual or in-house.</p>
-                </div>
-                <div class="item">
-                    <img src="{{url('img/home/back.svg')}}" alt="back">
-                    <h3>100% Money Back Guarantee</h3>
-                    <p>We are so confident in our courses and the skills of our instructor that we offer a money-back guarantee if you do not pass the exam.</p>
-                </div>
+                    <img src="{{$item->getImagePath()}}" alt="price">
+                    <h3>{!!$item->heading!!}</h3>
+                    <p>{!!$item->content!!}</p>
+                </div>    
+                @endforeach
+                
+
             </div>
 
 
