@@ -32,6 +32,15 @@ Route::post('/permission/delete/{permission}','UserController@deletePermission')
 Route::post('/role/assign','UserController@assignRoles')->name('assignRole'); // was updateRoles
 Route::post('/permission/assign','UserController@assignPermission')->name('assignPermission');
 Route::get('/module/auto-complete','UserController@loadModules')->name('moduleAutoComplete');// autocomplete module
+
+Route::get('/certification','CertificationController@index')->name('certificationList');
+Route::get('/certification/insert','CertificationController@create')->name('createCertification');
+Route::post('/certification/insert','CertificationController@insert')->name('insertCertification');
+Route::get('/certification/update/{id}','CertificationController@edit')->name('editCertification');
+Route::post('/certification/update/{id}','CertificationController@update')->name('updateCertification');
+Route::post('/certification/delete/{id}','CertificationController@delete')->name('deleteCertification');
+
+Route::get('/certification/courses','CertificationController@courseList')->name('certificationCourseList');
 // country routes
 Route::get('/country','CountryController@list')->name('countryList');
 Route::post('/country','CountryController@filterList')->name('countryList');
@@ -298,6 +307,10 @@ Route::get('/venue/deletevenue/{id}','VenueController@forceDeleteVenue')->name('
 Route::get('/countrytrash','CountryController@countrytrashList')->name('countryTrashList');
 Route::get('/country/restorevenue/{country_code}','CountryController@restoreCountry')->name('restoreCountry');
 Route::get('/country/deletecountry/{country_code}','CountryController@forceDeleteCountry')->name('forceDeleteCountry');
+
+Route::get('/certificationtrash','CertificationController@trashList')->name('certificationTrashList');
+Route::get('/certification/restore/{id}','CertificationController@restore')->name('restoreCertification');
+Route::get('/certification/forcedelete/{id}','CertificationController@forceDelete')->name('forceDeleteCertification');
 
 Route::get('/locationtrash','LocationController@locationtrashList')->name('locationTrashList');
 Route::get('/location/restorelocation/{id}','LocationController@restoreLocation')->name('restoreLocation');
