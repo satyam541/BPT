@@ -148,6 +148,10 @@ class Topic extends Model
             "display_order" => Popular::topics()->count()+1]
         );
     }
+    public function hasPopular()
+    {
+        return $this->morphOne('App\Models\Popular', 'module');
+    }
 
     public function faqs()
     {
@@ -188,11 +192,11 @@ class Topic extends Model
         // {
         //     $this->popular->restore();
         // }
-        // dd($this->whatsInclude());
-        // $this->whatsInclude()->restore();
-        // $this->faqs()->restore();
-        // $this->content()->restore();
-        $this->BulletPoint()->restore();
+        
+        $this->whatsInclude()->withTrashed()->restore();
+        $this->faqs()->withTrashed()->restore();
+        $this->content()->withTrashed()->restore();
+        $this->BulletPoint()->withTrashed()->restore();
         return parent::restore();
     }
 

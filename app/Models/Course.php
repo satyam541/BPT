@@ -61,6 +61,11 @@ class Course extends Model
         );
     }
     
+    public function hasPopular()
+    {
+        return $this->morphOne('App\Models\Popular', 'module');
+    }
+    
     public function loadContent()
     {
         $object = $this;
@@ -80,10 +85,10 @@ class Course extends Model
 
     public function delete()
     {
-        if($this->isPopular())
-        {
-            $this->popular->delete();
-        }
+        // if($this->isPopular())
+        // {
+        //     $this->popular->delete();
+        // }
         $this->whatsInclude()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
@@ -93,17 +98,14 @@ class Course extends Model
 
     public function restore()
     {
-        
-
         // if($this->isPopular())
         // {
         //     $this->popular->restore();
         // }
-        // dd($this->whatsInclude());
-        // $this->whatsInclude()->restore();
-        // $this->faqs()->restore();
-        // $this->content()->restore();
-        // $this->BulletPoint()->restore();
+        $this->whatsInclude()->withTrashed()->restore();
+        $this->faqs()->withTrashed()->restore();
+        $this->content()->withTrashed()->restore();
+        $this->BulletPoint()->withTrashed()->restore();
         return parent::restore();
     }
 
@@ -115,6 +117,11 @@ class Course extends Model
     public function content()
     {
         return $this->hasMany('App\Models\CourseContent');
+    }
+
+    public function certifications()
+    {
+        return $this->belongsToMany('App\Models\Certification','certification_course','course_id','certification_id');
     }
 
     public function faqs()
