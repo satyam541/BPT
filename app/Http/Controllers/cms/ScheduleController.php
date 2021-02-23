@@ -48,11 +48,9 @@ class ScheduleController extends ScheduleApi
       $this->authorize('create', new Schedule());
       $data["schedule"]     = new Schedule();
       $data["submitRoute"]  = "insertSchedule";
-
       $list["courses"]      = Course::pluck("name","id")->toArray();
       $list["countries"]    = Country::has('locations')->pluck("name","country_code")->toArray();
       $list["locations"]    = array();
-
       $data['list']         = $list;
       // required input fields
       //course, country, location,venue, date , time, duration , eventprice 
@@ -113,19 +111,21 @@ class ScheduleController extends ScheduleApi
     public function update(ScheduleRequest $request,Schedule $schedule)
     { 
       $this->authorize('update', $schedule);
-      $inputs   = $request->all();
-
+      $inputs = $request->all();
       $course   = Course::find($inputs['course_id']);
+      $dates    = explode(",",$inputs['response_date']);
+      foreach($dates as $date){
       $location = Location::with('venues')->find($inputs['location']);
-
       // $schedule = new Schedule();
       $schedule->response_course_id         = $inputs['course_id'];
       $schedule->course_id                  = $inputs['course_id'];
       $schedule->response_course_name       = $course->name;
+      $date=date_create($date);
+      $date=date_format($date,"Y-m-d");
       // $schedule->response_venue_id          = $location->venues->first()->id;
       // $schedule->venue_id                   = $location->venues->first()->id;
       $schedule->response_location          = $location->name;
-      $schedule->response_date              = $inputs['response_date'];
+      $schedule->response_date              = $date;
       $schedule->response_price             = $inputs['event_price'];
       $schedule->response_discounted_price  = $inputs['event_price'];
       $schedule->country_id                 = $inputs['country_id'];
@@ -137,6 +137,7 @@ class ScheduleController extends ScheduleApi
 
       return back()->with('success','Schedule updated!');
     }
+  }
 
     public function delete(Schedule $schedule)
     {
@@ -181,7 +182,6 @@ class ScheduleController extends ScheduleApi
       $selectedCourse     = $request->input('course',$courseId);    
       $list['courses']    = Course::pluck('name','id')->toArray();
       $list['countries']  = Country::pluck('name','country_code')->toArray();
-
       $data['locations']  = Location::whereHas('venue')->with("venue.customSchedulePrice")->where("country_id",$selectedCountry)->get();
       $data['course']     = Course::find($courseId);
       $data['selectedCourse']   = $selectedCourse; 
@@ -190,7 +190,7 @@ class ScheduleController extends ScheduleApi
       return view('cms.schedule.manageSchedulePrice',$data);
     }
 
-    public function updateCustomPrice(Request $request,$courseId, $venue=null)
+    public function updateCustomPrice(Request $request,$courseId, $venue = null)
     {
       $input = $request->all();
       $customize = CustomSchedulePrice::firstOrNew(array('course_id'=>$courseId,'venue_id'=>$venue));
@@ -267,7 +267,6 @@ class ScheduleController extends ScheduleApi
       $list["courses"]      = Course::pluck("name","id")->toArray();
       $list["countries"]    = Country::pluck("name","country_code")->toArray();
       $list["locations"]    = Location::pluck("name","id")->toArray();
-
       $data['list']         = $list;
       return view('cms.schedule.editSchedule',$data);
 
@@ -278,18 +277,20 @@ class ScheduleController extends ScheduleApi
     { 
       $this->authorize('update', $schedule);
       $inputs   = $request->all();
-
       $course   = Course::find($inputs['course_id']);
+      $dates    = explode(",",$inputs['response_date']);
+      foreach($dates as $date){
       $location = Location::with('venues')->find($inputs['location']);
-
       // $schedule = new Schedule();
       $schedule->response_course_id         = $inputs['course_id'];
       $schedule->course_id                  = $inputs['course_id'];
       $schedule->response_course_name       = $course->name;
-      $schedule->response_venue_id          = $location->venues->first()->id;
-      $schedule->venue_id                   = $location->venues->first()->id;
+      $date=date_create($date);
+      $date=date_format($date,"Y-m-d");
+      // $schedule->response_venue_id          = $location->venues->first()->id;
+      // $schedule->venue_id                   = $location->venues->first()->id;
       $schedule->response_location          = $location->name;
-      $schedule->response_date              = $inputs['response_date'];
+      $schedule->response_date              = $date;
       $schedule->response_price             = $inputs['event_price'];
       $schedule->response_discounted_price  = $inputs['event_price'];
       $schedule->country_id                 = $inputs['country_id'];
@@ -298,7 +299,8 @@ class ScheduleController extends ScheduleApi
       $schedule->duration                   = $inputs['duration'];
       $schedule->source                     = "cms";
       $schedule->save();
-
       return back()->with('success','Schedule updated!');
     }
+  }
 }
+

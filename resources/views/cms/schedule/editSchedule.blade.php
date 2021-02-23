@@ -63,7 +63,7 @@
                   
                   <div class="form-group">
                     {{Form::label('response_date','Event Date')}}
-                    {{Form::date('response_date',$schedule->response_date,['id'=>'inputDate','class'=>'form-control'])}}
+                    {{Form::text('response_date',$schedule->response_date,['id'=>'inputDates','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -154,6 +154,14 @@
             }
         });
     }
-    
+ </script>
+ <script>   
+    $(document).ready(function () {
+        $("#inputDates").datepicker({
+            dateFormat: "yy-m-d",
+           
+            
+        });
+    });
     </script>
 @endsection
