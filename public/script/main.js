@@ -251,3 +251,23 @@ $('input.telephone').on('focusout', function(event){
 
 //  honeytrap end
     
+
+//Start home blog-detail Testimonial//
+
+$('.blog-review').owlCarousel({
+    loop: true,
+    responsiveClass: true,
+    dots: false,
+    nav: true,
+    autoplay: true,
+    navText: ["",""],
+    items: 1,
+    responsive: {
+        0: {
+            items: 1,
+        }
+    }
+
+});
+
+//End  home blog-detail Testimonial//

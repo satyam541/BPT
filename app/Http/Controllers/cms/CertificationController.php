@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Certification;
 use App\Models\Course;
+use App\Http\Requests\cms\CertificationRequest;
 
 class CertificationController extends Controller
 {
@@ -29,7 +30,7 @@ class CertificationController extends Controller
         return view('cms.certification.certificationForm',$data);
     }
 
-    public function insert(Request $request)
+    public function insert(CertificationRequest $request)
     {
         $input = $request->except("_token");
         
@@ -55,7 +56,7 @@ class CertificationController extends Controller
         return view("cms.certification.certificationForm",$data);
     }
 
-    public function update(Request $request)
+    public function update(CertificationRequest $request)
     {
         $input      = $request->except("_token");
         $courses    = $request->courses;
