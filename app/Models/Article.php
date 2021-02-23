@@ -13,6 +13,7 @@ class Article extends Model
     public $image_path = "storage/uploads/article/";
     protected $guarded = array('id');
     public $imageprefix="large_";
+    public $appends = ['publish_date'];
     // protected $dates = ['post_date'];
 
 
@@ -59,5 +60,10 @@ class Article extends Model
                 }
             }
         }
+    }
+
+    public function getPublishDateAttribute()
+    {
+        return \Carbon\Carbon::parse($this->post_date);
     }
 }
