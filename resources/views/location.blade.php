@@ -12,7 +12,7 @@
                 <ul>
                     <li><a href="{{url('home')}}">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
-                    <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                    <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">    
                     <li><a href="">Locations</a></li>
                 </ul>
             </div>
