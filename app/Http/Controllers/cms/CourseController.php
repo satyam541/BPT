@@ -309,9 +309,9 @@ class CourseController extends Controller
    }
    public function restoreCourse($id)
    {
-        $course= Course::onlyTrashed()->where('id',$id);
+        $course= Course::onlyTrashed()->find($id);
         // $this->authorize('restore', $course);
-        $course->restore();
+        $course->myRestore();
         return back()->with('success','Successfully Restored');
 
    }
@@ -319,7 +319,7 @@ class CourseController extends Controller
    {
         $course = Course::onlyTrashed()->find($id);
         $this->authorize('forceDelete', $course);
-        $course->forceDelete();
+        $course->myforceDelete();
         return back()->with('success','Permanently Deleted');
    }
    

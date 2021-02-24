@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Course extends Model
 {
     use SoftDeletes;
@@ -85,10 +86,7 @@ class Course extends Model
 
     public function delete()
     {
-        // if($this->isPopular())
-        // {
-        //     $this->popular->delete();
-        // }
+        $this->hasPopular()->delete();
         $this->whatsInclude()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
@@ -96,17 +94,24 @@ class Course extends Model
         return parent::delete();
     }
 
-    public function restore()
+    public function myRestore()
     {
-        // if($this->isPopular())
-        // {
-        //     $this->popular->restore();
-        // }
-        $this->whatsInclude()->withTrashed()->restore();
-        $this->faqs()->withTrashed()->restore();
-        $this->content()->withTrashed()->restore();
-        $this->BulletPoint()->withTrashed()->restore();
-        return parent::restore();
+        $this->hasPopular()->restore();
+        $this->whatsInclude()->restore();
+        $this->faqs()->restore();
+        $this->content()->restore();
+        $this->BulletPoint()->restore();
+        return $this->restore();
+    }
+
+    public function myforceDelete()
+    {
+        $this->hasPopular()->forceDelete();
+        $this->whatsInclude()->forceDelete();
+        $this->faqs()->forceDelete();
+        $this->content()->forceDelete();
+        $this->BulletPoint()->forceDelete();
+        return $this->forceDelete();
     }
 
 
