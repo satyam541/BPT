@@ -39,7 +39,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1">
+              <table class="table table-border">
                 <thead>
                 <tr>
                   <th>Course</th>
@@ -71,12 +71,19 @@
                     </td>
                 </tr>
                     @endforeach
+
                   
                 
                 </tfoot>
               </table>
             </div>
             <!-- /.card-body -->
+            <div class="card-footer">
+              <div class="float-right">
+                {{$schedules->links()}}
+              </div>
+             
+            </div>
           </div>
           <!-- /.card --> 
         </div>
@@ -93,8 +100,6 @@
 @endsection
 @section('footer')
     <script>
-        $(document).ready(function(){
-            $('#example1').DataTable();
-        });
+       
     </script>
 @endsection

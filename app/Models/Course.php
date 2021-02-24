@@ -162,7 +162,7 @@ class Course extends Model
 
     public function customSchedulePrice()
     {
-        return $this->hasOne('App\Models\CustomSchedulePrice')->whereNull('venue_id')->withDefault();
+        return $this->hasOne('App\Models\CustomSchedulePrice')->whereNull('location_id')->withDefault();
     }
     public function onlinePrice()
     {
