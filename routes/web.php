@@ -88,6 +88,9 @@ Route::get('/third-party-trademarks',function(){
 Route::get('/cookies',function(){
     
 })->name('cookies');
+Route::get('/topic',function(){
+       return view('topic');
+})->name('topic');
 
 Route::fallback(function(){
     return  redirect()->route('404');

@@ -114,7 +114,6 @@
             
         }
         
-
     });
     $('.owl-next').addClass("btn-active");
     $('.owl-prev,.owl-next').click(function () {
@@ -148,6 +147,28 @@
         $(this).addClass("btn-active").siblings().removeClass("btn-active");
     });
     // End home Testimonial//
+
+    //Start Catalouge Testimonial//
+    $('.testi-list').owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        dots: false,
+        nav: true,
+        autoplay: true,
+        navText: ["", ""],
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+            }
+            
+        }
+    });
+    $('.owl-next').addClass("btn-active");
+    $('.owl-prev,.owl-next').click(function () {
+        $(this).addClass("btn-active").siblings().removeClass("btn-active");
+    });
+    // End Catalouge Testimonial//
 
     // Start FAQ
    $(".faq-item").click(function () {

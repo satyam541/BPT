@@ -1,0 +1,86 @@
+// Start Banner Section
+.catalouge-banner {
+    background: @blueGradient;
+    .banner-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .banner-text {
+        display: flex;
+        flex-direction: column;
+        h1, p {
+            color: @whiteColor;
+        }
+        .breadcrums {
+            ul {
+                li {
+                    color: @whiteColor;
+                }
+            }
+        }
+    }
+    .banner-testi {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .testi-list {
+        display: flex;
+    }
+    .testi-content {
+        display: flex;
+        flex-direction: column;
+        box-shadow: @shadowLight;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 10px;
+        margin: 0 1rem;
+        span {
+            display: flex;
+            height: 50px;
+            width: 50px;
+        }
+        h3 {
+            margin: .5rem 0;
+        }
+    }
+    .white {
+        background-color: @lightblueColor;
+        h3 {
+            color: @whiteColor;
+        }
+    }
+    .black {
+        background-color: @whiteColor;
+    }
+    .owl-nav {
+        display: flex !important;
+        justify-content: space-between;
+        width: 203px;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+
+        .owl-prev,
+        .owl-next {
+            background-image: url(../img/catalouge/testi-arrow.svg)!important;
+            background-repeat: no-repeat!important;
+            background-size: contain!important;
+            background-position: center!important;
+            opacity: 0.5;
+            width: 25px;
+            height: 25px;
+            background-color: transparent !important;
+            border-radius: 50%;
+            outline: none;
+        }
+
+        .owl-next {
+            transform: rotate(180deg);
+        }
+
+        .btn-active {
+            opacity: 1;
+        }
+    }
+}
+// End Banner Section
