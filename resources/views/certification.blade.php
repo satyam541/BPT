@@ -21,72 +21,72 @@
 </section>
 <!-- End Banner Section -->
 
-<!-- Start Cisco Section -->
-<section class="flex-container cisco">
+<!-- Start Certification-Course Section -->
+<section class="flex-container certification-course">
     <div class="container">
-        <div class="cisco-container">
+        <div class="course-container">
             <div class="heading center-heading">
                 <h2>Cisco Certifications</h2>
             </div>
-            <div class="cisco-list">
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+            <div class="course-list">
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>
-                <div class="cisco-content">
-                    <h3>CCNA Training (Cisco Certified Network Associate)</h3>
+                <div class="course-content">
+                    <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
                         <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
@@ -97,7 +97,7 @@
         </div>
     </div>
 </section>
-<!-- End Cisco Section -->
+<!-- End Certification-Course Section -->
 
 <!-- Start Method Section -->
 <section class="flex-container method">
@@ -147,7 +147,7 @@
                 </div>
                 <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.BPT was founded over 20 years ago with one simple mission.BPT was founded over 20 years ago with one simple mission.</p>
                 <div class="contact-list">
-                    <div class="contact">
+                    <div class="contact-content">
                         <div class="content">
                             <span>
                                 <img src="{{url('img/certification/call-us.svg')}}" alt="call-us">
@@ -156,7 +156,7 @@
                         </div>
                         <a href="tel:023 8000 1008">023 8000 1008</a>
                     </div>
-                    <div class="contact">
+                    <div class="contact-content">
                         <div class="content">
                             <span>
                                 <img src="{{url('img/certification/mail-black.svg')}}" alt="mail-black">
