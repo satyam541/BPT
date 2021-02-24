@@ -44,8 +44,50 @@
                 </div>
             </div>
         </div>
+        <div class="filter-top">
+                <form class="form">
+                    <div class="select-dropdown">
+                        <p>Select A Category</p>
+                        <select name="course">
+                            <option value="">Prince2@Training</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Select A Topic</p>
+                        <select name="course">
+                            <option value="">Prince2@Training</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-dropdown">
+                        <p>Search</p>
+                        <input type="text" placeholder="Search course here">
+                        <span>
+                            <img src="{{url('img/catalouge/magnifying.svg')}}" alt="">
+                        </span>
+                    </div>
+                </form>
+            </div>
     </div>
 </section>
 <!-- End Banner Section -->
+
+<!-- Start Category Section -->
+<section class="flex-container category">
+    <div class="category-container">
+        <div class="heading">
+            <h2>All <span>Category</span></h2>
+        </div>
+        <div class="category-list">
+            <div class="category-content"></div>
+        </div>
+    </div>
+</section>
+<!-- End Category Section -->
 
 @endsection

@@ -7633,11 +7633,6 @@ input::-webkit-inner-spin-button {
   padding-bottom: 1.5rem;
   width: 100%;
 }
-.training .select-dropdown p {
-  font-weight: 800;
-  padding-bottom: 0.5rem;
-  color: #1E1E1E;
-}
 .training select {
   background: #FFFFFF;
   padding: 15px 20px 15px 10px;
@@ -9447,6 +9442,7 @@ input::-webkit-inner-spin-button {
 }
 .catalouge-banner .testi-content h3 {
   margin: 0.5rem 0;
+  text-align: center;
 }
 .catalouge-banner .white {
   background-color: #0064D8;
@@ -9460,7 +9456,7 @@ input::-webkit-inner-spin-button {
 .catalouge-banner .owl-nav {
   display: flex !important;
   justify-content: space-between;
-  width: 203px;
+  width: 90px;
   margin: 0 auto;
   margin-top: 1.5rem;
 }
@@ -9471,8 +9467,8 @@ input::-webkit-inner-spin-button {
   background-size: contain!important;
   background-position: center!important;
   opacity: 0.5;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   background-color: transparent !important;
   border-radius: 50%;
   outline: none;
@@ -9482,4 +9478,141 @@ input::-webkit-inner-spin-button {
 }
 .catalouge-banner .owl-nav .btn-active {
   opacity: 1;
+}
+.catalouge-banner .filter-top {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+.catalouge-banner .form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.catalouge-banner .select-dropdown {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+.catalouge-banner .select-dropdown p {
+  font-weight: 800;
+  padding-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+.catalouge-banner .select-dropdown span {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  background-color: #0064D8;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  right: 5px;
+  bottom: 31px;
+}
+.catalouge-banner .select-dropdown span img {
+  width: 100%;
+  height: 100%;
+}
+.catalouge-banner select,
+.catalouge-banner input {
+  background: #FFFFFF;
+  padding: 15px 20px 15px 10px;
+  color: #787878;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #dbe2e8;
+  outline: 0px;
+  box-shadow: 5px 5px 10px 0 rgb(46 61 14.6%);
+  cursor: pointer;
+  border-radius: 40px;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
+.catalouge-banner select {
+  background-image: url(../img/catalouge/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 18% 24%;
+  background-position: center right;
+}
+.catalouge-banner input ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #787878;
+  opacity: 1;
+  /* Firefox */
+}
+.catalouge-banner input :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #787878;
+}
+.catalouge-banner input ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #787878;
+}
+@media (min-width : 768px) {
+  .catalouge-banner {
+    background: none;
+    background-image: url(../img/catalouge/banner-bg.png);
+    background-size: 100% 79%;
+    background-repeat: no-repeat;
+  }
+  .catalouge-banner .banner-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .catalouge-banner .banner-text {
+    width: 50%;
+  }
+  .catalouge-banner .banner-testi {
+    width: 42%;
+    margin-top: 0;
+    position: relative;
+  }
+  .catalouge-banner .owl-nav {
+    width: 100%;
+  }
+  .catalouge-banner .owl-nav .owl-prev,
+  .catalouge-banner .owl-nav .owl-next {
+    position: absolute;
+    top: 37%;
+  }
+  .catalouge-banner .owl-nav .owl-prev {
+    left: 0;
+  }
+  .catalouge-banner .owl-nav .owl-next {
+    right: 0;
+  }
+  .catalouge-banner .filter-top {
+    margin-top: 2rem;
+  }
+  .catalouge-banner .form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .catalouge-banner .select-dropdown {
+    width: 33%;
+  }
+}
+@media (min-width : 1024px) {
+  .catalouge-banner .banner-text {
+    width: 46%;
+  }
+  .catalouge-banner .banner-testi {
+    width: 50%;
+  }
 }

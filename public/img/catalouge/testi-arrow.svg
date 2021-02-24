@@ -1,17 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80.513" height="80.513" viewBox="0 0 80.513 80.513">
-  <defs>
-    <filter id="Path_28374" x="0" y="0" width="80.513" height="80.513" filterUnits="userSpaceOnUse">
-      <feOffset input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g id="testi-arrow" transform="translate(15 15)">
-    <circle id="Ellipse_3" data-name="Ellipse 3" cx="22" cy="22" r="22" transform="translate(5 1.357)" fill="#0064d8"/>
-    <g transform="matrix(1, 0, 0, 1, -15, -15)" filter="url(#Path_28374)">
-      <path id="Path_28374-2" data-name="Path 28374" d="M25.256,0A25.256,25.256,0,1,0,50.513,25.256,25.284,25.284,0,0,0,25.256,0Zm7.8,26.744L22.535,37.268a2.1,2.1,0,1,1-2.976-2.976l9.036-9.035-9.035-9.035a2.1,2.1,0,0,1,2.976-2.976L33.058,23.768A2.1,2.1,0,0,1,33.058,26.744Z" transform="translate(15 15)" fill="#fff"/>
-    </g>
+<svg id="testi-arrow" xmlns="http://www.w3.org/2000/svg" width="50.513" height="50.513" viewBox="0 0 50.513 50.513">
+  <g id="Group_7569" data-name="Group 7569">
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="22" cy="22" r="22" transform="translate(1.513 1.357)" fill="#0064d8"/>
+    <path id="Path_28374" data-name="Path 28374" d="M25.256,0A25.256,25.256,0,1,1,0,25.256,25.284,25.284,0,0,1,25.256,0Zm-7.8,26.744L27.978,37.268a2.1,2.1,0,1,0,2.976-2.976l-9.036-9.035,9.035-9.035a2.1,2.1,0,0,0-2.976-2.976L17.454,23.768A2.1,2.1,0,0,0,17.454,26.744Z" fill="#fff"/>
   </g>
 </svg>
