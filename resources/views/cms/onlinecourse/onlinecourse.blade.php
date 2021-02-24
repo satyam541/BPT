@@ -62,13 +62,13 @@
                     <tr>
                       <td>{{$onlineCourse->name}}</td>
                       <td>{{$onlineCourse->topic->name ?? null}}</td>
-                      <td class=" text-center">
+                      <td>
                         @can('update',$onlineCourse)
                         <a href="{{ route('courseAddonForm',['course'=>$onlineCourse->id]) }}" class="fa fa-list"></a>
                         @endcan
                       </td>
                       
-                      <td class=" text-center">
+                      <td>
                         @can('update',$onlineCourse)
                         <a href="{{Route('editCourse',['course'=>$onlineCourse->id])}}" class="fa fa-edit"></a>
                         @endcan

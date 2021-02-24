@@ -8,6 +8,8 @@ use App\Models\Course;
 use App\Models\Faq;
 use App\Models\Topic;
 use Illuminate\Http\Request;
+// use App\Http\Requests\cms\courseFaqRequest;
+use App\Http\Requests\CourseFaqRequest as RequestsCourseFaqRequest;
 
 class FaqController extends Controller
 {
@@ -28,7 +30,7 @@ class FaqController extends Controller
         return view('cms.faq.list', $result, compact('type'));
     }
 
-    public function createFaq($type, $id)
+    public function createFaq($type ,$id)
     {
         $result['data'] = new Faq();
         $result['data']['module_type'] = $type;
@@ -37,7 +39,7 @@ class FaqController extends Controller
         return view('cms.faq.faqForm', $result);
     }
 
-    public function insertFaq(Request $request)
+    public function insertFaq(RequestsCourseFaqRequest $request)
     {
         // $this->authorize('create', new Faq());
         $module_type = $request->get('module_type');

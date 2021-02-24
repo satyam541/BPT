@@ -59,7 +59,7 @@
                       <td>{{$courseAddon->addon_type}}</td>
                       
                       
-                      <td class=" text-center">
+                      <td>
                         {{-- @can('update',$courseAddon) --}}
                         <a href="{{Route('AddonEdit',['id'=>$courseAddon->id])}}" class="fa fa-edit"></a>
                         {{-- @endcan --}}

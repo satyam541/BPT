@@ -77,4 +77,8 @@
         </section>
         <!-- /.content -->
     </div>
+    @endsection
     <!-- /.content-wrapper -->
+@section('footer')
+    
+@endsection
