@@ -28,7 +28,6 @@
             &:nth-child(1){
                 width: 100%;
                 justify-content: center;
-                margin-bottom: .5rem;
             }
             &:nth-child(3){
                 justify-content: flex-end;
@@ -49,9 +48,6 @@
             margin-bottom: 0.5rem;
             &:last-child{
                 margin-bottom: 0;
-            }
-            &:nth-last-child(2){
-                margin-top: 0.5rem;
             }
         }
     }
@@ -99,7 +95,9 @@
             width: 3px;
             height: 50%;
             left: 0;
-            top: 40px;
+            top: 0;
+            margin: auto;
+            bottom: 0;
             background-color: @lightblueColor;
         }
 
@@ -168,7 +166,7 @@
 
             .button{
                 background-color: @lightblueColor;
-                padding: 0.5rem;
+                padding: 0.7rem;
                 width: 50px;
                 height: 40px;
                 img{
@@ -305,19 +303,28 @@
 
     .previous-nav,.next-nav{
         padding: 1rem;
-        font-size: 17px;
+        font-size: 15px;
         text-align: center;
         font-weight: bold;
         width: 48%;
-        color: @whiteColor;
-        background-image: url(../img/blog-detail/navs-bg.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
+        position: relative;
 
+        .bg-img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1
+        }
+        p{
+        color: @whiteColor;
+        }
         .buttons{
             .btn-blue{
                 padding: 8px 18px;
-                min-width: 125px;
+                min-width: 113px;
+                font-size: 12px;
             }
             img{
                 height: 15px;
