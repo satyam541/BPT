@@ -23,10 +23,23 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
+        if(FormRequest::route()->uri == 'cms/user/insert')
+        {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-          
+            'name'                     => ['required', 'string', 'max:255'],
+            'email'                    => ['required', 'string', 'email', 'max:255'],
+            'password'                 => ['required'],
+            'password_confirmation'    => ['required']
         ];
+    }
+    else
+    {
+        return[
+             'name'                    => ['required', 'string', 'max:255'],
+            'email'                    => ['required', 'string', 'email', 'max:255'],
+            
+        ];
+
+    }
     }
 }

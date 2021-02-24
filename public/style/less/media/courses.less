@@ -314,6 +314,40 @@
     // End Popular-Location Section
 }
 
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Training Section
+    .training {
+        .date {
+            p {
+                &::before {
+                    left: -4px;
+                    width: 95px;
+                }
+            }
+        }
+    }
+    // End Training Section
+
+    // Start Language Section
+    .language {
+        padding: @sectionPadding-md;
+        .language-list {
+            .content {
+                background-size: 21% 100%;
+            }
+        }
+    }
+    // End Language Section
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 50%;
+        }
+    }
+    // End Popular-Location Section
+}
+
 @media @size-lg{
 
     // Start Banner section //
@@ -374,6 +408,19 @@
         .tabs-container {
             flex-direction: row;
             justify-content: space-between;
+            position: relative;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                height: 60px;
+                width: 60px;
+                background-image: url(../img/courses/dotted-box.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
         .tab-links {
             flex-direction: column;
@@ -392,19 +439,6 @@
             background-color: @whiteColor;
             box-shadow: @shadowLight;
             padding: 1rem 2rem;
-            position: relative;
-            &::before {
-                content: '';
-                z-index: -1;
-                position: absolute;
-                top: -20px;
-                right: -20px;
-                height: 60px;
-                width: 60px;
-                background-image: url(../img/courses/dotted-box.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
         }
         #included {
             .heading {
@@ -714,6 +748,14 @@
 
 @media @size-xl{
 
+    // Start Banner section //
+    .courses-banner {
+        .banner-points {
+            width: 32%;
+        }
+    }
+    // End Banner section //
+
     // Start Foundation Section
     .foundation {
         padding: @sectionPadding-xl;
@@ -884,9 +926,6 @@
             &::before {
                 left: 30px;
             }
-        }
-        .location-content {
-            width: 65%;
         }
     }
     // End Popular-Location Section

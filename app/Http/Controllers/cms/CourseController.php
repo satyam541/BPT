@@ -17,6 +17,7 @@ use App\Http\Requests\cms\CourseContentRequest;
 use App\Http\Requests\cms\BulletPointRequest;
 use App\Http\Requests\cms\CourseRequest;
 use App\Http\Requests\cms\WhatsIncludedRequest;
+use App\Http\Requests\cms\CourseFaqRequest;
 use App\Models\WhatsIncluded as ModelsWhatsIncluded;
 use App\Models\whatsIncludedHeaders;
 

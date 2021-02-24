@@ -25,10 +25,10 @@ class Schedule extends Model
     }
 
 
-    public function location()
-    {
-        return Location::where('name',$this->response_location)->first()->name ?? null;
-    }
+    // public function location()
+    // {
+    //     return Location::where('name',$this->response_location)->first()->name ?? null;
+    // }
 
     public function getEndDateAttribute()
     {
@@ -39,14 +39,15 @@ class Schedule extends Model
         else '';
     }
 
-    public function getLocationAttribute()
-    {
-        if(empty($this->venue))
-        {
-            return new Location();
-        }
-        return $this->venue->location;
-    }
+    // public function getLocationAttribute()
+    // {
+    //     if(empty($this->venue))
+    //     {
+    //         return new Location();
+    //     }
+    //     return $this->venue->location;
+    // }
+    
     public function venueSchedules($name){
         return $this->where('response_location',$name)->paginate(10);
     }

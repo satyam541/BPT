@@ -6725,10 +6725,6 @@ input::-webkit-inner-spin-button {
 .certification-banner {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.certification-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-}
 .certification-banner h1,
 .certification-banner p {
   color: #FFFFFF;
@@ -6739,21 +6735,21 @@ input::-webkit-inner-spin-button {
 .certification-banner .breadcrums .white {
   display: flex;
 }
-.cisco {
+.certification-course {
   padding: 3rem 1.5rem;
 }
-.cisco .cisco-container {
+.certification-course .course-container {
   display: flex;
   flex-direction: column;
 }
-.cisco .cisco-list {
+.certification-course .course-list {
   display: flex;
   flex-direction: column;
 }
-.cisco .heading {
+.certification-course .heading {
   margin-bottom: 0;
 }
-.cisco .cisco-content {
+.certification-course .course-content {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -6763,8 +6759,10 @@ input::-webkit-inner-spin-button {
   border-radius: 25px;
   align-items: center;
 }
-.cisco h3 {
+.certification-course a {
   text-align: center;
+  font-weight: bold;
+  font-size: 16px;
 }
 .method {
   padding: 3rem 1.5rem;
@@ -6837,7 +6835,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.enquiry .contact {
+.enquiry .contact-content {
   display: flex;
   flex-direction: column;
   background-image: none;
@@ -6848,20 +6846,24 @@ input::-webkit-inner-spin-button {
   width: 272px;
   align-self: center;
 }
-.enquiry .contact:nth-child(1) {
+.enquiry .contact-content p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.enquiry .contact-content:nth-child(1) {
   background-color: #FFFFFF;
 }
-.enquiry .contact:nth-child(1) span {
+.enquiry .contact-content:nth-child(1) span {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.enquiry .contact:nth-child(2) {
+.enquiry .contact-content:nth-child(2) {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.enquiry .contact:nth-child(2) span {
+.enquiry .contact-content:nth-child(2) span {
   background-color: #FFFFFF;
 }
-.enquiry .contact:nth-child(2) p,
-.enquiry .contact:nth-child(2) a {
+.enquiry .contact-content:nth-child(2) p,
+.enquiry .contact-content:nth-child(2) a {
   color: #FFFFFF;
 }
 .enquiry .content {
@@ -6873,8 +6875,8 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  width: 30px;
+  height: 37px;
+  width: 37px;
   border-radius: 50%;
   padding: 0.5rem;
   margin-right: 0.5rem;
@@ -6924,33 +6926,21 @@ input::-webkit-inner-spin-button {
   .certification-banner::before {
     content: none;
   }
-  .cisco {
+  .certification-course {
     padding: 3rem 2rem;
   }
-  .cisco .cisco-list {
+  .certification-course .course-list {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .cisco .cisco-content {
+  .certification-course .course-content {
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
-    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
   }
-  .cisco .cisco-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 27px;
-    width: 97%;
-    height: 100%;
-    background-color: #000000;
-    opacity: 0.2;
-    z-index: -1;
-    border-radius: 25px;
-  }
-  .cisco .cisco-content::after {
+  .certification-course .course-content::after {
     content: '';
     position: absolute;
     left: 0;
@@ -6960,29 +6950,29 @@ input::-webkit-inner-spin-button {
     background-color: #0064D8;
     transition: 1s ease-in-out;
   }
-  .cisco .cisco-content:hover::after {
+  .certification-course .course-content:hover::after {
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     border-radius: 25px;
   }
-  .cisco .cisco-content:hover h3,
-  .cisco .cisco-content:hover .buttons {
+  .certification-course .course-content:hover h3,
+  .certification-course .course-content:hover .buttons {
     z-index: 1;
   }
-  .cisco .cisco-content:hover h3 {
+  .certification-course .course-content:hover h3 {
     color: #FFFFFF;
     transition: 1s ease-in-out;
   }
-  .cisco .cisco-content:hover .buttons .btn-blue {
+  .certification-course .course-content:hover .buttons .btn-blue {
     box-shadow: 0px 0px 10px rgb(255 249 12.45%);
   }
-  .cisco h3 {
+  .certification-course h3 {
     width: 70%;
     text-align: left;
   }
-  .cisco .buttons {
+  .certification-course .buttons {
     width: 28%;
     margin-top: 0;
     justify-content: flex-end;
@@ -7019,36 +7009,18 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     width: 100%;
     margin-top: 1.5rem;
-  }
-  .enquiry .contact {
-    box-shadow: none;
     padding: 2rem 3rem;
-    margin-top: 0;
   }
-  .enquiry .contact:nth-child(1) {
+  .enquiry .contact-content {
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0;
+  }
+  .enquiry .contact-content:nth-child(1) {
     background-color: transparent;
   }
-  .enquiry .contact:nth-child(2) {
+  .enquiry .contact-content:nth-child(2) {
     background: none;
-  }
-  .enquiry .content {
-    display: flex;
-    margin-bottom: 0.5rem;
-    align-items: center;
-  }
-  .enquiry .content span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-  }
-  .enquiry .content span img {
-    height: 100%;
-    width: 100%;
   }
   .enquiry .enquiry-img::before {
     top: 33%;
@@ -7074,12 +7046,13 @@ input::-webkit-inner-spin-button {
     background-position: right;
   }
   .certification-banner .banner-container {
-    background: linear-gradient(125deg, #FFFFFF 56%, transparent 44%);
+    background: linear-gradient(125deg, #FFFFFF 71%, transparent 29%);
     padding: 2rem;
     margin-top: 2rem;
+    width: 72%;
   }
   .certification-banner .banner-container p {
-    width: 55%;
+    width: 74%;
   }
   .certification-banner h1,
   .certification-banner p {
@@ -7094,42 +7067,40 @@ input::-webkit-inner-spin-button {
   .certification-banner .breadcrums .white {
     display: none;
   }
-  .cisco {
+  .certification-course {
     background-image: url(../img/certification/cisco-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  .cisco .cisco-content {
+  .certification-course .course-content {
     width: 47%;
     margin-right: 2.5rem;
   }
-  .cisco .cisco-content:nth-child(even) {
+  .certification-course .course-content:nth-child(even) {
     margin-right: 0;
   }
-  .cisco h3 {
+  .certification-course h3 {
     width: 61%;
   }
-  .cisco .buttons {
+  .certification-course .buttons {
     width: 37%;
   }
   .enquiry .enquiry-container {
     flex-direction: row;
     justify-content: space-between;
   }
-  .enquiry .contact {
+  .enquiry .contact-content:nth-child(1) {
     width: 40%;
   }
-  .enquiry .contact:first-child {
-    padding-right: 0;
-  }
-  .enquiry .contact:last-child {
-    padding-left: 0;
+  .enquiry .contact-content:nth-child(2) {
+    width: 56%;
   }
   .enquiry .enquiry-content {
     width: 53%;
   }
   .enquiry .enquiry-img {
     width: 40%;
+    margin-top: 0;
   }
   .enquiry .enquiry-img::before,
   .enquiry .enquiry-img::after {
@@ -7159,17 +7130,37 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
-  .cisco {
+  .certification-banner .banner-container {
+    background: linear-gradient(125deg, #FFFFFF 71%, transparent 29%);
+    width: 80%;
+  }
+  .certification-banner .banner-container p {
+    width: 74%;
+  }
+  .certification-banner h1,
+  .certification-banner p {
+    color: #000000;
+  }
+  .certification-banner .breadcrums ul li {
+    color: #000000;
+  }
+  .certification-banner .breadcrums .black {
+    display: flex;
+  }
+  .certification-banner .breadcrums .white {
+    display: none;
+  }
+  .certification-course {
     padding: 4rem 0rem;
   }
-  .cisco .cisco-content {
+  .certification-course .course-content {
     width: 48%;
     margin-right: 2.5rem;
   }
-  .cisco h3 {
+  .certification-course h3 {
     width: 61%;
   }
-  .cisco .buttons {
+  .certification-course .buttons {
     width: 39%;
   }
   .method {
@@ -7180,6 +7171,9 @@ input::-webkit-inner-spin-button {
   }
   .enquiry {
     padding: 4rem 0rem;
+  }
+  .enquiry .contact-content {
+    width: 43%;
   }
   .enquiry .enquiry-img::after {
     height: 61px;
@@ -7218,6 +7212,7 @@ input::-webkit-inner-spin-button {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .courses-banner .banner-points ul li {
   color: #FFFFFF;
@@ -7343,25 +7338,44 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.foundation #overview .buttons {
   position: relative;
+  width: 100%;
+  justify-content: flex-end;
   z-index: 1;
 }
-.foundation #overview::before {
+.foundation #overview .buttons::before,
+.foundation #overview .buttons::after {
   content: '';
   position: absolute;
   z-index: -1;
-  height: 5px;
-  width: 100%;
   border-radius: 10px;
+  height: 5px;
   bottom: 15px;
   left: 0;
+}
+.foundation #overview .buttons::before {
+  width: 100%;
   background-color: #c0c0c0;
+}
+.foundation #overview .buttons::after {
+  width: 33%;
+  background-color: #0064D8;
 }
 .foundation #overview .overview-content {
   display: flex;
   flex-direction: column;
-  height: 600px;
+  max-height: 400px;
   overflow: hidden;
+  width: 100%;
+}
+.foundation #overview .toggle {
+  max-height: 100% !important;
+  transition: all 0.3s ease-in, color 0s ease-in-out;
+}
+.foundation #overview .toggle + .buttons::after {
+  width: 100%;
 }
 .foundation #overview h2 {
   margin-top: 2rem;
@@ -7564,6 +7578,7 @@ input::-webkit-inner-spin-button {
 }
 .unable h2 {
   margin-bottom: 1rem;
+  width: 100%;
 }
 .training {
   padding: 3rem 1.5rem;
@@ -7895,6 +7910,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   margin-bottom: 2rem;
   text-align: center;
+  width: 100%;
 }
 .virtual .virtual-img span {
   display: flex;
@@ -8010,6 +8026,7 @@ input::-webkit-inner-spin-button {
 .language .buy {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .language .buy span {
   display: flex;
@@ -8496,6 +8513,21 @@ input::-webkit-inner-spin-button {
     transform: translateX(34px);
   }
 }
+@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .training .date p::before {
+    left: -4px;
+    width: 95px;
+  }
+  .language {
+    padding: 3rem 2rem;
+  }
+  .language .language-list .content {
+    background-size: 21% 100%;
+  }
+  .popular-location .popular-content {
+    width: 50%;
+  }
+}
 @media (min-width : 1024px) {
   .courses-banner {
     background: none;
@@ -8547,6 +8579,19 @@ input::-webkit-inner-spin-button {
   .foundation .tabs-container {
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+  }
+  .foundation .tabs-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    height: 60px;
+    width: 60px;
+    background-image: url(../img/courses/dotted-box.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   .foundation .tab-links {
     flex-direction: column;
@@ -8565,19 +8610,6 @@ input::-webkit-inner-spin-button {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
-    position: relative;
-  }
-  .foundation #overview::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    height: 60px;
-    width: 60px;
-    background-image: url(../img/courses/dotted-box.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
   }
   .foundation #included .heading {
     display: flex;
@@ -8844,6 +8876,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
+  .courses-banner .banner-points {
+    width: 32%;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -8988,9 +9023,6 @@ input::-webkit-inner-spin-button {
   }
   .popular-location .popular-content::before {
     left: 30px;
-  }
-  .popular-location .location-content {
-    width: 65%;
   }
 }
 @media (min-width : 1500px) {
