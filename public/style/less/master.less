@@ -603,7 +603,6 @@
  
     // Start banner//
     .banner {
-        display: flex;
         flex-direction: column;
         .banner-container{
             display: flex;
@@ -928,4 +927,70 @@
     }
 
     //End footer
+
+    // Start popup
+    .popup{
+        padding: @sectionPadding;
+        .popup-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .enquire-popup{
+            display: flex;
+            flex-direction: column;
+            box-shadow: @shadowLight;
+            position: relative;
+            z-index: 1;
+            padding: 1.5rem;
+            background-color: @whiteColor;
+            border-radius: 28px;
+            border-bottom: 2px solid @darkblueColor;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/master/heading-bg.png);
+                background-size: 100% 100%;
+                height: 70px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: -19px;
+                width: 230px;
+                background-repeat: no-repeat;
+            }
+            .cross{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                width: 30px;
+                padding: .3rem;
+                background-color: @whiteColor;
+                border-radius: 50px;
+                border: 4px solid @darkblueColor;
+                position: absolute;
+                right:15px;
+                top: 36px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .form{
+            box-shadow: none;
+            width: 100%;
+            padding: 0;
+
+            .heading{
+                padding-top: 0;
+                margin-top: -2rem;
+            }
+            .form-input{
+                justify-content: center;
+                padding-top: 3rem;
+            }
+        }
+    }
+    // End popup
 

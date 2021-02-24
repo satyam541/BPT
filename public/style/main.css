@@ -504,7 +504,6 @@ input::-webkit-inner-spin-button {
   margin-right: 5px;
 }
 .banner {
-  display: flex;
   flex-direction: column;
 }
 .banner .banner-container {
@@ -791,6 +790,68 @@ input::-webkit-inner-spin-button {
   width: 88%;
   padding: 0;
 }
+.popup {
+  padding: 3rem 1.5rem;
+}
+.popup .popup-container {
+  display: flex;
+  flex-direction: column;
+}
+.popup .enquire-popup {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  border-bottom: 2px solid #1C2848;
+}
+.popup .enquire-popup::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/master/heading-bg.png);
+  background-size: 100% 100%;
+  height: 70px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -19px;
+  width: 230px;
+  background-repeat: no-repeat;
+}
+.popup .enquire-popup .cross {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  padding: 0.3rem;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  border: 4px solid #1C2848;
+  position: absolute;
+  right: 15px;
+  top: 36px;
+}
+.popup .enquire-popup .cross img {
+  width: 100%;
+  height: 100%;
+}
+.popup .form {
+  box-shadow: none;
+  width: 100%;
+  padding: 0;
+}
+.popup .form .heading {
+  padding-top: 0;
+  margin-top: -2rem;
+}
+.popup .form .form-input {
+  justify-content: center;
+  padding-top: 3rem;
+}
 @media (min-width : 768px) {
   .buttons .btn-blue,
   .buttons .btn-white {
@@ -959,6 +1020,37 @@ input::-webkit-inner-spin-button {
   }
   .footer .content {
     width: 48%;
+  }
+  .popup {
+    padding: 3rem 2rem;
+  }
+  .popup .enquire-popup {
+    width: 355px;
+    margin: auto;
+  }
+  .popup .enquire-popup .cross:after {
+    content: '';
+    position: absolute;
+    right: -28px;
+    top: -4px;
+    background-image: url(../img/master/cross-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 31px;
+    width: 27px;
+  }
+  .popup .form {
+    box-shadow: none;
+    width: 100%;
+    padding: 0;
+  }
+  .popup .form .heading {
+    padding-top: 0;
+    margin-top: -2rem;
+  }
+  .popup .form .form-input {
+    justify-content: center;
+    padding-top: 3rem;
   }
 }
 @media (min-width : 1024px) {

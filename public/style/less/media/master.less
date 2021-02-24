@@ -207,6 +207,45 @@
   }
     //End footer
 
+    // Start popup
+    .popup{
+      padding: @sectionPadding-md;
+      .enquire-popup{
+        width: 355px;
+        margin: auto;
+          .cross{
+            &:after{
+              content: '';
+              position: absolute;
+              right: -28px;
+              top: -4px;
+              background-image: url(../img/master/cross-bg.png);
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              height: 31px;
+              width: 27px;
+            }
+        
+            
+          }
+      }
+      .form{
+          box-shadow: none;
+          width: 100%;
+          padding: 0;
+
+          .heading{
+              padding-top: 0;
+              margin-top: -2rem;
+          }
+          .form-input{
+              justify-content: center;
+              padding-top: 3rem;
+          }
+      }
+  }
+  // End popup
+
 }
 
 @media @size-lg {
