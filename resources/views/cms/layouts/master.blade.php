@@ -321,12 +321,6 @@
                   <p>Location</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{Route('venueList')}}" @if(Route::currentRouteName()=='venueList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle text-success"></i>
-                  <p>Venue</p>
-                </a>
-              </li>
             </ul>
           </li>
 
@@ -427,12 +421,6 @@
                 <a href="{{Route('blogList')}}" @if(Route::currentRouteName()=='blogList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Blog List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{Route('tagList')}}" @if(Route::currentRouteName()=='tagList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle text-success"></i>
-                  <p>Tag List</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -628,8 +616,22 @@
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         @php
+         
+         if(Str::contains($error, ['has'])){
+          $data = explode('The', $error );
+          $data = explode('has', $data[1]);
+         }
+         elseif(Str::contains($error, ['may'])){
+          $data = explode('The', $error );
+          $data = explode('may', $data[1]);
+         }
+         else{
           $data = explode('The ', $error);
           $data = explode('field ', $data[1]);
+         }
+        //  dd($data[0]);
+         
+          // $data = explode('has', $data[1]);
         @endphp
         <strong class="mr-auto text-white">{{ ucfirst($data[0]) }}</strong>
         <button type="button" class="close px-2" data-dismiss="toast" aria-label="Close">
