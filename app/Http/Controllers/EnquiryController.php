@@ -99,6 +99,7 @@ class EnquiryController extends Controller
         if($request->ajax())
         {
             return "done";
+            
         }
         \Session::flash('message', 'Thank You for Enquiry');
         return redirect()->back();
@@ -107,5 +108,10 @@ class EnquiryController extends Controller
     public function template()
     {
         return view('emails.enquiry');
+    }
+
+    public function postEnquiryPage()
+    {
+        
     }
 }

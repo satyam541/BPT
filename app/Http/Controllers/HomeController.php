@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
 
         $data['categories']=Category::whereHas('hasPopular')->with('topics','topics.courses')->get();
-        $data['topics']=Topic::has('Popular')->get()->toArray();
+        $data['topics']=Topic::has('Popular')->get();
         $data['locations']=Location::has('Popular')->take(6)->orderBy('display_order')->get();
         $data['testimonial']=Testimonial::first();
         $data['totalCourses']=null;
@@ -38,7 +38,6 @@ class HomeController extends Controller
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('home');
-        $data['Detail'] = PageDetail::getContent('home');
         return view('home',$data);
     }
 }
