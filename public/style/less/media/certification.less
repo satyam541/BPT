@@ -1,4 +1,5 @@
 @media @size-md{
+
     // Start Banner section //
     .certification-banner {
         
@@ -8,31 +9,19 @@
     }
     // End Banner section //
 
-    // Start Cisco Section
-    .cisco {
+    // Start Certification-Course Section
+    .certification-course {
         padding: @sectionPadding-md;
-        .cisco-list {
+        .course-list {
             flex-direction: row;
             flex-wrap: wrap;
         }
-        .cisco-content {
+        .course-content {
             flex-direction: row;
             justify-content: space-between;
             padding: 1.5rem;
-            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .10), 5px 0 0 0 rgba(192, 192, 192, .67);
             width: 100%;
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 27px;
-                width: 97%;
-                height: 100%;
-                background-color: @blackColor;
-                opacity: 0.2;
-                z-index: -1;
-                border-radius: 25px;
-            }
             &::after {
                 content: '';
                 position: absolute;
@@ -75,7 +64,7 @@
             justify-content: flex-end;
         }
     }
-    // End Cisco Section
+    // End Certification-Course Section
 
     // Start Method Section
     .method {
@@ -112,37 +101,18 @@
             flex-direction: row;
             width: 100%;
             margin-top: 1.5rem;
-        }
-        .contact {
-            box-shadow: none;
             padding: 2rem 3rem;
+        }
+        .contact-content {
+            box-shadow: none;
             margin-top: 0;
+            padding: 0;
             &:nth-child(1) {
                 background-color: transparent;
             }
             &:nth-child(2) {
                 background: none;
             }
-        }
-        .content {
-            display: flex;
-            margin-bottom: .5rem;
-            align-items: center;
-            span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 30px;
-                width: 30px;
-                border-radius: 50%;
-                padding: .5rem;
-                margin-right: .5rem;
-                img {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-            
         }
         .enquiry-img {
             &::before {
@@ -167,17 +137,19 @@
 }
 
 @media @size-lg{
+
     // Start Banner section //
     .certification-banner {
         background: linear-gradient(125deg, @darkblueColor 64%, transparent 36%), url(../img/certification/banner-bg.png);
         background-size: contain;
         background-position: right;
         .banner-container {
-            background: linear-gradient(125deg, @whiteColor 56%, transparent 44%);
+            background: linear-gradient(125deg, @whiteColor 71%, transparent 29%);
             padding: 2rem;
             margin-top: 2rem;
+            width: 72%;
             p {
-                width: 55%;
+                width: 74%;
             }
         }
         h1, p {
@@ -199,12 +171,12 @@
     }
     // End Banner section //
 
-    // Start Cisco Section
-    .cisco {
+    // Start Certification-Course Section
+    .certification-course {
         background-image: url(../img/certification/cisco-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        .cisco-content {
+        .course-content {
             width: 47%;
             margin-right: 2.5rem;
             &:nth-child(even) {
@@ -218,7 +190,7 @@
             width: 37%;
         }
     }
-    // End Cisco Section
+    // End Certification-Course Section
 
     // Start Enquiry Section
     .enquiry {
@@ -226,13 +198,12 @@
             flex-direction: row;
             justify-content: space-between;
         }
-        .contact {
-            width: 40%;
-            &:first-child {
-                padding-right: 0;
+        .contact-content {
+            &:nth-child(1) {
+                width: 40%;
             }
-            &:last-child {
-                padding-left: 0;
+            &:nth-child(2) {
+                width: 56%;
             }
         }
         .enquiry-content {
@@ -240,6 +211,7 @@
         }
         .enquiry-img {
             width: 40%;
+            margin-top: 0;
             &::before, &::after {
                 content: '';
                 position: absolute;
@@ -272,10 +244,38 @@
 
 @media @size-xl{
 
-    // Start Cisco Section
-    .cisco {
+    // Start Banner section //
+    .certification-banner {
+        .banner-container {
+            background: linear-gradient(125deg, @whiteColor 71%, transparent 29%);
+            width: 80%;
+            p {
+                width: 74%;
+            }
+        }
+        h1, p {
+            color: @blackColor;
+        }
+        .breadcrums {
+            ul {
+                li {
+                    color: @blackColor;
+                }
+            }
+            .black {
+                display: flex;
+            }
+            .white {
+                display: none;
+            }
+        }
+    }
+    // End Banner section //
+
+    // Start Certification-Course Section
+    .certification-course {
         padding: @sectionPadding-xl;
-        .cisco-content {
+        .course-content {
             width: 48%;
             margin-right: 2.5rem;
         }
@@ -286,7 +286,7 @@
             width: 39%;
         }
     }
-    // End Cisco Section
+    // End Certification-Course Section
 
     // Start Method Section
     .method {
@@ -300,6 +300,9 @@
     // Start Enquiry Section
     .enquiry {
         padding: @sectionPadding-xl;
+        .contact-content {
+            width: 43%;
+        }
         .enquiry-img {
             &::after {
                 height: 61px;
