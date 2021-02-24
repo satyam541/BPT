@@ -24,19 +24,13 @@ class CategoryContentRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id'      => ['required'],
-            'country_id'       => ['required'],
-            'heading'          => ['nullable'],
-            'overview'         => ['required'],
-            // 'description'   => ['required'],
+            'category_id'      => 'required',
+            'country_id'       => 'required',
+            'heading'          => 'nullable',
+            'overview'         => 'required',
+            // 'description'   => 'required',
         ];
     }
-    
-    public function messages()
-    {
-        return [];
-    }
-
     public function attributes()
     {
         return [

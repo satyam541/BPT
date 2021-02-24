@@ -37,12 +37,4 @@ class Venue extends Model
         File::delete(public_path($this->image_path.$this->image));
         return parent::delete();
     }
-    
-    /**
-     * schedule related functions
-     */
-    public function customSchedulePrice()
-    {
-        return $this->hasMany('App\Models\CustomSchedulePrice','venue_id','id');
-    }
 }

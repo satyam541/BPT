@@ -96,3 +96,6 @@ Route::fallback(function(){
     return  redirect()->route('404');
   })->name('fallback');
   Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
+
+Route::get('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
+

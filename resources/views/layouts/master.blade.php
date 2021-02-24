@@ -112,7 +112,7 @@
             type:"post",
             global:false,
             success:function(response){
-                
+                window.location.href = '/thank-you';
             }
         });
     }
@@ -146,7 +146,7 @@
                 // $('#modal3').modal('show'); 
                 $(formElement).find('input').not('input[name="_token"],input[name="type"],input[name="url"]').val("");
                 $(formElement).find('textarea').val("");
-                $(formElement).find("input[type='checkbox']").attr("checked",false);
+                $(formElement).find("input[type='checkbox']").prop("checked",false);
 
                 processEnquiry(formData);
             }
@@ -159,9 +159,7 @@
             
             $(formElement).find("button,input").attr('disabled',false);
             errors = err.responseJSON.errors;
-
             $.each(errors,function(index,value){
-
                 $(formElement).find("input[name='"+index+"']").addClass('error').attr('title',value[0]);
             });
             console.log(errors);

@@ -51,11 +51,14 @@
 <section class="flex-container doorstep">
             <div class="container">
                 <div class="doorstep-container">
-                    <form class="form" id="contact-us">
+                    <form class="form" onsubmit="submitEnquiry(this)" id="contact-us">
+                        @csrf
                         <div class="heading center-heading white-heading">
                             <h2>World Class Training At Your Doorstep</h2>
                         </div>
                         <div class="form-input">
+                            <input type="hidden" name="type" value="onsite"> 
+                            <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                             <div class="input-container">
                                 <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                                 <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
@@ -118,7 +121,7 @@
                             <p>Please click <a>here</a> for privacy policy. </p>
                         </div>
                         <div class="form-consent">
-                            <input type="checkbox" id="checkConsent">
+                            <input name="contactConsent" type="checkbox" id="checkConsent">
                             <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most suitable manner (by phone or email) in order to respond to my enquiry.</label>
                         </div>
                         <div class="consent-error" style="display: none;">
@@ -130,7 +133,7 @@
                             <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
                         </div>
                         <div class="buttons">
-                            <button class="btn-blue">
+                            <button onclick="EnquiryFormSubmit('enquiry',this)" class="btn-blue">
                                 Submit
                             </button>
                         </div>
