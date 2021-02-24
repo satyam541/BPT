@@ -85,7 +85,7 @@ class VenueController extends Controller
 
     public function update($venue,VenueRequest $request)
     {
-        $this->authorize('update', $venue);
+        // $this->authorize('update',$venue);
         $venue  = Venue::find($venue);
         $inputs = $request->except("_token");
         $venue->name                = $inputs["name"];

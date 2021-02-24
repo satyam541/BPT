@@ -125,4 +125,21 @@ class SettingController extends Controller
       
         // return back()->with('success','Successfully Updated');
     }
+    public function trashList()
+    {
+        $data['trashedWebsiteDetail'] = WebsiteDetail::onlyTrashed()->get();
+        return view('cms.trashed.websiteDetailTrashedList',$data);
+    }
+
+    public function restore($id)
+    {
+        WebsiteDetail::onlyTrashed()->find($id)->restore();
+        return back()->with('success','Successfully Restored');
+    }
+
+    public function forceDelete($id)
+    {
+        WebsiteDetail::onlyTrashed()->find($id)->forceDelete();
+        return back()->with('success','Permanently Deleted');
+    }
 }

@@ -62,14 +62,14 @@ class CountryController extends Controller
         $country->currency_symbol       = $inputs['currency_symbol'];
         $country->currency_symbol_html  = $inputs['currency_symbol_html'];
         $country->currency_title        = $inputs['currency_title'];
-        $country->allow_po              = isset($inputs['allow_po'])? 1 :0;
-        $country->charge_vat            = isset($inputs['charge_vat'])? 1 :0;
+        $country->allow_po              = isset($inputs['allow_po']);
+        $country->charge_vat            = isset($inputs['charge_vat']);
         $country->sales_tax_label       = $inputs['sales_tax_label'];
         $country->exchange_rate         = $inputs['exchange_rate'];
         $country->sales_ratio           = $inputs['sales_ratio'];
-        $country->active                = isset($inputs['active'])? 1 :0;
+        $country->active                = isset($inputs['active']);
         $country->vat_percentage        = $inputs['vat_percentage'];
-        $country->vat_amount_elearning  = $inputs['vat_amount'];
+        $country->vat_amount_elearning  = $inputs['vat_amount_elearning'];
         if(empty($country->created_at))
         {
             if($request->hasFile('image')){
@@ -95,6 +95,7 @@ class CountryController extends Controller
         $this->authorize('update',$country);
         $data['submitRoute'] = array('updateCountry',$country->id);
         $data['country'] = $country;
+        
         return view("cms.country.countryForm",$data);
     }
 
@@ -111,14 +112,14 @@ class CountryController extends Controller
         $country->currency_symbol       = $inputs['currency_symbol'];
         $country->currency_symbol_html  = $inputs['currency_symbol_html'];
         $country->currency_title        = $inputs['currency_title'];
-        $country->allow_po              = isset($inputs['allow_po'])? 1 :0;
-        $country->charge_vat            = isset($inputs['charge_vat'])? 1 :0;
+        $country->allow_po              = isset($inputs['allow_po']);
+        $country->charge_vat            = isset($inputs['charge_vat']);
         $country->sales_tax_label       = $inputs['sales_tax_label'];
         $country->exchange_rate         = $inputs['exchange_rate'];
         $country->sales_ratio           = $inputs['sales_ratio'];
-        $country->active                = isset($inputs['active'])? 1 :0;
+        $country->active                = isset($inputs['active']);
         $country->vat_percentage        = $inputs['vat_percentage'];
-        $country->vat_amount_elearning  = $inputs['vat_amount'];
+        $country->vat_amount_elearning  = $inputs['vat_amount_elearning'];
         
         if($request->hasFile('image')){
             $imageName = "flag-".$country->country_code.'.'.$request->file('image')->getClientOriginalExtension();
