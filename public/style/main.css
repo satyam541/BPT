@@ -7365,13 +7365,16 @@ input::-webkit-inner-spin-button {
 .foundation #overview .overview-content {
   display: flex;
   flex-direction: column;
-  max-height: 600px;
+  max-height: 400px;
   overflow: hidden;
   width: 100%;
 }
 .foundation #overview .toggle {
   max-height: 100% !important;
   transition: all 0.3s ease-in, color 0s ease-in-out;
+}
+.foundation #overview .toggle + .buttons::after {
+  width: 100%;
 }
 .foundation #overview h2 {
   margin-top: 2rem;
