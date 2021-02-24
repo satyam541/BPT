@@ -338,14 +338,14 @@ class CategoryController extends Controller
    public function restoreCategory($id)
    {
        $this->authorize('restore', new Category());
-       $category = Category::withTrashed()->find($id)->restore();
+       Category::onlyTrashed()->find($id)->myRestore();
        return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteCategory($id)
    {
        $this->authorize('forceDelete', new Category());
-       $category = Category::onlyTrashed()->find($id)->forceDelete();
+       Category::onlyTrashed()->find($id)->myforceDelete();
        return back()->with('success','Permanently Deleted');
    }
 }

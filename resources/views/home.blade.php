@@ -39,9 +39,10 @@
                 </div>
                 <div class="topic-list owl-carousel">
 
-                    @foreach (array_chunk($topics,4) as $topic)
-                        <ul>
-                        @foreach ($topic as $item)
+                    @foreach ($topics->chunk(4) as $items)
+                    @if ($items->count() == 4)
+                    <ul>
+                        @foreach ($items as $item)
                         <li>
                             <a>
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
@@ -54,6 +55,7 @@
                         </li>
                         @endforeach
                     </ul>
+                    @endif 
                     @endforeach
                     
                 </div>
@@ -164,7 +166,9 @@
                 <h2>{!!$pageDetail->ways['heading']->heading!!}</h2>
             </div>
             <div class="ways-list">
-                @php unset($pageDetail->ways['heading']) @endphp
+                @php 
+                    $waysHead = $pageDetail->ways['heading'];
+                    unset($pageDetail->ways['heading']); @endphp
                 @foreach ($pageDetail->ways as $ways)
                 <div class="item">
                     <span>
@@ -182,7 +186,7 @@
 
             </div>
             <div class="ways-image">
-                <img src="{{$Detail->ways['heading']->getImagePath()}}" alt="{{$Detail->ways['heading']->image_alt}}">
+                <img src="{{$waysHead->getImagePath()}}" alt="{{$waysHead->image_alt}}">
             </div>
         </div>
     </div>

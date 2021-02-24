@@ -349,7 +349,7 @@ class TopicController extends Controller
    public function restoreTopic($id)
    {
         // $this->authorize('restore', new Topic());
-        $topic = Topic::onlyTrashed()->find($id)->restore();
+        $topic = Topic::onlyTrashed()->find($id)->myRestore();
     
         return back()->with('success','Successfully Restored');
 
@@ -357,7 +357,7 @@ class TopicController extends Controller
    public function forceDeleteTopic($id)
    {
         // $this->authorize('forceDelete', new Topic());
-        $topic = Topic::onlyTrashed()->find($id)->forceDelete();
+        $topic = Topic::onlyTrashed()->find($id)->myforceDelete();
     
         return back()->with('success','Permanently Deleted');
 

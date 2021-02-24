@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Popular extends Model
 {
+    use SoftDeletes;
     protected $table = 'popular';
     // protected $orderby = 'display_order'; // eh ni chalda
     protected $guarded = array('id');

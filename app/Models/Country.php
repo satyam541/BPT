@@ -95,16 +95,5 @@ class Country extends Model
         return $this->hasMany("App\Models\Location","country_id");
     }
 
-    public function delete()
-    {
-        $this->locations()->delete();
-        return parent::delete();
-    }
-
-    public function restore()
-    {
-        $this->locations()->withTrashed()->restore();
-      
-        return parent::restore();
-    }
+    
 }

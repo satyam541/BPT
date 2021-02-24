@@ -1415,7 +1415,7 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
   border: 5px solid #1C2848;
   box-shadow: 0 0 1px 1px #cfcfcf;
-  z-index: 1;
+  z-index: 0;
 }
 .ways .item::before {
   content: '';
@@ -1847,7 +1847,7 @@ input::-webkit-inner-spin-button {
   .delivery .item:hover {
     align-items: center;
   }
-  .delivery .item:hover r .overlay {
+  .delivery .item:hover .overlay {
     background: linear-gradient(#0064D8, #1C2848);
   }
   .delivery .item:hover p {
@@ -5207,9 +5207,6 @@ input::-webkit-inner-spin-button {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .blog-banner .banner-container {
-    padding-top: 2rem;
-  }
   .blog-banner::before {
     content: none;
   }
@@ -5521,7 +5518,6 @@ input::-webkit-inner-spin-button {
 .blog-intro .detail p:nth-child(1) {
   width: 100%;
   justify-content: center;
-  margin-bottom: 0.5rem;
 }
 .blog-intro .detail p:nth-child(3) {
   justify-content: flex-end;
@@ -5539,9 +5535,6 @@ input::-webkit-inner-spin-button {
 }
 .blog-intro .intro-detail p:last-child {
   margin-bottom: 0;
-}
-.blog-intro .intro-detail p:nth-last-child(2) {
-  margin-top: 0.5rem;
 }
 .blog-intro .img-content {
   display: flex;
@@ -5583,7 +5576,9 @@ input::-webkit-inner-spin-button {
   width: 3px;
   height: 50%;
   left: 0;
-  top: 40px;
+  top: 0;
+  margin: auto;
+  bottom: 0;
   background-color: #0064D8;
 }
 .blog-intro .feedback p {
@@ -5649,7 +5644,7 @@ input::-webkit-inner-spin-button {
 }
 .blog-intro .search-bar span .button {
   background-color: #0064D8;
-  padding: 0.5rem;
+  padding: 0.7rem;
   width: 50px;
   height: 40px;
 }
@@ -5782,19 +5777,30 @@ input::-webkit-inner-spin-button {
 .blog-intro .previous-nav,
 .blog-intro .next-nav {
   padding: 1rem;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   font-weight: bold;
   width: 48%;
+  position: relative;
+}
+.blog-intro .previous-nav .bg-img,
+.blog-intro .next-nav .bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.blog-intro .previous-nav p,
+.blog-intro .next-nav p {
   color: #FFFFFF;
-  background-image: url(../img/blog-detail/navs-bg.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 .blog-intro .previous-nav .buttons .btn-blue,
 .blog-intro .next-nav .buttons .btn-blue {
   padding: 8px 18px;
-  min-width: 125px;
+  min-width: 113px;
+  font-size: 12px;
 }
 .blog-intro .previous-nav .buttons img,
 .blog-intro .next-nav .buttons img {
@@ -5907,12 +5913,14 @@ input::-webkit-inner-spin-button {
   .blog-intro .blog-navs .next-nav {
     width: 32%;
     position: relative;
+    padding: 1.5rem 2rem;
   }
-  .blog-intro .blog-navs .buttons .btn-blue {
+  .blog-intro .blog-navs .buttons {
     position: absolute;
     bottom: -17px;
     margin: auto;
-    left: 15px;
+    left: 0;
+    right: 0;
   }
   .blog-intro .blog-navs .next-nav {
     margin-left: 1rem;
@@ -5933,8 +5941,7 @@ input::-webkit-inner-spin-button {
   }
   .blog-intro .blog-navs .next-nav,
   .blog-intro .blog-navs .previous-nav {
-    padding: 2rem;
-    width: 30%;
+    width: 26%;
   }
   .blog-intro .blog-navs .buttons .btn-blue {
     left: 30px;
@@ -7718,11 +7725,6 @@ input::-webkit-inner-spin-button {
   padding-bottom: 1.5rem;
   width: 100%;
 }
-.training .select-dropdown p {
-  font-weight: 800;
-  padding-bottom: 0.5rem;
-  color: #1E1E1E;
-}
 .training select {
   background: #FFFFFF;
   padding: 15px 20px 15px 10px;
@@ -9496,5 +9498,221 @@ input::-webkit-inner-spin-button {
   }
   .result .filter {
     width: 24%;
+  }
+}
+.catalouge-banner {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.catalouge-banner .banner-container {
+  display: flex;
+  flex-direction: column;
+}
+.catalouge-banner .banner-text {
+  display: flex;
+  flex-direction: column;
+}
+.catalouge-banner .banner-text h1,
+.catalouge-banner .banner-text p {
+  color: #FFFFFF;
+}
+.catalouge-banner .banner-text .breadcrums ul li {
+  color: #FFFFFF;
+}
+.catalouge-banner .banner-testi {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.catalouge-banner .testi-list {
+  display: flex;
+}
+.catalouge-banner .testi-content {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 0 1rem;
+}
+.catalouge-banner .testi-content span {
+  display: flex;
+  height: 50px;
+  width: 50px;
+}
+.catalouge-banner .testi-content h3 {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.catalouge-banner .white {
+  background-color: #0064D8;
+}
+.catalouge-banner .white h3 {
+  color: #FFFFFF;
+}
+.catalouge-banner .black {
+  background-color: #FFFFFF;
+}
+.catalouge-banner .owl-nav {
+  display: flex !important;
+  justify-content: space-between;
+  width: 90px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+.catalouge-banner .owl-nav .owl-prev,
+.catalouge-banner .owl-nav .owl-next {
+  background-image: url(../img/catalouge/testi-arrow.svg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain!important;
+  background-position: center!important;
+  opacity: 0.5;
+  width: 35px;
+  height: 35px;
+  background-color: transparent !important;
+  border-radius: 50%;
+  outline: none;
+}
+.catalouge-banner .owl-nav .owl-next {
+  transform: rotate(180deg);
+}
+.catalouge-banner .owl-nav .btn-active {
+  opacity: 1;
+}
+.catalouge-banner .filter-top {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+.catalouge-banner .form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.catalouge-banner .select-dropdown {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+.catalouge-banner .select-dropdown p {
+  font-weight: 800;
+  padding-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+.catalouge-banner .select-dropdown span {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  background-color: #0064D8;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  right: 5px;
+  bottom: 31px;
+}
+.catalouge-banner .select-dropdown span img {
+  width: 100%;
+  height: 100%;
+}
+.catalouge-banner select,
+.catalouge-banner input {
+  background: #FFFFFF;
+  padding: 15px 20px 15px 10px;
+  color: #787878;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #dbe2e8;
+  outline: 0px;
+  box-shadow: 5px 5px 10px 0 rgb(46 61 14.6%);
+  cursor: pointer;
+  border-radius: 40px;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
+.catalouge-banner select {
+  background-image: url(../img/catalouge/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 18% 24%;
+  background-position: center right;
+}
+.catalouge-banner input ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #787878;
+  opacity: 1;
+  /* Firefox */
+}
+.catalouge-banner input :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #787878;
+}
+.catalouge-banner input ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #787878;
+}
+@media (min-width : 768px) {
+  .catalouge-banner {
+    background: none;
+    background-image: url(../img/catalouge/banner-bg.png);
+    background-size: 100% 79%;
+    background-repeat: no-repeat;
+  }
+  .catalouge-banner .banner-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .catalouge-banner .banner-text {
+    width: 50%;
+  }
+  .catalouge-banner .banner-testi {
+    width: 42%;
+    margin-top: 0;
+    position: relative;
+  }
+  .catalouge-banner .owl-nav {
+    width: 100%;
+  }
+  .catalouge-banner .owl-nav .owl-prev,
+  .catalouge-banner .owl-nav .owl-next {
+    position: absolute;
+    top: 37%;
+  }
+  .catalouge-banner .owl-nav .owl-prev {
+    left: 0;
+  }
+  .catalouge-banner .owl-nav .owl-next {
+    right: 0;
+  }
+  .catalouge-banner .filter-top {
+    margin-top: 2rem;
+  }
+  .catalouge-banner .form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .catalouge-banner .select-dropdown {
+    width: 33%;
+  }
+}
+@media (min-width : 1024px) {
+  .catalouge-banner .banner-text {
+    width: 46%;
+  }
+  .catalouge-banner .banner-testi {
+    width: 50%;
   }
 }

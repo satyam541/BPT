@@ -120,7 +120,8 @@ class Category extends Model
     {
         return $this->courses()->has('popular');
     }
-    public function hasPopular(){
+    public function hasPopular()
+    {
         return $this->morphOne('App\Models\Popular', 'module'); 
     }
     public function popular()
@@ -134,11 +135,7 @@ class Category extends Model
 
     public function delete()
     {
-        // File::delete(public_path($this->image_path.$this->image));
-        if($this->isPopular())
-        {
-            $this->popular->delete();
-        }
+        $this->hasPopular()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();
         $this->faqs()->delete();
@@ -146,13 +143,24 @@ class Category extends Model
         return parent::delete();
     }
 
-    public function restore()
+    public function myRestore()
     {
-        $this->content()->withTrashed()->restore();
-        $this->Bulletpoint()->withTrashed()->restore();
-        $this->faqs()->withTrashed()->restore();
-        $this->whatIncludes()->withTrashed()->restore();
-        return parent::restore();
+        $this->hasPopular()->restore();
+        $this->content()->restore();
+        $this->Bulletpoint()->restore();
+        $this->faqs()->restore();
+        $this->whatIncludes()->restore();
+        return $this->restore();
+    }
+
+    public function myforceDelete()
+    {
+        $this->hasPopular()->forceDelete();
+        $this->content()->forceDelete();
+        $this->Bulletpoint()->forceDelete();
+        $this->faqs()->forceDelete();
+        $this->whatIncludes()->forceDelete();
+        return $this->forceDelete();
     }
 
 }
