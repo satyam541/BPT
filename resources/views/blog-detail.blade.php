@@ -128,7 +128,8 @@
             </div>
             <div class="blog-navs">
                 <div class="previous-nav">
-                When Did Agile Start?
+                    <img src="{{url('img/blog-detail/navs-bg.png')}}" alt="navs-bg" class="bg-img">
+               <p> When Did Agile Start?</p>
                     <div class="buttons">
                         <a class="btn-blue">
                         <img src="{{url('img/blog-detail/prev-nav.svg')}}" alt="prev-nav">
@@ -137,7 +138,8 @@
                     </div>  
                 </div>
                 <div class="next-nav">
-                     When Did Agile Start?
+                <img src="{{url('img/blog-detail/navs-bg.png')}}" alt="navs-bg" class="bg-img">
+                     <p>When Did Agile Start?</p>
                      <div class="buttons">
                         <a class="btn-blue">
                             Next Post
