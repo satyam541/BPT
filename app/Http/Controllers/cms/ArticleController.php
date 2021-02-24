@@ -87,11 +87,11 @@ class ArticleController extends Controller
         //      $article->tags()->attach($tag->id);
         // }
 
-        if($request->has('is_popular'))
+        if($request->has('popular'))
         {
             $article->popular()->save($article->popular);
         }
-
+            // dd($request);
         if($article->type=='news')
         {
             return redirect()->route('newsList')->with('success', 'News Inserted Successfully!');
@@ -105,7 +105,7 @@ class ArticleController extends Controller
 
     public function edit($article)
     {
-        $article    =   Article::with('hasPopular')->find($article);
+        $article    =   Article::with('popular')->find($article);
         $this->authorize('update', $article);
         $data['article']        =   $article;
         $list['tag']            =   Tag::all()->pluck('name','name')->toArray();
@@ -163,11 +163,11 @@ class ArticleController extends Controller
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
 
-        if($request->has('is_popular'))
+        if($request->has('popular'))
         {
             $article->popular()->save($article->popular);
         }
-        else if($article->isPopular())
+        else if($article->Popular())
         {
             $article->popular->delete();
         }

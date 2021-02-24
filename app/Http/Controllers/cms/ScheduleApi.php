@@ -3,18 +3,18 @@
 
 namespace App\Http\Controllers\cms;
 
+use App\Models\ActivityStatus;
 use App\Models\CourseAddon;
 use App\Models\OnlinePrice;
 use App\Models\Country;
 use App\Models\Course;
 use App\Models\Schedule;
-use App\Models\Venue;
 use App\Models\CustomSchedulePrice;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Storage;
 // use Psr\Http\Message\ResponseInterface;
 // use GuzzleHttp\Middleware;
 // use Activity;
+use Carbon\Carbon;
 
 
 class ScheduleApi extends Controller
@@ -35,13 +36,52 @@ class ScheduleApi extends Controller
      */
     private $country;
     private $year;
-    private $menuCoursesId;
+    
+    /**
+     * @return bool
+     */
+    public function check_fetch_status():bool
+    {
+        $activity = ActivityStatus::where('activity', 'schedule_fetching')->first();
+        if(empty($activity))
+        {
+            return false;
+        }
+        $now = Carbon::now()->timezone("Asia/Kolkata");
+        $last_updated = Carbon::parse($activity->updated_at);
+        $status = $activity->status;
+        if($status == 1)
+        {
+            if($last_updated->diffInMinutes($now) > 60)
+            {
+                return false;
+            }
+            return true;
+        }
+        return $status;
+    }
+
+    public function set_fetch_status($status = null)
+    {
+        if(request()->has('status'))
+        {
+            $status = request()->get('status');
+        }
+        if(empty($status)){
+            return false;
+        }
+        $activity               =   ActivityStatus::where('activity', 'schedule_fetching')->first();
+        $activity->status       =   (request()->get('status') == 'stop')?0:1;
+        $activity->message      =   Carbon::now();
+        $activity->save();
+    }
 
     public function fetchApiData($countryid, $year, $month)
     {
         // $result = Storage::disk('dump')->get('apiResponse.json');
         // return json_decode($result,true);
-        $this->updateApiProcess('status', 'fetching from API for month ' . $month);
+        $this->updateApiProcess('month', $month);
+        $this->updateApiProcess('status', 'Fetching Data From API');
         if ($countryid == 'gb') {
             $countryid = 'uk';
         }
@@ -61,39 +101,41 @@ class ScheduleApi extends Controller
             'EventYear' => 'required',
         ]);
         $input = $request->all();
+      
         $this->country = strtolower($input['CountryID']); //strtolower($this->input->post('CountryID'));
 
         // $get_country_data = Country::where('id',$countryid)->get();
         $this->year = $input['EventYear'];
-            // $this->menuCoursesId = Course::where('is_popular',1)->get()->pluck('id')->toArray();
+        
         /*
-        deleting all api Schedules before adding new from api
+            deleting all api Schedules before adding new from api
         */
+       
         $currentyear=Carbon::now()->year;
-        Schedule::where(['country_id' => $this->country, 'source' => 'API'])->where(DB::raw('YEAR(response_date)'), $this->year)->forceDelete();
+       
         if($currentyear==$this->year)
         {
-             $currentmonth=Carbon::now()->month;
-
-        }   
+            $currentmonth   =   Carbon::now()->month;
+        }
         else
         {
-
              $currentmonth=1;
         }
-     
-       for($month=$currentmonth; $month<=12; $month++)
-       {
-               $results = $this->fetchApiData($this->country, $this->year, $month);
-               $this->storeData($results);
 
+        $this->set_fetch_status(true);
+        for($month=$currentmonth; $month<=12; $month++)
+        {
+            Schedule::where(['country_id' => $this->country, 'source' => 'API'])->where(DB::raw('MONTH(response_date)'), $month)->where(DB::raw('YEAR(response_date)'), $this->year)->forceDelete();
+            $results = $this->fetchApiData($this->country, $this->year, $month);
+            $this->storeData($results);
         }
 
-        Session::flash('success', 'successfully Fetched All Schedules.');
-        $this->updateApiProcess('status', 'copy for locations');
+        Session::flash('success', 'Successfully Fetched All Schedules.');
+        $this->updateApiProcess('status', 'Copy for Locations');
         $this->copyScheduleForLocation();
 
         $this->updateApiProcess('status', 'destroy');
+        $this->set_fetch_status(false);
         // return Redirect('/admin/schedules');
     }
 
@@ -110,7 +152,7 @@ class ScheduleApi extends Controller
         }
 
         /* 
-        ** loop to execute each course
+         loop to execute each course
         */
         $this->updateApiProcess('status', 'Processing');
         $totalResults = count($results);
@@ -161,27 +203,25 @@ class ScheduleApi extends Controller
 
                     if ($responseLocation == 'orderSeq') continue;
                     if (strtolower($responseLocation) == "virtual") {
-                        $venueId = 0;
+                        $locationId = 0;
                     } else {
                         $location = Location::where('name', $responseLocation)->where('country_id', $this->country)->where('fetch_schedule', 1)->first();
 
                         if (empty($location)) {
                             continue;
                         }
-                        $venue = $location->venue;
-                        if (empty($venue)) {
-                            continue;
-                        }
-                        $venueId = $venue->id;
+                      $locationId = $location->id;
+                       
+                        
                     }
 
-                    $API['venue_id'] = $venueId;
+                    $API['location_id'] = $locationId;
                     // $API['location_id'] = $location->id;
-                    $API['response_venue_id'] = $eventData['towncityId'];
+                    $API['response_town_city_id'] = $eventData['towncityId'];
                     $API['response_location'] = $responseLocation;
 
                     $customSchedulePrice = CustomSchedulePrice::where('course_id', $course->id)
-                        ->where('venue_id', $venueId)->first();
+                        ->where('location_id', $locationId)->first();
 
                     /**
                      * loop to execute all dates for the location
@@ -195,13 +235,12 @@ class ScheduleApi extends Controller
                         $API['response_discounted_price'] = $price['discountedPrice'];
                         $API['source'] = 'API';
 
-                        // $API['event_price'] = $this->getEventPrice($customSchedulePrice, $course, $responseLocation,$API['response_price']);
-                        $API['event_price'] = $price['discountedPrice'];
+                        $API['event_price'] = $this->getEventPrice($customSchedulePrice, $course, $responseLocation, $API['response_discounted_price']);
                         $data[] = $API;
                     }
                 }
                 if (!empty($data))
-                    $insert_success = Schedule::insert($data);
+                     Schedule::insert($data);
                 unset($data);
             }
         }
@@ -225,7 +264,7 @@ class ScheduleApi extends Controller
                 $eventPrice = round($price + $temp);
                 unset($temp);
             }
-        } elseif (!empty($course->customSchedulePrice->id)) {
+        } elseif (!empty($course->customSchedulePrice)) {
 
             if ($course->customSchedulePrice->method == 'Increment') {
                 $eventPrice = round($price + $course->customSchedulePrice->amount);
@@ -240,12 +279,6 @@ class ScheduleApi extends Controller
 
             if ($location == "Reading" || $location == "Brighton" || $location == "Southampton") {
                 $eventPrice = floor($price);
-            }
-            // else if(strtolower($location) == "virtual" && in_array($course->id,$this->menuCoursesId)){
-            else if(strtolower($location) == "virtual"){
-                // $temp = 0.4 * $price;
-                // $eventPrice = round($price - $temp);
-                $eventPrice = $price;
             } else { // apply default 10 percent increment to all location
                 $percentage = 10;
                 $new_incrementedAmount = ($percentage / 100) * $price;
@@ -320,11 +353,11 @@ class ScheduleApi extends Controller
         foreach ($locations as $location) {
             $this->updateApiProcess('first', $location->name, $totalLocations, $currentLocation++);
             // find locations with inherit id =  locations
-            $targetLocations = Location::with('venue')->where('inherit_schedule', $location->id)->get();
+            $targetLocations = Location::where('inherit_schedule', $location->id)->get();
             if ($targetLocations->isEmpty()) {
                 continue;
             }
-            $schedules = Schedule::where('venue_id', $location->venue->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->get();
+            $schedules = Schedule::where('location_id', $location->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->get();
             if ($schedules->isEmpty()) {
                 continue;
             }
@@ -333,10 +366,10 @@ class ScheduleApi extends Controller
             foreach ($targetLocations as $targetLocation) {
 
                 $this->updateApiProcess('second', $targetLocation->name, $totalTargetLocations, $currentTargetLocation++);
-                $targetSchedules = Schedule::where('venue_id', $targetLocation->venue->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->get();
+                $targetSchedules = Schedule::where('location_id', $targetLocation->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->get();
                 if ($targetSchedules->isNotEmpty()) {
                     // check if target locations has schedule 
-                    Schedule::where('venue_id', $targetLocation->venue->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->forceDelete();
+                    Schedule::where('location_id', $targetLocation->id)->whereYear('response_date', $this->year)->where('country_id', $this->country)->forceDelete();
                     // Schedule::where(['country_id'=>$this->country, 'source'=>'API'])->where(DB::raw('YEAR(response_date)'),$this->year)->forceDelete();
                 }
                 // copy schedule from location to target locations
@@ -352,8 +385,8 @@ class ScheduleApi extends Controller
 
                     $copy['course_id'] = $schedule['course_id'];
                     $copy['duration'] = $schedule['duration'];
-                    $copy['venue_id'] = $targetLocation->venue->id;
-                    $copy['response_venue_id'] = $schedule['response_venue_id'];
+                    $copy['location_id'] = $targetLocation->id;
+                    $copy['response_town_city_id'] = $schedule['response_town_city_id'];
                     $copy['response_location'] = $targetLocation->name;
                     $copy['response_date'] = $schedule['response_date'];
                     $copy['response_price'] = $schedule['response_price'];
@@ -378,7 +411,16 @@ class ScheduleApi extends Controller
                 return TRUE;
             }
             $status['status'] = $name;
-        } else {
+        }
+        else if($key == "month")
+        {
+            $status['month'] = $name;
+        }
+        else if($key == "break")
+        {
+            $status['break'] = $name;
+        } 
+        else {
             if (empty($status[$key])) {
                 $status[$key] = array();
             }
