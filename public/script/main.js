@@ -314,3 +314,19 @@ $('.blog-review').owlCarousel({
 });
 
 //End  home blog-detail Testimonial//
+
+//Start pop-up//
+$(".open-popup").on("click", function(){
+    $(".enquiry-popup").css("display","flex");
+});
+$(".cross").on("click", function(){
+    $(".enquiry-popup").css("display","none");
+});
+$('body').on('click',function(e){
+    var element = event.target;
+    if($(element).closest(".popup,.open-popup").length > 0)
+    {
+        return true;
+    }
+});
+// End pop-up//

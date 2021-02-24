@@ -87,13 +87,11 @@
         </div>
     </footer>
 
-    <section class="flex-container popup">
-        <div class="container">
+    <section class="flex-container enquiry-popup">
             <div class="enquire-popup">
                 <span class="cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
                 {{-- <form class="form" id="popup"> --}}
                         <form class="form sixsigma-co-uk-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
-                        
                         @csrf
                         <input type="hidden" name="type" value="contact"> 
                         <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
@@ -156,7 +154,6 @@
                         </div>
                     </form>
                 </div>
-        </div>
     </section>
 
 </body>

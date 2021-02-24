@@ -790,14 +790,23 @@ input::-webkit-inner-spin-button {
   width: 88%;
   padding: 0;
 }
-.popup {
+.enquiry-popup {
   padding: 3rem 1.5rem;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 88;
+  background-color: #ffffff6b;
 }
-.popup .popup-container {
+.enquiry-popup .popup-container {
   display: flex;
   flex-direction: column;
 }
-.popup .enquire-popup {
+.enquiry-popup .enquire-popup {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -808,7 +817,7 @@ input::-webkit-inner-spin-button {
   border-radius: 28px;
   border-bottom: 2px solid #1C2848;
 }
-.popup .enquire-popup::before {
+.enquiry-popup .enquire-popup::before {
   content: '';
   position: absolute;
   background-image: url(../img/master/heading-bg.png);
@@ -817,11 +826,11 @@ input::-webkit-inner-spin-button {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: -19px;
+  top: -22px;
   width: 230px;
   background-repeat: no-repeat;
 }
-.popup .enquire-popup .cross {
+.enquiry-popup .enquire-popup .cross {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -835,20 +844,20 @@ input::-webkit-inner-spin-button {
   right: 15px;
   top: 36px;
 }
-.popup .enquire-popup .cross img {
+.enquiry-popup .enquire-popup .cross img {
   width: 100%;
   height: 100%;
 }
-.popup .form {
+.enquiry-popup .form {
   box-shadow: none;
   width: 100%;
   padding: 0;
 }
-.popup .form .heading {
+.enquiry-popup .form .heading {
   padding-top: 0;
   margin-top: -2rem;
 }
-.popup .form .form-input {
+.enquiry-popup .form .form-input {
   justify-content: center;
   padding-top: 3rem;
 }
@@ -1021,14 +1030,14 @@ input::-webkit-inner-spin-button {
   .footer .content {
     width: 48%;
   }
-  .popup {
+  .enquiry-popup {
     padding: 3rem 2rem;
   }
-  .popup .enquire-popup {
+  .enquiry-popup .enquire-popup {
     width: 355px;
     margin: auto;
   }
-  .popup .enquire-popup .cross:after {
+  .enquiry-popup .enquire-popup .cross:after {
     content: '';
     position: absolute;
     right: -28px;
@@ -1039,16 +1048,16 @@ input::-webkit-inner-spin-button {
     height: 31px;
     width: 27px;
   }
-  .popup .form {
+  .enquiry-popup .form {
     box-shadow: none;
     width: 100%;
     padding: 0;
   }
-  .popup .form .heading {
+  .enquiry-popup .form .heading {
     padding-top: 0;
     margin-top: -2rem;
   }
-  .popup .form .form-input {
+  .enquiry-popup .form .form-input {
     justify-content: center;
     padding-top: 3rem;
   }
