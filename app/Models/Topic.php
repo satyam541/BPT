@@ -135,11 +135,11 @@ class Topic extends Model
         return $this->belongsTo('App\Models\Accreditation','accreditation_id')->withDefault();
     }
 
-    public function isPopular()
-    {
-        $popular = $this->popular;
-        return empty($popular->id)? FALSE : TRUE;
-    }
+    // public function isPopular()
+    // {
+    //     $popular = $this->popular;
+    //     return empty($popular->id)? FALSE : TRUE;
+    // }
 
     public function popular()
     {
@@ -148,10 +148,10 @@ class Topic extends Model
             "display_order" => Popular::topics()->count()+1]
         );
     }
-    public function hasPopular()
-    {
-        return $this->morphOne('App\Models\Popular', 'module');
-    }
+    // public function hasPopular()
+    // {
+    //     return $this->morphOne('App\Models\Popular', 'module');
+    // }
 
     public function faqs()
     {
