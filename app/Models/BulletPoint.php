@@ -38,6 +38,11 @@ class BulletPoint extends Model
     // public static function sortBulletPoint($type,$module_id){
     //     return self::where('module_id',$module_id)->where('module_type',$type)->count();
     // }
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category','module_id');
+    
+    }
     public function Topic()
     {
         return $this->belongsTo('App\Models\Topic','module_id');
@@ -47,4 +52,5 @@ class BulletPoint extends Model
         return $this->belongsTo('App\Models\Course','module_id');
     
     }
+
 }
