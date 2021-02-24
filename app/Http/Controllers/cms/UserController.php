@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\cms\RoleRequest;
 use App\Http\Requests\cms\UserRequest;
+use App\Http\Requests\cms\PermissionRequest;
 use App\Http\Requests\cms\ChangePasswordRequest;
 use DB;
 use App\User;
@@ -207,7 +208,7 @@ class UserController extends Controller
         return view('cms.manageUser.insertPermission');
     }
 
-    public function insertPermission(Request $request)
+    public function insertPermission(PermissionRequest $request)
     {
         $this->authorize('create', new Permission());
         $moduleName     = $request->input('moduleName');
@@ -281,7 +282,7 @@ class UserController extends Controller
         return view('cms.manageUser.updatePermission',$data);
     }
 
-    public function updatePermission(Request $request ,Permission $permission)
+    public function updatePermission(PermissionRequest $request ,Permission $permission)
     {
         $this->authorize('update', $permission);
         $inputs     = $request->all();

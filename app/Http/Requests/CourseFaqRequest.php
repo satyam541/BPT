@@ -23,9 +23,10 @@ class CourseFaqRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
-            'FaqQuestion' => 'required',
-            'FaqAnswer' => 'required',
+            'question' => 'required',
+            'answer' => 'required',
         ];
     }
 }

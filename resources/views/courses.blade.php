@@ -90,7 +90,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="overview">
-                    <div class="overview-content">
+                    <div class="overview-content" id="showmorecontent">
                         <h2>Course Overview</h2>
                         <p>PRINCE2 2017 is now available! This PRINCE2 Foundation and Practitioner is a combined training course based on the 2017 syllabus, which enables delegates to attain the full certification all at once. Both the Foundation and Practitioner exam is included with this PRINCE2 training course. PRINCE2® is a product or process based approach used for management of almost all types of projects. This PeopleCert accredited training course introduces delegates to various project management methodologies and provides a thorough understanding of roles, principles, processes and themes that form the structure of PRINCE2®.</p>
                         <ul>
@@ -105,8 +105,8 @@
                         <p>During the final two days, delegates will prepare for and complete the PRINCE2 Practitioner exam.</p>
                     </div>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue">
-                            Show More
+                        <a href="#showmorecontent" class="btn-blue showmorecontent">
+                            <span class="text">Show More</span>
                         </a>
                     </div>
                 </div>
