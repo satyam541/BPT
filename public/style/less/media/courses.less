@@ -49,6 +49,9 @@
         background-image: url(../img/courses/unable-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        p {
+            width: 70%;
+        }
         .unable-container {
             display: flex;
             flex-direction: column;
@@ -59,6 +62,108 @@
         }
     }
     // End Unable Section
+
+    // Start Training Section
+    .training {
+        padding: @sectionPadding-md;
+        .filter-top {
+            top: 5rem;
+            z-index: 12;
+            background-color: #C0C0C0;
+            padding: 0.5rem;
+            flex-direction: row;
+            width: 100%;
+            .heading {
+                display: none;
+            }
+        }
+        .form {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0;
+            align-items: center;
+            .buttons {
+                margin-top: 0;
+                align-items: initial;
+                align-self: flex-start;
+                height: 52px;
+                .btn-blue {
+                    border-radius: 0;
+                }
+            }
+        }
+        .select-dropdown {
+            width: 40%;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        select {
+            padding: 15px;
+        }
+        .modes-list {
+            display: flex;
+        }
+        .key-point {
+            display: flex;
+            width: 40%;
+            align-self: center;
+        }
+        .course-content {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2.5rem;
+            background-color: @whiteColor;
+            box-shadow: @shadowLight;
+            width: 100%;
+            align-self: center;
+        }
+        .name {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .buttons {
+                flex-direction: row;
+                margin-top: 0;
+                width: 50%;
+                .btn-blue {
+                    margin-top: 0;
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .course-name {
+            width: 50%;
+        }
+        .value {
+            flex-direction: row;
+            justify-content: space-between;
+            span {
+                margin-bottom: 0;
+                height: 74px;
+                width: 74px;
+                &::before {
+                    height: 72px;
+                    width: 74px;
+                }
+            }
+            .content {
+                width: 27%;
+            }
+        }
+        .date {
+            width: 27%;
+            p {
+                width: 41%;
+            }
+        }
+        .rate {
+            width: 16%;
+            h3 {
+                margin: 0rem 0 0.5rem;
+            }
+        }
+    }
+    // End Training Section
 
     // Start virtual Section
     .virtual {
@@ -209,6 +314,40 @@
     // End Popular-Location Section
 }
 
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Training Section
+    .training {
+        .date {
+            p {
+                &::before {
+                    left: -4px;
+                    width: 95px;
+                }
+            }
+        }
+    }
+    // End Training Section
+
+    // Start Language Section
+    .language {
+        padding: @sectionPadding-md;
+        .language-list {
+            .content {
+                background-size: 21% 100%;
+            }
+        }
+    }
+    // End Language Section
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 50%;
+        }
+    }
+    // End Popular-Location Section
+}
+
 @media @size-lg{
 
     // Start Banner section //
@@ -249,6 +388,9 @@
                     &:last-child {
                         color: @blackColor;
                     }
+                    a {
+                        font-weight: bold;
+                    }
                 }
             }
             .black {
@@ -266,6 +408,19 @@
         .tabs-container {
             flex-direction: row;
             justify-content: space-between;
+            position: relative;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                height: 60px;
+                width: 60px;
+                background-image: url(../img/courses/dotted-box.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
         .tab-links {
             flex-direction: column;
@@ -284,19 +439,6 @@
             background-color: @whiteColor;
             box-shadow: @shadowLight;
             padding: 1rem 2rem;
-            position: relative;
-            &::before {
-                content: '';
-                z-index: -1;
-                position: absolute;
-                top: -20px;
-                right: -20px;
-                height: 60px;
-                width: 60px;
-                background-image: url(../img/courses/dotted-box.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
         }
         #included {
             .heading {
@@ -324,6 +466,95 @@
         }
     }
     // End Unable Section
+
+    // Start Training Section
+    .training {
+        p {
+            text-align: center;
+        }
+        .calender-container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .calender-left {
+            width: 30%;
+            order: 2;
+            position: sticky;
+            top: 130px;
+            .heading {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                margin-top: 0;
+                h2 {
+                    text-align: center;
+                    font-size: 32px;
+                    span {
+                        font-size: 32px;
+                    }
+                }
+                img {
+                    display: none;
+                }
+            }
+        }
+        .calender-right {
+            width: 65%;
+            order: 1;
+        }
+        .course-content {
+            margin-top: 4rem;
+        }
+        .key-point {
+            width: 100%;
+            background-size: 31% 20%;
+
+        }
+        .course-name {
+            width: 37%;
+        }
+        .name {
+            transform: translate(0px, -22px);
+            width: 95%;
+            align-self: center;
+            border-radius: 0px 0px 40px 40px;
+            position: relative;
+            z-index: 1;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                z-index: -1;
+                width: 0;
+                height: 0;
+                border-bottom: 23px solid @blackColor;
+                opacity: .32;
+            }
+            &::before {
+                border-left: 17px solid transparent;
+                left: -17px;
+            }
+            &::after {
+                border-right: 17px solid transparent;
+                right: -17px;
+            }
+            .buttons {
+                width: 54%;
+            }
+        }
+        .value {
+            padding-top: 0;
+            margin-top: -1rem;
+        }
+        .date {
+            width: 30%;
+        }
+        .rate {
+            width: 19%;
+        }
+    }
+    // End Training Section
 
     // Start virtual Section
     .virtual {
@@ -495,7 +726,7 @@
     .popular-location {
         .popular-container {
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
         }
         .popular-content {
             width: 40%;
@@ -516,6 +747,14 @@
 }
 
 @media @size-xl{
+
+    // Start Banner section //
+    .courses-banner {
+        .banner-points {
+            width: 32%;
+        }
+    }
+    // End Banner section //
 
     // Start Foundation Section
     .foundation {
@@ -561,6 +800,45 @@
         padding: @sectionPadding-xl;
     }
     // End Unable Section
+
+    // Start Training Section
+    .training {
+        padding: @sectionPadding-xl;
+        .calender-left {
+            width: 22%;
+        }
+        .calender-right {
+            width: 73%;
+        }
+        .key-point {
+            background-size: 34% 20%;
+        }
+        .name {
+            width: 90%;
+            .buttons {
+                width: 42%;
+            }
+        }
+        .course-name {
+            width: 50%;
+        }
+        .value {
+            .content {
+                width: 22%;
+            }
+        }
+        .date {
+            width: 350px;
+            p {
+                width: 21%;
+                margin-top: 2rem;
+            }
+        }
+        .rate {
+            width: 13%;
+        }
+    }
+    // End Training Section
 
     // Start virtual Section
     .virtual {
@@ -649,8 +927,52 @@
                 left: 30px;
             }
         }
+    }
+    // End Popular-Location Section
+}
+
+@media @size-xll {
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 27%;
+        }
         .location-content {
-            width: 65%;
+            width: 60%;
+        }
+    }
+    // End Popular-Location Section
+}
+
+@media @size-xlll {
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 25%;
+        }
+    }
+    // End Popular-Location Section
+}
+
+@media @size-xllll {
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 22%;
+        }
+    }
+    // End Popular-Location Section
+}
+
+@media @size-xllll {
+
+    // Start Popular-Location Section
+    .popular-location {
+        .popular-content {
+            width: 21%;
         }
     }
     // End Popular-Location Section

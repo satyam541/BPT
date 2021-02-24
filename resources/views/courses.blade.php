@@ -90,21 +90,23 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="overview">
-                    <h2>Course Overview</h2>
-                    <p>PRINCE2 2017 is now available! This PRINCE2 Foundation and Practitioner is a combined training course based on the 2017 syllabus, which enables delegates to attain the full certification all at once. Both the Foundation and Practitioner exam is included with this PRINCE2 training course. PRINCE2® is a product or process based approach used for management of almost all types of projects. This PeopleCert accredited training course introduces delegates to various project management methodologies and provides a thorough understanding of roles, principles, processes and themes that form the structure of PRINCE2®.</p>
-                    <ul>
-                        <li>Holding PRINCE2® Foundation and Practitioner certification allows you to excel in your career and make use of upcoming opportunities.</li>
-                        <li>Learn thoroughly about the importance of this methodology and other related theoretical concepts in the Foundation level and then its practical applications in the Practitioner level.</li>
-                        <li>By considering the factors involved in any project like costs, timescales, quality, scope, risk and benefits allows the project manager to address planning, monitoring and deploying projects by making use of PRINCE2® framework and themes.</li>
-                    </ul>
-                    <h2>PRINCE2 Foundation and Practitioner Training Course Structure</h2>
-                    <p>The duration of the training course is five days.</p>
-                    <p>The training course is split into two sections:</p>
-                    <p>During the first three days, delegates will prepare for and complete the PRINCE2 Foundation exam.</p>
-                    <p>During the final two days, delegates will prepare for and complete the PRINCE2 Practitioner exam.</p>
+                    <div class="overview-content" id="showmorecontent">
+                        <h2>Course Overview</h2>
+                        <p>PRINCE2 2017 is now available! This PRINCE2 Foundation and Practitioner is a combined training course based on the 2017 syllabus, which enables delegates to attain the full certification all at once. Both the Foundation and Practitioner exam is included with this PRINCE2 training course. PRINCE2® is a product or process based approach used for management of almost all types of projects. This PeopleCert accredited training course introduces delegates to various project management methodologies and provides a thorough understanding of roles, principles, processes and themes that form the structure of PRINCE2®.</p>
+                        <ul>
+                            <li>Holding PRINCE2® Foundation and Practitioner certification allows you to excel in your career and make use of upcoming opportunities.</li>
+                            <li>Learn thoroughly about the importance of this methodology and other related theoretical concepts in the Foundation level and then its practical applications in the Practitioner level.</li>
+                            <li>By considering the factors involved in any project like costs, timescales, quality, scope, risk and benefits allows the project manager to address planning, monitoring and deploying projects by making use of PRINCE2® framework and themes.</li>
+                        </ul>
+                        <h2>PRINCE2 Foundation and Practitioner Training Course Structure</h2>
+                        <p>The duration of the training course is five days.</p>
+                        <p>The training course is split into two sections:</p>
+                        <p>During the first three days, delegates will prepare for and complete the PRINCE2 Foundation exam.</p>
+                        <p>During the final two days, delegates will prepare for and complete the PRINCE2 Practitioner exam.</p>
+                    </div>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue">
-                            Show More
+                        <a href="#showmorecontent" class="btn-blue showmorecontent">
+                            <span class="text">Show More</span>
                         </a>
                     </div>
                 </div>
@@ -226,39 +228,215 @@
             <div class="filter-top">
                 <div class="heading">
                     <h2>Filters</h2>
+                    <img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow">
                 </div>
                 <form class="form">
                     <div class="select-dropdown">
-                        <p>Select Your Course:</p>
                         <select name="course">
-                            <option value=""></option>
+                            <option value="">Select Your Course:</option>
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
                         </select>
                     </div>
                     <div class="select-dropdown">
-                        <p>Choose a Location:</p>
                         <select name="course">
-                            <option value=""></option>
+                            <option value="">Choose a Location:</option>
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
                         </select>
                     </div>
                     <div class="select-dropdown">
-                        <p>Select a Delivery Format:</p>
                         <select name="course">
-                            <option value=""></option>
+                            <option value="">Select a Delivery Format:</option>
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
                         </select>
+                    </div>
+                    <div class="buttons">
+                        <a href="javascript:void(0);" class="btn-blue">Explore Now</a>
                     </div>
                 </form>
             </div>
-            <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue">Explore Now</a>
+            <div class="calender-container">
+                <div class="calender-left">
+                    <div class="heading">
+                        <h2>Choose Mode <span>of Training</span></h2>
+                        <img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow">
+                    </div>
+                    <div class="modes">
+                        <div class="modes-list">
+                            <a href="javascript:(void);" class="methods" id="classroom">
+                                <img src="{{url('img/courses/classroom-blue.svg')}}" alt="classroom" class="blue">
+                                <img src="{{url('img/courses/classroom-gray.svg')}}" alt="classroom" class="gray">
+                                <p>Classroom</p>
+                            </a>
+                            <a href="javascript:(void);" class="methods" id="online">
+                                <img src="{{url('img/courses/online-blue.svg')}}" alt="online" class="blue">
+                                <img src="{{url('img/courses/online-gray.svg')}}" alt="online" class="gray">
+                                <p>Online</p>
+                            </a>
+                            <a href="javascript:(void);" class="methods" id="virtual">
+                                <img src="{{url('img/courses/virtual-blue.svg')}}" alt="virtual" class="blue">
+                                <img src="{{url('img/courses/virtual-gray.svg')}}" alt="virtual" class="gray">
+                                <p>Virtual</p>
+                            </a>
+                            <a href="javascript:(void);" class="methods" id="onsite">
+                                <img src="{{url('img/courses/onsite-blue.svg')}}" alt="onsite" class="blue">
+                                <img src="{{url('img/courses/onsite-gray.svg')}}" alt="onsite" class="gray">
+                                <p>Onsite</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h2>Key Points</h2>
+                        <p><strong>Duration: </strong>5 Days*</p>
+                        <p><strong>Exam(s): </strong> Included</p>
+                        <p><strong>Certificate(s): </strong> Included</p>
+                        <p><strong>Support: </strong> 24/7</p>
+                        <div class="buttons">
+                            <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                                <img src="{{url('img/courses/email.svg')}}" alt="email">Enquire Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="calender-right">
+                    <div class="course-content">
+                        <div class="name">
+                            <a href="javascript:void(0);" class="course-name">PRINCE2® Foundation and Practitioner</a>
+                            <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                                <img src="{{url('img/courses/email-black.svg')}}" alt="email">Enquire Now
+                            </a>
+                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Book Now">
+                                    <img src="{{url('img/courses/buy.svg')}}" alt="buy">Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span>
+                                <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
+                            </span>
+                            <div class="content">
+                                <h3>Virtual</h3>
+                                <p>Best Selling PRINCE2®</p>
+                                <p>Foundation and Practitioner</p>
+                            </div>
+                            <div class="date">
+                                <p>Monday</p>
+                                <p>06</p>
+                                <p>Dec</p>
+                                <p>2021</p>
+                            </div>
+                            <div class="rate">
+                                <h3>£2495</h3>
+                                <p><strong>Duration: </strong>2 Days</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="name">
+                            <a href="javascript:void(0);" class="course-name">PRINCE2® Foundation and Practitioner</a>
+                            <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                                <img src="{{url('img/courses/email-black.svg')}}" alt="email">Enquire Now
+                            </a>
+                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Book Now">
+                                    <img src="{{url('img/courses/buy.svg')}}" alt="buy">Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span>
+                                <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
+                            </span>
+                            <div class="content">
+                                <h3>Virtual</h3>
+                                <p>Best Selling PRINCE2®</p>
+                                <p>Foundation and Practitioner</p>
+                            </div>
+                            <div class="date">
+                                <p>Monday</p>
+                                <p>06</p>
+                                <p>Dec</p>
+                                <p>2021</p>
+                            </div>
+                            <div class="rate">
+                                <h3>£2495</h3>
+                                <p><strong>Duration: </strong>2 Days</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="name">
+                            <a href="javascript:void(0);" class="course-name">PRINCE2® Foundation and Practitioner</a>
+                            <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                                <img src="{{url('img/courses/email-black.svg')}}" alt="email">Enquire Now
+                            </a>
+                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Book Now">
+                                    <img src="{{url('img/courses/buy.svg')}}" alt="buy">Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span>
+                                <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
+                            </span>
+                            <div class="content">
+                                <h3>Virtual</h3>
+                                <p>Best Selling PRINCE2®</p>
+                                <p>Foundation and Practitioner</p>
+                            </div>
+                            <div class="date">
+                                <p>Monday</p>
+                                <p>06</p>
+                                <p>Dec</p>
+                                <p>2021</p>
+                            </div>
+                            <div class="rate">
+                                <h3>£2495</h3>
+                                <p><strong>Duration: </strong>2 Days</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <div class="name">
+                            <a href="javascript:void(0);" class="course-name">PRINCE2® Foundation and Practitioner</a>
+                            <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                                <img src="{{url('img/courses/email-black.svg')}}" alt="email">Enquire Now
+                            </a>
+                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Book Now">
+                                    <img src="{{url('img/courses/buy.svg')}}" alt="buy">Book Now
+                                </a>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span>
+                                <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
+                            </span>
+                            <div class="content">
+                                <h3>Virtual</h3>
+                                <p>Best Selling PRINCE2®</p>
+                                <p>Foundation and Practitioner</p>
+                            </div>
+                            <div class="date">
+                                <p>Monday</p>
+                                <p>06</p>
+                                <p>Dec</p>
+                                <p>2021</p>
+                            </div>
+                            <div class="rate">
+                                <h3>£2495</h3>
+                                <p><strong>Duration: </strong>2 Days</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
             </div>
         </div>
     </div>

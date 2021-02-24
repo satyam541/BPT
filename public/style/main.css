@@ -7211,6 +7211,7 @@ input::-webkit-inner-spin-button {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .courses-banner .banner-points ul li {
   color: #FFFFFF;
@@ -7241,6 +7242,9 @@ input::-webkit-inner-spin-button {
 }
 .courses-banner .breadcrums .white {
   display: flex;
+}
+.courses-banner .breadcrums ul li a {
+  font-size: 13px;
 }
 .foundation {
   padding: 3rem 1.5rem;
@@ -7333,6 +7337,44 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.foundation #overview .buttons {
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+  z-index: 1;
+}
+.foundation #overview .buttons::before,
+.foundation #overview .buttons::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 10px;
+  height: 5px;
+  bottom: 15px;
+  left: 0;
+}
+.foundation #overview .buttons::before {
+  width: 100%;
+  background-color: #c0c0c0;
+}
+.foundation #overview .buttons::after {
+  width: 33%;
+  background-color: #0064D8;
+}
+.foundation #overview .overview-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow: hidden;
+  width: 100%;
+}
+.foundation #overview .toggle {
+  max-height: 100% !important;
+  transition: all 0.3s ease-in, color 0s ease-in-out;
+}
+.foundation #overview .toggle + .buttons::after {
+  width: 100%;
 }
 .foundation #overview h2 {
   margin-top: 2rem;
@@ -7535,6 +7577,7 @@ input::-webkit-inner-spin-button {
 }
 .unable h2 {
   margin-bottom: 1rem;
+  width: 100%;
 }
 .training {
   padding: 3rem 1.5rem;
@@ -7553,16 +7596,37 @@ input::-webkit-inner-spin-button {
   box-shadow: 0 0 17px #c1c1c1;
   background: #FFFFFF;
   margin-bottom: 1rem;
-  margin-top: 1rem;
   border-radius: 5px;
   cursor: pointer;
   align-items: center;
+}
+.training .filter-top .heading {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+}
+.training .filter-top .heading::before {
+  content: none;
+}
+.training .filter-top .heading h2 {
+  width: calc(100% - 20px);
+  font-size: 18px;
+}
+.training .filter-top .heading img {
+  height: 15px;
+  width: 15px;
+  transform: rotate(88deg);
 }
 .training .form {
   display: none;
   flex-direction: column;
   width: 100%;
   margin-top: 1rem;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 .training .select-dropdown {
   padding-bottom: 1.5rem;
@@ -7572,6 +7636,222 @@ input::-webkit-inner-spin-button {
   font-weight: 800;
   padding-bottom: 0.5rem;
   color: #1E1E1E;
+}
+.training select {
+  background: #FFFFFF;
+  padding: 15px 20px 15px 10px;
+  color: #787878;
+  font-weight: 600;
+  width: 100%;
+  border: 1px solid #dbe2e8;
+  outline: 0px;
+  box-shadow: 5px 5px 10px 0 rgb(46 61 14.6%);
+  cursor: pointer;
+}
+.training .calender-container {
+  display: flex;
+  flex-direction: column;
+}
+.training .calender-left {
+  display: flex;
+  flex-direction: column;
+}
+.training .calender-left .heading {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 0 17px #c1c1c1;
+  background: #FFFFFF;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.training .calender-left .heading::before {
+  content: none;
+}
+.training .calender-left .heading h2 {
+  width: calc(100% - 20px);
+  font-size: 18px;
+}
+.training .calender-left .heading h2 span {
+  font-size: 18px;
+}
+.training .calender-left .heading img {
+  height: 15px;
+  width: 15px;
+  transform: rotate(88deg);
+}
+.training .modes {
+  display: flex;
+  flex-direction: column;
+}
+.training .modes-list {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.training .methods {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+}
+.training .methods img {
+  height: 110px;
+  width: 110px;
+}
+.training .methods .blue {
+  display: none;
+}
+.training .methods .gray {
+  display: flex;
+}
+.training .methods p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+.training .methods:hover .blue {
+  display: flex;
+}
+.training .methods:hover .gray {
+  display: none;
+}
+.training .key-point {
+  display: none;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border: 7px solid #c0c0c0;
+  align-items: center;
+  background-image: url(../img/courses/top-arc.svg), url(../img/courses/bottom-arc.svg);
+  background-repeat: no-repeat;
+  background-size: 33% 21%;
+  background-position: top left, bottom right;
+}
+.training .key-point h2 {
+  margin-bottom: 0.5rem;
+  color: #0064D8;
+}
+.training .key-point p {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.training .calender-right {
+  display: flex;
+  flex-direction: column;
+}
+.training .course-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  width: 272px;
+  align-self: center;
+}
+.training .name {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#181818, #363636);
+  padding: 1rem;
+}
+.training .name .buttons {
+  flex-direction: column;
+}
+.training .name .buttons .btn-blue {
+  margin-top: 1rem;
+}
+.training .course-name {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+.training .value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  z-index: 1;
+}
+.training .value span {
+  display: flex;
+  height: 85px;
+  width: 85px;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.training .value span img {
+  height: 100%;
+  width: 100%;
+}
+.training .value span::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: #1C2848;
+  height: 82px;
+  width: 85px;
+  border-radius: 50%;
+  bottom: -5px;
+  left: 0px;
+}
+.training .value .content {
+  display: flex;
+  flex-direction: column;
+}
+.training .value .content h3,
+.training .value .content p {
+  text-align: center;
+}
+.training .value .content p {
+  color: #0064D8;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.training .date {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.training .date p {
+  padding: 1rem 0.5rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  text-align: center;
+  width: 38%;
+  margin-top: 2.5rem;
+  position: relative;
+}
+.training .date p::before {
+  content: '';
+  position: absolute;
+  top: -17px;
+  left: -8px;
+  height: 27px;
+  width: 88px;
+  background-color: #f5f5f5;
+}
+.training .rate {
+  display: flex;
+  flex-direction: column;
+}
+.training .rate h3 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000000;
+  width: auto;
+  margin: 1.5rem 0 0.5rem;
+  text-align: center;
 }
 .virtual {
   padding: 3rem 1.5rem;
@@ -7629,6 +7909,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   margin-bottom: 2rem;
   text-align: center;
+  width: 100%;
 }
 .virtual .virtual-img span {
   display: flex;
@@ -7744,6 +8025,7 @@ input::-webkit-inner-spin-button {
 .language .buy {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .language .buy span {
   display: flex;
@@ -7988,6 +8270,9 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+  .unable p {
+    width: 70%;
+  }
   .unable .unable-container {
     display: flex;
     flex-direction: column;
@@ -7996,6 +8281,105 @@ input::-webkit-inner-spin-button {
   .unable h2,
   .unable p {
     color: #FFFFFF;
+  }
+  .training {
+    padding: 3rem 2rem;
+  }
+  .training .filter-top {
+    top: 5rem;
+    z-index: 12;
+    background-color: #C0C0C0;
+    padding: 0.5rem;
+    flex-direction: row;
+    width: 100%;
+  }
+  .training .filter-top .heading {
+    display: none;
+  }
+  .training .form {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    align-items: center;
+  }
+  .training .form .buttons {
+    margin-top: 0;
+    align-items: initial;
+    align-self: flex-start;
+    height: 52px;
+  }
+  .training .form .buttons .btn-blue {
+    border-radius: 0;
+  }
+  .training .select-dropdown {
+    width: 40%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .training select {
+    padding: 15px;
+  }
+  .training .modes-list {
+    display: flex;
+  }
+  .training .key-point {
+    display: flex;
+    width: 40%;
+    align-self: center;
+  }
+  .training .course-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    width: 100%;
+    align-self: center;
+  }
+  .training .name {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .training .name .buttons {
+    flex-direction: row;
+    margin-top: 0;
+    width: 50%;
+  }
+  .training .name .buttons .btn-blue {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+  .training .course-name {
+    width: 50%;
+  }
+  .training .value {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .training .value span {
+    margin-bottom: 0;
+    height: 74px;
+    width: 74px;
+  }
+  .training .value span::before {
+    height: 72px;
+    width: 74px;
+  }
+  .training .value .content {
+    width: 27%;
+  }
+  .training .date {
+    width: 27%;
+  }
+  .training .date p {
+    width: 41%;
+  }
+  .training .rate {
+    width: 16%;
+  }
+  .training .rate h3 {
+    margin: 0rem 0 0.5rem;
   }
   .virtual {
     padding: 3rem 2rem;
@@ -8128,6 +8512,21 @@ input::-webkit-inner-spin-button {
     transform: translateX(34px);
   }
 }
+@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .training .date p::before {
+    left: -4px;
+    width: 95px;
+  }
+  .language {
+    padding: 3rem 2rem;
+  }
+  .language .language-list .content {
+    background-size: 21% 100%;
+  }
+  .popular-location .popular-content {
+    width: 50%;
+  }
+}
 @media (min-width : 1024px) {
   .courses-banner {
     background: none;
@@ -8167,6 +8566,9 @@ input::-webkit-inner-spin-button {
   .courses-banner .breadcrums ul li:last-child {
     color: #000000;
   }
+  .courses-banner .breadcrums ul li a {
+    font-weight: bold;
+  }
   .courses-banner .breadcrums .black {
     display: flex;
   }
@@ -8176,6 +8578,19 @@ input::-webkit-inner-spin-button {
   .foundation .tabs-container {
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+  }
+  .foundation .tabs-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    height: 60px;
+    width: 60px;
+    background-image: url(../img/courses/dotted-box.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   .foundation .tab-links {
     flex-direction: column;
@@ -8194,19 +8609,6 @@ input::-webkit-inner-spin-button {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
-    position: relative;
-  }
-  .foundation #overview::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    height: 60px;
-    width: 60px;
-    background-image: url(../img/courses/dotted-box.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
   }
   .foundation #included .heading {
     display: flex;
@@ -8224,6 +8626,90 @@ input::-webkit-inner-spin-button {
   }
   .unable p {
     width: 60%;
+  }
+  .training p {
+    text-align: center;
+  }
+  .training .calender-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .training .calender-left {
+    width: 30%;
+    order: 2;
+    position: sticky;
+    top: 130px;
+  }
+  .training .calender-left .heading {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+  }
+  .training .calender-left .heading h2 {
+    text-align: center;
+    font-size: 32px;
+  }
+  .training .calender-left .heading h2 span {
+    font-size: 32px;
+  }
+  .training .calender-left .heading img {
+    display: none;
+  }
+  .training .calender-right {
+    width: 65%;
+    order: 1;
+  }
+  .training .course-content {
+    margin-top: 4rem;
+  }
+  .training .key-point {
+    width: 100%;
+    background-size: 31% 20%;
+  }
+  .training .course-name {
+    width: 37%;
+  }
+  .training .name {
+    transform: translate(0px, -22px);
+    width: 95%;
+    align-self: center;
+    border-radius: 0px 0px 40px 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .training .name::before,
+  .training .name::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    border-bottom: 23px solid #000000;
+    opacity: 0.32;
+  }
+  .training .name::before {
+    border-left: 17px solid transparent;
+    left: -17px;
+  }
+  .training .name::after {
+    border-right: 17px solid transparent;
+    right: -17px;
+  }
+  .training .name .buttons {
+    width: 54%;
+  }
+  .training .value {
+    padding-top: 0;
+    margin-top: -1rem;
+  }
+  .training .date {
+    width: 30%;
+  }
+  .training .rate {
+    width: 19%;
   }
   .virtual .virtual-container {
     flex-direction: row;
@@ -8372,7 +8858,7 @@ input::-webkit-inner-spin-button {
   }
   .popular-location .popular-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .popular-location .popular-content {
     width: 40%;
@@ -8389,6 +8875,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
+  .courses-banner .banner-points {
+    width: 32%;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -8425,6 +8914,40 @@ input::-webkit-inner-spin-button {
   }
   .unable {
     padding: 4rem 0rem;
+  }
+  .training {
+    padding: 4rem 0rem;
+  }
+  .training .calender-left {
+    width: 22%;
+  }
+  .training .calender-right {
+    width: 73%;
+  }
+  .training .key-point {
+    background-size: 34% 20%;
+  }
+  .training .name {
+    width: 90%;
+  }
+  .training .name .buttons {
+    width: 42%;
+  }
+  .training .course-name {
+    width: 50%;
+  }
+  .training .value .content {
+    width: 22%;
+  }
+  .training .date {
+    width: 350px;
+  }
+  .training .date p {
+    width: 21%;
+    margin-top: 2rem;
+  }
+  .training .rate {
+    width: 13%;
   }
   .virtual {
     padding: 4rem 0rem;
@@ -8500,8 +9023,28 @@ input::-webkit-inner-spin-button {
   .popular-location .popular-content::before {
     left: 30px;
   }
+}
+@media (min-width : 1500px) {
+  .popular-location .popular-content {
+    width: 27%;
+  }
   .popular-location .location-content {
-    width: 65%;
+    width: 60%;
+  }
+}
+@media (min-width : 1600px) {
+  .popular-location .popular-content {
+    width: 25%;
+  }
+}
+@media (min-width : 1800px) {
+  .popular-location .popular-content {
+    width: 22%;
+  }
+}
+@media (min-width : 1800px) {
+  .popular-location .popular-content {
+    width: 21%;
   }
 }
 .cart-banner {

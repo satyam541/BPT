@@ -22,6 +22,21 @@
     }
     //End Toggle menu//
 
+    // Start Foundation Script
+    $('.showmorecontent').click(function(event) {
+        event.preventDefault();
+        var id = $(this).attr('href');
+        $(id).toggleClass('toggle');
+        
+        if($(id).hasClass("toggle")) {  
+            $(this).find('.text').html(" Show Less");       
+        } else {
+            $(this).find('.text').html(" Show More");
+            scrollToSpecificDiv("#overview");
+        } 
+    });
+    // End Foundation Script
+
     //Start Delivery method script//
    $(".tab-content").hide();
    $(".tab-content").first().css("display", "flex");
