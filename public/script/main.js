@@ -202,6 +202,9 @@ function checkConsent(button)
     if(checkbox.is(":checked"))
     {
         error.hide();
+
+        $(this).find('form').submit();
+        
         return true;
     }
     error.show();
