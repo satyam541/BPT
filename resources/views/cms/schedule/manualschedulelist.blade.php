@@ -55,7 +55,7 @@
                     <tr>
                     <td>{{$schedule->course->name}}</td>
                     <td>{{$schedule->response_price}}</td>
-                    <td>{{$schedule->location()}}</td>
+                    <td>{{$schedule->location->name}}</td>
                     <td>{{$schedule->response_date}}</td>
                     <td><a href="{{route('editManualSchedule',['schedule'=>$schedule->id])}}" class="fa fa-edit"></a>
                     <a href="#"onclick="deleteItem('{{ route('deleteManualSchedule',['schedule'=>$schedule->id]) }}')" class="fa fa-trash" style="color: red"></a>

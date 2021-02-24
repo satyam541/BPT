@@ -41,25 +41,20 @@ class Location extends Model
     {
         return $this->belongsTo('App\Models\Country',"country_id");
     }
-
-    public function venues()
-    {
-        return $this->hasMany('App\Models\Venue');
-    }
     
     public function schedule()
     {
         return $this->hasMany('App\Models\Schedule');
     }
 
-    public function venue()
+    public function customSchedulePrice()
     {
-        return $this->hasOne('App\Models\Venue');
+        return $this->hasMany('App\Models\CustomSchedulePrice');
     }
 
     public function customCoursePrice($courseId)
     {
-        $schedule = $this->venue->customSchedulePrice->where('course_id',$courseId)->first();
+        $schedule = $this->customSchedulePrice->where('course_id',$courseId)->first();
         if(!empty($schedule))
         {
             return $schedule;
@@ -98,7 +93,6 @@ class Location extends Model
         {
             $this->popular->delete();
         }
-        $this->venues()->delete();
         return parent::delete();
     }
 
