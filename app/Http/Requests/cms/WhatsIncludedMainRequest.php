@@ -25,7 +25,7 @@ class WhatsIncludedMainRequest extends FormRequest
     {
         return [
             'name'      =>  'required',
-            'content'   =>  'required',
+            
         ];
     }
 }

@@ -25,10 +25,10 @@ class CourseContentRequest extends FormRequest
     {
         return [
             'course_id'         => ['required'],
-            'country_id'       => ['required'],
-            'heading'       => ['nullable'],
+            'country_id'        => ['required','unique:course_country_content,country_id'],
+            'heading'           => ['nullable'],
             // 'description'       => ['required'],
-            'overview'      => ['required']
+            'overview'           => ['required']
         ];
     }
     
