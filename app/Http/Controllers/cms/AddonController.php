@@ -4,6 +4,7 @@ namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\CourseAddon;
+use App\Http\Requests\cms\CourseaddonRequest;
 use Illuminate\Http\Request;
 
 class AddonController extends Controller
@@ -38,7 +39,7 @@ class AddonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CourseaddonRequest $request)
     {
         $inputs=$request->all();
         CourseAddon::create($inputs);
@@ -77,7 +78,7 @@ class AddonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(CourseaddonRequest $request)
     {
         $inputs=$request->all();
         CourseAddon::find($inputs['id'])->update($inputs);
