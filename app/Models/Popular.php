@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Popular extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
     protected $table = 'popular';
     // protected $orderby = 'display_order'; // eh ni chalda
     protected $guarded = array('id');

@@ -1,6 +1,5 @@
-// Start cart-banner section
+// Start search-banner section
 .search-banner{
-    background-color: @darkblueColor;
     background-color: @lightblueColor;
     .banner-container{
     h1,p{
@@ -30,7 +29,7 @@
     }
 }
 }
-// End cart-banner section
+// End search-banner section
 
 // Start search section
 .search{
@@ -70,8 +69,12 @@
 // Start result section
 .result{
     padding: @sectionPadding;
-    padding-top: 0!important;
+    padding-top: 1rem!important;
     .result-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .result-content{
         display: flex;
         flex-direction: column;
     }
@@ -86,6 +89,14 @@
         align-items: flex-start;
         box-shadow: @shadowLight;
         margin-top: 2rem;
+        &:first-child{
+            margin-top: 0;
+        }
+        .heading{
+            &::before{
+                content: none;
+            }
+        }
     }
     .buttons{
         flex-direction: column;

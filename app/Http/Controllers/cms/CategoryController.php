@@ -87,7 +87,7 @@ class CategoryController extends Controller
 
     public function edit($category)
     {
-        $category = Category::with('hasPopular')->find($category);
+        $category = Category::with('popular')->find($category);
         $this->authorize('update', $category);
         $data['category']    = $category;
         $data['submitRoute'] = array('updateCategory',$category->id);
@@ -123,7 +123,7 @@ class CategoryController extends Controller
         {
             $category->popular()->save($category->popular);
         }
-        else if($category->isPopular())
+        else if($category->popular())
         {
             $category->popular->delete();
         }
