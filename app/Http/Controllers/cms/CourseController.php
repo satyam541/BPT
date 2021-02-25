@@ -12,6 +12,7 @@ use App\Models\BulletPoint;
 use App\Models\CourseContent;
 use App\Models\Country;
 use App\Models\whatsIncluded;
+use App\Models\OnlinePrice;
 use App\Models\Accreditation;
 use App\Http\Requests\cms\CourseContentRequest;
 use App\Http\Requests\cms\BulletPointRequest;
@@ -167,11 +168,12 @@ class CourseController extends Controller
         $course = Course::firstOrNew( 
             ['topic_id'=>$inputs['topic_id'],'name'=>$inputs['name']]
         ,$inputs);
-        if(!isset($request['is_online'])){
-            $course['is_online']=0;
-        }
-        $reference=$inputs['reference'];
-        $course['reference']=$reference;
+
+        $course['is_online'] = isset($inputs['is_online']);
+        $course['reference'] = $inputs['reference'];
+
+        $online = new OnlinePrice();
+
         if(empty($course->created_at))
         {                    
             if($request->hasFile('image')){
@@ -180,17 +182,23 @@ class CourseController extends Controller
                 $course->image = $imageName;
             }
             $course->save();
-            \Session::flash('success', 'Course created!'); 
         }
-        else{
-            \Session::flash('failure', 'Duplicate Data Found!'); 
-        }
-        if($request->has('is_popular'))
+        
+        if(isset($input['is_popular']))
         {
-            $course->popular()->save($course->popular);
+            $course->popular->save();
         }
 
-        return redirect()->route('courseList');
+        if($request['is_online']){
+            $online['course_id']    = $course['id'];
+            $online['type']         = 'Online';
+            $online['component']    = 'Basic';
+            $online['price']        = $inputs['online_price'];
+            $online->save();
+        }
+        
+
+        return redirect()->route('courseList')->with('success','Course Added!');
     }
 
     public function contentInsert(CourseContentRequest $request)
@@ -217,7 +225,7 @@ class CourseController extends Controller
     public function edit($course)
     {
         // $this->authorize('update', $course);
-        $course = Course::with('hasPopular')->find($course);
+        $course = Course::with('hasPopular','onlinePrice')->find($course);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -238,19 +246,17 @@ class CourseController extends Controller
         return view('cms.course.contentForm',$data);
     }
 
-    public function update(Course $course,CourseRequest $request)
+    public function update(Course $course ,CourseRequest $request)
     {
         // $this->authorize('update', $course);
         $inputs = $request->except(["_token","is_popular"]);
         $inputs['accreditation_id']=$request->accreditation_id;
-
-    
+        
         $inputs['accredited'] = isset($inputs['accredited']);
-        $done = $course->update($inputs);
-            if(!isset($request['is_online'])){
-                $course['is_online']=0;
-            }
-            $course->save();
+        $inputs['is_online']  = isset($inputs['is_online']);
+        $course->update($inputs);
+        $online = array();
+
         if($request->hasFile('image')){
             $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($course->logo_path), $imageName);
@@ -258,18 +264,27 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $course->popular()->save($course->popular);
+            $course->popular->save();
         }
-        else if($course->isPopular())
+        else
         {
             $course->popular->delete();
         }
-        
-        if(!empty($done))
-        \Session::flash('success', 'Course updated!'); 
-        return redirect()->route('courseList');
+
+        if($request['is_online']){
+            $online['course_id']    = $course['id'];
+            $online['type']         = 'Online';
+            $online['component']    = 'Basic';
+            $online['price']        = $inputs['online_price'];
+            OnlinePrice::updateOrCreate(['id' =>$request['online_id']],$online);
+        }
+        elseif($request['online_id']){
+            $course->onlinePrice->delete();
+        }
+                
+        return redirect()->route('courseList')->with('success','Course Updated!');
     }
 
     public function contentUpdate(CourseContentRequest $request,CourseContent $courseDetail)

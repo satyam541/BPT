@@ -54,7 +54,7 @@
                         <td>{{$course->name}}</td>
                         {{Form::model($topics,array('route'=>['linkTopicRoute',['id'=>$course->id]]))}}
                         <td>
-                        {{Form::select('topic_id',$topics,null,['class'=>'select form-control','placeholder'=>'Select Topic'])}}
+                        {{Form::select('topic_id',$topics,null,['class'=>'selectJS form-control','placeholder'=>'Select Topic'])}}
                         </td>
                             <td>  <button class="btn btn-primary">Link</button></td>
                         {{Form::close()}}
