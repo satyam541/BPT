@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87.843" height="74.153" viewBox="0 0 87.843 74.153">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0064d8"/>
+      <stop offset="1" stop-color="#1c2848"/>
+    </linearGradient>
+  </defs>
+  <g id="carrer" transform="translate(13.736)">
+    <g id="Group_7196" data-name="Group 7196" transform="translate(10.863 0)">
+      <g id="Group_7195" data-name="Group 7195">
+        <path id="Path_18434" data-name="Path 18434" d="M81.518,0A6.651,6.651,0,0,0,75,6.662a6.518,6.518,0,1,0,13.035,0A6.651,6.651,0,0,0,81.518,0Z" transform="translate(-75 0)" fill="#181818"/>
+      </g>
+    </g>
+    <g id="Group_7198" data-name="Group 7198" transform="translate(10.863 13.283)">
+      <g id="Group_7197" data-name="Group 7197" transform="translate(0 0)">
+        <path id="Path_18435" data-name="Path 18435" d="M98.9,109.14a4.345,4.345,0,0,0,0-8.69H86.375l-3.144-6.434C81.168,89.887,75,91.776,75,96.1V117.95a4.5,4.5,0,0,0,2.971,4.01l10.972,3.66L92.6,136.594a4.345,4.345,0,1,0,8.242-2.752L96.507,120.8a4.374,4.374,0,0,0-2.747-2.747L83.7,114.7V109.14Z" transform="translate(-75 -91.719)" fill="#181818"/>
+      </g>
+    </g>
+    <g id="Group_7200" data-name="Group 7200" transform="translate(0 30.711)">
+      <g id="Group_7199" data-name="Group 7199" transform="translate(0 0)">
+        <path id="Path_18436" data-name="Path 18436" d="M73.515,217l-4.341-4.341a2.187,2.187,0,0,0-3.077,0L61.756,217a2.173,2.173,0,1,0,3.071,3.071l.636-.636V233.74H45.622a2.171,2.171,0,0,0-2.173,2.173v6.518H23.9a2.171,2.171,0,0,0-2.173,2.173v6.518H2.173a2.173,2.173,0,1,0,0,4.345H23.9a2.171,2.171,0,0,0,2.173-2.173v-6.518H45.622a2.171,2.171,0,0,0,2.173-2.173v-6.518H67.636a2.171,2.171,0,0,0,2.173-2.173v-16.48l.636.636A2.173,2.173,0,0,0,73.515,217Z" transform="translate(0 -212.024)" fill="url(#linear-gradient)"/>
+        <g id="Group_7658" data-name="Group 7658" transform="translate(-162.688 -1071.711)">
+          <g id="Group_7595" data-name="Group 7595" transform="translate(-189 687.334)">
+            <g id="Group_80" data-name="Group 80" transform="translate(409.909 417.026)">
+              <path id="Polygon_1" data-name="Polygon 1" d="M3.854,1.592a1,1,0,0,1,1.752,0L6.269,2.8a1,1,0,0,0,.394.394l1.205.663a1,1,0,0,1,0,1.752l-1.205.663a1,1,0,0,0-.394.394L5.606,7.868a1,1,0,0,1-1.752,0L3.191,6.663A1,1,0,0,0,2.8,6.269L1.592,5.606a1,1,0,0,1,0-1.752L2.8,3.191A1,1,0,0,0,3.191,2.8Z" fill="#ffd73b"/>
+              <path id="Polygon_2" data-name="Polygon 2" d="M1.694,1.358a.853.853,0,0,1,1.495,0h0a.853.853,0,0,0,.336.336h0a.853.853,0,0,1,0,1.495h0a.853.853,0,0,0-.336.336h0a.853.853,0,0,1-1.495,0h0a.853.853,0,0,0-.336-.336h0a.853.853,0,0,1,0-1.495h0a.853.853,0,0,0,.336-.336Z" transform="translate(2.441 2.441)" fill="#ebbb00"/>
+            </g>
+            <g id="Group_81" data-name="Group 81" transform="translate(337.951 413.916)">
+              <path id="Polygon_1-2" data-name="Polygon 1" d="M2.419,1.592a1,1,0,0,1,1.752,0l.154.279a1,1,0,0,0,.394.394L5,2.419A1,1,0,0,1,5,4.171l-.279.154a1,1,0,0,0-.394.394L4.171,5A1,1,0,0,1,2.419,5l-.154-.279a1,1,0,0,0-.394-.394l-.279-.154a1,1,0,0,1,0-1.752l.279-.154a1,1,0,0,0,.394-.394Z" transform="translate(0)" fill="#ffd73b"/>
+              <path id="Polygon_2-2" data-name="Polygon 2" d="M1.309,1.049a.659.659,0,0,1,1.155,0h0a.659.659,0,0,0,.26.26h0a.659.659,0,0,1,0,1.155h0a.659.659,0,0,0-.26.26h0a.659.659,0,0,1-1.155,0h0a.659.659,0,0,0-.26-.26h0a.659.659,0,0,1,0-1.155h0a.659.659,0,0,0,.26-.26Z" transform="translate(1.502 1.502)" fill="#ebbb00"/>
+            </g>
+            <g id="Group_82" data-name="Group 82" transform="translate(353.247 356.665)">
+              <path id="Polygon_1-3" data-name="Polygon 1" d="M2.42,1.592a1,1,0,0,1,1.752,0l.154.28a1,1,0,0,0,.394.394L5,2.42A1,1,0,0,1,5,4.173l-.28.154a1,1,0,0,0-.394.394L4.173,5A1,1,0,0,1,2.42,5l-.154-.28a1,1,0,0,0-.394-.394l-.28-.154a1,1,0,0,1,0-1.752l.28-.154a1,1,0,0,0,.394-.394Z" transform="translate(0 0)" fill="#ffd73b"/>
+              <path id="Polygon_2-3" data-name="Polygon 2" d="M1.181.946a.6.6,0,0,1,1.042,0h0a.6.6,0,0,0,.234.234h0a.6.6,0,0,1,0,1.042h0a.6.6,0,0,0-.234.234h0a.6.6,0,0,1-1.042,0h0a.6.6,0,0,0-.234-.234h0a.6.6,0,0,1,0-1.042h0A.6.6,0,0,0,1.181.946Z" transform="translate(1.701 1.701)" fill="#ebbb00"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Group_7202" data-name="Group 7202" transform="translate(6.542 45.998)">
+      <g id="Group_7201" data-name="Group 7201" transform="translate(0 0)">
+        <path id="Path_18437" data-name="Path 18437" d="M50.93,319.27a8.445,8.445,0,0,1-2.756-1.64L45.05,336.377a4.345,4.345,0,0,0,8.566,1.427L56.4,321.091Z" transform="translate(-45.014 -317.63)" fill="#181818"/>
+      </g>
+    </g>
+    <g id="Group_7204" data-name="Group 7204" transform="translate(0.004 18.037)">
+      <g id="Group_7203" data-name="Group 7203" transform="translate(0 0)">
+        <path id="Path_18438" data-name="Path 18438" d="M1.292,129.824a4.351,4.351,0,0,0,0,6.144l5.251,5.238V124.575Z" transform="translate(-0.022 -124.575)" fill="#181818"/>
+      </g>
+    </g>
+  </g>
+</svg>

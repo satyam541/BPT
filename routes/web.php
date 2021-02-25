@@ -63,8 +63,8 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
-Route::get('/catalouge', function () {
-    return view('catalouge');
+Route::get('/catalogue', function () {
+    return view('catalogue');
 });
 Route::get('/emptycart', function () {
     return view('emptycart');
