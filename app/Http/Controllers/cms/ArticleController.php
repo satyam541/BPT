@@ -87,11 +87,11 @@ class ArticleController extends Controller
         //      $article->tags()->attach($tag->id);
         // }
 
-        if($request->has('popular'))
+        if($request->has('is_popular'))
         {
-            $article->popular()->save($article->popular);
+            $article->popular()->save($article->Popular);
         }
-            // dd($request);
+
         if($article->type=='news')
         {
             return redirect()->route('newsList')->with('success', 'News Inserted Successfully!');
@@ -167,7 +167,7 @@ class ArticleController extends Controller
         {
             $article->popular()->save($article->popular);
         }
-        else if($article->Popular())
+        else if($article->popular())
         {
             $article->popular->delete();
         }

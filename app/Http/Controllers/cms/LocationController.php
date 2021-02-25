@@ -116,7 +116,7 @@ class LocationController extends Controller
         {
             $data->popular()->save($data->popular);
         }
-        else if($data->isPopular())
+        else if($data->popular())
         {
             $data->popular->delete();
         }

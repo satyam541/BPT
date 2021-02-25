@@ -91,7 +91,7 @@
 
                                 <div class="form-group">
                                     {{Form::label('is_popular','Is Popular')}}
-                                    <input type="checkbox" name="is_popular"@if($category->hasPopular!=null) checked @endif>
+                                    <input type="checkbox" name="is_popular"@if($popular==true) checked @endif>
                                 </div>
 
                             </div>

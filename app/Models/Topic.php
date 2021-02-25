@@ -144,8 +144,7 @@ class Topic extends Model
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
-            [
-            "country_id" =>'gb',
+            ["country_id" =>'gb',
             "display_order" => Popular::topics()]
         );
     }
