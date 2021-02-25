@@ -156,8 +156,105 @@
 <!-- End Foundation Section -->
 
 
-<!-- Start experiences section -->
+<!-- Start topic-delivery section -->
 
+    <section class="flex-container topic-delivery">
+        <div class="container">
+            <div class="delivery-container">
+                <div class="heading center-heading white-heading">
+                    <h2>Delivery Methods</h2>
+                </div>
+                <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our agency can only be as strong as our people & because of this, our team have designed game changing products.</p>
+                <div class="delivery-list">
+                    <a class="list">
+                        <span>
+                        <img src="{{url('img/topic/classroom.svg')}}" alt="classroom" class="black-icon">
+                        <img src="{{url('img/topic/classroom-white.svg')}}" alt="classroom" class="white-icon">
+                        </span>
+                        Classroom Training
+                    </a>
+                    <a class="list">
+                        <span>
+                        <img src="{{url('img/topic/led.svg')}}" alt="led" class="black-icon">
+                        <img src="{{url('img/topic/led-white.svg')}}" alt="led" class="white-icon">
+                        </span>
+                        Online Instructor-Led
+                    </a>
+                    <a class="list">
+                        <span>
+                        <img src="{{url('img/topic/paced.svg')}}" alt="paced" class="black-icon">
+                        <img src="{{url('img/topic/paced-white.svg')}}" alt="paced" class="white-icon">
+                        </span>
+                        Online/Self-Paced
+                    </a>
+                    <a class="list">
+                        <span>
+                        <img src="{{url('img/topic/onsite.svg')}}" alt="onsite" class="black-icon">
+                        <img src="{{url('img/topic/onsite-white.svg')}}" alt="onsite" class="white-icon">
+                        </span>
+                        Onsite Training
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- End topic-delivery section -->
+
+
+<!-- Start topic-choose section -->
+    <section class="flex-container topic-choose">
+        <div class="container">
+            <div class="choose-container">
+                <div class="choose-content">
+                        <div class="heading">
+                           <h2>Why Will You <span>Choose Us?</span></h2>  
+                        </div>
+                        <p>Our agency can only be as strong as our people & because of this, our team have designed game changing products.</p>
+                        <p>Intime is a design studio founded in London. Nowadays, we’ve grown and expanded our services, and have become a multinational firm, offering a variety of services and solutions Worldwide.</p>
+                    <div class="choose-progress">
+                        <div class="count">
+                            <div class="circle">
+                                <svg class="progress-ring topic-first" width="95" height="95">
+                                    <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
+                                    <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
+                                </svg>
+                            </div>
+                                <p class="txt-name">Business strategy growth</p>
+                        </div>     
+                        <div class="count">
+                            <div class="circle">
+                                <svg class="progress-ring topic-second" width="95" height="95">
+                                    <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
+                                    <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
+                                </svg>
+                            </div>
+                            <p class="txt-name">Finance valuable ideas</p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn-blue">
+                            <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="choose-image">
+                    <div class="years">
+                        <h3>10+</h3>
+                        <p>YEARS OF EXPERIENCES</p>
+                    </div>
+                    <span>
+                        <img src="{{url('img/topic/choose-image.png')}}" alt="choose-image">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End topic choose section -->
+
+
+<!-- Start experiences section -->
     <section class="flex-container experiences">
         <div class="container">
             <div class="experiences-container">
@@ -213,9 +310,7 @@
             </a>
         </div>
     </section>
-
 <!-- End experiences section -->
-
 
 
 <!-- Start explore section -->

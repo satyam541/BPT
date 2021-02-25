@@ -40,6 +40,158 @@
 // End topic-banner section //
 
 
+// start topic-delivery section//
+
+    .topic-delivery{
+        padding: @sectionPadding;
+        background-image: @blueGradient;
+        p,a{
+            color: @whiteColor;
+        }
+        p{
+            text-align: center;
+        }
+       
+    }
+
+// End topic-delivery section //
+
+
+
+
+// Start topic-choose section //
+
+    .topic-choose{
+        padding: @sectionPadding;
+
+        .choose-progress{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .count{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 48%;
+           
+            .circle{
+                width: 95px;
+                height: 95px;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .progress-ring{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .progress-ring__circle{
+                        transition: 0.35s stroke-dashoffset;
+                        transform: rotate(-90deg);
+                        transform-origin: 50% 50%;
+                        stroke-width: 6;
+                     }
+                     .circle-default{
+                        stroke:#e6e2e7!important;
+                        stroke-width: 6;
+                     }
+                     text{
+                        font-size: 20px;
+                     }
+                }
+                .topic-first{
+                    .progress-ring__circle{
+                        stroke: @lightblueColor!important;
+                    }
+                }
+                .topic-second{
+                    .progress-ring__circle{
+                        stroke: @lightblueColor!important;
+                    }
+                }
+               
+                .mask{
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+
+                    border-radius: 50%;
+                    transform: rotate(5deg);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
+                .fill{
+                    width: 95px;
+                    height: 95px;
+                    position: absolute;
+                    border-radius: 50%;
+                    clip: rect(0px,75px,150px,0px);
+                    background-color: @lightblueColor;
+
+                }
+            }
+            .txt-name{
+                font-size: 14px;
+                color: @blackColor;
+                text-align: center;
+                margin-left: 1rem;
+                font-weight: bold;
+            }
+            &:nth-child(1){
+                .fill{
+                    background-color:  @lightblueColor;
+                }
+            }
+            &:nth-child(2){
+                .fill{
+                    background-color: @darkblueColor;
+                    clip: rect(0,69px,120px,0);
+                    transform: rotate(6deg);
+                }
+            }
+        }
+
+        .choose-image{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            position: relative;
+            span{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+        .years{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background-image: @blueGradient;
+            width: 50%;
+            position: absolute;
+            bottom: 16px;
+            p,h3{
+                color: @whiteColor;
+                text-align: center;
+            }
+        }
+    }
+
+// End topic-choose section //
+
+
 // Start experiences section //
 
 .experiences{

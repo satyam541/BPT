@@ -3,7 +3,6 @@
 @media @size-md {
 
     // Start topic-banner section //
-
     .topic-banner{
 
         .banner-container{
@@ -19,11 +18,9 @@
             margin-top: 0;
         }
     }
-
     // End topic-banner section //
 
     // Start experiences section //
-
     .experiences{
         padding: @sectionPadding-md;
         background-image: url(../img/topic/experience-bg.png);
@@ -57,12 +54,40 @@
               width: 32%;
         }
     }
-
     // end experiences section //
 
 
-    // Start explore section //
+    // Start topic-choose section //
+    .topic-choose{
+        padding: @sectionPadding;
 
+
+        .choose-container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .choose-content{
+            width: 50%;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+        .count{
+            flex-direction: row;
+        }
+        .choose-image{
+            width: 48%;
+        }
+        .years{
+            width: 96%;
+            bottom: 92px;
+        }
+       
+    }
+    // End topic-choose section //
+
+
+    // Start explore section //
     .explore{
         padding: @sectionPadding-md;
 
@@ -72,13 +97,11 @@
             flex-wrap: wrap;
         }
     }
-
     // End explore section //
 
 
 
     // Start goals section //
-
     .goals{
         padding: @sectionPadding-md;
 
@@ -116,7 +139,6 @@
           margin: auto;
         }
     }
-
     // End goals section //
 
 }
@@ -124,7 +146,6 @@
 @media @size-lg {
 
     // Start topic-banner section //
-
     .banner{
         background-image: url(../img/topic/banner-bg.png);
          padding-bottom: 4rem;
@@ -147,17 +168,32 @@
             }
         }
     }
-
     // end topic-banner section //
 
-    // Start experiences section //
+    // Start topic-choose section //
+    .topic-choose{
+        .choose-image{
+            width: 45%;
+        }
+        .years{
+            width: 30%;
+            bottom: 150px;
+            left: -30px;
+        }
+        .count{
+            .txt-name{
+                text-align: left;
+            }
+        }
+    }
+    // End topic-choose section //
 
+    // Start experiences section //
     .experiences{
         h3{
             min-height: auto;
         }
     }
-
     // End experience section //
 
 
@@ -218,8 +254,17 @@
     }
     // End .topic-banner section //
 
-    // Start experiences section //
+    // Start topic-choose section //
+    .topic-choose{
+        padding: @sectionPadding-xl;
+        .years{
+            width: 23%;
+             bottom: 180px;
+        }
+    }
+    // End topic-choose section //
 
+    // Start experiences section //
     .experiences{
         padding: @sectionPadding-xl;
         
@@ -227,11 +272,9 @@
             width: 28%;
         }
     }
-
     // End experiencessection //
 
     // Start explore section //
-
     .explore{
         padding: @sectionPadding-xl;
 
@@ -239,11 +282,9 @@
             justify-content: space-between;
         }
     }
-
     // End explore section //
 
     // Start goals section //
-
     .goals{
         padding: @sectionPadding-xl;
         padding-bottom: 1rem;
@@ -256,7 +297,6 @@
 
 
     }
-
     // End goals section //
 
 }
