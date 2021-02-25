@@ -144,7 +144,7 @@
 <section class="flex-container contact-form">
     <div class="container">
         <div class="contact-container">
-            <form action="{{route('validateEnquiry')}}"  method="post" class="form" id="contact-us">
+            <form onsubmit="submitEnquiry(this)" class="form" id="contact-us">
                 @csrf
                 <input type="hidden" name="type" value="other"> 
                 <input type="hidden" name="Url" id="url" value="{{Request::url()}}">

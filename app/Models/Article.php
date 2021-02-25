@@ -64,8 +64,8 @@ class Article extends Model
     }
 
     // add post_date attribute to dates mutator
-    // public function getPublishDateAttribute()
-    // {
-    //     return \Carbon\Carbon::parse($this->post_date);
-    // }
+    public function getPublishDateAttribute()
+    {
+        return \Carbon\Carbon::parse($this->post_date);
+    }
 }

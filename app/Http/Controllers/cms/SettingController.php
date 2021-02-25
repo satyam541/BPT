@@ -29,10 +29,10 @@ class SettingController extends Controller
     public function createWebsiteDetail()
     {
         $this->authorize('create', new WebsiteDetail());
-        $data['websitedetail'] = new WebsiteDetail();
-         $data['submitRoute'] = "insertWebsiteDetail";
-        //  $data['websites'] = Website::all()->pluck('name','id')->toArray();
-         $data['countries'] = Country::all()->pluck('name','country_code')->toArray();
+        $data['websitedetail']  = new WebsiteDetail();
+         $data['submitRoute']   = "insertWebsiteDetail";
+        //  $data['websites']   = Website::all()->pluck('name','id')->toArray();
+         $data['countries']     = Country::all()->pluck('name','country_code')->toArray();
         return view('cms.websiteContent.websiteDetailform',$data);
     }
  
@@ -76,11 +76,11 @@ class SettingController extends Controller
     public function  editWebsiteDetail(WebsiteDetail $websitedetail)
     {
         $this->authorize('update', $websitedetail);
-        $data['websitedetail'] = $websitedetail;
+        $data['websitedetail']  = $websitedetail;
         
-        // $data['websites'] = Website::all()->pluck('name','id')->toArray();
-        $data['countries'] = Country::all()->pluck('name','country_code')->toArray();
-       $data['submitRoute'] = array('updateWebsiteDetail',$websitedetail->id);
+        // $data['websites']    = Website::all()->pluck('name','id')->toArray();
+        $data['countries']      = Country::all()->pluck('name','country_code')->toArray();
+       $data['submitRoute']     = array('updateWebsiteDetail',$websitedetail->id);
       
         return view("cms.websiteContent.websiteDetailform",$data);
     }
@@ -104,26 +104,25 @@ class SettingController extends Controller
         $websitedetail->contact_email      = $request->contact_email ;
         $websitedetail->contact_footer     = $request->contact_footer ;
         $websitedetail->copyright_footer   = $request->copyright_footer;
-        $websitedetail->opening_hours       = $request->opening_hours;
-        // $websitedetail->name                = $request->name;
+        $websitedetail->opening_hours      = $request->opening_hours;
+        // $websitedetail->name            = $request->name;
         $websitedetail->opening_days       = $request  ->opening_days;
-        $websitedetail->twitter            =$request->twitter;
-        $websitedetail->facebook           =$request->facebook;
-        $websitedetail->linkedin            =$request->linkedin;
-        $websitedetail->courses           =$request->courses;
-        $websitedetail->trainers           =$request->trainers;
-        $websitedetail->reviews           =$request->reviews;
-        $websitedetail->learners            =$request->learners;
-        $websitedetail->locations            =$request->locations;
+        $websitedetail->twitter            = $request->twitter;
+        $websitedetail->facebook           = $request->facebook;
+        $websitedetail->linkedin           = $request->linkedin;
+        $websitedetail->courses            = $request->courses;
+        $websitedetail->trainers           = $request->trainers;
+        $websitedetail->reviews            = $request->reviews;
+        $websitedetail->learners           = $request->learners;
+        $websitedetail->locations          = $request->locations;
         if($request->hasFile('image')){
             $imageName = $this->Logo_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
             $websitedetail->image = $imageName;
         }
         $websitedetail->save();
-        return redirect()->route('websiteDetailList')->with('success','Successfully Added');
+        return redirect()->route('websiteDetailList')->with('success','Successfully Updated');
       
-        // return back()->with('success','Successfully Updated');
     }
     public function trashList()
     {
