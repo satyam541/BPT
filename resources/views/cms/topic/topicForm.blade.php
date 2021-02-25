@@ -38,6 +38,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{Form::model($topic,['route'=>$submitRoute,"files"=>"true"])}}
+              {{-- <input type="hidden" name="id" value={{$topic->id}}/> --}}
                 <div class="card-body">
 
                   <div class="form-group">
@@ -97,7 +98,7 @@
 
                   <div class="form-group">
                     {{Form::label('is_popular','Is Popular')}}
-                    <input type="checkbox" name="is_popular"@if($topic->hasPopular!=null) checked @endif>
+                    <input type="checkbox" name="is_popular"@if($popular==true) checked @endif>
                   </div>
                   
                 </div>

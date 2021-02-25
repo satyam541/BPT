@@ -52,7 +52,7 @@
                   </div>
                   <div class="form-group">
                     {{Form::label('addon_type','Select Type')}}
-                    {{Form::select('addon_type',['book'=>'book'],null,['class'=>'form-control'])}}
+                    {{Form::select('addon_type',['book'=>'book'],null,['class'=>'form-control', 'placeholder' => 'Select Type'])}}
                   </div>
                   <div class="form-group">
                     {{Form::label('price','Enter Price')}}
