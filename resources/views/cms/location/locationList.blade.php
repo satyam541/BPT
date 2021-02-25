@@ -57,7 +57,7 @@
                     @foreach ($locations as $location)
                     <tr>
                       <td>{{$location->name}}</td>
-                      <td>{{$location->country->name}}</td>
+                      <td>{{$location->country->name ?? ''}}</td>
                       <td>
                         @can('update',$location)
                         <a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>

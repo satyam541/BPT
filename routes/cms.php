@@ -299,6 +299,10 @@ Route::get('/tagtrash','TagController@tagtrashList')->name('tagTrashList');
 Route::get('/tag/restoretag/{id}','TagController@restoreTag')->name('restoreTag');
 Route::get('/tag/deletetag/{id}','TagController@forceDeleteTag')->name('forceDeleteTag');
 
+Route::get('/websitedetailtrash','SettingController@trashList')->name('websiteDetailTrashList');
+Route::get('/websitedetail/restore/{id}','SettingController@restore')->name('restoreWebsiteDetail');
+Route::get('/websitedetail/delete/{id}','SettingController@forceDelete')->name('forceDeleteWebsiteDetail');
+
 Route::get('/venuetrash','VenueController@venuetrashList')->name('venueTrashList');
 Route::get('/venue/restorevenue/{id}','VenueController@restoreVenue')->name('restoreVenue');
 Route::get('/venue/deletevenue/{id}','VenueController@forceDeleteVenue')->name('forceDeleteVenue');

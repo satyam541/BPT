@@ -33,7 +33,7 @@ class Article extends Model
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
             ["country_id" => 'gb',
-            "display_order" => Popular::courses()->count()+1]
+            "display_order" => Popular::article()->count()+1]
         );
     }
     // public function hasPopular()
@@ -64,8 +64,8 @@ class Article extends Model
     }
 
     // add post_date attribute to dates mutator
-    // public function getPublishDateAttribute()
-    // {
-    //     return \Carbon\Carbon::parse($this->post_date);
-    // }
+    public function getPublishDateAttribute()
+    {
+        return \Carbon\Carbon::parse($this->post_date);
+    }
 }

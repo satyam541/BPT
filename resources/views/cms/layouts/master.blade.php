@@ -321,12 +321,6 @@
                   <p>Location</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{Route('venueList')}}" @if(Route::currentRouteName()=='venueList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle text-success"></i>
-                  <p>Venue</p>
-                </a>
-              </li>
             </ul>
           </li>
 
@@ -430,12 +424,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{Route('tagList')}}" @if(Route::currentRouteName()=='tagList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle text-success"></i>
-                  <p>Tag List</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{Route('testimonialList')}}" @if(Route::currentRouteName()=='testimonialList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Testimonials</p>
@@ -483,7 +471,7 @@
               </li>
             </ul>
           </li>
-          <li @if(in_array(Route::currentRouteName(),['certificationTrashList','WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          <li @if(in_array(Route::currentRouteName(),['websiteDetailTrashList','certificationTrashList','WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -574,6 +562,12 @@
                   <p>Accreditation List</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{Route('websiteDetailTrashList')}}" @if(Route::currentRouteName()=='websiteDetailTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Website Detail List</p>
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -622,8 +616,20 @@
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         @php
+         
+         if(Str::contains($error, ['has'])){
+          $data = explode('The', $error );
+          $data = explode('has', $data[1]);
+         }
+         elseif(Str::contains($error, ['may'])){
+          $data = explode('The', $error );
+          $data = explode('may', $data[1]);
+         }
+         else{
           $data = explode('The ', $error);
           $data = explode('field ', $data[1]);
+         }
+        
         @endphp
         <strong class="mr-auto text-white">{{ ucfirst($data[0]) }}</strong>
         <button type="button" class="close px-2" data-dismiss="toast" aria-label="Close">

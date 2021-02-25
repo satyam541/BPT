@@ -10,12 +10,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">orderDetail</h1>
+          <h1 class="m-0 text-dark">Order Detail</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="#">orderDetail</a></li>
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{route('orderList')}}">Orders</a></li>
+            <li class="breadcrumb-item active">Detail</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->

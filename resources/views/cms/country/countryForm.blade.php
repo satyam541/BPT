@@ -37,6 +37,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              {{-- {{dd($country)}} --}}
               {{Form::model($country,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
 
@@ -116,8 +117,8 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('vat_amount','vat amount')}}
-                    {{Form::number('vat_amount',null,['class'=>'form-control'])}}
+                    {{Form::label('vat_amount_elearning','vat amount')}}
+                    {{Form::number('vat_amount_elearning',null,['class'=>'form-control'])}}
                   </div>
                   
                   <div class="form-group">

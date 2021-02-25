@@ -105,11 +105,11 @@ class Category extends Model
         return $this->hasMany('App\Models\WhatsIncluded','module_id','id');
     }
 
-    public function isPopular()
-    {
-        $popular = $this->popular;
-        return empty($popular->id)? FALSE : TRUE;
-    }
+    // public function isPopular()
+    // {
+    //     $popular = $this->popular;
+    //     return empty($popular->id)? FALSE : TRUE;
+    // }
 
     public function courses()
     {
@@ -120,10 +120,10 @@ class Category extends Model
     {
         return $this->courses()->has('popular');
     }
-    public function hasPopular()
-    {
-        return $this->morphOne('App\Models\Popular', 'module'); 
-    }
+    // public function hasPopular()
+    // {
+    //     return $this->morphOne('App\Models\Popular', 'module'); 
+    // }
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(

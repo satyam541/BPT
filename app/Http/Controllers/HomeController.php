@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data['categories']=Category::whereHas('hasPopular')->with('topics','topics.courses')->get();
+        $data['categories']=Category::whereHas('hasPopular')->with('topics.courses')->get();
         $data['topics']=Topic::has('Popular')->get();
         $data['locations']=Location::has('Popular')->take(6)->orderBy('display_order')->get();
         $data['testimonial']=Testimonial::first();

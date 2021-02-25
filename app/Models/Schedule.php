@@ -19,9 +19,9 @@ class Schedule extends Model
         return $this->belongsTo('App\Models\Course');
     }
 
-    public function venue()
+    public function location()
     {
-        return $this->belongsTo('App\Models\Venue');
+        return $this->belongsTo('App\Models\Location');
     }
 
 
@@ -48,9 +48,9 @@ class Schedule extends Model
     //     return $this->venue->location;
     // }
     
-    public function venueSchedules($name){
-        return $this->where('response_location',$name)->paginate(10);
-    }
+    // public function venueSchedules($name){
+    //     return $this->where('response_location',$name)->paginate(10); //need to be remove this function
+    // }
     public function getTimeRemainingAttribute()
     {
         $scheduleDate = $this->response_date;
