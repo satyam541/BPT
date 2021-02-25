@@ -241,11 +241,11 @@ class TopicController extends Controller
         }
         
         $topic->save();
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $topic->popular()->save($topic->Popular);
-
+            $topic->popular->save();
         }
+       
         
         return redirect()->route('topicList')->with('success','Successfully Added');
     }
@@ -307,11 +307,11 @@ class TopicController extends Controller
             $topic->image = $imageName;
         }
         $topic->save();
-        if($request->has('popular'))
+        if(isset($input['is_popular']))
         {
-            $topic->Popular()->save($topic->popular);
+            $topic->popular->save();
         }
-        else if($topic->Popular())
+        else
         {
             $topic->popular->delete();
         }

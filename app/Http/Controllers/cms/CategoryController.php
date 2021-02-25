@@ -77,9 +77,10 @@ class CategoryController extends Controller
             $category->icon = $imageName;
         }
         $category->save();
-        if($request->has('is_popular'))
+
+        if(isset($input['is_popular']))
         {
-            $category->popular()->save($category->popular);
+            $category->popular->save();
         }
         
         return redirect()->route('categoryList')->with('success','Successfully Added');
@@ -119,11 +120,12 @@ class CategoryController extends Controller
             $category->icon = $imageName;
         }
         $category->save();
-        if($request->has('is_popular'))
+        
+        if(isset($input['is_popular']))
         {
-            $category->popular()->save($category->popular);
+            $category->popular->save();
         }
-        else if($category->popular())
+        else
         {
             $category->popular->delete();
         }

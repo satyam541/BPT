@@ -3,25 +3,64 @@
 
 
 
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+<div class="content-wrapper">
   <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Schedule</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Schedule</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
+  <section class="content-header">
+      <div class="container-fluid">
+          <div class="row mb-2">
+              <div class="col-sm-6">
+                  <h1>Schedule</h1>
+              </div>
+              <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                      <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                      <li class="breadcrumb-item active">Schedule</li>
+                  </ol>
+              </div>
+          </div>
   <!-- /.content-header -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="card card-primary card-outline">
+
+            <div class="card-header">
+                <div class="card-title">
+                    Filter content
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="" class="form-horizontal">
+                    <div class="form-group row">
+                      <label for="inputCourse" class="col-sm-2 control-label">Course</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('course',$list['courses'],null,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCountry" class="col-sm-2 control-label">Country</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('country',$list['countries'],null,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateLocations()"])}}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputLocation" class="col-sm-2 control-label">Location</label>
+                        <div class="col-sm-4">
+                            {{ Form::select('location',$list['locations'],null,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="col-sm-12 text-right">
+                          <button class="btn btn-primary">Submit</button>
+                      </div>
+                  </div>
+   
+                </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 
   <!-- Main content -->
   <section class="content">
@@ -99,7 +138,5 @@
 
 @endsection
 @section('footer')
-    <script>
-       
-    </script>
+
 @endsection
