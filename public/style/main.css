@@ -9529,6 +9529,9 @@ input::-webkit-inner-spin-button {
   margin: 0.5rem 0;
   text-align: center;
 }
+.catalouge-banner .testi-content .buttons img {
+  width: 20px !important;
+}
 .catalouge-banner .white {
   background-color: #0064D8;
 }
