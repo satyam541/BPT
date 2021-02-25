@@ -629,9 +629,7 @@
           $data = explode('The ', $error);
           $data = explode('field ', $data[1]);
          }
-        //  dd($data[0]);
-         
-          // $data = explode('has', $data[1]);
+        
         @endphp
         <strong class="mr-auto text-white">{{ ucfirst($data[0]) }}</strong>
         <button type="button" class="close px-2" data-dismiss="toast" aria-label="Close">
