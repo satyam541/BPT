@@ -1,0 +1,262 @@
+
+
+@media @size-md {
+
+    // Start topic-banner section //
+
+    .topic-banner{
+
+        .banner-container{
+            flex-direction: row;
+            justify-content: space-between;
+            .banner-content{
+                width: 46%;
+            }
+        }
+       
+        .choose-list{
+            width: 51%;
+            margin-top: 0;
+        }
+    }
+
+    // End topic-banner section //
+
+    // Start experiences section //
+
+    .experiences{
+        padding: @sectionPadding-md;
+        background-image: url(../img/topic/experience-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        .top-arrow{
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 25px;
+            height: 25px;
+             transform: rotate(180deg) translateX(2px);
+             img{
+                 width: 100%;
+                 height: 100%;
+             }
+        }
+        h3{
+            min-height: 50px;
+        }
+        .experiences-list{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .experiences-item{
+              width: 32%;
+        }
+    }
+
+    // end experiences section //
+
+
+    // Start explore section //
+
+    .explore{
+        padding: @sectionPadding-md;
+
+        .explore-list{
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+
+    // End explore section //
+
+
+
+    // Start goals section //
+
+    .goals{
+        padding: @sectionPadding-md;
+
+        .image{
+            width: 80%;
+            margin: auto;
+            margin-top: 1rem;
+        }
+        .goal-image{
+            .heading{
+                display: flex;
+                justify-content: center;
+            }
+            h2,p{
+                text-align: center;
+            }
+        }
+
+       
+        .goal-item{
+            flex-direction: row;
+            width: 100%;
+        }
+        .goal-content{
+            align-items: flex-start;
+            width: 62%;
+            margin-top: 0;
+            margin-left: 1.5rem;
+            p{
+                text-align: left;
+            }
+        }
+        .goals-list{
+            width: 78%;
+          margin: auto;
+        }
+    }
+
+    // End goals section //
+
+}
+
+@media @size-lg {
+
+    // Start topic-banner section //
+
+    .banner{
+        background-image: url(../img/topic/banner-bg.png);
+         padding-bottom: 4rem;
+         p,h2,h1,li{
+            color: @blackColor!important;
+        }
+         .choose-list{
+            width: 38%;
+            .heading{
+                &::before{
+                    background-color: @blackColor;
+                }
+            }
+            ul{
+                li{
+                    &::before{
+                        background-image: url(../img/topic/check.svg);
+                    }
+                }
+            }
+        }
+    }
+
+    // end topic-banner section //
+
+    // Start experiences section //
+
+    .experiences{
+        h3{
+            min-height: auto;
+        }
+    }
+
+    // End experience section //
+
+
+    // Start goal section //
+    .goals{
+
+        .image{
+            width: 85%;
+            margin-top: 1rem;
+        }
+        .goals-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .goal-image{
+            width: 42%;
+            .heading{
+                justify-content: flex-start;
+            }
+            h2,p{
+                text-align: left;
+            }
+        }
+
+        .goal-content{
+         width: 74%;
+         p{
+             font-size: 12px;
+         }
+        }
+
+        .goal-item{
+            padding: 2rem 1rem;
+            &:nth-child(1){
+                margin-top: 0;
+            }
+        }
+
+        .goals-list{
+             width: 54%;
+             margin: 0;
+        }
+    }
+    // End goal section //
+
+}
+
+
+@media @size-xl {
+
+    // Start topic-banner section //
+    .topic-banner{
+        padding-bottom: 6rem;
+        .choose-list{
+            width: 35%;
+        }
+    }
+    // End .topic-banner section //
+
+    // Start experiences section //
+
+    .experiences{
+        padding: @sectionPadding-xl;
+        
+        .experiences-item{
+            width: 28%;
+        }
+    }
+
+    // End experiencessection //
+
+    // Start explore section //
+
+    .explore{
+        padding: @sectionPadding-xl;
+
+        .explore-list{
+            justify-content: space-between;
+        }
+    }
+
+    // End explore section //
+
+    // Start goals section //
+
+    .goals{
+        padding: @sectionPadding-xl;
+        padding-bottom: 1rem;
+        .goals-list{
+            width: 41%;
+        }
+        .goal-image{
+            width: 53%;
+        }
+
+
+    }
+
+    // End goals section //
+
+}
