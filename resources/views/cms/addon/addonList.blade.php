@@ -73,9 +73,9 @@
                 
                 </tfoot>
               </table>
-              @can('create',new App\Models\CourseElearning())
+              {{-- @can('create',new App\Models\CourseElearning()) --}}
               <a id="add" href="{{ route('AddonCreate')}}" class="btn btn-success" style="">Add new Record</a>
-              @endcan
+              {{-- @endcan --}}
             </div>
             <!-- /.card-body -->
           </div>

@@ -72,6 +72,10 @@
 <section class="result">
     <div class="container">
         <div class="result-container">
+            <div class="heading">
+                <h2>31 Results Found For "V"</h2>
+            </div>
+            <div class="result-content">
             <div class="result-list">
                 <div class="result-info">
                     <div class="heading">
@@ -129,8 +133,10 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </div>
 </section>
+<!-- End result section -->
 
 @endsection

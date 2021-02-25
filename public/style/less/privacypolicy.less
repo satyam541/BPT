@@ -1,0 +1,70 @@
+// Start privacy-banner section
+.privacy-banner{
+    background-color: @darkblueColor;
+    background-color: @lightblueColor;
+    .banner-container{
+    h1,p{
+        color: @whiteColor;
+    }
+    .search{
+        background-color: #FFFFFF;
+        border-radius: 100px;
+        justify-content: space-between;
+        border: 2px solid white;
+        padding:0;
+        margin-top: 1rem;
+        input{
+            width: 70%;
+            background-color: transparent;
+            box-shadow: none;
+        }
+        button{
+            width: 82px;
+            padding: 0.5rem;
+            background-color: #1C2848;
+            border-radius: 50px;
+            outline: none;
+            color: #FFFFFF;
+            border: none;
+        }
+    }
+}
+}
+// End privacy-banner section
+
+// Start policy section
+.policy{
+    padding: @sectionPadding;
+    .policy-container{
+        display: flex;
+        flex-direction: column;
+    }
+    h3{
+        color: @lightblueColor;
+        font-size: 20px;
+        margin-top: .5rem;
+    }
+    p{
+        margin-top: .5rem;
+    }
+    ul{
+        li{
+            padding-left: 1.2rem;
+            position: relative;
+            margin-top: .5rem;
+            z-index: 1;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/privacy-policy/circle.svg);
+                background-size:contain;
+                background-repeat: no-repeat;
+                height: 15px;
+                width: 13px;
+                left: 0;
+                top: 3px;
+                z-index: -1;
+            }
+        }
+    }
+}

@@ -163,9 +163,9 @@ class ArticleController extends Controller
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
 
-        if($request->has('popular'))
+        if($request->has('is_popular'))
         {
-            $article->popular()->save($article->popular);
+            $article->popular()->save($article->Popular);
         }
         else if($article->popular())
         {

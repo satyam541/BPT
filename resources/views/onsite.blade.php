@@ -21,7 +21,7 @@
 <!-- End Banner Section -->
 
 <!-- Start Banner Section -->
-<section class="flex-container training">
+<section class="flex-container onsite-training">
     <div class="container">
         <div class="training-container">
             <div class="training-info">

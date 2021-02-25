@@ -37,9 +37,11 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
+                            {{-- {{dd($course)}} --}}
                             {{ Form::model($course, ['route' => $submitRoute, 'files' => 'true']) }}
                             <div class="card-body">
-
+                              {{Form::hidden('id',null)}}
+                              {{Form::hidden('online_id',$course->onlinePrice->id ?? '')}}
                                 <div class="form-group">
                                     {{ Form::label('name', 'Name') }}
                                     {{ Form::text('name', null, ['id' => 'name', 'class' => 'form-control']) }}
@@ -117,15 +119,17 @@
                                     {{ Form::checkbox('exam_included') }}
                                 </div>
 
-                                <div class="form-group">
-                                    {{ Form::label('is_online', 'Is Online', ['class' => 'mr-4']) }}
-                                    <input type="checkbox" class="is_online">
-
-                                </div>
+                  <div class="form-group">
+                    {{Form::label('is_popular','Is Popular')}}
+                    <input type="checkbox" name="is_popular"@if($course->popular->exists) checked @endif>
+                  </div>
+                  
+                </div>
+                <!-- /.card-body -->
 
                                 <div id='onlinePrice' class="form-group">
-                                    {{ Form::label('online_price', 'Online Price') }}
-                                    {{ Form::text('online_price', null, ['class' => 'form-control']) }}
+                                    {{ Form::label('online_price', 'Online Course Price') }}
+                                    {{ Form::text('online_price',$course->onlinePrice->price ?? '', ['class' => 'form-control']) }}
                                 </div>
 
                                 <div class="form-group">
