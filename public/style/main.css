@@ -9517,6 +9517,8 @@ input::-webkit-inner-spin-button {
   border-radius: 40px;
   -moz-appearance: none;
   /* Firefox */
+  -ms-appearance: none;
+  /* IE */
   -webkit-appearance: none;
   /* Safari and Chrome */
   appearance: none;
@@ -10128,7 +10130,7 @@ input::-webkit-inner-spin-button {
     padding: 4rem 0rem;
   }
   .category .category-content::before {
-    left: 37%;
+    left: 34%;
   }
   .have {
     padding: 4rem 0rem;
@@ -10171,10 +10173,5 @@ input::-webkit-inner-spin-button {
   .figures {
     padding: 4rem 0rem;
     background-size: 53% 16%;
-  }
-}
-@media (min-width : 1800px) {
-  .category .category-content::before {
-    left: 41%;
   }
 }

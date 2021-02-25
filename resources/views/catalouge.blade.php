@@ -79,58 +79,60 @@
 
 <!-- Start Category Section -->
 <section class="flex-container category">
-    <div class="category-container">
-        <div class="heading center-heading">
-            <h2>All <span>Category</span></h2>
-        </div>
-        <div class="category-list">
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/project.svg')}}" alt="project">
-                </span>
-                <h3>Project Management</h3>
+    <div class="container">
+        <div class="category-container">
+            <div class="heading center-heading">
+                <h2>All <span>Category</span></h2>
             </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/analysis.svg')}}" alt="analysis">
-                </span>
-                <h3>Business Analysis</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/improvement.svg')}}" alt="improvement">
-                </span>
-                <h3>Business Improvement</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/service.svg')}}" alt="service">
-                </span>
-                <h3>IT Service Management</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/security.svg')}}" alt="security">
-                </span>
-                <h3>IT Security</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/protection.svg')}}" alt="protection">
-                </span>
-                <h3>Data Protection</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/office.svg')}}" alt="office">
-                </span>
-                <h3>Office Applications</h3>
-            </div>
-            <div class="category-content">
-                <span>
-                    <img src="{{url('img/catalouge/skills.svg')}}" alt="skills">
-                </span>
-                <h3>Business Skills</h3>
+            <div class="category-list">
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/project.svg')}}" alt="project">
+                    </span>
+                    <h3>Project Management</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/analysis.svg')}}" alt="analysis">
+                    </span>
+                    <h3>Business Analysis</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/improvement.svg')}}" alt="improvement">
+                    </span>
+                    <h3>Business Improvement</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/service.svg')}}" alt="service">
+                    </span>
+                    <h3>IT Service Management</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/security.svg')}}" alt="security">
+                    </span>
+                    <h3>IT Security</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/protection.svg')}}" alt="protection">
+                    </span>
+                    <h3>Data Protection</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/office.svg')}}" alt="office">
+                    </span>
+                    <h3>Office Applications</h3>
+                </div>
+                <div class="category-content">
+                    <span>
+                        <img src="{{url('img/catalouge/skills.svg')}}" alt="skills">
+                    </span>
+                    <h3>Business Skills</h3>
+                </div>
             </div>
         </div>
     </div>
