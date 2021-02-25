@@ -88,10 +88,10 @@
                                     {{ Form::label('published', 'Is Published', ['class' => 'mr-1']) }}
                                     {{ Form::checkbox('published') }}
                                 </div>
-
+    
                                 <div class="form-group">
                                     {{Form::label('is_popular','Is Popular')}}
-                                    <input type="checkbox" name="is_popular"@if($popular==true) checked @endif>
+                                    <input type="checkbox" name="is_popular"@if($category->popular->exists) checked @endif>
                                 </div>
 
                             </div>

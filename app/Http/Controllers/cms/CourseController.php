@@ -184,9 +184,9 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $course->popular()->save($course->popular);
+            $course->popular->save();
         }
 
         if($request['is_online']){
@@ -264,11 +264,11 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $course->popular()->save($course->popular);
+            $course->popular->save();
         }
-        else if($course->isPopular())
+        else
         {
             $course->popular->delete();
         }

@@ -87,9 +87,13 @@ class ArticleController extends Controller
         //      $article->tags()->attach($tag->id);
         // }
 
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $article->popular()->save($article->Popular);
+            $article->popular->save();
+        }
+        else
+        {
+            $article->popular->delete();
         }
 
         if($article->type=='news')
