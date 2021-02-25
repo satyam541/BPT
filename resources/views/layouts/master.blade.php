@@ -181,7 +181,10 @@
             type:"post",
             global:false,
             success:function(response){
-                window.location.href = '/thank-you';
+                if(response == 'done') {
+                    window.location.href = '/thank-you/'+response; 
+            }
+                
             }
         });
     }
