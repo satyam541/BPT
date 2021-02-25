@@ -1370,6 +1370,7 @@ input::-webkit-inner-spin-button {
 .delivery .item img {
   width: 48px;
   height: 48px;
+  transition: 1s all;
 }
 .delivery h3 {
   margin-bottom: 0.5rem;
@@ -1378,13 +1379,16 @@ input::-webkit-inner-spin-button {
   width: auto;
   margin-top: 0.5rem;
   font-size: 17px;
+  transition: 1s all;
 }
 .delivery p {
   color: #FFFFFF;
+  transition: 1s all;
 }
 .delivery a {
   text-decoration: underline;
   margin-top: 0.5rem;
+  transition: 1s all;
 }
 .facts {
   padding: 3rem 1.5rem;
@@ -1760,6 +1764,7 @@ input::-webkit-inner-spin-button {
   }
   .delivery .item:hover p {
     text-align: center;
+    transition: 1s all;
   }
   .delivery .item:hover img {
     transition: 1s all;
