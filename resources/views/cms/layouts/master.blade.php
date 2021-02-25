@@ -41,6 +41,8 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
    <link rel="stylesheet" href="{{ url('adminlte/plugins/select2/css/select2.min.css')}}"/>
+
+   @yield('headerLinks')
 </head>
 <style>
   .select2-container--default .select2-selection--single .select2-selection__rendered{

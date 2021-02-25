@@ -46,7 +46,10 @@ Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseA
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
 // Route::get('/blog', function () {
 //     return view('blog');

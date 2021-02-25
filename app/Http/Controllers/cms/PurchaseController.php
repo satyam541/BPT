@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\cms;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -19,13 +18,14 @@ use App\Models\Venue;
 use Session;
 use App\Http\Requests\cms\ManualPurchaseRequest;
 use App\Models\Location;
+use Mail;
 
 class PurchaseController extends Controller
 {
     public function index() {
         
         $courses = Course::all();
-        // dd($courses);
+
         $countries = Country::orderBy('name')->get();
         
         return view('cms.purchase.purchaseForm', compact('courses', 'countries'));
@@ -42,8 +42,9 @@ class PurchaseController extends Controller
     }
     
     public function addPurchase(ManualPurchaseRequest $request) {
-     
-          $input  = $request->all();
+         
+            $input  = $request->all();
+            
             $events = empty($input['events'])? array() : explode("_", $input['events']);
             $course = Course::find($input['courseId']);
 
@@ -56,8 +57,8 @@ class PurchaseController extends Controller
                 $schedule->response_course_id = 0;
                 $schedule->course_id = $input["courseId"];
                 $schedule->response_course_name = $course->name;
-                $schedule->response_venue_id = 0;
-                $schedule->venue_id = 0;
+                $schedule->response_town_city_id = 0;
+                $schedule->location_id = 0;
                 $schedule->response_location = $input["location"];
                 $schedule->response_date = $input["eventDate"];
                 $schedule->response_price = $input["price"];
@@ -71,8 +72,8 @@ class PurchaseController extends Controller
 
             }
             else{
-                $eventDate = $events['1'];
             
+                $eventDate = $events['1'];
                 $eventTime = $events['2'];
                 $scheduleId = $events['3'];
                 $schedule = Schedule::find($scheduleId);
@@ -90,11 +91,18 @@ class PurchaseController extends Controller
             $emailRequest->event_date   =   $eventDate;
             // $emailRequest->event_time   =   $eventTime;
             $emailRequest->save();
+
+            $mobile         = $input['phone']; 
+            $phonecode      = $input['phonecode'];
+            $mobile         = str_replace($phonecode,'', $mobile);       
+            $phonecode      = substr($phonecode, 1); 
+            $mobileNumber   = $phonecode."|".$mobile;
+            $input['mobile']= $mobileNumber;
             
             /**
              * save customer detail and order details
              */
-            $customerId = $this->saveCustomerDetail(array('FirstName'=>$input['name'],'EmailID'=>$input['email']));
+            $customerId = $this->saveCustomerDetail(array('FirstName'=>$input['name'],'EmailID'=>$input['email'],'Mobile'=>$input['mobile']));
             $billingData = $this->saveBillingData($input,$customerId);
             if(!empty($customerId))
             {// pass vat amount and grandtotal
@@ -121,12 +129,16 @@ class PurchaseController extends Controller
             $emailData['email'] = $input['email'];
             $emailData['courseName'] = $course->name;
             $emailData['location'] = $input["location"];
-            $emailData['eventDate'] = $input["eventDate"];
+            $emailData['eventDate'] = $eventDate;
             $emailData['currency'] = $emailRequest->currency;
+            $emailData['gatewayOrderId']= $gatewayOrderId;
             $emailData['link'] = route('BookingDetail',array('id'=>$gatewayOrderId))."#bookingDetail"; 
-            $message = (string) \View::make('cms.purchase.purchaseEmail',$emailData);
-            
-            $this->sendEmail( $message, 'Payment Link Form', $input['email'] );
+           
+            Mail::send('cms.purchase.purchaseEmail', $emailData , function($message) use ($input){
+                
+                $message->to($input['email'])->subject('Payment Link Form');
+
+           });          
             
             Session::flash('message', 'Record Save & Email send to user successfully'); 
             Session::flash('paymentLink',$emailData['link']);
@@ -135,6 +147,7 @@ class PurchaseController extends Controller
             return Redirect()->back();
             
     }
+
     public function purchaseList(){
         $purchases=Order::whereNotNull('gateway_order_id')->with('customer')->get();
         return view('cms.purchase.purchases',compact('purchases'));
@@ -152,31 +165,14 @@ class PurchaseController extends Controller
         if(empty($orderLineItem))
         {
             return 'no schedule id for orderlineitem';
-           return abort(404);
         }
         // $schedule = Schedule::find($orderLineItem->first()->schedule_id);
         $customer = Customer::find($order->customer_id);
         $emailRequest = EmailRequest::where('order_id',$order->id)->first();
         $billingData = BillingDetail::find($order->billing_id);
-            /**
-             * create template for email
-             */
-            $responseUrl = route('cartResponseRoute');
-            $urlArray = $this->getFormValues($order->grand_total, $responseUrl,$gatewayorderId,$emailRequest->currency,$billingData,$customer->email);
-            $emailData["requestUrl"] = $urlArray['requestUrl'];
-            $emailData['requestParameter'] = $urlArray['requestParameter'];
-            $emailData["price"] = $order->sub_total;
-            $emailData["basePrice"] = $order->sub_total;
-            $emailData["vatPercentage"] = $order->vat_percentage;
-            $emailData["vatAmount"] = $order->vat_amount;
-            $emailData["totalAmount"] = $order->grand_total;
-            $emailData['email'] = $customer->email;
-            $emailData['courseName'] = $orderLineItem->course_name;
-            $emailData['location'] = $orderLineItem->venue;
-            $emailData['eventDate'] = $orderLineItem->schedule_date;
-            $emailData['currency'] = $emailRequest->currency;
-            dd($emailData);
-            return view('cms.purchase.purchaseDetail',$emailData);
+        $data = $this->getFormValues($order,$gatewayorderId,$billingData,$customer);
+         
+            return view('cart.checkout',$data);
     }
 
     public function getVenueDetails(Request $request) {
@@ -201,13 +197,6 @@ class PurchaseController extends Controller
         }
             $today = \Carbon\Carbon::today();
 
-            // $schedule = DB::table('schedules')
-            //         ->select('schedules.responseDiscountedPrice', 'schedules.responseDate', 'schedules.eventTime','schedules.scheduleId')
-            //         ->where('schedules.fk_courseId', '=', $input['courseId'])
-            //         ->where('schedules.responseLocation', 'LIKE', $input['locationId'])
-            //         ->where('schedules.fk_countryId', 'LIKE', $input['countryId'])
-            //         ->whereDate('schedules.responseDate','>',$today->toDateString())
-            //         ->get();
             $schedules = Schedule::where('course_id',$input['courseId'])
             ->where('response_location',$input['location'])
             ->where('country_id',$input['countryId'])
@@ -216,79 +205,13 @@ class PurchaseController extends Controller
             return json_encode($schedules);
     }
     
-    // protected function getAllCourses() {
-        
-    //     $courses = DB::table('course')
-    //                 ->select(
-    //                         'course.courseId', 'course.courseDisplayName', 'course.courseDuration'
-    //                         )
-    //                 ->where('course.isPublished', '=', '1')
-    //                 ->whereNull('course.deleted_at')
-    //                 ->orderBy('course.courseId', 'asc')
-    //                 ->get();
-        
-    //     return $courses;
-    // }
-    
-    // protected function groupByPackage($course) {
-        
-    //     $courses = [];
-        
-    //     foreach($course as $key=>$value) {
-        
-    //         $packages = DB::table('packages')->select('packages.packageName', 'packages.price', 'packages.fk_countryId')
-    //                     ->where('packages.fk_courseId', '=', $value->courseId)->get();
-            
-    //         if(!empty($packages) && count($packages) > 0) {
-            
-    //             $value->packages = $this->getPackageCountries($packages);
-                
-    //             array_push($courses, $value);
-                
-    //         }
-    //         else {
-                
-    //             array_push($courses, $value);
-                
-    //         }
-            
-    //     }
-        
-    //     return $courses;
-    // }
-    
-    // protected function getPackageCountries($packages) {
-        
-    //     $packagesReturn = [];
-        
-    //     foreach($packages as $key=>$value) {
-            
-    //         $countries = DB::table('countries')->select('countries.id', 'countries.name', 'countries.incrementedAmount',
-    //                                                     'countries.vatPercentage')
-    //                     ->where('countries.id', '=', $value->fk_countryId)->get();
-            
-    //         if(count($countries) > 0 && !empty($countries)) {
-                
-    //             //$value->venue = $this->getVenue($countries);
-                
-    //             array_push($packagesReturn, $value);
-                
-    //         }
-    //         else {
-    //             array_push($packagesReturn, $value);
-    //         }
-            
-    //     }
-        
-    //     return $packagesReturn;
-    // }
-    
     protected function getVenue($countries) {
         
         $venueArray = [];
         
         foreach($countries as $key=>$value) {
-            $venue = DB::table('venue')->select('venue.venueName')->where('venue.fk_countryId', '=', $value->id)->get();
+            $venue = Location::where('country_id', $value->id)->select('name')->get();
+            // $venue = DB::table('venue')->select('venue.venueName')->where('venue.fk_countryId', '=', $value->id)->get();
             array_push($venueArray, $venue);
         }
         
@@ -346,50 +269,78 @@ class PurchaseController extends Controller
         return $GBPValue;
     }
 
-    protected function getFormValues($amount, $responseUrl,$gatewayOrderId,$currency, $billingDetail,$email) {
-                $billingData = array();
-                $billingData["billToFirstName"]     = $billingDetail->firstname;
-                $billingData["billToLastName"]      = $billingDetail->lastname;
-                $billingData["billToStreet1"]       = $billingDetail->address1;
-                $billingData["billToStreet2"]       = $billingDetail->address2;
-                $billingData["billToCity"]          = $billingDetail->city;
-                $billingData["billToState"]         = '';
-                $billingData["billtoPostalCode"]    = $billingDetail->postcode;
-                $billingData["billToCountry"]       = $billingDetail->country->name;
-                $billingData["billToEmail"]         = $email;
-        
-                $options['timestamp'] = strftime("%Y%m%d%H%M%S");
-                $options['gatewayOrderId'] = $gatewayOrderId;
-                $options['responseUrl'] = $responseUrl;
-                $options['billingData'] = $billingData;
-        $networkOnlineObject = NetworkonlinePayment::create($amount, $currency,$options);
+    protected function getFormValues($order,$gatewayOrderId, $billingDetail,$customer) {
+        $data = array();
+        if(env('APP_ENV') == "local")
+        {
+            $data['paymentUrl'] =   "https://pay.sandbox.realexpayments.com/pay";
+            $merchantId         =   "knowledgeacademy";
+            $secret   	        =   "secret";
+            $account            =   "GPINTGBP";
+        }else{
+            $data['paymentUrl'] =   "https://hpp.globaliris.com/pay";
+            $merchantId         =   "knowledgeacademy";
+            $secret   	        =   "27v8GoTKLI";
+            $account            =   "PentagonWeb";
+        }
 
-        $requestParameter = $networkOnlineObject->NeoPostData;
+       
+        $responseUrl  = route('cartResponseRoute');     // use this for networkbitmap
+        $timestamp = strftime("%Y%m%d%H%M%S");
+        $gatewayOrderId = $gatewayOrderId;
+        $totalAmount = $order->grand_total*100;
 
-        if($networkOnlineObject->url)
-        $requestUrl = 'https://NeO.network.ae/direcpay/secure/PaymentTxnServlet';
-        else
-        $requestUrl = 'https://uat-NeO.network.ae/direcpay/secure/PaymentTxnServlet';
-     
-        return ['requestUrl' => $requestUrl, 'requestParameter' => $requestParameter];
-    }
-    
-    protected function sendEmail($message, $subject, $userEmail) {
+        $currencyCode =  "GBP";
+       
+        $tmp = $timestamp.'.'.$merchantId.'.'.$gatewayOrderId.'.'.$totalAmount.'.'.$currencyCode;
+        $tmp = sha1($tmp).'.'.$secret;
+        $sha1hash = sha1($tmp);
         
-        $to = $userEmail;
+        $details['merchantId']                          =   $merchantId;
+        $details['gatewayOrderId']                      =   $order->gateway_order_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+        $details['currencyCode']                        =   $currencyCode;
+        $details['totalAmount']                         =   $totalAmount;
+        $details['timestamp']                           =   $timestamp;
+        $details['sha1hash']                            =   $sha1hash;
+        $details['account']                             =   $account;
+        $details['responseUrl']                         =   $responseUrl;
+        $details['customerEmail']                       =   $customer->email;
+        $details['phone']                               =   $customer->mobile;
+        $details['address1']                            =   $billingDetail->address1;
+        $details['address2']                            =   $billingDetail->address2;
+        $details['city']                                =   $billingDetail->city;
+        $details['postalcode']                          =   $billingDetail->postcode;
+        $details['country']                             =   $billingDetail->country->name;
+        //form fields
+        $response = array();
+        $response['MERCHANT_ID']                        =   $details['merchantId'];
+        $response['ORDER_ID']                           =   $details['gatewayOrderId'];
+        $response['CURRENCY']                           =   $details['currencyCode'];
+        $response['ACCOUNT']                            =   $details['account'];
+        $response['MERCHANT_RESPONSE_URL']              =   $details['responseUrl'];
+        $response['AMOUNT']                             =   $details['totalAmount'];
+        $response['TIMESTAMP']                          =   $details['timestamp'];
+        $response['SHA1HASH']                           =   $details['sha1hash'];
+        $response['AUTO_SETTLE_FLAG']                   =   1;
         
-        $emailSubject = $subject;
+        //uncommnet below for 3d secure
+        $response['HPP_VERSION']                        =   2;
+        $response['HPP_CHANNEL']                        =   "ECOM";
+        $response['HPP_CUSTOMER_EMAIL']                 =   $details['customerEmail'];
+        $response['HPP_CUSTOMER_PHONENUMBER_MOBILE']    =   $details['phone'];
+        $response['HPP_BILLING_STREET1']                =   $details['address1'];
+        $response['HPP_BILLING_STREET2']                =   $details['address2'];
+        $response['HPP_BILLING_STREET3']                =   "";
+        $response['HPP_BILLING_CITY']                   =   $details['city'];
+        $response['HPP_BILLING_POSTALCODE']             =   $details['postalcode'];
+        $response['HPP_BILLING_COUNTRY']                =   "826";
 
-                    // Always set content-type when sending HTML email
-                    $headers = "MIME-Version: 1.0" . "\r\n";
-                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        //form field ends
+        $data['response'] = $response;
 
-                    // More headers
-                    $headers .= 'From: <webmaster@pearcemayfield.com>' . "\r\n";
-                    //\Session::flash('temp_form', $message); 
-                     mail($to,$emailSubject,$message,$headers);
-        
-    }
+        return  $data;
+
+}
 
         
     private function saveCustomerDetail($input)
@@ -399,12 +350,8 @@ class PurchaseController extends Controller
             'firstname' => empty($input['FirstName'])? '' : $input['FirstName'],
             'lastname'  => empty($input['LastName'])? '' : $input['LastName'],
             'telephone' => empty($input['Telephone'])? '' : $input['Telephone'],
-            // 'Mobile'    => $input['Mobile'],
-            'email'   => $input['EmailID'],
-            // 'marketingOffersOptIn'   => $input['marketingOffersOptIn'],
-            // 'contactConsent' => 1,
-            // 'othersConsent' => $input['otherConsent'],
-            // 'prefferedContactMethod' => 'Phone and Email'
+            'mobile'    => $input['Mobile'],
+            'email'     => $input['EmailID'],
         ];
         $customer = Customer::updateOrCreate(['email' => $input['EmailID']],$customerData);
         return $customer->id;
