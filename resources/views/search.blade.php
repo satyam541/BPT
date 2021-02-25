@@ -137,5 +137,6 @@
         </div>
     </div>
 </section>
+<!-- End result section -->
 
 @endsection

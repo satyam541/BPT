@@ -75,7 +75,7 @@ Route::get('/search', function () {
 });
 
 Route::get('/privacy-policy',function(){
-
+    return view('privacy-policy');
 })->name('privacy-policy');
 
 Route::get('/terms-and-conditions',function(){
