@@ -224,7 +224,7 @@
        var input = $(this).val();
        var locations = $(".popular-list .popular-content");
        locations.hide();
-    //    alert(input);
+
        $.each(locations, function( index, location ) {
            location = $(location);
            var locationName = location.find('.text-name').text().trim();
