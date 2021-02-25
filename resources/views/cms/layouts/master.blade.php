@@ -8,6 +8,10 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -112,10 +116,22 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
+        
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header">Admin Resources</li>
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+    
           <li class="nav-item has-treeview menu-open">
             <a href="{{Route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -764,8 +780,7 @@ $.widget.bridge('uibutton', $.ui.button)
     
         $(".selectJS").select2({
             width:'100%',
-
-            // placeholder:'Choose one',
+            placeholder:'Choose one',
         });
 
     

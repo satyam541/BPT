@@ -35,11 +35,32 @@ class ScheduleController extends ScheduleApi
 
     public function list(Request $request)
     {
-      $this->authorize('view', new Schedule());
-      // use when instead of if else statement here
-      $schedules = Schedule::with('course','location')->where('source','API')->paginate(10);
+      $responseLocation = $request->get('location');
+      $courseId         = $request->get('course');
+      $countries        = $request->get('country');
+      $query            = Schedule::query();
+      if(!empty($responseLocation))
+      {
+        $query->where('response_location',$responseLocation);
+      }
+      if(!empty($courseId))
+      {
+        $query->where('course_id',$courseId);
+      }
+      if(!empty($countries))
+      {
+        $query->where('country_id',$countries);
+      }
+        
+      $data['schedules']  = $query->paginate(10);
+      $request->flash(); // keep data for the next redirect. // try without this
+      $list['courses']    = Course::pluck('name','id')->toArray();
+      $list['countries']  = Country::pluck('name','country_code')->toArray();
+      $list['locations']  = Location::pluck("name","name")->toArray();
+      $data['list']       = $list;
+      
 
-      return view('cms.schedule.schedules',compact('schedules'));
+      return view('cms.schedule.schedules',$data);
     }
 
     public function create()
