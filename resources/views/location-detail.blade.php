@@ -118,7 +118,8 @@
 <section class="flex-container form-map">
     <div class="container">
         <div class="form-container">
-            <form class="form" id="locationDetail-form">
+            <form class="form" onsubmit="submitEnquiry(this)" id="locationDetail-form">
+                @csrf
                 <div class="heading center-heading">
                     <h2>Get In Touch With <span>Us</span></h2>
                 </div>
@@ -129,6 +130,8 @@
                         <input type="text" name="f-name" id="f-name" placeholder="First Name*"
                             autocomplete="off">
                     </div>
+                    <input type="hidden" name="type" value="other"> 
+                            <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                     <div class="input-container">
                         <span><img src="{{url('img/master/email-black.svg')}}" alt="email" class="black">
                         <img src="{{url('img/master/email-red.svg')}}" alt="email-red" class="red"></span>
@@ -167,7 +170,7 @@
                     <p>Please click <a>here</a> for privacy policy. </p>
                 </div>
                 <div class="form-consent">
-                    <input type="checkbox" id="checkConsent">
+                    <input name="contactConsent" type="checkbox" id="checkConsent">
                     <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most suitable manner (by phone or email) in order to respond to my enquiry.</label>
                 </div>
                 <div class="consent-error" style="display: none;">
@@ -179,7 +182,7 @@
                     <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
                 </div>
                 <div class="buttons">
-                    <button class="btn-blue">
+                    <button onclick="EnquiryFormSubmit('enquiry',this)" class="btn-blue">
                         Submit
                     </button>
                 </div>

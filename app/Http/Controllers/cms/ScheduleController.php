@@ -5,7 +5,6 @@ namespace App\Http\Controllers\cms;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Course;
-use App\Models\Venue;
 use App\Models\CustomSchedulePrice;
 use Carbon\Carbon;
 use App\Models\Schedule;
@@ -38,8 +37,8 @@ class ScheduleController extends ScheduleApi
     {
       $this->authorize('view', new Schedule());
       // use when instead of if else statement here
-      $schedules = Schedule::with('course','location')->where('source','API')->get();
-      
+      $schedules = Schedule::with('course','location')->where('source','API')->paginate(10);
+
       return view('cms.schedule.schedules',compact('schedules'));
     }
 
@@ -65,13 +64,13 @@ class ScheduleController extends ScheduleApi
       $dates    = explode(",",$inputs['response_date']);
       foreach($inputs['location'] as $loc){
         foreach($dates as $date){
-          $location = Location::with('venues')->where('name','like',"%".$loc."%")->first();
+          $location = Location::where('name','like',"%".$loc."%")->first();
           $schedule = new Schedule();
           $schedule->response_course_id         = $inputs['course_id'];
           $schedule->course_id                  = $inputs['course_id'];
           $schedule->response_course_name       = $course->name;
-          // $schedule->response_venue_id          = $location->venues->first()->id;
-          // $schedule->venue_id                   = $location->venues->first()->id;
+          $schedule->response_town_city_id      = $location->id;
+          $schedule->location_id                = $location->id;
           $date=date_create($date);
           $date=date_format($date,"Y-m-d");
           $schedule->response_location          = $location->name;
@@ -93,8 +92,8 @@ class ScheduleController extends ScheduleApi
     public function edit(Schedule $schedule)
     {
       $this->authorize('update', $schedule);
-      $data['schedule']         = $schedule;
-      $data['response_location']=$schedule->location();
+      $data['schedule']          = $schedule;
+      $data['response_location']=  $schedule->location->id;
       $data["submitRoute"]      = array("updateSchedule",$schedule->id);
 
       $list["courses"]          = Course::pluck("name","id")->toArray();
@@ -102,6 +101,7 @@ class ScheduleController extends ScheduleApi
       $list["locations"]        = Location::pluck("name","id")->toArray();
 
       $data['list']             = $list;
+      // dd($data['response_location']);
       // required input fields
       //course, country, location,venue, date , time, duration , eventprice 
       return view('cms.schedule.scheduleForm',$data);
@@ -122,8 +122,8 @@ class ScheduleController extends ScheduleApi
       $schedule->response_course_name       = $course->name;
       $date=date_create($date);
       $date=date_format($date,"Y-m-d");
-      // $schedule->response_venue_id          = $location->venues->first()->id;
-      // $schedule->venue_id                   = $location->venues->first()->id;
+      $schedule->response_town_city_id      = $location->id;
+      $schedule->location_id                = $location->id;
       $schedule->response_location          = $location->name;
       $schedule->response_date              = $date;
       $schedule->response_price             = $inputs['event_price'];
@@ -182,7 +182,7 @@ class ScheduleController extends ScheduleApi
       $selectedCourse     = $request->input('course',$courseId);    
       $list['courses']    = Course::pluck('name','id')->toArray();
       $list['countries']  = Country::pluck('name','country_code')->toArray();
-      $data['locations']  = Location::whereHas('venue')->with("venue.customSchedulePrice")->where("country_id",$selectedCountry)->get();
+      $data['locations']  = Location::with("customSchedulePrice")->where("country_id",$selectedCountry)->get();
       $data['course']     = Course::find($courseId);
       $data['selectedCourse']   = $selectedCourse; 
       $data['selectedCountry']  = $selectedCountry; 
@@ -190,10 +190,10 @@ class ScheduleController extends ScheduleApi
       return view('cms.schedule.manageSchedulePrice',$data);
     }
 
-    public function updateCustomPrice(Request $request,$courseId, $venue = null)
+    public function updateCustomPrice(Request $request,$courseId, $location_id = null)
     {
       $input = $request->all();
-      $customize = CustomSchedulePrice::firstOrNew(array('course_id'=>$courseId,'venue_id'=>$venue));
+      $customize = CustomSchedulePrice::firstOrNew(array('course_id'=>$courseId,'location_id'=>$location_id));
         if(empty($input['method']) || empty($input['amount']))
         {
           $customize->delete();
@@ -205,14 +205,6 @@ class ScheduleController extends ScheduleApi
           $customize->save();
         }
         return back();
-    }
-
-    public function test(Request $request)
-    {
-      // testing required for
-      // online_price
-      // course_addon
-      
     }
 
     public function onlinePrices()
@@ -280,15 +272,15 @@ class ScheduleController extends ScheduleApi
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
       foreach($dates as $date){
-      $location = Location::with('venues')->find($inputs['location']);
+      $location = Location::find($inputs['location']);
       // $schedule = new Schedule();
       $schedule->response_course_id         = $inputs['course_id'];
       $schedule->course_id                  = $inputs['course_id'];
       $schedule->response_course_name       = $course->name;
       $date=date_create($date);
       $date=date_format($date,"Y-m-d");
-      // $schedule->response_venue_id          = $location->venues->first()->id;
-      // $schedule->venue_id                   = $location->venues->first()->id;
+      $schedule->response_town_city_id      = $location->id;
+      $schedule->location_id                = $location->id;
       $schedule->response_location          = $location->name;
       $schedule->response_date              = $date;
       $schedule->response_price             = $inputs['event_price'];

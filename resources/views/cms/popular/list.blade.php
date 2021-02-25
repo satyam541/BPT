@@ -49,6 +49,7 @@
                                     @if(empty($item->module))
                                     @continue
                                     @endif
+                                    {{-- {{dd($item->module->name)}} --}}
                                 <tr id="id_{{$item['id']}}">
                                     <td class="sortable-handle">
                                         <span class="fa fa-sort"></span>
@@ -56,7 +57,7 @@
                                         <span class="fa fa-tag" style="color:{{$item->module->category->color_code}}"></span>
                                         @endif
                                     </td>
-                                    <td>{{$item->module->name}}</td>
+                                    <td>{{$item->module->name ?? $item->module->title }}</td>
                                     <td><a href="#" onclick="deleteItem('{{ route('deletePopular',['popular'=>$item->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
                                 @endforeach

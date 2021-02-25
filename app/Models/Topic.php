@@ -145,7 +145,7 @@ class Topic extends Model
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
             ["country_id" =>'gb',
-            "display_order" => Popular::topics()->count()+1]
+            "display_order" => Popular::topics()]
         );
     }
     // public function hasPopular()
@@ -172,10 +172,10 @@ class Topic extends Model
     public function delete()
     {
         // File::delete(public_path($this->image_path.$this->image));
-        if($this->isPopular())
-        {
-            $this->popular->delete();
-        }
+        // if($this->isPopular())
+        // {
+        //     $this->popular->delete();
+        // }
         $this->whatsInclude()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
@@ -184,20 +184,27 @@ class Topic extends Model
         return parent::delete();
     }
 
-    public function restore()
+    public function myRestore()
     {
-        
-
         // if($this->isPopular())
         // {
         //     $this->popular->restore();
         // }
         
-        $this->whatsInclude()->withTrashed()->restore();
-        $this->faqs()->withTrashed()->restore();
-        $this->content()->withTrashed()->restore();
-        $this->BulletPoint()->withTrashed()->restore();
-        return parent::restore();
+        $this->whatsInclude()->restore();
+        $this->faqs()->restore();
+        $this->content()->restore();
+        $this->BulletPoint()->restore();
+        return $this->restore();
+    }
+
+    public function myforceDelete()
+    {
+        $this->whatsInclude()->forceDelete();
+        $this->faqs()->forceDelete();
+        $this->content()->forceDelete();
+        $this->BulletPoint()->forceDelete();
+        return $this->forceDelete();
     }
 
 

@@ -179,8 +179,7 @@
     <div class="container">
         <div class="locate-container">
             <div class="heading center-heading">
-                <h2>Where to <span>Reach Us</span></h2>
-                {{-- <h2>{!!$pageDetail->reach_us['heading']->heading!!}</h2> --}}
+                <h2>{!! heading_split($pageDetail->reach_us['heading']->heading)!!}</h2>
                 <p>{!!$pageDetail->reach_us['heading']->content!!}</p>
             </div>
             <div class="map">
@@ -197,7 +196,7 @@
                 <div class="faq-container">
                     <div class="faq-content">
                         <div class="heading center-heading">
-                            <h2>Frequently Asked <span>Questions</span></h2>
+                            <h2>{!! heading_split($pageDetail->faq['heading']->heading) !!}</h2>
                         </div>
                         <div class="faq-list">
                             @php unset($pageDetail->faq['heading'])@endphp

@@ -221,6 +221,7 @@ class TopicController extends Controller
     {
         // $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
+        // dd($inputs);
         $topic                      = new Topic();
         $topic->reference           = $inputs['reference'];
         $topic->name                = $inputs['name'];
@@ -238,11 +239,12 @@ class TopicController extends Controller
             $request->file('image')->move(public_path($topic->image_path), $imageName);
             $topic->image = $imageName;
         }
-
+        
         $topic->save();
         if($request->has('is_popular'))
         {
-            $topic->popular()->save($topic->popular);
+            $topic->popular()->save($topic->Popular);
+
         }
         
         return redirect()->route('topicList')->with('success','Successfully Added');
@@ -263,7 +265,7 @@ class TopicController extends Controller
     public function edit($topic)
     {
         // $this->authorize('update', new Topic());
-        $data['topic']          = Topic::with('faqs','hasPopular')->find($topic);
+        $data['topic']          = Topic::with('faqs','Popular')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
         $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
@@ -288,6 +290,7 @@ class TopicController extends Controller
     {
         // $this->authorize('update', $topic);
         $inputs                     = $request->all();
+        // dd($inputs);
         $topic->name                = $inputs['name'];
         $topic->reference           = $inputs['reference'];
         $topic->tag_line            = $inputs['tag_line'];
@@ -304,11 +307,11 @@ class TopicController extends Controller
             $topic->image = $imageName;
         }
         $topic->save();
-        if($request->has('is_popular'))
+        if($request->has('popular'))
         {
-            $topic->popular()->save($topic->popular);
+            $topic->Popular()->save($topic->popular);
         }
-        else if($topic->isPopular())
+        else if($topic->Popular())
         {
             $topic->popular->delete();
         }
@@ -349,7 +352,7 @@ class TopicController extends Controller
    public function restoreTopic($id)
    {
         // $this->authorize('restore', new Topic());
-        $topic = Topic::onlyTrashed()->find($id)->restore();
+        $topic = Topic::onlyTrashed()->find($id)->myRestore();
     
         return back()->with('success','Successfully Restored');
 
@@ -357,7 +360,7 @@ class TopicController extends Controller
    public function forceDeleteTopic($id)
    {
         // $this->authorize('forceDelete', new Topic());
-        $topic = Topic::onlyTrashed()->find($id)->forceDelete();
+        $topic = Topic::onlyTrashed()->find($id)->myforceDelete();
     
         return back()->with('success','Permanently Deleted');
 

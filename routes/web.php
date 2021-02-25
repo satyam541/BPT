@@ -75,7 +75,7 @@ Route::get('/search', function () {
 });
 
 Route::get('/privacy-policy',function(){
-
+    return view('privacy-policy');
 })->name('privacy-policy');
 
 Route::get('/terms-and-conditions',function(){
@@ -96,3 +96,6 @@ Route::fallback(function(){
     return  redirect()->route('404');
   })->name('fallback');
   Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
+
+Route::get('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
+
