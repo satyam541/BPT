@@ -32,8 +32,8 @@
                 </div>
                 <div class="popular-list">
                     @foreach ($popularBlogs->take(4) as $blog)
-                        <a class="popular-item">
-                            <img src="{{url('../img/blog/popular-1.png')}}" alt="popular-1">
+                        <a class="popular-item" href={{route('blogDetail',['blog'=>$blog->reference])}}>
+                            <img src="{{url($blog->getImagePath())}}" alt="popular-1">
                             <p>{{$blog->publish_date->format('d M, Y')}}</p>
                             <div class="info">
                                 <p>by - {{$blog->author}}</p>
@@ -76,7 +76,7 @@
                         <p class="item-text">{!!$blog->summary!!}</p>
 
                         <div class="buttons">
-                            <a class="btn-blue">
+                            <a class="btn-blue" href={{route('blogDetail',['blog'=>$blog->reference])}}>
                                 Read More
                             </a>
                         </div>

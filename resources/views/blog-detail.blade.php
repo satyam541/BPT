@@ -7,14 +7,17 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Blog Detail</h1>
-            <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from</p>
+            <h1>{{$blog->title}}</h1>
+            <p>{{$blog->summary}}</p>
             <div class="breadcrums">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                     <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
-                    <li><a href="">Blog Detail</a></li>
+                    <li><a href="{{route('blog')}}">Blog</a></li>
+                    <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                    <li><a href="">{{$blog->title}}</a></li>
+
                 </ul>
             </div>
         </div>
@@ -28,54 +31,24 @@
         <div class="intro-container">
             <div class="content-left">
                 <span>
-                    <img src="{{url('img/blog-detail/detail.png')}}" alt="detail">
+                    <img src="{{url($blog->getImagePath())}}" alt="detail">
                 </span>
                 <div class="intro-detail">
                     <div class="detail">
                         <p>
                             <img src="{{url('img/blog-detail/name.svg')}}" alt="name">
-                            By Sarah Jordan
+                            {{$blog->author}}
                         </p>
                         <p>
-                            14 July, 2017
+                            {{$blog->publish_date->format('d M, Y')}}
                         </p>
                         <p>
                             Web Developer
                         </p>
                     </div>
-                    <h3>An Introduction To Agile Software Development</h3>
-                    <p>In The State Of Utah At A Ski Resort, In February Of 2001, 17 Project Management Industry Experts Gathered For Two Days. And As A Result, They Conceived The Agile Software Development Manifesto.</p>
-                    <p>In The State Of Utah At A Ski Resort, In February Of 2001, 17 Project Management Industry Experts Gathered For Two Days. And As A Result, They Conceived The Agile Software Development Manifesto.</p>
-                    <div class="img-content">
-                        <img src="{{url('img/blog-detail/list-detail.png')}}" alt="list-detail">
-                        <ul>
-                            <li>Extreme Programming</li>
-                            <li>Crystal</li>
-                            <li>Scrum</li>
-                            <li>DSDM</li>
-                            <li>FDD</li>
-                            <li>Adaptive Software Development</li>
-                        </ul>
-                    </div>
-                    <h3>The 12 Principles Of Agile Training</h3>
-                    <p>There Are 12 Key Principles Of Agile That Allows Any Project To Be Called An Agile Method If It Meets All Of The Following Criteria:</p>
-                    <ul>
-                        <li>Customer Satisfaction</li>
-                        <li>Welcome to change in requirement, regardless of how late on in the process they come.</li>
-                        <li>Deliver working software regularly</li>
-                        <li>Everyone must work together daily.</li>
-                        <li>Maintain motivated individuals and provide a supportive environment for them</li>
-                        <li>Promote a sustainable development.</li>
-                    </ul>
-                    <div class="feedback">
-                    <p>Praesent Tempus Cursus Magna, Eget Placerat Nibh Cursus Non. Sed Accumsan Maximus Hendrerit. Suspendisse Ullamcorper Auctor Nisl Suscipit Malesuada.</p>
-                    <h3 class="feedback-name">
-                    John Doe
-                        </h3>
-                    </div>
-
-                    <p>Agile Training Is Simple In Its Approach And Focuses On Continual Iterative Feedback At Regular Intervals Of The Project Thus Allowing For Continual Improvement And Refinement Of A Project. This Approach Is Thought To Maximise Customer Satisfaction, Improve The Flexibility Of A Project, Minimise Uncertainty And Boost Time To Market.</p>
-                </div>
+                    <h3>{{$blog->title}}</h3>
+                    {!!$blog->content!!}
+            </div>
 
             </div>
             <div class="content-right">
@@ -91,38 +64,23 @@
                     </span>
                 </div>
                 <div class="blog-review owl-carousel">
+                    @foreach ($testimonials as $testimonial)
                     <div class="review-inner">
                             <span>
-                                    <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
+                                    <img src="{{url($testimonial->getImagePath())}}" alt="testi-client">
                             </span>
-                            <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
+                            <p>{!!$testimonial->content!!}</p>
 
-                            <h3 class="author">CHRISTIAN PERRY</h3>
-                            <p>Web Developer</p>
+                            <h3 class="author">{!!$testimonial->author!!}</h3>
+                            <p>{!!$testimonial->designation!!}</p>
                     </div>
-                    <div class="review-inner">
-                            <span>
-                                    <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
-                            </span>
-                            <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
-
-                            <h3 class="author">CHRISTIAN PERRY</h3>
-                            <p>Web Developer</p>
-                    </div>
-                    <div class="review-inner">
-                            <span>
-                                    <img src="{{url('img/blog-detail/testi-client.svg')}}" alt="testi-client">
-                            </span>
-                            <p>The Gem not just a wordpress theme. A real design jewel! The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!The Gem not just a wordpress theme. A real design jewel!</p>
-
-                            <h3 class="author">CHRISTIAN PERRY</h3>
-                            <p>Web Developer</p>
-                    </div>
+                    @endforeach
+                    
                 </div>
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
-                    <a tell:023 8000 1008>Call: 023 8000 1008</a>
-                    <p>info@thebestpracticetraining.com</p>
+                    <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
+                    <p>{{websiteDetail()->contact_email}}</p>
                 </div>
                
             </div>
@@ -159,10 +117,8 @@
     <div class="container">
         <div class="ideal-container">
             <div class="heading center-heading">
-                <h2>Whatever Your Training Needs,<span> Find Your Ideal</span> </h2>
-                <p>Choose from over 200 courses which cover all aspects of
-                    business and personal training, including Project Management, IT Security, Business and many more.
-                    Our courses cater to every training need, from introductory crash courses to advanced and</p>
+                <h2>{!!heading_split($pageDetail->center_heading['heading']->heading)!!}</h2>
+                <p>{!!$pageDetail->center_heading['heading']->content!!}</p>
             </div>
             <div class="clients-inner">
                 <span class="image">
