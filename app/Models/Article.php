@@ -33,7 +33,7 @@ class Article extends Model
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
             ["country_id" => 'gb',
-            "display_order" => Popular::courses()->count()+1]
+            "display_order" => Popular::article()->count()+1]
         );
     }
     // public function hasPopular()

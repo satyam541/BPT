@@ -241,9 +241,9 @@ class TopicController extends Controller
         }
         
         $topic->save();
-        if($request->has('Popular'))
+        if($request->has('is_popular'))
         {
-            $topic->popular()->save($topic->popular);
+            $topic->popular()->save($topic->Popular);
 
         }
         
