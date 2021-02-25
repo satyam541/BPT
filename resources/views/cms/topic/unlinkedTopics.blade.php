@@ -54,7 +54,7 @@
                         <td>{{$topic->name}}</td>
                         {{Form::model($category,array('route'=>['linkCategoryRoute',['id'=>$topic->id]]))}}
                         <td>
-                        {{Form::select('category_id',$category,null,['class'=>'select form-control','placeholder'=>'Select Category'])}}
+                        {{Form::select('category_id',$category,null,['class'=>'selectJS form-control','placeholder'=>'Select Category'])}}
                         </td>
                             <td>  <button class="btn btn-primary">Link</button></td>
                         {{Form::close()}}
