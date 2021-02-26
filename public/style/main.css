@@ -999,9 +999,11 @@ input::-webkit-inner-spin-button {
   }
   .banner {
     padding: 3rem 2rem;
+    padding-top: 1rem !important;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
+    z-index: 4;
   }
   .banner .banner-container {
     padding: 0;
@@ -1689,7 +1691,6 @@ input::-webkit-inner-spin-button {
 @media (min-width : 768px) {
   .home-banner {
     background-image: url(../img/master/banner-bg.png);
-    z-index: 1;
     position: relative;
   }
   .home-banner::before {
