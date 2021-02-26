@@ -220,6 +220,17 @@ input::-webkit-inner-spin-button {
     transform: scale(0.7);
   }
 }
+@keyframes star-move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -100% -100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -2776,6 +2787,22 @@ input::-webkit-inner-spin-button {
     height: 370px;
   }
 }
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(-500%) rotate(360deg);
+    opacity: 0;
+  }
+}
 .about-banner {
   flex-direction: column;
   background-color: #0064D8;
@@ -3077,6 +3104,19 @@ input::-webkit-inner-spin-button {
 .contact-form {
   padding: 3rem 1.5rem;
   background-color: #F6F6F6;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contact-form h4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #fff;
+  animation: animate 5s linear infinite;
+  z-index: -1;
+  opacity: 0.6;
 }
 .contact-form .contact-container {
   display: flex;
@@ -6877,6 +6917,21 @@ input::-webkit-inner-spin-button {
 .method {
   padding: 3rem 1.5rem;
   background: linear-gradient(#0064D8, #1C2848);
+  position: relative;
+  z-index: 1;
+}
+.method #foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/certification/foreground.png);
+  animation: star-move 40s linear infinite;
 }
 .method .method-container {
   display: flex;

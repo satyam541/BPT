@@ -167,8 +167,8 @@ class CategoryController extends Controller
         $data['module_type']        = 'category';
         $data['bullet_point_text']  = $input['bullet_point_text'];
         if($input['id']==null){
-            $displayOrder=BulletPoint::sortBulletPoint('topic',$request->module);
-            $data['display_order']=$displayOrder+1;
+            $max = BulletPoint::where('module_type', 'category')->max('display_order');
+            $data['display_order']= $max+1;
         }
         BulletPoint::updateOrCreate(['id' =>$input['id']],$data);
         return redirect()->route('categoryBulletPointList',['module'=>$data['module_id']])->with('success','Operation done!');
