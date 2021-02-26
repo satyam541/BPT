@@ -102,5 +102,5 @@ Route::fallback(function(){
   })->name('fallback');
   Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
 
-Route::post('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
+Route::any('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
 
