@@ -26,20 +26,20 @@ class ArticleController extends Controller
     public function newsList(Request $request)
     {
         $this->authorize('view', Article::firstOrNew(['type'=>'news']));
-        $data=Article::where('type','news')->get();
-        $type='News';
+        $data                   =   Article::where('type','news')->get();
+        $type                   =   'News';
        return view('cms.article.article',compact('data','type'));
     }
 
     public function create()
     {
         $this->authorize('create', Article::firstOrNew(['type'=>'news']));
-        $data['article'] = new Article();
-        $data['submitRoute'] = "insertArticle";
-        $data['selectedTags']="";
-        $list['tag'] = Tag::pluck('name','name')->toArray();
-        $data['tag']=Tag::all(); 
-        $data['list'] = $list;
+        $data['article']        =    new Article();
+        $data['submitRoute']    =    "insertArticle";
+        $data['selectedTags']   =    "";
+        $list['tag']            =    Tag::pluck('name','name')->toArray();
+        $data['tag']            =    Tag::all(); 
+        $data['list']           =    $list;
         $data['articleRoute']="newsList";
         
         return view('cms.article.articleForm',$data);
@@ -49,26 +49,22 @@ class ArticleController extends Controller
     {
         $this->authorize('create', Article::firstOrNew(['type'=>$request->type]));
         $article=new Article();
-        $article->title                = $request->title;
-        $article->content              = $request->content;
-        $article->post_date            = $request->post_date;
-        $article->type                 = $request->type;
-        $article->author               = $request->author;
-        $article->meta_title           =$request->meta_title;
-        $article->meta_description     =$request->meta_description;
-        $article->meta_keywords        =$request->meta_keywords;
-        $article->summary              =$request->summary;
-        
-   
-       
-        $article->reference      = $request->reference;
+        $article->title                =    $request->title;
+        $article->content              =    $request->content;
+        $article->post_date            =    $request->post_date;
+        $article->type                 =    $request->type;
+        $article->author               =    $request->author;
+        $article->meta_title           =    $request->meta_title;
+        $article->meta_description     =    $request->meta_description;
+        $article->meta_keywords        =    $request->meta_keywords;
+        $article->summary              =    $request->summary;
+        $article->reference            =    $request->reference;
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
         }
-        
         $article->save();
         // $tagNames              =          $request->input('tag');
         // foreach($tagNames as $tagName)
@@ -86,7 +82,7 @@ class ArticleController extends Controller
         
         //      $article->tags()->attach($tag->id);
         // }
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -104,18 +100,17 @@ class ArticleController extends Controller
 
     public function edit($article)
     {
-        $article    =   Article::with('popular')->find($article);
         $this->authorize('update', $article);
-        $data['article']        =   $article;
-        $list['tag']            =   Tag::all()->pluck('name','name')->toArray();
-        $data['list']           =   $list;
-        $data['articleRoute']   =   "blogList";
-        
-        $data['tag']            =   Tag::all(); 
-        $data['selectedTags']   =   $article->tags->pluck('name')->toArray();
-        $data['submitRoute']    =   array('updateArticle',$article->id);
-        $data['route']          =   $article->type."List";
-        $data['value']          =   $article->type;
+        $article                        =   Article::with('popular')->find($article);
+        $data['article']                =   $article;
+        $list['tag']                    =   Tag::all()->pluck('name','name')->toArray();
+        $data['list']                   =   $list;
+        $data['articleRoute']           =   "blogList";
+        $data['tag']                    =   Tag::all(); 
+        $data['selectedTags']           =   $article->tags->pluck('name')->toArray();
+        $data['submitRoute']            =   array('updateArticle',$article->id);
+        $data['route']                  =   $article->type."List";
+        $data['value']                  =   $article->type;
         
         return view("cms.article.articleForm",$data);
     }
@@ -123,46 +118,38 @@ class ArticleController extends Controller
     public function update(Article $article,ArticleRequest $request)
     {
         $this->authorize('update', $article);
-        $article->title                 = $request->title;
-        $article->content               = $request->content;
-        $article->post_date             = $request->post_date;
-        $article->type                  = $request->type;
-        $article->author                = $request->author;
-        $article->meta_title            = $request->meta_title;
-        $article->meta_description      = $request->meta_description;
-        $article->meta_keywords         = $request->meta_keywords;
-        $article->summary               = $request->summary;
-        $article->reference             = $request->reference;
+        $article->title                 =   $request->title;
+        $article->content               =   $request->content;
+        $article->post_date             =   $request->post_date;
+        $article->type                  =   $request->type;
+        $article->author                =   $request->author;
+        $article->meta_title            =   $request->meta_title;
+        $article->meta_description      =   $request->meta_description;
+        $article->meta_keywords         =   $request->meta_keywords;
+        $article->summary               =   $request->summary;
+        $article->reference             =   $request->reference;
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
         }
-        
         $article->save();
-       
         // $tagNames              =          $request->input('tag');
-      
         // foreach($tagNames as $tagName)
         // {
         //     $tag = Tag::where('name',$tagName)->first();
-
-           
         //     if(empty($tag->id))
         //     {
         //         $tag = new Tag();
         //         $tag->name = $tagName;
-                  
         //         $tag->save();
         //     }
-         
-        //     // $article->tags()->sync($tag->id); 
+         //     $article->tags()->sync($tag->id); 
         // }
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
-
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -184,52 +171,44 @@ class ArticleController extends Controller
 
     public function delete(Article $article)
     {
-         $this->authorize('delete', $article);
+        $this->authorize('delete', $article);
         $article->delete();
     }
 
     public function blogList(Request $request)
     { 
         //  $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
-         $data=Article::where('type','blog')->get();
-         $type='Blog';
+        $data      =   Article::where('type','blog')->get();
+        $type      =   'Blog';
         return view('cms.article.article',compact('data','type'));
     }
-
-    
     public function loadTags(Request $request)
     {
-        $term = $request->input('term');
-        $result = Tag::select('name')->where("name","LIKE","%{$term}%")->get();
+        $term      =   $request->input('term');
+        $result    =   Tag::select('name')->where("name","LIKE","%{$term}%")->get();
         return response()->json($result);
     }
-
-        
    public function articletrashList()
    {
-     $this->authorize('view', Article::firstOrNew(['type'=>'news']));
-    $data['trashedArticles'] = Article::onlyTrashed()->get();
- 
-
-    return  view('cms.trashed.articleTrashedList',$data);
+        $this->authorize('view', Article::firstOrNew(['type'=>'news']));
+        $data['trashedArticles'] = Article::onlyTrashed()->get();
+        return  view('cms.trashed.articleTrashedList',$data);
        
    }
 
    public function restoreArticle($id)
    {
-        $article = Article::onlyTrashed()->find($id);
         $this->authorize('restore', $article);
+        $article = Article::onlyTrashed()->find($id);
         $article->restore();
-
         return back()->with('success','Successfully Restored');
 
    }
    public function forceDeleteArticle($id)
    {
-        $article = Article::onlyTrashed()->find($id);
         $this->authorize('forceDelete', $article);
+        $article = Article::onlyTrashed()->find($id);
         $article->forceDelete();
-        
         return back()->with('success','Permanently Deleted!');
    }
 
