@@ -396,3 +396,6 @@ Route::get('/bundle/edit/{id}','BundleController@edit')->name('editBundle');
 Route::post('/bundle/update/{id}', 'BundleController@store')->name('updateBundle');
 Route::post('/bundle/delete/{id}', 'BundleController@delete')->name('deleteBundle');
 
+
+
+Route::post('/selectedcountry','courseController@selectedCountry')->name('selectedcountry');

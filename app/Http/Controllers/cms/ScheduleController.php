@@ -52,7 +52,7 @@ class ScheduleController extends ScheduleApi
         $query->where('country_id',$countries);
       }
         
-      $data['schedules']  = $query->paginate(10);
+      $data['schedules']  = $query->where('source', 'API')->paginate(10);
       $request->flash(); // keep data for the next redirect. // try without this
       $list['courses']    = Course::pluck('name','id')->toArray();
       $list['countries']  = Country::pluck('name','country_code')->toArray();

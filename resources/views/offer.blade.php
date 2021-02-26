@@ -144,7 +144,7 @@
 <section class="flex-container recommend">
     <div class="container">
         <div class="recommend-container">
-            <div class="heading center-heading white-heading">
+            <div class="heading white-heading">
                 <h2>Stay in Touch</h2>
             </div>
             <div class="recommend-info">

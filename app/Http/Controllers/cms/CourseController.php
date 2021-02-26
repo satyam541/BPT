@@ -21,7 +21,6 @@ use App\Http\Requests\cms\WhatsIncludedRequest;
 use App\Http\Requests\cms\CourseFaqRequest;
 use App\Models\WhatsIncluded as ModelsWhatsIncluded;
 use App\Models\whatsIncludedHeaders;
-
 class CourseController extends Controller
 {
     /**
@@ -37,12 +36,16 @@ class CourseController extends Controller
         $this->Logo_prefix = "Logo";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-
+    public function selectedCountry(Request $request){
+        session(['selectedcountry'=>$request->all()]);
+        session()->save();
+        return 'done';
+    }
     public function list(Request $request)
     {
         // $this->authorize('view', new Course());
         $courses = Course::all();
-
+        // dd(session()->all()['selectedcountry']);
         return view('cms.course.courseList',compact('courses'));
     }
 

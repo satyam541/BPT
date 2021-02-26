@@ -241,7 +241,7 @@ class TopicController extends Controller
         }
         
         $topic->save();
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $topic->popular->save();
         }
@@ -307,7 +307,7 @@ class TopicController extends Controller
             $topic->image = $imageName;
         }
         $topic->save();
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $topic->popular->save();
         }

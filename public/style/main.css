@@ -4033,11 +4033,6 @@ input::-webkit-inner-spin-button {
 .onsite-banner {
   background-color: #1C2848;
 }
-.onsite-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1rem;
-}
 .onsite-banner .banner-container h1,
 .onsite-banner .banner-container p {
   color: #FFFFFF;
@@ -4047,6 +4042,7 @@ input::-webkit-inner-spin-button {
 }
 .onsite-training {
   padding: 3rem 1.5rem;
+  padding-bottom: 1rem!important;
 }
 .onsite-training .training-container {
   display: flex;
@@ -4082,6 +4078,7 @@ input::-webkit-inner-spin-button {
 }
 .doorstep {
   padding: 3rem 1.5rem;
+  padding-bottom: 1rem!important;
 }
 .doorstep .doorstep-container {
   display: flex;
@@ -4096,13 +4093,16 @@ input::-webkit-inner-spin-button {
 .doorstep .form label {
   color: #FFFFFF;
 }
+.doorstep .form .heading {
+  padding-top: 0;
+}
 .doorstep .form input[type=checkbox] {
   background-color: #FFFFFF;
   border-radius: 0;
 }
 .doorstep .form-consent p a {
   color: #FFFFFF;
-  font-weight: bold;
+  font-size: 12   px;
 }
 .doorstep .input-container {
   background-color: #4B5773;
@@ -4288,9 +4288,6 @@ input::-webkit-inner-spin-button {
     padding: 3rem 2rem;
     padding-top: 1rem;
   }
-  .onsite-banner .banner-container {
-    padding: 2rem 0;
-  }
   .onsite-training {
     padding: 3rem 2rem;
   }
@@ -4357,7 +4354,7 @@ input::-webkit-inner-spin-button {
     background-position: right;
   }
   .onsite-banner .banner-container {
-    width: 50%;
+    width: 48%;
   }
   .onsite-training .training-container {
     flex-direction: row;
@@ -4415,10 +4412,6 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
-  .onsite-banner {
-    padding: 4rem 0rem;
-    padding-top: 1rem;
-  }
   .onsite-banner .banner-container {
     width: 60%;
   }
@@ -4438,7 +4431,7 @@ input::-webkit-inner-spin-button {
     padding-bottom: 0;
     margin-bottom: 4rem;
     padding-left: 5rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    box-shadow: 0px 0px 10px rgb(0 0 0%);
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -6460,15 +6453,12 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.recommend .heading {
-  padding: 0;
-}
 .recommend .recommend-info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .recommend p {
-  text-align: center;
   color: #FFFFFF;
 }
 .recommend input {
@@ -6479,8 +6469,7 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   outline: none;
   border-bottom: 2px solid #FFFFFF;
-  width: 80%;
-  align-self: center;
+  width: 100%;
 }
 .recommend ::placeholder {
   color: #FFFFFF;
@@ -6647,18 +6636,12 @@ input::-webkit-inner-spin-button {
     background-color: transparent;
     background-image: url(../img/offer/recommend-bg.png);
   }
-  .recommend .heading::before {
-    right: inherit;
-  }
-  .recommend .heading h2 {
-    text-align: left;
-  }
   .recommend .recommend-info {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   .recommend p {
-    text-align: left;
     width: 38%;
   }
   .recommend input {
@@ -6667,6 +6650,8 @@ input::-webkit-inner-spin-button {
   }
   .recommend .buttons {
     margin-top: 0;
+    width: 24%;
+    justify-content: flex-end;
   }
   .new-bundle {
     padding: 3rem 2rem;
@@ -6752,16 +6737,6 @@ input::-webkit-inner-spin-button {
   .bundle .top-bundles {
     margin-top: 0;
     width: 45%;
-  }
-  .recommend .heading {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .recommend .heading h2 {
-    text-align: left;
-  }
-  .recommend input {
-    width: 35%;
   }
   .management .bundle-info {
     width: 48%;
@@ -11197,9 +11172,6 @@ input::-webkit-inner-spin-button {
   z-index: -1;
 }
 @media (min-width : 768px) {
-  .search-banner {
-    padding-top: 1rem!important;
-  }
   .search-banner .search {
     width: 65%;
   }
@@ -11209,10 +11181,7 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width : 1024px) {
   .privacy-banner {
-    background-color: transparent;
     background-image: url(../img/privacy-policy/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
   .privacy-banner .banner-container {
     width: 50%;
