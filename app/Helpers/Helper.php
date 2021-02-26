@@ -267,18 +267,17 @@ if(!function_exists('heading_split'))
 
     function heading_split($str)
     {
-        $string=trim($str);
-        $name = explode(" ", $string);
-        
+       
+        $name = explode(" ", $str);
         $position=(count($name)/2);
+        $position=ceil($position);
         if ($position >= 2) {
+
             $position= $position+1;
         }
-        $position=ceil($position);
-        $array1 = array_slice($name, 0,$position);
-        $result=array_diff($name,$array1);
-        $ar1=implode(" ",$array1);
-        $ar2=implode(" ",$result);
+        $array = array_chunk($name,$position);
+        $ar1=implode(" ",$array[0]);
+        $ar2=implode(" ",$array[1]);
         $ar2 ="<span>".$ar2."</span>";
         $final=$ar1." ".$ar2;
         return $final;   
