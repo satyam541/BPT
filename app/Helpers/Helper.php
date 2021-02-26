@@ -13,6 +13,12 @@ use App\Models\SocialMedia;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
+if(!function_exists('allCountries')){
+    function allCountries(){
+        $data=Country::pluck('name','country_code')->toArray();
+        $data=['ALL'=>'ALL']+$data;
+    }
+}
 if (!function_exists('encodeUrlSlug')) {
     function encodeUrlSlug($string)
     {

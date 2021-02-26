@@ -126,6 +126,7 @@
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              {{-- {{ Form::select('country_id', allCountries(), null, ['tabindex' => '-1', 'class' => 'form-control selectJS', 'placeholder' => 'Choose one']) }} --}}
               <div class="input-group-append">
                 <button class="btn btn-sidebar">
                   <i class="fas fa-search fa-fw"></i>
@@ -133,7 +134,6 @@
               </div>
             </div>
           </div>
-    
           <li class="nav-item has-treeview menu-open">
             <a href="{{Route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
