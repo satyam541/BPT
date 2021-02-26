@@ -59,7 +59,7 @@
                 <div class="our-list">
                     @foreach ($blogs as $blog)
                     {{-- {{dd($blog)}} --}}
-                    <div class="our-item">
+                    <div class="our-item hide">
                         
                         {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
@@ -84,9 +84,8 @@
                         <p class="date">{{$blog->publish_date->format('d M, Y')}}</p>
                     </div>
                     @endforeach
-
-                    <div class="buttons">
-                        <a class="btn-blue load-more">
+                    <div class="buttons" >
+                        <a class="btn-blue load-more" id="loadMore" >
                             Load More
                         </a>
                     </div>
