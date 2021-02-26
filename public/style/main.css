@@ -10302,7 +10302,7 @@ input::-webkit-inner-spin-button {
 .topic-banner h2,
 .topic-banner h1,
 .topic-banner li {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 .topic-banner .choose-list {
   margin-top: 2rem;
@@ -10861,7 +10861,7 @@ input::-webkit-inner-spin-button {
   .topic-banner h2,
   .topic-banner h1,
   .topic-banner li {
-    color: #000000;
+    color: #000000 !important;
   }
   .topic-banner .choose-list {
     width: 38%;
