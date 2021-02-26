@@ -271,7 +271,7 @@ if(!function_exists('heading_split'))
         $name = explode(" ", $str);
         $position=(count($name)/2);
         $position=ceil($position);
-        if ($position >= 2) {
+        if ($position > 2) {
 
             $position= $position+1;
         }

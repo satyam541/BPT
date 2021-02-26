@@ -37,6 +37,7 @@
         }
         .filter-top {
             margin-top: 2rem;
+            border-radius: 5px;
         }
         .form {
             flex-direction: row;
@@ -173,9 +174,6 @@
         background-position: bottom left;
         .category-content {
             width: 22%;
-            &::before {
-                left: 32%;
-            }
         }
     }
     // End Category Section
@@ -217,7 +215,7 @@
             width: 55%;
         }
         .popular-facts {
-            width: 45%;
+            width: 42%;
             margin-top: 0;
         }
         .popular-item {
@@ -278,11 +276,6 @@
     // Start Category Section
     .category {
         padding: @sectionPadding-xl;
-        .category-content {
-            &::before {
-                left: 34%;
-            }
-        }
     }
     // End Category Section
 
@@ -295,19 +288,12 @@
                 text-align: left;
             }
         }
-        .buttons {
-            width: 16%;
-            align-self: flex-start;
-        }
     }
     // End Category-Enquire Section
 
     // Start Popular-Courses Section
     .popular-courses {
         padding: @sectionPadding-xl;
-        .popular-facts {
-            width: 41%;
-        }
         .popular-item {
             background: linear-gradient(90deg, @darkblueColor 20%, @whiteColor 20%);
             span {

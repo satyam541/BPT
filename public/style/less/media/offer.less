@@ -47,20 +47,12 @@
             padding: @sectionPadding-md;
             background-color: transparent;
             background-image: url(../img/offer/recommend-bg.png);
-            .heading{
-                &::before{
-                    right: inherit;
-                }
-                h2{
-                    text-align: left;
-                }
-            }
             .recommend-info{
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
             }
             p{
-                text-align: left;
                 width: 38%;
             }
             input{
@@ -69,6 +61,8 @@
             }
             .buttons{
                 margin-top: 0;
+                width: 24%;
+                justify-content: flex-end;
             }
         }
         // End recommend section
@@ -177,21 +171,6 @@
         }
     }
     // End bundle section
-
-    //Start recommend section
-    .recommend{
-        .heading{
-            justify-content: flex-start;
-            align-items: flex-start;
-            h2{
-                text-align: left;
-            }
-        }
-        input{
-            width: 35%;
-        }
-    }
-    // End recommend section
     
     // Start management section
     .management{

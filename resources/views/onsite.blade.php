@@ -2,7 +2,7 @@
 @section("content")
 
 <!-- Start Banner Section -->
-<section class="flex-container onsite-banner">
+<section class="flex-container banner onsite-banner">
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
@@ -12,7 +12,7 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="">Onsite</a></li>
                 </ul>
             </div>
         </div>

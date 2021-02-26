@@ -29,10 +29,13 @@ class BlogController extends Controller
     {
         $blog = $request->route('blog');
         
-        $data['blog'] = Article::where('reference',$blog)->first();
+        $article       = Article::where('reference',$blog)->first();
+     
         $data['testimonials'] = Testimonial::all();
         $data['pageDetail']   = PageDetail::getContent('blog_detail');
-        
+        $data['prevBlog']     = $article->previous();
+        $data['nextBlog']     = $article->next();
+        $data['blog']         = $article;
         if(empty($blog))
         {
             abort('404');
