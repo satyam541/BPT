@@ -34,34 +34,34 @@
                 <h2>Most Searched <span>Courses</span></h2>
             </div>
             <div class="search-list">
-                <div class="search-info">
+                <a class="search-info">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
                     284 Times in last week </span>
                     <h3>PRINCE2® Training</h3>
                     <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
 
-                </div>
-                <div class="search-info">
+                </a>
+                <a class="search-info">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
                     284 Times in last week </span>
                     <h3>PRINCE2® Training</h3>
                     <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
 
-                </div>
-                <div class="search-info">
+                </a>
+                <a class="search-info">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
                     284 Times in last week </span>
                     <h3>PRINCE2® Training</h3>
                     <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
 
-                </div>
-                <div class="search-info">
+                </a>
+                <a class="search-info">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
                     284 Times in last week </span>
                     <h3>PRINCE2® Training</h3>
                     <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
 
-                </div>
+                </a>
             </div>
         </div>
     </div>

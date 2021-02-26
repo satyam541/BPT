@@ -1,5 +1,5 @@
 // Start Banner Section
-.catalouge-banner {
+.catalogue-banner {
     background: @blueGradient;
     .banner-container {
         display: flex;
@@ -44,6 +44,11 @@
             margin: .5rem 0;
             text-align: center;
         }
+        .buttons {
+                img {
+                    width: 20px !important;
+                }
+        }
     }
     .white {
         background-color: @lightblueColor;
@@ -63,7 +68,7 @@
 
         .owl-prev,
         .owl-next {
-            background-image: url(../img/catalouge/testi-arrow.svg)!important;
+            background-image: url(../img/catalogue/testi-arrow.svg)!important;
             background-repeat: no-repeat!important;
             background-size: contain!important;
             background-position: center!important;
@@ -147,7 +152,7 @@
         appearance:none;
     }
     select {
-        background-image: url(../img/catalouge/down-arrow.svg);
+        background-image: url(../img/catalogue/down-arrow.svg);
         background-repeat: no-repeat;
         background-size: 18% 24%;
         background-position: center right;
@@ -235,15 +240,15 @@
 }
 // End Category Section
 
-// Start Have Section
-.have {
+// Start Category-Enquire Section
+.category-enquire {
     padding: @sectionPadding;
     background: @blueGradient;
-    .have-container {
+    .enquire-container {
         display: flex;
         flex-direction: column;
     }
-    .have-content {
+    .enquire-content {
         display: flex;
         flex-direction: column;
         h2, p {
@@ -255,7 +260,7 @@
         }
     }
 }
-// End Have Section
+// End Category-Enquire Section
 
 // Start Popular-Courses Section
 .popular-courses {
@@ -310,7 +315,7 @@
                 top: 9px;
             }
         }
-        a {
+        h3 {
             width: calc(100% - 70px);
             font-size: 16px;
             font-weight: bold;
@@ -340,7 +345,7 @@
             position: absolute;
             right: 4px;
             top: 4px;
-            background-image: url(../img/catalouge/users.svg);
+            background-image: url(../img/catalogue/users.svg);
             background-repeat: no-repeat;
             background-size: contain;
             height: 60px;
@@ -371,29 +376,23 @@
             font-weight: bold;
         }
     }
-    .building {
+    .building, .caller {
         display: flex;
         height: 100%;
         width: 100%;
-        margin-top: 2rem;
         img {
             height: 100%;
             width: 100%;
+            border-radius: 10px;
         }
+    }
+    .building {
+        margin-top: 2rem;
     }
     .new-users {
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
-        .caller {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
     }
     .new-content {
         display: flex;

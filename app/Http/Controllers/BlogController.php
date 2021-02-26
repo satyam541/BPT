@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\PageDetail;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -23,5 +24,20 @@ class BlogController extends Controller
         $data['popularBlogs']   = $article->has('popular')->get();
         $data['pageDetail']     = PageDetail::getContent('blog');
         return view('blog',$data);
+    }
+    public function detail(Request $request)
+    {
+        $blog = $request->route('blog');
+        
+        $data['blog'] = Article::where('reference',$blog)->first();
+        $data['testimonials'] = Testimonial::all();
+        $data['pageDetail']   = PageDetail::getContent('blog_detail');
+        
+        if(empty($blog))
+        {
+            abort('404');
+        }
+        
+        return view('blog-detail',$data);
     }
 }

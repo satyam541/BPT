@@ -181,7 +181,10 @@
             type:"post",
             global:false,
             success:function(response){
-                window.location.href = '/thank-you';
+                if(response == 'done') {
+                    window.location.href = '/thank-you/'+response; 
+            }
+                
             }
         });
     }
@@ -245,6 +248,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
+@yield('footerscripts')
 <script>
     $(".auto-complete-course").focus(function()
  {
