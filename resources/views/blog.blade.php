@@ -59,7 +59,7 @@
                 <div class="our-list">
                     @foreach ($blogs as $blog)
                     {{-- {{dd($blog)}} --}}
-                    <div class="our-item">
+                    <div class="our-item hide">
                         
                         {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
@@ -84,9 +84,35 @@
                         <p class="date">{{$blog->publish_date->format('d M, Y')}}</p>
                     </div>
                     @endforeach
+                    @foreach ($blogs as $blog)
+                    {{-- {{dd($blog)}} --}}
+                    <div class="our-item hide">
+                        
+                        {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
+                        <img src="{{ $blog->getImagePath() }}" alt="our-image">
+                        <div class="our-info">
+                            <p class="name">
+                                <img src="{{ url('img/blog/author.svg') }}" alt="author">
+                                by - {{$blog->author}}
+                            </p>
+                            <p class="designation">
+                                Web Development
+                            </p>
+                        </div>
+                        <h3 >{{$blog->title}}</h3>
+                        <p class="item-text">{!!$blog->summary!!}</p>
 
-                    <div class="buttons">
-                        <a class="btn-blue load-more">
+                        <div class="buttons">
+                            <a class="btn-blue" href={{route('blogDetail',['blog'=>$blog->reference])}}>
+                                Read More
+                            </a>
+                        </div>
+
+                        <p class="date">{{$blog->publish_date->format('d M, Y')}}</p>
+                    </div>
+                    @endforeach
+                    <div class="buttons" >
+                        <a class="btn-blue load-more" id="loadMore" >
                             Load More
                         </a>
                     </div>
