@@ -142,6 +142,8 @@
 
 <!-- Start contact-from Section -->
 <section class="flex-container contact-form">
+    <div class="cubes">
+    </div>
     <div class="container">
         <div class="contact-container">
             <form onsubmit="submitEnquiry(this)" class="form" id="contact-us">

@@ -40,7 +40,7 @@
               <table id="example1">
                 <thead>
                 <tr>
-                    <th>course</th>
+                    <th>Course</th>
                     <th>Increment Type</th>
                     <th>Increment Amount</th>                      
                     <th>Location</th>

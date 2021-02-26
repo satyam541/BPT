@@ -87,6 +87,7 @@ class Course extends Model
     public function delete()
     {
         $this->hasPopular()->delete();
+        $this->onlinePrice()->delete();
         $this->whatsInclude()->delete();
         $this->faqs()->delete();
         $this->content()->delete();

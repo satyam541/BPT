@@ -349,3 +349,33 @@ $('body').on('click',function(e){
     }
 });
 // End pop-up//
+
+
+const colors = [
+    'rgba(225, 225, 225, 0.1)',
+    'rgba(225, 225, 225, 0.1)',
+    'rgba(225, 225, 225, 0.1)',
+    'rgba(225, 225, 225, 0.1)'
+  ];
+  
+  createSquare = () => {
+    const section = document.querySelector('.cubes');
+    const square = document.createElement('h4');
+    
+    const size = Math.random() * 50;
+    
+    square.style.width = 20 + size + 'px';
+    square.style.height = 20 + size + 'px';
+    
+    square.style.top = Math.random() * innerHeight + 'px';
+    square.style.left = Math.random() * innerWidth + 'px';
+    
+    square.style.background = colors[Math.floor(Math.random() * colors.length)];
+    section.appendChild(square);
+    
+    setTimeout(() => {
+      square.remove()
+    }, 5000);
+  }
+  
+  setInterval(createSquare, 150);

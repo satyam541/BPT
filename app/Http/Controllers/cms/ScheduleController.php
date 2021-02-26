@@ -225,7 +225,7 @@ class ScheduleController extends ScheduleApi
           $customize->amount = $input['amount'];
           $customize->save();
         }
-        return back();
+        return back()->with('success','Successfully Updated');
     }
 
     public function onlinePrices()
