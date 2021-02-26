@@ -252,7 +252,7 @@ span.textContent=percent+"%";
 svg.append(span);
 }
 
-// Topic-choose progress//
+// Topic-choose progress//  
 
 
 //enquiry form consent check
