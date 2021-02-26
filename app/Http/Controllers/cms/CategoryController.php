@@ -34,11 +34,16 @@ class CategoryController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
         $this->authorize('view', new Category());      
         $categories = Category::All();
-        return view('cms.category.categoryList',compact('categories'));    
+        $checked=null;
+        if(isset($request->popular)){
+            $categories = Category::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.category.categoryList',compact('categories','checked'));    
              
     }
 

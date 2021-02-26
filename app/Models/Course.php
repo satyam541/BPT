@@ -56,8 +56,9 @@ class Course extends Model
 
     public function popular()
     {
-        return $this->morphOne('App\Models\Popular', 'module')->withDefault(
-            ["country_id" => 'gb',
+        return $this->morphOne('App\Models\Popular', 'module')
+        ->withDefault(
+            ["country_id" => country()->country_code,
             "display_order" => Popular::courses()->count()+1]
         );
     }

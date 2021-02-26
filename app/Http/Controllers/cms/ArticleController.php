@@ -26,9 +26,15 @@ class ArticleController extends Controller
     public function newsList(Request $request)
     {
         $this->authorize('view', Article::firstOrNew(['type'=>'news']));
-        $data=Article::where('type','news')->get();
-        $type='News';
-       return view('cms.article.article',compact('data','type'));
+        $data['data']=Article::where('type','news')->get();
+        $data['type']='News';
+        $data['submitRoute']='newsList';
+        $data['checked']=null;
+        if(isset($request->popular)){
+            $data['data'] = Article::whereHas('popular')->where('type','news')->get();
+            $data['checked']='checked';
+        }
+       return view('cms.article.article',$data);
     }
 
     public function create()
@@ -191,9 +197,15 @@ class ArticleController extends Controller
     public function blogList(Request $request)
     { 
         //  $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
-         $data=Article::where('type','blog')->get();
-         $type='Blog';
-        return view('cms.article.article',compact('data','type'));
+         $data['data']=Article::where('type','blog')->get();
+         $data['type']='Blog';
+         $data['submitRoute']='blogList';
+         $data['checked']=null;
+        if(isset($request->popular)){
+            $data['data'] = Article::whereHas('popular')->where('type','blog')->get();
+            $data['checked']='checked';
+        }
+        return view('cms.article.article',$data);
     }
 
     
