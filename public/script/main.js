@@ -140,7 +140,7 @@
 
     
     //Start home Testimonial//
-    $('.reviews-outer' ).owlCarousel({
+    $('.reviews-outer').owlCarousel({
         loop: true,
         responsiveClass: true,
         dots: false,
@@ -214,26 +214,6 @@ function circleProgress(){
     setProgress(86,$('.circle .second'),45);
     setProgress(92,$('.circle .third'),45);
     setProgress(94,$('.circle .fourth'),45);
-}
-function setProgress(percent, svg, radius) {
-var circumference = radius * 2 * Math.PI;
-var firstcircle = svg.find('circle').last();
-firstcircle.css({'strokeDasharray':circumference});
-firstcircle.css('strokeDashoffset',circumference);
-const firstoffset = circumference - percent / 100 * circumference;
-firstcircle.css('strokeDashoffset' , firstoffset);
-var span = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-span.setAttribute('x', radius-12);
-span.setAttribute('y', radius+12);
-span.setAttribute('fill', '#000');
-span.textContent=percent+"%";
-svg.append(span);
-}
-
-// Topic-choose progress//
-
-circleProgress();
-function circleProgress(){
     setProgress(55,$('.circle .topic-first'),45);
     setProgress(75,$('.circle .topic-second'),45);
 }
@@ -251,8 +231,6 @@ span.setAttribute('fill', '#000');
 span.textContent=percent+"%";
 svg.append(span);
 }
-
-// Topic-choose progress//  
 
 
 //enquiry form consent check
@@ -282,7 +260,6 @@ function checkConsent(button)
 
 
  //phone code start
-
 
 $.ajax({
     url: countryjsonurl,

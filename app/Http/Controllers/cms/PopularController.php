@@ -22,16 +22,16 @@ class PopularController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
         // Popular::$module()->module;
-        if(session()->all()['selectedcountry']){
+        $data['popularItems'] = [];
+        if($request->session()->has('selectedcountry')){
 
-        $selectedCountry=array_keys(session()->all()['selectedcountry']);
-        
+        $selectedCountry=array_keys(session()->all()['selectedcountry']);  
         $selectedCountry=strtoupper($selectedCountry[0]);
-        }
         $data['popularItems'] = Popular::where('country_id',$selectedCountry)->get()->groupBy("module_type");
+    }
 
         return view('cms.popular.list',$data);
     }

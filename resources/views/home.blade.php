@@ -76,7 +76,7 @@
             <div class="courses-list">
                 @foreach ($categories->take(9) as $category)
 
-                <a class="course-name">
+                <a href="javascript:void(0);" class="course-name">
                     <span class="icon">
                         <img src="{{$category->getImagePath()}}" alt="management">
                         <img src="{{$category->getIconPath()}}" alt="management-white">

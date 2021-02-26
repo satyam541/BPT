@@ -182,7 +182,10 @@
             global:false,
             success:function(response){
                 if(response == 'done') {
-                    window.location.href = '/thank-you/'+response; 
+                    var input = '{{csrf_field()}}';
+                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thank-you")}}').html(input);
+                   $('body').append(form);
+                   $('#thank-you').submit();
             }
                 
             }
@@ -191,7 +194,6 @@
 
     function submitEnquiry(formElement)
     { 
-        console.log(formElement);
         button = $(formElement).find('button').first();
         event.preventDefault();
         if (checkConsent(button) == false) {
@@ -200,7 +202,6 @@
     
     formData = $(formElement).serialize();
     
-    console.log(formData);
     $.ajax({
         url:formValidationUrl,
         data:formData,
@@ -234,7 +235,6 @@
             $.each(errors,function(index,value){
                 $(formElement).find("input[name='"+index+"']").addClass('error').attr('title',value[0]);
             });
-            console.log(errors);
         }
     });
     }
@@ -277,7 +277,6 @@ $( function() {
                      _renderMenu: function( ul, items ) {
                            var that = this,
                            currentTopic = "";
-                           console.log(items);
                            $.each( items, function( index, item ) {
                                  var li;
                                  
