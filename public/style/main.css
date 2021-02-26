@@ -999,9 +999,11 @@ input::-webkit-inner-spin-button {
   }
   .banner {
     padding: 3rem 2rem;
+    padding-top: 1rem !important;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
+    z-index: 4;
   }
   .banner .banner-container {
     padding: 0;
@@ -1471,6 +1473,7 @@ input::-webkit-inner-spin-button {
 .delivery .item img {
   width: 48px;
   height: 48px;
+  transition: 1s all;
 }
 .delivery h3 {
   margin-bottom: 0.5rem;
@@ -1479,13 +1482,16 @@ input::-webkit-inner-spin-button {
   width: auto;
   margin-top: 0.5rem;
   font-size: 17px;
+  transition: 1s all;
 }
 .delivery p {
   color: #FFFFFF;
+  transition: 1s all;
 }
 .delivery a {
   text-decoration: underline;
   margin-top: 0.5rem;
+  transition: 1s all;
 }
 .facts {
   padding: 3rem 1.5rem;
@@ -1685,7 +1691,6 @@ input::-webkit-inner-spin-button {
 @media (min-width : 768px) {
   .home-banner {
     background-image: url(../img/master/banner-bg.png);
-    z-index: 1;
     position: relative;
   }
   .home-banner::before {
@@ -1861,6 +1866,7 @@ input::-webkit-inner-spin-button {
   }
   .delivery .item:hover p {
     text-align: center;
+    transition: 1s all;
   }
   .delivery .item:hover img {
     transition: 1s all;
@@ -10337,15 +10343,34 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
+  background-color: #FFFFFF;
 }
 .topic-courses .course-item span {
   display: flex;
   background-color: #F6F6F6;
-  padding: 0.7rem;
+  padding: 0.5rem;
   width: 60px;
   height: 60px;
   border-radius: 10px;
   margin-bottom: 1rem;
+  transition: 2s all;
+}
+.topic-courses .course-item span img {
+  width: 100%;
+  height: 100%;
+}
+.topic-courses .course-item span .white-book {
+  display: none;
+}
+.topic-courses .course-item:hover span {
+  background-color: #0064D8;
+  transition: 0.5s all;
+}
+.topic-courses .course-item:hover .book-black {
+  display: none;
+}
+.topic-courses .course-item:hover .white-book {
+  display: flex;
 }
 .topic-courses .course-name {
   display: flex;
@@ -10865,8 +10890,20 @@ input::-webkit-inner-spin-button {
   .topic-banner .choose-list ul li::before {
     background-image: url(../img/topic/check.svg);
   }
+  .topic-courses {
+    background-image: url(../img/topic/courses-bg.png);
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
   .topic-courses .course-name {
     width: 100%;
+  }
+  .topic-choose {
+    background-image: url(../img/topic/choose-bg.png);
+    background-size: 30% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
   }
   .topic-choose .choose-image {
     width: 45%;
@@ -10971,6 +11008,74 @@ input::-webkit-inner-spin-button {
   }
   .topic-courses .courses-info {
     width: 46%;
+  }
+  .topic-courses .course-item {
+    position: relative;
+  }
+  .topic-courses .course-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    margin: auto;
+    height: 2%;
+    width: 0;
+    background-color: #0064D8;
+    transition: 1s all;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .topic-courses .course-item::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+    margin: auto;
+    height: 2%;
+    width: 0;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item span {
+    position: relative;
+  }
+  .topic-courses .course-item span::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: -9px;
+    margin: auto;
+    height: 0%;
+    width: 2px;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item .course-name {
+    position: relative;
+  }
+  .topic-courses .course-item .course-name::before {
+    content: '';
+    position: absolute;
+    right: -9px;
+    top: -24px;
+    margin: auto;
+    height: 0%;
+    width: 2px;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover::before,
+  .topic-courses .course-item:hover::after {
+    width: 97%;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover span::before {
+    height: 130%;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover .course-name::before {
+    height: 260%;
+    transition: 1s all;
   }
   .topic-delivery .delivery-content {
     width: 45%;
