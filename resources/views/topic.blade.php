@@ -46,7 +46,8 @@
                         </div>
                         <div class="course-item">
                             <span>
-                                <img src="{{url('img/topic/book-black.svg')}}" alt="topic-book">
+                                <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
                                 <h3>PRINCE2® Training Foundation & Practitioner</h3>
@@ -55,7 +56,8 @@
                         </div>
                         <div class="course-item">
                             <span>
-                                <img src="{{url('img/topic/book-black.svg')}}" alt="topic-book">
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
                                 <h3>PRINCE2® Training Foundation & Practitioner</h3>
@@ -64,7 +66,8 @@
                         </div>
                         <div class="course-item">
                             <span>
-                                <img src="{{url('img/topic/book-black.svg')}}" alt="topic-book">
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
                                 <h3>PRINCE2® Training Foundation & Practitioner</h3>
@@ -73,7 +76,8 @@
                         </div>
                         <div class="course-item">
                             <span>
-                                <img src="{{url('img/topic/book-black.svg')}}" alt="topic-book">
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
                                 <h3>PRINCE2® Training Foundation & Practitioner</h3>

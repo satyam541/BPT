@@ -9497,10 +9497,6 @@ input::-webkit-inner-spin-button {
 .catalogue-banner {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.catalogue-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-}
 .catalogue-banner .banner-text {
   display: flex;
   flex-direction: column;
@@ -9585,7 +9581,6 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background: #FFFFFF;
-  border-radius: 5px;
   cursor: pointer;
   align-items: center;
 }
@@ -9608,7 +9603,7 @@ input::-webkit-inner-spin-button {
   padding-bottom: 0.5rem;
   color: #1E1E1E;
 }
-.catalogue-banner .select-dropdown span {
+.catalogue-banner .select-dropdown .select-search {
   display: flex;
   height: 36px;
   width: 36px;
@@ -9618,8 +9613,10 @@ input::-webkit-inner-spin-button {
   position: absolute;
   right: 5px;
   bottom: 31px;
+  outline: none;
+  border: none;
 }
-.catalogue-banner .select-dropdown span img {
+.catalogue-banner .select-dropdown .select-search img {
   width: 100%;
   height: 100%;
 }
@@ -9632,7 +9629,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
   border: 1px solid #dbe2e8;
   outline: 0px;
-  box-shadow: 5px 5px 10px 0 rgb(46 61 14.6%);
+  box-shadow: 0px 0px 10px rgba(169, 169, 169, 0.4);
   cursor: pointer;
   border-radius: 40px;
   -moz-appearance: none;
@@ -9693,11 +9690,13 @@ input::-webkit-inner-spin-button {
   position: absolute;
   height: 3px;
   width: 80px;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 37%;
   background: #1C2848;
   transition: 1s ease-in-out;
   border-radius: 10px;
+  margin: auto;
 }
 .category .category-content:first-child {
   margin-top: 0.5rem;
@@ -10064,6 +10063,7 @@ input::-webkit-inner-spin-button {
   }
   .catalogue-banner .filter-top {
     margin-top: 2rem;
+    border-radius: 5px;
   }
   .catalogue-banner .form {
     flex-direction: row;
@@ -10168,9 +10168,6 @@ input::-webkit-inner-spin-button {
   .category .category-content {
     width: 22%;
   }
-  .category .category-content::before {
-    left: 32%;
-  }
   .category-enquire {
     background: url(../img/catalogue/have-bg.png), linear-gradient(#0064D8, #1C2848);
     background-repeat: no-repeat;
@@ -10206,7 +10203,7 @@ input::-webkit-inner-spin-button {
     width: 55%;
   }
   .popular-courses .popular-facts {
-    width: 45%;
+    width: 42%;
     margin-top: 0;
   }
   .popular-courses .popular-item {
@@ -10250,9 +10247,6 @@ input::-webkit-inner-spin-button {
   .category {
     padding: 4rem 0rem;
   }
-  .category .category-content::before {
-    left: 34%;
-  }
   .category-enquire {
     padding: 4rem 0rem;
   }
@@ -10263,15 +10257,8 @@ input::-webkit-inner-spin-button {
   .category-enquire .enquire-content p {
     text-align: left;
   }
-  .category-enquire .buttons {
-    width: 16%;
-    align-self: flex-start;
-  }
   .popular-courses {
     padding: 4rem 0rem;
-  }
-  .popular-courses .popular-facts {
-    width: 41%;
   }
   .popular-courses .popular-item {
     background: linear-gradient(90deg, #1C2848 20%, #FFFFFF 20%);
@@ -10345,15 +10332,34 @@ input::-webkit-inner-spin-button {
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
+  background-color: #FFFFFF;
 }
 .topic-courses .course-item span {
   display: flex;
   background-color: #F6F6F6;
-  padding: 0.7rem;
+  padding: 0.5rem;
   width: 60px;
   height: 60px;
   border-radius: 10px;
   margin-bottom: 1rem;
+  transition: 2s all;
+}
+.topic-courses .course-item span img {
+  width: 100%;
+  height: 100%;
+}
+.topic-courses .course-item span .white-book {
+  display: none;
+}
+.topic-courses .course-item:hover span {
+  background-color: #0064D8;
+  transition: 0.5s all;
+}
+.topic-courses .course-item:hover .book-black {
+  display: none;
+}
+.topic-courses .course-item:hover .white-book {
+  display: flex;
 }
 .topic-courses .course-name {
   display: flex;
@@ -10873,8 +10879,20 @@ input::-webkit-inner-spin-button {
   .topic-banner .choose-list ul li::before {
     background-image: url(../img/topic/check.svg);
   }
+  .topic-courses {
+    background-image: url(../img/topic/courses-bg.png);
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
   .topic-courses .course-name {
     width: 100%;
+  }
+  .topic-choose {
+    background-image: url(../img/topic/choose-bg.png);
+    background-size: 30% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
   }
   .topic-choose .choose-image {
     width: 45%;
@@ -10979,6 +10997,74 @@ input::-webkit-inner-spin-button {
   }
   .topic-courses .courses-info {
     width: 46%;
+  }
+  .topic-courses .course-item {
+    position: relative;
+  }
+  .topic-courses .course-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    margin: auto;
+    height: 2%;
+    width: 0;
+    background-color: #0064D8;
+    transition: 1s all;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .topic-courses .course-item::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    bottom: 7px;
+    margin: auto;
+    height: 2%;
+    width: 0;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item span {
+    position: relative;
+  }
+  .topic-courses .course-item span::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: -9px;
+    margin: auto;
+    height: 0%;
+    width: 2px;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item .course-name {
+    position: relative;
+  }
+  .topic-courses .course-item .course-name::before {
+    content: '';
+    position: absolute;
+    right: -9px;
+    top: -24px;
+    margin: auto;
+    height: 0%;
+    width: 2px;
+    background-color: #0064D8;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover::before,
+  .topic-courses .course-item:hover::after {
+    width: 97%;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover span::before {
+    height: 130%;
+    transition: 1s all;
+  }
+  .topic-courses .course-item:hover .course-name::before {
+    height: 260%;
+    transition: 1s all;
   }
   .topic-delivery .delivery-content {
     width: 45%;
