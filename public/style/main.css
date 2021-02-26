@@ -2129,37 +2129,31 @@ input::-webkit-inner-spin-button {
     padding: 0 1rem;
     margin-top: 3rem;
   }
-  .looking .reviews-outer .owl-nav.disabled {
-    display: flex;
-  }
-  .looking .reviews-outer .owl-nav {
-    display: flex;
+  .looking .owl-nav {
+    display: flex !important;
     justify-content: space-between;
     width: 100%;
     transform: translateY(-142px);
   }
-  .looking .reviews-outer .owl-nav .owl-prev,
-  .looking .reviews-outer .owl-nav .owl-next {
-    background-repeat: no-repeat;
+  .looking .owl-nav .owl-prev,
+  .looking .owl-nav .owl-next {
+    background-image: url('../img/home/left-arrow.png') !important;
+    background-repeat: no-repeat !important;
     width: 32px;
     height: 30px;
-    background-size: contain;
+    background-size: contain !important;
     outline: none;
     opacity: 0.5;
-  }
-  .looking .reviews-outer .owl-nav .owl-prev span,
-  .looking .reviews-outer .owl-nav .owl-next span {
-    display: none;
-  }
-  .looking .reviews-outer .owl-nav .owl-prev {
-    background-image: url('../img/home/left-arrow.png');
     transform: translateX(-48px);
   }
-  .looking .reviews-outer .owl-nav .owl-next {
-    background-image: url('../img/home/right-arrow.png');
-    transform: translateX(32px);
+  .looking .owl-nav .owl-prev span,
+  .looking .owl-nav .owl-next span {
+    display: none;
   }
-  .looking .reviews-outer .owl-nav .btn-active {
+  .looking .owl-nav .owl-next {
+    transform: translateX(32px) rotate(180deg);
+  }
+  .looking .owl-nav .btn-active {
     opacity: 1;
   }
   .partners {
@@ -2235,9 +2229,6 @@ input::-webkit-inner-spin-button {
   }
   .looking {
     padding: 4rem 0rem;
-  }
-  .looking .reviews-outer .owl-nav .owl-next {
-    transform: translateX(46px);
   }
 }
 .contact-banner {

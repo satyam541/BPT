@@ -451,38 +451,30 @@
             padding: 0 1rem;
             margin-top: 3rem;
         }
-        .reviews-outer{
-            .owl-nav.disabled {
-                display: flex;
-            }
-            .owl-nav {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                transform: translateY(-142px);
+        .owl-nav {
+            display: flex !important;
+            justify-content: space-between;
+            width: 100%;
+            transform: translateY(-142px);
 
-                .owl-prev, .owl-next{
-                    background-repeat: no-repeat;
-                    width: 32px;
-                    height: 30px;
-                    background-size: contain;
-                    outline: none;
-                    opacity: .5;
-                    span {
-                        display: none;
-                    }
+            .owl-prev, .owl-next{
+                background-image: url('../img/home/left-arrow.png') !important;
+                background-repeat: no-repeat !important;
+                width: 32px;
+                height: 30px;
+                background-size: contain !important;
+                outline: none;
+                opacity: .5;
+                transform: translateX(-48px);
+                span {
+                    display: none;
                 }
-                .owl-prev {
-                    background-image: url('../img/home/left-arrow.png');
-                    transform: translateX(-48px);
-                }
-                .owl-next {
-                    background-image: url('../img/home/right-arrow.png');
-                    transform: translateX(32px);
-                }
-                .btn-active {
-                    opacity: 1;
-                }
+            }
+            .owl-next {
+                transform: translateX(32px) rotate(180deg);
+            }
+            .btn-active {
+                opacity: 1;
             }
         }
     }
@@ -565,12 +557,5 @@
     }
     .looking{
         padding: @sectionPadding-xl;
-        .reviews-outer{
-            .owl-nav{
-                .owl-next{
-                    transform: translateX(46px);
-                }
-            }
-        } 
     } 
 }
