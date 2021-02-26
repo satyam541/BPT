@@ -101,6 +101,7 @@
 
 <!-- Start Method Section -->
 <section class="flex-container method">
+    <div id="foreground"></div>
     <div class="container">
         <div class="method-container">
             <div class="heading center-heading white-heading">

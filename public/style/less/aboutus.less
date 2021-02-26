@@ -1,13 +1,19 @@
-// Start keyframes //
-@keyframes skills-rotate {
-    0%{
-        transform: rotate(0deg);
+@keyframes animate {
+    0% {
+      transform: scale(0) translateY(0) rotate(0deg);
+      opacity: 0;
     }
-    100%{
-        transform: rotate(360deg);
+    10% {
+      opacity: 1;
     }
-}
-// End keyframes// 
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translateY(-500%) rotate(360deg);
+      opacity: 0;
+    }
+  }
 
 // Start Banner section//
 .about-banner {
@@ -15,10 +21,6 @@
     background-color: @lightblueColor;
 
     .banner-container {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem 1.5rem;
-
         .banner-content {
             display: flex;
             flex-direction: column;
@@ -52,6 +54,10 @@
 .about-us {
     padding: @sectionPadding;
 
+    .about-container{
+        display: flex;
+        flex-direction: column;
+    }
     .about-content {
         display: flex;
         flex-direction: column;
@@ -61,10 +67,16 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        .values-content{
+            display: flex;
+            flex-direction: column  ;
+        }
     }
 
    .about-item{
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
     
    }
    p {
@@ -96,7 +108,14 @@
 .difference {
     padding: @sectionPadding;
     background-color: @bgColor;
+
+    .difference-container{
+        display: flex;
+        flex-direction: column;
+    }
    .difference-content{
+        display: flex;
+        flex-direction: column;
         p{
             text-align: center;
         }
@@ -111,7 +130,6 @@
         .count{
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             margin-bottom: 2rem;
             width: 48%;
@@ -273,7 +291,7 @@
         flex-direction: column;
         align-items: center;
         padding: 1rem;
-        background: linear-gradient(#00326C 68%, @whiteColor 68%);
+        background: linear-gradient(#00326C 61%, @whiteColor 61%);
         box-shadow:@shadowLight;
         position: relative;
         z-index: 1;
@@ -373,6 +391,19 @@
 .contact-form{
     padding: @sectionPadding;
     background-color: @bgColor;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+        h4{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: #fff;
+            animation: animate 5s linear infinite;
+            z-index: -1;
+            opacity: 0.6;
+          }
     .contact-container{
         display: flex;
         flex-direction: column;

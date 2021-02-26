@@ -126,7 +126,15 @@
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
+              @if (session()->has('selectedcountry'))
+              @php
+              $selectedCountry=array_keys(session()->all()['selectedcountry']);  
+              @endphp
+              {{ Form::select('country_id', allCountries(), $selectedCountry[0], ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}    
+              @else
               {{ Form::select('country_id', allCountries(), null, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              @endif
+              
             </div>
           </div>
           <br>
@@ -684,7 +692,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- datepicker -->
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{ url('cms/common.js')}}"></script>
+<script src="{{ url('adminlte/cms/common.js')}}"></script>
 <!-- Summernote -->
 <script src="{{ url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
@@ -693,7 +701,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE select 2 -->
 <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
-<script src="{{url('cms/summernote-cleaner.js')}}"></script>
+<script src="{{url('adminlte/cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 {{-- Toastr js --}}
@@ -770,6 +778,7 @@ $.widget.bridge('uibutton', $.ui.button)
   }
 
   $(document).ready(function() {
+    
     $(document).on('click', function (event) {
            $target = $(event.target);
 
@@ -786,7 +795,7 @@ $.widget.bridge('uibutton', $.ui.button)
                       'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
                   },
         success:function(response){
-
+          location.reload(); 
         }
       });
       

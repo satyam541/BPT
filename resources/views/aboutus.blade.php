@@ -3,7 +3,7 @@
 @section("content")
 
 <!-- Start Banner section  -->
-<section class="flex-container about-banner">
+<section class="flex-container banner about-banner">
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
@@ -15,7 +15,7 @@
                             <li><a href="">Home</a></li>
                             <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white">
                             <img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow"class="black"></li>
-                            <li><a href="">About-Us</a></li>
+                            <li><a href="">AboutUs</a></li>
                         </ul>
                     </div>
             </div>
@@ -142,6 +142,8 @@
 
 <!-- Start contact-from Section -->
 <section class="flex-container contact-form">
+    <div class="cubes">
+    </div>
     <div class="container">
         <div class="contact-container">
             <form onsubmit="submitEnquiry(this)" class="form" id="contact-us">

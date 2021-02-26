@@ -220,6 +220,17 @@ input::-webkit-inner-spin-button {
     transform: scale(0.7);
   }
 }
+@keyframes star-move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -100% -100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -2775,22 +2786,25 @@ input::-webkit-inner-spin-button {
     height: 370px;
   }
 }
-@keyframes skills-rotate {
+@keyframes animate {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1) translateY(-500%) rotate(360deg);
+    opacity: 0;
   }
 }
 .about-banner {
   flex-direction: column;
   background-color: #0064D8;
-}
-.about-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1.5rem;
 }
 .about-banner .banner-container .banner-content {
   display: flex;
@@ -2812,6 +2826,10 @@ input::-webkit-inner-spin-button {
 .about-us {
   padding: 3rem 1.5rem;
 }
+.about-us .about-container {
+  display: flex;
+  flex-direction: column;
+}
 .about-us .about-content {
   display: flex;
   flex-direction: column;
@@ -2821,8 +2839,14 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   height: 100%;
 }
+.about-us .about-image .values-content {
+  display: flex;
+  flex-direction: column  ;
+}
 .about-us .about-item {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .about-us p {
   text-align: center;
@@ -2848,6 +2872,14 @@ input::-webkit-inner-spin-button {
   padding: 3rem 1.5rem;
   background-color: #F6F6F6;
 }
+.difference .difference-container {
+  display: flex;
+  flex-direction: column;
+}
+.difference .difference-content {
+  display: flex;
+  flex-direction: column;
+}
 .difference .difference-content p {
   text-align: center;
 }
@@ -2861,7 +2893,6 @@ input::-webkit-inner-spin-button {
 .difference .difference-list .count {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
   width: 48%;
@@ -2991,7 +3022,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background: linear-gradient(#00326C 68%, #FFFFFF 68%);
+  background: linear-gradient(#00326C 61%, #FFFFFF 61%);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   position: relative;
   z-index: 1;
@@ -3072,6 +3103,19 @@ input::-webkit-inner-spin-button {
 .contact-form {
   padding: 3rem 1.5rem;
   background-color: #F6F6F6;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contact-form h4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #fff;
+  animation: animate 5s linear infinite;
+  z-index: -1;
+  opacity: 0.6;
 }
 .contact-form .contact-container {
   display: flex;
@@ -3196,23 +3240,14 @@ input::-webkit-inner-spin-button {
   padding: 1rem 0;
 }
 @media (min-width : 768px) {
-  .about-banner {
-    padding: 3rem 2rem;
-    padding-top: 1rem;
-  }
-  .about-banner .banner-container {
-    width: 100%;
-    padding: 0;
-  }
   .about-banner .banner-container .banner-content {
-    padding-top: 2rem;
     width: 100%;
   }
   .about-us {
     padding: 3rem 2rem;
   }
   .about-us .about-container {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   .about-us .about-content {
@@ -3244,6 +3279,12 @@ input::-webkit-inner-spin-button {
   }
   .reviews .testimonial-item {
     width: 85%;
+  }
+  .reviews .testimonial-item p {
+    min-height: 154px;
+  }
+  .reviews .testimonial-item .designation {
+    min-height: 0;
   }
   .contact-form {
     padding: 3rem 2rem;
@@ -3313,18 +3354,14 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width : 1024px) {
   .about-banner {
-    background-color: transparent;
     background-image: url(../img/aboutus/banner-bg.png);
-    background-size: 100% 100%;
+    background-color: transparent;
     background-position: center;
-    padding: 2rem;
-    padding-top: 1rem;
+    box-shadow: 0 0 6px 1px;
   }
   .about-banner .banner-container {
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
     align-items: center;
   }
   .about-banner .banner-container .banner-content {
@@ -3415,7 +3452,10 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
   }
   .reviews .testimonial-item {
-    background: linear-gradient(#00326C 61%, #FFFFFF 61%);
+    background: linear-gradient(#00326C 54%, #FFFFFF 44%);
+  }
+  .reviews .testimonial-item p {
+    min-height: 110px;
   }
   .contact-form {
     background-image: url(../img/aboutus/contact-form.png);
@@ -3468,13 +3508,6 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (min-width : 1366px) {
-  .about-banner {
-    padding: 4rem 0rem;
-    padding-top: 1rem;
-  }
-  .about-banner .banner-container {
-    padding-bottom: 0;
-  }
   .about-us {
     padding: 4rem 0rem;
   }
@@ -3494,6 +3527,9 @@ input::-webkit-inner-spin-button {
   }
   .reviews {
     padding: 4rem 0rem;
+  }
+  .reviews .testimonial-item p {
+    min-height: 90px;
   }
   .contact-form {
     padding: 4rem 0rem;
@@ -3539,7 +3575,7 @@ input::-webkit-inner-spin-button {
     background-color: #F6F6F6;
     z-index: -2;
     transform: rotate(75deg);
-    animation: skill-rotate 20s linear infinite;
+    animation: rotate 20s linear infinite;
   }
   .skills .skills-item p {
     width: 80%;
@@ -6880,6 +6916,21 @@ input::-webkit-inner-spin-button {
 .method {
   padding: 3rem 1.5rem;
   background: linear-gradient(#0064D8, #1C2848);
+  position: relative;
+  z-index: 1;
+}
+.method #foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/certification/foreground.png);
+  animation: star-move 40s linear infinite;
 }
 .method .method-container {
   display: flex;
@@ -10866,6 +10917,7 @@ input::-webkit-inner-spin-button {
   .topic-banner {
     background-image: url(../img/topic/banner-bg.png);
     padding-bottom: 4rem;
+    box-shadow: 0 0 10px 1px #000000;
   }
   .topic-banner p,
   .topic-banner h2,
