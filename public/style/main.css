@@ -6169,6 +6169,21 @@ input::-webkit-inner-spin-button {
 .key {
   padding: 3rem 1.5rem;
   background: linear-gradient(#0064D8, #1C2848);
+  position: relative;
+  z-index: 1;
+}
+.key #foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/master/foreground.png);
+  animation: star-move 40s linear infinite;
 }
 .key .key-container {
   display: flex;
@@ -6283,7 +6298,9 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width : 1024px) {
   .location-main .location-content {
-    width: 45%;
+    width: 47%;
+    border-right: 1px solid #C0C0C0;
+    padding-right: 1rem;
   }
   .location-main .location-contact {
     width: 50%;
