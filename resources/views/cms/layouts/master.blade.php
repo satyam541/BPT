@@ -126,7 +126,15 @@
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
+              @if (session()->has('selectedcountry'))
+              @php
+              $selectedCountry=array_keys(session()->all()['selectedcountry']);  
+              @endphp
+              {{ Form::select('country_id', allCountries(), $selectedCountry[0], ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}    
+              @else
               {{ Form::select('country_id', allCountries(), null, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              @endif
+              
             </div>
           </div>
           <br>
@@ -770,6 +778,7 @@ $.widget.bridge('uibutton', $.ui.button)
   }
 
   $(document).ready(function() {
+    
     $(document).on('click', function (event) {
            $target = $(event.target);
 
