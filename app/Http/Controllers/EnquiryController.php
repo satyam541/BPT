@@ -110,8 +110,8 @@ class EnquiryController extends Controller
         return view('emails.enquiry');
     }
 
-    public function postEnquiryPage($data)
+    public function postEnquiryPage()
     {
-     dd($data,'thank you');   
+     dd('thank you');   
     }
 }
