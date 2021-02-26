@@ -35,6 +35,67 @@
     </section>
 <!-- End Banner Section -->
 
+
+    <!-- Start topic-courses section -->
+        <section class="flex-container topic-courses" id="topic-courses">
+            <div class="container">
+                <div class="courses-container">
+                    <div class="explore-courses">
+                        <div class="heading">
+                            <h2>Popular Courses to <span>Explore</span></h2>
+                        </div>
+                        <div class="course-item">
+                            <span>
+                                <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
+                            </span>
+                            <div class="course-name">
+                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <span>
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
+                            </span>
+                            <div class="course-name">
+                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <span>
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
+                            </span>
+                            <div class="course-name">
+                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <span>
+                            <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
+                                <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
+                            </span>
+                            <div class="course-name">
+                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-info">
+                        <h2>Number Of Delegates Buys Courses In A Week</h2>
+                        <span>
+                            <img src="{{url('img/topic/courses-info.png')}}" alt="courses-info">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- End topic-courses section -->
+
 <!-- Start Foundation Section -->
     <section class="flex-container foundation">
         <div class="container">
@@ -161,10 +222,12 @@
     <section class="flex-container topic-delivery">
         <div class="container">
             <div class="delivery-container">
-                <div class="heading center-heading white-heading">
+                <div class="delivery-content">
+                <div class="heading white-heading">
                     <h2>Delivery Methods</h2>
                 </div>
                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our agency can only be as strong as our people & because of this, our team have designed game changing products.</p>
+                </div>
                 <div class="delivery-list">
                     <a class="list">
                         <span>
@@ -305,7 +368,7 @@
                         </div>
                 </div>
             </div>
-            <a class="top-arrow smoothscroll" data-href="#explore" >
+            <a class="top-arrow smoothscroll" data-href="#topic-courses" >
                 <img src="{{url('../img/topic/top-arrow.svg')}}" alt="top-arrow">
             </a>
         </div>

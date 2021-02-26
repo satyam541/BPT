@@ -1,9 +1,9 @@
 @media @size-md{
 
     // Start Banner Section
-    .catalouge-banner {
+    .catalogue-banner {
         background: none;
-        background-image: url(../img/catalouge/banner-bg.png);
+        background-image: url(../img/catalogue/banner-bg.png);
         background-size: 100% 79%;
         background-repeat: no-repeat;
         .banner-container {
@@ -37,6 +37,7 @@
         }
         .filter-top {
             margin-top: 2rem;
+            border-radius: 5px;
         }
         .form {
             flex-direction: row;
@@ -65,11 +66,11 @@
     }
     // End Category Section
 
-    // Start Have Section
-    .have {
+    // Start Category-Enquire Section
+    .category-enquire {
         padding: @sectionPadding-md;
     }
-    // End Have Section
+    // End Category-Enquire Section
 
     // Start Popular-Courses Section
     .popular-courses {
@@ -124,7 +125,7 @@
     // Start Figures Section
     .figures {
         padding: @sectionPadding-md;
-        background-image: url(../img/catalouge/figures-bg.png);
+        background-image: url(../img/catalogue/figures-bg.png);
         background-repeat: no-repeat;
         background-size: 78% 26%;
         background-position: center;
@@ -155,7 +156,7 @@
 @media @size-lg{
 
     // Start Banner Section
-    .catalouge-banner {
+    .catalogue-banner {
         .banner-text {
             width: 46%;
         }
@@ -167,30 +168,27 @@
 
     // Start Category Section
     .category {
-        background-image: url(../img/catalouge/category-bg.png);
+        background-image: url(../img/catalogue/category-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 40%;
         background-position: bottom left;
         .category-content {
             width: 22%;
-            &::before {
-                left: 32%;
-            }
         }
     }
     // End Category Section
 
-    // Start Have Section
-    .have {
-        background: url(../img/catalouge/have-bg.png), @blueGradient;
+    // Start Category-Enquire Section
+    .category-enquire {
+        background: url(../img/catalogue/have-bg.png), @blueGradient;
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        .have-container {
+        .enquire-container {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
         }
-        .have-content {
+        .enquire-content {
             width: 80%;
             h2, p {
                 text-align: left;
@@ -202,10 +200,13 @@
             margin-top: 0;
         }
     }
-    // End Have Section
+    // End Category-Enquire Section
 
     // Start Popular-Courses Section
     .popular-courses {
+        background-image: url(../img/catalogue/popular-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         .popular-container {
             flex-direction: row;
             justify-content: space-between;
@@ -214,7 +215,7 @@
             width: 55%;
         }
         .popular-facts {
-            width: 45%;
+            width: 42%;
             margin-top: 0;
         }
         .popular-item {
@@ -224,7 +225,7 @@
                     right: -11px;
                 }
             }
-            a {
+            h3 {
                 width: calc(100% - 55px);
             }
         }
@@ -275,36 +276,24 @@
     // Start Category Section
     .category {
         padding: @sectionPadding-xl;
-        .category-content {
-            &::before {
-                left: 34%;
-            }
-        }
     }
     // End Category Section
 
-    // Start Have Section
-    .have {
+    // Start Category-Enquire Section
+    .category-enquire {
         padding: @sectionPadding-xl;
-        .have-content {
+        .enquire-content {
             width: 80%;
             h2, p {
                 text-align: left;
             }
         }
-        .buttons {
-            width: 16%;
-            align-self: flex-start;
-        }
     }
-    // End Have Section
+    // End Category-Enquire Section
 
     // Start Popular-Courses Section
     .popular-courses {
         padding: @sectionPadding-xl;
-        .popular-facts {
-            width: 41%;
-        }
         .popular-item {
             background: linear-gradient(90deg, @darkblueColor 20%, @whiteColor 20%);
             span {
@@ -312,7 +301,7 @@
                     right: -18px;
                 }
             }
-            a {
+            h3 {
                 width: calc(100% - 67px);
             }
         }
