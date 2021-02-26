@@ -1,4 +1,61 @@
 @extends('cms.layouts.master')
+@section('headerLinks')
+<style>
+    .phonecode-field {
+        width: 100%;
+        padding: 0 15px;
+        outline: none;
+        border: none;
+        box-shadow: 0 0px 5px #c1c1c1;
+        padding-right: 10px;
+        font-size: 14px;
+        border: 1px solid #ebebeb;
+        color: #787878;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        background-color: #FFFFFF;
+      }
+      .phonecode-field select {
+        width: 45px;
+        border: none;
+        outline: 0;
+        border-right: 1px solid #eee;
+        margin-right: 10px;
+        color: #868686;
+      }
+      .phonecode-field span {
+        color: #868686;
+        font-size: 14px;
+        padding-right: 0;
+      }
+      .phonecode-field input {
+        border: none;
+        padding: 15px;
+        padding-top: 16px;
+        padding-left: 5px;
+        width: 55%;
+        outline: none;
+        color: #787878;
+      }
+      .phonecode-field .hidden-field {
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    
+    
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+@endsection
 @section('content')
 
 
@@ -54,6 +111,19 @@
                     {{Form::label('email','Email')}}
                     {{Form::text('email',null,['class'=>'form-control'])}}
                   </div>
+
+                  <div class="form-group">
+                    <label for="CourseName">Phone</label>
+                    <div class=" phonecode-field">
+                        <select class="country-code form-control form-control-sm" style="width:9%"></select>
+                            <span class=" prefix"></span>
+                        <input type="number" class="form-control form-control-lg telephone" placeholder="Phone Number *">
+                        <div class="hidden-field" style="display:none;">
+                            <input type="text" name="phonecode" class="phonecode">
+                           <input type="text" name="phone" class="phonenumber" placeholder="Phone Number *">
+                        </div>
+                     </div> 
+                   </div>
 
                   <div class="form-group">
                     {{Form::label('Address1','Address 1')}}
@@ -141,7 +211,7 @@
 
                     <div class="form-group">
                         {{Form::label('price','Price in GBP')}}
-                        <input type="number" name="price" value="" class="form-control" id="price" required="true" step=".01" />
+                        <input type="number" name="price" value="" class="form-control" id="price" required="true" step=".01" readonly/>
                     </div>
 
                     <div class="form-group">
@@ -151,7 +221,7 @@
                     
                     <div class="form-group">
                         {{Form::label('vatPrice','Price Inclusive Vat ')}}
-                        <input type="number" name="totalAmount" value="" class="form-control" id="totalAmount" required="true" step=".01" />
+                        <input type="number" name="totalAmount" value="" class="form-control" id="totalAmount" required="true" step=".01" readonly/>
                         <input type="hidden" name="vatPercentage" id="vatPercentage"/>
                         <input type="hidden" name="vatAmount" id="vatAmount">
                     </div>
@@ -448,6 +518,42 @@ function getSchedule(locationName , countryId , courseId ) {
     }
 
 }
+
+var countryjsonurl = "{{url('json/countries.json')}}";
+    $.ajax({
+    url: countryjsonurl,
+    type:'get',
+    dataType: 'json',
+    success: function(response)
+    {
+        var options = "";
+        $.each(response, function(index, value){
+            options += "<option data-index="+index+' value="'+value.code+'" data-phone-code="'+value.dial_code+'" data-country-id="'+index+'" data-country-name="'+value.name+'">'+value.code+'&emsp;&emsp; - &emsp;&emsp;'+value.name+'</option>';
+        });
+        $('select.country-code').html(options).trigger('change');
+    }
+});
+ 
+$("select.country-code").on('change', function(e){
+    var phonecode = $(this).find(':selected').data('phone-code');
+    $(this).closest('.phonecode-field').find('span.prefix').text(phonecode);
+    var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
+    $(this).closest('.phonecode-field').find('input.telephone').val('').trigger('change');
+    $(this).closest('.phonecode-field').find('input.phonenumber').val(prefix);
+    $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
+});
+$('input.telephone').on('focusout', function(event){
+    var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
+    var phonecode =  $(this).closest('.phonecode-field').find(':selected').data('phone-code');
+    var data = $(this).val();
+    if(data.startsWith('0'))
+    {
+        data = data.substring(1,data.length);
+    }
+    var number = prefix + data;
+    $(this).closest('.phonecode-field').find('input.phonenumber').val(number);
+    $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
+});
 </script>
 
 @endsection

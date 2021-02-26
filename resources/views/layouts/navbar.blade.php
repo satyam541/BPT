@@ -39,7 +39,7 @@
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
                     </a>
                     <a class="cart">
-                        <img src="{{url('img/flag/at.svg')}}" alt="cart">
+                        <img src="{{url('img/flag/uk.svg')}}" alt="cart">
                     </a>
                 </li>
                 
