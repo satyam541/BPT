@@ -2763,6 +2763,7 @@ input::-webkit-inner-spin-button {
   }
   .information .info-content {
     width: 25%;
+    min-height: 380px;
   }
   .faq {
     padding: 4rem 0rem;
