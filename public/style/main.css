@@ -1824,7 +1824,7 @@ input::-webkit-inner-spin-button {
   .delivery .delivery-list::before {
     content: '';
     position: absolute;
-    width: 74%;
+    width: 51%;
     height: 2px;
     left: 0;
     right: 0;
@@ -2081,6 +2081,9 @@ input::-webkit-inner-spin-button {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .delivery .delivery-list::before {
+    width: 78%;
   }
   .delivery .item {
     width: 24%;
@@ -8062,7 +8065,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
 }
 .work .work-content .heading p {
   font-weight: bold;
