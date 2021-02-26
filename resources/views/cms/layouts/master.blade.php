@@ -692,7 +692,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- datepicker -->
 <script src="{{ url('adminlte/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{ url('cms/common.js')}}"></script>
+<script src="{{ url('adminlte/cms/common.js')}}"></script>
 <!-- Summernote -->
 <script src="{{ url('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
@@ -701,7 +701,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE select 2 -->
 <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
-<script src="{{url('cms/summernote-cleaner.js')}}"></script>
+<script src="{{url('adminlte/cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>
 {{-- Toastr js --}}
