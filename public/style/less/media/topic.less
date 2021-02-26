@@ -20,6 +20,51 @@
     }
     // End topic-banner section //
 
+    // Start topic-courses section //
+
+    .topic-courses{
+        padding: @sectionPadding-md;
+
+        .explore-courses{
+            width: 53%;
+        }
+
+        .course-item{
+            flex-direction: row;
+            padding-left: 0;
+            span{
+                margin-bottom: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+        .course-name{
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 1rem;
+              
+            h3{
+                width: 66%;
+                text-align: left;
+                margin-bottom: 0;
+                    font-size: 16px;
+            }
+            
+        }
+        .courses-info{
+              width: 42%;
+              margin-top: 0;
+              position: sticky;
+              top: 60px;
+              height: fit-content;
+        }
+        .courses-container{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+// End topic-courses section //
+
     // Start experiences section //
     .experiences{
         padding: @sectionPadding-md;
@@ -55,6 +100,20 @@
         }
     }
     // end experiences section //
+
+    // start topic-delivery section //
+    .topic-delivery{
+        padding: @sectionPadding;
+
+        .delivery-list{
+            flex-direction: row;
+            justify-content: space-around;
+            .list{
+                width: 19%;
+            }
+        }
+    }
+    // End topic-delivery section //
 
 
     // Start topic-choose section //
@@ -146,7 +205,7 @@
 @media @size-lg {
 
     // Start topic-banner section //
-    .banner{
+    .topic-banner{
         background-image: url(../img/topic/banner-bg.png);
          padding-bottom: 4rem;
          p,h2,h1,li{
@@ -170,6 +229,15 @@
     }
     // end topic-banner section //
 
+    // Start topic-courses section //
+
+    .topic-courses{
+        .course-name{
+              width: 100%;
+        }
+    }
+// End topic-courses section //
+
     // Start topic-choose section //
     .topic-choose{
         .choose-image{
@@ -187,6 +255,49 @@
         }
     }
     // End topic-choose section //
+
+
+    // Start topic-delivery section //
+        .topic-delivery{
+            background-image: url(../img/topic/delivey-bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+                p,h2{
+                    text-align: left;
+                }
+
+            .delivery-container{
+                display: flex;
+                justify-content: space-between;
+            }
+            .delivery-content{
+                display: flex;
+                flex-direction: column;
+                 width: 37%;
+                 .heading{
+                     align-items: flex-start;
+                 }
+            }
+            .delivery-list{
+                justify-content: space-between;
+                    width: 61%;
+                    align-items: center;
+                .list{
+                width: 24%;
+                justify-content: center;
+                margin-top: 0;
+                padding-left: 0.3rem;
+                border-left: 1px solid #C0C0C0;
+                height: fit-content;
+                &:nth-child(1){
+                    border-left: none;
+                    padding-left: 0;
+                }
+                }
+            }
+        }
+    // End topic-delivery section//
 
     // Start experiences section //
     .experiences{
@@ -253,6 +364,33 @@
         }
     }
     // End .topic-banner section //
+
+       // Start topic-courses section //
+
+       .topic-courses{
+           padding: @sectionPadding-xl;
+        .explore-courses{
+            width: 49%;
+        }
+        .courses-info{
+            width: 46%;
+        }
+    }
+// End topic-courses section //
+
+    // Start topic-delivery section//
+        .topic-delivery{
+            .delivery-content{
+                width: 45%;
+                p{
+                    font-size: 13px;
+                }
+            }
+            .delivery-list{
+                width: 55%;
+            }
+        }
+    // End topic-delivery section//
 
     // Start topic-choose section //
     .topic-choose{
