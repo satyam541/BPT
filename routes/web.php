@@ -50,6 +50,9 @@ Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoCom
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/training-courses', 'CatalogueController@index')->name('catalougeList');
+
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
 // Route::get('/blog', function () {
@@ -68,9 +71,9 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
-Route::get('/catalogue', function () {
-    return view('catalogue');
-});
+// Route::get('/catalogue', function () {
+//     return view('catalogue');   // this route moved to "training-courses'
+// });
 Route::get('/emptycart', function () {
     return view('emptycart');
 });
