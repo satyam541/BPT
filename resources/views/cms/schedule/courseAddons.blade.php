@@ -10,12 +10,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Online Price</h1>
+          <h1 class="m-0 text-dark">Course Addons</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Online Price</li>
+            <li class="breadcrumb-item"><a href="{{route('onlinePriceList')}}">Online Price</a></li>
+            <li class="breadcrumb-item active">Addons</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -33,30 +34,23 @@
           <div class="card card-primary card-outline">
               <div class="card-header">
                   <div class="card-title">
-                 Online Price List
+                 Course Addons List 
                   </div>
               </div>
               <div class="card-body">
               <table id="example1">
                 <thead>
                 <tr>
-                    <th>Course</th>
+                    <th>Addon Name</th>
                     <th>Price</th>
-                    <th>Addons</th>
-                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($onlinePrices as $onlinePrice)
+                    @foreach($addons as $addon)
                     <tr>
-                        {{Form::open(['route' => array('updateOnlinePrice',$onlinePrice->id)])}}
-                        <td>{{$onlinePrice->course->name}}</td>
-                        <td>
-                        {{Form::text('amount', $onlinePrice->price ,array('class' => 'form-control')) }}
-                        </td>
-                        <td><a href="{{ route('courseAddonList',array($onlinePrice->id) ) }}" class="btn btn-warning btn-sm">AddOns</a></td>
-                        <td><button type="submit" class="btn btn-danger">Update</button></td>
-                        {{ Form::close() }}
+                        <td>{{$addon->name}}</td>
+                        <td>{{$addon->price}}</td>
+                        
                     </tr>
                     @endforeach
                     
@@ -84,10 +78,8 @@
         $(document).ready(function(){
             $('#example1').DataTable({
               "columns": [
-                        { "name": "course" },
-                        { "name": "price", "sorting":false, searching:false },
-                        { "name": "Addons", "sorting":false, searching:false },
-                        { "name": "action", "sorting":false, searching:false },
+                        { "name": "Addon Name" },
+                        { "name": "Price"  },
               ]                    
             });
 
