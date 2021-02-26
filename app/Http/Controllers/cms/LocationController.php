@@ -75,7 +75,7 @@ class LocationController extends Controller
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
-        $data['popular']=$location->isPopular();
+        $data['popular']=$location->popular();
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
@@ -112,11 +112,11 @@ class LocationController extends Controller
             $location['image']=$imageName;
         }
         $data=Location::updateOrCreate(['id' =>$inputs['id']],$location);
-        if($request->has('is_popular'))
+        if(isset($inputs['is_popular']))
         {
-            $data->popular()->save($data->popular);
+            $data->popular->save();
         }
-        else if($data->popular())
+        else
         {
             $data->popular->delete();
         }
