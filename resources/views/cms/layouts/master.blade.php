@@ -795,7 +795,7 @@ $.widget.bridge('uibutton', $.ui.button)
                       'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
                   },
         success:function(response){
-
+          location.reload(); 
         }
       });
       
