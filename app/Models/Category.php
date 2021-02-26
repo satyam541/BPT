@@ -105,12 +105,6 @@ class Category extends Model
         return $this->hasMany('App\Models\WhatsIncluded','module_id','id');
     }
 
-    // public function isPopular()
-    // {
-    //     $popular = $this->popular;
-    //     return empty($popular->id)? FALSE : TRUE;
-    // }
-
     public function courses()
     {
         return $this->hasManyThrough('App\Models\Course', 'App\Models\Topic');
@@ -120,10 +114,7 @@ class Category extends Model
     {
         return $this->courses()->has('popular');
     }
-    // public function hasPopular()
-    // {
-    //     return $this->morphOne('App\Models\Popular', 'module'); 
-    // }
+    
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')
@@ -136,7 +127,6 @@ class Category extends Model
 
     public function delete()
     {
-        $this->hasPopular()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();
         $this->faqs()->delete();
@@ -146,7 +136,6 @@ class Category extends Model
 
     public function myRestore()
     {
-        $this->hasPopular()->restore();
         $this->content()->restore();
         $this->Bulletpoint()->restore();
         $this->faqs()->restore();
@@ -156,7 +145,6 @@ class Category extends Model
 
     public function myforceDelete()
     {
-        $this->hasPopular()->forceDelete();
         $this->content()->forceDelete();
         $this->Bulletpoint()->forceDelete();
         $this->faqs()->forceDelete();

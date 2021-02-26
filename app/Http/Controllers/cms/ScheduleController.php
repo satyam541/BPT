@@ -252,8 +252,7 @@ class ScheduleController extends ScheduleApi
 
     public function courseAddon(Request $request,OnlinePrice $online)
     {
-      $addons = $online->addOns;
-      $data['addons'] = $addons;
+      $data['addons']  = $online->addOns;
       return view('cms.schedule.courseAddons',$data);
     }
 
