@@ -140,7 +140,7 @@
 
     
     //Start home Testimonial//
-    $('.reviews-outer' ).owlCarousel({
+    $('.reviews-outer').owlCarousel({
         loop: true,
         responsiveClass: true,
         dots: false,
@@ -260,7 +260,6 @@ function checkConsent(button)
 
 
  //phone code start
-
 
 $.ajax({
     url: countryjsonurl,

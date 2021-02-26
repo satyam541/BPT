@@ -2,9 +2,6 @@
 .onsite-banner {
     background-color: @darkblueColor;
     .banner-container {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem 1rem;
         h1,p {
             color: @whiteColor;
         }
@@ -19,6 +16,7 @@
 // Start training section
 .onsite-training{
     padding: @sectionPadding;
+    padding-bottom: 1rem!important;
     .training-container{
         display: flex;
         flex-direction: column;
@@ -60,6 +58,7 @@
 // Start doorstep section
 .doorstep{
     padding: @sectionPadding;
+    padding-bottom: 1rem!important;
     .doorstep-container{
         display: flex;
         flex-direction: column;
@@ -71,6 +70,9 @@
         p,label{
             color: @whiteColor;
         }
+        .heading{
+            padding-top: 0;
+        }
         input[type=checkbox] {
             background-color: @whiteColor;
             border-radius: 0;
@@ -80,7 +82,7 @@
         p{
         a{
             color: @whiteColor;
-            font-weight: bold;
+            font-size: 12   px;
         }
     }
     }

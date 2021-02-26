@@ -142,6 +142,7 @@
             height: 70px;
         }
         &:hover{
+            transition: .5s ease-in-out;
             box-shadow: @shadowLight;
             background-color: @whiteColor;
         }
@@ -249,6 +250,7 @@
         img{
             width: 48px;
             height: 48px;
+            transition: 1s all;
         }
     }
     h3{
@@ -258,13 +260,16 @@
         width: auto;
         margin-top: .5rem;
         font-size: 17px;
+        transition: 1s all;
     }
     p{
         color: @whiteColor;
+        transition: 1s all;
     }
     a{
         text-decoration: underline;
         margin-top: .5rem;
+        transition: 1s all;
     }
 }
 .facts{
@@ -309,6 +314,9 @@
         img{
             width: 38px;
             height: 38px;
+        }
+        p {
+            text-transform: uppercase;
         }
     }
     .fact-count{
@@ -361,6 +369,10 @@
         p{
             width: 63%;
             font-weight: 700;
+            a {
+                font-size: 18px;
+                font-weight: bold;
+            }
         }
         &:hover{
             background: linear-gradient(143deg , rgba(0,100,216,1) 0%, rgba(0,100,216,1) 77%, rgba(32,71,175,1) 78%);

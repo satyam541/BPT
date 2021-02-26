@@ -1,7 +1,6 @@
 @media @size-md{
     .home-banner{
         background-image: url(../img/master/banner-bg.png);
-        z-index: 1;
         position: relative;
         &::before {
           content: '';
@@ -183,6 +182,7 @@
                 }
                 p{
                     text-align: center;
+                    transition: 1s all;
                 }
                 img{
                     transition: 1s all;
@@ -394,6 +394,10 @@
         }
     }
     .delivery{
+        background-image: url(../img/home/delivery-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
         .item{
             width: 24%;
             height: 320px;
@@ -443,6 +447,9 @@
             margin-top: 3rem;
         }
         .reviews-outer{
+            .owl-nav.disabled {
+                display: flex;
+            }
             .owl-nav {
                 display: flex;
                 justify-content: space-between;

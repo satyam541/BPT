@@ -45,15 +45,12 @@
                     <th>Name</th>
                     <th>Topic</th>
                     <th>
-                      @can('update',new App\Models\CourseElearning())
                       Addon
-                      @endcan
                     </th>
                     <th>
-                      @can('update',new App\Models\CourseElearning())
+                      
                       Actions
-                      @endcan
-                    </th>
+                                          </th>
                   </tr>
                   </thead>
                 <tbody>
@@ -82,9 +79,9 @@
                 
                 </tfoot>
               </table>
-              @can('create',new App\Models\CourseElearning())
+            
               <a id="add" href="{{ route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
-              @endcan
+             
             </div>
             <!-- /.card-body -->
           </div>

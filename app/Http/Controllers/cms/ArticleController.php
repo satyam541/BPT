@@ -86,10 +86,9 @@ class ArticleController extends Controller
         
         //      $article->tags()->attach($tag->id);
         // }
-
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $article->popular()->save($article->Popular);
+            $article->popular->save();
         }
 
         if($article->type=='news')
@@ -163,15 +162,15 @@ class ArticleController extends Controller
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
 
-        if($request->has('is_popular'))
+        if(isset($input['is_popular']))
         {
-            $article->popular()->save($article->Popular);
+            $article->popular->save();
         }
-        else if($article->popular())
+        else
         {
             $article->popular->delete();
         }
-
+        
         if($article->type == 'news')
         {
             return redirect()->route('newsList')->with('success', 'News Updated Successfully!');

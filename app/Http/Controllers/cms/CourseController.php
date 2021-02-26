@@ -21,7 +21,6 @@ use App\Http\Requests\cms\WhatsIncludedRequest;
 use App\Http\Requests\cms\CourseFaqRequest;
 use App\Models\WhatsIncluded as ModelsWhatsIncluded;
 use App\Models\whatsIncludedHeaders;
-
 class CourseController extends Controller
 {
     /**
@@ -37,12 +36,16 @@ class CourseController extends Controller
         $this->Logo_prefix = "Logo";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-
+    public function selectedCountry(Request $request){
+        session(['selectedcountry'=>$request->all()]);
+        session()->save();
+        return 'done';
+    }
     public function list(Request $request)
     {
         // $this->authorize('view', new Course());
         $courses = Course::all();
-
+        // dd(session()->all()['selectedcountry']);
         return view('cms.course.courseList',compact('courses'));
     }
 
@@ -162,7 +165,7 @@ class CourseController extends Controller
     {
         // $this->authorize('create', new Course());
 
-        $inputs = $request->except(["_token",'is_popular']);
+        $inputs = $request->except(["_token"]);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
         $course = Course::firstOrNew( 
@@ -184,7 +187,7 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $course->popular->save();
         }
@@ -225,7 +228,7 @@ class CourseController extends Controller
     public function edit($course)
     {
         // $this->authorize('update', $course);
-        $course = Course::with('hasPopular','onlinePrice')->find($course);
+        $course = Course::with('popular','onlinePrice')->find($course);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -264,7 +267,7 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $course->popular->save();
         }

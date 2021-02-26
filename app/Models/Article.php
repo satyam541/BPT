@@ -29,6 +29,25 @@ class Article extends Model
     //     return empty($popular->id)? FALSE : TRUE;
     // }
 
+    public function next(){
+        
+        $article=Article::where('id', '>', $this->id)->orderBy('id','asc')->first();
+        if(empty($article))
+        {
+            return Article::first();
+        }
+        return $article;
+    }
+    public  function previous(){
+        
+        $article =Article::where('id', '<', $this->id)->orderBy('id','desc')->first();
+        if(empty($article))
+        {
+            return Article::all()->last();
+        }
+        return $article;
+    }
+
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(

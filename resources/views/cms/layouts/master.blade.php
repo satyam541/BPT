@@ -122,18 +122,22 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">Admin Resources</li>
+          <li class="nav-header">Sort By Country</li>
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
-              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                  <i class="fas fa-search fa-fw"></i>
-                </button>
-              </div>
+              {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
+              @if (session()->has('selectedcountry'))
+              @php
+              $selectedCountry=array_keys(session()->all()['selectedcountry']);  
+              @endphp
+              {{ Form::select('country_id', allCountries(), $selectedCountry[0], ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}    
+              @else
+              {{ Form::select('country_id', allCountries(), null, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              @endif
+              
             </div>
           </div>
-    
+          <br>
           <li class="nav-item has-treeview menu-open">
             <a href="{{Route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -706,6 +710,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @yield('footer')
 <script>
+  var selectedcountry = '{{ route("selectedcountry") }}';
   $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
@@ -773,14 +778,34 @@ $.widget.bridge('uibutton', $.ui.button)
   }
 
   $(document).ready(function() {
+    
     $(document).on('click', function (event) {
            $target = $(event.target);
 
     });
-    
+    $('#country').on('input',function(){
+     var country=$('#country').val();
+     
+      $.ajax({
+        url:selectedcountry,
+        data:country,
+        type:'post',
+        global:false,
+        headers: {
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                  },
+        success:function(response){
+
+        }
+      });
+      
+    });
         $(".selectJS").select2({
             width:'100%',
             placeholder:'Choose one',
+            tags: true,
+            theme: "classic",
+            tokenSeparators: [',', ' ']
         });
 
     

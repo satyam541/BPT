@@ -43,6 +43,7 @@ Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('vali
 
 Route::get('search','SearchController@search')->name('SearchCourse');
 Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseAutoComplete');
+Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoComplete');
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
@@ -101,5 +102,5 @@ Route::fallback(function(){
   })->name('fallback');
   Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
 
-Route::get('/thank-you/{data}','EnquiryController@postEnquiryPage')->name('enquiryResponse');
+Route::post('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
 

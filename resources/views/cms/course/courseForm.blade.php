@@ -131,17 +131,6 @@
                                     {{ Form::label('online_price', 'Online Course Price') }}
                                     {{ Form::text('online_price',$course->onlinePrice->price ?? '', ['class' => 'form-control']) }}
                                 </div>
-
-                                <div class="form-group">
-                                    {{ Form::label('published', 'Is Published', ['class' => 'mr-1']) }}
-                                    {{ Form::checkbox('published') }}
-                                </div>
-
-                                <div class="form-group">
-                                    {{ Form::label('is_popular', 'Is Popular') }}
-                                    <input type="checkbox" name="is_popular" @if ($course->hasPopular != null) checked @endif>
-                                </div>
-
                             </div>
                             <!-- /.card-body -->
 
