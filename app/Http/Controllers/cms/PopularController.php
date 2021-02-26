@@ -25,8 +25,13 @@ class PopularController extends Controller
     public function list()
     {
         // Popular::$module()->module;
+        if(session()->all()['selectedcountry']){
+
+        $selectedCountry=array_keys(session()->all()['selectedcountry']);
         
-        $data['popularItems'] = Popular::get()->groupBy("module_type");
+        $selectedCountry=strtoupper($selectedCountry[0]);
+        }
+        $data['popularItems'] = Popular::where('country_id',$selectedCountry)->get()->groupBy("module_type");
 
         return view('cms.popular.list',$data);
     }
