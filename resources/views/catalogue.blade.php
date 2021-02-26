@@ -12,7 +12,7 @@
                 <div class="breadcrums">
                     <ul>
                         <li><a href="javascript:void(0);">Home</a></li>
-                        <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums">
+                        <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                         <li><a href="">Category</a></li>
                     </ul>
                 </div>
@@ -67,9 +67,9 @@
                     <div class="select-dropdown">
                         <p>Search</p>
                         <input type="text" placeholder="Search course here">
-                        <span>
+                        <button class="select-search">
                             <img src="{{url('img/catalogue/magnifying.svg')}}" alt="magnifying">
-                        </span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -252,15 +252,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
                     </ul>
                 </div>
                 <div class="library-content">
@@ -271,15 +271,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
                     </ul>
                 </div>
                 <div class="library-content">
@@ -290,15 +290,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
                     </ul>
                 </div>
                 <div class="library-content">
@@ -309,15 +309,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
                     </ul>
                 </div>
                 <div class="library-content">
@@ -328,15 +328,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
                     </ul>
                 </div>
                 <div class="library-content">
@@ -347,15 +347,15 @@
                         <a href="javascript:void(0);">PRINCE2® Training</a>
                     </div>
                     <ul>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
-                        <li>Prince2 Foundation</li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
+                        <li><a>Prince2 Foundation</a></li>
                     </ul>
                 </div>
             </div>
