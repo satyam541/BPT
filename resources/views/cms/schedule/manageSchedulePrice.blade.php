@@ -71,7 +71,7 @@
 
                                             @foreach ($locations as $location)
                                                 <tr>
-                                                    {{ Form::open(['route' => ['updateCustomPrice', $course->id, $location->venue->id]]) }}
+                                                    {{ Form::open(['route' => ['updateCustomPrice', $course->id, $location->id]]) }}
                                                     <td>{{ $location->name }}</td>
                                                     <td>
 
