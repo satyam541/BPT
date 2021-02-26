@@ -19,7 +19,7 @@
             </div>
             <div class="banner-testi">
                 <div class="testi-list owl-carousel">
-                    <div class="testi-content white">
+                    <div class="testi-content">
                         <span>
                             <img src="{{url('img/catalogue/homework-white.svg')}}" alt="homework">
                         </span>
@@ -30,7 +30,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="testi-content black">
+                    <div class="testi-content">
                         <span>
                             <img src="{{url('img/catalogue/homework-black.svg')}}" alt="homework">
                         </span>

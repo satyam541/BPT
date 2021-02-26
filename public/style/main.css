@@ -4732,10 +4732,6 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
-.form-map .field-black select,
-.form-map .field-black span {
-  color: #ccc0c0;
-}
 .form-map .map {
   display: flex;
   margin-top: 2rem;
@@ -6924,7 +6920,7 @@ input::-webkit-inner-spin-button {
   opacity: 0.2;
   height: 100%;
   width: 100%;
-  background-image: url(../img/certification/foreground.png);
+  background-image: url(../img/master/foreground.png);
   animation: star-move 40s linear infinite;
 }
 .method .method-container {
@@ -9586,13 +9582,13 @@ input::-webkit-inner-spin-button {
 .catalogue-banner .testi-content .buttons img {
   width: 20px !important;
 }
-.catalogue-banner .white {
+.catalogue-banner .testi-content:nth-child(odd) {
   background-color: #0064D8;
 }
-.catalogue-banner .white h3 {
+.catalogue-banner .testi-content:nth-child(odd) h3 {
   color: #FFFFFF;
 }
-.catalogue-banner .black {
+.catalogue-banner .testi-content:nth-child(even) {
   background-color: #FFFFFF;
 }
 .catalogue-banner .owl-nav {

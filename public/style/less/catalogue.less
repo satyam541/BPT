@@ -45,15 +45,15 @@
                     width: 20px !important;
                 }
         }
-    }
-    .white {
-        background-color: @lightblueColor;
-        h3 {
-            color: @whiteColor;
+        &:nth-child(odd) {
+            background-color: @lightblueColor;
+            h3 {
+                color: @whiteColor;
+            }
         }
-    }
-    .black {
-        background-color: @whiteColor;
+        &:nth-child(even) {
+            background-color: @whiteColor;
+        }
     }
     .owl-nav {
         display: flex !important;
