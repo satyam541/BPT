@@ -165,7 +165,7 @@ class CourseController extends Controller
     {
         // $this->authorize('create', new Course());
 
-        $inputs = $request->except(["_token",'is_popular']);
+        $inputs = $request->except(["_token"]);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
         $course = Course::firstOrNew( 
@@ -187,7 +187,7 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $course->popular->save();
         }
@@ -228,7 +228,7 @@ class CourseController extends Controller
     public function edit($course)
     {
         // $this->authorize('update', $course);
-        $course = Course::with('hasPopular','onlinePrice')->find($course);
+        $course = Course::with('popular','onlinePrice')->find($course);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
@@ -267,7 +267,7 @@ class CourseController extends Controller
             $course->save();
         }
         
-        if(isset($input['is_popular']))
+        if(isset($inputs['is_popular']))
         {
             $course->popular->save();
         }

@@ -48,11 +48,11 @@ class Course extends Model
 
     }
     
-    public function isPopular()
-    {
-        $popular = $this->popular;
-        return empty($popular->id)? FALSE : TRUE;
-    }
+    // public function isPopular()
+    // {
+    //     $popular = $this->popular;
+    //     return empty($popular->id)? FALSE : TRUE;
+    // }
 
     public function popular()
     {
@@ -62,10 +62,10 @@ class Course extends Model
         );
     }
     
-    public function hasPopular()
-    {
-        return $this->morphOne('App\Models\Popular', 'module');
-    }
+    // public function hasPopular()
+    // {
+    //     return $this->morphOne('App\Models\Popular', 'module');
+    // }
     
     public function loadContent()
     {
