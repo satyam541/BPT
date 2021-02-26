@@ -4494,6 +4494,8 @@ input::-webkit-inner-spin-button {
   position: relative;
   z-index: 1;
   border-left: 4px solid transparent;
+  width: 272px;
+  align-self: center;
 }
 .convenient .convenient-content::before {
   content: '';
@@ -4508,7 +4510,7 @@ input::-webkit-inner-spin-button {
 }
 .convenient .convenient-content span {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   height: 50px;
   width: 50px;
@@ -4978,15 +4980,19 @@ input::-webkit-inner-spin-button {
     right: -68px;
     top: -32px;
   }
-  .convenient .convenient-content {
-    width: 45%;
+  .convenient .convenient-list {
+    width: 55%;
   }
   .convenient .largest {
-    width: 28%;
+    width: 30%;
+    height: 350px;
+    padding: 3.5rem;
   }
   .convenient .largest::before {
     content: '';
-    animation: none;
+    height: 450px;
+    width: 450px;
+    left: -44px;
   }
   .popular .popular-content {
     width: 22%;
@@ -6192,6 +6198,10 @@ input::-webkit-inner-spin-button {
   }
   .location-main .location-contact {
     width: 55%;
+    margin-top: 0;
+    align-self: flex-start;
+    position: sticky;
+    top: 80px;
   }
   .location-main .location-contact .content {
     padding: 1rem;
@@ -6234,15 +6244,16 @@ input::-webkit-inner-spin-button {
   }
   .location-main .location-contact {
     width: 50%;
-    position: relative;
-    z-index: 1;
   }
-  .location-main .location-contact::before {
+  .location-main .contact-bottom span {
+    position: relative;
+  }
+  .location-main .contact-bottom span::before {
     content: '';
     z-index: -1;
     position: absolute;
-    bottom: -41px;
-    right: -17px;
+    bottom: -37px;
+    right: -34px;
     background-image: url(../img/location-detail/dotted-box.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -6281,7 +6292,7 @@ input::-webkit-inner-spin-button {
   .location-main .location-contact {
     width: 40%;
   }
-  .location-main .location-contact::before {
+  .location-main .location-contact span::before {
     bottom: -44px;
     right: -34px;
   }

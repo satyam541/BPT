@@ -11,6 +11,10 @@
     }
     .location-contact {
         width: 55%;
+        margin-top: 0;
+        align-self: flex-start;
+        position: sticky;
+        top: 80px;
         .content {
             padding: 1rem;
             width: 80%;
@@ -62,19 +66,22 @@
         }
         .location-contact {
             width: 50%;
-            position: relative;
-            z-index: 1;
-            &::before {
-                content: '';
-                z-index: -1;
-                position: absolute;
-                bottom: -41px;
-                right: -17px;
-                background-image: url(../img/location-detail/dotted-box.png);
-                background-repeat: no-repeat;
-                background-size: contain;
-                height: 70px;
-                width: 70px;
+        }
+        .contact-bottom {
+            span {
+                position: relative;
+                &::before {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    bottom: -37px;
+                    right: -34px;
+                    background-image: url(../img/location-detail/dotted-box.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 70px;
+                    width: 70px;
+                }
             }
         }
     }
@@ -115,9 +122,11 @@
         }
         .location-contact {
             width: 40%;
-            &::before {
-                bottom: -44px;
-                right: -34px;
+            span {
+                &::before {
+                    bottom: -44px;
+                    right: -34px;
+                }
             }
         }
     }
