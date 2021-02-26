@@ -32,11 +32,14 @@
         .course-item{
             flex-direction: row;
             padding-left: 0;
+           
+            
             span{
                 margin-bottom: 0;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
             }
+            
         }
         .course-name{
                 flex-direction: row;
@@ -232,6 +235,10 @@
     // Start topic-courses section //
 
     .topic-courses{
+        background-image: url(../img/topic/courses-bg.png);
+        background-size: 100% 30%;
+        background-repeat: no-repeat;
+        background-position: bottom;
         .course-name{
               width: 100%;
         }
@@ -240,6 +247,10 @@
 
     // Start topic-choose section //
     .topic-choose{
+        background-image: url(../img/topic/choose-bg.png);
+        background-size: 30% 50%;
+        background-repeat: no-repeat;
+        background-position: bottom left;
         .choose-image{
             width: 45%;
         }
@@ -374,6 +385,80 @@
         }
         .courses-info{
             width: 46%;
+        }
+        .course-item{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 7px;
+                margin: auto;
+                height: 2%;
+                width: 0;
+                background-color:@lightblueColor;
+                transition: 1s all;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                right: 8px;
+                bottom: 7px;
+                margin: auto;
+                height: 2%;
+                width: 0;
+                background-color:@lightblueColor;
+                transition: 1s all;
+            }
+            span{
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 9px;
+                    top: -9px;
+                    margin: auto;
+                    height: 0%;
+                    width: 2px;
+                    background-color:@lightblueColor;
+                    transition: 1s all;
+                }
+            }
+            .course-name{
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    right: -9px;
+                    top: -24px;
+                    margin: auto;
+                    height: 0%;
+                    width: 2px;
+                    background-color:@lightblueColor;
+                    transition: 1s all;
+                }
+            }
+            &:hover{
+                &::before,&::after{
+                    width: 97%;
+                    transition: 1s all;
+                }
+
+                span{
+                    &::before{
+                        height: 130%;
+                        transition: 1s all;
+                    }
+                }
+                .course-name{
+                    &::before{
+                        height: 260%;
+                    transition: 1s all;
+                    }
+                }
+            }
         }
     }
 // End topic-courses section //

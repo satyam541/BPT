@@ -38,7 +38,7 @@
                     <div class="content">
                         <h3>{{$popularLocation->name}}</h3>
                         <div class="buttons">
-                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue open-popup enquiryJS" data-quote="View Details">
+                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
                     <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
                     </a>
                 </div>

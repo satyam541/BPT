@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Article;
 
 class SearchController extends Controller
 {
@@ -37,5 +38,23 @@ class SearchController extends Controller
 
             // $courses = Course::where('name','like','%'.$terms.'%') ->distinct() ->get();
         return response()->json($courses);
+    }
+
+    public function loadBlogs(Request $request)
+    {
+        $term       =   $request->input('term');
+        $terms      =   explode(" ",$term);
+        $blogs      =   Article::select('title as value','reference','type')
+                        ->orderBy('title')
+                        ->where(function($query)use($terms){
+                                foreach($terms as $word)
+                                {
+                                    $query->where('title','like','%'.$word.'%');
+                                }
+                            return $query;
+                        })
+                        ->distinct()->get();
+        
+        return response()->json($blogs);
     }
 }

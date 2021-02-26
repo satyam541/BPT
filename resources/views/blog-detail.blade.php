@@ -57,7 +57,7 @@
                         <h2>Search</h2>
                     </div>
                     <span>
-                        <input type="text" placeholder="Search....." autocompleat="off" > 
+                        <input type="text" class="auto-complete-blog" placeholder="Search....." autocompleat="off" > 
                        <div class="button">
                        <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
                        </div>
@@ -86,20 +86,20 @@
             </div>
             <div class="blog-navs">
                 <div class="previous-nav">
-                    <img src="{{url('img/blog-detail/navs-bg.png')}}" alt="navs-bg" class="bg-img">
-               <p> When Did Agile Start?</p>
+                    <img src="{{url($prevBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
+               <p> {{$prevBlog->title}}</p>
                     <div class="buttons">
-                        <a class="btn-blue">
+                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$prevBlog->reference])}}">
                         <img src="{{url('img/blog-detail/prev-nav.svg')}}" alt="prev-nav">
                             Previous Post
                         </a>
                     </div>  
                 </div>
                 <div class="next-nav">
-                <img src="{{url('img/blog-detail/navs-bg.png')}}" alt="navs-bg" class="bg-img">
-                     <p>When Did Agile Start?</p>
+                <img src="{{url($nextBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
+                     <p>{{$nextBlog->title}}</p>
                      <div class="buttons">
-                        <a class="btn-blue">
+                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$nextBlog->reference])}}">
                             Next Post
                             <img src="{{url('img/blog-detail/next-nav.svg')}}" alt="next-nav">
                         </a>
@@ -148,7 +148,10 @@
 </section>
 <!-- End ideal section -->
 
-
-
-
+@endsection
+@section('footerscripts')
+<script>
+    var blogURL = "{{route('blogAutoComplete')}}";
+ </script>
+ <script src="{{ url("script/blog.js") }}"></script>
 @endsection
