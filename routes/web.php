@@ -29,6 +29,7 @@ Route::get('/training-locations', 'LocationController@index')->name('locations')
 Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
 
 
 /*Enquiry Routes*/
@@ -45,14 +46,17 @@ Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseA
 // Route::get('/welcome', function () {
 //     return view('welcome');
 // });
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
 // Route::get('/blog', function () {
 //     return view('blog');
 // });
-Route::get('/blog-detail', function () {
-    return view('blog-detail');
-});
+// Route::get('/blog-detail', function () {
+//     return view('blog-detail');
+// });
 Route::get('/offer', function () {
     return view('offer');
 });
@@ -97,5 +101,5 @@ Route::fallback(function(){
   })->name('fallback');
   Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
 
-Route::get('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
+Route::get('/thank-you/{data}','EnquiryController@postEnquiryPage')->name('enquiryResponse');
 
