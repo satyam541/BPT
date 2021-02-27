@@ -41,9 +41,9 @@
                 <thead>
                 <tr>
                     <th>Course</th>
-                    <th>price</th>
+                    <th>Price</th>
                     <th>Addons</th>
-                    <th>action</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>

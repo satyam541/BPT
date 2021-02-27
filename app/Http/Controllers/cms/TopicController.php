@@ -36,11 +36,16 @@ class TopicController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
         // $this->authorize('view', new Topic());
         $topics=Topic::all();
-        return view('cms.topic.topiclist',compact('topics'));
+        $checked=null;
+        if(isset($request->popular)){
+            $topics = Topic::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.topic.topiclist',compact('topics','checked'));
     }
 
     public function unlinkedTopicList()

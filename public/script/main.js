@@ -43,7 +43,7 @@
     $('.showmorecontent').click(function(event) {
         event.preventDefault();
         var id = $(this).attr('href');
-        $(id).toggleClass('toggle');
+        $(id).toggleClass('toggle', 'slow');
         
         if($(id).hasClass("toggle")) {  
             $(this).find('.text').html(" Show Less");       
@@ -350,32 +350,17 @@ $('body').on('click',function(e){
 });
 // End pop-up//
 
+    //start Load more // 
 
-const colors = [
-    'rgba(225, 225, 225, 0.1)',
-    'rgba(225, 225, 225, 0.1)',
-    'rgba(225, 225, 225, 0.1)',
-    'rgba(225, 225, 225, 0.1)'
-  ];
-  
-  createSquare = () => {
-    const section = document.querySelector('.cubes');
-    const square = document.createElement('h4');
-    
-    const size = Math.random() * 50;
-    
-    square.style.width = 20 + size + 'px';
-    square.style.height = 20 + size + 'px';
-    
-    square.style.top = Math.random() * innerHeight + 'px';
-    square.style.left = Math.random() * innerWidth + 'px';
-    
-    square.style.background = colors[Math.floor(Math.random() * colors.length)];
-    section.appendChild(square);
-    
-    setTimeout(() => {
-      square.remove()
-    }, 5000);
-  }
-  
-  setInterval(createSquare, 150);
+    $(".hide").slice(0, 2).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $(".hide:hidden").slice(0, 2).slideDown();
+        if ($(".hide:hidden").length == 0) {
+            $(this).text("No More"); 
+        }
+    });
+
+    // End load more //
+
+

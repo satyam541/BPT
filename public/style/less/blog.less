@@ -28,6 +28,11 @@
 .popular-blog {
     padding: @sectionPadding;
 
+    .popular-container{
+        display: flex;
+        flex-direction: column;
+    }
+
     .popular-list {
         display: flex;
         flex-direction: column;
@@ -76,6 +81,7 @@
         padding: 1rem;
         position: absolute;
         bottom: 0;
+        width: 100%;
         p {
             background-color: transparent;
             width: 80%;
@@ -98,6 +104,8 @@
     padding: @sectionPadding;
     padding-top: 1rem;
     .our-container {
+        display: flex;
+        flex-direction: column;
         .load-more {
                 border: 4px solid @whiteColor;
                 box-shadow: 0 0 0 2px @lightblueColor;
@@ -121,12 +129,12 @@
             top: -19px;
         }
     }
-
+    .hide{
+        display: none;
+    }
     .our-item {
-        display: flex;
         flex-direction: column;
         padding: 1rem;
-        align-items: flex-start;
         box-shadow: @shadowLight;
         border-radius: 10px;
         margin-top: 5rem;
@@ -190,12 +198,17 @@
     .dates {
         display: none;
     }
+    h3{
+        text-align: center;
+        width: 100%;
+    }
     .item-text{
         margin-top: 0.5rem;
         overflow: hidden;
     display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+    text-align: center;
     }
 
 }

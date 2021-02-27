@@ -19,6 +19,9 @@ class Popular extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderBy('module_type')->orderBy('display_order');
         });
+        static::addGlobalScope('country', function (Builder $builder) {
+            $builder->where("country_id", country()->country_code);
+        });
     }
 
     public function module()

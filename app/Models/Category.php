@@ -127,7 +127,6 @@ class Category extends Model
 
     public function delete()
     {
-        $this->hasPopular()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();
         $this->faqs()->delete();
@@ -137,7 +136,6 @@ class Category extends Model
 
     public function myRestore()
     {
-        $this->hasPopular()->restore();
         $this->content()->restore();
         $this->Bulletpoint()->restore();
         $this->faqs()->restore();
@@ -147,7 +145,6 @@ class Category extends Model
 
     public function myforceDelete()
     {
-        $this->hasPopular()->forceDelete();
         $this->content()->forceDelete();
         $this->Bulletpoint()->forceDelete();
         $this->faqs()->forceDelete();
