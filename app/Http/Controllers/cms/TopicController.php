@@ -36,11 +36,16 @@ class TopicController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
-        // $this->authorize('view', new Topic());
+        $this->authorize('view', new Topic());
         $topics=Topic::all();
-        return view('cms.topic.topiclist',compact('topics'));
+        $checked=null;
+        if(isset($request->popular)){
+            $topics = Topic::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.topic.topiclist',compact('topics','checked'));
     }
 
     public function unlinkedTopicList()
@@ -62,13 +67,13 @@ class TopicController extends Controller
 
     public function contentList(Request $request)
     {
-        // $this->authorize('view', new Topic());
+        $this->authorize('view', new Topic());
         $filter                 = $request->all();
         $data['selectedTopic']  = empty($filter['topic'])? NULL : $filter['topic'];
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query                  = TopicContent::query();
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
-        $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query                  = $query->where('country_id',country()->country_code);
         $query->whereHas('topic');
         $result                 = $query->get();
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
@@ -103,8 +108,8 @@ class TopicController extends Controller
         $data['module_id']          = $module;
         $data['module_type']        = 'topic';
         if($input['id']==null){
-            $displayOrder=BulletPoint::sortBulletPoint('topic',$request->module);
-            $data['display_order']=$displayOrder+1;
+            $max = BulletPoint::where('module_type', 'topic')->max('display_order');
+            $data['display_order']= $max+1;
         }
         $data['bullet_point_text']  = $input['bullet_point_text'];
         BulletPoint::updateOrCreate(['id' =>$input['id']],$data);
@@ -192,7 +197,7 @@ class TopicController extends Controller
     public function contentCreate(Request $request)
     {
        
-        // $this->authorize('create', new Topic());
+        $this->authorize('create', new Topic());
         $filter             = $request->all();
         $selectedTopic      = empty($filter['topic'])? NULL : $filter['topic'];
         $selectedCountry    = empty($filter['country'])? NULL : $filter['country'];
@@ -207,7 +212,7 @@ class TopicController extends Controller
     
     public function create()
     {
-        // $this->authorize('create', new Topic());
+        $this->authorize('create', new Topic());
         $data['topic']          = new Topic();
         $data['submitRoute']    = 'insertTopic';
         $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
@@ -219,7 +224,7 @@ class TopicController extends Controller
 
     public function insert(TopicRequest $request)
     {
-        // $this->authorize('create', new Topic());
+        $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
         // dd($inputs);
         $topic                      = new Topic();
@@ -252,19 +257,16 @@ class TopicController extends Controller
 
     public function contentInsert(TopicContentRequest $request)
     {
-        // $this->authorize('create', new Topic());
+        $this->authorize('create', new Topic());
         $inputs              = $request->except("_token");
-        $content             = TopicContent::firstOrCreate(
-            ['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']]
-            ,$inputs);
-        
+        $content             = TopicContent::firstOrCreate(['topic_id'=>$inputs['topic_id'],'country_id'=>$inputs['country_id']],$inputs);
         return back()->with('success','Content Added');
 
     }
 
     public function edit($topic)
     {
-        // $this->authorize('update', new Topic());
+        $this->authorize('update', new Topic());
         $data['topic']          = Topic::with('faqs','Popular')->find($topic);
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
         $data['categorySlugs']   = Category::all()->pluck('reference','id')->toArray();
@@ -276,7 +278,7 @@ class TopicController extends Controller
 
     public function contentEdit(Request $request,TopicContent $topicDetail)
     {
-        // $this->authorize('update', $topicDetail->topic);
+        $this->authorize('update', $topicDetail->topic);
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
         $data['list'] = $list;
@@ -288,7 +290,7 @@ class TopicController extends Controller
     
     public function update(Topic $topic,TopicRequest $request)
     {
-        // $this->authorize('update', $topic);
+        $this->authorize('update', $topic);
         $inputs                     = $request->all();
         // dd($inputs);
         $topic->name                = $inputs['name'];
@@ -321,7 +323,7 @@ class TopicController extends Controller
 
     public function contentUpdate(TopicContentRequest $request,TopicContent $topicDetail)
     {
-        // $this->authorize('update', $topicDetail->topic);
+        $this->authorize('update', $topicDetail->topic);
         $inputs              = $request->except("_token");
         
         $content = $topicDetail->update($inputs);
@@ -331,19 +333,19 @@ class TopicController extends Controller
 
     public function delete(Topic $topic)
     {
-        // $this->authorize('delete', $topic);
+        $this->authorize('delete', $topic);
         $topic->delete();
     }
 
     public function contentDelete(Request $request,TopicContent $topicDetail)
     {
-        // $this->authorize('delete', $topicDetail->topic);
+        $this->authorize('delete', $topicDetail->topic);
         $topicDetail->delete();
     }
         
    public function topictrashList()
    {
-        // $this->authorize('view', new Topic());
+        $this->authorize('view', new Topic());
         $data['trashedTopics'] = Topic::onlyTrashed()->get();
     
         return  view('cms.trashed.topicTrashedList',$data);
@@ -351,7 +353,7 @@ class TopicController extends Controller
 
    public function restoreTopic($id)
    {
-        // $this->authorize('restore', new Topic());
+        $this->authorize('restore', new Topic());
         $topic = Topic::onlyTrashed()->find($id)->myRestore();
     
         return back()->with('success','Successfully Restored');
@@ -359,7 +361,7 @@ class TopicController extends Controller
    }
    public function forceDeleteTopic($id)
    {
-        // $this->authorize('forceDelete', new Topic());
+        $this->authorize('forceDelete', new Topic());
         $topic = Topic::onlyTrashed()->find($id)->myforceDelete();
     
         return back()->with('success','Permanently Deleted');

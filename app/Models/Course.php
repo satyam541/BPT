@@ -56,8 +56,9 @@ class Course extends Model
 
     public function popular()
     {
-        return $this->morphOne('App\Models\Popular', 'module')->withDefault(
-            ["country_id" => 'gb',
+        return $this->morphOne('App\Models\Popular', 'module')
+        ->withDefault(
+            ["country_id" => country()->country_code,
             "display_order" => Popular::courses()->count()+1]
         );
     }
@@ -93,6 +94,7 @@ class Course extends Model
         }
         $this->onlinePrice()->delete();
         $this->whatsInclude()->delete();
+        $this->popular()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
         $this->BulletPoint()->delete();

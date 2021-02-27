@@ -27,7 +27,7 @@
 <!-- Start Location-Main Section -->
 <section class="flex-container location-main">
     <div class="container">
-        <div class="location-main-container">
+        <div class="location-container">
             <div class="location-content">
                 <div class="heading">
                     <h2>{{$location->name}}</h2>
@@ -85,6 +85,7 @@
 
 <!-- Start Key Section -->
 <section class="flex-container key">
+    <div id="foreground"></div>
     <div class="container">
         <div class="key-container">
             <div class="info">

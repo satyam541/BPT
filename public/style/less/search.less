@@ -16,9 +16,10 @@
             width: 70%;
             background-color: transparent;
             box-shadow: none;
+            padding: 1rem;
         }
         button{
-            width: 82px;
+            width: 150px;
             padding: 0.5rem;
             background-color: #1C2848;
             border-radius: 50px;
@@ -32,8 +33,9 @@
 // End search-banner section
 
 // Start search section
-.search{
+.most-search{
     padding: @sectionPadding;
+    background-color: @bgColor;
     .search-container{
         display: flex;
         flex-direction: column;
@@ -46,6 +48,7 @@
         display: flex;
         flex-direction: column;
         box-shadow: @shadowLight;
+        background-color: @whiteColor;
         padding: 1.5rem;
         margin-top: 1rem;
         span{
@@ -69,6 +72,7 @@
 // Start result section
 .result{
     padding: @sectionPadding;
+    background-color: @bgColor;
     padding-top: 1rem!important;
     .result-container{
         display: flex;
@@ -88,6 +92,7 @@
         padding: 1.5rem;
         align-items: flex-start;
         box-shadow: @shadowLight;
+        background-color: @whiteColor;
         margin-top: 2rem;
         &:first-child{
             margin-top: 0;
@@ -109,6 +114,7 @@
         flex-direction: column;
         margin-top: 2rem;
         box-shadow: @shadowLight;
+        background-color: @whiteColor;
         padding: 1.5rem;
         h2{
             border-bottom: 2px solid #B7B7B7;
@@ -128,6 +134,7 @@
         p{
             font-weight: bold;
             margin: 1rem 0;
+            margin-bottom: .2rem;
         }
         li{
             display: flex;
@@ -138,6 +145,7 @@
             margin-right: .5rem;
             border: 1px solid #0064D8;
             border-radius: 0;
+            box-shadow: none;
         }
     }
 }

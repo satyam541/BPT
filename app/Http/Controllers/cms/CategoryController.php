@@ -34,11 +34,16 @@ class CategoryController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
         $this->authorize('view', new Category());      
         $categories = Category::All();
-        return view('cms.category.categoryList',compact('categories'));    
+        $checked=null;
+        if(isset($request->popular)){
+            $categories = Category::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.category.categoryList',compact('categories','checked'));    
              
     }
 
@@ -88,8 +93,8 @@ class CategoryController extends Controller
 
     public function edit($category)
     {
-        $category = Category::with('popular')->find($category);
-        $this->authorize('update', $category);
+        $this->authorize('update', new Category());
+        $category            = Category::with('popular')->find($category);
         $data['category']    = $category;
         $data['submitRoute'] = array('updateCategory',$category->id);
         return view("cms.category.categoryForm",$data);
@@ -97,12 +102,12 @@ class CategoryController extends Controller
 
     public function update(Category $category,CategoryRequest $request)
     {
-        $this->authorize('update', $category);
-        $input = $request->all();
+        $this->authorize('update', new Category());
+        $input                      = $request->all();
         $category->name             = $input['name'];
         $category->tag_line         = $input['tag_line'];
         // $category->display_order    = $input['display_order'];
-        $category->reference            = '/'.encodeUrlSlug($input['name']);
+        $category->reference        = '/'.encodeUrlSlug($input['name']);
         $category->color_code       = $input['color_code'];
         $category->published        = isset($input['published']);
         $category->is_online        = isset($input['is_online']);
@@ -142,12 +147,12 @@ class CategoryController extends Controller
 
     public function bulletPointList(Request $request)
     {
-        $data['selectedCourse'] = $request->module;
-        $data['editbulletpointroute']='categoryEditBulletPoint';
-        $data['deletebulletpointroute']='categoryDeleteBulletPoint';
-        $data['insertbulletpointroute']='categoryCreateBulletPoint';
-        $data['type']='category';
-        $data['module'] = Category::with('Bulletpoint')->find($request->module);
+        $data['selectedCourse']         = $request->module;
+        $data['editbulletpointroute']   ='categoryEditBulletPoint';
+        $data['deletebulletpointroute'] ='categoryDeleteBulletPoint';
+        $data['insertbulletpointroute'] ='categoryCreateBulletPoint';
+        $data['type']                   ='category';
+        $data['module']                 = Category::with('Bulletpoint')->find($request->module);
         return view('cms.bulletPoints.bulletPoints',$data);
         
     }
@@ -196,10 +201,10 @@ class CategoryController extends Controller
             $url = route('courseList');
             return redirect($url,302);
         }
-        $data['result'] = Category::with('whatsIncluded')->find($id);
-        $data['module'] = 'category';
-        $data['deletewhatsincludedroute']='categoryDeleteWhatsincluded';
-        $data['insertwhatsincludedroute']='categoryCreateWhatsincluded';
+        $data['result']                   = Category::with('whatsIncluded')->find($id);
+        $data['module']                   = 'category';
+        $data['deletewhatsincludedroute'] = 'categoryDeleteWhatsincluded';
+        $data['insertwhatsincludedroute'] = 'categoryCreateWhatsincluded';
         return view('cms.whatsincluded.whatsincluded',$data);
    }
 
@@ -212,14 +217,14 @@ class CategoryController extends Controller
             $url = route('courseList');
             return redirect($url,302);
         }
-        $categories = Category::all();
-        $course = $categories->where('id', $category_id)->first();
-        $data['course'] = $course;
-        $data['module'] = 'category';
-        $data['list'] = $categories->pluck('name','id')->toArray();
-        $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
-        $data['whatsincluded'] = new whatsincluded();
-        $data['submitRoute'] = 'categoryInsertWhatsincluded';
+        $categories             = Category::all();
+        $course                 = $categories->where('id', $category_id)->first();
+        $data['course']         = $course;
+        $data['module']         = 'category';
+        $data['list']           = $categories->pluck('name','id')->toArray();
+        $data['headings']       = whatsIncludedHeaders::all()->pluck('name','id')->toArray();
+        $data['whatsincluded']  = new whatsincluded();
+        $data['submitRoute']    = 'categoryInsertWhatsincluded';
      
        return view('cms.whatsincluded.whatsIncludedForm',$data);
    }
@@ -238,11 +243,9 @@ class CategoryController extends Controller
    public function whatsincludedinsert(WhatsIncludedRequest $request)
    {
        $category_id = $request->course_id;
-       $header_id = $request->header_id;
-
+       $header_id   = $request->header_id;
        Category::find($category_id)->WhatsIncluded()->syncWithoutDetaching([$header_id=>['module_id'=> $category_id, 'module_type' => 'Category']]);
-
-        \Session::flash('success', 'WhatsIncluded Added!'); 
+       \Session::flash('success', 'WhatsIncluded Added!'); 
        return redirect()->back();
    }
 
@@ -253,43 +256,41 @@ class CategoryController extends Controller
    }
    public function contentList(Request $request)
     {
-        // $this->authorize('view', new Topic());
-        $filter                 = $request->all();
-        $data['selectedCategory']  = empty($filter['category'])? NULL : $filter['category'];
-        $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
-        $query                  = CategoryContent::query();
-        $query                  = empty($filter['category'])? $query : $query->where('category_id',$filter['category']);
-        $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $this->authorize('view', new Category());
+        $filter                     = $request->all();
+        $data['selectedCategory']   = empty($filter['category'])? NULL : $filter['category'];
+        $data['selectedCountry']    = empty($filter['country'])? NULL : $filter['country'];
+        $query                      = CategoryContent::query();
+        $query                      = empty($filter['category'])? $query : $query->where('category_id',$filter['category']);
+        $query                      = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
         $query->whereHas('category');
-        $result                 = $query->get();
-        $list['category']       = Category::all()->pluck('name','id')->toArray();
-        $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
-        $data['list']           = $list;
-        $data['contents']       = $result;
+        $result                     = $query->get();
+        $list['category']           = Category::all()->pluck('name','id')->toArray();
+        $list['countries']          = Country::all()->pluck('name','country_code')->toArray();
+        $data['list']               = $list;
+        $data['contents']           = $result;
         return view('cms.category.contents',$data);
     }
     public function contentCreate(Request $request)
     {
-        // $this->authorize('create', new Course());
+        $this->authorize('create', new Category());
         $filter = $request->all();
-        $selectedCategory = empty($filter['category'])? NULL : $filter['category'];
-        $selectedCountry = empty($filter['country'])? NULL : $filter['country'];
-        $categoryDetail = CategoryContent::firstOrNew(array('category_id'=>$selectedCategory,'country_id'=>$selectedCountry));
-        $list['category'] = Category::all()->pluck('name','id')->toArray();
-        $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
+        $selectedCategory   = empty($filter['category'])? NULL : $filter['category'];
+        $selectedCountry    = empty($filter['country'])? NULL : $filter['country'];
+        $categoryDetail     = CategoryContent::firstOrNew(array('category_id'=>$selectedCategory,'country_id'=>$selectedCountry));
+        $list['category']   = Category::all()->pluck('name','id')->toArray();
+        $list['countries']  = Country::all()->pluck('name','country_code')->toArray();
         $data['list'] = $list;
         $data['categoryDetail'] = $categoryDetail;
-        $data['submitRoute'] = 'insertCategoryContent';
+        $data['submitRoute']    = 'insertCategoryContent';
         return view('cms.category.contentForm',$data);
     }
     public function contentInsert(CategoryContentRequest $request)
     {
-        // $this->authorize('create', new Course());
-        $inputs              = $request->except("_token");
-      
-        $content               = CategoryContent::firstOrNew(
-            ['category_id'=>$inputs['category_id'],'country_id'=>$inputs['country_id']]
-            ,$inputs);
+        $this->authorize('create', new Category());
+        $inputs   = $request->except("_token");
+        $content  = CategoryContent::firstOrNew(
+        ['category_id'=>$inputs['category_id'],'country_id'=>$inputs['country_id']],$inputs);
             if(empty($content->created_at))
             {
                 $content->save();
@@ -304,37 +305,34 @@ class CategoryController extends Controller
     }
     public function contentEdit(Request $request,CategoryContent $categoryDetail)
     {
-        // $this->authorize('update', $courseDetail->course);
-        $list['category'] = Category::all()->pluck('name','id')->toArray();
-        $list['countries'] = Country::all()->pluck('name','country_code')->toArray();
-        $data['list'] = $list;
+        $this->authorize('update', $categoryDetail->category);
+        $list['category']       = Category::all()->pluck('name','id')->toArray();
+        $list['countries']      = Country::all()->pluck('name','country_code')->toArray();
+        $data['list']           = $list;
         $data['categoryDetail'] = $categoryDetail;
-        $data['submitRoute'] = array('updateCategoryContent',$categoryDetail->id);
+        $data['submitRoute']    = array('updateCategoryContent',$categoryDetail->id);
         return view('cms.category.contentForm',$data);
     }
     public function contentUpdate(CategoryContentRequest $request,CategoryContent $categoryDetail)
     {
-        // $this->authorize('update', $courseDetail->course);
-        $inputs              = $request->except("_token");
-        
+        $this->authorize('update', $categoryDetail->category);
+        $inputs  = $request->except("_token");
         $content = $categoryDetail->update($inputs);
-            if(!empty($content))
+        if(!empty($content))
         \Session::flash('success', 'Content Updated!'); 
-
         return redirect()->route('categoryContentList',['category'=>$inputs['category_id']]);
 
     }
     public function contentDelete(Request $request,CategoryContent $categoryDetail)
     {
-        // $this->authorize('delete', $courseDetail->course);
+        $this->authorize('delete', $categoryDetail->category);
         $categoryDetail->delete();
     }
    public function categorytrashList()
    {
-     $this->authorize('view', new Category());
-     $data['trashedCategories'] = Category::onlyTrashed()->get();
-     return  view('cms.trashed.categoryTrashedList',$data);
-       
+        $this->authorize('view', new Category());
+        $data['trashedCategories'] = Category::onlyTrashed()->get();
+        return  view('cms.trashed.categoryTrashedList',$data);
    }
 
    public function restoreCategory($id)
@@ -342,7 +340,6 @@ class CategoryController extends Controller
        $this->authorize('restore', new Category());
        Category::onlyTrashed()->find($id)->myRestore();
        return back()->with('success','Successfully Restored');
-
    }
    public function forceDeleteCategory($id)
    {

@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class="experience">
-                        <div class="experience-info"  style="background-image: url({{url($pageDetail->faq['experience_us']->getImagePath())}})">
+                        <div class="experience-info">
                             <h2>{{$pageDetail->faq['experience_us']->heading}}</h2>
                         </div>
                         <div class="platforms">

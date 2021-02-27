@@ -2,14 +2,11 @@
     // Start search-banner section
     .search-banner{
         padding-top: 1rem!important;
-        .search{
-            width: 65%;
-        }
     }
     // End search-banner section
     
     // Start search section
-    .search{
+    .most-search{
         padding: @sectionPadding-md;
         .search-list{
             flex-direction: row;
@@ -61,17 +58,15 @@
             background-image: url(../img/search/banner-bg.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            .banner-container{
-                width: 50%;
-            }
-            .search{
-                width: 100%;
-            }
+            
+        .search{
+            width: 50%;
+        }
         }
         // End cart-banner section
     
         // Start search section
-        .search{
+        .most-search{
             .search-info{
                 width: 23%;
             }
@@ -83,7 +78,7 @@
     @media @size-xl{
     
         // Start search section
-        .search{
+        .most-search{
             padding: @sectionPadding-xl;
             .search-list{
                 justify-content: space-between;
@@ -92,15 +87,15 @@
         // End search section
 
         // Start result section
-    .result{
-        padding: @sectionPadding-xl;
-        .result-list{
-            width: 65%;
+        .result{
+            padding: @sectionPadding-xl;
+            .result-list{
+                width: 65%;
+            }
+            .filter{
+                width: 24%;
+            }
         }
-        .filter{
-            width: 24%;
-        }
-    }
-    // End result section
+        // End result section
     
     }
