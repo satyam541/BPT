@@ -11,6 +11,7 @@ use App\Http\Requests\cms\RoleRequest;
 use App\Http\Requests\cms\UserRequest;
 use App\Http\Requests\cms\PermissionRequest;
 use App\Http\Requests\cms\ChangePasswordRequest;
+use App\Events\CreateUser;
 use DB;
 use App\User;
 use App\Models\Role;
@@ -97,6 +98,7 @@ class UserController extends Controller
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
+        Event(new CreateUser($user));
         
         return redirect()->route('userList')->with('success', 'User Created!');
     }
