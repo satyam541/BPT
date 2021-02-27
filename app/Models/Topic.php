@@ -173,6 +173,7 @@ class Topic extends Model
     {
         // File::delete(public_path($this->image_path.$this->image));
         $this->whatsInclude()->delete();
+        $this->popular()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();

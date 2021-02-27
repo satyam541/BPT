@@ -13,7 +13,13 @@ class Schedule extends Model
     protected $table = 'schedule';
     protected $guarded = array('id');
     protected $dates = array('response_date');
-
+    public static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('country', function (Builder $builder) {
+            $builder->where("country_id", country()->country_code);
+        });
+    }
     public function course()
     {
         return $this->belongsTo('App\Models\Course');
