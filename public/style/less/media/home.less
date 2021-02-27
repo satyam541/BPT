@@ -262,7 +262,7 @@
     }
     .looking{
         padding: @sectionPadding-md;
-        background-size: 100% 72%;
+        background-image: linear-gradient(0deg, @whiteColor 0%, @whiteColor 14%, @darkblueColor 14%, @darkblueColor 4%, @lightblueColor 34%, @lightblueColor 86%, @bgColor 86%, @bgColor 100%);
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
@@ -422,6 +422,9 @@
         }
         .item{
             margin-top: 0;
+            p{
+                min-height: 44px;
+            }
         }
     } 
     .looking{
@@ -551,6 +554,11 @@
             width: 62%;
 
         }
+        .item{
+            p{
+                min-height: auto;
+            }
+        }
     } 
     .locations{
         padding: @sectionPadding-xl;
@@ -558,4 +566,11 @@
     .looking{
         padding: @sectionPadding-xl;
     } 
+}
+@media @size-xllll{
+  .facts{   
+    padding: 2rem 0rem;
+    margin-top: 2rem;
+    background-image: linear-gradient(90deg, @darkblueColor 40%, @whiteColor 39%);
+  }
 }
