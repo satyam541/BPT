@@ -264,10 +264,20 @@
             transform: scale(0.7);
         }
     }
+    @keyframes star-move {
+       0% {
+           background-position: 0 0;
+       }
+       50% {
+           background-position:  -100% -100%;
+       }
+       100% {
+           background-position: 0 0;
+       }
+    }
     // End Keyframes
 
     //Start inputfields
-
     .form {
         display: flex;
         flex-direction: column;
@@ -444,12 +454,9 @@
             color: #C0C0C0;
         }
     }
-
-     
     //End inputfields
     
     //Start breadcrums
-
     .breadcrums {
         display: flex;
         margin-top: 1rem;
@@ -473,9 +480,7 @@
         }
        
     }
-
     //End breadcrums
-
 
     // Start navbar //
     .navbar {

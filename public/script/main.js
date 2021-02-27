@@ -349,3 +349,39 @@ $('body').on('click',function(e){
     }
 });
 // End pop-up//
+
+
+//Start Load-more//
+// function show_blog(count, elm, slide)
+// {
+//     $.each($(".our-item").slice(0, count), function(index, elm){
+//             $(elm).removeClass('hide');
+//     });
+// }
+//     var count = 2;
+//     show_blog(count,'','');
+//     $("#loadMore").on('click', function (e){
+//         e.preventDefault();
+//         count = count + 2;
+//         show_blog(count, this, 'slideDown');
+//         if ($(".our-list div.hide").length == 0) {
+//             $(this).text("Know More"); 
+//         }
+//     });
+
+// End Load more //
+
+    //start Load more // 
+
+    $(".hide").slice(0, 2).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $(".hide:hidden").slice(0, 2).slideDown();
+        if ($(".hide:hidden").length == 0) {
+            $(this).text("Know More"); 
+        }
+    });
+
+    // End load more //
+
+

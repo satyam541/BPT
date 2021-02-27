@@ -225,7 +225,7 @@ class ScheduleController extends ScheduleApi
           $customize->amount = $input['amount'];
           $customize->save();
         }
-        return back();
+        return back()->with('success','Successfully Updated');
     }
 
     public function onlinePrices()
@@ -252,8 +252,7 @@ class ScheduleController extends ScheduleApi
 
     public function courseAddon(Request $request,OnlinePrice $online)
     {
-      $addons = $online->addOns;
-      $data['addons'] = $addons;
+      $data['addons']  = $online->addOns;
       return view('cms.schedule.courseAddons',$data);
     }
 

@@ -1,4 +1,19 @@
-
+@keyframes animate {
+    0% {
+      transform: scale(0) translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translateY(-500%) rotate(360deg);
+      opacity: 0;
+    }
+  }
 
 // Start Banner section//
 .about-banner {
@@ -494,6 +509,7 @@
 // Start Clients Section
 .clients {
 padding: @sectionPadding;
+padding-top: 1rem;
 .clients-container {
 display: flex;
 flex-wrap: wrap;

@@ -307,6 +307,10 @@ class CourseController extends Controller
     public function delete(Course $course)
     {
         // $this->authorize('delete', $course);
+        // if($course['is_online'])
+        // {
+        //     $course['is_online'] = 
+        // }
         $course->delete();
     }
 

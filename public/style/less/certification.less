@@ -51,6 +51,21 @@
 .method {
     padding: @sectionPadding;
     background: @blueGradient;
+    position: relative;
+    z-index: 1;
+    #foreground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        opacity: 0.2;
+        height: 100%;
+        width: 100%;
+        background-image: url(../img/master/foreground.png);
+        animation: star-move 40s linear infinite;
+    }
     .method-container {
         display: flex;
         flex-direction: column;
