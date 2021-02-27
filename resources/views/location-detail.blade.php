@@ -85,6 +85,7 @@
 
 <!-- Start Key Section -->
 <section class="flex-container key">
+    <div id="foreground"></div>
     <div class="container">
         <div class="key-container">
             <div class="info">

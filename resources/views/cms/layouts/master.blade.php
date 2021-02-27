@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
+  <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
@@ -126,14 +127,8 @@
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
-              @if (session()->has('selectedcountry'))
-              @php
-              $selectedCountry=array_keys(session()->all()['selectedcountry']);  
-              @endphp
-              {{ Form::select('country_id', allCountries(), $selectedCountry[0], ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}    
-              @else
-              {{ Form::select('country_id', allCountries(), null, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
-              @endif
+
+              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
               
             </div>
           </div>
@@ -699,6 +694,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
+<script src="{{url('adminlte/bootstrap-toggle-master/js/bootstrap-toggle.min.js')}}"></script>
 <!-- AdminLTE select 2 -->
 <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
 <script src="{{url('adminlte/cms/summernote-cleaner.js')}}"></script>
@@ -788,24 +784,26 @@ $.widget.bridge('uibutton', $.ui.button)
      
       $.ajax({
         url:selectedcountry,
-        data:country,
+        data:{country_id: country},
         type:'post',
         global:false,
         headers: {
                       'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
                   },
         success:function(response){
+          if(response=='done'){
           location.reload(); 
+          }
+          else{
+          alert('country code not available');
+          }
         }
       });
       
     });
         $(".selectJS").select2({
             width:'100%',
-            placeholder:'Choose one',
-            tags: true,
-            theme: "classic",
-            tokenSeparators: [',', ' ']
+            placeholder:'Choose one'
         });
 
     

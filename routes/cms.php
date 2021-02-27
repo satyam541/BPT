@@ -398,4 +398,4 @@ Route::post('/bundle/delete/{id}', 'BundleController@delete')->name('deleteBundl
 
 
 
-Route::post('/selectedcountry','courseController@selectedCountry')->name('selectedcountry');
+Route::post('/selectedcountry','CountryController@selectedCountry')->name('selectedcountry');

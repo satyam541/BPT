@@ -38,6 +38,14 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
+                                <div class="col-sm-2 ml-2">
+                                    <form action="{{Route('categoryList')}}" method="get">
+                                      <label class="">
+                                        <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
+                                      </label>
+                                      <input type="submit" name="submit" id="submit" style="visibility: hidden">
+                                    </form>
+                                  </div>
                                 <table id="example1" class="">
                                     <thead>
                                         <tr>
@@ -138,6 +146,9 @@
 @section('footer')
     <script>
         $(document).ready(function() {
+            $('#popular').change(function(){
+              $('#submit').click();
+                });
             $('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
