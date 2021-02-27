@@ -25,21 +25,19 @@ class UserRequest extends FormRequest
     {
         if(FormRequest::route()->uri == 'cms/user/insert')
         {
-        return [
-            'name'                     => ['required', 'string', 'max:255'],
-            'email'                    => ['required', 'string', 'email', 'max:255'],
-            'password'                 => ['required'],
-            'password_confirmation'    => ['required']
-        ];
-    }
-    else
-    {
-        return[
-             'name'                    => ['required', 'string', 'max:255'],
-            'email'                    => ['required', 'string', 'email', 'max:255'],
-            
-        ];
-
-    }
+            return [
+                'name'                     => 'required|string|max:255',
+                'email'                    => 'required|string|email|max:255|unique:user',
+                'password'                 => 'required',
+                'password_confirmation'    => 'required|same:password'
+            ];
+        }
+        else
+        {
+            return[
+                'name'                     => 'required|string|max:255',
+                'email'                    => 'required|string|email|max:255',
+            ];
+        }
     }
 }

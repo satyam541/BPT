@@ -107,13 +107,20 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer clear-fix small-pagination">
+                    <div class="card-footer">
+                        <div class="row">
+                        <div class="col-md-6">
                         @can('create',Auth::user(),App\User::class)
                         <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
                         @endcan
+                        </div>
+                        <div class="col-md-6">
+                            <div class="float-sm-right">{{ $users->links() }}</div>
 
-                        {{ $users->links() }}
+                        </div>
                     </div>
+
+                </div>
 
                 </div>
 
