@@ -4,7 +4,6 @@
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
-    background-repeat: no-repeat;
     &::before {
         content: none;
     }
@@ -49,20 +48,23 @@
                 z-index: -1;
                 background-image: url(../img/testimonial/curve.png);
                 background-repeat: no-repeat;
-                background-size: contain;
+                background-size: 100% 100%;
             }
             &::before {
-                height: 178px;
-                width: 177px;
+                height: 167px;
+                width: 161px;
                 top: 291px;
-                right: -42px;
+                right: -80px;
+            
             }
-            &::after {
-                height: 136px;
-                width: 124px;
-                bottom: 161px;
-                left: -129px;
-                transform: rotate(45deg);
+            &::after {   
+                height: 296px;
+                width: 232px;
+                bottom: 40px;
+                left: -143px;
+                transform: rotate(
+            354deg
+            );
             }
         }
         .customers-content {
