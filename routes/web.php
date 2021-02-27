@@ -21,7 +21,7 @@ Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, top
 Auth::routes(['register'=>false]);
 /* these routes is for login */
 
-
+Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
@@ -51,7 +51,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/training-courses', 'CatalogueController@index')->name('catalougeList');
+Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+Route::get('/training-courses/{category}/{topic}', 'CatalogueController@index')->name('topicPage');
+Route::get('/training-courses/{category}/{topic}/{course}', 'CatalogueController@index')->name('coursePage');
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
