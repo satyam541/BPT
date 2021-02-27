@@ -20,6 +20,11 @@ class CountryController extends Controller
     {
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
+    public function selectedCountry(Request $request){
+        $country = Country::find($request->country_id);
+        Country::setActiveCountry($country);
+        return 'done';
+    }
 
     public function list()
     {

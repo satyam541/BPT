@@ -86,14 +86,4 @@ class Location extends Model
     //     return $this->morphOne('App\Models\Popular', 'module');
     // }
     
-    public function delete()
-    {
-        // File::delete(public_path($this->image_path.$this->image));
-        if($this->isPopular())
-        {
-            $this->popular->delete();
-        }
-        return parent::delete();
-    }
-
 }

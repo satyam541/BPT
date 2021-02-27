@@ -56,8 +56,9 @@ class Course extends Model
 
     public function popular()
     {
-        return $this->morphOne('App\Models\Popular', 'module')->withDefault(
-            ["country_id" => 'gb',
+        return $this->morphOne('App\Models\Popular', 'module')
+        ->withDefault(
+            ["country_id" => country()->country_code,
             "display_order" => Popular::courses()->count()+1]
         );
     }
@@ -86,7 +87,11 @@ class Course extends Model
 
     public function delete()
     {
-        $this->hasPopular()->delete();
+        if($this->is_online = 1)
+        {
+            $this->is_online = 0;
+            $this->save();
+        }
         $this->onlinePrice()->delete();
         $this->whatsInclude()->delete();
         $this->faqs()->delete();
@@ -97,7 +102,6 @@ class Course extends Model
 
     public function myRestore()
     {
-        $this->hasPopular()->restore();
         $this->whatsInclude()->restore();
         $this->faqs()->restore();
         $this->content()->restore();
@@ -107,7 +111,6 @@ class Course extends Model
 
     public function myforceDelete()
     {
-        $this->hasPopular()->forceDelete();
         $this->whatsInclude()->forceDelete();
         $this->faqs()->forceDelete();
         $this->content()->forceDelete();

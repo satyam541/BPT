@@ -119,7 +119,7 @@
             &::before{
                 content: '';
                 position: absolute;
-                width: 74%;
+                width: 51%;
                 height: 2px;
                 left: 0;
                 right: 0;
@@ -262,7 +262,7 @@
     }
     .looking{
         padding: @sectionPadding-md;
-        background-size: 100% 72%;
+        background-image: linear-gradient(0deg, @whiteColor 0%, @whiteColor 14%, @darkblueColor 14%, @darkblueColor 4%, @lightblueColor 34%, @lightblueColor 86%, @bgColor 86%, @bgColor 100%);
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
@@ -398,6 +398,11 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
+        .delivery-list{
+            &::before{
+                width: 78%;
+            }
+        }
         .item{
             width: 24%;
             height: 320px;
@@ -417,6 +422,9 @@
         }
         .item{
             margin-top: 0;
+            p{
+                min-height: 44px;
+            }
         }
     } 
     .looking{
@@ -446,38 +454,30 @@
             padding: 0 1rem;
             margin-top: 3rem;
         }
-        .reviews-outer{
-            .owl-nav.disabled {
-                display: flex;
-            }
-            .owl-nav {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-                transform: translateY(-142px);
+        .owl-nav {
+            display: flex !important;
+            justify-content: space-between;
+            width: 100%;
+            transform: translateY(-142px);
 
-                .owl-prev, .owl-next{
-                    background-repeat: no-repeat;
-                    width: 32px;
-                    height: 30px;
-                    background-size: contain;
-                    outline: none;
-                    opacity: .5;
-                    span {
-                        display: none;
-                    }
+            .owl-prev, .owl-next{
+                background-image: url('../img/home/left-arrow.png') !important;
+                background-repeat: no-repeat !important;
+                width: 32px;
+                height: 30px;
+                background-size: contain !important;
+                outline: none;
+                opacity: .5;
+                transform: translateX(-48px);
+                span {
+                    display: none;
                 }
-                .owl-prev {
-                    background-image: url('../img/home/left-arrow.png');
-                    transform: translateX(-48px);
-                }
-                .owl-next {
-                    background-image: url('../img/home/right-arrow.png');
-                    transform: translateX(32px);
-                }
-                .btn-active {
-                    opacity: 1;
-                }
+            }
+            .owl-next {
+                transform: translateX(32px) rotate(180deg);
+            }
+            .btn-active {
+                opacity: 1;
             }
         }
     }
@@ -554,18 +554,23 @@
             width: 62%;
 
         }
+        .item{
+            p{
+                min-height: auto;
+            }
+        }
     } 
     .locations{
         padding: @sectionPadding-xl;
     }
     .looking{
         padding: @sectionPadding-xl;
-        .reviews-outer{
-            .owl-nav{
-                .owl-next{
-                    transform: translateX(46px);
-                }
-            }
-        } 
     } 
+}
+@media @size-xllll{
+  .facts{   
+    padding: 2rem 0rem;
+    margin-top: 2rem;
+    background-image: linear-gradient(90deg, @darkblueColor 40%, @whiteColor 39%);
+  }
 }
