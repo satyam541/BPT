@@ -2275,19 +2275,19 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
+.contact .heading {
+  margin-bottom: 0.5rem;
+  padding-top: 0;
+}
+.contact .heading::before {
+  content: none;
+}
 .contact .contact-info {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   padding: 2rem;
   background-image: linear-gradient(#0064D8, #00326C);
-}
-.contact .contact-info .heading {
-  margin-bottom: 0.5rem;
-  padding-top: 0;
-}
-.contact .contact-info .heading::before {
-  content: none;
 }
 .contact .contact-info .buttons {
   margin-top: 2rem;
@@ -2348,14 +2348,14 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   text-align: center;
 }
-.contact .social .media-list {
+.contact .media-list {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
   width: 210px;
   align-self: center;
 }
-.contact .social .media-list a {
+.contact .media-list a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2365,7 +2365,7 @@ input::-webkit-inner-spin-button {
   border-radius: 50px;
   background-image: linear-gradient(#0064D8, #00326C);
 }
-.contact .social .media-list a img {
+.contact .media-list a img {
   width: 100%;
   height: 100%;
 }
@@ -10358,7 +10358,6 @@ input::-webkit-inner-spin-button {
 }
 @media (min-width : 1600px) {
   .figures {
-    padding: 4rem 0rem;
     background-size: 53% 16%;
   }
 }
