@@ -13,7 +13,7 @@
         </div>
 
         <div style="margin-top:10px; width:100%">
-            <div style="background-color: #f94a3a; padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color: #4286f3; padding: 6px; color: #fff; font-size: 20px;width:100% ">
                  Account Details
             </div>
                     <table style="width:100%">
