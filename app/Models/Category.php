@@ -127,6 +127,7 @@ class Category extends Model
 
     public function delete()
     {
+        $this->popular()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();
         $this->faqs()->delete();

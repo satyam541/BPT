@@ -2698,6 +2698,9 @@ select::-ms-expand {
   }
   .faq .experience-info {
     align-self: center;
+    background-image: url(../img/contactus/experience-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     width: 287px;
     height: 255px;
     align-items: center;
@@ -3538,7 +3541,7 @@ select::-ms-expand {
     padding-top: 0;
   }
   .contact-form .contact-info {
-    width: 34%;
+    width: 36%;
     background: none;
   }
   .contact-form .contact-info .heading h2,
@@ -3596,7 +3599,7 @@ select::-ms-expand {
     align-items: center;
   }
   .contact-form .contact-container .contact-info {
-    width: 27%;
+    width: 30%;
   }
   .contact-form .contact-container .form {
     width: 68%;
@@ -4345,24 +4348,12 @@ select::-ms-expand {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 60px;
-  padding: 0.8rem;
+  height: 80px;
+  width: 80px;
+  padding: 1.2rem;
   background-color: #FFFFFF;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  position: relative;
-}
-.solution .solution-item span::before {
-  content: '';
-  position: absolute;
-  width: 36px;
-  height: 20px;
-  border-radius: 6px;
-  background-color: #1c2848;
-  left: 12px;
-  top: -4px;
-  z-index: -1;
+  box-shadow: 0px 10px 0px 0px #bdbdbd;
 }
 .solution .solution-item span img {
   width: 100%;
@@ -4490,11 +4481,11 @@ select::-ms-expand {
     width: 100%;
     margin-top: 2.5rem;
   }
+  .choose .choose-list {
+    justify-content: space-around;
+  }
   .choose .choose-item {
     width: 33%;
-  }
-  .choose .choose-item:last-child {
-    margin-right: auto;
   }
   .solution .solution-list {
     background-size: 70% 35%;
@@ -4516,11 +4507,8 @@ select::-ms-expand {
   }
   .doorstep {
     padding: 4rem 0rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 4rem;
-    padding-left: 5rem;
-    box-shadow: 0px 0px 10px rgb(0 0 0%);
+    padding-top: 6rem;
+    padding-bottom: 0!important;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -4529,24 +4517,38 @@ select::-ms-expand {
   .doorstep .container {
     width: 100%;
   }
+  .doorstep .doorstep-container {
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    padding: 1.5rem;
+  }
   .doorstep .form {
-    transform: scale(1.1);
-    width: 44%;
+    width: 51%;
+    position: absolute;
+    left: 120px;
+    top: -47px;
   }
   .doorstep .info {
     box-shadow: none;
     padding: 0;
     padding-left: 5rem;
     background-image: none;
+    margin-left: auto;
+    width: 41%;
   }
   .choose {
     padding: 4rem 0rem;
+    padding-top: 7rem;
+  }
+  .choose .choose-list {
+    justify-content: space-between;
   }
   .choose .choose-item {
-    width: 25%;
+    width: 23%;
   }
   .solution {
     padding: 4rem 0rem;
+    margin-bottom: 4rem;
   }
 }
 .location-banner {
@@ -5212,6 +5214,11 @@ select::-ms-expand {
   padding: 3rem 1.5rem;
   padding-top: 1rem;
 }
+.our-blog .headline {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
 .our-blog .our-container {
   display: flex;
   flex-direction: column;
@@ -5451,6 +5458,10 @@ select::-ms-expand {
     background-size: 100% 30%;
     background-repeat: no-repeat;
     background-position: bottom;
+  }
+  .our-blog .headline {
+    width: 70%;
+    align-self: center;
   }
   .our-blog .our-info .designation {
     width: 34%;
@@ -9515,9 +9526,10 @@ select::-ms-expand {
   width: 70%;
   background-color: transparent;
   box-shadow: none;
+  padding: 1rem;
 }
 .search-banner .banner-container .search button {
-  width: 82px;
+  width: 150px;
   padding: 0.5rem;
   background-color: #1C2848;
   border-radius: 50px;
@@ -9525,41 +9537,44 @@ select::-ms-expand {
   color: #FFFFFF;
   border: none;
 }
-.search {
+.most-search {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
 }
-.search .search-container {
+.most-search .search-container {
   display: flex;
   flex-direction: column;
 }
-.search .search-list {
+.most-search .search-list {
   display: flex;
   flex-direction: column;
 }
-.search .search-info {
+.most-search .search-info {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
   padding: 1.5rem;
   margin-top: 1rem;
 }
-.search .search-info span {
+.most-search .search-info span {
   display: flex;
   align-items: center;
   color: #C0C0C0;
   font-size: 13px;
 }
-.search .search-info span img {
+.most-search .search-info span img {
   height: 18px;
   width: 18px;
   margin-right: 0.5rem;
 }
-.search h3,
-.search p {
+.most-search h3,
+.most-search p {
   margin-top: 0.5rem;
 }
 .result {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
   padding-top: 1rem!important;
 }
 .result .result-container {
@@ -9580,6 +9595,7 @@ select::-ms-expand {
   padding: 1.5rem;
   align-items: flex-start;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
   margin-top: 2rem;
 }
 .result .result-info:first-child {
@@ -9599,6 +9615,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
   padding: 1.5rem;
 }
 .result .filter h2 {
@@ -9618,6 +9635,7 @@ select::-ms-expand {
 .result .filter p {
   font-weight: bold;
   margin: 1rem 0;
+  margin-bottom: 0.2rem;
 }
 .result .filter li {
   display: flex;
@@ -9628,23 +9646,21 @@ select::-ms-expand {
   margin-right: 0.5rem;
   border: 1px solid #0064D8;
   border-radius: 0;
+  box-shadow: none;
 }
 @media (min-width : 768px) {
   .search-banner {
     padding-top: 1rem!important;
   }
-  .search-banner .search {
-    width: 65%;
-  }
-  .search {
+  .most-search {
     padding: 3rem 2rem;
   }
-  .search .search-list {
+  .most-search .search-list {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .search .search-info {
+  .most-search .search-info {
     width: 48%;
   }
   .result {
@@ -9680,21 +9696,18 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  .search-banner .banner-container {
+  .search-banner .search {
     width: 50%;
   }
-  .search-banner .search {
-    width: 100%;
-  }
-  .search .search-info {
+  .most-search .search-info {
     width: 23%;
   }
 }
 @media (min-width : 1366px) {
-  .search {
+  .most-search {
     padding: 4rem 0rem;
   }
-  .search .search-list {
+  .most-search .search-list {
     justify-content: space-between;
   }
   .result {
@@ -10596,11 +10609,13 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .topic-courses .course-name h3 {
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
+  width: 100%;
 }
 .topic-courses .course-name img {
   width: 30px;
@@ -10616,6 +10631,7 @@ select::-ms-expand {
 }
 .topic-courses .courses-info span {
   display: flex;
+  height: 100%;
 }
 .topic-courses .courses-info span img {
   width: 100%;
@@ -10655,6 +10671,10 @@ select::-ms-expand {
   border-radius: 50%;
   margin-bottom: 1rem;
 }
+.topic-delivery .delivery-list .list img {
+  width: 100%;
+  height: 100%;
+}
 .topic-delivery .delivery-list .list .white-icon {
   display: none;
 }
@@ -10675,6 +10695,7 @@ select::-ms-expand {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  width: 100%;
 }
 .topic-choose .count {
   display: flex;
@@ -10758,6 +10779,9 @@ select::-ms-expand {
   margin-top: 2rem;
   position: relative;
 }
+.topic-choose .choose-image span {
+  height: 100%;
+}
 .topic-choose .choose-image span img {
   width: 100%;
   height: 100%;
@@ -10797,11 +10821,18 @@ select::-ms-expand {
   height: 60px;
   border: 2px dashed #FFFFFF;
 }
+.experiences span img {
+  width: 100%;
+  height: 100%;
+}
 .experiences .experiences-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+}
+.experiences .top-arrow {
+  display: none;
 }
 .explore {
   padding: 3rem 1.5rem;
@@ -10864,6 +10895,7 @@ select::-ms-expand {
 .goals .image {
   display: flex;
   margin-top: 1rem;
+  height: 100%;
 }
 .goals .image img {
   width: 100%;
@@ -10929,6 +10961,7 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 100%;
 }
 .goals .goal-content p {
   text-align: center;
@@ -10991,6 +11024,7 @@ select::-ms-expand {
     position: relative;
   }
   .experiences .top-arrow {
+    display: flex;
     position: absolute;
     bottom: -15px;
     left: 0;
@@ -11337,6 +11371,11 @@ select::-ms-expand {
     width: 53%;
   }
 }
+@media (min-width : 1600px) {
+  .topic-banner .choose-list {
+    width: 30%;
+  }
+}
 .privacy-banner {
   background-color: #1C2848;
   background-color: #0064D8;
@@ -11401,7 +11440,7 @@ select::-ms-expand {
   z-index: -1;
 }
 @media (min-width : 768px) {
-  .search-banner .search {
+  .privacy-banner .search {
     width: 65%;
   }
   .policy {
