@@ -61,7 +61,7 @@
                                         @endif
                                     </td>
                                     <td>{!!$faq->question!!}</td>
-                                    <td><a href="{{route('editFaq',['faq'=>$faq->id])}}"><i class="fa fa-edit text-red"></i></a></td>
+                                    <td><a href="{{route('editFaq',['faq'=>$faq->id])}}"><i class="fa fa-edit"></i></a></td>
                                     <td><a href="#" onclick="deleteItem('{{ route('deleteFaq',['faq'=>$faq->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
                                 @endforeach
