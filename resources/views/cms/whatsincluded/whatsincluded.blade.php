@@ -84,7 +84,13 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+          $('#example1').DataTable({
+              "columns": [
+                        { "name": "Name" },
+                        { "name": "Whats Included" },
+                        { "name": "Actions", "sorting":false, searching:false },
+              ]                    
+            });
             $('#add').hover(function(){
                 $(this).removeClass('btn-success');
                 $(this).addClass('btn-primary');

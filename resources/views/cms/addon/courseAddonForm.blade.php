@@ -40,7 +40,7 @@
                             {{ Form::model($model, ['route' => $submitRoute, 'files' => 'true']) }}
                             {{ Form::hidden('id', null) }}
                             <div class="card-body">
-                                <table class="table">
+                                <table class="table" id="example1">
                                     <thead>
                                         <tr>
                                             <th>Type</th>
@@ -88,4 +88,29 @@
     </div>
     <!-- /.content-wrapper -->
 
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable({
+                "columns": [{
+                        "name": "Type"
+                    },
+                    {
+                        "name": "Description",
+                    },
+                    {
+                        "name": "Name",
+                    },
+                    {
+                        "name": "Action",
+                        "sorting": false,
+                        searching: false
+                    },
+                ]
+
+            });
+        });
+
+    </script>
 @endsection

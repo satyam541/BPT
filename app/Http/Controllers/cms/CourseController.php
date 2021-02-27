@@ -36,19 +36,17 @@ class CourseController extends Controller
         $this->Logo_prefix = "Logo";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-    
+    public function selectedCountry(Request $request){
+        session(['selectedcountry'=>$request->all()]);
+        session()->save();
+        return 'done';
+    }
     public function list(Request $request)
     {
         // $this->authorize('view', new Course());
-        
         $courses = Course::all();
-        $checked=null;
-        if(isset($request->popular)){
-            $courses = Course::whereHas('popular')->get();
-            $checked='checked';
-        }
         // dd(session()->all()['selectedcountry']);
-        return view('cms.course.courseList',compact('courses','checked'));
+        return view('cms.course.courseList',compact('courses'));
     }
 
     public function unlinkedCourseList()
