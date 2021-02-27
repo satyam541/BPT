@@ -87,4 +87,10 @@ class Article extends Model
     {
         return \Carbon\Carbon::parse($this->post_date);
     }
+    
+    public function delete()
+    {
+        $this->popular()->delete();
+        return parent::delete();
+    }
 }

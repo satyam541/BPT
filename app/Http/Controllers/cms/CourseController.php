@@ -257,7 +257,7 @@ class CourseController extends Controller
     public function update(Course $course ,CourseRequest $request)
     {
         $this->authorize('update', new course());
-        $inputs = $request->except(["_token","is_popular"]);
+        $inputs = $request->except("_token");
         $inputs['accreditation_id']=$request->accreditation_id;
         
         $inputs['accredited'] = isset($inputs['accredited']);

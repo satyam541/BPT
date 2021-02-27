@@ -190,7 +190,7 @@ class ArticleController extends Controller
 
     public function delete(Article $article)
     {
-         $this->authorize('delete', $article);
+        $this->authorize('delete', $article);
         $article->delete();
     }
 
