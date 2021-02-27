@@ -197,7 +197,6 @@
         }
         .buttons {
             width: 16%;
-            align-self: flex-start;
             margin-top: 0;
         }
     }
@@ -212,12 +211,26 @@
             flex-direction: row;
             justify-content: space-between;
         }
+
         .popular-content {
             width: 55%;
         }
         .popular-facts {
             width: 42%;
             margin-top: 0;
+            position: relative;
+            z-index: 1;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                background-color: #f5f9fa;
+                right: -22px;
+                top: -42px;
+                z-index: -1;
+                border-radius: 100%;
+            }
         }
         .popular-item {
             width: 49%;
@@ -304,6 +317,14 @@
             }
             h3 {
                 width: calc(100% - 67px);
+            }
+        }
+        .popular-facts{
+            &::before{
+                width: 170px;
+                height: 170px;
+                right: -60px;
+                top: -53px;
             }
         }
     }

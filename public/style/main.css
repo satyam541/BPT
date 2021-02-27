@@ -231,6 +231,18 @@ input::-webkit-inner-spin-button {
     background-position: 0 0;
   }
 }
+@keyframes glow {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: #1C2848;
+    opacity: 0.6;
+  }
+  100% {
+    color: transparent;
+  }
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -10010,6 +10022,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem;
   margin-top: 2rem;
+  border-radius: 10px;
 }
 .library .name {
   display: flex;
@@ -10037,6 +10050,7 @@ input::-webkit-inner-spin-button {
   background-color: #F6F6F6;
   padding: 1.5rem;
   margin-top: 1rem;
+  border-radius: 10px;
 }
 .library ul li {
   font-size: 14px;
@@ -10266,7 +10280,6 @@ input::-webkit-inner-spin-button {
   }
   .category-enquire .buttons {
     width: 16%;
-    align-self: flex-start;
     margin-top: 0;
   }
   .popular-courses {
@@ -10284,6 +10297,19 @@ input::-webkit-inner-spin-button {
   .popular-courses .popular-facts {
     width: 42%;
     margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .popular-courses .popular-facts::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #f5f9fa;
+    right: -22px;
+    top: -42px;
+    z-index: -1;
+    border-radius: 100%;
   }
   .popular-courses .popular-item {
     width: 49%;
@@ -10347,6 +10373,12 @@ input::-webkit-inner-spin-button {
   }
   .popular-courses .popular-item h3 {
     width: calc(100% - 67px);
+  }
+  .popular-courses .popular-facts::before {
+    width: 170px;
+    height: 170px;
+    right: -60px;
+    top: -53px;
   }
   .library {
     padding: 4rem 0rem;
