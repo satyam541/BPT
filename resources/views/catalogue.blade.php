@@ -404,7 +404,7 @@
                 </div>
                 <div class="figures-content">
                     <span class="figures-image">
-                        <img src="{{url('img/catalogue/daily.svg')}}" alt="daily">
+                        <img src="{{url('img/catalogue/countries.svg')}}" alt="countries">
                     </span>
                     <div class="facts-count">
                         <h3 class="count-number" data-to="80" data-speed="3000"></h3>
