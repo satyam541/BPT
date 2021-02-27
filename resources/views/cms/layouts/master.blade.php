@@ -904,9 +904,7 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
-            placeholder:'Choose one'
-
-
+            
         });
 
     
