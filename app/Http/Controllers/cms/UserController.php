@@ -251,7 +251,6 @@ class UserController extends Controller
     {
         $this->authorize('view', new Permission());
         $filter = $request->all();
-        
         $data['selectedModule'] =   null;
         $data['selectedAccess'] =   null;
         if(!empty($filter['moduleName']) || !empty($filter['access']))
@@ -267,7 +266,7 @@ class UserController extends Controller
         $query      =   $query->select("permission.*");
         if(!empty($filter['moduleName']) && $filter['moduleName']!='ALL')
         {
-            $module = Module::where('name','like',"%".$filter['moduleName']."%")->first();
+            $module = Module::where('name',$filter['moduleName'])->first();
             $query  = $query->where('module_id',$module->id);
         }
         $query  = empty($filter['access'])||$filter['access']=='ALL' ? $query : $query->where('access',$filter['access']);
