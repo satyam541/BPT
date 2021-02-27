@@ -2373,7 +2373,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   height: 40px;
   width: 40px;
-  padding: 0.6rem;
+  padding: 0.7rem;
   border-radius: 50px;
   background-image: linear-gradient(#0064D8, #00326C);
 }
@@ -2433,6 +2433,7 @@ input::-webkit-inner-spin-button {
   bottom: 0;
   color: #f6f6f6;
   font-size: 50px;
+  animation: glow 5s linear infinite;
 }
 .information .info-content .info-text p {
   margin-top: 0.5rem;
@@ -2459,7 +2460,7 @@ input::-webkit-inner-spin-button {
 }
 .locate p {
   text-align: center;
-  font-weight: bold;
+  font-weight: 500;
 }
 .locate .map {
   display: flex;
@@ -2546,6 +2547,9 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
 }
+.faq .experience-info img {
+  display: none;
+}
 .faq .experience-info h2 {
   text-align: center;
 }
@@ -2561,9 +2565,14 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
+  padding: 0.7rem;
   border: 5px solid #FFFFFF;
   box-shadow: 0 0 1px 2px #0064D8;
   background-color: #0064D8;
+}
+.faq a img {
+  width: 100%;
+  height: 100%;
 }
 @media (min-width : 768px) {
   .contact-banner {
@@ -2652,13 +2661,15 @@ input::-webkit-inner-spin-button {
   }
   .faq .experience-info {
     align-self: center;
-    background-image: url(../img/contactus/experience-bg.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     width: 287px;
     height: 255px;
     align-items: center;
     justify-content: center;
+  }
+  .faq .experience-info img {
+    display: flex;
+    height: 100%;
+    width: 100%;
   }
   .faq .experience-info h2 {
     color: #FFFFFF;
@@ -2792,8 +2803,10 @@ input::-webkit-inner-spin-button {
     padding: 4rem 0rem;
   }
   .information .info-content {
-    width: 25%;
-    min-height: 380px;
+    width: 28%;
+  }
+  .information p {
+    min-height: 88px;
   }
   .faq {
     padding: 4rem 0rem;
