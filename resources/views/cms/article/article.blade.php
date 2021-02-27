@@ -53,7 +53,7 @@
                   <th>Name</th>
                   <th>Date</th>
                   <th>
-                    @can('restore',new App\Models\Article())
+                    @can('update',new App\Models\Article())
                     Actions
                     @endcan
                 </th>

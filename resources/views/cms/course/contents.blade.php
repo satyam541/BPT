@@ -33,7 +33,7 @@
                                 <tr>
                                     <th>Course</th>
                                     <th>Country</th>
-                                    <th>edit</th>
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>

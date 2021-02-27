@@ -102,7 +102,7 @@
                                                 </td>
                                                 @can('update', $category)
                                                     <td class=" text-center"> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}"
-                                                            class=" fa fa-list"></a>
+                                                            class=" fas fa-puzzle-piece"></a>
                                                     @endcan
                                                 </td>
                                                 <td class=" text-center">
@@ -174,7 +174,7 @@
                         searching: false
                     },
                     {
-                        "name": "platform",
+                        "name": "Actions",
                         "sorting": false,
                         searching: false
                     }

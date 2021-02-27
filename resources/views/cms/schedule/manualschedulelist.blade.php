@@ -85,7 +85,15 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-            $('#example1').DataTable();
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Course" },
+                        { "name": "Price" },
+                        { "name": "Location" },
+                        { "name": "Date" },
+                        { "name": "Actions", "sorting":false, searching:false  },
+              ]                    
+            });
         });
     </script>
 @endsection

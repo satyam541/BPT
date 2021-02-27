@@ -84,7 +84,7 @@
                       </td>
                       <td class=" text-center"> 
                         @can('update',$topic)
-                        <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fa fa-list"></a>
+                        <a href="{{route('topicWhatsIncludedList',['module'=>$topic->id])}}" class=" fas fa-puzzle-piece"></a>
                         @endcan
                       </td>
                       <td class=" text-center">
