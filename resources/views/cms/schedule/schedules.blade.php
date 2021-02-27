@@ -94,11 +94,11 @@
                 </thead>
                 <tbody>
                 
-                    @foreach ($schedules as $schedule)
+                    @forelse ($schedules as $schedule)
                     <tr>
                     <td>{{$schedule->course['name']}}</td>
                     <td>{{$schedule->response_price}}</td>
-                    <td>{{$schedule->location->name}}</td>
+                    <td>{{$schedule->location->name ?? ''}}</td>
                     <td>{{$schedule->response_date}}</td>
                     <td>
                       @can('update',$schedule)
@@ -109,7 +109,9 @@
                       @endcan
                     </td>
                 </tr>
-                    @endforeach
+                    @empty
+                    <marquee behavior='alternate' direction='right'><h3>No Data Available</h3></marquee>
+                    @endforelse
 
                   
                 
