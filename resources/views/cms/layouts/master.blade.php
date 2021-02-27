@@ -122,7 +122,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">Sort By Country</li>
+          <li class="nav-header">CMS By Country</li>
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
@@ -137,7 +137,8 @@
               
             </div>
           </div>
-          <br>
+          
+          <li class="nav-header">Admin Resources</li>
           <li class="nav-item has-treeview menu-open">
             <a href="{{Route('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -185,7 +186,7 @@
           </li>
 
          
-          <li class="nav-header">Resources</li>
+          <li class="nav-header">General Resources</li>
 
           <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse']))
           class="nav-item has-treeview menu-open"
