@@ -92,7 +92,7 @@ class ArticleController extends Controller
         
         //      $article->tags()->attach($tag->id);
         // }
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -168,7 +168,7 @@ class ArticleController extends Controller
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
 
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -234,7 +234,6 @@ class ArticleController extends Controller
         $article->restore();
 
         return back()->with('success','Successfully Restored');
-
    }
    public function forceDeleteArticle($id)
    {

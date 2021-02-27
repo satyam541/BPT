@@ -35,6 +35,7 @@ class ScheduleController extends ScheduleApi
 
     public function list(Request $request)
     {
+      $this->authorize('view', new Schedule());
       $responseLocation = $request->get('location');
       $courseId         = $request->get('course');
       $countries        = $request->get('country');
@@ -225,12 +226,12 @@ class ScheduleController extends ScheduleApi
           $customize->amount = $input['amount'];
           $customize->save();
         }
-        return back()->with('success','Successfully Updated');
+        return back();
     }
 
     public function onlinePrices()
     {
-      // $this->authorize('create', new Schedule());
+      $this->authorize('view', new Schedule());
       $data['onlinePrices'] = OnlinePrice::all();
       return view('cms.schedule.onlinePrices',$data);
     }

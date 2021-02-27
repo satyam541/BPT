@@ -45,24 +45,23 @@ class UserController extends Controller
     {
         $this->authorize('view', new User());
         $filter = $request->all();
-        
-        $data['selectedName']   =   null;
-        $data['selectedEmail']  =   null;
-        $data['selectedRole']   =   null;
-        $data['active']         =   null;
+        $data['selectedName']        =   null;
+        $data['selectedEmail']       =   null;
+        $data['selectedRole']        =   null;
+        $data['active']              =   null;
         if(!empty($filter['name'])){
-            $data['selectedName']   =   $filter['name'];
+            $data['selectedName']    =   $filter['name'];
         }
         if(!empty($filter['email'])){
-            $data['selectedEmail']  =   $filter['email'];
+            $data['selectedEmail']   =   $filter['email'];
         }
         if(!empty($filter['roleName'])){
-            $data['selectedRole']   =   $filter['roleName'];
+            $data['selectedRole']    =   $filter['roleName'];
         }
         if(isset($filter['active'])){
-            $data['active']     =   1;
+            $data['active']          =   1;
         }
-            $query  =   User::query();
+            $query                   =   User::query();
         if(!empty($filter))
         {
 
@@ -116,10 +115,9 @@ class UserController extends Controller
     {
         
         $this->authorize('update', $user);
-        $inputs     = $request->all();
+        $inputs         = $request->all();
         $user->name     = $inputs['name'];
         $user->email    = $inputs['email'];
-        
         $user->active   = empty($inputs['active'])? 0 : 1;
         $user->save();
         if(isset($inputs['resetPwd']))
@@ -148,13 +146,10 @@ class UserController extends Controller
     public function insertRole(RoleRequest $request)
     {
         $this->authorize('create', new Role());
-        $inputs = $request->all();
-        
+        $inputs         = $request->all();
         $roleName       = $request->input('name');
         $description    = $request->input('desc');
-
         $done = Role::create(['name'=> $roleName,'description'=>$description]);
-        
         return redirect()->route('roleList')->with('success', 'Role Updated Successfully!');
 
     }
@@ -162,7 +157,7 @@ class UserController extends Controller
     public function editRole(Role $role)
     {
         $this->authorize('update', $role);
-        $data['role']    = $role;
+        $data['role']          = $role;
         $data['permissions']   = Permission::all()->load('module')->groupBy('module_name');
         return view('cms.manageUser.updateRole',$data);
     }
@@ -170,11 +165,10 @@ class UserController extends Controller
     public function updateRole(RoleRequest $request ,Role $role)
     {
         $this->authorize('update',$role);
-        $inputs     = $request->all();
+        $inputs             = $request->all();
         $role->name         = $inputs['name'];
         $role->description  = $inputs['description'];
         $role->save();
-        
         return redirect()->route('roleList')->with('success', 'Role Updated Successfully!');
     }
 
@@ -196,11 +190,10 @@ class UserController extends Controller
 
     public function assignPermission(Request $request)
     {
-        $roleID = $request->input('role');
-        $role   = Role::find($roleID);
+        $roleID      = $request->input('role');
+        $role        = Role::find($roleID);
         $permissions = $request->input('permission');// return array of permission id
         $role->permissions()->sync($permissions);
-        
         return back()->with('success', 'Permission Assigned Successful!');
     }
 
@@ -223,9 +216,9 @@ class UserController extends Controller
             $module->name   = $moduleName;
             $module->save();
         }
-        $permission             = new Permission();
-        $permission->module_id  = $module->id;
-        $permission->access     = $access;
+        $permission              = new Permission();
+        $permission->module_id   = $module->id;
+        $permission->access      = $access;
         $permission->description = $description;
         try{
             $permission->save();
@@ -252,8 +245,8 @@ class UserController extends Controller
         $this->authorize('view', new Permission());
         $filter = $request->all();
         
-        $data['selectedModule'] =   null;
-        $data['selectedAccess'] =   null;
+        $data['selectedModule']     =   null;
+        $data['selectedAccess']     =   null;
         if(!empty($filter['moduleName']) || !empty($filter['access']))
         {
             $data['selectedModule'] =   $filter['moduleName'];
@@ -263,8 +256,8 @@ class UserController extends Controller
         $data['module'] =   ['ALL'=>'ALL']+$data['module'];
         $data['access'] =   Permission::all()->pluck('access','access')->toArray();
         $data['access'] =   ['ALL'=>'ALL']+$data['access'];
-        $query      =   Permission::query();
-        $query      =   $query->select("permission.*");
+        $query          =   Permission::query();
+        $query          =   $query->select("permission.*");
         if(!empty($filter['moduleName']) && $filter['moduleName']!='ALL')
         {
             $module = Module::where('name','like',"%".$filter['moduleName']."%")->first();
@@ -292,15 +285,14 @@ class UserController extends Controller
         $module     = Module::where('name',$moduleName)->first();
         if(empty($module->id))
         {
-            $module = new Module();
+            $module       = new Module();
             $module->name = $moduleName;
             $module->save();
         }
-        $permission->module_id  = $module->id;
-        $permission->access     = $inputs['access'];
+        $permission->module_id   = $module->id;
+        $permission->access      = $inputs['access'];
         $permission->description = $inputs['description'];
         $permission->save();
-        
         return redirect()->route('permissionList')->with('success', 'Permission Updated Successfully!');
     }
 
@@ -324,7 +316,7 @@ class UserController extends Controller
 
     public function loadModules(Request $request)
     {
-        $term = $request->input('term');
+        $term   = $request->input('term');
         $result = Module::select('name')->where("name","LIKE","%{$term}%")->get();
         return response()->json($result);
     }
@@ -337,12 +329,12 @@ class UserController extends Controller
     public function changePassword(ChangePasswordRequest $request)
     {
         $current_password = \Auth::User()->password; 
-        $currentPassword=  $request->input('currentPassword');
+        $currentPassword  =  $request->input('currentPassword');
     
       if(\Hash::check($currentPassword, $current_password))
       {         
-           $user_id = \Auth::User()->id;                       
-            $user = User::find($user_id);
+           $user_id         = \Auth::User()->id;                       
+            $user           = User::find($user_id);
             $user->password = \Hash::make($request->input('newPassword'));
             $user->save();
             Auth::logout();
