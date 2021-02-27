@@ -92,7 +92,7 @@ class ArticleController extends Controller
         
         //      $article->tags()->attach($tag->id);
         // }
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -128,7 +128,7 @@ class ArticleController extends Controller
 
     public function update(Article $article,ArticleRequest $request)
     {
-        $this->authorize('update', $article);
+        $this->authorize('update', new Article());
         $article->title                 = $request->title;
         $article->content               = $request->content;
         $article->post_date             = $request->post_date;
@@ -168,7 +168,7 @@ class ArticleController extends Controller
         //     $tags = Tag::wherein('name',$tagNames)->get();
         //     $article->tags()->sync($tags); 
 
-        if(isset($input['is_popular']))
+        if(isset($request['is_popular']))
         {
             $article->popular->save();
         }
@@ -190,13 +190,13 @@ class ArticleController extends Controller
 
     public function delete(Article $article)
     {
-         $this->authorize('delete', $article);
+        $this->authorize('delete', $article);
         $article->delete();
     }
 
     public function blogList(Request $request)
     { 
-        //  $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
+         $this->authorize('view', Article::firstOrNew(['type'=>'blog']));
          $data['data']=Article::where('type','blog')->get();
          $data['type']='Blog';
          $data['submitRoute']='blogList';
@@ -234,7 +234,6 @@ class ArticleController extends Controller
         $article->restore();
 
         return back()->with('success','Successfully Restored');
-
    }
    public function forceDeleteArticle($id)
    {

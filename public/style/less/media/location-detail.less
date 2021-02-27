@@ -2,7 +2,7 @@
     // Start Location-Main Section
 .location-main {
     padding: @sectionPadding-md;
-    .location-main-container {
+    .location-container {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -61,13 +61,27 @@
 @media @size-lg{
     // Start Location-Main Section
     .location-main {
+        .location-container{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: .5;
+            right: 0;
+            background-color: #C0C0C0;
+            margin: auto;
+        }
+    }
         .location-content {
             width: 47%;
-            border-right: 1px solid #C0C0C0;
             padding-right: 1rem;
         }
         .location-contact {
-            width: 50%;
+            width: 46%;
         }
         .contact-bottom {
             span {
@@ -122,8 +136,8 @@
         .location-content {
             width: 50%;
         }
-        .location-contact {
-            width: 40%;
+        .location-contact {   
+            width: 48%;
             span {
                 &::before {
                     bottom: -44px;

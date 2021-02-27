@@ -56,6 +56,7 @@
                     {{-- <h2>Our <span>Blogs</span> </h2> --}}
                     <h2>{!! $pageDetail->blog_list['heading']->heading !!}</h2>
                 </div>
+                <p class="headline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In inventore tempore perspiciatis temporibus nemo eveniet mollitia hic saepe quasi corporis a laudantium debitis molestiae quibusdam</p>
                 <div class="our-list">
                     @foreach ($blogs as $blog)
                     {{-- {{dd($blog)}} --}}

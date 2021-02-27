@@ -94,6 +94,7 @@ class Course extends Model
         }
         $this->onlinePrice()->delete();
         $this->whatsInclude()->delete();
+        $this->popular()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
         $this->BulletPoint()->delete();

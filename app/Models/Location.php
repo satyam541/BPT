@@ -67,12 +67,6 @@ class Location extends Model
         return route('location',['locName'=>Str::after($this->reference,'/')]);
     }
 
-    // public function isPopular()
-    // {
-    //     $popular = $this->popular;
-    //     return empty($popular->id)? FALSE : TRUE;
-    // }
-
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
@@ -80,10 +74,9 @@ class Location extends Model
             "display_order" => Popular::locations()->count()+1]
         );
     }
-
-    // public function hasPopular()
-    // {
-    //     return $this->morphOne('App\Models\Popular', 'module');
-    // }
-    
+    public function delete()
+    {
+        $this->popular()->delete();
+        return parent::delete();
+    }
 }

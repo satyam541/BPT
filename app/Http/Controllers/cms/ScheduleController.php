@@ -35,6 +35,7 @@ class ScheduleController extends ScheduleApi
 
     public function list(Request $request)
     {
+      $this->authorize('view', new Schedule());
       $responseLocation = $request->get('location');
       $courseId         = $request->get('course');
       $countries        = $request->get('country');
@@ -136,7 +137,7 @@ class ScheduleController extends ScheduleApi
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
       foreach($dates as $date){
-      $location = Location::with('venues')->find($inputs['location']);
+      $location = Location::find($inputs['location']);
       // $schedule = new Schedule();
       $schedule->response_course_id         = $inputs['course_id'];
       $schedule->course_id                  = $inputs['course_id'];
@@ -225,12 +226,12 @@ class ScheduleController extends ScheduleApi
           $customize->amount = $input['amount'];
           $customize->save();
         }
-        return back()->with('success','Successfully Updated');
+        return back();
     }
 
     public function onlinePrices()
     {
-      // $this->authorize('create', new Schedule());
+      $this->authorize('view', new Schedule());
       $data['onlinePrices'] = OnlinePrice::all();
       return view('cms.schedule.onlinePrices',$data);
     }
