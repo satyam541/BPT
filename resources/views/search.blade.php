@@ -27,7 +27,7 @@
 <!-- End Banner Section -->
 
 <!-- Start search section-->
-<section class="search">
+<section class="most-search">
     <div class="container">
         <div class="search-container">
             <div class="heading">
@@ -122,7 +122,7 @@
                         </ul>
                     </div>
                     <div class="search-catagories">
-                        <p>Categories</p>
+                        <p>Locations</p>
                         <ul>
                             <li><input type="checkbox"><label for="">284 Times in last week</label></li>
                             <li><input type="checkbox"><label for="">284 Times in last week</label></li>
