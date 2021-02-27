@@ -219,7 +219,6 @@
                     <div class="experience">
                         <div class="experience-info">
                             <h2>{{$pageDetail->faq['experience_us']->heading}}</h2>
-                            <img src="{{url('img/contactus/experience-bg.png')}}" alt="experience-bg">
                         </div>
                         <div class="platforms">
                             @foreach ($socialmedias as $socialmedia)
