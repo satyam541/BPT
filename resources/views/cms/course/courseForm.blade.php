@@ -123,11 +123,12 @@
                                     {{ Form::label('is_popular', 'Is Popular') }}
                                     <input type="checkbox" name="is_popular" @if ($course->popular->exists) checked @endif>
                                 </div>
+
                                 <div class="form-group">
                                     {{ Form::label('is_online', 'Is Online') }}
                                     <input type="checkbox" name="is_online" class="is_online" @if ($course->is_online != null) checked @endif>
-    
                                 </div>
+
                                 <div id='onlinePrice' class="form-group">
                                     {{ Form::label('online_price', 'Online Course Price') }}
                                     {{ Form::text('online_price', $course->onlinePrice->price ?? '', ['class' => 'form-control']) }}

@@ -26,11 +26,16 @@ class LocationController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function list()
+    public function list(Request $request)
     {
         $this->authorize('view', new Location());
         $locations       = Location::all();
-        return view('cms.location.locationList',compact('locations'));
+        $checked=null;
+        if(isset($request->popular)){
+            $locations = Location::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.location.locationList',compact('locations','checked'));
     }
 
     // public function filterList(Request $request)
