@@ -76,7 +76,7 @@ class CourseController extends Controller
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query = CourseContent::query();
         $query = empty($filter['course'])? $query : $query->where('course_id',$filter['course']);
-        $query = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query = $query->where('country_id',country()->country_code);
         $query->whereHas('course');
         $result = $query->paginate(10);
         $list['courses'] = Course::all()->pluck('name','id')->toArray();

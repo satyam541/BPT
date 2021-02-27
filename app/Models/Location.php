@@ -16,10 +16,10 @@ class Location extends Model
     protected static function boot()
     {
         parent::boot();
-        if(request()->route()->action['prefix'] != '/cms'){
-            
-            
-        }
+        static::addGlobalScope('country', function (Builder $builder) {
+            $builder->where("country_id", country()->country_code);
+        });
+        
     }
 
     public function setReferenceAttribute($value)

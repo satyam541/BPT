@@ -73,7 +73,7 @@ class TopicController extends Controller
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query                  = TopicContent::query();
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
-        $query                  = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query                  = $query->where('country_id',country()->country_code);
         $query->whereHas('topic');
         $result                 = $query->get();
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
