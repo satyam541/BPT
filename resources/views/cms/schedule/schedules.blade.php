@@ -96,7 +96,7 @@
                 
                     @foreach ($schedules as $schedule)
                     <tr>
-                    <td>{{$schedule->course->name}}</td>
+                    <td>{{$schedule->course['name']}}</td>
                     <td>{{$schedule->response_price}}</td>
                     <td>{{$schedule->location->name}}</td>
                     <td>{{$schedule->response_date}}</td>
