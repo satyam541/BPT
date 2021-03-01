@@ -81,7 +81,10 @@ class AddonController extends Controller
     public function update(CourseaddonRequest $request)
     {
         $inputs=$request->all();
-        CourseAddon::find($inputs['id'])->update($inputs);
+        $addons = CourseAddon::find($inputs['id']);
+        $addons['is_published'] = isset($inputs['is_published']);
+        
+        $addons->update($inputs);
         return redirect()->route('AddonList')->with('success','Addon Updated Successfully');
     }
 

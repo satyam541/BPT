@@ -36,11 +36,7 @@
               <div class="card-title">
                 Topic List
               </div>
-            </div>
-
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="col-sm-16 text-right">
+              <div class="col-sm-16 text-right">
                   <form action="{{Route('topicList')}}" method="get">
                     <label class="">
                       <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
@@ -48,6 +44,11 @@
                     <input type="submit" name="submit" id="submit" style="visibility: hidden">
                   </form>
                 </div>
+            </div>
+
+              <!-- /.card-header -->
+              <div class="card-body">
+                
               <table id="example1">
                 <thead>
                 <tr>

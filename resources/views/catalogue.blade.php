@@ -41,8 +41,9 @@
                                 <a href="javascript:void(0);" class="name">{{ $popularTopic->name }}</a>
                                 <div class="buttons">
                                     <a href="{{ url('training-courses' . $popularTopic->reference) }}"
-                                        class="btn-white">
-                                        <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view">View Detail
+                                        class="btn-blue">
+                                        <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view" class="black">
+                                        <img src="{{ url('img/catalogue/view-white.svg') }}" alt="view" class="white">View Detail
                                     </a>
                                 </div>
                             </div>
@@ -102,7 +103,8 @@
                     @foreach ($categories as $category)
                         <div class="category-content">
                             <span>
-                                <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}">
+                                <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="blue">
+                                <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="white">
                             </span>
                             <h3>{{ $category->name }}</h3>
                         </div>

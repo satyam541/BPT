@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="card-body">
-              <table id="example1" class="table-responsive && cell-border">
+              <table id="example1">
                 <thead>
                     <tr>
                         <th>Order No</th>

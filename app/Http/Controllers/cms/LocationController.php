@@ -67,7 +67,7 @@ class LocationController extends Controller
            
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['location']       = new Location();
-        $data['popular']=false;
+        $data['popular']        = false;
         $data['submitRoute']    = "insertLocation";
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
@@ -80,7 +80,7 @@ class LocationController extends Controller
         $data['locations']      = Location::pluck('name','id')->toArray();
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
-        $data['popular']=$location->popular();
+        $data['popular']        = $location->popular();
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
@@ -105,16 +105,16 @@ class LocationController extends Controller
         $location['inherit_schedule'] = $inputs['inherit_schedule'];
         $location['description']      = $inputs['description'];
         $location['fetch_schedule']   = isset($inputs['fetch_schedule']);
-        $location['longitude']=$inputs['longitude'];
-        $location['latitude']=$inputs['latitude'];
-        $location['reference']=$inputs['reference'];
+        $location['longitude']        = $inputs['longitude'];
+        $location['latitude']         = $inputs['latitude'];
+        $location['reference']        = $inputs['reference'];
 
         if($request->file('image')){
             $imageName = 'ImageUrl'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(
                 base_path() . '/public/images/', $imageName);
-            $input['image'] = $imageName;
-            $location['image']=$imageName;
+            $input['image']     = $imageName;
+            $location['image']  = $imageName;
         }
         $data=Location::updateOrCreate(['id' =>$inputs['id']],$location);
         if(isset($inputs['is_popular']))
@@ -156,7 +156,7 @@ class LocationController extends Controller
    public function restoreLocation($id)
    {
         $this->authorize('restore', new Location());
-        $location = Location::onlyTrashed()->find($id)->restore();
+        Location::onlyTrashed()->find($id)->restore();
  
         return back()->with('success','Successfully Restored');
 
@@ -165,7 +165,7 @@ class LocationController extends Controller
    public function forceDeleteLocation($id)
    {
         $this->authorize('forceDelete',new Location);
-        $location = Location::onlyTrashed()->find($id)->forceDelete();
+        Location::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');
    }
