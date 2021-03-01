@@ -96,7 +96,7 @@
                         </p>
                     </div>
                     <span class="arrow">
-                        <img src="{{url('img/home/right-arrow.svg')}}" alt="right-arrow">
+                        <img src="{{url('img/home/arrow.svg')}}" alt="arrow">
                     </span>
                 </a>
                     

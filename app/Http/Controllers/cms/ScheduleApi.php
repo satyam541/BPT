@@ -88,8 +88,9 @@ class ScheduleApi extends Controller
         $url = "https://www.theknowledgeacademy.com/_engine/scripts/course-data-api.php?country=" . $countryid . "&year=" . $year . "&month=" . $month;
         $client = new Client(['verify' => false]);
         $response = $client->request('GET', $url, ['proxy' => env('PROXY_URL')]);
-        $results = json_decode((string) $response->getBody(), true);
+        $results = json_decode((string) $response->getBody(), true);   
         return $results;
+
     }
 
     public function processAPI(Request $request)
@@ -101,37 +102,35 @@ class ScheduleApi extends Controller
             'EventYear' => 'required',
         ]);
         $input = $request->all();
-      
         $this->country = strtolower($input['CountryID']); //strtolower($this->input->post('CountryID'));
 
         // $get_country_data = Country::where('id',$countryid)->get();
         $this->year = $input['EventYear'];
-        
         /*
-            deleting all api Schedules before adding new from api
+        deleting all api Schedules before adding new from api
         */
-       
         $currentyear=Carbon::now()->year;
-       
+        Schedule::where(['country_id' => $this->country, 'source' => 'API'])->where(DB::raw('YEAR(response_date)'), $this->year)->forceDelete();
         if($currentyear==$this->year)
         {
-            $currentmonth   =   Carbon::now()->month;
-        }
+             $currentmonth=Carbon::now()->month;
+
+        }   
         else
         {
+
              $currentmonth=1;
         }
+     
+       for($month=$currentmonth; $month<=12; $month++)
+       {
+               $results = $this->fetchApiData($this->country, $this->year, $month);
+               $this->storeData($results);
 
-        $this->set_fetch_status(true);
-        for($month=$currentmonth; $month<=12; $month++)
-        {
-            Schedule::where(['country_id' => $this->country, 'source' => 'API'])->where(DB::raw('MONTH(response_date)'), $month)->where(DB::raw('YEAR(response_date)'), $this->year)->forceDelete();
-            $results = $this->fetchApiData($this->country, $this->year, $month);
-            $this->storeData($results);
         }
 
         Session::flash('success', 'Successfully Fetched All Schedules.');
-        $this->updateApiProcess('status', 'Copy for Locations');
+        $this->updateApiProcess('status', 'Copy for locations');
         $this->copyScheduleForLocation();
 
         $this->updateApiProcess('status', 'destroy');
@@ -172,6 +171,7 @@ class ScheduleApi extends Controller
             if ($courses->isEmpty()) {
                 continue;
             }
+             
             foreach ($courses as $course) {
                 $API['course_id'] = $course->id;
                 $API['duration'] = $course->duration;
@@ -239,6 +239,7 @@ class ScheduleApi extends Controller
                         $data[] = $API;
                     }
                 }
+                // dd($data);
                 if (!empty($data))
                      Schedule::insert($data);
                 unset($data);
@@ -299,14 +300,17 @@ class ScheduleApi extends Controller
         if (empty($price)) {
             return FALSE;
         }
+        
         $onlinePrice = OnlinePrice::firstOrNew(['course_id' => $courseid]);
         $percentage = 10;
         $new_incrementedAmount = ($percentage / 100) * $price;
         $onlinePrice['price'] =  round($price + $new_incrementedAmount);
-        $onlinePrice['type'] =  'Online';
+        $onlinePrice['type']  =  'Online';
         $onlinePrice['component'] =  'Basic';
         $onlinePrice['course_id'] = $courseid;
         $onlinePrice->save();
+    
+  
 
         if (!empty($addons))
             $this->saveOnlineCourseAddons($addons, $onlinePrice);
@@ -317,12 +321,17 @@ class ScheduleApi extends Controller
     */
     public function saveOnlineCourseAddons($addons, $onlinePrice)
     {
+      
         if (empty($addons)) {
             return FALSE;
         }
+        
+      
         $totalAddons = count($addons, COUNT_RECURSIVE) - count($addons);
         $addonIteration = 1;
         foreach ($addons as $addonType => $addOnData) {
+           
+           
             foreach ($addOnData as $responseid => $responseData) {
                 $this->updateApiProcess('last', 'addon', $totalAddons, $addonIteration);
                 $percentage = 10;
@@ -330,16 +339,27 @@ class ScheduleApi extends Controller
 
                 $data = array();
                 $data["addon_type"] = $addonType;
-                $data["response_id"] = $responseid;
-                $data["online_price_id"] = $onlinePrice->id;
+            
+                $courseAddon =  CourseAddon::updateOrCreate(
+                    [
+                        'name'        =>  $responseData['name'],
+                        'addon_type' => $addonType
+                    ],
+                    [
+                        'description' => $responseData['description'],
+                        'price'      =>  round($responseData['price'] + $new_incrementedAmount)
+                    ]
+                  
+                   
+                );
+             
+             
+                $onlinePrice->addons()->syncWithoutDetaching($courseAddon->id);
 
-                $addOn = CourseAddon::firstOrNew($data);
-                $addOn['name'] = $responseData['name'];
-                $addOn['description'] = $responseData['description'];
-                $addOn['price'] = round($responseData['price'] + $new_incrementedAmount);
-                $addOn->save();
+
             }
         }
+       
     }
 
 

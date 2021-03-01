@@ -21,27 +21,15 @@ class PopularController extends Controller
     {
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-    public function sample(){
-        $selectedCountry=country()->country_code;
-        $popularItems = Popular::query();
-        if($selectedCountry!='ALL'){
-            $popularItems=$popularItems->where('country_id',$selectedCountry);
-        }
-        $data['popularItems'] = $popularItems->get()->groupBy("module_type");
-        return view('cms.popular.sample',$data);                                                                    
-    }
+    
     public function list(Request $request)
     {
-        // Popular::$module()->module;
-        // $data['popularItems'] = [];  
         $selectedCountry=country()->country_code;
         $popularItems = Popular::query();
         if($selectedCountry!='ALL'){
             $popularItems=$popularItems->where('country_id',$selectedCountry);
         }
         $data['popularItems'] = $popularItems->get()->groupBy("module_type");
-                                                                              
-
         return view('cms.popular.list',$data);
     }
 

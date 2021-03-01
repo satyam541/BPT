@@ -316,14 +316,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="value">
-                            <span>
+                        <div class="detail">
+                            <div class="content">
+                                <span>
                                 <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
                             </span>
-                            <div class="content">
+                            <div class="sub-content">
                                 <h3>Virtual</h3>
-                                <p>Best Selling PRINCE2®</p>
-                                <p>Foundation and Practitioner</p>
+                                <p>Best Selling Courses in <strong>United Kingdom</strong></p>
+                            </div>
                             </div>
                             <div class="date">
                                 <p>Monday</p>
@@ -349,14 +350,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="value">
-                            <span>
+                        <div class="detail">
+                            <div class="content">
+                                <span>
                                 <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
                             </span>
-                            <div class="content">
+                            <div class="sub-content">
                                 <h3>Virtual</h3>
-                                <p>Best Selling PRINCE2®</p>
-                                <p>Foundation and Practitioner</p>
+                                <p>Best Selling Courses in <strong>United Kingdom</strong></p>
+                            </div>
                             </div>
                             <div class="date">
                                 <p>Monday</p>
@@ -382,14 +384,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="value">
-                            <span>
+                        <div class="detail">
+                            <div class="content">
+                                <span>
                                 <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
                             </span>
-                            <div class="content">
+                            <div class="sub-content">
                                 <h3>Virtual</h3>
-                                <p>Best Selling PRINCE2®</p>
-                                <p>Foundation and Practitioner</p>
+                                <p>Best Selling Courses in <strong>United Kingdom</strong></p>
+                            </div>
                             </div>
                             <div class="date">
                                 <p>Monday</p>
@@ -415,14 +418,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="value">
-                            <span>
+                        <div class="detail">
+                            <div class="content">
+                                <span>
                                 <img src="{{url('../img/courses/course-virtual.svg')}}" alt="course-virtual">
                             </span>
-                            <div class="content">
+                            <div class="sub-content">
                                 <h3>Virtual</h3>
-                                <p>Best Selling PRINCE2®</p>
-                                <p>Foundation and Practitioner</p>
+                                <p>Best Selling Courses in <strong>United Kingdom</strong></p>
+                            </div>
                             </div>
                             <div class="date">
                                 <p>Monday</p>
@@ -591,6 +595,11 @@
                         <h3>Lifetime Access</h3>
                     </div>
                 </div>
+                <div class="buttons">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <img src="{{url('img/courses/email.svg')}}" alt="email">Enquire Now
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -659,54 +668,54 @@
                 <h2>Explore Related Courses</h2>
             </div>
             <div class="related-list">
-                <div class="related-content">
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>MOV® Training</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">MOV® Training</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>Scrum Training</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">Scrum Training</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>CISA Training </h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">CISA Training </div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>Linux Training Courses</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">Linux Training Courses</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>Primavera Training Courses</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">Primavera Training Courses</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>Agile Project Management Training</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">Agile Project Management Training</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>P3O® Training</h3>
-                </div>
-                <div class="related-content">
+                    <div class="name">P3O® Training</div>
+                </a>
+                <a href="javascript:void(0);" class="related-content">
                     <span>
                         <img src="{{url('img/courses/related-book.svg')}}" alt="related-book">
                     </span>
-                    <h3>APMP Training</h3>
-                </div>
+                    <div class="name">APMP Training</div>
+                </a>
             </div>
         </div>
     </div>
@@ -732,60 +741,60 @@
                     <h2>Find The Most Convenient <span>Location For You</span></h2>
                 </div>
                 <div class="location-list">
-                    <div class="content">
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>London</h3>
+                        <div class="location-name">London</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
-                    <div class="content">
+                    </a>
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>Birminghamon</h3>
+                        <div class="location-name">Birminghamon</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
-                    <div class="content">
+                    </a>
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>Manchester</h3>
+                        <div class="location-name">Manchester</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
-                    <div class="content">
+                    </a>
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>Cardiff</h3>
+                        <div class="location-name">Cardiff</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
-                    <div class="content">
+                    </a>
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>Bristol</h3>
+                        <div class="location-name">Bristol</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
-                    <div class="content">
+                    </a>
+                    <a href="javascript:void(0);" class="content">
                         <span class="image">
                             <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                         </span>
-                        <h3>Leeds</h3>
+                        <div class="location-name">Leeds</div>
                         <span class="arrow">
                             <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
                         </span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
