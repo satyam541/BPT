@@ -10937,12 +10937,12 @@ select::-ms-expand {
 .goals .goal-image p {
   font-size: 13px;
 }
-.goals .goal-image span {
+.goals .goal-image .img {
   display: flex;
   margin-top: 1rem;
   height: 100%;
 }
-.goals .goal-image span img {
+.goals .goal-image .img img {
   width: 100%;
   height: 100%;
 }
@@ -11162,7 +11162,7 @@ select::-ms-expand {
   .goals .goal-image p {
     text-align: center;
   }
-  .goals .goal-image span {
+  .goals .goal-image .img {
     width: 80%;
     margin: auto;
     margin-top: 1rem;
@@ -11296,7 +11296,7 @@ select::-ms-expand {
   .goals .goal-image p {
     text-align: left;
   }
-  .goals .goal-image span {
+  .goals .goal-image .img {
     width: 85%;
     margin-top: 1rem;
   }
@@ -11578,4 +11578,15 @@ select::-ms-expand {
   width: 13px;
   height: 13px;
   background-repeat: no-repeat;
+}
+@media (min-width : 1024px) {
+  .knowledge-banner {
+    background-image: url;
+  }
+  .knowledge-banner p,
+  .knowledge-banner h2,
+  .knowledge-banner h1,
+  .knowledge-banner li {
+    color: #FFFFFF !important;
+  }
 }
