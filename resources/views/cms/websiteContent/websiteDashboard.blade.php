@@ -113,6 +113,7 @@
                                     </tr>        
                                 </thead>
                                 <tbody>
+                                  
                                     @foreach($courses as $course)
                             <tr>
                                 <td><a href="{{ url($course['course_data']->reference) }}">

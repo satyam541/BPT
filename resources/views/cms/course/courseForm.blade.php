@@ -100,6 +100,11 @@
                                     {{ Form::label('image', 'Logo') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
                                     <img src="{{ $course->getLogoPath() }}" class=" pad" style="max-width:50%" />
+                                    <br/>
+                            <br/>
+                            <a class="btn btn-danger" id="removeimage" onclick="doJob()">Remove Logo</a>
+                            <a class="btn bg-yellow" id="undoremoveimage" onclick="undodojob()">UNDO Remove Logo</a>
+                            {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
                                 </div>
 
 

@@ -117,7 +117,7 @@
                     <div class=" phonecode-field">
                         <select class="country-code form-control form-control-sm" style="width:9%"></select>
                             <span class=" prefix"></span>
-                        <input type="number" class="form-control form-control-lg telephone" placeholder="Phone Number *">
+                        <input type="number" class="form-control form-control-lg telephone" placeholder="Phone Number *" min="0">
                         <div class="hidden-field" style="display:none;">
                             <input type="text" name="phonecode" class="phonecode">
                            <input type="text" name="phone" class="phonenumber" id="#number" placeholder="Phone Number *">
@@ -179,7 +179,7 @@
 
                     <div class="form-group" id="locations" style="display: none;">
                         {{Form::label('location','Location')}}
-                        <select class="form-control" id="locationsSelect" name="location" ></select>
+                        <select class="form-control selectJS" id="locationsSelect" name="location" ></select>
                     </div>
 
                     <div class="form-group" id="events" style="display: none;">
