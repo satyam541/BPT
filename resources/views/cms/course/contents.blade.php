@@ -33,7 +33,7 @@
                                 <tr>
                                     <th>Course</th>
                                     <th>Country</th>
-                                    <th>edit</th>
+                                    <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
@@ -105,7 +105,7 @@
 
                 initComplete: function() {
                     var data = this;
-                    this.api().columns([0, 1]).every(function() {
+                    this.api().columns([0]).every(function() {
                         var column = this;
                         var columnName = $(column.header()).text();
                         var select = $('<select class="selectJS" data-placeholder="Select ' +

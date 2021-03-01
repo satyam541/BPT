@@ -56,10 +56,11 @@
                     {{-- <h2>Our <span>Blogs</span> </h2> --}}
                     <h2>{!! $pageDetail->blog_list['heading']->heading !!}</h2>
                 </div>
+                <p class="headline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In inventore tempore perspiciatis temporibus nemo eveniet mollitia hic saepe quasi corporis a laudantium debitis molestiae quibusdam</p>
                 <div class="our-list">
                     @foreach ($blogs as $blog)
                     {{-- {{dd($blog)}} --}}
-                    <div class="our-item">
+                    <div class="our-item hide">
                         
                         {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
@@ -84,9 +85,8 @@
                         <p class="date">{{$blog->publish_date->format('d M, Y')}}</p>
                     </div>
                     @endforeach
-
-                    <div class="buttons">
-                        <a class="btn-blue load-more">
+                    <div class="buttons" >
+                        <a class="btn-blue load-more" id="loadMore" >
                             Load More
                         </a>
                     </div>

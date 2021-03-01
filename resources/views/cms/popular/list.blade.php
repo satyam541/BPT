@@ -27,7 +27,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <!-- left column -->
-        @foreach($popularItems as $type => $items)
+        @forelse($popularItems as $type => $items)
         <div class="col-xs-6 col-md-6">
             <div class="card card-primary ">
                 <div class="card-header">
@@ -60,6 +60,7 @@
                                     <td>{{$item->module->name ?? $item->module->title }}</td>
                                     <td><a href="#" onclick="deleteItem('{{ route('deletePopular',['popular'=>$item->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
                                 </tr>
+                                
                                 @endforeach
                                 
                             </tbody>
@@ -70,7 +71,9 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <marquee behavior='alternate' direction='right'><h3>No Data Available</h3></marquee>
+        @endforelse
         <!-- /.col -->
       </div>
       <!-- /.row -->

@@ -16,7 +16,7 @@ use Illuminate\Support\Arr;
 if(!function_exists('allCountries')){
     function allCountries(){
         $data=Country::pluck('name','country_code')->toArray();
-        return $data=['ALL'=>'ALL']+$data;
+        return $data;
     }
 }
 if (!function_exists('encodeUrlSlug')) {

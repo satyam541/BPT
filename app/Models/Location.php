@@ -16,10 +16,10 @@ class Location extends Model
     protected static function boot()
     {
         parent::boot();
-        if(request()->route()->action['prefix'] != '/cms'){
-            
-            
-        }
+        static::addGlobalScope('country', function (Builder $builder) {
+            $builder->where("country_id", country()->country_code);
+        });
+        
     }
 
     public function setReferenceAttribute($value)
@@ -67,12 +67,6 @@ class Location extends Model
         return route('location',['locName'=>Str::after($this->reference,'/')]);
     }
 
-    // public function isPopular()
-    // {
-    //     $popular = $this->popular;
-    //     return empty($popular->id)? FALSE : TRUE;
-    // }
-
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
@@ -80,20 +74,9 @@ class Location extends Model
             "display_order" => Popular::locations()->count()+1]
         );
     }
-
-    // public function hasPopular()
-    // {
-    //     return $this->morphOne('App\Models\Popular', 'module');
-    // }
-    
     public function delete()
     {
-        // File::delete(public_path($this->image_path.$this->image));
-        if($this->isPopular())
-        {
-            $this->popular->delete();
-        }
+        $this->popular()->delete();
         return parent::delete();
     }
-
 }

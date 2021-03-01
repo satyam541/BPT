@@ -172,11 +172,8 @@ class Topic extends Model
     public function delete()
     {
         // File::delete(public_path($this->image_path.$this->image));
-        // if($this->isPopular())
-        // {
-        //     $this->popular->delete();
-        // }
         $this->whatsInclude()->delete();
+        $this->popular()->delete();
         $this->faqs()->delete();
         $this->content()->delete();
         $this->Bulletpoint()->delete();
@@ -186,11 +183,6 @@ class Topic extends Model
 
     public function myRestore()
     {
-        // if($this->isPopular())
-        // {
-        //     $this->popular->restore();
-        // }
-        
         $this->whatsInclude()->restore();
         $this->faqs()->restore();
         $this->content()->restore();

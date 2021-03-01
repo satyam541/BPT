@@ -15,7 +15,7 @@
         padding: @sectionPadding-md;
 
         .popular-item {
-            width: 352px;
+            width: 50%;
         }
 
         .popular-list {
@@ -53,6 +53,7 @@
 
         .our-item {
             width: 40%;
+            align-items: flex-start;
             &:nth-child(1),&:nth-child(2){
                 margin-top: 0;
             }
@@ -97,10 +98,14 @@
                 }
            
         }
-            h3{
-                min-height: 50px;
+            h3{ 
+                min-height: 75px;
+                text-align: left;
             }
         
+            .item-text{
+                text-align: left;
+            }
        
 
     }
@@ -154,7 +159,7 @@
         padding: 3rem 0;
 
         .popular-item {
-            width: 256px;
+             width: 25%;
         }
 
         .popular-list {
@@ -170,7 +175,10 @@
         background-size: 100% 30%;
         background-repeat: no-repeat;
         background-position: bottom;
-
+        .headline{
+            width: 70%;
+            align-self: center;
+        }
         .our-info {
             .designation {
                 width: 34%;
@@ -364,9 +372,6 @@
             
         }
 
-        h3{
-            min-height: 75px;
-        }
     }
 
     // End our-blog section //
