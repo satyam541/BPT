@@ -99,7 +99,7 @@
                     <td>{{$schedule->course['name']}}</td>
                     <td>{{$schedule->response_price}}</td>
                     <td>{{$schedule->location->name ?? ''}}</td>
-                    <td>{{$schedule->response_date}}</td>
+                    <td>{{date('d-m-Y', strtotime($schedule->response_date))}}</td>
                     <td>
                       @can('update',$schedule)
                       <a href="{{Route('editSchedule',['schedule'=>$schedule->id])}}" class="fa fa-edit"></a>

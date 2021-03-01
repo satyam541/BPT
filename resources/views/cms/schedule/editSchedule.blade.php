@@ -37,8 +37,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($schedule,array('route'=>$submitRoute,'files'=>'true'))}}
-                <div class="card-body">
+              {{Form::model($schedule,array('route'=>$submitRoute,'files'=>'true'))}}  
+              <div class="card-body">
                     
                   <div class="form-group">
                     {{Form::label('course_id','Course Name')}}
@@ -50,7 +50,6 @@
                     {{ Form::select('country_id',$list['countries'],null,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateLocations()"])}}
                     
                   </div>
-
                   <div class="form-group">
                     {{Form::label('location','Location')}}
                     {{ Form::select('location',$list['locations'],$schedule->location->id,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'Choose one',"onchange"=>"updateVenue()"])}}
@@ -63,7 +62,7 @@
                   
                   <div class="form-group">
                     {{Form::label('response_date','Event Date')}}
-                    {{Form::text('response_date',$schedule->response_date,['id'=>'inputDates','class'=>'form-control'])}}
+                    {{Form::text('response_date',date('d-m-Y', strtotime($schedule->response_date)),['id'=>'inputDates','class'=>'form-control'])}}
                   </div>
 
                   <div class="form-group">
@@ -98,63 +97,7 @@
     
 @endsection
 @section('footer')
-<script>
-    
-    function updateLocations()
-    {
-        countryId = $("#inputCountry").val();
-        locationVal = $("#inputLocation").val();
-        
-        if(!countryId)
-        {
-            return false;
-        }
-        $.ajax({
-            url:"{{ route('locationsOfCountry') }}",
-            data:{country:countryId},
-            dataType:"JSON",
-            method:"GET",
-            success:function(locations){
-                output = "";
-                // if(locations.length == 1 && locationVal == "") locationVal = locations[0].id;
-    
-                $.each(locations,function(i,location){
-                    output += "<option value='"+location.id +"'>"+location.name+"</option>";
-                });
-                $("#inputLocation").html(output).selectpicker('refresh').selectpicker('val',locationVal);
-            },
-            error: function(e)
-            {
-                console.log("something went wrong while fetching locations for country : "+countryId);
-                console.log(e);
-            }
-        });
-    }
-    updateLocations();
-    function updateDuration()
-    {
-        courseId = $("#inputCourse").val();
-        // locationVal = "{{old('location')}}";
-        if(!courseId)
-        {
-            return false;
-        }
-        $.ajax({
-            url:"{{ route('courseDetail') }}",
-            data:{course:courseId},
-            dataType:"JSON",
-            method:"GET",
-            success:function(course){
-                $("#inputDuration").val(course.duration);
-            },
-            error: function(e)
-            {
-                console.log("something went wrong while fetching duration for course : "+courseId);
-                console.log(e);
-            }
-        });
-    }
- </script>
+
  <script>   
     $(document).ready(function () {
         $("#inputDates").datepicker({
