@@ -102,10 +102,9 @@
             <div class="card-body">
                         
                         <div class="table-responsive ">
-                            <table class="table table-hover">
+                            <table id="example1"  class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
                                         <th>Course Name</th>
                                         <th>Country</th>
                                         <th>Locations</th>
@@ -116,7 +115,6 @@
                                 <tbody>
                                     @foreach($courses as $course)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
                                 <td><a href="{{ url($course['course_data']->reference) }}">
                                     {{$course['course_data']->name}}</a></td>
                             <td>United Kingdom</td>
@@ -152,6 +150,18 @@
     </section>
 @endsection
 
-@section('footerScripts')
-
+@section('footer')
+    <script>
+        $(document).ready(function(){
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Course Name" },
+                        { "name": "Country" },
+                        { "name": "Locations", "sorting":false, searching:false  },
+                        { "name": "Dates", "sorting":false, searching:false  },
+                        { "name": "View More", "sorting":false, searching:false }
+              ]                    
+            });
+        });
+    </script>
 @endsection
