@@ -128,7 +128,7 @@
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
 
-              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
               
             </div>
           </div>
@@ -324,7 +324,7 @@
                 <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
                   <i class="far fa-circle nav-icon "></i>
                   <p>
-                    Category    
+                    Certification    
                   </p>
                 </a>
                 @endcan
@@ -904,6 +904,8 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
+            placeholder:'Choose one',
+            
             
         });
 

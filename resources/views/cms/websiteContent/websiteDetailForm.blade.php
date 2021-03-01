@@ -58,7 +58,7 @@
 
                   <div class="form-group">
                     {{Form::label('contact_number','Contact Number')}}
-                    {{Form::number('contact_number',null,['class'=>'form-control'])}}
+                    {{Form::number('contact_number',null,['class'=>'form-control','min'=>'0'])}}
                   </div>
                   
                   <div class="form-group">

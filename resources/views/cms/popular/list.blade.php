@@ -35,7 +35,7 @@
                         <div class="tab">
                             @foreach ($popularItems as $type => $items)
                           
-                                <button   @if($loop->first)    class="tablinks "  onclick="openCity(event, '{{ $type }}')"  id="first" @else  onclick="openCity(event, '{{ $type }}')"  class="tablinks" @endif  >{{ $type }}</button> <!-- header name -->
+                                <button onclick="openCity(event, '{{ $type }}')"  class="tablinks" id="first"  >{{ $type }}</button> <!-- header name -->
                             @endforeach
                         </div>
                         @forelse ($popularItems as $type => $items)
@@ -87,10 +87,7 @@
 @section('footer')
 <script>
     $("document").ready(function() {
-        // alert("hii");
-        // openCity('event','article');
-        $("button#first").addClass('active').click();
-    // $("tablinks active").trigger('click');
+        $("#first").click();
 });
 
     function openCity(evt, cityName) {
@@ -104,7 +101,14 @@
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         document.getElementById(cityName).style.display = "block";
+        if(evt.currentTarget==undefined){
+            var el = document.getElementsByClassName('tablinks');
+            var requiredElement = el[0]
+            requiredElement.className += " active";
+        }        
+        else{
         evt.currentTarget.className += " active";
+        }
     }
     var changePosition = function(requestData) {
         console.log(requestData);

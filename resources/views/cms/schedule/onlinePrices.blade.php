@@ -50,7 +50,7 @@
                     @foreach($onlinePrices as $onlinePrice)
                     <tr>
                         {{Form::open(['route' => array('updateOnlinePrice',$onlinePrice->id)])}}
-                        <td>{{$onlinePrice->course->name}}</td>
+                        <td>{{$onlinePrice->course->name ?? ''}}</td>
                         <td>
                         {{Form::text('amount', $onlinePrice->price ,array('class' => 'form-control')) }}
                         </td>

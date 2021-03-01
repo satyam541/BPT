@@ -33,14 +33,14 @@
                             <div id="w6" class="info-box bg-yellow">
                                 <span class="info-box-icon "><i class="far fa-thumbs-up"></i></span>
                                 <div class="info-box-content">
-                                    <span class="info-box-text"><b>Course Content</b></span>
-                                    <span class="info-box-number">{{ round($percentage['content']) . '%' }}</span>
+                                    <span class="info-box-text" style="color: white"><b>Course Content</b></span>
+                                    <span class="info-box-number" style="color: white">{{ round($percentage['content']) . '%' }}</span>
                                     <div class="progress">
                                         <div class="progress-bar"
                                             style="width: {{ round($percentage['content']) . '%' }}">
                                         </div>
                                     </div>
-                                    <span class="progress-description">
+                                    <span class="progress-description" style="white-space: normal;color:white">
                                         @if (round($percentage['content']) > 90) Course
                                             Content of this course is good
                                         @elseif (round($percentage['content'])>60 and round($percentage['content']) <
@@ -86,7 +86,7 @@
                                             style="width: {{ round($percentage['schedule']) . '%' }}">
                                         </div>
                                     </div>
-                                    <span class="progress-description">
+                                    <span class="progress-description" style="white-space: normal">
                                         @if (round($percentage['schedule']) > 90) Course
                                             Content of this course is good
                                         @elseif (round($percentage['schedule'])>60 and round($percentage['schedule']) <
@@ -118,7 +118,11 @@
                         <!-- Widget: user widget style 1 -->
                         <div class="box box-widget widget-user-2">
                             <div id="w6" class="info-box bg-green">
-                                <span class="info-box-icon "><i class="far fa-thumbs-up"></i></span>
+                                <span class="info-box-icon "><i class="@if (round($percentage['seo'])> 90) far fa-thumbs-up
+                                    @elseif(round($percentage['seo']) < 90 &&
+                                    round($percentage['seo']) > 60) far fa-thumbs-up @else far
+                                        fa-thumbs-down @endif"></i>
+                                </span>
                                 <div class="info-box-content">
                                     <span class="info-box-text"><b>SEO Content</b></span>
                                     <span class="info-box-number">{{ round($percentage['seo']) . '%' }}</span>
@@ -126,7 +130,7 @@
                                         <div class="progress-bar" style="width: {{ round($percentage['seo']) . '%' }}">
                                         </div>
                                     </div>
-                                    <span class="progress-description">
+                                    <span class="progress-description"style="white-space: normal">
                                         @if (round($percentage['seo']) > 90) SEO Content of
                                             this course is good
                                         @elseif (round($percentage['seo'])>60 and round($percentage['seo']) < 90) SEO
@@ -180,7 +184,6 @@
                                                 <tr>
 
                                                     <td>{{ $key }}</td>
-
                                                     <td>
                                                         @if (0 == $date->first()->location['tier'])
                                                             3

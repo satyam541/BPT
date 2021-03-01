@@ -34,19 +34,20 @@
                                 <div class="card-title">
                                     Category List
                                 </div>
-                            </div>
-
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="col-sm-2 ml-2">
+                                <div class="col-sm-16 text-right">
                                     <form action="{{Route('categoryList')}}" method="get">
-                                      <label class="">
+                                      <label >
                                         <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
                                       </label>
                                       <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
                                   </div>
-                                <table id="example1" class="">
+                            </div>
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                
+                                <table id="example1" >
                                     <thead>
                                         <tr>
                                             <th>Name</th>

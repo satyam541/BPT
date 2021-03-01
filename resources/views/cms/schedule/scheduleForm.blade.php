@@ -52,8 +52,8 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('inputLocation[]','Location')}}
-                    {{ Form::select('location',$list['locations'],$response_location,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'Choose one',"onchange"=>"updateVenue()"])}}
+                    {{Form::label('location_id','Location')}}
+                    {{ Form::select('location_id',$list['locations'],null,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'Choose one',"onchange"=>"updateVenue()"])}}
                   </div>
 
                   <div class="form-group">

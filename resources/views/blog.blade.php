@@ -27,7 +27,6 @@
         <div class="container">
             <div class="popular-container">
                 <div class="heading center-heading">
-                    {{-- <h2>Most Popular <span>Blog</span></h2> --}}
                     <h2>{!! $pageDetail->main['heading']->heading !!}</h2>
                 </div>
                 <div class="popular-list">
@@ -53,16 +52,13 @@
         <div class="container">
             <div class="our-container">
                 <div class="heading center-heading">
-                    {{-- <h2>Our <span>Blogs</span> </h2> --}}
                     <h2>{!! $pageDetail->blog_list['heading']->heading !!}</h2>
                 </div>
                 <p class="headline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In inventore tempore perspiciatis temporibus nemo eveniet mollitia hic saepe quasi corporis a laudantium debitis molestiae quibusdam</p>
                 <div class="our-list">
                     @foreach ($blogs as $blog)
-                    {{-- {{dd($blog)}} --}}
                     <div class="our-item hide">
                         
-                        {{-- <img src="{{ url('img/blog/our-image.png') }}" alt="our-image"> --}}
                         <img src="{{ $blog->getImagePath() }}" alt="our-image">
                         <div class="our-info">
                             <p class="name">
@@ -103,32 +99,17 @@
         <div class="container">
             <div class="ideal-container">
                 <div class="heading center-heading">
-                    {{-- <h2>Whatever Your Training Needs,<span> Find Your Ideal</span> </h2> --}}
                     <h2>{!! $pageDetail->training_needs['heading']->heading !!}</h2>
                     <p>{!! $pageDetail->training_needs['heading']->content !!}</p>
                 </div>
                 <div class="clients-inner">
-                    <span class="image">
-                        <img src="{{ url('img/blog/amazon.svg') }}" alt="amazong">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/twitter.svg') }}" alt="twitter">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/google-service.svg') }}" alt="google-service">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/google.svg') }}" alt="google">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/google-plus.svg') }}" alt="google-plus">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/facebook.svg') }}" alt="facebook">
-                    </span>
-                    <span class="image">
-                        <img src="{{ url('img/blog/linkedin.svg') }}" alt="linkedin">
-                    </span>
+                    
+                    @foreach ($pageDetail->partners as $image)
+                        <span class="image">
+                            <img src="{{ url($image->getImagePath()) }}" alt="{{$image->image_alt}}">
+                        </span>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

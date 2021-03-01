@@ -35,12 +35,7 @@
                             {{ Form::select('course',$list['courses'],$selectedCourse,['tabindex'=>'-1','id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
-                    <div class="form-group row">
-                        {{Form::label('inputCountry','Country',['class'=>'col-sm-2 control-label'])}}
-                        <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],$selectedCountry,['tabindex'=>'-1','id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
-                        </div>
-                    </div>
+                    
                     <div class="form-group row">
                         {{Form::label('inputType','Type',['class'=>'col-sm-2 control-label'])}}
                             <div class="col-sm-4">
