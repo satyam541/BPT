@@ -114,6 +114,7 @@
                                     </tr>        
                                 </thead>
                                 <tbody>
+                                  
                                     @foreach($courses as $course)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
