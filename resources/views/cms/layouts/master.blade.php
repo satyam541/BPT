@@ -128,7 +128,7 @@
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
 
-              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
               
             </div>
           </div>
@@ -904,6 +904,7 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
+            placeholder:'Choose one',
             
             
         });
