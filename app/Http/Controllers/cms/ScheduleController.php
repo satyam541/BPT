@@ -109,11 +109,12 @@ class ScheduleController extends ScheduleApi
     {
       $this->authorize('update', $schedule);
       $data['schedule']          = $schedule;
-      $data["submitRoute"]      = array("updateSchedule",$schedule->id);
+      $data['response_location'] = optional($schedule->location)->id;
+      $data["submitRoute"]       = array("updateSchedule",$schedule->id);
 
-      $list["courses"]          = Course::pluck("name","id")->toArray();
-      $list["countries"]        = Country::pluck("name","country_code")->toArray();
-      $list["locations"]        = Location::pluck("name","id")->toArray();
+      $list["courses"]           = Course::pluck("name","id")->toArray();
+      $list["countries"]         = Country::pluck("name","country_code")->toArray();
+      $list["locations"]         = Location::pluck("name","id")->toArray();
 
       $data['list']             = $list;
       // required input fields

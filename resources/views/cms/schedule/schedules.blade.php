@@ -93,7 +93,7 @@
                     <tr>
                     <td>{{$schedule->course['name']}}</td>
                     <td>{{$schedule->response_price}}</td>
-                    <td>{{$schedule->location->name ?? ''}}</td>
+                    <td>{{$schedule->location->name ?? 'Virtual'}}</td>
                     <td>{{date('d-m-Y', strtotime($schedule->response_date))}}</td>
                     <td>
                       @can('update',$schedule)
