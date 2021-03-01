@@ -5,6 +5,7 @@ use App\Models\Course;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Topic;
 
 class FilterController extends Controller
 {
@@ -50,4 +51,32 @@ class FilterController extends Controller
         
         return redirect($url);
     }
+
+    public function getTopics(Request $request) {
+        
+        $input  = $request->all();
+        
+        if(empty($input['categoryId'])) {
+            return ['500' => 'nothing found'];
+        }
+
+        $topics = Topic::where('category_id',$input['categoryId'])->get();
+       
+        return json_encode($topics);
+    }
+    
+    public function getCourses(Request $request) {
+        
+        $input  = $request->all();
+        
+        if(empty($input['topicId'])) {
+            return ['500' => 'nothing found'];
+        }
+
+        $courses = Course::where('topic_id',$input['topicId'])->get();
+       
+        return json_encode($courses);
+    }
+
+
 }

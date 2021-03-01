@@ -50,7 +50,7 @@
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <a>PRINCE2® Training Foundation & Practitioner</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <a>PRINCE2® Training Foundation & Practitioner</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <a>PRINCE2® Training Foundation & Practitioner</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <h3>PRINCE2® Training Foundation & Practitioner</h3>
+                                <a>PRINCE2® Training Foundation & Practitioner</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -229,28 +229,28 @@
                 <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our agency can only be as strong as our people & because of this, our team have designed game changing products.</p>
                 </div>
                 <div class="delivery-list">
-                    <a class="list">
+                    <a class="item">
                         <span>
                         <img src="{{url('img/topic/classroom.svg')}}" alt="classroom" class="black-icon">
                         <img src="{{url('img/topic/classroom-white.svg')}}" alt="classroom" class="white-icon">
                         </span>
                         Classroom Training
                     </a>
-                    <a class="list">
+                    <a class="item">
                         <span>
                         <img src="{{url('img/topic/led.svg')}}" alt="led" class="black-icon">
                         <img src="{{url('img/topic/led-white.svg')}}" alt="led" class="white-icon">
                         </span>
                         Online Instructor-Led
                     </a>
-                    <a class="list">
+                    <a class="item">
                         <span>
                         <img src="{{url('img/topic/paced.svg')}}" alt="paced" class="black-icon">
                         <img src="{{url('img/topic/paced-white.svg')}}" alt="paced" class="white-icon">
                         </span>
                         Online/Self-Paced
                     </a>
-                    <a class="list">
+                    <a class="item">
                         <span>
                         <img src="{{url('img/topic/onsite.svg')}}" alt="onsite" class="black-icon">
                         <img src="{{url('img/topic/onsite-white.svg')}}" alt="onsite" class="white-icon">
@@ -391,7 +391,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -400,7 +400,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -409,7 +409,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -418,7 +418,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -427,7 +427,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -436,7 +436,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -445,7 +445,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                     <div class="explore-item"> 
                         <div class="numbers">
@@ -454,7 +454,7 @@
                                 <span>Courses</span>
                             </p>
                         </div>
-                        <h3>Physical Science and Engineering</h3>
+                        <a>Physical Science and Engineering</a>
                     </div>
                 </div>
             </div>
@@ -472,17 +472,16 @@
                         <h2>Achieve Your Goals <span>with BPT</span></h2>
                     </div>
                     <p>The Knowledge Academy is a World's Leading Association for training professionals. The knowledge Academy provides training in 490+ location in 221+ countries, covering 3000 subjects with four delivery method Classroom, Live Classroom (Virtual),The Knowledge Academy is a World's Leading Association for training professionals. The knowledge Academy provides training in 490+ location in 221+ countries, covering 3000 subjects with four delivery method Classroom, Live Classroom (Virtual),</p>
-
-                    <span class="image">
+                    <span>
                         <img src="{{url('img/topic/goals.png')}}" alt="goals">
                     </span>
                 </div>
                 <div class="goals-list">
                     <div class="goal-item">
-                        <span class="item-image">
+                        <span class="image">
                             <img src="{{url('img/topic/skills.svg')}}" alt="skills">
                         </span>
-                        <div class="goal-content">
+                        <div class="content">
                             <h3>
                             Learn The Latest Skills
                             </h3>
@@ -490,10 +489,10 @@
                         </div>
                     </div>
                     <div class="goal-item">
-                        <span class="item-image">
+                        <span class="image">
                             <img src="{{url('img/topic/carrer.svg')}}" alt="career">
                         </span>
-                        <div class="goal-content">
+                        <div class="content">
                             <h3>
                             Get Ready For A Career
                             </h3>
@@ -501,10 +500,10 @@
                         </div>
                     </div>
                     <div class="goal-item">
-                        <span class="item-image">
+                        <span class="image">
                             <img src="{{url('img/topic/degree.svg')}}" alt="degree">
                         </span>
-                        <div class="goal-content">
+                        <div class="content">
                             <h3>
                             Earn A Degree
                             </h3>

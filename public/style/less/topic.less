@@ -47,6 +47,14 @@
         .explore-courses{
             display: flex;
             flex-direction: column;
+
+            .heading{
+                display: flex;
+                justify-content: center;
+                h2{
+                    text-align: center;
+                }
+            }
         }
 
         .course-item{
@@ -95,7 +103,7 @@
             align-items: center;
             width: 100%;
 
-            h3{
+            a{
                 text-align: center;
                 margin-bottom: 1rem;
                 font-weight: bold;
@@ -147,12 +155,14 @@
 
        .delivery-list{
            display: flex;
-           flex-direction: column;
-           .list{
+           flex-wrap: wrap;
+           justify-content: space-between;
+           .item{
                display: flex;
                flex-direction: column;
                margin-top: 2rem;
                align-items: center;
+                    width: 49%;
 
                span{
                    display: flex;
@@ -198,9 +208,19 @@
     .topic-choose{
         padding: @sectionPadding;
 
+        .choose-content{
+            .heading{
+                display: flex;
+                justify-content: center;
+
+                h2{
+                    text-align: center;
+                }
+            }
+        }
         .choose-progress{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 2rem;
             width: 100%;
         }
@@ -211,7 +231,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 2rem;
-            width: 48%;
+            width: 140px;
            
             .circle{
                 width: 95px;
@@ -278,7 +298,6 @@
                 font-size: 14px;
                 color: @blackColor;
                 text-align: center;
-                margin-left: 1rem;
                 font-weight: bold;
             }
             &:nth-child(1){
@@ -383,6 +402,10 @@
         position: relative;
         margin-top: 2rem;
         width: 272px;
+        a{
+            font-size: 18px;
+            font-weight: bold;
+        }
     }
 
     .explore-list{
@@ -439,14 +462,15 @@
             p{
                 font-size: 13px;
             }
-        }
-        .image{
-            display: flex;
-            margin-top: 1rem;
-            height: 100%;
-            img{
-                width: 100%;
+
+            span{
+                display: flex;
+                margin-top: 1rem;
                 height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
 
@@ -488,7 +512,7 @@
 
                 }
 
-                .item-image{
+                .image{
                     background-color: @whiteColor;
                     border: 2px solid transparent;
                     transition: 1s all;
@@ -501,7 +525,7 @@
             }
         }
 
-        .item-image{
+        .image{
             display: flex;
             padding: 0.7rem;
             border: 2px solid #1C2848;
@@ -513,7 +537,7 @@
                 height: 100%;
             }
         }
-        .goal-content{
+        .content{
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -522,6 +546,9 @@
             p{
                 text-align: center;
                 margin-top: 0.5rem;
+            }
+            h3{
+                text-align: center;
             }
         }
     }   
