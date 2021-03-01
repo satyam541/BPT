@@ -169,5 +169,15 @@ class CountryController extends Controller
         return back()->with('success','Successfully Restored');
 
     }
+    public function forceDeleteCountry($country_code)
+    {
+        $this->authorize('forceDelete', new Country());
+        Country::onlyTrashed()->where('country_code', $country_code)->forceDelete();
+
+ 
+        return back()->with('success','permanently deleted');
+
+
+    }
     
 }

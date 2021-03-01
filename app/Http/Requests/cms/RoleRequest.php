@@ -23,9 +23,14 @@ class RoleRequest extends FormRequest
      */
     public function rules()
     {
+        $role=request()->route('role',0);
+        
+          $id = 0;
+          if(!empty($role)){
+              $id = $role->id;
+          }
         return [
-            //
-            'name' => ['required', 'string', 'max:255','unique:role']
+            'name' => 'required|string|max:255|unique:role,name,'.$id.',id',
         ];
     }
 }

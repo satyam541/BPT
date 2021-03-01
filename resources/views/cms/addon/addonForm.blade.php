@@ -46,17 +46,25 @@
                     {{Form::label('name','Enter Name')}}
                     {{Form::text('name',null,['class'=>'form-control'])}}
                   </div>
+
                   <div class="form-group">
                     {{Form::label('description','Enter Description')}}
                     {{Form::text('description',null,['class'=>'form-control'])}}
                   </div>
+
                   <div class="form-group">
                     {{Form::label('addon_type','Select Type')}}
                     {{Form::select('addon_type',['book'=>'book'],null,['class'=>'form-control', 'placeholder' => 'Select Type'])}}
                   </div>
+
                   <div class="form-group">
                     {{Form::label('price','Enter Price')}}
                     {{Form::number('price',null,['class'=>'form-control'])}}
+                  </div>
+
+                  <div class="form-group">
+                    {{Form::label('is_published','Is Published')}}
+                    {{Form::checkbox('is_published')}}
                   </div>
                 </div>
                 <!-- /.card-body -->

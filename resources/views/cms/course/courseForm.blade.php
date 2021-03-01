@@ -37,7 +37,6 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            {{-- {{dd($course)}} --}}
                             {{ Form::model($course, ['route' => $submitRoute, 'files' => 'true']) }}
                             <div class="card-body">
                                 {{ Form::hidden('id', null) }}
@@ -101,6 +100,11 @@
                                     {{ Form::label('image', 'Logo') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
                                     <img src="{{ $course->getLogoPath() }}" class=" pad" style="max-width:50%" />
+                                    <br/>
+                            <br/>
+                            <a class="btn btn-danger" id="removeimage" onclick="doJob()">Remove Logo</a>
+                            <a class="btn bg-yellow" id="undoremoveimage" onclick="undodojob()">UNDO Remove Logo</a>
+                            {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
                                 </div>
 
 
@@ -117,6 +121,11 @@
                                 <div class="form-group">
                                     {{ Form::label('exam_included', 'Exam Included', ['class' => 'mr-1']) }}
                                     {{ Form::checkbox('exam_included') }}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ Form::label('published', 'Published', ['class' => 'mr-2']) }}
+                                    {{ Form::checkbox('published') }}
                                 </div>
 
                                 <div class="form-group">

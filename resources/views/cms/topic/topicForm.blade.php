@@ -83,11 +83,6 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('is_online','Is Online',['class'=>'mr-4'])}}
-                    {{Form::checkbox('is_online')}}
-                  </div>
-
-                  <div class="form-group">
                     {{Form::label('priority','Has Priority',['class'=>'mr-1'])}}
                     {{Form::checkbox('priority')}}
                   </div>
@@ -98,7 +93,7 @@
 
                   <div class="form-group">
                     {{Form::label('is_popular','Is Popular')}}
-                    <input type="checkbox" name="is_popular"@if($topic->popular->exists) checked @endif>
+                    <input type="checkbox" name="is_popular"@if(!empty($topic->popular->created_at)) checked @endif>
                   </div>
                   
                 </div>

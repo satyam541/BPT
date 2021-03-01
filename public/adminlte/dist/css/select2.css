@@ -223,7 +223,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: bottom;
-    white-space: nowrap; }
+    white-space: nowrap;
+  color:#333; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
     cursor: default;
     padding-left: 2px;

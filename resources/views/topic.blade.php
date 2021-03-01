@@ -472,7 +472,7 @@
                         <h2>Achieve Your Goals <span>with BPT</span></h2>
                     </div>
                     <p>The Knowledge Academy is a World's Leading Association for training professionals. The knowledge Academy provides training in 490+ location in 221+ countries, covering 3000 subjects with four delivery method Classroom, Live Classroom (Virtual),The Knowledge Academy is a World's Leading Association for training professionals. The knowledge Academy provides training in 490+ location in 221+ countries, covering 3000 subjects with four delivery method Classroom, Live Classroom (Virtual),</p>
-                    <span>
+                    <span class="img">
                         <img src="{{url('img/topic/goals.png')}}" alt="goals">
                     </span>
                 </div>

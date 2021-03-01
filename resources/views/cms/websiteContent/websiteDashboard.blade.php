@@ -82,7 +82,7 @@
               <div class="icon">
                 <i class="fas fa-calendar-alt"></i>
               </div>
-              <a href="{{Route('orderList')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{Route('scheduleList')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -102,10 +102,9 @@
             <div class="card-body">
                         
                         <div class="table-responsive ">
-                            <table class="table table-hover">
+                            <table id="example1"  class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
                                         <th>Course Name</th>
                                         <th>Country</th>
                                         <th>Locations</th>
@@ -114,9 +113,9 @@
                                     </tr>        
                                 </thead>
                                 <tbody>
+                                  
                                     @foreach($courses as $course)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
                                 <td><a href="{{ url($course['course_data']->reference) }}">
                                     {{$course['course_data']->name}}</a></td>
                             <td>United Kingdom</td>
@@ -128,6 +127,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -151,6 +151,18 @@
     </section>
 @endsection
 
-@section('footerScripts')
-
+@section('footer')
+    <script>
+        $(document).ready(function(){
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Course Name" },
+                        { "name": "Country" },
+                        { "name": "Locations", "sorting":false, searching:false  },
+                        { "name": "Dates", "sorting":false, searching:false  },
+                        { "name": "View More", "sorting":false, searching:false }
+              ]                    
+            });
+        });
+    </script>
 @endsection

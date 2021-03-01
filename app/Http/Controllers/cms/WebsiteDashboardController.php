@@ -101,6 +101,7 @@ class WebsiteDashboardController extends Controller
 
         $data['dates'] = $dates;
         $data['course'] = $course;
+        // dd($data);
         return view("cms.websiteContent.courseDashboard", $data);
     }
 }

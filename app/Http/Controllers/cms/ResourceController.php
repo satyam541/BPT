@@ -20,7 +20,7 @@ class ResourceController extends Controller
     
     public function resourceList()
     {
-        // $this->authorize('view',  new Resource());
+        $this->authorize('view',  new Resource());
         $data['Resources'] = Resource::all();   
         return view('cms.resources.resource',$data);
     }
@@ -35,7 +35,7 @@ class ResourceController extends Controller
 
     public function insert(ResourceRequest $request)
     {
-        // $this->authorize('create',  new Resource());
+        $this->authorize('create',  new Resource());
         
         $resources=new Resource();
      
@@ -62,7 +62,7 @@ class ResourceController extends Controller
     public function delete($resources)
     {
         $resources=Resource::where('id',$resources)->first();
-        // $this->authorize('delete', $resources);
+        $this->authorize('delete', $resources);
         $resources->delete();
 
     }

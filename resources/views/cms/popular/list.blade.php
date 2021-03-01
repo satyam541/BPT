@@ -1,4 +1,5 @@
 @extends('cms.layouts.master')
+
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
@@ -33,8 +34,8 @@
                         <span class="message" id="error_type"></span>
                         <div class="tab">
                             @foreach ($popularItems as $type => $items)
-                              
-                                <button class="tablinks" onclick="openCity(event, '{{ $type }}')">{{ $type }}</button> <!-- header name -->
+                          
+                                <button onclick="openCity(event, '{{ $type }}')"  class="tablinks" id="first"  >{{ $type }}</button> <!-- header name -->
                             @endforeach
                         </div>
                         @forelse ($popularItems as $type => $items)
@@ -85,6 +86,10 @@
 @endsection
 @section('footer')
 <script>
+    $("document").ready(function() {
+        $("#first").click();
+});
+
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -96,7 +101,14 @@
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         document.getElementById(cityName).style.display = "block";
+        if(evt.currentTarget==undefined){
+            var el = document.getElementsByClassName('tablinks');
+            var requiredElement = el[0]
+            requiredElement.className += " active";
+        }        
+        else{
         evt.currentTarget.className += " active";
+        }
     }
     var changePosition = function(requestData) {
         console.log(requestData);

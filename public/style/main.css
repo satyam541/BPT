@@ -9804,9 +9804,16 @@ select::-ms-expand {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  width: 100%;
 }
 .catalogue-banner .testi-content .buttons img {
   width: 20px !important;
+}
+.catalogue-banner .testi-content .buttons .black {
+  display: none;
+}
+.catalogue-banner .testi-content .buttons .white {
+  display: flex;
 }
 .catalogue-banner .owl-item:nth-child(odd) .testi-content {
   background-color: #0064D8;
@@ -9818,6 +9825,16 @@ select::-ms-expand {
   display: flex;
 }
 .catalogue-banner .owl-item:nth-child(odd) .testi-content span .black {
+  display: none;
+}
+.catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .btn-blue {
+  background: #FFFFFF;
+  color: #000000;
+}
+.catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .black {
+  display: flex;
+}
+.catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .white {
   display: none;
 }
 .catalogue-banner .owl-nav {
@@ -9878,7 +9895,7 @@ select::-ms-expand {
 }
 .catalogue-banner select {
   background: #FFFFFF;
-  padding: 15px 20px 15px 10px;
+  padding: 0.8rem;
   color: #787878;
   font-weight: 600;
   width: 100%;
@@ -9949,6 +9966,12 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
+.category .category-content span .blue {
+  display: flex;
+}
+.category .category-content span .white {
+  display: none;
+}
 .category .category-content h3 {
   text-align: center;
 }
@@ -9961,6 +9984,12 @@ select::-ms-expand {
   left: 0;
   height: 100%;
   width: 100%;
+}
+.category .category-content:hover span .blue {
+  display: none;
+}
+.category .category-content:hover span .white {
+  display: flex;
 }
 .category-enquire {
   padding: 3rem 1.5rem;
@@ -10012,7 +10041,7 @@ select::-ms-expand {
   margin-top: 2rem;
   width: 272px;
   align-self: center;
-  background: linear-gradient(90deg, #1C2848 22%, #FFFFFF 22%);
+  background: linear-gradient(90deg, #1C2848 59px, #FFFFFF 59px);
 }
 .popular-courses .popular-item span {
   display: flex;
@@ -10058,20 +10087,6 @@ select::-ms-expand {
   border-radius: 12px;
   width: 272px;
   margin: auto;
-  position: relative;
-  z-index: 1;
-}
-.popular-courses .total-content::before {
-  content: '';
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  background-image: url(../img/catalogue/users.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 60px;
-  width: 60px;
-  opacity: 0.6;
 }
 .popular-courses .total-content span {
   display: flex;
@@ -10269,6 +10284,11 @@ select::-ms-expand {
   font-size: 16px;
   line-height: 1.4;
 }
+@media (min-width: 320px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .catalogue-banner select {
+    background-size: 6% 24%;
+  }
+}
 @media (min-width : 768px) {
   .catalogue-banner {
     background: none;
@@ -10309,9 +10329,17 @@ select::-ms-expand {
   .catalogue-banner .form {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+  .catalogue-banner .form .buttons {
+    margin-top: 0;
+    width: 15%;
+  }
+  .catalogue-banner .form .buttons .btn-blue {
+    min-width: 100px;
   }
   .catalogue-banner .select-dropdown {
-    width: 33%;
+    width: 28%;
   }
   .category {
     padding: 3rem 2rem;
@@ -10341,6 +10369,7 @@ select::-ms-expand {
   }
   .popular-courses .popular-item {
     width: 48%;
+    background: linear-gradient(90deg, #1C2848 74px, #FFFFFF 74px);
   }
   .popular-courses .popular-item span::before {
     right: -28px;
@@ -10389,11 +10418,6 @@ select::-ms-expand {
     width: 24%;
   }
 }
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 23%, #FFFFFF 23%);
-  }
-}
 @media (min-width : 1024px) {
   .catalogue-banner .banner-text {
     width: 46%;
@@ -10414,8 +10438,18 @@ select::-ms-expand {
     background-size: 100% 40%;
     background-position: bottom left;
   }
+  .category .category-list {
+    justify-content: flex-start;
+  }
   .category .category-content {
     width: 22%;
+    margin-right: 2rem;
+  }
+  .category .category-content:nth-child(4n) {
+    margin-right: 0;
+  }
+  .category .category-content:last-child {
+    margin-right: 0;
   }
   .category-enquire {
     background: url(../img/catalogue/have-bg.png), linear-gradient(#0064D8, #1C2848);
@@ -10469,6 +10503,7 @@ select::-ms-expand {
   }
   .popular-courses .popular-item {
     width: 49%;
+    background: linear-gradient(90deg, #1C2848 58px, #FFFFFF 58px);
   }
   .popular-courses .popular-item span::before {
     right: -11px;
@@ -10499,12 +10534,13 @@ select::-ms-expand {
     width: 31%;
   }
 }
-@media (min-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 18%, #FFFFFF 18%);
-  }
-}
 @media (min-width : 1366px) {
+  .catalogue-banner .form .buttons {
+    width: 9%;
+  }
+  .catalogue-banner .select-dropdown {
+    width: 29%;
+  }
   .category {
     padding: 4rem 0rem;
   }
@@ -10522,7 +10558,7 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 20%, #FFFFFF 20%);
+    background: linear-gradient(90deg, #1C2848 65px, #FFFFFF 65px);
   }
   .popular-courses .popular-item span::before {
     right: -18px;
@@ -10933,12 +10969,12 @@ select::-ms-expand {
 .goals .goal-image p {
   font-size: 13px;
 }
-.goals .goal-image span {
+.goals .goal-image .img {
   display: flex;
   margin-top: 1rem;
   height: 100%;
 }
-.goals .goal-image span img {
+.goals .goal-image .img img {
   width: 100%;
   height: 100%;
 }
@@ -11158,7 +11194,7 @@ select::-ms-expand {
   .goals .goal-image p {
     text-align: center;
   }
-  .goals .goal-image span {
+  .goals .goal-image .img {
     width: 80%;
     margin: auto;
     margin-top: 1rem;
@@ -11292,7 +11328,7 @@ select::-ms-expand {
   .goals .goal-image p {
     text-align: left;
   }
-  .goals .goal-image span {
+  .goals .goal-image .img {
     width: 85%;
     margin-top: 1rem;
   }
@@ -11539,5 +11575,50 @@ select::-ms-expand {
 @media (min-width : 1366px) {
   .policy {
     padding: 4rem 0rem;
+  }
+}
+.topic-banner {
+  background-image: linear-gradient(#0064D8, #1C2848);
+}
+.topic-banner p,
+.topic-banner h2,
+.topic-banner h1,
+.topic-banner li {
+  color: #FFFFFF !important;
+}
+.topic-banner .choose-list {
+  margin-top: 2rem;
+}
+.topic-banner .choose-list .heading::before {
+  background-color: #FFFFFF;
+}
+.topic-banner .choose-list ul li {
+  padding-left: 1.4rem;
+  margin-top: 1rem;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+.topic-banner .choose-list ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 4px;
+  background-image: url(../img/topic/check-white.svg);
+  background-size: contain;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+}
+@media (min-width : 1024px) {
+  .knowledge-banner {
+    background-image: url;
+  }
+  .knowledge-banner p,
+  .knowledge-banner h2,
+  .knowledge-banner h1,
+  .knowledge-banner li {
+    color: #FFFFFF !important;
   }
 }

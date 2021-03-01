@@ -53,7 +53,7 @@
                                 @if ($submitRoute != 'insertCertification')
                                     <div class="form-group">
                                         {{ Form::label('courses[]', 'Courses') }}
-                                        {{ Form::select('courses[]', $courses,null, ['class' => 'form-control selectJS', 'multiple' => 'multiple', 'title' => 'Select Courses']) }}
+                                        {{ Form::select('courses[]', $courses,null,['class' => 'form-control multipleSelect', 'multiple' => 'multiple', 'placeholder' => 'Choose One']) }}
                                     </div>
                                 @endif
 
@@ -106,6 +106,11 @@
             $("#reference").val(slug);
 
         }
+        $(".multipleSelect").css({"background-color": "yellow"}).select2({
+                placeholder:"Choose Course",
+                
+                
+        });
 
     </script>
 

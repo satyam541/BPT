@@ -35,12 +35,7 @@
                                                     {{ Form::select('course', $list['courses'], $selectedCourse, ['id' => 'inputCourse', 'class' => 'form-control selectJS', 'title' => 'Choose one']) }}
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                {{ Form::label('inputCountry', 'Country', ['class' => 'col-sm-2 control-label']) }}
-                                                <div class="col-sm-4">
-                                                    {{ Form::select('country', $list['countries'], $selectedCountry, ['id' => 'inputCountry', 'class' => 'form-control selectJS', 'title' => 'Choose one']) }}
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <div class="card-footer">
                                             <div class="col-sm-12 text-right">
