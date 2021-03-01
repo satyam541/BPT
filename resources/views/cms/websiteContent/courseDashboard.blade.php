@@ -184,7 +184,6 @@
                                                 <tr>
 
                                                     <td>{{ $key }}</td>
-
                                                     <td>
                                                         @if (0 == $date->first()->location['tier'])
                                                             3

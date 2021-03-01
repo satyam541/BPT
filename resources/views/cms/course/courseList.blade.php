@@ -36,21 +36,19 @@
               <div class="card-title">
                 Course List
               </div>
+              <div class="col-sm-16 text-right">
+                <form action="{{Route('courseList')}}" method="get">
+                  <label class="">
+                    <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
+                  </label>
+                  <input type="submit" name="submit" id="submit" style="visibility: hidden">
+                </form>
+              </div>
             </div>
 
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="col-sm-2 ml-2">
-                  <form action="{{Route('courseList')}}" method="get">
-                    <label class="">
-                      <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                    </label>
-                    <input type="submit" name="submit" id="submit" style="visibility: hidden">
-                  </form>
-                </div>
-                                
-                  
-               
+                              
               <table id="example1">
                 
                 <thead>
