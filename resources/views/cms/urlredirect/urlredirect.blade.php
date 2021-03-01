@@ -56,27 +56,32 @@
         </div>
     </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="card card-primary card-outline">
-                <div class="card-header">
-                    <div class="card-title">
-                        Url List
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive" style="background-color: white">
-                        <table class="table table-hover">
-                            <p class="no-margin small">Total : {{ $urls->total() }}</p>
+<section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+           
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <div class="card-title">
+                 UrlRedirect List
+              </div>
+            </div>
+                        <div class="card-body">
+                            <table id="example1">
+                              <p class="no-margin small">Total : {{ $urls->total() }}</p>
                                     <thead>
                                         <tr>
                                             <th>Source Url</th>
                                             <th>Destination Url</th>
                                             @can('update',new App\Models\UrlRedirect())
-                                            <th>Edit</th>
+                                            <th>Action</th>
                                             @endcan
-                                            @can('delete',new App\Models\UrlRedirect())
+                                            {{-- @can('delete',new App\Models\UrlRedirect())
                                             <th>Delete</th>
-                                            @endcan
+                                            @endcan --}}
                                         </tr>        
                                     </thead>
                                     <tbody>
@@ -85,48 +90,51 @@
                                             <td>{{$url->source_url}}</td>
                                             <td>{{$url->target_url}}</td>
                                             @can('update',$url)
-                                            <td><a href="{{ route('editUrlRedirect',['url'=>$url->id]) }}"><i class="fa fa-edit"></a></td>
+                                            <td>
+                                            <a href="{{ route('editUrlRedirect',['url'=>$url->id]) }}" class="fa fa-edit"></a>
  
                                             @endcan
                                             @can('delete',$url)
-                                            <td><a href="#" onclick="deleteItem('{{ route('deleteUrlRedirect',['url'=>$url->id])}}')"><i class="fa fa-trash text-red"></i></a></td>
+                                            <a href="#" onclick="deleteItem('{{ route('deleteUrlRedirect',['url'=>$url->id])}}')" class="fa fa-trash text-red"></a>
                                             @endcan
+                                            </td>
                                         </tr>
                                         @endforeach
     
-                                    </tbody>
+                                    </tfoot>
                                 </table>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    @can('create',new App\Models\UrlRedirect())
+                             @can('create',new App\Models\UrlRedirect())
                             <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
                             @endcan
-                                </div>
-                            <div class="col-md-6">
-                            <div class="float-sm-right"> {{ $urls->appends(request()->query())->links() }}</div>
-                     </div>
-                    
-                    </div>
+                            
                         </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card --> 
                     </div>
-                </div>
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+            
+                </div><!-- /.container-fluid -->
+              </section>
         </section>
             </div>
 @endsection
 
 @section('footer')
-    <script>
-        $(document).ready(function(){
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+<script>
+    $(document).ready(function(){
+        $('#example1').DataTable({
+          "columns": [
+                        { "source_url": "Source_Url",searching:false},
+                        { "target_url": "Target_Url",searching:false },
+                        { "name": "Actions", "sorting":false, searching:false }
+          ],
+        "bFilter": false,
+        "bInfo": false                   
         });
-    </script>
+    });
+    
+</script>
 @endsection

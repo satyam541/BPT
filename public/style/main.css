@@ -4362,6 +4362,7 @@ select::-ms-expand {
 .solution .solution-item h3 {
   margin-top: 1rem;
   font-size: 16px;
+  text-align: center;
 }
 @media (min-width : 768px) {
   .onsite-banner {
@@ -9771,6 +9772,7 @@ select::-ms-expand {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  width: 100%;
 }
 .catalogue-banner .testi-content .buttons img {
   width: 20px !important;
@@ -9979,7 +9981,7 @@ select::-ms-expand {
   margin-top: 2rem;
   width: 272px;
   align-self: center;
-  background: linear-gradient(90deg, #1C2848 22%, #FFFFFF 22%);
+  background: linear-gradient(90deg, #1C2848 59px, #FFFFFF 59px);
 }
 .popular-courses .popular-item span {
   display: flex;
@@ -10222,6 +10224,11 @@ select::-ms-expand {
   font-size: 16px;
   line-height: 1.4;
 }
+@media (min-width: 320px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .catalogue-banner select {
+    background-size: 6% 24%;
+  }
+}
 @media (min-width : 768px) {
   .catalogue-banner {
     background: none;
@@ -10302,6 +10309,7 @@ select::-ms-expand {
   }
   .popular-courses .popular-item {
     width: 48%;
+    background: linear-gradient(90deg, #1C2848 74px, #FFFFFF 74px);
   }
   .popular-courses .popular-item span::before {
     right: -28px;
@@ -10348,11 +10356,6 @@ select::-ms-expand {
   }
   .figures .figures-content {
     width: 24%;
-  }
-}
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 23%, #FFFFFF 23%);
   }
 }
 @media (min-width : 1024px) {
@@ -10440,6 +10443,7 @@ select::-ms-expand {
   }
   .popular-courses .popular-item {
     width: 49%;
+    background: linear-gradient(90deg, #1C2848 58px, #FFFFFF 58px);
   }
   .popular-courses .popular-item span::before {
     right: -11px;
@@ -10470,11 +10474,6 @@ select::-ms-expand {
     width: 31%;
   }
 }
-@media (min-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 18%, #FFFFFF 18%);
-  }
-}
 @media (min-width : 1366px) {
   .catalogue-banner .form .buttons {
     width: 9%;
@@ -10499,7 +10498,7 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .popular-courses .popular-item {
-    background: linear-gradient(90deg, #1C2848 20%, #FFFFFF 20%);
+    background: linear-gradient(90deg, #1C2848 65px, #FFFFFF 65px);
   }
   .popular-courses .popular-item span::before {
     right: -18px;
@@ -11517,4 +11516,38 @@ select::-ms-expand {
   .policy {
     padding: 4rem 0rem;
   }
+}
+.topic-banner {
+  background-image: linear-gradient(#0064D8, #1C2848);
+}
+.topic-banner p,
+.topic-banner h2,
+.topic-banner h1,
+.topic-banner li {
+  color: #FFFFFF !important;
+}
+.topic-banner .choose-list {
+  margin-top: 2rem;
+}
+.topic-banner .choose-list .heading::before {
+  background-color: #FFFFFF;
+}
+.topic-banner .choose-list ul li {
+  padding-left: 1.4rem;
+  margin-top: 1rem;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+.topic-banner .choose-list ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 4px;
+  background-image: url(../img/topic/check-white.svg);
+  background-size: contain;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
 }

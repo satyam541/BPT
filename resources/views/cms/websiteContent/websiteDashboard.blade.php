@@ -82,7 +82,7 @@
               <div class="icon">
                 <i class="fas fa-calendar-alt"></i>
               </div>
-              <a href="{{Route('orderList')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{Route('scheduleList')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -126,6 +126,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
             </div>
