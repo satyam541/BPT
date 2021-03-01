@@ -137,7 +137,7 @@ class ScheduleController extends ScheduleApi
       $course   = Course::find($inputs['course_id']);
       $dates    = explode(",",$inputs['response_date']);
       foreach($dates as $date){
-      $location = Location::with('venues')->find($inputs['location']);
+      $location = Location::find($inputs['location']);
       // $schedule = new Schedule();
       $schedule->response_course_id         = $inputs['course_id'];
       $schedule->course_id                  = $inputs['course_id'];
