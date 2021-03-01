@@ -519,78 +519,80 @@
 
 <!-- Start Popular-Location Section -->
     <section class="flex-container popular-location">
-        <div class="popular-container">
-            <div class="popular-content">
-                <h2>Largest  Location</h2>
-                <p>Southampton is the largest city located in England. The city is situated 69 miles south-west of London and 15 miles west north-west of Portsmouth. Southampton is the main port and neigh bouring city.</p>
-                <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
-                    <img src="{{url('img/courses/learn.svg')}}" alt="learn">
-                    Learn More
-                </a>
+        <div class="container">
+            <div class="popular-container">
+                        <div class="popular-content">
+                            <h2>Largest  Location</h2>
+                            <p>Southampton is the largest city located in England. The city is situated 69 miles south-west of London and 15 miles west north-west of Portsmouth. Southampton is the main port and neigh bouring city.</p>
+                            <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                                <img src="{{url('img/courses/learn.svg')}}" alt="learn">
+                                Learn More
+                            </a>
+                            </div>
+                        </div>
+                        <div class="location-content">
+                            <div class="heading">
+                                <h2>Find The Most Convenient <span>Location For You</span></h2>
+                            </div>
+                            <div class="location-list">
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>London</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>Birminghamon</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>Manchester</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>Cardiff</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>Bristol</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <span class="image">
+                                        <img src="{{url('img/courses/travel.svg')}}" alt="travel">
+                                    </span>
+                                    <h3>Leeds</h3>
+                                    <span class="arrow">
+                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="location-content">
-                <div class="heading">
-                    <h2>Find The Most Convenient <span>Location For You</span></h2>
-                </div>
-                <div class="location-list">
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>London</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>Birminghamon</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>Manchester</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>Cardiff</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>Bristol</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                    <div class="content">
-                        <span class="image">
-                            <img src="{{url('img/courses/travel.svg')}}" alt="travel">
-                        </span>
-                        <h3>Leeds</h3>
-                        <span class="arrow">
-                            <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 <!-- End Popular-Location Section -->
