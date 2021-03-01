@@ -185,7 +185,7 @@ class UserController extends Controller
         }
         $user->roles()->sync($roles);
         
-        return back()->with('success', 'Role Assigned Successfully!');
+        return back()->with('success', 'Operation Done!');
     }
 
     public function assignPermission(Request $request)
@@ -194,7 +194,7 @@ class UserController extends Controller
         $role        = Role::find($roleID);
         $permissions = $request->input('permission');// return array of permission id
         $role->permissions()->sync($permissions);
-        return back()->with('success', 'Permission Assigned Successful!');
+        return back()->with('success', 'Operation Done!');
     }
 
     public function createPermission()

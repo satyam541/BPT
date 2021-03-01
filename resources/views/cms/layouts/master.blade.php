@@ -324,7 +324,7 @@
                 <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
                   <i class="far fa-circle nav-icon "></i>
                   <p>
-                    Category    
+                    Certification    
                   </p>
                 </a>
                 @endcan
@@ -904,6 +904,7 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
+            
             
         });
 

@@ -37,7 +37,6 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            {{-- {{dd($course)}} --}}
                             {{ Form::model($course, ['route' => $submitRoute, 'files' => 'true']) }}
                             <div class="card-body">
                                 {{ Form::hidden('id', null) }}
@@ -117,6 +116,11 @@
                                 <div class="form-group">
                                     {{ Form::label('exam_included', 'Exam Included', ['class' => 'mr-1']) }}
                                     {{ Form::checkbox('exam_included') }}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ Form::label('published', 'Published', ['class' => 'mr-2']) }}
+                                    {{ Form::checkbox('published') }}
                                 </div>
 
                                 <div class="form-group">

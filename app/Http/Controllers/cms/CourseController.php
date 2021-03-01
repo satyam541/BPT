@@ -173,6 +173,7 @@ class CourseController extends Controller
         $inputs = $request->except(["_token"]);
         $inputs['accreditation_id']=$request->accreditation_id;
         $inputs['accredited'] = isset($inputs['accredited']);
+        $inputs['published'] = isset($inputs['published']);
         $course = Course::firstOrNew( 
             ['topic_id'=>$inputs['topic_id'],'name'=>$inputs['name']]
         ,$inputs);
@@ -261,6 +262,7 @@ class CourseController extends Controller
         $inputs['accreditation_id']=$request->accreditation_id;
         
         $inputs['accredited'] = isset($inputs['accredited']);
+        $inputs['published']  = isset($inputs['published']);
         $inputs['is_online']  = isset($inputs['is_online']);
         $course->update($inputs);
         $online = array();
