@@ -52,6 +52,7 @@
             text-align: center;
             font-size: 16px;
             font-weight: bold;
+            width: 100%;
         }
         .buttons {
                 img {
@@ -279,7 +280,7 @@
         margin-top: 2rem;
         width: 272px;
         align-self: center;
-        background: linear-gradient(90deg, @darkblueColor 22%, @whiteColor 22%);
+        background: linear-gradient(90deg, @darkblueColor 59px, @whiteColor 59px);
         span {
             display: flex;
             justify-content: center;
@@ -526,3 +527,14 @@
     }
 }
 // Start Figures Section
+
+@media (min-width:320px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    // Start Banner Section
+.catalogue-banner {
+    select {
+        background-size: 6% 24%;
+    }
+}
+// End Banner Section
+}
