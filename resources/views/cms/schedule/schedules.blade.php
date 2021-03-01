@@ -33,19 +33,14 @@
                     <div class="form-group row">
                       <label for="inputCourse" class="col-sm-2 control-label">Course</label>
                         <div class="col-sm-4">
-                            {{ Form::select('course',$list['courses'],null,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                            {{ Form::select('course',$list['courses'],null,['id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputCountry" class="col-sm-2 control-label">Country</label>
-                        <div class="col-sm-4">
-                            {{ Form::select('country',$list['countries'],null,['id'=>'inputCountry','class'=>'form-control selectJS', 'placeholder'=>'Choose one','onchange'=>"updateLocations()"])}}
-                        </div>
-                    </div>
+                    
                     <div class="form-group row">
                         <label for="inputLocation" class="col-sm-2 control-label">Location</label>
                         <div class="col-sm-4">
-                            {{ Form::select('location',$list['locations'],null,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                            {{ Form::select('location',$list['locations'],null,['id'=>'inputLocation','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
                     <div class="box-footer">

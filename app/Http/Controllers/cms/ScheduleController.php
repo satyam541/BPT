@@ -38,7 +38,6 @@ class ScheduleController extends ScheduleApi
       $this->authorize('view', new Schedule());
       $responseLocation = $request->get('location');
       $courseId         = $request->get('course');
-      $countries        = $request->get('country');
       $query            = Schedule::query();
       if(!empty($responseLocation))
       {
@@ -48,15 +47,10 @@ class ScheduleController extends ScheduleApi
       {
         $query->where('course_id',$courseId);
       }
-      if(!empty($countries))
-      {
-        $query->where('country_id',$countries);
-      }
         
       $data['schedules']  = $query->where('source', 'API')->paginate(10);
       $request->flash(); // keep data for the next redirect. // try without this
       $list['courses']    = Course::pluck('name','id')->toArray();
-      $list['countries']  = Country::pluck('name','country_code')->toArray();
       $list['locations']  = Location::pluck("name","name")->toArray();
       $data['list']       = $list;
       
@@ -115,7 +109,6 @@ class ScheduleController extends ScheduleApi
     {
       $this->authorize('update', $schedule);
       $data['schedule']          = $schedule;
-      $data['response_location']=  $schedule->location->id;
       $data["submitRoute"]      = array("updateSchedule",$schedule->id);
 
       $list["courses"]          = Course::pluck("name","id")->toArray();
@@ -123,7 +116,6 @@ class ScheduleController extends ScheduleApi
       $list["locations"]        = Location::pluck("name","id")->toArray();
 
       $data['list']             = $list;
-      // dd($data['response_location']);
       // required input fields
       //course, country, location,venue, date , time, duration , eventprice 
       return view('cms.schedule.scheduleForm',$data);
@@ -281,6 +273,7 @@ class ScheduleController extends ScheduleApi
       $list["countries"]    = Country::pluck("name","country_code")->toArray();
       $list["locations"]    = Location::pluck("name","id")->toArray();
       $data['list']         = $list;
+      
       return view('cms.schedule.editSchedule',$data);
 
     }
