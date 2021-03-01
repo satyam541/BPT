@@ -9845,7 +9845,7 @@ select::-ms-expand {
 }
 .catalogue-banner select {
   background: #FFFFFF;
-  padding: 15px 20px 15px 10px;
+  padding: 10px 20px 10px 10px;
   color: #787878;
   font-weight: 600;
   width: 100%;
@@ -10025,20 +10025,6 @@ select::-ms-expand {
   border-radius: 12px;
   width: 272px;
   margin: auto;
-  position: relative;
-  z-index: 1;
-}
-.popular-courses .total-content::before {
-  content: '';
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  background-image: url(../img/catalogue/users.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 60px;
-  width: 60px;
-  opacity: 0.6;
 }
 .popular-courses .total-content span {
   display: flex;
@@ -10276,9 +10262,17 @@ select::-ms-expand {
   .catalogue-banner .form {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+  }
+  .catalogue-banner .form .buttons {
+    margin-top: 0;
+    width: 15%;
+  }
+  .catalogue-banner .form .buttons .btn-blue {
+    min-width: 100px;
   }
   .catalogue-banner .select-dropdown {
-    width: 33%;
+    width: 28%;
   }
   .category {
     padding: 3rem 2rem;
@@ -10381,8 +10375,18 @@ select::-ms-expand {
     background-size: 100% 40%;
     background-position: bottom left;
   }
+  .category .category-list {
+    justify-content: flex-start;
+  }
   .category .category-content {
     width: 22%;
+    margin-right: 2rem;
+  }
+  .category .category-content:nth-child(4n) {
+    margin-right: 0;
+  }
+  .category .category-content:last-child {
+    margin-right: 0;
   }
   .category-enquire {
     background: url(../img/catalogue/have-bg.png), linear-gradient(#0064D8, #1C2848);
@@ -10472,6 +10476,12 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1366px) {
+  .catalogue-banner .form .buttons {
+    width: 9%;
+  }
+  .catalogue-banner .select-dropdown {
+    width: 29%;
+  }
   .category {
     padding: 4rem 0rem;
   }

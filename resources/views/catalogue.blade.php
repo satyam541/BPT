@@ -82,6 +82,9 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="buttons">
+                        <a href="javascript:void(0);" class="btn-blue">Search</a>
+                    </div>
                 </form>
             </div>
         </div>
