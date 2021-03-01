@@ -35,12 +35,13 @@
                         @foreach ($popularTopics as $popularTopic)
                             <div class="testi-content">
                                 <span>
-                                    <img src="{{ url('img/catalogue/homework-white.svg') }}" alt="homework">
+                                    <img src="{{ url('img/catalogue/homework-white.svg') }}" alt="homework" class="white">
+                                    <img src="{{ url('img/catalogue/homework-black.svg') }}" alt="homework" class="black">
                                 </span>
-                                <h3>{{ $popularTopic->name }}</h3>
+                                <a href="javascript:void(0);" class="name">{{ $popularTopic->name }}</a>
                                 <div class="buttons">
                                     <a href="{{ url('training-courses' . $popularTopic->reference) }}"
-                                        class="btn-white open-popup enquiryJS" data-quote="View Detail">
+                                        class="btn-white">
                                         <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view">View Detail
                                     </a>
                                 </div>
@@ -73,11 +74,13 @@
                         </select>
                     </div>
                     <div class="select-dropdown">
-                        <p>Search</p>
-                        <input type="text" name="course" class="auto-complete-course" placeholder="Search Course here">
-                        <button class="select-search">
-                            <img src="{{ url('img/catalogue/magnifying.svg') }}" alt="magnifying">
-                        </button>
+                        <p>Select A Course</p>
+                        <select name="topic" id="'topicSelect'">
+                            <option value="">Select Course</option>
+                            @foreach ($topics as $topicList)
+                                <option value="{{ $topicList->id }}">{{ $topicList->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </form>
             </div>
