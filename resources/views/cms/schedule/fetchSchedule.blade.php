@@ -39,10 +39,10 @@
                             <form class="form-horizontal" id="fetchScheduleForm">
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="inputCountry" class="col-sm-2 control-label  text-right">select
-                                            Country</label>
+                                        {{Form::label('inputCountry','Select Country', ['class' => 'col-md-2 control-label  text-right'])}}
+                                        
                                         <div class="col-sm-4">
-                                            {{ Form::select('country', $list['countries'], null, ['tabindex'=>'-1','id' => 'inputCountry', 'class' => 'form-control selectJS', 'title' => 'Choose one']) }}
+                                            {{ Form::select('country', $list['countries'], null, ['tabindex'=>'-1','id' => 'inputCountry', 'class' => 'form-control selectJS', 'placeholder' => 'Choose Country']) }}
                                         </div>
                                     </div>
 

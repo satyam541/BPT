@@ -46,15 +46,18 @@ class WhatsIncludedController extends Controller
     }
     public function update(WhatsIncludedMainRequest $request)
     {
-        $inputs = $request->input();
-        $whatsincluded = whatsIncludedHeaders::firstOrNew(['id'=>$inputs['id']]);
+        $inputs        = $request->except('_token');
+        $whatsincluded = whatsIncludedHeaders::find($inputs['id']);
         $whatsincluded->content = $inputs['content'];
+        $whatsincluded->name    = $inputs['name'];
+
         if($request->hasFile('icon')){
             $iconName = $request->file('icon')->getClientOriginalName();
             $request->file('icon')->move(public_path("/images/whatsinclude/"), $iconName);
             $whatsincluded->icon = "whatsinclude/".$iconName;
         }
-        $whatsincluded->save();
+        
+        $whatsincluded->update();
         
         return redirect()->route('whatsincludedListRoute')->with('success','WhatsIncluded Updated');
     }
