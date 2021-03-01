@@ -52,6 +52,7 @@
             text-align: center;
             font-size: 16px;
             font-weight: bold;
+            width: 100%;
         }
         .buttons {
                 img {
@@ -138,7 +139,7 @@
     }
     select {
         background:@whiteColor;
-        padding: 15px 20px 15px 10px;
+        padding: 10px 20px 10px 10px;
         color: #787878;
         font-weight: 600;
         width: 100%;
@@ -279,7 +280,7 @@
         margin-top: 2rem;
         width: 272px;
         align-self: center;
-        background: linear-gradient(90deg, @darkblueColor 22%, @whiteColor 22%);
+        background: linear-gradient(90deg, @darkblueColor 59px, @whiteColor 59px);
         span {
             display: flex;
             justify-content: center;
@@ -325,20 +326,6 @@
         border-radius: 12px;
         width: 272px;
         margin: auto;
-        position: relative;
-        z-index: 1;
-        &::before {
-            content: '';
-            position: absolute;
-            right: 4px;
-            top: 4px;
-            background-image: url(../img/catalogue/users.svg);
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 60px;
-            width: 60px;
-            opacity: .6;
-        }
         span {
             display: flex;
             height: 50px;
@@ -540,3 +527,14 @@
     }
 }
 // Start Figures Section
+
+@media (min-width:320px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    // Start Banner Section
+.catalogue-banner {
+    select {
+        background-size: 6% 24%;
+    }
+}
+// End Banner Section
+}

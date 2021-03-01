@@ -42,9 +42,17 @@
         .form {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+            .buttons {
+                margin-top: 0;
+                width: 15%;
+                .btn-blue {
+                    min-width: 100px;
+                }
+            }
         }
         .select-dropdown {
-            width: 33%;
+            width: 28%;
         }
     }
     // End Banner Section
@@ -83,6 +91,7 @@
         }
         .popular-item {
             width: 48%;
+            background: linear-gradient(90deg, @darkblueColor 74px, @whiteColor 74px);
             span {
                 &::before {
                     right: -28px;
@@ -143,17 +152,6 @@
 
 }
 
-@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-    // Start Popular-Courses Section
-    .popular-courses {
-        .popular-item {
-            background: linear-gradient(90deg, @darkblueColor 23%, @whiteColor 23%);
-        }
-    }
-    // End Popular-Courses Section
-}
-
 @media @size-lg{
 
     // Start Banner Section
@@ -182,8 +180,18 @@
         background-repeat: no-repeat;
         background-size: 100% 40%;
         background-position: bottom left;
+        .category-list {
+            justify-content: flex-start;
+        }
         .category-content {
             width: 22%;
+            margin-right: 2rem;
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
     // End Category Section
@@ -243,6 +251,7 @@
         }
         .popular-item {
             width: 49%;
+            background: linear-gradient(90deg, @darkblueColor 58px, @whiteColor 58px);
             span {
                 &::before {
                     right: -11px;
@@ -283,18 +292,21 @@
 
 }
 
-@media (min-width:1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media @size-xl{
 
-    // Start Popular-Courses Section
-    .popular-courses {
-        .popular-item {
-            background: linear-gradient(90deg, @darkblueColor 18%, @whiteColor 18%);
+     // Start Banner Section
+     .catalogue-banner {
+        
+        .form {
+            .buttons {
+                width: 9%;
+            }
+        }
+        .select-dropdown {
+            width: 29%;
         }
     }
-    // End Popular-Courses Section
-}
-
-@media @size-xl{
+    // End Banner Section
 
     // Start Category Section
     .category {
@@ -318,7 +330,7 @@
     .popular-courses {
         padding: @sectionPadding-xl;
         .popular-item {
-            background: linear-gradient(90deg, @darkblueColor 20%, @whiteColor 20%);
+            background: linear-gradient(90deg, @darkblueColor 65px, @whiteColor 65px);
             span {
                 &::before {
                     right: -18px;
