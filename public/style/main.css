@@ -2189,7 +2189,7 @@ select::-ms-expand {
   }
   .looking .owl-nav .owl-prev,
   .looking .owl-nav .owl-next {
-    background-image: url('../img/home/left-arrow.png') !important;
+    background-image: url('../img/home/testi-arrow.png') !important;
     background-repeat: no-repeat !important;
     width: 32px;
     height: 30px;
@@ -7671,7 +7671,7 @@ select::-ms-expand {
   width: 16px;
 }
 .foundation #overview p {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .foundation #faq {
   display: flex;
@@ -8090,7 +8090,6 @@ select::-ms-expand {
 .training .detail .content .sub-content p {
   color: #0064D8;
   margin-top: 0.5rem;
-  font-weight: bold;
 }
 .training .date {
   display: flex;
@@ -8357,7 +8356,7 @@ select::-ms-expand {
   background-repeat: no-repeat;
   background-size: contain;
   height: 75px;
-  width: 180px;
+  width: 75px;
   top: 0;
   left: -4px;
 }
@@ -8457,9 +8456,8 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
-.related .related-content a {
+.related .related-content .name {
   font-size: 16px;
-  font-weight: bold;
   width: calc(100% - 80px);
 }
 .popular-location {
@@ -8524,12 +8522,11 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
-.popular-location .content a {
+.popular-location .location-name {
   width: calc(100% - 100px);
-  font-weight: bold;
   font-size: 16px;
 }
-.popular-location .content .arrow {
+.popular-location .arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8539,7 +8536,7 @@ select::-ms-expand {
   width: 45px;
   border-radius: 8px;
 }
-.popular-location .content .arrow img {
+.popular-location .arrow img {
   width: 100%;
   height: 100%;
 }
@@ -8830,6 +8827,7 @@ select::-ms-expand {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-right: 1rem;
   }
   .popular-location .content {
     width: 47%;
@@ -8906,7 +8904,7 @@ select::-ms-expand {
   }
   .foundation .tabs-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
     margin-top: 2rem;
   }
@@ -8927,6 +8925,7 @@ select::-ms-expand {
     justify-content: center;
     width: 27%;
     align-self: flex-start;
+    margin-right: 3rem;
   }
   .foundation .tab-links .tab-click {
     width: 100%;
@@ -8935,7 +8934,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .foundation .tab-content {
-    width: 65%;
+    width: 69%;
     margin-top: 0 !important;
   }
   .foundation #overview {
@@ -9230,7 +9229,7 @@ select::-ms-expand {
     width: 22%;
   }
   .foundation .tab-content {
-    width: 71%;
+    width: 74%;
   }
   .foundation #included .heading {
     display: flex;
