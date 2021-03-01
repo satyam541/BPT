@@ -98,7 +98,7 @@
 
                   <div class="form-group">
                     {{Form::label('is_popular','Is Popular')}}
-                    <input type="checkbox" name="is_popular"@if($topic->popular->exists) checked @endif>
+                    <input type="checkbox" name="is_popular"@if(!empty($topic->popular->created_at)) checked @endif>
                   </div>
                   
                 </div>

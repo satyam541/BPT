@@ -29,17 +29,25 @@
                                     <div class="card-body">
                                         <form action="">
                                             <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
+                                                <div class="form-group row">
+                                                    <div class="col-md-6 col-xs-4 col-lg-2 col-sm-8">
+                                                        {{ Form::label('moduleName','Select Module:') }}
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-4 col-lg-6 col-sm-12">
                                                         {{ Form::select('moduleName', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control selectJS','tabindex'=>'-1'])) }}
                                                     </div>
-                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-6 col-xs-4 col-lg-2 col-sm-10">
+                                                        {{ Form::label('access','Select Access:') }}
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-4 col-lg-6 col-sm-10">
                                                         {{ Form::select('access', $access, $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  selectJS','tabindex'=>'-1'])) }}
                                                     </div>
-                                                    <div class="col-md-6 col-xs-4 col-lg-4 col-sm-10">
-                                                        <button class="btn btn-primary btn-sm">Search</button>
-                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-12 text-right">
+                                                <button class="btn btn-primary btn-sm">Search</button>
                                             </div>
                                         </form>
                                     </div>

@@ -86,6 +86,10 @@ Route::get('/search', function () {
     return view('search');
 });
 
+Route::get('/knowledge-pass',function(){
+    return view('knowledge-pass');
+});
+
 Route::get('/privacy-policy',function(){
     return view('privacy-policy');
 })->name('privacy-policy');
