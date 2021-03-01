@@ -199,6 +199,7 @@ class ScheduleController extends ScheduleApi
 
     public function manageSchedulePrice(Request $request, $courseId)
     {
+      
       $this->authorize('update', new Schedule());
       $selectedCountry    = $request->input('country', country()->country_code);
       $selectedCourse     = $request->input('course',$courseId);    
