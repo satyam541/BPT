@@ -127,8 +127,8 @@
     $(document).ready(function(){
         $('#example1').DataTable({
           "columns": [
-                        { "source_url": "Source_Url",searching:false},
-                        { "target_url": "Target_Url",searching:false },
+                        { "name": "source_Url",searching:false},
+                        { "name": "target_Url",searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
           ],
         "bFilter": false,
