@@ -22,6 +22,8 @@ Auth::routes(['register'=>false]);
 /* these routes is for login */
 
 Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
+Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
+Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
