@@ -11094,6 +11094,9 @@ select::-ms-expand {
   .topic-choose .count {
     flex-direction: row;
   }
+  .topic-choose .count .txt-name {
+    margin-left: 0.7rem;
+  }
   .topic-choose .choose-image {
     width: 48%;
     margin-top: 0;
@@ -11190,8 +11193,15 @@ select::-ms-expand {
     bottom: 150px;
     left: -30px;
   }
+  .topic-choose .count {
+    width: 206px;
+  }
   .topic-choose .count .txt-name {
     text-align: left;
+  }
+  .topic-choose .choose-progress {
+    width: 90%;
+    justify-content: space-between;
   }
   .topic-delivery {
     background-image: url(../img/topic/delivey-bg.png);
@@ -11369,6 +11379,9 @@ select::-ms-expand {
   .topic-choose .years {
     width: 23%;
     bottom: 180px;
+  }
+  .topic-choose .choose-progress {
+    width: 80%;
   }
   .experiences {
     padding: 4rem 0rem;
