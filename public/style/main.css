@@ -11517,3 +11517,37 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
 }
+.topic-banner {
+  background-image: linear-gradient(#0064D8, #1C2848);
+}
+.topic-banner p,
+.topic-banner h2,
+.topic-banner h1,
+.topic-banner li {
+  color: #FFFFFF !important;
+}
+.topic-banner .choose-list {
+  margin-top: 2rem;
+}
+.topic-banner .choose-list .heading::before {
+  background-color: #FFFFFF;
+}
+.topic-banner .choose-list ul li {
+  padding-left: 1.4rem;
+  margin-top: 1rem;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+.topic-banner .choose-list ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 4px;
+  background-image: url(../img/topic/check-white.svg);
+  background-size: contain;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+}
