@@ -20804,7 +20804,7 @@ html.maximized-card {
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #007bff;
   border-color: #006fe6;
-  color: #ffffff;
+  color: #000;
   padding: 0 10px;
   margin-top: .31rem;
 }
@@ -20938,7 +20938,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-primary .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #007bff;
   border-color: #006fe6;
-  color: #ffffff;
+  color: #000;
 }
 
 .select2-container--default .select2-primary .select2-selection--multiple .select2-selection__choice__remove,
@@ -20995,7 +20995,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-secondary .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #6c757d;
   border-color: #60686f;
-  color: #ffffff;
+  color: #000;
 }
 
 .select2-container--default .select2-secondary .select2-selection--multiple .select2-selection__choice__remove,
@@ -21052,7 +21052,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-success .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #28a745;
   border-color: #23923d;
-  color: #ffffff;
+  color: #000;
 }
 
 .select2-container--default .select2-success .select2-selection--multiple .select2-selection__choice__remove,
@@ -21109,7 +21109,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-info .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #17a2b8;
   border-color: #148ea1;
-  color: #ffffff;
+  color: 000;
 }
 
 .select2-container--default .select2-info .select2-selection--multiple .select2-selection__choice__remove,
@@ -21166,7 +21166,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-warning .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #ffc107;
   border-color: #edb100;
-  color: #1F2D3D;
+  color: #000;
 }
 
 .select2-container--default .select2-warning .select2-selection--multiple .select2-selection__choice__remove,
@@ -21223,7 +21223,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-danger .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #dc3545;
   border-color: #d32535;
-  color: #ffffff;
+  color: #000;
 }
 
 .select2-container--default .select2-danger .select2-selection--multiple .select2-selection__choice__remove,
@@ -21280,7 +21280,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-light .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #f8f9fa;
   border-color: #e9ecef;
-  color: #1F2D3D;
+  color: #000;
 }
 
 .select2-container--default .select2-light .select2-selection--multiple .select2-selection__choice__remove,
@@ -21337,7 +21337,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 .select2-dark .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #343a40;
   border-color: #292d32;
-  color: #ffffff;
+  color: #000;
 }
 
 .select2-container--default .select2-dark .select2-selection--multiple .select2-selection__choice__remove,

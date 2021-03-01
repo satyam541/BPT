@@ -61,6 +61,10 @@
                                                         <a href="{{ route('restoreCountry', ['country_code' => $trashedCountry->country_code]) }}"
                                                             class="fa fa-refresh fa-spin"></a>
                                                     @endcan
+                                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                                @can('forceDelete',$trashedCountry)
+                                                <a href="{{ route('forceDeleteCountry',['country_code'=>$trashedCountry->id])}}"  class="fa fa-trash" style="color: red"></a>
+                                                  @endcan
                                                 </td>
                                             </tr>
                                         @endforeach

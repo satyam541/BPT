@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UrlRedirect extends Model
 {
-  
+    use softDeletes;
     protected   $table='url_redirect';
     protected $primaryKey = "id";
 
