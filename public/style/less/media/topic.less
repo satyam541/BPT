@@ -27,6 +27,12 @@
 
         .explore-courses{
             width: 53%;
+            .heading{
+                justify-content: flex-start;
+                h2{
+                    text-align: left;
+                }
+            }
         }
 
         .course-item{
@@ -46,7 +52,7 @@
                 justify-content: space-between;
                 margin-left: 1rem;
               
-            h3{
+            a{
                 width: 66%;
                 text-align: left;
                 margin-bottom: 0;
@@ -108,11 +114,8 @@
     // start topic-delivery section //
     .topic-delivery{
         padding: @sectionPadding;
-
         .delivery-list{
-            flex-direction: row;
-            justify-content: space-around;
-            .list{
+            .item{
                 width: 19%;
             }
         }
@@ -134,16 +137,25 @@
             align-items: flex-start;
             display: flex;
             flex-direction: column;
+            .heading{
+                justify-content: flex-start;
+
+                h2{
+                    text-align: left;
+                }
+            }
         }
         .count{
             flex-direction: row;
         }
         .choose-image{
             width: 48%;
+            margin-top: 0;
+            align-items: flex-start;
+            justify-content: flex-end;
         }
         .years{
             width: 96%;
-            bottom: 92px;
         }
        
     }
@@ -168,11 +180,7 @@
     .goals{
         padding: @sectionPadding-md;
 
-        .image{
-            width: 80%;
-            margin: auto;
-            margin-top: 1rem;
-        }
+       
         .goal-image{
             .heading{
                 display: flex;
@@ -181,6 +189,12 @@
             h2,p{
                 text-align: center;
             }
+
+            span{
+                width: 80%;
+                margin: auto;
+                margin-top: 1rem;
+            }
         }
 
        
@@ -188,14 +202,15 @@
             flex-direction: row;
             width: 100%;
         }
-        .goal-content{
+        .content{
             align-items: flex-start;
             width: 62%;
             margin-top: 0;
             margin-left: 1.5rem;
-            p{
+            p,h3{
                 text-align: left;
             }
+            
         }
         .goals-list{
             width: 78%;
@@ -296,7 +311,7 @@
                 justify-content: space-between;
                     width: 61%;
                     align-items: center;
-                .list{
+                .item{
                 width: 24%;
                 justify-content: center;
                 margin-top: 0;
@@ -324,10 +339,7 @@
     // Start goal section //
     .goals{
 
-        .image{
-            width: 85%;
-            margin-top: 1rem;
-        }
+      
         .goals-container{
             display: flex;
             flex-direction: row;
@@ -341,13 +353,19 @@
             h2,p{
                 text-align: left;
             }
+
+            span{
+                width: 85%;
+                margin-top: 1rem;
+            }
         }
 
-        .goal-content{
+        .content{
          width: 74%;
          p{
              font-size: 12px;
          }
+         
         }
 
         .goal-item{
