@@ -120,7 +120,7 @@
                         <input type="number" class="form-control form-control-lg telephone" placeholder="Phone Number *">
                         <div class="hidden-field" style="display:none;">
                             <input type="text" name="phonecode" class="phonecode">
-                           <input type="text" name="phone" class="phonenumber" placeholder="Phone Number *">
+                           <input type="text" name="phone" class="phonenumber" id="#number" placeholder="Phone Number *">
                         </div>
                      </div> 
                    </div>
@@ -248,10 +248,6 @@
 @endsection
 
 @section('footer')
-
-<script>
-    
-</script>
 <script type="text/javascript">
 
 var previousPrice = 0;
@@ -261,7 +257,7 @@ var previousPrice = 0;
     var locationId =  countryId =  courseId = '';
 
     var vatPercentage,applyVat = true, currencyRate = 1, selectedCurrencyCode = "GBP", priceInGBP;
-    
+
 jQuery(document).ready(function(){
     
     $("#coursesSelect").change(function(){

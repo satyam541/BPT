@@ -234,7 +234,6 @@ Route::post('/schedule/onlineprice/update/{onlineId}',"ScheduleController@update
 Route::get('/schedule/onlineprice/addons/{online}',"ScheduleController@courseAddon")->name('courseAddonList');
 
 Route::get('/popular/list',"PopularController@list")->name("popularItems");
-Route::get('/sample/list','Popularcontroller@sample')->name('sampleItems');
 Route::post('/popular/delete/{popular}',"PopularController@delete")->name("deletePopular");
 Route::any('/popular/sort',"PopularController@sort")->name("sortPopular");
 
