@@ -222,6 +222,15 @@
                     <p>{!!$pageDetail->contact_us['heading']->content!!}</p>
                 </div>
                 <div class="contact-list">
+                <div class="item">
+                        <span>
+                            <img src="{{url('img/aboutus/about-call.svg')}}" alt="about-call">
+                        </span>
+                        <div class="item-info">
+                            <h3>Phone:</h3>
+                            <a href="{{'tel:'.$websiteDetail->contact_number}}">{!!$websiteDetail->contact_number!!}</a>
+                        </div>
+                    </div>
                     <div class="item">
                         <span>
                             <img src="{{url('img/aboutus/about-mail.svg')}}" alt="about-email">
@@ -230,15 +239,6 @@
                             <h3>Email:</h3>
                             <a href="{{'mailTo:'.$websiteDetail->contact_email}}">{!!$websiteDetail->contact_email!!}</a>
 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <span>
-                            <img src="{{url('img/aboutus/about-call.svg')}}" alt="about-call">
-                        </span>
-                        <div class="item-info">
-                            <h3>Phone:</h3>
-                            <a href="{{'tel:'.$websiteDetail->contact_number}}">{!!$websiteDetail->contact_number!!}</a>
                         </div>
                     </div>
                     <div class="item">

@@ -3488,7 +3488,7 @@ input::-webkit-inner-spin-button {
     padding-top: 0;
   }
   .contact-form .contact-info {
-    width: 34%;
+    width: 36%;
     background: none;
   }
   .contact-form .contact-info .heading h2,
@@ -3546,7 +3546,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
   }
   .contact-form .contact-container .contact-info {
-    width: 27%;
+    width: 30%;
   }
   .contact-form .contact-container .form {
     width: 68%;
@@ -5170,6 +5170,11 @@ input::-webkit-inner-spin-button {
   padding: 3rem 1.5rem;
   padding-top: 1rem;
 }
+.our-blog .headline {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
 .our-blog .our-container {
   display: flex;
   flex-direction: column;
@@ -5409,6 +5414,10 @@ input::-webkit-inner-spin-button {
     background-size: 100% 30%;
     background-repeat: no-repeat;
     background-position: bottom;
+  }
+  .our-blog .headline {
+    width: 70%;
+    align-self: center;
   }
   .our-blog .our-info .designation {
     width: 34%;
@@ -7522,7 +7531,6 @@ input::-webkit-inner-spin-button {
   transform: translateY(-28px);
   font-weight: bold;
   color: #f5f5f5;
-  align-self: flex-start;
 }
 .foundation .tab-links .active {
   border-bottom: 4px solid #0064D8;
@@ -7784,6 +7792,7 @@ input::-webkit-inner-spin-button {
 }
 .training {
   padding: 3rem 1.5rem;
+  background-color: #F6F6F6;
 }
 .training .training-container {
   display: flex;
@@ -7910,6 +7919,7 @@ input::-webkit-inner-spin-button {
   font-size: 18px;
   font-weight: bold;
   margin-top: 0.5rem;
+  text-align: center;
 }
 .training .methods:hover .blue {
   display: flex;
@@ -7924,7 +7934,7 @@ input::-webkit-inner-spin-button {
   padding: 2rem;
   background: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  border: 7px solid #c0c0c0;
+  border: 7px solid #E5E5E5;
   align-items: center;
   background-image: url(../img/courses/top-arc.svg), url(../img/courses/bottom-arc.svg);
   background-repeat: no-repeat;
@@ -7971,14 +7981,19 @@ input::-webkit-inner-spin-button {
   color: #FFFFFF;
   text-align: center;
 }
-.training .value {
+.training .detail {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
   z-index: 1;
 }
-.training .value span {
+.training .detail .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.training .detail .content span {
   display: flex;
   height: 85px;
   width: 85px;
@@ -7989,11 +8004,11 @@ input::-webkit-inner-spin-button {
   margin-bottom: 1rem;
   position: relative;
 }
-.training .value span img {
+.training .detail .content span img {
   height: 100%;
   width: 100%;
 }
-.training .value span::before {
+.training .detail .content span::before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -8004,15 +8019,15 @@ input::-webkit-inner-spin-button {
   bottom: -5px;
   left: 0px;
 }
-.training .value .content {
+.training .detail .content .sub-content {
   display: flex;
   flex-direction: column;
 }
-.training .value .content h3,
-.training .value .content p {
+.training .detail .content .sub-content h3,
+.training .detail .content .sub-content p {
   text-align: center;
 }
-.training .value .content p {
+.training .detail .content .sub-content p {
   color: #0064D8;
   margin-top: 0.5rem;
   font-weight: bold;
@@ -8020,14 +8035,14 @@ input::-webkit-inner-spin-button {
 .training .date {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .training .date p {
   padding: 1rem 0.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   text-align: center;
-  width: 38%;
+  width: 76px;
   margin-top: 2.5rem;
   position: relative;
 }
@@ -8035,7 +8050,7 @@ input::-webkit-inner-spin-button {
   content: '';
   position: absolute;
   top: -17px;
-  left: -8px;
+  left: -6px;
   height: 27px;
   width: 88px;
   background-color: #f5f5f5;
@@ -8120,6 +8135,7 @@ input::-webkit-inner-spin-button {
 }
 .work {
   padding: 3rem 1.5rem;
+  padding-top: 0 !important;
 }
 .work .work-container {
   display: flex;
@@ -8174,6 +8190,7 @@ input::-webkit-inner-spin-button {
 .language .language-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .language .language-img {
   display: flex;
@@ -8202,8 +8219,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
   align-items: center;
   background-color: #FFFFFF;
-  padding: 1rem;
-  padding-top: 0;
+  padding: 0 1rem 2.5rem;
 }
 .language .rate,
 .language .offer {
@@ -8226,7 +8242,7 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 .language .buy span {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   height: 40px;
@@ -8238,7 +8254,7 @@ input::-webkit-inner-spin-button {
   height: 100%;
 }
 .language .buy h3 {
-  width: calc(100% - 40px);
+  text-align: center;
 }
 .language .language-content {
   display: flex;
@@ -8253,9 +8269,6 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url(../img/courses/half-arc.png);
-  background-repeat: no-repeat;
-  background-size: 29% 100%;
   margin-top: 2rem;
   padding: 0.3rem;
   background-position: left top;
@@ -8269,10 +8282,24 @@ input::-webkit-inner-spin-button {
   background-color: #F6F6F6;
   border-radius: 50%;
   padding: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 .language .language-list .content span img {
   width: 100%;
   height: 100%;
+}
+.language .language-list .content span::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background-image: url(../img/courses/half-arc.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 75px;
+  width: 180px;
+  top: 0;
+  left: -4px;
 }
 .language .language-list .content h3 {
   width: calc(100% - 90px);
@@ -8309,6 +8336,7 @@ input::-webkit-inner-spin-button {
 }
 .skill .skill-content h3 {
   margin-bottom: 1rem;
+  text-align: center;
 }
 .skill .skill-content p {
   text-align: center;
@@ -8334,6 +8362,26 @@ input::-webkit-inner-spin-button {
   margin-top: 1.5rem;
   align-items: center;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+.related .related-content::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 50px;
+  width: 5px;
+  background-color: #c0c0c0;
+  margin: auto;
+  transition: 1s ease-in-out;
+}
+.related .related-content:hover::before {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 .related .related-content span {
   display: flex;
@@ -8349,7 +8397,9 @@ input::-webkit-inner-spin-button {
   height: 100%;
   width: 100%;
 }
-.related .related-content h3 {
+.related .related-content a {
+  font-size: 16px;
+  font-weight: bold;
   width: calc(100% - 80px);
 }
 .popular-location {
@@ -8401,7 +8451,7 @@ input::-webkit-inner-spin-button {
   background-size: 100% 100%;
   bottom: 0;
   left: 0;
-  height: 75px;
+  height: 70px;
   width: 75px;
 }
 .popular-location .content .image {
@@ -8414,8 +8464,10 @@ input::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
 }
-.popular-location .content h3 {
+.popular-location .content a {
   width: calc(100% - 100px);
+  font-weight: bold;
+  font-size: 16px;
 }
 .popular-location .content .arrow {
   display: flex;
@@ -8482,14 +8534,21 @@ input::-webkit-inner-spin-button {
   }
   .training {
     padding: 3rem 2rem;
+    background-image: url(../img/courses/training-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 93%;
+    background-position: bottom;
+    background-color: transparent;
   }
   .training .filter-top {
     top: 5rem;
     z-index: 12;
-    background-color: #C0C0C0;
+    background-color: #e5e5e5;
     padding: 0.5rem;
     flex-direction: row;
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
   .training .filter-top .heading {
     display: none;
@@ -8551,27 +8610,34 @@ input::-webkit-inner-spin-button {
   .training .course-name {
     width: 50%;
   }
-  .training .value {
+  .training .detail {
     flex-direction: row;
     justify-content: space-between;
   }
-  .training .value span {
+  .training .detail .content {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 40%;
+  }
+  .training .detail .content span {
     margin-bottom: 0;
     height: 74px;
     width: 74px;
+    margin-right: 1rem;
   }
-  .training .value span::before {
+  .training .detail .content span::before {
     height: 72px;
     width: 74px;
   }
-  .training .value .content {
-    width: 27%;
+  .training .detail .content .sub-content {
+    width: calc(100% - 80px);
+  }
+  .training .detail .content .sub-content h3,
+  .training .detail .content .sub-content p {
+    text-align: left;
   }
   .training .date {
     width: 27%;
-  }
-  .training .date p {
-    width: 41%;
   }
   .training .rate {
     width: 16%;
@@ -8621,6 +8687,14 @@ input::-webkit-inner-spin-button {
   }
   .language .buy {
     padding: 0;
+    width: auto;
+  }
+  .language .buy span {
+    display: flex;
+  }
+  .language .buy h3 {
+    text-align: left;
+    width: calc(100% - 40px);
   }
   .language .language-list {
     flex-direction: row;
@@ -8698,13 +8772,10 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
   }
   .popular-location .content {
-    width: 44%;
+    width: 47%;
   }
   .popular-location .content .image {
     margin-right: 1rem;
-  }
-  .popular-location .content h3 {
-    width: calc(100% - 100px);
   }
   .popular-location .content .arrow {
     transform: translateX(34px);
@@ -8777,6 +8848,7 @@ input::-webkit-inner-spin-button {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+    margin-top: 2rem;
   }
   .foundation .tabs-container::before {
     content: '';
@@ -8798,6 +8870,9 @@ input::-webkit-inner-spin-button {
   }
   .foundation .tab-links .tab-click {
     width: 100%;
+  }
+  .foundation .tab-links .tab-click:first-child {
+    margin-top: 0;
   }
   .foundation .tab-content {
     width: 65%;
@@ -8825,6 +8900,9 @@ input::-webkit-inner-spin-button {
   .unable p {
     width: 60%;
   }
+  .training {
+    background-size: 100% 88%;
+  }
   .training p {
     text-align: center;
   }
@@ -8844,6 +8922,7 @@ input::-webkit-inner-spin-button {
     box-shadow: none;
     padding: 0;
     margin-top: 0;
+    margin-bottom: 1rem;
   }
   .training .calender-left .heading h2 {
     text-align: center;
@@ -8899,7 +8978,12 @@ input::-webkit-inner-spin-button {
   .training .name .buttons {
     width: 54%;
   }
-  .training .value {
+  .training .modes {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .training .detail {
     padding-top: 0;
     margin-top: -1rem;
   }
@@ -8943,6 +9027,9 @@ input::-webkit-inner-spin-button {
     width: 35%;
     align-self: flex-start;
     margin-top: 0;
+  }
+  .work {
+    padding-top: 3rem;
   }
   .work .work-container {
     flex-direction: row;
@@ -9001,10 +9088,10 @@ input::-webkit-inner-spin-button {
   .language .price::before {
     content: '';
     position: absolute;
-    bottom: -26px;
-    right: -28px;
-    height: 60px;
-    width: 60px;
+    bottom: -41px;
+    right: -42px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     background-color: #0064D8;
     opacity: 0.26;
@@ -9079,22 +9166,11 @@ input::-webkit-inner-spin-button {
   .foundation {
     padding: 4rem 0rem;
   }
-  .foundation .tabs-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .foundation .tab-links {
-    flex-direction: column;
-    justify-content: center;
-    width: 27%;
-    align-self: flex-start;
-  }
-  .foundation .tab-links .tab-click {
-    width: 100%;
+    width: 22%;
   }
   .foundation .tab-content {
-    width: 65%;
-    margin-top: 0 !important;
+    width: 71%;
   }
   .foundation #included .heading {
     display: flex;
@@ -9134,14 +9210,10 @@ input::-webkit-inner-spin-button {
   .training .course-name {
     width: 50%;
   }
-  .training .value .content {
-    width: 22%;
-  }
   .training .date {
     width: 350px;
   }
   .training .date p {
-    width: 21%;
     margin-top: 2rem;
   }
   .training .rate {
@@ -10475,11 +10547,13 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .topic-courses .course-name h3 {
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
+  width: 100%;
 }
 .topic-courses .course-name img {
   width: 30px;
@@ -10495,6 +10569,7 @@ input::-webkit-inner-spin-button {
 }
 .topic-courses .courses-info span {
   display: flex;
+  height: 100%;
 }
 .topic-courses .courses-info span img {
   width: 100%;
@@ -10534,6 +10609,10 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
   margin-bottom: 1rem;
 }
+.topic-delivery .delivery-list .list img {
+  width: 100%;
+  height: 100%;
+}
 .topic-delivery .delivery-list .list .white-icon {
   display: none;
 }
@@ -10554,6 +10633,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  width: 100%;
 }
 .topic-choose .count {
   display: flex;
@@ -10637,6 +10717,9 @@ input::-webkit-inner-spin-button {
   margin-top: 2rem;
   position: relative;
 }
+.topic-choose .choose-image span {
+  height: 100%;
+}
 .topic-choose .choose-image span img {
   width: 100%;
   height: 100%;
@@ -10676,11 +10759,18 @@ input::-webkit-inner-spin-button {
   height: 60px;
   border: 2px dashed #FFFFFF;
 }
+.experiences span img {
+  width: 100%;
+  height: 100%;
+}
 .experiences .experiences-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+}
+.experiences .top-arrow {
+  display: none;
 }
 .explore {
   padding: 3rem 1.5rem;
@@ -10743,6 +10833,7 @@ input::-webkit-inner-spin-button {
 .goals .image {
   display: flex;
   margin-top: 1rem;
+  height: 100%;
 }
 .goals .image img {
   width: 100%;
@@ -10808,6 +10899,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 100%;
 }
 .goals .goal-content p {
   text-align: center;
@@ -10870,6 +10962,7 @@ input::-webkit-inner-spin-button {
     position: relative;
   }
   .experiences .top-arrow {
+    display: flex;
     position: absolute;
     bottom: -15px;
     left: 0;
@@ -11214,6 +11307,11 @@ input::-webkit-inner-spin-button {
   }
   .goals .goal-image {
     width: 53%;
+  }
+}
+@media (min-width : 1600px) {
+  .topic-banner .choose-list {
+    width: 30%;
   }
 }
 .privacy-banner {

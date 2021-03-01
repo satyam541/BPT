@@ -7,8 +7,8 @@
         @include("layouts.navbar")
         <div class="banner-container">
             <div class="banner-text">
-                <h1>Course Library</h1>
-                <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.BPT was founded over 20 years ago with one simple mission.BPT was founded over 20 years ago with one simple mission.</p>
+                <h1>{!!$pageDetail->banner['header']->heading!!}</h1>
+                <p>{!!$pageDetail->banner['header']->content!!}</p>
                 <div class="breadcrums">
                     <ul>
                         <li><a href="javascript:void(0);">Home</a></li>
@@ -19,54 +19,48 @@
             </div>
             <div class="banner-testi">
                 <div class="testi-list owl-carousel">
+                    @foreach ($popularTopics as $popularTopic)
                     <div class="testi-content">
                         <span>
                             <img src="{{url('img/catalogue/homework-white.svg')}}" alt="homework">
                         </span>
-                        <h3>Prince2 Foundation</h3>
+                        <h3>{{$popularTopic->name}}</h3>
                         <div class="buttons">
-                            <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="View Detail">
+                            <a href="{{url('training-courses'.$popularTopic->reference)}}" class="btn-white open-popup enquiryJS" data-quote="View Detail">
                                 <img src="{{url('img/catalogue/view-black.svg')}}" alt="view">View Detail
                             </a>
                         </div>
                     </div>
-                    <div class="testi-content">
-                        <span>
-                            <img src="{{url('img/catalogue/homework-black.svg')}}" alt="homework">
-                        </span>
-                        <h3>Prince2 Foundation</h3>
-                        <div class="buttons">
-                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="View Detail">
-                                <img src="{{url('img/catalogue/view-white.svg')}}" alt="view">View Detail
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
+                   
                 </div>
             </div>
         </div>
         <div class="filter-top">
-                <form class="form">
+                <form action="{{route('commonFilter')}}"  method='post'  class="form">
+                    @csrf
                     <div class="select-dropdown">
                         <p>Select A Category</p>
                         <select name="course">
-                            <option value="">Prince2@Training</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="">Select Category</option>
+                            @foreach ($categoriesList as $id=>$name)
+                           
+                            <option value="{{$id}}">{{$name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="select-dropdown">
                         <p>Select A Topic</p>
                         <select name="course">
-                            <option value="">Prince2@Training</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="">Select Topic</option>
+                            @foreach ($topics as $topicList)
+                            <option value="{{$topicList->id}}">{{$topicList->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="select-dropdown">
                         <p>Search</p>
-                        <input type="text" placeholder="Search course here">
+                        <input type="text" placeholder="Search Course here">
                         <button class="select-search">
                             <img src="{{url('img/catalogue/magnifying.svg')}}" alt="magnifying">
                         </button>
@@ -82,57 +76,18 @@
     <div class="container">
         <div class="category-container">
             <div class="heading center-heading">
-                <h2>All <span>Category</span></h2>
+                <h2>{!! heading_split($pageDetail->category['heading']->heading) !!}</h2>
             </div>
             <div class="category-list">
+                @foreach ($categories as $category)
                 <div class="category-content">
                     <span>
-                        <img src="{{url('img/catalogue/project.svg')}}" alt="project">
+                        <img src="{{$category->getIconPath()}}" alt="{{$category->name}}">
                     </span>
-                    <h3>Project Management</h3>
+                    <h3>{{$category->name}}</h3>
                 </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/analysis.svg')}}" alt="analysis">
-                    </span>
-                    <h3>Business Analysis</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/improvement.svg')}}" alt="improvement">
-                    </span>
-                    <h3>Business Improvement</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/service.svg')}}" alt="service">
-                    </span>
-                    <h3>IT Service Management</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/security.svg')}}" alt="security">
-                    </span>
-                    <h3>IT Security</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/protection.svg')}}" alt="protection">
-                    </span>
-                    <h3>Data Protection</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/office.svg')}}" alt="office">
-                    </span>
-                    <h3>Office Applications</h3>
-                </div>
-                <div class="category-content">
-                    <span>
-                        <img src="{{url('img/catalogue/skills.svg')}}" alt="skills">
-                    </span>
-                    <h3>Business Skills</h3>
-                </div>
+                @endforeach
+            
             </div>
         </div>
     </div>
@@ -144,8 +99,8 @@
     <div class="container">
         <div class="enquire-container">
             <div class="enquire-content">
-                <h2>Have Any Enquiry?</h2>
-                <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded, and it can be difficult to know which provider offers the most value.</p>
+                <h2>{!!$pageDetail->category_enquire['enquire_content']->heading!!}</h2>
+                <p>{!!$pageDetail->category_enquire['enquire_content']->content!!}</p>
             </div>
             <div class="buttons">
                 <div class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
@@ -163,33 +118,16 @@
         <div class="popular-container">
             <div class="popular-content">
                 <div class="heading">
-                    <h2>Popular <span>Courses</span></h2>
+                    <h2>{!! heading_split($pageDetail->popular_course['heading']->heading) !!}</h2>
                 </div>
                 <div class="popular-list">
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>01</span>
-                        <h3>Prince2 Foundation Prince</h3>
+                    @foreach ($popularCourses as $popularCourse)
+                    <a href="{{url('training-courses'.$popularCourse->reference)}}" class="popular-item">
+                        <span>0{{$loop->iteration}}</span>
+                        <h3>{{$popularCourse->name}}</h3>
                     </a>
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>02</span>
-                        <h3>Prince2 Foundation Prince</h3>
-                    </a>
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>03</span>
-                        <h3>Prince2 Foundation Prince</h3>
-                    </a>
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>04</span>
-                        <h3>Prince2 Foundation Prince</h3>
-                    </a>
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>05</span>
-                        <h3>Prince2 Foundation Prince</h3>
-                    </a>
-                    <a href="javascript:void(0);" class="popular-item">
-                        <span>06</span>
-                        <h3>Prince2 Foundation Prince</h3>
-                    </a>
+                    @endforeach
+                
                 </div>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Find Out More">
@@ -241,123 +179,25 @@
     <div class="container">
         <div class="library-container">
             <div class="heading">
-                <h2>Courses <span>Library</span></h2>
+                <h2>{!! heading_split($pageDetail->topics['heading']->heading) !!}</h2>
             </div>
             <div class="library-list">
+                @foreach ($topics as $topic)
                 <div class="library-content">
                     <div class="name">
                         <span>
                             <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
                         </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
+                        <a href="javascript:void(0);">{{$topic->name}}</a>
                     </div>
                     <ul>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
+                        @foreach ($topic->courses as $course)
+                        <li><a href="{{url('training-courses'.$course->reference)}}">{{$course->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="library-content">
-                    <div class="name">
-                        <span>
-                            <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
-                        </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
-                    </div>
-                    <ul>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                    </ul>
-                </div>
-                <div class="library-content">
-                    <div class="name">
-                        <span>
-                            <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
-                        </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
-                    </div>
-                    <ul>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                    </ul>
-                </div>
-                <div class="library-content">
-                    <div class="name">
-                        <span>
-                            <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
-                        </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
-                    </div>
-                    <ul>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                    </ul>
-                </div>
-                <div class="library-content">
-                    <div class="name">
-                        <span>
-                            <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
-                        </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
-                    </div>
-                    <ul>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                        <li><a href="javascript:void(0);">Prince2 Foundation</a></li>
-                    </ul>
-                </div>
-                <div class="library-content">
-                    <div class="name">
-                        <span>
-                            <img src="{{url('img/catalogue/analytics.svg')}}" alt="analytics">
-                        </span>
-                        <a href="javascript:void(0);">PRINCE2® Training</a>
-                    </div>
-                    <ul>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                        <li><a>Prince2 Foundation</a></li>
-                    </ul>
-                </div>
+                @endforeach
+            
             </div>
         </div>
     </div>
@@ -369,50 +209,25 @@
     <div class="container">
         <div class="figures-container">
             <div class="heading center-heading">
-                <h2>Our Amazing <span>Facts and Figures</span></h2>
+                <h2>{!!heading_split($pageDetail->figures_list['heading']->heading)!!}</span></h2>
             </div>
+            @php
+                unset($pageDetail->figures_list['heading'])
+            @endphp
             <div class="figures-list">
+                @foreach ($pageDetail->figures_list as $item)
+               
                 <div class="figures-content">
                     <span class="figures-image">
-                        <img src="{{url('img/catalogue/daily.svg')}}" alt="daily">
+                        <img src="{{$item->getImagePath()}}" alt="{{$item->imageAlt}}">
                     </span>
                     <div class="facts-count">
-                        <h3 class="count-number" data-to="230" data-speed="3000"></h3>
+                        <h3 class="count-number" data-to="{!!$item->heading!!}" data-speed="3000"></h3>
                         <span>+</span>
                     </div>
-                    <p>Courses Running Daily</p>
+                    <p>{!!$item->content!!}</p>
                 </div>
-                <div class="figures-content">
-                    <span class="figures-image">
-                        <img src="{{url('img/catalogue/worldwide.svg')}}" alt="worldwide">
-                    </span>
-                    <div class="facts-count">
-                        <h3 class="count-number" data-to="150" data-speed="3000"></h3>
-                        <span>+</span>
-                    </div>
-                    <p>Locations Worldwide</p>
-                </div>
-                <div class="figures-content">
-                    <span class="figures-image">
-                        <img src="{{url('img/catalogue/events.svg')}}" alt="events">
-                    </span>
-                    <div class="facts-count">
-                        <h3 class="count-number" data-to="670" data-speed="3000"></h3>
-                        <span>+</span>
-                    </div>
-                    <p>Events</p>
-                </div>
-                <div class="figures-content">
-                    <span class="figures-image">
-                        <img src="{{url('img/catalogue/countries.svg')}}" alt="countries">
-                    </span>
-                    <div class="facts-count">
-                        <h3 class="count-number" data-to="80" data-speed="3000"></h3>
-                        <span>+</span>
-                    </div>
-                    <p>Countries</p>
-                </div>
-            </div>
+                @endforeach
         </div>
     </div>
 </section>

@@ -10,9 +10,9 @@
   <!-- Font Awesome -->
   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/cms/tabs/tab.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -904,9 +904,7 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
-            placeholder:'Choose one'
-
-
+            
         });
 
     

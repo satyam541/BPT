@@ -34,7 +34,7 @@ class ManualPurchaseRequest extends FormRequest
             'courseId'      => ['required'],
             'country'       => ['required'],
             'location'      => ['required'],
-            'price'         => ['required', 'numeric'],
+            
             
         ];
     }
