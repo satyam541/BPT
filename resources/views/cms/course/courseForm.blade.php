@@ -99,7 +99,9 @@
                                 <div class="form-group">
                                     {{ Form::label('image', 'Image') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
+                                    @if(!empty($course->image))
                                     <img id="cImage" src="{{ $course->getLogoPath() }}" class=" pad" height="70px" width="70px" />
+                                    @endif
                                     <br/>
                                     <br/>
                                     <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>

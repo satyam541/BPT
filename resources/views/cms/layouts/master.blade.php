@@ -347,7 +347,7 @@
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Location()) || Auth::user()->can('view', new App\Models\Venue()))      
           <li
-           @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList']))
+           @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList','locationTier']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -374,6 +374,14 @@
                 <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>
+                </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                @can('view',new App\Models\location())
+                <a href="{{Route('locationTier')}}" @if(Route::currentRouteName()=='locationTier')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Manage Tiers</p>
                 </a>
                 @endcan
               </li>
