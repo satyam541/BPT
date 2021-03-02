@@ -1316,10 +1316,12 @@ select::-ms-expand {
 .courses .course-name .name h3 {
   width: 100%;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 .courses .course-name .name p {
   width: 50%;
   color: #C0C0C0;
+  text-align: center;
 }
 .courses .course-name .arrow {
   display: none;
@@ -1699,6 +1701,32 @@ select::-ms-expand {
   width: 120px !important;
   height: 30px;
 }
+.looking .owl-nav {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100px;
+  margin-top: 1rem;
+}
+.looking .owl-nav .owl-prev,
+.looking .owl-nav .owl-next {
+  background-image: url('../img/home/testi-arrow.png') !important;
+  background-repeat: no-repeat !important;
+  width: 32px;
+  height: 30px;
+  background-size: contain !important;
+  outline: none;
+  opacity: 0.5;
+}
+.looking .owl-nav .owl-prev span,
+.looking .owl-nav .owl-next span {
+  display: none;
+}
+.looking .owl-nav .owl-next {
+  transform: rotate(180deg);
+}
+.looking .owl-nav .btn-active {
+  opacity: 1;
+}
 .looking .author-name {
   display: flex;
   flex-direction: column;
@@ -1766,6 +1794,10 @@ select::-ms-expand {
   }
   .courses .course-name .icon {
     display: flex;
+  }
+  .courses .course-name .name h3,
+  .courses .course-name .name p {
+    text-align: left;
   }
   .effective {
     padding: 3rem 2rem;
@@ -1838,6 +1870,14 @@ select::-ms-expand {
   }
   .delivery {
     padding: 3rem 2rem;
+  }
+  .delivery .heading::before {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .delivery .heading h2 {
+    text-align: center;
   }
   .delivery .delivery-list {
     flex-direction: row;
@@ -1988,9 +2028,6 @@ select::-ms-expand {
   }
   .looking {
     padding: 3rem 2rem;
-    background-image: linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 14%, #1C2848 14%, #1C2848 4%, #0064D8 34%, #0064D8 86%, #F6F6F6 86%, #F6F6F6 100%);
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
   }
   .looking::before {
@@ -2157,6 +2194,12 @@ select::-ms-expand {
   .locations .location-name:nth-child(5n) {
     margin-right: 2rem;
   }
+  .looking {
+    background-image: linear-gradient(0deg, #FFFFFF 0%, #FFFFFF 14%, #1C2848 14%, #1C2848 4%, #0064D8 34%, #0064D8 86%, #F6F6F6 86%, #F6F6F6 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-right: 4rem;
+  }
   .looking .looking-for {
     background-image: url(../img/home/moon.png);
     background-size: 100% 50%;
@@ -2183,32 +2226,19 @@ select::-ms-expand {
     padding: 0 1rem;
     margin-top: 3rem;
   }
-  .looking .owl-nav {
-    display: flex !important;
-    justify-content: space-between;
-    width: 100%;
-    transform: translateY(-142px);
+  .looking .reviews-outer {
+    position: relative;
   }
-  .looking .owl-nav .owl-prev,
-  .looking .owl-nav .owl-next {
-    background-image: url('../img/home/testi-arrow.png') !important;
-    background-repeat: no-repeat !important;
-    width: 32px;
-    height: 30px;
-    background-size: contain !important;
-    outline: none;
-    opacity: 0.5;
+  .looking .owl-nav {
+    width: 100%;
+    position: absolute;
+    top: 5%;
+  }
+  .looking .owl-nav .owl-prev {
     transform: translateX(-48px);
   }
-  .looking .owl-nav .owl-prev span,
-  .looking .owl-nav .owl-next span {
-    display: none;
-  }
   .looking .owl-nav .owl-next {
-    transform: translateX(32px) rotate(180deg);
-  }
-  .looking .owl-nav .btn-active {
-    opacity: 1;
+    transform: translateX(40px) rotate(180deg);
   }
   .partners {
     background-image: url(../img/home/dotted-globe.png);
@@ -4791,7 +4821,7 @@ select::-ms-expand {
   align-items: center;
   font-size: 16px;
   font-weight: bold;
-  margin-left: 3rem;
+  margin-left: 3.5rem;
 }
 .popular .popular-content .content img {
   width: 12px;
@@ -4838,6 +4868,7 @@ select::-ms-expand {
   .convenient .convenient-content {
     width: 42%;
     padding: 1rem;
+    justify-content: flex-start;
   }
   .convenient .convenient-content span {
     transform: rotate(45deg) translate(-31px, 32px);
@@ -4849,7 +4880,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     height: 325px;
     width: 340px;
-    padding: 3rem;
+    padding: 4rem 1.5rem;
     align-self: center;
     position: relative;
     z-index: 1;
@@ -4917,20 +4948,20 @@ select::-ms-expand {
   .popular .popular-content:nth-child(2n) {
     margin-right: 0;
   }
-  .popular .popular-content::before {
+  .popular .popular-content .img {
+    left: -6px;
+  }
+  .popular .popular-content .img::before {
     content: '';
     position: absolute;
     z-index: -1;
     background-image: url(../img/location/polygon.png);
-    background-size: cover;
-    height: 79px;
-    width: 88px;
-    top: -9px;
-    left: -16px;
-  }
-  .popular .popular-content .img {
-    left: -6px;
-    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 94px;
+    top: -5px;
+    left: -9px;
   }
   .buy {
     display: flex;
@@ -9757,7 +9788,7 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .result .result-list {
-    width: 65%;
+    width: 70%;
   }
   .result .filter {
     width: 24%;
@@ -10126,7 +10157,7 @@ select::-ms-expand {
 .popular-courses .building,
 .popular-courses .caller {
   display: flex;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 .popular-courses .building img,
@@ -10350,7 +10381,7 @@ select::-ms-expand {
     min-width: 100px;
   }
   .catalogue-banner .select-dropdown {
-    width: 28%;
+    width: 26%;
   }
   .category {
     padding: 3rem 2rem;
@@ -10383,7 +10414,7 @@ select::-ms-expand {
     background: linear-gradient(90deg, #1C2848 74px, #FFFFFF 74px);
   }
   .popular-courses .popular-item span::before {
-    right: -28px;
+    right: -27px;
   }
   .popular-courses .popular-facts {
     flex-direction: row;

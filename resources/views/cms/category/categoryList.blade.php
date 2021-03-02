@@ -33,6 +33,9 @@
                             <div class="card-header">
                                 <div class="card-title col-sm-12">
                                     Category List
+                                    <div class="popular">
+                                        Polpular
+                                    </div>
                                     <form action="{{Route('categoryList')}}" method="get">
                                         
                                         <div class="onoffswitch">
@@ -54,7 +57,7 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                
+                                <div class="table table-responsive">
                                 <table id="example1" >
                                     <thead>
                                         <tr>
@@ -130,6 +133,7 @@
 
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
@@ -155,9 +159,8 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#myonoffswitch').change(function(){
-              $('#submit').click();
-                });
+           
+              
             $('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
@@ -198,6 +201,29 @@
                 $(this).removeClass('btn-primary');
                 $(this).addClass('btn-success');
             });
+            $('#submit').on('click',function(){
+        //    var country=$('#country').val();
+     
+      $.ajax({
+        url:"{{route('categoryList')}}",
+        data:{popular},
+        type:'post',
+        global:false,
+        headers: {
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                  },
+        success:function(response){
+          if(response=='done'){
+          location.reload(); 
+          }
+          else{
+          alert('country code not available');
+          }
+        }
+      });
+      
+    });
+   
         });
 
     </script>

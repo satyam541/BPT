@@ -27,6 +27,7 @@
         .convenient-content {
             width: 42%;
             padding: 1rem;
+            justify-content: flex-start;
             span {
                 transform: rotate(45deg) translate(-31px, 32px);
             }
@@ -38,7 +39,7 @@
             background-repeat: no-repeat;
             height: 325px;
             width: 340px;
-            padding: 3rem;
+            padding: 4rem 1.5rem;
             align-self: center;
             position: relative;
             z-index: 1;
@@ -109,21 +110,21 @@
             margin-right: 3rem;
             &:nth-child(2n) {
                 margin-right: 0;
-            }
-            &::before {
+            }   
+            .img {
+                left: -6px;
+            &::before { 
                 content: '';
                 position: absolute;
                 z-index: -1;
                 background-image: url(../img/location/polygon.png);
-                background-size: cover;
-                height: 79px;
-                width: 88px;
-                top: -9px;
-                left: -16px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 80px;
+                width: 94px;
+                top: -5px;
+                left: -9px;
             }
-            .img {
-                left: -6px;
-                z-index: 1;
             }
         }
     }

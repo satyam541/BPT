@@ -75,13 +75,19 @@
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
                     @if(!empty($testimonial->image))
-                    <img src="{{URL($testimonial->image_path.$testimonial->image)}}" class=" pad" style="max-width: 50%" />
+                    <img id="tImage" src="{{URL($testimonial->getImagePath())}}" class=" pad" height="70px" width="70px" />
                     @endif
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
 
                   <div class="form-group">
                     {{Form::label('rating','Rating')}}
-                    {{Form::select('rating',['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Select Rating..'])}}
+                    {{Form::select('rating',['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5],null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Select Ratings'])}}
                   </div>
 
                 </div>
@@ -104,4 +110,30 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            
+            $('#undoremoveimage').hide();
+                @if($testimonial['image'] == null)
+                $('#removeimage').hide();
+                @endif
+        });
+        function removeImage()
+            {
+                $('#removeimagetxt').val('removed');
+                $('#tImage').attr('src','/images/no-image.png');
+                $('#removeimage').hide();
+                $('#undoremoveimage').show();
+            }
+            function undoImage()
+            {
+                $('#removeimagetxt').val(null);
+                $('#tImage').attr('src','{{$testimonial->getImagePath()}}');
+                $('#removeimage').show();
+                $('#undoremoveimage').hide();
+            }
+
+    </script>
 @endsection

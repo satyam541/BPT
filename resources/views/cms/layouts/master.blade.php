@@ -917,7 +917,10 @@ $.widget.bridge('uibutton', $.ui.button)
             width:'100%',
             
         });
-
+        
+          $('#myonoffswitch').change(function(){
+              $('#submit').click();
+          });
     
       summernoteload('.summernote');
 

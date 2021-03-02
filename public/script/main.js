@@ -7,7 +7,7 @@
     var sticky = header.offsetTop;
 
     function myFunction() {
-        if ($(this).scrollTop() > 400 && $(this).width() >= 320) {
+        if ($(this).scrollTop() > 300 && $(this).width() >= 320) {
             header.addClass("sticky").addClass("sticky-down").removeClass("sticky-up");
         } else {
             header.removeClass("sticky").addClass("sticky-up").removeClass("sticky-down");
@@ -144,16 +144,13 @@
         loop: true,
         responsiveClass: true,
         dots: false,
-        nav: false,
+        nav: true,
         autoplay: true,
         navText: ["", ""],
         items: 1,
         responsive: {
             0: {
                 items: 1,
-            },
-            1024: {
-                nav: true,
             }
             
         }
