@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/toggle/toggle.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
   <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
@@ -48,7 +49,9 @@
 <style>
   .select2-container--default .select2-selection--single .select2-selection__rendered{
   line-height: 19px;
+  
 }
+
 </style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -904,8 +907,6 @@ $.widget.bridge('uibutton', $.ui.button)
     });
         $(".selectJS").select2({
             width:'100%',
-            placeholder:'Choose one',
-            
             
         });
 

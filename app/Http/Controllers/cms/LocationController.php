@@ -131,7 +131,12 @@ class LocationController extends Controller
             $input['image']     = $imageName;
             $location['image']  = $imageName;
         }
+        if($inputs['removeimagetxt']!=null)
+        {
+            $location['image'] = null;
+        }
         $data=Location::updateOrCreate(['id' =>$inputs['id']],$location);
+        
         if(isset($inputs['is_popular']))
         {
             $data->popular->save();

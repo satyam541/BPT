@@ -86,16 +86,17 @@
                     {{Form::label('intro','Intro')}}
                     {{Form::textarea('intro',null,['class'=>'form-control', 'rows'=>'4'])}}
                   </div>
-                  {{Form::label('image','Image',)}}
+                  
                   <div class="form-group">
-                    
+                    {{Form::label('image','Image',)}}
                     {!!Form::file('image')!!}
+                    <img id="lImage" src="{{URL('/images/'.$location['image'])}}" height="70px" width="70px" />
                     <br/>
-                    @if($location['image']=='')
-                        <img src="{{URL('/images/no-image.png')}}" style="width: 150px" />
-                    @else
-                        <img src="{{URL('/images/'.$location['image'])}}" style="width: 150px" />
-                    @endif
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
 
                   <div class="form-group">
@@ -183,6 +184,11 @@
         $("#name").on('input',function(){
         updateSlug();
     });
+    $('#undoremoveimage').hide();
+          @if($location['image'] == null)
+            $('#removeimage').hide();
+          @endif
+
     function updateSlug()
 {
     var location = $("#name").val();
@@ -194,6 +200,23 @@
     $(document).bind("location_changed", function(event, object) {
         console.log("changed: " + $(object).attr('id') );
     });
+
+    function removeImage()
+        {
+            $('#removeimagetxt').val('removed');
+            $('#lImage').attr('src','/images/no-image.png');
+            $('#removeimage').hide();
+            $('#undoremoveimage').show();
+        }
+
+
+        function undoImage()
+        {
+            $('#removeimagetxt').val(null);
+            $('#lImage').attr('src','{{'/images/'.$location['image']}}');
+            $('#removeimage').show();
+            $('#undoremoveimage').hide();
+        }
 </script>
 
     
