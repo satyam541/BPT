@@ -350,7 +350,7 @@
                             </h3>
 
                             <p>
-                            Choose from over 200 courses which cover all aspects of business and personal training, including Project  Management, IT Security, Business and many more.
+                            Choose from over 300 courses which cover all aspects of business and personal training, including Project  Management, IT Security, Business and many more.
                             </p>
                         </div>
                         <div class="experiences-item">
@@ -363,7 +363,7 @@
                             </h3>
 
                             <p>
-                            Choose from over 200 courses which cover all aspects of business and personal training, including Project  Management, IT Security, Business and many more.
+                            Choose from over 400 courses which cover all aspects of business and personal training, including Project  Management, IT Security, Business and many more.
                             </p>
                         </div>
                 </div>
@@ -496,7 +496,7 @@
                             <h3>
                             Get Ready For A Career
                             </h3>
-                            <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,</p>
+                            <p>Choose from over 300 courses which cover all aspects of business and personal training, including Project Management,</p>
                         </div>
                     </div>
                     <div class="goal-item">
@@ -507,7 +507,7 @@
                             <h3>
                             Earn A Degree
                             </h3>
-                            <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management,</p>
+                            <p>Choose from over 400 courses which cover all aspects of business and personal training, including Project Management,</p>
                         </div>
                     </div>
                 </div>
