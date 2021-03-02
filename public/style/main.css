@@ -11731,6 +11731,66 @@ select::-ms-expand {
   width: 60%;
   justify-content: flex-start;
 }
+.right {
+  padding: 3rem 1.5rem;
+}
+.right .right-container {
+  display: flex;
+  flex-direction: column;
+}
+.right .right-container .heading {
+  margin-bottom: 0;
+}
+.right .right-container .heading p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.right .right-list {
+  display: flex;
+  flex-direction: column;
+}
+.right .content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.right .content h2,
+.right .content p {
+  text-align: center;
+}
+.right .content p {
+  margin-top: 0.5rem;
+}
+.right .right-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+}
+.right .right-item span {
+  display: flex;
+  padding: 0.5rem;
+  border: 1px solid #707070;
+  width: 70px;
+  height: 60px;
+  position: relative;
+}
+.right .right-item span h3 {
+  width: 20px;
+  position: absolute;
+  padding: 3px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+  left: -1px;
+  background-color: #FFFFFF;
+}
+.right .right-item span img {
+  width: 100%;
+  height: 100%;
+}
 @media (min-width : 768px) {
   .benefit {
     padding: 3rem 2rem;
@@ -11784,6 +11844,33 @@ select::-ms-expand {
   }
   .spending h3 {
     font-size: 17px;
+  }
+  .right {
+    padding: 3rem 2rem;
+  }
+  .right .right-list {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .right .content {
+    width: 75%;
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  .right .content h2,
+  .right .content p {
+    text-align: left;
+  }
+  .right .content p {
+    font-size: 12px;
+  }
+  .right .content h2 {
+    font-size: 16px;
+  }
+  .right .right-item {
+    width: 45%;
+    flex-direction: row;
   }
 }
 @media (min-width : 1024px) {
@@ -11866,6 +11953,13 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
+  .right .right-list {
+    justify-content: space-between;
+  }
+  .right .right-item {
+    width: 32%;
+    align-items: flex-start;
+  }
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
@@ -11897,5 +11991,11 @@ select::-ms-expand {
   .spending .item::before {
     width: 354px;
     left: -14px;
+  }
+  .right {
+    padding: 4rem 0rem;
+  }
+  .right .right-item {
+    width: 28%;
   }
 }
