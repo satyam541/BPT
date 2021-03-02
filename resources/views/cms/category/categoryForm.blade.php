@@ -63,13 +63,25 @@
                                 <div class="form-group">
                                     {{ Form::label('image', 'Image') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
-                                    <img src="{{ $category->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                                    <img id="cImage" src="{{ $category->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                                    <br/>
+                                    <br/>
+                                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                                    <br/>
                                 </div>
 
                                 <div class="form-group">
                                     {{ Form::label('icon', 'Icon') }}
                                     {{ Form::file('icon', null, ['class' => 'form-control']) }}
-                                    <img src="{{ $category->getIconPath() }}" class=" pad" style="max-width:50%;" />
+                                    <img id="cIcon" src="{{ $category->getIconPath() }}" class=" pad" style="max-width:50%;" />
+                                    <br/>
+                                    <br/>
+                                    <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>
+                                    <a class="btn bg-yellow" id="undoremoveicon" onclick="undoIcon()">UNDO Remove Icon</a>
+                                    {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
+                                    <br/>
                                 </div>
 
                                 <div class="form-group">
@@ -113,8 +125,18 @@
         $(document).ready(function() {
             $("#name").on('input', function() {
                 updateSlug();
+                
             });
+            $('#undoremoveimage').hide();
+                @if($category['image'] == null)
+                $('#removeimage').hide();
+                @endif
 
+                $('#undoremoveicon').hide();
+                @if($category['icon'] == null)
+                $('#removeicon').hide();
+                @endif
+            
             function updateSlug() {
                 var location = $("#name").val();
                 var slug = '/' + convertUrl(location);
@@ -122,6 +144,35 @@
 
             }
         });
+        function removeImage()
+            {
+                $('#removeimagetxt').val('removed');
+                $('#cImage').attr('src','/images/no-image.png');
+                $('#removeimage').hide();
+                $('#undoremoveimage').show();
+            }
+            function undoImage()
+            {
+                $('#removeimagetxt').val(null);
+                $('#cImage').attr('src','{{$category->getImagePath()}}');
+                $('#removeimage').show();
+                $('#undoremoveimage').hide();
+            }
+
+            function removeIcon()
+            {
+                $('#removeicontxt').val('removed');
+                $('#cIcon').attr('src','/images/no-image.png');
+                $('#removeicon').hide();
+                $('#undoremoveicon').show();
+            }
+            function undoIcon()
+            {
+                $('#removeicontxt').val(null);
+                $('#cIcon').attr('src','{{$category->getIconPath()}}');
+                $('#removeicon').show();
+                $('#undoremoveicon').hide();
+            }
 
     </script>
 @endsection

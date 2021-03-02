@@ -26,6 +26,17 @@ class LocationController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
+    public function sample(Request $request)
+    {
+        $this->authorize('view', new Location());
+        $locations       = Location::all();
+        // $checked=null;
+        // if(isset($request->popular)){
+        //     $locations = Location::whereHas('popular')->get();
+        //     $checked='checked';
+        // }
+        return view('cms.location.sample',compact('locations'));
+    }
     public function list(Request $request)
     {
         $this->authorize('view', new Location());
@@ -69,6 +80,7 @@ class LocationController extends Controller
         $data['location']       = new Location();
         $data['popular']        = false;
         $data['submitRoute']    = "insertLocation";
+        $data['tier']=['1'=>'1','2'=>'2','3'=>'3'];
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view('cms.location.locationForm',$data);
@@ -81,6 +93,7 @@ class LocationController extends Controller
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
         $data['popular']        = $location->popular();
+        $data['tier']=['1'=>'1','2'=>'2','3'=>'3'];
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
@@ -98,6 +111,7 @@ class LocationController extends Controller
         $location['address']          = $inputs['address'];
         $location['phone']            = $inputs['phone'];
         $location['email']            = $inputs['email'];
+        $location['tier']             = $inputs['tier'];
         $location['intro']            = $inputs['intro'];
         $location['meta_title']       = $inputs['meta_title'];
         $location['meta_description'] = $inputs['meta_description'];
