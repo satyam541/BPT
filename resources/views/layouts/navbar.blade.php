@@ -20,15 +20,15 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a data-href="#choose" class="link smoothscroll">Onsite</a>
+                    <a href ="{{route('onsite')}}"data-href="#choose" class="link smoothscroll">Onsite</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a data-href="#faq" class="link smoothscroll">About</a>
+                    <a href="{{route('aboutUs')}}" data-href="#faq" class="link smoothscroll">About</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a data-href="#azure-other" class="link smoothscroll">Locations</a>
+                    <a href="{{route('locations')}}" data-href="#azure-other" class="link smoothscroll">Locations</a>
                     <span></span>
                 </li>
                 <li class="links-li">

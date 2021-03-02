@@ -14,6 +14,7 @@
   padding: 3px;
 }
 </style>
+<!-- Start home-banner section -->
 <section class="flex-container banner home-banner">
     
     <div class="container">
@@ -63,6 +64,9 @@
         </div>
 
 </section>
+<!-- End home-banner section -->
+
+<!-- Start courses section -->
 <section class="flex-container courses">
     <div class="container">
         <div class="courses-container">
@@ -112,6 +116,9 @@
         </div>
     </div>
 </section>
+<!-- End courses section -->
+
+<!-- Start effective section -->
 <section class="flex-container effective">
     <div class="container">
         <div class="effective-container">
@@ -129,6 +136,9 @@
         </div>
     </div>
 </section>
+<!-- End effective section -->
+
+<!-- Start whychoose section -->
 <section class="flex-container whychoose">
     <div class="container">
         <div class="whychoose-container">
@@ -158,6 +168,9 @@
     </div>
 
 </section>
+<!-- End whychoose section -->
+
+<!-- Start ways section -->
 <section class="flex-container ways">
     <div class="container">
         <div class="ways-container">
@@ -191,6 +204,9 @@
         </div>
     </div>
 </section>
+<!-- End ways section -->
+
+<!-- Start delivery section -->
 <section class="flex-container delivery">
     <div class="container">
         <div class="delivery-container">
@@ -221,6 +237,9 @@
         </div>
     </div>
 </section>
+<!-- End delivery section -->
+
+<!-- Start facts section -->
 <section class="flex-container facts">
     <div class="container">
         <div class="facts-container">
@@ -262,6 +281,9 @@
         </div>
     </div>
 </section>
+<!-- End facts section -->
+
+<!-- Start location section -->
 <section class="flex-container locations">
     <div class="container">
         <div class="locations-container">
@@ -302,6 +324,9 @@
         </div>
     </div>
 </section>
+<!-- End location section -->
+
+<!-- Start looking section -->
 <section class="flex-container looking">
     <div class="container">
         <div class="looking-container">
@@ -371,6 +396,9 @@
         </div>
     </div>
 </section>
+<!-- end looking section -->
+
+<!-- Start partners section -->
 <div class="flex-container partners">
     <div class="container">
         <div class="partners-container">
@@ -394,6 +422,7 @@
         </div>
     </div>
 </div>
+<!-- End partners section -->
 
 
 @endsection
