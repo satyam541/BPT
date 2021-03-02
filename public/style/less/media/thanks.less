@@ -1,0 +1,87 @@
+@media @size-md{
+
+    // Start Form-Success Section
+    .form-success {
+        padding: @sectionPadding-md;
+        .success-container {
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 2rem;
+            background-image: linear-gradient(0deg, @darkblueColor, @lightblueColor);
+            background-size: 26% 100%;
+            background-repeat: no-repeat;
+            box-shadow: @shadowLight;
+        }
+        .success {
+            width: 51%;
+            justify-content: center;
+            align-items: center;
+        }
+        .success-content {
+            background-color: @whiteColor;
+            box-shadow: @shadowLight;
+            padding: 2rem;
+            border-radius: 20px;
+        }
+        .success-contact {
+            width: 40%;
+            margin-top: 0rem;
+        }
+        .social-media {
+            border-top: 1px solid #c0c0c0;
+            padding-top: 1.5rem;
+        }
+    }
+    // End Form-Success Section
+}
+@media @size-lg{
+
+    // Start Banner section //
+    .thanks-banner {
+        background: none;
+        background-image: url(../img/thanks/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .banner-container {
+            width: 52%;
+        }
+    
+    }
+    // End Banner section //
+
+    // Start Form-Success Section
+    .form-success {
+        .success {
+            width: 47%;
+            border: 2px solid @whiteColor;
+            border-radius: 20px;
+            padding: 1rem;
+            align-self: flex-start;
+            align-items: flex-start;
+        }
+        .success-container {
+            padding: 3rem 0rem;
+        }
+        .success-content {   
+            padding: 4rem 2rem;
+        }
+        .success-contact {
+            width: 43%;
+        }
+    }
+    // End Form-Success Section
+}
+@media @size-xl{
+
+    // Start Form-Success Section
+    .form-success {
+        padding: @sectionPadding-xl;
+        .success {
+            width: 39%;
+        }
+        .success-contact {
+            width: 34%;
+        }
+    }
+    // End Form-Success Section
+}

@@ -90,15 +90,18 @@ Route::get('/knowledge-pass',function(){
     return view('knowledge-pass');
 });
 
+Route::get('/thanks', function () {
+    return view('thanks');
+});
+
 Route::get('/privacy-policy',function(){
     return view('privacy-policy');
 })->name('privacy-policy');
 
 Route::get('/terms-and-conditions',function(){
-
 })->name('terms-and-conditions');
-Route::get('/third-party-trademarks',function(){
 
+Route::get('/third-party-trademarks',function(){
 })->name('third-party');
 
 Route::get('/cookies',function(){
