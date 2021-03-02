@@ -57,7 +57,11 @@
                     {{Form::select('region_id',$regions,null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
                     
                   </div>
-
+                  <div class="form-group">
+                    {{Form::label('tier','Select Tier')}}
+                    {{Form::select('tier',$tier,null,['tabindex'=>'-1','class'=>'form-control selectJS', 'placeholder'=>'Choose one'])}}
+                    
+                  </div>
                   <div class="form-group">
                     {{Form::label('address','Address')}}
                     {{Form::textarea('address',null,['class'=>'form-control ', 'rows'=>'4'])}}
