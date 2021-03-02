@@ -31,10 +31,8 @@
 
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <div class="card-title col-sm-6">
+                                <div class="card-title col-sm-12">
                                     Category List
-                                </div>
-                                {{-- <div class="col-sm-6"> --}}
                                     <form action="{{Route('categoryList')}}" method="get">
                                         <div class="onoffswitch">
                                         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
@@ -45,7 +43,10 @@
                                     </div>
                                       <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
-                                  </div>
+                                  </div>  
+                                </div>
+                                {{-- <div class="col-sm-6"> --}}
+                                    
                             {{-- </div> --}}
 
                             <!-- /.card-header -->
