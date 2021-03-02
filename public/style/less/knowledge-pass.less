@@ -38,3 +38,42 @@
         }
     }
 // End topic-banner section //
+
+// Start benefit section
+.benefit{
+    padding: @sectionPadding;
+    background-color: @darkblueColor;
+    .benefit-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .benefit-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .benefit-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        h3{
+            color: @whiteColor;
+            text-align: center;
+        }
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 180px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+// End benefit section

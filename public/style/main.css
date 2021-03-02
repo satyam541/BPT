@@ -11579,3 +11579,66 @@ select::-ms-expand {
   height: 13px;
   background-repeat: no-repeat;
 }
+.benefit {
+  padding: 3rem 1.5rem;
+  background-color: #1C2848;
+}
+.benefit .benefit-container {
+  display: flex;
+  flex-direction: column;
+}
+.benefit .benefit-list {
+  display: flex;
+  flex-direction: column;
+}
+.benefit .benefit-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.benefit .benefit-info:last-child {
+  margin-bottom: 0;
+}
+.benefit .benefit-info h3 {
+  color: #FFFFFF;
+  text-align: center;
+}
+.benefit .benefit-info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+}
+.benefit .benefit-info span img {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width : 768px) {
+  .benefit {
+    padding: 3rem 2rem;
+  }
+  .benefit .benefit-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .benefit .benefit-info {
+    width: 26%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width : 1024px) {
+  .benefit .benefit-info {
+    width: 30%;
+  }
+}
+@media (min-width : 1366px) {
+  .benefit {
+    padding: 4rem 0rem;
+  }
+  .benefit .benefit-info {
+    width: 14%;
+  }
+}

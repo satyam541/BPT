@@ -1,14 +1,46 @@
 
 @media @size-md {
 
+    // Start benefit section
+.benefit{
+    padding: @sectionPadding-md;
+    .benefit-list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .benefit-info{
+        width: 26%;
+        margin-bottom: 0;
+    }
+}
+// End benefit section
+
 }
 
 @media @size-lg {
+
+    // Start benefit section
+    .benefit{
+        .benefit-info{
+            width: 30%;
+        }
+    }
+    // End benefit section
 
 }
 
 
 @media @size-xl {
+
+     // Start benefit section
+     .benefit{
+         padding: @sectionPadding-xl;
+        .benefit-info{
+            width: 14%;
+        }
+    }
+    // End benefit section
 
 }
 
