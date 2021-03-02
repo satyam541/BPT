@@ -50,7 +50,13 @@
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon',['id'=>'icon'])}}
                     @if(!empty($whatsincluded->icon))
-                        <img src="{{url('images/'.$whatsincluded->icon)}}" width="150px"/>
+                        <img id="wIcon" src="{{url('images/'.$whatsincluded->icon)}}" height="70px" width="70px"/>
+                        <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>
+                    <a class="btn bg-yellow" id="undoremoveicon" onclick="undoIcon()">UNDO Remove Icon</a>
+                    {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
+                    <br/>
                     @endif
                     
                   </div>
@@ -77,4 +83,30 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            
+            $('#undoremoveicon').hide();
+                @if($whatsincluded['icon'] == null)
+                $('#removeicon').hide();
+                @endif
+        });
+        function removeIcon()
+            {
+                $('#removeicontxt').val('removed');
+                $('#wIcon').attr('src','/images/no-image.png');
+                $('#removeicon').hide();
+                $('#undoremoveicon').show();
+            }
+            function undoIcon()
+            {
+                $('#removeicontxt').val(null);
+                $('#wIcon').attr('src','{{url('images/'.$whatsincluded->icon)}}');
+                $('#removeicon').show();
+                $('#undoremoveicon').hide();
+            }
+
+    </script>
 @endsection

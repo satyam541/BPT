@@ -124,7 +124,9 @@
                   <div class="form-group">
                     {{Form::label('image','Flag Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
+                    @if(!empty($country->image))
                     <img id="cImage" src="{{ $country->getImagePath() }}" class=" pad" height="70px" width="70px"/>
+                    @endif
                     <br/>
                     <br/>
                     <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>

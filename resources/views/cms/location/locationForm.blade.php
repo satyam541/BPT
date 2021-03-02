@@ -90,7 +90,9 @@
                   <div class="form-group">
                     {{Form::label('image','Image',)}}
                     {!!Form::file('image')!!}
+                    @if(!empty($location->image))
                     <img id="lImage" src="{{URL('/images/'.$location['image'])}}" height="70px" width="70px" />
+                    @endif
                     <br/>
                     <br/>
                     <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
