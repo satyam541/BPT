@@ -54,8 +54,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
-Route::get('/training-courses/{category}/{topic}', 'CatalogueController@index')->name('topicPage');
-Route::get('/training-courses/{category}/{topic}/{course}', 'CatalogueController@index')->name('coursePage');
+Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
+Route::get('/training-courses/{category}/{topic}/{course}', 'CourseController@index')->name('coursePage');
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
