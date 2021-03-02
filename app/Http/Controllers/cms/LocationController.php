@@ -26,7 +26,7 @@ class LocationController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
 
-    public function sample(Request $request)
+    public function locationTier(Request $request)
     {
         $this->authorize('view', new Location());
         $locations       = Location::query();
@@ -36,7 +36,7 @@ class LocationController extends Controller
         //     $locations = Location::whereHas('popular')->get();
         //     $checked='checked';
         // }
-        return view('cms.location.sample',compact('data'));
+        return view('cms.location.locationTier',compact('data'));
     }
     public function list(Request $request)
     {
