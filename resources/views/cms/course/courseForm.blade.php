@@ -97,14 +97,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    {{ Form::label('image', 'Logo') }}
+                                    {{ Form::label('image', 'Image') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
-                                    <img src="{{ $course->getLogoPath() }}" class=" pad" style="max-width:50%" />
+                                    <img id="cImage" src="{{ $course->getLogoPath() }}" class=" pad" style="max-width:50%" />
                                     <br/>
-                            <br/>
-                            <a class="btn btn-danger" id="removeimage" onclick="doJob()">Remove Logo</a>
-                            <a class="btn bg-yellow" id="undoremoveimage" onclick="undodojob()">UNDO Remove Logo</a>
-                            {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                                    <br/>
+                                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                                    <br/>
                                 </div>
 
 
@@ -186,8 +187,28 @@
 
             });
 
+            $('#undoremoveimage').hide();
+            @if($course['image'] == null)
+             $('#removeimage').hide();
+            @endif
+ 
         });
+        function removeImage()
+        {
+            $('#removeimagetxt').val('removed');
+            $('#cImage').attr('src','/images/no-image.png');
+            $('#removeimage').hide();
+            $('#undoremoveimage').show();
+        }
 
+
+        function undoImage()
+        {
+            $('#removeimagetxt').val(null);
+            $('#cImage').attr('src','{{$course->getLogoPath()}}');
+            $('#removeimage').show();
+            $('#undoremoveimage').hide();
+        }
         function updateSlug() {
             var location = $("#name").val();
             var slug = '/' + convertUrl(location);
