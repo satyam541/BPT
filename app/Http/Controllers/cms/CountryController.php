@@ -131,6 +131,10 @@ class CountryController extends Controller
             $request->file('image')->move(public_path($country->image_path), $imageName);
             $country->image = $imageName;
         }
+        if($inputs['removeimagetxt']!=null)
+        {
+            $country->image = null;
+        }
         
         $country->save();
         if(!empty($country->name))

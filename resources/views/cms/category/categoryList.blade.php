@@ -31,18 +31,26 @@
 
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <div class="card-title">
+                                <div class="card-title col-sm-12">
                                     Category List
-                                </div>
-                                <div class="col-sm-16 text-right">
                                     <form action="{{Route('categoryList')}}" method="get">
-                                      <label >
-                                        <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                                      </label>
+                                        
+                                        <div class="onoffswitch">
+                                        <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                                        <label class="onoffswitch-label" for="myonoffswitch">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        
+                                        </label>
+                                        
+                                    </div>
                                       <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
-                                  </div>
-                            </div>
+                                  </div>  
+                                </div>
+                                {{-- <div class="col-sm-6"> --}}
+                                    
+                            {{-- </div> --}}
 
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -147,7 +155,7 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#popular').change(function(){
+            $('#myonoffswitch').change(function(){
               $('#submit').click();
                 });
             $('#example1').DataTable({

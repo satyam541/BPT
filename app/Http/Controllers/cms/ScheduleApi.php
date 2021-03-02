@@ -184,7 +184,7 @@ class ScheduleApi extends Controller
                     $this->updateApiProcess('second', 'onlinePrice', 1, 1);
                     $this->saveOnlineCoursePrice(
                         $courselocations['onlinePrice']['price'],
-                        $course->id,
+                        $course,
                         $addons
                     );
                     unset($courselocations['onlinePrice']);
@@ -295,11 +295,12 @@ class ScheduleApi extends Controller
     ** save online price for the given course
     ** and also call save addons with the onlinepriceid
     */
-    public function saveOnlineCoursePrice($price, $courseid, $addons)
+    public function saveOnlineCoursePrice($price, $course, $addons)
     {
         if (empty($price)) {
             return FALSE;
         }
+        $courseid = $course->id;
         
         $onlinePrice = OnlinePrice::firstOrNew(['course_id' => $courseid]);
         $percentage = 10;
@@ -313,13 +314,13 @@ class ScheduleApi extends Controller
   
 
         if (!empty($addons))
-            $this->saveOnlineCourseAddons($addons, $onlinePrice);
+            $this->saveOnlineCourseAddons($addons, $course);
     }
 
     /*
     ** save addons related to given onlinepriceid
     */
-    public function saveOnlineCourseAddons($addons, $onlinePrice)
+    public function saveOnlineCourseAddons($addons, $course)
     {
       
         if (empty($addons)) {
@@ -353,8 +354,8 @@ class ScheduleApi extends Controller
                    
                 );
              
-             
-                $onlinePrice->addons()->syncWithoutDetaching($courseAddon->id);
+               
+                $course->courseAddon()->syncWithoutDetaching($courseAddon->id);
 
 
             }
