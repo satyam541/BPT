@@ -34,12 +34,15 @@
                                 <div class="card-title col-sm-12">
                                     Category List
                                     <form action="{{Route('categoryList')}}" method="get">
+                                        
                                         <div class="onoffswitch">
-                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                                        <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                                         <label class="onoffswitch-label" for="myonoffswitch">
                                             <span class="onoffswitch-inner"></span>
                                             <span class="onoffswitch-switch"></span>
+                                        
                                         </label>
+                                        
                                     </div>
                                       <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
@@ -152,7 +155,7 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#popular').change(function(){
+            $('#myonoffswitch').change(function(){
               $('#submit').click();
                 });
             $('#example1').DataTable({
