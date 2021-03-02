@@ -29,13 +29,14 @@ class LocationController extends Controller
     public function sample(Request $request)
     {
         $this->authorize('view', new Location());
-        $locations       = Location::all();
+        $locations       = Location::query();
+        $data=$locations->get()->groupBy('tier');
         // $checked=null;
         // if(isset($request->popular)){
         //     $locations = Location::whereHas('popular')->get();
         //     $checked='checked';
         // }
-        return view('cms.location.sample',compact('locations'));
+        return view('cms.location.sample',compact('data'));
     }
     public function list(Request $request)
     {
