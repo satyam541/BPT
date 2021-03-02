@@ -11543,12 +11543,263 @@ select::-ms-expand {
   top: 3px;
   z-index: -1;
 }
+.budget {
+  display: none;
+}
+.knowledge {
+  padding: 3rem 1.5rem;
+}
+.knowledge .knowledge-container {
+  display: flex;
+  flex-direction: column;
+}
+.knowledge .pass-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.knowledge .pass-info p {
+  margin-top: 0.5rem;
+}
+.knowledge .booking-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.knowledge .booking-info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 6px #ded9d9;
+  padding: 1rem;
+  width: 272px;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.knowledge .booking-info:last-child {
+  margin-top: 0;
+}
+.knowledge .booking-info:nth-child(even) {
+  background-color: #F6F6F6;
+}
+.knowledge .booking-info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+.knowledge .booking-info span img {
+  width: 100%;
+  height: 100%;
+}
+.knowledge .booking-info h3,
+.knowledge .booking-info p {
+  margin-top: 0.5rem;
+}
+.study {
+  padding: 3rem 1.5rem;
+}
+.study .study-container {
+  display: flex;
+  flex-direction: column;
+}
+.study .study-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.study .study-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem;
+  padding-top: 0;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom: 5px solid #1C2848;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.study .study-info::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/privacy-policy/study-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  left: 0;
+  top: -12px;
+  height: 50px;
+  width: 100%;
+  z-index: -1;
+}
+.study .study-info:last-child {
+  margin-bottom: 0;
+}
+.study .study-info h2,
+.study .study-info p {
+  text-align: center;
+}
+.study .study-info h2 {
+  color: #FFFFFF;
+  margin-top: -0.3rem;
+}
+.study .study-info p {
+  margin-top: 2rem;
+}
+.requirement {
+  padding: 3rem 1.5rem;
+}
+.requirement .reuqirement-container {
+  display: flex;
+  flex-direction: column;
+}
+.requirement .headline {
+  text-align: center;
+}
+.requirement table {
+  width: 100%;
+}
+.requirement tr {
+  padding: 1rem;
+  text-align: left;
+  width: 100%;
+}
+.requirement tr:first-child {
+  display: flex;
+  background-color: #0064D8;
+  color: #FFFFFF;
+  justify-content: space-between;
+}
+.requirement tr:nth-child(2) {
+  border-bottom: 2px solid #C2C2C2;
+}
+.requirement td {
+  padding: 1rem;
+}
 @media (min-width : 768px) {
   .privacy-banner .search {
     width: 65%;
   }
   .policy {
     padding: 3rem 2rem;
+  }
+  .budget {
+    padding: 3rem 2rem;
+    display: flex;
+  }
+  .budget .budget-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .budget .headline {
+    text-align: center;
+  }
+  .budget .budget-table {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .budget table {
+    display: flex;
+    flex-direction: column;
+  }
+  .budget tr {
+    text-align: left;
+  }
+  .budget tr:last-child td {
+    background-color: transparent;
+  }
+  .budget th {
+    padding: 1rem;
+    text-align: center;
+  }
+  .budget th:first-child {
+    background-color: #0064D8;
+    color: #FFFFFF;
+    text-align: left;
+    width: 52%;
+  }
+  .budget th:nth-child(2) {
+    background-color: #F9EDE7;
+  }
+  .budget th:nth-child(3) {
+    background-color: #F7F7F7;
+  }
+  .budget th:nth-child(4) {
+    background-color: #FBF6E8;
+  }
+  .budget td {
+    padding: 1rem;
+    font-size: 12px;
+  }
+  .budget td img {
+    width: 20px;
+    height: 20px;
+  }
+  .budget td:nth-child(2) {
+    background-color: #F9EDE7;
+  }
+  .budget td:nth-child(3) {
+    background-color: #F7F7F7;
+  }
+  .budget td:nth-child(4) {
+    background-color: #FBF6E8;
+  }
+  .budget td:nth-child(2),
+  .budget td:nth-child(3),
+  .budget td:nth-child(4) {
+    text-align: center;
+  }
+  .budget td p {
+    margin-bottom: 0.5rem;
+  }
+  .budget td p:first-child {
+    color: #0064D8;
+    font-weight: 500;
+  }
+  .budget td p:nth-child(2) {
+    margin-bottom: 0;
+  }
+  .budget td .buttons {
+    margin-top: 0;
+  }
+  .budget td .btn-blue {
+    font-size: 12px;
+    min-width: 116px;
+  }
+  .budget td .btn-blue img {
+    width: 16px;
+    height: 16px;
+  }
+  .knowledge {
+    padding: 3rem 2rem;
+    padding-top: 1rem!important;
+  }
+  .knowledge .booking-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .knowledge .booking-info {
+    width: 31%;
+  }
+  .knowledge h3 {
+    min-height: 50px;
+  }
+  .study {
+    padding: 3rem 2rem;
+    padding-top: 1rem!important;
+  }
+  .study .study-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .study .study-info {
+    width: 46%;
+    margin-bottom: 0;
   }
 }
 @media (min-width : 1024px) {
@@ -11571,9 +11822,72 @@ select::-ms-expand {
   .privacy-banner .breadcrums li .black {
     display: flex;
   }
+  .budget .budget-table {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    margin-top: 4rem;
+  }
+  .budget table {
+    width: 95%;
+    align-self: center;
+    transform: translate(0px, -25px);
+  }
+  .budget td .buttons {
+    margin-top: 1rem;
+  }
+  .budget td .btn-blue {
+    font-size: 18px;
+    min-width: 150px;
+  }
+  .budget td .btn-blue img {
+    width: 20px;
+    height: 20px;
+  }
+  .knowledge .knowledge-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .knowledge .pass-info {
+    width: 50%;
+    padding-right: 5rem;
+    border: 5px solid #C2C2C2;
+    border-right: none;
+    align-self: center;
+    padding: 2.5rem;
+  }
+  .knowledge .booking-list {
+    width: 50%;
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+  .knowledge .booking-info {
+    align-self: flex-start;
+    width: 50%;
+    margin-bottom: 0;
+  }
+  .study .study-info::before {
+    height: 60px;
+  }
+  .study .study-info h2 {
+    margin-top: 0;
+  }
 }
 @media (min-width : 1366px) {
   .policy {
+    padding: 4rem 0rem;
+  }
+  .budget {
+    padding: 4rem 0rem;
+  }
+  .knowledge {
+    padding: 4rem 0rem;
+  }
+  .knowledge .pass-info {
+    width: 60%;
+  }
+  .knowledge .booking-list {
+    width: 40%;
+  }
+  .study {
     padding: 4rem 0rem;
   }
 }
@@ -11610,42 +11924,6 @@ select::-ms-expand {
   width: 13px;
   height: 13px;
   background-repeat: no-repeat;
-}
-.benefit {
-  padding: 3rem 1.5rem;
-  background-color: #1C2848;
-}
-.benefit .benefit-container {
-  display: flex;
-  flex-direction: column;
-}
-.benefit .benefit-list {
-  display: flex;
-  flex-direction: column;
-}
-.benefit .benefit-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.benefit .benefit-info:last-child {
-  margin-bottom: 0;
-}
-.benefit .benefit-info h3 {
-  color: #FFFFFF;
-  text-align: center;
-}
-.benefit .benefit-info span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 180px;
-}
-.benefit .benefit-info span img {
-  width: 100%;
-  height: 100%;
 }
 @media (min-width : 768px) {
   .benefit {
