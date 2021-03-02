@@ -226,7 +226,7 @@ class TopicController extends Controller
     {
         $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
-        // dd($inputs);
+        
         $topic                      = new Topic();
         $topic->reference           = $inputs['reference'];
         $topic->name                = $inputs['name'];
@@ -234,7 +234,6 @@ class TopicController extends Controller
         $topic->accreditation_id    = $inputs['accreditation_id'];
         $topic->accredited          = isset($inputs['accredited']);
         $topic->published           = isset($inputs['published']);
-        $topic->is_online           = isset($inputs['is_online']);
         $topic->priority            = isset($inputs['priority']);
         $topic->category_id         = $inputs['category_id'];
         $topic->ip_trademark        = $inputs['ip_trademark'];
@@ -299,7 +298,6 @@ class TopicController extends Controller
         $topic->accreditation_id    = $inputs['accreditation_id'];
         $topic->accredited          = isset($inputs['accredited']) ? 1:0;
         $topic->published           = isset($inputs['published'])? 1:0;
-        $topic->is_online           = isset($inputs['is_online'])? 1:0;
         $topic->priority            = isset($inputs['priority'])? 1:0;
         $topic->category_id         = $inputs['category_id'];
         $topic->ip_trademark        = $inputs['ip_trademark'];
@@ -307,6 +305,10 @@ class TopicController extends Controller
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path($topic->image_path), $imageName);
             $topic->image = $imageName;
+        }
+        if($inputs['removeimagetxt']!=null)
+        {
+            $topic->image = null;
         }
         $topic->save();
         if(isset($inputs['is_popular']))

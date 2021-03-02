@@ -85,7 +85,10 @@ class TestimonialController extends Controller
            $request->file('image')->move(public_path($testimonial->image_path), $imageName);
            $testimonial->image = $imageName;
        }
-       
+       if($request['removeimagetxt']!=null)
+        {
+            $testimonial->image = null;
+        }
        $testimonial->save();
        return redirect()->route('testimonialList')->with('success','Successfully Updated');
    }

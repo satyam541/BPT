@@ -7,7 +7,7 @@
     var sticky = header.offsetTop;
 
     function myFunction() {
-        if ($(this).scrollTop() > 400 && $(this).width() >= 320) {
+        if ($(this).scrollTop() > 300 && $(this).width() >= 320) {
             header.addClass("sticky").addClass("sticky-down").removeClass("sticky-up");
         } else {
             header.removeClass("sticky").addClass("sticky-up").removeClass("sticky-down");
@@ -144,16 +144,13 @@
         loop: true,
         responsiveClass: true,
         dots: false,
-        nav: false,
+        nav: true,
         autoplay: true,
         navText: ["", ""],
         items: 1,
         responsive: {
             0: {
                 items: 1,
-            },
-            1024: {
-                nav: true,
             }
             
         }
@@ -222,8 +219,8 @@ var circumference = radius * 2 * Math.PI;
 var firstcircle = svg.find('circle').last();
 firstcircle.css({'strokeDasharray':circumference});
 firstcircle.css('strokeDashoffset',circumference);
-const firstoffset = circumference - percent / 100 * circumference;
-firstcircle.css('strokeDashoffset' , firstoffset);
+const firstoffset = circumference - ((percent / 100) * circumference);
+firstcircle.css('strokeDashoffset' , firstoffset + 12);
 var span = document.createElementNS('http://www.w3.org/2000/svg', 'text');
 span.setAttribute('x', radius-12);
 span.setAttribute('y', radius+12);

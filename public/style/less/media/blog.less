@@ -16,6 +16,7 @@
 
         .popular-item {
             width: 50%;
+            margin-top: 0;
         }
 
         .popular-list {
@@ -37,6 +38,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: flex-start;
            
                     &:last-child{
                         .buttons{
@@ -54,6 +56,7 @@
         .our-item {
             width: 40%;
             align-items: flex-start;
+            margin-top: 3rem;
             &:nth-child(1),&:nth-child(2){
                 margin-top: 0;
             }
@@ -99,7 +102,7 @@
            
         }
             h3{ 
-                min-height: 75px;
+                min-height: 40px;
                 text-align: left;
             }
         
@@ -115,6 +118,10 @@
     // Start ideal section //
     .ideal {
         padding: @sectionPadding-md;
+            .clients-inner{
+                width: 100%;
+                margin: 0;
+            }
 
     }
 
@@ -179,6 +186,7 @@
             width: 70%;
             align-self: center;
         }
+
         .our-info {
             .designation {
                 width: 34%;
@@ -210,6 +218,7 @@
                 }
             }
             &:nth-child(even){
+                margin-top: 5rem;
                 &::before{
                     left: -104px;
                     top: 170px;
@@ -240,6 +249,10 @@
         .heading {
             width: 28%;
             align-items: flex-start;
+            &::before{
+                left: 0;
+                right: auto;
+            }
 
             h2,
             p {
@@ -248,7 +261,7 @@
         }
 
         .ideal-container {
-            display: flex;
+            flex-direction: row;
             justify-content: space-around;
         }
 
@@ -327,14 +340,6 @@
 
         .container {
             width: 100%;
-        }
-
-        .popular-item {
-            width: 337px;
-            &:nth-child(2) {
-                width: 338px;
-            }
-
         }
     }
 

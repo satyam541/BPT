@@ -138,9 +138,10 @@ class Course extends Model
     {
         return $this->morphMany('App\Models\Faq', 'module');
     }
-    // public function courseAddon(){
-    //     return $this->belongsToMany('App\Models\CourseAddon','course_addon_new','online_price_id','addon_id');
-    // }
+
+    public function courseAddon(){
+        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
+    }
 
     public function getLogoPath()
     {// check file exist then return default image.

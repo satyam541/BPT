@@ -67,7 +67,6 @@ class CategoryController extends Controller
         $category->reference            = $input['reference'];
         $category->color_code           = $input['color_code'];
         $category->published            = isset($input['published'])?1:0;
-        $category->is_online            = isset($input['is_online'])?1:0;
         $category->is_technical         = isset($input['is_technical'])?1:0;
         
         if($request->hasFile('image')){
@@ -110,7 +109,6 @@ class CategoryController extends Controller
         $category->reference        = '/'.encodeUrlSlug($input['name']);
         $category->color_code       = $input['color_code'];
         $category->published        = isset($input['published']);
-        $category->is_online        = isset($input['is_online']);
         $category->is_technical     = isset($input['is_technical']);
    
         if($request->hasFile('image')){
@@ -119,11 +117,22 @@ class CategoryController extends Controller
             $category->image = $imageName;
         }
 
+        if($request['removeimagetxt']!=null)
+        {
+            $category->image = null;
+        }
+        
         if($request->hasFile('icon')){
             $imageName = $this->Icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
+
+        if($request['removeicontxt']!=null)
+        {
+            $category->icon = null;
+        }
+
         $category->save();
         
         if(isset($input['is_popular']))

@@ -1,14 +1,239 @@
 
 @media @size-md {
 
+    // Start benefit section
+.benefit{
+    padding: @sectionPadding-md;
+    .benefit-list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .benefit-info{
+        width: 26%;
+        margin-bottom: 0;
+    }
+}
+// End benefit section
+
+// Start pass-clients section //
+
+.pass-clients{
+    padding: @sectionPadding-md;
+
+    .pass-container{
+        flex-direction: row;
+        justify-content: space-between;
+            align-items: center;
+    }
+
+    .pass-content{
+        width: 51%;
+    }
+
+    .clients-pass{
+        width: 40%;
+        span{
+            &:nth-child(1),&:nth-child(2){
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// End pass-clients section //
+
+
+
+// Start spending section //
+.spending{
+    padding: @sectionPadding-md;
+    .spending-container{
+      padding: 2rem 1rem;
+      background-color: @bgColor;
+    }
+
+    .spending-list{
+        flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+
+    .item{
+    background-color: @whiteColor;
+    width: 45%;
+        &::before{
+            width: 325px;
+            height: 83px;
+        }
+    }
+    h3{
+        font-size: 17px;
+    }
+}
+// End spending section //
+
 }
 
 @media @size-lg {
+
+    // Start knowledge banner section //
+        .knowledge-banner{
+            background-image: url(../img/knowledge-pass/banner-bg.png);
+            background-size: 45% 100%;
+            background-position: right;
+
+            p,h1{
+                color: @textColor;
+            }
+
+            .banner-container{
+                 width: 50%;
+
+                 .breadcrums{
+                     li{
+                         color: @textColor;
+                     }
+                     .white{
+                         display: none;
+                     }
+                     .black{
+                         display: flex;
+                     }
+                 }
+            }
+
+        }
+    // End knowledge banner section //
+
+    // Start benefit section
+    .benefit{
+        .benefit-info{
+            width: 30%;
+        }
+    }
+    // End benefit section
+
+    // Start pass-clients section //
+
+.pass-clients{
+    .pass-content{
+    width: 56%;
+    }
+
+    .clients-pass{
+        position: relative;
+            height: 315px;
+         width: 41%;
+        span{
+            position: absolute;
+            margin-top: 0;
+            width: 120px;
+             height: 110px;
+            &:nth-child(1){
+                top: 100px;
+                left: 0;
+                width: 150px;
+                height: 140px;
+            }
+            &:nth-child(2){
+                bottom: 0;
+                left: 100px;
+            }
+            &:nth-child(3){
+                top: 0;
+                left: 100px;
+                height: 132px;
+                width: 140px
+            }
+            &:nth-child(4){
+                top: 100px;
+                right: 53px;
+                z-index: -1;
+                width: 150px;
+                height: 130px;
+            }
+            &:nth-child(5){
+                
+                bottom: 0;
+                right: 0;
+            }
+            &:nth-child(6){
+                top: 22px;
+                right: 0;
+                height: 100px;
+            }
+        }
+    }
+}
+
+// End pass-clients section //
+
+// Start spending section //
+.spending{
+    .item{
+         width: 30%;
+        &::before{
+            width: 301px;
+        }
+    }
+    h3{
+        word-break: break-all;
+    }
+}
+// End spending section //
 
 }
 
 
 @media @size-xl {
+
+    // Start knowledge-banner section //
+
+    .knowledge-banner {
+        background-size: 40% 100%;
+        padding-bottom: 6rem;
+    box-shadow: @shadowLight;
+        .banner-container{
+             width: 49%;
+        }
+    }
+
+    // End knowledge-banner  section //
+
+     // Start benefit section
+     .benefit{
+         padding: @sectionPadding-xl;
+        .benefit-info{
+            width: 14%;
+        }
+    }
+    // End benefit section
+
+
+    
+// Start pass-clients section //
+    .pass-clients{
+        padding: @sectionPadding-xl;
+        .clients-pass{
+            width: 33%;
+        }
+    }
+// End pass-clients section //
+
+
+// Start spending section //
+.spending{
+    padding: @sectionPadding-xl;
+    .item{
+        width: 28%;
+        &::before{
+            width: 354px;
+            left: -14px;
+        }
+    }
+}
+// End spending section //
 
 }
 

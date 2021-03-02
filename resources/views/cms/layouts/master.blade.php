@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/toggle/toggle.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
   <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
@@ -48,7 +49,9 @@
 <style>
   .select2-container--default .select2-selection--single .select2-selection__rendered{
   line-height: 19px;
+  
 }
+
 </style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -128,7 +131,7 @@
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
 
-              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country', 'placeholder' => 'Choose one']) }}
+              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
               
             </div>
           </div>
@@ -344,7 +347,7 @@
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Location()) || Auth::user()->can('view', new App\Models\Venue()))      
           <li
-           @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList']))
+           @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList','locationTier']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -371,6 +374,14 @@
                 <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>
+                </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                @can('view',new App\Models\location())
+                <a href="{{Route('locationTier')}}" @if(Route::currentRouteName()=='locationTier')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle text-warning"></i>
+                  <p>Manage Tiers</p>
                 </a>
                 @endcan
               </li>
@@ -905,9 +916,11 @@ $.widget.bridge('uibutton', $.ui.button)
         $(".selectJS").select2({
             width:'100%',
             
-            
         });
-
+        
+          $('#myonoffswitch').change(function(){
+              $('#submit').click();
+          });
     
       summernoteload('.summernote');
 

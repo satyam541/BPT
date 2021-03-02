@@ -73,7 +73,13 @@
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image')}}
-                    <img src="{{ $pageDetail->getImagePath() }}" class=" pad" style="max-width:50%"/>
+                    <img id="pImage" src="{{ $pageDetail->getImagePath() }}" class=" pad" height="70px" width="70px"/>
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
 
                   <div class="form-group">
@@ -84,7 +90,15 @@
                   <div class="form-group">
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon')}}
-                    <img src="{{ $pageDetail->getIconPath() }}" class=" pad" style="max-width:50%"/>
+                    @if(!empty($pageDetail->icon))
+                    <img id="pIcon" src="{{ $pageDetail->getIconPath() }}" class=" pad" height="70px" width="70px"/>
+                    @endif
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>
+                    <a class="btn bg-yellow" id="undoremoveicon" onclick="undoIcon()">UNDO Remove Icon</a>
+                    {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
                   
                   <div class="form-group">
@@ -111,4 +125,50 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            
+            $('#undoremoveimage').hide();
+                @if($pageDetail['image'] == null)
+                $('#removeimage').hide();
+                @endif
+
+                $('#undoremoveicon').hide();
+                @if($pageDetail['icon'] == null)
+                $('#removeicon').hide();
+                @endif
+        });
+        function removeImage()
+            {
+                $('#removeimagetxt').val('removed');
+                $('#pImage').attr('src','/images/no-image.png');
+                $('#removeimage').hide();
+                $('#undoremoveimage').show();
+            }
+            function undoImage()
+            {
+                $('#removeimagetxt').val(null);
+                $('#pImage').attr('src','{{$pageDetail->getImagePath()}}');
+                $('#removeimage').show();
+                $('#undoremoveimage').hide();
+            }
+
+            function removeIcon()
+            {
+                $('#removeicontxt').val('removed');
+                $('#pIcon').attr('src','/images/no-image.png');
+                $('#removeicon').hide();
+                $('#undoremoveicon').show();
+            }
+            function undoIcon()
+            {
+                $('#removeicontxt').val(null);
+                $('#pIcon').attr('src','{{$pageDetail->getIconPath()}}');
+                $('#removeicon').show();
+                $('#undoremoveicon').hide();
+            }
+
+    </script>
 @endsection

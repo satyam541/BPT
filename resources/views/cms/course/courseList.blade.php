@@ -33,24 +33,30 @@
            
           <div class="card card-primary card-outline">
             <div class="card-header">
-              <div class="card-title">
+              <div class="card-title col-sm-12">
                 Course List
+                <div class="popular">
+                  Popular
               </div>
+              <form action="{{Route('courseList')}}" method="get">
+                                        
+                <div class="onoffswitch">
+                <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                
+                </label>
+                
             </div>
+              <input type="submit" name="submit" id="submit" style="visibility: hidden">
+            </form>
+          </div>  
+        </div>
 
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="col-sm-2 ml-2">
-                  <form action="{{Route('courseList')}}" method="get">
-                    <label class="">
-                      <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                    </label>
-                    <input type="submit" name="submit" id="submit" style="visibility: hidden">
-                  </form>
-                </div>
-                                
-                  
-               
+              <div class="table table-responsive">    
               <table id="example1">
                 
                 <thead>
@@ -126,6 +132,7 @@
                     @endforeach
                 </tbody>
               </table>
+            </div>
               @can('create',new App\Models\Course())
               <a id="add" href="{{route('createCourse')}}" class="btn btn-success" style="">Add new Record</a>
               @endcan
@@ -148,9 +155,7 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-              $('#popular').change(function(){
-              $('#submit').click();
-                });
+              
             $('#example1').DataTable({
               "columns": [
                         { "name": "Name" },

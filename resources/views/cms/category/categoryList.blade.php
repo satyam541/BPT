@@ -31,21 +31,33 @@
 
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <div class="card-title">
+                                <div class="card-title col-sm-12">
                                     Category List
+                                    <div class="popular">
+                                        Polpular
+                                    </div>
+                                    <form action="{{Route('categoryList')}}" method="get">
+                                        
+                                        <div class="onoffswitch">
+                                        <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                                        <label class="onoffswitch-label" for="myonoffswitch">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        
+                                        </label>
+                                        
+                                    </div>
+                                      <input type="submit" name="submit" id="submit" style="visibility: hidden">
+                                    </form>
+                                  </div>  
                                 </div>
-                            </div>
+                                {{-- <div class="col-sm-6"> --}}
+                                    
+                            {{-- </div> --}}
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <div class="col-sm-2 ml-2">
-                                    <form action="{{Route('categoryList')}}" method="get">
-                                      <label >
-                                        <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                                      </label>
-                                      <input type="submit" name="submit" id="submit" style="visibility: hidden">
-                                    </form>
-                                  </div>
+                                <div class="table table-responsive">
                                 <table id="example1" >
                                     <thead>
                                         <tr>
@@ -121,6 +133,7 @@
 
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
@@ -146,9 +159,8 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $('#popular').change(function(){
-              $('#submit').click();
-                });
+           
+              
             $('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
@@ -189,6 +201,29 @@
                 $(this).removeClass('btn-primary');
                 $(this).addClass('btn-success');
             });
+            $('#submit').on('click',function(){
+        //    var country=$('#country').val();
+     
+      $.ajax({
+        url:"{{route('categoryList')}}",
+        data:{popular},
+        type:'post',
+        global:false,
+        headers: {
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                  },
+        success:function(response){
+          if(response=='done'){
+          location.reload(); 
+          }
+          else{
+          alert('country code not available');
+          }
+        }
+      });
+      
+    });
+   
         });
 
     </script>

@@ -120,6 +120,10 @@ class SettingController extends Controller
             $request->file('image')->move(public_path($websitedetail->logo_path), $imageName);
             $websitedetail->image = $imageName;
         }
+        if($request['removeimagetxt']!=null)
+        {
+            $websitedetail->image = null;
+        }
         $websitedetail->save();
         return redirect()->route('websiteDetailList')->with('success','Successfully Updated');
       

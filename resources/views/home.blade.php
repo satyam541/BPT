@@ -66,7 +66,7 @@
 <section class="flex-container courses">
     <div class="container">
         <div class="courses-container">
-            <div class="heading">
+            <div class="heading center-heading">
                 <h2>Professional Skills For
                     <span>
                         The Digital World
@@ -194,7 +194,7 @@
 <section class="flex-container delivery">
     <div class="container">
         <div class="delivery-container">
-            <div class="heading center-heading">
+            <div class="heading">
                 <h2>Expert Training In A Classroom,
                     <span>
                      Online Or From Home!
@@ -324,6 +324,34 @@
                     <h2>What Our Clients Say About Us</h2>
                 </div>
                 <div class="reviews-outer owl-carousel">
+                    <div class="reviews-inner">
+                        <p>
+                            {!!$testimonial->content!!}
+                        </p>
+                        <div class="author-name">
+                            <h3>
+                                {!!$testimonial->author!!}
+                            </h3>
+                            <span>
+                                {!!$testimonial->designation!!}
+                            </span>
+                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        </div>
+                    </div>
+                    <div class="reviews-inner">
+                        <p>
+                            {!!$testimonial->content!!}
+                        </p>
+                        <div class="author-name">
+                            <h3>
+                                {!!$testimonial->author!!}
+                            </h3>
+                            <span>
+                                {!!$testimonial->designation!!}
+                            </span>
+                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
+                        </div>
+                    </div>
                     <div class="reviews-inner">
                         <p>
                             {!!$testimonial->content!!}

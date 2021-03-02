@@ -34,6 +34,11 @@
             .icon{
                 display: flex;
             }
+            .name{
+                h3, p{
+                        text-align: left;
+                }
+            }
         }
     }
     .effective{
@@ -113,6 +118,16 @@
     }
     .delivery{
         padding: @sectionPadding-md;
+        .heading{
+            &::before{
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            h2{  
+                text-align: center;
+            }
+        }
         .delivery-list{
             flex-direction: row;
             justify-content: space-between;
@@ -271,9 +286,6 @@
     }
     .looking{
         padding: @sectionPadding-md;
-        background-image: linear-gradient(0deg, @whiteColor 0%, @whiteColor 14%, @darkblueColor 14%, @darkblueColor 4%, @lightblueColor 34%, @lightblueColor 86%, @bgColor 86%, @bgColor 100%);
-        background-position: center;
-        background-repeat: no-repeat;
         position: relative;
         &::before{
             content: '';
@@ -461,6 +473,11 @@
         }
     }
     .looking{
+        // background-image: linear-gradient(0deg , @whiteColor 0%, @whiteColor 9%, @darkblueColor 9%, @darkblueColor 3%, @lightblueColor 34%, @lightblueColor 90%, @bgColor 91%, @bgColor 100%);
+        background-image: linear-gradient(0deg, @whiteColor 0%, @whiteColor 14%, @darkblueColor 14%, @darkblueColor 4%, @lightblueColor 34%, @lightblueColor 86%, @bgColor 86%, @bgColor 100%);
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-right: 4rem;
         .looking-for{
             background-image: url(../img/home/moon.png);
             background-size: 100% 50%;
@@ -487,32 +504,21 @@
             padding: 0 1rem;
             margin-top: 3rem;
         }
-        .owl-nav {
-            display: flex !important;
-            justify-content: space-between;
-            width: 100%;
-            transform: translateY(-142px);
-
-            .owl-prev, .owl-next{
-                background-image: url('../img/home/testi-arrow.png') !important;
-                background-repeat: no-repeat !important;
-                width: 32px;
-                height: 30px;
-                background-size: contain !important;
-                outline: none;
-                opacity: .5;
-                transform: translateX(-48px);
-                span {
-                    display: none;
-                }
-            }
-            .owl-next {
-                transform: translateX(32px) rotate(180deg);
-            }
-            .btn-active {
-                opacity: 1;
-            }
+        .reviews-outer{
+            position: relative;
         }
+         .owl-nav{
+             width: 100%;
+             position: absolute;
+             top: 5%;
+            .owl-prev{
+                transform: translateX(-48px);
+            
+            }
+            .owl-next{
+                transform: translateX(40px) rotate(180deg);
+            }
+        } 
     }
     .partners{
         background-image: url(../img/home/dotted-globe.png);
@@ -595,10 +601,23 @@
     } 
     .locations{
         padding: @sectionPadding-xl;
+        .locations-container{
+            justify-content: space-around;
+        }
     }
     .looking{
         padding: @sectionPadding-xl;
     } 
+    .partners{
+        .heading {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 1rem;
+            h2{
+                line-height: 1.2;
+            }
+        }
+    }
 }
 @media @size-xllll{
   .facts{   

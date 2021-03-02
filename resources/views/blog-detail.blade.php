@@ -79,7 +79,7 @@
                 </div>
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
-                    <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
+                    <a href="tel:{{websiteDetail()->contact_number}}">Call: {{websiteDetail()->contact_number}}</a>
                     <p>{{websiteDetail()->contact_email}}</p>
                 </div>
                
@@ -121,27 +121,11 @@
                 <p>{!!$pageDetail->center_heading['heading']->content!!}</p>
             </div>
             <div class="clients-inner">
-                <span class="image">
-                    <img src="{{url('img/blog/amazon.svg')}}" alt="amazong">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/twitter.svg')}}" alt="twitter">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/google-service.svg')}}" alt="google-service">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/google.svg')}}" alt="google">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/google-plus.svg')}}" alt="google-plus">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/facebook.svg')}}" alt="facebook">
-                </span>
-                <span class="image">
-                    <img src="{{url('img/blog/linkedin.svg')}}" alt="linkedin">
-                </span>
+                @foreach ($pageDetail->partners as $image)
+                    <span class="image">
+                        <img src="{{ url($image->getImagePath()) }}" alt="{{$image->image_alt}}">
+                    </span>
+                @endforeach
             </div>
         </div>
     </div>

@@ -297,7 +297,7 @@
                         <p><strong>Certificate(s): </strong> Included</p>
                         <p><strong>Support: </strong> 24/7</p>
                         <div class="buttons">
-                            <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
                                 <img src="{{url('img/courses/email.svg')}}" alt="email">Enquire Now
                             </a>
                         </div>
