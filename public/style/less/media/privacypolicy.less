@@ -12,7 +12,131 @@
         padding:@sectionPadding-md;
     }
     // End policy section 
+
+    // Start budget section
+    .budget {
+        padding: @sectionPadding-md;
+        display: flex;
+        .budget-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .headline{
+            text-align: center;
+        }
+        .budget-table{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+        table{
+            display: flex;
+            flex-direction: column;
+        }
+        tr{
+            text-align: left;
+            &:last-child{
+                td{
+                    background-color: transparent;
+                }
+            }
+        }
+        th{
+            padding: 1rem;
+            text-align: center;
+            &:first-child{
+                background-color: @lightblueColor;
+                color: @whiteColor;
+                text-align: left;
+                width: 52%;
+            }
+            &:nth-child(2){
+                background-color: #F9EDE7;
+            }
+            &:nth-child(3){
+                background-color: #F7F7F7;
+            }
+            &:nth-child(4){
+                background-color: #FBF6E8;
+            }
+
+        }
+        td{
+            padding: 1rem;
+            font-size: 12px;
+            img{
+                width: 20px;
+                height: 20px;
+            }
+            &:nth-child(2){
+                background-color: #F9EDE7;
+            }
+            &:nth-child(3){
+                background-color: #F7F7F7;
+            }
+            &:nth-child(4){
+                background-color: #FBF6E8;
+            }
+            &:nth-child(2),&:nth-child(3),&:nth-child(4){
+                text-align: center;
+            }
+            p{
+                margin-bottom: .5rem;
+            &:first-child{
+                color: @lightblueColor;
+                font-weight: 500;
+            }
+            &:nth-child(2){
+                margin-bottom: 0;
+            }
+            }
+            .buttons{
+                margin-top: 0;
+            }
+            .btn-blue{
+                font-size: 12px;
+                min-width: 116px;
+                img{
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+    // End budget section
     
+    // Start knowledge section
+    .knowledge{
+        padding: @sectionPadding-md;
+        padding-top: 1rem!important;
+        .booking-list{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .booking-info{
+            width: 31%;
+        }
+        h3{
+            min-height: 50px;
+        }
+    }
+    // End knowledge section
+
+    // Start study section
+    .study{
+        padding: @sectionPadding-md;
+        padding-top: 1rem!important;
+        .study-list{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .study-info{
+            width: 46%;
+            margin-bottom: 0;
+        }
+    }
+    // End study section
     
     }
     
@@ -41,15 +165,107 @@
         }
         // End privacy-banner section
         
+        // Start budget section
+        .budget {
+            .budget-table{
+                box-shadow: @shadowLight;
+                margin-top: 4rem;
+            }
+            table{
+                width: 95%;
+                align-self: center;
+                transform: translate(0px, -25px);
+            }
+            td{
+                .buttons{
+                    margin-top: 1rem;
+                }
+                .btn-blue{
+                    font-size: 18px;
+                    min-width: 150px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+        // End budget section
+
+        // Start knowledge section
+        .knowledge{
+            .knowledge-container{
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .pass-info{
+                width: 50%;
+                padding-right: 5rem;
+                border: 5px solid #C2C2C2;
+                border-right: none;
+                align-self: center;
+                padding: 2.5rem;
+            }
+            .booking-list{
+                width: 50%;
+                margin-top: 0;
+                justify-content: flex-start;
+            }
+            .booking-info{
+                align-self: flex-start;
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+        }
+        // End knowledge section
+
+        // Start study section
+        .study{
+            .study-info{
+                &::before{
+                    height: 60px;
+                }
+                h2{
+                    margin-top: 0;
+                }
+            }
+        }
+        // End study section
 
     }
     
     @media @size-xl{
 
-        // Start policy section
+    // Start policy section
     .policy{
         padding:@sectionPadding-xl;
     }
     // End policy section 
+
+    // Start budget section
+    .budget {
+        padding: @sectionPadding-xl;
+    }
+    // End budget section
+
+    // Start knowledge section
+    .knowledge{
+        padding: @sectionPadding-xl;
+        .pass-info{
+            width: 60%;
+        }
+        .booking-list{
+            width: 40%;
+        }
+
+    }
+    // End knowledge section
+
+    // Start study section
+    .study{
+        padding: @sectionPadding-xl;
+    }
+    // End study section
     
     }

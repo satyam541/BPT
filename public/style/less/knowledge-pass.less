@@ -1,211 +1,40 @@
-// Start knowledge banner //
-.knowledge-banner{
-    background-image: @blueGradient;
-    h1,p{
-        color: @whiteColor;
-    }
-}
-// End knowledge banner //
 
-// Start pass-clients section //
-
-    .pass-clients{
-        padding: @sectionPadding;
-
-        .pass-container{
-            display: flex;
-            flex-direction: column;
-        }
-        .heading{
-            p{
-                margin-top: 1rem;
-            }
+// Start topic-banner section //
+    .topic-banner{
+        background-image:@blueGradient;
+        p,h2,h1,li{
+            color: @whiteColor!important;
         }
 
-        h3{
-            margin-bottom: 1rem;
-        }
-        .tagline{
-            margin-top: 1rem;
-        }
-       
-
-        .pass-content{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            
-        }
-
-        .clients-pass{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            span{
-                display: flex;
-                width: 130px;
-                height: 80px;
-                margin-top: 1rem;
-                padding: 0.7rem;
-                box-shadow: @shadowLight;
-                background-color: @whiteColor;
-                border-radius: 10px;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-
-// End pass-clients section //
-
-// Start spending section //
-    .spending{
-        padding: @sectionPadding;
-
-        .spending-container{
-            display: flex;
-            flex-direction: column;
-        }
-
-        
-    .heading{
-        margin-bottom: 0;
-    }
-
-    .buttons{
-        margin-top: 2rem;
-    }
-
-        .spending-list{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .item{
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            box-shadow: @shadowLight;
-            border-radius: 20px;
-            position: relative;
-            z-index: 1;
+        .choose-list{
             margin-top: 2rem;
-            &:nth-child(2){
+            .heading{
                 &::before{
-                    background-image: url(../img/knowledge-pass/item-silver.png);
+                    background-color: @whiteColor;
                 }
             }
-            &:nth-child(3){
-                &::before{
-                    background-image: url(../img/knowledge-pass/item-gold.png);
-                }
-            }
-            &::before{
-                content: '';
-                position: absolute;
-                z-index: -1;
-                top: 0;
-                left: -12px;
-                background-image: url(../img/knowledge-pass/item-bronze.png);
-                width: 295px;
-                height: 111px;
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
-            }
-        }
-        h3{
-            margin-bottom: 1rem;
-            color: @whiteColor;
-        }
-        ul{
-            li{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                font-weight: bold;
-                p{
-                    display: flex;
-                    width: 25%;
-                    justify-content: flex-end;
-                    margin-bottom: 0.3rem;
-                    &:nth-child(1){
-                        width: 60%;
-                        justify-content: flex-start;
+            ul{
+                li{
+                    padding-left: 1.4rem;
+                    margin-top: 1rem;
+                    font-size: 14px;
+                    position: relative;
+                    z-index: 1;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        left: 0;
+                        top: 4px;
+                        background-image: url(../img/topic/check-white.svg);
+                        background-size: contain;
+                        width: 13px;
+                        height: 13px;
+                        background-repeat: no-repeat;
                     }
                 }
             }
         }
     }
-// End spending section //
+// End topic-banner section //
 
-// Start right section //
-    .right{
-        padding: @sectionPadding;
-
-        .right-container{
-            display: flex;
-            flex-direction: column;
-
-            .heading{
-                margin-bottom: 0;
-                p{
-                    text-align: center;
-                    margin-top: 0.5rem;
-                }
-            }
-        }
-
-        .right-list{
-            display: flex;
-            flex-direction: column;
-
-        }
-        .content{
-            display: flex;
-            flex-direction: column;
-            margin-top: 1rem;
-
-            h2,p{
-                text-align: center;
-            }
-            p{
-                margin-top: 0.5rem;
-            }
-        }
-
-        .right-item{
-            display: flex;
-            flex-direction: column;
-            margin-top: 2rem;
-            align-items: center;
-
-            span{
-                display: flex;
-                padding: 0.5rem;
-                border: 1px solid #707070;
-                width: 70px;
-                height: 60px;
-                position: relative;
-
-                h3{
-                    width: 20px;
-                    position: absolute;
-                    padding: 3px;
-                    padding-right: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    top: -10px;
-                    left: -1px;
-                    background-color: @whiteColor;
-                }
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-// End right section //
