@@ -63,7 +63,9 @@
                                 <div class="form-group">
                                     {{ Form::label('image', 'Image') }}
                                     {{ Form::file('image', null, ['class' => 'form-control']) }}
+                                    @if(!empty($category->image))
                                     <img id="cImage" src="{{ $category->getImagePath() }}" height="70px" width="70px" class=" pad" />
+                                    @endif
                                     <br/>
                                     <br/>
                                     <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
@@ -75,7 +77,9 @@
                                 <div class="form-group">
                                     {{ Form::label('icon', 'Icon') }}
                                     {{ Form::file('icon', null, ['class' => 'form-control']) }}
+                                    @if(!empty($category->icon))
                                     <img id="cIcon" src="{{ $category->getIconPath() }}" class=" pad" height="70px" width="70px" />
+                                    @endif
                                     <br/>
                                     <br/>
                                     <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>
