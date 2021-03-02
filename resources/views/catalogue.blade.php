@@ -1,18 +1,20 @@
 @extends("layouts.master")
 @section('content')
-<style>
-    .ui-autocomplete .ui-autocomplete-category {
-  color: #000080;
-  font-weight: 700;
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 5px;
-  font-size: 16px;
-  padding: 8px;
-}
-.ui-autocomplete .ui-menu-item {
-  padding: 3px;
-}
-</style>
+    <style>
+        .ui-autocomplete .ui-autocomplete-category {
+            color: #000080;
+            font-weight: 700;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 5px;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        .ui-autocomplete .ui-menu-item {
+            padding: 3px;
+        }
+
+    </style>
 
     <!-- Start Banner Section -->
     <section class="flex-container banner catalogue-banner">
@@ -40,7 +42,7 @@
                                 </span>
                                 <a href="javascript:void(0);" class="name">{{ $popularTopic->name }}</a>
                                 <div class="buttons">
-                                    <a href="{{ url('training-courses' . $popularTopic->reference) }}"
+                                    <a href="{{ url('training-courses' . $popularTopic->reference) }}" class="btn-white">
                                         class="btn-blue">
                                         <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view" class="black">
                                         <img src="{{ url('img/catalogue/view-white.svg') }}" alt="view" class="white">View Detail
@@ -76,10 +78,11 @@
                     </div>
                     <div class="select-dropdown">
                         <p>Select A Course</p>
-                        <select name="topic" id="'topicSelect'">
+                        <select name="course" id="courseSelect">
                             <option value="">Select Course</option>
-                            @foreach ($topics as $topicList)
-                                <option value="{{ $topicList->id }}">{{ $topicList->name }}</option>
+
+                            @foreach ($courses as $id => $course)
+                                <option value="{{ $id }}">{{ $course }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -214,7 +217,8 @@
                             </div>
                             <ul>
                                 @foreach ($topic->courses as $course)
-                                    <li><a href="{{ url('training-courses' . $course->reference) }}">{{ $course->name }}</a>
+                                    <li><a
+                                            href="{{ url('training-courses' . $course->reference) }}">{{ $course->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -286,28 +290,54 @@
                     },
                     success: function(res) {
 
-                        var jsonData = res;
+                        var topics = res.topics;
+                        var courses = res.courses;
 
                         var topic = '<option value="">Select Topic</option>';
+                        var course = '<option value="">Select Topic</option>';
 
-                        var length = jsonData.length;
-                        if (length > 0) {
-                            for (var i = 0; i < length; i++) {
-
-                                topic += '<option value="' + jsonData[i].id + '">' + jsonData[i].name +
+                        if (topics) {
+                            $.each(topics, function(id, object){
+                                console.log(object.name);
+                                topic += '<option value="' + object.id + '">' + object.name +
                                     '</option>';
-                            }
+                            })
 
                             $('#topicSelect').html(topic);
-                            $('#topics').show();
+                            // $('#topics').show();
 
                             $("#topicSelect").attr("name", "topic");
                         } else {
                             var topic = '<option value="">Topic not Found</option>';
                         }
 
+                        if (courses) {
+                            $.each(courses, function(id, object){
+                                console.log(object.name);
+                                course += '<option value="' + object.id + '">' + object.name +
+                                    '</option>';
+                            })
+
+                            $('#courseSelect').html(course);
+                            // $('#topics').show();
+
+                            $("#courseSelect").attr("name", "course");
+                        } else {
+                            var course = '<option value="">Course not Found</option>';
+                        }
+
                     },
                 });
+
+
+            }
+
+            $("#topicSelect").change(function() {
+                topicId = $(this).val();
+                getCourse(topicId);
+            });
+
+            function getCourse(topicId) {
 
                 $.ajax({
                     method: "POST",
@@ -323,27 +353,27 @@
                     success: function(res) {
 
                         var jsonData = res;
-
-                        var topic = '';
+                        var course = '<option value="">Select Course</option>';
 
                         var length = jsonData.length;
                         if (length > 0) {
                             for (var i = 0; i < length; i++) {
 
-                                topic += '<option value="' + jsonData[i].id + '">' + jsonData[i].name +
+                                course += '<option value="' + jsonData[i].id + '">' + jsonData[i].name +
                                     '</option>';
                             }
 
-                            $('#topicSelect').html(topic);
-                            $('#topics').show();
+                            $('#courseSelect').html(course);
+                            // $('#courses').show();
 
-                            $("#topicSelect").attr("name", "topic");
+                            $("#courseSelect").attr("name", "course");
                         } else {
-                            var topic = '<option value="">Topic not Found</option>';
+                            var course = '<option value="">Course not Found</option>';
                         }
 
                     },
-                })
+                });
+
 
             }
 

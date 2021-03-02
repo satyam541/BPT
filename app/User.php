@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Module;
 use App\Models\Role;
 use App\Models\Permission;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
@@ -70,27 +70,27 @@ class User extends Authenticatable
      * get user with access
      * @return collection of users having similar permission
      */
-    public static function withPermission($moduleName,$access)
-    {
-        $Module = Module::findByName($moduleName);
-        $roles = Permission::with('roles')->where("module_id",$Module->id)->where("access",$access)->get()
-            ->pluck("roles")->flatten()->pluck("name")->unique()->toArray();
+    // public static function withPermission($moduleName,$access)
+    // {
+    //     $Module = Module::findByName($moduleName);
+    //     $roles = Permission::with('roles')->where("module_id",$Module->id)->where("access",$access)->get()
+    //         ->pluck("roles")->flatten()->pluck("name")->unique()->toArray();
 
-        return Self::withRole($roles);
-    }
+    //     return Self::withRole($roles);
+    // }
 
     /**
      * similar to with_access 
      * works on roles instead
      * @return collection of users having similar roles
      */
-    public static function withRole($role)
-    {
-        $roles = Arr::wrap($role);
-        $users = Role::with('users')->whereIn("name",$roles)->get()
-            ->pluck("users")->flatten()->unique("email");
-            return $users;
-    }
+    // public static function withRole($role)
+    // {
+    //     $roles = Arr::wrap($role);
+    //     $users = Role::with('users')->whereIn("name",$roles)->get()
+    //         ->pluck("users")->flatten()->unique("email");
+    //         return $users;
+    // }
 
     /**
      * use this function to find user access
@@ -143,10 +143,10 @@ class User extends Authenticatable
     }
 
     /** retrieve all the access given to the users
-     * @return array of access
+     * @return collaction of access
      */
     
-    private function permissions()
+    private function permissions() : Collection
     {
         // using actions method only once per page
         //testing required here .............................................................

@@ -54,7 +54,7 @@
                 <div class="heading center-heading">
                     <h2>{!! $pageDetail->blog_list['heading']->heading !!}</h2>
                 </div>
-                <p class="headline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In inventore tempore perspiciatis temporibus nemo eveniet mollitia hic saepe quasi corporis a laudantium debitis molestiae quibusdam</p>
+                <p class="headline">{!! $pageDetail->blog_list['heading']->content !!}</p>
                 <div class="our-list">
                     @foreach ($blogs as $blog)
                     <div class="our-item hide">
