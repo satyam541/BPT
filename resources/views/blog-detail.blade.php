@@ -79,7 +79,7 @@
                 </div>
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
-                    <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
+                    <a href="tel:{{websiteDetail()->contact_number}}">Call: {{websiteDetail()->contact_number}}</a>
                     <p>{{websiteDetail()->contact_email}}</p>
                 </div>
                
