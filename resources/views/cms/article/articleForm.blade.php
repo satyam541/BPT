@@ -37,7 +37,6 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{-- {{dd($article)}} --}}
               {{Form::model($article,['route'=>$submitRoute,"files"=>"true"])}}
                 <div class="card-body">
                     
@@ -82,8 +81,14 @@
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
                     @if(!empty($article->image))
-                    <img src="{{URL($article->image_path.$article->image)}}" class=" pad" style="max-width: 50%" />
+                    <img id="aImage" src="{{URL($article->getImagePath())}}" class=" pad" height="70px" width="70px" />
                     @endif
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
 
                   <div class="form-group">
@@ -152,7 +157,27 @@
     $("#reference").val(slug);
     
 }
+$('#undoremoveimage').hide();
+            @if($article['image'] == null)
+             $('#removeimage').hide();
+            @endif
  });
+ function removeImage()
+        {
+            $('#removeimagetxt').val('removed');
+            $('#aImage').attr('src','/images/no-image.png');
+            $('#removeimage').hide();
+            $('#undoremoveimage').show();
+        }
+
+
+        function undoImage()
+        {
+            $('#removeimagetxt').val(null);
+            $('#aImage').attr('src','{{$article->getImagePath()}}');
+            $('#removeimage').show();
+            $('#undoremoveimage').hide();
+        }
 $( function() {
             
             $( "#autoTag" ).autocomplete({

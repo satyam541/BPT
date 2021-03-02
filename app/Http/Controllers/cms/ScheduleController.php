@@ -226,7 +226,7 @@ class ScheduleController extends ScheduleApi
     public function onlinePrices()
     {
       $this->authorize('view', new Schedule());
-      $data['onlinePrices'] = OnlinePrice::all();
+      $data['onlinePrices'] = OnlinePrice::whereHas('course')->with('course')->get();
       return view('cms.schedule.onlinePrices',$data);
     }
 

@@ -231,8 +231,10 @@
         flex-direction: column;
     }
     .solution-list{
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
     .solution-item{
         display: flex;
@@ -240,6 +242,7 @@
         align-items: center;
         margin-top: 2rem;
         z-index: 1;
+        width: 48%;
         span{
             display: flex;
             align-items: center;

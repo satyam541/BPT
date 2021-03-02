@@ -71,6 +71,13 @@ class ArticleController extends Controller
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            if($request->type == 'blog')
+            {
+                $imageName = 'blogthumbnail'.$imageName;
+            }
+            else{
+                $imageName = 'newsthumbnail'.$imageName;
+            }
             $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
         }
@@ -142,8 +149,19 @@ class ArticleController extends Controller
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            if($request->type == 'blog')
+            {
+                $imageName = 'blogthumbnail'.$imageName;
+            }
+            else{
+                $imageName = 'newsthumbnail'.$imageName;
+            }
             $request->file('image')->move(public_path($article->image_path), $imageName);
             $article->image = $imageName;
+        }
+        if($request['removeimagetxt']!=null)
+        {
+            $article->image = null;
         }
         
         $article->save();

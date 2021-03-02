@@ -33,6 +33,7 @@ class LocationRequest extends FormRequest
         return [
             'name'                  => 'required|string|max:100',
             'country_id'            => 'required',
+            'tier'                  => 'required',
             'reference'             => 'required|unique:location,reference,' . $id . ',id',
             'phone'                 => 'required',
             'email'                 => 'required|string|max:255|regex:/^[a-zA-Z0-9.]+@[a-zA-Z]+[.]{1}[a-z]+$/',

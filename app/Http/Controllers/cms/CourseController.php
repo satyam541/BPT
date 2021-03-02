@@ -273,7 +273,11 @@ class CourseController extends Controller
             $course->image = $imageName;
             $course->save();
         }
-        
+        if($inputs['removeimagetxt']!=null)
+        {
+            $course->image = null;
+            $course->save(); 
+        }
         if(isset($inputs['is_popular']))
         {
             $course->popular->save();
