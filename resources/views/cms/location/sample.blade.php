@@ -112,11 +112,12 @@ li.draggable-item.ui-sortable-placeholder {
 
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="container">
                     
                     <div class="row">  
                         @foreach ($data as $tier=>$locations)
+                        
                         <div class="column col-sm-4">
+                            <span class="card-title"><b>Tier: {{$tier}}</b></span>
                             @foreach ($locations as $location)
                             <ul class="connected-sortable droppable-area{{$tier}}">
                               <li class="draggable-item">{{$location->name}}</li>
@@ -128,7 +129,7 @@ li.draggable-item.ui-sortable-placeholder {
                         @endforeach                          
                     </div>
 
-                </div>
+
               @can('create',new App\Models\Location())
               <a id="add" href="{{route('createLocation')}}" class="btn btn-success" style="">Add new Record</a>
               @endcan
