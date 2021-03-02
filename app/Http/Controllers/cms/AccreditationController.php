@@ -71,6 +71,10 @@ class AccreditationController extends Controller
             $request->file('image')->move(public_path($accreditation->image_path), $imageName);
             $accreditation->image = $imageName;
         }
+        if($request['removeimagetxt']!=null)
+        {
+            $accreditation->image = null;
+        }
         
         $accreditation->save();
         

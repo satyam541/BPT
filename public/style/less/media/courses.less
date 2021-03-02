@@ -571,8 +571,13 @@
         }
         .modes {
             background-color: @whiteColor;
-            padding: 1rem;
+            padding: 2.5rem 1rem;
             box-shadow: @shadowLight;
+        }
+        .methods {
+            &:nth-child(1), &:nth-child(2) {
+                margin-top: 0;
+            }
         }
         .detail {
             padding-top: 0;
@@ -597,10 +602,6 @@
             width: 64%;
         }
         .virtual-content {
-            width: 43%;
-            &:nth-child(2) {
-                margin-top: 0;
-            }
             .content {
                 display: flex;
                 justify-content: space-between;
@@ -724,6 +725,7 @@
             align-items: flex-start;
             h3 {
                 min-height: 50px;
+                text-align: left;
             }
             p {
                 text-align: left;

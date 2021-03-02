@@ -810,7 +810,6 @@ select::-ms-expand {
 .footer .contact-us h2 {
   font-size: 26px;
   margin-bottom: 1rem;
-  text-align: center;
 }
 .footer .contact-us img {
   width: 15px;
@@ -1265,6 +1264,9 @@ select::-ms-expand {
   }
   .footer .contact-us li {
     margin-bottom: 0.5rem;
+  }
+  .footer .contact-us h2 {
+    text-align: center;
   }
 }
 .home-banner .banner-container {
@@ -4348,7 +4350,9 @@ select::-ms-expand {
 }
 .solution .solution-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .solution .solution-item {
   display: flex;
@@ -4356,6 +4360,7 @@ select::-ms-expand {
   align-items: center;
   margin-top: 2rem;
   z-index: 1;
+  width: 48%;
 }
 .solution .solution-item span {
   display: flex;
@@ -5938,9 +5943,11 @@ select::-ms-expand {
   content: '';
   position: absolute;
   z-index: -1;
-  width: 145px;
-  height: 2px;
-  left: 40px;
+  width: 134px;
+  height: 1px;
+  left: 0;
+  right: 0;
+  margin: auto;
   top: -15px;
   background-color: #FFFFFF;
 }
@@ -5959,6 +5966,7 @@ select::-ms-expand {
   font-weight: bold;
   width: 48%;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .blog-intro .previous-nav .bg-img,
 .blog-intro .next-nav .bg-img {
@@ -7857,6 +7865,9 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.foundation .included-content h3 {
+  text-align: center;
+}
 .foundation .included-content:hover {
   transition: 1s ease-in-out;
 }
@@ -8037,6 +8048,7 @@ select::-ms-expand {
 .training .key-point h2 {
   margin-bottom: 0.5rem;
   color: #0064D8;
+  text-align: center;
 }
 .training .key-point p {
   margin: 0.5rem 0;
@@ -8059,7 +8071,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   background: linear-gradient(#181818, #363636);
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 .training .name .buttons {
   flex-direction: column;
@@ -9072,8 +9084,12 @@ select::-ms-expand {
   }
   .training .modes {
     background-color: #FFFFFF;
-    padding: 1rem;
+    padding: 2.5rem 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .training .methods:nth-child(1),
+  .training .methods:nth-child(2) {
+    margin-top: 0;
   }
   .training .detail {
     padding-top: 0;
@@ -9091,12 +9107,6 @@ select::-ms-expand {
   }
   .virtual .virtual-list {
     width: 64%;
-  }
-  .virtual .virtual-content {
-    width: 43%;
-  }
-  .virtual .virtual-content:nth-child(2) {
-    margin-top: 0;
   }
   .virtual .virtual-content .content {
     display: flex;
@@ -9206,6 +9216,7 @@ select::-ms-expand {
   }
   .skill .skill-content h3 {
     min-height: 50px;
+    text-align: left;
   }
   .skill .skill-content p {
     text-align: left;
