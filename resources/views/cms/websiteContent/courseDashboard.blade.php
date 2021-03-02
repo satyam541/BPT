@@ -180,12 +180,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            
                                             @foreach ($dates as $key => $date)
                                                 <tr>
-
+                                              {{-- {{dd($date->first()->location)}} --}}
                                                     <td>{{ $key }}</td>
                                                     <td>
-                                                        @if (0 == $date->first()->location['tier'])
+                                                        @if (empty($date->first()->location['tier']))
                                                             3
                                                         @else
                                                             {{ $date->first()->location->tier }}
@@ -196,7 +197,7 @@
                                                             dates="{{ $date->toJson() }}" loc="{{ $key }}"
                                                             onclick="displaydates(this);" data-target="#modal-info"><i
                                                                 class="far fa-eye"></i></td>
-                                                    <td>{{ $course->onlinePrice }}</td>
+                                                    <td>{{ $course->onlinePrice->price }}</td>
                                                     <td> </td>
 
 
