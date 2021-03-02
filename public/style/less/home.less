@@ -1,8 +1,12 @@
+// Start banner section //
 .home-banner{
     .banner-container{
         box-shadow: @shadowLight;
     }
 }
+// End banner section //
+
+// Start courses section//
 .courses{
     padding: @sectionPadding;
     .courses-container{
@@ -45,10 +49,12 @@
             h3{
                 width: 100%;
                 margin-bottom: .5rem;
+                text-align: center;
             }
             p{
                 width: 50%;
                 color: #C0C0C0;
+                text-align: center;
             }
         }
         .arrow{
@@ -94,6 +100,9 @@
         margin-top: 2rem;
     }
 }
+// End courses section //
+
+// Start effective section //
 .effective{
     padding: @sectionPadding;
     background: @blueGradient;
@@ -119,6 +128,9 @@
     }
 
 }
+// End effective section //
+
+// Start whychoose section //
 .whychoose{
     padding: @sectionPadding;
     .whychoose-container{
@@ -156,6 +168,9 @@
     }
 
 }
+// End whychoose section //
+
+// Start ways section //
 .ways{
     padding: @sectionPadding;
     background-color: @darkblueColor;
@@ -229,6 +244,9 @@
     }
 
 }
+// End  ways section //
+
+// Start delivery section //
 .delivery{
     padding: @sectionPadding;
     .delivery-container{
@@ -273,6 +291,9 @@
         transition: 1s all;
     }
 }
+// End delivery section //
+
+// Start facts section //
 .facts{
     padding: @sectionPadding;
     padding-top: 0rem;
@@ -331,6 +352,9 @@
         text-align: center;
     }
 }
+// End facts section //
+
+// Start locaion section
 .locations{
     padding: @sectionPadding;
     background-color: @bgColor;
@@ -398,6 +422,9 @@
 
 
 }
+// End location section//
+
+// Start looking section //
 .looking{
     padding: @sectionPadding;
     background-image: @blueGradient;
@@ -449,11 +476,40 @@
             height: 30px;
         }
     }
+    
+    .owl-nav {
+        display: flex !important;
+        justify-content: space-between;
+        width: 100px;
+        margin-top: 1rem;
+
+        .owl-prev, .owl-next{
+            background-image: url('../img/home/testi-arrow.png') !important;
+            background-repeat: no-repeat !important;
+            width: 32px;
+            height: 30px;
+            background-size: contain !important;
+            outline: none;
+            opacity: .5;
+            span {
+                display: none;
+            }
+        }
+        .owl-next {
+            transform: rotate(180deg);
+        }
+        .btn-active {
+            opacity: 1;
+        }
+    }
     .author-name{
         display: flex;
         flex-direction: column;
     }
 }
+// End looking section //
+
+// Start partners section//
 .partners{
     padding: @sectionPadding;
     .partners-container{
@@ -481,3 +537,4 @@
 
     }
 }
+// End partners section //

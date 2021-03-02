@@ -117,11 +117,22 @@ class CategoryController extends Controller
             $category->image = $imageName;
         }
 
+        if($request['removeimagetxt']!=null)
+        {
+            $category->image = null;
+        }
+        
         if($request->hasFile('icon')){
             $imageName = $this->Icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
             $request->file('icon')->move(public_path($category->icon_path), $imageName);
             $category->icon = $imageName;
         }
+
+        if($request['removeicontxt']!=null)
+        {
+            $category->icon = null;
+        }
+
         $category->save();
         
         if(isset($input['is_popular']))

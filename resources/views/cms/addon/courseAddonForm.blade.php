@@ -33,20 +33,19 @@
                     <div class="col-md-12">
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <h3 class="card-title">{{ $model->name }}</h3>
+                                <h3 class="card-title">{{ $onlineprice->course->name }}</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            {{ Form::model($model, ['route' => $submitRoute, 'files' => 'true']) }}
-                            {{ Form::hidden('id', null) }}
                             <div class="card-body">
                                 <table class="table" id="example1">
                                     <thead>
                                         <tr>
+                                            <th>Name</th>
                                             <th>Type</th>
                                             <th>Description</th>
-                                            <th>Name</th>
-                                            <th>Action</th>
+                                           
+                                            {{-- <th>Action</th> --}}
                                         </tr>
                                     </thead>
 
@@ -55,15 +54,13 @@
                                     
                                     @foreach ($courseAddons as $courseAddon)
                                         <tr>
-                                            <td>{{ $courseAddon->addon_type }}</td>
-                                            <td>{{ $courseAddon->description }}</td>
                                             <td>
                                                 {{ Form::label('name', $courseAddon->name) }}
-                                            </td>    
-                                            <td>
-                                                <input type="checkbox" name="name[]" value="{{$courseAddon->id}}" @if (in_array($courseAddon->id,$selectedAddons))checked @endif>
-
-                                            </td>
+                                            </td>  
+                                            <td>{{ $courseAddon->addon_type }}</td>
+                                            <td>{{ $courseAddon->description }}</td>
+                                             
+                                  
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -71,10 +68,6 @@
                             </div>
                             <!-- /.card-body -->
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                            {{ Form::close() }}
                         </div>
                         <!-- /.card -->
                     </div>

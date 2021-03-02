@@ -91,6 +91,10 @@ class SocialMediaController extends Controller
             $request->file('image')->move(public_path($socialmedia->image_path), $imageName);
             $socialmedia->image = $imageName;
         }
+        if($request['removeimagetxt']!=null)
+        {
+            $socialmedia->image = null;
+        }
         $socialmedia->save();
         return redirect()->route('socialmediaList')->with('success','Successfully Updated ');
 

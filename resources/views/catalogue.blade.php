@@ -1,21 +1,5 @@
 @extends("layouts.master")
 @section('content')
-    <style>
-        .ui-autocomplete .ui-autocomplete-category {
-            color: #000080;
-            font-weight: 700;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 5px;
-            font-size: 16px;
-            padding: 8px;
-        }
-
-        .ui-autocomplete .ui-menu-item {
-            padding: 3px;
-        }
-
-    </style>
-
     <!-- Start Banner Section -->
     <section class="flex-container banner catalogue-banner">
         <div class="container">
@@ -42,8 +26,7 @@
                                 </span>
                                 <a href="javascript:void(0);" class="name">{{ $popularTopic->name }}</a>
                                 <div class="buttons">
-                                    <a href="{{ url('training-courses' . $popularTopic->reference) }}" class="btn-white">
-                                        class="btn-blue">
+                                    <a href="{{ url('training-courses' . $popularTopic->reference) }}" class="btn-blue">
                                         <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view" class="black">
                                         <img src="{{ url('img/catalogue/view-white.svg') }}" alt="view" class="white">View Detail
                                     </a>

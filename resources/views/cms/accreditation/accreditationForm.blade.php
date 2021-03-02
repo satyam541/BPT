@@ -48,7 +48,15 @@
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
-                    <img src="{{ $accreditation->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                    @if(!empty($accreditation->image))
+                    <img id="aImage" src="{{ $accreditation->getImagePath() }}" class=" pad" height="70px" width="70px" />
+                    @endif
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
+                    <br/>
                   </div>
 
                 </div>
@@ -71,4 +79,34 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+
+            $('#undoremoveimage').hide();
+            @if($accreditation['image'] == null)
+             $('#removeimage').hide();
+            @endif
+ 
+        });
+        function removeImage()
+        {
+            $('#removeimagetxt').val('removed');
+            $('#aImage').attr('src','/images/no-image.png');
+            $('#removeimage').hide();
+            $('#undoremoveimage').show();
+        }
+
+
+        function undoImage()
+        {
+            $('#removeimagetxt').val(null);
+            $('#aImage').attr('src','{{$accreditation->getImagePath()}}');
+            $('#removeimage').show();
+            $('#undoremoveimage').hide();
+        }
+
+    </script>
+
 @endsection
