@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Models\CourseAddon;
 use App\Models\Course;
+use App\Models\OnlinePrice;
 
 
 class OnlineCourseController extends Controller

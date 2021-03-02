@@ -11999,3 +11999,194 @@ select::-ms-expand {
     width: 28%;
   }
 }
+.thanks-banner {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.thanks-banner h1,
+.thanks-banner p {
+  color: #FFFFFF;
+}
+.form-success {
+  padding: 3rem 1.5rem;
+}
+.form-success .success-container {
+  display: flex;
+  flex-direction: column;
+}
+.form-success .success {
+  display: flex;
+  flex-direction: column;
+}
+.form-success .success-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-success .success-content p {
+  margin-top: 0.5rem;
+}
+.form-success .success-content a {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.form-success .success-content a:last-child {
+  margin-bottom: 0;
+}
+.form-success .success-content a strong {
+  color: #0064D8;
+}
+.form-success .content {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1rem;
+}
+.form-success .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.form-success .success-contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.form-success .contact-main {
+  display: flex;
+  margin-top: 2rem;
+}
+.form-success .contact-main span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.form-success .contact-main span img {
+  height: 100%;
+  width: 100%;
+}
+.form-success .contact-main .contact-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  width: calc(100% - 50px);
+}
+.form-success .contact-main .contact-content h3 {
+  margin-bottom: 0.5rem;
+}
+.form-success .social-media {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.form-success .social-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+}
+.form-success .social-media a:last-child {
+  margin-right: 0;
+}
+.form-success .social-media a:nth-child(2) {
+  border: 2px solid #003C93;
+}
+.form-success .social-media a:nth-child(3) {
+  border: 2px solid #0097D8;
+}
+.form-success .social-media a:nth-child(4) {
+  border: 2px solid #FF1B1B;
+}
+.form-success .social-media a:nth-child(5) {
+  border: 2px solid #1856FF;
+}
+.form-success .social-media img {
+  width: 18px;
+  height: 18px;
+}
+.form-success .social-media p {
+  font-weight: 700;
+  width: 100%;
+}
+@media (min-width : 768px) {
+  .form-success {
+    padding: 3rem 2rem;
+  }
+  .form-success .success-container {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem;
+    background-image: linear-gradient(0deg, #1C2848, #0064D8);
+    background-size: 26% 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .form-success .success {
+    width: 51%;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-success .success-content {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  .form-success .success-contact {
+    width: 40%;
+    margin-top: 0rem;
+  }
+  .form-success .social-media {
+    border-top: 1px solid #c0c0c0;
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width : 1024px) {
+  .thanks-banner {
+    background: none;
+    background-image: url(../img/thanks/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .thanks-banner .banner-container {
+    width: 52%;
+  }
+  .form-success .success-container {
+    padding: 2rem 0rem;
+    align-items: center;
+  }
+  .form-success .success {
+    width: 47%;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .form-success .success-content {
+    padding: 4rem 2rem;
+  }
+  .form-success .success-contact {
+    width: 43%;
+  }
+}
+@media (min-width : 1366px) {
+  .form-success {
+    padding: 4rem 0rem;
+  }
+  .form-success .success {
+    width: 39%;
+  }
+  .form-success .success-contact {
+    width: 34%;
+  }
+}
