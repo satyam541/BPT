@@ -31,14 +31,18 @@
 
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <div class="card-title">
+                                <div class="card-title col-sm-6">
                                     Category List
                                 </div>
-                                <div class="col-sm-16 text-right">
+                                <div class="col-sm-6 float-right">
                                     <form action="{{Route('categoryList')}}" method="get">
-                                      <label >
-                                        <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                                      </label>
+                                        <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
                                       <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
                                   </div>
