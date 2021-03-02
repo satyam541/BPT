@@ -81,7 +81,7 @@
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
                     @if(!empty($article->image))
-                    <img id="aImage" src="{{URL($article->getImagePath())}}" class=" pad" style="max-width: 50%" />
+                    <img id="aImage" src="{{URL($article->getImagePath())}}" class=" pad" height="70px" width="70px" />
                     @endif
                     <br/>
                     <br/>

@@ -51,7 +51,7 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                    <a href="javascript:void(0);" class="btn-blue" data-quote="Learn More">
                     <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
                     </a>
                 </div>
@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <div class="form-consent">
-                    <p>The information you provide shall be processed by Pearce mayfield – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
+                    <p>The information you provide shall be processed by Best Practice Training Limited – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
                     </p>
                 </div>
                 <div class="form-consent">

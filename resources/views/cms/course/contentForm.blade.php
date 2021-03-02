@@ -38,7 +38,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($courseDetail,['route'=>$submitRoute,"files"=>"true"])}}
+              {{Form::model($courseDetail,['route'=>$submitRoute])}}
                 <div class="card-body">
 
                     <div class="form-group">

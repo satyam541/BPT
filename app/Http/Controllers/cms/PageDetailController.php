@@ -101,10 +101,18 @@ class PageDetailController extends Controller
             $action = $request->file('image')->move(public_path($pageDetail->image_path), $imageName);
             $inputs["image"] = $imageName;
         }
+        if($inputs['removeimagetxt']!=null)
+        {
+            $inputs["image"] = null;
+        }
         if($request->hasFile('icon')){
             $imageName = $icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
             $action = $request->file('icon')->move(public_path($pageDetail->image_path), $imageName);
             $inputs["icon"] = $imageName;
+        }
+        if($inputs['removeicontxt']!=null)
+        {
+            $inputs["icon"] = null;
         }
 
         try

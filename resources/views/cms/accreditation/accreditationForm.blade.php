@@ -48,7 +48,7 @@
                   <div class="form-group">
                     {{Form::label('image','Image')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
-                    <img id="aImage" src="{{ $accreditation->getImagePath() }}" class=" pad" style="max-width: 50%" />
+                    <img id="aImage" src="{{ $accreditation->getImagePath() }}" class=" pad" height="70px" width="70px" />
                     <br/>
                     <br/>
                     <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
