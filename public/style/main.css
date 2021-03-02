@@ -5938,9 +5938,11 @@ select::-ms-expand {
   content: '';
   position: absolute;
   z-index: -1;
-  width: 145px;
-  height: 2px;
-  left: 40px;
+  width: 134px;
+  height: 1px;
+  left: 0;
+  right: 0;
+  margin: auto;
   top: -15px;
   background-color: #FFFFFF;
 }
@@ -5959,6 +5961,7 @@ select::-ms-expand {
   font-weight: bold;
   width: 48%;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .blog-intro .previous-nav .bg-img,
 .blog-intro .next-nav .bg-img {
