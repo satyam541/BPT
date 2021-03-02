@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Models\CourseAddon;
 use App\Models\Course;
+use App\Models\OnlinePrice;
 
 
 class OnlineCourseController extends Controller
@@ -28,16 +29,13 @@ class OnlineCourseController extends Controller
         return view('cms.onlinecourse.onlinecourse',compact('onlineCourses'));
     }
     public function courseAddonForm($course){
-        $data['courseAddons']=CourseAddon::all();
-        $data['model']=Course::find($course);
-        $Addons=Course::with('courseAddon')->find($course);
-        $selectedAddons=[];
-            foreach($Addons->courseAddon->toArray() as $selectedAddon){
-        $selectedAddons[]=$selectedAddon['id'];
-    }
-        $data['selectedAddons']=$selectedAddons;
-    // dd($data['selectedAddons']);
-        $data['submitRoute']='courseAddonAssigned';
+      
+     
+        $onlinePrice             =   OnlinePrice::where('course_id',$course)->first();
+        $data['courseAddons']    =   $onlinePrice->addons;
+        $data['onlineprice']     =   $onlinePrice;
+  
+   
         return view('cms.addon.courseAddonForm',$data);
     }
     public function courseAddonassigned(Request $request){
