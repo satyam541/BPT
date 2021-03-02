@@ -96,7 +96,7 @@ class Topic extends Model
 
     public function topicContent()
     {
-        return $this->hasOne('App\Models\TopicContent')->where('country_id', 'gb');
+        return $this->hasOne('App\Models\TopicContent')->where('country_id', country()->country_code);
     }
 
     public function menuCourses()
