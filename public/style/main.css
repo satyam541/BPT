@@ -810,7 +810,6 @@ select::-ms-expand {
 .footer .contact-us h2 {
   font-size: 26px;
   margin-bottom: 1rem;
-  text-align: center;
 }
 .footer .contact-us img {
   width: 15px;
@@ -1265,6 +1264,9 @@ select::-ms-expand {
   }
   .footer .contact-us li {
     margin-bottom: 0.5rem;
+  }
+  .footer .contact-us h2 {
+    text-align: center;
   }
 }
 .home-banner .banner-container {
@@ -4348,7 +4350,9 @@ select::-ms-expand {
 }
 .solution .solution-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .solution .solution-item {
   display: flex;
@@ -4356,6 +4360,7 @@ select::-ms-expand {
   align-items: center;
   margin-top: 2rem;
   z-index: 1;
+  width: 48%;
 }
 .solution .solution-item span {
   display: flex;
