@@ -1,0 +1,180 @@
+@media @size-md{
+
+    // Start Steps Section
+    .steps {
+        padding: @sectionPadding-md;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 90%;
+            width: 300px;
+            background-image: url(../img/cart/ring.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .steps-container {
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                top: 90px;
+                left: -32px;
+                height: 93%;
+                width: 350px;
+                background: @blueGradient;
+                border-radius: 0px 40px 40px 0px;
+            }
+            .heading {
+                margin-bottom: 3rem;
+            }
+        }
+    
+        .payment-container {
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 0;
+        }
+        .detail-container {
+            width: 35%;
+            background-image: none;
+            align-self: center;
+            padding: 0;
+            .detail {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 4rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                p {
+                    order: 1;
+                    text-align: left;
+                    margin-top: 0;
+                    width: calc(100% - 50px);
+                    font-size: 18px;
+                }
+                span {
+                    order: 2;
+                    transform: translateX(25px);
+                }
+            }
+        }
+        .form {
+            width: 62%;
+            margin-top: 0;
+            padding: 1.5rem 3rem;
+            .buttons {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    }
+    // End Steps Section
+}
+@media @size-lg{
+
+    // Start Banner section //
+    .cart-banner {
+        background: none;
+        background-image: url(../img/cart/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        .banner-container {
+            width: 48%;
+        }
+    
+    }
+    // End Banner section //
+
+    // Start Steps Section
+    .steps {
+        .steps-container {
+            &::before {
+                top: 93px;
+                height: 96%;
+                width: 365px;
+            }
+        }
+        .detail-container {
+            width: 25%;
+            .detail {
+                span {
+                    transform: translateX(24px);
+                }
+            }
+        }
+        .form {
+            width: 70%;
+            padding: 1.5rem 4rem;
+        }
+    }
+    // End Steps Section
+}
+@media @size-xl{
+
+    // Start Steps Section
+    .steps {
+        padding: @sectionPadding-xl;
+        .steps-container {
+            &::before {
+                left: -83px;
+                width: 445px;
+            }
+        }
+        .detail-container {
+            width: 25%;
+            .detail {
+                span {
+                    transform: translateX(24px);
+                }
+            }
+        }
+        .form {
+            padding: 1.5rem 4rem;
+        }
+    }
+    // End Steps Section
+}
+
+@size-xl-max: ~"(min-width : 1400px)";
+@media @size-xl-max
+{
+
+    // Start Steps Section
+    .steps {
+        .steps-container {
+            &::before {
+                left: 0px;
+            }
+        }
+        .detail-container {
+            padding-left: 2rem;
+        }
+    }
+    // End Steps Section
+}
+
+@media @size-xll {
+
+    // Start Steps Section
+    .steps {
+        .steps-container {
+            &::before {
+                left: 0px;
+            }
+        }
+        .detail-container {
+            padding-left: 2rem;
+        }
+    }
+    // End Steps Section
+}
