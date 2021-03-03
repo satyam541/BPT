@@ -11933,39 +11933,177 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
 }
-.topic-banner {
+.knowledge-banner {
   background-image: linear-gradient(#0064D8, #1C2848);
 }
-.topic-banner p,
-.topic-banner h2,
-.topic-banner h1,
-.topic-banner li {
-  color: #FFFFFF !important;
+.knowledge-banner h1,
+.knowledge-banner p {
+  color: #FFFFFF;
 }
-.topic-banner .choose-list {
+.pass-clients {
+  padding: 3rem 1.5rem;
+}
+.pass-clients .pass-container {
+  display: flex;
+  flex-direction: column;
+}
+.pass-clients .heading p {
+  margin-top: 1rem;
+}
+.pass-clients h3 {
+  margin-bottom: 1rem;
+}
+.pass-clients .tagline {
+  margin-top: 1rem;
+}
+.pass-clients .pass-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pass-clients .clients-pass {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pass-clients .clients-pass span {
+  display: flex;
+  width: 130px;
+  height: 80px;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.pass-clients .clients-pass span img {
+  width: 100%;
+  height: 100%;
+}
+.spending {
+  padding: 3rem 1.5rem;
+}
+.spending .spending-container {
+  display: flex;
+  flex-direction: column;
+}
+.spending .heading {
+  margin-bottom: 0;
+}
+.spending .buttons {
   margin-top: 2rem;
 }
-.topic-banner .choose-list .heading::before {
-  background-color: #FFFFFF;
+.spending .spending-list {
+  display: flex;
+  flex-direction: column;
 }
-.topic-banner .choose-list ul li {
-  padding-left: 1.4rem;
-  margin-top: 1rem;
-  font-size: 14px;
+.spending .item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border-radius: 20px;
   position: relative;
   z-index: 1;
+  margin-top: 2rem;
 }
-.topic-banner .choose-list ul li::before {
+.spending .item:nth-child(2)::before {
+  background-image: url(../img/knowledge-pass/item-silver.png);
+}
+.spending .item:nth-child(3)::before {
+  background-image: url(../img/knowledge-pass/item-gold.png);
+}
+.spending .item::before {
   content: '';
   position: absolute;
   z-index: -1;
-  left: 0;
-  top: 4px;
-  background-image: url(../img/topic/check-white.svg);
-  background-size: contain;
-  width: 13px;
-  height: 13px;
+  top: 0;
+  left: -12px;
+  background-image: url(../img/knowledge-pass/item-bronze.png);
+  width: 295px;
+  height: 111px;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.spending h3 {
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+}
+.spending ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.spending ul li p {
+  display: flex;
+  width: 25%;
+  justify-content: flex-end;
+  margin-bottom: 0.3rem;
+}
+.spending ul li p:nth-child(1) {
+  width: 60%;
+  justify-content: flex-start;
+}
+.right {
+  padding: 3rem 1.5rem;
+}
+.right .right-container {
+  display: flex;
+  flex-direction: column;
+}
+.right .right-container .heading {
+  margin-bottom: 0;
+}
+.right .right-container .heading p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.right .right-list {
+  display: flex;
+  flex-direction: column;
+}
+.right .content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.right .content h2,
+.right .content p {
+  text-align: center;
+}
+.right .content p {
+  margin-top: 0.5rem;
+}
+.right .right-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+}
+.right .right-item span {
+  display: flex;
+  padding: 0.5rem;
+  border: 1px solid #707070;
+  width: 70px;
+  height: 60px;
+  position: relative;
+}
+.right .right-item span h3 {
+  width: 20px;
+  position: absolute;
+  padding: 3px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+  left: -1px;
+  background-color: #FFFFFF;
+}
+.right .right-item span img {
+  width: 100%;
+  height: 100%;
 }
 @media (min-width : 768px) {
   .benefit {
