@@ -178,7 +178,7 @@
             
             <li><a href="javascriptvoid(0)">{{websiteDetail()->contact_number}}<img src="{{url('img/master/phone-ringing.svg')}}" alt="phone-ringing"></a></li>
             <li><a class="open-popup enquiryJS">Enquiry<img src="{{url('img/master/mail.svg')}}" alt="mail"></a></li>
-            <li><a href="javascriptvoid(0)">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
+            <li><a class="open-popup enquiryJS">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
     </nav>
 
