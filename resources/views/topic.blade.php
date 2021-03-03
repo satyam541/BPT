@@ -352,7 +352,9 @@
             <div class="popular-container">
                         <div class="popular-content">
                             <h2>{!!$pageDetail->popular_location['popular']->heading!!}</h2>
-                            <p>{!!$pageDetail->popular_location['popular']->content!!}</p>
+                            @if($locations->isNotEmpty())
+                            <p>{!!$locations->first()->meta_description!!}</p>
+                            @endif
                             <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
                                 <img src="{{url('img/courses/learn.svg')}}" alt="learn">
