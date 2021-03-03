@@ -294,7 +294,7 @@
                 <p> {!!$pageDetail->locations['heading']->content!!} </p>
             </div>
             @foreach ($locations as $location)
-            <div class="location-name" onclick="location.href = '{{route('locationDetail',['location'=>$location->reference])}}';">
+            <div class="location-name pointer" onclick="location.href = '{{route('locationDetail',['location'=>$location->reference])}}';">
                 
                 <span>
                     0{{$loop->iteration}}
