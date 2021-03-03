@@ -26,7 +26,7 @@
                         <h2>REASONS TO CHOOSE</h2>
                     </div>
                     <ul>
-                        @foreach ($topic->Bulletpoint as $bulletPoint)
+                        @foreach ($topic->Bulletpoint->take(4) as $bulletPoint)
                         <li>{!!$bulletPoint->bullet_point_text!!}</li>    
                         @endforeach
                         
