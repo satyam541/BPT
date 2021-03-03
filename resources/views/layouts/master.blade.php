@@ -155,6 +155,24 @@
                     </form>
                 </div>
     </section>
+    <section class="flex-container bottom-bar">
+        <div class="container">
+            <div class="bottom-list">
+            <a href="" class="email">
+                    <img src="{{url('img/master/email-white.png')}}" alt="mail">
+                </a>
+            <a href="" class="search-btn search">
+                    <img src="{{url('img/master/search-white.png')}}" alt="search">
+                </a>
+            <a href="" class="cart">
+                    <img src="{{url('img/master/cart-white.png')}}" alt="cart">
+                </a>
+                <a href="" class="call">
+                    <img src="{{url('img/master/call.png')}}" alt="call">
+                </a>
+            </div>
+        </div>
+    </section>
 
 </body>
 <!--enquiry submit script start-->
