@@ -294,14 +294,13 @@
                 <p> {!!$pageDetail->locations['heading']->content!!} </p>
             </div>
             @foreach ($locations as $location)
-            <div class="location-name">
+            <div class="location-name" onclick="location.href = '{{route('locationDetail',['location'=>$location->reference])}}';">
                 
                 <span>
                     0{{$loop->iteration}}
                 </span>
                 <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
                 <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <a href="{{route('locationDetail',['location'=>$location->reference])}}">
                 <p>
                     {!!$location->name!!}</a>
                 </p>
