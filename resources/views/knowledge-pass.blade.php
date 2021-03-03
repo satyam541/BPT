@@ -142,6 +142,111 @@
     </section>
 <!-- End spending section -->
 
+<!-- Start right section -->
+    <section class="flex-container right">
+        <div class="container">
+            <div class="right-container">
+                <div class="heading center-heading">
+                    <h2>Why a Knowledge Pass is right <span>for you</span></h2>
+                    <p>Receive these exclusive benefits depending on your chosen budget.</p>
+                </div>
+                <div class="right-list">
+                    <div class="right-item">
+                        <span>
+                            <h3>01</h3>
+                            <img src="{{url('img/knowledge-pass/saving.svg')}}" alt="saving">
+                        </span>
+                        <div class="content">
+                            <h2>Saving Money</h2>
+                            <p>Purchasing courses together lets you save money and get the most out of your budget.</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>02</h3>
+                            <img src="{{url('img/knowledge-pass/time.svg')}}" alt="time">
+                        </span>
+                        <div class="content">
+                            <h2>Saving time</h2>
+                            <p>Keep a record with your personalised dashboard of spends and utilisation.</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>03</h3>
+                            <img src="{{url('img/knowledge-pass/budget.svg')}}" alt="budget">
+                        </span>
+                        <div class="content">
+                            <h2>12 month annualised budget</h2>
+                            <p>Your courses can be booked at your convenience over a period of 12 months and can be split between .</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>04</h3>
+                            <img src="{{url('img/knowledge-pass/invoicing.svg')}}" alt="invoicing">
+                        </span>
+                        <div class="content">
+                            <h2>Invoicing & administration reduced</h2>
+                            <p>Through the use of Avenoire you can easily manage training requests,</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>05</h3>
+                            <img src="{{url('img/knowledge-pass/analysis.svg')}}" alt="analysis">
+                        </span>
+                        <div class="content">
+                            <h2>Training needs analysis</h2>
+                            <p>Your KnowledgePass includes exclusive access to our Avenoire training needs analysis tool</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>06</h3>
+                            <img src="{{url('img/knowledge-pass/progress.svg')}}" alt="progress">
+                        </span>
+                        <div class="content">
+                            <h2>Track progress & feedback</h2>
+                            <p>While using Avenoire, your personalised dashboard lets you keep track of spend and utilisation </p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>07</h3>
+                            <img src="{{url('img/knowledge-pass/manage.svg')}}" alt="manage">
+                        </span>
+                        <div class="content">
+                            <h2>Easily manage training requests</h2>
+                            <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>08</h3>
+                            <img src="{{url('img/knowledge-pass/transparency.svg')}}" alt="transparency">
+                        </span>
+                        <div class="content">
+                            <h2>Full Transparency</h2>
+                            <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating</p>
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <span>
+                            <h3>09</h3>
+                            <img src="{{url('img/knowledge-pass/alerts.svg')}}" alt="alerts">
+                        </span>
+                        <div class="content">
+                            <h2>Alerts & Notifications</h2>
+                            <p>Monthly spend reports, budget utilisation notifications, booking request alerts, feedback report</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End right section -->
+
 
 <!-- Start benefits section -->
     <section class="flex-container benefit">

@@ -90,7 +90,9 @@
                   <div class="form-group">
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon')}}
+                    @if(!empty($pageDetail->icon))
                     <img id="pIcon" src="{{ $pageDetail->getIconPath() }}" class=" pad" height="70px" width="70px"/>
+                    @endif
                     <br/>
                     <br/>
                     <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>

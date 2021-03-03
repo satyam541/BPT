@@ -94,7 +94,16 @@
                   <div class="form-group">
                     {{Form::label('image','Logo')}}
                     {{Form::file('image',null,['class'=>'form-control'])}}
-                    <img src="{{ $websitedetail->getLogoPath() }}" class=" pad" style="max-width:50%"/>
+                    @if(!empty($websitedetail->image))
+                    <img id="wImage" src="{{ $websitedetail->getLogoPath() }}" class=" pad" height="70px" width="70px"/>
+                    @endif
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
+                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove
+                        Image</a>
+                    {{ Form::hidden('removeimagetxt', null, array_merge(['id' => 'removeimagetxt', 'class' => 'form-control'])) }}
+                    <br/>
                   </div>
 
                   <div class="form-group">
@@ -151,4 +160,30 @@
 </div>
 <!-- /.content-wrapper -->
     
+@endsection
+@section('footer')
+    <script>
+        $(document).ready(function() {
+            
+            $('#undoremoveimage').hide();
+                @if($websitedetail['image'] == null)
+                $('#removeimage').hide();
+                @endif
+        });
+        function removeImage()
+            {
+                $('#removeimagetxt').val('removed');
+                $('#wImage').attr('src','/images/no-image.png');
+                $('#removeimage').hide();
+                $('#undoremoveimage').show();
+            }
+            function undoImage()
+            {
+                $('#removeimagetxt').val(null);
+                $('#wImage').attr('src','{{$websitedetail->getLogoPath()}}');
+                $('#removeimage').show();
+                $('#undoremoveimage').hide();
+            }
+
+    </script>
 @endsection

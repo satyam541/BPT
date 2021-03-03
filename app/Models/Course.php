@@ -122,7 +122,7 @@ class Course extends Model
 
     public function countryContent(){
         // return $this->hasOne('App\Models\CourseContent')->where('country_id',country()->id);
-        return $this->hasOne('App\Models\CourseContent')->where('country_id','gb');
+        return $this->hasOne('App\Models\CourseContent')->where('country_id',country()->country_code);
     }
     public function content()
     {

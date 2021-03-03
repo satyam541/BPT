@@ -139,3 +139,73 @@
         }
     }
 // End spending section //
+
+// Start right section //
+    .right{
+        padding: @sectionPadding;
+
+        .right-container{
+            display: flex;
+            flex-direction: column;
+
+            .heading{
+                margin-bottom: 0;
+                p{
+                    text-align: center;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+
+        .right-list{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+
+            h2,p{
+                text-align: center;
+            }
+            p{
+                margin-top: 0.5rem;
+            }
+        }
+
+        .right-item{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            align-items: center;
+
+            span{
+                display: flex;
+                padding: 0.5rem;
+                border: 1px solid #707070;
+                width: 70px;
+                height: 60px;
+                position: relative;
+
+                h3{
+                    width: 20px;
+                    position: absolute;
+                    padding: 3px;
+                    padding-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: -10px;
+                    left: -1px;
+                    background-color: @whiteColor;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+// End right section //

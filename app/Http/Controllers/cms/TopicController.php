@@ -306,6 +306,10 @@ class TopicController extends Controller
             $request->file('image')->move(public_path($topic->image_path), $imageName);
             $topic->image = $imageName;
         }
+        if($inputs['removeimagetxt']!=null)
+        {
+            $topic->image = null;
+        }
         $topic->save();
         if(isset($inputs['is_popular']))
         {

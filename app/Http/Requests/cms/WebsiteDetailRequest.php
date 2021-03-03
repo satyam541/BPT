@@ -36,6 +36,7 @@ class WebsiteDetailRequest extends FormRequest
             'address'           =>  'required|string',
             'contact_number'    =>  'required|string',
             'contact_email'     =>  'required',
+            'opening_days'      =>  'nullable|numeric',
             'contact_footer'    =>  'nullable|string',
             'facebook'          =>  'nullable|string',
             'twitter'           =>  'nullable|string',

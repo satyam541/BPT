@@ -44,7 +44,6 @@
 // End pass-clients section //
 
 
-
 // Start spending section //
 .spending{
     padding: @sectionPadding-md;
@@ -72,6 +71,38 @@
     }
 }
 // End spending section //
+
+// Start right section //
+.right{
+    padding: @sectionPadding-md;
+
+
+    .right-list{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .content{
+         width: 75%;
+         margin-left: 1rem;
+         margin-top: 0;
+        h2,p{
+            text-align: left;
+        }
+        p{
+            font-size: 12px
+        }
+        h2{
+            font-size: 16px;
+        }
+    }
+
+    .right-item{
+        width: 45%;
+      flex-direction: row;
+    }
+}
+// End right section //
 
 }
 
@@ -183,6 +214,19 @@
 }
 // End spending section //
 
+// Start right section //
+.right{
+
+    .right-list{
+        justify-content: space-between;
+    }
+    .right-item{
+         width: 32%;
+         align-items: flex-start;
+    }
+}
+// End right section //
+
 }
 
 
@@ -193,7 +237,7 @@
     .knowledge-banner {
         background-size: 40% 100%;
         padding-bottom: 6rem;
-    box-shadow: @shadowLight;
+        box-shadow: @shadowLight;
         .banner-container{
              width: 49%;
         }
@@ -234,6 +278,16 @@
     }
 }
 // End spending section //
+
+// Start right section //
+.right{
+    padding: @sectionPadding-xl;
+
+    .right-item{
+         width: 28%;
+    }
+}
+// End right section //
 
 }
 

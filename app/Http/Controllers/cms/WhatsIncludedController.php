@@ -56,7 +56,10 @@ class WhatsIncludedController extends Controller
             $request->file('icon')->move(public_path("/images/whatsinclude/"), $iconName);
             $whatsincluded->icon = "whatsinclude/".$iconName;
         }
-        
+        if($inputs['removeicontxt']!=null)
+        {
+            $whatsincluded->icon = null;
+        }
         $whatsincluded->update();
         
         return redirect()->route('whatsincludedListRoute')->with('success','WhatsIncluded Updated');
