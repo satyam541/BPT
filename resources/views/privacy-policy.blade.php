@@ -200,44 +200,7 @@
                 <h2>Calculate your Requirements</h2>
             </div>
             <p class="headline">Not sure what your budget should be? Use our training calculator to figure out how much you need to spend. Simply select how many of each course you think you will need for your staff and we will tell you the estimated cost.</p>
-            <table>
-                <tr>
-                    <th>Select a course category</th>
-                    <th># of Delegates</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>Business Skills (17 Course(s))</td>
-                    <td>0</td>
-                    <td>£0</td>
-                </tr>
-                <tr>
-                    <td>Popular Business Skills courses</td>
-                    <td>Delegates</td>
-                    <td>Price</td>
-                    <td>Total</td>
-                </tr>
-                <tr>
-                    <td>Exceptional Customer Service Training</td>
-                    <td></td>
-                    <td>£1295</td>
-                    <td>£0</td>
-                </tr>
-                <tr>
-                    <td>Exceptional Customer Service Training</td>
-                    <td></td>
-                    <td>£1295</td>
-                    <td>£0</td>
-                </tr>
-                <tr>
-                    <td>Business Skills (17 Course(s))</td>
-                    <td>0</td>
-                    <td>£0</td>
-                </tr>
-                <tr>
-                    <td>Summary  |  1 Courses Selected</td>
-                </tr>
-            </table>
+           
         </div>
     </div>
 </section>
