@@ -591,11 +591,11 @@
                 <h2>Case <span>Studies</span></h2>
             </div>
             <div class="study-list">
-                <div class="study-info">
+                <div class="study-content">
                     <h2>Consistent Quality</h2>
                     <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
                 </div>
-                <div class="study-info">
+                <div class="study-content">
                     <h2>Consistent Quality</h2>
                     <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
                 </div>
