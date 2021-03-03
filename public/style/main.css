@@ -11982,7 +11982,7 @@ select::-ms-expand {
 .study .study-info::before {
   content: '';
   position: absolute;
-  background-image: url(../img/privacy-policy/study-bg.png);
+  background-image: url(../img/knowledge-pass/study-bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   left: 0;
@@ -12014,6 +12014,134 @@ select::-ms-expand {
 }
 .requirement .headline {
   text-align: center;
+}
+.requirement .chart {
+  display: flex;
+  flex-direction: column;
+}
+.requirement .chart-title {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background: linear-gradient(#0064D8, #1C2848);
+  color: white;
+}
+.requirement .chart-title h3 {
+  width: 25%;
+  text-align: center;
+}
+.requirement .chart-title h3:first-child {
+  width: 50%;
+  text-align: left;
+}
+.requirement .course-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.requirement .course-content {
+  display: flex;
+  flex-direction: column;
+}
+.requirement .course-name {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid grey;
+  padding: 1rem 0;
+}
+.requirement .course-name p,
+.requirement .course-name span {
+  color: #0064D8;
+  font-weight: 900;
+  width: 25%;
+  text-align: center;
+  font-size: 18px;
+}
+.requirement .course-name p {
+  width: 50%;
+  text-align: left;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.requirement .course-name p::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/knowledge-pass/star.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 22px;
+  left: 0;
+  top: 4px;
+}
+.requirement .bold {
+  font-weight: 600;
+}
+.requirement .course-detail {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+}
+.requirement .course-detail p {
+  width: 25%;
+  text-align: center;
+  font-size: 16px;
+}
+.requirement .course-detail p:first-child {
+  width: 50%;
+  text-align: left;
+}
+.requirement .course-detail p:last-child {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.requirement .course-detail p:last-child span {
+  width: 48%;
+}
+.requirement .course-detail .select {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  position: relative;
+  z-index: 1;
+}
+.requirement .course-detail .select::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/knowledge-pass/down-arrow.svg);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+}
+.requirement .course-detail .select select {
+  width: 43px;
+  border: 2px solid #1C2848;
+  border-radius: 8px;
+  background: linear-gradient(90deg, transparent 50%, #1C2848 40%);
+  -webkit-appearance: none;
+  outline: none;
+  padding-left: 7px;
+}
+.requirement .course-detail .select option {
+  color: #000000;
+}
+.requirement .summary {
+  display: flex;
+  padding: 1rem 0;
+  width: 40%;
+}
+.requirement .summary p {
+  font-size: 20px;
+  font-weight: 700;
+  width: 50%;
+}
+.requirement .summary p:first-child {
+  border-right: 2px solid #000000;
+  width: 27%;
+  padding-right: 1rem;
+  margin-right: 1rem;
 }
 @media (min-width : 768px) {
   .benefit {

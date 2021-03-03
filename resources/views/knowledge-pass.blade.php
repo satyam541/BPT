@@ -308,18 +308,18 @@
                     <p>Dedicated account manager</p>
                     <p>Your direct point of contact for all your training requirements</p>
                     </td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
                 </tr>
                 <tr>
                     <td>
                     <p>Fixed discount percentages</p>
                     <p>Discount rates will vary based upon investment level</p>
                     </td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
                 </tr>
                 <tr>
                     <td>
@@ -344,16 +344,16 @@
                     <p>Become a partner</p>
                     <p>You'll be added to our clients and we'll provide you with a testimonial. You will also receive exclusive offers and training updates</p>
                     </td>
-                    <td><img src="{{url('img/privacy-policy/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
                     </td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/privacy-policy/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/privacy-policy/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/privacy-policy/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
                 </tr>
             </table>
         </div>
@@ -375,37 +375,37 @@
                     <p>The quality of training provided has been good with very good feedback from delegates. </p>
                     <p>They use good quality venues and think about meeting our needs in their selection. " The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection.</p>
                     <div class="buttons">
-                    <a class="btn-blue"><img src="{{url('img/privacy-policy/message.svg')}}" alt="arrow">Need More Info</a>
+                    <a class="btn-blue"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
                     </div>
             </div>
             <div class="booking-list">
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/hand.svg')}}" alt="hand"></span>
+                        <span><img src="{{url('img/knowledge-pass/hand.svg')}}" alt="hand"></span>
                         <h3>Confirm the amount</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/platform.svg')}}" alt="platform"></span>
+                        <span><img src="{{url('img/knowledge-pass/platform.svg')}}" alt="platform"></span>
                         <h3>Your Online platform is live</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/online-booking.svg')}}" alt="online-booking"></span>
+                        <span><img src="{{url('img/knowledge-pass/online-booking.svg')}}" alt="online-booking"></span>
                         <h3>Start booking your courses</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/form.svg')}}" alt="form"></span>
+                        <span><img src="{{url('img/knowledge-pass/form.svg')}}" alt="form"></span>
                         <h3>Sign the booking form</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/data.svg')}}" alt="data"></span>
+                        <span><img src="{{url('img/knowledge-pass/data.svg')}}" alt="data"></span>
                         <h3>Your dedicated account is opened</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
-                        <span><img src="{{url('img/privacy-policy/conversation.svg')}}" alt="conversation"></span>
+                        <span><img src="{{url('img/knowledge-pass/conversation.svg')}}" alt="conversation"></span>
                         <h3>Caroline, cornwall Council</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
@@ -445,7 +445,129 @@
                 <h2>Calculate your Requirements</h2>
             </div>
             <p class="headline">Not sure what your budget should be? Use our training calculator to figure out how much you need to spend. Simply select how many of each course you think you will need for your staff and we will tell you the estimated cost.</p>
-           
+           <div class="chart">
+               <div class="chart-title">
+                   <h3>
+                       Select a course category
+                   </h3>
+                   <h3># of Delegates</h3>
+                   <h3>Total</h3>
+               </div>
+               <div class="course-list">
+                <div class="course-content">
+                    <div class="course-name">
+                            <p>
+                                Business Skills (17 courses (s))
+                            </p>
+                            <span>0</span>
+                            <span>0</span>
+                            <img src="" alt="">
+                    </div>
+                    <div class="course-detail bold">
+                            <p>
+                            Popular Business Skill courses
+                            </p> 
+                            <p>delegates</p>  
+                            <p>
+                                <span>
+                                    price
+                                </span>
+                                <span>
+                                    Total
+                                </span>
+                            </p>
+
+                    </div>
+                    <div class="course-detail">
+                            <p>
+                            Popular Business Skill courses
+                            </p> 
+                            <span class="select">
+                            <select name="" id="">
+                                <option value="">1</option>
+                            </select>
+                            </span>
+                            <p>
+                                <span>
+                                    price
+                                </span>
+                                <span>
+                                    Total
+                                </span>
+                            </p>
+
+                    </div>
+                    <div class="course-detail">
+                            <p>
+                            Popular Business Skill courses
+                            </p> 
+                            <span class="select">
+                            <select name="" id="">
+                                <option value="">1</option>
+                            </select>
+                            </span>
+                            <p>
+                                <span>
+                                    price
+                                </span>
+                                <span>
+                                    Total
+                                </span>
+                            </p>
+
+                    </div>
+                    <div class="course-detail">
+                            <p>
+                            Popular Business Skill courses
+                            </p> 
+                            <span class="select">
+                            <select name="" id="">
+                                <option value="">1</option>
+                            </select>
+                            </span>
+                            <p>
+                                <span>
+                                    price
+                                </span>
+                                <span>
+                                    Total
+                                </span>
+                            </p>
+
+                    </div>
+
+                </div>
+                <div class="course-content">
+                    <div class="course-name">
+                            <p>
+                                Business Skills (17 courses (s))
+                            </p>
+                            <span>0</span>
+                            <span>0</span>
+                    </div>
+                    <div class="course-detail bold">
+                            <p>
+                            Popular Business Skill courses
+                            </p> 
+                            <p>delegates</p>  
+                            <p>
+                                <span>
+                                    price
+                                </span>
+                                <span>
+                                    Total
+                                </span>
+                            </p>
+
+                    </div>
+                </div>
+               </div>
+               <div class="summary">
+                   <p>summary</p>
+                   <p>1 course selected</p>
+               </div>
+
+           </div>
         </div>
     </div>
 </section>

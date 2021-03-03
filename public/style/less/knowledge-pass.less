@@ -334,7 +334,7 @@
         &::before{
             content: '';
             position: absolute;
-            background-image: url(../img/privacy-policy/study-bg.png);
+            background-image: url(../img/knowledge-pass/study-bg.png);
             background-size: 100% 100%;
             background-repeat: no-repeat;
             left: 0;
@@ -369,6 +369,139 @@
     }
     .headline{
         text-align: center;
+    }
+    .chart{
+        display: flex;
+        flex-direction: column;
+    }
+    .chart-title{
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        background: @blueGradient;
+        color: white;
+        h3{
+            width: 25%;
+            text-align: center;
+            &:first-child{
+                width: 50%;
+                text-align: left;
+            }
+        }
+    }
+    .course-list{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    .course-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .course-name{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 2px solid grey;
+        padding: 1rem 0;
+        p,span{
+            color: @lightblueColor;
+            font-weight: 900;
+            width: 25%;
+            text-align: center;
+            font-size: 18px;
+        
+        }
+        p{
+            width: 50%;
+            text-align: left;
+            position: relative;
+            padding-left: 1.5rem;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/knowledge-pass/star.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 22px;
+                left: 0;
+                top: 4px;
+            }
+        }
+
+    }
+    .bold{
+        font-weight: 600;
+    }
+    .course-detail{
+        display: flex;
+        flex-direction: row; 
+        padding-top: 1rem;   
+    
+        p{
+            width: 25%;
+            text-align: center;
+            font-size: 16px;
+            &:first-child{
+                width: 50%;
+                text-align: left;
+            }
+            &:last-child{
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                span{
+                    width: 48%;
+                }
+            }
+        }
+        .select{
+            display: flex;
+            justify-content: center;
+            width: 25%;
+            position: relative;
+            z-index: 1;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/knowledge-pass/down-arrow.svg);
+                background-repeat: no-repeat;
+                width: 50px;
+                height: 50px;
+                z-index: -1;
+            }
+            select{ 
+                width: 43px;
+                border: 2px solid @darkblueColor;
+                border-radius: 8px;
+                background: linear-gradient(
+            90deg
+            , transparent 50%,@darkblueColor 40%); 
+            -webkit-appearance: none;
+            outline: none;
+            padding-left: 7px;
+           
+            }
+            option{
+                color: @blackColor;
+            }
+        }
+    }
+    .summary{
+        display: flex;
+        padding: 1rem 0;
+        width: 40%;
+        p{
+            font-size: 20px;
+            font-weight: 700;
+            width: 50%;
+            &:first-child{
+                border-right: 2px solid @blackColor;
+                width: 27%;
+                padding-right: 1rem;
+                margin-right: 1rem;
+            }
+        }
     }
 }
 // End requirement section
