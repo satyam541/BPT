@@ -36,6 +36,7 @@
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <link rel="stylesheet" href="{{url('adminlte/plugins/toggle/toggle.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/locationTier/locationTier.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
   <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">

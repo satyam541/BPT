@@ -1,67 +1,5 @@
 @extends('cms.layouts.master')
 @section('headerLinks')
-    <style>
-         {
-  padding: 0;
-  margin: 0;
-  cursor: default;
-  color:#333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 900px;
-  min-width: 300px;
-}
-.row {
-  width:100%;
-  overflow: none;
-}
-.column {
-  float:left;
-  width: 50%;
-}
-.connected-sortable {
-  margin: 0 auto;
-  list-style: none;
-  width: 90%;
-}
-
-li.draggable-item {
-  width: inherit;
-  padding: 15px 20px;
-  background-color: #f5f5f5;
-  -webkit-transition: transform .25s ease-in-out;
-  -moz-transition: transform .25s ease-in-out;
-  -o-transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
-  
-  -webkit-transition: box-shadow .25s ease-in-out;
-  -moz-transition: box-shadow .25s ease-in-out;
-  -o-transition: box-shadow .25s ease-in-out;
-  transition: box-shadow .25s ease-in-out;
-  &:hover {
-    cursor: pointer;
-    background-color: #eaeaea;
-  }
-}
-/* styles during drag */
-li.draggable-item.ui-sortable-helper {
-  background-color: #e5e5e5;
-  -webkit-box-shadow: 0 0 8px rgba(53,41,41, .8);
-  -moz-box-shadow: 0 0 8px rgba(53,41,41, .8);
-  box-shadow: 0 0 8px rgba(53,41,41, .8);
-  transform: scale(1.015);
-  z-index: 100;
-}
-li.draggable-item.ui-sortable-placeholder {
-  background-color: #ddd;
-  -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
-}
-    </style>
 @endsection
 @section('content')
 
@@ -100,14 +38,7 @@ li.draggable-item.ui-sortable-placeholder {
               <div class="card-title">
                 Location List
               </div>
-              {{-- <div class="col-sm-16 text-right">
-                <form action="{{Route('locationList')}}" method="get">
-                  <label class="">
-                    <input id="popular" name="popular"@if($checked!=null) checked @endif type="checkbox" data-toggle="toggle"> Only Popular
-                  </label>
-                  <input type="submit" name="submit" id="submit" style="visibility: hidden">
-                </form>
-              </div> --}}
+             
             </div>
 
               <!-- /.card-header -->
@@ -160,17 +91,7 @@ function init() {
       stack: '.connected-sortable ul'
     }).disableSelection();
 }
-          $('#popular').change(function(){
-              $('#submit').click();
-                });
-            $('#example1').DataTable({
-              "columns": [
-                        { "name": "Name" },
-                        { "name": "Country" },
-                        { "name": "Actions", "sorting":false, searching:false }
-              ]                    
-            });
-
+            
 
         });
         
