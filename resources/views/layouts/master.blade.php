@@ -55,7 +55,7 @@
                         <ul>
                             @foreach(blogs()->take(3) as $blog)
                             <li><img src="{{url('img/master/polygon.svg')}}" alt="polygon" class="polygon-img">
-                                <a href="{{$blog->reference}}">{{$blog->title}}</a>
+                                <a href="{{route('blogDetail',['blog'=>$blog->reference])}}">{{$blog->title}}</a>
                                 <span>
                                     <img src="{{url('img/master/time.svg')}}" alt="time">
                                     <p class="date">{{$blog->post_date}}</p>
