@@ -189,6 +189,48 @@
         min-width: 150px;
         white-space: nowrap;
         border-radius: 100px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: '';
+            width: 0%;
+            height: 100%;
+            background-color: #002353;
+            position: absolute;
+            -ms-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+            left: -10%;
+            opacity: 1;
+            top: 0;
+            z-index: -12;
+            -ms-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: 2px 0px 14px rgb(0 0 0 / 60%);
+
+        }
+        &::after{
+            content: '';
+                width: 0%;
+                height: 100%;
+                background-color: #20539A;
+                position: absolute;
+                -ms-transform: skewX(-20deg);
+                transform: skewX(-20deg);
+                left: -10%;
+                opacity: 0;
+                top: 0;
+                z-index: -15;
+                -ms-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+                transition: all .4s cubic-bezier(.2,.95,.57,.99);
+                box-shadow: 2px 0px 14px rgb(0 0 0 / 60%);
+        }
+        &:hover{
+            &::after,&::before{
+                opacity: 1;
+                width: calc(100% + 50px);
+            }
+        }
         }
         .btn-blue {
             background: @lightblueColor;
@@ -197,6 +239,12 @@
         .btn-white {
             background-color: @whiteColor;
             color: @blackColor;
+            &::before{
+                background-color: #e5e5e5;
+            }
+            &::after{
+                    background-color: @lightblueColor;
+            }
         }
     }
     //End buttons
@@ -957,6 +1005,52 @@
     }
 
     //End footer
+
+    //bottom bar
+    
+    .bottom-bar{
+        background: @darkblueColor;
+        box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.09803922);
+        width: 100%;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-around;
+        .bottom-list{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+            a{
+                display: flex;
+                img{
+                    width: 25px;
+                }
+            }
+        }
+    }
+    //end bottom bar
+
+    //back to top
+    #scroll {
+        z-index: 12;
+        position: fixed;
+        right: 10px;
+        bottom: 56px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-color: #fc9701;
+        text-indent: -9999px;
+        display: none;
+        -webkit-border-radius: 60px;
+        -moz-border-radius: 60px;
+        border-radius: 60px;
+        box-shadow: 0 0 5px #c1c1c1;
+    }
+    //end back to top
 
     // Start popup
     .enquiry-popup{

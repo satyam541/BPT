@@ -11702,12 +11702,15 @@ select::-ms-expand {
   text-align: center;
 }
 .requirement table {
+  border-collapse: collapse;
   width: 100%;
 }
 .requirement tr {
-  padding: 1rem;
   text-align: left;
   width: 100%;
+}
+.requirement tr th {
+  padding: 1rem;
 }
 .requirement tr:first-child {
   display: flex;
@@ -11967,6 +11970,36 @@ select::-ms-expand {
   height: 13px;
   background-repeat: no-repeat;
 }
+.benefit {
+  padding: 3rem 1.5rem;
+  background-color: #1C2848;
+}
+.benefit h3 {
+  color: #FFFFFF;
+  text-align: center;
+}
+.benefit .benefit-list {
+  display: flex;
+  flex-direction: column;
+}
+.benefit .benefit-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.benefit .benefit-info:nth-child(1) {
+  margin-top: 0;
+}
+.benefit .benefit-info span {
+  display: flex;
+  width: 160px;
+  height: 160px;
+}
+.benefit .benefit-info span img {
+  width: 100%;
+  height: 100%;
+}
 @media (min-width : 768px) {
   .benefit {
     padding: 3rem 2rem;
@@ -11978,7 +12011,7 @@ select::-ms-expand {
   }
   .benefit .benefit-info {
     width: 26%;
-    margin-bottom: 0;
+    margin-top: 0;
   }
   .pass-clients {
     padding: 3rem 2rem;
@@ -12178,8 +12211,8 @@ select::-ms-expand {
 .thanks-banner {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.thanks-banner h1,
-.thanks-banner p {
+.thanks-banner .banner-container h1,
+.thanks-banner .banner-container p {
   color: #FFFFFF;
 }
 .form-success {

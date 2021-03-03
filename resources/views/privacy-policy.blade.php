@@ -204,18 +204,17 @@
                 <tr>
                     <th>Select a course category</th>
                     <th># of Delegates</th>
-                    <th>Total</th>
+                    <th >Total</th>
                 </tr>
                 <tr>
                     <td>Business Skills (17 Course(s))</td>
-                    <td>0</td>
+                    <td colspan="2">0</td>
                     <td>£0</td>
                 </tr>
                 <tr>
                     <td>Popular Business Skills courses</td>
                     <td>Delegates</td>
-                    <td>Price</td>
-                    <td>Total</td>
+                    <td rowspan="2">Price total</td>
                 </tr>
                 <tr>
                     <td>Exceptional Customer Service Training</td>
