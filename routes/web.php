@@ -84,9 +84,9 @@ Route::get('/emptycart', function () {
     return view('emptycart');
 });
 
-Route::get('/search', function () {
-    return view('search');
-});
+// Route::get('/search', function () {
+//     return view('search');
+// });
 
 Route::get('/knowledge-pass',function(){
     return view('knowledge-pass');

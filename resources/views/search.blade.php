@@ -6,17 +6,19 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Search</h1>
-            <p>Let us know your requirements. Rest we will manage for you.</p>
+            <h1>{{$pageDetail->banner['header']->heading}}</h1>
+            <p>{{$pageDetail->banner['header']->content}}</p>
+            <form class="search-form">
             <div class="search">
-                            <input type="text" class="auto-complete-course auto-redirect" placeholder="Search your course here....">
+                            <input type="text" class="auto-complete-course auto-redirect" value="{{$query}}" placeholder="Search your course here...." name="q" >
                             <button>
                                 Search
                             </button>
                         </div>
+                    </form>
             <div class="breadcrums">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                     <li><a href="">Search</a></li>
                 </ul>
@@ -31,37 +33,24 @@
     <div class="container">
         <div class="search-container">
             <div class="heading">
-                <h2>Most Searched <span>Courses</span></h2>
+                <h2>Most Searched <span>Topics</span></h2>
             </div>
             <div class="search-list">
+                @foreach ($popularTopics->take(4) as $popularTopic)
+                {{$popularTopic->loadContent()}}
                 <a class="search-info">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
-                    284 Times in last week </span>
-                    <h3>PRINCE2® Training</h3>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
-
+                    {{$popularTopic->courses->count()}} 
+                    @if ($popularTopic->courses->count() == 1)
+                    Course
+                    @elseif($popularTopic->courses->count() > 1)
+                    Courses
+                    @endif
+                 </span>
+                    <h3>{{$popularTopic->name}}</h3>
+                    <p>{!!$popularTopic->summary!!}</p>
                 </a>
-                <a class="search-info">
-                    <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
-                    284 Times in last week </span>
-                    <h3>PRINCE2® Training</h3>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
-
-                </a>
-                <a class="search-info">
-                    <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
-                    284 Times in last week </span>
-                    <h3>PRINCE2® Training</h3>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
-
-                </a>
-                <a class="search-info">
-                    <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
-                    284 Times in last week </span>
-                    <h3>PRINCE2® Training</h3>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training</p>
-
-                </a>
+                @endforeach
             </div>
         </div>
     </div>
@@ -73,62 +62,45 @@
     <div class="container">
         <div class="result-container">
             <div class="heading">
-                <h2>31 Results Found For "V"</h2>
+                @if($result->count() != 0 && $query !="")
+                <h2>{{$result->count()}} results found for "{{$query}}"</h2>
+                @endif
             </div>
             <div class="result-content">
             <div class="result-list">
+                @foreach ($result as $course)
+                {{$course->loadContent()}}
                 <div class="result-info">
                     <div class="heading">
-                        <h2>Value Stream Mapping - <span>Lean Training</span></h2>
+                        <h2>{{$course->name}} - <span>{{$course->topic->name}}</span></h2>
                     </div>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                    <p>{!!$course->detail!!}</p>
                     <div class="buttons">
                         <a class="btn-blue"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
                         <a class="btn-white"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
                     </div>
                 </div>
-                <div class="result-info">
-                    <div class="heading">
-                        <h2>Value Stream Mapping - <span>Lean Training</span></h2>
-                    </div>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
-                    <div class="buttons">
-                        <a class="btn-blue"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                        <a class="btn-white"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
-                    </div>
-                </div>
-                <div class="result-info">
-                    <div class="heading">
-                        <h2>Value Stream Mapping - <span>Lean Training</span></h2>
-                    </div>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
-                    <div class="buttons">
-                        <a class="btn-blue"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                        <a class="btn-white"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
-                    </div>
-                </div>
+                @endforeach
+                {{$result->links()}}
             </div>
+
             <div class="filter">
                 <div class="filter-info">
                     <h2>Filter</h2>
                     <div class="search-catagories">
-                        <p>Categories</p>
+                        <p>Courses</p>
                         <ul>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
+                            @foreach ($popularCourses->take(5) as $popularCourse)
+                                <li><a href=""> <label for="">{{$popularCourse->name}}</label> </a> </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="search-catagories">
                         <p>Locations</p>
                         <ul>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
-                            <li><input type="checkbox"><label for="">284 Times in last week</label></li>
+                            @foreach ($popularLocations->take(5) as $popularLocation)
+                                <li><a href=""> <label for="">{{$popularLocation->name}}</label> </a> </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -36,7 +36,7 @@
               <div class="card-title col-sm-12">
                 Location List
                 <div class="popular">
-                  Polpular
+                  Popular
               </div>
               <form action="{{Route('locationList')}}" method="get">
                                         
