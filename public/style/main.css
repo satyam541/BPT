@@ -12178,8 +12178,8 @@ select::-ms-expand {
 .thanks-banner {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.thanks-banner h1,
-.thanks-banner p {
+.thanks-banner .banner-container h1,
+.thanks-banner .banner-container p {
   color: #FFFFFF;
 }
 .form-success {
