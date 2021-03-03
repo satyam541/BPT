@@ -86,7 +86,6 @@
             </div>
         </div>
     </footer>
-
     <section class="flex-container enquiry-popup">
             <div class="enquire-popup">
                 <span class="cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
@@ -155,6 +154,32 @@
                     </form>
                 </div>
     </section>
+    
+    <section class="flex-container bottom-bar">
+        <div class="container">
+            <div class="bottom-list">
+            <a href="" class="email">
+                    <img src="{{url('img/master/email-white.png')}}" alt="mail">
+                </a>
+            <a href="" class="search-btn search">
+                    <img src="{{url('img/master/search-white.png')}}" alt="search">
+                </a>
+            <a href="" class="cart">
+                    <img src="{{url('img/master/cart-white.png')}}" alt="cart">
+                </a>
+                <a href="" class="call">
+                    <img src="{{url('img/master/call.png')}}" alt="call">
+                </a>
+            </div>
+        </div>
+    </section>
+    <nav class="social">
+        <ul>
+            <li><a href="javascriptvoid(0)">023 8000 1008<img src="{{url('img/master/phone-ringing.svg')}}" alt="phone-ringing"></a></li>
+            <li><a class="open-popup enquiryJS">Enquiry<img src="{{url('img/master/mail.svg')}}" alt="mail"></a></li>
+            <li><a href="javascriptvoid(0)">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
+        </ul>
+    </nav>
 
 </body>
 <!--enquiry submit script start-->
