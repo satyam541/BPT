@@ -3986,6 +3986,7 @@ select::-ms-expand {
 .testimonial h3,
 .testimonial h4 {
   margin-top: 0.5rem;
+  text-align: center;
 }
 .testimonial h4 {
   font-size: 14px;

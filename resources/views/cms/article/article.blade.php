@@ -33,7 +33,7 @@
             <div class="card-title col-sm-12">
               {{$type}} List
               <div class="popular">
-              Polpular
+              Popular
               
             </div>
                 <form action="{{Route($submitRoute)}}" method="get">
@@ -105,7 +105,7 @@
 @section('footer')
     <script>
         $(document).ready(function(){
-          $('#popular').change(function(){
+          $('#myonoffswitch').change(function(){
               $('#submit').click();
                 });
             $('#example1').DataTable({

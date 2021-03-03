@@ -180,6 +180,7 @@
             <li><a href="javascriptvoid(0)">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
     </nav>
+    
 
 </body>
 <!--enquiry submit script start-->
@@ -273,7 +274,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
-@yield('footerscripts')
+@yield('footerScripts')
 <script>
     $(".auto-complete-course").focus(function()
  {

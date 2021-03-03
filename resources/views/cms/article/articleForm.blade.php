@@ -146,14 +146,13 @@
 
 <script>
  $(document).ready( function() {
-        $("#title,#type").on('input',function(){
+        $("#title").on('input',function(){
         updateSlug();
         });
         function updateSlug()
 {
     var article = $("#title").val();
-    var type= $("#type").val();
-    var slug = type+'/'+convertUrl(article);
+    var slug = convertUrl(article);
     $("#reference").val(slug);
     
 }
