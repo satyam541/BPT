@@ -22,8 +22,9 @@ class TopicController extends Controller
         $data['pageDetail'] = PageDetail::getContent('topic');
         $topic=Topic::with('topicContent','Bulletpoint')->where('reference','/'.$category.'/'.$topic)->first();
         $data['courses']=Course::has('popular')->with('countryContent','faqs')->where('topic_id',$topic->id)->take(4)->get();
-        if($data['courses']->isEmpty()){
-            $data['courses']=Course::with('countryContent','faqs')->where('topic_id',$topic->id)->take(4)->get();
+        if($data['courses']->isEmpty() || $data['courses']->count()<4){
+            $count=4-$data['courses']->count();
+            $data['courses']=$data['courses']->merge(Course::doesnthave('popular')->with('countryContent','faqs')->where('topic_id',$topic->id)->take($count)->get());
         }
         $data['topic']=$topic;
         $data['otherTopics']=Topic::with('courses')->take(8)->get();

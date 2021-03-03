@@ -21,6 +21,7 @@
                 </div>
             </div>
                 <div class="choose-list">
+                    @if($topic->Bulletpoint->isNotEmpty())
                     <div class="heading">
                         <h2>REASONS TO CHOOSE</h2>
                     </div>
@@ -30,6 +31,7 @@
                         @endforeach
                         
                     </ul>
+                    @endif
                 </div>
             </div>
         </div>
@@ -75,12 +77,14 @@
     <section class="flex-container foundation">
         <div class="container">
             <div class="foundation-container">
+                @if ($courses->first()->countryContent && $courses->first()->faqs->isnotEmpty())
                 <div class="heading">
                     <h2>{!!$courses->first()->name!!}</h2>
                 </div>
+                @endif
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        @if ($courses->first()->countryContent->overview)
+                        @if ($courses->first()->countryContent)
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{url('img/courses/overview.svg')}}" alt="overview">
@@ -90,8 +94,6 @@
                             </p>
                             <div class="number">01</div>
                         </li>
-                        @endif
-                        @if ($courses->first()->countryContent->summary)
                         <li class="tab-click" data-target="course">
                             <span class="image">
                                 <img src="{{url('img/courses/content.svg')}}" alt="content">
@@ -115,18 +117,23 @@
                         </li>
                         @endif
                     </ul>
+                    
                     <div class="tab-content" id="overview">
+                        @if ($courses->first()->countryContent)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
-                            {{-- {{dd($courses->first())}} --}}
+                            
                             {!!$courses->first()->countryContent->overview!!}
+                            
                         </div>
                         <div class="buttons">
                             <a href="#showmorecontent" class="btn-blue showmorecontent">
                                 <span class="text">Show More</span>
                             </a>
                         </div>
+                        @endif
                     </div>
+                    
                     <div class="tab-content" id="faq">
                         <div class="heading">
                             <h2>Frequently Asked <span>Questions</span></h2>
@@ -363,9 +370,9 @@
                                     <span class="image">
                                         <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                                     </span>
-                                    <h3><a href="{{ url('training-locations/' . $location->reference) }}">{{$location->name}}</a></h3>
+                                    <h3>{{$location->name}}</h3>
                                     <span class="arrow">
-                                        <img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow">
+                                        <a href="{{ url('training-locations/' . $location->reference) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
                                     </span>
                                 </div>                                    
                                 @endforeach
