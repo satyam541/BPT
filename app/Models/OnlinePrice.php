@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class OnlinePrice extends Model
 {
-    //
     protected $table = 'course_online_price';
     protected $guarded = array('id');
 

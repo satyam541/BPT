@@ -8,5 +8,4 @@ class Statistic extends Model
 {
     protected $table = "statistic";
     
-
 }

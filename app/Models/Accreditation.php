@@ -9,9 +9,9 @@ class Accreditation extends Model
 {
     
  use SoftDeletes;
-    protected   $table='accreditation';
-    protected $primaryKey = "id";
-    public $image_path = "storage/uploads/accreditation/";
+    protected   $table      = 'accreditation';
+    protected $primaryKey   = "id";
+    public $image_path      = "storage/uploads/accreditation/";
 
 
     // public function getImagePath()
