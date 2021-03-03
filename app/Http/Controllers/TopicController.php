@@ -29,6 +29,7 @@ class TopicController extends Controller
         $data['topic']=$topic;
         $data['otherTopics']=Topic::with('courses')->take(8)->get();
         $data['locations']=Location::has('popular')->take(6)->get();
+
         return view('topic',$data);
     }
 }
