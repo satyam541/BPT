@@ -133,7 +133,7 @@
 <!-- End ideal section -->
 
 @endsection
-@section(footerScripts')
+@section('footerScripts')
 <script>
     var blogURL = "{{route('blogAutoComplete')}}";
  </script>

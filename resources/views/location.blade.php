@@ -217,7 +217,7 @@
 
 @endsection
 
-@section(footerScripts')
+@section('footerScripts')
     
 <script>
  

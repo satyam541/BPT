@@ -245,7 +245,7 @@
 
 @endsection
 
-@section(footerScripts')
+@section('footerScripts')
     <script>
         var categoryId = topicId = courseId = '';
 
