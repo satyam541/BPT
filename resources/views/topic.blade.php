@@ -49,13 +49,13 @@
                         </div>
                         @foreach ($courses as $course)
 
-                        <div class="course-item">
+                        <div class="course-item" onclick="location.href = '{{ url('training-courses' . $course->reference) }}';">
                             <span>
                                 <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <a href="{{ url('training-courses' . $course->reference) }}">{{$course->name}}</a>
+                                <a href="">{{$course->name}}</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
