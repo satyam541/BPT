@@ -16,6 +16,7 @@ Route::get('fetchapi/locations', 'TestController@locations');
 Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
 
 
 Auth::routes(['register'=>false]);
@@ -24,6 +25,7 @@ Auth::routes(['register'=>false]);
 Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
 Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
 Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
+Route::post('/filter-course','CourseController@filter')->name('courseFilterRoute');
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
@@ -55,7 +57,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
 Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
-Route::get('/training-courses/{category}/{topic}/{course}', 'CourseController@index')->name('coursePage');
+Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 

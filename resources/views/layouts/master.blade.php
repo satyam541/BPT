@@ -273,7 +273,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
-@yield('footerscripts')
+@yield('footerScripts')
 <script>
     $(".auto-complete-course").focus(function()
  {
