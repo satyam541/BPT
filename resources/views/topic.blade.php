@@ -13,7 +13,7 @@
                     <p>{!!$topic->tag_line!!}</p>
                     <div class="breadcrums">
                         <ul>
-                            <li><a href="">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                             <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                             <li><a href="">{{$topic->name}}</a></li>
