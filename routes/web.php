@@ -34,6 +34,7 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
+Route::get('/thanks','ThanksController@index')->name('thanks');
 
 
 /*Enquiry Routes*/
@@ -92,9 +93,9 @@ Route::get('/knowledge-pass',function(){
     return view('knowledge-pass');
 });
 
-Route::get('/thanks', function () {
-    return view('thanks');
-});
+// Route::get('/thanks', function () {
+//     return view('thanks');
+// });
 Route::get('/cart', function () {
     return view('cart');
 });
