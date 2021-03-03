@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a class="btn-blue">
+                        <a class="btn-blue open-popup enquiryJS">
                             <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
                             Enquire Now
                         </a>
@@ -368,13 +368,13 @@
                             </div>
                             <div class="location-list">
                                 @foreach ($locations as $location)
-                                <div class="content">
+                                <div class="content" onclick="location.href = '{{ url('training-locations/' . $location->reference) }}';">
                                     <span class="image">
                                         <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                                     </span>
                                     <h3>{{$location->name}}</h3>
                                     <span class="arrow">
-                                        <a href="{{ url('training-locations/' . $location->reference) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
+                                        <a href=""><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
                                     </span>
                                 </div>                                    
                                 @endforeach
