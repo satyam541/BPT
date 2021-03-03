@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Topic;
-use App\models\Course;
+use App\Models\Course;
 use App\Models\PageDetail;
 use App\Models\Location;
 class TopicController extends Controller
@@ -20,15 +20,12 @@ class TopicController extends Controller
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('topic');
-        $topic=Topic::with('topicContent','Bulletpoint')->where('reference','/'.$category.'/'.$topic)->first();
-        $data['courses']=Course::has('popular')->with('countryContent','faqs')->where('topic_id',$topic->id)->take(4)->get();
-        if($data['courses']->isEmpty() || $data['courses']->count()<4){
-            $count=4-$data['courses']->count();
-            $data['courses']=$data['courses']->merge(Course::doesnthave('popular')->with('countryContent','faqs')->where('topic_id',$topic->id)->take($count)->get());
-        }
+        $topic=Topic::with('topicContent','faqs','Bulletpoint')->where('reference','/'.$category.'/'.$topic)->first();
+        $data['courses']=Course::with('countryContent','faqs')->where('topic_id',$topic->id)->get();
         $data['topic']=$topic;
         $data['otherTopics']=Topic::with('courses')->take(8)->get();
         $data['locations']=Location::has('popular')->take(6)->get();
+
         return view('topic',$data);
     }
 }

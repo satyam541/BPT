@@ -297,6 +297,9 @@ select::-ms-expand {
     color: transparent;
   }
 }
+.pointer {
+  cursor: pointer;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -11779,7 +11782,7 @@ select::-ms-expand {
 }
 .pass-clients .clients-pass span {
   display: flex;
-  width: 130px;
+  width: 46%;
   height: 80px;
   margin-top: 1rem;
   padding: 0.7rem;
@@ -11817,6 +11820,8 @@ select::-ms-expand {
   position: relative;
   z-index: 1;
   margin-top: 2rem;
+  width: 272px;
+  align-self: center;
 }
 .spending .item:nth-child(2)::before {
   background-image: url(../img/knowledge-pass/item-silver.png);
@@ -11856,43 +11861,44 @@ select::-ms-expand {
   width: 60%;
   justify-content: flex-start;
 }
-.right {
+.why-right {
   padding: 3rem 1.5rem;
+  padding-top: 1rem !important;
 }
-.right .right-container {
+.why-right .right-container {
   display: flex;
   flex-direction: column;
 }
-.right .right-container .heading {
+.why-right .right-container .heading {
   margin-bottom: 0;
 }
-.right .right-container .heading p {
+.why-right .right-container .heading p {
   text-align: center;
   margin-top: 0.5rem;
 }
-.right .right-list {
+.why-right .right-list {
   display: flex;
   flex-direction: column;
 }
-.right .content {
+.why-right .content {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
-.right .content h2,
-.right .content p {
+.why-right .content h2,
+.why-right .content p {
   text-align: center;
 }
-.right .content p {
+.why-right .content p {
   margin-top: 0.5rem;
 }
-.right .right-item {
+.why-right .right-item {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   align-items: center;
 }
-.right .right-item span {
+.why-right .right-item span {
   display: flex;
   padding: 0.5rem;
   border: 1px solid #707070;
@@ -11900,19 +11906,20 @@ select::-ms-expand {
   height: 60px;
   position: relative;
 }
-.right .right-item span h3 {
-  width: 20px;
+.why-right .right-item span h3 {
+  width: 26px;
   position: absolute;
-  padding: 3px;
-  padding-right: 10px;
+  padding: 2px;
+  padding-left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   top: -10px;
-  left: -1px;
+  left: -6px;
   background-color: #FFFFFF;
+  color: #1C2848;
 }
-.right .right-item span img {
+.why-right .right-item span img {
   width: 100%;
   height: 100%;
 }
@@ -11933,6 +11940,8 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 272px;
+  align-self: center;
 }
 .benefit .benefit-info:nth-child(1) {
   margin-top: 0;
@@ -12011,7 +12020,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
 }
-.study .study-info {
+.study .study-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12026,10 +12035,10 @@ select::-ms-expand {
   position: relative;
   z-index: 1;
 }
-.study .study-info::before {
+.study .study-content::before {
   content: '';
   position: absolute;
-  background-image: url(../img/privacy-policy/study-bg.png);
+  background-image: url(../img/knowledge-pass/study-bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   left: 0;
@@ -12038,29 +12047,22 @@ select::-ms-expand {
   width: 100%;
   z-index: -1;
 }
-.study .study-info:last-child {
+.study .study-content:last-child {
   margin-bottom: 0;
 }
-.study .study-info h2,
-.study .study-info p {
+.study .study-content h2,
+.study .study-content p {
   text-align: center;
 }
-.study .study-info h2 {
+.study .study-content h2 {
   color: #FFFFFF;
   margin-top: -0.3rem;
 }
-.study .study-info p {
+.study .study-content p {
   margin-top: 2rem;
 }
 .requirement {
-  padding: 3rem 1.5rem;
-}
-.requirement .reuqirement-container {
-  display: flex;
-  flex-direction: column;
-}
-.requirement .headline {
-  text-align: center;
+  display: none;
 }
 @media (min-width : 768px) {
   .benefit {
@@ -12093,6 +12095,178 @@ select::-ms-expand {
   .pass-clients .clients-pass span:nth-child(2) {
     margin-top: 0;
   }
+  .requirement {
+    display: flex;
+    padding: 3rem 2rem;
+    background: linear-gradient(180deg, #1C2848 63%, transparent 20%);
+  }
+  .requirement .reuqirement-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .headline {
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .requirement .chart {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    background-color: #FFFFFF;
+  }
+  .requirement .chart-title {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    background: linear-gradient(#0064D8, #1C2848);
+    color: white;
+  }
+  .requirement .chart-title h3 {
+    width: 25%;
+    text-align: center;
+  }
+  .requirement .chart-title h3:first-child {
+    width: 50%;
+    text-align: left;
+  }
+  .requirement .course-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .course-list .active .course-name {
+    background-color: transparent;
+    border-bottom: 2px solid #c0c0c0;
+  }
+  .requirement .course-list .active .course-name .image .blue {
+    display: flex;
+  }
+  .requirement .course-list .active .course-name .image .white {
+    display: none;
+  }
+  .requirement .course-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .course-name {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: #F6F6F6;
+    border-bottom: 2px solid transparent;
+    padding: 1rem;
+  }
+  .requirement .course-name .image {
+    position: absolute;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .requirement .course-name .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .requirement .course-name .image .blue {
+    display: none;
+  }
+  .requirement .course-name .image .white {
+    display: flex;
+  }
+  .requirement .course-name p,
+  .requirement .course-name span {
+    color: #0064D8;
+    font-weight: 900;
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .requirement .course-name p {
+    width: 50%;
+    text-align: left;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .requirement .course-name p::before {
+    content: '';
+    position: absolute;
+    background-image: url(../img/knowledge-pass/star.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 22px;
+    left: 0;
+    top: 4px;
+  }
+  .requirement .bold {
+    font-weight: 600;
+  }
+  .requirement .description {
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .requirement .course-detail {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+  }
+  .requirement .course-detail p {
+    width: 25%;
+    text-align: center;
+    font-size: 16px;
+  }
+  .requirement .course-detail p:first-child {
+    width: 50%;
+    text-align: left;
+  }
+  .requirement .course-detail p:last-child {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .requirement .course-detail p:last-child span {
+    width: 48%;
+  }
+  .requirement .course-detail .select {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+  }
+  .requirement .course-detail .select select {
+    width: 43px;
+    border: 2px solid #1C2848;
+    border-radius: 10px;
+    background: url(../img/knowledge-pass/select-bg.png);
+    background-position: right;
+    background-size: contain;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    outline: none;
+    padding-left: 7px;
+  }
+  .requirement .course-detail .select option {
+    color: #000000;
+  }
+  .requirement .summary {
+    display: flex;
+    padding: 1rem;
+    width: 58%;
+  }
+  .requirement .summary p {
+    font-size: 20px;
+    font-weight: 700;
+    width: 50%;
+  }
+  .requirement .summary p:first-child {
+    border-right: 2px solid #000000;
+    width: 27%;
+    padding-right: 1rem;
+    margin-right: 1rem;
+  }
   .spending {
     padding: 3rem 2rem;
   }
@@ -12116,30 +12290,30 @@ select::-ms-expand {
   .spending h3 {
     font-size: 17px;
   }
-  .right {
+  .why-right {
     padding: 3rem 2rem;
   }
-  .right .right-list {
+  .why-right .right-list {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  .right .content {
+  .why-right .content {
     width: 75%;
     margin-left: 1rem;
     margin-top: 0;
   }
-  .right .content h2,
-  .right .content p {
+  .why-right .content h2,
+  .why-right .content p {
     text-align: left;
   }
-  .right .content p {
+  .why-right .content p {
     font-size: 12px;
   }
-  .right .content h2 {
+  .why-right .content h2 {
     font-size: 16px;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 45%;
     flex-direction: row;
   }
@@ -12245,6 +12419,7 @@ select::-ms-expand {
   }
   .knowledge h3 {
     min-height: 50px;
+    width: 83%;
   }
   .study {
     padding: 3rem 2rem;
@@ -12254,7 +12429,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
   }
-  .study .study-info {
+  .study .study-content {
     width: 46%;
     margin-bottom: 0;
   }
@@ -12290,7 +12465,6 @@ select::-ms-expand {
   .pass-clients .clients-pass {
     position: relative;
     height: 315px;
-    width: 41%;
   }
   .pass-clients .clients-pass span {
     position: absolute;
@@ -12339,10 +12513,10 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
-  .right .right-list {
+  .why-right .right-list {
     justify-content: space-between;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 32%;
     align-items: flex-start;
   }
@@ -12388,10 +12562,10 @@ select::-ms-expand {
     width: 50%;
     margin-bottom: 0;
   }
-  .study .study-info::before {
+  .study .study-content::before {
     height: 60px;
   }
-  .study .study-info h2 {
+  .study .study-content h2 {
     margin-top: 0;
   }
 }
@@ -12426,10 +12600,10 @@ select::-ms-expand {
     width: 354px;
     left: -14px;
   }
-  .right {
+  .why-right {
     padding: 4rem 0rem;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 28%;
   }
   .budget {
@@ -12439,10 +12613,10 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .knowledge .pass-info {
-    width: 60%;
+    width: 54%;
   }
   .knowledge .booking-list {
-    width: 40%;
+    width: 46%;
   }
   .study {
     padding: 4rem 0rem;

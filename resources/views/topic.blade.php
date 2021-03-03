@@ -13,7 +13,7 @@
                     <p>{!!$topic->tag_line!!}</p>
                     <div class="breadcrums">
                         <ul>
-                            <li><a href="">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                             <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                             <li><a href="">{{$topic->name}}</a></li>
@@ -26,7 +26,7 @@
                         <h2>REASONS TO CHOOSE</h2>
                     </div>
                     <ul>
-                        @foreach ($topic->Bulletpoint as $bulletPoint)
+                        @foreach ($topic->Bulletpoint->take(4) as $bulletPoint)
                         <li>{!!$bulletPoint->bullet_point_text!!}</li>    
                         @endforeach
                         
@@ -49,13 +49,13 @@
                         </div>
                         @foreach ($courses as $course)
 
-                        <div class="course-item">
+                        <div class="course-item" onclick="location.href = '{{ url('training-courses' . $course->reference) }}';">
                             <span>
                                 <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <a href="{{ url('training-courses' . $course->reference) }}">{{$course->name}}</a>
+                                <a href="">{{$course->name}}</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -77,14 +77,15 @@
     <section class="flex-container foundation">
         <div class="container">
             <div class="foundation-container">
-                @if ($courses->first()->countryContent && $courses->first()->faqs->isnotEmpty())
+                @if ($topic->topicContent && $topic->faqs->isnotEmpty())
                 <div class="heading">
                     <h2>{!!$courses->first()->name!!}</h2>
                 </div>
                 @endif
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        @if ($courses->first()->countryContent)
+                        {{-- {{dd($topic->topicContent)}} --}}
+                        @if ($topic->topicContent)
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{url('img/courses/overview.svg')}}" alt="overview">
@@ -104,7 +105,7 @@
                             <div class="number">02</div>
                         </li>
                         @endif
-                        @if ($courses->first()->faqs->isnotEmpty())
+                        @if ($topic->faqs->isnotEmpty())
 
                         <li class="tab-click" data-target="faq">
                             <span class="image">
@@ -119,11 +120,11 @@
                     </ul>
                     
                     <div class="tab-content" id="overview">
-                        @if ($courses->first()->countryContent)                        
+                        @if ($topic->topicContent)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
                             
-                            {!!$courses->first()->countryContent->overview!!}
+                            {!!$topic->topicContent->overview!!}
                             
                         </div>
                         <div class="buttons">
@@ -138,7 +139,7 @@
                         <div class="heading">
                             <h2>Frequently Asked <span>Questions</span></h2>
                         </div>
-                        @foreach ($courses->first()->faqs as $faq)
+                        @foreach ($topic->faqs as $faq)
                             
                         
                         <div class="faq-list">
@@ -224,7 +225,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a class="btn-blue">
+                        <a class="btn-blue open-popup enquiryJS">
                             <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
                             Enquire Now
                         </a>
@@ -352,10 +353,8 @@
             <div class="popular-container">
                         <div class="popular-content">
                             <h2>{!!$pageDetail->popular_location['popular']->heading!!}</h2>
-                            @if($locations->isNotEmpty())
                             
-                            <p>{!!$locations->first()->meta_description!!}</p>
-                            @endif
+                            <p>{!!$pageDetail->popular_location['popular']->content!!}</p>
                             <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
                                 <img src="{{url('img/courses/learn.svg')}}" alt="learn">
@@ -369,13 +368,13 @@
                             </div>
                             <div class="location-list">
                                 @foreach ($locations as $location)
-                                <div class="content">
+                                <div class="content" onclick="location.href = '{{ url('training-locations/' . $location->reference) }}';">
                                     <span class="image">
                                         <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                                     </span>
                                     <h3>{{$location->name}}</h3>
                                     <span class="arrow">
-                                        <a href="{{ url('training-locations/' . $location->reference) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
+                                        <a href=""><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
                                     </span>
                                 </div>                                    
                                 @endforeach

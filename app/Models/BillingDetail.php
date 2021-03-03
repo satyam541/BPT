@@ -39,8 +39,6 @@ class BillingDetail extends Model
 
     public function order()
     {
-
-        
         return $this->hasOne("App\Models\Order",'billing_id');
     }
     public function toArray()
@@ -56,12 +54,4 @@ class BillingDetail extends Model
         $output['province'] = $this->province;
         return $output;
     }
-
-    
-
-
-
-
-
-
 }

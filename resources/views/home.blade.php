@@ -32,7 +32,7 @@
                             </button>
                         </div>
                         <div class="buttons">
-                                <a class="btn-blue">
+                                <a href="{{route('catalouge')}}" class="btn-blue">
                                     <img src="{{url('img/home/book.svg')}}" alt="book">
                                     Course catalogue
                                 </a>
@@ -45,7 +45,7 @@
                     <ul>
                         @foreach ($items as $item)
                         <li>
-                            <a>
+                            <a href="{{ url('training-courses' . $item->reference) }}">
                             <img src="{{url('img/master/open-book.svg')}}" alt="book">
                             <p>
                                 {{$item['name']}}
@@ -71,11 +71,7 @@
     <div class="container">
         <div class="courses-container">
             <div class="heading center-heading">
-                <h2>Professional Skills For
-                    <span>
-                        The Digital World
-                    </span>
-                </h2>
+                <h2>{!!heading_split($pageDetail->course['heading']->heading)!!} </h2>
             </div>
             <div class="courses-list">
                 @foreach ($categories->take(9) as $category)
@@ -89,15 +85,19 @@
                         <h3>
                             {{$category->name}}
                         </h3>
-                        <p>
-                            {{$category->topics->count()}} Topics
-                        </p>
+                        @if($category->topics->count()<2)
+                        <p>{{$category->topics->count()}} Topic</p>
+                        @else    
+                        <p>{{$category->topics->count()}} Topics</p>
+                        @endif
                         @foreach ($category->topics as $topic)
                         @php $totalCourses+=$topic->courses->count() @endphp
                     @endforeach
-                        <p>
-                            {{$totalCourses}} Courses
-                        </p>
+                    @if($totalCourses<2)
+                        <p> {{$totalCourses}} Course </p>
+                    @else
+                    <p> {{$totalCourses}} Courses </p>
+                    @endif
                     </div>
                     <span class="arrow">
                         <img src="{{url('img/home/arrow.svg')}}" alt="arrow">
@@ -127,7 +127,7 @@
                 <p>{!!$pageDetail->banner['content']->heading!!}</p>
             </div>
             <div class="buttons">
-                <a class="btn-white" href="tel: 02380001008">
+                <a class="btn-white" href="tel:{{websiteDetail()->contact_number}}">
                     <img src="{{url('img/master/call.svg')}}" alt="call">
                     {{websiteDetail()->contact_number}}
                 </a>
@@ -289,23 +289,18 @@
         <div class="locations-container">
             <div class="content">
                 <div class="heading">
-                    <h2>Organisations Locations
-                        <span>
-                            Around The Globe
-                        </span>
-                    </h2>
+                    <h2> {!!heading_split($pageDetail->locations['heading']->heading)!!}</h2>
                 </div>
                 <p> {!!$pageDetail->locations['heading']->content!!} </p>
             </div>
             @foreach ($locations as $location)
-            <div class="location-name">
+            <div class="location-name pointer" onclick="location.href = '{{route('locationDetail',['location'=>$location->reference])}}';">
                 
                 <span>
                     0{{$loop->iteration}}
                 </span>
                 <img src="{{url('img/home/location.svg')}}" alt="location" class="blue">
                 <img src="{{url('img/home/location-white.svg')}}" alt="location" class="white">
-                <a href="{{route('locationDetail',['location'=>$location->reference])}}">
                 <p>
                     {!!$location->name!!}</a>
                 </p>
@@ -316,7 +311,7 @@
             
             
             <div class="buttons">
-                <a class="btn-blue">
+                <a href="{{route('locations')}}" class="btn-blue">
                     <img src="{{url('img/home/location-white.svg')}}" alt="call">
                     View All Locations
                 </a>
@@ -338,7 +333,7 @@
                     {!!$pageDetail->looking_for['heading']->content!!}
                 </p>
                 <div class="buttons">
-                    <a class="btn-blue">
+                    <a class="btn-blue open-popup enquiryJS">
                         <img src="{{url('img/home/phone-call.svg')}}" alt="phone-call">
                         Contact Us
                     </a>

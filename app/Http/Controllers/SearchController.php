@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Article;
+use App\Models\Topic;
+use App\Models\Location;
+use App\Models\PageDetail;
 
 class SearchController extends Controller
 {
     public function search()
     {
-        $query = request()->q;
-        $courses = Course::with('topic')->where('name','like','%'.$query.'%')->get();
-        $data['query'] = $query;
+        $query      = request()->q;
+        $courses    = Course::with('topic')->where('name','like','%'.$query.'%')->paginate(20);
+        $data['query']  = $query;
         $data['result'] = $courses;
-        return view('enquiry',$data);
+        $data['pageDetail']        = PageDetail::getContent('search');
+        $data['popularTopics']     = Topic::has('popular')->with('courses')->get();
+        $data['popularCourses']    = Course::has('popular')->get();
+        $data['popularLocations']  = Location::has('popular')->get();
+
+        return view('search',$data);
     }
     public function loadCourses(Request $request)
     {

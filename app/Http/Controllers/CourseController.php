@@ -83,4 +83,39 @@ class CourseController extends Controller
         // dd($data);
         return view('courses', $data);
     }
+
+    public function filter(Request $request)
+    {
+        $hash = null;
+        if($request->has("deliveryMethod"))
+        {
+            $hash = $request->deliveryMethod;
+        }
+        if(empty($request->course))
+        {
+            return redirect()->back();
+        }
+        $courseobj=Course::find($request->course);
+        $location=$request->location;
+        $month = $request->month;
+        $locationObj = "";
+        $url = "";
+        if(empty($location))
+        {
+            $url = $courseobj->url;
+        }
+        if(!empty($location) && !empty($courseobj))
+        {
+
+            $locationObj = Location::where("reference",$location)->first();
+            $url = $courseobj->url.'/'.$locationObj->reference;
+        }
+        
+        $url = $url.$hash;
+        // if(!empty($hash) && $hash == "#online-booking" && $courseobj->is_online == 1)
+        // {
+        //     $url = route("onlineCourseRoute",['course'=>$courseobj->elearningCourse->reference]);
+        // }
+        return redirect($url);
+    }
 }
