@@ -127,7 +127,7 @@
                 <p>{!!$pageDetail->banner['content']->heading!!}</p>
             </div>
             <div class="buttons">
-                <a class="btn-white" href="tel: 02380001008">
+                <a class="btn-white" href="tel:{{websiteDetail()->contact_number}}">
                     <img src="{{url('img/master/call.svg')}}" alt="call">
                     {{websiteDetail()->contact_number}}
                 </a>
@@ -333,7 +333,7 @@
                     {!!$pageDetail->looking_for['heading']->content!!}
                 </p>
                 <div class="buttons">
-                    <a class="btn-blue">
+                    <a class="btn-blue open-popup enquiryJS">
                         <img src="{{url('img/home/phone-call.svg')}}" alt="phone-call">
                         Contact Us
                     </a>

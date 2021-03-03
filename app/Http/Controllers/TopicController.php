@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Topic;
-use App\models\Course;
+use App\Models\Course;
 use App\Models\PageDetail;
 use App\Models\Location;
 class TopicController extends Controller

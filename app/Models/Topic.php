@@ -156,7 +156,7 @@ class Topic extends Model
     }
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','topic');
+        return $this->hasMany('App\Models\BulletPoint','module_id','id')->where('module_type','topic');
     }
     public function whatsInclude()
     {
