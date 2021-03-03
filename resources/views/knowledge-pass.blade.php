@@ -56,6 +56,174 @@
     </section>
 <!-- End pass-clients section -->
 
+
+<!-- Start requirement section -->
+<section class="flex-container requirement">
+    <div class="container">
+        <div class="requirement-container">
+            <div class="heading center-heading white-heading">
+                <h2>Calculate your Requirements</h2>
+            </div>
+            <p class="headline">Not sure what your budget should be? Use our training calculator to figure out how much you need to spend. Simply select how many of each course you think you will need for your staff and we will tell you the estimated cost.</p>
+           <div class="chart">
+               <div class="chart-title">
+                   <h3>
+                       Select a course category
+                   </h3>
+                   <h3># of Delegates</h3>
+                   <h3>Total</h3>
+               </div>
+               <div class="course-list">
+                    <div class="course-content">
+                        <div class="course-name">
+                                <p>
+                                    Business Skills (17 courses (s))
+                                </p>
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="image">
+                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
+                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
+                                </span>
+                        </div>
+                        <div class="description">
+                        <div class="course-detail bold">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <p>delegates</p>  
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="course-content">
+                        <div class="course-name">
+                                <p>
+                                    Business Skills (17 courses (s))
+                                </p>
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="image">
+                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
+                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
+                                </span>
+                        </div>
+                        <div class="description">
+                        <div class="course-detail bold">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <p>delegates</p>  
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        </div>
+
+                    </div>
+               </div>
+               <div class="summary">
+                   <p>Summary</p>
+                   <p>1 course selected</p>
+               </div>
+
+           </div>
+        </div>
+    </div>
+</section>
+<!-- End requirement section -->
+
 <!-- Start spending section -->
     <section class="flex-contanier spending">
         <div class="container">
@@ -143,7 +311,7 @@
 <!-- End spending section -->
 
 <!-- Start right section -->
-    <section class="flex-container right">
+    <section class="flex-container why-right">
         <div class="container">
             <div class="right-container">
                 <div class="heading center-heading">
@@ -437,141 +605,6 @@
 </section>
 <!-- End study section -->
 
-<!-- Start requirement section -->
-<section class="flex-container requirement">
-    <div class="container">
-        <div class="requirement-container">
-            <div class="heading center-heading">
-                <h2>Calculate your Requirements</h2>
-            </div>
-            <p class="headline">Not sure what your budget should be? Use our training calculator to figure out how much you need to spend. Simply select how many of each course you think you will need for your staff and we will tell you the estimated cost.</p>
-           <div class="chart">
-               <div class="chart-title">
-                   <h3>
-                       Select a course category
-                   </h3>
-                   <h3># of Delegates</h3>
-                   <h3>Total</h3>
-               </div>
-               <div class="course-list">
-                <div class="course-content">
-                    <div class="course-name">
-                            <p>
-                                Business Skills (17 courses (s))
-                            </p>
-                            <span>0</span>
-                            <span>0</span>
-                            <img src="" alt="">
-                    </div>
-                    <div class="course-detail bold">
-                            <p>
-                            Popular Business Skill courses
-                            </p> 
-                            <p>delegates</p>  
-                            <p>
-                                <span>
-                                    price
-                                </span>
-                                <span>
-                                    Total
-                                </span>
-                            </p>
-
-                    </div>
-                    <div class="course-detail">
-                            <p>
-                            Popular Business Skill courses
-                            </p> 
-                            <span class="select">
-                            <select name="" id="">
-                                <option value="">1</option>
-                            </select>
-                            </span>
-                            <p>
-                                <span>
-                                    price
-                                </span>
-                                <span>
-                                    Total
-                                </span>
-                            </p>
-
-                    </div>
-                    <div class="course-detail">
-                            <p>
-                            Popular Business Skill courses
-                            </p> 
-                            <span class="select">
-                            <select name="" id="">
-                                <option value="">1</option>
-                            </select>
-                            </span>
-                            <p>
-                                <span>
-                                    price
-                                </span>
-                                <span>
-                                    Total
-                                </span>
-                            </p>
-
-                    </div>
-                    <div class="course-detail">
-                            <p>
-                            Popular Business Skill courses
-                            </p> 
-                            <span class="select">
-                            <select name="" id="">
-                                <option value="">1</option>
-                            </select>
-                            </span>
-                            <p>
-                                <span>
-                                    price
-                                </span>
-                                <span>
-                                    Total
-                                </span>
-                            </p>
-
-                    </div>
-
-                </div>
-                <div class="course-content">
-                    <div class="course-name">
-                            <p>
-                                Business Skills (17 courses (s))
-                            </p>
-                            <span>0</span>
-                            <span>0</span>
-                    </div>
-                    <div class="course-detail bold">
-                            <p>
-                            Popular Business Skill courses
-                            </p> 
-                            <p>delegates</p>  
-                            <p>
-                                <span>
-                                    price
-                                </span>
-                                <span>
-                                    Total
-                                </span>
-                            </p>
-
-                    </div>
-                </div>
-               </div>
-               <div class="summary">
-                   <p>summary</p>
-                   <p>1 course selected</p>
-               </div>
-
-           </div>
-        </div>
-    </div>
-</section>
-<!-- End requirement section -->
 
 
 @endsection

@@ -11778,7 +11778,7 @@ select::-ms-expand {
 }
 .pass-clients .clients-pass span {
   display: flex;
-  width: 130px;
+  width: 46%;
   height: 80px;
   margin-top: 1rem;
   padding: 0.7rem;
@@ -11816,6 +11816,8 @@ select::-ms-expand {
   position: relative;
   z-index: 1;
   margin-top: 2rem;
+  width: 272px;
+  align-self: center;
 }
 .spending .item:nth-child(2)::before {
   background-image: url(../img/knowledge-pass/item-silver.png);
@@ -11855,43 +11857,44 @@ select::-ms-expand {
   width: 60%;
   justify-content: flex-start;
 }
-.right {
+.why-right {
   padding: 3rem 1.5rem;
+  padding-top: 1rem !important;
 }
-.right .right-container {
+.why-right .right-container {
   display: flex;
   flex-direction: column;
 }
-.right .right-container .heading {
+.why-right .right-container .heading {
   margin-bottom: 0;
 }
-.right .right-container .heading p {
+.why-right .right-container .heading p {
   text-align: center;
   margin-top: 0.5rem;
 }
-.right .right-list {
+.why-right .right-list {
   display: flex;
   flex-direction: column;
 }
-.right .content {
+.why-right .content {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
-.right .content h2,
-.right .content p {
+.why-right .content h2,
+.why-right .content p {
   text-align: center;
 }
-.right .content p {
+.why-right .content p {
   margin-top: 0.5rem;
 }
-.right .right-item {
+.why-right .right-item {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   align-items: center;
 }
-.right .right-item span {
+.why-right .right-item span {
   display: flex;
   padding: 0.5rem;
   border: 1px solid #707070;
@@ -11899,19 +11902,20 @@ select::-ms-expand {
   height: 60px;
   position: relative;
 }
-.right .right-item span h3 {
-  width: 20px;
+.why-right .right-item span h3 {
+  width: 26px;
   position: absolute;
-  padding: 3px;
-  padding-right: 10px;
+  padding: 2px;
+  padding-left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   top: -10px;
-  left: -1px;
+  left: -6px;
   background-color: #FFFFFF;
+  color: #1C2848;
 }
-.right .right-item span img {
+.why-right .right-item span img {
   width: 100%;
   height: 100%;
 }
@@ -11932,6 +11936,8 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  width: 272px;
+  align-self: center;
 }
 .benefit .benefit-info:nth-child(1) {
   margin-top: 0;
@@ -12052,142 +12058,7 @@ select::-ms-expand {
   margin-top: 2rem;
 }
 .requirement {
-  padding: 3rem 1.5rem;
-}
-.requirement .reuqirement-container {
-  display: flex;
-  flex-direction: column;
-}
-.requirement .headline {
-  text-align: center;
-}
-.requirement .chart {
-  display: flex;
-  flex-direction: column;
-}
-.requirement .chart-title {
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  background: linear-gradient(#0064D8, #1C2848);
-  color: white;
-}
-.requirement .chart-title h3 {
-  width: 25%;
-  text-align: center;
-}
-.requirement .chart-title h3:first-child {
-  width: 50%;
-  text-align: left;
-}
-.requirement .course-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-}
-.requirement .course-content {
-  display: flex;
-  flex-direction: column;
-}
-.requirement .course-name {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 2px solid grey;
-  padding: 1rem 0;
-}
-.requirement .course-name p,
-.requirement .course-name span {
-  color: #0064D8;
-  font-weight: 900;
-  width: 25%;
-  text-align: center;
-  font-size: 18px;
-}
-.requirement .course-name p {
-  width: 50%;
-  text-align: left;
-  position: relative;
-  padding-left: 1.5rem;
-}
-.requirement .course-name p::before {
-  content: '';
-  position: absolute;
-  background-image: url(../img/knowledge-pass/star.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 20px;
-  height: 22px;
-  left: 0;
-  top: 4px;
-}
-.requirement .bold {
-  font-weight: 600;
-}
-.requirement .course-detail {
-  display: flex;
-  flex-direction: row;
-  padding-top: 1rem;
-}
-.requirement .course-detail p {
-  width: 25%;
-  text-align: center;
-  font-size: 16px;
-}
-.requirement .course-detail p:first-child {
-  width: 50%;
-  text-align: left;
-}
-.requirement .course-detail p:last-child {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-}
-.requirement .course-detail p:last-child span {
-  width: 48%;
-}
-.requirement .course-detail .select {
-  display: flex;
-  justify-content: center;
-  width: 25%;
-  position: relative;
-  z-index: 1;
-}
-.requirement .course-detail .select::before {
-  content: '';
-  position: absolute;
-  background-image: url(../img/knowledge-pass/down-arrow.svg);
-  background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
-  z-index: -1;
-}
-.requirement .course-detail .select select {
-  width: 43px;
-  border: 2px solid #1C2848;
-  border-radius: 8px;
-  background: linear-gradient(90deg, transparent 50%, #1C2848 40%);
-  -webkit-appearance: none;
-  outline: none;
-  padding-left: 7px;
-}
-.requirement .course-detail .select option {
-  color: #000000;
-}
-.requirement .summary {
-  display: flex;
-  padding: 1rem 0;
-  width: 40%;
-}
-.requirement .summary p {
-  font-size: 20px;
-  font-weight: 700;
-  width: 50%;
-}
-.requirement .summary p:first-child {
-  border-right: 2px solid #000000;
-  width: 27%;
-  padding-right: 1rem;
-  margin-right: 1rem;
+  display: none;
 }
 @media (min-width : 768px) {
   .benefit {
@@ -12220,6 +12091,178 @@ select::-ms-expand {
   .pass-clients .clients-pass span:nth-child(2) {
     margin-top: 0;
   }
+  .requirement {
+    display: flex;
+    padding: 3rem 2rem;
+    background: linear-gradient(180deg, #1C2848 63%, transparent 20%);
+  }
+  .requirement .reuqirement-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .headline {
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .requirement .chart {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    background-color: #FFFFFF;
+  }
+  .requirement .chart-title {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    background: linear-gradient(#0064D8, #1C2848);
+    color: white;
+  }
+  .requirement .chart-title h3 {
+    width: 25%;
+    text-align: center;
+  }
+  .requirement .chart-title h3:first-child {
+    width: 50%;
+    text-align: left;
+  }
+  .requirement .course-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .course-list .active .course-name {
+    background-color: transparent;
+    border-bottom: 2px solid #c0c0c0;
+  }
+  .requirement .course-list .active .course-name .image .blue {
+    display: flex;
+  }
+  .requirement .course-list .active .course-name .image .white {
+    display: none;
+  }
+  .requirement .course-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .requirement .course-name {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: #F6F6F6;
+    border-bottom: 2px solid transparent;
+    padding: 1rem;
+  }
+  .requirement .course-name .image {
+    position: absolute;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .requirement .course-name .image img {
+    width: 100%;
+    height: 100%;
+  }
+  .requirement .course-name .image .blue {
+    display: none;
+  }
+  .requirement .course-name .image .white {
+    display: flex;
+  }
+  .requirement .course-name p,
+  .requirement .course-name span {
+    color: #0064D8;
+    font-weight: 900;
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .requirement .course-name p {
+    width: 50%;
+    text-align: left;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .requirement .course-name p::before {
+    content: '';
+    position: absolute;
+    background-image: url(../img/knowledge-pass/star.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 22px;
+    left: 0;
+    top: 4px;
+  }
+  .requirement .bold {
+    font-weight: 600;
+  }
+  .requirement .description {
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .requirement .course-detail {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+  }
+  .requirement .course-detail p {
+    width: 25%;
+    text-align: center;
+    font-size: 16px;
+  }
+  .requirement .course-detail p:first-child {
+    width: 50%;
+    text-align: left;
+  }
+  .requirement .course-detail p:last-child {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .requirement .course-detail p:last-child span {
+    width: 48%;
+  }
+  .requirement .course-detail .select {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+  }
+  .requirement .course-detail .select select {
+    width: 43px;
+    border: 2px solid #1C2848;
+    border-radius: 10px;
+    background: url(../img/knowledge-pass/select-bg.png);
+    background-position: right;
+    background-size: contain;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    outline: none;
+    padding-left: 7px;
+  }
+  .requirement .course-detail .select option {
+    color: #000000;
+  }
+  .requirement .summary {
+    display: flex;
+    padding: 1rem;
+    width: 58%;
+  }
+  .requirement .summary p {
+    font-size: 20px;
+    font-weight: 700;
+    width: 50%;
+  }
+  .requirement .summary p:first-child {
+    border-right: 2px solid #000000;
+    width: 27%;
+    padding-right: 1rem;
+    margin-right: 1rem;
+  }
   .spending {
     padding: 3rem 2rem;
   }
@@ -12243,30 +12286,30 @@ select::-ms-expand {
   .spending h3 {
     font-size: 17px;
   }
-  .right {
+  .why-right {
     padding: 3rem 2rem;
   }
-  .right .right-list {
+  .why-right .right-list {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  .right .content {
+  .why-right .content {
     width: 75%;
     margin-left: 1rem;
     margin-top: 0;
   }
-  .right .content h2,
-  .right .content p {
+  .why-right .content h2,
+  .why-right .content p {
     text-align: left;
   }
-  .right .content p {
+  .why-right .content p {
     font-size: 12px;
   }
-  .right .content h2 {
+  .why-right .content h2 {
     font-size: 16px;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 45%;
     flex-direction: row;
   }
@@ -12466,10 +12509,10 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
-  .right .right-list {
+  .why-right .right-list {
     justify-content: space-between;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 32%;
     align-items: flex-start;
   }
@@ -12553,10 +12596,10 @@ select::-ms-expand {
     width: 354px;
     left: -14px;
   }
-  .right {
+  .why-right {
     padding: 4rem 0rem;
   }
-  .right .right-item {
+  .why-right .right-item {
     width: 28%;
   }
   .budget {
@@ -12764,5 +12807,210 @@ select::-ms-expand {
   }
   .form-success .success-contact {
     width: 34%;
+  }
+}
+.cart-banner {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.cart-banner .banner-container h1,
+.cart-banner .banner-container p {
+  color: #FFFFFF;
+}
+.steps {
+  padding: 3rem 1.5rem;
+}
+.steps .steps-container {
+  display: flex;
+  flex-direction: column;
+}
+.steps .steps-container .heading p {
+  text-align: center;
+}
+.steps .payment-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.steps .detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(#0064D8, #1C2848);
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  background-position: bottom;
+  padding: 0.5rem;
+}
+.steps .detail-container .detail {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-items: center;
+}
+.steps .detail-container .detail p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 1rem;
+  order: 2;
+  text-align: center;
+  color: #FFFFFF;
+}
+.steps .detail-container .detail span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  height: 50px;
+  width: 50px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+}
+.steps .form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.steps .form h2 {
+  margin-bottom: 2rem;
+}
+@media (min-width : 768px) {
+  .steps {
+    padding: 3rem 2rem;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .steps::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90%;
+    width: 300px;
+    background-image: url(../img/cart/ring.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .steps .steps-container {
+    position: relative;
+    z-index: 1;
+  }
+  .steps .steps-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 90px;
+    left: -32px;
+    height: 93%;
+    width: 350px;
+    background: linear-gradient(#0064D8, #1C2848);
+    border-radius: 0px 40px 40px 0px;
+  }
+  .steps .steps-container .heading {
+    margin-bottom: 3rem;
+  }
+  .steps .payment-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+  .steps .detail-container {
+    width: 35%;
+    background-image: none;
+    align-self: center;
+    padding: 0;
+  }
+  .steps .detail-container .detail {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .steps .detail-container .detail:last-child {
+    margin-bottom: 0;
+  }
+  .steps .detail-container .detail p {
+    order: 1;
+    text-align: left;
+    margin-top: 0;
+    width: calc(100% - 50px);
+    font-size: 18px;
+  }
+  .steps .detail-container .detail span {
+    order: 2;
+    transform: translateX(25px);
+  }
+  .steps .form {
+    width: 62%;
+    margin-top: 0;
+    padding: 1.5rem 3rem;
+  }
+  .steps .form .buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+@media (min-width : 1024px) {
+  .cart-banner {
+    background: none;
+    background-image: url(../img/cart/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .cart-banner .banner-container {
+    width: 48%;
+  }
+  .steps .steps-container::before {
+    top: 93px;
+    height: 96%;
+    width: 365px;
+  }
+  .steps .detail-container {
+    width: 25%;
+  }
+  .steps .detail-container .detail span {
+    transform: translateX(24px);
+  }
+  .steps .form {
+    width: 70%;
+    padding: 1.5rem 4rem;
+  }
+}
+@media (min-width : 1366px) {
+  .steps {
+    padding: 4rem 0rem;
+  }
+  .steps .steps-container::before {
+    left: -83px;
+    width: 445px;
+  }
+  .steps .detail-container {
+    width: 25%;
+  }
+  .steps .detail-container .detail span {
+    transform: translateX(24px);
+  }
+  .steps .form {
+    padding: 1.5rem 4rem;
+  }
+}
+@media (min-width : 1400px) {
+  .steps .steps-container::before {
+    left: 0px;
+  }
+  .steps .detail-container {
+    padding-left: 2rem;
+  }
+}
+@media (min-width : 1500px) {
+  .steps .steps-container::before {
+    left: 0px;
+  }
+  .steps .detail-container {
+    padding-left: 2rem;
   }
 }

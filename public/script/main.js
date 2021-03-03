@@ -360,4 +360,14 @@ $('body').on('click',function(e){
 
     // End load more //
 
+    
+    // Start FAQ
+   $(".course-name").click(function () {
+    $(this).parent().toggleClass("active");
+    $(this).parent().find('.description').slideToggle();
+    $(this).parent().siblings(".course-content").removeClass("active").find('.description').slideUp();
+});
+
+// End FAQ
+
 

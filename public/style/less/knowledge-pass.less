@@ -42,7 +42,7 @@
             justify-content: space-between;
             span{
                 display: flex;
-                width: 130px;
+                width: 46%;
                 height: 80px;
                 margin-top: 1rem;
                 padding: 0.7rem;
@@ -90,6 +90,8 @@
             position: relative;
             z-index: 1;
             margin-top: 2rem;
+            width: 272px;
+            align-self: center;
             &:nth-child(2){
                 &::before{
                     background-image: url(../img/knowledge-pass/item-silver.png);
@@ -139,8 +141,9 @@
 // End spending section //
 
 // Start right section //
-    .right{
+    .why-right{
         padding: @sectionPadding;
+        padding-top: 1rem !important;
 
         .right-container{
             display: flex;
@@ -188,16 +191,17 @@
                 position: relative;
 
                 h3{
-                    width: 20px;
+                    width: 26px;
                     position: absolute;
-                    padding: 3px;
-                    padding-right: 10px;
+                    padding: 2px;
+                    padding-left: 0;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     top: -10px;
-                    left: -1px;
+                    left: -6px;
                     background-color: @whiteColor;
+                    color: @darkblueColor;
                 }
                 img{
                     width: 100%;
@@ -227,6 +231,8 @@
             flex-direction: column;
             align-items: center;
             margin-top: 1rem;
+            width: 272px;
+            align-self: center;
             &:nth-child(1){
                 margin-top: 0;
             }
@@ -360,146 +366,6 @@
 
 // Start requirement section
 .requirement{
-    padding: @sectionPadding;
-    .reuqirement-container{
-        display: flex;
-        flex-direction: column;
-    }
-    .headline{
-        text-align: center;
-    }
-    .chart{
-        display: flex;
-        flex-direction: column;
-    }
-    .chart-title{
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;
-        background: @blueGradient;
-        color: white;
-        h3{
-            width: 25%;
-            text-align: center;
-            &:first-child{
-                width: 50%;
-                text-align: left;
-            }
-        }
-    }
-    .course-list{
-        display: flex;
-        flex-direction: column;
-        padding: 0 1rem;
-    }
-    .course-content{
-        display: flex;
-        flex-direction: column;
-    }
-    .course-name{
-        display: flex;
-        flex-direction: row;
-        border-bottom: 2px solid grey;
-        padding: 1rem 0;
-        p,span{
-            color: @lightblueColor;
-            font-weight: 900;
-            width: 25%;
-            text-align: center;
-            font-size: 18px;
-        
-        }
-        p{
-            width: 50%;
-            text-align: left;
-            position: relative;
-            padding-left: 1.5rem;
-            &::before{
-                content: '';
-                position: absolute;
-                background-image: url(../img/knowledge-pass/star.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 20px;
-                height: 22px;
-                left: 0;
-                top: 4px;
-            }
-        }
-
-    }
-    .bold{
-        font-weight: 600;
-    }
-    .course-detail{
-        display: flex;
-        flex-direction: row; 
-        padding-top: 1rem;   
-    
-        p{
-            width: 25%;
-            text-align: center;
-            font-size: 16px;
-            &:first-child{
-                width: 50%;
-                text-align: left;
-            }
-            &:last-child{
-                display: flex;
-                justify-content: space-between;
-                text-align: center;
-                span{
-                    width: 48%;
-                }
-            }
-        }
-        .select{
-            display: flex;
-            justify-content: center;
-            width: 25%;
-            position: relative;
-            z-index: 1;
-            &::before{
-                content: '';
-                position: absolute;
-                background-image: url(../img/knowledge-pass/down-arrow.svg);
-                background-repeat: no-repeat;
-                width: 50px;
-                height: 50px;
-                z-index: -1;
-            }
-            select{ 
-                width: 43px;
-                border: 2px solid @darkblueColor;
-                border-radius: 8px;
-                background: linear-gradient(
-            90deg
-            , transparent 50%,@darkblueColor 40%); 
-            -webkit-appearance: none;
-            outline: none;
-            padding-left: 7px;
-           
-            }
-            option{
-                color: @blackColor;
-            }
-        }
-    }
-    .summary{
-        display: flex;
-        padding: 1rem 0;
-        width: 40%;
-        p{
-            font-size: 20px;
-            font-weight: 700;
-            width: 50%;
-            &:first-child{
-                border-right: 2px solid @blackColor;
-                width: 27%;
-                padding-right: 1rem;
-                margin-right: 1rem;
-            }
-        }
-    }
+    display: none;
 }
 // End requirement section
