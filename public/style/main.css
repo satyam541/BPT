@@ -297,6 +297,9 @@ select::-ms-expand {
     color: transparent;
   }
 }
+.pointer {
+  cursor: pointer;
+}
 .form {
   display: flex;
   flex-direction: column;
