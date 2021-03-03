@@ -51,7 +51,7 @@
                     </span>
                     <div class="info">
                         <p>Call Us:</p>
-                        <a>023 8000 1008</a>
+                        <a>{{websiteDetail()->contact_number}}</a>
                     </div>
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                     </span>
                     <div class="info">
                         <p>Send Us Mail:</p>
-                        <a>info@thebestpracticetraining.com</a>
+                        <a>{{websiteDetail()->contact_email}}</a>
                     </div>
                 </li>
 
