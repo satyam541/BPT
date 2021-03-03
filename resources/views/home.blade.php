@@ -127,7 +127,7 @@
                 <p>{!!$pageDetail->banner['content']->heading!!}</p>
             </div>
             <div class="buttons">
-                <a class="btn-white" href="tel: 02380001008">
+                <a class="btn-white" href="tel:{{websiteDetail()->contact_number}}">
                     <img src="{{url('img/master/call.svg')}}" alt="call">
                     {{websiteDetail()->contact_number}}
                 </a>
