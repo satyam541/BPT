@@ -11,7 +11,7 @@ class Course extends Model
     use SoftDeletes;
     protected $table = 'course';
     protected $guarded = array('id');
-    // protected $appends = ['url'];
+    protected $appends = ['url'];
     public $logo_path = "uploads/course/";
 
     public $combinedAttributes = array();
@@ -211,6 +211,13 @@ class Course extends Model
     public function whatsInclude()
     {
         return $this->hasMany('App\Models\WhatsIncluded','module_id');
+    }
+
+    public function getUrlAttribute()
+    {
+        $reference =  $this->reference;
+        $url = 'training-courses'.$reference;
+        return url($url);
     }
    
 }

@@ -93,6 +93,9 @@ Route::get('/knowledge-pass',function(){
 Route::get('/thanks', function () {
     return view('thanks');
 });
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::get('/privacy-policy',function(){
     return view('privacy-policy');

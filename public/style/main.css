@@ -979,6 +979,9 @@ select::-ms-expand {
   justify-content: center;
   padding-top: 3rem;
 }
+.social {
+  display: none;
+}
 @media (min-width : 768px) {
   .buttons .btn-blue,
   .buttons .btn-white {
@@ -1359,6 +1362,49 @@ select::-ms-expand {
   }
   .footer .contact-us h2 {
     text-align: center;
+  }
+  .social {
+    display: flex;
+    position: fixed;
+    bottom: 40%;
+    left: -125px;
+    z-index: 3;
+  }
+  .social ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .social li {
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    background-color: #1C2848;
+    font-size: 14px;
+    padding: 14px 12px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 0px 30px 30px 0px;
+    transition: 1s all;
+  }
+  .social li img {
+    width: 25px;
+    height: 25px;
+    margin-left: 1rem;
+  }
+  .social li:hover {
+    -webkit-transform: translate(123px, 0);
+    -moz-transform: translate(123px, 0);
+    -ms-transform: translate(123px, 0);
+    -o-transform: translate(123px, 0);
+    transform: translate(123px, 0);
+  }
+  .social li:hover img {
+    transform: rotate(360deg);
+    transition: all 1s;
+  }
+  .social a {
+    display: flex;
+    align-items: center;
   }
 }
 .home-banner .banner-container {
