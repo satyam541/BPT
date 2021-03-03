@@ -11702,12 +11702,15 @@ select::-ms-expand {
   text-align: center;
 }
 .requirement table {
+  border-collapse: collapse;
   width: 100%;
 }
 .requirement tr {
-  padding: 1rem;
   text-align: left;
   width: 100%;
+}
+.requirement tr th {
+  padding: 1rem;
 }
 .requirement tr:first-child {
   display: flex;
