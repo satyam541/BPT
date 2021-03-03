@@ -83,11 +83,6 @@ class Category extends Model
         $object->combinedAttributes = array_merge($attributes, $original);
     }
 
-
-    public function getUrlAttribute()
-    {
-        return route('categoryPageRoute',['slug'=>$this->reference]);
-    }
     public function whatsIncluded()
     {
         return $this->belongsToMany("App\Models\WhatsIncludedHeaders",'whats_included', 'module_id','header_id' )->where('module_type', 'category');
@@ -151,6 +146,13 @@ class Category extends Model
         $this->faqs()->forceDelete();
         $this->whatIncludes()->forceDelete();
         return $this->forceDelete();
+    }
+
+    public function getUrlAttribute()
+    {
+        $reference =  $this->reference;
+        $url = 'training-courses'.$reference;
+        return url($url);
     }
 
 }
