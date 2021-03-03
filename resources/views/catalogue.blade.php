@@ -196,7 +196,7 @@
                                 <span>
                                     <img src="{{ url('img/catalogue/analytics.svg') }}" alt="analytics">
                                 </span>
-                                <a href="javascript:void(0);">{{ $topic->name }}</a>
+                                <a href="{{ url('training-courses' . $topic->reference) }}">{{ $topic->name }}</a>
                             </div>
                             <ul>
                                 @foreach ($topic->courses as $course)
