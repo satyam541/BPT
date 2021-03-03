@@ -353,6 +353,7 @@
                         <div class="popular-content">
                             <h2>{!!$pageDetail->popular_location['popular']->heading!!}</h2>
                             @if($locations->isNotEmpty())
+                            
                             <p>{!!$locations->first()->meta_description!!}</p>
                             @endif
                             <div class="buttons">
