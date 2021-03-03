@@ -3986,6 +3986,7 @@ select::-ms-expand {
 .testimonial h3,
 .testimonial h4 {
   margin-top: 0.5rem;
+  text-align: center;
 }
 .testimonial h4 {
   font-size: 14px;
@@ -12636,5 +12637,210 @@ select::-ms-expand {
   }
   .form-success .success-contact {
     width: 34%;
+  }
+}
+.cart-banner {
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.cart-banner .banner-container h1,
+.cart-banner .banner-container p {
+  color: #FFFFFF;
+}
+.steps {
+  padding: 3rem 1.5rem;
+}
+.steps .steps-container {
+  display: flex;
+  flex-direction: column;
+}
+.steps .steps-container .heading p {
+  text-align: center;
+}
+.steps .payment-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.steps .detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: linear-gradient(#0064D8, #1C2848);
+  background-repeat: no-repeat;
+  background-size: 100% 75%;
+  background-position: bottom;
+  padding: 0.5rem;
+}
+.steps .detail-container .detail {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-items: center;
+}
+.steps .detail-container .detail p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 1rem;
+  order: 2;
+  text-align: center;
+  color: #FFFFFF;
+}
+.steps .detail-container .detail span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  height: 50px;
+  width: 50px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+}
+.steps .form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.steps .form h2 {
+  margin-bottom: 2rem;
+}
+@media (min-width : 768px) {
+  .steps {
+    padding: 3rem 2rem;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .steps::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90%;
+    width: 300px;
+    background-image: url(../img/cart/ring.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .steps .steps-container {
+    position: relative;
+    z-index: 1;
+  }
+  .steps .steps-container::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 90px;
+    left: -32px;
+    height: 93%;
+    width: 350px;
+    background: linear-gradient(#0064D8, #1C2848);
+    border-radius: 0px 40px 40px 0px;
+  }
+  .steps .steps-container .heading {
+    margin-bottom: 3rem;
+  }
+  .steps .payment-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+  .steps .detail-container {
+    width: 35%;
+    background-image: none;
+    align-self: center;
+    padding: 0;
+  }
+  .steps .detail-container .detail {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .steps .detail-container .detail:last-child {
+    margin-bottom: 0;
+  }
+  .steps .detail-container .detail p {
+    order: 1;
+    text-align: left;
+    margin-top: 0;
+    width: calc(100% - 50px);
+    font-size: 18px;
+  }
+  .steps .detail-container .detail span {
+    order: 2;
+    transform: translateX(25px);
+  }
+  .steps .form {
+    width: 62%;
+    margin-top: 0;
+    padding: 1.5rem 3rem;
+  }
+  .steps .form .buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+@media (min-width : 1024px) {
+  .cart-banner {
+    background: none;
+    background-image: url(../img/cart/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .cart-banner .banner-container {
+    width: 48%;
+  }
+  .steps .steps-container::before {
+    top: 93px;
+    height: 96%;
+    width: 365px;
+  }
+  .steps .detail-container {
+    width: 25%;
+  }
+  .steps .detail-container .detail span {
+    transform: translateX(24px);
+  }
+  .steps .form {
+    width: 70%;
+    padding: 1.5rem 4rem;
+  }
+}
+@media (min-width : 1366px) {
+  .steps {
+    padding: 4rem 0rem;
+  }
+  .steps .steps-container::before {
+    left: -83px;
+    width: 445px;
+  }
+  .steps .detail-container {
+    width: 25%;
+  }
+  .steps .detail-container .detail span {
+    transform: translateX(24px);
+  }
+  .steps .form {
+    padding: 1.5rem 4rem;
+  }
+}
+@media (min-width : 1400px) {
+  .steps .steps-container::before {
+    left: 0px;
+  }
+  .steps .detail-container {
+    padding-left: 2rem;
+  }
+}
+@media (min-width : 1500px) {
+  .steps .steps-container::before {
+    left: 0px;
+  }
+  .steps .detail-container {
+    padding-left: 2rem;
   }
 }
