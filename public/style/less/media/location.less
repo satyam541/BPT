@@ -51,7 +51,7 @@
                 height: 430px;
                 width: 430px;
                 bottom: -51px;
-                left: -40px;
+                right: -47px;
                 background-image: url(../img/location/arc-circle.png);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
@@ -105,12 +105,11 @@
             flex-direction: row;
             flex-wrap: wrap;
         }
+        .item{
+            width: 50%;
+            padding: 2rem 7px 0;
+        }
         .popular-content {
-            width: 44%;
-            margin-right: 3rem;
-            &:nth-child(2n) {
-                margin-right: 0;
-            }   
             .img {
                 left: -6px;
             &::before { 
@@ -269,18 +268,8 @@
 
     // Start Popular Section
     .popular {
-        .popular-content {
-            width: 28%;
-            margin-right: 3rem;
-            &:nth-child(2n) {
-                margin-right: 3rem;
-            }
-            &:nth-child(3n) {
-                margin-right: 0;
-            }
-            &:last-child {
-                margin-right: 0;
-            }
+        .item{
+            width: 33%;
         }
     }
     // End Popular Section
@@ -347,11 +336,11 @@
             width: 30%;
             height: 350px;
             padding: 3.5rem;
+            margin-right: 4rem;
             &::before {
                 content: '';
                 height: 450px;
                 width: 450px;
-                left: -44px;
             }
         }
     }
@@ -360,19 +349,15 @@
     // Start Popular Section
     .popular {
         .popular-content {
-            width: 22%;
             &::before {
                 left: -13px;
-            }
-            &:nth-child(3n) {
-                margin-right: 3rem;
-            }
-            &:nth-child(4n) {
-                margin-right: 0;
             }
             .img {
                 left: -3px;
             }
+        }
+        .item{
+            width: 25%;
         }
     }
     // End Popular Section
