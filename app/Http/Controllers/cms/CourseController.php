@@ -11,7 +11,7 @@ use App\Models\Topic;
 use App\Models\BulletPoint;
 use App\Models\CourseContent;
 use App\Models\Country;
-use App\Models\whatsIncluded;
+use App\Models\WhatsIncluded;
 use App\Models\OnlinePrice;
 use App\Models\Accreditation;
 use App\Http\Requests\cms\CourseContentRequest;
@@ -20,7 +20,7 @@ use App\Http\Requests\cms\CourseRequest;
 use App\Http\Requests\cms\WhatsIncludedRequest;
 use App\Http\Requests\cms\CourseFaqRequest;
 use App\Models\WhatsIncluded as ModelsWhatsIncluded;
-use App\Models\whatsIncludedHeaders;
+use App\Models\WhatsIncludedHeaders;
 class CourseController extends Controller
 {
     /**

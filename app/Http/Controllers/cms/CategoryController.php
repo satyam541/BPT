@@ -8,11 +8,11 @@ use App\Http\Requests\cms\BulletPointRequest;
 use Carbon\Carbon;
 use App\Models\Category;
 use App\Models\Country;
-use App\Models\whatsIncluded;
+use App\Models\WhatsIncluded;
 use App\Models\BulletPoint;
 use App\Models\CategoryContent;
 use App\Http\Requests\cms\CategoryContentRequest;
-use App\Models\whatsIncludedHeaders;
+use App\Models\WhatsIncludedHeaders;
 use App\Http\Requests\cms\CategoryRequest;
 
 use App\Http\Requests\cms\WhatsIncludedRequest;
