@@ -68,11 +68,12 @@ class CourseController extends Controller
         $data['schedules']          = $schedule->where('country_id', country()->id)->where('response_location','!=','Virtual')->where('course_id', $course_id)
                                         ->orderBy('response_date')
                                         ->orderByRaw("Field(response_location,".$locationOrderString.")")
-                                        ->paginate(10)->setPageName('classroom_page');
+                                        ->paginate(5,['*'],'classroom-page');
 
         $data['virtualSchedules']   = Schedule::where('country_id', country()->id)->where('response_location','Virtual')
                                         ->where('course_id',$course_id)
-                                        ->where('response_date','>',Carbon::today())->orderBy('response_date')->paginate(10)->setPageName('virtual_page');
+                                        ->where('response_date','>',Carbon::today())->orderBy('response_date')
+                                        ->paginate(5,['*'],'virtual-page');
 
         $topicCourses               = $course->topic->courses()->get()->pluck('id')->toArray();
         $onlineCourses              = Course::whereNotIn('id',$topicCourses)->get()->pluck('course_id')->toArray();

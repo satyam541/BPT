@@ -48,7 +48,7 @@
                    </div>
                 </div>
                 <div class="order-container">
-                    <form class="form">
+                    <form class="form" style="display: none;">
                         <h2>Customer Details</h2>
                         <div class="form-input">
                             <div class="input-container">
@@ -119,6 +119,166 @@
                             </button>
                         </div>
                     </form>
+                    <div class="form-inner">
+                        <div class="card-detail">
+                                        <p>Please Select Your Payment Options And Complete The Details Below</p>
+                                        <div class="input-container">
+                                            <span><img src="{{url('img/master/credit-black.svg')}}" alt="credit-black" class="black">
+                                            <img src="{{url('img/master/credit-red.svg')}}" alt="credit-red" class="red"></span>
+                                                <select name="credit-card" id="credit-card">
+                                                    <option value="">Credit/Debit card*</option>
+                                                </select>
+                                        </div>
+                                        <div class="input-container">
+                                            <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                            <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                            <select name="debit-card" id="debit-card">
+                                                    <option value="">Debit card*</option>
+                                                </select>
+                                        </div>
+                        </div>
+                        <form class="form billing-details">
+                            <h2>Billing Details</h2>
+                            <div class="form-consent">
+                                <input name="contactConsent" type="checkbox" id="checkConsent">
+                                <label for="checkConsent">Use the same details for billing details</label>
+                            </div>
+                        
+                            <div class="form-input">
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                    <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                    <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                    <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                    <input type="text" name="l-name" id="l-name" placeholder="Last Name*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/house-black.svg')}}" alt="house" class="black">
+                                    <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
+                                    <input type="text" name="address-1" id="adress-1" placeholder="Address 1*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/house-black.svg')}}" alt="house" class="black">
+                                    <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
+                                    <input type="text" name="address-1" id="adress-1" placeholder="Address 2*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/city-black.svg')}}" alt="city-black" class="black">
+                                    <img src="{{url('img/master/city-red.svg')}}" alt="city-red" class="red"></span>
+                                    <input type="text" name="city" id="city" placeholder="City/Town*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/postcode-black.svg')}}" alt="postcode-black" class="black">
+                                    <img src="{{url('img/master/postcode-red.svg')}}" alt="postcode-red" class="red"></span>
+                                    <input type="text" name="postcode" id="postcode" placeholder="PostCode*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/province-black.svg')}}" alt="province-black" class="black">
+                                    <img src="{{url('img/master/province-red.svg')}}" alt="province-red" class="red"></span>
+                                    <input type="text" name="province" id="province" placeholder="Province*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/pin-black.svg')}}" alt="pin-black" class="black">
+                                    <img src="{{url('img/master/pin-red.svg')}}" alt="pin-red" class="red"></span>
+                                    <input type="text" name="location" id="location" placeholder="United Kingdom*" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a class="btn-white">
+                                    <img src="{{url('img/cart/previous-arrow.svg')}}" alt="previous-arrow">
+                                    Previous
+                                </a>
+                                <a class="btn-blue">
+                                    Next
+                                    <img src="{{url('img/cart/next-arrow.svg')}}" alt="next-arrow">
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form-inner delegate">
+                        <div class="card-detail">
+                                        <p>CCNA Training</p>
+                                        <div class="input-container">
+                                        <p><strong>Booking Type:</strong> Online</p>
+                                        </div>
+                        </div>
+                        <form class="form billing-details delegate-details">
+                            <h2>Delegate Details</h2>
+                            <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
+                            <div class="form-consent">
+                                <input name="contactConsent" type="checkbox" id="checkConsent">
+                                <label for="checkConsent">Use your Details</label>
+                            </div>
+                        
+                            <div class="form-input">
+                                <h3>Delegate 1</h3>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                    <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                    <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                    <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                    <input type="text" name="l-name" id="l-name" placeholder="Last Name*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
+                                    <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                    <div class="phonecode-field field-black">
+                                        <select class="country-code"></select>
+                                        <span class="prefix"></span>
+                                        <input type="number" class="telephone" placeholder="Phone Number*" min=0>
+                                        <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                            <input type="text" name="phone" class="phonenumber" tabindex="-1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
+                                    <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                    <div class="phonecode-field field-black">
+                                        <select class="country-code"></select>
+                                        <span class="prefix"></span>
+                                        <input type="number" class="telephone" placeholder="Phone Number*" min=0>
+                                        <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                            <input type="text" name="phone" class="phonenumber" tabindex="-1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                    <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                    <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                    <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                    <input type="text" name="confirm-email" id="confirm-email" placeholder="Confirm Email*" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a class="btn-white">
+                                    <img src="{{url('img/cart/previous-arrow.svg')}}" alt="previous-arrow">
+                                    Previous
+                                </a>
+                                <a class="btn-blue">
+                                    Next
+                                    <img src="{{url('img/cart/next-arrow.svg')}}" alt="next-arrow">
+                                </a>
+                            </div>
+                        </form>
+                        
+                    </div>
                     <div class="payment-detail">
                         <div class="payment">
                             <h2>Payment Detail</h2>

@@ -50,6 +50,7 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
+                        @if (!empty($selectedCourse->countryContent['overview']))
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -58,7 +59,9 @@
                                 Overview
                             </p>
                             <div class="number">01</div>
-                        </li>
+                        </li> 
+                        @endif
+                        
 
                         <li class="tab-click" data-target="course">
                             <span class="image">
@@ -94,6 +97,8 @@
                             </li>
                         @endif
                     </ul>
+
+                    @if (!empty($selectedCourse->countryContent['overview']))
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
@@ -105,18 +110,23 @@
                             </a>
                         </div>
                     </div>
+                    @endif
+                        
                     <div class="tab-content tab-common" id="course">
+                        @if (!empty($selectedCourse->countryContent['summery']))                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Content</h2>
-                            {!! $selectedCourse->countryContent->overview !!}
+                            
+                            {!!$selectedCourse->countryContent->summery!!}
+                            
                         </div>
                         <div class="buttons">
                             <a href="#showmorecontent" class="btn-blue showmorecontent">
                                 <span class="text">Show More</span>
                             </a>
                         </div>
+                        @endif
                     </div>
-
                     @if ($selectedCourse->faqs->isNotEmpty())
                         <div class="tab-content" id="faq">
                             <div class="heading">
@@ -188,7 +198,7 @@
     <!-- End Unable Section -->
 
     <!-- Start Training Section -->
-    <section class="flex-container training">
+    <section class="flex-container training" id="datesprices">
         <div class="container">
             <div class="training-container">
                 <div class="heading center-heading">
@@ -324,7 +334,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$schedules->links()}}
+                                {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="virtual-block">
@@ -368,7 +378,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$virtualSchedules->links()}}
+                                {{$virtualSchedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="online-block">
@@ -490,14 +500,27 @@
                     <div class="info">
                         <h2>{{$selectedCourse->name}}</h2>
                     </div>
+                    {{-- {{dd($virtualSchedules->first()->event_price)}} --}}
                     <div class="price">
-                        @if ($schedules->first()->response_discounted_price < $schedules->first()->event_price)
-                        <span class="rate">£{{$schedules->first()->event_price}}</span>  
-                        <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
-                            
-                        @else
-                        <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                        @if ($schedules->isNotEmpty())
+                            @if (!empty($schedules->first()->response_discounted_price) < !empty($schedules->first()->event_price))
+                            <span class="rate">£{{$schedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                            @endif
+                        @elseif($virtualSchedules->isNotEmpty())
+                            @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->first()->event_price))
+                            <span class="rate">£{{$virtualSchedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$virtualSchedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$virtualSchedules->first()->event_price}}</span> 
+                            @endif
                         @endif
+                        
+                        
                         
                         <div class="buy">
                             <span>
@@ -768,6 +791,70 @@
    function submitOnlineForm() {
       $("#onlineBookingForm").submit();
    }
+
+   $(document).ready(function(){
+      @if(!empty($hash))
+         window.location.hash = "{{$hash}}";
+      @endif
+      $(window).on('hashchange',function(){ 
+        var hash = window.location.hash;
+        if(hash!="")
+         openSpecificDeliveryMethod(hash);
+      });
+      if(window.location.href)
+      {
+        var hash = window.location.hash;
+        if(hash!="")
+        openSpecificDeliveryMethod(hash);
+      }
+    });
+    function openSpecificDeliveryMethod(method)
+    {
+      method = method.replace(/(?![a-z0-9-])./gi, ""); 
+      switch(method){
+      case 'classroom-booking':
+            displaySchedules('classroom');
+            $("#classroom").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'virtual-booking' :
+            displaySchedules('virtual');
+            $("#virtual").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'online-booking' :
+            displaySchedules('online');
+            $("#online").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'onsite-booking' :
+            displaySchedules('onsite');
+            $("#onsite").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      default:
+         scrollToSpecificDiv("#"+method);
+         break;
+      }
+    }
+    function scrollToSpecificDiv(selector)
+    {
+      if($(selector).length>0)
+      {
+         var selectorTop = $(selector).offset().top;
+         console.log(selectorTop);
+         $('html,body').animate({ 
+            scrollTop:selectorTop
+         }, 1000);
+      }
+      else{
+         console.log('scrolltop not found');
+      }
+    }
 </script>
 
 @endsection
