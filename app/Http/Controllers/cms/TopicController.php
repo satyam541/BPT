@@ -12,9 +12,9 @@ use App\Models\Category;
 use App\Models\Country;
 use App\Models\Course;
 use App\Models\Faq;
-use App\Models\whatsIncluded;
+use App\Models\WhatsIncluded;
 use App\Models\BulletPoint;
-use App\Models\whatsIncludedHeaders;
+use App\Models\WhatsIncludedHeaders;
 use App\Models\Accreditation;
 use App\Http\Requests\cms\TopicContentRequest;
 use App\Http\Requests\cms\TopicRequest;
@@ -45,7 +45,7 @@ class TopicController extends Controller
             $topics = Topic::whereHas('popular')->get();
             $checked='checked';
         }
-        return view('cms.topic.topiclist',compact('topics','checked'));
+        return view('cms.topic.topicList',compact('topics','checked'));
     }
 
     public function unlinkedTopicList()

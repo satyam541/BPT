@@ -198,7 +198,7 @@
     <!-- End Unable Section -->
 
     <!-- Start Training Section -->
-    <section class="flex-container training">
+    <section class="flex-container training" id="datesprices">
         <div class="container">
             <div class="training-container">
                 <div class="heading center-heading">
@@ -791,6 +791,70 @@
    function submitOnlineForm() {
       $("#onlineBookingForm").submit();
    }
+
+   $(document).ready(function(){
+      @if(!empty($hash))
+         window.location.hash = "{{$hash}}";
+      @endif
+      $(window).on('hashchange',function(){ 
+        var hash = window.location.hash;
+        if(hash!="")
+         openSpecificDeliveryMethod(hash);
+      });
+      if(window.location.href)
+      {
+        var hash = window.location.hash;
+        if(hash!="")
+        openSpecificDeliveryMethod(hash);
+      }
+    });
+    function openSpecificDeliveryMethod(method)
+    {
+      method = method.replace(/(?![a-z0-9-])./gi, ""); 
+      switch(method){
+      case 'classroom-booking':
+            displaySchedules('classroom');
+            $("#classroom").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'virtual-booking' :
+            displaySchedules('virtual');
+            $("#virtual").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'online-booking' :
+            displaySchedules('online');
+            $("#online").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      case 'onsite-booking' :
+            displaySchedules('onsite');
+            $("#onsite").addClass('active');
+            $("select[name=deliveryMethod]").val("#"+method);
+            scrollToSpecificDiv("#datesprices");
+            break;
+      default:
+         scrollToSpecificDiv("#"+method);
+         break;
+      }
+    }
+    function scrollToSpecificDiv(selector)
+    {
+      if($(selector).length>0)
+      {
+         var selectorTop = $(selector).offset().top;
+         console.log(selectorTop);
+         $('html,body').animate({ 
+            scrollTop:selectorTop
+         }, 1000);
+      }
+      else{
+         console.log('scrolltop not found');
+      }
+    }
 </script>
 
 @endsection

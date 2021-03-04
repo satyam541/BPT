@@ -57,6 +57,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
 Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
 Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
 
@@ -100,19 +101,14 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/privacy-policy',function(){
-    return view('privacy-policy');
-})->name('privacy-policy');
+Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
 
 Route::get('/terms-and-conditions',function(){
 })->name('terms-and-conditions');
 
-Route::get('/third-party-trademarks',function(){
-})->name('third-party');
+Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
 
-Route::get('/cookies',function(){
-    
-})->name('cookies');
+Route::get('/cookies','CommonPageController@index')->name('cookies');
 Route::get('/topic',function(){
        return view('topic');
 })->name('topic');

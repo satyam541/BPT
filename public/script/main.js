@@ -384,3 +384,25 @@ $('#scroll').click(function(){
 }); 
 // End scroll top
 
+function stepOne() {
+ $('#stepTwo').addClass('step-active');
+ $('#stepOne').hide().removeClass('step-active');
+}
+
+function prev() {
+    $('#stepOne').addClass('step-active');
+    $('#stepTwo').removeClass('step-active');
+}
+function stepThree() {
+    $('#stepThree').addClass('step-active');
+    $('#stepTwo').hide().removeClass('step-active');
+}
+function prevTwo() {
+    $('#stepTwo').addClass('step-active');
+    $('#stepThree').removeClass('step-active');
+}
+function stepFour() {
+    $('#stepFour').addClass('step-active');
+    $('#stepThree').hide().removeClass('step-active');
+}
+

@@ -16,37 +16,23 @@ class WebsiteDashboardController extends Controller
 {
     public function index()
     {
-        $courseData = [];
-        $courses = Course::orderBy('display_order', 'desc')->orderBy('topic_id')->get();
-        $data['total_courses']        =    $courses->count();
-        $data['total_enquiries']    =    Enquiry::all()->count();
+        $courseData                 =    array();
+       
+        $courses                    =    Course::with('schedule:id,course_id,response_location')->select('id','name','display_order','topic_id', 'reference')->orderBy('display_order', 'desc')->orderBy('topic_id')->get();
+        $data['total_courses']      =    $courses->count();
+        $data['total_enquiries']    =    Enquiry::count();
         $data['total_locations']    =    Location::all()->count();
-        $data['total_schedules']    =    Schedule::where('response_date', '>', Carbon::now())->get()->count();
+        $data['total_schedules']    =    Schedule::where('response_date', '>', Carbon::now())->where('country_id', country()->country_code)->count();
         foreach ($courses as $course) {
             $course_schedule['course_data']    = $course;
             $course_schedule['schedule_count'] = $course->schedule->count();
             $course_schedule['location_count'] =  $course->schedule->groupBy('response_location')->count();
             $courseData[] = $course_schedule;
         }
-        $locationCount['1']                     =   Location::where('tier', 1)->count();
-        $locationCount['2']                     =   Location::where('tier', 2)->count();
-        $locationCount['3']                     =   Location::where('tier', 0)->count();
-        $scheduleCount['classroom']             =   Schedule::where('response_date', '>', Carbon::now())->where('response_location', '!=', 'virtual')->count();
-        $scheduleCount['virtual']               =   Schedule::where('response_date', '>', Carbon::now())->where('response_location', 'virtual')->count();
-        $enquiryCount['general']                =   Enquiry::where('type', 'LIKE', "%general%")->orWhere('type', 'LIKE', '%header%')->count();;
-        $enquiryCount['course']                 =   Enquiry::whereNotNull('course')->count();;
-        $enquiryCount['onsite']                 =   Enquiry::where('type', 'LIKE', "%onsite%")->count();
-        $enquiryCount['classroom']              =   Enquiry::whereNotNull('location')->where('location', '!=', 'Virtual')->count();
-        $enquiryCount['virtual']                =   Enquiry::where('location', 'Virtual')->count();
-        $enquiryCount['vacancy']                =   Enquiry::where('type', 'LIKE', "%career%")->count();
-        $enquiryCount['location']               =   Enquiry::where('type', 'like', '%location%')->count();
-        $count['location']                      =   $locationCount;
-        $count['schedule']                      =   $scheduleCount;
-        $count['enquiry']                       =   $enquiryCount;
-        $data['count'] = $count;
-        //    dd($count);
+        
+       
+
         $data['courses'] = collect($courseData);
-        // dd($data);
         return view("cms.websiteContent.websiteDashboard", $data);
     }
 
