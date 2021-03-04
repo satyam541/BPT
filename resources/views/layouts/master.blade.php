@@ -180,23 +180,10 @@
             <li><a class="open-popup enquiryJS">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
     </nav>  
-    <a class="top-arrow smoothscroll" id="scroll" data-href=".banner" >
-                <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
+    <a class="up-arrow smoothscroll" id="scroll" data-href=".banner" >
+        <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
     </a>
-    <div class="flex-container no-schedule">
-        <div class="heading center-heading">
-            <h2>Managing Change and Leading Teams</h2>
-        </div>
-            <p>Contact us for Date and Price</p>
-            <div class="buttons">
-                <div class="btn-blue">
-                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
-                </div>
-            </div>
-                <p>---- OR ----</p>
-                <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.</p>
-        </div>
-</div>
+    
 
 
 </body>

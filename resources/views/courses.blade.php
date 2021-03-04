@@ -50,7 +50,10 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        @if (!empty($selectedCourse->countryContent['overview']))
+                        @php
+                        $content = $selectedCourse->countryContent;
+                        @endphp
+                        @if (!empty($content['overview']))
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -61,17 +64,23 @@
                             <div class="number">01</div>
                         </li> 
                         @endif
+                       
+                        @if (
+                            !empty($content['summary']) || !empty($content['detail']) || 
+                            !empty($content['pre_requities']) || !empty($content['who_should_attend']) || 
+                            !empty($content['what_will_you_learn']) 
+                            )
+                            <li class="tab-click" data-target="course">
+                                <span class="image">
+                                    <img src="{{ url('img/courses/content.svg') }}" alt="content">
+                                </span>
+                                <p class="tab">
+                                    Course Content
+                                </p>
+                                <div class="number">02</div>
+                            </li>
+                        @endif
                         
-
-                        <li class="tab-click" data-target="course">
-                            <span class="image">
-                                <img src="{{ url('img/courses/content.svg') }}" alt="content">
-                            </span>
-                            <p class="tab">
-                                Course Content
-                            </p>
-                            <div class="number">02</div>
-                        </li>
                         @if ($selectedCourse->faqs->isNotEmpty())
                             <li class="tab-click" data-target="faq">
                                 <span class="image">
@@ -98,11 +107,11 @@
                         @endif
                     </ul>
 
-                    @if (!empty($selectedCourse->countryContent['overview']))
+                    @if (!empty($content['overview']))
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
-                            {!! $selectedCourse->countryContent->overview !!}
+                            {!! $content->overview !!}
                         </div>
                         <div class="buttons">
                             <a href="#showmorecontent" class="btn-blue showmorecontent">
@@ -111,13 +120,30 @@
                         </div>
                     </div>
                     @endif
-                        
-                    <div class="tab-content tab-common" id="course">
-                        @if (!empty($selectedCourse->countryContent['summery']))                        
+                    @if (
+                            !empty($content['summary']) || !empty($content['detail']) || 
+                            !empty($content['pre_requities']) || !empty($content['who_should_attend']) || 
+                            !empty($content['what_will_you_learn']) 
+                        )
+                    <div class="tab-content tab-common" id="course">                   
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Content</h2>
+                            @if (!empty($content['summary']))
+                            {!!$content->summary!!}
+                            @endif
+                            @if (!empty($content['detail']))
+                            {!!$content->detail!!}
+                            @endif
+                            @if (!empty($content['pre_requities']))
+                            {!!$content->pre_requities!!}
+                            @endif
+                            @if (!empty($content['who_should_attend']))
+                            {!!$content->who_should_attend!!}
+                            @endif
+                            @if (!empty($content['what_will_you_learn']))
+                            {!!$content->what_will_you_learn!!}
+                            @endif
                             
-                            {!!$selectedCourse->countryContent->summery!!}
                             
                         </div>
                         <div class="buttons">
@@ -125,8 +151,9 @@
                                 <span class="text">Show More</span>
                             </a>
                         </div>
-                        @endif
+                        
                     </div>
+                    @endif
                     @if ($selectedCourse->faqs->isNotEmpty())
                         <div class="tab-content" id="faq">
                             <div class="heading">
@@ -182,11 +209,8 @@
     <section class="flex-container unable">
         <div class="container">
             <div class="unable-container">
-                <h2>Unable to Spare Entire Days Training?</h2>
-                <p>We offer the option to learn virtually over consecutive half-days, whilst maintaining your quality
-                    day-to-day working commitments. We offer the option to learn virtually over consecutive half-days,
-                    whilst maintaining your quality day-to-day working commitments. We offer the option to learn virtually
-                    over consecutive half-days, whilst maintaining your quality day-to-day working commitments.</p>
+                <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
+                <p>{!! $pageDetail->overlay['heading']->content !!}</p>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Have a Question?">
                         <img src="{{ url('img/master/arrow.svg') }}" alt="arrow">Have a Question?
@@ -388,6 +412,20 @@
                     </div>
                 </div>
             </div>
+            <div class="no-schedule">
+                <div class="heading center-heading">
+                    <h2>Managing Change and Leading Teams</h2>
+                </div>
+                <p>Contact us for Date and Price</p>
+                <div class="buttons">
+                    <div class="btn-blue">
+                        Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                    </div>
+                </div>
+                <p>---- OR ----</p>
+                <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.</p>
+            </div>
+    </div>
         </div>
     </section>
     <!-- End Training Section -->
@@ -397,50 +435,23 @@
         <div class="container">
             <div class="virtual-container">
                 <div class="virtual-list">
+                    @foreach ($pageDetail->features as $feature)
                     <div class="virtual-content">
                         <div class="content">
                             <span>
-                                <img src="{{ url('img/courses/conference.svg') }}" alt="conference">
+                                <img src="{{ $feature->getImagePath() }}" alt="{{$feature->image_alt}}">
                             </span>
-                            <h2>Video Conferencing</h2>
+                            <h2>{!! $feature->heading !!}</h2>
                         </div>
-                        <p>Using the best web conferencing software to facilitate learner-teacher-learner communication.</p>
+                        <p>{!! $feature->content !!}</p>
                     </div>
-                    <div class="virtual-content">
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/whiteboard.svg') }}" alt="whiteboard">
-                            </span>
-                            <h2>Digital Whiteboards</h2>
-                        </div>
-                        <p>Offering real -time demonstrations and diagrams.Offering real -time demonstrations and diagrams.
-                        </p>
-                    </div>
-                    <div class="virtual-content">
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/messaging.svg') }}" alt="messaging">
-                            </span>
-                            <h2>Instant Messaging</h2>
-                        </div>
-                        <p>Allowing typed conversations on lower bandwidths.Offering real -time demonstrations and diagrams.
-                        </p>
-                    </div>
-                    <div class="virtual-content">
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/control.svg') }}" alt="control">
-                            </span>
-                            <h2>Participation Controls</h2>
-                        </div>
-                        <p>Enabling students to participate in discussions, mute their surroundings or virtually "raise"
-                            their hands. </p>
-                    </div>
+                    @endforeach
+                    
                 </div>
                 <div class="virtual-img">
-                    <h2>The Role of Virtual Classrooms in Future Learning</h2>
+                    <h2>{!! $pageDetail->features_right['heading']->heading !!}</h2>
                     <span>
-                        <img src="{{ url('img/courses/future.png') }}" alt="future">
+                        <img src="{{ $pageDetail->features_right['heading']->getImagePath() }}" alt="{{$pageDetail->features_right['heading']->image_alt}}">
                     </span>
                 </div>
             </div>
@@ -454,38 +465,26 @@
             <div class="work-container">
                 <div class="work-content">
                     <div class="heading">
-                        <h2>How It <span>Works?</span></h2>
-                        <p>FIND COURSES</p>
+                        <h2>{!! heading_split($pageDetail->work_flow['heading']->heading) !!}</h2>
+                        <p>{!! $pageDetail->work_flow['heading']->page_tag_line !!}</p>
                     </div>
-                    <p>Choose from over 200 courses which cover all aspects of business and personal training, including
-                        Project Management, IT Security, Business and many more.Our courses cater to every training need,
-                        from introductory crash courses to advanced</p>
+                    <p>{!! $pageDetail->work_flow['heading']->content !!}</p>
                 </div>
+                @php
+                    unset($pageDetail->work_flow['heading']);
+                @endphp
                 <div class="work-list">
+
+                    @foreach ($pageDetail->work_flow as $flow)
                     <div class="content">
                         <span>
-                            <img src="{{ url('img/courses/search.svg') }}" alt="search">
+                            <img src="{{ $flow->getImagePath() }}" alt="{{$flow->image_alt}}}">
                         </span>
-                        <h3>Search Courses</h3>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including
-                        </p>
+                        <h3>{!! $flow->heading !!}</h3>
+                        <p>{!! $flow->content !!}</p>
                     </div>
-                    <div class="content">
-                        <span>
-                            <img src="{{ url('img/courses/details.svg') }}" alt="details">
-                        </span>
-                        <h3>View Course Details</h3>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including
-                        </p>
-                    </div>
-                    <div class="content">
-                        <span>
-                            <img src="{{ url('img/courses/book.svg') }}" alt="book">
-                        </span>
-                        <h3>Book Course</h3>
-                        <p>Choose from over 200 courses which cover all aspects of business and personal training, including
-                        </p>
-                    </div>
+                    @endforeach
+                   
                 </div>
             </div>
         </div>
@@ -538,38 +537,22 @@
                 </div>
                 <div class="language-content">
                     <div class="heading">
-                        <h2>Amazing Courses To Learn <span>Language Better</span></h2>
+                        <h2>{!! heading_split($pageDetail->benefits['heading']->heading) !!}</h2>
                     </div>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                        professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                        consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                        literature, discovered the undoubtable source. Lorem Ipsum comes from sections</p>
+                    <p>{!! $pageDetail->benefits['heading']->content !!}</p>
+                    @php
+                        unset($pageDetail->benefits['heading'])
+                    @endphp
                     <div class="language-list">
-                        <div class="content">
+                        @foreach ($pageDetail->benefits as $benefit)
+                            <div class="content">
                             <span>
-                                <img src="{{ url('img/courses/skilled.svg') }}" alt="skilled">
+                                <img src="{{ $benefit->getImagePath() }}" alt="{{$benefit->image_alt}}">
                             </span>
-                            <h3>Skilled Trainers</h3>
+                            <h3>{!! $benefit->heading !!}</h3>
                         </div>
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/affordable.svg') }}" alt="affordable">
-                            </span>
-                            <h3>Affordable Courses</h3>
-                        </div>
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/flexible.svg') }}" alt="flexible">
-                            </span>
-                            <h3>Efficient & Flexible</h3>
-                        </div>
-                        <div class="content">
-                            <span>
-                                <img src="{{ url('img/courses/access.svg') }}" alt="access">
-                            </span>
-                            <h3>Lifetime Access</h3>
-                        </div>
+                        @endforeach
+                        
                     </div>
                     <div class="buttons">
                         <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
@@ -587,12 +570,16 @@
         <div class="container">
             <div class="skill-container">
                 <div class="heading">
-                    <h2>Learn a New Skill From <span>Online Courses</span></h2>
+                    <h2>{!! heading_split($pageDetail->online_courses['heading']->heading) !!}</h2>
                 </div>
+                @php
+                    unset($pageDetail->online_courses['heading'])
+                @endphp
                 <div class="skill-list">
+                    @foreach ($pageDetail->online_courses as $item)
                     <div class="skill-content">
-                        <h3>Learn The Latest Skills</h3>
-                        <p>Like business analytics, graphic design, Python, and more.</p>
+                        <h3>{!! $item->heading !!}</h3>
+                        <p>{!! $item->content !!}</p>
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
                                 <img src="{{ url('img/courses/email.svg') }}" alt="email">
@@ -600,36 +587,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="skill-content">
-                        <h3>100k Online Courses</h3>
-                        <p>In high-demand fields like IT, AI and cloud engineering.</p>
-                        <div class="buttons">
-                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
-                                <img src="{{ url('img/courses/email.svg') }}" alt="email">
-                                Enquire Now
-                            </a>
-                        </div>
-                    </div>
-                    <div class="skill-content">
-                        <h3>Earn a Certificate</h3>
-                        <p>From a leading university in business, computer science, and more.</p>
-                        <div class="buttons">
-                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
-                                <img src="{{ url('img/courses/email.svg') }}" alt="email">
-                                Enquire Now
-                            </a>
-                        </div>
-                    </div>
-                    <div class="skill-content">
-                        <h3>Up Your Skill</h3>
-                        <p>With on-demand training and development programs.</p>
-                        <div class="buttons">
-                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
-                                <img src="{{ url('img/courses/email.svg') }}" alt="email">
-                                Enquire Now
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
+                   
                 </div>
             </div>
         </div>
@@ -644,54 +603,15 @@
                     <h2>Explore Related Courses</h2>
                 </div>
                 <div class="related-list">
-                    <a href="javascript:void(0);" class="related-content">
+                    @foreach ($relatedCourses as $relatedCourse)
+                    <a href="{{ $relatedCourse->url }}" class="related-content">
                         <span>
                             <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
                         </span>
-                        <div class="name">MOV® Training</div>
+                        <div class="name">{!! $relatedCourse->name !!}</div>
                     </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">Scrum Training</div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">CISA Training </div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">Linux Training Courses</div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">Primavera Training Courses</div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">Agile Project Management Training</div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">P3O® Training</div>
-                    </a>
-                    <a href="javascript:void(0);" class="related-content">
-                        <span>
-                            <img src="{{ url('img/courses/related-book.svg') }}" alt="related-book">
-                        </span>
-                        <div class="name">APMP Training</div>
-                    </a>
+                    @endforeach
+                  
                 </div>
             </div>
         </div>
@@ -703,10 +623,8 @@
         <div class="container">
             <div class="popular-container">
                 <div class="popular-content">
-                    <h2>Largest Location</h2>
-                    <p>Southampton is the largest city located in England. The city is situated 69 miles south-west of
-                        London and 15 miles west north-west of Portsmouth. Southampton is the main port and neigh bouring
-                        city.</p>
+                    <h2>{!! $pageDetail->largest_location['heading']->heading !!}</h2>
+                    <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                     <div class="buttons">
                         <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
                             <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
@@ -716,63 +634,21 @@
                 </div>
                 <div class="location-content">
                     <div class="heading">
-                        <h2>Find The Most Convenient <span>Location For You</span></h2>
+                        <h2>{!! heading_split($pageDetail->location['heading']->heading) !!}</h2>
                     </div>
                     <div class="location-list">
-                        <a href="javascript:void(0);" class="content">
+                        @foreach ($popularLocations as $popularLocation)
+                        <a href="{{$popularLocation->url}}" class="content">
                             <span class="image">
                                 <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
                             </span>
-                            <div class="location-name">London</div>
+                            <div class="location-name">{!! $popularLocation->name !!}</div>
                             <span class="arrow">
                                 <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
                             </span>
                         </a>
-                        <a href="javascript:void(0);" class="content">
-                            <span class="image">
-                                <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
-                            </span>
-                            <div class="location-name">Birminghamon</div>
-                            <span class="arrow">
-                                <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
-                            </span>
-                        </a>
-                        <a href="javascript:void(0);" class="content">
-                            <span class="image">
-                                <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
-                            </span>
-                            <div class="location-name">Manchester</div>
-                            <span class="arrow">
-                                <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
-                            </span>
-                        </a>
-                        <a href="javascript:void(0);" class="content">
-                            <span class="image">
-                                <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
-                            </span>
-                            <div class="location-name">Cardiff</div>
-                            <span class="arrow">
-                                <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
-                            </span>
-                        </a>
-                        <a href="javascript:void(0);" class="content">
-                            <span class="image">
-                                <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
-                            </span>
-                            <div class="location-name">Bristol</div>
-                            <span class="arrow">
-                                <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
-                            </span>
-                        </a>
-                        <a href="javascript:void(0);" class="content">
-                            <span class="image">
-                                <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
-                            </span>
-                            <div class="location-name">Leeds</div>
-                            <span class="arrow">
-                                <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
-                            </span>
-                        </a>
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>

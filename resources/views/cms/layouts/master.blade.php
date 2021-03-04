@@ -9,22 +9,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('adminlte/cms/tabs/tab.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
   <!-- Tempusdominus Bbootstrap 4 -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}"> --}}
   <!-- iCheck -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}"> --}}
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}"> --}}
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/toggle/toggle.css')}}">
   <link rel="stylesheet" href="{{url('adminlte/plugins/locationTier/locationTier.css')}}">
   <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}"> --}}
   <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -816,7 +816,7 @@ $.widget.bridge('uibutton', $.ui.button)
 {{-- Toastr js --}}
 <script src="{{Url('adminlte/plugins/toastr/toastr.min.js')}}"></script>
 <!-- SweetAlert2 -->
-<script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+{{-- <script src="{{Url('adminlte/plugins/sweetalert2/sweetalert2.min.js')}}"></script> --}}
 @yield('footer')
 <script>
   var selectedcountry = '{{ route("selectedcountry") }}';
