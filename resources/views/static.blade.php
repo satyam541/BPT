@@ -13,7 +13,7 @@
                     <li><a href="{{route('home')}}">Home</a></li>
                     <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                     <li><img src="{{url('img/master/breadcrum-black.svg')}}" alt="arrow" class="black"></li>
-                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">{!!$pageDetail->banner['header']->heading!!}</a></li>
                 </ul>
             </div>
         </div>
