@@ -331,6 +331,19 @@ Route::get('/category/restorecategory/{id}','CategoryController@restoreCategory'
 Route::get('/category/deletecategory/{id}','CategoryController@forceDeleteCategory')->name('forceDeleteCategory');
 
 
+Route::get('/topic/content/trash','TopicController@trashTopicContent')->name('topicContentTrashList');
+Route::get('/topic/restoretopiccontent/{id}','TopicController@restoreTopicContent')->name('restoreTopicContent');
+Route::get('/topic/deletetopiccontent/{id}','TopicController@forceDeleteTopicContent')->name('forceDeleteTopicContent');
+
+
+Route::get('/course/content/trash','CourseController@courseContentTrash')->name('courseContentTrashList');
+Route::get('/course/restore/coursecontent/{id}','CourseController@restoreCourseContent')->name('restoreCourseContent');
+Route::get('/course/delete/coursecontent/{id}','CourseController@forceDeleteCourseContent')->name('forceDeleteCourseContent');
+
+Route::get('/category/content/trash','CategoryController@categoryContentTrash')->name('categoryContentTrashList');
+Route::get('/category/restore/categorycontent/{id}','CategoryController@restoreCategoryContent')->name('restoreCategoryContent');
+Route::get('/category/delete/categorycontent/{id}','CategoryController@forceDeleteCategoryContent')->name('forceDeleteCategoryContent');
+
 Route::get('/topictrash','TopicController@topictrashList')->name('topicTrashList');
 Route::get('/topic/restoretopic/{id}','TopicController@restoreTopic')->name('restoreTopic');
 Route::get('/topic/deletetopic/{id}','TopicController@forceDeleteTopic')->name('forceDeleteTopic');
