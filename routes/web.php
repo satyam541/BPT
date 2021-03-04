@@ -103,15 +103,14 @@ Route::get('/cart', function () {
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
 
-Route::get('/terms-and-conditions',function(){
-})->name('terms-and-conditions');
+Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-and-conditions');
 
 Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
 
 Route::get('/cookies','CommonPageController@index')->name('cookies');
-Route::get('/topic',function(){
-       return view('topic');
-})->name('topic');
+// Route::get('/topic',function(){
+//        return view('topic');
+// })->name('topic');
 
 Route::fallback(function(){
     return  redirect()->route('404');

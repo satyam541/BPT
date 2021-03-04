@@ -12,6 +12,7 @@ class Topic extends Model
     protected $table = 'topic';
     protected $guarded = array('id');
     protected $appends = ['url'];
+    protected $withCount = ['courses'];
     public $image_path = "uploads/topic/";
     
     public $combinedAttributes = array();

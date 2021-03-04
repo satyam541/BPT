@@ -21,8 +21,9 @@ class Location extends Model
             $builder->where("country_id", country()->country_code);
         });
         static::addGlobalScope('order', function (Builder $builder) {
-            // $builder->orderByRaw("Field(tier,'1','2','3','4','0')");
-            $builder->orderByRaw("Field(name,'London','Birmingham','Manchester')");
+           
+            
+            $builder->orderByRaw("Field(tier,'1','2','3','4','0')");$builder->orderByRaw("Field(name,'London','Birmingham','Manchester')");
             $builder->orderBy('name');
         });
         
