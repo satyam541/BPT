@@ -76,6 +76,9 @@
         h2 {
             margin-bottom: 2rem;
         }
+        .form-input {
+            width: 95%;
+        }
     }
     .form-inner{
         box-shadow: @shadowLight;
@@ -83,6 +86,11 @@
          margin-top: 2rem;
          display: none;
          flex-direction: column;
+    }
+    .group-input {
+        display: flex;
+        height: 238px;
+        overflow-y: scroll;
     }
     .card-detail{
         background-color: @lightblueColor;
@@ -129,7 +137,7 @@
      }
     }
     .delegate{
-        display: flex;
+        display: none;
         .card-detail{
             .input-container{
                 display: flex;
@@ -199,5 +207,8 @@
             }
         }
     }
+}
+.step-active{
+    display: flex !important;
 }
 // End Steps Section
