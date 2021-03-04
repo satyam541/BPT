@@ -12915,6 +12915,7 @@ select::-ms-expand {
   background-size: 100% 75%;
   background-position: bottom;
   padding: 0.5rem;
+  z-index: 1;
 }
 .steps .detail-container .detail {
   display: flex;
@@ -12950,14 +12951,81 @@ select::-ms-expand {
   margin-top: 2rem;
 }
 .steps .form {
-  display: none;
+  display: flex;
   flex-direction: column;
+  z-index: 0;
 }
 .steps .form h2 {
   margin-bottom: 2rem;
 }
-.steps .payment-detail {
+.steps .form-inner {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+.steps .card-detail {
+  background-color: #0064D8;
+  padding: 1rem;
+}
+.steps .card-detail p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+.steps .card-detail .input-container {
+  padding-right: 0.7rem;
+  background-color: #f8f8f8;
+}
+.steps .card-detail .input-container select {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0 0 0.7rem;
+  background-color: transparent;
+}
+.steps .billing-details {
+  position: relative;
+  box-shadow: none;
+  padding: 0;
+}
+.steps .billing-details h2 {
+  margin-bottom: 1rem!important;
+}
+.steps .billing-details .form-consent {
+  margin-bottom: 1rem;
+}
+.steps .billing-details .buttons {
+  flex-direction: column;
+}
+.steps .billing-details .buttons .btn-blue {
+  margin-top: 1rem;
+}
+.steps .billing-details .buttons .btn-blue img {
+  margin-left: 5px;
+  margin-right: 0;
+}
+.steps .delegate {
+  display: none;
+}
+.steps .delegate .card-detail .input-container {
   display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  width: 100%;
+}
+.steps .delegate .card-detail .input-container p {
+  color: #181818;
+  margin-bottom: 0;
+}
+.steps .delegate-details .form-consent {
+  margin-top: 1rem;
+}
+.steps .delegate-details .form-input h3 {
+  margin-bottom: 1rem;
+}
+.steps .payment-detail {
+  display: none;
   flex-direction: column;
 }
 .steps .payment-detail .buttons {
@@ -13079,6 +13147,49 @@ select::-ms-expand {
     width: 100%;
     justify-content: flex-end;
   }
+  .steps .form-inner {
+    background-color: #FFFFFF;
+    position: relative;
+    margin-top: 0;
+  }
+  .steps .card-detail {
+    background-image: url(../img/cart/credit-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    padding: 3rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: absolute;
+    top: -32px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  .steps .card-detail .input-container {
+    width: 48%;
+  }
+  .steps .billing-details {
+    padding: 1.5rem 2rem !important;
+    width: 100%!important;
+    background-color: transparent!important;
+    margin-top: 6rem !important;
+  }
+  .steps .billing-details .form-consent label {
+    width: 61%;
+  }
+  .steps .billing-details .buttons {
+    flex-direction: row;
+  }
+  .steps .billing-details .buttons .btn-blue {
+    margin-top: 0;
+  }
+  .steps .billing-details .buttons .btn-white {
+    margin-right: 1rem;
+  }
   .steps .payment-detail {
     background-color: #FFFFFF;
     padding: 2rem;
@@ -13135,6 +13246,39 @@ select::-ms-expand {
   .steps .form {
     padding: 1.5rem 4rem;
   }
+  .steps .card-detail {
+    width: 90%;
+  }
+  .steps .billing-details {
+    padding: 1rem 5rem !important;
+  }
+  .steps .billing-details .form-consent {
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 30px;
+  }
+  .steps .billing-details .form-consent label {
+    width: 40%;
+  }
+  .steps .billing-details .input-container {
+    width: 48%;
+  }
+  .steps .delegate-details p {
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+  .steps .delegate-details .form-consent {
+    margin-top: 0rem;
+    margin-bottom: 0;
+    top: 21px;
+  }
+  .steps .delegate-details .form-consent label {
+    width: 25%;
+  }
+  .steps .delegate-details .form-input h3 {
+    margin-bottom: 1rem;
+  }
   .steps .payment-detail {
     padding: 2rem 3rem;
   }
@@ -13155,6 +13299,9 @@ select::-ms-expand {
   }
   .steps .form {
     padding: 1.5rem 4rem;
+  }
+  .steps .delegate-details .form-consent label {
+    width: 20%;
   }
   .steps .payment-detail {
     padding: 2rem 4rem;
