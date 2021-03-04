@@ -985,6 +985,79 @@ select::-ms-expand {
 .tooltips {
   display: none;
 }
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 20px;
+  border-radius: 4px;
+  width: 100%;
+  height: fit-content;
+}
+.pagination > li {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  padding: 4px 12px;
+  margin-left: -1px;
+  line-height: 1.8;
+  color: #000000;
+  text-decoration: none;
+  box-shadow: 0 0 8px #e1e1e1;
+  font-size: 14px;
+  font-weight: 500;
+  background: #FFFFFF;
+  border-right: 2px solid #0064D8;
+}
+.pagination > li > a:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 8px #c0c0c0;
+  border-right: 2px solid #1C2848;
+  font-weight: 600;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  background: linear-gradient(to bottom right, #1C2848, #0064D8);
+  color: #FFFFFF;
+  border-right: none;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  background: linear-gradient(to bottom right, #1C2848, #0064D8);
+  color: #FFFFFF;
+  border-right: none;
+}
+.pagination > .disabled > a,
+.pagination > .disabled > span,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > span:hover {
+  cursor: not-allowed;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover {
+  z-index: 1;
+  color: #000000;
+  cursor: default;
+  box-shadow: 0 0 8px #c0c0c0;
+  background-color: #FFFFFF;
+  border-right: 2px solid #1C2848;
+}
 @media (min-width : 768px) {
   .buttons .btn-blue,
   .buttons .btn-white {
