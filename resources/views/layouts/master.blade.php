@@ -154,7 +154,6 @@
                     </form>
                 </div>
     </section>
-    
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
@@ -180,11 +179,11 @@
             <li><a class="open-popup enquiryJS">Enquiry<img src="{{url('img/master/mail.svg')}}" alt="mail"></a></li>
             <li><a class="open-popup enquiryJS">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
-    </nav>
-    
+    </nav>  
     <a class="top-arrow smoothscroll" id="scroll" data-href=".banner" >
                 <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
-            </a>
+    </a>
+    
 
 
 </body>

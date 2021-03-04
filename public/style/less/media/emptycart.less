@@ -17,6 +17,41 @@
     }
 }
 // End empty section
+.order{
+    padding: @sectionPadding-md;
+    .order-main{
+        .buttons{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            .btn-white{
+                margin-bottom: 0rem;
+            }
+        }
+    }
+    .inner-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .total-main{
+            width: 40%;
+            position: sticky;
+            top: 85px;
+            
+        }
+        .order-main{
+            width: 58%;
+            .order-courses{
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+         
+        }
+
+    }
+}
 
 }
 
@@ -33,6 +68,60 @@
         }
     }
     // End cart-banner section
+    .order{
+        
+        .inner-content{
+            .total-main{
+                width: 30%;
+                
+            }
+            .order-main{
+                width: 68%;             
+            }
+    
+        }
+        .order-main{
+            .course-info{
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                .detail{
+                    width: 38%;
+                    justify-content: center;
+                    padding: 1rem;
+                    margin-bottom: 0;
+                    li{
+                        &:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .delivery-method{
+                    width: 25%;
+                    flex-direction: column!important;
+                    p{
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                .counts{
+                    flex-direction: column!important;
+                    justify-content: center;
+                    p{
+                        text-align: center;
+                        margin-bottom: 1.5rem;
+                        width: 100%;
+                    }
+                    .count{
+                        margin: 0   auto;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+       
+    }
 }
 
 @media @size-xl{

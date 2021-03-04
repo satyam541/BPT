@@ -8408,6 +8408,24 @@ select::-ms-expand {
   margin: 1.5rem 0 0.5rem;
   text-align: center;
 }
+.training .no-schedule {
+  padding: 3rem 1.5rem;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.training .no-schedule p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.training .no-schedule p strong {
+  color: #0064D8;
+}
+.training .no-schedule .btn-blue img {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
 .virtual {
   padding: 3rem 1.5rem;
 }
@@ -9681,6 +9699,11 @@ select::-ms-expand {
 .order .order-main .buttons {
   flex-direction: column;
 }
+.order .order-main .buttons .btn-white img,
+.order .order-main .buttons .btn-blue img {
+  margin-right: 0;
+  margin-left: 15px;
+}
 .order .order-main .buttons .btn-white {
   margin-bottom: 1rem;
 }
@@ -9693,12 +9716,16 @@ select::-ms-expand {
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
+  background-image: url(../img/emptycart/bg.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 .order .order-heading {
   position: relative;
   padding: 1rem;
   z-index: 1;
-  transform: translate(10px, -34px);
+  transform: translate(0px, -34px);
 }
 .order .order-heading:before {
   content: '';
@@ -9773,16 +9800,17 @@ select::-ms-expand {
   width: 100%;
   height: auto;
 }
-.order .order-courses {
-  margin-top: 2rem;
+.order .order-main {
+  display: flex;
+  flex-direction: column;
 }
-.order .order-courses .course-name {
+.order .order-main .course-name {
   padding: 1rem;
   background-color: #0064D8;
   color: #FFFFFF;
   position: relative;
 }
-.order .order-courses .course-name a {
+.order .order-main .course-name a {
   position: absolute;
   width: 32px;
   height: 32px;
@@ -9793,85 +9821,90 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
-.order .order-courses .course-name a img {
+.order .order-main .course-name a img {
   width: 100%;
   height: 100%;
 }
-.order .order-courses .course-info {
+.order .order-main .course-info {
   padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
-.order .order-courses .course-info .delivery-method {
+.order .order-main .course-info .delivery-method {
   flex-direction: row-reverse !important;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
-.order .order-courses .course-info .delivery-method p {
+.order .order-main .course-info .delivery-method p {
   display: flex;
   width: 80%;
   align-items: flex-end;
   justify-content: flex-end;
 }
-.order .order-courses .course-info .counts {
+.order .order-main .course-info .counts {
   flex-direction: row;
   align-items: center;
 }
-.order .order-courses .course-info .detail {
+.order .order-main .course-info .detail {
   display: flex;
   flex-direction: column;
 }
-.order .order-courses .course-info .detail .mode {
+.order .order-main .course-info .detail .mode {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
+  margin-left: auto;
 }
-.order .order-courses .course-info .detail .icon {
+.order .order-main .course-info .detail .icon {
   width: 50px;
   height: 50px;
 }
-.order .order-courses .course-info .detail .icon img {
+.order .order-main .course-info .detail .icon img {
   width: 100%;
   height: 100%;
 }
-.order .order-courses .course-info .detail li {
+.order .order-main .course-info .detail li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
-.order .order-courses .course-info .detail li p {
+.order .order-main .course-info .detail li p {
   width: 78%;
 }
-.order .order-courses .course-info .detail li span {
+.order .order-main .course-info .detail li span {
   width: 20%;
   font-weight: 900;
   text-align: end;
 }
-.order .order-courses .course-info .counts {
+.order .order-main .course-info .counts {
   flex-direction: row!important;
   justify-content: space-between;
 }
-.order .order-courses .course-info .counts p {
+.order .order-main .course-info .counts p {
   width: 50%;
 }
-.order .order-courses .course-info .counts .count {
+.order .order-main .course-info .counts .count {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 48%;
 }
-.order .order-courses .course-info .counts .count a {
+.order .order-main .course-info .counts .count a {
   padding: 0px 10px;
   background-color: #1C2848;
   color: #FFFFFF;
   border-radius: 20px 0 0 20px;
 }
-.order .order-courses .course-info .counts .count span {
+.order .order-main .course-info .counts .count span {
   margin: 0 0.5rem;
 }
-.order .order-courses .course-info .counts .count .plus {
+.order .order-main .course-info .counts .count .plus {
   border-radius: 0 20px 20px 0;
+}
+.order .order-main .order-courses {
+  margin-top: 2rem;
 }
 @media (min-width : 768px) {
   .cart-banner {
@@ -9887,6 +9920,34 @@ select::-ms-expand {
   .empty span {
     width: 575px;
   }
+  .order {
+    padding: 3rem 2rem;
+  }
+  .order .order-main .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .order .order-main .buttons .btn-white {
+    margin-bottom: 0rem;
+  }
+  .order .inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .order .inner-content .total-main {
+    width: 40%;
+    position: sticky;
+    top: 85px;
+  }
+  .order .inner-content .order-main {
+    width: 58%;
+  }
+  .order .inner-content .order-main .order-courses:first-child {
+    margin-top: 0;
+  }
 }
 @media (min-width : 1024px) {
   .cart-banner {
@@ -9897,6 +9958,48 @@ select::-ms-expand {
   }
   .cart-banner .banner-container {
     width: 50%;
+  }
+  .order .inner-content .total-main {
+    width: 30%;
+  }
+  .order .inner-content .order-main {
+    width: 68%;
+  }
+  .order .order-main .course-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .order .order-main .course-info .detail {
+    width: 38%;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 0;
+  }
+  .order .order-main .course-info .detail li:last-child {
+    margin-bottom: 0;
+  }
+  .order .order-main .course-info .delivery-method {
+    width: 25%;
+    flex-direction: column!important;
+  }
+  .order .order-main .course-info .delivery-method p {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .order .order-main .course-info .counts {
+    flex-direction: column!important;
+    justify-content: center;
+  }
+  .order .order-main .course-info .counts p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .order .order-main .course-info .counts .count {
+    margin: 0   auto;
+    justify-content: center;
   }
 }
 @media (min-width : 1366px) {
@@ -13165,22 +13268,10 @@ select::-ms-expand {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
-.steps .input-container {
-  width: 99%;
-}
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
   margin-top: 2rem;
-  display: none;
-  flex-direction: column;
-}
-.steps .group-input {
-  display: flex;
-  flex-direction: column;
-  height: 238px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13209,7 +13300,7 @@ select::-ms-expand {
   padding: 0;
 }
 .steps .billing-details h2 {
-  margin: 1rem 0!important;
+  margin-bottom: 1rem!important;
 }
 .steps .billing-details .form-consent {
   margin-bottom: 1rem;
@@ -13251,7 +13342,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 0;
 }
-.steps .payment-detail .buttons button {
+.steps .payment-detail .buttons a {
   margin-top: 1rem;
 }
 .steps .payment-detail .buttons .btn-blue img {
@@ -13286,9 +13377,6 @@ select::-ms-expand {
 }
 .steps .payment-content p:last-child {
   margin-bottom: 0;
-}
-.step-active {
-  display: flex !important;
 }
 @media (min-width : 768px) {
   .steps {
@@ -13403,9 +13491,6 @@ select::-ms-expand {
   .steps .billing-details .form-consent label {
     width: 61%;
   }
-  .steps .billing-details h2 {
-    margin-top: 0 !important;
-  }
   .steps .billing-details .buttons {
     flex-direction: row;
   }
@@ -13455,8 +13540,8 @@ select::-ms-expand {
     width: 48%;
   }
   .steps .steps-container::before {
-    top: 88px;
-    height: 95%;
+    top: 93px;
+    height: 96%;
     width: 365px;
   }
   .steps .detail-container {
@@ -13470,9 +13555,6 @@ select::-ms-expand {
   }
   .steps .form {
     padding: 1.5rem 4rem;
-  }
-  .steps .form-inner {
-    top: 15px;
   }
   .steps .card-detail {
     width: 90%;
