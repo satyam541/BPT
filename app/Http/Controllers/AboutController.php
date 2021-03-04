@@ -14,7 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $pageDetail = PageDetail::where(['page_name'=>'about-us','section'=>'metas'])->get();
+        $pageDetail = PageDetail::where(['page_name'=>'about_us','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())
         {
             $meta['title'] = $pageDetail->where('sub_section','title')->first()->heading;
