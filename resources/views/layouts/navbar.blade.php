@@ -51,7 +51,7 @@
                     </span>
                     <div class="info">
                         <p>Call Us:</p>
-                        <a>{{websiteDetail()->contact_number}}</a>
+                        <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
                     </div>
                 </li>
                 <li>
@@ -60,12 +60,12 @@
                     </span>
                     <div class="info">
                         <p>Send Us Mail:</p>
-                        <a>{{websiteDetail()->contact_email}}</a>
+                        <a href="mailto:{{websiteDetail()->contact_email}}">{{websiteDetail()->contact_email}}</a>
                     </div>
                 </li>
 
                 <li class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" >
+                    <a class="btn-blue open-popup enquiryJS">
                         <img src="{{url('img/master/quote.svg')}}" alt="quote">
                         Get a Quote
                     </a>
