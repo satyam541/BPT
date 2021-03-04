@@ -45,7 +45,7 @@ class TopicController extends Controller
             $topics = Topic::whereHas('popular')->get();
             $checked='checked';
         }
-        return view('cms.topic.topiclist',compact('topics','checked'));
+        return view('cms.topic.topicList',compact('topics','checked'));
     }
 
     public function unlinkedTopicList()
