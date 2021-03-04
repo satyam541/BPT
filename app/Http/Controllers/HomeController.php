@@ -8,6 +8,7 @@ use App\Models\PageDetail;
 use App\Models\Topic;
 use App\Models\Location;
 use App\Models\Testimonial;
+
 class HomeController extends Controller
 {
     /**
@@ -24,20 +25,19 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data['categories']=Category::has('popular')->with('topics.courses')->get();
-        $data['topics']=Topic::has('popular')->get();
-        $data['locations']=Location::has('popular')->limit(7)->orderBy('display_order')->get();
-        $data['testimonials']=Testimonial::all();
-        $data['totalCourses']=null;
-        $pageDetail = PageDetail::where(['page_name'=>'home','section'=>'metas'])->get();
-        if($pageDetail->isNotEmpty())
-        {
-            $data['title'] = $pageDetail->where('sub_section','title')->first()->heading;
-            $data['description'] = $pageDetail->where('sub_section','description')->first()->heading;
-            $data['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
+        $data['categories'] = Category::has('popular')->select('id', 'name', 'reference', 'display_order', 'reference', 'image', 'icon')->withCount('topics')->with('topics')->get();
+        $data['topics']     = Topic::has('popular')->select('id', 'name', 'reference')->get();
+        $data['locations']  = Location::has('popular')->select('id', 'name', 'reference','display_order','tier')->limit(7)->get();
+        $data['testimonials'] = Testimonial::select('author', 'content', 'image', 'designation')->get();
+        $data['totalCourses'] = null;
+        $pageDetail = PageDetail::where(['page_name' => 'home', 'section' => 'metas'])->get();
+        if ($pageDetail->isNotEmpty()) {
+            $data['title'] = $pageDetail->where('sub_section', 'title')->first()->heading;
+            $data['description'] = $pageDetail->where('sub_section', 'description')->first()->heading;
+            $data['keyword'] = $pageDetail->where('sub_section', 'keywords')->first()->heading;
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('home');
-        return view('home',$data);
+        return view('home', $data);
     }
 }
