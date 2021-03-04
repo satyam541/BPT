@@ -269,6 +269,57 @@
                                         <input type="text" name="confirm-email" id="confirm-email" placeholder="Confirm Email*" autocomplete="off">
                                     </div>
                                 </div>
+                                <div class="form-input">
+                                    <h3>Delegate 1</h3>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                        <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                        <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                            autocomplete="off">
+                                    </div>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
+                                        <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                        <input type="text" name="l-name" id="l-name" placeholder="Last Name*"
+                                            autocomplete="off">
+                                    </div>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
+                                        <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                                        <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                        <div class="phonecode-field field-black">
+                                            <select class="country-code"></select>
+                                            <span class="prefix"></span>
+                                            <input type="number" class="telephone" placeholder="Phone Number*" min=0>
+                                            <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                                <input type="text" name="phone" class="phonenumber" tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/contactus/phone-call.svg')}}" alt="phone-call" class="black">
+                                        <img src="{{url('img/contactus/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
+                                        <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                        <div class="phonecode-field field-black">
+                                            <select class="country-code"></select>
+                                            <span class="prefix"></span>
+                                            <input type="number" class="telephone" placeholder="Phone Number*" min=0>
+                                            <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                                <input type="text" name="phone" class="phonenumber" tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                        <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                        <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
+                                    </div>
+                                    <div class="input-container">
+                                        <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                        <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                        <input type="text" name="confirm-email" id="confirm-email" placeholder="Confirm Email*" autocomplete="off">
+                                    </div>
+                                </div>
                             </div>
                             <div class="buttons">
                                 <button class="btn-white" type="button" onclick="prevTwo();">

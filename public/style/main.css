@@ -13166,8 +13166,8 @@ select::-ms-expand {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
-.steps .form .form-input {
-  width: 95%;
+.steps .input-container {
+  width: 99%;
 }
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -13178,8 +13178,10 @@ select::-ms-expand {
 }
 .steps .group-input {
   display: flex;
+  flex-direction: column;
   height: 238px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13250,7 +13252,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 0;
 }
-.steps .payment-detail .buttons a {
+.steps .payment-detail .buttons button {
   margin-top: 1rem;
 }
 .steps .payment-detail .buttons .btn-blue img {
