@@ -36,6 +36,7 @@
   {{-- Toastr css  --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/toastr/toastr.min.css')}}">
   <link rel="stylesheet" href="{{url('adminlte/plugins/toggle/toggle.css')}}">
+  <link rel="stylesheet" href="{{url('adminlte/plugins/locationTier/locationTier.css')}}">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/sweetalert2/sweetalert2.min.css')}}">
   <link href="{{url('adminlte/bootstrap-toggle-master/css/bootstrap-toggle.min.css')}}" rel="stylesheet">
@@ -370,7 +371,7 @@
               </li>
               @endcan
               <li class="nav-item">
-                @can('view',new App\Models\location())
+                @can('view',new App\Models\Location())
                 <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>

@@ -15,7 +15,7 @@ use Illuminate\Support\Arr;
 
 if(!function_exists('allCountries')){
     function allCountries(){
-        $data=Country::pluck('name','country_code')->toArray();
+        $data=Country::where('active',1)->pluck('name','country_code')->toArray();
         return $data;
     }
 }

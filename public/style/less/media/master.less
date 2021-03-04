@@ -255,6 +255,8 @@
   }
   // End popup
 
+  
+
 }
 
 @media @size-lg {
@@ -374,9 +376,6 @@
 
 }
 
-
-
-
 @media @size-xl {
     .container {
       width: 1200px;
@@ -494,5 +493,52 @@
       }
   }
     //End footer
+
+    // Start social
+    .tooltips{
+      display: flex;
+      position: fixed;
+      bottom: 40%;
+      left: -125px;
+      z-index: 5;
+      ul{
+          display: flex;
+          flex-direction: column;
+      }
+      li{
+          display: flex;
+          justify-content: flex-end;
+          color: #fff;
+          background-color: @darkblueColor;
+          font-size: 14px;
+          padding: 14px 12px;
+          width: 100%;
+          margin-bottom: .5rem;
+          border-radius: 0px 30px 30px 0px;
+          transition: 1s all;
+  
+          img{
+              width: 25px;
+              height: 25px;
+              margin-left: 1rem;
+          }
+          &:hover{
+                  -webkit-transform: translate(123px, 0);
+                  -moz-transform: translate(123px, 0);
+                  -ms-transform: translate(123px, 0);
+                  -o-transform: translate(123px, 0);
+                  transform: translate(123px, 0);
+                  img{
+                              transform: rotate(360deg);
+                              transition: all 1s;
+                  }
+          }
+      }
+      a{
+          display: flex;
+          align-items: center;
+      }
+      }
+      // End social
 
 }

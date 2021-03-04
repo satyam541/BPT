@@ -44,6 +44,190 @@
 // End pass-clients section //
 
 
+// Start requirement section
+.requirement{
+    display: flex;
+    padding: @sectionPadding-md;
+    background: linear-gradient(180deg, @darkblueColor 63%, transparent 20%);
+    .reuqirement-container{ 
+        display: flex;
+        flex-direction: column;
+    }
+    .headline{
+        text-align: center;
+        color: @whiteColor;
+    }
+    .chart{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        box-shadow: @shadowLight;
+        background-color: @whiteColor;
+    }
+    .chart-title{
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        background: @blueGradient;
+        color: white;
+        h3{
+            width: 25%;
+            text-align: center;
+            &:first-child{
+                width: 50%;
+                text-align: left;
+            }
+        }
+    }
+    .course-list{
+        display: flex;
+        flex-direction: column;
+        .active{
+            .course-name{
+                background-color: transparent;
+                border-bottom: 2px solid #c0c0c0;
+                .image{
+                    .blue{
+                        display: flex;
+                    }
+                    .white{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .course-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .course-name{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        background-color: @bgColor;
+        border-bottom: 2px solid transparent;
+        padding: 1rem;
+        .image{
+            position: absolute; 
+            right: 10px;
+            width: 28px;
+            height: 28px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .blue{
+                display: none;
+            }
+            .white{
+                display: flex;
+            }
+        }
+        p,span{
+            color: @lightblueColor;
+            font-weight: 900;
+            width: 25%;
+            text-align: center;
+            font-size: 18px;
+        
+        }
+        p{
+            width: 50%;
+            text-align: left;
+            position: relative;
+            padding-left: 2rem;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/knowledge-pass/star.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 22px;
+                left: 0;
+                top: 4px;
+            }
+        }
+
+    }
+    .bold{
+        font-weight: 600;
+    }
+    .description{
+        display: none;
+        flex-direction: column;
+        padding: 1rem;
+    
+    }
+    .course-detail{
+        display: flex;
+        flex-direction: row; 
+        padding-bottom: 1rem; 
+    
+        p{
+            width: 25%;
+            text-align: center;
+            font-size: 16px;
+            &:first-child{
+                width: 50%;
+                text-align: left;
+            }
+            &:last-child{
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                padding: 0 2rem;
+                span{
+                    width: 48%;
+                }
+            }
+        }
+        .select{
+            display: flex;
+            justify-content: center;
+            width: 25%;
+            select{ 
+                width: 43px;
+                border: 2px solid @darkblueColor;
+                border-radius: 10px;
+                background: url(../img/knowledge-pass/select-bg.png); 
+            background-position:  right;
+            background-size: contain;
+            -webkit-appearance: none;
+            background-repeat: no-repeat;
+            outline: none;
+            padding-left: 7px;
+           
+            }
+            option{
+                color: @blackColor;
+            }
+        }
+    }
+    .summary{
+        display: flex;
+        padding: 1rem;
+        width: 58%;
+    
+        p{
+            font-size: 20px;
+            font-weight: 700;
+            width: 50%;
+            &:first-child{
+                border-right: 2px solid @blackColor;
+                width: 27%;
+                padding-right: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+// End requirement section
+
 // Start spending section //
 .spending{
     padding: @sectionPadding-md;
@@ -73,7 +257,7 @@
 // End spending section //
 
 // Start right section //
-.right{
+.why-right{
     padding: @sectionPadding-md;
 
 
@@ -210,6 +394,7 @@
         }
         h3{
             min-height: 50px;
+            width: 83%;
         }
     }
     // End knowledge section
@@ -222,7 +407,7 @@
             flex-direction: row;
             justify-content: space-between;
         }
-        .study-info{
+        .study-content{
             width: 46%;
             margin-bottom: 0;
         }
@@ -279,8 +464,7 @@
 
     .clients-pass{
         position: relative;
-            height: 315px;
-         width: 41%;
+        height: 315px;
         span{
             position: absolute;
             margin-top: 0;
@@ -340,7 +524,7 @@
 // End spending section //
 
 // Start right section //
-.right{
+.why-right{
 
     .right-list{
         justify-content: space-between;
@@ -409,7 +593,7 @@
 
         // Start study section
         .study{
-            .study-info{
+            .study-content{
                 &::before{
                     height: 60px;
                 }
@@ -473,7 +657,7 @@
 // End spending section //
 
 // Start right section //
-.right{
+.why-right{
     padding: @sectionPadding-xl;
 
     .right-item{
@@ -492,10 +676,10 @@
     .knowledge{
         padding: @sectionPadding-xl;
         .pass-info{
-            width: 60%;
+            width: 54%;
         }
         .booking-list{
-            width: 40%;
+            width: 46%;
         }
 
     }

@@ -93,7 +93,7 @@ class Category extends Model
     } 
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','category');
+        return $this->hasMany('App\Models\BulletPoint','module_id','id')->where('module_type','category');
     }
     public function whatIncludes()
     {

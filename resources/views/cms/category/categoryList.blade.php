@@ -34,105 +34,108 @@
                                 <div class="card-title col-sm-12">
                                     Category List
                                     <div class="popular">
-                                        Polpular
+                                        Popular
                                     </div>
-                                    <form action="{{Route('categoryList')}}" method="get">
-                                        
+                                    <form action="{{ Route('categoryList') }}" method="get">
+
                                         <div class="onoffswitch">
-                                        <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
-                                        <label class="onoffswitch-label" for="myonoffswitch">
-                                            <span class="onoffswitch-inner"></span>
-                                            <span class="onoffswitch-switch"></span>
-                                        
-                                        </label>
-                                        
-                                    </div>
-                                      <input type="submit" name="submit" id="submit" style="visibility: hidden">
+                                            <input type="checkbox" name="popular" @if ($checked != null) checked @endif
+                                                class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                                            <label class="onoffswitch-label" for="myonoffswitch">
+                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-switch"></span>
+
+                                            </label>
+
+                                        </div>
+                                        <input type="submit" name="submit" id="submit" style="visibility: hidden">
                                     </form>
-                                  </div>  
+
                                 </div>
-                                {{-- <div class="col-sm-6"> --}}
-                                    
+                            </div>
+                            {{-- <div class="col-sm-6"> --}}
+
                             {{-- </div> --}}
 
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="table table-responsive">
-                                <table id="example1" >
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th class=" text-center">
-                                                @can('update', new App\Models\Category())
-                                                    Content
-                                                @endcan
-                                            </th>
-                                            <th class=" text-center">
-                                                @can('update', new App\Models\Category())
-                                                    Faq's
-                                                @endcan
-                                            </th>
-                                            <th class=" text-center">
-                                                @can('update', new App\Models\Category())
-                                                    Bulletpoints
-                                                @endcan
-                                            </th>
-                                            <th class=" text-center">
-                                                @can('update', new App\Models\Category())
-                                                    Whats Included
-                                                @endcan
-                                            </th>
-                                            <th class=" text-center">
-                                                @can('update', new App\Models\Category())
-                                                    Actions
-                                                @endcan
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        @foreach ($categories as $category)
+                                    <table id="example1">
+                                        <thead>
                                             <tr>
-                                                <td>{{ $category->name }}</td>
-                                                <td class=" text-center">
-                                                    @can('update', $category)
-                                                        <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
-                                                            class=" fa fa-list"></a>
+                                                <th>Name</th>
+                                                <th class=" text-center">
+                                                    @can('update', new App\Models\Category())
+                                                        Content
                                                     @endcan
-                                                </td>
-                                                <td class=" text-center">
-                                                    @can('update', $category)
-                                                        <a href="{{ route('faqList', ['type' => 'category', 'id' => $category->id]) }}"
-                                                            class="far fa-question-circle"></a>
+                                                </th>
+                                                <th class=" text-center">
+                                                    @can('update', new App\Models\Category())
+                                                        Faq's
                                                     @endcan
-                                                </td>
-                                                <td class=" text-center">
-                                                    @can('update', $category)
-                                                        <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}"
-                                                            class=" fa fa-bullseye"></a>
+                                                </th>
+                                                <th class=" text-center">
+                                                    @can('update', new App\Models\Category())
+                                                        Bulletpoints
                                                     @endcan
-                                                </td>
-                                                @can('update', $category)
-                                                    <td class=" text-center"> <a href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}"
-                                                            class=" fas fa-puzzle-piece"></a>
+                                                </th>
+                                                <th class=" text-center">
+                                                    @can('update', new App\Models\Category())
+                                                        Whats Included
                                                     @endcan
-                                                </td>
-                                                <td class=" text-center">
-                                                    @can('update', $category)
-                                                        <a href="{{ Route('editCategory', ['category' => $category->id]) }}"
-                                                            class="fa fa-edit"></a>
+                                                </th>
+                                                <th class=" text-center">
+                                                    @can('update', new App\Models\Category())
+                                                        Actions
                                                     @endcan
-                                                    @can('delete', $category)
-                                                        <a href="#"
-                                                            onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')"
-                                                            class="fa fa-trash" style="color: red"></a>
-                                                    @endcan
-                                                </td>
+                                                </th>
                                             </tr>
-                                        @endforeach
+                                        </thead>
+                                        <tbody>
 
-                                    </tbody>
-                                </table>
+                                            @foreach ($categories as $category)
+                                                <tr>
+                                                    <td>{{ $category->name }}</td>
+                                                    <td class=" text-center">
+                                                        @can('update', $category)
+                                                            <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
+                                                                class=" fa fa-list"></a>
+                                                        @endcan
+                                                    </td>
+                                                    <td class=" text-center">
+                                                        @can('update', $category)
+                                                            <a href="{{ route('faqList', ['type' => 'category', 'id' => $category->id]) }}"
+                                                                class="far fa-question-circle"></a>
+                                                        @endcan
+                                                    </td>
+                                                    <td class=" text-center">
+                                                        @can('update', $category)
+                                                            <a href="{{ route('categoryBulletPointList', ['module' => $category->id]) }}"
+                                                                class=" fa fa-bullseye"></a>
+                                                        @endcan
+                                                    </td>
+                                                    @can('update', $category)
+                                                        <td class=" text-center"> <a
+                                                                href="{{ route('categoryWhatsIncludedList', ['module' => $category->id]) }}"
+                                                                class=" fas fa-puzzle-piece"></a>
+                                                        @endcan
+                                                    </td>
+                                                    <td class=" text-center">
+                                                        @can('update', $category)
+                                                            <a href="{{ Route('editCategory', ['category' => $category->id]) }}"
+                                                                class="fa fa-edit"></a>
+                                                        @endcan
+                                                        @can('delete', $category)
+                                                            <a href="#"
+                                                                onclick="deleteItem('{{ route('deleteCategory', ['category' => $category->id]) }}')"
+                                                                class="fa fa-trash" style="color: red"></a>
+                                                        @endcan
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -159,8 +162,8 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-           
-              
+
+
             $('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
@@ -201,29 +204,30 @@
                 $(this).removeClass('btn-primary');
                 $(this).addClass('btn-success');
             });
-            $('#submit').on('click',function(){
-        //    var country=$('#country').val();
-     
-      $.ajax({
-        url:"{{route('categoryList')}}",
-        data:{popular},
-        type:'post',
-        global:false,
-        headers: {
-                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-                  },
-        success:function(response){
-          if(response=='done'){
-          location.reload(); 
-          }
-          else{
-          alert('country code not available');
-          }
-        }
-      });
-      
-    });
-   
+            $('#submit').on('click', function() {
+                //    var country=$('#country').val();
+
+                $.ajax({
+                    url: "{{ route('categoryList') }}",
+                    data: {
+                        popular
+                    },
+                    type: 'post',
+                    global: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                    },
+                    success: function(response) {
+                        if (response == 'done') {
+                            location.reload();
+                        } else {
+                            alert('country code not available');
+                        }
+                    }
+                });
+
+            });
+
         });
 
     </script>

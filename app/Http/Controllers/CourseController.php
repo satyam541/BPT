@@ -68,11 +68,11 @@ class CourseController extends Controller
         $data['schedules']          = $schedule->where('country_id', country()->id)->where('response_location','!=','Virtual')->where('course_id', $course_id)
                                         ->orderBy('response_date')
                                         ->orderByRaw("Field(response_location,".$locationOrderString.")")
-                                        ->paginate(10)->setPageName('classroom_page');
+                                        ->paginate(10,['*'],'classroom-page');
 
         $data['virtualSchedules']   = Schedule::where('country_id', country()->id)->where('response_location','Virtual')
                                         ->where('course_id',$course_id)
-                                        ->where('response_date','>',Carbon::today())->orderBy('response_date')->paginate(10)->setPageName('virtual_page');
+                                        ->where('response_date','>',Carbon::today())->orderBy('response_date')->paginate(10,['*'],'virtual-page');
 
         $topicCourses               = $course->topic->courses()->get()->pluck('id')->toArray();
         $onlineCourses              = Course::whereNotIn('id',$topicCourses)->get()->pluck('course_id')->toArray();
@@ -82,5 +82,40 @@ class CourseController extends Controller
         $data['onlineSchedules']    = Course::with('onlinePrice')->find($course_id)->orderByRaw("Field(id,".$finalCourseOrder.")")->get();
         // dd($data);
         return view('courses', $data);
+    }
+
+    public function filter(Request $request)
+    {
+        $hash = null;
+        if($request->has("deliveryMethod"))
+        {
+            $hash = $request->deliveryMethod;
+        }
+        if(empty($request->course))
+        {
+            return redirect()->back();
+        }
+        $courseobj=Course::find($request->course);
+        $location=$request->location;
+        $month = $request->month;
+        $locationObj = "";
+        $url = "";
+        if(empty($location))
+        {
+            $url = $courseobj->url;
+        }
+        if(!empty($location) && !empty($courseobj))
+        {
+
+            $locationObj = Location::where("reference",$location)->first();
+            $url = $courseobj->url.'/'.$locationObj->reference;
+        }
+        
+        $url = $url.$hash;
+        // if(!empty($hash) && $hash == "#online-booking" && $courseobj->is_online == 1)
+        // {
+        //     $url = route("onlineCourseRoute",['course'=>$courseobj->elearningCourse->reference]);
+        // }
+        return redirect($url);
     }
 }

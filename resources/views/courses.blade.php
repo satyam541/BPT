@@ -50,6 +50,7 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
+                        @if (!empty($selectedCourse->countryContent['overview']))
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -58,7 +59,9 @@
                                 Overview
                             </p>
                             <div class="number">01</div>
-                        </li>
+                        </li> 
+                        @endif
+                        
 
                         <li class="tab-click" data-target="course">
                             <span class="image">
@@ -94,7 +97,9 @@
                             </li>
                         @endif
                     </ul>
-                    <div class="tab-content" id="overview">
+
+                    @if (!empty($selectedCourse->countryContent['overview']))
+                    <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
                             {!! $selectedCourse->countryContent->overview !!}
@@ -105,7 +110,23 @@
                             </a>
                         </div>
                     </div>
-
+                    @endif
+                        
+                    <div class="tab-content tab-common" id="course">
+                        @if (!empty($selectedCourse->countryContent['summery']))                        
+                        <div class="overview-content" id="showmorecontent">
+                            <h2>Course Content</h2>
+                            
+                            {!!$selectedCourse->countryContent->summery!!}
+                            
+                        </div>
+                        <div class="buttons">
+                            <a href="#showmorecontent" class="btn-blue showmorecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
+                        @endif
+                    </div>
                     @if ($selectedCourse->faqs->isNotEmpty())
                         <div class="tab-content" id="faq">
                             <div class="heading">
@@ -188,7 +209,8 @@
                         <h2>Filters</h2>
                         <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
                     </div>
-                    <form class="form">
+                    <form class="form exclude" method="post" action="{{route('courseFilterRoute')}}">
+                        @csrf
                         <div class="select-dropdown">
                             <select name="course" required="required" oninvalid="this.setCustomValidity('Please select your course')">
                                 <option value="">Select Your Course:</option>
@@ -235,22 +257,22 @@
                         </div>
                         <div class="modes">
                             <div class="modes-list" id="scheduleLinks">
-                                <a href="javascript:(void);" class="methods" id="classroom">
+                                <a href="#classroom-booking" class="methods" id="classroom" data-target="classroom">
                                     <img src="{{ url('img/courses/classroom-blue.svg') }}" alt="classroom" class="blue">
                                     <img src="{{ url('img/courses/classroom-gray.svg') }}" alt="classroom" class="gray">
                                     <p>Classroom</p>
                                 </a>
-                                <a href="javascript:(void);" class="methods" id="online">
+                                <a href="#online-booking" class="methods" id="online" data-target="online">
                                     <img src="{{ url('img/courses/online-blue.svg') }}" alt="online" class="blue">
                                     <img src="{{ url('img/courses/online-gray.svg') }}" alt="online" class="gray">
                                     <p>Online</p>
                                 </a>
-                                <a href="javascript:(void);" class="methods" id="virtual">
+                                <a href="#virtual-booking" class="methods" id="virtual" data-target="virtual">
                                     <img src="{{ url('img/courses/virtual-blue.svg') }}" alt="virtual" class="blue">
                                     <img src="{{ url('img/courses/virtual-gray.svg') }}" alt="virtual" class="gray">
                                     <p>Virtual</p>
                                 </a>
-                                <a href="javascript:(void);" class="methods" id="onsite">
+                                <a href="#onsite-booking" class="methods" id="onsite"  data-target="onsite">
                                     <img src="{{ url('img/courses/onsite-blue.svg') }}" alt="onsite" class="blue">
                                     <img src="{{ url('img/courses/onsite-gray.svg') }}" alt="onsite" class="gray">
                                     <p>Onsite</p>
@@ -272,48 +294,97 @@
                         </div>
                     </div>
                     <div class="calender-right">
-                        @if (!$schedules->isEmpty())
-                        @foreach ($schedules as $schedule)
-                        <div class="course-content">
-                            <div class="name">
-                                <a href="javascript:void(0);" class="course-name">{{$schedule->course->name}}</a>
-                                <div class="buttons">
-                                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
-                                        data-quote="Enquire Now">
-                                        <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
-                                    </a>
-                                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                        data-quote="Book Now">
-                                        <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="detail">
-                                <div class="content">
-                                    <span>
-                                        <img src="{{ url('../img/courses/course-virtual.svg') }}" alt="course-virtual">
-                                    </span>
-                                    <div class="sub-content">
-                                        <h3>{{$schedule->response_location}}</h3>
-                                        <p>Best Selling Courses in <strong>{{$schedule->response_location}}</strong></p>
+                        <div id="classroom-block">
+                            @if (!$schedules->isEmpty())
+                                @foreach ($schedules as $schedule)
+                                    <div class="course-content" >
+                                        <div class="name">
+                                            <a href="javascript:void(0);" class="course-name">{{$schedule->course->name}}</a>
+                                            <div class="buttons">
+                                                <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
+                                                    data-quote="Enquire Now">
+                                                    <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
+                                                </a>
+                                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                                    data-quote="Book Now">
+                                                    <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="content">
+                                                <span>
+                                                    <img src="{{ url('../img/courses/course-virtual.svg') }}" alt="course-virtual">
+                                                </span>
+                                                <div class="sub-content">
+                                                    <h3>{{$schedule->response_location}}</h3>
+                                                    <p>Best Selling Course in <strong>{{$schedule->response_location}}</strong></p>
+                                                </div>
+                                            </div>
+                                            <div class="date">
+                                                <p>{{ $schedule->response_date->isoFormat('ddd') }}</p>
+                                                <p>{{ $schedule->response_date->isoFormat('DD') }}</p>
+                                                <p>{{ $schedule->response_date->isoFormat('MMM') }}</p>
+                                                <p>{{ $schedule->response_date->isoFormat('YYYY') }}</p>
+                                            </div>
+                                            <div class="rate">
+                                                <h3>£{{ceil($schedule->event_price) }}</h3>
+                                                <p><strong>Duration: </strong>2 Days</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="date">
-                                    <p>{{ $schedule->response_date->isoFormat('ddd') }}</p>
-                                    <p>{{ $schedule->response_date->isoFormat('DD') }}</p>
-                                    <p>{{ $schedule->response_date->isoFormat('MMM') }}</p>
-                                    <p>{{ $schedule->response_date->isoFormat('YYYY') }}</p>
-                                </div>
-                                <div class="rate">
-                                    <h3>£{{ceil($schedule->event_price) }}</h3>
-                                    <p><strong>Duration: </strong>2 Days</p>
-                                </div>
-                            </div>
+                                @endforeach
+                                {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
+                            @endif
                         </div>
-                        @endforeach
-                        {{$schedules->links()}}
-                        @endif
-                        
+                        <div id="virtual-block">
+                            @if (!$virtualSchedules->isEmpty())
+                                @foreach ($virtualSchedules as $virtual)
+                                    <div class="course-content" >
+                                        <div class="name">
+                                            <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
+                                            <div class="buttons">
+                                                <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
+                                                    data-quote="Enquire Now">
+                                                    <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
+                                                </a>
+                                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                                    data-quote="Book Now">
+                                                    <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <div class="content">
+                                                <span>
+                                                    <img src="{{ url('../img/courses/course-virtual.svg') }}" alt="course-virtual">
+                                                </span>
+                                                <div class="sub-content">
+                                                    <h3>{{$virtual->response_location}}</h3>
+                                                    {{-- <p>Best Selling Courses in <strong>{{$virtual->response_location}}</strong></p> --}}
+                                                    <p>Best Selling Course</p>
+                                                </div>
+                                            </div>
+                                            <div class="date">
+                                                <p>{{ $virtual->response_date->isoFormat('ddd') }}</p>
+                                                <p>{{ $virtual->response_date->isoFormat('DD') }}</p>
+                                                <p>{{ $virtual->response_date->isoFormat('MMM') }}</p>
+                                                <p>{{ $virtual->response_date->isoFormat('YYYY') }}</p>
+                                            </div>
+                                            <div class="rate">
+                                                <h3>£{{ceil($virtual->event_price) }}</h3>
+                                                <p><strong>Duration: </strong>2 Days</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                {{$virtualSchedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
+                            @endif
+                        </div>
+                        <div id="online-block">
+                        </div>
+                        <div id="onsite-block">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -429,14 +500,27 @@
                     <div class="info">
                         <h2>{{$selectedCourse->name}}</h2>
                     </div>
+                    {{-- {{dd($virtualSchedules->first()->event_price)}} --}}
                     <div class="price">
-                        @if ($schedules->first()->response_discounted_price < $schedules->first()->event_price)
-                        <span class="rate">£{{$schedules->first()->event_price}}</span>  
-                        <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
-                            
-                        @else
-                        <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                        @if ($schedules->isNotEmpty())
+                            @if (!empty($schedules->first()->response_discounted_price) < !empty($schedules->first()->event_price))
+                            <span class="rate">£{{$schedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                            @endif
+                        @elseif($virtualSchedules->isNotEmpty())
+                            @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->first()->event_price))
+                            <span class="rate">£{{$virtualSchedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$virtualSchedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$virtualSchedules->first()->event_price}}</span> 
+                            @endif
                         @endif
+                        
+                        
                         
                         <div class="buy">
                             <span>
@@ -695,5 +779,18 @@
         </div>
     </section>
     <!-- End Popular-Location Section -->
+
+@endsection
+@section('footerScripts')
+<script>
+   var defaultMethod = "virtual";
+</script>
+<script src="{{ url("script/filter.js") }}"></script>
+<script src="{{ url("script/courseSchedule.js") }}"></script>
+<script>
+   function submitOnlineForm() {
+      $("#onlineBookingForm").submit();
+   }
+</script>
 
 @endsection
