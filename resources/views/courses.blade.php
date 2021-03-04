@@ -334,7 +334,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$schedules->links()}}
+                                {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="virtual-block">
@@ -378,7 +378,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$virtualSchedules->links()}}
+                                {{$virtualSchedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="online-block">
