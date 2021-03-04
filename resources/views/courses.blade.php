@@ -113,11 +113,11 @@
                     @endif
                         
                     <div class="tab-content tab-common" id="course">
-                        @if ($topic->topicContent)                        
+                        @if (!empty($selectedCourse->countryContent['summery']))                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Content</h2>
                             
-                            {!!$topic->topicContent->overview!!}
+                            {!!$selectedCourse->countryContent->summery!!}
                             
                         </div>
                         <div class="buttons">
