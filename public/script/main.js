@@ -370,4 +370,17 @@ $('body').on('click',function(e){
 
 // End FAQ
 
+// Start scroll top 
+$(window).scroll(function(){ 
+    if ($(this).scrollTop() > 100) { 
+        $('#scroll').fadeIn(); 
+    } else { 
+        $('#scroll').fadeOut(); 
+    } 
+}); 
+$('#scroll').click(function(){ 
+    $("html, body").animate({ scrollTop: 0 }, 600); 
+    return false; 
+}); 
+// End scroll top
 

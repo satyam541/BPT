@@ -181,6 +181,10 @@
             <li><a class="open-popup enquiryJS">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
     </nav>
+    
+    <a class="top-arrow smoothscroll" id="scroll" data-href=".banner" >
+                <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
+            </a>
 
 
 </body>
