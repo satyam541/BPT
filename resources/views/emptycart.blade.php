@@ -74,43 +74,84 @@
                         <span><img src="{{url('img/emptycart/american.png')}}" alt="american"></span>
                     </div>
                 </div>
-                <div class="order-courses">
-                    <div class="course-name">
-                        <h2>PRINCE2® Foundation and Practitioner</h2>
-                        <a href="javascript:void(0);"><img src="{{url('img/emptycart/delete.svg')}}" alt="delete"></a>
-                    </div>
-                    <div class="course-info">
-                        <div class="detail delivery-method">
-                            <p class="mode">Online Mode</p>
-                            <span class="icon"><img src="{{url('img/emptycart/online.svg')}}" alt="online"></span>
+                <div class="order-main">
+                    <div class="order-courses">
+                        <div class="course-name">
+                            <h2>PRINCE2® Foundation and Practitioner</h2>
+                            <a href="javascript:void(0);"><img src="{{url('img/emptycart/delete.svg')}}" alt="delete"></a>
                         </div>
-                        <div class="detail">
-                            <ul>
-                                <li>
-                                    <p>6 Month Access:</p>
-                                    <span>£ 270 </span>
-                                </li>
-                                <li>
-                                    <p>1 Year  Access: </p>
-                                    <span>£ 270 </span>
-                                </li>
-                                <li>
-                                    <p>Official MSP Manual:</p>
-                                    <span>£ 270 </span>
-                                </li>
+                        <div class="course-info">
+                            <div class="detail delivery-method">
+                                <p class="mode">Online Mode</p>
+                                <span class="icon"><img src="{{url('img/emptycart/online.svg')}}" alt="online"></span>
+                            </div>
+                            <div class="detail">
+                                <ul>
+                                    <li>
+                                        <p>6 Month Access:</p>
+                                        <span>£ 270 </span>
+                                    </li>
+                                    <li>
+                                        <p>1 Year  Access: </p>
+                                        <span>£ 270 </span>
+                                    </li>
+                                    <li>
+                                        <p>Official MSP Manual:</p>
+                                        <span>£ 270 </span>
+                                    </li>
 
-                            </ul>
+                                </ul>
 
-                        </div>
-                        <div class="detail counts">
-                            <p>No. of Delegate (s)</p>
-                            <div class="count">
-                                <a class="minus">-</a>
-                                <span class="numbers">1</span>
-                                <a class="plus">+</a>
+                            </div>
+                            <div class="detail counts">
+                                <p>No. of Delegate (s)</p>
+                                <div class="count">
+                                    <a class="minus">-</a>
+                                    <span class="numbers">1</span>
+                                    <a class="plus">+</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="order-courses">
+                        <div class="course-name">
+                            <h2>PRINCE2® Foundation and Practitioner</h2>
+                            <a href="javascript:void(0);"><img src="{{url('img/emptycart/delete.svg')}}" alt="delete"></a>
+                        </div>
+                        <div class="course-info">
+                            <div class="detail delivery-method">
+                                <p class="mode">Online Mode</p>
+                                <span class="icon"><img src="{{url('img/emptycart/online.svg')}}" alt="online"></span>
+                            </div>
+                            <div class="detail">
+                                <ul>
+                                    <li>
+                                        <p>6 Month Access:</p>
+                                        <span>£ 270 </span>
+                                    </li>
+                                    <li>
+                                        <p>1 Year  Access: </p>
+                                        <span>£ 270 </span>
+                                    </li>
+                                    <li>
+                                        <p>Official MSP Manual:</p>
+                                        <span>£ 270 </span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <div class="detail counts">
+                                <p>No. of Delegate (s)</p>
+                                <div class="count">
+                                    <a class="minus">-</a>
+                                    <span class="numbers">1</span>
+                                    <a class="plus">+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
                 </div>
             </div>
             <div class="buttons">
