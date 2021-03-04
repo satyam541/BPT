@@ -974,11 +974,11 @@ select::-ms-expand {
 .tooltips {
   display: none;
 }
-.top-arrow {
+.up-arrow {
   display: none;
   position: fixed;
-  right: 32px;
-  bottom: 45px;
+  right: 5px;
+  bottom: 50px;
   height: 40px;
   width: 40px;
   box-shadow: 0 0 3px #000000;
@@ -988,7 +988,7 @@ select::-ms-expand {
   transform: rotate(-90deg);
   z-index: 3;
 }
-.top-arrow img {
+.up-arrow img {
   width: 100%;
   height: 100%;
 }
@@ -1269,6 +1269,15 @@ select::-ms-expand {
   .enquiry-popup .form .form-input {
     justify-content: center;
     padding-top: 3rem;
+  }
+  .up-arrow {
+    right: 32px;
+    bottom: 45px;
+  }
+  .no-schedule {
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
   }
 }
 @media (min-width : 1024px) {
@@ -13269,10 +13278,22 @@ select::-ms-expand {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
+.steps .input-container {
+  width: 99%;
+}
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
   margin-top: 2rem;
+  display: none;
+  flex-direction: column;
+}
+.steps .group-input {
+  display: flex;
+  flex-direction: column;
+  height: 238px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13301,7 +13322,7 @@ select::-ms-expand {
   padding: 0;
 }
 .steps .billing-details h2 {
-  margin-bottom: 1rem!important;
+  margin: 1rem 0!important;
 }
 .steps .billing-details .form-consent {
   margin-bottom: 1rem;
@@ -13343,7 +13364,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 0;
 }
-.steps .payment-detail .buttons a {
+.steps .payment-detail .buttons button {
   margin-top: 1rem;
 }
 .steps .payment-detail .buttons .btn-blue img {
@@ -13378,6 +13399,9 @@ select::-ms-expand {
 }
 .steps .payment-content p:last-child {
   margin-bottom: 0;
+}
+.step-active {
+  display: flex !important;
 }
 @media (min-width : 768px) {
   .steps {
@@ -13492,6 +13516,9 @@ select::-ms-expand {
   .steps .billing-details .form-consent label {
     width: 61%;
   }
+  .steps .billing-details h2 {
+    margin-top: 0 !important;
+  }
   .steps .billing-details .buttons {
     flex-direction: row;
   }
@@ -13541,8 +13568,8 @@ select::-ms-expand {
     width: 48%;
   }
   .steps .steps-container::before {
-    top: 93px;
-    height: 96%;
+    top: 88px;
+    height: 95%;
     width: 365px;
   }
   .steps .detail-container {
@@ -13556,6 +13583,9 @@ select::-ms-expand {
   }
   .steps .form {
     padding: 1.5rem 4rem;
+  }
+  .steps .form-inner {
+    top: 15px;
   }
   .steps .card-detail {
     width: 90%;
