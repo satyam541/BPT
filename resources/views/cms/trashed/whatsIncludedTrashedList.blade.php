@@ -53,7 +53,7 @@
                     <td>{{$trash->name}}</td>
                     <td>{{$trash->created_at}}</td>
                     <td>
-                      <a href="{{ route('restoreWhatsIncluded',['id'=>$trash->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      <a href="{{ route('restoreWhatsIncluded',['id'=>$trash->id]) }}" class="fa fa-sync fa-spin"></a>
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <a href="{{ route('forceDeleteWhatsIncluded',['id'=>$trash->id])}}" class="fa fa-trash" style="color: red"></a>
                       
