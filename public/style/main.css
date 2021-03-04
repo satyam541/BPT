@@ -8256,10 +8256,10 @@ select::-ms-expand {
   margin-top: 0.5rem;
   text-align: center;
 }
-.training .methods:hover .blue {
-  display: flex;
+.training .active .blue {
+  display: flex ;
 }
-.training .methods:hover .gray {
+.training .active .gray {
   display: none;
 }
 .training .key-point {
