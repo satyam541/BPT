@@ -54,7 +54,7 @@
                                                 <td>{{ $trashedCertification->created_at }}</td>
                                                 <td>
                                                     <a href="{{ route('restoreCertification', ['id' => $trashedCertification->id]) }}"
-                                                        class="fa fa-refresh fa-spin"></a>
+                                                        class="fa fa-sync fa-spin"></a>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                     <a href="{{ route('forceDeleteCertification', ['id' => $trashedCertification->id]) }}"
                                                         class="fa fa-trash" style="color: red"></a>

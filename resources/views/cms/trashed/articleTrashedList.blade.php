@@ -62,7 +62,7 @@
                                                 <td>
                                                     @can('restore', $trashedarticle)
                                                         <a href="{{ route('restoreArticle', ['id' => $trashedarticle->id]) }}"
-                                                            class="fa fa-refresh fa-spin"></a>
+                                                            class="fa fa-sync fa-spin"></a>
                                                     @endcan
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                     @can('forceDelete', $trashedarticle)
