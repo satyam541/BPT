@@ -119,10 +119,25 @@
                         @endif
                     </ul>
                     
-                    <div class="tab-content" id="overview">
+                    <div class="tab-content tab-common" id="overview">
                         @if ($topic->topicContent)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
+                            
+                            {!!$topic->topicContent->overview!!}
+                            
+                        </div>
+                        <div class="buttons">
+                            <a href="#showmorecontent" class="btn-blue showmorecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
+                        @endif
+                    </div>
+                    <div class="tab-content tab-common" id="course">
+                        @if ($topic->topicContent)                        
+                        <div class="overview-content" id="showmorecontent">
+                            <h2>Course Content</h2>
                             
                             {!!$topic->topicContent->overview!!}
                             

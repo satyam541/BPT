@@ -173,7 +173,7 @@
             </div>
         </div>
     </section>
-    <nav class="social">
+    <nav class="tooltips">
         <ul>
             
             <li><a href="javascriptvoid(0)">{{websiteDetail()->contact_number}}<img src="{{url('img/master/phone-ringing.svg')}}" alt="phone-ringing"></a></li>

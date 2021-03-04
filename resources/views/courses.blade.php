@@ -94,9 +94,20 @@
                             </li>
                         @endif
                     </ul>
-                    <div class="tab-content" id="overview">
+                    <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
+                            {!! $selectedCourse->countryContent->overview !!}
+                        </div>
+                        <div class="buttons">
+                            <a href="#showmorecontent" class="btn-blue showmorecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-content tab-common" id="course">
+                        <div class="overview-content" id="showmorecontent">
+                            <h2>Course Content</h2>
                             {!! $selectedCourse->countryContent->overview !!}
                         </div>
                         <div class="buttons">

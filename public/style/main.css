@@ -982,7 +982,7 @@ select::-ms-expand {
   justify-content: center;
   padding-top: 3rem;
 }
-.social {
+.tooltips {
   display: none;
 }
 @media (min-width : 768px) {
@@ -1366,18 +1366,18 @@ select::-ms-expand {
   .footer .contact-us h2 {
     text-align: center;
   }
-  .social {
+  .tooltips {
     display: flex;
     position: fixed;
     bottom: 40%;
     left: -125px;
     z-index: 3;
   }
-  .social ul {
+  .tooltips ul {
     display: flex;
     flex-direction: column;
   }
-  .social li {
+  .tooltips li {
     display: flex;
     justify-content: flex-end;
     color: #fff;
@@ -1389,23 +1389,23 @@ select::-ms-expand {
     border-radius: 0px 30px 30px 0px;
     transition: 1s all;
   }
-  .social li img {
+  .tooltips li img {
     width: 25px;
     height: 25px;
     margin-left: 1rem;
   }
-  .social li:hover {
+  .tooltips li:hover {
     -webkit-transform: translate(123px, 0);
     -moz-transform: translate(123px, 0);
     -ms-transform: translate(123px, 0);
     -o-transform: translate(123px, 0);
     transform: translate(123px, 0);
   }
-  .social li:hover img {
+  .tooltips li:hover img {
     transform: rotate(360deg);
     transition: all 1s;
   }
-  .social a {
+  .tooltips a {
     display: flex;
     align-items: center;
   }
@@ -7803,19 +7803,19 @@ select::-ms-expand {
   font-weight: bold;
   align-self: flex-end;
 }
-.foundation #overview {
+.foundation .tab-common {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.foundation #overview .buttons {
+.foundation .tab-common .buttons {
   position: relative;
   width: 100%;
   justify-content: flex-end;
   z-index: 1;
 }
-.foundation #overview .buttons::before,
-.foundation #overview .buttons::after {
+.foundation .tab-common .buttons::before,
+.foundation .tab-common .buttons::after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -7824,32 +7824,32 @@ select::-ms-expand {
   bottom: 15px;
   left: 0;
 }
-.foundation #overview .buttons::before {
+.foundation .tab-common .buttons::before {
   width: 100%;
   background-color: #c0c0c0;
 }
-.foundation #overview .buttons::after {
+.foundation .tab-common .buttons::after {
   width: 33%;
   background-color: #0064D8;
 }
-.foundation #overview .overview-content {
+.foundation .tab-common .overview-content {
   display: flex;
   flex-direction: column;
   max-height: 400px;
   overflow: hidden;
   width: 100%;
 }
-.foundation #overview .toggle {
+.foundation .tab-common .toggle {
   max-height: 100% !important;
   transition: all 0.3s ease-in, color 0s ease-in-out;
 }
-.foundation #overview .toggle + .buttons::after {
+.foundation .tab-common .toggle + .buttons::after {
   width: 100%;
 }
-.foundation #overview h2 {
+.foundation .tab-common h2 {
   margin-top: 2rem;
 }
-.foundation #overview ul li {
+.foundation .tab-common ul li {
   display: flex;
   padding-left: 1.4rem;
   font-size: 14px;
@@ -7857,7 +7857,7 @@ select::-ms-expand {
   z-index: 1;
   margin-top: 1rem;
 }
-.foundation #overview ul li::before {
+.foundation .tab-common ul li::before {
   content: '';
   z-index: -1;
   position: absolute;
@@ -7869,7 +7869,7 @@ select::-ms-expand {
   height: 16px;
   width: 16px;
 }
-.foundation #overview p {
+.foundation .tab-common p {
   margin-top: 0.5rem;
 }
 .foundation #faq {
@@ -9140,7 +9140,7 @@ select::-ms-expand {
     width: 69%;
     margin-top: 0 !important;
   }
-  .foundation #overview {
+  .foundation .tab-common {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
