@@ -55,7 +55,7 @@
                                                 <td>{{ $trash->created_at }}</td>
                                                 <td>
                                                     <a href="{{ route('restoreWebsiteDetail', ['id' => $trash->id]) }}"
-                                                        class="fa fa-refresh fa-spin"></a>
+                                                        class="fa fa-sync fa-spin"></a>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                     <a href="{{ route('forceDeleteWebsiteDetail', ['id' => $trash->id]) }}"
                                                         class="fa fa-trash" style="color: red"></a>

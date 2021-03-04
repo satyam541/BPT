@@ -59,7 +59,7 @@
                                                 <td>
                                                     @can('restore', $trashedCountry)
                                                         <a href="{{ route('restoreCountry', ['country_code' => $trashedCountry->country_code]) }}"
-                                                            class="fa fa-refresh fa-spin"></a>
+                                                            class="fa fa-sync fa-spin"></a>
                                                     @endcan
                                                   &nbsp;&nbsp;&nbsp;&nbsp;
                                                 @can('forceDelete',$trashedCountry)

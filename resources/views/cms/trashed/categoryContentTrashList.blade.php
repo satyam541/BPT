@@ -56,7 +56,7 @@
                                                 <td>{{ $trashContent->created_at }}</td>
                                                 <td>
                                                     <a href="{{ route('restoreCategoryContent', ['id' => $trashContent->id]) }}"
-                                                        class="fa fa-refresh fa-spin"></a>
+                                                        class="fa fa-sync fa-spin"></a>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                                     <a href="{{ route('forceDeleteCategoryContent', ['id' => $trashContent->id]) }}"
                                                         class="fa fa-trash" style="color: red"></a>
