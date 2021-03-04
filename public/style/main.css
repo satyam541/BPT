@@ -110,6 +110,7 @@ select::-ms-expand {
   position: fixed !important;
   top: 0 !important;
   transition: 1s all;
+  width: 100%;
 }
 .sticky .top-bar {
   display: none!important;
@@ -9922,9 +9923,6 @@ select::-ms-expand {
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
-  .cart-banner {
-    padding-top: 1rem!important;
-  }
   .empty {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
