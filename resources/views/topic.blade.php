@@ -55,7 +55,7 @@
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <a href="">{{$course->name}}</a>
+                                <a href="{{ url('training-courses' . $course->reference) }}">{{$course->name}}</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -389,7 +389,7 @@
                                     </span>
                                     <h3>{{$location->name}}</h3>
                                     <span class="arrow">
-                                        <a href=""><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
+                                        <a href="{{ url('training-locations/' . $location->reference) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
                                     </span>
                                 </div>                                    
                                 @endforeach

@@ -27,7 +27,7 @@ class HomeController extends Controller
         $data['categories']=Category::has('popular')->with('topics.courses')->get();
         $data['topics']=Topic::has('popular')->get();
         $data['locations']=Location::has('popular')->limit(7)->orderBy('display_order')->get();
-        $data['testimonial']=Testimonial::first();
+        $data['testimonials']=Testimonial::all();
         $data['totalCourses']=null;
         $pageDetail = PageDetail::where(['page_name'=>'home','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())

@@ -13,10 +13,10 @@ class SearchController extends Controller
 {
     public function search()
     {
-        $query      = request()->q;
-        $courses    = Course::with('topic')->where('name','like','%'.$query.'%')->paginate(20);
-        $data['query']  = $query;
-        $data['result'] = $courses;
+        $query                     = request()->q;
+        $courses                   = Course::with('topic')->where('name','like','%'.$query.'%')->paginate(20);
+        $data['query']             = $query;
+        $data['result']            = $courses;
         $data['pageDetail']        = PageDetail::getContent('search');
         $data['popularTopics']     = Topic::has('popular')->with('courses')->get();
         $data['popularCourses']    = Course::has('popular')->get();
@@ -37,14 +37,9 @@ class SearchController extends Controller
                             }
                             return $query;
                         })
-                        ->where('name', 'not like','%Evening%')
-                        ->where('name', 'not like','%Weekend%')
-                        ->where('name', 'not like','%Residential%')
                         ->orderBy('display_order')
                         ->distinct()
                         ->get();
-
-            // $courses = Course::where('name','like','%'.$terms.'%') ->distinct() ->get();
         return response()->json($courses);
     }
 
