@@ -87,7 +87,7 @@
                 </div>
                 <div class="category-list">
                     @foreach ($categories as $category)
-                        <div class="category-content">
+                        <div class="category-content" onclick="location.href = '{{ url('training-courses' . $category->reference) }}';">
                             <span>
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="blue">
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="white">

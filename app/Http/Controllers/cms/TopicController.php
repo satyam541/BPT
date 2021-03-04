@@ -367,10 +367,26 @@ class TopicController extends Controller
         $topic = Topic::onlyTrashed()->find($id)->myforceDelete();
     
         return back()->with('success','Permanently Deleted');
-
-
    }
 
+   public function trashTopicContent()
+   {
+       $data['topicContent'] = TopicContent::with(['topic'=>function($query){
+        $query->withTrashed();
+       }])->onlyTrashed()->where('country_id',country()->country_code)->get();
+      
+       return view('cms.trashed.topicContentTrashList',$data);
+   }
+   public function restoreTopicContent($id)
+   {
+       TopicContent::where('id',$id)->restore();
+       return back()->with('success','Successfully Restored');
+   }
+   public function forceDeleteTopicContent($id)
+   {
+        TopicContent::where('id',$id)->forceDelete();
+        return back()->with('success','Permanently Deleted');
+   }
    
    public function multipleFaq()
    {

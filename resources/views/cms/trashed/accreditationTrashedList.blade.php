@@ -59,7 +59,7 @@
                     <td>{{$trashedaccreditation->created_at}}</td>
                     <td>
                       @can('restore',$trashedaccreditation)
-                      <a href="{{ route('restoreAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      <a href="{{ route('restoreAccreditation',['id'=>$trashedaccreditation->id]) }}" class="fa fa-sync fa-spin"></a>
                       @endcan
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       @can('forceDelete',$trashedaccreditation)
