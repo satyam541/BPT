@@ -371,7 +371,7 @@
               </li>
               @endcan
               <li class="nav-item">
-                @can('view',new App\Models\location())
+                @can('view',new App\Models\Location())
                 <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>

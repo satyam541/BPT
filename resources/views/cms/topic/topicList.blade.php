@@ -37,7 +37,7 @@
                 Topic List
                 <div class="popular">
                   Popular
-              </div>
+                </div>
               <form action="{{Route('topicList')}}" method="get">
                                         
                 <div class="onoffswitch">
@@ -47,12 +47,12 @@
                     <span class="onoffswitch-switch"></span>
                 
                 </label>
-                
+                </div>
             </div>
               <input type="submit" name="submit" id="submit" style="visibility: hidden">
             </form>
           </div>  
-        </div>
+      
         
               <!-- /.card-header -->
               <div class="card-body">
@@ -155,4 +155,4 @@
             });
         });
     </script>
-@endsection\
+@endsection

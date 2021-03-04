@@ -83,12 +83,10 @@
                     @if(!empty($article->image))
                     <img id="aImage" src="{{URL($article->getImagePath())}}" class=" pad" height="70px" width="70px" />
                     @endif
-                    <br/>
-                    <br/>
-                    <a class="btn btn-danger" id="removeimage" onclick="removeImage()">Remove Image</a>
-                    <a class="btn bg-yellow" id="undoremoveimage" onclick="undoImage()">UNDO Remove Image</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="fa fa-remove" id="removeimage" onclick="removeImage()" style="color: red"></a>
+                    <a class="fas fa-undo" id="undoremoveimage" onclick="undoImage()" style="color: red"></a>
                     {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
-                    <br/>
                   </div>
 
                   <div class="form-group">

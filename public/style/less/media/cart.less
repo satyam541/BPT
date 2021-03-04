@@ -78,6 +78,56 @@
                 justify-content: flex-end;
             }
         }
+        .form-inner{
+            background-color: @whiteColor;
+            position: relative;
+            margin-top: 0;
+        }
+        .card-detail{
+            background-image: url(../img/cart/credit-bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-color: transparent;
+             padding: 3rem;
+             padding-bottom: 2rem;
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+             flex-wrap: wrap;
+             position: absolute;
+              top: -32px;
+              right: 0;
+              left: 0;
+              margin: auto;
+
+             .input-container{
+                 width: 48%;
+             }
+
+        }
+        .billing-details{
+            padding: 1.5rem 2rem!important;
+              width: 100%!important;
+              background-color: transparent!important;
+              margin-top: 6rem !important;
+            .form-consent{
+                label{
+                    width: 61%;
+                }
+            }
+            h2 {
+                margin-top: 0 !important;
+            }
+            .buttons{
+                flex-direction: row;
+                .btn-blue{
+                    margin-top: 0;
+                }
+                .btn-white{
+                    margin-right: 1rem;
+                }
+            }
+        }
         .payment-detail {
             background-color: @whiteColor;
             padding: 2rem;
@@ -130,8 +180,8 @@
     .steps {
         .steps-container {
             &::before {
-                top: 93px;
-                height: 96%;
+                top: 88px;
+                height: 95%;
                 width: 365px;
             }
         }
@@ -148,6 +198,50 @@
         }
         .form {
             padding: 1.5rem 4rem;
+        }
+        .form-inner{
+            top: 15px;
+        }
+        .card-detail{
+            width: 90%;
+        }
+        .billing-details{
+            padding: 1rem 5rem !important;
+            .form-consent{
+                justify-content: flex-end;
+                position: absolute;
+                right: 0;
+                top: 30px;
+
+                label{
+                    width: 40%;
+                }
+            }
+            .input-container{
+                width: 48%;
+            }
+        }
+        .delegate-details{
+
+            
+            p{
+                font-size: 12px;
+                margin-bottom: 1rem;
+            }
+            .form-consent{
+                margin-top: 0rem;
+                margin-bottom: 0;
+                     top: 21px;
+
+                     label{
+                         width: 25%;
+                     }
+            }
+            .form-input{
+                h3{
+                    margin-bottom: 1rem;
+                }
+            }
         }
         .payment-detail {
             padding: 2rem 3rem;
@@ -176,6 +270,14 @@
         }
         .form {
             padding: 1.5rem 4rem;
+        }
+        .delegate-details{
+            .form-consent{
+                     label{
+                         width: 20%;
+                     }
+            }
+          
         }
         .payment-detail {
             padding: 2rem 4rem;

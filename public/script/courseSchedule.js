@@ -13,9 +13,7 @@ $(document).ready(function(){
         }
         window.location.href = $(this).attr("href");
     });
-
-    $("#virtual-block .dates-prices .selectBtn").on('click',displayVirtualDetail);
-    $("#virtual-block .virtual-block .backToDates").on('click',displayVirtualDates);
+    
     if(defaultMethod)
     {
         // alert(defaultMethod);
