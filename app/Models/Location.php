@@ -12,6 +12,7 @@ class Location extends Model
     use SoftDeletes;
     protected $table   = 'location';
     protected $guarded = array('id');
+    protected $appends = ['url'];
     
     protected static function boot()
     {
@@ -67,11 +68,6 @@ class Location extends Model
         return new CustomSchedulePrice();
     }
 
-    public function getUrlAttribute()
-    {
-        return route('location',['locName'=>Str::after($this->reference,'/')]);
-    }
-
     public function popular()
     {
         return $this->morphOne('App\Models\Popular', 'module')->withDefault(
@@ -83,5 +79,12 @@ class Location extends Model
     {
         $this->popular()->delete();
         return parent::delete();
+    }
+
+    public function getUrlAttribute()
+    {
+        $reference =  $this->reference;
+        $url = 'training-location/'.$reference;
+        return url($url);
     }
 }

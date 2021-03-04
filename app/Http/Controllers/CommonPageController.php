@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CommonPageController extends Controller
 {
-    public function index(){
-        
+    public function index(Request $request){
+        dd($request->segment(1));
     }
 }
