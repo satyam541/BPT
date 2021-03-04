@@ -12833,7 +12833,6 @@ select::-ms-expand {
 .steps .payment-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .steps .detail-container {
   display: flex;
@@ -12872,13 +12871,61 @@ select::-ms-expand {
   font-size: 18px;
   font-weight: bold;
 }
-.steps .form {
+.steps .order-container {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
 }
+.steps .form {
+  display: none;
+  flex-direction: column;
+}
 .steps .form h2 {
   margin-bottom: 2rem;
+}
+.steps .payment-detail {
+  display: flex;
+  flex-direction: column;
+}
+.steps .payment-detail .buttons {
+  flex-direction: column;
+  margin-top: 0;
+}
+.steps .payment-detail .buttons a {
+  margin-top: 1rem;
+}
+.steps .payment-detail .buttons .btn-blue img {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.steps .payment-detail .form-consent {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.steps .payment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.steps .payment:first-child {
+  margin-top: 0;
+}
+.steps .payment h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.steps .payment-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  padding: 1rem;
+}
+.steps .payment-content p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.steps .payment-content p:last-child {
+  margin-bottom: 0;
 }
 @media (min-width : 768px) {
   .steps {
@@ -12948,14 +12995,44 @@ select::-ms-expand {
     order: 2;
     transform: translateX(25px);
   }
-  .steps .form {
+  .steps .order-container {
     width: 62%;
     margin-top: 0;
+  }
+  .steps .form {
     padding: 1.5rem 3rem;
   }
   .steps .form .buttons {
     width: 100%;
     justify-content: flex-end;
+  }
+  .steps .payment-detail {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .steps .payment-detail .buttons {
+    flex-direction: row;
+    margin-top: 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .steps .payment-detail .buttons .btn-blue {
+    margin-left: 1rem;
+  }
+  .steps .payment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .steps .payment:first-child {
+    margin-top: 0;
+  }
+  .steps .payment h2 {
+    text-align: left;
+  }
+  .steps .payment-content p {
+    text-align: left;
   }
 }
 @media (min-width : 1024px) {
@@ -12979,9 +13056,14 @@ select::-ms-expand {
   .steps .detail-container .detail span {
     transform: translateX(24px);
   }
-  .steps .form {
+  .steps .order-container {
     width: 70%;
+  }
+  .steps .form {
     padding: 1.5rem 4rem;
+  }
+  .steps .payment-detail {
+    padding: 2rem 3rem;
   }
 }
 @media (min-width : 1366px) {
@@ -13000,6 +13082,9 @@ select::-ms-expand {
   }
   .steps .form {
     padding: 1.5rem 4rem;
+  }
+  .steps .payment-detail {
+    padding: 2rem 4rem;
   }
 }
 @media (min-width : 1400px) {

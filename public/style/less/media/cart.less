@@ -36,7 +36,6 @@
                 margin-bottom: 3rem;
             }
         }
-    
         .payment-container {
             flex-direction: row;
             justify-content: flex-start;
@@ -68,13 +67,45 @@
                 }
             }
         }
-        .form {
+        .order-container {
             width: 62%;
             margin-top: 0;
+        }
+        .form {
             padding: 1.5rem 3rem;
             .buttons {
                 width: 100%;
                 justify-content: flex-end;
+            }
+        }
+        .payment-detail {
+            background-color: @whiteColor;
+            padding: 2rem;
+            box-shadow: @shadowLight;
+            .buttons {
+                flex-direction: row;
+                margin-top: 0;
+                justify-content: flex-end;
+                width: 100%;
+                .btn-blue {
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .payment {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            &:first-child {
+                margin-top: 0;
+            }
+            h2 {
+                text-align: left;
+            }
+        }
+        .payment-content {
+            p {
+                text-align: left;
             }
         }
     }
@@ -112,9 +143,14 @@
                 }
             }
         }
-        .form {
+        .order-container {
             width: 70%;
+        }
+        .form {
             padding: 1.5rem 4rem;
+        }
+        .payment-detail {
+            padding: 2rem 3rem;
         }
     }
     // End Steps Section
@@ -140,6 +176,9 @@
         }
         .form {
             padding: 1.5rem 4rem;
+        }
+        .payment-detail {
+            padding: 2rem 4rem;
         }
     }
     // End Steps Section
