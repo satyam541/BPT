@@ -298,7 +298,7 @@ $('input.telephone').on('focusout', function(event){
 // honeytrap start
  function addInputField()
  {
-         $.each($('form'), function(index, form){
+         $.each($('form').not('.exclude'), function(index, form){
              $(form).append('\
          <div style="visibility:hidden;pointer-events:none;width:0;height:0;position:absolute;top:-9999px;left:-9999px;z-index:-1;">\
              <input type="text" name="email_address" class="email"  tabindex="-1">\
@@ -360,4 +360,27 @@ $('body').on('click',function(e){
 
     // End load more //
 
+    
+    // Start FAQ
+   $(".course-name").click(function () {
+    $(this).parent().toggleClass("active");
+    $(this).parent().find('.description').slideToggle();
+    $(this).parent().siblings(".course-content").removeClass("active").find('.description').slideUp();
+});
+
+// End FAQ
+
+// Start scroll top 
+$(window).scroll(function(){ 
+    if ($(this).scrollTop() > 100) { 
+        $('#scroll').fadeIn(); 
+    } else { 
+        $('#scroll').fadeOut(); 
+    } 
+}); 
+$('#scroll').click(function(){ 
+    $("html, body").animate({ scrollTop: 0 }, 600); 
+    return false; 
+}); 
+// End scroll top
 

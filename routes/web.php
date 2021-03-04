@@ -16,6 +16,7 @@ Route::get('fetchapi/locations', 'TestController@locations');
 Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
+Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
 
 
 Auth::routes(['register'=>false]);
@@ -24,6 +25,7 @@ Auth::routes(['register'=>false]);
 Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
 Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
 Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
+Route::post('/filter-course','CourseController@filter')->name('courseFilterRoute');
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
@@ -32,6 +34,7 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
+Route::get('/thanks','ThanksController@index')->name('thanks');
 
 
 /*Enquiry Routes*/
@@ -55,7 +58,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
 Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
-Route::get('/training-courses/{category}/{topic}/{course}', 'CourseController@index')->name('coursePage');
+Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
@@ -82,16 +85,19 @@ Route::get('/emptycart', function () {
     return view('emptycart');
 });
 
-Route::get('/search', function () {
-    return view('search');
-});
+// Route::get('/search', function () {
+//     return view('search');
+// });
 
 Route::get('/knowledge-pass',function(){
     return view('knowledge-pass');
 });
 
-Route::get('/thanks', function () {
-    return view('thanks');
+// Route::get('/thanks', function () {
+//     return view('thanks');
+// });
+Route::get('/cart', function () {
+    return view('cart');
 });
 
 Route::get('/privacy-policy',function(){

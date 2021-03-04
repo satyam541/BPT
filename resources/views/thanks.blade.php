@@ -5,11 +5,11 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Thanks</h1>
-            <p>'We have just updated our website. So, if you didn't find your ideal course or have any query? Contact Us'</p>
+            <h1>{!!$pageDetail->banner['heading']->heading!!}</h1>
+            <p>{!!$pageDetail->banner['heading']->content!!}</p>
             <div class="breadcrums">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                     <li><a href="">Thanks</a></li>
                 </ul>
@@ -26,25 +26,25 @@
             <div class="success">
                 <div class="success-content">
                     <div class="content">
-                        <h2>Thank You For Your Enquiry.</h2>
-                        <p>Our representative will get in touch with you shortly.</p>
+                        <h2>{!!$pageDetail->success['success_content']->heading!!}</h2>
+                        <p>{!!$pageDetail->success['success_content']->content!!}</p>
                     <div class="info">
-                            <a href="tel:023 8000 1008"><strong>Call Us: </strong> 023 8000 1008</a>
-                            <a href="mailto:enquirie@bestpracticetraining.com"><strong>Email: </strong> enquirie@bestpracticetraining.com</a>
+                            <a href="tel:{{websiteDetail()->contact_number}}"><strong>Call Us: </strong> {{websiteDetail()->contact_number}}</a>
+                            <a href="mailto:{{websiteDetail()->contact_email}}"><strong>Email: </strong> {{websiteDetail()->contact_email}}</a>
                     </div>
                     </div>
                 </div>
             </div>
             <div class="success-contact">
-                <h2>Contact Us</h2>
-                <p>If you have some questions, Please feel free to contact us.</p>
+                <h2>{!!$pageDetail->success['success_contact']->heading!!}</h2>
+                <p>{!!$pageDetail->success['success_contact']->content!!}</p>
                 <div class="contact-main">
                     <span>
                         <img src="{{url('img/thanks/phone-white.svg')}}" alt="phone">
                     </span>
                     <div class="contact-content">
                         <h3>Phone</h3>
-                        <p>023 8000 1008</p>
+                        <p>{{websiteDetail()->contact_number}}</p>
                     </div>
                 </div>
                 <div class="contact-main">
@@ -53,7 +53,7 @@
                     </span>
                     <div class="contact-content">
                         <h3>Address</h3>
-                        <p>Wessex House, Upper Market Street, Eastleigh, Hampshire, SO50 9FD.</p>
+                        <p>{{websiteDetail()->address}}</p>
                     </div>
                 </div>
                 <div class="social-media">

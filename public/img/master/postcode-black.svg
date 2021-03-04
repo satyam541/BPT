@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.297" height="17.084" viewBox="0 0 24.297 17.084">
+  <g id="postcode-black" transform="translate(0 -76)">
+    <g id="Group_8277" data-name="Group 8277" transform="translate(0 76)">
+      <g id="Group_8276" data-name="Group 8276">
+        <circle id="Ellipse_364" data-name="Ellipse 364" cx="1.186" cy="1.186" r="1.186" transform="translate(12.623 9.135)"/>
+        <circle id="Ellipse_365" data-name="Ellipse 365" cx="1.186" cy="1.186" r="1.186" transform="translate(15.945 9.135)"/>
+        <circle id="Ellipse_366" data-name="Ellipse 366" cx="1.186" cy="1.186" r="1.186" transform="translate(9.301 9.135)"/>
+        <circle id="Ellipse_367" data-name="Ellipse 367" cx="1.186" cy="1.186" r="1.186" transform="translate(5.979 9.135)"/>
+        <path id="Path_28631" data-name="Path 28631" d="M23.348,76H.949A.949.949,0,0,0,0,76.949V92.135a.949.949,0,0,0,.949.949h22.4a.949.949,0,0,0,.949-.949V76.949A.949.949,0,0,0,23.348,76ZM22.4,91.186H1.9V77.9H22.4Z" transform="translate(0 -76)"/>
+        <path id="Path_28632" data-name="Path 28632" d="M131.949,175.4h9.965a.949.949,0,0,0,0-1.9h-9.965a.949.949,0,1,0,0,1.9Z" transform="translate(-124.783 -168.873)"/>
+      </g>
+    </g>
+  </g>
+</svg>

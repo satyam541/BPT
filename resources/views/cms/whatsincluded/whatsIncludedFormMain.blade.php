@@ -50,16 +50,14 @@
                     {{Form::label('icon','Icon')}}
                     {{Form::file('icon',['id'=>'icon'])}}
                     @if(!empty($whatsincluded->icon))
-                        <img id="wIcon" src="{{url('images/'.$whatsincluded->icon)}}" height="70px" width="70px"/>
-                        <br/>
-                    <br/>
-                    <a class="btn btn-danger" id="removeicon" onclick="removeIcon()">Remove Icon</a>
-                    <a class="btn bg-yellow" id="undoremoveicon" onclick="undoIcon()">UNDO Remove Icon</a>
-                    {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
-                    <br/>
+                    <img id="wIcon" src="{{url('images/'.$whatsincluded->icon)}}" height="70px" width="70px"/>
                     @endif
-                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="fa fa-remove" id="removeicon" onclick="removeIcon()" style="color: red"></a>
+                    <a class="fas fa-undo" id="undoremoveicon" onclick="undoIcon()" style="color: red"></a>
+                    {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
                   </div>
+
                   <div class="form-group">
                     {{Form::label('content','Content')}}
                     {{Form::textarea('content',$whatsincluded->content,['class'=>'form-control'])}}

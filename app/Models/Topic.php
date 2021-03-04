@@ -47,13 +47,6 @@ class Topic extends Model
         }
     }
 
-    public function getUrlAttribute()
-    {
-        // $categorySlug = $this->category->reference;
-        // $slug = $this->reference;
-        // return route('topicPageRoute',['topic'=>$slug]);
-    }
-
     // public function getLogoPath()
     // {// check file exist then return default image.
     //     $imageLink = url($this->logo_path.$this->logo);
@@ -163,7 +156,7 @@ class Topic extends Model
     }
     public function Bulletpoint()
     {
-        return $this->hasMany('App\Models\Bulletpoint','module_id','id')->where('module_type','topic');
+        return $this->hasMany('App\Models\BulletPoint','module_id','id')->where('module_type','topic');
     }
     public function whatsInclude()
     {
@@ -197,6 +190,13 @@ class Topic extends Model
         $this->content()->forceDelete();
         $this->BulletPoint()->forceDelete();
         return $this->forceDelete();
+    }
+
+    public function getUrlAttribute()
+    {
+        $reference =  $this->reference;
+        $url = 'training-courses'.$reference;
+        return url($url);
     }
 
 

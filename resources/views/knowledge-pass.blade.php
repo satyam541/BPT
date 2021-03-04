@@ -56,6 +56,174 @@
     </section>
 <!-- End pass-clients section -->
 
+
+<!-- Start requirement section -->
+<section class="flex-container requirement">
+    <div class="container">
+        <div class="requirement-container">
+            <div class="heading center-heading white-heading">
+                <h2>Calculate your Requirements</h2>
+            </div>
+            <p class="headline">Not sure what your budget should be? Use our training calculator to figure out how much you need to spend. Simply select how many of each course you think you will need for your staff and we will tell you the estimated cost.</p>
+           <div class="chart">
+               <div class="chart-title">
+                   <h3>
+                       Select a course category
+                   </h3>
+                   <h3># of Delegates</h3>
+                   <h3>Total</h3>
+               </div>
+               <div class="course-list">
+                    <div class="course-content">
+                        <div class="course-name">
+                                <p>
+                                    Business Skills (17 courses (s))
+                                </p>
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="image">
+                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
+                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
+                                </span>
+                        </div>
+                        <div class="description">
+                        <div class="course-detail bold">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <p>delegates</p>  
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="course-content">
+                        <div class="course-name">
+                                <p>
+                                    Business Skills (17 courses (s))
+                                </p>
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="image">
+                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
+                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
+                                </span>
+                        </div>
+                        <div class="description">
+                        <div class="course-detail bold">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <p>delegates</p>  
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        <div class="course-detail">
+                                <p>
+                                Popular Business Skill courses
+                                </p> 
+                                <span class="select">
+                                <select name="" id="">
+                                    <option value="">1</option>
+                                </select>
+                                </span>
+                                <p>
+                                    <span>
+                                        price
+                                    </span>
+                                    <span>
+                                        Total
+                                    </span>
+                                </p>
+
+                        </div>
+                        </div>
+
+                    </div>
+               </div>
+               <div class="summary">
+                   <p>Summary</p>
+                   <p>1 course selected</p>
+               </div>
+
+           </div>
+        </div>
+    </div>
+</section>
+<!-- End requirement section -->
+
 <!-- Start spending section -->
     <section class="flex-contanier spending">
         <div class="container">
@@ -143,7 +311,7 @@
 <!-- End spending section -->
 
 <!-- Start right section -->
-    <section class="flex-container right">
+    <section class="flex-container why-right">
         <div class="container">
             <div class="right-container">
                 <div class="heading center-heading">
@@ -285,6 +453,157 @@
         </div>
     </section>
 <!-- End benefits section -->
+
+
+<!-- Start budget section -->
+<section class="flex-container budget">
+    <div class="container">
+        <div class="budget-container">
+            <div class="heading center-heading">
+                <h2>Compare Budget Allocations</h2>
+            </div>
+            <p class="headline">Receive these exclusive benefits depending on your chosen budget.</p>
+            <div class="budget-table">
+            <table>
+                <tr>
+                    <th>Features</th>
+                    <th>Bronze</th>
+                    <th>Silver</th>
+                    <th>Gold</th>
+                </tr>
+                <tr>
+                    <td>
+                    <p>Dedicated account manager</p>
+                    <p>Your direct point of contact for all your training requirements</p>
+                    </td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                </tr>
+                <tr>
+                    <td>
+                    <p>Fixed discount percentages</p>
+                    <p>Discount rates will vary based upon investment level</p>
+                    </td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                </tr>
+                <tr>
+                    <td>
+                    <p>Free eLearning licences</p>
+                    <p>Depending on your budget investment, you will be able to enrol a number of users on eLearning courses</p>
+                    </td>
+                    <td>20 Users</td>
+                    <td>10 Users</td>
+                    <td>5 Users</td>
+                </tr>
+                <tr>
+                    <td>
+                    <p>Free courses</p>
+                    <p>Depending on your budget investment, you will be able to enrol a number of delegates on courses</p>
+                    </td>
+                    <td>12 Delegates</td>
+                    <td>7 Delegates</td>
+                    <td>3 Delegates</td>
+                </tr>
+                <tr>
+                    <td>
+                    <p>Become a partner</p>
+                    <p>You'll be added to our clients and we'll provide you with a testimonial. You will also receive exclusive offers and training updates</p>
+                    </td>
+                    <td><img src="{{url('img/knowledge-pass/tick.svg')}}" alt="tick"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- End budget section -->
+
+<!-- Start knowledge section -->
+<section class="flex-container knowledge">
+    <div class="container">
+        <div class="knowledge-container">
+            <div class="pass-info">
+                <div class="heading">
+                    <h2>Your guide to booking a Knowledge Pass</h2>
+                </div>
+                <p>"The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection."
+                    </p>
+                    <p>The quality of training provided has been good with very good feedback from delegates. </p>
+                    <p>They use good quality venues and think about meeting our needs in their selection. " The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection.</p>
+                    <div class="buttons">
+                    <a class="btn-blue"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
+                    </div>
+            </div>
+            <div class="booking-list">
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/hand.svg')}}" alt="hand"></span>
+                        <h3>Confirm the amount</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/platform.svg')}}" alt="platform"></span>
+                        <h3>Your Online platform is live</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/online-booking.svg')}}" alt="online-booking"></span>
+                        <h3>Start booking your courses</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/form.svg')}}" alt="form"></span>
+                        <h3>Sign the booking form</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/data.svg')}}" alt="data"></span>
+                        <h3>Your dedicated account is opened</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+                    <div class="booking-info">
+                        <span><img src="{{url('img/knowledge-pass/conversation.svg')}}" alt="conversation"></span>
+                        <h3>Caroline, cornwall Council</h3>
+                        <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End knowledge section -->
+
+<!-- Start study section -->
+<section class="flex-container study">
+    <div class="container">
+        <div class="study-container">
+            <div class="heading center-heading">
+                <h2>Case <span>Studies</span></h2>
+            </div>
+            <div class="study-list">
+                <div class="study-content">
+                    <h2>Consistent Quality</h2>
+                    <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
+                </div>
+                <div class="study-content">
+                    <h2>Consistent Quality</h2>
+                    <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End study section -->
 
 
 
