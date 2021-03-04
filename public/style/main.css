@@ -10243,6 +10243,9 @@ select::-ms-expand {
   border-radius: 0;
   box-shadow: none;
 }
+.form {
+  background-color: #1C2848;
+}
 @media (min-width : 768px) {
   .search-banner {
     padding-top: 1rem!important;
