@@ -356,4 +356,22 @@ class CategoryController extends Controller
        Category::onlyTrashed()->find($id)->myforceDelete();
        return back()->with('success','Permanently Deleted');
    }
+   public function categoryContentTrash()
+   {
+    $data['categoryContent'] = CategoryContent::with(['category'=>function($query){
+        $query->withTrashed();
+    }])->onlyTrashed()->where('country_id',country()->country_code)->get();
+
+    return view('cms.trashed.categoryContentTrashList',$data);
+   }
+   public function restoreCategoryContent($id)
+   {
+       CategoryContent::where('id',$id)->restore();
+       return back()->with('success','Successfully Restored');
+   }
+   public function forceDeleteCategoryContent($id)
+   {
+       CategoryContent::where('id',$id)->forceDelete();
+       return back()->with('success','Permanently Deleted');
+   }
 }

@@ -10,12 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Certification</h1>
+                        <h1 class="m-0 text-dark">Category Content</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item">Certification</li>
+                            <li class="breadcrumb-item"><a href="{{route('categoryList')}}">Category</a></li>
+                            <li class="breadcrumb-item active">Content</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,7 +35,7 @@
                         <div class="card card-primary card-outline">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Certification Trash
+                                    Category Content Trash
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -42,21 +43,22 @@
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th>Certification Name</th>
+                                            <th>Category Name</th>
                                             <th>Date</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($trashedCertifications as $trashedCertification)
+
+                                        @foreach ($categoryContent as $trashContent)
                                             <tr>
-                                                <td>{{ $trashedCertification->name }}</td>
-                                                <td>{{ $trashedCertification->created_at }}</td>
+                                                <td>{{ $trashContent->category->name ?? '' }}</td>
+                                                <td>{{ $trashContent->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('restoreCertification', ['id' => $trashedCertification->id]) }}"
+                                                    <a href="{{ route('restoreCategoryContent', ['id' => $trashContent->id]) }}"
                                                         class="fa fa-sync fa-spin"></a>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <a href="{{ route('forceDeleteCertification', ['id' => $trashedCertification->id]) }}"
+                                                    <a href="{{ route('forceDeleteCategoryContent', ['id' => $trashContent->id]) }}"
                                                         class="fa fa-trash" style="color: red"></a>
                                                 </td>
                                             </tr>
@@ -86,7 +88,7 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [{
-                        "name": "Certification Name"
+                        "name": "Topic Name"
                     },
                     {
                         "name": "Date",

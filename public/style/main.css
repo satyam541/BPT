@@ -107,13 +107,10 @@ select::-ms-expand {
   display: none;
 }
 .sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed !important;
+  top: 0 !important;
+  transition: 1s all;
   width: 100%;
-  transition: 1s;
-  height: auto;
-  z-index: 2;
 }
 .sticky .top-bar {
   display: none!important;
@@ -1072,6 +1069,9 @@ select::-ms-expand {
   }
   .navbar {
     width: 100%;
+    position: absolute;
+    top: 25px;
+    left: 0;
   }
   .navbar ul {
     display: flex;
@@ -1203,7 +1203,8 @@ select::-ms-expand {
   }
   .banner {
     padding: 3rem 2rem;
-    padding-top: 1rem !important;
+    padding-top: 12rem !important;
+    position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
@@ -1211,7 +1212,6 @@ select::-ms-expand {
   }
   .banner .banner-container {
     padding: 0;
-    padding-top: 2rem;
   }
   .banner .banner-container .banner-content {
     align-items: flex-start;
@@ -9718,6 +9718,8 @@ select::-ms-expand {
   margin-bottom: 1rem;
 }
 .order .inner-content {
+  display: flex;
+  flex-direction: column;
   margin-top: 3rem;
 }
 .order .total-main {
@@ -9760,7 +9762,7 @@ select::-ms-expand {
 .order .total-content {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .order .total-content li {
   display: flex;
@@ -9788,13 +9790,11 @@ select::-ms-expand {
 }
 .order .cards {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 .order .cards p {
-  width: 100%;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: 900;
@@ -9815,6 +9815,8 @@ select::-ms-expand {
   flex-direction: column;
 }
 .order .order-main .course-name {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   background-color: #0064D8;
   color: #FFFFFF;
@@ -9836,6 +9838,8 @@ select::-ms-expand {
   height: 100%;
 }
 .order .order-main .course-info {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
@@ -9914,12 +9918,11 @@ select::-ms-expand {
   border-radius: 0 20px 20px 0;
 }
 .order .order-main .order-courses {
+  display: flex;
+  flex-direction: column;
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
-  .cart-banner {
-    padding-top: 1rem!important;
-  }
   .empty {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
@@ -9943,7 +9946,7 @@ select::-ms-expand {
     margin-bottom: 0rem;
   }
   .order .inner-content {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -9977,17 +9980,25 @@ select::-ms-expand {
   }
   .order .order-main .course-info {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 0;
+    box-shadow: none;
   }
   .order .order-main .course-info .detail {
     width: 38%;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     margin-bottom: 0;
   }
   .order .order-main .course-info .detail li:last-child {
     margin-bottom: 0;
+  }
+  .order .order-main .course-info .detail:nth-child(odd) {
+    background-color: #F2F2F2;
+  }
+  .order .order-main .course-info .detail:nth-child(even) {
+    background-color: #FFFFFF;
   }
   .order .order-main .course-info .delivery-method {
     width: 25%;
@@ -10019,6 +10030,15 @@ select::-ms-expand {
   .empty {
     padding: 4rem 0rem;
     background-size: cover;
+  }
+  .order {
+    padding: 4rem 0rem;
+  }
+  .order .inner-content .total-main {
+    width: 25%;
+  }
+  .order .inner-content .order-main {
+    width: 72%;
   }
 }
 .error-banner {
