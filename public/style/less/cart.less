@@ -81,6 +81,8 @@
         box-shadow: @shadowLight;
         padding: 1.5rem 1rem;
          margin-top: 2rem;
+         display: none;
+         flex-direction: column;
     }
     .card-detail{
         background-color: @lightblueColor;
@@ -110,7 +112,7 @@
         box-shadow: none;
         padding: 0;
         h2{
-            margin-bottom: 1rem!important;
+            margin: 1rem 0!important;
         }
         .form-consent{
             margin-bottom: 1rem;
@@ -127,7 +129,7 @@
      }
     }
     .delegate{
-        display: none;
+        display: flex;
         .card-detail{
             .input-container{
                 display: flex;
