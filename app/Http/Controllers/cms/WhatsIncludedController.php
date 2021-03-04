@@ -4,8 +4,8 @@ namespace App\Http\Controllers\cms;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\whatsIncluded;
-use App\Models\whatsIncludedHeaders;
+use App\Models\WhatsIncluded;
+use App\Models\WhatsIncludedHeaders;
 use Carbon\Carbon;
 use App\Http\Requests\cms\WhatsIncludedMainRequest;
 

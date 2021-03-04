@@ -10,7 +10,7 @@
   <!-- Font Awesome -->
   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="{{url('adminlte/cms/tabs/tab.css')}}">
   <!-- Ionicons -->
@@ -794,7 +794,7 @@
 <script>
 $.widget.bridge('uibutton', $.ui.button)
 </script>
-<script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
+{{-- <script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script> --}}
 
 <!-- Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

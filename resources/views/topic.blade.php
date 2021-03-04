@@ -73,192 +73,225 @@
         </section>
     <!-- End topic-courses section -->
 
-    <!-- Start Foundation Section -->
-        <section class="flex-container foundation">
-            <div class="container">
-                <div class="foundation-container">
-                    @if ($topic->topicContent && $topic->faqs->isnotEmpty())
-                    <div class="heading">
-                        <h2>{!!$courses->first()->name!!}</h2>
-                    </div>
-                    @endif
-                    <div class="tabs-container">
-                        <ul class="tab-links">
-                            {{-- {{dd($topic->topicContent)}} --}}
-                            @if ($topic->topicContent)
-                            <li class="tab-click" data-target="overview">
-                                <span class="image">
-                                    <img src="{{url('img/courses/overview.svg')}}" alt="overview">
-                                </span>
-                                <p class="tab">
-                                Overview
-                                </p>
-                                <div class="number">01</div>
-                            </li>
-                            <li class="tab-click" data-target="course">
-                                <span class="image">
-                                    <img src="{{url('img/courses/content.svg')}}" alt="content">
-                                </span>
-                                <p class="tab">
-                                Course Content
-                                </p>
-                                <div class="number">02</div>
-                            </li>
-                            @endif
-                            @if ($topic->faqs->isnotEmpty())
+<!-- Start Foundation Section -->
+    <section class="flex-container foundation">
+        <div class="container">
+            <div class="foundation-container">
+                @if ($topic->topicContent && $topic->faqs->isnotEmpty())
+                <div class="heading">
+                    <h2>{!!$topic->name!!}</h2>
+                </div>
+                @endif
+                <div class="tabs-container">
+                    <ul class="tab-links">
+                        
+                        @if ($topic->topicContent!=null)
+                        @php $topic->topicContent=summernote_replace($topic->topicContent) @endphp                            
+                        @endif
+                        @if ($topic->topicContent->overview!=null)
+                        <li class="tab-click" data-target="overview">
+                            <span class="image">
+                                <img src="{{url('img/courses/overview.svg')}}" alt="overview">
+                            </span>
+                            <p class="tab">
+                            Overview
+                            </p>
+                            <div class="number">01</div>
+                        </li>
+                        @endif
+                        @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)
+                        <li class="tab-click" data-target="course">
+                            <span class="image">
+                                <img src="{{url('img/courses/content.svg')}}" alt="content">
+                            </span>
+                            <p class="tab">
+                            Topic Content
+                            </p>
+                            <div class="number">02</div>
+                        </li>
+                        @endif
+                        @if ($topic->faqs->isnotEmpty())
 
-                            <li class="tab-click" data-target="faq">
-                                <span class="image">
-                                    <img src="{{url('img/courses/faq.svg')}}" alt="faq">
-                                </span>
-                                <p class="tab">
-                                FAQs
-                                </p>
-                                <div class="number">03</div>
-                            </li>
-                            @endif
-                        </ul>
-                        
-                        <div class="tab-content tab-common" id="overview">
-                            @if ($topic->topicContent)                        
-                            <div class="overview-content" id="showmorecontent">
-                                <h2>Course Overview</h2>
-                                
-                                {!!$topic->topicContent->overview!!}
-                                
-                            </div>
-                            <div class="buttons">
-                                <a href="#showmorecontent" class="btn-blue showmorecontent">
-                                    <span class="text">Show More</span>
-                                </a>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="tab-content tab-common" id="course">
-                            @if ($topic->topicContent)                        
-                            <div class="overview-content" id="showmorecontent">
-                                <h2>Course Content</h2>
-                                
-                                {!!$topic->topicContent->overview!!}
-                                
-                            </div>
-                            <div class="buttons">
-                                <a href="#showmorecontent" class="btn-blue showmorecontent">
-                                    <span class="text">Show More</span>
-                                </a>
-                            </div>
-                            @endif
-                        </div>
-                        
-                        <div class="tab-content" id="faq">
-                            <div class="heading">
-                                <h2>Frequently Asked <span>Questions</span></h2>
-                            </div>
-                            @foreach ($topic->faqs as $faq)
-                                
+                        <li class="tab-click" data-target="faq">
+                            <span class="image">
+                                <img src="{{url('img/courses/faq.svg')}}" alt="faq">
+                            </span>
+                            <p class="tab">
+                            FAQs
+                            </p>
+                            <div class="number">03</div>
+                        </li>
+                        @endif
+                    </ul>
+                    
+                    <div class="tab-content tab-common" id="overview">
+                        @if ($topic->topicContent->overview!=null)                        
+                        <div class="overview-content" id="showmorecontent">
+                            <h2>Course Overview</h2>
                             
-                            <div class="faq-list">
-                                <div class="faq-item">
-                                    <div class="ques">
-                                    <h3>{!!$faq->question!!} </h3>
-                                    <span>
-                                    </span>
-                                    </div>
-                                    <div class="ans">
-                                    <p>{!!$faq->answer!!}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <!-- End Foundation Section -->
-
-
-    <!-- Start topic-delivery section -->
-
-        <section class="flex-container topic-delivery">
-            <div class="container">
-                <div class="delivery-container">
-                    <div class="delivery-content">
-                    <div class="heading white-heading">
-                        <h2>{!!$pageDetail->delivery_methods['delivery_content']->heading!!}</h2>
-                    </div>
-                    <p>{!!$pageDetail->delivery_methods['delivery_content']->content!!}</p>
-                    </div>
-                    @php unset($pageDetail->delivery_methods['delivery_content']) @endphp
-                    <div class="delivery-list">
-                        @foreach ($pageDetail->delivery_methods as $deliveryMethods)
-                            <a class="item">
-                                <span>
-                                <img src="{{$deliveryMethods->getImagePath()}}" alt="{{$deliveryMethods->image_alt}}" class="black-icon">
-                                <img src="{{$deliveryMethods->getIconPath()}}" alt="{{$deliveryMethods->icon_alt}}" class="white-icon">
-                                </span>
-                                {!!$deliveryMethods->heading!!}
-                            </a>
-                            @endforeach
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <!-- End topic-delivery section -->
-
-
-    <!-- Start topic-choose section -->
-        <section class="flex-container topic-choose">
-            <div class="container">
-                <div class="choose-container">
-                    <div class="choose-content">
-                            <div class="heading">
-                            <h2>{!!heading_split($pageDetail->choose_content['heading']->heading)!!}</h2>  
-                            </div>
-                            <p>{!!$pageDetail->choose_content['heading']->content!!}</p>
-                            <p>{!!$pageDetail->choose_content['heading']->page_tag_line!!}</p>
-                        <div class="choose-progress">
-                            <div class="count">
-                                <div class="circle">
-                                    <svg class="progress-ring topic-first" width="95" height="95">
-                                        <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
-                                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
-                                    </svg>
-                                </div>
-                                    <p class="txt-name">Business strategy growth</p>
-                            </div>     
-                            <div class="count">
-                                <div class="circle">
-                                    <svg class="progress-ring topic-second" width="95" height="95">
-                                        <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
-                                        <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
-                                    </svg>
-                                </div>
-                                <p class="txt-name">Finance valuable ideas</p>
-                            </div>
+                            {!!$topic->topicContent->overview!!}
+                            
                         </div>
                         <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS">
-                                <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
-                                Enquire Now
+                            <a href="#showmorecontent" class="btn-blue showmorecontent">
+                                <span class="text">Show More</span>
                             </a>
                         </div>
+                        @endif
                     </div>
-                    <div class="choose-image">
-                        <div class="years">
-                            <h3>{!!$pageDetail->choose_content['years']->heading!!}</h3>
-                            <p>{!!$pageDetail->choose_content['years']->content!!}</p>
+                    <div class="tab-content tab-common" id="course">
+                         @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)                        
+                        <div class="overview-content" id="showmorecontent">
+                            <h2>Topic Content</h2>
+                            <br>
+                            @if ($topic->topicContent->summary!=null)
+                               <h3>Summary</h3>
+                               <p>{!!$topic->topicContent->summary!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->detail!=null)
+                               <h3>Detail</h3>
+                               <p>{!!$topic->topicContent->detail!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->whats_included!=null)
+                               <h3>What's Included</h3>
+                               <p>{!!$topic->topicContent->whats_included!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->pre_requities!=null)
+                               <h3>Pre Requities</h3>
+                               <p>{!!$topic->topicContent->pre_requities!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->who_should_attend!=null)
+                            <h3>Who Should Attend</h3>
+                            <p>{!!$topic->topicContent->who_should_attend!!}</p>
+                            <br> 
+                         @endif
+                         @if ($topic->topicContent->what_will_you_learn!=null)
+                         <h3>What Will You Learn</h3>
+                         <p>{!!$topic->topicContent->what_will_you_learn!!}</p>
+                         <br> 
+                      @endif
                         </div>
-                        <span>
-                            <img src="{{$pageDetail->choose_content['years']->getImagePath()}}" alt="{{$pageDetail->choose_content['years']->image_alt}}">
-                        </span>
+                        <div class="buttons">
+                            <a href="#showmorecontent" class="btn-blue showmorecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
+                        @endif
+                    </div>
+                    
+                    <div class="tab-content" id="faq">
+                        <div class="heading">
+                            <h2>Frequently Asked <span>Questions</span></h2>
+                        </div>
+                        @foreach ($topic->faqs as $faq)
+                            
+                        
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="ques">
+                                <h3>{!!$faq->question!!} </h3>
+                                <span>
+                                </span>
+                                </div>
+                                <div class="ans">
+                                <p>{!!$faq->answer!!}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </section>
-    <!-- End topic choose section -->
+        </div>
+    </section>
+<!-- End Foundation Section -->
+
+
+<!-- Start topic-delivery section -->
+
+    <section class="flex-container topic-delivery">
+        <div class="container">
+            <div class="delivery-container">
+                <div class="delivery-content">
+                <div class="heading white-heading">
+                    <h2>{!!$pageDetail->delivery_methods['delivery_content']->heading!!}</h2>
+                </div>
+                <p>{!!$pageDetail->delivery_methods['delivery_content']->content!!}</p>
+                </div>
+                @php unset($pageDetail->delivery_methods['delivery_content']) @endphp
+                <div class="delivery-list">
+                    @foreach ($pageDetail->delivery_methods as $deliveryMethods)
+                        <a class="item">
+                            <span>
+                            <img src="{{$deliveryMethods->getImagePath()}}" alt="{{$deliveryMethods->image_alt}}" class="black-icon">
+                            <img src="{{$deliveryMethods->getIconPath()}}" alt="{{$deliveryMethods->icon_alt}}" class="white-icon">
+                            </span>
+                            {!!$deliveryMethods->heading!!}
+                        </a>
+                        @endforeach
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- End topic-delivery section -->
+
+
+<!-- Start topic-choose section -->
+    <section class="flex-container topic-choose">
+        <div class="container">
+            <div class="choose-container">
+                <div class="choose-content">
+                        <div class="heading">
+                           <h2>{!!heading_split($pageDetail->choose_content['heading']->heading)!!}</h2>  
+                        </div>
+                        <p>{!!$pageDetail->choose_content['heading']->content!!}</p>
+                        <p>{!!$pageDetail->choose_content['heading']->page_tag_line!!}</p>
+                    <div class="choose-progress">
+                        <div class="count">
+                            <div class="circle">
+                                <svg class="progress-ring topic-first" width="95" height="95">
+                                    <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
+                                    <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
+                                </svg>
+                            </div>
+                                <p class="txt-name">Business strategy growth</p>
+                        </div>     
+                        <div class="count">
+                            <div class="circle">
+                                <svg class="progress-ring topic-second" width="95" height="95">
+                                    <circle class="circle-default" fill="white" r="43" cx="47.5" cy="47.5" />
+                                    <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
+                                </svg>
+                            </div>
+                            <p class="txt-name">Finance valuable ideas</p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a class="btn-blue open-popup enquiryJS">
+                            <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+                <div class="choose-image">
+                    <div class="years">
+                        <h3>{!!$pageDetail->choose_content['years']->heading!!}</h3>
+                        <p>{!!$pageDetail->choose_content['years']->content!!}</p>
+                    </div>
+                    <span>
+                        <img src="{{$pageDetail->choose_content['years']->getImagePath()}}" alt="{{$pageDetail->choose_content['years']->image_alt}}">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End topic choose section -->
 
 
 <!-- Start experiences section -->
