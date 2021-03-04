@@ -51,6 +51,12 @@
     .order-main{
         .buttons{
             flex-direction: column;
+            .btn-white,.btn-blue{
+                img{
+                    margin-right: 0;
+                    margin-left:15px;
+                }
+            }
             .btn-white{
                 margin-bottom: 1rem;
             }
@@ -66,12 +72,16 @@
         background-color: @whiteColor;
         box-shadow: @shadowLight;
         padding: 1rem;
+        background-image: url(../img/emptycart/bg.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
     }
     .order-heading{
         position: relative;
         padding: 1rem;
         z-index: 1;
-        transform: translate(10px, -34px);
+        transform: translate(0px, -34px);
         &:before{
             content: '';
             background-image: url('../img/emptycart/total-bg.png');
@@ -148,8 +158,10 @@
         }
       
     }
-    .order-courses{
-       margin-top: 2rem;
+    .order-main{
+        display: flex;
+        flex-direction: column;
+      
         .course-name{
             padding: 1rem;
             background-color: @lightblueColor;
@@ -173,6 +185,7 @@
         }
         .course-info{
             padding: 1rem;
+            box-shadow: @shadowLight;
             .delivery-method{
                 flex-direction: row-reverse!important;
                 align-items: center;
@@ -197,6 +210,7 @@
                     font-weight: 600;
                     margin-bottom: 1rem;
                     text-align: center;
+                    margin-left: auto;
                 }
                 .icon{
                     width: 50px;
@@ -258,6 +272,9 @@
                 }
             }
            
+        }
+        .order-courses{
+            margin-top: 2rem;
         }
       
     }
