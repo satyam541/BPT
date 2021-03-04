@@ -38,7 +38,7 @@
             <div class="search-list">
                 @foreach ($popularTopics->take(4) as $popularTopic)
                 {{$popularTopic->loadContent()}}
-                <a class="search-info">
+                <a class="search-info" href="{{url('/training-courses'.$popularTopic->reference)}}">
                     <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
                     {{$popularTopic->courses->count()}} 
                     @if ($popularTopic->courses->count() == 1)
@@ -76,8 +76,8 @@
                     </div>
                     <p>{!!$course->detail!!}</p>
                     <div class="buttons">
-                        <a class="btn-blue"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                        <a class="btn-white"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
+                        <a class="btn-blue open-popup enquiryJS"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
+                        <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
                     </div>
                 </div>
                 @endforeach
@@ -91,7 +91,7 @@
                         <p>Courses</p>
                         <ul>
                             @foreach ($popularCourses->take(5) as $popularCourse)
-                                <li><a href=""> <label for="">{{$popularCourse->name}}</label> </a> </li>
+                                <li><a href="{{url('/training-courses'.$popularCourse->reference)}}"> <label for="">{{$popularCourse->name}}</label> </a> </li>
                             @endforeach
                         </ul>
                     </div>
@@ -99,7 +99,7 @@
                         <p>Locations</p>
                         <ul>
                             @foreach ($popularLocations->take(5) as $popularLocation)
-                                <li><a href=""> <label for="">{{$popularLocation->name}}</label> </a> </li>
+                                <li><a href="{{url('/training-locations/'.$popularLocation->reference)}}"> <label for="">{{$popularLocation->name}}</label> </a> </li>
                             @endforeach
                         </ul>
                     </div>

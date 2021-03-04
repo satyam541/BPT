@@ -77,12 +77,22 @@
             margin-bottom: 2rem;
         }
     }
+    .input-container {
+        width: 99%;
+    }
     .form-inner{
         box-shadow: @shadowLight;
         padding: 1.5rem 1rem;
          margin-top: 2rem;
          display: none;
          flex-direction: column;
+    }
+    .group-input {
+        display: flex;
+        flex-direction: column;
+        height: 238px;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
     .card-detail{
         background-color: @lightblueColor;
@@ -129,7 +139,7 @@
      }
     }
     .delegate{
-        display: flex;
+        display: none;
         .card-detail{
             .input-container{
                 display: flex;
@@ -159,7 +169,7 @@
         .buttons {
             flex-direction: column;
             margin-top: 0;
-            a {
+            button {
                 margin-top: 1rem;
             }
             .btn-blue {
@@ -199,5 +209,8 @@
             }
         }
     }
+}
+.step-active{
+    display: flex !important;
 }
 // End Steps Section
