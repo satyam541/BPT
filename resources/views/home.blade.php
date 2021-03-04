@@ -344,6 +344,7 @@
                     <h2>What Our Clients Say About Us</h2>
                 </div>
                 <div class="reviews-outer owl-carousel">
+                    @foreach ($testimonials as $testimonial)
                     <div class="reviews-inner">
                         <p>
                             {!!$testimonial->content!!}
@@ -358,34 +359,9 @@
                             <img src="{{url('img/home/stars.svg')}}" alt="stars">
                         </div>
                     </div>
-                    <div class="reviews-inner">
-                        <p>
-                            {!!$testimonial->content!!}
-                        </p>
-                        <div class="author-name">
-                            <h3>
-                                {!!$testimonial->author!!}
-                            </h3>
-                            <span>
-                                {!!$testimonial->designation!!}
-                            </span>
-                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                        </div>
-                    </div>
-                    <div class="reviews-inner">
-                        <p>
-                            {!!$testimonial->content!!}
-                        </p>
-                        <div class="author-name">
-                            <h3>
-                                {!!$testimonial->author!!}
-                            </h3>
-                            <span>
-                                {!!$testimonial->designation!!}
-                            </span>
-                            <img src="{{url('img/home/stars.svg')}}" alt="stars">
-                        </div>
-                    </div>
+                    @endforeach
+                    
+                    
                 </div>
             </div>
         </div>
