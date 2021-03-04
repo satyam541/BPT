@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Course;
 use App\Models\Location;
+use App\Models\PageDetail;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
     public function index(Request $request)
-    {
+    {   $data['pageDetail']     = PageDetail::getContent('course');
         $schedule               =   Schedule::query();
         $data['selectedMonth'] = null;
         $month = null;
@@ -37,7 +38,7 @@ class CourseController extends Controller
             metaData($meta);
         }
         $data['relatedCourses']     = Course::where('topic_id', $course->topic_id)->where('id', '<>', $course->id)->select('name', 'reference')->get(); 
-        $data['popularLocation']    = Location::has('popular')->select('name', 'reference')->get(); 
+        $data['popularLocations']    = Location::has('popular')->select('name', 'reference')->orderBy('tier')->orderBy('display_order')->get(); 
         $course_id = $course->id;
 
         if($request->course)
