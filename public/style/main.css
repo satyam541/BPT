@@ -977,8 +977,8 @@ select::-ms-expand {
 .top-arrow {
   display: none;
   position: fixed;
-  right: 32px;
-  bottom: 45px;
+  right: 5px;
+  bottom: 50px;
   height: 40px;
   width: 40px;
   box-shadow: 0 0 3px #000000;
@@ -991,6 +991,23 @@ select::-ms-expand {
 .top-arrow img {
   width: 100%;
   height: 100%;
+}
+.no-schedule {
+  padding: 3rem 1.5rem;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.no-schedule p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.no-schedule p strong {
+  color: #0064D8;
+}
+.no-schedule .btn-blue img {
+  margin-right: 0;
+  margin-left: 0.5rem;
 }
 .pagination {
   display: flex;
@@ -1269,6 +1286,15 @@ select::-ms-expand {
   .enquiry-popup .form .form-input {
     justify-content: center;
     padding-top: 3rem;
+  }
+  .top-arrow {
+    right: 32px;
+    bottom: 45px;
+  }
+  .no-schedule {
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
   }
 }
 @media (min-width : 1024px) {
@@ -8409,24 +8435,6 @@ select::-ms-expand {
   margin: 1.5rem 0 0.5rem;
   text-align: center;
 }
-.training .no-schedule {
-  padding: 3rem 1.5rem;
-  display: none;
-  flex-direction: column;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-}
-.training .no-schedule p {
-  text-align: center;
-  margin-top: 0.5rem;
-  font-weight: 500;
-}
-.training .no-schedule p strong {
-  color: #0064D8;
-}
-.training .no-schedule .btn-blue img {
-  margin-right: 0;
-  margin-left: 0.5rem;
-}
 .virtual {
   padding: 3rem 1.5rem;
 }
@@ -9751,7 +9759,7 @@ select::-ms-expand {
 .order .total-content {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .order .total-content li {
   display: flex;
@@ -9970,15 +9978,22 @@ select::-ms-expand {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    box-shadow: none;
   }
   .order .order-main .course-info .detail {
     width: 38%;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin-bottom: 0;
   }
   .order .order-main .course-info .detail li:last-child {
     margin-bottom: 0;
+  }
+  .order .order-main .course-info .detail:nth-child(odd) {
+    background-color: #F2F2F2;
+  }
+  .order .order-main .course-info .detail:nth-child(even) {
+    background-color: #FFFFFF;
   }
   .order .order-main .course-info .delivery-method {
     width: 25%;
@@ -10010,6 +10025,15 @@ select::-ms-expand {
   .empty {
     padding: 4rem 0rem;
     background-size: cover;
+  }
+  .order {
+    padding: 4rem 0rem;
+  }
+  .order .inner-content .total-main {
+    width: 25%;
+  }
+  .order .inner-content .order-main {
+    width: 72%;
   }
 }
 .error-banner {
@@ -13269,10 +13293,22 @@ select::-ms-expand {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
+.steps .input-container {
+  width: 99%;
+}
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
   margin-top: 2rem;
+  display: none;
+  flex-direction: column;
+}
+.steps .group-input {
+  display: flex;
+  flex-direction: column;
+  height: 238px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13301,7 +13337,7 @@ select::-ms-expand {
   padding: 0;
 }
 .steps .billing-details h2 {
-  margin-bottom: 1rem!important;
+  margin: 1rem 0!important;
 }
 .steps .billing-details .form-consent {
   margin-bottom: 1rem;
@@ -13343,7 +13379,7 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 0;
 }
-.steps .payment-detail .buttons a {
+.steps .payment-detail .buttons button {
   margin-top: 1rem;
 }
 .steps .payment-detail .buttons .btn-blue img {
@@ -13378,6 +13414,9 @@ select::-ms-expand {
 }
 .steps .payment-content p:last-child {
   margin-bottom: 0;
+}
+.step-active {
+  display: flex !important;
 }
 @media (min-width : 768px) {
   .steps {
@@ -13492,6 +13531,9 @@ select::-ms-expand {
   .steps .billing-details .form-consent label {
     width: 61%;
   }
+  .steps .billing-details h2 {
+    margin-top: 0 !important;
+  }
   .steps .billing-details .buttons {
     flex-direction: row;
   }
@@ -13541,8 +13583,8 @@ select::-ms-expand {
     width: 48%;
   }
   .steps .steps-container::before {
-    top: 93px;
-    height: 96%;
+    top: 88px;
+    height: 95%;
     width: 365px;
   }
   .steps .detail-container {
@@ -13556,6 +13598,9 @@ select::-ms-expand {
   }
   .steps .form {
     padding: 1.5rem 4rem;
+  }
+  .steps .form-inner {
+    top: 15px;
   }
   .steps .card-detail {
     width: 90%;

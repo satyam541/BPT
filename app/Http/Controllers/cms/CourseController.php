@@ -355,7 +355,25 @@ class CourseController extends Controller
         $course->myforceDelete();
         return back()->with('success','Permanently Deleted');
    }
-   
+   public function courseContentTrash()
+   {
+        $data['courseContent'] = CourseContent::with(['course'=>function($query){
+            $query->withTrashed();
+        }])->onlyTrashed()->where('country_id',country()->country_code)->get();
+
+       return view('cms.trashed.courseContentTrashList',$data);
+   }
+   public function restoreCourseContent($id)
+   {
+       CourseContent::where('id',$id)->restore();
+       return back()->with('success','Successfully Restored');
+   }
+   public function forceDeleteCourseContent($id)
+   {
+       CourseContent::where('id',$id)->forceDelete();
+       return back()->with('success','Permanently Deleted');
+   }
+
    public function whatsincludedlist(Request $request)
    {
         $id = $request->module;
