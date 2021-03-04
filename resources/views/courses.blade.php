@@ -50,6 +50,7 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
+                        @if (!empty($selectedCourse->countryContent['overview']))
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -58,7 +59,9 @@
                                 Overview
                             </p>
                             <div class="number">01</div>
-                        </li>
+                        </li> 
+                        @endif
+                        
 
                         <li class="tab-click" data-target="course">
                             <span class="image">
@@ -94,6 +97,8 @@
                             </li>
                         @endif
                     </ul>
+
+                    @if (!empty($selectedCourse->countryContent['overview']))
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
@@ -105,18 +110,23 @@
                             </a>
                         </div>
                     </div>
+                    @endif
+                        
                     <div class="tab-content tab-common" id="course">
+                        @if (!empty($selectedCourse->countryContent['summery']))                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Content</h2>
-                            {!! $selectedCourse->countryContent->overview !!}
+                            
+                            {!!$selectedCourse->countryContent->summery!!}
+                            
                         </div>
                         <div class="buttons">
                             <a href="#showmorecontent" class="btn-blue showmorecontent">
                                 <span class="text">Show More</span>
                             </a>
                         </div>
+                        @endif
                     </div>
-
                     @if ($selectedCourse->faqs->isNotEmpty())
                         <div class="tab-content" id="faq">
                             <div class="heading">
@@ -324,7 +334,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$schedules->links()}}
+                                {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="virtual-block">
@@ -368,7 +378,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{$virtualSchedules->links()}}
+                                {{$virtualSchedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
                             @endif
                         </div>
                         <div id="online-block">
@@ -490,14 +500,27 @@
                     <div class="info">
                         <h2>{{$selectedCourse->name}}</h2>
                     </div>
+                    {{-- {{dd($virtualSchedules->first()->event_price)}} --}}
                     <div class="price">
-                        @if ($schedules->first()->response_discounted_price < $schedules->first()->event_price)
-                        <span class="rate">£{{$schedules->first()->event_price}}</span>  
-                        <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
-                            
-                        @else
-                        <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                        @if ($schedules->isNotEmpty())
+                            @if (!empty($schedules->first()->response_discounted_price) < !empty($schedules->first()->event_price))
+                            <span class="rate">£{{$schedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$schedules->first()->event_price}}</span> 
+                            @endif
+                        @elseif($virtualSchedules->isNotEmpty())
+                            @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->first()->event_price))
+                            <span class="rate">£{{$virtualSchedules->first()->event_price}}</span>  
+                            <span class="offer">£{{$virtualSchedules->first()->response_discounted_price}}</span>  
+                                
+                            @else
+                            <span class="offer">£{{$virtualSchedules->first()->event_price}}</span> 
+                            @endif
                         @endif
+                        
+                        
                         
                         <div class="buy">
                             <span>

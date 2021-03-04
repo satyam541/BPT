@@ -71,10 +71,10 @@
                             <h2>Contact Info</h2>
                         <ul>
                             <li><img src="{{url('img/master/white-call.svg')}}" alt="call">
-                                <a href="">{{websiteDetail()->contact_number}}</a>
+                                <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
                             </li>
                             <li><img src="{{url('img/master/white-email.svg')}}" alt="email">
-                                <a href="">{{websiteDetail()->contact_email}}</a>
+                                <a href="mailto:{{websiteDetail()->contact_email}}">{{websiteDetail()->contact_email}}</a>
                             </li>
                             <li><img src="{{url('img/master/location.svg')}}" alt="location">
                                 <p>{{websiteDetail()->address}}</p>
@@ -176,11 +176,15 @@
     <nav class="tooltips">
         <ul>
             
-            <li><a href="javascriptvoid(0)">{{websiteDetail()->contact_number}}<img src="{{url('img/master/phone-ringing.svg')}}" alt="phone-ringing"></a></li>
+            <li><a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}<img src="{{url('img/master/phone-ringing.svg')}}" alt="phone-ringing"></a></li>
             <li><a class="open-popup enquiryJS">Enquiry<img src="{{url('img/master/mail.svg')}}" alt="mail"></a></li>
             <li><a class="open-popup enquiryJS">Request Callback</a><img src="{{url('img/master/phone-contact.svg')}}" alt="phone-contact"></li>
         </ul>
     </nav>
+    
+    <a class="top-arrow smoothscroll" id="scroll" data-href=".banner" >
+                <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
+            </a>
 
 
 </body>

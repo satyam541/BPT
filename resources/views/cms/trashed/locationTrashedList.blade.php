@@ -45,7 +45,7 @@
                   <th>Location Name</th>
                   <th>Date</th>
                   <th>
-                  @can('restore',new App\Models\location())
+                  @can('restore',new App\Models\Location())
                     Actions
                     @endcan
                   </th>
