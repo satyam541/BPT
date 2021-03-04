@@ -31,7 +31,7 @@
         }
     }
     .inner-content{
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         .total-main{
@@ -83,13 +83,14 @@
         .order-main{
             .course-info{
                 display: flex;
+                flex-direction: row;
                 justify-content: space-between;
                 padding: 0;
                 box-shadow: none;
                 .detail{
                     width: 38%;
                     justify-content: center;
-                    padding: 1rem 2rem;
+                    padding: 2rem;
                     margin-bottom: 0;
                     li{
                         &:last-child{
