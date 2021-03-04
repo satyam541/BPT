@@ -79,13 +79,16 @@
             <div class="foundation-container">
                 @if ($topic->topicContent && $topic->faqs->isnotEmpty())
                 <div class="heading">
-                    <h2>{!!$courses->first()->name!!}</h2>
+                    <h2>{!!$topic->name!!}</h2>
                 </div>
                 @endif
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        {{-- {{dd($topic->topicContent)}} --}}
-                        @if ($topic->topicContent)
+                        
+                        @if ($topic->topicContent!=null)
+                        @php $topic->topicContent=summernote_replace($topic->topicContent) @endphp                            
+                        @endif
+                        @if ($topic->topicContent->overview!=null)
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{url('img/courses/overview.svg')}}" alt="overview">
@@ -95,12 +98,14 @@
                             </p>
                             <div class="number">01</div>
                         </li>
+                        @endif
+                        @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)
                         <li class="tab-click" data-target="course">
                             <span class="image">
                                 <img src="{{url('img/courses/content.svg')}}" alt="content">
                             </span>
                             <p class="tab">
-                            Course Content
+                            Topic Content
                             </p>
                             <div class="number">02</div>
                         </li>
@@ -120,7 +125,7 @@
                     </ul>
                     
                     <div class="tab-content tab-common" id="overview">
-                        @if ($topic->topicContent)                        
+                        @if ($topic->topicContent->overview!=null)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
                             
@@ -135,12 +140,40 @@
                         @endif
                     </div>
                     <div class="tab-content tab-common" id="course">
-                        @if ($topic->topicContent)                        
+                         @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)                        
                         <div class="overview-content" id="showmorecontent">
-                            <h2>Course Content</h2>
-                            
-                            {!!$topic->topicContent->overview!!}
-                            
+                            <h2>Topic Content</h2>
+                            <br>
+                            @if ($topic->topicContent->summary!=null)
+                               <h3>Summary</h3>
+                               <p>{!!$topic->topicContent->summary!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->detail!=null)
+                               <h3>Detail</h3>
+                               <p>{!!$topic->topicContent->detail!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->whats_included!=null)
+                               <h3>What's Included</h3>
+                               <p>{!!$topic->topicContent->whats_included!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->pre_requities!=null)
+                               <h3>Pre Requities</h3>
+                               <p>{!!$topic->topicContent->pre_requities!!}</p>
+                               <br> 
+                            @endif
+                            @if ($topic->topicContent->who_should_attend!=null)
+                            <h3>Who Should Attend</h3>
+                            <p>{!!$topic->topicContent->who_should_attend!!}</p>
+                            <br> 
+                         @endif
+                         @if ($topic->topicContent->what_will_you_learn!=null)
+                         <h3>What Will You Learn</h3>
+                         <p>{!!$topic->topicContent->what_will_you_learn!!}</p>
+                         <br> 
+                      @endif
                         </div>
                         <div class="buttons">
                             <a href="#showmorecontent" class="btn-blue showmorecontent">
