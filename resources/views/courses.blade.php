@@ -402,49 +402,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="virtual-block">
-                            @if (!$virtualSchedules->isEmpty())
-                                @foreach ($virtualSchedules as $virtual)
-                                    <div class="course-content" >
-                                        <div class="name">
-                                            <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
-                                            <div class="buttons">
-                                                <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
-                                                    data-quote="Enquire Now">
-                                                    <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
-                                                </a>
-                                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                                    data-quote="Book Now">
-                                                    <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="content">
-                                                <span>
-                                                    <img src="{{ url('../img/courses/course-virtual.svg') }}" alt="course-virtual">
-                                                </span>
-                                                <div class="sub-content">
-                                                    <h3>{{$virtual->response_location}}</h3>
-                                                    {{-- <p>Best Selling Courses in <strong>{{$virtual->response_location}}</strong></p> --}}
-                                                    <p>Best Selling Course</p>
-                                                </div>
-                                            </div>
-                                            <div class="date">
-                                                <p>{{ $virtual->response_date->isoFormat('ddd') }}</p>
-                                                <p>{{ $virtual->response_date->isoFormat('DD') }}</p>
-                                                <p>{{ $virtual->response_date->isoFormat('MMM') }}</p>
-                                                <p>{{ $virtual->response_date->isoFormat('YYYY') }}</p>
-                                            </div>
-                                            <div class="rate">
-                                                <h3>£{{ceil($virtual->event_price) }}</h3>
-                                                <p><strong>Duration: </strong>2 Days</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                                {{$virtualSchedules->onEachSide(2)->fragment('virtual-booking')->appends(request()->query())->links()}}
-                            @endif
+                        
+                        @endforeach
+                            {{$virtualSchedules->onEachSide(2)->fragment('virtual-booking')->appends(request()->query())->links()}}
+                        @endif
                         </div>
                         <div id="online-block" class="online-block">
                             <div class="add-ons">
@@ -541,10 +502,6 @@
                         </div>
                         <div id="onsite-block">
                         </div>
-                    </div>
-                    <div id="online-block">
-                    </div>
-                    <div id="onsite-block">
                     </div>
                 </div>
             </div>
