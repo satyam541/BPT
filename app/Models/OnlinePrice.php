@@ -15,7 +15,7 @@ class OnlinePrice extends Model
     }
     public function addons()
     {
-        return $this->belongsToMany('App\Models\CourseAddon','course_addon','online_price_id','addon_id');
+        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
     }
 
 }
