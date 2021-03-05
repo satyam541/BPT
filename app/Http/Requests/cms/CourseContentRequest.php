@@ -3,6 +3,7 @@
 namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\CourseContentRule;
 
 class CourseContentRequest extends FormRequest
 {
@@ -25,10 +26,10 @@ class CourseContentRequest extends FormRequest
     {
         return [
             'course_id'         => 'required',
-            'country_id'        => 'required',
+            'country_id'        => ['required',new CourseContentRule],
             'heading'           => 'nullable',
             // 'description'       => 'required',
-            'overview'           => 'required'
+            'overview'          => 'required'
         ];
     }
 

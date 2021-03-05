@@ -87,7 +87,7 @@
             $('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
-                        { "name": "Category" },
+                        { "name": "Category", "sorting":false, searching:false },
                         { "name": "Actions", "sorting":false, searching:false  }
               ]                    
             });
