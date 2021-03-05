@@ -31,28 +31,28 @@
             </div>
             <div class="payment-container">
                 <div class="detail-container">
-                    <div class="detail">
+                    <div class="detail" id="one">
                         <p>Customer Details</p>
                         <span class="number">
                             <p>1</p>
                             <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
                         </span>
                     </div>
-                   <div class="detail">
+                   <div class="detail" id="two">
                         <p>Billing Details</p>
                         <span class="number ">
                             <p>2</p>
                             <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
                         </span>
                    </div>
-                   <div class="detail">
+                   <div class="detail" id="three">
                         <p>Delegate Details</p>
                         <span class="number">
                             <p>3</p>
                             <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
                         </span>
                    </div>
-                   <div class="detail">
+                   <div class="detail" id="four">
                         <p>Summary Details</p>
                         <span class="number">
                             <p>4</p>

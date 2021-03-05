@@ -168,10 +168,6 @@
         }
 
     });
-    $('.owl-next').addClass("btn-active");
-    $('.owl-prev,.owl-next').click(function () {
-        $(this).addClass("btn-active").siblings().removeClass("btn-active");
-    });
     // End home Testimonial//
 
     //Start Catalouge Testimonial//
@@ -397,25 +393,30 @@ $('#scroll').click(function(){
 // End scroll top
 
 function stepOne() {
- $('#stepTwo').addClass('step-active');
- $('#stepOne').hide().removeClass('step-active');
- $('.detail').addClass('number-active');
+    $('#stepTwo').addClass('step-active');   
+    $('#stepOne').hide().removeClass('step-active'); 
+    $('#one').addClass('number-active');  
 }
-
+ 
 function prev() {
     $('#stepOne').addClass('step-active');
     $('#stepTwo').removeClass('step-active');
+    $('#one').removeClass('number-active');
 }
 function stepThree() {
     $('#stepThree').addClass('step-active');
     $('#stepTwo').hide().removeClass('step-active');
+    $('#two').addClass('number-active');  
 }
 function prevTwo() {
     $('#stepTwo').addClass('step-active');
     $('#stepThree').removeClass('step-active');
+    $('#two').removeClass('number-active');
+  
 }
 function stepFour() {
     $('#stepFour').addClass('step-active');
     $('#stepThree').hide().removeClass('step-active');
+    $('#three').addClass('number-active');  
 }
 

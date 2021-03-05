@@ -172,9 +172,7 @@ Route::post('/whatsincluded/update','WhatsIncludedController@update')->name('upd
 Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@delete')->name('deleteWhatsIncluded');
 // Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
-Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonForm')->name('courseAddonForm');
-Route::post('/courseassignAddon','OnlineCourseController@courseAddonassigned')->name('courseAddonAssigned');
-Route::post('/online-course/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
+Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonsList')->name('courseAddonsList');
 
 
 // Addon Routes
