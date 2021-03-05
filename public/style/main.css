@@ -458,6 +458,9 @@ select::-ms-expand {
   /* Edge */
   color: #C0C0C0;
 }
+.message span {
+  align-items: flex-start;
+}
 .breadcrums {
   display: flex;
   margin-top: 1rem;
@@ -849,7 +852,7 @@ select::-ms-expand {
   color: #FFFFFF;
   font-size: 14px;
   width: 88%;
-  word-break: break-word;
+  word-break: break-all;
 }
 .footer ul li:last-child {
   margin-bottom: 0;
@@ -1061,6 +1064,21 @@ select::-ms-expand {
   box-shadow: 0 0 8px #c0c0c0;
   background-color: #FFFFFF;
   border-right: 2px solid #1C2848;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C2848;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0064D8;
 }
 @media (min-width : 768px) {
   .buttons .btn-blue,
@@ -10267,9 +10285,6 @@ select::-ms-expand {
   background-color: #1C2848;
 }
 @media (min-width : 768px) {
-  .search-banner {
-    padding-top: 1rem!important;
-  }
   .most-search {
     padding: 3rem 2rem;
   }
