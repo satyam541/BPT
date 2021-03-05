@@ -88,7 +88,7 @@ class PageDetailController extends Controller
         $data['pageDetail'] = $pageDetail;
         $data['summernote']=json_encode(null);
         if($pageDetail->content!=null){
-            if (strpos($pageDetail->content, '<p>') !== false) {
+            if (strpos($pageDetail->content, '<p>') || strpos($pageDetail->content, '<p') !== false) {
                 $data['summernote']=json_encode(true);
             }
             else{

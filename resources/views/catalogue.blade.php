@@ -1,4 +1,4 @@
-@extends("layouts.master")
+    @extends("layouts.master")
 @section('content')
     <!-- Start Banner Section -->
     <section class="flex-container banner catalogue-banner">
