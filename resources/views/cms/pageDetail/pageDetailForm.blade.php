@@ -59,12 +59,15 @@
                     {{Form::label('heading','Heading')}}
                     {{Form::text('heading',null,['class'=>'form-control'])}}
                   </div>
-                  
-                  <div class="form-group">
+                  <button id="change">Summernote</button>
+                  <div id="content" class="form-group">
                     {{Form::label('content','Content')}}
-                    {{Form::textarea('content',null,['class'=>'form-control'])}}
+                    {{Form::textarea('content',null,['id'=>'contentData','class'=>'form-control'])}}
                   </div>
-
+                  <div id="summernote" class="form-group" style="display: none">
+                    {{Form::label('content','Content')}}
+                    {{Form::textarea('content',null,['id'=>'summernoteData','disabled'=>'disabled', 'class'=>'form-control summernote'])}}
+                  </div>
                   <div class="form-group">
                     {{Form::label('page_tag_line','Page Tag Line')}}
                     {{Form::text('page_tag_line',null,['class'=>'form-control'])}}
@@ -127,7 +130,22 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            
+          var summernote=JSON.parse('{{$summernote}}');
+          if(summernote!=null){
+            if(summernote==true){
+                
+              $('#summernote').css({'display' : ''});
+              $("#summernoteData").removeAttr('disabled');
+              $('#content').css({'display' : 'none'});
+              $("#contentData").attr('disabled','disabled');
+            }
+            else{
+              $('#content').css({'display' : ''});
+              $('#summernote').css({'display' : 'none'});
+              $("#summernoteData").attr('disabled','disabled');
+              $("#contentData").removeAttr('disabled');
+            }
+          }
             $('#undoremoveimage').hide();
                 @if($pageDetail['image'] == null)
                 $('#removeimage').hide();
@@ -137,6 +155,22 @@
                 @if($pageDetail['icon'] == null)
                 $('#removeicon').hide();
                 @endif
+          $('#change').click(function(e){
+            e.preventDefault();
+            if ($('#summernote').css('display') == 'none')
+            {
+              $('#summernote').css({'display' : ''});
+              $("#summernoteData").removeAttr('disabled');
+              $('#content').css({'display' : 'none'});
+              $("#contentData").attr('disabled','disabled');
+            }
+            else{
+              $('#content').css({'display' : ''});
+              $('#summernote').css({'display' : 'none'});
+              $("#summernoteData").attr('disabled','disabled');
+              $("#contentData").removeAttr('disabled');
+            }
+          });
         });
         function removeImage()
             {
