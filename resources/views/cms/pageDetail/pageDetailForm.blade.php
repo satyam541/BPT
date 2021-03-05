@@ -59,13 +59,13 @@
                     {{Form::label('heading','Heading')}}
                     {{Form::text('heading',null,['class'=>'form-control'])}}
                   </div>
-                  <button id="change">Summernote</button>
+                  <button  id="change">summernote</button>
                   <div id="content" class="form-group">
-                    {{Form::label('content','Content')}}
+                    <br>
                     {{Form::textarea('content',null,['id'=>'contentData','class'=>'form-control'])}}
                   </div>
                   <div id="summernote" class="form-group" style="display: none">
-                    {{Form::label('content','Content')}}
+                    <br>
                     {{Form::textarea('content',null,['id'=>'summernoteData','disabled'=>'disabled', 'class'=>'form-control summernote'])}}
                   </div>
                   <div class="form-group">
@@ -133,13 +133,14 @@
           var summernote=JSON.parse('{{$summernote}}');
           if(summernote!=null){
             if(summernote==true){
-                
+              $('#change').text('textarea');
               $('#summernote').css({'display' : ''});
               $("#summernoteData").removeAttr('disabled');
               $('#content').css({'display' : 'none'});
               $("#contentData").attr('disabled','disabled');
             }
             else{
+              $('#change').text('summernote');
               $('#content').css({'display' : ''});
               $('#summernote').css({'display' : 'none'});
               $("#summernoteData").attr('disabled','disabled');
@@ -159,12 +160,14 @@
             e.preventDefault();
             if ($('#summernote').css('display') == 'none')
             {
+              $('#change').text('textarea');
               $('#summernote').css({'display' : ''});
               $("#summernoteData").removeAttr('disabled');
               $('#content').css({'display' : 'none'});
               $("#contentData").attr('disabled','disabled');
             }
             else{
+              $('#change').text('summernote');
               $('#content').css({'display' : ''});
               $('#summernote').css({'display' : 'none'});
               $("#summernoteData").attr('disabled','disabled');
