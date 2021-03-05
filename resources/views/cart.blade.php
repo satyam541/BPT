@@ -31,7 +31,7 @@
             </div>
             <div class="payment-container">
                 <div class="detail-container">
-                    <div class="detail" id="one">
+                    <div class="detail blue-active" id="one">
                         <p>Customer Details</p>
                         <span class="number">
                             <p>1</p>
@@ -40,7 +40,7 @@
                     </div>
                    <div class="detail" id="two">
                         <p>Billing Details</p>
-                        <span class="number ">
+                        <span class="number">
                             <p>2</p>
                             <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
                         </span>
@@ -348,26 +348,28 @@
                         
                     </div>
                     <div class="payment-detail" id="stepFour">
-                        <div class="payment">
-                            <h2>Payment Detail</h2>
-                            <div class="payment-content">
-                                <p><strong>Payment Method: </strong> Credit Card</p>
-                                <p><strong>Payment Method: </strong> Credit Card</p>
+                        <div class="group-input">
+                            <div class="payment">
+                                <h2>Payment Detail</h2>
+                                <div class="payment-content">
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="payment">
-                            <h2>Payment Detail</h2>
-                            <div class="payment-content">
-                                <p><strong>Payment Method: </strong> Credit Card</p>
-                                <p><strong>Payment Method: </strong> Credit Card</p>
-                                <p><strong>Payment Method: </strong> Credit Card</p>
+                            <div class="payment">
+                                <h2>Payment Detail</h2>
+                                <div class="payment-content">
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="payment">
-                            <h2>Payment Detail</h2>
-                            <div class="payment-content">
-                                <p><strong>Payment Method: </strong> Credit Card</p>
-                                <p><strong>Payment Method: </strong> Credit Card</p>
+                            <div class="payment">
+                                <h2>Payment Detail</h2>
+                                <div class="payment-content">
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                    <p><strong>Payment Method: </strong> Credit Card</p>
+                                </div>
                             </div>
                         </div>
                         <div class="form-consent">
