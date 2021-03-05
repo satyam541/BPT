@@ -10627,6 +10627,12 @@ select::-ms-expand {
   background: #FFFFFF;
   color: #000000;
 }
+.catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .btn-blue::before {
+  background-color: #e5e5e5;
+}
+.catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .btn-blue::after {
+  background-color: #0064D8;
+}
 .catalogue-banner .owl-item:nth-child(odd) .testi-content .buttons .black {
   display: flex;
 }
