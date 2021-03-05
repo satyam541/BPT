@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{  metaData('title') }}</title>
+   <meta name="description" content="{{ metaData('description') }} " />
+   <meta name="keyword" content="{{  metaData('keyword') }}"  />
+   @if(request()->has('page') || request()->has('month'))
+      <meta name="robots" content="noindex, nofollow" /> 
+   @endif
+   @if(preg_match('/[A-Z]/',request()->url()))
+      <meta name="robots" content="noindex" /> 
+   @endif
     <link rel="stylesheet" href="{{url('style/main.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
+    <style>
+        .ui-autocomplete .ui-autocomplete-category {
+            color: #000080;
+            font-weight: 700;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 5px;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        .ui-autocomplete .ui-menu-item {
+            padding: 3px;
+        }
+
+    </style>
    @yield('header')
 </head>
 <body>

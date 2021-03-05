@@ -1,21 +1,6 @@
 @extends("layouts.master")
 
 @section('content')
-    <style>
-        .ui-autocomplete .ui-autocomplete-category {
-            color: #000080;
-            font-weight: 700;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 5px;
-            font-size: 16px;
-            padding: 8px;
-        }
-
-        .ui-autocomplete .ui-menu-item {
-            padding: 3px;
-        }
-
-    </style>
     <!-- Start home-banner section -->
     <section class="flex-container banner home-banner">
 
