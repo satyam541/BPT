@@ -3,6 +3,7 @@
 namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\CategoryContentRule;
 
 class CategoryContentRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class CategoryContentRequest extends FormRequest
     {
         return [
             'category_id'      => 'required',
-            'country_id'       => 'required',
+            'country_id'       => ['required',new CategoryContentRule],
             'heading'          => 'nullable',
             'overview'         => 'required',
             // 'description'   => 'required',
