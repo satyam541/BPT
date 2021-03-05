@@ -8269,6 +8269,9 @@ select::-ms-expand {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.training .modes-active {
+  display: flex;
+}
 .training .methods {
   display: flex;
   flex-direction: column;
