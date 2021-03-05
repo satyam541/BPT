@@ -85,6 +85,15 @@ class PageDetailController extends Controller
     {
         $this->authorize('update', $pageDetail);
         $data['pageDetail'] = $pageDetail;
+        $data['summernote']=json_encode(null);
+        if($pageDetail->content!=null){
+            if (strpos($pageDetail->content, '<p>') !== false) {
+                $data['summernote']=json_encode(true);
+            }
+            else{
+                $data['summernote']=json_encode(false);
+            }
+        }
         $data['submitRoute'] = array('updatePageDetail',$pageDetail->id);
         return view("cms.pageDetail.pageDetailForm",$data);
     }
