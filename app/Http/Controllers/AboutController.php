@@ -22,7 +22,7 @@ class AboutController extends Controller
             $meta['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($meta);
         }
-        $data['testimonials'] = Testimonial::limit(6)->get();
+        $data['testimonials'] = Testimonial::limit(6)->select('author', 'content', 'image', 'designation')->get();
         $data['websiteDetail'] = websiteDetail();
         $data['pageDetail'] = PageDetail::getContent('about_us');
 
