@@ -974,7 +974,7 @@ select::-ms-expand {
 .tooltips {
   display: none;
 }
-.top-arrow {
+.up-arrow {
   display: none;
   position: fixed;
   right: 5px;
@@ -988,26 +988,9 @@ select::-ms-expand {
   transform: rotate(-90deg);
   z-index: 3;
 }
-.top-arrow img {
+.up-arrow img {
   width: 100%;
   height: 100%;
-}
-.no-schedule {
-  padding: 3rem 1.5rem;
-  flex-direction: column;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-}
-.no-schedule p {
-  text-align: center;
-  margin-top: 0.5rem;
-  font-weight: 500;
-}
-.no-schedule p strong {
-  color: #0064D8;
-}
-.no-schedule .btn-blue img {
-  margin-right: 0;
-  margin-left: 0.5rem;
 }
 .pagination {
   display: flex;
@@ -1287,7 +1270,7 @@ select::-ms-expand {
     justify-content: center;
     padding-top: 3rem;
   }
-  .top-arrow {
+  .up-arrow {
     right: 32px;
     bottom: 45px;
   }
@@ -8323,6 +8306,128 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.training .add-ons {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  background-image: url(../img/courses/add-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.training .add-ons h2 {
+  position: absolute;
+  background-image: url(../img/courses/add-layer.png);
+  background-size: 100% 100%;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  top: -18px;
+  left: -14px;
+  font-size: 20px;
+}
+.training .add-ons .item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.training .add-ons .item .offer {
+  display: flex;
+  align-items: flex-start;
+}
+.training .add-ons .item .offer h3 {
+  margin-left: 0.5rem;
+  font-size: 15px;
+}
+.training .add-ons .item p {
+  text-align: left;
+  margin-left: 1.6rem;
+  font-size: 13px;
+}
+.training .online-block {
+  display: flex;
+  flex-direction: column;
+}
+.training .add-foundation {
+  display: flex;
+  flex-direction: column;
+}
+.training .add-foundation .foundation-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border-radius: 10px;
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid #0064D8;
+}
+.training .add-foundation h3 {
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.training .add-foundation span {
+  display: flex;
+  margin-top: 1.5rem;
+  border-bottom: 1px dashed #C0C0C0;
+  padding: 0 1rem;
+  padding-bottom: 0.5rem;
+  width: 85%;
+  align-self: center;
+}
+.training .add-foundation span img {
+  width: 25px;
+  height: 25px;
+}
+.training .add-foundation span p {
+  width: 80%;
+  margin-left: 1rem;
+  justify-content: flex-start;
+  display: flex;
+}
+.training .add-foundation ul {
+  padding: 1rem;
+}
+.training .add-foundation ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.training .add-foundation ul li:last-child {
+  padding-top: 0.5rem;
+  border-top: 1px solid #C0C0C0;
+}
+.training .add-foundation ul li p {
+  width: 40%;
+  display: flex;
+  font-weight: bold;
+}
+.training .add-foundation ul li p:nth-child(2) {
+  justify-content: flex-end;
+  color: #0064D8;
+}
+.training .add-foundation .buttons {
+  flex-direction: column;
+}
+.training .add-foundation .buttons .btn-white {
+  margin-top: 1rem;
+}
+.training .add-foundation .info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.training .add-foundation .info strong {
+  color: #0064D8;
+}
 .training .course-content {
   display: flex;
   flex-direction: column;
@@ -8434,6 +8539,24 @@ select::-ms-expand {
   width: auto;
   margin: 1.5rem 0 0.5rem;
   text-align: center;
+}
+.training .no-schedule {
+  padding: 3rem 1.5rem;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.training .no-schedule p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.training .no-schedule p strong {
+  color: #0064D8;
+}
+.training .no-schedule .btn-blue img {
+  margin-right: 0;
+  margin-left: 0.5rem;
 }
 .virtual {
   padding: 3rem 1.5rem;
@@ -9012,6 +9135,26 @@ select::-ms-expand {
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
   }
+  .training .online-block {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .training .add-ons {
+    width: 48%;
+    margin-top: 0;
+  }
+  .training .add-foundation {
+    width: 48%;
+  }
+  .training .add-foundation .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 0;
+  }
   .virtual {
     padding: 3rem 2rem;
   }
@@ -9367,6 +9510,12 @@ select::-ms-expand {
   .training .rate {
     width: 19%;
   }
+  .training .add-foundation .buttons {
+    flex-direction: column;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 1rem;
+  }
   .virtual .virtual-container {
     flex-direction: row;
     justify-content: space-between;
@@ -9587,6 +9736,33 @@ select::-ms-expand {
   }
   .training .rate {
     width: 13%;
+  }
+  .training .online-block {
+    align-items: flex-start;
+  }
+  .training .add-ons {
+    width: 53%;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .training .add-ons h2 {
+    width: 75%;
+    text-align: left;
+    left: -19px;
+    justify-content: flex-start;
+    padding-left: 3.3rem;
+  }
+  .training .add-foundation {
+    width: 43%;
+  }
+  .training .add-foundation ul {
+    padding: 1rem 2rem;
+  }
+  .training .add-foundation .buttons {
+    flex-direction: row;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 0rem;
   }
   .virtual {
     padding: 4rem 0rem;
