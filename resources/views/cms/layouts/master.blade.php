@@ -236,7 +236,12 @@
             </ul>
           </li>
           @endif
-        @if (Auth::user()->can('view', new App\Models\Course())  || Auth::user()->can('view', new App\Models\Category()) || Auth::user()->can('view', new App\Models\Topic())  || Auth::user()->can('view', new App\Models\Topic())  || Auth::user()->can('view', new App\Models\Accreditation()))
+        @if (Auth::user()->can('view', new App\Models\Course())  ||
+             Auth::user()->can('view', new App\Models\Category()) || 
+             Auth::user()->can('view', new App\Models\Topic())  || 
+             Auth::user()->can('view', new App\Models\Topic())  || 
+             Auth::user()->can('view', new App\Models\Accreditation())
+            )
           <li @if(in_array(Route::currentRouteName(),
           ['faqList',
           'categoryList','createCategory','categoryContentList','categoryBulletPointList','categoryWhatsIncludedList','editCategory',
@@ -261,7 +266,14 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 @can('view',new App\Models\Category())
-                <a href="{{Route('categoryList')}}" @if(request()->type== "category" || in_array(Route::currentRouteName(),['categoryList','createCategory','categoryContentList','categoryBulletPointList','categoryWhatsIncludedList','editCategory'])) class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('categoryList')}}" @if(request()->type== "category" || in_array(Route::currentRouteName(),[
+                                                                                                                            'categoryList',
+                                                                                                                            'createCategory',
+                                                                                                                            'categoryContentList',
+                                                                                                                            'categoryBulletPointList',
+                                                                                                                            'categoryWhatsIncludedList',
+                                                                                                                            'editCategory'
+                                                                                                                            ])) class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>Category</p>
                 </a>
@@ -269,7 +281,14 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Topic())
-                <a href="{{Route('topicList')}}" @if( request()->type== "topic" || in_array(Route::currentRouteName(),['topicList','createTopic','editTopic','topicContentList','topicBulletPointList','topicWhatsIncludedList']))class="nav-link active" @else class="nav-link" @endif">
+                <a href="{{Route('topicList')}}" @if( request()->type== 'topic' || in_array(Route::currentRouteName(),[
+                                                                                                                        'topicList',
+                                                                                                                        'createTopic',
+                                                                                                                        'editTopic',
+                                                                                                                        'topicContentList',
+                                                                                                                        'topicBulletPointList',
+                                                                                                                        'topicWhatsIncludedList'
+                                                                                                                      ]))class='nav-link active' @else class='nav-link' @endif>
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Topic</p>
                 </a>
@@ -277,7 +296,14 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Course())
-                <a href="{{Route('courseList')}}" @if( request()->type== "course" || in_array(Route::currentRouteName(),['courseList','createCourse','editCourse','courseBulletPointList','courseWhatsIncludedList','courseContentList']))class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('courseList')}}" @if( request()->type== "course" || in_array(Route::currentRouteName(),[
+                                                                                                                          'courseList',
+                                                                                                                          'createCourse',
+                                                                                                                          'editCourse',
+                                                                                                                          'courseBulletPointList',
+                                                                                                                          'courseWhatsIncludedList',
+                                                                                                                          'courseContentList'
+                                                                                                                        ]))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Course</p>
                 </a>
@@ -285,14 +311,21 @@
               </li>
               <li class="nav-item">
                 @can('view', new App\Models\course())
-                <a href="{{Route('onlinecourseList')}}" @if(in_array(Route::currentRouteName(),['onlinecourseList','courseAddonsList']))class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('onlinecourseList')}}" @if(in_array(Route::currentRouteName(),[
+                                                                                                  'onlinecourseList',
+                                                                                                  'courseAddonsList'
+                                                                                                ]))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-primary"></i>
                   <p>Online Course</p>
                 </a>
                 @endcan
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsincludedListRoute')}}" @if(in_array(Route::currentRouteName(),['whatsincludedListRoute','createWhatsIncluded','editWhatsIncluded']))class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('whatsincludedListRoute')}}" @if(in_array(Route::currentRouteName(),[
+                                                                                                      'whatsincludedListRoute',
+                                                                                                      'createWhatsIncluded',
+                                                                                                      'editWhatsIncluded'
+                                                                                                     ]))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
@@ -467,7 +500,11 @@
             </ul>
           </li>
           @endif
-          @if (Auth::user()->can('view', new App\Models\Course()) || Auth::user()->can('view', new App\Models\Category()) ||  Auth::user()->can('view', new App\Models\Topic()) || Auth::user()->can('view', new App\Models\Location()))
+          @if (Auth::user()->can('view', new App\Models\Course()) ||
+               Auth::user()->can('view', new App\Models\Category()) ||  
+               Auth::user()->can('view', new App\Models\Topic()) || 
+               Auth::user()->can('view', new App\Models\Location())
+              )
           <li @if(in_array(Route::currentRouteName(),['popularItems']))
           class="nav-item has-treeview menu-open"
           @else
@@ -583,8 +620,37 @@
             </ul>
           </li>
           @endif
-          @if(Auth::user()->can('restore', new App\Models\Course()) || Auth::user()->can('restore', new App\Models\Resource()) || Auth::user()->can('restore', new App\Models\Country()) || Auth::user()->can('restore', new App\Models\Location()) || Auth::user()->can('restore', new App\Models\Category()) || Auth::user()->can('restore', new App\Models\Topic()) || Auth::user()->can('restore', new App\Models\Article()) || Auth::user()->can('restore', new App\Models\Testimonial()) || Auth::user()->can('restore', new App\Models\Accreditation()) || Auth::user()->can('restore', new App\Models\WebsiteDetail()))
-          <li @if(in_array(Route::currentRouteName(),['courseContentTrashList','topicContentTrashList','categoryContentTrashList','websiteDetailTrashList','certificationTrashList','WhatsIncludedTrashList','accreditationTrashList','testimonialTrashList','articleTrashList','tagTrashList','resourceTrash','countryTrashList','venueTrashList','locationTrashList','categoryTrashList','topicTrashList','courseTrashList','onlineCourseTrash']))
+          @if(Auth::user()->can('restore', new App\Models\Course()) ||
+            Auth::user()->can('restore', new App\Models\Resource()) || 
+            Auth::user()->can('restore', new App\Models\Country()) || 
+            Auth::user()->can('restore', new App\Models\Location()) || 
+            Auth::user()->can('restore', new App\Models\Category()) || 
+            Auth::user()->can('restore', new App\Models\Topic()) || 
+            Auth::user()->can('restore', new App\Models\Article()) || 
+            Auth::user()->can('restore', new App\Models\Testimonial()) || 
+            Auth::user()->can('restore', new App\Models\Accreditation()) || 
+            Auth::user()->can('restore', new App\Models\WebsiteDetail())
+            )
+          <li @if(in_array(Route::currentRouteName(),[
+                                                      'courseContentTrashList',
+                                                      'topicContentTrashList',
+                                                      'categoryContentTrashList',
+                                                      'websiteDetailTrashList',
+                                                      'certificationTrashList',
+                                                      'WhatsIncludedTrashList',
+                                                      'accreditationTrashList',
+                                                      'testimonialTrashList',
+                                                      'articleTrashList',
+                                                      'tagTrashList',
+                                                      'resourceTrash',
+                                                      'countryTrashList',
+                                                      'venueTrashList',
+                                                      'locationTrashList',
+                                                      'categoryTrashList',
+                                                      'topicTrashList',
+                                                      'courseTrashList',
+                                                      'onlineCourseTrash'
+                                                      ]))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -819,6 +885,7 @@
 
 </div>
 <!-- ./wrapper -->
+
 
 <!-- jQuery -->
 <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
