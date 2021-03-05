@@ -11,7 +11,7 @@ use App\Models\PageDetail;
 
 class SearchController extends Controller
 {
-    public function search()
+    public function search(Request $request)
     {
         $query                     = request()->q;
         $courses                   = Course::with('topic')->where('name','like','%'.$query.'%')->paginate(20);
