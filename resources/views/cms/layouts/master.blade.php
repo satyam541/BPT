@@ -403,7 +403,7 @@
           'scheduleList','editSchedule',
           'manualScheduleList','editManualSchedule',
           'manageCoursePrice','manageSchedulePrice',
-          'onlinePriceList']))
+          'onlinePriceList','courseAddonList']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -458,7 +458,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\schedule())
-                <a href="{{Route('onlinePriceList')}}" @if(Route::currentRouteName()=='onlinePriceList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('onlinePriceList')}}" @if(in_array(Route::currentRouteName(),['onlinePriceList','courseAddonList']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-"></i>
                   <p>Online Prices</p>
                 </a>
