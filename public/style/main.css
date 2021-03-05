@@ -8346,7 +8346,7 @@ select::-ms-expand {
 }
 .training .add-ons .item p {
   text-align: left;
-  margin-left: 1.6rem;
+  padding-left: 1.6rem;
   font-size: 13px;
 }
 .training .online-block {
@@ -8427,6 +8427,32 @@ select::-ms-expand {
 }
 .training .add-foundation .info strong {
   color: #0064D8;
+}
+.training .onsite-block .onsite-form {
+  background-color: #1C2848;
+  flex-direction: column;
+}
+.training .onsite-block .onsite-form .heading p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 12px;
+}
+.training .onsite-block .onsite-form .input-container {
+  background-color: #424E6E;
+}
+.training .onsite-block .onsite-form span {
+  background-color: #687494;
+}
+.training .onsite-block .onsite-form input {
+  color: #FFFFFF;
+}
+.training .onsite-block .onsite-form p,
+.training .onsite-block .onsite-form label {
+  color: #FFFFFF;
+}
+.training .onsite-block .onsite-form .form-consent input {
+  background-color: #FFFFFF;
+  border-radius: 0;
 }
 .training .course-content {
   display: flex;
@@ -9154,6 +9180,14 @@ select::-ms-expand {
   }
   .training .add-foundation .buttons .btn-white {
     margin-top: 0;
+  }
+  .training .onsite-block .onsite-form .form-input {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .training .onsite-block .onsite-form .input-container {
+    width: 48%;
   }
   .virtual {
     padding: 3rem 2rem;
@@ -10442,31 +10476,6 @@ select::-ms-expand {
   border-radius: 0;
   box-shadow: none;
 }
-.form {
-  background-color: #1C2848;
-}
-.form .heading p {
-  text-align: center;
-  margin-top: 0.5rem;
-  font-size: 12px;
-}
-.form .input-container {
-  background-color: #424E6E;
-}
-.form span {
-  background-color: #687494;
-}
-.form input {
-  color: #FFFFFF;
-}
-.form p,
-.form label {
-  color: #FFFFFF;
-}
-.form .form-consent input {
-  background-color: #FFFFFF;
-  border-radius: 0;
-}
 @media (min-width : 768px) {
   .search-banner {
     padding-top: 1rem!important;
@@ -10506,14 +10515,6 @@ select::-ms-expand {
     top: 70px;
     height: fit-content;
     margin-top: 0;
-  }
-  .form .form-input {
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .form .input-container {
-    width: 48%;
   }
 }
 @media (min-width : 1024px) {
