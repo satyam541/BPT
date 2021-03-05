@@ -528,6 +528,12 @@
             color: #C0C0C0;
         }
     }
+    
+    .message{
+        span{
+            align-items: flex-start;
+        }
+    }
     //End inputfields
     
     //Start breadcrums
@@ -977,7 +983,7 @@
                     color:@whiteColor;
                     font-size: 14px;
                     width: 88%;
-                    word-break: break-word;
+                    word-break: break-all;
                   
                 }
                 &:last-child{
@@ -1230,3 +1236,23 @@
         }
 }
 //End pegination
+//Start scroll 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: @whiteColor;
+}
+
+::-webkit-scrollbar-thumb {
+    background: @darkblueColor;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: @lightblueColor;
+}
+//Ens scroll
