@@ -387,6 +387,7 @@ $('#scroll').click(function(){
 function stepOne() {
  $('#stepTwo').addClass('step-active');
  $('#stepOne').hide().removeClass('step-active');
+ $('.detail').addClass('number-active');
 }
 
 function prev() {
