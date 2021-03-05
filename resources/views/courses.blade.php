@@ -268,18 +268,18 @@
                             <option value="#onsite-booking">Onsite</option>
                         </select>
                     </div>
-                    <div class="buttons">
+                    <div class="buttons explore-btn">
                         <a href="javascript:void(0);" onclick="filterSubmit(this)" class="btn-blue">Explore Now</a>
                     </div>
                 </form>
             </div>
             <div class="calender-container">
                 <div class="calender-left">
-                    <div class="heading">
-                        <h2>Choose Mode <span>of Training</span></h2>
-                        <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
-                    </div>
                     <div class="modes">
+                        <div class="heading" id="chooseMode">
+                            <h2>Choose Mode <span>of Training</span></h2>
+                            <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
+                        </div>
                         <div class="modes-list" id="scheduleLinks">
                             <a href="#classroom-booking" class="methods" id="classroom" data-target="classroom">
                                 <img src="{{ url('img/courses/classroom-blue.svg') }}" alt="classroom" class="blue">
@@ -553,13 +553,12 @@
                                 <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
                                     autocomplete="off"> 
                             </div>
-                            <div class="input-container">
+                            <div class="input-container message">
                                 <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
                                 <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
-                                <input type="text" name="address" id="address" placeholder="Address"
-                                    autocomplete="off">
+                                <textarea placeholder="Address" id="address" name="address"></textarea>
                             </div>
-                            <div class="input-container">
+                            <div class="input-container message">
                                 <span><img src="{{url('img/master/comment-white.svg')}}" alt="comment" class="black">
                                 <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                                 <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
