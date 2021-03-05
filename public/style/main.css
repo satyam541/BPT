@@ -13253,6 +13253,7 @@ select::-ms-expand {
 .steps .detail-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-image: linear-gradient(#0064D8, #1C2848);
   background-repeat: no-repeat;
   background-size: 100% 75%;
@@ -13263,18 +13264,19 @@ select::-ms-expand {
 .steps .detail-container .detail {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 61px;
   align-items: center;
 }
 .steps .detail-container .detail p {
   font-size: 14px;
   font-weight: bold;
   margin-top: 1rem;
+  line-height: 1.5;
   order: 2;
   text-align: center;
   color: #FFFFFF;
 }
-.steps .detail-container .detail span {
+.steps .detail-container .detail .number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13287,6 +13289,23 @@ select::-ms-expand {
   border-radius: 50%;
   font-size: 18px;
   font-weight: bold;
+  border: 2px solid #F2F2F2;
+}
+.steps .detail-container .detail .number p {
+  color: #181818;
+  text-align: center;
+  width: 100%;
+}
+.steps .detail-container .detail .number img {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.steps .detail-container .number-active .number p {
+  display: none;
+}
+.steps .detail-container .number-active .number img {
+  display: flex;
 }
 .steps .order-container {
   display: flex;
@@ -13297,12 +13316,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   z-index: 0;
+  background-color: #FFFFFF;
 }
 .steps .form h2 {
   margin-bottom: 2rem;
-}
-.steps .input-container {
-  width: 99%;
 }
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -13317,6 +13334,7 @@ select::-ms-expand {
   height: 238px;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding-left: 1rem;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13336,7 +13354,6 @@ select::-ms-expand {
   width: 100%;
   border: none;
   outline: none;
-  padding: 0 0 0 0.7rem;
   background-color: transparent;
 }
 .steps .billing-details {
@@ -13490,9 +13507,9 @@ select::-ms-expand {
     width: calc(100% - 50px);
     font-size: 18px;
   }
-  .steps .detail-container .detail span {
+  .steps .detail-container .detail .number {
     order: 2;
-    transform: translateX(25px);
+    transform: translateX(24px);
   }
   .steps .order-container {
     width: 62%;
@@ -13522,7 +13539,7 @@ select::-ms-expand {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -32px;
+    top: -36px;
     right: 0;
     left: 0;
     margin: auto;
@@ -13598,20 +13615,31 @@ select::-ms-expand {
   .steps .detail-container {
     width: 25%;
   }
-  .steps .detail-container .detail span {
-    transform: translateX(24px);
-  }
   .steps .order-container {
     width: 70%;
   }
   .steps .form {
     padding: 1.5rem 4rem;
   }
+  .steps .form-input {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .steps .input-container {
+    width: 48%;
+  }
+  .steps .input-container:last-child {
+    width: 100%;
+  }
   .steps .form-inner {
     top: 15px;
   }
   .steps .card-detail {
     width: 90%;
+  }
+  .steps .card-detail .input-container:last-child {
+    width: 48%;
   }
   .steps .billing-details {
     padding: 1rem 5rem !important;
@@ -13627,6 +13655,9 @@ select::-ms-expand {
   }
   .steps .billing-details .input-container {
     width: 48%;
+  }
+  .steps .delegate .card-detail .input-container {
+    width: 100%;
   }
   .steps .delegate-details p {
     font-size: 12px;
@@ -13658,7 +13689,7 @@ select::-ms-expand {
   .steps .detail-container {
     width: 25%;
   }
-  .steps .detail-container .detail span {
+  .steps .detail-container .detail .number {
     transform: translateX(24px);
   }
   .steps .form {

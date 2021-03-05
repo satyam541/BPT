@@ -21,7 +21,7 @@
 <!-- End Banner Section -->
 
 <!-- Start Steps Section -->
-<section class="flex-container steps">2
+<section class="flex-container steps">
     
     <div class="container">
         <div class="steps-container">
@@ -33,19 +33,31 @@
                 <div class="detail-container">
                     <div class="detail">
                         <p>Customer Details</p>
-                        <span>1</span>
+                        <span class="number">
+                            <p>1</p>
+                            <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
+                        </span>
                     </div>
                    <div class="detail">
                         <p>Billing Details</p>
-                        <span>2</span>
+                        <span class="number ">
+                            <p>2</p>
+                            <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
+                        </span>
                    </div>
                    <div class="detail">
                         <p>Delegate Details</p>
-                        <span>3</span>
+                        <span class="number">
+                            <p>3</p>
+                            <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
+                        </span>
                    </div>
                    <div class="detail">
                         <p>Summary Details</p>
-                        <span>4</span>
+                        <span class="number">
+                            <p>4</p>
+                            <img src="{{url('img/cart/green-tick.svg')}}" alt="tick">
+                        </span>
                    </div>
                 </div>
                 <div class="order-container">
@@ -84,7 +96,7 @@
                                 <input type="text" name="address" id="adress" placeholder="Address"
                                     autocomplete="off">
                             </div>
-                            <div class="input-container">
+                            <div class="input-container message">
                                 <span><img src="{{url('img/master/comment-black.svg')}}" alt="comment" class="black">
                                 <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                                 <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
