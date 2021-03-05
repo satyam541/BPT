@@ -62,6 +62,7 @@ Route::post('/location/update/{location}','LocationController@insert')->name('up
 Route::post('/location/delete/{location}','LocationController@delete')->name('deleteLocation');
 Route::get('location/region/fetch','LocationController@getRegion')->name('autoRegion');
 Route::get('/location/tier','LocationController@locationTier')->name('locationTier');
+Route::get('/location/tier-sort','LocationController@sortTier')->name('sortTier');
 // venue routes
 Route::get('/venue','VenueController@list')->name('venueList');
 Route::get('/venue/insert','VenueController@create')->name('createVenue');

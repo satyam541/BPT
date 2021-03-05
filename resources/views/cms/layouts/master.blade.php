@@ -148,7 +148,7 @@
           </li>
           @if (Auth::user()->can('view', new App\User()) || Auth::user()->can('view', new App\Models\Role()) || Auth::user()->can('view', new App\Models\Permission()))
 
-          <li @if(in_array(Route::currentRouteName(),['userList','roleList','permissionList']))
+          <li @if(in_array(Route::currentRouteName(),['userList','createUser','editUser','roleList','createRole','editRole','permissionList','createPermission','editPermission']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -164,7 +164,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
               @can('view',new App\User())
-                <a href="{{Route('userList')}}" @if(Route::currentRouteName()=='userList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('userList')}}" @if(in_array(Route::currentRouteName(),['userList','createUser','editUser']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>User</p>
                 </a>
@@ -172,7 +172,7 @@
               </li>
               <li class="nav-item">
               @can('view',new App\Models\Role())
-                <a href="{{Route('roleList')}}" @if(Route::currentRouteName()=='roleList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('roleList')}}" @if(in_array(Route::currentRouteName(),['roleList','createRole','editRole']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Role</p>
                 </a>
@@ -180,7 +180,7 @@
               </li>
               <li class="nav-item">
               @can('view',new App\Models\Permission())
-                <a href="{{Route('permissionList')}}" @if(Route::currentRouteName()=='permissionList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('permissionList')}}" @if(in_array(Route::currentRouteName(),['permissionList','createPermission','editPermission']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Permission</p>
                 </a>
@@ -237,7 +237,15 @@
           </li>
           @endif
         @if (Auth::user()->can('view', new App\Models\Course())  || Auth::user()->can('view', new App\Models\Category()) || Auth::user()->can('view', new App\Models\Topic())  || Auth::user()->can('view', new App\Models\Topic())  || Auth::user()->can('view', new App\Models\Accreditation()))
-          <li @if(in_array(Route::currentRouteName(),['AddonList','categoryList','topicList','courseList','onlinecourseList','whatsincludedListRoute','accreditationList']))
+          <li @if(in_array(Route::currentRouteName(),
+          ['faqList',
+          'categoryList','createCategory','categoryContentList','categoryBulletPointList','categoryWhatsIncludedList','editCategory',
+          'topicList','createTopic','editTopic','topicContentList','topicBulletPointList','topicWhatsIncludedList',
+          'courseList','createCourse','editCourse','courseBulletPointList','courseWhatsIncludedList','courseContentList',
+          'onlinecourseList','courseAddonsList',
+          'createWhatsIncluded','editWhatsIncluded','whatsincludedListRoute',
+          'AddonList','AddonCreate','AddonEdit',
+          'accreditationList','accreditationCreate','editAccreditation']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -248,13 +256,12 @@
               <p>
                 Courses
                 <i class="fas fa-angle-left right"></i>
-                {{-- <span class="badge badge-info right">6</span> --}}
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 @can('view',new App\Models\Category())
-                <a href="{{Route('categoryList')}}" @if(Route::currentRouteName()=='categoryList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('categoryList')}}" @if(request()->type== "category" || in_array(Route::currentRouteName(),['categoryList','createCategory','categoryContentList','categoryBulletPointList','categoryWhatsIncludedList','editCategory'])) class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-danger"></i>
                   <p>Category</p>
                 </a>
@@ -262,7 +269,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Topic())
-                <a href="{{Route('topicList')}}" @if(Route::currentRouteName()=='topicList')class="nav-link active" @else class="nav-link" @endif">
+                <a href="{{Route('topicList')}}" @if( request()->type== "topic" || in_array(Route::currentRouteName(),['topicList','createTopic','editTopic','topicContentList','topicBulletPointList','topicWhatsIncludedList']))class="nav-link active" @else class="nav-link" @endif">
                   <i class="far fa-circle nav-icon text-warning"></i>
                   <p>Topic</p>
                 </a>
@@ -270,7 +277,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Course())
-                <a href="{{Route('courseList')}}" @if(Route::currentRouteName()=='courseList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('courseList')}}" @if( request()->type== "course" || in_array(Route::currentRouteName(),['courseList','createCourse','editCourse','courseBulletPointList','courseWhatsIncludedList','courseContentList']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-success"></i>
                   <p>Course</p>
                 </a>
@@ -278,21 +285,21 @@
               </li>
               <li class="nav-item">
                 @can('view', new App\Models\course())
-                <a href="{{Route('onlinecourseList')}}" @if(Route::currentRouteName()=='onlinecourseList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('onlinecourseList')}}" @if(in_array(Route::currentRouteName(),['onlinecourseList','courseAddonsList']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon text-primary"></i>
                   <p>Online Course</p>
                 </a>
                 @endcan
               </li>
               <li class="nav-item">
-                <a href="{{Route('whatsincludedListRoute')}}" @if(Route::currentRouteName()=='whatsincludedListRoute')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('whatsincludedListRoute')}}" @if(in_array(Route::currentRouteName(),['whatsincludedListRoute','createWhatsIncluded','editWhatsIncluded']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Whats Included</p>
                 </a>
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\course())
-                <a href="{{Route('AddonList')}}" @if(Route::currentRouteName()=='AddonList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('AddonList')}}" @if(in_Array(Route::currentRouteName(),['AddonList','AddonCreate','AddonEdit']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Course Addon</p>
                 </a>
@@ -300,7 +307,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Accreditation())
-                <a href="{{Route('accreditationList')}}" @if(Route::currentRouteName()=='accreditationList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('accreditationList')}}" @if(in_array(Route::currentRouteName(),['accreditationList','accreditationCreate','editAccreditation']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon"></i>
                   <p>Accreditation</p>
                 </a>
@@ -310,7 +317,7 @@
           </li>
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Category()))
-          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList']))
+          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList','createCertification','editCertification']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -325,7 +332,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 @can('view',new App\Models\Category())
-                <a href="{{Route('certificationList')}}"@if(Route::currentRouteName()=='certificationList')class="nav-link active" @else class="nav-link" @endif >
+                <a href="{{Route('certificationList')}}"@if(in_array(Route::currentRouteName(),['certificationList','createCertification','editCertification'])) class="nav-link active" @else class="nav-link" @endif >
                   <i class="far fa-circle nav-icon "></i>
                   <p>
                     Certification    
@@ -348,7 +355,9 @@
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Location()) || Auth::user()->can('view', new App\Models\Venue()))      
           <li
-           @if(in_array(Route::currentRouteName(),['countryList','locationList','venueList','locationTier']))
+           @if(in_array(Route::currentRouteName(),['countryList','createCountry','editCountry',
+           'locationList','createLocation','editLocation',
+           'locationTier']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -357,14 +366,14 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-map-marker-alt"></i>
               <p>
-                Venues
+                Locations
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               @can('view',new App\Models\country())
               <li class="nav-item">
-                <a href="{{Route('countryList')}}" @if(Route::currentRouteName()=='countryList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('countryList')}}" @if(in_array(Route::currentRouteName(),['countryList','createCountry','editCountry']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Country</p>
                 </a>
@@ -372,7 +381,7 @@
               @endcan
               <li class="nav-item">
                 @can('view',new App\Models\Location())
-                <a href="{{Route('locationList')}}" @if(Route::currentRouteName()=='locationList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('locationList')}}" @if(in_array(Route::currentRouteName(),['locationList','createLocation','editLocation']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Location</p>
                 </a>
@@ -390,7 +399,11 @@
           </li>
           @endif
          @if(Auth::user()->can('view', new App\Models\Schedule()))     
-          <li @if(in_array(Route::currentRouteName(),['scheduleList','getSchedule','manualScheduleList','manageCoursePrice','onlinePriceList']))
+          <li @if(in_array(Route::currentRouteName(),['getSchedule','createSchedule',
+          'scheduleList','editSchedule',
+          'manualScheduleList','editManualSchedule',
+          'manageCoursePrice','manageSchedulePrice',
+          'onlinePriceList','courseAddonList']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -405,7 +418,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 @can('view',new App\Models\schedule())
-                <a href="{{Route('scheduleList')}}" @if(Route::currentRouteName()=='scheduleList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('scheduleList')}}" @if(in_array(Route::currentRouteName(),['scheduleList','editSchedule']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Schedule List</p>
                 </a>
@@ -421,7 +434,7 @@
               </li>
               <li class="nav-item">
                 @can('create',new App\Models\Schedule())
-                <a href="{{Route('createSchedule')}}" class="nav-link">
+                <a href="{{Route('createSchedule')}}" @if(Route::currentRouteName()=='createSchedule')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Add Schedule</p>
                 </a>
@@ -429,7 +442,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Schedule())
-                <a href="{{Route('manualScheduleList')}}" @if(Route::currentRouteName()=='manualScheduleList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('manualScheduleList')}}" @if(in_array(Route::currentRouteName(),['manualScheduleList','editManualSchedule']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Manual Schedule List</p>
                 </a>
@@ -437,7 +450,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Schedule())
-                <a href="{{Route('manageCoursePrice')}}" @if(Route::currentRouteName()=='manageCoursePrice')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('manageCoursePrice')}}" @if(in_array(Route::currentRouteName(),['manageCoursePrice','manageSchedulePrice']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>Manage Price</p>
                 </a>
@@ -445,7 +458,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\schedule())
-                <a href="{{Route('onlinePriceList')}}" @if(Route::currentRouteName()=='onlinePriceList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('onlinePriceList')}}" @if(in_array(Route::currentRouteName(),['onlinePriceList','courseAddonList']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-"></i>
                   <p>Online Prices</p>
                 </a>
@@ -478,7 +491,7 @@
           </li>
           @endcan
           @if(Auth::user()->can('view', App\Models\Article::firstOrNew(['type'=>'news'])) || Auth::user()->can('view', App\Models\Article::firstOrNew(['type'=>'blog'])) || Auth::user()->can('view', new App\Models\Testimonial()))
-          <li @if(in_array(Route::currentRouteName(),['newsList','blogList','tagList','testimonialList']))
+          <li @if(in_array(Route::currentRouteName(),['blogList','createNews','editArticle','testimonialList','createTestimonial','updateTestimonial']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -501,7 +514,7 @@
               </li> --}}
               <li class="nav-item">
               @can('view', new App\Models\Article())
-                <a href="{{Route('blogList')}}" @if(Route::currentRouteName()=='blogList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('blogList')}}" @if(in_array(Route::currentRouteName(),['blogList','createNews','editArticle']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Blog List</p>
                 </a>
@@ -509,7 +522,7 @@
               </li>
               <li class="nav-item">
               @can('view', new App\Models\Testimonial())
-                <a href="{{Route('testimonialList')}}" @if(Route::currentRouteName()=='testimonialList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('testimonialList')}}" @if(in_array(Route::currentRouteName(),['testimonialList','createTestimonial','updateTestimonial']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Testimonials</p>
                 </a>
@@ -519,7 +532,10 @@
           </li>
           @endif
           @if(Auth::user()->can('view', new App\Models\WebsiteDetail())  || Auth::user()->can('view', new App\Models\SocialMedia()) || Auth::user()->can('view', new App\Models\UrlRedirect()) )
-          <li @if(in_array(Route::currentRouteName(),['websiteDashboard','websiteDetailList','urlRedirectList','socialmediaList']))
+          <li @if(in_array(Route::currentRouteName(),['websiteDashboard','courseDashboard',
+          'websiteDetailList','createwebsiteDetail','editWebsiteDetail',
+          'urlRedirectList','createUrlRedirect','editUrlRedirect',
+          'socialmediaList','createsocialmedia','editsocialmedia']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -534,7 +550,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
               @can('view', new App\Models\WebsiteDetail())
-                <a href="{{Route('websiteDashboard')}}" @if(Route::currentRouteName()=='websiteDashboard')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('websiteDashboard')}}" @if(in_array(Route::currentRouteName(),['websiteDashboard','courseDashboard']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-danger"></i>
                   <p>Webiste Dashboard</p>
                 </a>
@@ -542,7 +558,7 @@
               </li>
               <li class="nav-item">
               @can('view', new App\Models\WebsiteDetail())
-                <a href="{{Route('websiteDetailList')}}" @if(Route::currentRouteName()=='websiteDetailList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('websiteDetailList')}}" @if(in_array(Route::currentRouteName(),['websiteDetailList','createwebsiteDetail','editWebsiteDetail']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Website Detail List</p>
                 </a>
@@ -550,7 +566,7 @@
               </li>
               <li class="nav-item">
               @can('view', new App\Models\UrlRedirect())
-                <a href="{{Route('urlRedirectList')}}" @if(Route::currentRouteName()=='urlRedirectList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('urlRedirectList')}}" @if(in_array(Route::currentRouteName(),['urlRedirectList','createUrlRedirect','editUrlRedirect']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-success"></i>
                   <p>URL Redirect</p>
                 </a>
@@ -558,7 +574,7 @@
               </li>
               <li class="nav-item">
               @can('view', new App\Models\SocialMedia())
-                <a href="{{Route('socialmediaList')}}" @if(Route::currentRouteName()=='socialmediaList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('socialmediaList')}}" @if(in_array(Route::currentRouteName(),['socialmediaList','createsocialmedia','editsocialmedia']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-primary"></i>
                   <p>Social Media List</p>
                 </a>
@@ -712,7 +728,7 @@
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
            @can('view', new App\Models\PageDetail())
-            <a href="{{Route('pageDetailList')}}" @if(Route::currentRouteName()=='pageDetailList')class="nav-link active" @else class="nav-link" @endif>
+            <a href="{{Route('pageDetailList')}}" @if(in_array(Route::currentRouteName(),['pageDetailList','createPageDetail','editPageDetail']))class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Page Content</p>
             </a>
@@ -720,7 +736,7 @@
           </li>
           <li class="nav-item">
             @can('view', new App\Models\Enquiry())
-              <a href="{{Route('enquiryList')}}" @if(Route::currentRouteName()=='enquiryList')class="nav-link active" @else class="nav-link" @endif>
+              <a href="{{Route('enquiryList')}}" @if(in_array(Route::currentRouteName(),['enquiryList','enquirydetail']))class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-warning"></i>
               <p class="text">Enquiries</p>
             </a>
@@ -728,7 +744,7 @@
           </li>
           <li class="nav-item">
            @can('view', new App\Models\Order())
-            <a href="{{Route('orderList')}}" @if(Route::currentRouteName()=='orderList')class="nav-link active" @else class="nav-link" @endif>
+            <a href="{{Route('orderList')}}" @if(in_array(Route::currentRouteName(),['orderList','orderDetail']))class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-success"></i>
               <p class="text">Order List</p>
             </a>
@@ -744,7 +760,7 @@
           </li>
           <li class="nav-item">
             @can('view',new App\Models\resource())
-            <a href="{{Route('resourcesList')}}" @if(Route::currentRouteName()=='resourcesList')class="nav-link active" @else class="nav-link" @endif>
+            <a href="{{Route('resourcesList')}}" @if(in_array(Route::currentRouteName(),['resourcesList','createresources','editresources']))class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle"></i>
               <p class="text">Resources</p>
             </a>
@@ -803,6 +819,7 @@
 
 </div>
 <!-- ./wrapper -->
+
 
 <!-- jQuery -->
 <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
