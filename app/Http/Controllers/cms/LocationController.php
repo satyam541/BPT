@@ -94,7 +94,7 @@ class LocationController extends Controller
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
         $data['popular']        = $location->popular();
-        $data['tier']=['1'=>'1','2'=>'2','3'=>'3'];
+        $data['tier']           = ['1'=>'1','2'=>'2','3'=>'3'];
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
