@@ -23,8 +23,9 @@ class Location extends Model
         static::addGlobalScope('order', function (Builder $builder) {
            
             
-            $builder->orderByRaw("Field(tier,'1','2','3','4','0')");$builder->orderByRaw("Field(name,'London','Birmingham','Manchester')");
-            $builder->orderBy('name');
+            $builder->orderByRaw("Field(tier,'1','2','3','4','0')");
+            $builder->orderByRaw("Field(name,'London','Birmingham','Manchester')");
+            // $builder->orderBy('name');
         });
         
     }
