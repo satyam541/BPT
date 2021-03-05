@@ -116,7 +116,7 @@
                                   
                                     @foreach($courses as $course)
                             <tr>
-                                <td><a href="{{ url($course['course_data']->reference) }}">
+                                <td><a href="{{ url('/training-courses'.$course['course_data']->reference) }}">
                                     {{$course['course_data']->name}}</a></td>
                             <td>United Kingdom</td>
                             <td>{{ $course['location_count']}}</td>
@@ -125,7 +125,7 @@
                              </tr>
                             @endforeach
                                 </tbody>
-                            </table>
+                            </table>  
                         </div>
                         
                     </div>
