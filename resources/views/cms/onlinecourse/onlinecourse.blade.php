@@ -61,7 +61,7 @@
                       <td>{{$onlineCourse->topic->name ?? null}}</td>
                       <td>
                         @can('update',$onlineCourse)
-                        <a href="{{ route('courseAddonForm',['course'=>$onlineCourse->id]) }}" class="fas fa-puzzle-piece"></a>
+                        <a href="{{ route('courseAddonsList',['course'=>$onlineCourse->id]) }}" class="fas fa-puzzle-piece"></a>
                         @endcan
                       </td>
                       

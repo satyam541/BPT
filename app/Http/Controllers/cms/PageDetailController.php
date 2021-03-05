@@ -31,6 +31,7 @@ class PageDetailController extends Controller
     {
         $this->authorize('create', new Pagedetail());
         $data['pageDetail'] = new PageDetail();
+        $data['summernote']=json_encode(null);
         $data['pages'] = PageDetail::pluck('page_name','id')->unique()->toArray();
         $data['submitRoute'] = "insertPageDetail";
         return view('cms.pageDetail.pageDetailForm',$data);
@@ -87,7 +88,7 @@ class PageDetailController extends Controller
         $data['pageDetail'] = $pageDetail;
         $data['summernote']=json_encode(null);
         if($pageDetail->content!=null){
-            if (strpos($pageDetail->content, '<p>') !== false) {
+            if (strpos($pageDetail->content, '<p>') || strpos($pageDetail->content, '<p') !== false) {
                 $data['summernote']=json_encode(true);
             }
             else{

@@ -28,40 +28,11 @@ class OnlineCourseController extends Controller
         $onlineCourses = Course::where('is_online', 1)->get();
         return view('cms.onlinecourse.onlinecourse', compact('onlineCourses'));
     }
-    public function courseAddonForm($course)
+    public function courseAddonsList($course)
     {
-        $data['courseAddons'] = CourseAddon::all();
-        $data['model'] = Course::find($course);
-        $Addons = Course::with('courseAddon')->find($course);
-        $selectedAddons = [];
-        foreach ($Addons->courseAddon->toArray() as $selectedAddon) {
-            $selectedAddons[] = $selectedAddon['id'];
-        }
-        $data['selectedAddons'] = $selectedAddons;
-        // dd($data['selectedAddons']);
-        $data['submitRoute'] = 'courseAddonAssigned';
-        return view('cms.addon.courseAddonForm', $data);
+        $data['onlineCourse'] = Course::with('courseAddon')->find($course);
+        
+        return view('cms.addon.courseAddonsList', $data);
     }
-    
-    public function courseAddonassigned(Request $request)
-    {
-        $course = Course::find($request->id);
-        $course->courseAddon()->sync($request->name);
-        $course->save();
-        return redirect()->route('onlinecourseList')->with('success', 'Addons assigned successfully');
-    }
-
-    public function delete(Course $course)
-    {
-        $this->authorize('delete', $course);
-        $course->is_online = 0;
-        $course->courseAddon()->detach();
-        $course->save();
-    }
-
-
-    //save file
-
-
-
+   
 }
