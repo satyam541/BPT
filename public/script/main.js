@@ -40,7 +40,7 @@
     //End Toggle menu//
 
     // Start Foundation Script
-    $('.showmorecontent').click(function(event) {
+    $('.overcontent').click(function(event) {
         event.preventDefault();
         var id = $(this).attr('href');
         $(id).toggleClass('toggle', 'slow');
@@ -50,6 +50,18 @@
         } else {
             $(this).find('.text').html(" Show More");
             scrollToSpecificDiv("#overview");
+        } 
+    });
+    $('.coursecontent').click(function(event) {
+        event.preventDefault();
+        var id = $(this).attr('href');
+        $(id).toggleClass('toggle', 'slow');
+        
+        if($(id).hasClass("toggle")) {  
+            $(this).find('.text').html(" Show Less");       
+        } else {
+            $(this).find('.text').html(" Show More");
+            scrollToSpecificDiv("#course");
         } 
     });
     // End Foundation Script
@@ -387,6 +399,7 @@ $('#scroll').click(function(){
 function stepOne() {
  $('#stepTwo').addClass('step-active');
  $('#stepOne').hide().removeClass('step-active');
+ $('.detail').addClass('number-active');
 }
 
 function prev() {

@@ -8306,6 +8306,128 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.training .add-ons {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  background-image: url(../img/courses/add-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.training .add-ons h2 {
+  position: absolute;
+  background-image: url(../img/courses/add-layer.png);
+  background-size: 100% 100%;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  top: -18px;
+  left: -14px;
+  font-size: 20px;
+}
+.training .add-ons .item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.training .add-ons .item .offer {
+  display: flex;
+  align-items: flex-start;
+}
+.training .add-ons .item .offer h3 {
+  margin-left: 0.5rem;
+  font-size: 15px;
+}
+.training .add-ons .item p {
+  text-align: left;
+  margin-left: 1.6rem;
+  font-size: 13px;
+}
+.training .online-block {
+  display: flex;
+  flex-direction: column;
+}
+.training .add-foundation {
+  display: flex;
+  flex-direction: column;
+}
+.training .add-foundation .foundation-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border-radius: 10px;
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid #0064D8;
+}
+.training .add-foundation h3 {
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.training .add-foundation span {
+  display: flex;
+  margin-top: 1.5rem;
+  border-bottom: 1px dashed #C0C0C0;
+  padding: 0 1rem;
+  padding-bottom: 0.5rem;
+  width: 85%;
+  align-self: center;
+}
+.training .add-foundation span img {
+  width: 25px;
+  height: 25px;
+}
+.training .add-foundation span p {
+  width: 80%;
+  margin-left: 1rem;
+  justify-content: flex-start;
+  display: flex;
+}
+.training .add-foundation ul {
+  padding: 1rem;
+}
+.training .add-foundation ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.training .add-foundation ul li:last-child {
+  padding-top: 0.5rem;
+  border-top: 1px solid #C0C0C0;
+}
+.training .add-foundation ul li p {
+  width: 40%;
+  display: flex;
+  font-weight: bold;
+}
+.training .add-foundation ul li p:nth-child(2) {
+  justify-content: flex-end;
+  color: #0064D8;
+}
+.training .add-foundation .buttons {
+  flex-direction: column;
+}
+.training .add-foundation .buttons .btn-white {
+  margin-top: 1rem;
+}
+.training .add-foundation .info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.training .add-foundation .info strong {
+  color: #0064D8;
+}
 .training .course-content {
   display: flex;
   flex-direction: column;
@@ -9013,6 +9135,26 @@ select::-ms-expand {
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
   }
+  .training .online-block {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .training .add-ons {
+    width: 48%;
+    margin-top: 0;
+  }
+  .training .add-foundation {
+    width: 48%;
+  }
+  .training .add-foundation .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 0;
+  }
   .virtual {
     padding: 3rem 2rem;
   }
@@ -9368,6 +9510,12 @@ select::-ms-expand {
   .training .rate {
     width: 19%;
   }
+  .training .add-foundation .buttons {
+    flex-direction: column;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 1rem;
+  }
   .virtual .virtual-container {
     flex-direction: row;
     justify-content: space-between;
@@ -9589,6 +9737,33 @@ select::-ms-expand {
   .training .rate {
     width: 13%;
   }
+  .training .online-block {
+    align-items: flex-start;
+  }
+  .training .add-ons {
+    width: 53%;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .training .add-ons h2 {
+    width: 75%;
+    text-align: left;
+    left: -19px;
+    justify-content: flex-start;
+    padding-left: 3.3rem;
+  }
+  .training .add-foundation {
+    width: 43%;
+  }
+  .training .add-foundation ul {
+    padding: 1rem 2rem;
+  }
+  .training .add-foundation .buttons {
+    flex-direction: row;
+  }
+  .training .add-foundation .buttons .btn-white {
+    margin-top: 0rem;
+  }
   .virtual {
     padding: 4rem 0rem;
   }
@@ -9685,6 +9860,8 @@ select::-ms-expand {
 }
 .empty span {
   display: flex;
+  width: 100%;
+  height: 150px;
 }
 .empty span img {
   width: 100%;
@@ -9695,19 +9872,22 @@ select::-ms-expand {
   text-align: center;
   margin-top: 1rem;
 }
-.empty .buttons img {
-  margin-left: 0.5rem;
+.empty .buttons a img {
+  margin-left: 5px;
   margin-right: 0;
   height: 12px;
   width: 12px;
 }
 .order {
-  display: flex;
   flex-direction: column;
   padding: 3rem 1.5rem;
 }
 .order .order-main .buttons {
   flex-direction: column;
+}
+.order .order-main .buttons .btn-white,
+.order .order-main .buttons .btn-blue {
+  min-width: 200px;
 }
 .order .order-main .buttons .btn-white img,
 .order .order-main .buttons .btn-blue img {
@@ -9720,7 +9900,6 @@ select::-ms-expand {
 .order .inner-content {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
 }
 .order .total-main {
   display: flex;
@@ -9731,7 +9910,7 @@ select::-ms-expand {
   background-image: url(../img/emptycart/bg.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: contain;
+  background-size: 100% 38%;
 }
 .order .order-heading {
   position: relative;
@@ -9772,13 +9951,12 @@ select::-ms-expand {
 }
 .order .total-content li p {
   width: 75%;
-  color: #181818;
 }
 .order .total-content li span {
   font-weight: 600;
   width: 20%;
   color: #181818;
-  text-align: end;
+  text-align: right;
 }
 .order .total-content li:last-child {
   margin-bottom: 0;
@@ -9814,6 +9992,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.order .order-main .heading {
+  margin-bottom: 3rem;
+}
 .order .order-main .course-name {
   display: flex;
   flex-direction: column;
@@ -9842,11 +10023,12 @@ select::-ms-expand {
   flex-direction: column;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
 }
 .order .order-main .course-info .delivery-method {
   flex-direction: row-reverse !important;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
 .order .order-main .course-info .delivery-method p {
@@ -9868,7 +10050,6 @@ select::-ms-expand {
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
-  margin-left: auto;
 }
 .order .order-main .course-info .detail .icon {
   width: 50px;
@@ -9888,9 +10069,9 @@ select::-ms-expand {
   width: 78%;
 }
 .order .order-main .course-info .detail li span {
-  width: 20%;
+  width: 21%;
   font-weight: 900;
-  text-align: end;
+  text-align: right;
 }
 .order .order-main .course-info .counts {
   flex-direction: row!important;
@@ -9939,7 +10120,6 @@ select::-ms-expand {
   .order .order-main .buttons {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     margin-top: 2rem;
   }
   .order .order-main .buttons .btn-white {
@@ -9979,7 +10159,6 @@ select::-ms-expand {
     width: 68%;
   }
   .order .order-main .course-info {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
@@ -9988,7 +10167,7 @@ select::-ms-expand {
   .order .order-main .course-info .detail {
     width: 38%;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.5rem;
     margin-bottom: 0;
   }
   .order .order-main .course-info .detail li:last-child {
@@ -10266,6 +10445,28 @@ select::-ms-expand {
 .form {
   background-color: #1C2848;
 }
+.form .heading p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 12px;
+}
+.form .input-container {
+  background-color: #424E6E;
+}
+.form span {
+  background-color: #687494;
+}
+.form input {
+  color: #FFFFFF;
+}
+.form p,
+.form label {
+  color: #FFFFFF;
+}
+.form .form-consent input {
+  background-color: #FFFFFF;
+  border-radius: 0;
+}
 @media (min-width : 768px) {
   .search-banner {
     padding-top: 1rem!important;
@@ -10305,6 +10506,14 @@ select::-ms-expand {
     top: 70px;
     height: fit-content;
     margin-top: 0;
+  }
+  .form .form-input {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .form .input-container {
+    width: 48%;
   }
 }
 @media (min-width : 1024px) {
@@ -13253,6 +13462,7 @@ select::-ms-expand {
 .steps .detail-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   background-image: linear-gradient(#0064D8, #1C2848);
   background-repeat: no-repeat;
   background-size: 100% 75%;
@@ -13263,18 +13473,19 @@ select::-ms-expand {
 .steps .detail-container .detail {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 61px;
   align-items: center;
 }
 .steps .detail-container .detail p {
   font-size: 14px;
   font-weight: bold;
   margin-top: 1rem;
+  line-height: 1.5;
   order: 2;
   text-align: center;
   color: #FFFFFF;
 }
-.steps .detail-container .detail span {
+.steps .detail-container .detail .number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13287,6 +13498,23 @@ select::-ms-expand {
   border-radius: 50%;
   font-size: 18px;
   font-weight: bold;
+  border: 2px solid #F2F2F2;
+}
+.steps .detail-container .detail .number p {
+  color: #181818;
+  text-align: center;
+  width: 100%;
+}
+.steps .detail-container .detail .number img {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.steps .detail-container .number-active .number p {
+  display: none;
+}
+.steps .detail-container .number-active .number img {
+  display: flex;
 }
 .steps .order-container {
   display: flex;
@@ -13297,12 +13525,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   z-index: 0;
+  background-color: #FFFFFF;
 }
 .steps .form h2 {
   margin-bottom: 2rem;
-}
-.steps .input-container {
-  width: 99%;
 }
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -13317,6 +13543,7 @@ select::-ms-expand {
   height: 238px;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding-left: 1rem;
 }
 .steps .card-detail {
   background-color: #0064D8;
@@ -13336,7 +13563,6 @@ select::-ms-expand {
   width: 100%;
   border: none;
   outline: none;
-  padding: 0 0 0 0.7rem;
   background-color: transparent;
 }
 .steps .billing-details {
@@ -13490,9 +13716,9 @@ select::-ms-expand {
     width: calc(100% - 50px);
     font-size: 18px;
   }
-  .steps .detail-container .detail span {
+  .steps .detail-container .detail .number {
     order: 2;
-    transform: translateX(25px);
+    transform: translateX(24px);
   }
   .steps .order-container {
     width: 62%;
@@ -13522,7 +13748,7 @@ select::-ms-expand {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -32px;
+    top: -36px;
     right: 0;
     left: 0;
     margin: auto;
@@ -13598,20 +13824,31 @@ select::-ms-expand {
   .steps .detail-container {
     width: 25%;
   }
-  .steps .detail-container .detail span {
-    transform: translateX(24px);
-  }
   .steps .order-container {
     width: 70%;
   }
   .steps .form {
     padding: 1.5rem 4rem;
   }
+  .steps .form-input {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .steps .input-container {
+    width: 48%;
+  }
+  .steps .input-container:last-child {
+    width: 100%;
+  }
   .steps .form-inner {
     top: 15px;
   }
   .steps .card-detail {
     width: 90%;
+  }
+  .steps .card-detail .input-container:last-child {
+    width: 48%;
   }
   .steps .billing-details {
     padding: 1rem 5rem !important;
@@ -13627,6 +13864,9 @@ select::-ms-expand {
   }
   .steps .billing-details .input-container {
     width: 48%;
+  }
+  .steps .delegate .card-detail .input-container {
+    width: 100%;
   }
   .steps .delegate-details p {
     font-size: 12px;
@@ -13658,7 +13898,7 @@ select::-ms-expand {
   .steps .detail-container {
     width: 25%;
   }
-  .steps .detail-container .detail span {
+  .steps .detail-container .detail .number {
     transform: translateX(24px);
   }
   .steps .form {

@@ -321,7 +321,7 @@ class UserController extends Controller
     }
     public function changepass()
     {
-     return view('cms.manageUser.changepassword');
+     return view('cms.manageUser.changePassword');
 
     }
 
