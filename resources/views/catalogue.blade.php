@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="filter-top">
-                <form action="{{ route('commonFilter') }}" method='post' class="form">
+                <form action="{{ route('commonFilter') }}" method='post' class="form exclude">
                     @csrf
                     <div class="select-dropdown">
                         <p>Select A Category</p>
@@ -70,7 +70,7 @@
                         </select>
                     </div>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue">Search</a>
+                        <input type="submit" value="Search" class="btn-blue">
                     </div>
                 </form>
             </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="category-list">
                     @foreach ($categories as $category)
-                        <div class="category-content">
+                        <div class="category-content" onclick="location.href = '{{ url('training-courses' . $category->reference) }}';">
                             <span>
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="blue">
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="white">
@@ -277,7 +277,7 @@
                         var courses = res.courses;
 
                         var topic = '<option value="">Select Topic</option>';
-                        var course = '<option value="">Select Topic</option>';
+                        var course = '<option value="">Select Course</option>';
 
                         if (topics) {
                             $.each(topics, function(id, object){

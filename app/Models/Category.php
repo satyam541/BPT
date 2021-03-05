@@ -63,7 +63,7 @@ class Category extends Model
 
     public function categoryContent()
     {
-        return $this->hasOne('App\Models\CategoryContent')->where('country_id', 'gb');
+        return $this->hasOne('App\Models\CategoryContent')->where('country_id', country()->country_code);
     }
 
     public function loadContent()

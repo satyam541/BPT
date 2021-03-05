@@ -59,7 +59,7 @@
                     <td>{{$trashedtestimonial->created_at}}</td>
                     <td>
                       @can('restore',$trashedtestimonial)
-                      <a href="{{ route('restoreTestimonial',['id'=>$trashedtestimonial->id]) }}" class="fa fa-refresh fa-spin"></a>
+                      <a href="{{ route('restoreTestimonial',['id'=>$trashedtestimonial->id]) }}" class="fa fa-sync fa-spin"></a>
                       @endcan
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       @can('forceDelete',$trashedtestimonial)
