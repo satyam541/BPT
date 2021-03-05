@@ -44,7 +44,6 @@
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Description</th>
-                                           
                                         </tr>
                                     </thead>
                                     <tbody>         
