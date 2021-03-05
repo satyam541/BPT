@@ -21,7 +21,8 @@
 <!-- End Banner Section -->
 
 <!-- Start Steps Section -->
-<section class="flex-container steps">
+<section class="flex-container steps">2
+    
     <div class="container">
         <div class="steps-container">
             <div class="heading center-heading">

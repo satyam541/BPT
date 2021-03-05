@@ -107,13 +107,10 @@ select::-ms-expand {
   display: none;
 }
 .sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed !important;
+  top: 0 !important;
+  transition: 1s all;
   width: 100%;
-  transition: 1s;
-  height: auto;
-  z-index: 2;
 }
 .sticky .top-bar {
   display: none!important;
@@ -1072,6 +1069,9 @@ select::-ms-expand {
   }
   .navbar {
     width: 100%;
+    position: absolute;
+    top: 25px;
+    left: 0;
   }
   .navbar ul {
     display: flex;
@@ -1203,7 +1203,8 @@ select::-ms-expand {
   }
   .banner {
     padding: 3rem 2rem;
-    padding-top: 1rem !important;
+    padding-top: 12rem !important;
+    position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: transparent;
@@ -1211,7 +1212,6 @@ select::-ms-expand {
   }
   .banner .banner-container {
     padding: 0;
-    padding-top: 2rem;
   }
   .banner .banner-container .banner-content {
     align-items: flex-start;
@@ -9923,9 +9923,6 @@ select::-ms-expand {
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
-  .cart-banner {
-    padding-top: 1rem!important;
-  }
   .empty {
     padding: 3rem 2rem;
     padding-top: 1rem!important;
@@ -10265,6 +10262,9 @@ select::-ms-expand {
   border: 1px solid #0064D8;
   border-radius: 0;
   box-shadow: none;
+}
+.form {
+  background-color: #1C2848;
 }
 @media (min-width : 768px) {
   .search-banner {
