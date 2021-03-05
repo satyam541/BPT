@@ -47,6 +47,6 @@ class OrderMail extends Mailable
         {
             $subject = "Order Generated";
         }
-        return $this->subject($subject)->view('email.cartOrder',$input);
+        return $this->subject($subject)->view('emails.cartOrder',$input);
     }
 }
