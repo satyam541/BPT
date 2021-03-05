@@ -14,7 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $pageDetail = PageDetail::where(['page_name'=>'about-us','section'=>'metas'])->get();
+        $pageDetail = PageDetail::where(['page_name'=>'about_us','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())
         {
             $meta['title'] = $pageDetail->where('sub_section','title')->first()->heading;
@@ -22,7 +22,7 @@ class AboutController extends Controller
             $meta['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($meta);
         }
-        $data['testimonials'] = Testimonial::limit(6)->get();
+        $data['testimonials'] = Testimonial::limit(6)->select('author', 'content', 'image', 'designation')->get();
         $data['websiteDetail'] = websiteDetail();
         $data['pageDetail'] = PageDetail::getContent('about_us');
 

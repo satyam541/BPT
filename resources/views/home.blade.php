@@ -1,21 +1,6 @@
 @extends("layouts.master")
 
 @section('content')
-    <style>
-        .ui-autocomplete .ui-autocomplete-category {
-            color: #000080;
-            font-weight: 700;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 5px;
-            font-size: 16px;
-            padding: 8px;
-        }
-
-        .ui-autocomplete .ui-menu-item {
-            padding: 3px;
-        }
-
-    </style>
     <!-- Start home-banner section -->
     <section class="flex-container banner home-banner">
 
@@ -27,13 +12,17 @@
                         {!! $pageDetail->banner['banner-content']->heading !!}
                     </h1>
                     <p>{!! $pageDetail->banner['banner-content']->content !!}</p>
-                    <div class="search">
-                        <input type="text" class="auto-complete-course auto-redirect"
-                            placeholder="Search your training course here....">
-                        <button>
-                            Search
-                        </button>
-                    </div>
+                    <form action="{{ route('SearchCourse') }}" method="get" class="exclude">
+                        <div class="search">
+
+                            <input type="text"  name="q" class="auto-complete-course auto-redirect"
+                                placeholder="Search your training course here...." required>
+                            <button type="submit">
+                                Search
+                            </button>
+
+                        </div>
+                    </form>
                     <div class="buttons">
                         <a href="{{ route('catalouge') }}" class="btn-blue">
                             <img src="{{ url('img/home/book.svg') }}" alt="book">
