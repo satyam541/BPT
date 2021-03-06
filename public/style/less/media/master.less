@@ -295,6 +295,7 @@
       //Start navbar //
       .navbar {
         ul{
+          position: relative;
           .links-li{
             .link{
               padding-bottom: 0;
@@ -335,6 +336,160 @@
           width: 70%;
           }
       }
+      .dropdown-menu {
+        width: 100%;
+        padding: 1rem 2rem;
+        position: absolute;
+        left: 0;
+        top: 155px;
+        padding-top: 1rem;
+        background-color: @whiteColor;
+        box-shadow: @shadowLight;
+        .dropdown-list{
+            display: flex;
+            justify-content: space-between;
+        }
+        h3{
+          color: @blackColor;
+          border-bottom: 2px solid #E2E2E2;
+          padding-bottom: .7rem;
+          margin-bottom: 2rem;
+          width: 70%;
+          font-size: 22px;
+        }
+        .topic-info {
+            display: flex;
+            flex-direction: column;
+            background-color: @darkblueColor;
+            width: 30%;
+            z-index: 1;
+            padding: 1rem;
+            padding-right: 0;
+            h3{
+              color: @whiteColor;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                text-align: center;
+                color: @whiteColor;
+                font-size: 16px;
+                font-weight: bold;
+                &:hover {
+                    cursor: pointer;
+                }
+                img{
+                  height: 30px;
+                  width: 30px;
+                  margin-right: .5rem;
+                }
+            }
+            .topic-active {
+                background:linear-gradient(#F5F5F5,#C8C8C8);
+                color: @blackColor;
+                position: relative;
+                &::before {
+                  content: '';
+                  position: absolute;
+                  width: 0;
+                  height: 0;
+                  right: -54px;
+                  border-top: 30px solid transparent;
+                  border-left: 38px solid #CCCCCC;
+                  border-bottom: 35px solid transparent;
+                  z-index: 0;
+                }
+            }
+        }
+
+        .course-list {
+          display: flex;
+          flex-direction: column;
+          width: 32%;
+          z-index: 1;
+          .course-content {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              box-shadow: @shadowLight;
+              background-color: @bgColor;
+              padding: 1rem;
+              padding-right: 0;
+             .course {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              h3{
+                color: @blackColor;
+                align-self: flex-start;
+              }
+              a {
+                display: flex;
+                align-items: center;
+                  padding: 1rem;
+                  padding-right: 0;
+                  font-size: 16px;
+                  font-weight: bold;
+                  text-align: left;
+                  img{
+                    height: 30px;
+                    width: 30px;
+                    margin-right: .5rem;
+                  }
+              }
+              .course-active {
+                background-color: #373737;
+                color: @whiteColor;
+                position: relative;
+                &::before {
+                  content: '';
+                  z-index: -1;
+                  position: absolute;
+                  right: -14px;
+                  top: 10px;
+                  height: 25px;
+                  width: 40px;
+                  transform: rotate(45deg);
+                  background-color: #373737;
+                }
+              }
+             }
+          }
+        }
+       
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+            .menu-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: @whiteColor;
+                box-shadow: @shadowLight;
+                padding: 1rem;
+               .content {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                a {
+                    width: 50%;
+                    padding: 7px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    &:hover {
+                        background-color: #1F5E88;
+                        color: @whiteColor;
+                        cursor: pointer;
+                    }
+                }
+               }
+            }
+        }
+    }
     //End navbar //
     
     //Start banner //
