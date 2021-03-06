@@ -358,11 +358,11 @@ class CategoryController extends Controller
    }
    public function categoryContentTrash()
    {
-    $data['categoryContent'] = CategoryContent::with(['category'=>function($query){
-        $query->withTrashed();
-    }])->onlyTrashed()->where('country_id',country()->country_code)->get();
+        $data['categoryContent'] = CategoryContent::with(['category'=>function($query){
+            $query->withTrashed();
+        }])->onlyTrashed()->where('country_id',country()->country_code)->get();
 
-    return view('cms.trashed.categoryContentTrashList',$data);
+       return view('cms.trashed.categoryContentTrashList',$data);
    }
    public function restoreCategoryContent($id)
    {
