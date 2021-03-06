@@ -589,6 +589,74 @@ select::-ms-expand {
 .dropdown-menu {
   display: none;
 }
+.pop-search {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translate(0, -100%) scale(0, 0);
+  -moz-transform: translate(0, -100%) scale(0, 0);
+  -o-transform: translate(0, -100%) scale(0, 0);
+  -ms-transform: translate(0, -100%) scale(0, 0);
+  transform: translate(0, -100%) scale(0, 0);
+  opacity: 0;
+}
+.pop-search .search-cross {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  background-color: #FFFFFF;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.pop-search .search-cross img {
+  width: 100%;
+  height: 100%;
+}
+.pop-search .search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.pop-search .search-form .search {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 50px;
+}
+.pop-search .search-form input {
+  box-shadow: none;
+  background: transparent;
+}
+.pop-search .search-form button {
+  width: 150px;
+  padding: 0.5rem;
+  background-color: #1C2848;
+  border-radius: 50px;
+  outline: none;
+  color: #FFFFFF;
+  border: none;
+}
+.open {
+  -webkit-transform: translate(0, 0) scale(1, 1);
+  -moz-transform: translate(0, 0) scale(1, 1);
+  -o-transform: translate(0, 0) scale(1, 1);
+  -ms-transform: translate(0, 0) scale(1, 1);
+  transform: translate(0, 0) scale(1, 1);
+  opacity: 1;
+  z-index: 9999;
+}
 .banner {
   flex-direction: column;
 }
@@ -1532,27 +1600,23 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
     width: 34%;
-  }
-  .dropdown-menu .menu-list .menu-content {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     background-color: #FFFFFF;
     padding: 1rem;
   }
-  .dropdown-menu .menu-list .menu-content .menu-info {
+  .dropdown-menu .menu-list .menu-info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
   }
-  .dropdown-menu .menu-list .menu-content .menu-info a {
+  .dropdown-menu .menu-list .menu-info a {
     width: 50%;
     padding: 7px;
     font-size: 16px;
     font-weight: bold;
   }
-  .dropdown-menu .menu-list .menu-content .menu-info a:hover {
+  .dropdown-menu .menu-list .menu-info a:hover {
     background-color: #1F5E88;
     color: #FFFFFF;
     cursor: pointer;

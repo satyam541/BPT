@@ -470,4 +470,14 @@ function stepFour() {
         $('.country-list').toggleClass('country-active');
     });
 
+      //Start open search
+    
+      $('#search').click(function(){
+        $('#pop-search').addClass('open');
+    });
+    $(".search-cross").on("click", function(){
+        $('#pop-search').removeClass('open');
+    });
+    //End open search
+
 
