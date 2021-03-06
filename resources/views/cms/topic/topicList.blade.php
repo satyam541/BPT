@@ -48,11 +48,11 @@
                 
                 </label>
                 </div>
-            </div>
+            
               <input type="submit" name="submit" id="submit" style="visibility: hidden">
             </form>
           </div>  
-      
+            </div>
         
               <!-- /.card-header -->
               <div class="card-body">
@@ -65,8 +65,8 @@
                   <th>Category</th>
                   <th>Content</th>
                   <th>FAQ's</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
+                  <th>Bullet Points</th>
+                  <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
@@ -75,7 +75,7 @@
                     @foreach ($topics as $topic)
                     <tr>
                       <td>{{$topic->name}}</td>
-                      <td>{{$topic->category->name}}</td>
+                      <td>{{$topic->category->name ?? ''}}</td>
                       <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>

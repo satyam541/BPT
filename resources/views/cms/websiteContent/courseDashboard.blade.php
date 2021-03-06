@@ -169,7 +169,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-hover">
+                                    <table id="example1" class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Location</th>
@@ -242,6 +242,17 @@
 @endsection
 @section('footer')
     <script>
+        $(document).ready(function(){
+            $('#example1').DataTable({
+              "columns": [
+                        { "name": "Location" },
+                        { "name": "Tier" },
+                        { "name": "Classroom", "sorting":false, searching:false },
+                        { "name": "Online price" },
+                        { "name": "Landing Page"},
+              ]                    
+            });
+        });
         function displaydates(elm) {
             body = $("#modal-info .modal-body");
             table =

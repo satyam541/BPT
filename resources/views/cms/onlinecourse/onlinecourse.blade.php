@@ -61,7 +61,7 @@
                       <td>{{$onlineCourse->topic->name ?? null}}</td>
                       <td>
                         @can('update',$onlineCourse)
-                        <a href="{{ route('courseAddonForm',['course'=>$onlineCourse->id]) }}" class="fas fa-puzzle-piece"></a>
+                        <a href="{{ route('courseAddonsList',['course'=>$onlineCourse->id]) }}" class="fas fa-puzzle-piece"></a>
                         @endcan
                       </td>
                       
@@ -69,9 +69,9 @@
                         @can('update',$onlineCourse)
                         <a href="{{Route('editCourse',['course'=>$onlineCourse->id])}}" class="fa fa-edit"></a>
                         @endcan
-                        @can('delete',$onlineCourse)
+                        {{-- @can('delete',$onlineCourse)
                         <a href="" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse->id])}}')" class="fa fa-trash" style="color: red"></a>
-                        @endcan
+                        @endcan --}}
                       </td>
                     </tr>
                     @endforeach

@@ -94,7 +94,7 @@
                     <img id="lImage" src="{{URL('/images/'.$location['image'])}}" height="70px" width="70px" />
                     @endif
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="fa fa-remove" id="removeimage" onclick="removeImage()" style="color: red"></a>
+                    <a class="fa fa-trash" id="removeimage" onclick="removeImage()" style="color: red"></a>
                     <a class="fas fa-undo" id="undoremoveimage" onclick="undoImage()" style="color: red"></a>
                     {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
                     <br/>

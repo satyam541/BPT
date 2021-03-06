@@ -18,21 +18,6 @@
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
-    <style>
-        .ui-autocomplete .ui-autocomplete-category {
-            color: #000080;
-            font-weight: 700;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 5px;
-            font-size: 16px;
-            padding: 8px;
-        }
-
-        .ui-autocomplete .ui-menu-item {
-            padding: 3px;
-        }
-
-    </style>
    @yield('header')
 </head>
 <body>
@@ -120,7 +105,7 @@
                         <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
 
                         <div class="heading center-heading white-heading">
-                            <h2>Get A Quote</h2>
+                            <h2 id="quote">Get A Quote</h2>
                         </div>
                         <div class="form-input">
                             <div class="input-container">
@@ -171,6 +156,9 @@
                             <input type="checkbox" name="marketing_consent" id="allowconsent">
                             <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
                         </div>
+                        <div id="hiddenFields">
+
+                        </div>
                         <div class="buttons">
                             <button class="btn-blue" onclick="EnquiryFormSubmit('enquiry',this)">Submit</button>
                             {{-- <button class="btn-blue">Submit</button> --}}
@@ -212,11 +200,83 @@
 
 </body>
 <!--enquiry submit script start-->
+
+<!--enquiry submit script end-->
+<script>
+    var countryjsonurl = "{{url('json/countries.json')}}";
+  </script>
+<script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
+<script src="{{url('script/owl.carousel.min.js')}}"></script>
+<script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
+<script src="{{url('script/main.js')}}"></script>
+<script src="{{url('script/count.js')}}"></script>
 <script>
     
     var formValidationUrl = '{{ route("validateEnquiry") }}';
     var formSubmitUrl = '{{ route("sendEnquiry") }}';
+    var ajaxTime= new Date().getTime();
+    $(document).ready(function(){
+      $(".enquiryJS").click(function(){
+            var type = $(this).data('type');
+            var course = $(this).data('course');
+            var location = $(this).data('location');
+            var date = $(this).data('date');
+            var quote = $(this).data('quote');
+            var deliveryType = $(this).data('deliverytype');
+            var price = $(this).data('price');
+            var url = "{{Request::url()}}";
+            var button=$(this).data('button');
+            buttonval=  button +'<i class="fas fa-paper-plane"></i>';
+            buttonvalue=  'Submit'+'<i class="fas fa-paper-plane"></i>';
+          
+            
 
+               if(button=="undefined")
+                {    
+                  $("#button").html(buttonvalue);
+                
+                }
+                else
+                {
+                  $("#button").html(buttonval);
+                 
+                }
+            $("#hiddenFields").empty();
+            if(type)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="type"  id="type" value="'+type+'">');
+            }
+            if(course)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="course"  id="course" value="'+course+'">');
+            }
+            if(location)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="location"  id="location" value="'+location+'">');
+            }
+            if(date)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="date"  id="date" value="'+date+'">');
+            }
+            if(deliveryType)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="deliveryType"  id="deliveryType" value="'+deliveryType+'">');
+            }
+            if(url)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="Url"  id="url" value="'+url+'">');
+            }
+            
+            if(price)
+            {
+               $("#hiddenFields").append('<input type="hidden" name="price"  id="price" value="'+price+'">');
+            }
+         
+            // document.getElementById("quote").innerHTML=quote;
+         
+        
+      });
+});
     function EnquiryFormSubmit(formType, button) {
         if (button != null) {
             consentValidation = checkConsent(button);
@@ -233,11 +293,13 @@
             url:formSubmitUrl,
             data:formData,
             type:"post",
+            timeout: 90000,
             global:false,
             success:function(response){
                 if(response == 'done') {
+                    var totalTime = new Date().getTime()-ajaxTime;
                     var input = '{{csrf_field()}}';
-                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thank-you")}}').html(input);
+                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thanks")}}').html(input);
                    $('body').append(form);
                    $('#thank-you').submit();
             }
@@ -293,15 +355,6 @@
     });
     }
 </script>
-<!--enquiry submit script end-->
-<script>
-    var countryjsonurl = "{{url('json/countries.json')}}";
-  </script>
-<script src="{{url('script/jquery-3.3.1.min.js')}}"></script>
-<script src="{{url('script/owl.carousel.min.js')}}"></script>
-<script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
-<script src="{{url('script/main.js')}}"></script>
-<script src="{{url('script/count.js')}}"></script>
 @yield('footerScripts')
 <script>
     $(".auto-complete-course").focus(function()

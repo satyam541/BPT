@@ -29,8 +29,8 @@ class LocationController extends Controller
     public function locationTier(Request $request)
     {
         $this->authorize('view', new Location());
-        $locations       = Location::query();
-        $data=$locations->get()->groupBy('tier');
+        $data      = Location::orderBy('display_order')->get()->groupBy('tier');
+       
         // $checked=null;
         // if(isset($request->popular)){
         //     $locations = Location::whereHas('popular')->get();
@@ -94,7 +94,7 @@ class LocationController extends Controller
         $data['submitRoute']    = array('updateLocation',$location->id);
         $data['location']       = $location;
         $data['popular']        = $location->popular();
-        $data['tier']=['1'=>'1','2'=>'2','3'=>'3'];
+        $data['tier']           = ['1'=>'1','2'=>'2','3'=>'3'];
         $data['countries']      = Country::pluck('name','country_code')->toArray();
         $data['regions']        = Region::pluck('name','id');
         return view("cms.location.locationForm",$data);
@@ -188,5 +188,26 @@ class LocationController extends Controller
         Location::onlyTrashed()->find($id)->forceDelete();
  
         return back()->with('success','Permanently Deleted');
+   }
+
+   public function sortTier(Request $request)
+   {
+    $inputs     =   $request->input();
+    $location   =   $inputs['sort']['location'];
+    $tier       =   $inputs['sort']['tier'];
+    
+    unset($inputs['sort']['location']);
+    unset($inputs['sort']['tier']);
+    $sort       =   $inputs['sort'];
+    $location = Location::find($location);
+    $location->tier = $tier;
+    $location->save();
+    foreach($sort as $index=>$location)
+    {
+        $location = Location::find($location);
+        $location->display_order = $index+1;
+        $location->save();
+    }
+    return "success";
    }
 }

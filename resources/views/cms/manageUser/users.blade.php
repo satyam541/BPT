@@ -31,19 +31,19 @@
                                     <div class="form-group row">
                                         {{ Form::label('inputName', 'Name', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('name', $list['name'], $selectedName, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                            {{ Form::select('name', $list['name'], $selectedName, ['id' => 'inputName', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         {{ Form::label('inputEmail', 'Email', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('email', $list['email'], $selectedEmail, ['id' => 'inputEmail', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                            {{ Form::select('email', $list['email'], $selectedEmail, ['id' => 'inputEmail', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         {{ Form::label('inputRole', 'Role', ['class' => 'col-sm-2 control-label']) }}
                                         <div class="col-sm-4">
-                                            {{ Form::select('roleName', $list['role'], $selectedRole, ['id' => 'inputRole', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                            {{ Form::select('roleName', $list['role'], $selectedRole, ['id' => 'inputRole', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -77,7 +77,7 @@
                     <div class="card-body">
                         <div class="table-responsive" style="background-color: white">
 
-                            <table class="table table-hover">
+                            <table class="table table-hover" id="example1">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -114,10 +114,6 @@
                         <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
                         @endcan
                         </div>
-                        <div class="col-md-6">
-                            <div class="float-sm-right">{{ $users->links() }}</div>
-
-                        </div>
                     </div>
 
                 </div>
@@ -130,4 +126,22 @@
 @endsection
 
 @section('footer')
+<script>
+    $('.select').select2();
+    
+    $(document).ready(function(){
+        $('#example1').DataTable({
+          "columns": [
+                        { "name": "Name",searching:false},
+                        { "name": "Email",searching:false },
+                        { "name": "Role",searching:false },
+                        { "name": "Active",searching:false },
+                        { "name": "Actions", "sorting":false, searching:false }
+          ],
+                          
+        });
+    });
+    
+</script>
+    
 @endsection

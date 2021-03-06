@@ -62,6 +62,7 @@ Route::post('/location/update/{location}','LocationController@insert')->name('up
 Route::post('/location/delete/{location}','LocationController@delete')->name('deleteLocation');
 Route::get('location/region/fetch','LocationController@getRegion')->name('autoRegion');
 Route::get('/location/tier','LocationController@locationTier')->name('locationTier');
+Route::get('/location/tier-sort','LocationController@sortTier')->name('sortTier');
 // venue routes
 Route::get('/venue','VenueController@list')->name('venueList');
 Route::get('/venue/insert','VenueController@create')->name('createVenue');
@@ -172,9 +173,7 @@ Route::post('/whatsincluded/update','WhatsIncludedController@update')->name('upd
 Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@delete')->name('deleteWhatsIncluded');
 // Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
-Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonForm')->name('courseAddonForm');
-Route::post('/courseassignAddon','OnlineCourseController@courseAddonassigned')->name('courseAddonAssigned');
-Route::post('/online-course/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
+Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonsList')->name('courseAddonsList');
 
 
 // Addon Routes

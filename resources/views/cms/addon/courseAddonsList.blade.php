@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Course Addon Form</h1>
+                        <h1 class="m-0 text-dark">Course Addon</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <h3 class="card-title">{{ $onlineprice->course->name }}</h3>
+                                <h3 class="card-title">{{ $onlineCourse->name }}</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -44,23 +44,14 @@
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Description</th>
-                                           
-                                            {{-- <th>Action</th> --}}
                                         </tr>
                                     </thead>
-
-                                    <tbody>
-
-                                    
-                                    @foreach ($courseAddons as $courseAddon)
+                                    <tbody>         
+                                    @foreach ($onlineCourse->courseAddon as $courseAddon)
                                         <tr>
-                                            <td>
-                                                {{ Form::label('name', $courseAddon->name) }}
-                                            </td>  
+                                            <td>{{ $courseAddon->name }}</td>  
                                             <td>{{ $courseAddon->addon_type }}</td>
                                             <td>{{ $courseAddon->description }}</td>
-                                             
-                                  
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -86,22 +77,11 @@
     <script>
         $(document).ready(function() {
             $('#example1').DataTable({
-                "columns": [{
-                        "name": "Type"
-                    },
-                    {
-                        "name": "Description",
-                    },
-                    {
-                        "name": "Name",
-                    },
-                    {
-                        "name": "Action",
-                        "sorting": false,
-                        searching: false
-                    },
+                "columns": [
+                    { "name": "Name" },
+                    { "name": "Type" },
+                    { "name": "Description" }
                 ]
-
             });
         });
 

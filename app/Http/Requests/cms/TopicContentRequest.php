@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests\cms;
+use App\Rules\TopicContentRule;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,10 +26,10 @@ class TopicContentRequest extends FormRequest
     {
         return [
             'topic_id'         => 'required',
-            'country_id'       => 'required',
+            'country_id'       => ['required',new TopicContentRule],
             // 'heading'       => 'nullable',
             // 'details'       => 'required',
-            //'overview'       => 'required'
+            'overview'         => 'required'
         ];
     }
 

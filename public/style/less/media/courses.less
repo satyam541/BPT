@@ -89,7 +89,7 @@
             flex-direction: row;
             margin-top: 0;
             align-items: center;
-            .buttons {
+            .explore-btn {
                 margin-top: 0;
                 align-items: initial;
                 align-self: flex-start;
@@ -173,6 +173,40 @@
             width: 16%;
             h3 {
                 margin: 0rem 0 0.5rem;
+            }
+        }
+
+        .online-block{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-ons{
+            width: 48%;
+            margin-top: 0;
+        }
+        .add-foundation{
+            width: 48%;
+            .buttons{
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 1rem;
+                .btn-white{
+                    margin-top: 0;
+                }
+            }
+        }
+        .onsite-block{
+            .onsite-form{
+                .form-input{
+                    flex-direction: row;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                .input-container{
+                    width: 48%;
+                }
+                
             }
         }
     }
@@ -494,9 +528,6 @@
     // Start Training Section
     .training {
         background-size: 100% 88%;
-        p {
-            text-align: center;
-        }
         .calender-container {
             flex-direction: row;
             justify-content: space-between;
@@ -590,6 +621,15 @@
         }
         .rate {
             width: 19%;
+        }
+
+        .add-foundation{
+            .buttons{
+                flex-direction: column;
+                .btn-white{
+                    margin-top: 1rem;
+                }
+            }
         }
     }
     // End Training Section
@@ -857,6 +897,55 @@
         .rate {
             width: 13%;
         }
+
+        .online-block{
+            align-items: flex-start;
+        }
+       .add-ons{
+          width: 53%;
+          margin-top: 2rem;
+          padding-bottom: 2rem;
+          h2{
+            width: 75%;
+            text-align: left;
+            left: -19px;
+            justify-content: flex-start;
+            padding-left: 3.3rem;
+          }
+       }
+       .add-foundation{
+           width: 43%;
+           .foundation-content{
+           }
+           h3{
+           }
+           span{
+               img{
+               }
+               p{
+               }
+           }
+           ul{
+            padding: 1rem 2rem;
+               li{
+                   &:last-child{
+                   }
+   
+                   p{
+                   }
+               }
+           }
+           .buttons{
+               flex-direction: row;
+               .btn-white{
+                   margin-top: 0rem;
+               }
+           }
+           .info{
+               strong{
+               }
+           }
+       }
     }
     // End Training Section
 
