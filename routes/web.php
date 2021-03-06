@@ -64,10 +64,16 @@ Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseC
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
 Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
+Route::get('/booking/classroom/{id}',['as'=>'classroomBooking','uses'=>"CartController@addToCart"]);
+Route::get('/booking/virtual/{id}',['as'=>'virtualBooking','uses'=>"CartController@addToCart"]);
 
 //Cart Routes
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/cart/detail', 'CartController@index')->name('cartDetail');
+Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
+
+//ajax requests
+Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
+Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@removeItem']);
 
 
 Route::get('/offer', function () {

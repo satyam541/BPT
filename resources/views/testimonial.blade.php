@@ -64,7 +64,7 @@
                 <p>{!!$pageDetail->overlay['regarding_our_services']->content!!}</p>
             </div>
             <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Contact Us">
+                    <a class="btn-blue open-popup enquiryJS" data-type="other" data-quote="Contact Us">
                         <img src="{{url('img/testimonial/call-white.svg')}}" alt="call">Contact Us
                     </a>
                 </div>

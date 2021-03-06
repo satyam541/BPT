@@ -76,7 +76,7 @@
                     </div>
                     <p>{!!$course->detail!!}</p>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
+                        <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
                         <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
                     </div>
                 </div>

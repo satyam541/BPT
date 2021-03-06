@@ -458,11 +458,26 @@ function stepFour() {
 
         $(".course a").click(function() {
             var target = $(this).data('target');
-            $(".content").hide();
+            $(".menu-info").hide();
             $("#" + target).css("display", "flex");
             $(".course a").removeClass('course-active');
             $(this).addClass("course-active");
         });
         $(".course a").first().trigger('click');
     });
+
+    $('#flag').click(function() {
+        $('.country-list').toggleClass('country-active');
+    });
+
+      //Start open search
+    
+      $('#search').click(function(){
+        $('#pop-search').addClass('open');
+    });
+    $(".search-cross").on("click", function(){
+        $('#pop-search').removeClass('open');
+    });
+    //End open search
+
 

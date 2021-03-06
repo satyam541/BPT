@@ -46,10 +46,11 @@ class CartController extends Controller
         $data['cartItems']=$cartItems;
 
         $data['courseobj']=Course::whereIn('name',$course)->first();
-        $data['popularCourses']=Popular::courses()->take(7);
-        $data['countries'] = Country::all();
+        // $data['popularCourses']=Popular::courses()->take(7);
+        // $data['countries'] = Country::all();
         $data['cartTotal'] = Cart::subtotal(0,'','');
         $data['paymentCards'] = OrderCardType::all();
+
         return view('cart/cart',$data);
     }
 
@@ -57,7 +58,6 @@ class CartController extends Controller
     {
         
         $id = $request->route('id');
-        dd($request->all(), $id);
         $route = $request->route()->action['as'];
         switch ($route) {
             case 'classroomBooking':
@@ -95,13 +95,13 @@ class CartController extends Controller
        
         Cart::add($cart);
         
-        $url = route('cartOrderPage');
+        $url = route('cart');
         return redirect($url);
     }
 
-    private function onlineBooking(Request $request,$id)
+    public function OnlineBooking(Request $request,$id)
     {
-        $onlinePrice = OnlinePrice::find($id);
+        $onlineCourse = Course::find($id);
         $addonIds = $request->get('addon');// array of id
         $addonPrice = 0;
 
@@ -119,24 +119,25 @@ class CartController extends Controller
             $addonString = '';
         }
 
-        $cart['id'] = "online:".$onlinePrice->id.$addonString;
-        $cart['name'] = $onlinePrice->course->name;
+        $cart['id'] = "online:".$onlineCourse->id.$addonString; //course wise
+        $cart['name'] = $onlineCourse->name;
         $cart['qty'] = 1;
         $cart['weight'] = 1;
-        $totalprice = country()->convertPrice($onlinePrice->price + $addonPrice);
+        $totalprice = country()->convertPrice($onlineCourse->onlinePrice->price + $addonPrice);
         $cart['price'] =  $totalprice;
-                   
+
         $options = array();
         $options['addons'] = $addons;
         $options['method'] = "online";
         $options['country'] = country()->id;
-        $options['id'] = $onlinePrice->id;
+        $options['id']      = $onlineCourse->id; 
 
         $cart['options'] = $options;
-        
+
         Cart::add($cart);
-        $url = route('cartOrderPage');
+        $url = route('cart');
         return redirect($url);
+
     }
 
     public function updateQuantity(Request $request)
@@ -187,6 +188,18 @@ class CartController extends Controller
                 ]);
 
         return 'done';
+    }
+
+    public function cartDetail()
+    {
+        if(empty(Cart::content())){
+            return redirect()->route('404');
+        }
+
+        $cartItems = Cart::content();
+
+
+        return view('cart.cartDetail');
     }
 
     public function submitCustomerDetail(CustomerRequest $request)

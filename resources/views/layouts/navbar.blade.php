@@ -36,13 +36,13 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a class="search">
+                    <a class="search" id="search">
                         <img src="{{url('img/master/search.svg')}}" alt="search">
                     </a>
                     <a class="cart">
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
                     </a>
-                    <a class="cart">
+                    <a class="cart" id="flag">
                         <img src="{{url('img/flag/uk.svg')}}" alt="cart">
                     </a>
                 </li>
@@ -76,123 +76,182 @@
                 </li>
             </ul>
         </div>
+        <ul class="country-list">
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+        </ul>
+
     </div>
 </div>
 <div class="dropdown-menu">
-            <div class="dropdown-list">
-                <div class="topic-info">
-                    <h3>Categories</h3>
-                    <a data-target="c1"><img src="{{url('img/master/analytics.svg')}}" alt="analytics">Project Management</a>
-                    <a data-target="c2"><img src="{{url('img/master/data.svg')}}" alt="data">Business Analysis</a>
-                    <a data-target="c3"><img src="{{url('img/master/increase.svg')}}" alt="increase">Business Improvement</a>
-                    <a data-target="c4"><img src="{{url('img/master/computer.svg')}}" alt="computer">IT Service Management</a>
-                    <a data-target="c5"><img src="{{url('img/master/secure-data.svg')}}" alt="secure-data">IT Security</a>
-                    <a data-target="c6"><img src="{{url('img/master/data-protection.svg')}}" alt="cv">Data Protection</a>
-                    <a data-target="c6"><img src="{{url('img/master/cv.svg')}}" alt="cv">Office Applications</a>
-                    <a data-target="c6"><img src="{{url('img/master/skills.svg')}}" alt="skills">Business Skills</a>
+    <div class="dropdown-list">
+        <div class="topic-info">
+            <h3>Categories</h3>
+            <a data-target="c1">
+                <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
+            <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue"></span>Project Management</a>
+
+            <a data-target="c2"><span><img src="{{url('img/master/data.svg')}}" alt="data" class="white"><img src="{{url('img/master/data-blue.svg')}}" alt="data-blue" class="blue"></span>Business Analysis</a>
+
+            <a data-target="c3"><span><img src="{{url('img/master/increase.svg')}}" alt="increase" class="white">
+            <img src="{{url('img/master/increase-blue.svg')}}" alt="increase-blue" class="blue"></span>Business Improvement</a>
+
+            <a data-target="c4"><span><img src="{{url('img/master/computer.svg')}}" alt="computer" class="white">
+            <img src="{{url('img/master/computer-blue.svg')}}" alt="computer-blue" class="blue"></span>IT Service Management</a>
+
+            <a data-target="c5"><span><img src="{{url('img/master/secure-data.svg')}}" alt="secure-data" class="white">
+            <img src="{{url('img/master/secure-data-blue.svg')}}" alt="secure-data" class="blue"></span>IT Security</a>
+
+            <a data-target="c6"><span><img src="{{url('img/master/data-protection.svg')}}" alt="cv" class="white">
+            <img src="{{url('img/master/data-protection-blue.svg')}}" alt="cv" class="blue"></span>Data Protection</a>
+
+            <a data-target="c7"><span><img src="{{url('img/master/cv.svg')}}" alt="cv" class="white">
+            <img src="{{url('img/master/cv-blue.svg')}}" alt="cv" class="blue"></span>Office Applications</a>
+
+            <a data-target="c8"><span><img src="{{url('img/master/skills.svg')}}" alt="skills" class="white">
+            <img src="{{url('img/master/skills-blue.svg')}}" alt="skills" class="blue"></span>Business Skills</a>
+        </div>
+        <div class="course-list">
+            <div class="course-content">
+                <h3>Topic</h3>
+                <div class="course" id="c1">
+                    <a data-target="d1"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
+                    <a data-target="d2"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
+                    <a data-target="d3"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
+                    <a data-target="d4"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
+                    <a data-target="d5"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
                 </div>
-                <div class="course-list">
-                    <div class="course-content">
-                        <h3>Topic</h3>
-                        <div class="course" id="c1">
-                            <a data-target="d1"><img src="{{url('img/master/test.svg')}}" alt="test">Agile Project Management Training</a>
-                            <a data-target="d2"><img src="{{url('img/master/test.svg')}}" alt="test">Agile Project Management Training</a>
-                            <a data-target="d3"><img src="{{url('img/master/test.svg')}}" alt="test">Agile Project Management Training</a>
-                            <a data-target="d4"><img src="{{url('img/master/test.svg')}}" alt="test">Agile Project Management Training</a>
-                            <a data-target="d5"><img src="{{url('img/master/test.svg')}}" alt="test">Agile Project Management Training</a>
-                        </div>
-                        <div class="course" id="c2" data-target="d2">
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                        </div>
-                        <div class="course" id="c3" data-target="d3">
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                        </div>
-                        <div class="course" id="c4" data-target="d4">
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                        </div>
-                        <div class="course" id="c5" data-target="d5">
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                        </div>
-                        <div class="course" id="c6" data-target="d6">
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                            <a>Prince2 Training Course</a>
-                        </div>
-                    </div>
+                <div class="course" id="c2" data-target="d2">
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
                 </div>
-                <div class="menu-list">
-                    <div class="menu-content">
-                            <h3>Courses</h3>
-                        <div class="content" id="d1">
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                            <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                        </div>
-                        <div class="content" id="d2">
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                        </div>
-                        <div class="content" id="d3">
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                        </div>
-                        <div class="content" id="d4">
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                        </div>
-                        <div class="content" id="d5">
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                        </div>
-                        <div class="content" id="d6">
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                            <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                        </div>
-                    </div>
+                <div class="course" id="c3" data-target="d3">
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                </div>
+                <div class="course" id="c4" data-target="d4">
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                </div>
+                <div class="course" id="c5" data-target="d5">
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                </div>
+                <div class="course" id="c6" data-target="d6">
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
+                    <a>Prince2 Training Course</a>
                 </div>
             </div>
+        </div>
+        <div class="menu-list">
+            <div class="menu-content">
+                    <h3>Courses</h3>
+                <div class="menu-info" id="d1">
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
+                </div>
+                <div class="menu-info" id="d2">
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                </div>
+                <div class="menu-info" id="d3">
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                </div>
+                <div class="menu-info" id="d4">
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                </div>
+                <div class="menu-info" id="d5">
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                </div>
+                <div class="menu-info" id="d6">
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-search" id="pop-search">
+        <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
+    <form class="search-form">
+            <div class="search">
+                <input type="text" placeholder="Search your course here...."  autocomplete="off">
+                <button>
+                    Search
+                </button>
+            </div>     
+    </form>
 </div>

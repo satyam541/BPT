@@ -32,7 +32,7 @@
                 <div class="course-content">
                     <a href="javascript:void(0);">CCNA Training (Cisco Certified Network Associate)</a>
                     <div class="buttons">
-                        <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-quote="CCNA Training (Cisco Certified Network Associate)">
+                        <a href="javascript(void);" class="btn-blue open-popup enquiryJS" data-type="other" data-quote="CCNA Training (Cisco Certified Network Associate)">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>

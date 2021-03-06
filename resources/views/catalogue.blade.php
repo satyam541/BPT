@@ -111,7 +111,7 @@
                     <p>{!! $pageDetail->category_enquire['enquire_content']->content !!}</p>
                 </div>
                 <div class="buttons">
-                    <div class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                    <div class="btn-white open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
                         <img src="{{ url('img/catalogue/email-black.svg') }}" alt="email">Enquire Now
                     </div>
                 </div>

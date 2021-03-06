@@ -177,13 +177,17 @@
         }
 
         .online-block{
-            flex-direction: row;
+            .exclude{
+                flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            }
         }
         .add-ons{
             width: 48%;
-            margin-top: 0;
+            position: sticky;
+            top: 170px;
+            height: auto;
         }
         .add-foundation{
             width: 48%;

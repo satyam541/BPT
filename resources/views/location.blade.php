@@ -73,7 +73,7 @@
                 <p>{{$pageDetail->find['find_container']->content}}</p>
             </div>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire" data-type="other">
                     <img src="{{url('img/location/enquire.svg')}}" alt="enquire"> Enquire
                 </a>
             </div>

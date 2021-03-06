@@ -329,7 +329,7 @@
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
-                                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                    <a href="{{ route('classroomBooking',$schedule->id) }}" class="btn-blue"
                                         data-quote="Book Now">
                                         <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
                                     </a>
@@ -387,7 +387,7 @@
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
-                                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                    <a href="{{ route('virtualBooking',$virtual->id) }}" class="btn-blue"
                                         data-quote="Book Now">
                                         <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
                                     </a>
@@ -438,10 +438,11 @@
                         @endif
                     </div>
                     <div id="online-block" class="online-block">
+                        @if (!empty($onlineSchedules))
                         <form action="{{route('onlineBooking',['id'=>$onlineSchedules->id])}}" class="exclude">
+                            @if (!$onlineSchedules->courseAddon->isEmpty())
                             <div class="add-ons">
                                 <h2>Optional add-ons</h2>
-                                
                                     @foreach ($onlineSchedules->courseAddon as $addon)
                                     <div class="item">
                                         <div class="offer feature-tickbox">
@@ -451,22 +452,22 @@
                                         <p>{!! $addon->description !!}</p>
                                     </div>
                                     @endforeach
-                                
-                                
                             
-                            </div>
+                            </div> 
+                            @endif
+                            
                             <div class="add-foundation">
                                 <div class="foundation-content">
                                     <h3>{!! $selectedCourse->name !!}</h3>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/hours.svg')}}" alt="hours">
                                         <p>40 Hours (on average)</p>
                                     </span>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/days.svg')}}" alt="days">
                                         <p>90 Days Access</p>
                                     </span>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/administration.svg')}}" alt="administration">
                                         <p>40 Hours (on average)</p>
                                     </span>
@@ -504,6 +505,8 @@
                                     date of purchase.</p>
                             </div>
                         </form>
+                        @endif
+                        
                     </div>
                     <div id="onsite-block" class="onsite-block">
                         <!-- Start form section -->
