@@ -42,7 +42,7 @@
                     <a class="cart">
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
                     </a>
-                    <a class="cart">
+                    <a class="cart" id="flag">
                         <img src="{{url('img/flag/uk.svg')}}" alt="cart">
                     </a>
                 </li>
@@ -76,6 +76,39 @@
                 </li>
             </ul>
         </div>
+        <ul class="country-list">
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+        </ul>
+
     </div>
 </div>
 <div class="dropdown-menu">
