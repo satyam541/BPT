@@ -8534,6 +8534,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.training .online-block .exclude {
+  display: flex;
+  flex-direction: column;
+}
 .training .add-foundation {
   display: flex;
   flex-direction: column;
@@ -8555,7 +8559,7 @@ select::-ms-expand {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.training .add-foundation span {
+.training .add-foundation .image {
   display: flex;
   border-bottom: 1px dashed #C0C0C0;
   padding: 1.5rem 0 1rem 0;
@@ -8563,11 +8567,11 @@ select::-ms-expand {
   width: 85%;
   align-self: center;
 }
-.training .add-foundation span img {
+.training .add-foundation .image img {
   width: 25px;
   height: 25px;
 }
-.training .add-foundation span p {
+.training .add-foundation .image p {
   width: 80%;
   margin-left: 1rem;
   justify-content: flex-start;
@@ -9350,14 +9354,16 @@ select::-ms-expand {
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
   }
-  .training .online-block {
+  .training .online-block .exclude {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
   .training .add-ons {
     width: 48%;
-    margin-top: 0;
+    position: sticky;
+    top: 170px;
+    height: auto;
   }
   .training .add-foundation {
     width: 48%;

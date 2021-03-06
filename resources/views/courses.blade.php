@@ -441,7 +441,6 @@
                         <form action="{{route('onlineBooking',['id'=>$onlineSchedules->id])}}" class="exclude">
                             <div class="add-ons">
                                 <h2>Optional add-ons</h2>
-                                
                                     @foreach ($onlineSchedules->courseAddon as $addon)
                                     <div class="item">
                                         <div class="offer feature-tickbox">
@@ -451,22 +450,20 @@
                                         <p>{!! $addon->description !!}</p>
                                     </div>
                                     @endforeach
-                                
-                                
                             
                             </div>
                             <div class="add-foundation">
                                 <div class="foundation-content">
                                     <h3>{!! $selectedCourse->name !!}</h3>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/hours.svg')}}" alt="hours">
                                         <p>40 Hours (on average)</p>
                                     </span>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/days.svg')}}" alt="days">
                                         <p>90 Days Access</p>
                                     </span>
-                                    <span>
+                                    <span class="image">
                                         <img src="{{url('img/courses/administration.svg')}}" alt="administration">
                                         <p>40 Hours (on average)</p>
                                     </span>
