@@ -81,9 +81,8 @@ class CourseController extends Controller
         $onlineCourses              = '"'.implode('","',$onlineCourses).'"';
         $topicCourses               = '"'.implode('","',$topicCourses).'"';
         $finalCourseOrder           = $topicCourses.",".$onlineCourses;
-        $data['onlineSchedules']    = Course::with('onlinePrice', 'courseAddon')->where('id',$course_id)->orderByRaw("Field(id,".$finalCourseOrder.")")->get();
-        // dd($data);
-        // dd($data['onlineSchedules']);
+        $data['onlineSchedules']    = Course::has('onlinePrice')->with('onlinePrice', 'courseAddon')->where('id',$course_id)->orderByRaw("Field(id,".$finalCourseOrder.")")->first();
+        
         return view('courses', $data);
     }
 

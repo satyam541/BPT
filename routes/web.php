@@ -63,6 +63,8 @@ Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseC
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
 
+Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
+
 // Route::get('/blog', function () {
 //     return view('blog');
 // });

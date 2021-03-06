@@ -185,12 +185,18 @@ function highlightSelectedOption()
 function updateOnlinePrice()
 {
     var selected = $("#online-block .feature-tickbox input:checked");
-    var total = $(".top-right-calender .total-price");
+    var addon = $(".foundation-content .addons-price");
+    var total = $(".foundation-content .total-price");
     var onlinePrice = parseInt(total.data('onlineprice'));
+    var addonsPrice = 0;
     $.each(selected,function(index,val){
         onlinePrice += parseInt($(val).data('price'));
+        addonsPrice += parseInt($(val).data('price'));
     });
-    console.log(onlinePrice);
-    var totalprice = total.find('span');
+    var totalprice = total;
     totalprice.html(parseInt(onlinePrice));
+    addon.html(parseInt(addonsPrice));
+
+   
+    
 }
