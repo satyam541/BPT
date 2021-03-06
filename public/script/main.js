@@ -78,6 +78,14 @@
    });
  //End Delivery method script//
     
+//choose modes
+$('#chooseMode').on("click", function(){
+    $('.modes-list').toggleClass('modes-active');
+
+});
+//End choose modes
+
+
     //Start Testimonial//
     $('.topic-list').owlCarousel({
         loop: true,

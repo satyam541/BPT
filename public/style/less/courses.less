@@ -478,6 +478,10 @@
         background-color: transparent;
         box-shadow: none;
         padding: 0;
+        .country-code{
+            margin: 0;
+            padding: 0;
+        }
     }
     .select-dropdown {
         padding-bottom: 1.5rem;
@@ -538,6 +542,9 @@
         display: none;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+    .modes-active{
+        display: flex;
     }
     .methods {
         display: flex;
@@ -611,10 +618,8 @@
             position: absolute;
             background-image: url(../img/courses/add-layer.png);
             background-size: 100% 100%;
-            padding: 1rem;
-            padding-bottom: 2rem;
+            padding: 1rem 1rem 2rem 2rem;
             display: flex;
-            justify-content: center;
             color: #FFFFFF;
             top: -18px;
             left: -14px;
@@ -638,6 +643,9 @@
                  padding-left: 1.6rem;
                  font-size: 13px;
             }
+        }
+        &:nth-child(2){
+            background-color: black;
         }
     }
     .online-block{
@@ -667,9 +675,8 @@
         }
         span{
             display: flex;
-            margin-top: 1.5rem;
             border-bottom: 1px dashed #C0C0C0;
-            padding: 0 1rem;
+            padding: 1.5rem 0 1rem 0;
             padding-bottom: 0.5rem;
             width: 85%;
             align-self: center;
@@ -723,9 +730,13 @@
     }
 
     .onsite-block{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
         .onsite-form{
             background-color: @darkblueColor;
             flex-direction: column;
+            padding: 2rem;
             .heading{
                 p{
                     text-align: center;
@@ -738,6 +749,9 @@
             }
             span{
                 background-color: #687494;
+            }
+            .prefix{
+                background-color: transparent;
             }
             input{
                 color: @whiteColor;
