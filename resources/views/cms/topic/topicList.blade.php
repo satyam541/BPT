@@ -75,7 +75,7 @@
                     @foreach ($topics as $topic)
                     <tr>
                       <td>{{$topic->name}}</td>
-                      <td>{{$topic->category->name}}</td>
+                      <td>{{$topic->category->name ?? ''}}</td>
                       <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>
