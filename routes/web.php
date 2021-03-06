@@ -67,7 +67,11 @@ Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController
 
 //Cart Routes
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/cart/detail', 'CartController@index')->name('cartDetail');
+Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
+
+//ajax requests
+Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
+Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@removeItem']);
 
 
 Route::get('/offer', function () {

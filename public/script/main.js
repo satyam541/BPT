@@ -458,7 +458,7 @@ function stepFour() {
 
         $(".course a").click(function() {
             var target = $(this).data('target');
-            $(".content").hide();
+            $(".menu-info").hide();
             $("#" + target).css("display", "flex");
             $(".course a").removeClass('course-active');
             $(this).addClass("course-active");
