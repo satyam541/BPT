@@ -76,7 +76,7 @@
                                                 </th>
                                                 <th class=" text-center">
                                                     @can('update', new App\Models\Category())
-                                                        Bulletpoints
+                                                        Bullet Points
                                                     @endcan
                                                 </th>
                                                 <th class=" text-center">
