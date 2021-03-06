@@ -25,9 +25,7 @@ class TestController extends Controller
 {
     public function index()
     {
-       $locations  = Location::all();
-      $locations =$locations->orderByRaw("Field(name,'London','Birmingham','Manchester')");
-      dd($locations);
+      
         dd('please uncomment!!');
         ini_set('max_execution_time',-1);
         $url = "http://127.0.0.1:8000/api/category";

@@ -112,6 +112,6 @@ class EnquiryController extends Controller
 
     public function postEnquiryPage()
     {
-     dd('thank you');   
+     return view();   
     }
 }
