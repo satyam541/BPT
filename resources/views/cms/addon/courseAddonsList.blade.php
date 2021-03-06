@@ -44,7 +44,6 @@
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Description</th>
-                                           
                                         </tr>
                                     </thead>
                                     <tbody>         
@@ -79,10 +78,9 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [
-                    { "name": "Type" },
-                    { "name": "Description" },
                     { "name": "Name" },
-                    { "name": "Action", "sorting": false, searching: false },
+                    { "name": "Type" },
+                    { "name": "Description" }
                 ]
             });
         });

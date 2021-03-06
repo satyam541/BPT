@@ -30,7 +30,7 @@ class TopicContentRule implements Rule
         $topic_id       = request()->topic_id;
         
         $topicContents  = TopicContent::withTrashed()->where('topic_id',$topic_id)->get();
-        $topicContent  =  request()->route('topicDetail');
+        $topicContent   =  request()->route('topicDetail');
         
         // Update case
         if(!empty($topicContent) && $topicContent[$attribute] == $value)

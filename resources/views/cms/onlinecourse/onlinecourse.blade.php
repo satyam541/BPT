@@ -69,9 +69,9 @@
                         @can('update',$onlineCourse)
                         <a href="{{Route('editCourse',['course'=>$onlineCourse->id])}}" class="fa fa-edit"></a>
                         @endcan
-                        @can('delete',$onlineCourse)
+                        {{-- @can('delete',$onlineCourse)
                         <a href="" onclick="deleteItem('{{ route('deleteOnlineCourse',['course'=>$onlineCourse->id])}}')" class="fa fa-trash" style="color: red"></a>
-                        @endcan
+                        @endcan --}}
                       </td>
                     </tr>
                     @endforeach
