@@ -47,7 +47,7 @@
                         <div class="heading">
                             <h2>{!!heading_split($pageDetail->popular_courses['heading']->heading)!!}</h2>
                         </div>
-                        @foreach ($courses as $course)
+                        @foreach ($topic->courses as $course)
 
                         <div class="course-item" onclick="location.href = '{{ url('training-courses' . $course->reference) }}';">
                             <span>
