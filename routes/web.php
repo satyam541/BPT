@@ -34,7 +34,7 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
-Route::get('/thanks','ThanksController@index')->name('thanks');
+Route::any('/thanks','ThanksController@index')->name('thanks');
 
 
 /*Enquiry Routes*/
@@ -62,6 +62,8 @@ Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->nam
 Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
 
 Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
+
+Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
 
 // Route::get('/blog', function () {
 //     return view('blog');

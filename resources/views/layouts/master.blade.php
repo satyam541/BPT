@@ -201,7 +201,7 @@
     
     var formValidationUrl = '{{ route("validateEnquiry") }}';
     var formSubmitUrl = '{{ route("sendEnquiry") }}';
-
+    var ajaxTime= new Date().getTime();
     function EnquiryFormSubmit(formType, button) {
         if (button != null) {
             consentValidation = checkConsent(button);
@@ -218,11 +218,13 @@
             url:formSubmitUrl,
             data:formData,
             type:"post",
+            timeout: 90000,
             global:false,
             success:function(response){
                 if(response == 'done') {
+                    var totalTime = new Date().getTime()-ajaxTime;
                     var input = '{{csrf_field()}}';
-                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thank-you")}}').html(input);
+                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thanks")}}').html(input);
                    $('body').append(form);
                    $('#thank-you').submit();
             }

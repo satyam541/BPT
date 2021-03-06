@@ -61,7 +61,7 @@
                         <p class="tab">
                             Overview
                         </p>
-                        <div class="number">01</div>
+                        <div class="number"></div>
                     </li>
                     @endif
 
@@ -77,7 +77,7 @@
                         <p class="tab">
                             Course Content
                         </p>
-                        <div class="number">02</div>
+                        <div class="number"></div>
                     </li>
                     @endif
 
@@ -89,7 +89,7 @@
                         <p class="tab">
                             FAQs
                         </p>
-                        <div class="number">03</div>
+                        <div class="number"></div>
                     </li>
 
                     @endif
@@ -102,7 +102,7 @@
                         <p class="tab">
                             What's Included
                         </p>
-                        <div class="number">04</div>
+                        <div class="number"></div>
                     </li>
                     @endif
                 </ul>
@@ -359,6 +359,21 @@
                         </div>
                         @endforeach
                         {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
+                        @else
+                        <div class="no-schedule" style="display: flex">
+                            <div class="heading center-heading">
+                                <h2>{!! $selectedCourse->name !!}</h2>
+                            </div>
+                            <p>Contact us for Date and Price</p>
+                            <div class="buttons">
+                                <div class="btn-blue">
+                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            </p>
+                        </div>
                         @endif
                     </div>
                     <div id="virtual-block">
@@ -402,215 +417,203 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         @endforeach
-                            {{$virtualSchedules->onEachSide(2)->fragment('virtual-booking')->appends(request()->query())->links()}}
-                        @endif
+                        {{$virtualSchedules->onEachSide(2)->fragment('virtual-booking')->appends(request()->query())->links()}}
+                        @else
+                        <div class="no-schedule" style="display: flex">
+                            <div class="heading center-heading">
+                                <h2>{!! $selectedCourse->name !!}</h2>
+                            </div>
+                            <p>Contact us for Date and Price</p>
+                            <div class="buttons">
+                                <div class="btn-blue">
+                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            </p>
                         </div>
-                        <div id="online-block" class="online-block">
+                        @endif
+                    </div>
+                    <div id="online-block" class="online-block">
+                        <form action="{{route('onlineBooking',['id'=>$onlineSchedules->id])}}" class="exclude">
                             <div class="add-ons">
                                 <h2>Optional add-ons</h2>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>6 Months Access - £109</h3>
+                                
+                                    @foreach ($onlineSchedules->courseAddon as $addon)
+                                    <div class="item">
+                                        <div class="offer feature-tickbox">
+                                            <input type="checkbox" name="addon[]" data-price="{{floor($addon->price)}}" value="{{$addon->id}}">
+                                            <h3>{!! $addon->name !!} - £{!! formatPrice(floor($addon->price)) !!}</h3>
+                                        </div>
+                                        <p>{!! $addon->description !!}</p>
                                     </div>
-                                    <p>Extend your access to match your schedule.</p>
-                                </div>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>1 Year Access - £164</h3>
-                                    </div>
-                                    <p>Give yourself as much time as you need to complete the course</p>
-                                </div>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>Official PRINCE2® Manual - £83</h3>
-                                    </div>
-                                    <p>Assist your learning with the Official PRINCE2® Manual</p>
-                                </div>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>Official PRINCE2® Foundation Exam - £325</h3>
-                                    </div>
-                                    <p>Take the Official PeopleCert PRINCE2® Foundation Exam</p>
-                                </div>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>Official PRINCE2® Practitioner Exam - £380</h3>
-                                    </div>
-                                    <p>Take the Official PeopleCert PRINCE2® Practitioner Exam</p>
-                                </div>
-                                <div class="item">
-                                    <div class="offer">
-                                        <input type="checkbox">
-                                        <h3>Official PRINCE2® Exams - £655</h3>
-                                    </div>
-                                    <p>Take both PeopleCert PRINCE2® exams and become fully certified</p>
-                                </div>
+                                    @endforeach
+                                
+                                
+                            
                             </div>
                             <div class="add-foundation">
                                 <div class="foundation-content">
-                                <h3>PRINCE2® Foundation and Practitioner</h3>
-                                <span>
-                                    <img src="{{url('img/courses/hours.svg')}}" alt="hours">
-                                    <p>40 Hours (on average)</p>
-                                </span>
-                                <span>
-                                    <img src="{{url('img/courses/days.svg')}}" alt="days">
-                                    <p>90 Days Access</p>
-                                </span>
-                                <span>
-                                    <img src="{{url('img/courses/administration.svg')}}" alt="administration">
-                                    <p>40 Hours (on average)</p>
-                                </span>
-                                <ul>
-                                    <li>
-                                        <p>Course price</p>
-                                        <p>£270</p>
-                                    </li>
-                                    <li>
-                                        <p>add-ons price</p>
-                                        <p>£356</p>
-                                    </li>
-                                    <li>
-                                        <p>Sub-Total</p>
-                                        <p>£626</p>
-                                    </li>
-                                </ul>
+                                    <h3>{!! $selectedCourse->name !!}</h3>
+                                    <span>
+                                        <img src="{{url('img/courses/hours.svg')}}" alt="hours">
+                                        <p>40 Hours (on average)</p>
+                                    </span>
+                                    <span>
+                                        <img src="{{url('img/courses/days.svg')}}" alt="days">
+                                        <p>90 Days Access</p>
+                                    </span>
+                                    <span>
+                                        <img src="{{url('img/courses/administration.svg')}}" alt="administration">
+                                        <p>40 Hours (on average)</p>
+                                    </span>
+                                    <ul>
+                                        <li>
+                                            <p>Course price</p>
+                                            <p>£{!! formatPrice(floor($onlineSchedules->onlinePrice->price)) !!}</p>
+                                        </li>
+                                        <li>
+                                            <p>add-ons price</p>
+                                            <p>£<span class="addons-price">0</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Sub-Total</p>
+                                            <p>£<span class="total-price" data-onlineprice="{{floor($onlineSchedules->onlinePrice->price)}}">{{floor($onlineSchedules->onlinePrice->price)}}</span></p>
+                                        </li>
+                                    </ul>
 
-                                <div class="buttons">
-                                    <a class="btn-blue">
-                                        <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
-                                         Enquire Now
-                                    </a>
-                                    <a class="btn-white">
-                                        <img src="{{url('img/courses/book-now.svg')}}" alt="book-now">
-                                        Book Now
-                                    </a>
-                                </div>
-                                </div>
-                            <p class="info">Upon purchase <strong>you will receive a password </strong> via the email you used to purchase the course.</p>
-                            <p class="info">You will then be able to <strong>login to our online learning platform </strong> with your email and password.</p>
-                            <p class="info">You will have access to the platform for <strong>90 days </strong> from the date of purchase.</p>
-                            </div>
-                           
-                        </div>
-                        <div id="onsite-block" class="onsite-block">
-                    <!-- Start form section -->
-                <form class="form onsite-form" onsubmit="submitEnquiry(this)" id="contact-us">
-                        @csrf
-                        <div class="heading center-heading white-heading">
-                            <h2>ONSITE ENQUIRY?</h2>
-                            <p>Fill up the form below and we will get back to you!</p>
-                        </div>
-                        <div class="form-input">
-                            <input type="hidden" name="type" value="onsite"> 
-                            <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
-                                <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                                <input type="text" name="f-name" id="f-name" placeholder="First Name*"
-                                    autocomplete="off">
-                            </div>
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/email-white.svg')}}" alt="email" class="black">
-                                <img src="{{url('img/master/email-red.svg')}}" alt="email-red" class="red"></span>
-                                <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
-                            </div>
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/phone-callwhite.svg')}}" alt="phone-call" class="black">
-                                <img src="{{url('img/master/phone-callred.svg')}}" alt="phonecall-red" class="red"></span>
-                                <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                                <div class="phonecode-field">
-                                    <select class="country-code"></select>
-                                    <span class="prefix"></span>
-                                    <input type="number" class="telephone" placeholder="Phone Number*">
-                                    <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                        <input type="text" name="Phone" class="phonenumber">
+                                    <div class="buttons">
+                                        <a class="btn-blue">
+                                            <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
+                                            Enquire Now
+                                        </a>
+                                        <button type="submit" class="btn-white">
+                                            <img src="{{url('img/courses/book-now.svg')}}" alt="book-now">
+                                            Book Now
+                                        </button>
                                     </div>
                                 </div>
+                                <p class="info">Upon purchase <strong>you will receive a password </strong> via the email
+                                    you used to purchase the course.</p>
+                                <p class="info">You will then be able to <strong>login to our online learning platform
+                                    </strong> with your email and password.</p>
+                                <p class="info">You will have access to the platform for <strong>90 days </strong> from the
+                                    date of purchase.</p>
                             </div>
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
-                                <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
-                                <input type="text" name="company" id="address" placeholder="Company"
-                                    autocomplete="off">
+                        </form>
+                    </div>
+                    <div id="onsite-block" class="onsite-block">
+                        <!-- Start form section -->
+                        <form class="form onsite-form" onsubmit="submitEnquiry(this)" id="contact-us">
+                            @csrf
+                            <div class="heading center-heading white-heading">
+                                <h2>ONSITE ENQUIRY?</h2>
+                                <p>Fill up the form below and we will get back to you!</p>
                             </div>
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/book-white.svg')}}" alt="book" class="black">
-                                <img src="{{url('img/master/book-red.svg')}}" alt="book-red" class="red"></span>
-                                <input type="text" name="course" id="course" placeholder="Course*"
-                                    autocomplete="off">
+                            <div class="form-input">
+                                <input type="hidden" name="type" value="onsite">
+                                <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
+                                        <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
+                                    <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/email-white.svg')}}" alt="email" class="black">
+                                        <img src="{{url('img/master/email-red.svg')}}" alt="email-red"
+                                            class="red"></span>
+                                    <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/phone-callwhite.svg')}}" alt="phone-call"
+                                            class="black">
+                                        <img src="{{url('img/master/phone-callred.svg')}}" alt="phonecall-red"
+                                            class="red"></span>
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                    <div class="phonecode-field">
+                                        <select class="country-code"></select>
+                                        <span class="prefix"></span>
+                                        <input type="number" class="telephone" placeholder="Phone Number*">
+                                        <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                            <input type="text" name="Phone" class="phonenumber">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
+                                        <img src="{{url('img/master/house-red.svg')}}" alt="house-red"
+                                            class="red"></span>
+                                    <input type="text" name="company" id="address" placeholder="Company"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/book-white.svg')}}" alt="book" class="black">
+                                        <img src="{{url('img/master/book-red.svg')}}" alt="book-red" class="red"></span>
+                                    <input type="text" name="course" id="course" placeholder="Course*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container">
+                                    <span><img src="{{url('img/master/position-white.svg')}}" alt="position"
+                                            class="black">
+                                        <img src="{{url('img/master/position-red.svg')}}" alt="position-red"
+                                            class="red"></span>
+                                    <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
+                                        autocomplete="off">
+                                </div>
+                                <div class="input-container message">
+                                    <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
+                                        <img src="{{url('img/master/house-red.svg')}}" alt="house-red"
+                                            class="red"></span>
+                                    <textarea placeholder="Address" id="address" name="address"></textarea>
+                                </div>
+                                <div class="input-container message">
+                                    <span><img src="{{url('img/master/comment-white.svg')}}" alt="comment"
+                                            class="black">
+                                        <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red"
+                                            class="red"></span>
+                                    <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
+                                </div>
                             </div>
-                            <div class="input-container">
-                                <span><img src="{{url('img/master/position-white.svg')}}" alt="position" class="black">
-                                <img src="{{url('img/master/position-red.svg')}}" alt="position-red" class="red"></span>
-                                <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
-                                    autocomplete="off"> 
+                            <div class="form-consent">
+                                <p>The information you provide shall be processed by Best Practice Training Limited – a
+                                    professional training organisation. Your data shall be used by a member of staff to
+                                    contact you regarding your enquiry.
+                                </p>
                             </div>
-                            <div class="input-container message">
-                                <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
-                                <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
-                                <textarea placeholder="Address" id="address" name="address"></textarea>
+                            <div class="form-consent">
+                                <p>Please click <a>here</a> for privacy policy. </p>
                             </div>
-                            <div class="input-container message">
-                                <span><img src="{{url('img/master/comment-white.svg')}}" alt="comment" class="black">
-                                <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
-                                <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
+                            <div class="form-consent">
+                                <input name="contactConsent" type="checkbox" id="checkConsent">
+                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                                    suitable manner (by phone or email) in order to respond to my enquiry.</label>
                             </div>
-                        </div>
-                        <div class="form-consent">
-                            <p>The information you provide shall be processed by Best Practice Training Limited – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
-                            </p>
-                        </div>
-                        <div class="form-consent">
-                            <p>Please click <a>here</a> for privacy policy. </p>
-                        </div>
-                        <div class="form-consent">
-                            <input name="contactConsent" type="checkbox" id="checkConsent">
-                            <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most suitable manner (by phone or email) in order to respond to my enquiry.</label>
-                        </div>
-                        <div class="consent-error" style="display: none;">
-                            <p>We cannot process your enquiry without contacting you, please tick to confirm you
-                                consent to us contacting you about your enquiry</p>
-                        </div>
-                        <div class="form-consent">
-                            <input type="checkbox" name="marketing_consent" id="allowconsent">
-                            <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
-                        </div>
-                        <div class="buttons">
-                            <button onclick="EnquiryFormSubmit('enquiry',this)" class="btn-blue">
-                                Submit
-                            </button>
-                        </div>
-                </form>
-                <!-- End form section -->
-                        </div>
+                            <div class="consent-error" style="display: none;">
+                                <p>We cannot process your enquiry without contacting you, please tick to confirm you
+                                    consent to us contacting you about your enquiry</p>
+                            </div>
+                            <div class="form-consent">
+                                <input type="checkbox" name="marketing_consent" id="allowconsent">
+                                <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                                    discounts</label>
+                            </div>
+                            <div class="buttons">
+                                <button onclick="EnquiryFormSubmit('enquiry',this)" class="btn-blue">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                        <!-- End form section -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="no-schedule">
-            <div class="heading center-heading">
-                <h2>Managing Change and Leading Teams</h2>
-            </div>
-            <p>Contact us for Date and Price</p>
-            <div class="buttons">
-                <div class="btn-blue">
-                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
-                </div>
-            </div>
-            <p>---- OR ----</p>
-            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
-            </p>
-        </div>
     </div>
-    </div>
+    
 </section>
 <!-- End Training Section -->
 
@@ -847,75 +850,78 @@
 @endsection
 @section('footerScripts')
 <script>
-var defaultMethod = "virtual";
+    var defaultMethod = "virtual";
+
 </script>
 <script src="{{ url("script/filter.js") }}"></script>
 <script src="{{ url("script/courseSchedule.js") }}"></script>
 <script>
-function submitOnlineForm() {
-    $("#onlineBookingForm").submit();
-}
+    function submitOnlineForm() {
+        $("#onlineBookingForm").submit();
+    }
 
-$(document).ready(function() {
-    @if(!empty($hash))
-    window.location.hash = "{{$hash}}";
-    @endif
-    $(window).on('hashchange', function() {
-        var hash = window.location.hash;
-        if (hash != "")
-            openSpecificDeliveryMethod(hash);
+    $(document).ready(function () {
+        @if(!empty($hash))
+        window.location.hash = "{{$hash}}";
+        @endif
+        $(window).on('hashchange', function () {
+            var hash = window.location.hash;
+            if (hash != "")
+                openSpecificDeliveryMethod(hash);
+        });
+        if (window.location.href) {
+            var hash = window.location.hash;
+            if (hash != "")
+                openSpecificDeliveryMethod(hash);
+        }
     });
-    if (window.location.href) {
-        var hash = window.location.hash;
-        if (hash != "")
-            openSpecificDeliveryMethod(hash);
-    }
-});
 
-function openSpecificDeliveryMethod(method) {
-    method = method.replace(/(?![a-z0-9-])./gi, "");
-    switch (method) {
-        case 'classroom-booking':
-            displaySchedules('classroom');
-            $("#classroom").addClass('active');
-            $("select[name=deliveryMethod]").val("#" + method);
-            scrollToSpecificDiv("#datesprices");
-            break;
-        case 'virtual-booking':
-            displaySchedules('virtual');
-            $("#virtual").addClass('active');
-            $("select[name=deliveryMethod]").val("#" + method);
-            scrollToSpecificDiv("#datesprices");
-            break;
-        case 'online-booking':
-            displaySchedules('online');
-            $("#online").addClass('active');
-            $("select[name=deliveryMethod]").val("#" + method);
-            scrollToSpecificDiv("#datesprices");
-            break;
-        case 'onsite-booking':
-            displaySchedules('onsite');
-            $("#onsite").addClass('active');
-            $("select[name=deliveryMethod]").val("#" + method);
-            scrollToSpecificDiv("#datesprices");
-            break;
-        default:
-            scrollToSpecificDiv("#" + method);
-            break;
+    function openSpecificDeliveryMethod(method) {
+        method = method.replace(/(?![a-z0-9-])./gi, "");
+        switch (method) {
+            case 'classroom-booking':
+                displaySchedules('classroom');
+                $("#classroom").addClass('active');
+                $("select[name=deliveryMethod]").val("#" + method);
+                scrollToSpecificDiv("#datesprices");
+                break;
+            case 'virtual-booking':
+                displaySchedules('virtual');
+                $("#virtual").addClass('active');
+                $("select[name=deliveryMethod]").val("#" + method);
+                scrollToSpecificDiv("#datesprices");
+                break;
+            case 'online-booking':
+                displaySchedules('online');
+                $("#online").addClass('active');
+                $("select[name=deliveryMethod]").val("#" + method);
+                scrollToSpecificDiv("#datesprices");
+                break;
+            case 'onsite-booking':
+                displaySchedules('onsite');
+                $("#onsite").addClass('active');
+                $("select[name=deliveryMethod]").val("#" + method);
+                scrollToSpecificDiv("#datesprices");
+                break;
+            default:
+                scrollToSpecificDiv("#" + method);
+                break;
+        }
     }
-}
 
-function scrollToSpecificDiv(selector) {
-    if ($(selector).length > 0) {
-        var selectorTop = $(selector).offset().top;
-        console.log(selectorTop);
-        $('html,body').animate({
-            scrollTop: selectorTop
-        }, 1000);
-    } else {
-        console.log('scrolltop not found');
+    function scrollToSpecificDiv(selector) {
+        if ($(selector).length > 0) {
+            var selectorTop = $(selector).offset().top;
+            console.log(selectorTop);
+            $('html,body').animate({
+                scrollTop: selectorTop
+            }, 1000);
+        } else {
+            console.log('scrolltop not found');
+        }
     }
-}
+
+
 </script>
 
 @endsection
