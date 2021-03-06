@@ -93,7 +93,7 @@
                 Some Key Points of the Location
                 </h2>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now" data-type="other" data-location="{{$location->name}}">
                     <img src="{{url('img/location-detail/call.svg')}}" alt="call">Enquire Now
                     </a>
                 </div>
@@ -132,6 +132,7 @@
                             autocomplete="off">
                     </div>
                     <input type="hidden" name="type" value="other"> 
+                    <input type="hidden" name="location" value="{{$location->name}}">
                             <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                     <div class="input-container">
                         <span><img src="{{url('img/master/email-black.svg')}}" alt="email" class="black">
