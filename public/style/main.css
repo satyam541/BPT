@@ -383,6 +383,7 @@ select::-ms-expand {
 .input-container span {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #F6F6F6;
   height: 100%;
   width: 50px;
@@ -584,6 +585,9 @@ select::-ms-expand {
   width: 15px;
   height: 15px;
   margin-right: 5px;
+}
+.dropdown-menu {
+  display: none;
 }
 .banner {
   flex-direction: column;
@@ -1308,6 +1312,9 @@ select::-ms-expand {
   .black-breadcrums .white {
     display: none;
   }
+  .navbar ul {
+    position: relative;
+  }
   .navbar ul .links-li .link {
     padding-bottom: 0;
   }
@@ -1336,6 +1343,158 @@ select::-ms-expand {
   }
   .navbar .menu-links {
     width: 70%;
+  }
+  .dropdown-menu {
+    width: 100%;
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 0;
+    top: 155px;
+    padding-top: 1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .dropdown-menu .dropdown-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropdown-menu h3 {
+    color: #000000;
+    border-bottom: 2px solid #E2E2E2;
+    padding-bottom: 0.7rem;
+    margin-bottom: 2rem;
+    width: 70%;
+    font-size: 22px;
+  }
+  .dropdown-menu .topic-info {
+    display: flex;
+    flex-direction: column;
+    background-color: #1C2848;
+    width: 30%;
+    z-index: 1;
+    padding: 1rem;
+    padding-right: 0;
+  }
+  .dropdown-menu .topic-info h3 {
+    color: #FFFFFF;
+  }
+  .dropdown-menu .topic-info a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .dropdown-menu .topic-info a:hover {
+    cursor: pointer;
+  }
+  .dropdown-menu .topic-info a img {
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5rem;
+  }
+  .dropdown-menu .topic-info .topic-active {
+    background: linear-gradient(#F5F5F5, #C8C8C8);
+    color: #000000;
+    position: relative;
+  }
+  .dropdown-menu .topic-info .topic-active::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -54px;
+    border-top: 30px solid transparent;
+    border-left: 38px solid #CCCCCC;
+    border-bottom: 35px solid transparent;
+    z-index: 0;
+  }
+  .dropdown-menu .course-list {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    z-index: 1;
+  }
+  .dropdown-menu .course-list .course-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    background-color: #F6F6F6;
+    padding: 1rem;
+    padding-right: 0;
+  }
+  .dropdown-menu .course-list .course-content .course {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .dropdown-menu .course-list .course-content .course h3 {
+    color: #000000;
+    align-self: flex-start;
+  }
+  .dropdown-menu .course-list .course-content .course a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-right: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .dropdown-menu .course-list .course-content .course a img {
+    height: 30px;
+    width: 30px;
+    margin-right: 0.5rem;
+  }
+  .dropdown-menu .course-list .course-content .course .course-active {
+    background-color: #373737;
+    color: #FFFFFF;
+    position: relative;
+  }
+  .dropdown-menu .course-list .course-content .course .course-active::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    right: -14px;
+    top: 10px;
+    height: 25px;
+    width: 40px;
+    transform: rotate(45deg);
+    background-color: #373737;
+  }
+  .dropdown-menu .menu-list {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+  }
+  .dropdown-menu .menu-list .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    padding: 1rem;
+  }
+  .dropdown-menu .menu-list .menu-content .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dropdown-menu .menu-list .menu-content .content a {
+    width: 50%;
+    padding: 7px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .dropdown-menu .menu-list .menu-content .content a:hover {
+    background-color: #1F5E88;
+    color: #FFFFFF;
+    cursor: pointer;
   }
   .banner::before {
     height: 56%;
