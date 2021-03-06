@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="buttons">
-                    <a class="btn-blue open-popup enquiryJS">
+                    <a data-type="top" class="btn-blue open-popup enquiryJS">
                         <img src="{{url('img/master/quote.svg')}}" alt="quote">
                         Get a Quote
                     </a>
