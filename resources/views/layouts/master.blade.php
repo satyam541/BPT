@@ -102,8 +102,6 @@
                         <form class="form sixsigma-co-uk-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
                         @csrf
                         
-                        <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
-
                         <div class="heading center-heading white-heading">
                             <h2 id="quote">Get A Quote</h2>
                         </div>
