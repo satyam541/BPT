@@ -248,6 +248,8 @@ class ScheduleController extends ScheduleApi
     public function courseAddon(Request $request,OnlinePrice $online)
     {
       $data['addons']  = $online->addOns;
+      
+      $data['onlineCourse'] = Course::find($online->course_id);
       return view('cms.schedule.courseAddons',$data);
     }
 
