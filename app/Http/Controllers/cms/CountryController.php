@@ -33,17 +33,7 @@ class CountryController extends Controller
         $countries= Country::all();
         return view('cms.country.countryList',compact('countries'));
     }
-    // public function filterList(Request $request)
-    // {
-    //     $this->authorize('view', new Country());
-    //     $data['countries']       = Country::where('country_code',$request['country'])->paginate(10);
-    //     if($request->country==null){
-    //         $data['countries'] = Country::paginate(10);
-    //     }
-    //     $data['selectedCountry'] = $request['country'];
-    //     $data['countrylist']       = Country::orderBy('name','asc')->pluck('name','country_code')->unique()->filter()->toArray();
-    //     return view('cms.country.countries',$data);
-    // }
+    
     public function create()
     {
         
@@ -152,7 +142,6 @@ class CountryController extends Controller
     public function getLocations(Request $request)
     {
         $id = $request->get('country');
-        $data = array();
         return Country::find($id)->locations()->withoutGlobalScope('order')->orderBy('name')->get()->toJson();
     }
 

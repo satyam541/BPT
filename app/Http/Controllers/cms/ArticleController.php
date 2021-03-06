@@ -83,22 +83,7 @@ class ArticleController extends Controller
         }
         
         $article->save();
-        // $tagNames              =          $request->input('tag');
-        // foreach($tagNames as $tagName)
-        // {
-        //     $tag = Tag::where('name',$tagName)->first();
-           
-        //     if(empty($tag->id))
-        //     {
-        //         $tag = new Tag();
-        //         $tag->name = $tagName;
-        //         // dd($tag);
-        //         $tag->save();
-        //     }
-                  
-        
-        //      $article->tags()->attach($tag->id);
-        // }
+    
         if(isset($request['is_popular']))
         {
             $article->popular->save();
@@ -166,26 +151,6 @@ class ArticleController extends Controller
         
         $article->save();
        
-        // $tagNames              =          $request->input('tag');
-      
-        // foreach($tagNames as $tagName)
-        // {
-        //     $tag = Tag::where('name',$tagName)->first();
-
-           
-        //     if(empty($tag->id))
-        //     {
-        //         $tag = new Tag();
-        //         $tag->name = $tagName;
-                  
-        //         $tag->save();
-        //     }
-         
-        //     // $article->tags()->sync($tag->id); 
-        // }
-        //     $tags = Tag::wherein('name',$tagNames)->get();
-        //     $article->tags()->sync($tags); 
-
         if(isset($request['is_popular']))
         {
             $article->popular->save();
