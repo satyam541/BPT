@@ -433,3 +433,36 @@ function stepFour() {
     $('#four').addClass('blue-active'); 
 }
 
+    //menu
+    $("#menucourses").click(function(event) {
+        event.preventDefault();
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+            $(location).attr('href', $(this).attr('href'));
+            $(".dropdown-menu").hide();
+            return true;
+        } else {
+            $(".dropdown-menu").toggle();
+        }
+        event.stopPropagation();
+    });
+
+    $(document).ready(function() {
+        $(".topic-info a").click(function() {
+            var target = $(this).data('target');
+            $(".course").hide();
+            $("#" + target).css("display", "flex");
+            $(".topic-info a").removeClass('topic-active');
+            $(this).addClass("topic-active");
+        });
+        $(".topic-info a").first().trigger('click');
+
+        $(".course a").click(function() {
+            var target = $(this).data('target');
+            $(".content").hide();
+            $("#" + target).css("display", "flex");
+            $(".course a").removeClass('course-active');
+            $(this).addClass("course-active");
+        });
+        $(".course a").first().trigger('click');
+    });
+
