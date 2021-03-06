@@ -223,7 +223,6 @@
             success:function(response){
                 if(response == 'done') {
                     var totalTime = new Date().getTime()-ajaxTime;
-                    alert(totalTime);
                     var input = '{{csrf_field()}}';
                     var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thanks")}}').html(input);
                    $('body').append(form);
