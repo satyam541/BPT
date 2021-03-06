@@ -95,7 +95,7 @@ class CartController extends Controller
        
         Cart::add($cart);
         
-        $url = route('cartOrderPage');
+        $url = route('cart');
         return redirect($url);
     }
 
@@ -192,6 +192,13 @@ class CartController extends Controller
 
     public function cartDetail()
     {
+        if(empty(Cart::content())){
+            return redirect()->route('404');
+        }
+
+        $cartItems = Cart::content();
+
+
         return view('cart.cartDetail');
     }
 
