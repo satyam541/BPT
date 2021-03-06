@@ -222,7 +222,7 @@
             success:function(response){
                 if(response == 'done') {
                     var input = '{{csrf_field()}}';
-                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thank-you")}}').html(input);
+                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action', '{{url("thanks")}}').html(input);
                    $('body').append(form);
                    $('#thank-you').submit();
             }
