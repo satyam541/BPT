@@ -61,7 +61,7 @@
                         <p class="tab">
                             Overview
                         </p>
-                        <div class="number">01</div>
+                        <div class="number"></div>
                     </li>
                     @endif
 
@@ -77,7 +77,7 @@
                         <p class="tab">
                             Course Content
                         </p>
-                        <div class="number">02</div>
+                        <div class="number"></div>
                     </li>
                     @endif
 
@@ -89,7 +89,7 @@
                         <p class="tab">
                             FAQs
                         </p>
-                        <div class="number">03</div>
+                        <div class="number"></div>
                     </li>
 
                     @endif
@@ -102,7 +102,7 @@
                         <p class="tab">
                             What's Included
                         </p>
-                        <div class="number">04</div>
+                        <div class="number"></div>
                     </li>
                     @endif
                 </ul>
@@ -359,6 +359,21 @@
                         </div>
                         @endforeach
                         {{$schedules->onEachSide(2)->fragment('classroom-booking')->appends(request()->query())->links()}}
+                        @else
+                        <div class="no-schedule" style="display: flex">
+                            <div class="heading center-heading">
+                                <h2>{!! $selectedCourse->name !!}</h2>
+                            </div>
+                            <p>Contact us for Date and Price</p>
+                            <div class="buttons">
+                                <div class="btn-blue">
+                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            </p>
+                        </div>
                         @endif
                     </div>
                     <div id="virtual-block">
@@ -405,103 +420,90 @@
 
                         @endforeach
                         {{$virtualSchedules->onEachSide(2)->fragment('virtual-booking')->appends(request()->query())->links()}}
+                        @else
+                        <div class="no-schedule" style="display: flex">
+                            <div class="heading center-heading">
+                                <h2>{!! $selectedCourse->name !!}</h2>
+                            </div>
+                            <p>Contact us for Date and Price</p>
+                            <div class="buttons">
+                                <div class="btn-blue">
+                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            </p>
+                        </div>
                         @endif
                     </div>
                     <div id="online-block" class="online-block">
-                        <div class="add-ons">
-                            <h2>Optional add-ons</h2>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>6 Months Access - £109</h3>
-                                </div>
-                                <p>Extend your access to match your schedule.</p>
+                        <form action="{{route('onlineBooking',['id'=>$onlineSchedules->id])}}" class="exclude">
+                            <div class="add-ons">
+                                <h2>Optional add-ons</h2>
+                                
+                                    @foreach ($onlineSchedules->courseAddon as $addon)
+                                    <div class="item">
+                                        <div class="offer feature-tickbox">
+                                            <input type="checkbox" name="addon[]" data-price="{{floor($addon->price)}}" value="{{$addon->id}}">
+                                            <h3>{!! $addon->name !!} - £{!! formatPrice(floor($addon->price)) !!}</h3>
+                                        </div>
+                                        <p>{!! $addon->description !!}</p>
+                                    </div>
+                                    @endforeach
+                                
+                                
+                            
                             </div>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>1 Year Access - £164</h3>
-                                </div>
-                                <p>Give yourself as much time as you need to complete the course</p>
-                            </div>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>Official PRINCE2® Manual - £83</h3>
-                                </div>
-                                <p>Assist your learning with the Official PRINCE2® Manual</p>
-                            </div>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>Official PRINCE2® Foundation Exam - £325</h3>
-                                </div>
-                                <p>Take the Official PeopleCert PRINCE2® Foundation Exam</p>
-                            </div>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>Official PRINCE2® Practitioner Exam - £380</h3>
-                                </div>
-                                <p>Take the Official PeopleCert PRINCE2® Practitioner Exam</p>
-                            </div>
-                            <div class="item">
-                                <div class="offer">
-                                    <input type="checkbox">
-                                    <h3>Official PRINCE2® Exams - £655</h3>
-                                </div>
-                                <p>Take both PeopleCert PRINCE2® exams and become fully certified</p>
-                            </div>
-                        </div>
-                        <div class="add-foundation">
-                            <div class="foundation-content">
-                                <h3>PRINCE2® Foundation and Practitioner</h3>
-                                <span>
-                                    <img src="{{url('img/courses/hours.svg')}}" alt="hours">
-                                    <p>40 Hours (on average)</p>
-                                </span>
-                                <span>
-                                    <img src="{{url('img/courses/days.svg')}}" alt="days">
-                                    <p>90 Days Access</p>
-                                </span>
-                                <span>
-                                    <img src="{{url('img/courses/administration.svg')}}" alt="administration">
-                                    <p>40 Hours (on average)</p>
-                                </span>
-                                <ul>
-                                    <li>
-                                        <p>Course price</p>
-                                        <p>£270</p>
-                                    </li>
-                                    <li>
-                                        <p>add-ons price</p>
-                                        <p>£356</p>
-                                    </li>
-                                    <li>
-                                        <p>Sub-Total</p>
-                                        <p>£626</p>
-                                    </li>
-                                </ul>
+                            <div class="add-foundation">
+                                <div class="foundation-content">
+                                    <h3>{!! $selectedCourse->name !!}</h3>
+                                    <span>
+                                        <img src="{{url('img/courses/hours.svg')}}" alt="hours">
+                                        <p>40 Hours (on average)</p>
+                                    </span>
+                                    <span>
+                                        <img src="{{url('img/courses/days.svg')}}" alt="days">
+                                        <p>90 Days Access</p>
+                                    </span>
+                                    <span>
+                                        <img src="{{url('img/courses/administration.svg')}}" alt="administration">
+                                        <p>40 Hours (on average)</p>
+                                    </span>
+                                    <ul>
+                                        <li>
+                                            <p>Course price</p>
+                                            <p>£{!! formatPrice(floor($onlineSchedules->onlinePrice->price)) !!}</p>
+                                        </li>
+                                        <li>
+                                            <p>add-ons price</p>
+                                            <p>£<span class="addons-price">0</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Sub-Total</p>
+                                            <p>£<span class="total-price" data-onlineprice="{{floor($onlineSchedules->onlinePrice->price)}}">{{floor($onlineSchedules->onlinePrice->price)}}</span></p>
+                                        </li>
+                                    </ul>
 
-                                <div class="buttons">
-                                    <a class="btn-blue">
-                                        <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
-                                        Enquire Now
-                                    </a>
-                                    <a class="btn-white">
-                                        <img src="{{url('img/courses/book-now.svg')}}" alt="book-now">
-                                        Book Now
-                                    </a>
+                                    <div class="buttons">
+                                        <a class="btn-blue">
+                                            <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
+                                            Enquire Now
+                                        </a>
+                                        <button type="submit" class="btn-white">
+                                            <img src="{{url('img/courses/book-now.svg')}}" alt="book-now">
+                                            Book Now
+                                        </button>
+                                    </div>
                                 </div>
+                                <p class="info">Upon purchase <strong>you will receive a password </strong> via the email
+                                    you used to purchase the course.</p>
+                                <p class="info">You will then be able to <strong>login to our online learning platform
+                                    </strong> with your email and password.</p>
+                                <p class="info">You will have access to the platform for <strong>90 days </strong> from the
+                                    date of purchase.</p>
                             </div>
-                            <p class="info">Upon purchase <strong>you will receive a password </strong> via the email
-                                you used to purchase the course.</p>
-                            <p class="info">You will then be able to <strong>login to our online learning platform
-                                </strong> with your email and password.</p>
-                            <p class="info">You will have access to the platform for <strong>90 days </strong> from the
-                                date of purchase.</p>
-                        </div>
-
+                        </form>
                     </div>
                     <div id="onsite-block" class="onsite-block">
                         <!-- Start form section -->
@@ -611,20 +613,7 @@
             </div>
         </div>
     </div>
-    <div class="no-schedule">
-        <div class="heading center-heading">
-            <h2>Managing Change and Leading Teams</h2>
-        </div>
-        <p>Contact us for Date and Price</p>
-        <div class="buttons">
-            <div class="btn-blue">
-                Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
-            </div>
-        </div>
-        <p>---- OR ----</p>
-        <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
-        </p>
-    </div>
+    
 </section>
 <!-- End Training Section -->
 
@@ -931,6 +920,7 @@
             console.log('scrolltop not found');
         }
     }
+
 
 </script>
 

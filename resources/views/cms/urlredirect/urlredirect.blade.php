@@ -127,12 +127,11 @@
     $(document).ready(function(){
         $('#example1').DataTable({
           "columns": [
-                        { "name": "source_Url",searching:false},
-                        { "name": "target_Url",searching:false },
+                        { "name": "Source Url",searching:false},
+                        { "name": "Destination Url",searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
           ],
-        "bFilter": false,
-        "bInfo": false                   
+                          
         });
     });
     

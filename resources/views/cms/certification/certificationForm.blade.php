@@ -106,7 +106,7 @@
             $("#reference").val(slug);
 
         }
-        $(".multipleSelect").css({"background-color": "yellow"}).select2({
+        $(".multipleSelect").select2({
                 placeholder:"Choose Course",
                 
                 

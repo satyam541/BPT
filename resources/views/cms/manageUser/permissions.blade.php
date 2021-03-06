@@ -31,10 +31,10 @@
                                             <div class="form-group">
                                                 <div class="form-group row">
                                                     <div class="col-md-6 col-xs-4 col-lg-2 col-sm-8">
-                                                        {{ Form::label('moduleName','Select Module:') }}
+                                                        {{ Form::label('module','Select Module:') }}
                                                     </div>
                                                     <div class="col-md-6 col-xs-4 col-lg-6 col-sm-12">
-                                                        {{ Form::select('moduleName', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control selectJS','tabindex'=>'-1'])) }}
+                                                        {{ Form::select('module', $module, $selectedModule, array_merge(['id' => 'module', 'class' => 'form-control select','tabindex'=>'-1','placeholder'=>'ALL'])) }}
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -42,7 +42,7 @@
                                                         {{ Form::label('access','Select Access:') }}
                                                     </div>
                                                     <div class="col-md-6 col-xs-4 col-lg-6 col-sm-10">
-                                                        {{ Form::select('access', $access, $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  selectJS','tabindex'=>'-1'])) }}
+                                                        {{ Form::select('access', $access,  $selectedAccess, array_merge(['id' => 'access', 'class' => 'form-control  select','tabindex'=>'-1','placeholder'=>'ALL'])) }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,4 +117,7 @@
     </div>
     @endsection
     @section('footer')
+    <script>
+        $('.select').select2();
+        </script>
     @endsection

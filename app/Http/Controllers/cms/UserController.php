@@ -243,29 +243,23 @@ class UserController extends Controller
     public function permissionList(Request $request)
     {
         $this->authorize('view', new Permission());
-        $filter = $request->all();
         $data['selectedModule'] =   null;
         $data['selectedAccess'] =   null;
-        if(!empty($filter['moduleName']) || !empty($filter['access']))
-        {
-            $data['selectedModule'] =   $filter['moduleName'];
-            $data['selectedAccess'] =   $filter['access'];
+        $module_id              =   $request->get('module');
+        $access                 =   $request->get('access');
+        $query                  =   Permission::query();
+        if(!empty($module_id)){
+            $data['selectedModule'] = $module_id;
+            $query->where('module_id',$module_id);
         }
-        $data['module'] =   Module::all()->pluck('name','name')->toArray();
-        $data['module'] =   ['ALL'=>'ALL']+$data['module'];
-        $data['access'] =   Permission::all()->pluck('access','access')->toArray();
-        $data['access'] =   ['ALL'=>'ALL']+$data['access'];
-        $query          =   Permission::query();
-        $query          =   $query->select("permission.*");
-        if(!empty($filter['moduleName']) && $filter['moduleName']!='ALL')
-        {
-            $module = Module::where('name',$filter['moduleName'])->first();
-            $query  = $query->where('module_id',$module->id);
+        if(!empty($access)){
+            $data['selectedAccess'] = $access;
+            $query->where('access',$access);
         }
-        $query  = empty($filter['access'])||$filter['access']=='ALL' ? $query : $query->where('access',$filter['access']);
-        $result = $query->paginate(10);
-
-        $data['permissions'] = $result;
+        $data['module']      =   Module::all()->pluck('name','id')->toArray();
+        $data['access']      =   Permission::all()->pluck('access','access')->toArray();
+        $result              =   $query->paginate(10);
+        $data['permissions'] =   $result;
     
         return view('cms.manageUser.permissions',$data);
     }
