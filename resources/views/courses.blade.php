@@ -325,7 +325,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$schedule->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-type="course" data-price="{{$schedule->event_price}}" data-quote="{{$schedule->course->name}}" data-course="{{$schedule->course->name}}" data-date="{{$schedule->response_date->format('j M Y')}}" data-location="{{$schedule->response_location}}" data-deliveryType="Classroom" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
