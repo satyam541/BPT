@@ -1223,6 +1223,44 @@ select::-ms-expand {
   .navbar .menu-links .menu-toggle {
     display: none;
   }
+  .navbar .country-list {
+    display: none;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    padding: 1rem;
+    position: absolute;
+    top: 127px;
+    right: 0;
+    width: 225px;
+    max-height: 180px;
+    overflow-y: scroll;
+  }
+  .navbar .country-list li {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .navbar .country-list li:last-child {
+    margin-bottom: 0;
+  }
+  .navbar .country-list li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar .country-list li a img {
+    height: 30px;
+    width: 30px;
+  }
+  .navbar .country-list li a p {
+    width: calc(100% - 50px);
+    font-size: 14px;
+    color: #1C2848;
+  }
+  .navbar .country-active {
+    display: flex;
+  }
   .banner {
     padding: 3rem 2rem;
     padding-top: 12rem !important;

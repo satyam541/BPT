@@ -167,6 +167,44 @@
 
         
       }
+      .country-list {
+        display: none;
+        flex-direction: column;
+        background: @whiteColor;
+        box-shadow: @shadowLight;
+        padding: 1rem;
+        position: absolute;
+        top: 127px;
+        right: 0;
+        width: 225px;
+        max-height: 180px;
+        overflow-y: scroll;
+        li {
+          width: 100%;
+          align-items: center;
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+              height: 30px;
+              width: 30px;
+            }
+            p {
+              width: calc(100% - 50px);
+              font-size: 14px;
+              color: @darkblueColor;
+            }
+          }
+        }
+      }
+      .country-active {
+        display: flex;
+      }
   
     }
     //End navbar //

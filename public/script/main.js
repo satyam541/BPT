@@ -466,3 +466,8 @@ function stepFour() {
         $(".course a").first().trigger('click');
     });
 
+    $('#flag').click(function() {
+        $('.country-list').toggleClass('country-active');
+    });
+
+

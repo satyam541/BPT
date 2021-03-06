@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS">
+                        <a class="btn-blue open-popup enquiryJS" data-type="topic" data-quote="{{$topic->name}}" data-course="{{$topic->name}}">
                             <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
                             Enquire Now
                         </a>
