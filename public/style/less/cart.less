@@ -19,6 +19,7 @@
         .heading {
             p {
                 text-align: center;
+                margin-top: .5rem;
             }
         }
     }
@@ -117,7 +118,6 @@
     .form-inner{
         box-shadow: @shadowLight;
         padding: 1.5rem 1rem;
-         margin-top: 2rem;
          display: none;
          flex-direction: column;
     }
@@ -150,6 +150,25 @@
             background-color: transparent;
         }
 
+    }
+    .input-card{
+        position: relative;
+        height: 42px;
+        padding-right: 0;
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        select{
+                padding-left: 3.5rem;
+                appearance: none;
+                background-image: url(../img/catalogue/down-arrow.svg);
+                background-repeat: no-repeat;
+                background-size: 16% 16%;
+                background-position: center right;
+                padding-right: 1.5rem;
+        }
     }
     }
     .billing-details{
@@ -201,6 +220,9 @@
     .payment-detail {
         display: none;
         flex-direction: column;
+        h2{
+            margin-bottom: 2rem;
+        }
         .buttons {
             flex-direction: column;
             margin-top: 0;
@@ -217,6 +239,9 @@
         .form-consent {
             display: flex;
             margin-top: 1rem;
+            label{
+                font-size: 12px;
+            }
         }
     }
     .payment {

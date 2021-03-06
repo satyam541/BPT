@@ -13650,6 +13650,7 @@ select::-ms-expand {
 }
 .steps .steps-container .heading p {
   text-align: center;
+  margin-top: 0.5rem;
 }
 .steps .payment-container {
   display: flex;
@@ -13737,7 +13738,6 @@ select::-ms-expand {
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
-  margin-top: 2rem;
   display: none;
   flex-direction: column;
 }
@@ -13769,6 +13769,25 @@ select::-ms-expand {
   border: none;
   outline: none;
   background-color: transparent;
+}
+.steps .card-detail .input-card {
+  position: relative;
+  height: 42px;
+  padding-right: 0;
+}
+.steps .card-detail .input-card span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.steps .card-detail .input-card select {
+  padding-left: 3.5rem;
+  appearance: none;
+  background-image: url(../img/catalogue/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 16% 16%;
+  background-position: center right;
+  padding-right: 1.5rem;
 }
 .steps .billing-details {
   position: relative;
@@ -13814,6 +13833,9 @@ select::-ms-expand {
   display: none;
   flex-direction: column;
 }
+.steps .payment-detail h2 {
+  margin-bottom: 2rem;
+}
 .steps .payment-detail .buttons {
   flex-direction: column;
   margin-top: 0;
@@ -13828,6 +13850,9 @@ select::-ms-expand {
 .steps .payment-detail .form-consent {
   display: flex;
   margin-top: 1rem;
+}
+.steps .payment-detail .form-consent label {
+  font-size: 12px;
 }
 .steps .payment {
   display: flex;
@@ -14043,9 +14068,6 @@ select::-ms-expand {
   }
   .steps .card-detail .input-container:last-child {
     width: 48%;
-  }
-  .steps .billing-details {
-    padding: 1rem 5rem !important;
   }
   .steps .billing-details .form-consent {
     justify-content: flex-end;
