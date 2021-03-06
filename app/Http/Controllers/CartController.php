@@ -55,7 +55,9 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
+        
         $id = $request->route('id');
+        dd($request->all(), $id);
         $route = $request->route()->action['as'];
         switch ($route) {
             case 'classroomBooking':
