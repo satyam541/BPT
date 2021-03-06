@@ -78,7 +78,7 @@
                     {{Form::file('image')}}
                     <img id="pImage" src="{{ $pageDetail->getImagePath() }}" class=" pad" height="70px" width="70px"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="fa fa-remove" id="removeimage" onclick="removeImage()" style="color: red"></a>
+                    <a class="fa fa-trash" id="removeimage" onclick="removeImage()" style="color: red"></a>
                     <a class="fas fa-undo" id="undoremoveimage" onclick="undoImage()" style="color: red"></a>
                     {{Form::hidden('removeimagetxt',null,array_merge(['id'=>'removeimagetxt','class' => 'form-control']))}}
                     <br/>
@@ -96,7 +96,7 @@
                     <img id="pIcon" src="{{ $pageDetail->getIconPath() }}" class=" pad" height="70px" width="70px"/>
                     @endif
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="fa fa-remove" id="removeicon" onclick="removeIcon()" style="color: red"></a>
+                    <a class="fa fa-trash" id="removeicon" onclick="removeIcon()" style="color: red"></a>
                     <a class="fas fa-undo" id="undoremoveicon" onclick="undoIcon()" style="color: red"></a>
                     {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
                     <br/>

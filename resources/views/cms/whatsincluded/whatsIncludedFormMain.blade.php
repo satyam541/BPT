@@ -53,7 +53,7 @@
                     <img id="wIcon" src="{{url('images/'.$whatsincluded->icon)}}" height="70px" width="70px"/>
                     @endif
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="fa fa-remove" id="removeicon" onclick="removeIcon()" style="color: red"></a>
+                    <a class="fa fa-trash" id="removeicon" onclick="removeIcon()" style="color: red"></a>
                     <a class="fas fa-undo" id="undoremoveicon" onclick="undoIcon()" style="color: red"></a>
                     {{Form::hidden('removeicontxt',null,array_merge(['id'=>'removeicontxt','class' => 'form-control']))}}
                   </div>

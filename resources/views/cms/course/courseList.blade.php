@@ -75,12 +75,12 @@
                   </th>
                   <th>
                     @can('update',new App\Models\Course())
-                    Bulletpoints
+                    Bullet Points
                     @endcan
                   </th>
                   <th>
                     @can('update',new App\Models\Course())
-                    WhatsIncluded
+                    Whats Included
                     @endcan
                   </th>
                   <th>

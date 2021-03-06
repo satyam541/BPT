@@ -65,8 +65,8 @@
                   <th>Category</th>
                   <th>Content</th>
                   <th>FAQ's</th>
-                  <th>Bulletpoints</th>
-                  <th>Whatsincluded</th>
+                  <th>Bullet Points</th>
+                  <th>Whats Included</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
