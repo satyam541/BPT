@@ -39,7 +39,7 @@
                 @foreach ($popularTopics->take(4) as $popularTopic)
                 {{$popularTopic->loadContent()}}
                 <a class="search-info" href="{{url('/training-courses'.$popularTopic->reference)}}">
-                    <span><img src="{{url('img/search/alarm-clock.svg')}}" alt="alarm-clock">
+                    <span><img src="{{url('img/search/course.svg')}}" alt="course">
                     {{$popularTopic->courses->count()}} 
                     @if ($popularTopic->courses->count() == 1)
                     Course
@@ -91,7 +91,7 @@
                         <p>Courses</p>
                         <ul>
                             @foreach ($popularCourses->take(5) as $popularCourse)
-                                <li><a href="{{url('/training-courses'.$popularCourse->reference)}}"> <label for="">{{$popularCourse->name}}</label> </a> </li>
+                                <li><a href="{{url('/training-courses'.$popularCourse->reference)}}">{{$popularCourse->name}}</a> </li>
                             @endforeach
                         </ul>
                     </div>
@@ -99,7 +99,7 @@
                         <p>Locations</p>
                         <ul>
                             @foreach ($popularLocations->take(5) as $popularLocation)
-                                <li><a href="{{url('/training-locations/'.$popularLocation->reference)}}"> <label for="">{{$popularLocation->name}}</label> </a> </li>
+                                <li><a href="{{url('/training-locations/'.$popularLocation->reference)}}">{{$popularLocation->name}}</a> </li>
                             @endforeach
                         </ul>
                     </div>

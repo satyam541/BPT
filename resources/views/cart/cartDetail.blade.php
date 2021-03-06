@@ -135,14 +135,14 @@
                     <div class="form-inner" id="stepTwo">
                         <div class="card-detail">
                             <p>Please Select Your Payment Options And Complete The Details Below</p>
-                            <div class="input-container">
+                            <div class="input-container input-card">
                                 <span><img src="{{url('img/master/credit-black.svg')}}" alt="credit-black" class="black">
                                 <img src="{{url('img/master/credit-red.svg')}}" alt="credit-red" class="red"></span>
                                     <select name="credit-card" id="credit-card">
                                         <option value="">Credit/Debit card*</option>
                                     </select>
                             </div>
-                            <div class="input-container">
+                            <div class="input-container input-card">
                                 <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
                                 <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
                                 <select name="debit-card" id="debit-card">
@@ -153,8 +153,8 @@
                         <form class="form billing-details">
                             <h2>Billing Details</h2>
                             <div class="form-consent">
-                                <input name="contactConsent" type="checkbox" id="checkConsent">
-                                <label for="checkConsent">Use the same details for billing details</label>
+                                <input name="contactConsent" type="checkbox" id="billingConsent">
+                                <label for="billingConsent">Use the same details for billing details</label>
                             </div>
                         
                             <div class="group-input">
@@ -226,8 +226,8 @@
                             <h2>Delegate Details</h2>
                             <p>Choose from over 200 courses which cover all aspects of business and personal training, including Project Management, IT Security, Business and many more. Our courses cater to every training need, from introductory crash courses to advanced and prestigious qualifications, all to the highest standard of quality.</p>
                             <div class="form-consent">
-                                <input name="contactConsent" type="checkbox" id="checkConsent">
-                                <label for="checkConsent">Use your Details</label>
+                                <input name="contactConsent" type="checkbox" id="delegateConsent">
+                                <label for="delegateConsent">Use your Details</label>
                             </div>
                         
                             <div class="group-input">
@@ -348,6 +348,7 @@
                         
                     </div>
                     <div class="payment-detail" id="stepFour">
+                        <h2>Summary Detail</h2>
                         <div class="group-input">
                             <div class="payment">
                                 <h2>Payment Detail</h2>

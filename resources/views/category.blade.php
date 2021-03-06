@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other" data-course="{!!$category->name!!}">
                         <img src="{{url('img/certification/enquire.svg')}}" alt="enquire">Enquire Now
                     </a>
                 </div>

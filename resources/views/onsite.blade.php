@@ -58,6 +58,7 @@
                         </div>
                         <div class="form-input">
                             <input type="hidden" name="type" value="onsite"> 
+                            <input type="hidden" name="location" value="onsite"> 
                             <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                             <div class="input-container">
                                 <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">

@@ -65,12 +65,15 @@ Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseCon
 
 Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
 
-// Route::get('/blog', function () {
-//     return view('blog');
-// });
-// Route::get('/blog-detail', function () {
-//     return view('blog-detail');
-// });
+//Cart Routes
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
+
+//ajax requests
+Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
+Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@removeItem']);
+
+
 Route::get('/offer', function () {
     return view('offer');
 });
@@ -81,27 +84,19 @@ Route::get('/certification', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
-// Route::get('/catalogue', function () {
-//     return view('catalogue');   // this route moved to "training-courses'
-// });
-Route::get('/emptycart', function () {
-    return view('emptycart');
-});
 
-// Route::get('/search', function () {
-//     return view('search');
+// Route::get('/emptycart', function () {
+//     return view('emptycart'); //this routes moves to "cart"
 // });
+
 
 Route::get('/knowledge-pass',function(){
     return view('knowledge-pass');
 });
 
-// Route::get('/thanks', function () {
-//     return view('thanks');
+// Route::get('/cart', function () {
+//     return view('cart');//this routes moves to 'cart/detail'
 // });
-Route::get('/cart', function () {
-    return view('cart');
-});
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
 
@@ -110,14 +105,10 @@ Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-an
 Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
 
 Route::get('/cookies','CommonPageController@index')->name('cookies');
-// Route::get('/topic',function(){
-//        return view('topic');
-// })->name('topic');
 
 Route::fallback(function(){
     return  redirect()->route('404');
   })->name('fallback');
-  Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
+Route::get('/404',['as'=>'404','uses'=>'ErrorController@index']);
 
-Route::any('/thank-you','EnquiryController@postEnquiryPage')->name('enquiryResponse');
 
