@@ -130,9 +130,9 @@
                 <div class="course-list">
                     <div class="course-content">
                         <h3>Topic</h3>
-                        @foreach ($topicData->take(8) as $category_id=>$topics) 
+                        @foreach ($topicData as $category_id=>$topics) 
                         <div class="course" id="category_{{$category_id}}">
-                            @foreach ($topics as $topic)
+                            @foreach ($topics->take(8) as $topic)
                             <a data-target="topic_{{$topic->id}}">
                                 <span>
                                     <img src="{{url('img/master/test.svg')}}" alt="test"></span>
@@ -146,9 +146,9 @@
                 <div class="menu-list">
                     <div class="menu-content">
                         <h3>Courses</h3>
-                        @foreach ($courseData->take(8) as $topic_id=>$courses) 
+                        @foreach ($courseData as $topic_id=>$courses) 
                         <div class="menu-info" id="topic_{{$topic_id}}">
-                            @foreach ($courses as $course)
+                            @foreach ($courses->take(8) as $course)
                             <a href="{{$course->url}}">{{$course->name}}</a>
                             @endforeach
                         </div>
