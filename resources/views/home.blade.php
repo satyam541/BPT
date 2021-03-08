@@ -12,10 +12,10 @@
                         {!! $pageDetail->banner['banner-content']->heading !!}
                     </h1>
                     <p>{!! $pageDetail->banner['banner-content']->content !!}</p>
-                    <form class="search" action="{{ route('SearchCourse') }}" method="get" class="exclude">
+                    <form class="search" action="" method="get" class="exclude" >
                             <input type="text"  name="q" class="auto-complete-course auto-redirect"
                                 placeholder="Search your training course here...." required>
-                            <button type="submit">
+                            <button type="submit" onclick="getquery(this)">
                                 Search
                             </button>
                     </form>

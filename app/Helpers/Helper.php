@@ -82,15 +82,24 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('menu_data')) {
         function menu_data()
         {
-            $data['categories']     =   Category::has('popular')->has('topics.courses')->select('id', 'name', 'display_order')
+            $data['categories']     =   Category::has('topics.courses')->select('id', 'name', 'display_order')
                                                     ->orderBy('display_order')
+                                                    ->limit(8)
                                                     ->get();
-            $data['topics']         =   Topic::has('popular')->select('id', 'name','category_id', 'display_order')
+            $category_ids           =   $data['categories']->pluck('id')->toArray();
+            $data['topics']         =   Topic::has('courses')
+                                                    ->select('id', 'name','category_id', 'display_order')
+                                                    ->whereIn('category_id', $category_ids)
                                                     ->orderBy('display_order')
                                                     ->orderBy('category_id')
                                                     ->get()
                                                     ->groupBy('category_id');
-            $data['courses']        =   Course::has('popular')->select('id', 'name', 'topic_id','display_order', 'reference')
+                                                    
+            $data['courses']        =   Course::has('topic.category')->select('id', 'name', 'topic_id','display_order', 'reference')
+                                                    ->whereHas('topic.category', function($query) use($category_ids)
+                                                    {
+                                                        $query->whereIn('category_id', $category_ids);
+                                                    })
                                                     ->orderBy('display_order')
                                                     ->orderBy('topic_id')
                                                     ->get()

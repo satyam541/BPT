@@ -12,7 +12,7 @@
             </a>
             <ul>
                 <li class="links-li">
-                    <a data-href="#courses" class="link" id="menucourses">Courses</a>
+                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -132,7 +132,7 @@
                         <h3>Topic</h3>
                         @foreach ($topicData as $category_id=>$topics) 
                         <div class="course" id="category_{{$category_id}}">
-                            @foreach ($topics as $topic)
+                            @foreach ($topics->take(8) as $topic)
                             <a data-target="topic_{{$topic->id}}">
                                 <span>
                                     <img src="{{url('img/master/test.svg')}}" alt="test"></span>
@@ -141,7 +141,6 @@
                             @endforeach
                         </div>
                         @endforeach
-
                     </div>
                 </div>
                 <div class="menu-list">
@@ -149,7 +148,7 @@
                         <h3>Courses</h3>
                         @foreach ($courseData as $topic_id=>$courses) 
                         <div class="menu-info" id="topic_{{$topic_id}}">
-                            @foreach ($courses as $course)
+                            @foreach ($courses->take(8) as $course)
                             <a href="{{$course->url}}">{{$course->name}}</a>
                             @endforeach
                         </div>
@@ -163,12 +162,12 @@
 
 <div class="pop-search" id="pop-search">
     <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
-    <form class="search-form">
-        <div class="search">
-            <input type="text" placeholder="Search your course here...." autocomplete="off">
-            <button>
-                Search
-            </button>
-        </div>
+    <form class="search-form" onsubmit="getquery(this)">
+            <div class="search">
+                <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
+                <button  onclick="getquery(this)">
+                    Search
+                </button>
+            </div>     
     </form>
 </div>
