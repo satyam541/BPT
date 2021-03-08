@@ -362,7 +362,8 @@
     background-color: @bgColor;
     .locations-container{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .content{
         display: flex;
@@ -376,8 +377,10 @@
         align-items: center;
         background-image: linear-gradient(143deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 77%, #d6d6d6 77%);
         border-radius: 10px;
+         width: 48%;
+        flex-wrap: wrap;
         span{
-            width: 10%;
+            width: 20%;
             font-weight: 700;
             color: @greyColor;
         }
