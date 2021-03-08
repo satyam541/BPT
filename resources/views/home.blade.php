@@ -123,6 +123,12 @@
                         {{ websiteDetail()->contact_number }}
                     </a>
                 </div>
+                <div class="buttons">
+                    <a class="btn-blue">
+                        <img src="{{ url('img/master/quote.svg') }}" alt="quote">
+                        Enquire Now
+                    </a>
+                </div>
 
             </div>
         </div>

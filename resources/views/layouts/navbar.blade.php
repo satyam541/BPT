@@ -123,7 +123,7 @@
                         <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
                             <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue">
                         </span>
-                        {{$category->name}}
+                        <p>{{$category->name}}</p>
                     </a>
                     @endforeach
                 </div>
@@ -136,7 +136,7 @@
                             <a data-target="topic_{{$topic->id}}">
                                 <span>
                                     <img src="{{url('img/master/test.svg')}}" alt="test"></span>
-                                    {{$topic->name}}
+                                    <p>{{$topic->name}}</p>
                             </a>
                             @endforeach
                         </div>
@@ -149,7 +149,9 @@
                         @foreach ($courseData as $topic_id=>$courses) 
                         <div class="menu-info" id="topic_{{$topic_id}}">
                             @foreach ($courses->take(8) as $course)
-                            <a href="{{$course->url}}">{{$course->name}}</a>
+                            <a href="{{$course->url}}">
+                                {{$course->name}}
+                            </a>
                             @endforeach
                         </div>
                         @endforeach

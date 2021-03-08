@@ -227,10 +227,6 @@
             align-items: flex-start;
             width: 50%;
           }
-          .topic-list{
-            width: 46%;
-            margin-top: 0;
-          }
       }
     } 
     //End banner //
@@ -415,7 +411,6 @@
             a {
                 display: flex;
                 align-items: center;
-                text-align: center;
                 color: @whiteColor;
                 font-size: 16px;
                 font-weight: bold;
@@ -437,6 +432,10 @@
                     width: 30px;
                   }
                 }
+                p{
+                  color: @whiteColor;
+                  width: 72%;
+                }
             }
             .topic-active {
               background: linear-gradient(#cccccc, #cfcfcf);
@@ -450,6 +449,9 @@
                   .blue{
                     display: flex;
                   }
+                }
+                p{
+                  color: @blackColor;
                 }
                 &::before {
                   content: '';
@@ -503,6 +505,9 @@
                     width: 30px;
                   }
                  }
+                 p{
+                   width: 72%;
+                 }
               }
               .course-active {
                 background: linear-gradient(#0064D8,#00326C);
@@ -511,15 +516,19 @@
                 span{
                   background-color: #2674CF;
                 }
+                p{
+                  color: @whiteColor;
+                }
                 &::before {
                   content: '';
                   position: absolute;
-                  width: 0;
-                  height: 0;
+                  width: 62px;
+                  height: 60px;
                   right: -27px;
-                  border-top: 30px solid transparent;
-                  border-left: 27px solid #00326C;
-                  border-bottom: 33px solid transparent;
+                  background-image: url('../img/master/dropdown-blue.png');
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                  
                   z-index: 0;
                 }
               }
@@ -543,12 +552,21 @@
                 a {
                     width: 50%;
                     padding: 7px;
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: bold;
-                    &:hover {
-                        background-color: #1F5E88;
-                        color: @whiteColor;
-                        cursor: pointer;
+                    position: relative;
+                    padding-left: 30px;
+                    cursor: pointer;
+                    &::before{
+                      content: '';
+                      position: absolute;
+                      left: 0;
+                      background-image: url('../img/master/blue-circle.svg');
+                      background-repeat: no-repeat;
+                      background-size: contain;
+                      background-position: top;
+                      width: 22px;
+                      height: 22px;
                     }
                 }
                }
@@ -564,14 +582,6 @@
       .banner-container {
           .banner-content{
             width: 55%;
-          }
-          .topic-list{
-            width: 40%;
-            a{
-              p{
-                width: 70%;
-              }
-            }
           }
       }
       .search {
@@ -593,7 +603,7 @@
           }
       }
       .footer-content{
-          background-image: url('../../../img/master/footer-bg.png');
+          background-image: url('../img/master/footer-bg.png');
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top;
