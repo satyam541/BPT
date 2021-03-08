@@ -371,7 +371,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -383,7 +383,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{$virtual->event_price}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
@@ -432,7 +432,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -487,7 +487,7 @@
                                     </ul>
 
                                     <div class="buttons">
-                                        <a class="btn-blue">
+                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->online_course_name}}" class="btn-blue">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>

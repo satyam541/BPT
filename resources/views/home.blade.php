@@ -79,7 +79,10 @@
                                     <p>{{ $category->topics_count }} Topics</p>
                                 @endif
                                 @foreach ($category->topics as $topic)
-                                    @php $totalCourses+=$topic->courses_count @endphp
+                                @if($loop->first)
+                                @php $totalCourses=0 @endphp
+                                @endif
+                                @php $totalCourses+=$topic->courses_count @endphp
                                 @endforeach
                                 @if ($totalCourses < 2)
                                     <p> {{ $totalCourses }} Course </p>
