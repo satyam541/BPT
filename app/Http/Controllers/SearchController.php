@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\Topic;
 use App\Models\Location;
 use App\Models\PageDetail;
+use App\Models\Popular;
 
 class SearchController extends Controller
 {
@@ -44,16 +45,16 @@ class SearchController extends Controller
                     return $query;
                 })
                 ->distinct()->get();
-        //  $blogs    = Article::orderBy('title')
-        //         ->where(function ($query) use ($terms) {
-        //             foreach ($terms as $word) {
-        //                 $query->where('title', 'like', '%' . $word . '%');
-        //             }
-        //             return $query;
-        //         })
-        //         ->distinct()->get();
-                // $data['results']= $blogs->merge($topics)->merge($courses);
-                                $data['result'] =$topics->merge('courses');
+         $blogs    = Article::orderBy('title')
+                ->where(function ($query) use ($terms) {
+                    foreach ($terms as $word) {
+                        $query->where('title', 'like', '%' . $word . '%');
+                    }
+                    return $query;
+                })
+                ->distinct()->get();
+                $data['results']= $blogs->merge($topics)->merge($courses);
+                               //  $results=$   topics->merge('courses');
                             //    dd($data);
                
                 
@@ -62,16 +63,19 @@ class SearchController extends Controller
 
         else
         {
-            $data['result'] = Popular::courses()->take(5);
-            // $blogs=Article::where('type','blog')->get()->take(5);
-            // $data['results']=$courses->merge($blogs);
+            $courses=Popular::courses()->take(5);
+            $blogs=Article::where('type','blog')->get()->take(5);
+            $data['results']=$courses->merge($blogs);
            
 
            
 
         }
-
-        return view('search',$data);
+        $data['query'] = $query;
+     
+        $data['pageDetail'] = PageDetail::getContent('search');
+        // $data['categories']=Category::has('article')->get();
+        return view('search', $data);
     }
     public function index()
     {
