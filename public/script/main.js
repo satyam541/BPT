@@ -91,7 +91,7 @@ $('#chooseMode').on("click", function(){
         loop: true,
         responsiveClass: true,
         dots: true,
-        nav: true,
+        nav: false,
         autoplay: true,
         navText: ["", ""],
         items: 1,

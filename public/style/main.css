@@ -1885,7 +1885,6 @@ select::-ms-expand {
 }
 .courses .course-name {
   display: flex;
-  flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   padding: 1rem;
@@ -1998,7 +1997,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 10px;
   align-items: center;
   margin-top: 1rem;
 }
@@ -2008,6 +2006,7 @@ select::-ms-expand {
 }
 .whychoose .item:hover {
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
@@ -2111,6 +2110,9 @@ select::-ms-expand {
   height: 48px;
   transition: 1s all;
 }
+.delivery .overlay {
+  display: none;
+}
 .delivery h3 {
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
@@ -2166,7 +2168,7 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  width: 48%;
+  width: 50%;
 }
 .facts .item img {
   width: 38px;
@@ -2199,7 +2201,6 @@ select::-ms-expand {
 }
 .locations .location-name {
   display: flex;
-  flex-wrap: wrap;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1rem;
@@ -2386,7 +2387,6 @@ select::-ms-expand {
   }
   .courses .course-name {
     width: 48%;
-    flex-direction: row;
   }
   .courses .course-name .icon {
     display: flex;
@@ -2402,6 +2402,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 68%;
     background-position: bottom;
+    padding-top: 0!important;
   }
   .effective .effective-container {
     flex-direction: row;
@@ -2433,6 +2434,7 @@ select::-ms-expand {
   .whychoose {
     padding: 3rem 2rem;
     background-color: #fbfbfb;
+    padding-top: 0.5rem !important;
   }
   .whychoose .choose-list {
     flex-direction: row;
@@ -2441,7 +2443,7 @@ select::-ms-expand {
   .whychoose .item {
     width: 35%;
     padding: 2rem;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .whychoose h3 {
     min-height: 50px;
@@ -2554,6 +2556,7 @@ select::-ms-expand {
     height: 96px;
   }
   .delivery .overlay {
+    display: flex;
     background: linear-gradient(#000000, #575757);
     opacity: 0.8;
     position: absolute;
@@ -2598,6 +2601,7 @@ select::-ms-expand {
     width: 100%;
   }
   .locations .location-name {
+    flex-wrap: wrap;
     width: 21%;
     height: 150px;
     justify-content: space-between;

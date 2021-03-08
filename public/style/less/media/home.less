@@ -34,7 +34,6 @@
         }
         .course-name{
             width: 48%;
-            flex-direction: row;
             .icon{
                 display: flex;
             }
@@ -55,6 +54,7 @@
         background-repeat: no-repeat;
         background-size: 100% 68%;
         background-position: bottom;
+        padding-top: 0!important;
         .effective-container{
             flex-direction: row;
             justify-content: space-between;
@@ -90,6 +90,7 @@
     .whychoose{
         padding: @sectionPadding-md;
         background-color: #fbfbfb;
+        padding-top: 0.5rem!important;
         .choose-list{
             flex-direction: row;
             justify-content: space-between;
@@ -97,7 +98,7 @@
         .item{
             width: 35%;
             padding: 2rem;
-            margin-top: 1rem;
+            margin-top: 0;
         
         }
         h3{
@@ -227,6 +228,7 @@
         }
         
         .overlay{
+            display: flex;
             background:  linear-gradient(#000000,#575757);
             opacity: .8;
             position: absolute;
@@ -280,6 +282,7 @@
             width: 100%;
         }
         .location-name{
+        flex-wrap: wrap;
             width: 21%;
             height: 150px;
             justify-content: space-between;
