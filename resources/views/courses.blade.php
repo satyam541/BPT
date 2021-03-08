@@ -487,7 +487,7 @@
                                     </ul>
 
                                     <div class="buttons">
-                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->online_course_name}}" class="btn-blue">
+                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->name}}"data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>
