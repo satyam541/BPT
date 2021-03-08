@@ -79,7 +79,10 @@
                                     <p>{{ $category->topics_count }} Topics</p>
                                 @endif
                                 @foreach ($category->topics as $topic)
-                                    @php $totalCourses+=$topic->courses_count @endphp
+                                @if($loop->first)
+                                @php $totalCourses=0 @endphp
+                                @endif
+                                @php $totalCourses+=$topic->courses_count @endphp
                                 @endforeach
                                 @if ($totalCourses < 2)
                                     <p> {{ $totalCourses }} Course </p>
@@ -118,6 +121,12 @@
                     <a class="btn-white" href="tel:{{ websiteDetail()->contact_number }}">
                         <img src="{{ url('img/master/call.svg') }}" alt="call">
                         {{ websiteDetail()->contact_number }}
+                    </a>
+                </div>
+                <div class="buttons">
+                    <a class="btn-blue">
+                        <img src="{{ url('img/master/quote.svg') }}" alt="quote">
+                        Enquire Now
                     </a>
                 </div>
 
@@ -323,7 +332,7 @@
                         {!! $pageDetail->looking_for['heading']->content !!}
                     </p>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS">
+                        <a  href="{{route('contactUs')}}" class="btn-blue  enquiryJS">
                             <img src="{{ url('img/home/phone-call.svg') }}" alt="phone-call">
                             Contact Us
                         </a>

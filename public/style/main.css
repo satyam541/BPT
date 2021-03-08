@@ -1333,10 +1333,6 @@ select::-ms-expand {
     align-items: flex-start;
     width: 50%;
   }
-  .banner .banner-container .topic-list {
-    width: 46%;
-    margin-top: 0;
-  }
   .footer {
     padding: 3rem 2rem;
   }
@@ -1670,12 +1666,6 @@ select::-ms-expand {
   .banner .banner-container .banner-content {
     width: 55%;
   }
-  .banner .banner-container .topic-list {
-    width: 40%;
-  }
-  .banner .banner-container .topic-list a p {
-    width: 70%;
-  }
   .banner .search {
     width: 76%;
   }
@@ -1847,6 +1837,87 @@ select::-ms-expand {
 }
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.home-banner .banner-container .topic-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.home-banner .banner-container .topic-list ul {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  margin: auto;
+}
+.home-banner .banner-container .topic-list li {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.home-banner .banner-container .topic-list li:nth-child(1) a {
+  background-color: rgba(28, 40, 72, 0.8);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.home-banner .banner-container .topic-list li:nth-child(2) a {
+  background-color: rgba(28, 40, 72, 0.83);
+}
+.home-banner .banner-container .topic-list li:nth-child(3) a {
+  background-color: rgba(28, 40, 72, 0.89);
+}
+.home-banner .banner-container .topic-list li:nth-child(4) a {
+  background-color: rgba(28, 40, 72, 0.92);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.home-banner .banner-container .topic-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+.home-banner .banner-container .topic-list a img:first-child {
+  width: 35px;
+  height: 30px;
+}
+.home-banner .banner-container .topic-list a img:last-child {
+  width: 20px;
+  height: 20px;
+}
+.home-banner .banner-container .topic-list a p {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  padding-right: 1rem;
+  border-right: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-weight: 600;
+  width: 65%;
+}
+.home-banner .banner-container .topic-list a span {
+  font-size: 14px;
+  line-height: normal;
+  font-weight: normal;
+}
+.home-banner .banner-container .topic-list .owl-dots {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.home-banner .banner-container .topic-list .owl-dots .owl-dot {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background-color: #C7C7C7;
+  margin-right: 7px;
+  outline: none;
+  border-radius: 18px;
+}
+.home-banner .banner-container .topic-list .owl-dots .owl-dot.active {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px #b4b4b4;
+  width: 20px;
+  height: 20px;
 }
 .courses {
   padding: 3rem 1.5rem;
@@ -2169,7 +2240,8 @@ select::-ms-expand {
 }
 .locations .locations-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .locations .content {
   display: flex;
@@ -2183,9 +2255,11 @@ select::-ms-expand {
   align-items: center;
   background-image: linear-gradient(143deg, #ffffff 0%, #ffffff 77%, #d6d6d6 77%);
   border-radius: 10px;
+  width: 48%;
+  flex-wrap: wrap;
 }
 .locations .location-name span {
-  width: 10%;
+  width: 20%;
   font-weight: 700;
   color: #F2F2F2;
 }
@@ -2353,6 +2427,10 @@ select::-ms-expand {
     z-index: 1;
     box-shadow: none;
   }
+  .home-banner .banner-container .topic-list {
+    width: 46%;
+    margin-top: 0;
+  }
   .courses {
     padding: 3rem 2rem;
   }
@@ -2406,6 +2484,9 @@ select::-ms-expand {
     width: 30%;
     justify-content: flex-end;
     margin-top: 0;
+  }
+  .effective .buttons .btn-blue {
+    margin-left: 0.5rem;
   }
   .whychoose {
     padding: 3rem 2rem;
@@ -2569,15 +2650,13 @@ select::-ms-expand {
     background-size: contain;
     background-position: center;
   }
-  .locations .locations-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   .locations .content {
     width: 100%;
   }
+  .locations .locations-container {
+    justify-content: flex-start;
+  }
   .locations .location-name {
-    flex-wrap: wrap;
     width: 21%;
     height: 150px;
     justify-content: space-between;
@@ -2585,7 +2664,7 @@ select::-ms-expand {
   }
   .locations .location-name span {
     font-size: 48px;
-    width: 54%;
+    width: 50%;
   }
   .locations .location-name img {
     width: 40px;
@@ -2647,17 +2726,29 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
+  .banner .banner-container .topic-list {
+    width: 40%;
+  }
+  .banner .banner-container .topic-list a p {
+    width: 70%;
+  }
   .courses .course-name {
     width: 31%;
   }
   .effective .effective-container {
     width: 90%;
     margin: auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
   .effective .content img {
     width: 100px;
     height: 100px;
+  }
+  .effective .buttons {
+    width: 25%;
+  }
+  .effective .buttons .btn-blue {
+    margin-left: 0;
   }
   .whychoose h3 {
     min-height: auto;
@@ -2841,7 +2932,10 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .effective .content {
-    width: 57%;
+    width: 75%;
+  }
+  .effective .buttons {
+    width: 21%;
   }
   .whychoose {
     padding: 4rem 0rem;
@@ -4751,12 +4845,9 @@ select::-ms-expand {
 .onsite-banner .banner-container p {
   color: #FFFFFF;
 }
-.onsite-banner .banner-container p {
-  margin-top: 0.5rem;
-}
 .onsite-training {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .onsite-training .training-container {
   display: flex;
@@ -4792,7 +4883,7 @@ select::-ms-expand {
 }
 .doorstep {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .doorstep .doorstep-container {
   display: flex;
@@ -4927,7 +5018,7 @@ select::-ms-expand {
   position: absolute;
   left: 0;
   bottom: 0;
-  background: linear-gradient(#0064d8, #00326c);
+  background: linear-gradient(#0064D8, #00326c);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -4939,10 +5030,12 @@ select::-ms-expand {
   z-index: 1;
 }
 .choose .choose-item p {
+  display: flex;
+  align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
   padding-left: 2.5rem;
-  background-color: white;
+  background-color: #FFFFFF;
   border-top-left-radius: 35px;
   border-bottom-right-radius: 35px;
   font-weight: bold;
@@ -4990,10 +5083,6 @@ select::-ms-expand {
   text-align: center;
 }
 @media (min-width : 768px) {
-  .onsite-banner {
-    padding: 3rem 2rem;
-    padding-top: 1rem;
-  }
   .onsite-training {
     padding: 3rem 2rem;
   }
@@ -5026,11 +5115,11 @@ select::-ms-expand {
   }
   .choose .choose-list {
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
   .choose .choose-item {
     width: 48%;
+    padding-right: 1.5rem;
   }
   .solution {
     padding: 3rem 2rem;
@@ -5107,11 +5196,11 @@ select::-ms-expand {
     width: 100%;
     margin-top: 2.5rem;
   }
-  .choose .choose-list {
-    justify-content: space-around;
-  }
   .choose .choose-item {
     width: 33%;
+  }
+  .choose .choose-item p {
+    min-height: 76px;
   }
   .solution .solution-list {
     background-size: 70% 35%;
@@ -5134,7 +5223,6 @@ select::-ms-expand {
   .doorstep {
     padding: 4rem 0rem;
     padding-top: 6rem;
-    padding-bottom: 0!important;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -5170,7 +5258,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .choose .choose-item {
-    width: 23%;
+    width: 25%;
   }
   .solution {
     padding: 4rem 0rem;

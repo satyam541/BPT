@@ -21,20 +21,22 @@
                 </div>
                 {!! $selectedCourse->tag_line !!}
             </div>
+            @if($selectedCourse->whatsIncluded->isNotEmpty())
             <div class="banner-points">
                 <h2>Key Points</h2>
                 <ul>
                     <li>Duration: {{ $selectedCourse->duration }}*</li>
-                    <li>Certificate(s): Included</li>
-                    <li>Exam(s): Included</li>
-                    <li>Support: 24/7</li>
+                    @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                    <li>{!!$whatsInclude->name!!}</li>
+                    @endforeach
                 </ul>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section>
@@ -211,7 +213,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Have a Question?">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/master/arrow.svg') }}" alt="arrow">Have a Question?
                 </a>
             </div>
@@ -304,14 +306,16 @@
                         </div>
                     </div>
                     <div class="key-point">
+                        @if($selectedCourse->whatsIncluded->isNotEmpty())
                         <h2>Key Points</h2>
-                        <p><strong>Duration: </strong>5 Days*</p>
-                        <p><strong>Exam(s): </strong> Included</p>
-                        <p><strong>Certificate(s): </strong> Included</p>
-                        <p><strong>Support: </strong> 24/7</p>
+                        <p><strong>Duration: </strong>{{ $selectedCourse->duration }}*</p>
+                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                        <p><strong>{!!$whatsInclude->name!!}</strong></p>
+                        @endforeach
+                        @endif
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                data-quote="Enquire Now">
+                                data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                                 <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                             </a>
                         </div>
@@ -366,12 +370,12 @@
                             </div>
                             <p>Contact us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -383,8 +387,8 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS"
-                                        data-quote="Enquire Now">
+                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{$virtual->event_price}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
+                                        data-quote="Enquire Now" data-course="{{$selectedCourse->name}}" data-date="{{$virtual->response_date}}" data-price="{{$virtual->event_price}}" data-location="{{$virtual->response_location}}" data-deliveryType="virtual">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
                                     <a href="{{ route('virtualBooking',$virtual->id) }}" class="btn-blue"
@@ -427,12 +431,12 @@
                             </div>
                             <p>Contact us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="virtual" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>02034687222</strong> or <strong>info@sixsigma.co.uk</strong> for more information.
+                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -487,7 +491,7 @@
                                     </ul>
 
                                     <div class="buttons">
-                                        <a class="btn-blue">
+                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->name}}"data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>
@@ -518,6 +522,8 @@
                             </div>
                             <div class="form-input">
                                 <input type="hidden" name="type" value="onsite">
+                                <input type="hidden" name="location" value="onsite">
+                                {{-- <input type="hidden" name="course" value="{{$selectedCourse->name}}"> --}}
                                 <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
@@ -557,7 +563,7 @@
                                     <span><img src="{{url('img/master/book-white.svg')}}" alt="book" class="black">
                                         <img src="{{url('img/master/book-red.svg')}}" alt="book-red" class="red"></span>
                                     <input type="text" name="course" id="course" placeholder="Course*"
-                                        autocomplete="off">
+                                        autocomplete="off" value="{{$selectedCourse->name}}" readonly>
                                 </div>
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/position-white.svg')}}" alt="position"
@@ -701,6 +707,20 @@
                         @else
                         <span class="offer">£{{$schedules->first()->event_price}}</span>
                         @endif
+                        
+                        <div class="buy">
+                            <span>
+                                <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
+                            </span>
+                            <h3>23 hours left at this price!</h3>
+                        </div>
+                        <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price={{$schedules->first()->event_price}}>
+                                <img src="{{ url('img/courses/email.svg') }}" alt="email">
+                                Enquire Now
+                            </a>
+                        </div>
                         @elseif($virtualSchedules->isNotEmpty())
                         @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->
                             first()->event_price))
@@ -710,10 +730,7 @@
                             @else
                             <span class="offer">£{{$virtualSchedules->first()->event_price}}</span>
                             @endif
-                            @endif
-
-
-
+                            
                             <div class="buy">
                                 <span>
                                     <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
@@ -722,11 +739,15 @@
                             </div>
                             <div class="buttons">
                                 <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                    data-quote="Buy Now">
-                                    <img src="{{ url('img/courses/buy.svg') }}" alt="buy">
-                                    Buy Now
+                                    data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price="{{$virtualSchedules->first()->response_discounted_price}}">
+                                    <img src="{{ url('img/courses/email.svg') }}" alt="email">
+                                    Enquire Now
                                 </a>
                             </div>
+                            @endif
+
+
+
                 </div>
             </div>
             <div class="language-content">
@@ -749,7 +770,7 @@
 
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -775,7 +796,7 @@
                     <h3>{!! $item->heading !!}</h3>
                     <p>{!! $item->content !!}</p>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                             <img src="{{ url('img/courses/email.svg') }}" alt="email">
                             Enquire Now
                         </a>
@@ -820,7 +841,7 @@
                 <h2>{!! $pageDetail->largest_location['heading']->heading !!}</h2>
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
                         Learn More
                     </a>

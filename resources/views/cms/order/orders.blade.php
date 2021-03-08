@@ -51,11 +51,13 @@
                 </thead>
                 <tbody>
                 
+                
                     @foreach($orders as  $index => $order)
                     <tr>
                          
+                      
                         <td>{{ $order->gateway_order_id}}</td>
-                        <td>{{$order->customer->firstname}}</td>
+                        <td>{{optional($order->customer)->firstname}}</td>
                         <td>{{ $order->grand_total }}</td>
                         <td>{{ $order->created_at->format('d M, Y') }}</td>
                         <td>{{ $order->gateway_response }}</td>

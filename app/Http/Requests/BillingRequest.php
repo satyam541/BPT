@@ -26,25 +26,30 @@ class BillingRequest extends FormRequest
     public function rules()
     {
            return[
-            'PaymentMethod'        => 'required',
-            'BFirstName'           => 'required',
-            'BAddress1'            => 'required',
-            'BTown'                => 'required',
-            'BPostCode'            => 'required',
-            'BProvince'            => 'required',
-            'CardDetails'          => 'required_if:PaymentMethod,Credit/Debit Card',
-            'PurchaseDetails'      => 'required_if:PaymentMethod,Purchase Order',
+            'firstname'     => 'required',
+            'lastname'      => 'required',
+            'address1'      => 'required',
+            'city'          => 'required',
+            'province'      => 'required',
+            'country'       => 'required',
+            'paymentmethod' => 'required',
+            'cardtype'      => 'required_if:paymentmethod,card',
+            'purchase'      => 'required_if:paymentmethod,purchase order',
            ];  
     }
     public function messages()
     {
-        return[
-            'BFirstName.required'   => 'Please fill First Name in billing details.',
-            'BAddress1.required'    => 'Please fill Address in billing details.',
-            'BTown.required'        => 'Please fill Town in billing details.',
-            'BPostCode.required'    => 'Please fill Post Code in billing details.',
-            'BProvince.required'    => 'Please fill Province in billing details',
-            'PurchaseDetails'       => 'Please fill Purchase Order Detail in billing details'
+        return [];
+    }
+
+    public function attributes()
+    {
+        return [
+            'firstname' => 'First Name',
+            'lastname'  => 'Last Name',
+            'address1'  => 'Address Line 1',
+            'address2'  => 'Address Line 2',
+            'city'      => 'City/Town',
         ];
     }
 }
