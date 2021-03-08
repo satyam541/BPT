@@ -5131,7 +5131,7 @@ select::-ms-expand {
   }
   .choose {
     padding: 4rem 0rem;
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   .choose .choose-list {
     justify-content: space-between;
@@ -5142,6 +5142,24 @@ select::-ms-expand {
   .solution {
     padding: 4rem 0rem;
     margin-bottom: 4rem;
+  }
+}
+@media (min-width : 1500px) {
+  .doorstep .container {
+    width: 1200px;
+  }
+  .doorstep .doorstep-container {
+    box-shadow: none;
+    padding-bottom: 4.3rem;
+  }
+  .doorstep .form {
+    left: 0px;
+  }
+  .doorstep .info {
+    width: 49%;
+  }
+  .choose {
+    padding-top: 4rem;
   }
 }
 .location-banner {
