@@ -20,6 +20,10 @@
         justify-content: space-between;
         z-index: 1;
         box-shadow: none;
+        .topic-list{
+          width: 46%;
+          margin-top: 0;
+        }
         }
     }
     // End banner section //
@@ -34,7 +38,6 @@
         }
         .course-name{
             width: 48%;
-            flex-direction: row;
             .icon{
                 display: flex;
             }
@@ -55,6 +58,7 @@
         background-repeat: no-repeat;
         background-size: 100% 68%;
         background-position: bottom;
+        padding-top: 0!important;
         .effective-container{
             flex-direction: row;
             justify-content: space-between;
@@ -81,6 +85,10 @@
             width: 30%;
             justify-content: flex-end;
             margin-top: 0;
+
+            .btn-blue{
+                margin-left: 0.5rem;
+            }
         }
     
     }
@@ -90,6 +98,7 @@
     .whychoose{
         padding: @sectionPadding-md;
         background-color: #fbfbfb;
+        padding-top: 0.5rem!important;
         .choose-list{
             flex-direction: row;
             justify-content: space-between;
@@ -97,7 +106,7 @@
         .item{
             width: 35%;
             padding: 2rem;
-            margin-top: 1rem;
+            margin-top: 0;
         
         }
         h3{
@@ -227,6 +236,7 @@
         }
         
         .overlay{
+            display: flex;
             background:  linear-gradient(#000000,#575757);
             opacity: .8;
             position: absolute;
@@ -272,12 +282,11 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        .locations-container{
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
         .content{
             width: 100%;
+        }
+        .locations-container{
+            justify-content: flex-start;
         }
         .location-name{
             width: 21%;
@@ -286,7 +295,7 @@
             margin-right: 2rem;
             span{
                 font-size: 48px;    
-                width: 54%;
+                width: 50%;
             }
             img{
                 width: 40px;
@@ -363,6 +372,23 @@
 }
 
 @media @size-lg{
+    
+    // Start banner section //
+    .banner{
+        .banner-container{
+            .topic-list{
+              width: 40%;
+              a{
+                p{
+                  width: 70%;
+                }
+              }
+            }
+        }
+    }
+    
+    // End banner section //
+
     // Start courses section //
     .courses{
         .course-name{
@@ -376,12 +402,18 @@
         .effective-container{
             width: 90%;
             margin: auto;
-            padding: 0 4rem;
+            padding: 0 2rem;
         }
         .content{
             img{
                 width: 100px;
                 height: 100px;
+            }
+        }
+        .buttons{
+         width: 25%;
+            .btn-blue{
+                margin-left: 0;
             }
         }
     }
@@ -606,8 +638,12 @@
     // Start effects section//
     .effective{
         padding: @sectionPadding-xl;
+       
         .content{
-                width: 57%;
+                width: 75%;
+        }
+        .buttons{
+            width: 21%;
         }
     }
     // End effects section //

@@ -70,10 +70,16 @@ Route::get('/booking/virtual/{id}',['as'=>'virtualBooking','uses'=>"CartControll
 //Cart Routes
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
+Route::get('/summary',['as'=>'summary','uses'=>'SummaryController@index']);
+Route::post('/cart/checkout',['as'=>'cartCheckout', 'uses'=>"CheckoutController@index"]);
+Route::post('/cart/content/clear',['as'=>'cartDestroyRoute','uses'=>'CartController@clearCart']);
 
 //ajax requests
 Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
 Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@removeItem']);
+Route::get('/cart/customerDetail/submit',['as'=>'customerDetailSubmit','uses'=>'CartController@submitCustomerDetail']);
+Route::get('/cart/delegateDetail/submit',['as'=>'delegateDetailSubmit','uses'=>'CartController@submitDelegateDetail']);
+Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'CartController@submitBillingDetail']);
 
 
 Route::get('/offer', function () {

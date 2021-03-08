@@ -301,6 +301,40 @@ select::-ms-expand {
 .pointer {
   cursor: pointer;
 }
+.ui-autocomplete .ui-autocomplete-category {
+  color: #007D3D;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+.ui-autocomplete .ui-menu-item {
+  padding: 3px;
+}
+#ui-id-1 {
+  max-height: 50vh;
+  overflow: scroll;
+  width: 85%;
+}
+#ui-id-2 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
+}
+#ui-id-3 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
+}
+#ui-id-4 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -721,85 +755,6 @@ select::-ms-expand {
   padding-right: 1.5rem;
   border: none;
   outline: none;
-}
-.banner .topic-list {
-  display: flex;
-  margin-top: 2rem;
-}
-.banner .topic-list ul {
-  display: flex;
-  flex-direction: column;
-  width: 96%;
-  margin: auto;
-}
-.banner .topic-list li {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-}
-.banner .topic-list li:nth-child(1) a {
-  background-color: rgba(28, 40, 72, 0.8);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.banner .topic-list li:nth-child(2) a {
-  background-color: rgba(28, 40, 72, 0.83);
-}
-.banner .topic-list li:nth-child(3) a {
-  background-color: rgba(28, 40, 72, 0.89);
-}
-.banner .topic-list li:nth-child(4) a {
-  background-color: rgba(28, 40, 72, 0.92);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.banner .topic-list a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-}
-.banner .topic-list a img:first-child {
-  width: 35px;
-  height: 30px;
-}
-.banner .topic-list a img:last-child {
-  width: 20px;
-  height: 20px;
-}
-.banner .topic-list a p {
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  padding-right: 1rem;
-  border-right: 2px solid #FFFFFF;
-  color: #FFFFFF;
-  font-weight: 600;
-  width: 65%;
-}
-.banner .topic-list a span {
-  font-size: 14px;
-  line-height: normal;
-  font-weight: normal;
-}
-.banner .topic-list .owl-dots {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.banner .topic-list .owl-dots .owl-dot {
-  display: flex;
-  width: 15px;
-  height: 15px;
-  background-color: #C7C7C7;
-  margin-right: 7px;
-  outline: none;
-  border-radius: 18px;
-}
-.banner .topic-list .owl-dots .owl-dot.active {
-  background-color: #FFFFFF;
-  box-shadow: 0 0 10px #b4b4b4;
-  width: 20px;
-  height: 20px;
 }
 .footer {
   background-color: #1C2848;
@@ -1355,10 +1310,6 @@ select::-ms-expand {
     align-items: flex-start;
     width: 50%;
   }
-  .banner .banner-container .topic-list {
-    width: 46%;
-    margin-top: 0;
-  }
   .footer {
     padding: 3rem 2rem;
   }
@@ -1499,7 +1450,6 @@ select::-ms-expand {
   .dropdown-menu .topic-info a {
     display: flex;
     align-items: center;
-    text-align: center;
     color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
@@ -1522,6 +1472,10 @@ select::-ms-expand {
     height: 30px;
     width: 30px;
   }
+  .dropdown-menu .topic-info a p {
+    color: #FFFFFF;
+    width: 72%;
+  }
   .dropdown-menu .topic-info .topic-active {
     background: linear-gradient(#cccccc, #cfcfcf);
     color: #000000;
@@ -1535,6 +1489,9 @@ select::-ms-expand {
   }
   .dropdown-menu .topic-info .topic-active span .blue {
     display: flex;
+  }
+  .dropdown-menu .topic-info .topic-active p {
+    color: #000000;
   }
   .dropdown-menu .topic-info .topic-active::before {
     content: '';
@@ -1589,6 +1546,9 @@ select::-ms-expand {
     height: 30px;
     width: 30px;
   }
+  .dropdown-menu .course-list .course-content .course a p {
+    width: 72%;
+  }
   .dropdown-menu .course-list .course-content .course .course-active {
     background: linear-gradient(#0064D8, #00326C);
     color: #FFFFFF;
@@ -1597,15 +1557,18 @@ select::-ms-expand {
   .dropdown-menu .course-list .course-content .course .course-active span {
     background-color: #2674CF;
   }
+  .dropdown-menu .course-list .course-content .course .course-active p {
+    color: #FFFFFF;
+  }
   .dropdown-menu .course-list .course-content .course .course-active::before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 62px;
+    height: 60px;
     right: -27px;
-    border-top: 30px solid transparent;
-    border-left: 27px solid #00326C;
-    border-bottom: 33px solid transparent;
+    background-image: url('../img/master/dropdown-blue.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     z-index: 0;
   }
   .dropdown-menu .menu-list {
@@ -1625,25 +1588,28 @@ select::-ms-expand {
   .dropdown-menu .menu-list .menu-info a {
     width: 50%;
     padding: 7px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-  }
-  .dropdown-menu .menu-list .menu-info a:hover {
-    background-color: #1F5E88;
-    color: #FFFFFF;
+    position: relative;
+    padding-left: 30px;
     cursor: pointer;
+  }
+  .dropdown-menu .menu-list .menu-info a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-image: url('../img/master/blue-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    width: 22px;
+    height: 22px;
   }
   .banner::before {
     height: 56%;
   }
   .banner .banner-container .banner-content {
     width: 55%;
-  }
-  .banner .banner-container .topic-list {
-    width: 40%;
-  }
-  .banner .banner-container .topic-list a p {
-    width: 70%;
   }
   .banner .search {
     width: 76%;
@@ -1661,7 +1627,7 @@ select::-ms-expand {
     padding-right: 0;
   }
   .footer .footer-content {
-    background-image: url('../../../img/master/footer-bg.png');
+    background-image: url('../img/master/footer-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -1817,6 +1783,87 @@ select::-ms-expand {
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
+.home-banner .banner-container .topic-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.home-banner .banner-container .topic-list ul {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  margin: auto;
+}
+.home-banner .banner-container .topic-list li {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.home-banner .banner-container .topic-list li:nth-child(1) a {
+  background-color: rgba(28, 40, 72, 0.8);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.home-banner .banner-container .topic-list li:nth-child(2) a {
+  background-color: rgba(28, 40, 72, 0.83);
+}
+.home-banner .banner-container .topic-list li:nth-child(3) a {
+  background-color: rgba(28, 40, 72, 0.89);
+}
+.home-banner .banner-container .topic-list li:nth-child(4) a {
+  background-color: rgba(28, 40, 72, 0.92);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.home-banner .banner-container .topic-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+.home-banner .banner-container .topic-list a img:first-child {
+  width: 35px;
+  height: 30px;
+}
+.home-banner .banner-container .topic-list a img:last-child {
+  width: 20px;
+  height: 20px;
+}
+.home-banner .banner-container .topic-list a p {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  padding-right: 1rem;
+  border-right: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-weight: 600;
+  width: 65%;
+}
+.home-banner .banner-container .topic-list a span {
+  font-size: 14px;
+  line-height: normal;
+  font-weight: normal;
+}
+.home-banner .banner-container .topic-list .owl-dots {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.home-banner .banner-container .topic-list .owl-dots .owl-dot {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background-color: #C7C7C7;
+  margin-right: 7px;
+  outline: none;
+  border-radius: 18px;
+}
+.home-banner .banner-container .topic-list .owl-dots .owl-dot.active {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px #b4b4b4;
+  width: 20px;
+  height: 20px;
+}
 .courses {
   padding: 3rem 1.5rem;
 }
@@ -1830,7 +1877,6 @@ select::-ms-expand {
 }
 .courses .course-name {
   display: flex;
-  flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   padding: 1rem;
@@ -1943,7 +1989,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 10px;
   align-items: center;
   margin-top: 1rem;
 }
@@ -1953,6 +1998,7 @@ select::-ms-expand {
 }
 .whychoose .item:hover {
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
@@ -2056,6 +2102,9 @@ select::-ms-expand {
   height: 48px;
   transition: 1s all;
 }
+.delivery .overlay {
+  display: none;
+}
 .delivery h3 {
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
@@ -2111,7 +2160,7 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  width: 48%;
+  width: 50%;
 }
 .facts .item img {
   width: 38px;
@@ -2136,7 +2185,8 @@ select::-ms-expand {
 }
 .locations .locations-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .locations .content {
   display: flex;
@@ -2144,16 +2194,17 @@ select::-ms-expand {
 }
 .locations .location-name {
   display: flex;
-  flex-wrap: wrap;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1rem;
   align-items: center;
   background-image: linear-gradient(143deg, #ffffff 0%, #ffffff 77%, #d6d6d6 77%);
   border-radius: 10px;
+  width: 48%;
+  flex-wrap: wrap;
 }
 .locations .location-name span {
-  width: 10%;
+  width: 20%;
   font-weight: 700;
   color: #F2F2F2;
 }
@@ -2321,6 +2372,10 @@ select::-ms-expand {
     z-index: 1;
     box-shadow: none;
   }
+  .home-banner .banner-container .topic-list {
+    width: 46%;
+    margin-top: 0;
+  }
   .courses {
     padding: 3rem 2rem;
   }
@@ -2331,7 +2386,6 @@ select::-ms-expand {
   }
   .courses .course-name {
     width: 48%;
-    flex-direction: row;
   }
   .courses .course-name .icon {
     display: flex;
@@ -2347,6 +2401,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 68%;
     background-position: bottom;
+    padding-top: 0!important;
   }
   .effective .effective-container {
     flex-direction: row;
@@ -2375,9 +2430,13 @@ select::-ms-expand {
     justify-content: flex-end;
     margin-top: 0;
   }
+  .effective .buttons .btn-blue {
+    margin-left: 0.5rem;
+  }
   .whychoose {
     padding: 3rem 2rem;
     background-color: #fbfbfb;
+    padding-top: 0.5rem !important;
   }
   .whychoose .choose-list {
     flex-direction: row;
@@ -2386,7 +2445,7 @@ select::-ms-expand {
   .whychoose .item {
     width: 35%;
     padding: 2rem;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .whychoose h3 {
     min-height: 50px;
@@ -2499,6 +2558,7 @@ select::-ms-expand {
     height: 96px;
   }
   .delivery .overlay {
+    display: flex;
     background: linear-gradient(#000000, #575757);
     opacity: 0.8;
     position: absolute;
@@ -2535,12 +2595,11 @@ select::-ms-expand {
     background-size: contain;
     background-position: center;
   }
-  .locations .locations-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   .locations .content {
     width: 100%;
+  }
+  .locations .locations-container {
+    justify-content: flex-start;
   }
   .locations .location-name {
     width: 21%;
@@ -2550,7 +2609,7 @@ select::-ms-expand {
   }
   .locations .location-name span {
     font-size: 48px;
-    width: 54%;
+    width: 50%;
   }
   .locations .location-name img {
     width: 40px;
@@ -2612,17 +2671,29 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
+  .banner .banner-container .topic-list {
+    width: 40%;
+  }
+  .banner .banner-container .topic-list a p {
+    width: 70%;
+  }
   .courses .course-name {
     width: 31%;
   }
   .effective .effective-container {
     width: 90%;
     margin: auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
   .effective .content img {
     width: 100px;
     height: 100px;
+  }
+  .effective .buttons {
+    width: 25%;
+  }
+  .effective .buttons .btn-blue {
+    margin-left: 0;
   }
   .whychoose h3 {
     min-height: auto;
@@ -2806,7 +2877,10 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .effective .content {
-    width: 57%;
+    width: 75%;
+  }
+  .effective .buttons {
+    width: 21%;
   }
   .whychoose {
     padding: 4rem 0rem;
@@ -4716,12 +4790,9 @@ select::-ms-expand {
 .onsite-banner .banner-container p {
   color: #FFFFFF;
 }
-.onsite-banner .banner-container p {
-  margin-top: 0.5rem;
-}
 .onsite-training {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .onsite-training .training-container {
   display: flex;
@@ -4757,7 +4828,7 @@ select::-ms-expand {
 }
 .doorstep {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .doorstep .doorstep-container {
   display: flex;
@@ -4892,7 +4963,7 @@ select::-ms-expand {
   position: absolute;
   left: 0;
   bottom: 0;
-  background: linear-gradient(#0064d8, #00326c);
+  background: linear-gradient(#0064D8, #00326c);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -4904,10 +4975,12 @@ select::-ms-expand {
   z-index: 1;
 }
 .choose .choose-item p {
+  display: flex;
+  align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
   padding-left: 2.5rem;
-  background-color: white;
+  background-color: #FFFFFF;
   border-top-left-radius: 35px;
   border-bottom-right-radius: 35px;
   font-weight: bold;
@@ -4955,10 +5028,6 @@ select::-ms-expand {
   text-align: center;
 }
 @media (min-width : 768px) {
-  .onsite-banner {
-    padding: 3rem 2rem;
-    padding-top: 1rem;
-  }
   .onsite-training {
     padding: 3rem 2rem;
   }
@@ -4991,11 +5060,11 @@ select::-ms-expand {
   }
   .choose .choose-list {
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
   .choose .choose-item {
     width: 48%;
+    padding-right: 1.5rem;
   }
   .solution {
     padding: 3rem 2rem;
@@ -5072,11 +5141,11 @@ select::-ms-expand {
     width: 100%;
     margin-top: 2.5rem;
   }
-  .choose .choose-list {
-    justify-content: space-around;
-  }
   .choose .choose-item {
     width: 33%;
+  }
+  .choose .choose-item p {
+    min-height: 76px;
   }
   .solution .solution-list {
     background-size: 70% 35%;
@@ -5099,7 +5168,6 @@ select::-ms-expand {
   .doorstep {
     padding: 4rem 0rem;
     padding-top: 6rem;
-    padding-bottom: 0!important;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -5129,17 +5197,35 @@ select::-ms-expand {
   }
   .choose {
     padding: 4rem 0rem;
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   .choose .choose-list {
     justify-content: space-between;
   }
   .choose .choose-item {
-    width: 23%;
+    width: 25%;
   }
   .solution {
     padding: 4rem 0rem;
     margin-bottom: 4rem;
+  }
+}
+@media (min-width : 1500px) {
+  .doorstep .container {
+    width: 1200px;
+  }
+  .doorstep .doorstep-container {
+    box-shadow: none;
+    padding-bottom: 4.3rem;
+  }
+  .doorstep .form {
+    left: 0px;
+  }
+  .doorstep .info {
+    width: 49%;
+  }
+  .choose {
+    padding-top: 4rem;
   }
 }
 .location-banner {
@@ -7809,6 +7895,7 @@ select::-ms-expand {
     padding: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
+    position: relative;
   }
   .certification-course .course-content::after {
     content: '';
@@ -7827,11 +7914,11 @@ select::-ms-expand {
     left: 0;
     border-radius: 25px;
   }
-  .certification-course .course-content:hover h3,
+  .certification-course .course-content:hover a,
   .certification-course .course-content:hover .buttons {
     z-index: 1;
   }
-  .certification-course .course-content:hover h3 {
+  .certification-course .course-content:hover a {
     color: #FFFFFF;
     transition: 1s ease-in-out;
   }

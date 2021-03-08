@@ -1,6 +1,3 @@
-
-var base_url = window.location.origin;
-
 function updateCart(cartId,action) {
 	$.ajax({
         url: updateCartRoute,

@@ -1,10 +1,4 @@
 @media @size-md{
-    // Start Banner section //
-    .onsite-banner {
-        padding: @sectionPadding-md;
-        padding-top: 1rem;
-    }
-    // End Banner section //
 
     // Start training section
     .onsite-training{
@@ -46,11 +40,11 @@
         padding: @sectionPadding-md;
         .choose-list{
             flex-direction: row;
-            justify-content: space-between;
             flex-wrap: wrap;
         }
         .choose-item{
             width: 48%;
+            padding-right: 1.5rem;
         }
     }
     // End choose section
@@ -152,11 +146,11 @@
 
     // Start choose section
     .choose {
-        .choose-list{
-            justify-content: space-around;
-        }
         .choose-item{
             width: 33%;
+            p {
+                min-height: 76px;
+            }
         }
     }
     // End choose section
@@ -197,7 +191,6 @@
     .doorstep{
         padding: @sectionPadding-xl;
         padding-top: 6rem;
-        padding-bottom: 0!important;
         background-image: url(../img/onsite/information-bg.png);
         background-size: auto;
         background-repeat: no-repeat;
@@ -230,12 +223,12 @@
     // Start choose section
     .choose {
         padding: @sectionPadding-xl;
-        padding-top: 7rem;
+        padding-top: 6rem;
         .choose-list{
             justify-content: space-between;
         }
         .choose-item{
-            width: 23%;
+            width: 25%;
         }
     }
     // End choose section
@@ -246,4 +239,32 @@
         margin-bottom: 4rem;
     }
     // End solution section
+}
+
+@media @size-xll {
+
+    // Start doorstep section
+    .doorstep{
+        .container{
+            width: 1200px;
+        }
+        .doorstep-container{
+            box-shadow: none;
+            padding-bottom: 4.3rem;
+        }
+        .form{
+            left: 0px;
+        }
+        .info{
+            width: 49%;
+        }
+    }
+    // End doorstep section
+
+    // Start choose section
+    .choose {
+        padding-top: 4rem;
+    }
+    // End choose section
+    
 }
