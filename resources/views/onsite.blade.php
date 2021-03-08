@@ -10,7 +10,7 @@
             <p>{!!$pageDetail->banner['header']->content!!}</p>
             <div class="breadcrums">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
                     <li><a href="">Onsite</a></li>
                 </ul>
