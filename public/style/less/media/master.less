@@ -7,6 +7,7 @@
 @size-xlllll: ~"(min-width : 1900px)"; // 1900
 
 @media @size-md {
+ 
   //Start buttons
       .buttons {
         .btn-blue, .btn-white{
@@ -22,7 +23,7 @@
       position: absolute;
       top: 25px;
       left: 0;
-  
+    
       ul {
         display: flex;
         align-items: center;
@@ -182,7 +183,9 @@
         li {
           width: 100%;
           align-items: center;
-          margin-bottom: 1rem;
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.4rem;
+          border-bottom: 1px solid @greyColor;
           &:last-child {
             margin-bottom: 0;
           }
@@ -311,7 +314,11 @@
   }
   // no-schedule
 
-  
+  .sticky{
+    .country-list{
+          top: 60px;
+      }
+}
 
 }
 
@@ -376,11 +383,9 @@
       }
       .dropdown-menu {
         width: 100%;
-        padding: 1rem 2rem;
         position: absolute;
         left: 0;
-        top: 155px;
-        padding-top: 1rem;
+        top: 140px;
         background-color: @whiteColor;
         box-shadow: @shadowLight;
         z-index: 5;
@@ -434,7 +439,7 @@
                 }
             }
             .topic-active {
-              background: linear-gradient(#F5F5F5,#C8C8C8);
+              background: linear-gradient(#cccccc, #cfcfcf);
                 color: @blackColor;
                 position: relative;
                 span{
@@ -449,13 +454,13 @@
                 &::before {
                   content: '';
                   position: absolute;
-                  width: 0;
-                  height: 0;
+                  width: 62px;
+                  height: 60px;
                   right: -27px;
-                  border-top: 30px solid transparent;
-                  border-left: 27px solid #c8c8c896;
-                  border-bottom: 33px solid transparent;
-                  z-index: 0;
+                  background-image: url('../img/master/arrow-grey.png');
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                  z-index: -1;
                 }
             }
         }
@@ -471,6 +476,7 @@
               box-shadow: @shadowLight;
               background-color: @bgColor;
               padding: 1rem;
+              padding-left: 2rem;
               padding-right: 0;
              .course {
               display: flex;
@@ -491,10 +497,10 @@
                    justify-content: center;
                    height: 60px;
                    width: 60px;
+                   margin-right: 1rem;
                    img{
                     height: 30px;
                     width: 30px;
-                    margin-right: .5rem;
                   }
                  }
               }
