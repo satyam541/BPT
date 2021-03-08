@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="20" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0064d8"/>
+      <stop offset="1" stop-color="#00326c"/>
+    </linearGradient>
+  </defs>
+  <g id="blue-circle" clip-path="url(#clip-path)">
+    <g id="blue-circle-2" data-name="blue-circle" transform="translate(-977 -294)">
+      <g id="Ellipse_3010" data-name="Ellipse 3010" transform="translate(977 294)" fill="none" stroke="#c2c2c2" stroke-width="2">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9" fill="none"/>
+      </g>
+      <circle id="Ellipse_3011" data-name="Ellipse 3011" cx="7.5" cy="7.5" r="7.5" transform="translate(981 298)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
