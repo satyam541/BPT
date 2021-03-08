@@ -118,6 +118,10 @@ select::-ms-expand {
 .sticky .bpt-logo img {
   width: 196px!important;
 }
+.sticky .dropdown-menu {
+  display: none;
+  visibility: hidden;
+}
 .sticky-up {
   top: -100px;
 }
@@ -485,6 +489,7 @@ select::-ms-expand {
 }
 .navbar {
   display: flex;
+  z-index: 2;
 }
 .navbar ul {
   list-style-type: none;
@@ -585,6 +590,9 @@ select::-ms-expand {
   width: 15px;
   height: 15px;
   margin-right: 5px;
+}
+.navbar .country-list {
+  display: none;
 }
 .dropdown-menu {
   display: none;
@@ -1307,7 +1315,9 @@ select::-ms-expand {
   .navbar .country-list li {
     width: 100%;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #F2F2F2;
   }
   .navbar .country-list li:last-child {
     margin-bottom: 0;
@@ -1407,6 +1417,9 @@ select::-ms-expand {
     margin: auto;
     margin-top: 2rem;
   }
+  .sticky .country-list {
+    top: 60px;
+  }
 }
 @media (min-width : 1024px) {
   .black-breadcrums li {
@@ -1452,11 +1465,9 @@ select::-ms-expand {
   }
   .dropdown-menu {
     width: 100%;
-    padding: 1rem 2rem;
     position: absolute;
     left: 0;
-    top: 155px;
-    padding-top: 1rem;
+    top: 140px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     z-index: 5;
@@ -1512,7 +1523,7 @@ select::-ms-expand {
     width: 30px;
   }
   .dropdown-menu .topic-info .topic-active {
-    background: linear-gradient(#F5F5F5, #C8C8C8);
+    background: linear-gradient(#cccccc, #cfcfcf);
     color: #000000;
     position: relative;
   }
@@ -1528,13 +1539,13 @@ select::-ms-expand {
   .dropdown-menu .topic-info .topic-active::before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 62px;
+    height: 60px;
     right: -27px;
-    border-top: 30px solid transparent;
-    border-left: 27px solid #c8c8c896;
-    border-bottom: 33px solid transparent;
-    z-index: 0;
+    background-image: url('../img/master/arrow-grey.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
   }
   .dropdown-menu .course-list {
     display: flex;
@@ -1548,6 +1559,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     background-color: #F6F6F6;
     padding: 1rem;
+    padding-left: 2rem;
     padding-right: 0;
   }
   .dropdown-menu .course-list .course-content .course {
@@ -1571,11 +1583,11 @@ select::-ms-expand {
     justify-content: center;
     height: 60px;
     width: 60px;
+    margin-right: 1rem;
   }
   .dropdown-menu .course-list .course-content .course a span img {
     height: 30px;
     width: 30px;
-    margin-right: 0.5rem;
   }
   .dropdown-menu .course-list .course-content .course .course-active {
     background: linear-gradient(#0064D8, #00326C);

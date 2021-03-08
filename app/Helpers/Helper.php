@@ -79,12 +79,21 @@ if (!function_exists('encodeUrlSlug')) {
             return $selectedDetail;
         }
     }
-    if (!function_exists('categories')) {
-        function categories()
+    if (!function_exists('menu_data')) {
+        function menu_data()
         {
-            return Category::with('topics:id,category_id,name,display_order','topics.courses:id,topic_id,name,reference,display_order')
-            ->select('id', 'name', 'display_order')
-            ->get();
+            $data['categories']     =   Category::select('id', 'name', 'display_order')
+                                                    ->get();
+            $data['topics']         =   Topic::select('id', 'name','category_id', 'display_order')
+                                                    ->orderBy('display_order')
+                                                    ->groupBy('category_id')
+                                                    ->get();
+            $data['courses']        =   Course::select('id', 'name', 'topic_id','display_order', 'reference')
+                                                    ->orderBy('display_order')
+                                                    ->groupBy('category_id')
+                                                    ->get();
+            return $data;
+            
         }
     }
     if (!function_exists('capitalizeName')) {

@@ -145,8 +145,7 @@
                     <a data-target="d3"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
                     <a data-target="d4"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
                     <a data-target="d5"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
-                </div>
-           
+                </div>           
             </div>
         </div>
         <div class="menu-list">
