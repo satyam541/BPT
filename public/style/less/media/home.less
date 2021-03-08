@@ -20,6 +20,10 @@
         justify-content: space-between;
         z-index: 1;
         box-shadow: none;
+        .topic-list{
+          width: 46%;
+          margin-top: 0;
+        }
         }
     }
     // End banner section //
@@ -81,6 +85,10 @@
             width: 30%;
             justify-content: flex-end;
             margin-top: 0;
+
+            .btn-blue{
+                margin-left: 0.5rem;
+            }
         }
     
     }
@@ -274,22 +282,20 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        .locations-container{
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
         .content{
             width: 100%;
         }
+        .locations-container{
+            justify-content: flex-start;
+        }
         .location-name{
-        flex-wrap: wrap;
             width: 21%;
             height: 150px;
             justify-content: space-between;
             margin-right: 2rem;
             span{
                 font-size: 48px;    
-                width: 54%;
+                width: 50%;
             }
             img{
                 width: 40px;
@@ -366,6 +372,23 @@
 }
 
 @media @size-lg{
+    
+    // Start banner section //
+    .banner{
+        .banner-container{
+            .topic-list{
+              width: 40%;
+              a{
+                p{
+                  width: 70%;
+                }
+              }
+            }
+        }
+    }
+    
+    // End banner section //
+
     // Start courses section //
     .courses{
         .course-name{
@@ -379,12 +402,18 @@
         .effective-container{
             width: 90%;
             margin: auto;
-            padding: 0 4rem;
+            padding: 0 2rem;
         }
         .content{
             img{
                 width: 100px;
                 height: 100px;
+            }
+        }
+        .buttons{
+         width: 25%;
+            .btn-blue{
+                margin-left: 0;
             }
         }
     }
@@ -609,8 +638,12 @@
     // Start effects section//
     .effective{
         padding: @sectionPadding-xl;
+       
         .content{
-                width: 57%;
+                width: 75%;
+        }
+        .buttons{
+            width: 21%;
         }
     }
     // End effects section //

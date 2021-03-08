@@ -2,6 +2,107 @@
 .home-banner{
     .banner-container{
         box-shadow: @shadowLight;
+        
+    
+    .topic-list{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        ul{
+            display: flex;
+            flex-direction: column;
+            width: 96%;
+            margin: auto;
+        }
+        li{
+            box-shadow: @shadowLight;
+            &:nth-child(1){
+                a{
+                    background-color: rgba(28,40,72,0.80); 
+                    border-top-left-radius: 5px; 
+                    border-top-right-radius: 5px; 
+                }                   
+            }
+            &:nth-child(2){
+                a{
+                    background-color: rgba(28,40,72,.83);   
+                }
+               
+            }
+            &:nth-child(3){
+                a{
+                    background-color: rgba(28,40,72,.89);
+                }
+                   
+            }
+            &:nth-child(4){
+                a{
+                    background-color: rgba(28,40,72,.92);
+                    border-bottom-left-radius: 5px; 
+                    border-bottom-right-radius: 5px;   
+                }
+               
+            }
+        }
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;       
+            
+            img{
+                &:first-child{
+                    width: 35px;
+                    height: 30px;
+                }
+                &:last-child{
+                        width: 20px;
+                        height: 20px;
+                }
+            }
+            p{
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+                padding-right: 1rem;
+                border-right: 2px solid @whiteColor;
+                color: @whiteColor;
+                font-weight: 600;
+                width: 65%;
+            }
+            span{
+                font-size: 14px;
+                line-height: normal;
+                font-weight: normal;
+            }
+         
+        }
+        
+        .owl-dots{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        
+            .owl-dot{
+                display: flex;
+                width: 15px;
+                height: 15px;
+                background-color: #C7C7C7;
+                margin-right: 7px;
+                outline: none;
+                border-radius: 18px;
+            }
+            
+            .owl-dot.active{
+                background-color: @whiteColor;
+                box-shadow: 0 0 10px #b4b4b4;
+                width: 20px;
+                height: 20px;
+            }
+        
+            }
+    }
     }
 }
 // End banner section //
@@ -362,7 +463,8 @@
     background-color: @bgColor;
     .locations-container{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .content{
         display: flex;
@@ -376,8 +478,10 @@
         align-items: center;
         background-image: linear-gradient(143deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 77%, #d6d6d6 77%);
         border-radius: 10px;
+         width: 48%;
+        flex-wrap: wrap;
         span{
-            width: 10%;
+            width: 20%;
             font-weight: 700;
             color: @greyColor;
         }
