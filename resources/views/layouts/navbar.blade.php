@@ -12,7 +12,7 @@
             </a>
             <ul>
                 <li class="links-li">
-                    <a data-href="#courses" class="link" id="menucourses">Courses</a>
+                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -130,7 +130,7 @@
                 <div class="course-list">
                     <div class="course-content">
                         <h3>Topic</h3>
-                        @foreach ($topicData as $category_id=>$topics) 
+                        @foreach ($topicData->take(8) as $category_id=>$topics) 
                         <div class="course" id="category_{{$category_id}}">
                             @foreach ($topics as $topic)
                             <a data-target="topic_{{$topic->id}}">
@@ -141,13 +141,12 @@
                             @endforeach
                         </div>
                         @endforeach
-
                     </div>
                 </div>
                 <div class="menu-list">
                     <div class="menu-content">
                         <h3>Courses</h3>
-                        @foreach ($courseData as $topic_id=>$courses) 
+                        @foreach ($courseData->take(8) as $topic_id=>$courses) 
                         <div class="menu-info" id="topic_{{$topic_id}}">
                             @foreach ($courses as $course)
                             <a href="{{$course->url}}">{{$course->name}}</a>

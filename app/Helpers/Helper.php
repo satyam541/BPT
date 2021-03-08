@@ -82,15 +82,15 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('menu_data')) {
         function menu_data()
         {
-            $data['categories']     =   Category::has('popular')->has('topics.courses')->select('id', 'name', 'display_order')
+            $data['categories']     =   Category::has('topics.courses')->select('id', 'name', 'display_order')
                                                     ->orderBy('display_order')
                                                     ->get();
-            $data['topics']         =   Topic::has('popular')->select('id', 'name','category_id', 'display_order')
+            $data['topics']         =   Topic::select('id', 'name','category_id', 'display_order')
                                                     ->orderBy('display_order')
                                                     ->orderBy('category_id')
                                                     ->get()
                                                     ->groupBy('category_id');
-            $data['courses']        =   Course::has('popular')->select('id', 'name', 'topic_id','display_order', 'reference')
+            $data['courses']        =   Course::select('id', 'name', 'topic_id','display_order', 'reference')
                                                     ->orderBy('display_order')
                                                     ->orderBy('topic_id')
                                                     ->get()
