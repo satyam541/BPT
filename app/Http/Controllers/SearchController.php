@@ -22,7 +22,60 @@ class SearchController extends Controller
         $data['popularCourses']    = Course::has('popular')->get();
         $data['popularLocations']  = Location::has('popular')->get();
 
+
+        if(!empty($query)){
+          
+            $terms      = explode(" ", $query);
+            $courses    = Course::with('content')
+                ->orderBy('topic_id')->orderBy('name')
+                ->where('topic_id',"!=",0)
+                ->where(function ($query) use ($terms) {
+                    foreach ($terms as $word) {
+                        $query->where('name', 'like', '%' . $word . '%');
+                    }
+                    return $query;
+                })
+                ->distinct()->get();
+          $topics    = Topic::with('content')->orderBy('name')
+                ->where(function ($query) use ($terms) {
+                    foreach ($terms as $word) {
+                        $query->where('name', 'like', '%' . $word . '%');
+                    }
+                    return $query;
+                })
+                ->distinct()->get();
+        //  $blogs    = Article::orderBy('title')
+        //         ->where(function ($query) use ($terms) {
+        //             foreach ($terms as $word) {
+        //                 $query->where('title', 'like', '%' . $word . '%');
+        //             }
+        //             return $query;
+        //         })
+        //         ->distinct()->get();
+                // $data['results']= $blogs->merge($topics)->merge($courses);
+                                $data['result'] =$topics->merge('courses');
+                            //    dd($data);
+               
+                
+                
+        }
+
+        else
+        {
+            $data['result'] = Popular::courses()->take(5);
+            // $blogs=Article::where('type','blog')->get()->take(5);
+            // $data['results']=$courses->merge($blogs);
+           
+
+           
+
+        }
+
         return view('search',$data);
+    }
+    public function index()
+    {
+
     }
     public function loadCourses(Request $request)
     {

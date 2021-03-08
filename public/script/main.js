@@ -450,20 +450,21 @@ function stepFour() {
         $(".topic-info a").click(function() {
             var target = $(this).data('target');
             $(".course").hide();
-            $("#" + target).css("display", "flex");
+            $("#"+target).css("display", "flex");
             $(".topic-info a").removeClass('topic-active');
             $(this).addClass("topic-active");
+            $("#"+target).find('a').first().trigger('click');
         });
-        $(".topic-info a").first().trigger('click');
+        
 
         $(".course a").click(function() {
             var target = $(this).data('target');
             $(".menu-info").hide();
-            $("#" + target).css("display", "flex");
+            $("#"+target).css("display", "flex");
             $(".course a").removeClass('course-active');
             $(this).addClass("course-active");
         });
-        $(".course a").first().trigger('click');
+        $(".topic-info a").first().trigger('click');
     });
 
     $('#flag').click(function() {
