@@ -2347,6 +2347,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 68%;
     background-position: bottom;
+    padding-top: 0!important;
   }
   .effective .effective-container {
     flex-direction: row;
@@ -2378,6 +2379,7 @@ select::-ms-expand {
   .whychoose {
     padding: 3rem 2rem;
     background-color: #fbfbfb;
+    padding-top: 0.5rem !important;
   }
   .whychoose .choose-list {
     flex-direction: row;
@@ -2386,7 +2388,7 @@ select::-ms-expand {
   .whychoose .item {
     width: 35%;
     padding: 2rem;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .whychoose h3 {
     min-height: 50px;
