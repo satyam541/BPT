@@ -1942,7 +1942,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 10px;
   align-items: center;
   margin-top: 1rem;
 }
@@ -1952,6 +1951,7 @@ select::-ms-expand {
 }
 .whychoose .item:hover {
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
@@ -2113,7 +2113,7 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  width: 48%;
+  width: 50%;
 }
 .facts .item img {
   width: 38px;
@@ -2146,7 +2146,6 @@ select::-ms-expand {
 }
 .locations .location-name {
   display: flex;
-  flex-wrap: wrap;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1rem;
@@ -2545,6 +2544,7 @@ select::-ms-expand {
     width: 100%;
   }
   .locations .location-name {
+    flex-wrap: wrap;
     width: 21%;
     height: 150px;
     justify-content: space-between;
