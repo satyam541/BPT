@@ -77,10 +77,7 @@ class SearchController extends Controller
         // $data['categories']=Category::has('article')->get();
         return view('search', $data);
     }
-    public function index()
-    {
-
-    }
+    
     public function loadCourses(Request $request)
     {
         $term = $request->input('term');

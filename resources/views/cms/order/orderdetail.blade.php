@@ -1,4 +1,4 @@
-@extends('cms.layouts.master')
+ @extends('cms.layouts.master')
 @section('content')
 
 
@@ -116,44 +116,44 @@
                     <table class="table table">
                         <tr>
                             <th> First Name</th>
-                            <td>{{$order->customer->firstname}}</td>
+                            <td>{{optional($order->customer)->firstname}}</td>
                         </tr>
                         <tr>
                             <th>Last Name</th>
-                            <td>{{$order->customer->lastname}}</td>
+                            <td>{{optional($order->customer)->lastname}}</td>
                         </tr>
                         <tr>
                             <th>Telephone</th>
-                            <td>{{$order->customer->telephone}}</td>
+                            <td>{{optional($order->customer)->telephone}}</td>
                         </tr>
                         <tr>
                             <th>Mobile</th>
-                            <td>{{$order->customer->mobile}}</td>
+                            <td>{{optional($order->customer)->mobile}}</td>
                         </tr>
                         <tr>
                             <th>Email</th>
-                            <td>{{$order->customer->email}}</td>
+                            <td>{{optional($order->customer)->email}}</td>
                         </tr>
                         <tr>
                             <th>Company</th>
-                            <td>{{$order->customer->company}}</td>
+                            <td>{{optional($order->customer)->company}}</td>
                         </tr>
                         <tr>
                             <th>Contact Consent</th>
-                            <td>{{$order->customer->contact_consent}}</td>
+                            <td>{{optional($order->customer)->contact_consent}}</td>
                         </tr>
                         <tr>
                             <th>Others Consent</th>
-                            <td>{{$order->customer->others_consent}}</td>
+                            <td>{{optional($order->customer)->others_consent}}</td>
                         </tr>
 
                         <tr>
                             <th>Preffered Contact Method</th>
-                            <td>{{$order->customer->preffered_contact_method}}</td>
+                            <td>{{optional($order->customer)->preffered_contact_method}}</td>
                         </tr>
                         <tr>
                             <th>Marketing Consent</th>
-                            <td>{{$order->customer->marketing_consent}}</td>
+                            <td>{{optional($order->customer)->marketing_consent}}</td>
                         </tr>
                     </table>
             </div>
