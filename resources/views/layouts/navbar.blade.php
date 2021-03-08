@@ -135,7 +135,9 @@
                             @foreach ($topics->take(8) as $topic)
                             <a data-target="topic_{{$topic->id}}">
                                 <span>
-                                    <img src="{{url('img/master/test.svg')}}" alt="test"></span>
+                                    <img src="{{url('img/master/test.svg')}}" alt="test" class="blue">
+                                    <img src="{{url('img/master/test-white.svg')}}" alt="test-white" class="white">
+                                </span>
                                     <p>{{$topic->name}}</p>
                             </a>
                             @endforeach
@@ -155,6 +157,9 @@
                             @endforeach
                         </div>
                         @endforeach
+                    </div>
+                    <div class="buttons">
+                        <a class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
                     </div>
                 </div>
             </div>

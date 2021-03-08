@@ -387,11 +387,12 @@
         left: 0;
         top: 140px;
         background-color: @whiteColor;
-        box-shadow: @shadowLight;
         z-index: 5;
         .dropdown-list{
             display: flex;
             justify-content: space-between;
+            box-shadow: @shadowLight;   
+             border-bottom-right-radius: 100px;
         }
         h3{
           color: @blackColor;
@@ -407,8 +408,9 @@
             background-color: @darkblueColor;
             width: 32%;
             z-index: 1;
-            padding: 1rem;
+            padding: 1.5rem;
             padding-right: 0;
+            border-bottom-left-radius: 22px;
             h3{
               color: @whiteColor;
             }
@@ -474,14 +476,12 @@
         .course-list {
           display: flex;
           flex-direction: column;
-          width: 32%;
+          width: 34%;
+          background-color: @bgColor;
           .course-content {
               display: flex;
               flex-direction: column;
-              justify-content: space-between;
-              box-shadow: @shadowLight;
-              background-color: @bgColor;
-              padding: 1rem;
+              padding: 1.5rem;
               padding-left: 2rem;
               padding-right: 0;
              .course {
@@ -504,6 +504,9 @@
                    height: 60px;
                    width: 60px;
                    margin-right: 1rem;
+                   .white{
+                     display: none;
+                   }
                    img{
                     height: 30px;
                     width: 30px;
@@ -519,6 +522,12 @@
                 position: relative;
                 span{
                   background-color: #2674CF;
+                  .white{
+                    display: flex;
+                  }
+                  .blue{
+                    display: none;
+                  }
                 }
                 p{
                   color: @whiteColor;
@@ -526,13 +535,12 @@
                 &::before {
                   content: '';
                   position: absolute;
-                  width: 62px;
+                  width: 45px;
                   height: 60px;
-                  right: -27px;
-                  background-image: url('../img/master/dropdown-blue.png');
+                  right: -25px;
+                  background-image: url(../img/master/dropdown-blue.png);
                   background-repeat: no-repeat;
                   background-size: 100% 100%;
-                  
                   z-index: 0;
                 }
               }
@@ -544,10 +552,12 @@
         .menu-list {
             display: flex;
             flex-direction: column;
-            width: 34%;
             justify-content: space-between;
-            background-color: @whiteColor;
-            padding: 1rem;
+            width: 34%;
+            padding: 1.5rem;
+            padding-right: 0;
+            border-bottom-right-radius: 100px;
+            background-color: transparent;
                .menu-info {
                 display: flex;
                 flex-direction: row;
@@ -573,6 +583,19 @@
                       height: 22px;
                     }
                 }
+               }
+               .menu-content{
+                 display: flex;
+                 flex-direction: column;
+               }
+               .buttons{
+                 justify-content: flex-start;
+                 .btn-blue{
+                   img{
+                     margin-right: 0;
+                     margin-left: 5px;
+                   }
+                 }
                }
         }
     }
