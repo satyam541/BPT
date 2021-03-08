@@ -10,9 +10,9 @@
             <a href="javascript:void(0)" class="menu-toggle" onclick="toggleMenu()">
                 <img src="{{url('img/master/back.svg')}}" alt="back"> Back
             </a>
-            <ul>
+            <ul class="menu-list">
                 <li class="links-li">
-                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses</a>
+                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -24,17 +24,23 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('blog')}}" data-href="#blog" class="link">Blogs</a>
-                    <span></span>
-                </li>
-                <li class="links-li">
-                    <a href="{{route('aboutUs')}}" data-href="#faq" class="link">About</a>
-                    <span></span>
-                </li>
-                <li class="links-li">
                     <a href="{{route('locations')}}" data-href="#azure-other" class="link">Locations</a>
                     <span></span>
                 </li>
+                <li class="links-li" id="aboutdropdown" >
+                    <a href="javascript:void(0);" data-href="#faq" class="link">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
+                    <span></span>
+                    <ul>
+                        <li><a>About Us</a></li>
+                        <li><a>blogs</a></li>
+                        <li><a>Testimonials</a></li>
+                    </ul>
+                </li>
+                <li class="links-li">
+                    <a href="{{route('blog')}}" data-href="#blog" class="link">Blogs</a>
+                    <span></span> 
+                </li>
+                
                 <li class="links-li">
                     <a class="search" id="search">
                         <img src="{{url('img/master/search.svg')}}" alt="search">

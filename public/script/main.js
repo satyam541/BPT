@@ -483,4 +483,17 @@ function stepFour() {
     });
     //End open search
 
+    //Tabs count 
+    $.each($("li.tab-click"), function(index, elm){
+        var headingText =  "0" + (index+1);
+        $(elm).find('.number').text(headingText);
+    });
+    // End count
+
+    //Start about dropdown
+    $('#aboutdropdown').click(function() {
+        $(this).children('ul').toggleClass('active');
+    });
+    //End about dropdown
+
 
