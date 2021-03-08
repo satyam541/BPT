@@ -79,10 +79,33 @@ if (!function_exists('encodeUrlSlug')) {
             return $selectedDetail;
         }
     }
-    if (!function_exists('topics')) {
-        function topics()
+    if (!function_exists('menu_data')) {
+        function menu_data()
         {
-            return Topic::with('courses')->where('priority', 1)->get()->take(4);
+            $data['categories']     =   Category::has('topics.courses')->select('id', 'name', 'display_order')
+                                                    ->orderBy('display_order')
+                                                    ->limit(8)
+                                                    ->get();
+            $category_ids           =   $data['categories']->pluck('id')->toArray();
+            $data['topics']         =   Topic::has('courses')
+                                                    ->select('id', 'name','category_id', 'display_order')
+                                                    ->whereIn('category_id', $category_ids)
+                                                    ->orderBy('display_order')
+                                                    ->orderBy('category_id')
+                                                    ->get()
+                                                    ->groupBy('category_id');
+                                                    
+            $data['courses']        =   Course::has('topic.category')->select('id', 'name', 'topic_id','display_order', 'reference')
+                                                    ->whereHas('topic.category', function($query) use($category_ids)
+                                                    {
+                                                        $query->whereIn('category_id', $category_ids);
+                                                    })
+                                                    ->orderBy('display_order')
+                                                    ->orderBy('topic_id')
+                                                    ->get()
+                                                    ->groupBy('topic_id');
+            return $data;
+            
         }
     }
     if (!function_exists('capitalizeName')) {

@@ -91,7 +91,7 @@ $('#chooseMode').on("click", function(){
         loop: true,
         responsiveClass: true,
         dots: true,
-        nav: true,
+        nav: false,
         autoplay: true,
         navText: ["", ""],
         items: 1,
@@ -355,7 +355,7 @@ $(".cross").on("click", function(){
     $(".enquiry-popup").css("display","none");
 });
 $('body').on('click',function(e){
-    var element = event.target;
+    var element = e.target;
     if($(element).closest(".popup,.open-popup").length > 0)
     {
         return true;
@@ -450,20 +450,23 @@ function stepFour() {
         $(".topic-info a").click(function() {
             var target = $(this).data('target');
             $(".course").hide();
-            $("#" + target).css("display", "flex");
+            $(".menu-info").hide();
+            $("#"+target).css("display", "flex");
             $(".topic-info a").removeClass('topic-active');
             $(this).addClass("topic-active");
+            console.log(target);
+            $("#"+target).find('a').first().trigger('click');
         });
-        $(".topic-info a").first().trigger('click');
+        
 
         $(".course a").click(function() {
             var target = $(this).data('target');
             $(".menu-info").hide();
-            $("#" + target).css("display", "flex");
+            $("#"+target).css("display", "flex");
             $(".course a").removeClass('course-active');
             $(this).addClass("course-active");
         });
-        $(".course a").first().trigger('click');
+        $(".topic-info a").first().trigger('click');
     });
 
     $('#flag').click(function() {

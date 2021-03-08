@@ -208,6 +208,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{url('script/main.js')}}"></script>
 <script src="{{url('script/count.js')}}"></script>
+<script src="{{url('script/search.js')}}"></script>
 <script>
     
     var formValidationUrl = '{{ route("validateEnquiry") }}';
@@ -360,14 +361,14 @@
    $(this).removeClass("error");
    $(this).attr("placeholder","");
  });
- function getquery(elm)
-{
-   var query = $(elm).prev().val();
-   if(query.length >= 1)
-      {window.location.href = window.origin+"/search?q="+query;}
-   $(elm).prev().attr("placeholder","Add Course to Search");
-   $(elm).prev().addClass("error");
-}
+//  function getquery(elm)
+// {
+//    var query = $(elm).prev().val();
+//    if(query.length >= 1)
+//       {window.location.href = window.origin+"/search?q="+query;}
+//    $(elm).prev().attr("placeholder","Add Course to Search");
+//    $(elm).prev().addClass("error");
+// }
 
 
 var autoCompleteCourseUrl = "{{route('courseAutoComplete')}}";

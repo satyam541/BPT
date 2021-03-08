@@ -118,6 +118,10 @@ select::-ms-expand {
 .sticky .bpt-logo img {
   width: 196px!important;
 }
+.sticky .dropdown-menu {
+  display: none;
+  visibility: hidden;
+}
 .sticky-up {
   top: -100px;
 }
@@ -296,6 +300,40 @@ select::-ms-expand {
 }
 .pointer {
   cursor: pointer;
+}
+.ui-autocomplete .ui-autocomplete-category {
+  color: #007D3D;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+.ui-autocomplete .ui-menu-item {
+  padding: 3px;
+}
+#ui-id-1 {
+  max-height: 50vh;
+  overflow: scroll;
+  width: 85%;
+}
+#ui-id-2 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
+}
+#ui-id-3 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
+}
+#ui-id-4 {
+  max-height: 50vh;
+  overflow: scroll;
+  z-index: 130;
+  width: 230px;
 }
 .form {
   display: flex;
@@ -485,6 +523,7 @@ select::-ms-expand {
 }
 .navbar {
   display: flex;
+  z-index: 2;
 }
 .navbar ul {
   list-style-type: none;
@@ -586,6 +625,9 @@ select::-ms-expand {
   height: 15px;
   margin-right: 5px;
 }
+.navbar .country-list {
+  display: none;
+}
 .dropdown-menu {
   display: none;
 }
@@ -630,13 +672,13 @@ select::-ms-expand {
   height: 100%;
 }
 .pop-search .search-form .search {
-  width: 80%;
+  width: 600px;
   margin: auto;
   background-color: white;
   border-radius: 50px;
 }
 .pop-search .search-form input {
-  box-shadow: none;
+  box-shadow: none !important;
   background: transparent;
 }
 .pop-search .search-form button {
@@ -1307,7 +1349,9 @@ select::-ms-expand {
   .navbar .country-list li {
     width: 100%;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #F2F2F2;
   }
   .navbar .country-list li:last-child {
     margin-bottom: 0;
@@ -1407,6 +1451,9 @@ select::-ms-expand {
     margin: auto;
     margin-top: 2rem;
   }
+  .sticky .country-list {
+    top: 60px;
+  }
 }
 @media (min-width : 1024px) {
   .black-breadcrums li {
@@ -1452,11 +1499,9 @@ select::-ms-expand {
   }
   .dropdown-menu {
     width: 100%;
-    padding: 1rem 2rem;
     position: absolute;
     left: 0;
-    top: 155px;
-    padding-top: 1rem;
+    top: 140px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     z-index: 5;
@@ -1488,7 +1533,6 @@ select::-ms-expand {
   .dropdown-menu .topic-info a {
     display: flex;
     align-items: center;
-    text-align: center;
     color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
@@ -1511,8 +1555,12 @@ select::-ms-expand {
     height: 30px;
     width: 30px;
   }
+  .dropdown-menu .topic-info a p {
+    color: #FFFFFF;
+    width: 72%;
+  }
   .dropdown-menu .topic-info .topic-active {
-    background: linear-gradient(#F5F5F5, #C8C8C8);
+    background: linear-gradient(#cccccc, #cfcfcf);
     color: #000000;
     position: relative;
   }
@@ -1525,16 +1573,19 @@ select::-ms-expand {
   .dropdown-menu .topic-info .topic-active span .blue {
     display: flex;
   }
+  .dropdown-menu .topic-info .topic-active p {
+    color: #000000;
+  }
   .dropdown-menu .topic-info .topic-active::before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 62px;
+    height: 60px;
     right: -27px;
-    border-top: 30px solid transparent;
-    border-left: 27px solid #c8c8c896;
-    border-bottom: 33px solid transparent;
-    z-index: 0;
+    background-image: url('../img/master/arrow-grey.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
   }
   .dropdown-menu .course-list {
     display: flex;
@@ -1548,6 +1599,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     background-color: #F6F6F6;
     padding: 1rem;
+    padding-left: 2rem;
     padding-right: 0;
   }
   .dropdown-menu .course-list .course-content .course {
@@ -1571,11 +1623,14 @@ select::-ms-expand {
     justify-content: center;
     height: 60px;
     width: 60px;
+    margin-right: 1rem;
   }
   .dropdown-menu .course-list .course-content .course a span img {
     height: 30px;
     width: 30px;
-    margin-right: 0.5rem;
+  }
+  .dropdown-menu .course-list .course-content .course a p {
+    width: 72%;
   }
   .dropdown-menu .course-list .course-content .course .course-active {
     background: linear-gradient(#0064D8, #00326C);
@@ -1585,15 +1640,18 @@ select::-ms-expand {
   .dropdown-menu .course-list .course-content .course .course-active span {
     background-color: #2674CF;
   }
+  .dropdown-menu .course-list .course-content .course .course-active p {
+    color: #FFFFFF;
+  }
   .dropdown-menu .course-list .course-content .course .course-active::before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 62px;
+    height: 60px;
     right: -27px;
-    border-top: 30px solid transparent;
-    border-left: 27px solid #00326C;
-    border-bottom: 33px solid transparent;
+    background-image: url('../img/master/dropdown-blue.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     z-index: 0;
   }
   .dropdown-menu .menu-list {
@@ -1613,13 +1671,22 @@ select::-ms-expand {
   .dropdown-menu .menu-list .menu-info a {
     width: 50%;
     padding: 7px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-  }
-  .dropdown-menu .menu-list .menu-info a:hover {
-    background-color: #1F5E88;
-    color: #FFFFFF;
+    position: relative;
+    padding-left: 30px;
     cursor: pointer;
+  }
+  .dropdown-menu .menu-list .menu-info a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-image: url('../img/master/blue-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    width: 22px;
+    height: 22px;
   }
   .banner::before {
     height: 56%;
@@ -1649,7 +1716,7 @@ select::-ms-expand {
     padding-right: 0;
   }
   .footer .footer-content {
-    background-image: url('../../../img/master/footer-bg.png');
+    background-image: url('../img/master/footer-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -1818,7 +1885,6 @@ select::-ms-expand {
 }
 .courses .course-name {
   display: flex;
-  flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   padding: 1rem;
@@ -1931,7 +1997,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 10px;
   align-items: center;
   margin-top: 1rem;
 }
@@ -1941,6 +2006,7 @@ select::-ms-expand {
 }
 .whychoose .item:hover {
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
@@ -2044,6 +2110,9 @@ select::-ms-expand {
   height: 48px;
   transition: 1s all;
 }
+.delivery .overlay {
+  display: none;
+}
 .delivery h3 {
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
@@ -2099,7 +2168,7 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  width: 48%;
+  width: 50%;
 }
 .facts .item img {
   width: 38px;
@@ -2132,7 +2201,6 @@ select::-ms-expand {
 }
 .locations .location-name {
   display: flex;
-  flex-wrap: wrap;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1rem;
@@ -2319,7 +2387,6 @@ select::-ms-expand {
   }
   .courses .course-name {
     width: 48%;
-    flex-direction: row;
   }
   .courses .course-name .icon {
     display: flex;
@@ -2335,6 +2402,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 68%;
     background-position: bottom;
+    padding-top: 0!important;
   }
   .effective .effective-container {
     flex-direction: row;
@@ -2366,6 +2434,7 @@ select::-ms-expand {
   .whychoose {
     padding: 3rem 2rem;
     background-color: #fbfbfb;
+    padding-top: 0.5rem !important;
   }
   .whychoose .choose-list {
     flex-direction: row;
@@ -2374,7 +2443,7 @@ select::-ms-expand {
   .whychoose .item {
     width: 35%;
     padding: 2rem;
-    margin-top: 1rem;
+    margin-top: 0;
   }
   .whychoose h3 {
     min-height: 50px;
@@ -2487,6 +2556,7 @@ select::-ms-expand {
     height: 96px;
   }
   .delivery .overlay {
+    display: flex;
     background: linear-gradient(#000000, #575757);
     opacity: 0.8;
     position: absolute;
@@ -2531,6 +2601,7 @@ select::-ms-expand {
     width: 100%;
   }
   .locations .location-name {
+    flex-wrap: wrap;
     width: 21%;
     height: 150px;
     justify-content: space-between;
@@ -7815,6 +7886,7 @@ select::-ms-expand {
     padding: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
+    position: relative;
   }
   .certification-course .course-content::after {
     content: '';
@@ -7833,11 +7905,11 @@ select::-ms-expand {
     left: 0;
     border-radius: 25px;
   }
-  .certification-course .course-content:hover h3,
+  .certification-course .course-content:hover a,
   .certification-course .course-content:hover .buttons {
     z-index: 1;
   }
-  .certification-course .course-content:hover h3 {
+  .certification-course .course-content:hover a {
     color: #FFFFFF;
     transition: 1s ease-in-out;
   }
@@ -10622,12 +10694,6 @@ select::-ms-expand {
   width: 100%;
 }
 @media (min-width : 768px) {
-  .error-banner {
-    padding-top: 1rem!important;
-  }
-  .error-banner .banner-container {
-    flex-direction: column;
-  }
   .error {
     padding: 3rem 2rem;
   }
