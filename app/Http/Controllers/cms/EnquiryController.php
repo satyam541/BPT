@@ -12,20 +12,23 @@ class EnquiryController extends Controller
     public function enquiryList(Request $request)
     {
         $this->authorize('view', new Enquiry());
-        $filter     = $request->all();
-        $query      = Enquiry::query();
-        $data['selectedCourse']     = empty($filter['course'])? NULL : $filter['course'];
-        $data['selectedType']       = empty($filter['type'])? NULL : $filter['type'];
-
-        $query  = empty($filter['course'])? $query : $query->where('course',$filter['course']);
-        $query  = empty($filter['type'])? $query : $query->where('type',$filter['type']);
+        $data['selectedCourse'] =   null;
+        $data['selectedType']   =   null;
+        $course                 =   $request->get('course');
+        $type                   =   $request->get('type');
+        $query                  =   Enquiry::query();
+        if(!empty($course)){
+            $data['selectedCourse']  =   $course;
+            $query->where('course',$course);
+        }
+        if(!empty($type)){
+            $data['selectedType']    =   $type;
+            $query->where('type',$type);
+        }
         $result = $query->orderByDesc('created_at')->paginate(10);
-
         $list['courses']    = Enquiry::all()->pluck('course','course')->unique()->filter()->toArray();
         $list['types']      = Enquiry::all()->pluck('type','type')->unique()->filter()->toArray();
-
         $request->flash();
-
         $data['list']       = $list;
         $data['enquiries']  = $result;
         return view('cms.enquiry.enquiry',$data);
