@@ -47,10 +47,13 @@ class SummaryController extends Controller
         $mailData['orderDetail']    =  $details['orderData'];
         if(config('app.env') != "local")
             Mail::to($details['customerData']->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));        
-        $view                    = \View::make('email.cartOrder',$mailData);
-        $mailData['emailsent']   =  $view->render();
-      //  MakeJWTEnquiry($mailData);
-        return view('cart/summary',$details);
+        // $view                    = \View::make('email.cartOrder',$mailData);
+        // $mailData['emailsent']   =  $view->render();
+
+    //    MakeJWTEnquiry($mailData);
+        $summaryView = \View::make('cart.summaryFragment', $details)->render();
+        
+        return $summaryView;
     }
 
 }

@@ -24,21 +24,28 @@ class DelegateRequest extends FormRequest
     public function rules()
     {
         return [
-            'CFirstName'             => 'required',
-            'CMobile'               => 'required||numeric',
-            'CEmail'                => 'required|email',
-           
+            'firstname'     => 'required',
+            'lastname'     => 'required',
+            'phone'     => 'required|numeric',
+            'telephone'     => 'sometimes|numeric',
+            'email'     => 'required|email',
+            'postcode'  => 'sometimes'
         ];
     }
 
     public function messages()
     {
-        return[
-            'CFirstName.required'   => 'Please fill first name in Delegate details.',
-            'CMobile.required'      => 'Please fill mobile in delegate details.',
-            'CEmail.required'       => 'Please fill email in delegate details.',
-            'CMobile.required'      => 'Mobile number must be in number',
-           
+        return [];
+    }
+
+    public function attributes()
+    {
+        return [
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
+            'phone' => 'Phone Number',
+            'email' => 'email address',
+            'postcode' => 'Postal Code'
         ];
     }
 }

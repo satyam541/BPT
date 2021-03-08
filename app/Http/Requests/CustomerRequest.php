@@ -24,26 +24,30 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'CFirstName'           => 'required',
-            'CMobile'              => 'required',
-        //  'CTelephone'           => 'numeric|digits_between:11,12',
-            'CEmail'               => 'required|email|confirmed',
-            'CEmail_confirmation'  => 'required|email'
+            'firstname'     => 'required',
+            'phone'         => 'required|numeric',
+            // 'CTelephone'    => 'numeric|digits_between:11,12',
+            'email'         => 'required|email|confirmed'
             
         ];
     }
 
     public function messages()
     {
-        return[
-            'CFirstName.required'           => 'Please fill your first name.',
-            'CMobile.required'              => 'Please fill your mobile.',
-            'CEmail.required'               => 'Please fill your email address.',
-            'CEmail.email'                  => 'Please fill a valid email address.',
-            'CEmail_confirmation.required'  => 'Please confirm your email address.',
-            'CEmail_confirmation.email'     => 'Please fill a valid confirmation email address.',
-            'CEmail.confirmed'              => 'Confirmation email does not match the email address.'
-    
+        return [
+            'email.required' => ':attribute is required',
         ];
     }
+    
+    public function attributes()
+    {
+        return [
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
+            'phone' => 'Phone Number',
+            'company' => 'Company name',
+            'email' => 'email address',
+        ];
+    }
+    
 }

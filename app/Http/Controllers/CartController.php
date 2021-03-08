@@ -195,11 +195,12 @@ class CartController extends Controller
         if(empty(Cart::content())){
             return redirect()->route('404');
         }
+        $data['cartItems']    = Cart::content();
+        $data['countries']    = Country::pluck( 'name','country_code');
+        $data['paymentCards'] = OrderCardType::all();
 
-        $cartItems = Cart::content();
 
-
-        return view('cart.cartDetail');
+        return view('cart.cartDetail', $data);
     }
 
     public function submitCustomerDetail(CustomerRequest $request)
@@ -209,6 +210,7 @@ class CartController extends Controller
             return json_encode(['error'=>'empty']);
         }
         $input = $request->all();
+        // dd($input);
         $customer = Customer::firstOrNew(['email'=>$input['email']]);
 
         $customer->firstname                    = $input['firstname'];
@@ -235,7 +237,7 @@ class CartController extends Controller
         session(['orderData' => $order]);
 
        
-//saving line items
+        //saving line items
         foreach ($cartItems as $rowId => $cartItem) {
             // $line_id = $cartItem->options['line_id']?? null;
             // $orderLineItem = OrderLineItem::firstOrNew(['id'=>$line_id]);
@@ -381,8 +383,9 @@ class CartController extends Controller
     }
     
     public function submitDelegateDetail(DelegateRequest $request)
-    {
+    {   
         $input = $request->all();
+        // dd($input);
         $cartItems = Cart::content();
         $cartItem = $cartItems->where('rowId',$input['rowId'])->first();
         if(empty($cartItem))
@@ -428,6 +431,7 @@ class CartController extends Controller
 
     private function nextCartItem($rowId,$delegate)
     {
+        // dd($delegate);
         $cartItem = Cart::get($rowId);
         $cartItems = Cart::content();
         $quantity = $cartItem->qty;
@@ -493,6 +497,7 @@ class CartController extends Controller
         // return array
         return array('rowId'=>$rowId,'delegate'=>$delegate,'content'=>$content);
     }
+
 
     
     public function gatewayResponse(Request $request)
