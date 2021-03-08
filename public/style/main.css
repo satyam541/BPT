@@ -1847,6 +1847,7 @@ select::-ms-expand {
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 .home-banner .banner-container .topic-list .owl-dots .owl-dot {
   display: flex;
@@ -4789,12 +4790,9 @@ select::-ms-expand {
 .onsite-banner .banner-container p {
   color: #FFFFFF;
 }
-.onsite-banner .banner-container p {
-  margin-top: 0.5rem;
-}
 .onsite-training {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .onsite-training .training-container {
   display: flex;
@@ -4830,7 +4828,7 @@ select::-ms-expand {
 }
 .doorstep {
   padding: 3rem 1.5rem;
-  padding-bottom: 1rem!important;
+  padding-bottom: 0rem!important;
 }
 .doorstep .doorstep-container {
   display: flex;
@@ -4965,7 +4963,7 @@ select::-ms-expand {
   position: absolute;
   left: 0;
   bottom: 0;
-  background: linear-gradient(#0064d8, #00326c);
+  background: linear-gradient(#0064D8, #00326c);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -4977,10 +4975,12 @@ select::-ms-expand {
   z-index: 1;
 }
 .choose .choose-item p {
+  display: flex;
+  align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
   padding-left: 2.5rem;
-  background-color: white;
+  background-color: #FFFFFF;
   border-top-left-radius: 35px;
   border-bottom-right-radius: 35px;
   font-weight: bold;
@@ -5028,10 +5028,6 @@ select::-ms-expand {
   text-align: center;
 }
 @media (min-width : 768px) {
-  .onsite-banner {
-    padding: 3rem 2rem;
-    padding-top: 1rem;
-  }
   .onsite-training {
     padding: 3rem 2rem;
   }
@@ -5064,11 +5060,11 @@ select::-ms-expand {
   }
   .choose .choose-list {
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
   .choose .choose-item {
     width: 48%;
+    padding-right: 1.5rem;
   }
   .solution {
     padding: 3rem 2rem;
@@ -5145,11 +5141,11 @@ select::-ms-expand {
     width: 100%;
     margin-top: 2.5rem;
   }
-  .choose .choose-list {
-    justify-content: space-around;
-  }
   .choose .choose-item {
     width: 33%;
+  }
+  .choose .choose-item p {
+    min-height: 76px;
   }
   .solution .solution-list {
     background-size: 70% 35%;
@@ -5172,7 +5168,6 @@ select::-ms-expand {
   .doorstep {
     padding: 4rem 0rem;
     padding-top: 6rem;
-    padding-bottom: 0!important;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
@@ -5208,7 +5203,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .choose .choose-item {
-    width: 23%;
+    width: 25%;
   }
   .solution {
     padding: 4rem 0rem;

@@ -1,10 +1,4 @@
 @media @size-md{
-    // Start Banner section //
-    .onsite-banner {
-        padding: @sectionPadding-md;
-        padding-top: 1rem;
-    }
-    // End Banner section //
 
     // Start training section
     .onsite-training{
@@ -46,11 +40,11 @@
         padding: @sectionPadding-md;
         .choose-list{
             flex-direction: row;
-            justify-content: space-between;
             flex-wrap: wrap;
         }
         .choose-item{
             width: 48%;
+            padding-right: 1.5rem;
         }
     }
     // End choose section
@@ -152,11 +146,11 @@
 
     // Start choose section
     .choose {
-        .choose-list{
-            justify-content: space-around;
-        }
         .choose-item{
             width: 33%;
+            p {
+                min-height: 76px;
+            }
         }
     }
     // End choose section
@@ -197,7 +191,6 @@
     .doorstep{
         padding: @sectionPadding-xl;
         padding-top: 6rem;
-        padding-bottom: 0!important;
         background-image: url(../img/onsite/information-bg.png);
         background-size: auto;
         background-repeat: no-repeat;
@@ -235,7 +228,7 @@
             justify-content: space-between;
         }
         .choose-item{
-            width: 23%;
+            width: 25%;
         }
     }
     // End choose section

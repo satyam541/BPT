@@ -5,9 +5,6 @@
         h1,p {
             color: @whiteColor;
         }
-        p{
-            margin-top: .5rem;
-        }
     }
  
 }
@@ -16,7 +13,7 @@
 // Start training section
 .onsite-training{
     padding: @sectionPadding;
-    padding-bottom: 1rem!important;
+    padding-bottom: 0rem!important;
     .training-container{
         display: flex;
         flex-direction: column;
@@ -58,7 +55,7 @@
 // Start doorstep section
 .doorstep{
     padding: @sectionPadding;
-    padding-bottom: 1rem!important;
+    padding-bottom: 0rem!important;
     .doorstep-container{
         display: flex;
         flex-direction: column;
@@ -137,7 +134,7 @@
                     left: 0;
                     border-radius: 5px;
                     transform: rotate(45deg);
-                    background:linear-gradient(#0064D8,#267BDD);
+                    background:linear-gradient(@lightblueColor,#267BDD);
                     z-index: -1;
                 }
                 img{
@@ -186,7 +183,7 @@
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                background-color: #0064D8;
+                background-color: @lightblueColor;
                 height: 50%;
                 width: 100%;
                 border-bottom-left-radius: 100px;
@@ -197,7 +194,7 @@
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                background: linear-gradient(#0064d8,#00326c);
+                background: linear-gradient(@lightblueColor,#00326c);
                 height: 100%;
                 width: 100%;
                 border-radius: 50%;
@@ -210,10 +207,12 @@
             }
         }
         p{
+            display: flex;
+            align-items: center;
             box-shadow: @shadowLight;
             padding: 1rem;
             padding-left: 2.5rem;
-            background-color: white;
+            background-color: @whiteColor;
             border-top-left-radius: 35px;
             border-bottom-right-radius: 35px;
             font-weight: bold;
