@@ -7809,6 +7809,7 @@ select::-ms-expand {
     padding: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
+    position: relative;
   }
   .certification-course .course-content::after {
     content: '';
@@ -7827,11 +7828,11 @@ select::-ms-expand {
     left: 0;
     border-radius: 25px;
   }
-  .certification-course .course-content:hover h3,
+  .certification-course .course-content:hover a,
   .certification-course .course-content:hover .buttons {
     z-index: 1;
   }
-  .certification-course .course-content:hover h3 {
+  .certification-course .course-content:hover a {
     color: #FFFFFF;
     transition: 1s ease-in-out;
   }
