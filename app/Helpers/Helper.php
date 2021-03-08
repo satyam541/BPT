@@ -79,10 +79,12 @@ if (!function_exists('encodeUrlSlug')) {
             return $selectedDetail;
         }
     }
-    if (!function_exists('topics')) {
-        function topics()
+    if (!function_exists('categories')) {
+        function categories()
         {
-            return Topic::with('courses')->where('priority', 1)->get()->take(4);
+            return Category::with('topics:id,category_id,name,display_order','topics.courses:id,topic_id,name,reference,display_order')
+            ->select('id', 'name', 'display_order')
+            ->get();
         }
     }
     if (!function_exists('capitalizeName')) {

@@ -630,13 +630,13 @@ select::-ms-expand {
   height: 100%;
 }
 .pop-search .search-form .search {
-  width: 80%;
+  width: 600px;
   margin: auto;
   background-color: white;
   border-radius: 50px;
 }
 .pop-search .search-form input {
-  box-shadow: none;
+  box-shadow: none !important;
   background: transparent;
 }
 .pop-search .search-form button {
@@ -10604,12 +10604,6 @@ select::-ms-expand {
   width: 100%;
 }
 @media (min-width : 768px) {
-  .error-banner {
-    padding-top: 1rem!important;
-  }
-  .error-banner .banner-container {
-    flex-direction: column;
-  }
   .error {
     padding: 3rem 2rem;
   }

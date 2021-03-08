@@ -32,14 +32,14 @@
                     <div class="form-group row">
                         {{Form::label('inputCourse','Course',['class'=>'col-sm-2 control-label'])}}
                         <div class="col-sm-4">
-                            {{ Form::select('course',$list['courses'],$selectedCourse,['tabindex'=>'-1','id'=>'inputCourse','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                            {{ Form::select('course',$list['courses'],$selectedCourse,['tabindex'=>'-1','id'=>'inputCourse','class'=>'form-control select', 'placeholder'=>'ALL'])}}
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         {{Form::label('inputType','Type',['class'=>'col-sm-2 control-label'])}}
                             <div class="col-sm-4">
-                                {{ Form::select('type',$list['types'],$selectedType,['tabindex'=>'-1','id'=>'inputType','class'=>'form-control selectJS', 'placeholder'=>'ALL'])}}
+                                {{ Form::select('type',$list['types'],$selectedType,['tabindex'=>'-1','id'=>'inputType','class'=>'form-control select', 'placeholder'=>'ALL'])}}
                             </div>
                         </div>
                 </div>
@@ -111,4 +111,7 @@
  @endsection
 
  @section('footer')
+<script>
+    $('.select').select2();
+    </script>
 @endsection
