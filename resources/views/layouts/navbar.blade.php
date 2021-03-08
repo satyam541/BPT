@@ -108,10 +108,7 @@
                 </a>
             </li>
         </ul>
-
-    </div>
-</div>
-<div class="dropdown-menu">
+        <div class="dropdown-menu">
     <div class="dropdown-list">
         <div class="topic-info">
             <h3>Categories</h3>
@@ -149,34 +146,7 @@
                     <a data-target="d4"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
                     <a data-target="d5"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
                 </div>
-                <div class="course" id="c2" data-target="d2">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c3" data-target="d3">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c4" data-target="d4">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c5" data-target="d5">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c6" data-target="d6">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
+           
             </div>
         </div>
         <div class="menu-list">
@@ -190,60 +160,14 @@
                     <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
                     <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
                 </div>
-                <div class="menu-info" id="d2">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d3">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d4">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d5">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d6">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
+              
             </div>
         </div>
     </div>
 </div>
+    </div>
+</div>
+
 <div class="pop-search" id="pop-search">
         <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form">
