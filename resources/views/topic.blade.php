@@ -346,7 +346,13 @@
                         <div class="numbers">
                             <img src="{{url('img/topic/topic-book.svg')}}" alt="topic-book">
                             <p> {{$otherTopic->courses->count()}} 
-                                <span>Courses</span>
+                                <span>
+                                    @if($otherTopic->courses->count() == 1)
+                                    Course
+                                    @elseif($otherTopic->courses->count() >1 )
+                                    Courses
+                                    @endif
+                                </span>
                             </p>
                         </div>
                         <a href="{{ url('training-courses' . $otherTopic->reference) }}">{{$otherTopic->name}}</a>
