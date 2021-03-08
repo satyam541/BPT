@@ -12,7 +12,7 @@
             </a>
             <ul>
                 <li class="links-li">
-                    <a data-href="#courses" class="link" id="menucourses">Courses</a>
+                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -20,11 +20,11 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href ="{{route('onsite')}}"data-href="#choose" class="link">Onsite</a>
+                    <a href="{{route('onsite')}}" data-href="#choose" class="link">Onsite</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href ="{{route('blog')}}"data-href="#blog" class="link">Blogs</a>
+                    <a href="{{route('blog')}}" data-href="#blog" class="link">Blogs</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -46,7 +46,7 @@
                         <img src="{{url('img/flag/uk.svg')}}" alt="cart">
                     </a>
                 </li>
-                
+
             </ul>
             <ul class="top-bar">
                 <li>
@@ -108,144 +108,60 @@
                 </a>
             </li>
         </ul>
-
-    </div>
-</div>
-<div class="dropdown-menu">
-    <div class="dropdown-list">
-        <div class="topic-info">
-            <h3>Categories</h3>
-            <a data-target="c1">
-                <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
-            <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue"></span>Project Management</a>
-
-            <a data-target="c2"><span><img src="{{url('img/master/data.svg')}}" alt="data" class="white"><img src="{{url('img/master/data-blue.svg')}}" alt="data-blue" class="blue"></span>Business Analysis</a>
-
-            <a data-target="c3"><span><img src="{{url('img/master/increase.svg')}}" alt="increase" class="white">
-            <img src="{{url('img/master/increase-blue.svg')}}" alt="increase-blue" class="blue"></span>Business Improvement</a>
-
-            <a data-target="c4"><span><img src="{{url('img/master/computer.svg')}}" alt="computer" class="white">
-            <img src="{{url('img/master/computer-blue.svg')}}" alt="computer-blue" class="blue"></span>IT Service Management</a>
-
-            <a data-target="c5"><span><img src="{{url('img/master/secure-data.svg')}}" alt="secure-data" class="white">
-            <img src="{{url('img/master/secure-data-blue.svg')}}" alt="secure-data" class="blue"></span>IT Security</a>
-
-            <a data-target="c6"><span><img src="{{url('img/master/data-protection.svg')}}" alt="cv" class="white">
-            <img src="{{url('img/master/data-protection-blue.svg')}}" alt="cv" class="blue"></span>Data Protection</a>
-
-            <a data-target="c7"><span><img src="{{url('img/master/cv.svg')}}" alt="cv" class="white">
-            <img src="{{url('img/master/cv-blue.svg')}}" alt="cv" class="blue"></span>Office Applications</a>
-
-            <a data-target="c8"><span><img src="{{url('img/master/skills.svg')}}" alt="skills" class="white">
-            <img src="{{url('img/master/skills-blue.svg')}}" alt="skills" class="blue"></span>Business Skills</a>
-        </div>
-        <div class="course-list">
-            <div class="course-content">
-                <h3>Topic</h3>
-                <div class="course" id="c1">
-                    <a data-target="d1"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
-                    <a data-target="d2"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
-                    <a data-target="d3"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
-                    <a data-target="d4"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
-                    <a data-target="d5"><span><img src="{{url('img/master/test.svg')}}" alt="test"></span>Agile Project Management Training</a>
+        <div class="dropdown-menu">
+            @php
+            $menu_data = menu_data();
+            $categories = $menu_data['categories'];
+            $topicData = $menu_data['topics'];
+            $courseData = $menu_data['courses'];
+            @endphp
+            <div class="dropdown-list">
+                <div class="topic-info">
+                    <h3>Categories</h3>
+                    @foreach($categories as $category)
+                    <a data-target="category_{{$category->id}}">
+                        <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
+                            <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue">
+                        </span>
+                        {{$category->name}}
+                    </a>
+                    @endforeach
                 </div>
-                <div class="course" id="c2" data-target="d2">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
+                <div class="course-list">
+                    <div class="course-content">
+                        <h3>Topic</h3>
+                        @foreach ($topicData as $category_id=>$topics) 
+                        <div class="course" id="category_{{$category_id}}">
+                            @foreach ($topics->take(8) as $topic)
+                            <a data-target="topic_{{$topic->id}}">
+                                <span>
+                                    <img src="{{url('img/master/test.svg')}}" alt="test"></span>
+                                    {{$topic->name}}
+                            </a>
+                            @endforeach
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="course" id="c3" data-target="d3">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c4" data-target="d4">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c5" data-target="d5">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-                <div class="course" id="c6" data-target="d6">
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                    <a>Prince2 Training Course</a>
-                </div>
-            </div>
-        </div>
-        <div class="menu-list">
-            <div class="menu-content">
-                    <h3>Courses</h3>
-                <div class="menu-info" id="d1">
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                    <a href="javascript:void(0);">PRINCE2® Foundation & Practitioner</a>
-                </div>
-                <div class="menu-info" id="d2">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d3">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d4">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d5">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                </div>
-                <div class="menu-info" id="d6">
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
-                    <a href="javascript:void(0);">Lean Six Sigma Green Belt</a>
+                <div class="menu-list">
+                    <div class="menu-content">
+                        <h3>Courses</h3>
+                        @foreach ($courseData as $topic_id=>$courses) 
+                        <div class="menu-info" id="topic_{{$topic_id}}">
+                            @foreach ($courses->take(8) as $course)
+                            <a href="{{$course->url}}">{{$course->name}}</a>
+                            @endforeach
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="pop-search" id="pop-search">
-        <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
+    <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form" onsubmit="getquery(this)">
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
