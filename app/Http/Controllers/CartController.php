@@ -191,9 +191,9 @@ class CartController extends Controller
     }
 
     public function cartDetail()
-    {
-        if(empty(Cart::content())){
-            return redirect()->route('404');
+    {   
+        if(Cart::content()->isEmpty()){
+            return redirect()->route('cart');
         }
         $data['cartItems']    = Cart::content();
         $data['countries']    = Country::pluck( 'name','country_code');
@@ -431,19 +431,23 @@ class CartController extends Controller
 
     private function nextCartItem($rowId,$delegate)
     {
-        // dd($delegate);
         $cartItem = Cart::get($rowId);
+        
         $cartItems = Cart::content();
         $quantity = $cartItem->qty;
+
         if($quantity > $delegate)
         {
             $delegate++;
         }
+
         else if($cartItems->last()->rowId != $cartItem->rowId)
         {
             $delegate = 1;
             $iterator = $cartItems->getIterator();
+
             $next = current($iterator);
+       
             while($next->rowId != $cartItem->rowId)
             {
                 $next = next($iterator);
@@ -466,26 +470,25 @@ class CartController extends Controller
         session()->save();
 
         // generate html for cart delegate page
-        $content = "<h4>$cartItem->name</h4>";
-
+        $courseName = $cartItem->name;
         switch($cartItem->options['method'])
         {
             case 'classroom':
-                $content .= "<p>Classroom</p>
-                <p>".$cartItem->options->location."</p>
-                <p>".$cartItem->options->date."</p>";
+                $method = "Classroom";
+                $content = "Location:".$cartItem->options->location.
+                "<p> Date:".$cartItem->options->date."</p>";
                 break;
 
             case 'virtual':
-                $content .= "<p>Virtual</p>
-                <p>".$cartItem->options->date."</p>";
+                $method = "Virtual";
+                $content = "Date:".$cartItem->options->date;
                 break;
 
             case 'online':
-                $content .= "<p>Online</p>";
+                $method = "Online";
                 if(!empty($cartItem->options['addons']))
                 {
-                    $content .= "<ul>";
+                    $content = "<ul>";
                     foreach($cartItem->options['addons'] as $addon)
                     {
                     $content .="<li> $addon->name </li>";
@@ -494,8 +497,9 @@ class CartController extends Controller
                 }
                 break;
         }
+        // dd($content);
         // return array
-        return array('rowId'=>$rowId,'delegate'=>$delegate,'content'=>$content);
+        return array('rowId'=>$rowId,'delegate'=>$delegate, 'courseName'=>$courseName,'content'=>$content, 'method'=>$method);
     }
 
 
