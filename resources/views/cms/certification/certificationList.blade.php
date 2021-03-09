@@ -88,9 +88,7 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [{
-                        "name": "Name"
-                    },
-                    {
+                        "name": "Name",
                         "name": "Actions",
                         "sorting": false,
                         searching: false

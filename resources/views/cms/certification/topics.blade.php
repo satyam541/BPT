@@ -94,12 +94,8 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [{
-                        "name": "Certification Name"
-                    },
-                    {
-                        "name": "Course Name"
-                    },
-                    {
+                        "name": "Certification Name",
+                        "name": "Course Name",
                         "name": "Actions",
                         "sorting": false,
                         searching: false

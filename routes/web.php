@@ -81,14 +81,18 @@ Route::get('/cart/customerDetail/submit',['as'=>'customerDetailSubmit','uses'=>'
 Route::get('/cart/delegateDetail/submit',['as'=>'delegateDetailSubmit','uses'=>'CartController@submitDelegateDetail']);
 Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'CartController@submitBillingDetail']);
 
+//certification
+Route::get('/certification-programmes','CertificationController@index');
+
+
 
 Route::get('/offer', function () {
     return view('offer');
 });
 
-Route::get('/certification', function () {
-    return view('certification');
-});
+// Route::get('/certification', function () {
+//     return view('certification');
+// });
 Route::get('/courses', function () {
     return view('courses');
 });
