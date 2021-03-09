@@ -11,8 +11,9 @@
                 <img src="{{url('img/master/back.svg')}}" alt="back"> Back
             </a>
             <ul class="menu-list">
-                <li class="links-li">
-                    <a data-href="{{route('catalouge')}}" class="link" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
+                <li class="links-li course-link">
+                    <a href="{{route('catalouge')}}" class="link mobile">Courses</a>
+                    <a class="link desktop" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -27,8 +28,9 @@
                     <a href="{{route('locations')}}" data-href="#azure-other" class="link">Locations</a>
                     <span></span>
                 </li>
-                <li class="links-li" id="aboutdropdown" >
-                    <a href="javascript:void(0);" data-href="#faq" class="link">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
+                <li class="links-li about-link" id="aboutdropdown" >
+                    <a href="{{route('aboutUs')}};" data-href="#faq" class="link mobile">About</a>
+                    <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
                         <li><a>About Us</a></li>
@@ -122,7 +124,7 @@
             $courseData = $menu_data['courses'];
             @endphp
             <div class="dropdown-list">
-                <div class="topic-info">
+                <div class="category-menu">
                     <h3>Categories</h3>
                     @foreach($categories as $category)
                     <a data-target="category_{{$category->id}}">
@@ -133,7 +135,7 @@
                     </a>
                     @endforeach
                 </div>
-                <div class="course-list">
+                <div class="topic-menu">
                     <div class="course-content">
                         <h3>Topic</h3>
                         @foreach ($topicData as $category_id=>$topics) 
@@ -151,7 +153,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="menu-list">
+                <div class="course-menu">
                     <div class="menu-content">
                         <h3>Courses</h3>
                         @foreach ($courseData as $topic_id=>$courses) 

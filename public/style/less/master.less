@@ -617,12 +617,10 @@
                 border-bottom: 1px dotted @blackColor;
                 cursor: pointer;
 
-                &:first-child,&:nth-child(5) {
+                &:first-child{
                     padding-top: 0;
-                    img{
-                        display: none;
-                    }
                 }
+                
 
                 &:nth-last-child(2) {
                     border-bottom: none;
@@ -658,6 +656,9 @@
                     color: @blackColor;
                     text-decoration: none;
                 }
+                .desktop{
+                    display: none;
+                }
             }
             #aboutdropdown{
                 position: relative;
@@ -665,12 +666,17 @@
                     display: none;  
                     padding: .5rem;
                     position: absolute;
-                    bottom: -115px;
+                    top: 40px;
                     left: 0;
                     background-color: @whiteColor;
                     flex-direction: column;
+                    transition: 1s ease-in-out;
                     li{
-                        margin-bottom: .5rem;
+                        margin-bottom: .7rem;
+                        a{
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
                     }
                 }
             }
