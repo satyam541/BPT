@@ -441,18 +441,19 @@ $('#scroll').click(function(){
             $(".dropdown-menu").hide();
             return true;
         } else {
-            $(".dropdown-menu").toggle();
+            $(".dropdown-menu").slideToggle();
+            $(this).toggleClass("active");
         }
         event.stopPropagation();
     });
 
     $(document).ready(function() {
-        $(".topic-info a").click(function() {
+        $(".category-menu a").click(function() {
             var target = $(this).data('target');
             $(".course").hide();
             $(".menu-info").hide();
             $("#"+target).css("display", "flex");
-            $(".topic-info a").removeClass('topic-active');
+            $(".category-menu a").removeClass('topic-active');
             $(this).addClass("topic-active");
             console.log(target);
             $("#"+target).find('a').first().trigger('click');
@@ -466,7 +467,7 @@ $('#scroll').click(function(){
             $(".course a").removeClass('course-active');
             $(this).addClass("course-active");
         });
-        $(".topic-info a").first().trigger('click');
+        $(".category-menu a").first().trigger('click');
     });
 
     $('#flag').click(function() {
@@ -490,9 +491,9 @@ $('#scroll').click(function(){
     });
     // End count
 
-    //Start about dropdown
-    $('#aboutdropdown').click(function() {
-        $(this).children('ul').toggleClass('active');
+     //Start about dropdown
+     $('#aboutdropdown').click(function() {
+        $(this).toggleClass('active');
     });
     //End about dropdown
 
