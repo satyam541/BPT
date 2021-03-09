@@ -48,7 +48,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- {{dd($certifications)}} --}}
                                         @foreach ($certifications as $certification)
                                             <tr>
                                                 <td>{{ $certification->name  }}</td>
@@ -64,7 +63,7 @@
                                         @endforeach
 
 
-                                        </tfoot>
+                                        </tbody>
                                 </table>
                                 <a id="add" href="{{ route('createCertification') }}" class="btn btn-success" style="">Add new Record</a>
                             </div>
@@ -87,12 +86,9 @@
     <script>
         $(document).ready(function() {
             $('#example1').DataTable({
-                "columns": [{
-                        "name": "Name",
-                        "name": "Actions",
-                        "sorting": false,
-                        searching: false
-                    }
+                "columns": [
+                        {"name": "Certification Name"},
+                        {"name": "Actions", "sorting": false, searching: false}
                 ]
             });
 

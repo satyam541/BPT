@@ -350,7 +350,8 @@
           </li>
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Category()))
-          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationTopicList','createCertification','editCertification']))
+          <li @if(in_array(Route::currentRouteName(),['certificationList','createCertification','editCertification',
+                                                      'certificationTopicList','certificationTopicCreate','certificationTopicEdit','assignCoursesForm']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -375,7 +376,7 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Course())
-                <a href="{{Route('certificationTopicList')}}"@if(Route::currentRouteName()=='certificationTopicList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('certificationTopicList')}}"@if(in_array(Route::currentRouteName(),['certificationTopicList','certificationTopicCreate','certificationTopicEdit','assignCoursesForm']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon "></i>
                   <p>
                     Topics
