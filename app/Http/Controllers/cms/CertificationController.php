@@ -6,26 +6,29 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Certification;
 use App\Models\Course;
+use App\Models\CertificationTopic;
 use App\Http\Requests\cms\CertificationRequest;
+use App\Http\Requests\cms\CertificationTopicRequest;
 
 class CertificationController extends Controller
 {
     public function index()
     {
-        $certifications = Certification::with('courses')->get();
+        $certifications = Certification::all();
         return view('cms.certification.certificationList',compact('certifications'));
     }
    
-    public function courseList()
+    public function topicList()
     {
-        $data['courses'] = Course::whereHas('certifications')->with('certifications')->get();
-        return view('cms.certification.courses',$data);
+        $data['topics'] = CertificationTopic::with('certification')->get();
+        
+        return view('cms.certification.topics',$data);
     }
 
     public function create()
     {
         $data['certification'] = new Certification();
-        $data['courses']       = Course::pluck('name','id')->toArray();
+        
         $data['submitRoute']   = "insertCertification";
         return view('cms.certification.certificationForm',$data);
     }
@@ -50,7 +53,7 @@ class CertificationController extends Controller
     public function edit($id)
     {
         $data['certification']  = Certification::find($id);
-        $data['courses']        = Course::pluck('name','id')->toArray();
+        
         $data['submitRoute']    = array('updateCertification',$id);
         
         return view("cms.certification.certificationForm",$data);
@@ -59,17 +62,92 @@ class CertificationController extends Controller
     public function update(CertificationRequest $request)
     {
         $input      = $request->except("_token");
-        $courses    = $request->courses;
-
+       
         $certification      = Certification::find($request->id);
         $certification['name']          = $input['name'];
         $certification['tka_name']      = $input['tka_name'];
         $certification['slug']          = $input['slug'];
         $certification['is_published']  = isset($input['is_published']) ? 1: 0;
-        $certification->courses()->sync($courses);
         
         $certification->update();
         return redirect()->route('certificationList')->with('success','Successfully Updated');
+    }
+
+    public function assignCourseForm($topic_id)
+    {
+        $data['courses']    =   Course::pluck('name','id');
+        $data['topic']      =   CertificationTopic::find($topic_id);
+        $data['submitRoute']= ['assignCoursesRoute','topic_id'=>$topic_id];
+        return view('cms.certification.assignCourseForm',$data);
+    }
+
+    public function assignCourses(Request $request)
+    {
+        // dd($request->except('_token'));
+        $topic = CertificationTopic::find($request->id);
+        $topic->courses()->sync($request->courses);
+        return redirect()->route('certificationTopicList')->with('success','Courses Assigned');
+    }
+
+    public function addTopic()
+    {
+        $data['topic'] = new CertificationTopic();
+        $data['certifications'] = Certification::pluck('name','id');
+        $data['submitRoute']    = 'certificationTopicInsert';
+        return view('cms.certification.topicForm',$data);
+    }
+
+    public function insertTopic(CertificationTopicRequest $request)
+    {
+        // dd($request->all());
+        $inputs = $request->except('_token');
+        $topic  = new CertificationTopic();
+        $topic['name']  = $inputs['name'];
+        $topic['certification_id'] = $inputs['certification_id'];
+        $topic->save();
+        return redirect()->route('certificationTopicList')->with('success','Successfully Added');
+    }
+    
+    public function editTopic($id)
+    {
+        $data['topic']       = CertificationTopic::find($id);
+        $data['certifications'] = Certification::pluck('name','id');
+        $data['submitRoute'] = ['certificationTopicEdit','id'=>$id];
+        return view('cms.certification.topicForm',$data);
+    }
+
+    public function updateTopic(CertificationTopicRequest $request)
+    {
+        $topic = CertificationTopic::find($request->id);
+        $topic['name'] = $request['name'];
+        $topic['certification_id'] = $request['certification_id'];
+        
+        $topic->update();
+        return redirect()->route('certificationTopicList')->with('success','Successfully Updated');
+    }
+
+    public function deleteTopic($id)
+    {
+        CertificationTopic::find($id)->delete();
+    }
+
+    public function topicTrashList()
+    {
+        $data['trashTopics'] = CertificationTopic::onlyTrashed()->get();
+        return view('cms.trashed.CertificationTopicTrash',$data);
+    }
+    public function restoreTopic($id)
+    {
+        CertificationTopic::onlyTrashed()->find($id)->restore();
+        return back()->with('success','Successfully Restored');
+    }
+    public function forceDeleteTopic($id)
+    {
+        $topic = CertificationTopic::onlyTrashed()->find($id);
+        $topic->courses()->detach();
+        $topic->forceDelete();
+        return back()->with('success','Permanently Deleted');
+
     }
 
     public function delete($id)
@@ -95,7 +173,7 @@ class CertificationController extends Controller
     public function forceDelete($id)
     {
         $data = Certification::onlyTrashed()->find($id);
-        $data->courses()->detach();
+        $data->topics()->detach();
         
         $data->forceDelete();
         return back()->with('success','Permanently Deleted');
