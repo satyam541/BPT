@@ -11,8 +11,8 @@ class Certification extends Model
     protected $table = 'certification';
     protected $primaryKey = "id";
 
-    public function courses()
+    public function topic()
     {
-        return $this->belongsToMany('App\Models\Course','certification_course','certification_id','course_id');
+        return $this->belongsTo('App\Models\CertificationTopic');
     }
 }

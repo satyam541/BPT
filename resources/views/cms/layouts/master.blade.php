@@ -350,7 +350,7 @@
           </li>
           @endif
            @if (Auth::user()->can('view', new App\Models\Country()) || Auth::user()->can('view', new App\Models\Category()))
-          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationCourseList','createCertification','editCertification']))
+          <li @if(in_array(Route::currentRouteName(),['certificationList','certificationTopicList','createCertification','editCertification']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -375,10 +375,10 @@
               </li>
               <li class="nav-item">
                 @can('view',new App\Models\Course())
-                <a href="{{Route('certificationCourseList')}}"@if(Route::currentRouteName()=='certificationCourseList')class="nav-link active" @else class="nav-link" @endif>
+                <a href="{{Route('certificationTopicList')}}"@if(Route::currentRouteName()=='certificationTopicList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="far fa-circle nav-icon "></i>
                   <p>
-                    Courses
+                    Topics
                   </p>
                 </a>
                 @endcan
@@ -631,7 +631,7 @@
             Auth::user()->can('restore', new App\Models\Accreditation()) || 
             Auth::user()->can('restore', new App\Models\WebsiteDetail())
             )
-          <li @if(in_array(Route::currentRouteName(),[
+          <li @if(in_array(Route::currentRouteName(),['certificationTopicTrash',
                                                       'courseContentTrashList',
                                                       'topicContentTrashList',
                                                       'categoryContentTrashList',
@@ -644,7 +644,6 @@
                                                       'tagTrashList',
                                                       'resourceTrash',
                                                       'countryTrashList',
-                                                      'venueTrashList',
                                                       'locationTrashList',
                                                       'categoryTrashList',
                                                       'topicTrashList',
@@ -671,14 +670,12 @@
                 </a>
                 @endcan
               </li>
-              {{-- <li class="nav-item">
-              @can('view', new App\Models\Venue())
-                <a href="{{Route('venueTrashList')}}" @if(Route::currentRouteName()=='venueTrashList')class="nav-link active" @else class="nav-link" @endif>
+              <li class="nav-item">
+                <a href="{{Route('certificationTopicTrash')}}" @if(Route::currentRouteName()=='certificationTopicTrash')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
-                  <p>Venue List</p>
+                  <p>Certification Topic</p>
                 </a>
-                @endcan
-              </li> --}}
+              </li>
               <li class="nav-item">
               @can('view', new App\Models\Location())
                 <a href="{{Route('locationTrashList')}}" @if(Route::currentRouteName()=='locationTrashList')class="nav-link active" @else class="nav-link" @endif>

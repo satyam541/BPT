@@ -10,12 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Certification</h1>
+                        <h1 class="m-0 text-dark">Certification Topics</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Certification</li>
+                            <li class="breadcrumb-item"><a href="{{ route('certificationList') }}">Certification</a></li>
+                            <li class="breadcrumb-item active">Topics</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,7 +35,7 @@
                         <div class="card card-primary card-outline">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Certification List
+                                    Certification Topics List
                                 </div>
                             </div>
 
@@ -43,32 +44,37 @@
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th>Certification Name</th>
+                                            <th> Certification Name</th>
+                                            <th> Topics Name</th>
+                                            <th>Courses</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- {{dd($certifications)}} --}}
-                                        @foreach ($certifications as $certification)
+                                        
+                                        @foreach ($topics as $topic)
                                             <tr>
-                                                <td>{{ $certification->name  }}</td>
+                                                <td>{{$topic->certification->name ?? "" }}</td>
+                                                <td>{{ $topic->name  }}</td>
                                                 <td>
-                                                    <a href="{{ route('editCertification', ['id' => $certification->id]) }}"
-                                                        class="fa fa-edit"></a>
+                                                    <a href="{{Route('assignCoursesForm',['topic_id'=>$topic->id])}}" class="btn btn-primary">Assign </a></td>
+                                                <td>
+                                                    <a href="{{Route('certificationTopicEdit',['id'=>$topic->id])}}" class="fa fa-edit"></a>
                                                     &nbsp;&nbsp;&nbsp;
-                                                    <a href=""
-                                                        onclick="deleteItem('{{ route('deleteCertification', ['id' => $certification->id]) }}')"
-                                                        class="fa fa-trash" style="color: red"></a>
+                                                    <a href="" onclick="deleteItem('{{ route('deleteCertificationTopic',['id'=>$topic->id])}}')" class="fa fa-trash" style="color: red"></a>
                                                 </td>
                                             </tr>
                                         @endforeach
 
 
-                                        </tfoot>
+                                    </tbody>
                                 </table>
-                                <a id="add" href="{{ route('createCertification') }}" class="btn btn-success" style="">Add new Record</a>
+                                
                             </div>
                             <!-- /.card-body -->
+                            <div class="card-footer">
+                                <a id="add" href="{{route('certificationTopicCreate')}}" class="btn btn-success" style="">Add new Record</a>
+                            </div>
                         </div>
                         <!-- /.card -->
                     </div>
@@ -88,7 +94,8 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [{
-                        "name": "Name",
+                        "name": "Certification Name",
+                        "name": "Course Name",
                         "name": "Actions",
                         "sorting": false,
                         searching: false

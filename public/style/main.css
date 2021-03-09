@@ -562,9 +562,7 @@ select::-ms-expand {
 .navbar .menu-list .links-li .link {
   display: flex;
   align-items: center;
-  font-size: 14px;
   color: #000000;
-  text-decoration: none;
 }
 .navbar .menu-list .links-li .desktop {
   display: none;
@@ -1168,6 +1166,7 @@ select::-ms-expand {
     padding: 0;
     color: #000000;
     font-weight: 500;
+    position: relative;
   }
   .navbar .menu-list .links-li:last-child {
     margin-top: 0;
@@ -1188,6 +1187,9 @@ select::-ms-expand {
     height: 3px;
     visibility: hidden;
     transition: 1s all;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
   }
   .navbar .menu-list .links-li:hover span {
     width: 100%;
@@ -5991,6 +5993,11 @@ select::-ms-expand {
 .our-blog .our-container .load-more {
   border: 4px solid #FFFFFF;
   box-shadow: 0 0 0 2px #0064D8;
+  transition: 1s all;
+}
+.our-blog .our-container .load-more:hover {
+  box-shadow: 0 0 0 2px #1C2848;
+  transition: 1s all;
 }
 .our-blog .our-list {
   position: relative;
@@ -7168,27 +7175,13 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
-  .location-main .location-container {
-    position: relative;
-  }
-  .location-main .location-container::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    right: 0;
-    background-color: #C0C0C0;
-    margin: auto;
-  }
   .location-main .location-content {
-    width: 47%;
+    width: 58%;
     padding-right: 1rem;
+    border-right: 1px solid #c0c0c0;
   }
   .location-main .location-contact {
-    width: 46%;
+    width: 38%;
   }
   .location-main .contact-bottom span {
     position: relative;
@@ -7231,15 +7224,8 @@ select::-ms-expand {
   .location-main {
     padding: 4rem 0rem;
   }
-  .location-main .location-content {
-    width: 50%;
-  }
-  .location-main .location-contact {
-    width: 48%;
-  }
   .location-main .location-contact span::before {
     bottom: -44px;
-    right: -34px;
   }
   .key {
     padding: 4rem 0rem;
@@ -9165,6 +9151,8 @@ select::-ms-expand {
   display: none;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  margin-top: 2rem;
+  background-color: #FFFFFF;
 }
 .training .no-schedule p {
   text-align: center;
@@ -9631,7 +9619,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .foundation .included-content {
-    width: 24%;
+    width: 20%;
     margin-bottom: 0;
   }
   .learn-more {
@@ -10061,10 +10049,6 @@ select::-ms-expand {
   .foundation #included .heading h2 {
     text-align-last: left;
   }
-  .foundation .included-content {
-    width: 22%;
-    margin-bottom: 0;
-  }
   .learn-more .more-list {
     width: 49%;
   }
@@ -10361,10 +10345,6 @@ select::-ms-expand {
   }
   .foundation #included .heading h2 {
     text-align-last: left;
-  }
-  .foundation .included-content {
-    width: 22%;
-    margin-bottom: 0;
   }
   .learn-more {
     padding: 4rem 0rem;
