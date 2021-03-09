@@ -31,7 +31,7 @@
                 </div>
                 <p>{!!$pageDetail->main['heading']->content!!}</p>
                 <div class="buttons">
-                <a class="btn-blue"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
+                <a class="btn-blue open-popup enquiryJS" data-quote="Need More Information"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
                 </a>
             </div>
             <div class="delegate">
@@ -102,13 +102,12 @@
                                 <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
                                     autocomplete="off"> 
                             </div>
-                            <div class="input-container">
+                            <div class="input-container message">
                                 <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
                                 <img src="{{url('img/master/house-red.svg')}}" alt="house-red" class="red"></span>
-                                <input type="text" name="address" id="address" placeholder="Address"
-                                    autocomplete="off">
+                                <textarea name="address" id="address" placeholder="Address"></textarea>
                             </div>
-                            <div class="input-container">
+                            <div class="input-container message">
                                 <span><img src="{{url('img/master/comment-white.svg')}}" alt="comment" class="black">
                                 <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                                 <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>

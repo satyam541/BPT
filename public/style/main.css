@@ -4933,6 +4933,9 @@ select::-ms-expand {
   color: #FFFFFF;
   font-size: 12   px;
 }
+.doorstep .consent-error p {
+  color: red;
+}
 .doorstep .input-container {
   background-color: #4B5773;
 }
@@ -5471,24 +5474,14 @@ select::-ms-expand {
   display: flex;
   background-color: #f5f5f5;
   padding: 0.7rem;
+  width: 272px;
+  align-self: center;
 }
 .popular .search input {
   padding: 0.5rem;
-  width: 66%;
+  width: 100%;
   border: none;
   outline: none;
-}
-.popular .search button {
-  display: flex;
-  background-color: #1C2848;
-  outline: none;
-  border: none;
-  padding: 0.5rem;
-  color: #FFFFFF;
-  align-items: center;
-  justify-content: center;
-  width: 34%;
-  padding: 0.7rem;
 }
 .popular .popular-list {
   display: flex;
@@ -5543,6 +5536,7 @@ select::-ms-expand {
 }
 .form-map {
   padding: 3rem 1.5rem;
+  padding-top: 0;
 }
 .form-map .form-container {
   display: flex;
@@ -5574,10 +5568,11 @@ select::-ms-expand {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0;
+    padding-left: 2rem;
   }
   .convenient .convenient-content {
-    width: 42%;
+    width: 45%;
     padding: 1rem;
     justify-content: flex-start;
   }
@@ -5589,8 +5584,9 @@ select::-ms-expand {
     background-image: url(../img/location/largest-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 325px;
+    height: 340px;
     width: 340px;
+    justify-content: center;
     padding: 4rem 1.5rem;
     align-self: center;
     position: relative;
@@ -5603,7 +5599,7 @@ select::-ms-expand {
     position: absolute;
     height: 430px;
     width: 430px;
-    bottom: -51px;
+    bottom: -47px;
     right: -47px;
     background-image: url(../img/location/arc-circle.png);
     background-repeat: no-repeat;
@@ -5645,6 +5641,15 @@ select::-ms-expand {
   .popular .popular-info h2 {
     width: auto;
   }
+  .popular .popular-info .heading {
+    align-items: flex-start;
+  }
+  .popular .popular-info .heading::before {
+    margin: 0;
+  }
+  .popular .popular-info .heading h2 {
+    text-align: left;
+  }
   .popular .search {
     width: 80%;
   }
@@ -5654,7 +5659,7 @@ select::-ms-expand {
   }
   .popular .item {
     width: 50%;
-    padding: 2rem 7px 0;
+    padding: 2rem 0.8rem 0;
   }
   .popular .popular-content .img {
     left: -6px;
@@ -5704,6 +5709,9 @@ select::-ms-expand {
   .form-map .form-container form .form-input .input-container:last-child {
     width: 100%;
   }
+  .form-map .form-container .map {
+    height: 485px;
+  }
 }
 @media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .convenient .convenient-content span {
@@ -5740,6 +5748,15 @@ select::-ms-expand {
   }
   .convenient {
     padding-bottom: 3rem;
+  }
+  .convenient .heading {
+    align-items: flex-start;
+  }
+  .convenient .heading::before {
+    margin: 0;
+  }
+  .convenient .heading h2 {
+    text-align-last: left;
   }
   .convenient .convenient-container {
     display: flex;
@@ -5815,7 +5832,6 @@ select::-ms-expand {
   .form-map .form-container .map {
     width: 50%;
     margin-top: 0;
-    height: 490px;
   }
 }
 @media (min-width : 1366px) {
@@ -5842,6 +5858,9 @@ select::-ms-expand {
     height: 450px;
     width: 450px;
   }
+  .popular {
+    padding: 4rem 0rem;
+  }
   .popular .popular-content::before {
     left: -13px;
   }
@@ -5850,6 +5869,9 @@ select::-ms-expand {
   }
   .popular .item {
     width: 25%;
+  }
+  .popular .search {
+    width: 45%;
   }
   .buy {
     padding: 4rem 0rem;
@@ -8283,6 +8305,39 @@ select::-ms-expand {
 .courses-banner .breadcrums ul li a {
   font-size: 13px;
 }
+.course-intro {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#FFFFFF, #F5F5F5);
+}
+.course-intro .intro-container {
+  display: flex;
+  flex-direction: column;
+}
+.course-intro .intro-para {
+  font-weight: bold;
+}
+.course-intro p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.course-intro ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+.course-intro ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/checkmark.svg);
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
 .foundation {
   padding: 3rem 1.5rem;
 }
@@ -8600,6 +8655,49 @@ select::-ms-expand {
 }
 .foundation .included-content:hover span::before {
   background: linear-gradient(90deg, #0064D8, #1C2848);
+}
+.learn-more {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#F6F6F6, #F6F6F6, #FFFFFF, #FFFFFF);
+}
+.learn-more p {
+  margin-top: 1rem;
+}
+.learn-more .heading {
+  margin-bottom: 0;
+}
+.learn-more ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+}
+.learn-more ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/more-points.svg);
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
+.learn-more .more-content ul li:last-child {
+  margin-bottom: 2rem;
+}
+.learn-more .more-list {
+  margin-top: 2rem;
+}
+.learn-more .more-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-top: 3px solid #1C2848;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .unable {
   padding: 3rem 1.5rem;
@@ -9502,6 +9600,17 @@ select::-ms-expand {
   .courses-banner .banner-points ul li {
     width: 47%;
   }
+  .course-intro {
+    padding: 3rem 2rem;
+  }
+  .course-intro ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .course-intro ul li {
+    width: 49%;
+  }
   .foundation {
     padding: 3rem 2rem;
   }
@@ -9524,6 +9633,21 @@ select::-ms-expand {
   .foundation .included-content {
     width: 24%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 3rem 2rem;
+  }
+  .learn-more .more-content {
+    width: 48%;
+  }
+  .learn-more .more-list {
+    width: 48%;
+    margin-top: 0;
+  }
+  .learn-more .more-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
   }
   .unable {
     padding: 3rem 2rem;
@@ -9941,6 +10065,12 @@ select::-ms-expand {
     width: 22%;
     margin-bottom: 0;
   }
+  .learn-more .more-list {
+    width: 49%;
+  }
+  .learn-more .more-container {
+    padding: 3rem 2rem;
+  }
   .unable p {
     width: 60%;
   }
@@ -10210,6 +10340,9 @@ select::-ms-expand {
   .courses-banner .banner-points {
     width: 32%;
   }
+  .course-intro {
+    padding: 4rem 0rem;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -10232,6 +10365,9 @@ select::-ms-expand {
   .foundation .included-content {
     width: 22%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 4rem 0rem;
   }
   .unable {
     padding: 4rem 0rem;
@@ -12707,6 +12843,11 @@ select::-ms-expand {
     width: 2px;
     background-color: #0064D8;
     transition: 1s all;
+  }
+  .topic-courses .course-item a {
+    width: 93%;
+    font-size: 15px;
+    overflow: hidden;
   }
   .topic-courses .course-item:hover::before,
   .topic-courses .course-item:hover::after {
