@@ -12798,6 +12798,11 @@ select::-ms-expand {
     background-color: #0064D8;
     transition: 1s all;
   }
+  .topic-courses .course-item a {
+    width: 93%;
+    font-size: 15px;
+    overflow: hidden;
+  }
   .topic-courses .course-item:hover::before,
   .topic-courses .course-item:hover::after {
     width: 97%;
