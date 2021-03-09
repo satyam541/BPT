@@ -562,9 +562,7 @@ select::-ms-expand {
 .navbar .menu-list .links-li .link {
   display: flex;
   align-items: center;
-  font-size: 14px;
   color: #000000;
-  text-decoration: none;
 }
 .navbar .menu-list .links-li .desktop {
   display: none;
@@ -1168,6 +1166,7 @@ select::-ms-expand {
     padding: 0;
     color: #000000;
     font-weight: 500;
+    position: relative;
   }
   .navbar .menu-list .links-li:last-child {
     margin-top: 0;
@@ -1188,6 +1187,9 @@ select::-ms-expand {
     height: 3px;
     visibility: hidden;
     transition: 1s all;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
   }
   .navbar .menu-list .links-li:hover span {
     width: 100%;
