@@ -768,13 +768,8 @@
                         @else
                         <span class="offer">£{{$schedules->first()->event_price}}</span>
                         @endif
-                        
-                        <div class="buy">
-                            <span>
-                                <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
-                            </span>
-                            <h3>23 hours left at this price!</h3>
-                        </div>
+                        <p class="prize">£995.00</p>
+                        <p><strong>delivery type</strong>-online</p>
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
                                 data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price={{$schedules->first()->event_price}}>
@@ -829,11 +824,6 @@
                     </div>
                     @endforeach
 
-                </div>
-                <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
-                        <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
-                    </a>
                 </div>
             </div>
         </div>
