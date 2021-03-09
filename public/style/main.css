@@ -9119,6 +9119,8 @@ select::-ms-expand {
   display: none;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  margin-top: 2rem;
+  background-color: #FFFFFF;
 }
 .training .no-schedule p {
   text-align: center;
@@ -9585,7 +9587,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .foundation .included-content {
-    width: 24%;
+    width: 20%;
     margin-bottom: 0;
   }
   .learn-more {
@@ -10015,10 +10017,6 @@ select::-ms-expand {
   .foundation #included .heading h2 {
     text-align-last: left;
   }
-  .foundation .included-content {
-    width: 22%;
-    margin-bottom: 0;
-  }
   .learn-more .more-list {
     width: 49%;
   }
@@ -10315,10 +10313,6 @@ select::-ms-expand {
   }
   .foundation #included .heading h2 {
     text-align-last: left;
-  }
-  .foundation .included-content {
-    width: 22%;
-    margin-bottom: 0;
   }
   .learn-more {
     padding: 4rem 0rem;
