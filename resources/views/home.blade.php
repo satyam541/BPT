@@ -241,29 +241,30 @@
         <div class="container">
             <div class="facts-container">
                 <div class="fact-content">
+                    @php $homepage=homepageData()  @endphp
                     <h2>Our Amazing Facts and Figures</h2>
-                    <p>We are the Largest Global Accredited Training Provider. We successfully run {{homepageData()['courses']}}+ Courses Daily in
-                        {{homepageData()['locations']}}+ locations worldwide.</p>
+                    <p>We are the Largest Global Accredited Training Provider. We successfully run {{$homepage['courses']}}+ Courses Daily in
+                        {{$homepage['locations']}}+ locations worldwide.</p>
                 </div>
                 <div class="facts-list">
                     <div class="item">
                         <img src="{{ url('img/home/running.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['courses']}}" data-speed="3000">{{homepageData()['courses']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['courses']}}" data-speed="3000">{{$homepage['courses']}}</h3><span>+</span>
                         </div>
                         <p>Courses Running Daily</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/locations.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['locations']}}" data-speed="3000">{{homepageData()['locations']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['locations']}}" data-speed="3000">{{$homepage['locations']}}</h3><span>+</span>
                         </div>
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/event.svg') }}" alt="event">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['schedules']}}" data-speed="3000">{{homepageData()['schedules']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['schedules']}}" data-speed="3000">{{$homepage['schedules']}}</h3><span>+</span>
                         </div>
                         <p>Events</p>
                     </div>
