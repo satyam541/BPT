@@ -443,6 +443,8 @@ $('#scroll').click(function(){
         } else {
             $(".dropdown-menu").slideToggle();
             $(this).toggleClass("active");
+            $("#aboutdropdown").removeClass('active');
+            $('#country-list').removeClass('country-active');
         }
         event.stopPropagation();
     });
@@ -472,6 +474,9 @@ $('#scroll').click(function(){
 
     $('#flag').click(function() {
         $('.country-list').toggleClass('country-active');
+        $("#dropdown-menu").hide();
+        $("#menucourses").removeClass('active');
+        $("#aboutdropdown").removeClass('active');
     });
 
       //Start open search
@@ -494,7 +499,22 @@ $('#scroll').click(function(){
      //Start about dropdown
      $('#aboutdropdown').click(function() {
         $(this).toggleClass('active');
+        $("#dropdown-menu").hide();
+        $("#menucourses").removeClass('active');
+        $('#country-list').removeClass('country-active');
     });
     //End about dropdown
 
 
+    $('body').on('click',function(){
+        var element = event.target;
+        if($(element).closest("#dropdown-menu , #aboutdropdown").length > 0)
+        { 
+            return false;
+        }
+        else{
+            $("#aboutdropdown").removeClass('active');
+            $('#dropdown-menu').hide();
+
+        }
+       });

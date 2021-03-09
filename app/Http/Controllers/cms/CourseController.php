@@ -82,9 +82,6 @@ class CourseController extends Controller
         $query = $query->where('country_id',country()->country_code);
         $query->whereHas('course');
         $result = $query->paginate(10);
-        $list['courses'] = Course::all()->pluck('name','id')->toArray();
-        $list['countries'] = Country::all()->pluck('name','country_code')->toArray();   
-        $data['list'] = $list;
         $data['contents'] = $result;
         return view('cms.course.contents',$data);
     }

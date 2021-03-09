@@ -6,8 +6,8 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Technical IT Certifications</h1>
-            <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.BPT was founded over 20 years ago with one simple mission.BPT was founded over 20 years ago with one simple mission.</p>
+            <h1>{!!$pageDetail->banner['heading']->heading!!}</h1>
+            <p>{!!$pageDetail->banner['heading']->content!!}</p>
             <div class="breadcrums">
                 <ul>
                     <li><a href="javascript:void(0);">Home</a></li>
@@ -155,7 +155,7 @@
                             </span>
                             <p>Call Us:</p>
                         </div>
-                        <a href="tel:023 8000 1008">023 8000 1008</a>
+                        <a href="tel:{{websiteDetail()->contact_number}}">023 8000 1008</a>
                     </div>
                     <div class="contact-content">
                         <div class="content">
@@ -164,11 +164,11 @@
                             </span>
                             <p>Email Us:</p>
                         </div>
-                        <a href="mailto:enquiries@bestpracticetraining.com">enquiries@bestpracticetraining.com</a>
+                        <a href="mailto:{{websiteDetail()->contact_email}}">enquiries@bestpracticetraining.com</a>
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
                         <img src="{{url('img/certification/enquire.svg')}}" alt="enquire">Enquire Now
                     </a>
                 </div>
