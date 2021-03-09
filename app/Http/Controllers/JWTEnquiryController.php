@@ -128,7 +128,7 @@ class JWTEnquiryController extends JWT
 			return false;
 		}
 		
-		dd('hi');
+	
 		$this->data['iss']    = isset($_SERVER['HTTP_HOST'])?$_SERVER['HTTP_HOST']:"";
 		$this->data['source'] = "Best Practice Training";
 		$this->data['sub']    = "Enquiry";

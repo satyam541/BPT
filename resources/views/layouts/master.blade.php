@@ -130,6 +130,11 @@
                                 <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
                                 <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
                             </div>
+                            <div class="input-container">
+                                <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
+                                <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                <input type="text" name="company name" id="company" placeholder="Company Name*" autocomplete="off">
+                            </div>
                             <div class="input-container message">
                                 <span><img src="{{url('img/contactus/comment.svg')}}" alt="comment" class="black">
                                 <img src="{{url('img/contactus/comment-red.svg')}}" alt="comment-red" class="red"></span>

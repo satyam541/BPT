@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Certification</h1>
+                        <h1 class="m-0 text-dark">Certification Topics</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Certification</li>
+                            <li class="breadcrumb-item active">Certification Topics</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -34,38 +34,37 @@
                         <div class="card card-primary card-outline">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Certification List
+                                    Certification Topic Trash
                                 </div>
                             </div>
-
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th>Certification Name</th>
+                                            <th>Topic Name</th>
+                                            <th>Date</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($certifications as $certification)
+                                        @foreach ($trashTopics as $trashTopic)
                                             <tr>
-                                                <td>{{ $certification->name  }}</td>
+                                                <td>{{ $trashTopic->name }}</td>
+                                                <td>{{ $trashTopic->created_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('editCertification', ['id' => $certification->id]) }}"
-                                                        class="fa fa-edit"></a>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <a href=""
-                                                        onclick="deleteItem('{{ route('deleteCertification', ['id' => $certification->id]) }}')"
+                                                    <a href="{{ route('restoreCertificationTopic', ['id' => $trashTopic->id]) }}"
+                                                        class="fa fa-sync fa-spin"></a>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="{{ route('forceDeleteCertificationTopic', ['id' => $trashTopic->id]) }}"
                                                         class="fa fa-trash" style="color: red"></a>
                                                 </td>
                                             </tr>
                                         @endforeach
 
 
-                                        </tbody>
+                                        </tfoot>
                                 </table>
-                                <a id="add" href="{{ route('createCertification') }}" class="btn btn-success" style="">Add new Record</a>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -86,12 +85,20 @@
     <script>
         $(document).ready(function() {
             $('#example1').DataTable({
-                "columns": [
-                        {"name": "Certification Name"},
-                        {"name": "Actions", "sorting": false, searching: false}
+                "columns": [{
+                        "name": "Topic Name"
+                    },
+                    {
+                        "name": "Date",
+                        searching: false
+                    },
+                    {
+                        "name": "Actions",
+                        "sorting": false,
+                        searching: false
+                    }
                 ]
             });
-
         });
 
     </script>

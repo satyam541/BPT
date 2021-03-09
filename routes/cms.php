@@ -40,7 +40,19 @@ Route::get('/certification/update/{id}','CertificationController@edit')->name('e
 Route::post('/certification/update/{id}','CertificationController@update')->name('updateCertification');
 Route::post('/certification/delete/{id}','CertificationController@delete')->name('deleteCertification');
 
-Route::get('/certification/courses','CertificationController@courseList')->name('certificationCourseList');
+Route::get('/certification/topics','CertificationController@topicList')->name('certificationTopicList');
+Route::get('/certification/topics/insert','CertificationController@addTopic')->name('certificationTopicCreate');
+Route::post('/certification/topics/insert','CertificationController@insertTopic')->name('certificationTopicInsert');
+Route::get('/certification/topics/update/{id}','CertificationController@editTopic')->name('certificationTopicEdit');
+Route::post('/certification/topics/update/{id}','CertificationController@updateTopic')->name('certificationTopicUpdate');
+Route::post('/certification/topics/delete/{id}','CertificationController@deleteTopic')->name('deleteCertificationTopic');
+
+Route::get('/certification/unlinkedTopic','CertificationController@unlinkedTopic')->name('unlinkCertificationTopic');
+Route::post('/certification/linkCertification/{id}','CertificationController@linkCertification')->name('linkCertificationRoute');
+
+
+Route::get('/certification/topics/{topic_id}/assignCourse','CertificationController@assignCourseForm')->name('assignCoursesForm');
+Route::post('/certification/topics/{topic_id}/assignCourse','CertificationController@assignCourses')->name('assignCoursesRoute');
 // country routes
 Route::get('/country','CountryController@list')->name('countryList');
 Route::post('/country','CountryController@filterList')->name('countryList');
@@ -314,6 +326,10 @@ Route::get('/country/deletecountry/{country_code}','CountryController@forceDelet
 Route::get('/certificationtrash','CertificationController@trashList')->name('certificationTrashList');
 Route::get('/certification/restore/{id}','CertificationController@restore')->name('restoreCertification');
 Route::get('/certification/forcedelete/{id}','CertificationController@forceDelete')->name('forceDeleteCertification');
+
+Route::get('/certification/topic/trash','CertificationController@topicTrashList')->name('certificationTopicTrash');
+Route::get('/certification/topic/restore/{id}','CertificationController@restoreTopic')->name('restoreCertificationTopic');
+Route::get('/certification/topic/forcedelete/{id}','CertificationController@forceDeleteTopic')->name('forceDeleteCertificationTopic');
 
 Route::get('/locationtrash','LocationController@locationtrashList')->name('locationTrashList');
 Route::get('/location/restorelocation/{id}','LocationController@restoreLocation')->name('restoreLocation');
