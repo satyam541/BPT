@@ -7,7 +7,6 @@
             <div class="container">
             @include("layouts.navbar")
                 <div class="banner-container">
-                    <div class="banner-content">
                         <h1>{!!$pageDetail->banner['banner']->heading!!}</h1>
                         <p>{!!$pageDetail->banner['banner']->content!!}</p>
                         <div class="breadcrums">
@@ -17,7 +16,6 @@
                                 <li><a href="{{route('contactUs')}}">Contact</a></li>
                             </ul>
                         </div>
-                    </div>
                 </div>
             </div>
 </section>

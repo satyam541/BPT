@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
+    <link rel="stylesheet" href="{{url('style/fontawesome.css')}}">
    @yield('header')
 </head>
 <body>
@@ -203,6 +204,7 @@
     <div class="pop-search" id="pop-mobile">
     <span class="search-close"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form" onsubmit="getquery(this)">
+    <h2>Search <span>our</span> courses and <span>solutions</span></h2>
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
                 <button  onclick="getquery(this)">

@@ -653,6 +653,10 @@
                     display: flex;
                     align-items: center;
                     color: @blackColor;
+                    i{
+                        margin-right: 0.5rem;
+                        width: 20px;
+                    }
                 }
                 .desktop{
                     display: none;
@@ -779,7 +783,7 @@
         -ms-transform: translate(0,-100%) scale(0,0);
         transform: translate(0,-100%) scale(0,0);
         opacity: 0;
-        .search-cross{
+        .search-cross,.search-close{
             display: flex;
             width: 34px;
             height: 34px;
@@ -813,11 +817,12 @@
                 width: 600px;
                 background-color: white;
                 border-radius: 50px;
-            
             }
             input{
                 box-shadow: none !important;
-                background: transparent;
+                background: transparent; 
+                border: none;
+                outline: none;
             }
             button{    
                 width: 150px;
@@ -830,6 +835,23 @@
                 cursor: pointer;
             }
         }
+    }
+    #pop-mobile{
+        .search-form{
+            .search{
+                width: 85%;
+                padding: 0.5rem;
+            }
+            input{
+                
+            width: 68%;
+ 
+            }
+            button {
+                width: 30%;
+            }
+        }
+      
     }
     .open{    
         -webkit-transform: translate(0,0) scale(1,1);
