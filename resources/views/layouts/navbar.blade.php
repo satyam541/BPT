@@ -29,13 +29,13 @@
                     <span></span>
                 </li>
                 <li class="links-li about-link" id="aboutdropdown" >
-                    <a href="{{route('aboutUs')}};" data-href="#faq" class="link mobile">About</a>
+                    <a href="" data-href="#faq" class="link mobile">About</a>
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
                         <li><a href="{{route('aboutUs')}}">About Us</a></li>
                         <li><a href="{{route('blog')}}">Blogs</a></li>
-                        <li><a>Testimonials</a></li>    
+                        <li><a href="{{route('testimonials')}}">Testimonials</a></li>
                     </ul>   
                 </li>
                 <li class="links-li">
