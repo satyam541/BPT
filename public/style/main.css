@@ -9321,40 +9321,21 @@ select::-ms-expand {
   background-color: #FFFFFF;
   padding: 0 1rem 2.5rem;
 }
-.language .rate,
-.language .offer {
+.language .prize,
+.language .offer,
+.language p {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.language .rate {
+.language .prize {
   font-size: 26px;
   text-decoration: line-through;
   color: #C0C0C0;
-  margin: 1.5rem 0 0.5rem;
+  margin: 0.5rem 0 0.5rem;
 }
 .language .offer {
   font-size: 30px;
-}
-.language .buy {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-.language .buy span {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40px;
-  margin-right: 0.5rem;
-}
-.language .buy span img {
-  width: 100%;
-  height: 100%;
-}
-.language .buy h3 {
-  text-align: center;
 }
 .language .language-content {
   display: flex;
@@ -9838,17 +9819,6 @@ select::-ms-expand {
   .language .language-img {
     width: 55%;
     align-self: center;
-  }
-  .language .buy {
-    padding: 0;
-    width: auto;
-  }
-  .language .buy span {
-    display: flex;
-  }
-  .language .buy h3 {
-    text-align: left;
-    width: calc(100% - 40px);
   }
   .language .language-list {
     flex-direction: row;
