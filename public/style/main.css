@@ -7168,27 +7168,13 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
-  .location-main .location-container {
-    position: relative;
-  }
-  .location-main .location-container::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    right: 0;
-    background-color: #C0C0C0;
-    margin: auto;
-  }
   .location-main .location-content {
-    width: 47%;
+    width: 58%;
     padding-right: 1rem;
+    border-right: 1px solid #c0c0c0;
   }
   .location-main .location-contact {
-    width: 46%;
+    width: 38%;
   }
   .location-main .contact-bottom span {
     position: relative;
@@ -7231,15 +7217,8 @@ select::-ms-expand {
   .location-main {
     padding: 4rem 0rem;
   }
-  .location-main .location-content {
-    width: 50%;
-  }
-  .location-main .location-contact {
-    width: 48%;
-  }
   .location-main .location-contact span::before {
     bottom: -44px;
-    right: -34px;
   }
   .key {
     padding: 4rem 0rem;

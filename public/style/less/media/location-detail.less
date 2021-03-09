@@ -61,27 +61,13 @@
 @media @size-lg{
     // Start Location-Main Section
     .location-main {
-        .location-container{
-        position: relative;
-        &::before{
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            top: 0;
-            left: 0;
-            opacity: .5;
-            right: 0;
-            background-color: #C0C0C0;
-            margin: auto;
-        }
-    }
         .location-content {
-            width: 47%;
+            width: 58%;
             padding-right: 1rem;
+            border-right: 1px solid #c0c0c0;
         }
         .location-contact {
-            width: 46%;
+            width: 38%;
         }
         .contact-bottom {
             span {
@@ -133,15 +119,10 @@
     // Start Location-Main Section
     .location-main {
         padding: @sectionPadding-xl;
-        .location-content {
-            width: 50%;
-        }
-        .location-contact {   
-            width: 48%;
+        .location-contact { 
             span {
                 &::before {
                     bottom: -44px;
-                    right: -34px;
                 }
             }
         }
