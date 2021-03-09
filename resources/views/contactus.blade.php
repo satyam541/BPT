@@ -3,7 +3,7 @@
 @section("content")
 
 <!-- Start Banner section  -->
-<section class="flex-container contact-banner">
+<section class="flex-container banner contact-banner">
             <div class="container">
             @include("layouts.navbar")
                 <div class="banner-container">

@@ -744,11 +744,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.banner .banner-container .banner-content p {
-  color: #181818;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
 .banner .banner-container .banner-content button {
   width: 82px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -1165,7 +1160,7 @@ select::-ms-expand {
   }
   .banner {
     padding: 3rem 2rem;
-    padding-top: 12rem !important;
+    padding-top: 5rem !important;
     position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1242,6 +1237,9 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
+  .banner {
+    padding-top: 10rem !important;
+  }
   .black-breadcrums li {
     color: #181818;
   }
@@ -1875,6 +1873,11 @@ select::-ms-expand {
 }
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+}
+.home-banner .banner-container .banner-content p {
+  color: #181818;
+  margin-bottom: 1rem;
+  line-height: 1.8;
 }
 .home-banner .banner-container .topic-list {
   display: flex;
@@ -3048,18 +3051,8 @@ select::-ms-expand {
   flex-direction: column;
   background-color: #0064D8;
 }
-.contact-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1.5rem;
-}
-.contact-banner .banner-container .banner-content {
-  display: flex;
-  flex-direction: column;
-}
 .contact-banner .banner-container .banner-content h1 {
   color: #FFFFFF;
-  margin-bottom: 0.5rem;
 }
 .contact-banner .banner-container .banner-content p {
   color: #FFFFFF;
@@ -3363,18 +3356,6 @@ select::-ms-expand {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .contact-banner {
-    padding: 3rem 2rem;
-    padding-top: 1rem;
-  }
-  .contact-banner .banner-container {
-    width: 100%;
-    padding: 0;
-  }
-  .contact-banner .banner-container .banner-content {
-    padding-top: 2rem;
-    width: 100%;
-  }
   .contact {
     padding: 3rem 2rem;
   }
@@ -3491,9 +3472,6 @@ select::-ms-expand {
   }
   .contact-banner .banner-container {
     flex-direction: row;
-    justify-content: space-between;
-    padding-top: 3rem;
-    align-items: center;
   }
   .contact-banner .banner-container .banner-content {
     width: 45%;
