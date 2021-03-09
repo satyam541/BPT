@@ -332,7 +332,7 @@
                         {!! $pageDetail->looking_for['heading']->content !!}
                     </p>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS">
+                        <a  href="{{route('contactUs')}}" class="btn-blue  enquiryJS">
                             <img src="{{ url('img/home/phone-call.svg') }}" alt="phone-call">
                             Contact Us
                         </a>

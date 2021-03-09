@@ -21,24 +21,48 @@
                 </div>
                 {!! $selectedCourse->tag_line !!}
             </div>
+            @if($selectedCourse->whatsIncluded->isNotEmpty())
             <div class="banner-points">
                 <h2>Key Points</h2>
                 <ul>
                     <li>Duration: {{ $selectedCourse->duration }}*</li>
-                    <li>Certificate(s): Included</li>
-                    <li>Exam(s): Included</li>
-                    <li>Support: 24/7</li>
+                    @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                    <li>{!!$whatsInclude->name!!}</li>
+                    @endforeach
                 </ul>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section>
 <!-- End Banner Section -->
+
+<!-- Start course-intro section -->
+    <section class="flex-container course-intro">
+        <div class="container">
+            <div class="intro-container">
+                <div class="heading center-heading">
+                    <h2>Course <span>Introduction</span></h2>
+                </div>
+                <p class="intro-para">The PRINCE2 Foundation and Practitioner training course is experiencing a 2017 update. Book now for the new 2017 program.</p>
+                <p>PRINCE2 (PRojects IN Controlled Environments) is an approach to project management which provides a method for planning as well as managing projects effectively. It is widely used by the UK government as well as internationallyandin private sector. PRINCE2® Foundation and Practitioner is a combined course which helps you to achieve both the PRINCE2® Foundation and PRINCE2® Practitioner certifications. </p>
+                    <ul>
+                            <li>PRINCE2® (PRojects IN Controlled Environment version 2) is a method used for effective management of projects of any size belonging to any sector</li>
+                            <li>Best practice training are one of the most active providers of this certification due to its high quality and economical price</li>
+                            <li>Best Practice Training is a globally accredited PRINCE2® Training provider</li>
+                            <li>PRINCE2® is widely recognised in private sector by the UK government and internationally</li>
+                            <li>Gain deeper understanding of PRINCE2® methodology with our unique way of teaching</li>
+                            <li>Delivered by highly experienced and trained instructors</li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+<!-- End course-intro section -->
 
 <!-- Start Foundation Section -->
 <section class="flex-container foundation">
@@ -204,6 +228,45 @@
 </section>
 <!-- End Foundation Section -->
 
+<!-- Start learn-more section -->
+    <section class="flex-container learn-more">
+            <div class="container">
+                <div class="more-container">
+                    <div class="more-content">
+                        <div class="heading">
+                            <h2>Prerequisites</h2>
+                        </div>
+                        <p>This course has no prerequisites, although it will be beneficial if delegates already have some experience of working in projects before attending this course.</p>
+                        <p>Along with this, the below-mentioned delegates can also choose the course:</p>
+                        <ul>
+                            <li>PRINCE2® Foundation/PMP®/CAPM® Certified</li>
+                            <li>Projects Director and Certified Senior Project Manager</li>
+                            <li>Project Management Associate</li>
+                        </ul>
+
+                        <div class="heading">
+                            <h2>Target <span>Audience</span></h2>
+                        </div>
+                        <p>This project management course is for anyone who would like to enhance their skills in becoming a project manager. You have to pass the PRINCE2 Foundation course before taking the Practitioner course.</p>
+                    </div>
+                    <div class="more-list">
+                        <div class="heading">
+                            <h2>Delegates Will <span>Learn How To</span></h2>
+                        </div>
+                        <ul>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- End learn-more section -->
+
 <!-- Start Unable Section -->
 <section class="flex-container unable">
     <div class="container">
@@ -211,7 +274,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Have a Question?">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/master/arrow.svg') }}" alt="arrow">Have a Question?
                 </a>
             </div>
@@ -304,14 +367,16 @@
                         </div>
                     </div>
                     <div class="key-point">
+                        @if($selectedCourse->whatsIncluded->isNotEmpty())
                         <h2>Key Points</h2>
-                        <p><strong>Duration: </strong>5 Days*</p>
-                        <p><strong>Exam(s): </strong> Included</p>
-                        <p><strong>Certificate(s): </strong> Included</p>
-                        <p><strong>Support: </strong> 24/7</p>
+                        <p><strong>Duration: </strong>{{ $selectedCourse->duration }}*</p>
+                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                        <p><strong>{!!$whatsInclude->name!!}</strong></p>
+                        @endforeach
+                        @endif
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                data-quote="Enquire Now">
+                                data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                                 <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                             </a>
                         </div>
@@ -366,7 +431,7 @@
                             </div>
                             <p>Contact us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
@@ -384,7 +449,7 @@
                                 <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
                                 <div class="buttons">
                                     <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{$virtual->event_price}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
-                                        data-quote="Enquire Now">
+                                        data-quote="Enquire Now" data-course="{{$selectedCourse->name}}" data-date="{{$virtual->response_date}}" data-price="{{$virtual->event_price}}" data-location="{{$virtual->response_location}}" data-deliveryType="virtual">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
                                     <a href="{{ route('virtualBooking',$virtual->id) }}" class="btn-blue"
@@ -427,7 +492,7 @@
                             </div>
                             <p>Contact us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="virtual" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
@@ -487,7 +552,7 @@
                                     </ul>
 
                                     <div class="buttons">
-                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->online_course_name}}" class="btn-blue">
+                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->name}}"data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>
@@ -518,6 +583,8 @@
                             </div>
                             <div class="form-input">
                                 <input type="hidden" name="type" value="onsite">
+                                <input type="hidden" name="location" value="onsite">
+                                {{-- <input type="hidden" name="course" value="{{$selectedCourse->name}}"> --}}
                                 <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
@@ -557,7 +624,7 @@
                                     <span><img src="{{url('img/master/book-white.svg')}}" alt="book" class="black">
                                         <img src="{{url('img/master/book-red.svg')}}" alt="book-red" class="red"></span>
                                     <input type="text" name="course" id="course" placeholder="Course*"
-                                        autocomplete="off">
+                                        autocomplete="off" value="{{$selectedCourse->name}}" readonly>
                                 </div>
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/position-white.svg')}}" alt="position"
@@ -701,6 +768,20 @@
                         @else
                         <span class="offer">£{{$schedules->first()->event_price}}</span>
                         @endif
+                        
+                        <div class="buy">
+                            <span>
+                                <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
+                            </span>
+                            <h3>23 hours left at this price!</h3>
+                        </div>
+                        <div class="buttons">
+                            <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
+                                data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price={{$schedules->first()->event_price}}>
+                                <img src="{{ url('img/courses/email.svg') }}" alt="email">
+                                Enquire Now
+                            </a>
+                        </div>
                         @elseif($virtualSchedules->isNotEmpty())
                         @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->
                             first()->event_price))
@@ -710,10 +791,7 @@
                             @else
                             <span class="offer">£{{$virtualSchedules->first()->event_price}}</span>
                             @endif
-                            @endif
-
-
-
+                            
                             <div class="buy">
                                 <span>
                                     <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
@@ -722,11 +800,15 @@
                             </div>
                             <div class="buttons">
                                 <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                    data-quote="Buy Now">
-                                    <img src="{{ url('img/courses/buy.svg') }}" alt="buy">
-                                    Buy Now
+                                    data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price="{{$virtualSchedules->first()->response_discounted_price}}">
+                                    <img src="{{ url('img/courses/email.svg') }}" alt="email">
+                                    Enquire Now
                                 </a>
                             </div>
+                            @endif
+
+
+
                 </div>
             </div>
             <div class="language-content">
@@ -749,7 +831,7 @@
 
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -775,7 +857,7 @@
                     <h3>{!! $item->heading !!}</h3>
                     <p>{!! $item->content !!}</p>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                             <img src="{{ url('img/courses/email.svg') }}" alt="email">
                             Enquire Now
                         </a>
@@ -820,7 +902,7 @@
                 <h2>{!! $pageDetail->largest_location['heading']->heading !!}</h2>
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
                         Learn More
                     </a>

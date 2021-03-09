@@ -525,46 +525,68 @@ select::-ms-expand {
   display: flex;
   z-index: 2;
 }
-.navbar ul {
+.navbar .menu-list {
   list-style-type: none;
   margin-bottom: 0;
 }
-.navbar ul .links-li {
+.navbar .menu-list .links-li {
   padding: 8px 0;
   border-bottom: 1px dotted #000000;
   cursor: pointer;
 }
-.navbar ul .links-li:first-child {
+.navbar .menu-list .links-li:first-child,
+.navbar .menu-list .links-li:nth-child(5) {
   padding-top: 0;
 }
-.navbar ul .links-li:nth-last-child(2) {
+.navbar .menu-list .links-li:first-child img,
+.navbar .menu-list .links-li:nth-child(5) img {
+  display: none;
+}
+.navbar .menu-list .links-li:nth-last-child(2) {
   border-bottom: none;
   padding-bottom: 0;
 }
-.navbar ul .links-li:last-child {
+.navbar .menu-list .links-li:last-child {
   display: none;
   padding-bottom: 0;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
-.navbar ul .links-li:last-child a {
+.navbar .menu-list .links-li:last-child a {
   display: flex;
   width: 35px;
   height: 35px;
   padding: 6px;
   background-color: #1C2848;
 }
-.navbar ul .links-li:last-child img {
+.navbar .menu-list .links-li:last-child img {
   width: 100%;
   height: 100%;
 }
-.navbar ul .links-li .link {
+.navbar .menu-list .links-li .link {
+  display: flex;
+  align-items: center;
   font-size: 14px;
   color: #000000;
   text-decoration: none;
 }
-.navbar ul .buttons {
+.navbar .menu-list #aboutdropdown {
+  position: relative;
+}
+.navbar .menu-list #aboutdropdown ul {
+  display: none;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: -115px;
+  left: 0;
+  background-color: #FFFFFF;
+  flex-direction: column;
+}
+.navbar .menu-list #aboutdropdown ul li {
+  margin-bottom: 0.5rem;
+}
+.navbar .menu-list .buttons {
   display: none;
 }
 .navbar .top-bar {
@@ -1126,7 +1148,7 @@ select::-ms-expand {
     top: 25px;
     left: 0;
   }
-  .navbar ul {
+  .navbar .menu-list {
     display: flex;
     align-items: center;
     margin: 0;
@@ -1135,7 +1157,7 @@ select::-ms-expand {
     background: linear-gradient(#0064D8, #1C2848);
     order: 2;
   }
-  .navbar ul .links-li {
+  .navbar .menu-list .links-li {
     display: flex!important;
     flex-direction: column;
     border-bottom: none;
@@ -1144,41 +1166,41 @@ select::-ms-expand {
     color: #000000;
     font-weight: 500;
   }
-  .navbar ul .links-li:last-child {
+  .navbar .menu-list .links-li:last-child {
     margin-top: 0;
     margin-right: 0;
     margin-left: auto;
     width: 140px;
     flex-direction: row;
   }
-  .navbar ul .links-li .link {
+  .navbar .menu-list .links-li .link {
     font-weight: 600;
     transition: none;
     color: #FFFFFF;
     padding-bottom: 3px;
   }
-  .navbar ul .links-li span {
+  .navbar .menu-list .links-li span {
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 49%, rgb(23 50 97) 49%, #056ab9 57%, #ffffff 57%, #ffffff 69%, rgb(23 50 97) 69%, rgb(23 50 97) 77%, #ffffff 77%, #ffffff 88%, rgb(23 50 97) 88%, #ffffff 88%);
     width: 0;
     height: 3px;
     visibility: hidden;
     transition: 1s all;
   }
-  .navbar ul .links-li:hover span {
+  .navbar .menu-list .links-li:hover span {
     width: 100%;
     visibility: visible;
     transition: 1s all;
   }
-  .navbar ul .buttons .btn-white {
+  .navbar .menu-list .buttons .btn-white {
     margin-right: 1rem;
     padding: 0.5rem;
     min-width: 40px;
     height: 40px;
   }
-  .navbar ul .buttons .btn-white img {
+  .navbar .menu-list .buttons .btn-white img {
     margin-right: 0;
   }
-  .navbar ul .buttons .btn-white:last-child {
+  .navbar .menu-list .buttons .btn-white:last-child {
     margin-right: 0;
   }
   .navbar .top-bar {
@@ -1187,6 +1209,7 @@ select::-ms-expand {
     background: #FFFFFF !important;
     order: 1;
     justify-content: flex-start;
+    padding: 0.8rem;
   }
   .navbar .top-bar .buttons {
     display: flex;
@@ -1382,11 +1405,21 @@ select::-ms-expand {
   .black-breadcrums .white {
     display: none;
   }
-  .navbar ul {
+  .navbar .menu-list {
     position: relative;
   }
-  .navbar ul .links-li .link {
+  .navbar .menu-list .links-li:first-child img,
+  .navbar .menu-list .links-li:nth-child(5) img {
+    display: flex;
+    height: 10px;
+    width: 10px;
+    margin-left: 5px;
+  }
+  .navbar .menu-list .links-li .link {
     padding-bottom: 0;
+  }
+  .navbar .menu-list #aboutdropdown .active {
+    display: flex;
   }
   .navbar .top-bar li:first-child {
     margin-right: 1.5rem;
@@ -1420,12 +1453,13 @@ select::-ms-expand {
     left: 0;
     top: 140px;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     z-index: 5;
   }
   .dropdown-menu .dropdown-list {
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    border-bottom-right-radius: 100px;
   }
   .dropdown-menu h3 {
     color: #000000;
@@ -1441,8 +1475,9 @@ select::-ms-expand {
     background-color: #1C2848;
     width: 32%;
     z-index: 1;
-    padding: 1rem;
+    padding: 1.5rem;
     padding-right: 0;
+    border-bottom-left-radius: 22px;
   }
   .dropdown-menu .topic-info h3 {
     color: #FFFFFF;
@@ -1507,15 +1542,13 @@ select::-ms-expand {
   .dropdown-menu .course-list {
     display: flex;
     flex-direction: column;
-    width: 32%;
+    width: 34%;
+    background-color: #F6F6F6;
   }
   .dropdown-menu .course-list .course-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-    background-color: #F6F6F6;
-    padding: 1rem;
+    padding: 1.5rem;
     padding-left: 2rem;
     padding-right: 0;
   }
@@ -1542,6 +1575,9 @@ select::-ms-expand {
     width: 60px;
     margin-right: 1rem;
   }
+  .dropdown-menu .course-list .course-content .course a span .white {
+    display: none;
+  }
   .dropdown-menu .course-list .course-content .course a span img {
     height: 30px;
     width: 30px;
@@ -1557,16 +1593,22 @@ select::-ms-expand {
   .dropdown-menu .course-list .course-content .course .course-active span {
     background-color: #2674CF;
   }
+  .dropdown-menu .course-list .course-content .course .course-active span .white {
+    display: flex;
+  }
+  .dropdown-menu .course-list .course-content .course .course-active span .blue {
+    display: none;
+  }
   .dropdown-menu .course-list .course-content .course .course-active p {
     color: #FFFFFF;
   }
   .dropdown-menu .course-list .course-content .course .course-active::before {
     content: '';
     position: absolute;
-    width: 62px;
+    width: 45px;
     height: 60px;
-    right: -27px;
-    background-image: url('../img/master/dropdown-blue.png');
+    right: -25px;
+    background-image: url(../img/master/dropdown-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 0;
@@ -1574,10 +1616,12 @@ select::-ms-expand {
   .dropdown-menu .menu-list {
     display: flex;
     flex-direction: column;
-    width: 34%;
     justify-content: space-between;
-    background-color: #FFFFFF;
-    padding: 1rem;
+    width: 34%;
+    padding: 1.5rem;
+    padding-right: 0;
+    border-bottom-right-radius: 100px;
+    background-color: transparent;
   }
   .dropdown-menu .menu-list .menu-info {
     display: flex;
@@ -1604,6 +1648,17 @@ select::-ms-expand {
     background-position: top;
     width: 22px;
     height: 22px;
+  }
+  .dropdown-menu .menu-list .menu-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdown-menu .menu-list .buttons {
+    justify-content: flex-start;
+  }
+  .dropdown-menu .menu-list .buttons .btn-blue img {
+    margin-right: 0;
+    margin-left: 5px;
   }
   .banner::before {
     height: 56%;
@@ -1658,7 +1713,7 @@ select::-ms-expand {
   .heading span {
     font-size: 32px;
   }
-  .navbar ul .links-li {
+  .navbar .menu-list .links-li {
     margin-right: 1rem;
   }
   .footer {
@@ -1847,6 +1902,7 @@ select::-ms-expand {
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 .home-banner .banner-container .topic-list .owl-dots .owl-dot {
   display: flex;
@@ -8225,6 +8281,39 @@ select::-ms-expand {
 .courses-banner .breadcrums ul li a {
   font-size: 13px;
 }
+.course-intro {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#FFFFFF, #F5F5F5);
+}
+.course-intro .intro-container {
+  display: flex;
+  flex-direction: column;
+}
+.course-intro .intro-para {
+  font-weight: bold;
+}
+.course-intro p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.course-intro ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+.course-intro ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/checkmark.svg);
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
 .foundation {
   padding: 3rem 1.5rem;
 }
@@ -8542,6 +8631,49 @@ select::-ms-expand {
 }
 .foundation .included-content:hover span::before {
   background: linear-gradient(90deg, #0064D8, #1C2848);
+}
+.learn-more {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#F6F6F6, #F6F6F6, #FFFFFF, #FFFFFF);
+}
+.learn-more p {
+  margin-top: 1rem;
+}
+.learn-more .heading {
+  margin-bottom: 0;
+}
+.learn-more ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+}
+.learn-more ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/more-points.svg);
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
+.learn-more .more-content ul li:last-child {
+  margin-bottom: 2rem;
+}
+.learn-more .more-list {
+  margin-top: 2rem;
+}
+.learn-more .more-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-top: 3px solid #1C2848;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .unable {
   padding: 3rem 1.5rem;
@@ -9444,6 +9576,17 @@ select::-ms-expand {
   .courses-banner .banner-points ul li {
     width: 47%;
   }
+  .course-intro {
+    padding: 3rem 2rem;
+  }
+  .course-intro ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .course-intro ul li {
+    width: 49%;
+  }
   .foundation {
     padding: 3rem 2rem;
   }
@@ -9466,6 +9609,21 @@ select::-ms-expand {
   .foundation .included-content {
     width: 24%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 3rem 2rem;
+  }
+  .learn-more .more-content {
+    width: 48%;
+  }
+  .learn-more .more-list {
+    width: 48%;
+    margin-top: 0;
+  }
+  .learn-more .more-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
   }
   .unable {
     padding: 3rem 2rem;
@@ -9883,6 +10041,12 @@ select::-ms-expand {
     width: 22%;
     margin-bottom: 0;
   }
+  .learn-more .more-list {
+    width: 49%;
+  }
+  .learn-more .more-container {
+    padding: 3rem 2rem;
+  }
   .unable p {
     width: 60%;
   }
@@ -10152,6 +10316,9 @@ select::-ms-expand {
   .courses-banner .banner-points {
     width: 32%;
   }
+  .course-intro {
+    padding: 4rem 0rem;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -10174,6 +10341,9 @@ select::-ms-expand {
   .foundation .included-content {
     width: 22%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 4rem 0rem;
   }
   .unable {
     padding: 4rem 0rem;
@@ -12649,6 +12819,11 @@ select::-ms-expand {
     width: 2px;
     background-color: #0064D8;
     transition: 1s all;
+  }
+  .topic-courses .course-item a {
+    width: 93%;
+    font-size: 15px;
+    overflow: hidden;
   }
   .topic-courses .course-item:hover::before,
   .topic-courses .course-item:hover::after {

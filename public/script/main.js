@@ -400,38 +400,38 @@ $('#scroll').click(function(){
 }); 
 // End scroll top
 
-function stepOne() {
-    $('#stepTwo').addClass('step-active');   
-    $('#stepOne').hide().removeClass('step-active'); 
-    $('#one').addClass('number-active').removeClass('blue-active');  
-    $('#two').addClass('blue-active');  
-}
+// function stepOne() {
+//     $('#stepTwo').addClass('step-active');   
+//     $('#stepOne').hide().removeClass('step-active'); 
+//     $('#one').addClass('number-active').removeClass('blue-active');  
+//     $('#two').addClass('blue-active');  
+// }
  
-function prev() {
-    $('#stepOne').addClass('step-active');
-    $('#stepTwo').removeClass('step-active');
-    $('#one').removeClass('number-active').addClass('blue-active');
-    $('#two').removeClass('blue-active'); 
-}
-function stepThree() {
-    $('#stepThree').addClass('step-active');
-    $('#stepTwo').hide().removeClass('step-active');
-    $('#two').addClass('number-active').removeClass('blue-active');  
-    $('#three').addClass('blue-active');  
-}
-function prevTwo() {
-    $('#stepTwo').addClass('step-active');
-    $('#stepThree').removeClass('step-active');
-    $('#two').removeClass('number-active').addClass('blue-active');
-    $('#three').removeClass('blue-active'); 
+// function prev() {
+//     $('#stepOne').addClass('step-active');
+//     $('#stepTwo').removeClass('step-active');
+//     $('#one').removeClass('number-active').addClass('blue-active');
+//     $('#two').removeClass('blue-active'); 
+// }
+// function stepThree() {
+//     $('#stepThree').addClass('step-active');
+//     $('#stepTwo').hide().removeClass('step-active');
+//     $('#two').addClass('number-active').removeClass('blue-active');  
+//     $('#three').addClass('blue-active');  
+// }
+// function prevTwo() {
+//     $('#stepTwo').addClass('step-active');
+//     $('#stepThree').removeClass('step-active');
+//     $('#two').removeClass('number-active').addClass('blue-active');
+//     $('#three').removeClass('blue-active'); 
   
-}
-function stepFour() {
-    $('#stepFour').addClass('step-active');
-    $('#stepThree').hide().removeClass('step-active');
-    $('#three').addClass('number-active').removeClass('blue-active');  
-    $('#four').addClass('blue-active'); 
-}
+// }
+// function stepFour() {
+//     $('#stepFour').addClass('step-active');
+//     $('#stepThree').hide().removeClass('step-active');
+//     $('#three').addClass('number-active').removeClass('blue-active');  
+//     $('#four').addClass('blue-active'); 
+// }
 
     //menu
     $("#menucourses").click(function(event) {
@@ -482,5 +482,18 @@ function stepFour() {
         $('#pop-search').removeClass('open');
     });
     //End open search
+
+    //Tabs count 
+    $.each($("li.tab-click"), function(index, elm){
+        var headingText =  "0" + (index+1);
+        $(elm).find('.number').text(headingText);
+    });
+    // End count
+
+    //Start about dropdown
+    $('#aboutdropdown').click(function() {
+        $(this).children('ul').toggleClass('active');
+    });
+    //End about dropdown
 
 
