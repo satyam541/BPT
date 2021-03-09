@@ -242,35 +242,35 @@
             <div class="facts-container">
                 <div class="fact-content">
                     <h2>Our Amazing Facts and Figures</h2>
-                    <p>We are the Largest Global Accredited Training Provider. We successfully run 100+ Courses Daily in
-                        490+ locations worldwide.</p>
+                    <p>We are the Largest Global Accredited Training Provider. We successfully run {{homepageData()['courses']}}+ Courses Daily in
+                        {{homepageData()['locations']}}+ locations worldwide.</p>
                 </div>
                 <div class="facts-list">
                     <div class="item">
                         <img src="{{ url('img/home/running.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="230" data-speed="3000">230</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{homepageData()['courses']}}" data-speed="3000">{{homepageData()['courses']}}</h3><span>+</span>
                         </div>
                         <p>Courses Running Daily</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/locations.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="150" data-speed="3000">150</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{homepageData()['locations']}}" data-speed="3000">{{homepageData()['locations']}}</h3><span>+</span>
                         </div>
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/event.svg') }}" alt="event">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="670" data-speed="3000">670</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{homepageData()['schedules']}}" data-speed="3000">{{homepageData()['schedules']}}</h3><span>+</span>
                         </div>
                         <p>Events</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="80" data-speed="3000">80</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{homepageData()['countries']}}" data-speed="3000">{{homepageData()['countries']}}</h3><span>+</span>
                         </div>
                         <p>Countries</p>
                     </div>

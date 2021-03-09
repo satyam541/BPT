@@ -132,7 +132,7 @@
             <div class="input-group" data-widget="sidebar-search">
               {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
 
-              {{ Form::select('country_id', allCountries(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
+              {{ Form::select('country_id', countries()->pluck('name','country_code')->toArray(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
               
             </div>
           </div>
