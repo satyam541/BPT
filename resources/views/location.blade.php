@@ -73,8 +73,8 @@
                 <p>{{$pageDetail->find['find_container']->content}}</p>
             </div>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire" data-type="other">
-                    <img src="{{url('img/location/enquire.svg')}}" alt="enquire"> Enquire
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
+                    <img src="{{url('img/location/enquire.svg')}}" alt="enquire"> Enquire Now
                 </a>
             </div>
         </div>
@@ -92,9 +92,6 @@
                 </div>
                 <div class="search">
                     <input type="text" name="filter" id="locationFilter" placeholder="Search location here....">
-                    <button>
-                        Search
-                    </button>
                 </div>
             </div>
             
@@ -176,7 +173,7 @@
                         <input type="text" name="address" id="adress" placeholder="Address"
                             autocomplete="off">
                     </div>
-                    <div class="input-container">
+                    <div class="input-container message">
                         <span><img src="{{url('img/master/comment-black.svg')}}" alt="comment" class="black">
                         <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                         <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
@@ -208,7 +205,7 @@
                 </div>
             </form>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13633.525907762536!2d75.58587720000001!3d31.320836250000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1613628596038!5m2!1sen!2sin" width="400" height="270" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.470825758302!2d-1.3537326847136424!3d50.97048735763841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487472fdaa4f0855%3A0xc4bce2c7a80e1796!2sWessex%20House!5e0!3m2!1sen!2sin!4v1615202510481!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

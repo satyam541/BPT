@@ -71,6 +71,47 @@
 }
 // End Banner section //
 
+// Start course-intro section//
+    .course-intro{
+        padding: @sectionPadding;
+        background-image: linear-gradient(#FFFFFF , #F5F5F5);
+
+        .intro-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .intro-para{
+            font-weight: bold;
+        }
+        p{
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        ul{
+
+            li{
+                padding-left: 1.5rem;
+                margin-top: 0.8rem;
+                position: relative;
+                z-index: 1;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    background-image: url(../img/courses/checkmark.svg);
+                    background-size: contain;
+                    width: 17px;
+                    height: 17px;
+                    left: 0;
+                    top: 4px;
+                    background-repeat: no-repeat;
+
+                }
+            }
+        }
+    }
+// End course-intro section //
+
 // Start Foundation Section
 .foundation {
     padding: @sectionPadding;
@@ -409,6 +450,62 @@
     }
 }
 // End Foundation Section
+
+// Start learn-more section //
+    .learn-more{
+        padding: @sectionPadding;
+        background-image: linear-gradient(@bgColor , @bgColor , @whiteColor , @whiteColor);
+
+        p{
+            margin-top: 1rem;
+        }
+        .heading{
+            margin-bottom: 0;
+        }
+        ul{
+            li{
+                padding-left: 1.5rem;
+                margin-top: 0.8rem;
+                position: relative;
+                z-index: 1;
+                font-size: 13px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    background-image: url(../img/courses/more-points.svg);
+                    background-size: contain;
+                    width: 15px;
+                    height: 15px;
+                    left: 0;
+                    top: 4px;
+                    background-repeat: no-repeat;
+
+                }
+            }
+        }
+        .more-content{
+            ul{
+                li{
+                    &:last-child{
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+        .more-list{
+            margin-top: 2rem;
+        }
+        .more-container{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background-color: @whiteColor;
+            border-top: 3px solid @darkblueColor;
+            box-shadow: @shadowLight;
+        }
+    }
+// End learn-more section //
 
 // Start Unable Section
 .unable {

@@ -40,6 +40,28 @@
 </section>
 <!-- End Banner Section -->
 
+<!-- Start course-intro section -->
+    <section class="flex-container course-intro">
+        <div class="container">
+            <div class="intro-container">
+                <div class="heading center-heading">
+                    <h2>Course <span>Introduction</span></h2>
+                </div>
+                <p class="intro-para">The PRINCE2 Foundation and Practitioner training course is experiencing a 2017 update. Book now for the new 2017 program.</p>
+                <p>PRINCE2 (PRojects IN Controlled Environments) is an approach to project management which provides a method for planning as well as managing projects effectively. It is widely used by the UK government as well as internationallyandin private sector. PRINCE2® Foundation and Practitioner is a combined course which helps you to achieve both the PRINCE2® Foundation and PRINCE2® Practitioner certifications. </p>
+                    <ul>
+                            <li>PRINCE2® (PRojects IN Controlled Environment version 2) is a method used for effective management of projects of any size belonging to any sector</li>
+                            <li>Best practice training are one of the most active providers of this certification due to its high quality and economical price</li>
+                            <li>Best Practice Training is a globally accredited PRINCE2® Training provider</li>
+                            <li>PRINCE2® is widely recognised in private sector by the UK government and internationally</li>
+                            <li>Gain deeper understanding of PRINCE2® methodology with our unique way of teaching</li>
+                            <li>Delivered by highly experienced and trained instructors</li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+<!-- End course-intro section -->
+
 <!-- Start Foundation Section -->
 <section class="flex-container foundation">
     <div class="container">
@@ -203,6 +225,45 @@
     </div>
 </section>
 <!-- End Foundation Section -->
+
+<!-- Start learn-more section -->
+    <section class="flex-container learn-more">
+            <div class="container">
+                <div class="more-container">
+                    <div class="more-content">
+                        <div class="heading">
+                            <h2>Prerequisites</h2>
+                        </div>
+                        <p>This course has no prerequisites, although it will be beneficial if delegates already have some experience of working in projects before attending this course.</p>
+                        <p>Along with this, the below-mentioned delegates can also choose the course:</p>
+                        <ul>
+                            <li>PRINCE2® Foundation/PMP®/CAPM® Certified</li>
+                            <li>Projects Director and Certified Senior Project Manager</li>
+                            <li>Project Management Associate</li>
+                        </ul>
+
+                        <div class="heading">
+                            <h2>Target <span>Audience</span></h2>
+                        </div>
+                        <p>This project management course is for anyone who would like to enhance their skills in becoming a project manager. You have to pass the PRINCE2 Foundation course before taking the Practitioner course.</p>
+                    </div>
+                    <div class="more-list">
+                        <div class="heading">
+                            <h2>Delegates Will <span>Learn How To</span></h2>
+                        </div>
+                        <ul>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- End learn-more section -->
 
 <!-- Start Unable Section -->
 <section class="flex-container unable">

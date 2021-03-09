@@ -5395,7 +5395,7 @@ select::-ms-expand {
 }
 .popular .search input {
   padding: 0.5rem;
-  width: 66%;
+  width: 100%;
   border: none;
   outline: none;
 }
@@ -8204,6 +8204,39 @@ select::-ms-expand {
 .courses-banner .breadcrums ul li a {
   font-size: 13px;
 }
+.course-intro {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#FFFFFF, #F5F5F5);
+}
+.course-intro .intro-container {
+  display: flex;
+  flex-direction: column;
+}
+.course-intro .intro-para {
+  font-weight: bold;
+}
+.course-intro p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.course-intro ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+.course-intro ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/checkmark.svg);
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
 .foundation {
   padding: 3rem 1.5rem;
 }
@@ -8521,6 +8554,49 @@ select::-ms-expand {
 }
 .foundation .included-content:hover span::before {
   background: linear-gradient(90deg, #0064D8, #1C2848);
+}
+.learn-more {
+  padding: 3rem 1.5rem;
+  background-image: linear-gradient(#F6F6F6, #F6F6F6, #FFFFFF, #FFFFFF);
+}
+.learn-more p {
+  margin-top: 1rem;
+}
+.learn-more .heading {
+  margin-bottom: 0;
+}
+.learn-more ul li {
+  padding-left: 1.5rem;
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+}
+.learn-more ul li::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url(../img/courses/more-points.svg);
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 4px;
+  background-repeat: no-repeat;
+}
+.learn-more .more-content ul li:last-child {
+  margin-bottom: 2rem;
+}
+.learn-more .more-list {
+  margin-top: 2rem;
+}
+.learn-more .more-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-top: 3px solid #1C2848;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .unable {
   padding: 3rem 1.5rem;
@@ -9423,6 +9499,17 @@ select::-ms-expand {
   .courses-banner .banner-points ul li {
     width: 47%;
   }
+  .course-intro {
+    padding: 3rem 2rem;
+  }
+  .course-intro ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .course-intro ul li {
+    width: 49%;
+  }
   .foundation {
     padding: 3rem 2rem;
   }
@@ -9445,6 +9532,21 @@ select::-ms-expand {
   .foundation .included-content {
     width: 24%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 3rem 2rem;
+  }
+  .learn-more .more-content {
+    width: 48%;
+  }
+  .learn-more .more-list {
+    width: 48%;
+    margin-top: 0;
+  }
+  .learn-more .more-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 1.5rem;
   }
   .unable {
     padding: 3rem 2rem;
@@ -9862,6 +9964,12 @@ select::-ms-expand {
     width: 22%;
     margin-bottom: 0;
   }
+  .learn-more .more-list {
+    width: 49%;
+  }
+  .learn-more .more-container {
+    padding: 3rem 2rem;
+  }
   .unable p {
     width: 60%;
   }
@@ -10131,6 +10239,9 @@ select::-ms-expand {
   .courses-banner .banner-points {
     width: 32%;
   }
+  .course-intro {
+    padding: 4rem 0rem;
+  }
   .foundation {
     padding: 4rem 0rem;
   }
@@ -10153,6 +10264,9 @@ select::-ms-expand {
   .foundation .included-content {
     width: 22%;
     margin-bottom: 0;
+  }
+  .learn-more {
+    padding: 4rem 0rem;
   }
   .unable {
     padding: 4rem 0rem;
