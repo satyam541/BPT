@@ -484,6 +484,12 @@ $('#scroll').click(function(){
       $('#search').click(function(){
         $('#pop-search').addClass('open');
     });
+    $('#mobile-search').click(function(){
+        $('#pop-mobile').addClass('open');
+    });
+    $(".search-close").on("click", function(){
+        $('#pop-mobile').removeClass('open');
+    });
     $(".search-cross").on("click", function(){
         $('#pop-search').removeClass('open');
     });
