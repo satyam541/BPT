@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="contact-container">
                     {{-- <form class="form" id="contact-us"> --}}
-                        <form class="form sixsigma-co-uk-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
+                        <form class="form bestpracticetraining.com-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
                         
                         @csrf
                         <input type="hidden" name="type" value="contact"> 
