@@ -193,7 +193,7 @@
           <li class="nav-header">General Resources</li>
           @if (Auth::user()->can('view', new App\Models\Country())|| Auth::user()->can('view', new App\Models\Course()) 
           || Auth::user()->can('view', new App\Models\Location()) || Auth::user()->can('view', new App\Models\Topic()))      
-          <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse']))
+          <li @if(in_array(Route::currentRouteName(),['unlinkTopic','unlinkCourse','unlinkCertificationTopic']))
           class="nav-item has-treeview menu-open"
           @else
           class="nav-item has-treeview"
@@ -203,7 +203,7 @@
               <p>
                 Unlinked Data
                 <i class="fas fa-angle-left right"></i>
-                @if (unlinkedTopic()>0 || unlinkedCourse() > 0)
+                @if (unlinkedTopic()>0 || unlinkedCourse() > 0 || unlinkedCertificationTopic()>0)
                 <span class="right badge badge-danger">New</span>
                 @endif
               </p>
@@ -232,6 +232,16 @@
                   </p>
                 </a>
                 @endcan
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('unlinkCertificationTopic')}}"@if(Route::currentRouteName()=='unlinkCertificationTopic')class="nav-link active" @else class="nav-link" @endif >
+                  <i class="far fa-circle nav-icon "></i>
+                  <p>Certification Topics
+                    @if (unlinkedCertificationTopic()>0)
+                    <span class="right badge" style="background-color:rgb(212, 11, 11) !important">{{unlinkedCertificationTopic()}}</span>
+                    @endif
+                  </p>
+                </a>
               </li>
             </ul>
           </li>

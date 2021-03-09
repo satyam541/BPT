@@ -94,16 +94,11 @@
 
         function updateSlug() {
             var location = $("#name").val();
-            var slug = '/' + convertUrl(location);
+            var slug = '/certification-programmes/' + convertUrl(location);
 
             $("#reference").val(slug);
 
         }
-        $(".multipleSelect").select2({
-                placeholder:"Choose Course",
-                
-                
-        });
 
     </script>
 

@@ -47,6 +47,9 @@ Route::get('/certification/topics/update/{id}','CertificationController@editTopi
 Route::post('/certification/topics/update/{id}','CertificationController@updateTopic')->name('certificationTopicUpdate');
 Route::post('/certification/topics/delete/{id}','CertificationController@deleteTopic')->name('deleteCertificationTopic');
 
+Route::get('/certification/unlinkedTopic','CertificationController@unlinkedTopic')->name('unlinkCertificationTopic');
+Route::post('/certification/linkCertification/{id}','CertificationController@linkCertification')->name('linkCertificationRoute');
+
 
 Route::get('/certification/topics/{topic_id}/assignCourse','CertificationController@assignCourseForm')->name('assignCoursesForm');
 Route::post('/certification/topics/{topic_id}/assignCourse','CertificationController@assignCourses')->name('assignCoursesRoute');

@@ -9,6 +9,7 @@ use App\Http\Controllers\JWTEnquiryController;
 use App\Models\Course;
 use App\Models\Location;
 use App\Models\PageDetail;
+use App\Models\CertificationTopic;
 use App\Models\Topic;
 use App\Models\SocialMedia;
 use Illuminate\Support\Str;
@@ -340,6 +341,14 @@ if (!function_exists('unlinkedCourse')) {
     function unlinkedCourse()
     {
         $unlinkedCourse = Course::whereDoesntHave('topic')->count();
+        return $unlinkedCourse;
+    }
+}
+
+if (!function_exists('unlinkedCertificationTopic')) {
+    function unlinkedCertificationTopic()
+    {
+        $unlinkedCourse = CertificationTopic::whereDoesntHave('certification')->count();
         return $unlinkedCourse;
     }
 }

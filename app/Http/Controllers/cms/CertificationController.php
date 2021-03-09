@@ -25,6 +25,21 @@ class CertificationController extends Controller
         return view('cms.certification.topics',$data);
     }
 
+    public function unlinkedTopic()
+    {
+        $data['topics']          = CertificationTopic::whereDoesntHave('certification')->get();
+        $data['certification']   = Certification::pluck('name','id');
+        return view('cms.certification.unlinkedTopics',$data);
+    }
+
+    public function linkCertification($id, Request $request)
+    {
+        $topic = CertificationTopic::find($id);
+        $topic['certification_id'] = $request['certification_id']; 
+        $topic->update();
+        return back()->with('success','Certification linked');
+    }
+
     public function create()
     {
         $data['certification'] = new Certification();
@@ -172,10 +187,7 @@ class CertificationController extends Controller
 
     public function forceDelete($id)
     {
-        $data = Certification::onlyTrashed()->find($id);
-        $data->topics()->detach();
-        
-        $data->forceDelete();
+        Certification::onlyTrashed()->find($id)->forceDelete();
         return back()->with('success','Permanently Deleted');
     }
 
