@@ -33,13 +33,13 @@
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
-                        <li><a href="{{route('aboutUs')}};">About Us</a></li>
-                        <li><a>Contact Us</a></li>
-                        <li><a>Testimonials</a></li>
+                        <li><a href="{{route('aboutUs')}}">About Us</a></li>
+                        <li><a href="{{route('blog')}}">Blogs</a></li>
+                        <li><a>Testimonials</a></li>    
                     </ul>   
                 </li>
                 <li class="links-li">
-                    <a href="{{route('blog')}}" data-href="#blog" class="link">Blogs</a>
+                    <a href="{{route('contactUs')}}" data-href="#blog" class="link">Contact Us</a>
                     <span></span> 
                 </li>
                 
@@ -79,12 +79,12 @@
                 <li class="buttons">
                     <a data-type="top" class="btn-blue open-popup enquiryJS">
                         <img src="{{url('img/master/quote.svg')}}" alt="quote">
-                        Get a Quote
+                        Get A Quote
                     </a>
                 </li>
             </ul>
         </div>
-        <ul class="country-list">
+        <ul class="country-list" id="country-list">
             <li>
                 <a href="javascript:void:(0);">
                     <img src="{{url('img/flag/uk.svg')}}" alt="flag">
@@ -116,7 +116,7 @@
                 </a>
             </li>
         </ul>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id="dropdown">
             @php
             $menu_data = menu_data();
             $categories = $menu_data['categories'];
@@ -178,6 +178,7 @@
 <div class="pop-search" id="pop-search">
     <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form" onsubmit="getquery(this)">
+    <h2>Search <span>our</span> courses and <span>solutions</span></h2>
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
                 <button  onclick="getquery(this)">
