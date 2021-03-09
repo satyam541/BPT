@@ -99,7 +99,7 @@
             <div class="enquire-popup">
                 <span class="cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
                 {{-- <form class="form" id="popup"> --}}
-                        <form class="form sixsigma-co-uk-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
+                        <form class="form bestpracticetraining.com-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
                         @csrf
                         
                         <div class="heading center-heading white-heading">

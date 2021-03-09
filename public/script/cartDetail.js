@@ -134,6 +134,9 @@ function submitDelegateForm()
                 cartForm.find('input[name="rowId"]').val(result.rowId);
                 cartForm.find('input[name="delegate"]').val(result.delegate);
                 cartForm.find('.headingJS span').html(result.delegate);
+                cartForm.find('#delegate-detail').html(result.content);
+                cartForm.find('#method span').html(result.method);
+                cartForm.find('#course-name').html(result.courseName);
             }
             else
             {

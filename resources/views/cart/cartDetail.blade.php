@@ -274,9 +274,9 @@
                             <input type='hidden' name='delegate' value='1'>
                             @csrf
                             <div class="card-detail">
-                                <p>CCNA Training</p>
+                                <p id="course-name">{{$cartItems->first()->name}}</p>
                                 <div class="input-container">
-                                    <p><strong>Booking Type:</strong>
+                                    <p><strong id="method">Booking Type:</strong><span>
                                         @switch($cartItems->first()->options['method'] ?? '')
                                         @case('classroom')
                                         Classroom  
@@ -288,15 +288,39 @@
                                         Virtual
                                         @break
                                         @endswitch
+                                        </span>
                                     </p>
                                 </div>
                             </div>
                             <div class="form billing-details delegate-details">
                                 <h2>Delegate Details</h2>
-                                <p>Choose from over 200 courses which cover all aspects of business and personal training,
-                                    including Project Management, IT Security, Business and many more. Our courses cater to
-                                    every training need, from introductory crash courses to advanced and prestigious
-                                    qualifications, all to the highest standard of quality.</p>
+                                <p id="delegate-detail">
+                                    
+                                    @switch($cartItems->first()->options['method'])
+                                    @case ('classroom')
+                                        
+                                        <p>Location: {{$cartItems->first()->options->location}}</p>
+                                        <p>Date: {{$cartItems->first()->options->date}}</p>
+                                    @break
+
+                                    @case ('virtual')
+                                       {{$cartItems->first()->options->date}}
+                                    @break
+
+                                    @case ('online')
+                                    
+                                        @if(!empty($cartItems->first()->options['addons']))
+                                       
+                                           <ul>
+                                            @foreach($cartItems->first()->options['addons'] as $addon)
+                                            
+                                           <li> {{$addon->name }}</li>
+                                            @endforeach
+                                            </ul>
+                                        @endif
+                                     @break;
+                                @endswitch
+                                </p>
                                 <div class="form-consent">
                                     <input name="contactConsent" type="checkbox" id="delegateConsent">
                                     <label for="delegateConsent">Use your Details</label>
@@ -348,8 +372,8 @@
                                                 <span class="prefix"></span>
                                                 <input type="number" class="telephone" placeholder="Telephone Number*" min=0>
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                                    <input type="text" name="telephone" class="phonenumber" tabindex="-1">
-                                                    <input type="text" name="phonecode" class="phonecode" tabindex="-1">
+                                                    <input type="text" name="telephone" class="phonenumber" tabindex="-1" autocomplete="off">
+                                                    <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
