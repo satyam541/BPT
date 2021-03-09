@@ -22,10 +22,11 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 2rem;
+            padding: 0;
+            padding-left: 2rem;
         }
         .convenient-content {
-            width: 42%;
+            width: 45%;
             padding: 1rem;
             justify-content: flex-start;
             span {
@@ -37,8 +38,9 @@
             background-image: url(../img/location/largest-bg.png);
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            height: 325px;
+            height: 340px;
             width: 340px;
+            justify-content: center;
             padding: 4rem 1.5rem;
             align-self: center;
             position: relative;
@@ -50,7 +52,7 @@
                 position: absolute;
                 height: 430px;
                 width: 430px;
-                bottom: -51px;
+                bottom: -47px;
                 right: -47px;
                 background-image: url(../img/location/arc-circle.png);
                 background-repeat: no-repeat;
@@ -97,6 +99,15 @@
             h2 {
                 width: auto;
             }
+            .heading {
+                align-items: flex-start;
+                &::before {
+                    margin: 0;
+                }
+                h2 {
+                    text-align: left;
+                }
+            }
         }
         .search {
             width: 80%;
@@ -107,7 +118,7 @@
         }
         .item{
             width: 50%;
-            padding: 2rem 7px 0;
+            padding: 2rem .8rem 0;
         }
         .popular-content {
             .img {
@@ -168,7 +179,11 @@
                     }
                 }
             }
+            .map {
+                height: 485px;
+            }
         }
+        
     }
     // End Form-Map Section
 }
@@ -221,6 +236,15 @@
     // Start Convenient section //
     .convenient {
         padding-bottom: 3rem;
+        .heading {
+            align-items: flex-start;
+            &::before {
+                margin: 0;
+            }
+            h2 {
+                text-align-last: left;
+            }
+        }
         .convenient-container {
             display: flex;
             flex-direction: row;
@@ -308,7 +332,6 @@
             .map {
                 width: 50%;
                 margin-top: 0;
-                height: 490px;
             }
         }
     }
@@ -348,6 +371,7 @@
 
     // Start Popular Section
     .popular {
+        padding: @sectionPadding-xl;
         .popular-content {
             &::before {
                 left: -13px;
@@ -358,6 +382,9 @@
         }
         .item{
             width: 25%;
+        }
+        .search {
+            width: 45%;
         }
     }
     // End Popular Section
