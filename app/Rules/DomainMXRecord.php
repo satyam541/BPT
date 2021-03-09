@@ -26,7 +26,7 @@ class DomainMXRecord implements Rule
     public function passes($attribute, $value)
     {
         $host = last(explode('@', $value));
-        return checkdnsrr($host);
+        return checkdnsrr($host,'MX');
     }
 
     /**

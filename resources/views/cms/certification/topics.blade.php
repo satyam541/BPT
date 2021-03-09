@@ -93,13 +93,11 @@
     <script>
         $(document).ready(function() {
             $('#example1').DataTable({
-                "columns": [{
-                        "name": "Certification Name",
-                        "name": "Course Name",
-                        "name": "Actions",
-                        "sorting": false,
-                        searching: false
-                    }
+                "columns": [
+                        {"name": "Certification Name"},
+                        {"name": "Course Name"},
+                        {"name": "Courses", "sorting": false, searching: false },
+                        {"name": "Actions", "sorting": false, searching: false }
                 ]
             });
 

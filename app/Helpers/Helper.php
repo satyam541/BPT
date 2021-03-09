@@ -4,6 +4,7 @@ use App\Models\Country;
 use App\Models\WebsiteDetail;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\Schedule;
 use App\Http\Controllers\JWTEnquiryController;
 use App\Models\Course;
 use App\Models\Location;
@@ -12,10 +13,16 @@ use App\Models\Topic;
 use App\Models\SocialMedia;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
+use Carbon\Carbon;
 
-if(!function_exists('allCountries')){
-    function allCountries(){
-        $data=Country::where('active',1)->pluck('name','country_code')->toArray();
+if(!function_exists('homepageData')){
+    function homepageData(){
+        $data=[];
+        $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
+        $data['countries']=Country::count();
+        $data['locations']=Location::count();
+        $data['courses']=Course::count();
+        $data['schedules']=Schedule::whereDate('response_date','>',$date)->count();
         return $data;
     }
 }
