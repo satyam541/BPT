@@ -32,8 +32,8 @@ class EnquiryRequest extends FormRequest
             'fname'         =>  'sometimes|required',
             'lname'         =>  'sometimes|required',
             'phone'         =>  'numeric|sometimes',
-            // 'email'         =>  ['required','email',new DomainMXRecord],
-            'email'         =>  ['required','email:rfc,dns'],
+            'email'         =>  ['required','email',new DomainMXRecord],
+            // 'email'         =>  ['required','email:rfc'],
             'course'        =>  'sometimes|required',
             'delegates'     =>  'sometimes|required',        
             'time'          =>  'sometimes|required'

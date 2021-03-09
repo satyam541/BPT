@@ -1,23 +1,49 @@
 
+function prev() {
+    $('#stepOne').addClass('step-active');
+    $('#stepTwo').removeClass('step-active');
+    $('#one').removeClass('number-active').addClass('blue-active');
+    $('#two').removeClass('blue-active'); 
+}
+
+function prevTwo() {
+    $('#stepTwo').addClass('step-active');
+    $('#stepThree').removeClass('step-active');
+    $('#two').removeClass('number-active').addClass('blue-active');
+    $('#three').removeClass('blue-active'); 
+  
+}
+function stepFour() {
+    $('#stepFour').addClass('step-active');
+    $('#stepThree').hide().removeClass('step-active');
+    $('#three').addClass('number-active').removeClass('blue-active');  
+    $('#four').addClass('blue-active'); 
+}
+
 function submitCustomerForm()
 {// error status 422
-    var cartForm = $("#customerDetailForm");
+    var cartForm = $("#stepOne");
     
     formData = cartForm.serialize();
+    console.log(formData);
     $.ajax({
         url: submitCustomerRoute,
         dataType:'json',
         data:formData,
         beforeSend:function(){
             cartForm.find('input').removeClass('error');
-            cartForm.find("input,button").attr('title','').closest('.input-group').removeClass('error');
+            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('error');
         },
         complete:function(){
             cartForm.find("input,button").prop('disabled',false);
         },
         success: function (result)
         {
-            nextCartForm();
+            $('#stepTwo').addClass('step-active');   
+            $('#stepOne').hide().removeClass('step-active'); 
+            $('#one').addClass('number-active').removeClass('blue-active');  
+            $('#two').addClass('blue-active');  
+            // nextCartForm();
         },
         error: function(error){
             if(error.status == '422')
@@ -25,7 +51,7 @@ function submitCustomerForm()
                 var response = error.responseJSON;
                 var errors = response.errors;
                 $.each(errors,function(index,value){
-                    cartForm.find(".input"+index).attr('title',value).closest('.input-group').addClass('error');
+                    cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('error');
                 });
             }
         }
@@ -34,7 +60,7 @@ function submitCustomerForm()
 
 function submitBillingForm()
 {
-    var cartForm = $("#billingDetailForm");
+    var cartForm = $("#stepTwo");
     formData = cartForm.serialize();
     $.ajax({
         url: submitBillingRoute,
@@ -51,10 +77,13 @@ function submitBillingForm()
         {
             if(result.rowId)
             {
-                $("#delegateDetailForm").find('input[name="rowId"]').val(result.rowId);
+                $("#stepThree").find('input[name="rowId"]').val(result.rowId);
                 // console.log(result.rowId);
             }
-            nextCartForm();
+            $('#stepThree').addClass('step-active');
+            $('#stepTwo').hide().removeClass('step-active');
+            $('#two').addClass('number-active').removeClass('blue-active');  
+            $('#three').addClass('blue-active');  
         },
         error: function(error){
             if(error.status == '422')
@@ -72,7 +101,7 @@ function submitBillingForm()
 
 function submitDelegateForm()
 {
-    var cartForm = $("#delegateDetailForm");
+    var cartForm = $("#stepThree");
     formData = cartForm.serialize();
     $.ajax({
         url: submitDelegateRoute,
@@ -108,7 +137,20 @@ function submitDelegateForm()
             }
             else
             {
-                nextCartForm();
+                $.ajax({
+                    url: summaryPageRoute,
+                    dataType:'html',
+                
+
+                    success: function (result)
+                    {
+                        $('#stepFour').addClass('step-active');
+                        $('#stepThree').hide().removeClass('step-active');
+                        $('#three').addClass('number-active').removeClass('blue-active');  
+                        $('#four').addClass('blue-active'); 
+                        $('#stepFour').find('.group-input').html(result);
+                    }
+                });
             }
         },
         error: function(error){
@@ -183,49 +225,33 @@ function switchPaymentMethod(value)
         }
     }
 
-    function prev() {
-        var cartpopup = $('#popupForms');
-        var numbering = $(".cart-topbar");
-        var thiscartinfo = cartpopup.find('form.open');
-        var thisNumbering = numbering.find('.topbar-menu.active');
-        // var width = thiscartinfo.width();
-        if (thiscartinfo.is(':first-child')) {
-            //nextcartinfo = cartpopup.find('.cartinfo:last-cartinfo');
-        } else {
-            nextcartinfo = thiscartinfo.prev();
-            prevNumbering = thisNumbering.prev();
-            // cartpopup.find(".cartinfo").animate({
-            //     left: '+=' + width + 'px'
-            // }, 'slow');
-            thiscartinfo.removeClass('open');
-            nextcartinfo.addClass('open');
-            thisNumbering.removeClass('active');
-            prevNumbering.addClass('active');
+    function checkAgree() {
+        if($("#agree").is(':checked') == false){
+            alert("Please accept our terms and conditions");
+            return false;
+        }else
+        {
+            $('#pay_form').submit();
         }
-        // nextcartinfo.animate({left:'+='+width+'px'},'slow');
+    
     }
 
-    function openBox() {
-        // var box = $(".cartpopup");
-        // box.removeAttr("style");
-        // box.show();
-        // box.closest('.cart-section').show();
-        // box.css('display', "-webkit-box");
-        // box.css("animation", "jumpUp .5s forwards");
-
-        $("#popupForms form").removeClass('open').first().addClass("open");
-        $("section.billing-section").show();
-        $("body").css('overflow','hidden');
-
+    function cancelOrder(csrfToken) {
+        $.ajax({
+            url: "{{ route('cartDestroyRoute') }}",
+            type: "post",
+            data:{
+                _token: csrfToken
+            },
+            success: function(data)
+            {
+                window.location.href = '{{ route("cart") }}';
+            }
+        })
     }
 
-    function closeBox() {
-        
-        $("#popupForms form").removeClass('open');
-        $("section.billing-section").hide();
-        $("body").css("overflow","auto");
-    }
 
-    function submitCart() {
-        window.location.href = summaryPageRoute;
-    }
+
+    // function submitCart() {
+    //     window.location.href = summaryPageRoute;
+    // }
