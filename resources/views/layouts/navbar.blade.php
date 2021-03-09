@@ -33,10 +33,10 @@
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
-                        <li><a>About Us</a></li>
-                        <li><a>blogs</a></li>
+                        <li><a href="{{route('aboutUs')}};">About Us</a></li>
+                        <li><a>Contact Us</a></li>
                         <li><a>Testimonials</a></li>
-                    </ul>
+                    </ul>   
                 </li>
                 <li class="links-li">
                     <a href="{{route('blog')}}" data-href="#blog" class="link">Blogs</a>
