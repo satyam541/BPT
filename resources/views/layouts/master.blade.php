@@ -172,13 +172,13 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-            <a href="" class="email">
+            <a href="javascript:void(0);" class="email">
                     <img src="{{url('img/master/email-white.png')}}" alt="mail">
                 </a>
-            <a href="" class="search-btn search">
+            <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
                     <img src="{{url('img/master/search-white.png')}}" alt="search">
-                </a>
-            <a href="" class="cart">
+            </a>
+            <a href="javascript:void(0);" class="cart">
                     <img src="{{url('img/master/cart-white.png')}}" alt="cart">
                 </a>
                 <a href="" class="call">
@@ -200,7 +200,17 @@
     </a>
     
 
-
+    <div class="pop-search" id="pop-mobile">
+    <span class="search-close"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
+    <form class="search-form" onsubmit="getquery(this)">
+            <div class="search">
+                <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
+                <button  onclick="getquery(this)">
+                    Search
+                </button>
+            </div>     
+    </form>
+</div>
 </body>
 <!--enquiry submit script start-->
 
