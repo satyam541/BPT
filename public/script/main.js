@@ -512,9 +512,10 @@ $('#scroll').click(function(){
         { 
             return false;
         }
-
-        else{
-            $("#aboutdropdown").removeClass('active');
-            $('#dropdown-menu').hide();
-        }
-       });
+        $("#aboutdropdown").removeClass('active');
+        $('#dropdown-menu').hide();
+    });
+    
+    $('.course-menu a').on('click', function(){
+        window.location.href = $(this).attr('href');
+    })
