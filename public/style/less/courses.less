@@ -1,19 +1,10 @@
 // Start Banner section //
 .courses-banner {
     background: @blueGradient;
-    .banner-container {
-        display: flex;
-        flex-direction: column;
         .banner-content {
-            display: flex;
-            flex-direction: column;
             h1,p {
                 color: @whiteColor;
             }
-            p {
-                margin-bottom: 0;
-            }
-        }
     }
     .banner-points {
         display: flex;
@@ -31,7 +22,6 @@
             width: 100%;
             li {
                 color: @whiteColor;
-                font-size: 14px;
                 padding-left: 1.5rem;
                 margin-top: 1rem;
                 position: relative;
@@ -118,6 +108,9 @@
     .foundation-container {
         display: flex;
         flex-direction: column;
+        .heading{
+            margin-bottom: 0;
+        }
     }
     .tabs-container {
         display: flex;
@@ -128,12 +121,13 @@
         flex-direction: column;
         .tab-click {
             display: flex;
-            justify-content: space-between;
             background-color: @whiteColor;
             padding: 1.5rem;
             margin-top: 3rem;
             box-shadow: @shadowLight;
             border-bottom: 4px solid #c0c0c0;
+            width: 272px;
+            align-self: center;
             position: relative;
             z-index: 1;
             &:first-child {
@@ -229,6 +223,7 @@
         .overview-content {
             display: flex;
             flex-direction: column;
+            margin-top: 2rem;
             max-height: 400px;
             overflow: hidden;
             width: 100%;
@@ -242,14 +237,10 @@
                 }
             }
         }
-        h2 {
-            margin-top: 2rem;
-        }
         ul {
             li {
                 display: flex;
                 padding-left: 1.4rem;
-                font-size: 14px;
                 position: relative;
                 z-index: 1;
                 margin-top: 1rem;
@@ -411,24 +402,39 @@
             align-items: center;
             background-color: @whiteColor;
             border-radius: 50%;
-            border: 2px dashed #c0c0c0;
-            height: 90px;
-            width: 90px;
+            height: 70px;
+            width: 70px;
             position: relative;
+             padding: 1.2rem;
             margin-bottom: 1.5rem;
+            box-shadow: @shadowLight;
             &::before {
                 content: '';
                 position: absolute;
                 z-index: -1;
-                top: -17px;
-                left: 27px;
+                top: -24px;
+                left: 20px;
                 height: 120px;
                 width: 30px;
                 background: #c0c0c0;
                 border-radius: 20px;
-                transform: rotate(45deg);
+                transform: rotate(
+            45deg
+            );
                 animation: rotate 15s linear infinite;
-                transition: 1s ease-in-out;
+                transition: 1s all;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: -14px;
+                left: -15px;
+                width: 95px;
+                height: 95px;
+                background-color: @whiteColor;
+                border: 2px dashed #C0C0C0;
+                border-radius: 50%;
             }
             img {
                 height: 100%;
@@ -439,12 +445,14 @@
             text-align: center;
         }
         &:hover {
-            transition: 1s ease-in-out;
+            transition: 2s all;
             span {
-                border: 2px dashed @lightblueColor;
-                &::before {
-                    background: linear-gradient(90deg, @lightblueColor, @darkblueColor);
-                }
+               &::after{
+                   border: 2px dashed @lightblueColor;
+               }
+               &::before{
+                   background: @lightblueColor;
+               }
             }
         }
     }
@@ -543,7 +551,7 @@
         padding: 1rem;
         box-shadow: 0 0 17px #c1c1c1;
         background: @whiteColor;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         border-radius: 5px;
         cursor: pointer;
         align-items: center;
@@ -610,7 +618,6 @@
             padding: 1rem;
             box-shadow: 0 0 17px #c1c1c1;
             background: @whiteColor;
-            margin-top: 1rem;
             border-radius: 5px;
             cursor: pointer;
             &::before {

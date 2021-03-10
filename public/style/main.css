@@ -302,7 +302,7 @@ select::-ms-expand {
   cursor: pointer;
 }
 .ui-autocomplete .ui-autocomplete-category {
-  color: #007D3D;
+  color: #1C2848;
   font-weight: 700;
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 5px;
@@ -583,6 +583,7 @@ select::-ms-expand {
   flex-direction: column;
   transition: 1s ease-in-out;
   width: 142px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .navbar .menu-list #aboutdropdown ul li {
   padding-bottom: 0.3rem;
@@ -1333,7 +1334,7 @@ select::-ms-expand {
     color: #000000;
     border-bottom: 2px solid #E2E2E2;
     padding-bottom: 0.7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 70%;
     font-size: 22px;
   }
@@ -8259,20 +8260,9 @@ select::-ms-expand {
 .courses-banner {
   background: linear-gradient(#0064D8, #1C2848);
 }
-.courses-banner .banner-container {
-  display: flex;
-  flex-direction: column;
-}
-.courses-banner .banner-container .banner-content {
-  display: flex;
-  flex-direction: column;
-}
-.courses-banner .banner-container .banner-content h1,
-.courses-banner .banner-container .banner-content p {
+.courses-banner .banner-content h1,
+.courses-banner .banner-content p {
   color: #FFFFFF;
-}
-.courses-banner .banner-container .banner-content p {
-  margin-bottom: 0;
 }
 .courses-banner .banner-points {
   display: flex;
@@ -8292,7 +8282,6 @@ select::-ms-expand {
 }
 .courses-banner .banner-points ul li {
   color: #FFFFFF;
-  font-size: 14px;
   padding-left: 1.5rem;
   margin-top: 1rem;
   position: relative;
@@ -8363,6 +8352,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.foundation .foundation-container .heading {
+  margin-bottom: 0;
+}
 .foundation .tabs-container {
   display: flex;
   flex-direction: column;
@@ -8373,12 +8365,13 @@ select::-ms-expand {
 }
 .foundation .tab-links .tab-click {
   display: flex;
-  justify-content: space-between;
   background-color: #FFFFFF;
   padding: 1.5rem;
   margin-top: 3rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-bottom: 4px solid #c0c0c0;
+  width: 272px;
+  align-self: center;
   position: relative;
   z-index: 1;
 }
@@ -8474,6 +8467,7 @@ select::-ms-expand {
 .foundation .tab-common .overview-content {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
   max-height: 400px;
   overflow: hidden;
   width: 100%;
@@ -8485,13 +8479,9 @@ select::-ms-expand {
 .foundation .tab-common .toggle + .buttons::after {
   width: 100%;
 }
-.foundation .tab-common h2 {
-  margin-top: 2rem;
-}
 .foundation .tab-common ul li {
   display: flex;
   padding-left: 1.4rem;
-  font-size: 14px;
   position: relative;
   z-index: 1;
   margin-top: 1rem;
@@ -8638,25 +8628,38 @@ select::-ms-expand {
   align-items: center;
   background-color: #FFFFFF;
   border-radius: 50%;
-  border: 2px dashed #c0c0c0;
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   position: relative;
+  padding: 1.2rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .foundation .included-content span::before {
   content: '';
   position: absolute;
   z-index: -1;
-  top: -17px;
-  left: 27px;
+  top: -24px;
+  left: 20px;
   height: 120px;
   width: 30px;
   background: #c0c0c0;
   border-radius: 20px;
   transform: rotate(45deg);
   animation: rotate 15s linear infinite;
-  transition: 1s ease-in-out;
+  transition: 1s all;
+}
+.foundation .included-content span::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -14px;
+  left: -15px;
+  width: 95px;
+  height: 95px;
+  background-color: #FFFFFF;
+  border: 2px dashed #C0C0C0;
+  border-radius: 50%;
 }
 .foundation .included-content span img {
   height: 100%;
@@ -8666,13 +8669,13 @@ select::-ms-expand {
   text-align: center;
 }
 .foundation .included-content:hover {
-  transition: 1s ease-in-out;
+  transition: 2s all;
 }
-.foundation .included-content:hover span {
+.foundation .included-content:hover span::after {
   border: 2px dashed #0064D8;
 }
 .foundation .included-content:hover span::before {
-  background: linear-gradient(90deg, #0064D8, #1C2848);
+  background: #0064D8;
 }
 .learn-more {
   padding: 3rem 1.5rem;
@@ -8751,7 +8754,7 @@ select::-ms-expand {
   padding: 1rem;
   box-shadow: 0 0 17px #c1c1c1;
   background: #FFFFFF;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-radius: 5px;
   cursor: pointer;
   align-items: center;
@@ -8819,7 +8822,6 @@ select::-ms-expand {
   padding: 1rem;
   box-shadow: 0 0 17px #c1c1c1;
   background: #FFFFFF;
-  margin-top: 1rem;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -9651,7 +9653,7 @@ select::-ms-expand {
     padding: 3rem 1.5rem;
   }
   .unable {
-    padding: 3rem 2rem;
+    padding: 2rem;
     background: none;
     background-image: url(../img/courses/unable-bg.png);
     background-repeat: no-repeat;
@@ -9664,10 +9666,6 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  .unable h2,
-  .unable p {
-    color: #FFFFFF;
   }
   .training {
     padding: 3rem 2rem;
@@ -9979,9 +9977,6 @@ select::-ms-expand {
   }
   .courses-banner .banner-points h2 {
     text-align: center;
-  }
-  .courses-banner .banner-points ul li {
-    width: 47%;
   }
   .courses-banner .breadcrums {
     margin-bottom: 1rem;

@@ -64,6 +64,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
+                                                <th>Popular</th>
                                                 <th class=" text-center">
                                                     @can('update', new App\Models\Category())
                                                         Content
@@ -96,6 +97,7 @@
                                             @foreach ($categories as $category)
                                                 <tr>
                                                     <td>{{ $category->name }}</td>
+                                                    <td class=" text-center"><input type="checkbox" name="is_popular"></td>
                                                     <td class=" text-center">
                                                         @can('update', $category)
                                                             <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
@@ -167,6 +169,11 @@
             $('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
+                    },
+                    {
+                        "name": "Popular",
+                        "sorting": false,
+                        searching: false
                     },
                     {
                         "name": "Content",

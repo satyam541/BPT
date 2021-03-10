@@ -213,7 +213,8 @@
                         @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
                         <div class="included-content">
                             <span>
-                                <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{!! $whatsInclude->name !!}">
+                                <img src="{{url('img/master/call.svg')}}" alt="quote">
+                                <!-- <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{!! $whatsInclude->name !!}"> -->
                             </span>
                             <h3>{!! $whatsInclude->name !!}</h3>
                         </div>

@@ -63,6 +63,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Category</th>
+                  <th>Popular</th>
                   <th>Content</th>
                   <th>FAQ's</th>
                   <th>Bullet Points</th>
@@ -76,6 +77,7 @@
                     <tr>
                       <td>{{$topic->name}}</td>
                       <td>{{$topic->category->name ?? ''}}</td>
+                      <td class=" text-center"><input type="checkbox" name="is_popular"></td>
                       <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>
@@ -138,6 +140,7 @@
               "columns": [
                         { "name": "Name" },
                         { "name": "Category" },
+                        { "name": "Popular", "sorting":false, searching:false },
                         { "name": "Content", "sorting":false, searching:false },
                         { "name": "Faq", "sorting":false, searching:false },
                         { "name": "Bulletpoints", "sorting":false, searching:false  },
