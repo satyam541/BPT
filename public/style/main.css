@@ -3082,7 +3082,7 @@ select::-ms-expand {
 }
 .contact-banner {
   flex-direction: column;
-  background-color: #0064D8;
+  background-color: #1C2848;
 }
 .contact-banner .banner-container h1 {
   color: #FFFFFF;
@@ -3102,7 +3102,6 @@ select::-ms-expand {
   flex-direction: column;
 }
 .contact .heading {
-  margin-bottom: 0.5rem;
   padding-top: 0;
 }
 .contact .heading::before {
@@ -3124,7 +3123,7 @@ select::-ms-expand {
 }
 .contact .contact-list .item {
   display: flex;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0.8rem;
   border: 1px solid #FFFFFF;
 }
@@ -3167,7 +3166,7 @@ select::-ms-expand {
 .contact .social {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .contact .social p {
   font-weight: 500;
@@ -3333,6 +3332,8 @@ select::-ms-expand {
   height: 100%;
 }
 .faq .ques h3 {
+  display: flex;
+  align-self: center;
   font-size: 14px;
   width: calc(100% - 27px);
 }
@@ -3370,7 +3371,9 @@ select::-ms-expand {
 .faq .platforms {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  width: 272px;
+  align-self: center;
 }
 .faq a {
   display: flex;
@@ -3407,7 +3410,6 @@ select::-ms-expand {
   .contact .item:last-child {
     width: 54%;
     margin: auto;
-    margin-top: 1rem;
   }
   .contact .social {
     align-self: center;
@@ -3437,8 +3439,8 @@ select::-ms-expand {
     width: 32%;
     margin-top: 0!important;
   }
-  .locate .map {
-    padding: 2rem;
+  .locate {
+    padding: 3rem 2rem;
   }
   .faq {
     padding: 3rem 2rem;
@@ -3446,6 +3448,7 @@ select::-ms-expand {
   .faq .faq-container {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
   }
   .faq .faq-content {
     width: 50%;
@@ -3484,8 +3487,10 @@ select::-ms-expand {
   .faq .platforms {
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 0;
+    width: auto;
+    margin: 0;
     transform: translate(-28px, 0px);
+    align-self: auto;
   }
   .faq a:first-child {
     transform: translate(-62px, 14px);
@@ -3496,12 +3501,9 @@ select::-ms-expand {
 }
 @media (min-width : 1024px) {
   .contact-banner {
-    background-color: transparent;
     background-image: url(../img/contactus/banner-bg.png);
     background-size: cover;
     background-position: center;
-    padding: 2rem;
-    padding-top: 1rem;
   }
   .contact-banner .banner-container {
     width: 45%;
@@ -3532,7 +3534,7 @@ select::-ms-expand {
     width: 100%;
   }
   .contact .social {
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
     width: 100%;
     padding-top: 0;
   }
@@ -3547,9 +3549,6 @@ select::-ms-expand {
   }
   .information .info-text {
     padding: 2rem;
-  }
-  .faq .faq-container {
-    align-items: center;
   }
   .faq .faq-content {
     width: 56%;
@@ -3605,6 +3604,9 @@ select::-ms-expand {
   }
   .information p {
     min-height: 88px;
+  }
+  .locate {
+    padding: 4rem 0rem;
   }
   .faq {
     padding: 4rem 0rem;
