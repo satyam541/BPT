@@ -184,7 +184,7 @@
                 </a>
                 <a href="tel:{{websiteDetail()->contact_number}}"  class="call">
                     <img src="{{url('img/master/call.png')}}" alt="call">
-                </a>
+                </a> 
             </div>
         </div>
     </section>
