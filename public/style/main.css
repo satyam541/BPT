@@ -320,19 +320,19 @@ select::-ms-expand {
 #ui-id-2 {
   max-height: 50vh;
   overflow: scroll;
-  z-index: 130;
+  z-index: 9999;
   width: 230px;
 }
 #ui-id-3 {
   max-height: 50vh;
   overflow: scroll;
-  z-index: 130;
+  z-index: 9999;
   width: 230px;
 }
 #ui-id-4 {
   max-height: 50vh;
   overflow: scroll;
-  z-index: 130;
+  z-index: 9999;
   width: 230px;
 }
 .form {
@@ -372,10 +372,7 @@ select::-ms-expand {
   margin-bottom: 0.4rem;
   width: 100%;
 }
-.form .form-consent:last-child {
-  margin-bottom: 0;
-}
-.form .form-consent:last-child {
+.form .form-consent:nth-last-child(3) {
   margin-bottom: 0;
 }
 .form .form-consent input {
@@ -612,7 +609,7 @@ select::-ms-expand {
 .navbar .container {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
 }
@@ -1004,7 +1001,7 @@ select::-ms-expand {
   left: 0;
   overflow: auto;
   z-index: 88;
-  background-color: #ffffff6b;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .enquiry-popup .popup-container {
   display: flex;
@@ -1184,6 +1181,9 @@ select::-ms-expand {
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .navbar .container {
+    padding: 1rem 2rem;
   }
   .navbar .container .menu.active + .menu-links {
     width: 50%;
