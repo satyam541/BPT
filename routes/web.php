@@ -82,11 +82,11 @@ Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@r
 Route::get('/cart/customerDetail/submit',['as'=>'customerDetailSubmit','uses'=>'CartController@submitCustomerDetail']);
 Route::get('/cart/delegateDetail/submit',['as'=>'delegateDetailSubmit','uses'=>'CartController@submitDelegateDetail']);
 Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'CartController@submitBillingDetail']);
+Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@customerData']);
 
 //certification
-Route::get('/certification-programmes','CertificationController@index');
-
-
+Route::get('/certification-programmes','CertificationController@index')->name('certification');
+Route::get('/certification-details/{method}/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
 Route::get('/offer', function () {
     return view('offer');

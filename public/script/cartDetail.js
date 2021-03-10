@@ -31,8 +31,8 @@ function submitCustomerForm()
         dataType:'json',
         data:formData,
         beforeSend:function(){
-            cartForm.find('input').removeClass('error');
-            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('error');
+            cartForm.find('input').removeClass('input-error');
+            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('input-error');
         },
         complete:function(){
             cartForm.find("input,button").prop('disabled',false);
@@ -46,12 +46,15 @@ function submitCustomerForm()
             // nextCartForm();
         },
         error: function(error){
+           
             if(error.status == '422')
             {
                 var response = error.responseJSON;
                 var errors = response.errors;
+               
                 $.each(errors,function(index,value){
-                    cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('error');
+                
+                    cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
             }
         }
@@ -67,8 +70,8 @@ function submitBillingForm()
         dataType:'json',
         data:formData,
         beforeSend:function(){
-            cartForm.find('input').removeClass('error');
-            cartForm.find("input,button").attr('title','').closest('.input-group').removeClass('error');
+            cartForm.find('input').removeClass('input-error');
+            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('input-error');
         },
         complete:function(){
             cartForm.find("input,button").prop('disabled',false);
@@ -90,8 +93,9 @@ function submitBillingForm()
             {
                 var response = error.responseJSON;
                 var errors = response.errors;
+                console.log(errors,response);
                 $.each(errors,function(index,value){
-                    cartForm.find(".input"+index).attr('title',value).closest('.input-group').addClass('error');
+                    cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
             }
         }
@@ -109,7 +113,7 @@ function submitDelegateForm()
         data:formData,
         beforeSend:function(){
             cartForm.find("input,button").prop('disabled',true);
-            cartForm.find("input,button").attr('title','').closest('.input-group').removeClass('error');
+            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('input-error');
         },
         complete: function(){
             cartForm.find("input,button").prop('disabled',false);
@@ -162,7 +166,7 @@ function submitDelegateForm()
                 var response = error.responseJSON;
                 var errors = response.errors;
                 $.each(errors,function(index,value){
-                    cartForm.find(".input"+index).attr('title',value).closest('.input-group').addClass('error');
+                    cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
             }
         }
@@ -253,6 +257,70 @@ function switchPaymentMethod(value)
         })
     }
 
+             
+    function sameDelegate(checkDelegate) {
+        
+        $.ajax({
+                url: customerData,
+                type:'get',
+                dataType: 'json',
+                success: function(response)
+                {
+              
+                    if(checkDelegate.checked) {
+
+                       
+                        $('.inputfirstname').val(response.customer.firstname);
+                        $('.inputlastname').val(response.customer.lastname);
+                        $('.tel').val(response.mobile);
+                        $('.c_code').val(response.countrycode);
+                        $('.code').text(response.phonecode);
+                       
+                      
+                    } 
+                    else 
+                    {
+                        delegate.val('');
+                        delegate.val('');
+                    }
+
+
+
+                }
+
+            });
+        
+    }
+
+    function sameBilling(checkBilling) {
+
+        $.ajax({
+                url: customerData,
+                type:'get',
+                dataType: 'json',
+                success: function(response)
+                {
+                    
+                   
+                    var billing    = $('#stepTwo');
+                    var BFirstName = billing.find("input[name='firstname']");
+                    var BLastName  = billing.find("input[name='lastname']");
+                
+                    if(checkBilling.checked) {
+                        
+                        BFirstName.val(response.customer.firstname);
+                        BLastName.val(response.customer.lastname);
+    
+                    } 
+                    else 
+                    {
+                        BFirstName.val('');
+                        BLastName.val('');
+                    }
+                }
+            });
+        
+    }
 
 
     // function submitCart() {

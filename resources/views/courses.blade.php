@@ -563,12 +563,14 @@
                                         </button>
                                     </div>
                                 </div>
+                                <div class="info-content">
                                 <p class="info">Upon purchase <strong>you will receive a password </strong> via the email
                                     you used to purchase the course.</p>
                                 <p class="info">You will then be able to <strong>login to our online learning platform
                                     </strong> with your email and password.</p>
                                 <p class="info">You will have access to the platform for <strong>90 days </strong> from the
                                     date of purchase.</p>
+                                </div>
                             </div>
                         </form>
                         @endif
