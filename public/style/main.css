@@ -583,6 +583,7 @@ select::-ms-expand {
   flex-direction: column;
   transition: 1s ease-in-out;
   width: 142px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .navbar .menu-list #aboutdropdown ul li {
   padding-bottom: 0.3rem;

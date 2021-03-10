@@ -29,7 +29,7 @@
                     <span></span>
                 </li>
                 <li class="links-li about-link" id="aboutdropdown" >
-                    <a href="" data-href="#faq" class="link mobile"><i class="fa fa-address-card"></i>About</a>
+                    <a href="" data-href="#faq" class="link mobile"><i class="fa fa-address-card"></i>About Us</a>
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
