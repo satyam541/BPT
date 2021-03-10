@@ -12,7 +12,7 @@
             </a>
             <ul class="menu-list">
                 <li class="links-li course-link">
-                    <a href="{{route('catalouge')}}" class="link mobile">Courses</a>
+                    <a href="{{route('catalouge')}}" class="link mobile"><i class="fas fa-home"></i>Courses</a>
                     <a class="link desktop" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
