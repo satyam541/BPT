@@ -72,7 +72,7 @@ class UserController extends Controller
                 $q->where('name',$filter['roleName']);
             });
         }
-        $users = $query->paginate(10);
+        $users = $query->paginate(11);
         $list['name']   = User::all()->pluck('name','name')->toArray();
         $list['email']  = User::all()->pluck('email','email')->toArray();
         $list['role']   = Role::All()->pluck('name','name')->toArray();
