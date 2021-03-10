@@ -51,7 +51,8 @@
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
                     </a>
                     <a class="cart" id="flag">
-                        <img src="{{url('img/flag/uk.svg')}}" alt="cart">
+                    <div class="flag {{ strtolower(country()->country_code) }}"></div>
+                        <!-- <img src="{{url('img/flag/uk.svg')}}" alt="cart" class="flag"> -->
                     </a>
                 </li>
 
@@ -84,38 +85,46 @@
                 </li>
             </ul>
         </div>
-        <ul class="country-list" id="country-list">
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
+        <ul class="country-list country-select" id="country-list">                                        
+            @foreach (countries() as $country)
+            <li class="country preferred @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
+                <div class="flag {{ strtolower($country->id) }}"></div>
+                <span class="country-names">{{ $country->name }}</span>
             </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
+            @endforeach
         </ul>
+        <!-- <ul class="country-list" id="country-list">
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void:(0);">
+                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
+                    <p>London</p>
+                </a>
+            </li>
+        </ul> -->
         <div class="dropdown-menu" id="dropdown-menu">
             @php
             $menu_data = menu_data();
