@@ -242,9 +242,9 @@
             <div class="facts-container">
                 <div class="fact-content">
                     @php $homepage=homepageData()  @endphp
-                    <h2>Our Amazing Facts and Figures</h2>
-                    <p>We are the Largest Global Accredited Training Provider. We successfully run {{$homepage['courses']}}+ Courses Daily in
-                        {{$homepage['locations']}}+ locations worldwide.</p>
+                    <h2>Statics, We're Proud Of</h2>
+                    <p>Best Practice Training is a globally accredited and renowned organisation providing specially designed training courses based on industry best practices.
+                    </p>
                 </div>
                 <div class="facts-list">
                     <div class="item">
@@ -341,7 +341,7 @@
                 </div>
                 <div class="clients-reviews">
                     <div class="heading white-heading">
-                        <h2>What Our Clients Say About Us</h2>
+                        <h2>What Our Customers Saying</h2>
                     </div>
                     <div class="reviews-outer owl-carousel">
                         @foreach ($testimonials as $testimonial)
@@ -374,9 +374,9 @@
         <div class="container">
             <div class="partners-container">
                 <div class="heading center-heading">
-                    <h2>Our Courses Are Accredited By The Leading Learning
+                    <h2>Approved by Professional 
                         <span>
-                            Institutions Across The Globe
+                            Certification Bodies
                         </span>
                     </h2>
                 </div>
