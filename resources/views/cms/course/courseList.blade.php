@@ -63,6 +63,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Topic</th>
+                  <th>Popular</th>
                   <th>
                     @can('update',new App\Models\Course())
                     Content
@@ -96,6 +97,7 @@
                     <tr>
                       <td>{{$course->name}}</td>
                       <td>{{$course->topic->name ?? null}}</td>
+                      <td class=" text-center"><input type="checkbox" name="is_popular"></td>
                       <td class=" text-center">
                         @can('update',$course)
                         <a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a>
@@ -160,6 +162,7 @@
               "columns": [
                         { "name": "Name" },
                         { "name": "Topic" },
+                        { "name": "Popular", "sorting":false, searching:false },
                         { "name": "Content", "sorting":false, searching:false },
                         { "name": "Faq", "sorting":false, searching:false },
                         { "name": "Bulletpoints", "sorting":false, searching:false  },

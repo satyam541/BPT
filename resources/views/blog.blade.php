@@ -33,7 +33,7 @@
                     @foreach ($popularBlogs->take(4) as $blog)
                         <a class="popular-item" href={{route('blogDetail',['blog'=>$blog->reference])}}>
                             <img src="{{url($blog->getImagePath())}}" alt="popular-1">
-                            <p>{{$blog->publish_date->format('d M, Y')}}</p>
+                            <p class="date">{{$blog->publish_date->format('d M, Y')}}</p>
                             <div class="info">
                                 <p>by - {{$blog->author}}</p>
                                 <h3>{{$blog->title}}</h3>
@@ -95,7 +95,7 @@
 
 
     <!-- Start ideal section -->
-    <section class="flex-conatiner ideal">
+    <section class="flex-container ideal">
         <div class="container">
             <div class="ideal-container">
                 <div class="heading center-heading">

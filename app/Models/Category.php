@@ -114,7 +114,7 @@ class Category extends Model
     {
         return $this->morphOne('App\Models\Popular', 'module')
         ->withDefault(
-            ["country_id" => 'gb',
+            ["country_id" => country()->country_code,
             "display_order" => Popular::categories()->count()+1]
         );
     }

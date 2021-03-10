@@ -48,6 +48,11 @@
                                     {{ Form::label('name', ' Topic Name') }}
                                     {{ Form::text('name', null, ['id' => 'name', 'class' => 'form-control']) }}
                                 </div>
+
+                                <div class="form-group">
+                                    {{ Form::label('detail', ' Detail') }}
+                                    {{ Form::textarea('detail', null, ['class' => 'form-control summernote']) }}
+                                </div>
                             </div>
 
                         </div>
