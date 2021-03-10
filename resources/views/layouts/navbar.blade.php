@@ -1,7 +1,7 @@
 <div class="navbar" id="fixheader">
     <div class="container">
         <a href="{{route('home')}}" class="bpt-logo">
-            <img src="{{url('img/master/bpt-logo.svg')}}" alt="bptlogo">
+            <img src="{{url('img/master/bpt-logo-blue.svg')}}" alt="bptlogo">
         </a>
         <div class="menu" id="menuToggle" onclick="toggleMenu()">
             <img src="{{url('img/master/menu.svg')}}" alt="menu">
@@ -12,34 +12,34 @@
             </a>
             <ul class="menu-list">
                 <li class="links-li course-link">
-                    <a href="{{route('catalouge')}}" class="link mobile"><i class="fa fa-home"></i>Courses</a>
+                    <a href="{{route('catalouge')}}" class="link mobile"><i class="fa fa-book"></i>Courses</a>
                     <a class="link desktop" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a data-href="#overview" class="link">Certification</a>
+                    <a data-href="#overview" class="link"><i class="fa fa-money"></i>Certification</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('onsite')}}" data-href="#choose" class="link">Onsite</a>
+                    <a href="{{route('onsite')}}" data-href="#choose" class="link"><i class="fa fa-building"></i>Onsite</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('locations')}}" data-href="#azure-other" class="link">Locations</a>
+                    <a href="{{route('locations')}}" data-href="#azure-other" class="link"><i class="fa fa-map"></i>Locations</a>
                     <span></span>
                 </li>
                 <li class="links-li about-link" id="aboutdropdown" >
-                    <a href="" data-href="#faq" class="link mobile">About</a>
+                    <a href="" data-href="#faq" class="link mobile"><i class="fa fa-address-card"></i>About</a>
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
-                        <li><a href="{{route('aboutUs')}}">About Us</a></li>
-                        <li><a href="{{route('blog')}}">Blogs</a></li>
-                        <li><a href="{{route('testimonials')}}">Testimonials</a></li>
+                        <li><a href="{{route('aboutUs')}}"><i class="fa fa-address-card"></i>About Us</a></li>
+                        <li><a href="{{route('blog')}}"><i class="fa fa-clipboard"></i>Blogs</a></li>
+                        <li><a href="{{route('testimonials')}}"><i class="fa fa-comments"></i>Testimonials</a></li>
                     </ul>   
                 </li>
                 <li class="links-li">
-                    <a href="{{route('contactUs')}}" data-href="#blog" class="link">Contact Us</a>
+                    <a href="{{route('contactUs')}}" data-href="#blog" class="link"><i class="fa fa-address-book"></i>Contact Us</a>
                     <span></span> 
                 </li>
                 
@@ -116,7 +116,7 @@
                 </a>
             </li>
         </ul>
-        <div class="dropdown-menu" id="dropdown">
+        <div class="dropdown-menu" id="dropdown-menu">
             @php
             $menu_data = menu_data();
             $categories = $menu_data['categories'];

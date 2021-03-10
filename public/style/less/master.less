@@ -654,7 +654,6 @@
                     color: @whiteColor;
                     i{
                         margin-right: 0.5rem;
-                        width: 20px;
                     }
                 }
                 .desktop{
@@ -671,12 +670,24 @@
                     left: 0;
                     background-color: @whiteColor;
                     flex-direction: column;
-                    transition: 1s ease-in-out;
+                    transition: 1s ease-in-out;    
+                    width: 142px;
                     li{
-                        margin-bottom: .7rem;
+                        padding-bottom: .3rem;
+                        margin-bottom: .5rem;
+                        border-bottom: 2px dotted @greyColor;
                         a{
-                            font-size: 16px;
+                            font-size: 14px;
                             font-weight: 500;
+                            color: @darkblueColor;
+                            i{
+                                margin-right: 0.5rem;
+                            }
+                        }
+                        &:last-child{
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+                            border-bottom: none;
                         }
                     }
                 }

@@ -566,7 +566,6 @@ select::-ms-expand {
 }
 .navbar .menu-list .links-li .link i {
   margin-right: 0.5rem;
-  width: 20px;
 }
 .navbar .menu-list .links-li .desktop {
   display: none;
@@ -583,13 +582,25 @@ select::-ms-expand {
   background-color: #FFFFFF;
   flex-direction: column;
   transition: 1s ease-in-out;
+  width: 142px;
 }
 .navbar .menu-list #aboutdropdown ul li {
-  margin-bottom: 0.7rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px dotted #F2F2F2;
 }
 .navbar .menu-list #aboutdropdown ul li a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+  color: #1C2848;
+}
+.navbar .menu-list #aboutdropdown ul li a i {
+  margin-right: 0.5rem;
+}
+.navbar .menu-list #aboutdropdown ul li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 .navbar .menu-list .buttons {
   display: none;
@@ -1558,6 +1569,9 @@ select::-ms-expand {
     transition: none;
     color: #FFFFFF;
     padding-bottom: 3px;
+  }
+  .navbar .menu-list .links-li .link i {
+    display: none;
   }
   .navbar .menu-list .links-li span {
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 49%, rgb(23 50 97) 49%, #056ab9 57%, #ffffff 57%, #ffffff 69%, rgb(23 50 97) 69%, rgb(23 50 97) 77%, #ffffff 77%, #ffffff 88%, rgb(23 50 97) 88%, #ffffff 88%);
