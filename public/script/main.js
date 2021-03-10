@@ -354,13 +354,6 @@ $(".open-popup").on("click", function(){
 $(".cross").on("click", function(){
     $(".enquiry-popup").css("display","none");
 });
-$('body').on('click',function(e){
-    var element = e.target;
-    if($(element).closest(".popup,.open-popup").length > 0)
-    {
-        return true;
-    }
-});
 // End pop-up//
 
     //start Load more // 
@@ -435,7 +428,7 @@ $('#scroll').click(function(){
 
     //menu
     $("#menucourses").click(function(event) {
-        event.preventDefault();
+         event.preventDefault();
         if (window.matchMedia("(max-width: 1023px)").matches) {
             $(location).attr('href', $(this).attr('href'));
             $(".dropdown-menu").hide();
@@ -446,7 +439,7 @@ $('#scroll').click(function(){
             $("#aboutdropdown").removeClass('active');
             $('#country-list').removeClass('country-active');
         }
-        event.stopPropagation();
+         event.stopPropagation();
     });
 
     $(document).ready(function() {
@@ -512,15 +505,17 @@ $('#scroll').click(function(){
     //End about dropdown
 
 
-    $('body').on('click',function(){
+    $('body').on('click',function(event){
         var element = event.target;
-        if($(element).closest("#dropdown-menu , #aboutdropdown").length > 0)
+        
+        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup").length > 0)
         { 
             return false;
         }
-        else{
-            $("#aboutdropdown").removeClass('active');
-            $('#dropdown-menu').hide();
-
-        }
-       });
+        $("#aboutdropdown").removeClass('active');
+        $('#dropdown-menu').hide();
+    });
+    
+    $('.course-menu a').on('click', function(){
+        window.location.href = $(this).attr('href');
+    })

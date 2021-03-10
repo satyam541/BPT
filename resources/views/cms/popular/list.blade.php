@@ -19,9 +19,43 @@
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
-        </div>
+        
         <!-- /.content-header -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card card-primary card-outline">
 
+                    <div class="card-header">
+                        <div class="card-title">
+                            Add To Popular
+                        </div>
+                    </div>
+                    <div class="card-body">
+                            {{Form::open(['id'=>'form'])}}
+                            <div class="form-group row">
+                                {{ Form::label('module', 'Module Type:', ['class' => 'col-sm-2 control-label']) }}
+                                <div class="col-sm-4">
+                                    {{ Form::select('module', $module,null, ['id' => 'inputModule', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                {{ Form::label('name', 'Name:', ['class' => 'col-sm-2 control-label']) }}
+                                <div class="col-sm-4">
+                                    {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-12 text-right">
+                                <a href="" onclick="addToPopular('{{route('insertPopular',['module'=>  , 'name'=> ])}}')" class="btn btn-primary">Submit</a>
+                            </div>
+                            {{Form::close()}}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -88,7 +122,21 @@
 <script>
     $("document").ready(function() {
         $("#first").click();
-});
+    });
+        function addToPopular(path)
+        {
+            var module = $("#inputModule").val();
+            var name   = $("#inputName").val();
+
+            $.ajax({
+                type: "POST",
+                url: path,
+                data: "module=" + module + "&name=" + name,
+                success: function(data) {
+                    toastr.success('Operation Done');
+                }
+            });
+        }        
 
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;

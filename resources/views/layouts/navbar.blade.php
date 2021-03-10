@@ -167,7 +167,7 @@
                         @endforeach
                     </div>
                     <div class="buttons">
-                        <a class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
+                        <a href="{{route('catalouge')}}" class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
                     </div>
                 </div>
             </div>
