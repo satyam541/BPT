@@ -547,6 +547,7 @@ select::-ms-expand {
 }
 .navbar .menu-list .links-li:last-child a {
   display: flex;
+  align-items: center;
   width: 35px;
   height: 35px;
   padding: 6px;
@@ -1692,12 +1693,16 @@ select::-ms-expand {
     position: absolute;
     top: 127px;
     right: 0;
-    width: 225px;
+    width: 240px;
     max-height: 180px;
     overflow-y: scroll;
   }
+  .navbar .country-list .flag {
+    margin-right: 0.5rem;
+  }
   .navbar .country-list li {
     width: 100%;
+    display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
     padding-bottom: 0.4rem;
@@ -1719,6 +1724,12 @@ select::-ms-expand {
     width: calc(100% - 50px);
     font-size: 14px;
     color: #1C2848;
+  }
+  .navbar .flag {
+    background-image: url(../img/master/flags.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 12px;
   }
   .navbar .country-active {
     display: flex;
