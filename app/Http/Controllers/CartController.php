@@ -225,7 +225,8 @@ class CartController extends Controller
         
         $customer->save();
          // save customer detail to session
-         session(['customer'=>$customer, 'phonecode'=>$input['phonecode']]);
+         session(['customer'=>$customer, 'phonecode'=>$input['phonecode'],'countrycode'=>$input['m_code']]);
+        
         $order          = new Order(); 
         $cartItems = Cart::content();
         $order->customer_id = $customer->id;
@@ -584,6 +585,20 @@ class CartController extends Controller
         }
         
         return view('cart.response',$data);
+    }
+    public function customerData()
+    {
+        $customer   = session('customer');
+        $phonecode  = session('phonecode');
+        $countrycode= session('countrycode');
+        $mobile         = $customer->mobile; 
+        $mobile         = str_replace($phonecode, '', $mobile);    
+        $data=[];
+        $data['customer']=$customer;
+        $data['countrycode']=$countrycode;
+        $data['phonecode']=$phonecode;
+        $data['mobile']=$mobile;
+        return json_encode($data);
     }
 
 }
