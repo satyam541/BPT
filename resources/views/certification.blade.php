@@ -34,7 +34,7 @@
                     <a href="javascript:void(0);">{{$certification->name}}</a>
                     <div class="buttons">
                         <a href="{{url('certification-details'.$certification->slug)}}" class="btn-blue" >
-                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">Certification Detail
+                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">Certification
                         </a>
                     </div>
                 </div>
