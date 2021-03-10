@@ -5947,10 +5947,13 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   width: 272px;
-  height: 300px;
+  height: 250px;
   position: relative;
   z-index: 1;
   margin-top: 2rem;
+}
+.popular-blog .popular-item:first-child {
+  margin-top: 0;
 }
 .popular-blog .popular-item::before {
   content: '';
@@ -5967,20 +5970,20 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
-.popular-blog .popular-item p {
+.popular-blog .popular-item .date {
   background-color: #0064D8;
   width: 40%;
   padding: 0.3rem;
-  justify-content: center;
   display: flex;
+  justify-content: center;
   color: #FFFFFF;
   font-weight: 800;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 .popular-blog .info {
   display: flex;
-  flex-direction: column;
-  margin-top: auto;
   padding: 1rem;
   position: absolute;
   bottom: 0;
@@ -5989,8 +5992,8 @@ select::-ms-expand {
 .popular-blog .info p {
   background-color: transparent;
   width: 80%;
-  padding: 0;
-  justify-content: flex-start;
+  position: inherit;
+  color: #FFFFFF;
 }
 .popular-blog .info h3 {
   color: #FFFFFF;
@@ -6019,6 +6022,8 @@ select::-ms-expand {
   transition: 1s all;
 }
 .our-blog .our-list {
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 1;
 }
@@ -6070,16 +6075,18 @@ select::-ms-expand {
 .our-blog .our-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   width: 100%;
+}
+.our-blog .our-info .name,
+.our-blog .our-info .designation {
+  font-size: 13px;
+  font-weight: bold;
 }
 .our-blog .our-info .name {
   display: flex;
   align-items: center;
-  font-size: 13px;
   width: 48%;
-  font-weight: bold;
   margin-top: 0;
   margin-right: auto;
 }
@@ -6090,16 +6097,12 @@ select::-ms-expand {
 }
 .our-blog .our-info .designation {
   width: 45%;
-  font-size: 13px;
-  font-weight: bold;
-  margin-top: 0;
 }
 .our-blog .dates {
   display: none;
 }
 .our-blog h3 {
   text-align: center;
-  width: 100%;
 }
 .our-blog .item-text {
   margin-top: 0.5rem;
@@ -6154,16 +6157,16 @@ select::-ms-expand {
     margin-top: 0;
   }
   .popular-blog .popular-list {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
   }
   .our-blog {
     padding: 3rem 2rem;
+    padding-top: 0;
   }
   .our-blog .our-list {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
@@ -6178,10 +6181,6 @@ select::-ms-expand {
   .our-blog .our-item {
     width: 40%;
     align-items: flex-start;
-    margin-top: 3rem;
-  }
-  .our-blog .our-item:nth-child(1),
-  .our-blog .our-item:nth-child(2) {
     margin-top: 0;
   }
   .our-blog .our-item::before {
@@ -6205,6 +6204,9 @@ select::-ms-expand {
     right: -130px;
     top: 55px;
   }
+  .our-blog .our-item:nth-child(even) {
+    margin-top: 5rem;
+  }
   .our-blog .our-item:nth-child(even)::before {
     left: -78px;
     top: 140px;
@@ -6226,6 +6228,7 @@ select::-ms-expand {
   }
   .ideal {
     padding: 3rem 2rem;
+    padding-top: 0;
   }
   .ideal .clients-inner {
     width: 100%;
@@ -6233,11 +6236,24 @@ select::-ms-expand {
   }
 }
 @media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .our-blog .our-list .our-item:nth-last-child(2) {
+    margin-right: auto;
+    margin-right: 0;
+  }
   .our-blog .our-list .our-item:nth-last-child(4) {
     margin-right: auto;
   }
   .our-blog .our-list .item-text {
     height: 150px;
+  }
+  .our-blog .our-list:nth-child(even)::before {
+    left: -96px;
+  }
+  .our-blog .our-list:nth-child(even) .date {
+    left: -146px;
+  }
+  .our-blog .our-list:nth-child(odd) .date {
+    right: -145px;
   }
 }
 @media (min-width : 1024px) {
@@ -6281,7 +6297,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
   }
   .our-blog .our-item:nth-child(odd)::before {
-    right: -105px;
+    right: -104px;
   }
   .our-blog .our-item:nth-child(odd)::after {
     right: -40px;
@@ -6290,9 +6306,6 @@ select::-ms-expand {
   .our-blog .our-item:nth-child(odd) .date {
     right: -155px;
     top: 70px;
-  }
-  .our-blog .our-item:nth-child(even) {
-    margin-top: 5rem;
   }
   .our-blog .our-item:nth-child(even)::before {
     left: -104px;
@@ -6311,6 +6324,7 @@ select::-ms-expand {
     background-image: url(../img/blog/ideal-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    padding-top: 1rem;
   }
   .ideal .heading {
     width: 28%;

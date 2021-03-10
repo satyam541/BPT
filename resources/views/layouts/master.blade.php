@@ -23,7 +23,7 @@
 </head>
 <body>
     @yield("content")
-    <footer class="flex-direction footer">
+    <footer class="flex-container footer">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-content">

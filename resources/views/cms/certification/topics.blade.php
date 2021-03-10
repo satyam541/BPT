@@ -44,8 +44,8 @@
                                 <table id="example1">
                                     <thead>
                                         <tr>
-                                            <th> Certification Name</th>
-                                            <th> Topics Name</th>
+                                            <th>Topics Name</th>
+                                            <th>Certification Name</th>
                                             <th>Courses</th>
                                             <th>Actions</th>
                                         </tr>
@@ -54,8 +54,8 @@
                                         
                                         @foreach ($topics as $topic)
                                             <tr>
-                                                <td>{{$topic->certification->name ?? "" }}</td>
                                                 <td>{{ $topic->name  }}</td>
+                                                <td>{{$topic->certification->name ?? "" }}</td>
                                                 <td>
                                                     <a href="{{Route('assignCoursesForm',['topic_id'=>$topic->id])}}" class="btn btn-primary">Assign </a></td>
                                                 <td>
@@ -94,8 +94,8 @@
         $(document).ready(function() {
             $('#example1').DataTable({
                 "columns": [
+                        {"name": "Topics Name"},
                         {"name": "Certification Name"},
-                        {"name": "Course Name"},
                         {"name": "Courses", "sorting": false, searching: false },
                         {"name": "Actions", "sorting": false, searching: false }
                 ]
