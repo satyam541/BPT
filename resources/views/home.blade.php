@@ -140,9 +140,9 @@
         <div class="container">
             <div class="whychoose-container">
                 <div class="heading center-heading">
-                    <h2>Why
+                    <h2>Why We are 
                         <span>
-                            Choose Us
+                        Best to Choose?
                         </span>
                     </h2>
                     {{-- <h1>{{$pageDetail->choose_us['heading']->heading}}</h1> --}}
@@ -208,9 +208,9 @@
         <div class="container">
             <div class="delivery-container">
                 <div class="heading">
-                    <h2>Expert Training In A Classroom,
+                    <h2>Professional Training, 
                         <span>
-                            Online Or From Home!
+                        The Way It Should Be Done
                         </span>
                     </h2>
                 </div>
