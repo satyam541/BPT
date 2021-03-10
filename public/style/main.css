@@ -9040,6 +9040,13 @@ select::-ms-expand {
 .training .add-foundation .info strong {
   color: #0064D8;
 }
+.training .info-content {
+  padding: 1rem;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  border-radius: 10px;
+  margin-top: 2rem;
+}
 .training .onsite-block {
   display: flex;
   flex-direction: column;
@@ -9788,7 +9795,7 @@ select::-ms-expand {
     margin: 0rem 0 0.5rem;
   }
   .training .online-block .exclude {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -10390,7 +10397,7 @@ select::-ms-expand {
     align-items: flex-start;
   }
   .training .add-ons {
-    width: 53%;
+    width: 46%;
     margin-top: 2rem;
     padding-bottom: 2rem;
   }
@@ -10400,9 +10407,6 @@ select::-ms-expand {
     left: -19px;
     justify-content: flex-start;
     padding-left: 3.3rem;
-  }
-  .training .add-foundation {
-    width: 43%;
   }
   .training .add-foundation ul {
     padding: 1rem 2rem;
