@@ -33,22 +33,18 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Assign Course Form</h3>
+                                <h3 class="card-title">{{$topic->name}}</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
                             {{ Form::model($topic, ['route' => $submitRoute]) }}
                             <div class="card-body">
-                                {{-- {{dd($topic)}} --}}
+                                
                                 {{ Form::hidden('id', null, ['class' => 'form-control']) }}
-                                <div class="form-group">
-                                    {{ Form::label('name', 'Topic') }}
-                                    {{ Form::text('name', null, ['class' => 'form-control', 'readOnly']) }}
-                                </div>
-
+                                
                                 <div class="form-group">
                                     {{ Form::label('courses[]', 'Courses') }}
-                                    {{ Form::select('courses[]', $courses,null,['class' => 'form-control multipleSelect', 'multiple' => 'multiple', 'title' => 'Choose One', 'required'=>'required']) }}
+                                    {{ Form::select('courses[]', $courses,null,['class' => 'form-control multipleSelect', 'multiple' => 'multiple', 'title'=>'Select Course']) }}
                                 </div>
 
                             </div>
@@ -81,6 +77,8 @@
             $("#name").on('input', function() {
                 updateSlug();
             });
+
+            $(".multipleSelect").select2();
         });
 
         function updateSlug() {
@@ -90,11 +88,7 @@
             $("#reference").val(slug);
 
         }
-        $(".multipleSelect").select2({
-                placeholder:"Choose Course",
-                
-                
-        });
+        
 
     </script>
 

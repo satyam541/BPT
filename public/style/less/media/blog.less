@@ -7,7 +7,6 @@
         }
 
     }
-
     //End bannner section //
 
     // Start popular-blog Section //
@@ -20,22 +19,21 @@
         }
 
         .popular-list {
-            display: flex;
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
         }
     }
-
     // End popular-blog Section //
 
     // Start our-blog section //
 
     .our-blog {
         padding: @sectionPadding-md;
+        padding-top: 0;
 
         .our-list {
-            display: flex;
+            flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: flex-start;
@@ -56,10 +54,7 @@
         .our-item {
             width: 40%;
             align-items: flex-start;
-            margin-top: 3rem;
-            &:nth-child(1),&:nth-child(2){
-                margin-top: 0;
-            }
+            margin-top: 0;
 
             &::before {
                 content: '';
@@ -85,6 +80,7 @@
                 }
             }
             &:nth-child(even){
+                margin-top: 5rem;
                 &::before{
                     left: -78px;
                     top: 140px;
@@ -112,19 +108,18 @@
        
 
     }
-
     // End our blog section //
 
     // Start ideal section //
     .ideal {
         padding: @sectionPadding-md;
-            .clients-inner{
-                width: 100%;
-                margin: 0;
-            }
+        padding-top: 0;
+        .clients-inner{
+            width: 100%;
+            margin: 0;
+        }
 
     }
-
     // End ideal section //
 
 }
@@ -134,12 +129,30 @@
     .our-blog {
         .our-list {
             .our-item {
+                &:nth-last-child(2) {
+                    margin-right: auto;
+                    margin-right: 0;
+                }
                 &:nth-last-child(4) {
                     margin-right: auto;
                 }
             }
             .item-text{
                 height: 150px;
+            }
+            &:nth-child(even){
+                &::before{
+                    left: -96px;
+                }
+                .date{
+                    left: -146px;
+                }
+                
+            }
+            &:nth-child(odd){
+                .date{
+                    right: -145px;
+                }
             }
         }
 
@@ -206,7 +219,7 @@
 
             &:nth-child(odd){
                 &::before{
-                    right: -105px;
+                    right: -104px;
                 }
                 &::after{
                     right: -40px;
@@ -218,7 +231,6 @@
                 }
             }
             &:nth-child(even){
-                margin-top: 5rem;
                 &::before{
                     left: -104px;
                     top: 170px;
@@ -245,6 +257,7 @@
         background-image: url(../img/blog/ideal-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        padding-top: 1rem;
 
         .heading {
             width: 28%;

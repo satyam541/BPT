@@ -23,7 +23,7 @@
 </head>
 <body>
     @yield("content")
-    <footer class="flex-direction footer">
+    <footer class="flex-container footer">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-content">
@@ -173,16 +173,16 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-            <a href="javascript:void(0);" class="email">
+            <a href="{mailto:{{websiteDetail()->contact_number}}"  class="email">
                     <img src="{{url('img/master/email-white.png')}}" alt="mail">
                 </a>
             <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
                     <img src="{{url('img/master/search-white.png')}}" alt="search">
             </a>
-            <a href="javascript:void(0);" class="cart">
+            <a href="{{route('cart')}}" class="cart">
                     <img src="{{url('img/master/cart-white.png')}}" alt="cart">
                 </a>
-                <a href="" class="call">
+                <a href="tel:{{websiteDetail()->contact_number}}"  class="call">
                     <img src="{{url('img/master/call.png')}}" alt="call">
                 </a>
             </div>
