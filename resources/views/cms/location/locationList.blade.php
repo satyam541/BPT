@@ -61,6 +61,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Country</th>
+                  <th>Popular</th>
                   <th>
                     @can('update',new App\Models\Location())
                     Actions
@@ -74,6 +75,7 @@
                     <tr>
                       <td>{{$location->name}}</td>
                       <td>{{$location->country->name ?? ''}}</td>
+                      <td><input type="checkbox" name="is_popular"></td>
                       <td>
                         @can('update',$location)
                         <a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
@@ -115,6 +117,7 @@
               "columns": [
                         { "name": "Name" },
                         { "name": "Country" },
+                        { "name": "Popular", "sorting":false, searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });

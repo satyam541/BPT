@@ -134,9 +134,9 @@
           "columns": [
                         { "name": "Name",searching:false},
                         { "name": "Email",searching:false },
-                        { "name": "Role",searching:false },
                         { "name": "Active",searching:false },
-                        { "name": "Actions", "sorting":false, searching:false }
+                        { "name": "Role",searching:false },
+                        { "name": "Edit", "sorting":false, searching:false }
           ],
                           
         });

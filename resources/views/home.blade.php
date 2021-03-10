@@ -124,7 +124,7 @@
                     </a>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue">
+                    <a class="btn-blue open-popup enquiryJS">
                         <img src="{{ url('img/master/quote.svg') }}" alt="quote">
                         Enquire Now
                     </a>
@@ -223,7 +223,7 @@
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
                             <h3>{!! $delivery->heading !!}</h3>
                             <p>{!! $delivery->content !!}</p>
-                            <a href="">Enquire Now</a>
+                            <a class="btn-blue open-popup enquiryJS " href="">Enquire Now</a>
                         </div>
                     @endforeach
 

@@ -56,6 +56,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Date</th>
+                  <th>Popular</th>
                   <th>
                     @can('update',new App\Models\Article())
                     Actions
@@ -69,6 +70,7 @@
                     <tr>
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
+                    <td class=" text-center"><input type="checkbox" name="is_popular"></td>
                     <td>
                     @can('update',$item)
                     <a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
@@ -112,6 +114,7 @@
               "columns": [
                         { "name": "Name" },
                         { "name": "Date", searching:false },
+                        { "name": "Popular", "sorting":false, searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });

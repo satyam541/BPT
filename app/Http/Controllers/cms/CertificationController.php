@@ -117,7 +117,8 @@ class CertificationController extends Controller
         // dd($request->all());
         $inputs = $request->except('_token');
         $topic  = new CertificationTopic();
-        $topic['name']  = $inputs['name'];
+        $topic['name']    = $inputs['name'];
+        $topic['detail']  = $inputs['detail'];
         $topic['certification_id'] = $inputs['certification_id'];
         $topic->save();
         return redirect()->route('certificationTopicList')->with('success','Successfully Added');
@@ -134,7 +135,8 @@ class CertificationController extends Controller
     public function updateTopic(CertificationTopicRequest $request)
     {
         $topic = CertificationTopic::find($request->id);
-        $topic['name'] = $request['name'];
+        $topic['name']   = $request['name'];
+        $topic['detail'] = $request['detail'];
         $topic['certification_id'] = $request['certification_id'];
         
         $topic->update();
