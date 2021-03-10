@@ -19,9 +19,48 @@
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
-        </div>
+        
         <!-- /.content-header -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card card-primary card-outline">
 
+                    <div class="card-header">
+                        <div class="card-title">
+                            Add To Popular
+                        </div>
+                    </div>
+                    <div class="card-body">
+                            {{Form::open(['id'=>'add-popular'])}}
+                            @csrf
+                            <div class="form-group row">
+                                {{ Form::label('module', 'Module Type:', ['class' => 'col-sm-2 control-label']) }}
+                                <div class="col-sm-4">
+                                    {{ Form::select('module_type', $module,null, ['id' => 'module-type', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                {{ Form::label('name', 'Name:', ['class' => 'col-sm-2 control-label']) }}
+                                <div class="col-sm-4">
+                                    <Select name="module_id" class="form-control selectJS" id="module-data">
+                                        <option value=""></option>
+                                
+                                    </Select>
+                                    {{-- {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }} --}}
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-4 text-right">
+                                <button type="button" onclick="addToPopular(this)" class="btn btn-primary">Add Popular</button>
+                            </div>
+                            {{Form::close()}}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -88,7 +127,64 @@
 <script>
     $("document").ready(function() {
         $("#first").click();
-});
+
+        $("#module-type").change(function() {
+                type = $(this).val();
+                
+                getModuleData(type);
+
+        });
+
+    });
+
+    function getModuleData(type){
+
+        $.ajax({
+            url: '{{ route('getModuleData') }}',
+            type: 'POST',
+            dataType: 'json',
+            data: {module:type},
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                var moduleData = '<option value="">Select </option>';
+                console.log(data);
+                $.each(data, function(id, name){
+                    // console.log(id, name);
+                    moduleData += '<option value="' +id + '">' + name +
+                                    '</option>';
+                })
+                $('#module-data').html(moduleData);
+            },
+            error: function() {
+                error.fadeIn('slow', function() {
+                    error.delay(3000).fadeOut();
+                });
+            }
+        });
+    }
+
+    function addToPopular(){
+        var cartForm = $("#add-popular");
+        formData = cartForm.serialize();
+        $.ajax({
+            url: '{{ route('insertPopular') }}',
+            type: 'POST',
+            data:formData, 
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                toastr.success('Successfully Added');
+                location.reload();
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+        
 
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;

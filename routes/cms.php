@@ -248,7 +248,8 @@ Route::get('/schedule/onlineprice/addons/{online}',"ScheduleController@courseAdd
 Route::get('/popular/list',"PopularController@list")->name("popularItems");
 Route::post('/popular/delete/{popular}',"PopularController@delete")->name("deletePopular");
 Route::any('/popular/sort',"PopularController@sort")->name("sortPopular");
-
+Route::post('/popular/insert','PopularController@insert')->name('insertPopular');
+Route::post('/popular/module/data','PopularController@getModuleData')->name('getModuleData');
 
 
 Route::post('/purchase/store', ['as' => 'purchaseResponse', 'uses' => 'PurchaseController@storeDetails']);

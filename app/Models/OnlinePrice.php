@@ -10,6 +10,7 @@ class OnlinePrice extends Model
     protected $guarded = array('id');
 
 
+
     public function course() {
         return $this->belongsTo('App\Models\Course');
     }
@@ -18,4 +19,9 @@ class OnlinePrice extends Model
         return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
     }
 
+    public function getOfferPriceAttribute($price)
+    {
+        return $this->price -50 ;
+        
+    }
 }

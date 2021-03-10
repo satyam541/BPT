@@ -289,12 +289,16 @@ $.ajax({
 });
  
 $("select.country-code").on('change', function(e){
-    var phonecode = $(this).find(':selected').data('phone-code');
+    var phonecode   = $(this).find(':selected').data('phone-code');
+    var countrycode = $(this).find(':selected').val();
+
     $(this).closest('.phonecode-field').find('span.prefix').text(phonecode);
     var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
     $(this).closest('.phonecode-field').find('input.telephone').val('').trigger('change');
     $(this).closest('.phonecode-field').find('input.phonenumber').val(prefix);
     $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
+    $(this).closest('.phonecode-field').find('input.countrycode').val(countrycode);
+    
 });
 $('input.telephone').on('focusout', function(event){
     var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
@@ -353,13 +357,6 @@ $(".open-popup").on("click", function(){
 });
 $(".cross").on("click", function(){
     $(".enquiry-popup").css("display","none");
-});
-$('body').on('click',function(e){
-    var element = e.target;
-    if($(element).closest(".popup,.open-popup").length > 0)
-    {
-        return true;
-    }
 });
 // End pop-up//
 
@@ -435,7 +432,7 @@ $('#scroll').click(function(){
 
     //menu
     $("#menucourses").click(function(event) {
-        event.preventDefault();
+         event.preventDefault();
         if (window.matchMedia("(max-width: 1023px)").matches) {
             $(location).attr('href', $(this).attr('href'));
             $(".dropdown-menu").hide();
@@ -446,7 +443,7 @@ $('#scroll').click(function(){
             $("#aboutdropdown").removeClass('active');
             $('#country-list').removeClass('country-active');
         }
-        event.stopPropagation();
+         event.stopPropagation();
     });
 
     $(document).ready(function() {
@@ -512,15 +509,17 @@ $('#scroll').click(function(){
     //End about dropdown
 
 
-    $('body').on('click',function(){
+    $('body').on('click',function(event){
         var element = event.target;
-        if($(element).closest("#dropdown-menu , #aboutdropdown").length > 0)
+        
+        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup").length > 0)
         { 
             return false;
         }
-        else{
-            $("#aboutdropdown").removeClass('active');
-            $('#dropdown-menu').hide();
-
-        }
-       });
+        $("#aboutdropdown").removeClass('active');
+        $('#dropdown-menu').hide();
+    });
+    
+    $('.course-menu a').on('click', function(){
+        window.location.href = $(this).attr('href');
+    })

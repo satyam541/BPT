@@ -69,7 +69,7 @@
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/name-black.svg') }}" alt="name" class="black">
                                         <img src="{{ url('img/master/name-red.svg') }}" alt="name-red" class="red"></span>
-                                    <input type="text" name="firstname" id="f-name" placeholder="First Name*" autocomplete="off">
+                                    <input type="text" name="firstname" id="firstname" placeholder="First Name*" autocomplete="off" class="inputfirstname">
                                 </div>
                                 <input type="hidden" name="type" value="other">
                                 <input type="hidden" name="Url" id="url" value="{{ Request::url() }}">
@@ -77,17 +77,17 @@
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/name-black.svg') }}" alt="name" class="black">
                                         <img src="{{ url('img/master/name-red.svg') }}" alt="name-red" class="red"></span>
-                                    <input type="text" name="lastname" id="l-name" placeholder="Last Name*" autocomplete="off">
+                                    <input type="text" name="lastname" id="lastname" placeholder="Last Name*" autocomplete="off" class="inputlastname">
                                 </div>
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/email-black.svg') }}" alt="email" class="black">
                                         <img src="{{ url('img/master/email-red.svg') }}" alt="email-red" class="red"></span>
-                                    <input type="text" name="email" id="email" placeholder="Email Address*" autocomplete="off">
+                                    <input type="text" name="email" id="email" placeholder="Email Address*" autocomplete="off" class="inputemail">
                                 </div>
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/email-black.svg') }}" alt="email" class="black">
                                         <img src="{{ url('img/master/email-red.svg') }}" alt="email-red" class="red"></span>
-                                    <input type="text" name="email_confirmation" id="email" placeholder="Confirm Email Address*" autocomplete="off">
+                                    <input type="text" name="email_confirmation" id="email" placeholder="Confirm Email Address*" autocomplete="off"  class="inputemail">
                                 </div>
 
                                 <div class="input-container">
@@ -103,6 +103,7 @@
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                             <input type="text" name="phone" class="phonenumber">
                                             <input type="text" name="phonecode" class="phonecode">
+                                            <input type="text" name="m_code" class="countrycode" autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +111,7 @@
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/house-black.svg') }}" alt="house" class="black">
                                         <img src="{{ url('img/master/house-red.svg') }}" alt="house-red" class="red"></span>
-                                    <input type="text" name="company" id="email" placeholder="Company" autocomplete="off">
+                                    <input type="text" name="company" id="email" placeholder="Company" autocomplete="off" class="inputcompany">
                                 </div>
                                 
                             </div>
@@ -157,7 +158,7 @@
                                             class="black">
                                         <img src="{{ url('img/master/credit-red.svg') }}" alt="credit-red"
                                             class="red"></span>
-                                    <select name="paymentmethod" id="credit-card" onchange="switchPaymentMethod(this.value)">
+                                    <select name="paymentmethod" id="credit-card" onchange="switchPaymentMethod(this.value)" class="inputpaymentmethod">
                                         <option value="" selected> Choose your payment method * </option>
                                         <option value="card"> Credit/Debit Card </option>
                                         <option value="purchase order"> Purchase Order </option>
@@ -178,7 +179,7 @@
                             <div class="form billing-details">
                                 <h2>Billing Details</h2>
                                 <div class="form-consent">
-                                    <input name="contactConsent" type="checkbox" id="billingConsent">
+                                    <input name="contactConsent" type="checkbox" id="billingConsent" onclick="sameBilling(this)">
                                     <label for="billingConsent">Use the same details for billing details</label>
                                 </div>
 
@@ -190,7 +191,7 @@
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
                                             <input type="text" name="firstname" id="f-name" placeholder="First Name*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="firstname inputfirstname">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/name-black.svg') }}" alt="name"
@@ -198,7 +199,7 @@
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
                                             <input type="text" name="lastname" id="l-name" placeholder="Last Name*"
-                                                autocomplete="off">
+                                                autocomplete="off"  class="lastname inputlastname">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/house-black.svg') }}" alt="house"
@@ -206,7 +207,7 @@
                                                 <img src="{{ url('img/master/house-red.svg') }}" alt="house-red"
                                                     class="red"></span>
                                             <input type="text" name="address1" id="adress-1" placeholder="Address 1*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="inputaddress1">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/house-black.svg') }}" alt="house"
@@ -214,7 +215,7 @@
                                                 <img src="{{ url('img/master/house-red.svg') }}" alt="house-red"
                                                     class="red"></span>
                                             <input type="text" name="address2" id="adress-1" placeholder="Address 2*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="inputaddress2">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/city-black.svg') }}" alt="city-black"
@@ -222,7 +223,7 @@
                                                 <img src="{{ url('img/master/city-red.svg') }}" alt="city-red"
                                                     class="red"></span>
                                             <input type="text" name="city" id="city" placeholder="City/Town*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="inputcity">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/postcode-black.svg') }}"
@@ -230,7 +231,7 @@
                                                 <img src="{{ url('img/master/postcode-red.svg') }}" alt="postcode-red"
                                                     class="red"></span>
                                             <input type="text" name="postcode" id="postcode" placeholder="PostCode*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="inputpostcode">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/province-black.svg') }}"
@@ -322,12 +323,12 @@
                                 @endswitch
                                 </p>
                                 <div class="form-consent">
-                                    <input name="contactConsent" type="checkbox" id="delegateConsent">
+                                    <input name="contactConsent" type="checkbox" id="delegateConsent" onclick="sameDelegate(this)">
                                     <label for="delegateConsent">Use your Details</label>
                                 </div>
 
                                 <div class="group-input">
-                                    <div class="form-input">
+                                    <div class="form-input delegatedetail">
                                         <h3 class="headingJS">Delegate <span>1</span></h3>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/name-black.svg') }}" alt="name"
@@ -335,7 +336,7 @@
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
                                             <input type="text" name="firstname" id="f-name" placeholder="First Name*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="firstname inputfirstname">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/name-black.svg') }}" alt="name"
@@ -343,7 +344,7 @@
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
                                             <input type="text" name="lastname" id="l-name" placeholder="Last Name*"
-                                                autocomplete="off">
+                                                autocomplete="off"  class="firstname inputlastname">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/contactus/phone-call.svg') }}" alt="phone-call"
@@ -352,9 +353,9 @@
                                                     class="red"></span>
                                             <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                             <div class="phonecode-field field-black">
-                                                <select class="country-code"></select>
-                                                <span class="prefix"></span>
-                                                <input type="number" class="telephone" placeholder="Phone Number*" min=0 autocomplete="off">
+                                                <select class="country-code c_code"></select>
+                                                <span class="prefix code"></span>
+                                                <input type="number" class="telephone tel" placeholder="Phone Number*" min=0 autocomplete="off">
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                                     <input type="text" name="phone" class="phonenumber" tabindex="-1" autocomplete="off">
                                                     <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
@@ -368,9 +369,9 @@
                                                     class="red"></span>
                                             <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                             <div class="phonecode-field field-black">
-                                                <select class="country-code"></select>
-                                                <span class="prefix"></span>
-                                                <input type="number" class="telephone" placeholder="Telephone Number*" min=0>
+                                                <select class="country-code mcode"></select>
+                                                <span class="prefix  "></span>
+                                                <input type="number" class="telephone " placeholder="Telephone Number*" min=0>
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                                     <input type="text" name="telephone" class="phonenumber" tabindex="-1" autocomplete="off">
                                                     <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
@@ -383,7 +384,7 @@
                                                 <img src="{{ url('img/contactus/email-red.svg') }}" alt="email-red"
                                                     class="red"></span>
                                             <input type="text" name="email" id="email" placeholder="Email*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="email inputemail">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/contactus/email.svg') }}" alt="email"
@@ -391,74 +392,10 @@
                                                 <img src="{{ url('img/contactus/email-red.svg') }}" alt="email-red"
                                                     class="red"></span>
                                             <input type="text" name="confirm-email" id="confirm-email"
-                                                placeholder="Confirm Email*" autocomplete="off">
+                                                placeholder="Confirm Email*" autocomplete="off" class="email inputemail">
                                         </div>
                                     </div>
-                                    {{-- <div class="form-input">
-                                        <h3>Delegate 1</h3>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/master/name-black.svg') }}" alt="name"
-                                                    class="black">
-                                                <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
-                                                    class="red"></span>
-                                            <input type="text" name="f-name" id="f-name" placeholder="First Name*"
-                                                autocomplete="off">
-                                        </div>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/master/name-black.svg') }}" alt="name"
-                                                    class="black">
-                                                <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
-                                                    class="red"></span>
-                                            <input type="text" name="l-name" id="l-name" placeholder="Last Name*"
-                                                autocomplete="off">
-                                        </div>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/contactus/phone-call.svg') }}" alt="phone-call"
-                                                    class="black">
-                                                <img src="{{ url('img/contactus/phone-callred.svg') }}" alt="phonecall-red"
-                                                    class="red"></span>
-                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                                            <div class="phonecode-field field-black">
-                                                <select class="country-code"></select>
-                                                <span class="prefix"></span>
-                                                <input type="number" class="telephone" placeholder="Phone Number*" min=0>
-                                                <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                                    <input type="text" name="phone" class="phonenumber" tabindex="-1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/contactus/phone-call.svg') }}" alt="phone-call"
-                                                    class="black">
-                                                <img src="{{ url('img/contactus/phone-callred.svg') }}" alt="phonecall-red"
-                                                    class="red"></span>
-                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
-                                            <div class="phonecode-field field-black">
-                                                <select class="country-code"></select>
-                                                <span class="prefix"></span>
-                                                <input type="number" class="telephone" placeholder="Phone Number*" min=0>
-                                                <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                                    <input type="text" name="phone" class="phonenumber" tabindex="-1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/contactus/email.svg') }}" alt="email"
-                                                    class="black">
-                                                <img src="{{ url('img/contactus/email-red.svg') }}" alt="email-red"
-                                                    class="red"></span>
-                                            <input type="text" name="email" id="email" placeholder="Email*"
-                                                autocomplete="off">
-                                        </div>
-                                        <div class="input-container">
-                                            <span><img src="{{ url('img/contactus/email.svg') }}" alt="email"
-                                                    class="black">
-                                                <img src="{{ url('img/contactus/email-red.svg') }}" alt="email-red"
-                                                    class="red"></span>
-                                            <input type="text" name="confirm-email" id="confirm-email"
-                                                placeholder="Confirm Email*" autocomplete="off">
-                                        </div>
-                                    </div> --}}
+                                 
                                 </div>
                                 <div class="buttons">
                                     <button class="btn-white" type="button" onclick="prevTwo();">
@@ -505,13 +442,16 @@
 
 @section('footerScripts')
 
+       
     <script>
-        var submitCustomerRoute = '{{ route('customerDetailSubmit') }}';
-        var submitBillingRoute = '{{ route('billingDetailSubmit') }}';
-        var submitDelegateRoute = '{{ route('delegateDetailSubmit') }}';
-        var summaryPageRoute = "{{ route('summary') }}";
+        var submitCustomerRoute   = '{{ route('customerDetailSubmit') }}';
+        var submitBillingRoute    = '{{ route('billingDetailSubmit') }}';
+        var submitDelegateRoute   = '{{ route('delegateDetailSubmit') }}';
+        var summaryPageRoute      = "{{ route('summary') }}";
+        var customerData          = "{{route('customerData')}}";
 
     </script>
     <script src="{{ url('script/cartDetail.js') }}"></script>
+
     
 @endsection
