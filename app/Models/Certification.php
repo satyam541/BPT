@@ -13,6 +13,6 @@ class Certification extends Model
 
     public function topic()
     {
-        return $this->belongsTo('App\Models\CertificationTopic');
+        return $this->hasMany('App\Models\CertificationTopic');
     }
 }
