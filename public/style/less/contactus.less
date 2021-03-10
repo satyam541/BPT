@@ -1,7 +1,7 @@
 // Start Banner section//
 .contact-banner {
     flex-direction: column;
-    background-color: @lightblueColor;
+    background-color: #1C2848;
 
     .banner-container {
             h1 {
@@ -26,7 +26,6 @@
         flex-direction: column;
     }
     .heading{
-        margin-bottom: .5rem;
         padding-top: 0;
         &::before{
             content: none;
@@ -49,7 +48,7 @@
         flex-direction: column;
         .item{
             display: flex;
-            margin-top: 1rem;
+            margin-bottom: 1rem;
             padding: .8rem;
             border: 1px solid @whiteColor;
             h3,a,p{
@@ -91,7 +90,7 @@
     .social{
         display: flex;
         flex-direction: column;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         p{
             font-weight: 500;
             color: @whiteColor;
@@ -280,6 +279,8 @@
             }
         }
         h3{
+            display: flex;
+            align-self: center;
             font-size: 14px;
             width: calc(100% - 27px);
         }
@@ -319,7 +320,9 @@
     .platforms{
         display: flex;
         justify-content: space-around;
-        margin-top: 2rem;
+        margin-top: 1rem;
+        width: 272px;
+        align-self: center;
     }
     a{
         display: flex;

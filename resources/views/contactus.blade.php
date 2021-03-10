@@ -33,7 +33,7 @@
                         <input type="hidden" name="Url" id="url" value="{{Request::url()}}">
 
                         <div class="heading center-heading">
-                            <h2>Get In Touch <span>With Us Today</span> </h2>
+                            <h2>Get in Touch <span>with Us Today</span> </h2>
                         </div>
                         <div class="form-input">
                             <div class="input-container">
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                             <div class="social">
-                                <p>Sign Up With Social Platform</p>
+                                <p>Sign Up with Social Platform</p>
                                 <div class="media-list">
                                     @foreach ($socialmedias as $socialmedia)
                                     <a href="{{$socialmedia->link}}"><img src="{{url($socialmedia->getImagePath())}}" alt="linkedin"></a>    
@@ -152,10 +152,7 @@
                         <h2>Get More Information</h2>
                     </div>
                     <div class="info-list">
-
-                        
                         @foreach ($pageDetail->get_more_information as $information)
-
                             <div class="info-content">
                                 <span style="background-image: url({{url($information->getImagePath())}})">
                                     <img src="{{url($information->getIconPath())}}" alt="talk"></span>
