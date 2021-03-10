@@ -531,7 +531,7 @@ select::-ms-expand {
 }
 .navbar .menu-list .links-li {
   padding: 8px 0;
-  border-bottom: 1px dotted #000000;
+  border-bottom: 1px dotted #FFFFFF;
   cursor: pointer;
 }
 .navbar .menu-list .links-li:first-child {
@@ -562,7 +562,7 @@ select::-ms-expand {
 .navbar .menu-list .links-li .link {
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #FFFFFF;
 }
 .navbar .menu-list .links-li .link i {
   margin-right: 0.5rem;
@@ -641,11 +641,11 @@ select::-ms-expand {
   top: 0;
   right: 0;
   z-index: 15;
-  background-color: #FFFFFF;
+  background: linear-gradient(#0064D8, #1C2848);
   flex-direction: column;
 }
 .navbar .menu-links .menu-toggle {
-  color: #000000;
+  color: #FFFFFF;
 }
 .navbar .menu-links .menu-toggle img {
   width: 15px;
@@ -1178,7 +1178,7 @@ select::-ms-expand {
   }
   .banner {
     padding: 3rem 2rem;
-    padding-top: 5rem !important;
+    padding-top: 6rem !important;
     position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
