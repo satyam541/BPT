@@ -302,7 +302,7 @@ select::-ms-expand {
   cursor: pointer;
 }
 .ui-autocomplete .ui-autocomplete-category {
-  color: #007D3D;
+  color: #1C2848;
   font-weight: 700;
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 5px;
@@ -1334,7 +1334,7 @@ select::-ms-expand {
     color: #000000;
     border-bottom: 2px solid #E2E2E2;
     padding-bottom: 0.7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 70%;
     font-size: 22px;
   }
