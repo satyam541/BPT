@@ -289,12 +289,16 @@ $.ajax({
 });
  
 $("select.country-code").on('change', function(e){
-    var phonecode = $(this).find(':selected').data('phone-code');
+    var phonecode   = $(this).find(':selected').data('phone-code');
+    var countrycode = $(this).find(':selected').val();
+
     $(this).closest('.phonecode-field').find('span.prefix').text(phonecode);
     var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
     $(this).closest('.phonecode-field').find('input.telephone').val('').trigger('change');
     $(this).closest('.phonecode-field').find('input.phonenumber').val(prefix);
     $(this).closest('.phonecode-field').find('input.phonecode').val(phonecode);
+    $(this).closest('.phonecode-field').find('input.countrycode').val(countrycode);
+    
 });
 $('input.telephone').on('focusout', function(event){
     var prefix = $(this).closest('.phonecode-field').find('span.prefix').text();
@@ -518,4 +522,9 @@ $('#scroll').click(function(){
     
     $('.course-menu a').on('click', function(){
         window.location.href = $(this).attr('href');
-    })
+    });
+    $(".country-list .country").click(function() {
+ 
+        var conntrycode = $(this).data("country-code");
+        // alert(conntrycode); 
+    });

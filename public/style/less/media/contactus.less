@@ -17,7 +17,6 @@
           &:last-child{
             width: 54%;
             margin: auto;
-            margin-top: 1rem;
           }
           }
           .social{
@@ -58,9 +57,7 @@
 
       //Start locate section
       .locate{
-        .map{
-          padding: 2rem;
-        }
+        padding: @sectionPadding-md;
       }
 
       // Start FAQ Section
@@ -69,6 +66,7 @@
           .faq-container{
               flex-direction: row-reverse;
               justify-content: space-between;
+              align-items: center;
           }
           .faq-content{
               width: 50%;
@@ -107,8 +105,10 @@
           .platforms{
               flex-direction: column;
               justify-content: space-around;
-              margin-top: 0;
-              transform: translate(-28px, 0px)
+              width: auto;
+              margin:0;
+              transform: translate(-28px, 0px);
+              align-self: auto;
           }
           a{
               &:first-child{
@@ -123,16 +123,13 @@
   
     }
   
-  @media @size-lg {
+@media @size-lg {
   
        //Start banner section//
        .contact-banner {
-        background-color: transparent;
         background-image:url(../img/contactus/banner-bg.png);
         background-size: cover;
         background-position: center;
-        padding: 2rem;
-        padding-top: 1rem;
         .banner-container {
             width: 45%;
         }
@@ -167,7 +164,7 @@
               }
           }
           .social{
-            margin: 2.5rem 0;
+            margin: 1.5rem 0;
             width: 100%;
             padding-top: 0;
           }
@@ -191,9 +188,6 @@
 
         // Start FAQ Section
         .faq{
-          .faq-container{
-            align-items: center;
-          }
             .faq-content{
                 width: 56%;
             }
@@ -218,10 +212,9 @@
             }
             }
         // End FAQ Section
-    }
+  }
   
-  
-  @media @size-xl {
+@media @size-xl {
   
       //Start banner section//
       .contact-banner {
@@ -265,6 +258,12 @@
         }
         //End information section
 
+        // Start locate section
+        .locate{
+          padding: @sectionPadding-xl;
+        }
+        // End locate section
+
         // Start FAQ Section
         .faq{
             padding: @sectionPadding-xl;
@@ -277,4 +276,4 @@
             }
             }
         // End FAQ Section
-    }
+  }

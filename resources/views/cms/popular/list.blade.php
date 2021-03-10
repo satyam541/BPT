@@ -31,22 +31,27 @@
                         </div>
                     </div>
                     <div class="card-body">
-                            {{Form::open(['id'=>'form'])}}
+                            {{Form::open(['id'=>'add-popular'])}}
+                            @csrf
                             <div class="form-group row">
                                 {{ Form::label('module', 'Module Type:', ['class' => 'col-sm-2 control-label']) }}
                                 <div class="col-sm-4">
-                                    {{ Form::select('module', $module,null, ['id' => 'inputModule', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                    {{ Form::select('module_type', $module,null, ['id' => 'module-type', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 {{ Form::label('name', 'Name:', ['class' => 'col-sm-2 control-label']) }}
                                 <div class="col-sm-4">
-                                    {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                    <Select name="module_id" class="form-control selectJS" id="module-data">
+                                        <option value=""></option>
+                                
+                                    </Select>
+                                    {{-- {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }} --}}
                                 </div>
                             </div>
                             
-                            <div class="col-sm-12 text-right">
-                                <a href="" onclick="addToPopular('{{route('insertPopular',['module'=>  , 'name'=> ])}}')" class="btn btn-primary">Submit</a>
+                            <div class="col-sm-4 text-right">
+                                <button type="button" onclick="addToPopular(this)" class="btn btn-primary">Add Popular</button>
                             </div>
                             {{Form::close()}}
 
@@ -122,21 +127,64 @@
 <script>
     $("document").ready(function() {
         $("#first").click();
-    });
-        function addToPopular(path)
-        {
-            var module = $("#inputModule").val();
-            var name   = $("#inputName").val();
 
-            $.ajax({
-                type: "POST",
-                url: path,
-                data: "module=" + module + "&name=" + name,
-                success: function(data) {
-                    toastr.success('Operation Done');
-                }
-            });
-        }        
+        $("#module-type").change(function() {
+                type = $(this).val();
+                
+                getModuleData(type);
+
+        });
+
+    });
+
+    function getModuleData(type){
+
+        $.ajax({
+            url: '{{ route('getModuleData') }}',
+            type: 'POST',
+            dataType: 'json',
+            data: {module:type},
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                var moduleData = '<option value="">Select </option>';
+                console.log(data);
+                $.each(data, function(id, name){
+                    // console.log(id, name);
+                    moduleData += '<option value="' +id + '">' + name +
+                                    '</option>';
+                })
+                $('#module-data').html(moduleData);
+            },
+            error: function() {
+                error.fadeIn('slow', function() {
+                    error.delay(3000).fadeOut();
+                });
+            }
+        });
+    }
+
+    function addToPopular(){
+        var cartForm = $("#add-popular");
+        formData = cartForm.serialize();
+        $.ajax({
+            url: '{{ route('insertPopular') }}',
+            type: 'POST',
+            data:formData, 
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                toastr.success('Successfully Added');
+                location.reload();
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+        
 
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;

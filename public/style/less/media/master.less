@@ -24,6 +24,7 @@
       top: 0;
       left: 0;
       .container{
+        padding: 1rem 2rem;
         .menu.active {
           &+.menu-links {
               width: 50%;
@@ -609,6 +610,7 @@
 
         
       }
+      
       .country-list {
         display: none;
         flex-direction: column;
@@ -618,11 +620,15 @@
         position: absolute;
         top: 127px;
         right: 0;
-        width: 225px;
+        width: 240px;
         max-height: 180px;
         overflow-y: scroll;
+        .flag{
+          margin-right: .5rem;
+        }
         li {
           width: 100%;
+          display: flex;
           align-items: center;
           margin-bottom: 0.5rem;
           padding-bottom: 0.4rem;
@@ -646,6 +652,12 @@
           }
         }
       }
+      .flag {
+        background-image: url(../img/master/flags.png);
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 12px;
+    }
       .country-active {
         display: flex;
       }

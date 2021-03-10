@@ -13,12 +13,14 @@
    @if(preg_match('/[A-Z]/',request()->url()))
       <meta name="robots" content="noindex" /> 
    @endif
+   <link rel="stylesheet" href="{{ url('style/country-select.css') }}">
     <link rel="stylesheet" href="{{url('style/main.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
     <link rel="stylesheet" href="{{url('style/fontawesome.css')}}">
+   
    @yield('header')
 </head>
 <body>
@@ -134,7 +136,7 @@
                             <div class="input-container">
                                 <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
                                 <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
-                                <input type="text" name="company name" id="company" placeholder="Company Name*" autocomplete="off">
+                                <input type="text" name="company name" id="company" placeholder="Company Name" autocomplete="off">
                             </div>
                             <div class="input-container message">
                                 <span><img src="{{url('img/contactus/comment.svg')}}" alt="comment" class="black">
@@ -173,18 +175,18 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-            <a href="javascript:void(0);" class="email">
+            <a href="{mailto:{{websiteDetail()->contact_number}}"  class="email">
                     <img src="{{url('img/master/email-white.png')}}" alt="mail">
                 </a>
             <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
                     <img src="{{url('img/master/search-white.png')}}" alt="search">
             </a>
-            <a href="javascript:void(0);" class="cart">
+            <a href="{{route('cart')}}" class="cart">
                     <img src="{{url('img/master/cart-white.png')}}" alt="cart">
                 </a>
-                <a href="" class="call">
+                <a href="tel:{{websiteDetail()->contact_number}}"  class="call">
                     <img src="{{url('img/master/call.png')}}" alt="call">
-                </a>
+                </a> 
             </div>
         </div>
     </section>
