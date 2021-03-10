@@ -18,6 +18,8 @@ Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
 
+Route::get('match/topic', 'TestController@matchTopic');
+
 
 Auth::routes(['register'=>false]);
 /* these routes is for login */
