@@ -179,7 +179,7 @@
             <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
                     <img src="{{url('img/master/search-white.png')}}" alt="search">
             </a>
-            <a href="javascript:void(0);" class="cart">
+            <a href="{{route('cart')}}" class="cart">
                     <img src="{{url('img/master/cart-white.png')}}" alt="cart">
                 </a>
                 <a href="tel:{{websiteDetail()->contact_number}}"  class="call">
