@@ -25,14 +25,13 @@ function submitCustomerForm()
     var cartForm = $("#stepOne");
     
     formData = cartForm.serialize();
-    console.log(formData);
     $.ajax({
         url: submitCustomerRoute,
         dataType:'json',
         data:formData,
         beforeSend:function(){
             cartForm.find('input').removeClass('input-error');
-            cartForm.find("input,button").attr('title','').closest('.input-container').removeClass('input-error');
+            cartForm.find("input,button,select").attr('title','').closest('.input-container').removeClass('input-error');
         },
         complete:function(){
             cartForm.find("input,button").prop('disabled',false);
@@ -43,7 +42,7 @@ function submitCustomerForm()
             $('#stepOne').hide().removeClass('step-active'); 
             $('#one').addClass('number-active').removeClass('blue-active');  
             $('#two').addClass('blue-active');  
-            // nextCartForm();
+          
         },
         error: function(error){
            
@@ -53,6 +52,7 @@ function submitCustomerForm()
                 var errors = response.errors;
                
                 $.each(errors,function(index,value){
+                
                 
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
@@ -275,16 +275,11 @@ function switchPaymentMethod(value)
                         $('.tel').val(response.mobile);
                         $('.c_code').val(response.countrycode);
                         $('.code').text(response.phonecode);
+                        $('.inputemail').val(response.customer.email);
+
                        
                       
                     } 
-                    else 
-                    {
-                        delegate.val('');
-                        delegate.val('');
-                    }
-
-
 
                 }
 
@@ -312,11 +307,7 @@ function switchPaymentMethod(value)
                         BLastName.val(response.customer.lastname);
     
                     } 
-                    else 
-                    {
-                        BFirstName.val('');
-                        BLastName.val('');
-                    }
+                  
                 }
             });
         

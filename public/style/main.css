@@ -122,6 +122,9 @@ select::-ms-expand {
   display: none;
   visibility: hidden;
 }
+.sticky .country-list {
+  top: 60px!important;
+}
 .sticky-up {
   top: -100px;
 }
@@ -1976,6 +1979,7 @@ select::-ms-expand {
   color: #FFFFFF;
   font-weight: 600;
   width: 65%;
+  justify-content: center;
 }
 .home-banner .banner-container .topic-list a span {
   font-size: 14px;
@@ -2816,6 +2820,7 @@ select::-ms-expand {
   }
   .banner .banner-container .topic-list a p {
     width: 70%;
+    line-height: 1.4;
   }
   .courses .course-name {
     width: 31%;
@@ -10857,6 +10862,12 @@ select::-ms-expand {
     padding: 1.5rem;
     margin-bottom: 0;
   }
+  .order .order-main .course-info .detail p {
+    font-size: 13px;
+  }
+  .order .order-main .course-info .detail .loaction {
+    text-align: right;
+  }
   .order .order-main .course-info .detail li:last-child {
     margin-bottom: 0;
   }
@@ -14306,13 +14317,14 @@ select::-ms-expand {
 .steps .delegate {
   display: none;
 }
-.steps .delegate .card-detail .input-container {
+.steps .delegate .card-detail .booking-content {
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
   width: 100%;
+  background-color: #FFFFFF;
 }
-.steps .delegate .card-detail .input-container p {
+.steps .delegate .card-detail .booking-content p {
   color: #181818;
   margin-bottom: 0;
 }
@@ -14471,7 +14483,7 @@ select::-ms-expand {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -36px;
+    top: -29px;
     right: 0;
     left: 0;
     margin: auto;
@@ -14549,9 +14561,6 @@ select::-ms-expand {
   }
   .steps .input-container {
     width: 48%;
-  }
-  .steps .input-container:last-child {
-    width: 100%;
   }
   .steps .form-inner {
     top: 15px;
