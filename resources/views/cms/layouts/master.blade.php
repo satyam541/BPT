@@ -801,6 +801,14 @@
           @endif
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
+            @can('view', new App\Models\PageDetail())
+             <a href="{{Route('paymentDetail')}}" @if(in_array(Route::currentRouteName(),['paymentDetail','paymentDetailCreate','paymentDetailEdit']))class="nav-link active" @else class="nav-link" @endif>
+               <i class="nav-icon far fa-circle text-danger"></i>
+               <p class="text">Payment Detail</p>
+             </a>
+             @endcan
+           </li>
+          <li class="nav-item">
            @can('view', new App\Models\PageDetail())
             <a href="{{Route('pageDetailList')}}" @if(in_array(Route::currentRouteName(),['pageDetailList','createPageDetail','editPageDetail']))class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon far fa-circle text-danger"></i>
