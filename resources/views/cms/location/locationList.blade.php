@@ -33,6 +33,7 @@
            
           <div class="card card-primary card-outline">
             <div class="card-header">
+              <span class="message" id="success_type"></span>
               <div class="card-title col-sm-12">
                 Location List
                 <div class="popular">
@@ -75,7 +76,7 @@
                     <tr>
                       <td>{{$location->name}}</td>
                       <td>{{$location->country->name ?? ''}}</td>
-                      <td><input type="checkbox" name="is_popular"></td>
+                      <td><input type="checkbox" value="{{$location->id}}" @if ($location->popular->exists) checked @endif class="popularLocation"  name="is_popular"></td>
                       <td>
                         @can('update',$location)
                         <a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
@@ -112,6 +113,7 @@
 @endsection
 @section('footer')
     <script>
+      success = $('#success_type');
         $(document).ready(function(){
              $('#example1').DataTable({
               "columns": [
@@ -121,7 +123,33 @@
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
+            $('tbody').on('click','.popularLocation',function(){
+              var id=$(this).val();
+              var checked=$(this).attr('checked');
+              var that = this;
+              $.ajax({
+                url:'{{route('locationPopular')}}',
+                data:{locationId:id,checked:checked},
+                type:'post',
+                headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+              if(data=='removed'){
+                $(that).attr('checked',false);
+              }
+              else{
+                $(that).attr("checked", true);
+              }
+                    success.fadeIn('slow', function(){
 
+                        toastr.success('successfully '+data);
+                        success.delay(3000).fadeOut(); 
+                    });
+                }
+            
+              });
+            });
             $('#add').hover(function(){
                 $(this).removeClass('btn-success');
                 $(this).addClass('btn-primary');
