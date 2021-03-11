@@ -13,12 +13,14 @@
    @if(preg_match('/[A-Z]/',request()->url()))
       <meta name="robots" content="noindex" /> 
    @endif
+   <link rel="stylesheet" href="{{ url('style/country-select.css') }}">
     <link rel="stylesheet" href="{{url('style/main.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
     <link rel="stylesheet" href="{{url('style/fontawesome.css')}}">
+   
    @yield('header')
 </head>
 <body>

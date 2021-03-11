@@ -522,4 +522,9 @@ $('#scroll').click(function(){
     
     $('.course-menu a').on('click', function(){
         window.location.href = $(this).attr('href');
-    })
+    });
+    $(".country-list .country").click(function() {
+ 
+        var conntrycode = $(this).data("country-code");
+        // alert(conntrycode); 
+    });

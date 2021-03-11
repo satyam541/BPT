@@ -85,9 +85,8 @@ Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'Ca
 Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@customerData']);
 
 //certification
-Route::get('/certification-programmes','CertificationController@index');
-
-
+Route::get('/certification-programmes','CertificationController@index')->name('certification');
+Route::get('/certification-details/{method}/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
 Route::get('/offer', function () {
     return view('offer');
