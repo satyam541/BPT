@@ -90,7 +90,7 @@
                                     <input type="text" name="email_confirmation" id="email" placeholder="Confirm Email Address*" autocomplete="off"  class="inputemail">
                                 </div>
 
-                                <div class="input-container">
+                                <div class="input-container ">
                                     <span><img src="{{ url('img/master/phone-callblack.svg') }}" alt="phone-call"
                                             class="black">
                                         <img src="{{ url('img/master/phone-callred.svg') }}" alt="phonecall-red"
@@ -246,7 +246,7 @@
                                                     class="black">
                                                 <img src="{{ url('img/master/pin-red.svg') }}" alt="pin-red"
                                                     class="red"></span>
-                                            <select name="country" id="location">
+                                            <select name="country" id="location"  class="inputcountry">
                                                 <option value="">Select Country*</option>
                                                 @foreach ($countries as $code => $country)
                                                     <option value="{{$code}}">{{$country}}</option>
