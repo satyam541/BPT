@@ -150,8 +150,8 @@
                                 <img src="{{ url('img/catalogue/users.svg') }}" alt="users">
                             </span>
                             <div class="total-text">
-                                <p>Users</p>
-                                <h3>11,256+</h3>
+                                <p>Total Learners </p>
+                                <h3>600K+</h3>
                             </div>
                         </div>
                         <span class="building">
@@ -167,12 +167,12 @@
                                 <img src="{{ url('img/catalogue/teamwork.svg') }}" alt="teamwork">
                             </span>
                             <div class="users-content">
-                                <h3>76%</h3>
-                                <p>New Users</p>
+                                <h3>54%</h3>
+                                <p>New Users </p>
                             </div>
                             <div class="users-content">
-                                <h3>23%</h3>
-                                <p>Repeat Users</p>
+                                <h3>46%</h3>
+                                <p>Repeat Users </p>
                             </div>
                         </div>
                     </div>
