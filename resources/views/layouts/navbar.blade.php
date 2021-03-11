@@ -17,7 +17,7 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certification</a>
+                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certifications</a>
                     <span></span>
                 </li>
                 <li class="links-li">
