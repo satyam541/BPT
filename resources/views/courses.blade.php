@@ -51,16 +51,7 @@ $content = $selectedCourse->countryContent;
                 <div class="heading center-heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
-                <p class="intro-para">The PRINCE2 Foundation and Practitioner training course is experiencing a 2017 update. Book now for the new 2017 program.</p>
-                <p>PRINCE2 (PRojects IN Controlled Environments) is an approach to project management which provides a method for planning as well as managing projects effectively. It is widely used by the UK government as well as internationallyandin private sector. PRINCE2® Foundation and Practitioner is a combined course which helps you to achieve both the PRINCE2® Foundation and PRINCE2® Practitioner certifications. </p>
-                    <ul>
-                            <li>PRINCE2® (PRojects IN Controlled Environment version 2) is a method used for effective management of projects of any size belonging to any sector</li>
-                            <li>Best practice training are one of the most active providers of this certification due to its high quality and economical price</li>
-                            <li>Best Practice Training is a globally accredited PRINCE2® Training provider</li>
-                            <li>PRINCE2® is widely recognised in private sector by the UK government and internationally</li>
-                            <li>Gain deeper understanding of PRINCE2® methodology with our unique way of teaching</li>
-                            <li>Delivered by highly experienced and trained instructors</li>
-                    </ul>
+                <p class="intro-para">{!! $selectedCourse->countryContent->detail !!}</p>
             </div>
         </div>
     </section>
@@ -104,7 +95,7 @@ $content = $selectedCourse->countryContent;
                     </li>
                     @endif
 
-                    @if ($selectedCourse->faqs->isNotEmpty())
+                    {{-- @if ($selectedCourse->faqs->isNotEmpty())
                     <li class="tab-click" data-target="faq">
                         <span class="image">
                             <img src="{{ url('img/courses/faq.svg') }}" alt="faq">
@@ -115,7 +106,7 @@ $content = $selectedCourse->countryContent;
                         <div class="number"></div>
                     </li>
 
-                    @endif
+                    @endif --}}
 
                     @if ($selectedCourse->whatsIncluded->isNotEmpty())
                     <li class="tab-click" data-target="included">
@@ -143,30 +134,13 @@ $content = $selectedCourse->countryContent;
                     </div>
                 </div>
                 @endif
-                @if (
-                !empty($content['summary']) || !empty($content['detail']) ||
-                !empty($content['pre_requities']) || !empty($content['who_should_attend']) ||
-                !empty($content['what_will_you_learn'])
-                )
+                @if (!empty($content['summary']))
                 <div class="tab-content tab-common" id="course">
                     <div class="overview-content" id="coursecontent">
                         <h2>Course Content</h2>
                         @if (!empty($content['summary']))
                         {!!$content->summary!!}
                         @endif
-                        @if (!empty($content['detail']))
-                        {!!$content->detail!!}
-                        @endif
-                        @if (!empty($content['pre_requities']))
-                        {!!$content->pre_requities!!}
-                        @endif
-                        @if (!empty($content['who_should_attend']))
-                        {!!$content->who_should_attend!!}
-                        @endif
-                        @if (!empty($content['what_will_you_learn']))
-                        {!!$content->what_will_you_learn!!}
-                        @endif
-
 
                     </div>
                     <div class="buttons">
@@ -177,7 +151,7 @@ $content = $selectedCourse->countryContent;
 
                 </div>
                 @endif
-                @if ($selectedCourse->faqs->isNotEmpty())
+                {{-- @if ($selectedCourse->faqs->isNotEmpty())
                 <div class="tab-content" id="faq">
                     <div class="heading">
                         <h2>Frequently Asked <span>Questions</span></h2>
@@ -200,7 +174,7 @@ $content = $selectedCourse->countryContent;
 
                     </div>
                 </div>
-                @endif
+                @endif --}}
 
                 @if ($selectedCourse->whatsIncluded->isNotEmpty())
                 <div class="tab-content" id="included">
@@ -212,8 +186,8 @@ $content = $selectedCourse->countryContent;
                         @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
                         <div class="included-content">
                             <span>
-                                <img src="{{url('img/master/call.svg')}}" alt="quote">
-                                <!-- <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{!! $whatsInclude->name !!}"> -->
+                                {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
+                                <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{{ $whatsInclude->name }}">
                             </span>
                             <h3>{!! $whatsInclude->name !!}</h3>
                         </div>
@@ -566,6 +540,21 @@ $content = $selectedCourse->countryContent;
                                 </div>
                             </div>
                         </form>
+                        @else
+                        <div class="no-schedule" style="display: flex">
+                            <div class="heading center-heading">
+                                <h2>{!! $selectedCourse->name !!}</h2>
+                            </div>
+                            <p>Contact us for Date and Price</p>
+                            <div class="buttons">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
+                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            </p>
+                        </div>
                         @endif
                         
                     </div>
@@ -753,50 +742,26 @@ $content = $selectedCourse->countryContent;
                 <div class="info">
                     <h2>{{$selectedCourse->name}}</h2>
                 </div>
-                {{-- {{dd($virtualSchedules->first()->event_price)}} --}}
                 <div class="price">
-                    @if ($schedules->isNotEmpty())
-                    @if (!empty($schedules->first()->response_discounted_price) < !empty($schedules->
-                        first()->event_price))
-                        <span class="rate">£{{$schedules->first()->event_price}}</span>
-                        <span class="offer">£{{$schedules->first()->response_discounted_price}}</span>
-
-                        @else
-                        <span class="offer">£{{$schedules->first()->event_price}}</span>
-                        @endif
-                        <p class="prize">£995.00</p>
-                        <p><strong>delivery type</strong>-online</p>
+                    @if (!empty($onlineSchedules))
+                        <span class="prize">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price}}</span>
+                        <span class="offer">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->offer_price}}</span>
+                    @endif
+                   
+                    {{-- <div class="buy">
+                        <span>
+                            <img src="{{url('img/courses/stopwatch.svg')}}" alt="stopwatch">
+                        </span>
+                        <h3>23 hours left at this price!</h3>
+                    </div> --}}
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price={{$schedules->first()->event_price}}>
+                                data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price=@if(!empty($onlineSchedules)){{ optional($onlineSchedules->onlinePrice)->offer_price}} @endif>
                                 <img src="{{ url('img/courses/email.svg') }}" alt="email">
                                 Enquire Now
                             </a>
                         </div>
-                        @elseif($virtualSchedules->isNotEmpty())
-                        @if (!empty($virtualSchedules->first()->response_discounted_price) < !empty($virtualSchedules->
-                            first()->event_price))
-                            <span class="rate">£{{$virtualSchedules->first()->event_price}}</span>
-                            <span class="offer">£{{$virtualSchedules->first()->response_discounted_price}}</span>
-
-                            @else
-                            <span class="offer">£{{$virtualSchedules->first()->event_price}}</span>
-                            @endif
-                            
-                            <div class="buy">
-                                <span>
-                                    <img src="{{ url('img/courses/stopwatch.svg') }}" alt="stopwatch">
-                                </span>
-                                <h3>23 hours left at this price!</h3>
-                            </div>
-                            <div class="buttons">
-                                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                    data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price="{{$virtualSchedules->first()->response_discounted_price}}">
-                                    <img src="{{ url('img/courses/email.svg') }}" alt="email">
-                                    Enquire Now
-                                </a>
-                            </div>
-                            @endif
+                   
 
 
 
