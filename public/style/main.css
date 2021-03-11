@@ -5439,6 +5439,7 @@ select::-ms-expand {
 }
 .convenient .convenient-content:hover {
   border-left: 4px solid #1C2848;
+  transition: 1s all;
 }
 .convenient .convenient-content:hover span {
   background: linear-gradient(#0064D8, #1C2848);
@@ -5736,8 +5737,9 @@ select::-ms-expand {
   }
   .buy .img {
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100%;
+    align-self: center;
   }
   .buy .img img {
     width: 100%;
@@ -5762,9 +5764,6 @@ select::-ms-expand {
   }
 }
 @media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .convenient .convenient-content span {
-    transform: rotate(45deg) translate(-41px, 42px);
-  }
 }
 @media (min-width : 1024px) {
   .location-banner {
@@ -5826,14 +5825,14 @@ select::-ms-expand {
     top: 0;
   }
   .convenient .convenient-list {
-    width: 64%;
+    width: 60%;
     padding-right: 0;
   }
   .convenient .convenient-content {
     width: 45%;
   }
   .convenient .largest {
-    width: 34%;
+    width: 36%;
     margin-top: 0;
   }
   .convenient .largest::before {
@@ -5906,6 +5905,11 @@ select::-ms-expand {
     height: 450px;
     width: 450px;
   }
+  .find {
+    padding: 4rem 0rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   .popular {
     padding: 4rem 0rem;
   }
@@ -5924,7 +5928,7 @@ select::-ms-expand {
   .buy {
     padding: 4rem 0rem;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
   .form-map {
     padding: 4rem 0rem;
@@ -5941,6 +5945,9 @@ select::-ms-expand {
   .form-map .form-container form::after {
     bottom: -1px;
     border-top: 14px solid #C0C0C0;
+  }
+  .form-map .form-container .map {
+    height: 500px;
   }
 }
 .blog-banner {
