@@ -277,6 +277,7 @@ Route::post('/article/update/{article}','ArticleController@update')->name('updat
 Route::post('/article/delete/{article}','ArticleController@delete')->name('deleteArticle');
 Route::get('/article/bloglist','ArticleController@blogList')->name('blogList');
 Route::get('/article/auto-complete','ArticleController@loadTags')->name('tagAutoComplete');
+Route::post('/article/popular','ArticleController@popular')->name('articlePopular');
 Route::get('/tag/taglist','TagController@tagList')->name('tagList');
 Route::get('/tag/update/{tag}','TagController@edit')->name('editTag');
 Route::post('/tag/update/{tag}','TagController@update')->name('updateTag');
