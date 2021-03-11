@@ -23,7 +23,6 @@
 
     <!-- Start Steps Section -->
     <section class="flex-container steps">
-
         <div class="container">
             <div class="steps-container">
                 <div class="heading center-heading">
@@ -276,7 +275,7 @@
                             @csrf
                             <div class="card-detail">
                                 <p id="course-name">{{$cartItems->first()->name}}</p>
-                                <div class="input-container">
+                                <div class="booking-content">
                                     <p><strong id="method">Booking Type:</strong><span>
                                         @switch($cartItems->first()->options['method'] ?? '')
                                         @case('classroom')

@@ -14278,13 +14278,14 @@ select::-ms-expand {
 .steps .delegate {
   display: none;
 }
-.steps .delegate .card-detail .input-container {
+.steps .delegate .card-detail .booking-content {
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
   width: 100%;
+  background-color: #FFFFFF;
 }
-.steps .delegate .card-detail .input-container p {
+.steps .delegate .card-detail .booking-content p {
   color: #181818;
   margin-bottom: 0;
 }
@@ -14443,7 +14444,7 @@ select::-ms-expand {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -36px;
+    top: -29px;
     right: 0;
     left: 0;
     margin: auto;
