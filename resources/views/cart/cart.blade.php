@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a class="btn-white">
+                        <a href="{{route('catalouge')}}" class="btn-white">
                             Continue Shopping
                             <img src="{{ url('img/emptycart/shopping.svg') }}" alt="right-arrow">
                         </a>
