@@ -517,7 +517,7 @@ $('#scroll').click(function(){
             return false;
         }
         $("#aboutdropdown").removeClass('active');
-        $('#dropdown-menu').hide();
+        $('#dropdown-menu').slideUp();
     });
     
     $('.course-menu a').on('click', function(){
