@@ -3014,6 +3014,7 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
+    padding-bottom: 0 !important;
   }
   .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
@@ -3090,6 +3091,9 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .looking {
+    padding: 4rem 0rem;
+  }
+  .partners {
     padding: 4rem 0rem;
   }
   .partners .heading {
