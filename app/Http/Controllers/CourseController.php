@@ -28,12 +28,12 @@ class CourseController extends Controller
         }
 
         $course         = Course::with('topic:name,id,reference','countryContent','faqs','whatsIncluded')->where('reference','/'.$request->category.'/'.$request->topic.'/'.$request->course)->first();
-        $courseContent  = $course->countryContent;
-        if(!empty($courseContent))
+        $course->loadContent(); 
+        if(!empty($course))
         {
-            $meta['description'] =  $courseContent->meta_description;
-            $meta['keyword']    =   $courseContent->meta_keywords; 
-            $meta['title']      =   $courseContent->meta_title; 
+            $meta['description'] =  $course->meta_description;
+            $meta['keyword']    =   $course->meta_keywords; 
+            $meta['title']      =   $course->meta_title; 
             metaData($meta);
         }
         $data['relatedCourses']     = Course::where('topic_id', $course->topic_id)->where('id', '<>', $course->id)->select('name', 'reference')->get(); 
