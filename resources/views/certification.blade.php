@@ -32,8 +32,9 @@
             <div class="course-list">
                 <div class="course-content" onclick="location.href = '{{ url('certification-details'.$certification->slug) }}';">
                     <a href="javascript:void(0);">{{$certification->name}}</a>
+                    {{-- {{ dd($certification->slug)}} --}}
                     <div class="buttons">
-                        <a href="{{url('certification-details'.$certification->slug)}}" class="btn-blue" >
+                        <a href="{{route('certificationDetail', ['certification'=>$certification->slug])}}" class="btn-blue" >
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Certification
                         </a>
                     </div>
