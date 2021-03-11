@@ -67,6 +67,7 @@ Route::get("/country/get/schedule/locations","ScheduleController@getLocationsFor
 
 Route::get('/location','LocationController@list')->name('locationList');
 Route::post('/location','LocationController@filterList')->name('locationList');
+Route::post('/location/popular','LocationController@popular')->name('locationPopular');
 Route::get('/location/insert','LocationController@create')->name('createLocation');
 Route::post('/location/insert','LocationController@insert')->name('insertLocation');
 Route::get('/location/update/{location}','LocationController@edit')->name('editLocation');
@@ -85,6 +86,7 @@ Route::post('/venue/delete/{venue}','VenueController@delete')->name('deleteVenue
 
 Route::get('/category','CategoryController@list')->name('categoryList');
 Route::get('/category/insert','CategoryController@create')->name('createCategory');
+Route::post('/category/popular','CategoryController@popular')->name('categoryPopular');
 Route::post('/category/insert','CategoryController@insert')->name('insertCategory');
 Route::get('/category/update/{category}','CategoryController@edit')->name('editCategory');
 Route::post('/category/update/{category}','CategoryController@update')->name('updateCategory');
@@ -101,6 +103,7 @@ Route::post('/category/content/delete/{categoryDetail}','CategoryController@cont
 Route::get('/topic','TopicController@list')->name('topicList');
 Route::get('/topic/insert','TopicController@create')->name('createTopic');
 Route::post('/topic/insert','TopicController@insert')->name('insertTopic');
+Route::post('/topic/popular','TopicController@popular')->name('topicPopular');
 Route::get('/topic/update/{topic}','TopicController@edit')->name('editTopic');
 Route::post('/topic/update/{topic}','TopicController@update')->name('updateTopic');
 Route::post('/topic/delete/{topic}','TopicController@delete')->name('deleteTopic');
@@ -128,6 +131,7 @@ Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCate
 
 Route::get('/course','CourseController@list')->name('courseList');
 Route::get('/course/insert','CourseController@create')->name('createCourse');
+Route::post('/course/popular','CourseController@popular')->name('coursePopular');
 Route::post('/course/insert','CourseController@insert')->name('insertCourse');
 Route::get('/course/update/{course}','CourseController@edit')->name('editCourse');
 Route::post('/course/update/{course}','CourseController@update')->name('updateCourse');

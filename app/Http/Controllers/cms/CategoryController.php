@@ -33,7 +33,15 @@ class CategoryController extends Controller
         $this->Icon_prefix  = "categoryIcon";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-
+    public function popular(Request $request){
+        $category=Category::find($request->categoryId);
+        if($request->checked=='checked'){
+            $category->popular->delete();    
+            return 'removed';
+        }
+        $category->popular->save();
+        return 'added';
+    }
     public function list(Request $request)
     {
         $this->authorize('view', new Category());      
