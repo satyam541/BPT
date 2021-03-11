@@ -7836,6 +7836,12 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.certification-course .course-detail {
+  margin-top: 2rem;
+}
+.certification-course .course-detail:first-child {
+  margin-top: 0;
+}
 .certification-course .course-list {
   display: flex;
   flex-direction: column;
