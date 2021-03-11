@@ -20,11 +20,12 @@
         }
         .owl-nav {
             width: 100%;
+            margin-top: 0;
 
             .owl-prev,
             .owl-next {
                 position: absolute;
-                top: 37%;
+                top: 38%;
             }
 
             .owl-prev {
@@ -51,8 +52,15 @@
                 }
             }
         }
+        select {
+            background-size: 24% 24%;
+        }
         .select-dropdown {
             width: 26%;
+            padding-bottom: 0;
+            &:nth-last-child(2) {
+                padding-bottom: 0;
+            }
         }
     }
     // End Banner Section
@@ -60,7 +68,10 @@
     // Start Category Section
     .category {
         padding: @sectionPadding-md;
-        padding-top: 2rem !important;
+        padding-top: 0rem !important;
+        .heading {
+            margin-bottom: 0;
+        }
         .category-list {
             flex-direction: row;
             flex-wrap: wrap;
@@ -70,6 +81,9 @@
             width: 46%;
             &:first-child {
                 margin-top: 2rem;
+            }
+            h3 {
+                min-height: 50px;
             }
         }
     }
@@ -152,6 +166,17 @@
 
 }
 
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    // Start Banner Section
+.catalogue-banner {
+    select {
+        background-size: 9% 24%;
+    }
+}
+// End Banner Section
+}
+
 @media @size-lg{
 
     // Start Banner Section
@@ -191,6 +216,9 @@
             }
             &:last-child {
                 margin-right: 0;
+            }
+            h3 {
+                min-height: 100px;
             }
         }
     }
@@ -261,9 +289,6 @@
                 width: calc(100% - 55px);
             }
         }
-        .total-users {
-            width: 45%;
-        }
         .total-text {
             width: calc(100% - 48px);
             p, h3 {
@@ -311,6 +336,11 @@
     // Start Category Section
     .category {
         padding: @sectionPadding-xl;
+        .category-content {
+            h3 {
+                min-height: 50px;
+            }
+        }
     }
     // End Category Section
 
@@ -363,6 +393,17 @@
         background-size: 63% 16%;
     }
     // Start Figures Section
+}
+
+@media (min-width:1366px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    // Start Banner Section
+.catalogue-banner {
+    select {
+        background-size: 6% 24%;
+    }
+}
+// End Banner Section
 }
 
 @media @size-xlll{
