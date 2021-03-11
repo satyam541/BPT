@@ -362,7 +362,7 @@ $content = $selectedCourse->countryContent;
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
-                                    <a href="{{ route('classroomBooking',$schedule->id) }}" class="btn-blue"
+                                    <a href="{{ route('classroomBooking',['id'=>$schedule->id]) }}" class="btn-blue"
                                         data-quote="Book Now">
                                         <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
                                     </a>
@@ -420,7 +420,7 @@ $content = $selectedCourse->countryContent;
                                         data-quote="Enquire Now" data-course="{{$selectedCourse->name}}" data-date="{{$virtual->response_date}}" data-price="{{$virtual->event_price}}" data-location="{{$virtual->response_location}}" data-deliveryType="virtual">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
-                                    <a href="{{ route('virtualBooking',$virtual->id) }}" class="btn-blue"
+                                    <a href="{{ route('virtualBooking',['id'=>$virtual->id]) }}" class="btn-blue"
                                         data-quote="Book Now">
                                         <img src="{{ url('img/courses/buy.svg') }}" alt="buy">Book Now
                                     </a>
