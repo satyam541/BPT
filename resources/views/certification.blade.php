@@ -31,7 +31,7 @@
             
             <div class="course-list">
                 @foreach ($certifications as $certification)
-                <div class="course-content" onclick="location.href = '{{ url('certification-details'.$certification->slug) }}';">
+                <div class="course-content" onclick="location.href = '{{route('certificationDetail', ['certification'=>$certification->slug])}}';">
                     <a href="javascript:void(0);">{{$certification->name}}</a>
                     {{-- {{ dd($certification->slug)}} --}}
                     <div class="buttons">
