@@ -28,8 +28,9 @@
             <div class="heading center-heading">
                 <h2>Certifications</h2>
             </div>
-            @foreach ($certifications as $certification)
+            
             <div class="course-list">
+                @foreach ($certifications as $certification)
                 <div class="course-content" onclick="location.href = '{{ url('certification-details'.$certification->slug) }}';">
                     <a href="javascript:void(0);">{{$certification->name}}</a>
                     {{-- {{ dd($certification->slug)}} --}}
@@ -39,9 +40,9 @@
                         </a>
                     </div>
                 </div>
-                
+                @endforeach 
             </div>    
-            @endforeach
+           
             
         </div>
     </div>
