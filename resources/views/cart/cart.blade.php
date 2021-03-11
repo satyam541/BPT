@@ -116,7 +116,7 @@
                                                 @else
                                                     <li>
                                                         <p>Date: {{ $cartItem->options->date }}</p>
-                                                        <p>Location: {{ $cartItem->options->location }}</p>
+                                                        <p class="loaction">Location: {{ $cartItem->options->location }}</p>
                                                     </li>
                                                 @endif
                                                     
