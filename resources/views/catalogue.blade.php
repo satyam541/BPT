@@ -70,7 +70,7 @@
                         </select>
                     </div>
                     <div class="buttons">
-                        <input type="submit" value="Search" class="btn-blue">
+                        <button type="submit" class="btn-blue">Search</buttton>
                     </div>
                 </form>
             </div>
