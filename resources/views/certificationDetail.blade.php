@@ -24,16 +24,16 @@
 <section class="flex-container certification-course">
     <div class="container">
         @foreach ($certification->topic as $topic)
-        <div class="course-container">
+        <div class="course-container course-detail">
             <div class="heading center-heading">
                 <h2>{!!$topic->name!!}</h2>
             </div>
             <div class="course-list">
                 @foreach ($topic->courses as $course)
-                <div class="course-content">
+                <div onclick="location.href = '{{ $course->url }}';" class="course-content">
                     <a href="javascript:void(0);">{{$course->name}}</a>
-                    <div class="buttons" onclick="location.href = '{{ url('training-courses' . $course->reference) }}';">
-                        <a href="{{ url('training-courses' . $course->reference) }}" class="btn-blue" data-quote="{{$course->name}}">
+                    <div class="buttons">
+                        <a href="{{ $course->url }}" class="btn-blue" data-quote="{{$course->name}}">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">course Detail
                         </a>
                     </div>

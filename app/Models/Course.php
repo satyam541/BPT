@@ -217,6 +217,10 @@ class Course extends Model
     {
         $reference =  $this->reference;
         $url = 'training-courses'.$reference;
+        if(country()->country_code != 'gb')
+        {
+            $url = country()->country_code."/".$url;
+        }
         return url($url);
     }
    

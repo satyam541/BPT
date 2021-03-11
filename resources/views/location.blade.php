@@ -85,6 +85,7 @@
 <!-- Start Popular Section -->
 <section class="flex-container popular">
     <div class="container">
+        @if(count($locations)>6)
         <div class="popular-container">
             <div class="popular-info">
                 <div class="heading center-heading">
@@ -112,6 +113,7 @@
           
             </div>
         </div>
+        @endif
     </div>
 </section>
 <!-- End Popular Section -->

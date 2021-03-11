@@ -20,10 +20,12 @@ class TopicController extends Controller
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('topic');
-        $data['topic']      = Topic::with('topicContent','faqs','Bulletpoint','courses')->where('reference','/'.$category.'/'.$topic)->first();
+        $data['topic']      = Topic::with('topicContent','faqs','Bulletpoint','courses')
+                                ->where('reference','/'.$category.'/'.$topic)->first();
         
-        $data['otherTopics']= Topic::with('courses')->take(8)->get();
-        $data['locations']  = Location::has('popular')->take(6)->get();
+        $data['otherTopics']= Topic::with('courses')->select('id', 'name', 'reference')
+                                ->limit(8)->withCount('courses')->get();
+        $data['locations']  = Location::has('popular')->limit(6)->get();
 
         return view('topic',$data);
     }

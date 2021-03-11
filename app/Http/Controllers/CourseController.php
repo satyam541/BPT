@@ -29,12 +29,11 @@ class CourseController extends Controller
 
         $course         = Course::with('topic:name,id,reference','countryContent','faqs','whatsIncluded')->where('reference','/'.$request->category.'/'.$request->topic.'/'.$request->course)->first();
         $courseContent  = $course->countryContent;
-        // dd($courseContent);
         if(!empty($courseContent))
         {
-            $meta['description'] =  $courseContent->first()->meta_description;
-            $meta['keyword']    =   $courseContent->first()->meta_keywords; 
-            $meta['title']      =   $courseContent->first()->meta_title; 
+            $meta['description'] =  $courseContent->meta_description;
+            $meta['keyword']    =   $courseContent->meta_keywords; 
+            $meta['title']      =   $courseContent->meta_title; 
             metaData($meta);
         }
         $data['relatedCourses']     = Course::where('topic_id', $course->topic_id)->where('id', '<>', $course->id)->select('name', 'reference')->get(); 
@@ -51,13 +50,6 @@ class CourseController extends Controller
             $location = Location::where("reference","LIKE","%{$location}%")->first();
             $schedule = $schedule->where('response_location',$location->name);
         }
-        if(!empty($month))
-        {
-            $schedule = $schedule->whereMonth('response_date',$month);
-        }
-
-        $monthlist=[1=>'January','Febuary','March','April','May','June','July','August','September','October','November','December'];
-        
 
         $data['selectedlocation']   = $request->location;
         $data['selectedCourse']     = $course;
@@ -66,12 +58,14 @@ class CourseController extends Controller
         $data['locations']          = $locations;    
         $locationNames              = $locations->pluck('name')->toArray();
         $locationOrderString        = '"'.implode('","',$locationNames).'"';
-        $data['schedules']          = $schedule->where('country_id', country()->id)->where('response_location','!=','Virtual')->where('course_id', $course_id)
+        $data['schedules']          = $schedule->where('country_id', country()->id)
+                                        ->where('response_location','!=','Virtual')->where('course_id', $course_id)
                                         ->orderBy('response_date')
                                         ->orderByRaw("Field(response_location,".$locationOrderString.")")
                                         ->paginate(5,['*'],'classroom-page');
 
-        $data['virtualSchedules']   = Schedule::where('country_id', country()->id)->where('response_location','Virtual')
+        $data['virtualSchedules']   = Schedule::where('country_id', country()->id)
+                                        ->where('response_location','Virtual')
                                         ->where('course_id',$course_id)
                                         ->where('response_date','>',Carbon::today())->orderBy('response_date')
                                         ->paginate(5,['*'],'virtual-page');
@@ -99,8 +93,6 @@ class CourseController extends Controller
         }
         $courseobj=Course::find($request->course);
         $location=$request->location;
-        $month = $request->month;
-        $locationObj = "";
         $url = "";
         if(empty($location))
         {

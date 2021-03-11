@@ -28,7 +28,7 @@ class CatalogueController extends Controller
         $data['popularTopics']      = Topic::has('popular')->get();
         $data['topics']             = Topic::has('courses')->with('courses')->where('published', 1)->orderBy('display_order')->get();
         $data['popularCourses']     = Course::has('popular')->limit(6)->orderBy('display_order')->get();
-        $data['courses']            = Course::select('id', 'name')->pluck('name', 'id');
+        $data['courses']            = Course::pluck('name', 'id');
         return view('catalogue', $data);
     }
 }
