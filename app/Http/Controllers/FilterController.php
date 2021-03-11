@@ -33,10 +33,6 @@ class FilterController extends Controller
     public function getTopics(Request $request) {
         
         $input  = $request->all();
-        
-        if(empty($input['categoryId'])) {
-            return ['500' => 'nothing found'];
-        }
 
         $topics = Topic::where('category_id',$input['categoryId'])->get();
 
@@ -53,10 +49,6 @@ class FilterController extends Controller
     public function getCourses(Request $request) {
        
         $input  = $request->all();
-       
-        if(empty($input['topicId'])) {
-            return ['500' => 'nothing found'];
-        }
         $courses = Course::where('topic_id', $input['topicId'])->get();
 
         return json_encode($courses);
