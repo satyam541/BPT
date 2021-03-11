@@ -19,9 +19,11 @@ class Popular extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderBy('module_type')->orderBy('display_order');
         });
-        static::addGlobalScope('country', function (Builder $builder) {
-            $builder->where("country_id", country()->country_code);
-        });
+        if (request()->route()->action['prefix'] != 'cms') {
+            static::addGlobalScope('country', function (Builder $builder) {
+                $builder->where("country_id", country()->country_code);
+            });
+        }
     }
 
     public function module()
@@ -31,25 +33,25 @@ class Popular extends Model
 
     public static function courses()
     {
-        return self::with('module')->where('module_type',"course")->get()->pluck('module');
+        return self::with('module')->where('module_type', "course")->get()->pluck('module');
     }
 
     public static function categories()
     {
-        return self::with('module')->where('module_type',"category")->get()->pluck('module');
+        return self::with('module')->where('module_type', "category")->get()->pluck('module');
     }
     public static function topics()
     {
-        return self::with('module')->where('module_type',"topic")->get()->pluck('module');
+        return self::with('module')->where('module_type', "topic")->get()->pluck('module');
     }
 
     public static function locations()
     {
-        return self::with('module')->where('module_type',"location")->get()->pluck('module');
+        return self::with('module')->where('module_type', "location")->get()->pluck('module');
     }
     public static function article()
     {
-        return self::with('module')->where('module_type',"blog")->get()->pluck('module');
+        return self::with('module')->where('module_type', "blog")->get()->pluck('module');
     }
     public function getTypeAttribute()
     {
