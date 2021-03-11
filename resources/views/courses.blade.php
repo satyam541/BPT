@@ -41,7 +41,9 @@
     </div>
 </section>
 <!-- End Banner Section -->
-
+@php
+$content = $selectedCourse->countryContent;
+@endphp
 <!-- Start course-intro section -->
     <section class="flex-container course-intro">
         <div class="container">
@@ -74,9 +76,6 @@
             </div>
             <div class="tabs-container">
                 <ul class="tab-links">
-                    @php
-                    $content = $selectedCourse->countryContent;
-                    @endphp
                     @if (!empty($content['overview']))
                     <li class="tab-click" data-target="overview">
                         <span class="image">
@@ -230,42 +229,36 @@
 <!-- End Foundation Section -->
 
 <!-- Start learn-more section -->
+@if(!empty($content['pre_requities']) || !empty($content['who_should_attend']) || !empty($content['what_will_you_learn']))
     <section class="flex-container learn-more">
             <div class="container">
                 <div class="more-container">
                     <div class="more-content">
+                        @if(!empty($content['pre_requities']))
                         <div class="heading">
                             <h2>Prerequisites</h2>
                         </div>
-                        <p>This course has no prerequisites, although it will be beneficial if delegates already have some experience of working in projects before attending this course.</p>
-                        <p>Along with this, the below-mentioned delegates can also choose the course:</p>
-                        <ul>
-                            <li>PRINCE2® Foundation/PMP®/CAPM® Certified</li>
-                            <li>Projects Director and Certified Senior Project Manager</li>
-                            <li>Project Management Associate</li>
-                        </ul>
-
+                        {!!$content->pre_requities!!}
+                        @endif
+                        @if(!empty($content['who_should_attend']))
                         <div class="heading">
                             <h2>Target <span>Audience</span></h2>
                         </div>
-                        <p>This project management course is for anyone who would like to enhance their skills in becoming a project manager. You have to pass the PRINCE2 Foundation course before taking the Practitioner course.</p>
+                        {!!$content->who_should_attend!!}
+                        @endif
                     </div>
+                    @if(!empty($content['what_will_you_learn']))
                     <div class="more-list">
                         <div class="heading">
                             <h2>Delegates Will <span>Learn How To</span></h2>
                         </div>
-                        <ul>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                            <li>Understand the characteristics and context of project management with benefits of implementing PRINCE2®.</li>
-                        </ul>
+                        {!!$content->what_will_you_learn!!}
                     </div>
+                    @endif
                 </div>
             </div>
     </section>
+@endif
 <!-- End learn-more section -->
 
 <!-- Start Unable Section -->
