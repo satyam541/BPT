@@ -30,7 +30,7 @@
         <div class="convenient-container">
             <div class="convenient-list">
                 @foreach($popularLocations as $popularLocation)
-                <div class="convenient-content">
+                <div class="convenient-content" onclick="location.href = '{{ url('training-locations/' . $popularLocation->reference) }}';">
                     <span>
                     <img src="{{url('img/location/globe.svg')}}" alt="globe" class="black">
                         <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
