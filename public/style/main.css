@@ -10971,9 +10971,6 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .error-banner {
     background-image: url(../img/404/banner-bg.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 50% 100%;
   }
   .error-banner .banner-container {
     width: 50%;
@@ -10983,9 +10980,6 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1366px) {
-  .error-banner {
-    padding: 4rem 0rem;
-  }
   .error {
     padding: 4rem 0rem;
   }
