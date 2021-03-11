@@ -29,7 +29,7 @@ class LocationController extends Controller
     return view('location',$data);
 
     }
-
+    
     public function detail(Request $request)
     {
         $location = $request->route('location');

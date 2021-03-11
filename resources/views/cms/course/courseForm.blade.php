@@ -129,6 +129,7 @@
                                     {{ Form::label('published', 'Published', ['class' => 'mr-2']) }}
                                     {{ Form::checkbox('published') }}
                                 </div>
+                                
 
                                 <div class="form-group">
                                     {{ Form::label('is_popular', 'Is Popular') }}

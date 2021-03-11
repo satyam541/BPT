@@ -35,7 +35,15 @@ class TopicController extends Controller
         $this->Image_prefix = "topicImage";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-
+    public function popular(Request $request){
+        $topic=Topic::find($request->topicId);
+        if($request->checked=='checked'){
+            $topic->popular->delete();    
+            return 'removed';
+        }
+        $topic->popular->save();
+        return 'added';
+    }
     public function list(Request $request)
     {
         $this->authorize('view', new Topic());
