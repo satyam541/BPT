@@ -122,6 +122,9 @@ select::-ms-expand {
   display: none;
   visibility: hidden;
 }
+.sticky .country-list {
+  top: 60px!important;
+}
 .sticky-up {
   top: -100px;
 }
@@ -1976,6 +1979,7 @@ select::-ms-expand {
   color: #FFFFFF;
   font-weight: 600;
   width: 65%;
+  justify-content: center;
 }
 .home-banner .banner-container .topic-list a span {
   font-size: 14px;
@@ -2816,6 +2820,7 @@ select::-ms-expand {
   }
   .banner .banner-container .topic-list a p {
     width: 70%;
+    line-height: 1.4;
   }
   .courses .course-name {
     width: 31%;

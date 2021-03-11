@@ -419,7 +419,7 @@
                             {{ Form::open(array('route'=>'cartCheckout', 'id'=>'pay_form')) }}
                             <div class="form-consent">
                                 <input type="checkbox" name="agree" id="agree">
-                                <label for="readconsent">I have read and agree with the terms and conditions.</label>
+                                <label for="agree">I have read and agree with the terms and conditions.</label>
                             </div>
                             <div class="buttons">
                                 <button type="button" class="btn-white" onclick="cancelOrder()">
