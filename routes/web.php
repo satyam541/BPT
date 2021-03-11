@@ -55,7 +55,7 @@ Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoCom
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('homeRoute');
 
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
@@ -86,7 +86,7 @@ Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@cu
 
 //certification
 Route::get('/certification-programmes','CertificationController@index')->name('certification');
-Route::get('/certification-details/{method}/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
+Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
 Route::get('/offer', function () {
     return view('offer');

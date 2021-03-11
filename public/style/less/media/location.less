@@ -152,8 +152,9 @@
         }
         .img {
             display: flex;
-            width: 100%;
+            width: 80%;
             height: 100%;
+            align-self: center;
             img {
                 width: 100%;
                 height: 100%;
@@ -192,7 +193,7 @@
     .convenient {
         .convenient-content {
             span {
-                transform: rotate(45deg) translate(-41px, 42px);
+                // transform: rotate(45deg) translate(-41px, 42px);
             }
         }
     }
@@ -262,14 +263,14 @@
             }
         }
         .convenient-list {
-            width: 64%;
+            width: 60%;
             padding-right: 0;
         }
         .convenient-content {
             width: 45%;
         }
         .largest {
-            width: 34%;
+            width: 36%;
             margin-top: 0;
             &::before {
                 content: none;
@@ -366,6 +367,14 @@
     }
     // End Convenient section //
 
+    // Start Find section //
+    .find {
+       padding: @sectionPadding-xl;
+       padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    // End Find section //
+
     // Start Popular Section
     .popular {
         padding: @sectionPadding-xl;
@@ -390,7 +399,7 @@
     .buy {
         padding: @sectionPadding-xl;
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 0;
     }
     // End Buy Section
 
@@ -412,7 +421,11 @@
                     border-top: 14px solid #C0C0C0;
                 }
             }
+            .map{
+                height: 500px;
+            }
         }
+      
     }
     // End Form-Map Section
 }

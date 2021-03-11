@@ -38,6 +38,15 @@ class LocationController extends Controller
         // }
         return view('cms.location.locationTier',compact('data'));
     }
+    public function popular(Request $request){
+        $location=Location::find($request->locationId);
+        if($request->checked=='checked'){
+            $location->popular->delete();    
+            return 'removed';
+        }
+        $location->popular->save();
+        return 'added';
+    }
     public function list(Request $request)
     {
         $this->authorize('view', new Location());

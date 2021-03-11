@@ -41,10 +41,19 @@ class CourseController extends Controller
         session()->save();
         return 'done';
     }
+    public function popular(Request $request){
+        $course=Course::find($request->courseId);
+        if($request->checked=='checked'){
+            $course->popular->delete();    
+            return 'removed';
+        }
+        $course->popular->save();
+        return 'added';
+    }
     public function list(Request $request)
     {
         $this->authorize('view', new Course());
-        $courses = Course::all();
+        $courses = Course::with('popular')->get();
         $checked=null;
         if(isset($request->popular)){
             $courses = Course::whereHas('popular')->get();

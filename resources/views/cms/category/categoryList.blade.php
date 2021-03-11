@@ -59,6 +59,7 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
+                                <span class="message" id="success_type"></span>
                                 <div class="table table-responsive">
                                     <table id="example1">
                                         <thead>
@@ -97,7 +98,7 @@
                                             @foreach ($categories as $category)
                                                 <tr>
                                                     <td>{{ $category->name }}</td>
-                                                    <td class=" text-center"><input type="checkbox" name="is_popular"></td>
+                                                    <td class=" text-center"><input type="checkbox" value="{{$category->id}}" @if ($category->popular->exists) checked @endif class="popularCategory" name="is_popular"></td>
                                                     <td class=" text-center">
                                                         @can('update', $category)
                                                             <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
@@ -163,6 +164,7 @@
 @endsection
 @section('footer')
     <script>
+        success = $('#success_type');
         $(document).ready(function() {
 
 
@@ -203,7 +205,33 @@
                 ]
 
             });
+            $('tbody').on('click','.popularCategory',function(){
+              var id=$(this).val();
+              var checked=$(this).attr('checked');
+              var that = this;
+              $.ajax({
+                url:'{{route('categoryPopular')}}',
+                data:{categoryId:id,checked:checked},
+                type:'post',
+                headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+              if(data=='removed'){
+                $(that).attr('checked',false);
+              }
+              else{
+                $(that).attr("checked", true);
+              }
+                    success.fadeIn('slow', function(){
 
+                        toastr.success('successfully '+data);
+                        success.delay(3000).fadeOut(); 
+                    });
+                }
+            
+              });
+            });
             $('#add').hover(function() {
                 $(this).removeClass('btn-success');
                 $(this).addClass('btn-primary');
