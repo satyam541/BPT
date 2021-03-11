@@ -2307,7 +2307,7 @@ select::-ms-expand {
   width: 50%;
 }
 .facts .item img {
-  width: 38px;
+  width: 44px;
   height: 38px;
 }
 .facts .item p {
@@ -2318,6 +2318,10 @@ select::-ms-expand {
   margin: 0.5rem 0;
   align-items: center;
   font-size: 26px;
+}
+.facts .fact-count h3,
+.facts .fact-count span {
+  font-size: 30px;
 }
 .facts h3 {
   color: #1C2848;
@@ -2424,6 +2428,7 @@ select::-ms-expand {
 .looking .reviews-inner {
   display: flex;
   flex-direction: column;
+  margin: 0 0.5rem;
 }
 .looking .reviews-inner p {
   color: #FFFFFF;
@@ -2698,8 +2703,8 @@ select::-ms-expand {
   }
   .delivery .item:hover img {
     transition: 1s all;
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
   }
   .delivery .overlay {
     display: flex;
@@ -2843,6 +2848,9 @@ select::-ms-expand {
   .effective .buttons .btn-blue {
     margin-left: 0;
   }
+  .whychoose {
+    padding-bottom: 2rem;
+  }
   .whychoose h3 {
     min-height: auto;
   }
@@ -2939,6 +2947,7 @@ select::-ms-expand {
   }
   .locations .content {
     width: 61%;
+    padding-right: 3rem;
   }
   .locations .location-name {
     width: 17%;
@@ -7836,6 +7845,12 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.certification-course .course-detail {
+  margin-top: 2rem;
+}
+.certification-course .course-detail:first-child {
+  margin-top: 0;
+}
 .certification-course .course-list {
   display: flex;
   flex-direction: column;
@@ -11425,6 +11440,7 @@ select::-ms-expand {
 }
 .category .category-content h3 {
   text-align: center;
+  margin-top: 0.5rem;
 }
 .category .category-content:hover h3 {
   transition: 1s ease-in-out;
@@ -11493,7 +11509,7 @@ select::-ms-expand {
   align-items: center;
   padding: 1rem;
   margin-top: 2rem;
-  background: linear-gradient(90deg, #1C2848 59px, #FFFFFF 59px);
+  background: linear-gradient(90deg, #1C2848 65px, #FFFFFF 59px);
 }
 .popular-courses .popular-item span {
   display: flex;
@@ -11514,7 +11530,7 @@ select::-ms-expand {
   border-top: 10px solid transparent;
   border-left: 10px solid #1C2848;
   border-bottom: 10px solid transparent;
-  right: -13px;
+  right: -19px;
   top: 9px;
 }
 .popular-courses .popular-item h3 {
@@ -11669,7 +11685,6 @@ select::-ms-expand {
   border-radius: 10px;
 }
 .library ul li {
-  font-size: 14px;
   padding-left: 1.4rem;
   position: relative;
   z-index: 1;
@@ -11709,8 +11724,6 @@ select::-ms-expand {
   display: flex;
   height: 100px;
   width: 100px;
-  justify-content: center;
-  align-items: center;
   padding: 1.5rem;
   background-color: #FFFFFF;
   border-radius: 50%;
@@ -11786,7 +11799,7 @@ select::-ms-expand {
     align-items: center;
   }
   .catalogue-banner .form .buttons {
-    margin-top: 0;
+    margin-top: auto;
     width: 15%;
   }
   .catalogue-banner .form .buttons .btn-blue {
@@ -11836,10 +11849,6 @@ select::-ms-expand {
   }
   .popular-courses .popular-item {
     width: 48%;
-    background: linear-gradient(90deg, #1C2848 74px, #FFFFFF 74px);
-  }
-  .popular-courses .popular-item span::before {
-    right: -27px;
   }
   .popular-courses .popular-facts {
     flex-direction: row;
@@ -11910,9 +11919,6 @@ select::-ms-expand {
     background-size: 100% 40%;
     background-position: bottom left;
   }
-  .category .category-list {
-    justify-content: flex-start;
-  }
   .category .category-content {
     width: 22%;
     margin-right: 2rem;
@@ -11946,21 +11952,22 @@ select::-ms-expand {
   .category-enquire .buttons {
     width: 16%;
     margin-top: 0;
+    justify-content: flex-end;
   }
   .popular-courses {
     background-image: url(../img/catalogue/popular-bg.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
   }
   .popular-courses .popular-container {
     flex-direction: row;
     justify-content: space-between;
   }
   .popular-courses .popular-content {
-    width: 55%;
+    width: 56%;
   }
   .popular-courses .popular-facts {
-    width: 42%;
+    width: 41%;
     margin-top: 0;
     position: relative;
     z-index: 1;
@@ -11988,19 +11995,6 @@ select::-ms-expand {
   }
   .popular-courses .total-text {
     width: calc(100% - 48px);
-  }
-  .popular-courses .total-text p,
-  .popular-courses .total-text h3 {
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 20px;
-  }
-  .popular-courses .total-text h3 {
-    font-weight: bold;
-  }
-  .popular-courses .new-users {
-    width: 45%;
   }
   .library .library-content {
     width: 31%;

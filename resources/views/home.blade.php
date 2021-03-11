@@ -22,7 +22,7 @@
                     <div class="buttons">
                         <a href="{{ route('catalouge') }}" class="btn-blue">
                             <img src="{{ url('img/home/book.svg') }}" alt="book">
-                            Course catalogue
+                            Course Catalogue
                         </a>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                     </a>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
                         <img src="{{ url('img/master/quote.svg') }}" alt="quote">
                         Enquire Now
                     </a>
@@ -367,10 +367,10 @@
             </div>
         </div>
     </section>
-    <!-- end looking section -->
+    <!-- End looking section -->
 
     <!-- Start partners section -->
-    <div class="flex-container partners">
+    <section class="flex-container partners">
         <div class="container">
             <div class="partners-container">
                 <div class="heading center-heading">
@@ -392,7 +392,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- End partners section -->
 
 

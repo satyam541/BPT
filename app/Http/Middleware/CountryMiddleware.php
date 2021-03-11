@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Country;
+use App\Models\Country;
 use Closure;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;

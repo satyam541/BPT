@@ -74,7 +74,7 @@
 <!-- End Services Section -->
 
 <!-- Start Testimonial Section -->
-<section class="flex-container testimonial">
+<!-- <section class="flex-container testimonial">
     <div class="container">
         <div class="testimonial-container">
             <div class="heading center-heading white-heading">
@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Testimonial Section -->
 
 <!-- Start Facts Section -->

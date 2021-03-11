@@ -229,7 +229,11 @@
 <script src="{{url('script/count.js')}}"></script>
 <script src="{{url('script/search.js')}}"></script>
 <script>
-    
+    //country selectbox 
+    $("#country-list li.country").on('click',function(){
+        var countryCode = $(this).data('country-code');
+        window.location.href =  location.origin+'/'+countryCode+'/home';
+    });
     var formValidationUrl = '{{ route("validateEnquiry") }}';
     var formSubmitUrl = '{{ route("sendEnquiry") }}';
     var ajaxTime= new Date().getTime();

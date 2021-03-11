@@ -269,6 +269,13 @@ Route::get('/country/select/{id}',function($id){
   return $country->toJson();
 });
 
+Route::get('/paymentdetail/list','PaymentDetailController@list')->name('paymentDetail');
+Route::get('/paymentdetail/insert','PaymentDetailController@create')->name('paymentDetailCreate');
+Route::post('/paymentdetail/insert','PaymentDetailController@insert')->name('paymentDetailInsert');
+Route::get('/paymentdetail/update/{id}','PaymentDetailController@edit')->name('paymentDetailEdit');
+Route::post('/paymentdetail/update/{id}','PaymentDetailController@update')->name('paymentDetailUpdate');
+Route::post('/paymentdetail/delete/{id}','PaymentDetailController@delete')->name('paymentDetailDelete');
+
 Route::get('/article/newslist','ArticleController@newsList')->name('newsList');
 Route::get('/article/create','ArticleController@create')->name('createNews');
 Route::post('/article/insert','ArticleController@insert')->name('insertArticle');
@@ -277,6 +284,7 @@ Route::post('/article/update/{article}','ArticleController@update')->name('updat
 Route::post('/article/delete/{article}','ArticleController@delete')->name('deleteArticle');
 Route::get('/article/bloglist','ArticleController@blogList')->name('blogList');
 Route::get('/article/auto-complete','ArticleController@loadTags')->name('tagAutoComplete');
+Route::post('/article/popular','ArticleController@popular')->name('articlePopular');
 Route::get('/tag/taglist','TagController@tagList')->name('tagList');
 Route::get('/tag/update/{tag}','TagController@edit')->name('editTag');
 Route::post('/tag/update/{tag}','TagController@update')->name('updateTag');
