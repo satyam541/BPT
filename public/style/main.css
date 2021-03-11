@@ -122,6 +122,9 @@ select::-ms-expand {
   display: none;
   visibility: hidden;
 }
+.sticky .country-list {
+  top: 60px!important;
+}
 .sticky-up {
   top: -100px;
 }

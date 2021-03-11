@@ -30,20 +30,25 @@ class Article extends Model
     // }
 
     public function next(){
-        
-        $article=Article::where('id', '>', $this->id)->orderBy('id','asc')->first();
-        if(empty($article))
-        {
-            return Article::first();
+        $article=Article::select('id','image','title', 'reference','type')
+                            ->where('id', '>', $this->id)
+                            ->orderBy('id','asc')
+                            ->first();
+        if(empty($article)){
+            $article = Article::select('id','image','title', 'reference','type')->first();
         }
         return $article;
     }
+    
     public  function previous(){
-        
-        $article =Article::where('id', '<', $this->id)->orderBy('id','desc')->first();
-        if(empty($article))
-        {
-            return Article::all()->last();
+        $article =Article::select('id','image','title', 'reference','type')
+                            ->where('id', '<', $this->id)
+                            ->orderBy('id','desc')
+                            ->first();
+        if(empty($article)){
+            $article = Article::select('id','image','title', 'reference','type')
+                                ->orderBy('id', 'desc')
+                                ->first();
         }
         return $article;
     }
