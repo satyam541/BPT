@@ -229,7 +229,7 @@
                       
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="http://bestpracticetraining.lv6/uploads/page/catalogue_image_1614332950.svg" alt="">
+                              <img src="{{url('uploads/page/catalogue_image_1614332950.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$homepage['courses']}}" data-speed="3000">{{$homepage['courses']}}</h3>
@@ -240,7 +240,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="http://bestpracticetraining.lv6/uploads/page/catalogue_image_1614333026.svg" alt="">
+                              <img src="{{url('uploads/page/catalogue_image_1614333026.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$homepage['locations']}}" data-speed="3000">{{$homepage['locations']}}</h3>
@@ -251,7 +251,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="http://bestpracticetraining.lv6/uploads/page/catalogue_image_1615444428.svg" alt="">
+                              <img src="{{url('uploads/page/catalogue_image_1615444428.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="500" data-speed="3000">500</h3>
@@ -262,7 +262,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="http://bestpracticetraining.lv6/uploads/page/catalogue_image_1614333297.svg" alt="">
+                              <img src="{{url('uploads/page/catalogue_image_1614333297.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3>
