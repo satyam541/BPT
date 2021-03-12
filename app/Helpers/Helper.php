@@ -20,7 +20,7 @@ if(!function_exists('homepageData')){
     function homepageData(){
         $data=[];
         $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
-        $data['countries']=Country::count();
+        $data['countries']=Country::where('active',1)->count();
         $data['locations']=Location::withoutGlobalScopes()->count();
         $data['courses']=Course::count();
         $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date','>',$date)->count();
@@ -240,7 +240,7 @@ if (!function_exists('encodeUrlSlug')) {
             } else {
                 if (empty($savedData[$data])) {
                     switch ($data) {
-                        case "location":
+                        case "countryname":
                             return country()->name;
                             break;
                         case "cc":
@@ -257,9 +257,9 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('replaceVar')) {
         function replaceVar($content)
         {
-            $location = storeVar('location');
+            $country_name = storeVar('countryname');
             $country_code = storeVar('cc');
-            $content = str_replace('{location}', $location, $content);
+            $content = str_replace('{countryname}', $country_name, $content);
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }
