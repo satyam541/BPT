@@ -82,9 +82,10 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        
-                    @if ($topic->topicContent!=null)
-                        @php $content=summernote_replace($topic->topicContent)@endphp
+                        {{-- {{dd($topic)}} --}}
+                    @if (!empty($topic))
+                   
+                        @php $content=summernote_replace($topic)@endphp
                         @if ($content->overview!=null)
                         <li class="tab-click" data-target="overview">
                             <span class="image">

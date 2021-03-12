@@ -9,19 +9,19 @@ use App\Models\PageDetail;
 use App\Models\Location;
 class TopicController extends Controller
 {
-    public function index($category,$topic){
-        $data=[];
-        $pageDetail = PageDetail::where(['page_name'=>'topic','section'=>'metas'])->get();
-        if($pageDetail->isNotEmpty())
+    public function index(Request $request){
+        $topic      = Topic::with('topicContent','faqs','Bulletpoint','courses')
+                                ->where('reference','/'.$request->category.'/'.$request->topic)->first();
+        $topic->loadContent();                       
+        if(!empty($topic))
         {
-            $data['title']       = $pageDetail->where('sub_section','title')->first()->heading;
-            $data['description'] = $pageDetail->where('sub_section','description')->first()->heading;
-            $data['keyword']     = $pageDetail->where('sub_section','keywords')->first()->heading; 
+            $data['title']       = $topic->meta_title;
+            $data['description'] = $topic->meta_description;
+            $data['keyword']     = $topic->meta_keywords; 
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('topic');
-        $data['topic']      = Topic::with('topicContent','faqs','Bulletpoint','courses')
-                                ->where('reference','/'.$category.'/'.$topic)->first();
+        $data['topic'] = $topic;
         
         $data['otherTopics']= Topic::with('courses')->select('id', 'name', 'reference')
                                 ->limit(8)->withCount('courses')->get();
