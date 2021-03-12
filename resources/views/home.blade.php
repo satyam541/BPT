@@ -33,7 +33,7 @@
                             <ul>
                                 @foreach ($items as $item)
                                     <li>
-                                        <a href="{{ url('training-courses' . $item->reference) }}">
+                                        <a href="{{$item->url }}">
                                             <img src="{{ url('img/master/open-book.svg') }}" alt="book">
                                             <p>
                                                 {{ $item['name'] }}
@@ -65,7 +65,7 @@
                     @foreach ($categories->take(9) as $category)
 
                         {{-- <a href="{{ url('training-courses' . $category->reference) }}" class="course-name"> --}}
-                        <a href="{{ route('categoryPage', ['category'=>$category->reference]) }}" class="course-name">
+                        <a href="{{ $category->url }}" class="course-name">
                             <span class="icon">
                                 <img src="{{ $category->getImagePath() }}" alt="management">
                                 <img src="{{ $category->getIconPath() }}" alt="management-white">
@@ -272,7 +272,7 @@
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['countries']}}" data-speed="3000">{{homepageData()['countries']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3><span>+</span>
                         </div>
                         <p>Countries</p>
                     </div>

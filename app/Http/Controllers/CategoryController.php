@@ -7,18 +7,18 @@ use App\Models\Category;
 use App\Models\PageDetail;
 class CategoryController extends Controller
 {
-    public function index($category){
-        $data=[];
-        $pageDetail = PageDetail::where(['page_name'=>'category','section'=>'metas'])->get();
-        if($pageDetail->isNotEmpty())
+    public function index(Request $request){
+        $category=Category::with('categoryContent','topics')->where('reference','/'.$request->category)->first();
+        $category->loadContent();
+        if(!empty($category))
         {
-            $data['title'] = $pageDetail->where('sub_section','title')->first()->heading;
-            $data['description'] = $pageDetail->where('sub_section','description')->first()->heading;
-            $data['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
+            $data['title'] = $category->meta_title;
+            $data['description'] = $category->meta_description;
+            $data['keyword'] = $category->meta_keywords; 
             metaData($data);
         }
         $data['pageDetail'] = PageDetail::getContent('category');
-        $category=Category::with('categoryContent','topics')->where('reference','/'.$category)->first();
+        
         $data['category']=$category;
         return view('category',$data);
     }

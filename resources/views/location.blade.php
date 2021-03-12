@@ -51,7 +51,7 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue" data-quote="Learn More">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
                     <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
                     </a>
                 </div>

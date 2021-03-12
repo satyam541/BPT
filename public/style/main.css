@@ -424,7 +424,8 @@ select::-ms-expand {
   justify-content: center;
   background-color: #F6F6F6;
   height: 100%;
-  width: 50px;
+  width: 46px;
+  min-width: 46px;
   padding: 0.7rem;
 }
 .input-container span img {
@@ -551,6 +552,7 @@ select::-ms-expand {
 .navbar .menu-list .links-li:last-child a {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 35px;
   height: 35px;
   padding: 6px;
@@ -773,7 +775,6 @@ select::-ms-expand {
   z-index: 99;
   width: 100%;
   padding: 10px 10px;
-  border-radius: 35px 35px 0 0;
   background: linear-gradient(#0064D8, #1C2848);
 }
 .cookie-div p {
@@ -1027,7 +1028,7 @@ select::-ms-expand {
   left: 0;
   overflow: auto;
   z-index: 88;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.92);
 }
 .enquiry-popup .popup-container {
   display: flex;
@@ -1406,6 +1407,24 @@ select::-ms-expand {
     transform: rotate(360deg);
     transition: 0.6s ease;
   }
+  .navbar .menu-list .links-li .cart {
+    position: relative;
+  }
+  .navbar .menu-list .links-li .cart p {
+    position: absolute;
+    color: #1C2848;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -7px;
+    font-weight: 800;
+    right: -7px;
+    width: 17px;
+    background-color: white;
+    font-size: 14px;
+    height: 17px;
+    border-radius: 2px;
+  }
   .navbar .menu-list .links-li span {
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 49%, rgb(23 50 97) 49%, #056ab9 57%, #ffffff 57%, #ffffff 69%, rgb(23 50 97) 69%, rgb(23 50 97) 77%, #ffffff 77%, #ffffff 88%, rgb(23 50 97) 88%, #ffffff 88%);
     width: 0;
@@ -1571,6 +1590,7 @@ select::-ms-expand {
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
   }
   .dropdown-menu h3 {
     color: #000000;
@@ -1645,6 +1665,7 @@ select::-ms-expand {
     width: 62px;
     height: 60px;
     right: -27px;
+    top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1719,6 +1740,7 @@ select::-ms-expand {
     width: 45px;
     height: 60px;
     right: -25px;
+    top: 0;
     background-image: url(../img/master/dropdown-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1742,7 +1764,7 @@ select::-ms-expand {
     width: 100%;
   }
   .dropdown-menu .course-menu .menu-info a {
-    width: 50%;
+    width: 100%;
     padding: 7px;
     font-size: 14px;
     font-weight: bold;
@@ -4015,7 +4037,6 @@ select::-ms-expand {
   background-image: linear-gradient(#0064D8, #00326C);
 }
 .contact-form .contact-info .heading {
-  margin-bottom: 0.5rem;
   padding-top: 0;
 }
 .contact-form .contact-info .heading::before {
@@ -4121,7 +4142,7 @@ select::-ms-expand {
 .clients .clients-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
@@ -4144,6 +4165,9 @@ select::-ms-expand {
   }
   .about-us .about-content {
     width: 48%;
+  }
+  .about-us .about-content .about-item:last-child {
+    margin-bottom: 0;
   }
   .about-us .about-content .about-item p {
     text-align: left;
@@ -4200,7 +4224,6 @@ select::-ms-expand {
   .contact-form .item:last-child {
     width: 54%;
     margin: auto;
-    margin-top: 1rem;
   }
   .contact-form .contact-list {
     flex-direction: row;
@@ -4213,7 +4236,7 @@ select::-ms-expand {
   .skills .skills-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .skills p {
     font-size: 12px;
@@ -4304,7 +4327,7 @@ select::-ms-expand {
   .about-us .about-image .heading h2::before {
     content: none;
   }
-  .difference {
+  .difference .difference-container {
     background-image: url(../img/aboutus/difference-bg.png);
     background-size: 100% 50%;
     background-repeat: no-repeat;
@@ -4314,6 +4337,7 @@ select::-ms-expand {
   .difference .difference-content {
     width: 70%;
     margin-left: auto;
+    padding-right: 1rem;
   }
   .difference .difference-content p {
     text-align: center;
@@ -4330,10 +4354,7 @@ select::-ms-expand {
     color: #FFFFFF;
   }
   .difference .difference-list {
-    margin-top: 3rem;
-  }
-  .difference .difference-list .count {
-    width: 24%;
+    margin-top: 4rem;
   }
   .reviews {
     background-image: url(../img/aboutus/testimonial-bg.png);
@@ -4344,11 +4365,13 @@ select::-ms-expand {
     background: linear-gradient(#00326C 54%, #FFFFFF 44%);
   }
   .reviews .testimonial-item p {
-    min-height: 110px;
+    min-height: 132px;
   }
   .contact-form {
     background-image: url(../img/aboutus/contact-form.png);
     background-size: 100% 100%;
+    padding-bottom: 1rem  !important;
+    padding-top: 1rem  !important;
   }
   .contact-form .contact-container {
     flex-direction: row-reverse;
@@ -4384,8 +4407,12 @@ select::-ms-expand {
   .contact-form .contact-info .contact-list .item {
     width: 100%;
   }
+  .skills .skills-list {
+    width: 80%;
+    align-self: center;
+  }
   .skills .skills-item {
-    width: 24%;
+    width: 30%;
   }
   .clients {
     padding-left: 0;
@@ -4394,7 +4421,6 @@ select::-ms-expand {
   .clients .clients-container {
     box-shadow: none;
     background-color: #F6F6F6;
-    justify-content: space-around;
   }
 }
 @media (min-width : 1366px) {
@@ -4409,17 +4435,15 @@ select::-ms-expand {
   }
   .difference {
     padding: 4rem 0rem;
-    background-size: 100% 53%;
-    padding-top: 3rem;
   }
-  .difference .difference-list {
-    margin-top: 5rem;
+  .difference .difference-container {
+    background-size: 100% 58%;
   }
   .reviews {
     padding: 4rem 0rem;
   }
   .reviews .testimonial-item p {
-    min-height: 90px;
+    min-height: 110px;
   }
   .contact-form {
     padding: 4rem 0rem;
@@ -4440,6 +4464,7 @@ select::-ms-expand {
   }
   .skills .skills-list {
     width: 100%;
+    justify-content: space-around;
   }
   .skills .skills-item {
     width: 20%;
@@ -4482,15 +4507,6 @@ select::-ms-expand {
     justify-content: space-around;
     background-color: transparent;
     padding: 0;
-  }
-}
-@media (min-width : 1600px) {
-  .difference {
-    background-size: 100% 55%;
-    padding-top: 4rem;
-  }
-  .difference .difference-list {
-    margin-top: 8rem;
   }
 }
 .testimonial-banner {
@@ -4846,7 +4862,7 @@ select::-ms-expand {
     box-shadow: 9px 10px 10px rgba(0, 0, 0, 0.098);
   }
   .customers .customers-content .content p {
-    min-height: 154px;
+    min-height: 176px;
   }
   .services {
     padding: 3rem 2rem;
@@ -4877,7 +4893,7 @@ select::-ms-expand {
     width: 30%;
   }
   .customers .customers-content .content p {
-    min-height: 176px;
+    min-height: 198px;
   }
   .services .services-container {
     flex-direction: row;
@@ -4937,7 +4953,7 @@ select::-ms-expand {
     content: '';
   }
   .customers .customers-content .content p {
-    min-height: 132px;
+    min-height: 154px;
   }
   .services {
     padding: 4rem 0rem;
@@ -4983,13 +4999,21 @@ select::-ms-expand {
   background-image: url(../img/onsite/map-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
+  height: 100%;
+}
+.onsite-training .delegate .heading {
+  padding-top: 0;
 }
 .onsite-training .delegate .heading::before {
   content: none;
 }
+.onsite-training .trained-bg {
+  display: none;
+}
 .onsite-training .training-map {
   display: flex;
   margin-top: 1rem;
+  height: 100%;
 }
 .onsite-training .training-map img {
   width: 100%;
@@ -5060,8 +5084,6 @@ select::-ms-expand {
 }
 .doorstep .info .item span {
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: linear-gradient(#0064D8, #1C2848);
   height: 50px;
   width: 50px;
@@ -5071,8 +5093,8 @@ select::-ms-expand {
   position: relative;
 }
 .doorstep .info .item span::before {
-  position: absolute;
   content: '';
+  position: absolute;
   height: 50px;
   width: 50px;
   top: 0;
@@ -5165,9 +5187,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.solution .solution-container .heading {
+  margin-bottom: 0;
+}
 .solution .solution-list {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -5176,13 +5200,10 @@ select::-ms-expand {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  z-index: 1;
   width: 48%;
 }
 .solution .solution-item span {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 80px;
   width: 80px;
   padding: 1.2rem;
@@ -5238,6 +5259,9 @@ select::-ms-expand {
     width: 48%;
     padding-right: 1.5rem;
   }
+  .choose .choose-item:nth-child(even) {
+    padding-right: 0;
+  }
   .solution {
     padding: 3rem 2rem;
     background-image: url(../img/onsite/solution-bg.png);
@@ -5246,11 +5270,8 @@ select::-ms-expand {
     background-position: center;
   }
   .solution .solution-list {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
     background-image: url(../img/onsite/bg-line.png);
-    background-size: 75% 35%;
+    background-size: 70% 35%;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -5260,10 +5281,9 @@ select::-ms-expand {
 }
 @media (min-width : 1024px) {
   .onsite-banner {
+    background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
-    background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
   }
   .onsite-banner .banner-container {
     width: 48%;
@@ -5286,7 +5306,7 @@ select::-ms-expand {
     text-align: left;
   }
   .onsite-training .delegate {
-    width: 47%;
+    width: 49%;
     margin-top: 0;
   }
   .onsite-training .training-map {
@@ -5316,11 +5336,21 @@ select::-ms-expand {
   .choose .choose-item {
     width: 33%;
   }
+  .choose .choose-item:nth-child(even) {
+    padding-right: 1.5rem;
+  }
+  .choose .choose-item:nth-child(3),
+  .choose .choose-item:nth-child(6) {
+    padding-right: 0;
+  }
+  .choose .choose-item:last-child {
+    padding-right: 0;
+  }
   .choose .choose-item p {
     min-height: 76px;
   }
-  .solution .solution-list {
-    background-size: 70% 35%;
+  .solution {
+    margin-bottom: 4rem;
   }
 }
 @media (min-width : 1366px) {
@@ -5335,7 +5365,34 @@ select::-ms-expand {
     width: 48%;
   }
   .onsite-training .delegate {
-    width: 46%;
+    position: relative;
+  }
+  .onsite-training .delegate .heading {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 62%;
+  }
+  .onsite-training .delegate .heading h2 {
+    text-align: left;
+  }
+  .onsite-training .trained-bg {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/onsite/trained-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0.5rem 1rem;
+    width: 37%;
+    position: absolute;
+    right: 0;
+  }
+  .onsite-training .trained-bg h3,
+  .onsite-training .trained-bg p {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .onsite-training .trained-bg h3 {
+    margin-bottom: 0.5rem;
   }
   .doorstep {
     padding: 4rem 0rem;
@@ -5371,15 +5428,18 @@ select::-ms-expand {
     padding: 4rem 0rem;
     padding-top: 6rem;
   }
-  .choose .choose-list {
-    justify-content: space-between;
-  }
   .choose .choose-item {
     width: 25%;
   }
+  .choose .choose-item:nth-child(4) {
+    padding-right: 0;
+  }
+  .choose .choose-item:nth-child(3),
+  .choose .choose-item:nth-child(6) {
+    padding-right: 1.5rem;
+  }
   .solution {
     padding: 4rem 0rem;
-    margin-bottom: 4rem;
   }
 }
 @media (min-width : 1500px) {
@@ -5846,7 +5906,7 @@ select::-ms-expand {
     margin: 0;
   }
   .convenient .heading h2 {
-    text-align-last: left;
+    text-align: left;
   }
   .convenient .convenient-container {
     display: flex;
@@ -5961,7 +6021,7 @@ select::-ms-expand {
   .popular {
     padding: 4rem 0rem;
   }
-  .popular .popular-content::before {
+  q .popular .popular-content::before {
     left: -13px;
   }
   .popular .popular-content .img {
@@ -5976,7 +6036,7 @@ select::-ms-expand {
   .buy {
     padding: 4rem 0rem;
     padding-top: 2rem;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
   }
   .form-map {
     padding: 4rem 0rem;
@@ -7283,6 +7343,9 @@ select::-ms-expand {
     width: 48%;
     align-self: inherit;
   }
+  .key .buttons {
+    display: none;
+  }
 }
 @media (min-width : 1024px) {
   .location-main .location-container {
@@ -7325,6 +7388,9 @@ select::-ms-expand {
   .key .key-content {
     width: 23%;
   }
+  .key .info h2 {
+    font-size: 26px;
+  }
 }
 @media (min-width : 1366px) {
   .location-main {
@@ -7349,6 +7415,9 @@ select::-ms-expand {
   }
   .key .key-content {
     margin-top: 0;
+  }
+  .key .buttons {
+    display: flex;
   }
 }
 .offer-banner {
@@ -8945,7 +9014,6 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
   align-items: center;
-  width: 48%;
 }
 .training .methods img {
   height: 110px;
@@ -8980,7 +9048,7 @@ select::-ms-expand {
   align-items: center;
   background-image: url(../img/courses/top-arc.svg), url(../img/courses/bottom-arc.svg);
   background-repeat: no-repeat;
-  background-size: 37% 21%;
+  background-size: 33% 21%;
   background-position: top left, bottom right;
 }
 .training .key-point h2 {
@@ -9165,7 +9233,6 @@ select::-ms-expand {
 .training .course-content {
   display: flex;
   flex-direction: column;
-  margin: auto;
   margin-top: 2.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -9427,7 +9494,6 @@ select::-ms-expand {
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   align-items: center;
-  width: 100%;
 }
 .language .info {
   display: flex;
@@ -9471,7 +9537,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  width: 100%;
 }
 .language .language-list {
   display: flex;
@@ -9481,7 +9546,7 @@ select::-ms-expand {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0.3rem;
   background-position: left top;
   width: 272px;
@@ -9570,7 +9635,7 @@ select::-ms-expand {
   justify-content: space-between;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   margin-top: 1.5rem;
   align-items: center;
   border-radius: 10px;
@@ -9611,7 +9676,6 @@ select::-ms-expand {
 }
 .related .related-content .name {
   font-size: 16px;
-  font-weight: 600;
   width: calc(100% - 80px);
 }
 .popular-location {
@@ -9633,8 +9697,8 @@ select::-ms-expand {
 .popular-location .popular-content p {
   text-align: center;
 }
-.popular-location .popular-content h2 {
-  margin-bottom: 0.6rem;
+.popular-location .popular-content p {
+  margin-top: 0.5rem;
 }
 .popular-location .location-content {
   display: flex;
@@ -9673,16 +9737,13 @@ select::-ms-expand {
   display: flex;
   height: 45px;
   width: 45px;
-  margin-right: 0.5rem;
 }
 .popular-location .content .image img {
   width: 100%;
   height: 100%;
 }
-.popular-location .location-name {
-  width: calc(100% - 100px);
-  font-size: 18px;
-  font-weight: 600;
+.popular-location h3 {
+  width: calc(100% - 110px);
 }
 .popular-location .arrow {
   display: flex;
@@ -9816,9 +9877,6 @@ select::-ms-expand {
   .training .modes-list {
     display: flex;
   }
-  .training .methods {
-    width: 24%;
-  }
   .training .key-point {
     display: flex;
     width: 40%;
@@ -9841,7 +9899,7 @@ select::-ms-expand {
   .training .name .buttons {
     flex-direction: row;
     margin-top: 0;
-    width: 48%;
+    width: 50%;
   }
   .training .name .buttons .btn-blue {
     margin-top: 0;
@@ -9884,23 +9942,6 @@ select::-ms-expand {
   }
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
-  }
-  .training .calender-left .heading {
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-  .training .calender-left .heading h2 {
-    text-align: center;
-    font-size: 32px;
-  }
-  .training .calender-left .heading h2 span {
-    font-size: 32px;
-  }
-  .training .calender-left .heading img {
-    display: none;
   }
   .training .online-block .exclude {
     flex-direction: row-reverse;
@@ -9947,7 +9988,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .virtual .virtual-img {
-    width: 65%;
+    width: 55%;
     align-self: center;
   }
   .work {
@@ -10015,9 +10056,6 @@ select::-ms-expand {
   .related .related-content:nth-child(even) {
     margin-right: 0;
   }
-  .related .related-content:last-child {
-    margin-right: 0;
-  }
   .popular-location {
     padding: 3rem 2rem;
   }
@@ -10041,36 +10079,21 @@ select::-ms-expand {
     background-image: url(../img/courses/polygon-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: -23px;
-    left: 23px;
+    top: -10px;
+    left: 20px;
     animation: rotate 15s linear infinite;
   }
   .popular-location .location-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-right: 1rem;
   }
   .popular-location .content {
-    width: 45%;
-  }
-  .popular-location .content .image {
-    margin-right: 1rem;
+    width: 47%;
   }
   .popular-location .content .arrow {
     transform: translateX(34px);
-  }
-}
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .training .date p::before {
-    left: -4px;
-    width: 95px;
-  }
-  .language {
-    padding: 3rem 2rem;
-  }
-  .language .language-list .content {
-    background-size: 21% 100%;
   }
 }
 @media (min-width : 1024px) {
@@ -10158,9 +10181,6 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
   }
-  .foundation .tab-common .overview-content {
-    margin-top: 0;
-  }
   .foundation #included .heading {
     display: flex;
     align-items: flex-start;
@@ -10195,6 +10215,23 @@ select::-ms-expand {
     top: 143px;
     margin-top: 3rem;
   }
+  .training .calender-left .heading {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .training .calender-left .heading h2 {
+    text-align: center;
+    font-size: 32px;
+  }
+  .training .calender-left .heading h2 span {
+    font-size: 32px;
+  }
+  .training .calender-left .heading img {
+    display: none;
+  }
   .training .calender-right {
     width: 65%;
     order: 1;
@@ -10204,7 +10241,7 @@ select::-ms-expand {
   }
   .training .key-point {
     width: 100%;
-    background-size: 31% 18%;
+    background-size: 31% 20%;
   }
   .training .course-name {
     width: 37%;
@@ -10243,9 +10280,6 @@ select::-ms-expand {
     background-color: #FFFFFF;
     padding: 2.5rem 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  }
-  .training .methods {
-    width: 48%;
   }
   .training .methods:nth-child(1),
   .training .methods:nth-child(2) {
@@ -10293,7 +10327,11 @@ select::-ms-expand {
   }
   .virtual .virtual-img {
     width: 35%;
+    align-self: flex-start;
     margin-top: 0;
+  }
+  .work {
+    padding-top: 3rem;
   }
   .work .work-container {
     flex-direction: row;
@@ -10416,11 +10454,8 @@ select::-ms-expand {
   }
   .popular-location .popular-content::before {
     width: 330px;
-    top: -23px;
-    left: 20px;
-  }
-  .popular-location .location-list {
-    justify-content: space-between;
+    top: 0;
+    height: 370px;
   }
   .popular-location .location-content {
     margin-top: 0;
@@ -10451,7 +10486,7 @@ select::-ms-expand {
     right: initial;
   }
   .foundation #included .heading h2 {
-    text-align-last: left;
+    text-align: left;
   }
   .learn-more {
     padding: 4rem 0rem;
@@ -10469,7 +10504,7 @@ select::-ms-expand {
     width: 73%;
   }
   .training .key-point {
-    background-size: 36% 19%;
+    background-size: 34% 20%;
   }
   .training .name {
     width: 90%;
@@ -10524,7 +10559,6 @@ select::-ms-expand {
   }
   .work {
     padding: 4rem 0rem;
-    padding-top: 1rem !important;
   }
   .work .work-content {
     width: 26%;
@@ -12303,7 +12337,7 @@ select::-ms-expand {
 }
 .topic-choose .choose-progress {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
 }
@@ -12312,17 +12346,11 @@ select::-ms-expand {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
   width: 140px;
 }
 .topic-choose .count .circle {
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .topic-choose .count .circle .progress-ring {
   display: flex;
@@ -12387,10 +12415,12 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
   position: relative;
+  height: 100%;
 }
 .topic-choose .choose-image .choose-info {
   height: auto;
   position: relative;
+  height: 100%;
 }
 .topic-choose .choose-image .choose-info img {
   width: 100%;
@@ -12465,9 +12495,10 @@ select::-ms-expand {
   padding-top: 4rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
+  border-bottom-left-radius: 0;
   position: relative;
   margin-top: 2rem;
-  width: 272px;
+  width: 100%;
 }
 .explore .explore-item a {
   font-size: 18px;
@@ -12477,6 +12508,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
 }
 .explore .numbers {
   display: flex;
@@ -12489,13 +12521,13 @@ select::-ms-expand {
   position: absolute;
   left: -15px;
   top: -15px;
+  width: 200px;
 }
 .explore .numbers img {
   width: 55px;
   height: 55px;
 }
 .explore .numbers p {
-  width: 33%;
   color: #FFFFFF;
   font-weight: bold;
   padding-left: 0.7rem;
@@ -12511,12 +12543,13 @@ select::-ms-expand {
   padding: 3rem 1.5rem;
   background-color: #F6F6F6;
 }
-.goals .goal-image {
+.goals .goals-container {
   display: flex;
   flex-direction: column;
 }
-.goals .goal-image p {
-  font-size: 13px;
+.goals .goal-image {
+  display: flex;
+  flex-direction: column;
 }
 .goals .goal-image .img {
   display: flex;
@@ -12529,8 +12562,11 @@ select::-ms-expand {
 }
 .goals .goals-list {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .goals .goal-item {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12714,9 +12750,10 @@ select::-ms-expand {
   .topic-choose .count {
     flex-direction: row;
     margin-bottom: 0;
+    width: 165px;
   }
-  .topic-choose .count .txt-name {
-    margin-left: 0.7rem;
+  .topic-choose .circle {
+    margin-right: 0.7rem;
   }
   .topic-choose .choose-image {
     width: 48%;
@@ -12730,8 +12767,14 @@ select::-ms-expand {
   }
   .explore .explore-list {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .explore .explore-item {
+    width: 45%;
+  }
+  .explore .explore-item a {
+    min-height: 48px;
   }
   .goals {
     padding: 3rem 2rem;
@@ -12751,20 +12794,21 @@ select::-ms-expand {
   }
   .goals .goal-item {
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
   }
   .goals .content {
     align-items: flex-start;
     width: 62%;
     margin-top: 0;
-    margin-left: 1.5rem;
+    width: calc(100% - 110px);
   }
   .goals .content p,
   .goals .content h3 {
     text-align: left;
   }
   .goals .goals-list {
-    width: 78%;
+    width: 85%;
     margin: auto;
   }
 }
@@ -12806,11 +12850,6 @@ select::-ms-expand {
   .topic-choose .choose-image {
     width: 45%;
   }
-  .topic-choose .years {
-    width: 30%;
-    bottom: 150px;
-    left: -30px;
-  }
   .topic-choose .count {
     width: 206px;
   }
@@ -12819,7 +12858,6 @@ select::-ms-expand {
   }
   .topic-choose .choose-progress {
     width: 90%;
-    justify-content: space-between;
   }
   .topic-delivery {
     background-image: url(../img/topic/delivey-bg.png);
@@ -12862,8 +12900,17 @@ select::-ms-expand {
   .experiences h3 {
     min-height: auto;
   }
+  .explore .explore-item {
+    width: 30%;
+  }
+  .goals {
+    background-color: transparent;
+    background: linear-gradient(180deg, #FFFFFF, #F6F6F6), url(../img/topic/goal-bg.png);
+    background-position: top,bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 50%, 100% 50%;
+  }
   .goals .goals-container {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -12881,14 +12928,8 @@ select::-ms-expand {
     width: 85%;
     margin-top: 1rem;
   }
-  .goals .content {
-    width: 74%;
-  }
   .goals .content p {
     font-size: 12px;
-  }
-  .goals .goal-item {
-    padding: 2rem 1rem;
   }
   .goals .goal-item:nth-child(1) {
     margin-top: 0;
@@ -12915,77 +12956,15 @@ select::-ms-expand {
     width: 46%;
   }
   .topic-courses .course-item {
-    position: relative;
-  }
-  .topic-courses .course-item::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-  .topic-courses .course-item::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    bottom: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item span {
-    position: relative;
-  }
-  .topic-courses .course-item span::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    top: -9px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item .course-name {
-    position: relative;
-  }
-  .topic-courses .course-item .course-name::before {
-    content: '';
-    position: absolute;
-    right: -9px;
-    top: -24px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
+    border: 2px solid transparent;
   }
   .topic-courses .course-item a {
     width: 93%;
     font-size: 15px;
     overflow: hidden;
   }
-  .topic-courses .course-item:hover::before,
-  .topic-courses .course-item:hover::after {
-    width: 97%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover span::before {
-    height: 130%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover .course-name::before {
-    height: 260%;
-    transition: 1s all;
+  .topic-courses .course-item:hover {
+    border: 2px solid #0064D8;
   }
   .topic-delivery {
     padding: 4rem 0rem;
@@ -13002,15 +12981,8 @@ select::-ms-expand {
   .topic-choose {
     padding: 4rem 0rem;
   }
-  .topic-choose .years {
-    width: 23%;
-    bottom: 180px;
-  }
   .topic-choose .choose-progress {
     width: 80%;
-  }
-  .topic-choose .count {
-    margin-bottom: 0;
   }
   .experiences {
     padding: 4rem 0rem;
@@ -13026,7 +12998,6 @@ select::-ms-expand {
   }
   .goals {
     padding: 4rem 0rem;
-    padding-bottom: 1rem;
   }
   .goals .goals-list {
     width: 41%;

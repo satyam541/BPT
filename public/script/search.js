@@ -11,7 +11,7 @@ function getquery(elm)
     }
  
     if(query.length >= 1)
-        {window.location.href = window.origin+"/search?q="+query;}
+        {window.location.href = searchUrl+"?q="+query;}
     $(elm).prev().attr("placeholder","Add Term to Search");
     $(elm).prev().addClass("error");
 }
