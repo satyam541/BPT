@@ -211,7 +211,6 @@
     </section>
     <nav class="tooltips">
         <ul>
-
             <li><a href="tel:{{ websiteDetail()->contact_number }}">{{ websiteDetail()->contact_number }}<img
                         src="{{ url('img/master/phone-ringing.svg') }}" alt="phone-ringing"></a></li>
             <li><a class="open-popup enquiryJS">Enquiry<img src="{{ url('img/master/mail.svg') }}" alt="mail"></a></li>

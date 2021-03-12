@@ -172,8 +172,14 @@
 
         .explore-list{
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
+        }
+        .explore-item{
+            width: 45%;
+            a{
+                min-height: 48px;
+            }
         }
     }
     // End explore section //
@@ -204,20 +210,21 @@
        
         .goal-item{
             flex-direction: row;
+            justify-content: space-between;
             width: 100%;
         }
         .content{
             align-items: flex-start;
             width: 62%;
             margin-top: 0;
-            margin-left: 1.5rem;
+            width: calc(100% - 110px);
             p,h3{
                 text-align: left;
             }
             
         }
         .goals-list{
-            width: 78%;
+            width: 85%;
           margin: auto;
         }
     }
@@ -273,11 +280,6 @@
         background-position: bottom left;
         .choose-image{
             width: 45%;
-        }
-        .years{
-            width: 30%;
-            bottom: 150px;
-            left: -30px;
         }
         .count{
              width: 206px;
@@ -343,11 +345,23 @@
     }
     // End experience section //
 
+    // Start explore section
+    .explore{
+        .explore-item{
+            width: 30%;
+        }
+    }
+    // End explore section
+
 
     // Start goal section //
     .goals{
+        background-color: transparent;
+        background: linear-gradient(180deg,@whiteColor,#F6F6F6), url(../img/topic/goal-bg.png);
+        background-position: top,bottom;
+        background-repeat: no-repeat;
+        background-size: 100% 50%, 100% 50%;
         .goals-container{
-            display: flex;
             flex-direction: row;
             justify-content: space-between;
         }
@@ -367,7 +381,6 @@
         }
 
         .content{
-         width: 74%;
          p{
              font-size: 12px;
          }
@@ -375,7 +388,6 @@
         }
 
         .goal-item{
-            padding: 2rem 1rem;
             &:nth-child(1){
                 margin-top: 0;
             }
@@ -512,10 +524,6 @@
     // Start topic-choose section //
     .topic-choose{
         padding: @sectionPadding-xl;
-        .years{
-            width: 23%;
-             bottom: 180px;
-        }
         .choose-progress{
             width: 80%;
         }
@@ -548,7 +556,6 @@
     // Start goals section //
     .goals{
         padding: @sectionPadding-xl;
-        padding-bottom: 1rem;
         .goals-list{
             width: 41%;
         }

@@ -20,7 +20,7 @@
 </section>
 <!-- End Banner Section -->
 
-<!-- Start Banner Section -->
+<!-- Start Onsite Section -->
 <section class="flex-container onsite-training">
     <div class="container">
         <div class="training-container">
@@ -31,13 +31,17 @@
                 </div>
                 <p>{!!$pageDetail->main['heading']->content!!}</p>
                 <div class="buttons">
-                <a class="btn-blue open-popup enquiryJS" data-quote="Need More Information"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More information</div>
+                <a class="btn-blue open-popup enquiryJS" data-quote="Need More Information"><img src="{{url('img/onsite/information.svg')}}" alt="information">Need More Information</div>
                 </a>
             </div>
             <div class="delegate">
                 <div class="heading center-heading">
                     <h2>{!!$pageDetail->main['heading']->page_tag_line!!}</h2>
                 </div>
+                <div class="trained-bg">
+                        <h3>75%</h3>
+                        <p>Trained Delegates Through Onsite Training</p>
+                    </div>
                 <div class="training-map">
                     <img src="{{$pageDetail->main['heading']->getImagePath()}}" alt="training-map">
                 </div>
@@ -45,9 +49,9 @@
         </div>
     </div>
 </section>
-<!-- End Banner Section -->
+<!-- End Onsite Section -->
 
-<!-- Start contact Section -->
+<!-- Start Doorstep Section -->
 <section class="flex-container doorstep">
             <div class="container">
                 <div class="doorstep-container">
@@ -63,7 +67,7 @@
                             <div class="input-container">
                                 <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                                 <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                                <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                <input type="text" name="f-name" id="f-name" placeholder="Name*"
                                     autocomplete="off">
                             </div>
                             <div class="input-container">
@@ -80,7 +84,7 @@
                                     <span class="prefix"></span>
                                     <input type="number" class="telephone" placeholder="Phone Number*">
                                     <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                        <input type="text" name="Phone" class="phonenumber">
+                                        <input type="number" name="Phone" class="phonenumber">
                                     </div>
                                 </div>
                             </div>
@@ -163,9 +167,9 @@
                 </div>
             </div>
 </section>
-<!-- End contact Section --> 
+<!-- End Doorstep Section --> 
 
-<!-- Start choose section -->
+<!-- Start Choose section -->
 <section class="flex-container choose">
     <div class="container">
         <div class="choose-container">
@@ -185,9 +189,9 @@
         </div>
     </div>
 </section>
-<!-- End choose section -->
+<!-- End Choose section -->
 
-<!-- Start solution section -->
+<!-- Start Solution section -->
 <section class=" flex-container solution">
     <div class="container">
         <div class="solution-container">
@@ -207,6 +211,6 @@
         </div>
     </div>
 </section>
-<!-- End solution section -->
+<!-- End Solution section -->
 
 @endsection
