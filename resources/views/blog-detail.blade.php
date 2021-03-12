@@ -80,7 +80,7 @@
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
                     <a href="tel:{{websiteDetail()->contact_number}}">Call: {{websiteDetail()->contact_number}}</a>
-                    <p>{{websiteDetail()->contact_email}}</p>
+                    <a href="enquiries@bestpracticetraining.com" class="email">{{websiteDetail()->contact_email}}</a>
                 </div>
                
             </div>
@@ -113,7 +113,7 @@
 
 
 <!-- Start ideal section -->
-<section class="flex-conatiner ideal">
+<section class="flex-container ideal">
     <div class="container">
         <div class="ideal-container">
             <div class="heading center-heading">

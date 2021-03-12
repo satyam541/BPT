@@ -16,7 +16,7 @@
                             <li><a href="{{route('home')}}">Home</a></li>
                             <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                             <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
-                            <li><a href="">{{$topic->name}}</a></li>
+                            <li><a href="#">{{$topic->name}}</a></li>
                         </ul>
                 </div>
             </div>
@@ -49,13 +49,13 @@
                         </div>
                         @foreach ($topic->courses as $course)
 
-                        <div class="course-item" onclick="location.href = '{{ url('training-courses' . $course->reference) }}';">
+                        <div class="course-item" onclick="location.href = '{{ $course->url }}';">
                             <span>
                                 <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
                                 <img src="{{url('img/topic/white-book.svg')}}" alt="white-book" class="white-book">
                             </span>
                             <div class="course-name">
-                                <a href="{{ url('training-courses' . $course->reference) }}">{{$course->name}}</a>
+                                <a href="{{ $course->url }}">{{$course->name}}</a>
                                 <img src="{{url('img/topic/right-arrow.svg')}}" alt="right-arrow" >
                             </div>
                         </div>
@@ -77,18 +77,15 @@
     <section class="flex-container foundation">
         <div class="container">
             <div class="foundation-container">
-                @if ($topic->topicContent && $topic->faqs->isnotEmpty())
                 <div class="heading">
                     <h2>{!!$topic->name!!}</h2>
                 </div>
-                @endif
                 <div class="tabs-container">
                     <ul class="tab-links">
                         
-                        @if ($topic->topicContent!=null)
-                        @php $topic->topicContent=summernote_replace($topic->topicContent) @endphp                            
-                        @endif
-                        @if ($topic->topicContent->overview!=null)
+                    @if ($topic->topicContent!=null)
+                        @php $content=summernote_replace($topic->topicContent)@endphp
+                        @if ($content->overview!=null)
                         <li class="tab-click" data-target="overview">
                             <span class="image">
                                 <img src="{{url('img/courses/overview.svg')}}" alt="overview">
@@ -96,10 +93,10 @@
                             <p class="tab">
                             Overview
                             </p>
-                            <div class="number">01</div>
+                            <div class="number"></div>
                         </li>
                         @endif
-                        @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)
+                        @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)
                         <li class="tab-click" data-target="course">
                             <span class="image">
                                 <img src="{{url('img/courses/content.svg')}}" alt="content">
@@ -107,7 +104,7 @@
                             <p class="tab">
                             Topic Content
                             </p>
-                            <div class="number">02</div>
+                            <div class="number"></div>
                         </li>
                         @endif
                         @if ($topic->faqs->isnotEmpty())
@@ -119,17 +116,18 @@
                             <p class="tab">
                             FAQs
                             </p>
-                            <div class="number">03</div>
+                            <div class="number"></div>
                         </li>
                         @endif
+                    @endif
                     </ul>
                     
                     <div class="tab-content tab-common" id="overview">
-                        @if ($topic->topicContent->overview!=null)                        
+                        @if ($content->overview!=null)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Course Overview</h2>
                             
-                            {!!$topic->topicContent->overview!!}
+                            {!!$content->overview!!}
                             
                         </div>
                         <div class="buttons">
@@ -140,38 +138,38 @@
                         @endif
                     </div>
                     <div class="tab-content tab-common" id="course">
-                         @if ($topic->topicContent->detail||$topic->topicContent->summary||$topic->topicContent->whats_included||$topic->topicContent->pre_requities||$topic->topicContent->who_should_attend||$topic->topicContent->what_will_you_learn!=null)                        
+                         @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                        
                         <div class="overview-content" id="showmorecontent">
                             <h2>Topic Content</h2>
                             <br>
-                            @if ($topic->topicContent->summary!=null)
+                            @if ($content->summary!=null)
                                <h3>Summary</h3>
-                               <p>{!!$topic->topicContent->summary!!}</p>
+                               <p>{!!$content->summary!!}</p>
                                <br> 
                             @endif
-                            @if ($topic->topicContent->detail!=null)
+                            @if ($content->detail!=null)
                                <h3>Detail</h3>
-                               <p>{!!$topic->topicContent->detail!!}</p>
+                               <p>{!!$content->detail!!}</p>
                                <br> 
                             @endif
-                            @if ($topic->topicContent->whats_included!=null)
+                            @if ($content->whats_included!=null)
                                <h3>What's Included</h3>
-                               <p>{!!$topic->topicContent->whats_included!!}</p>
+                               <p>{!!$content->whats_included!!}</p>
                                <br> 
                             @endif
-                            @if ($topic->topicContent->pre_requities!=null)
+                            @if ($content->pre_requities!=null)
                                <h3>Pre Requities</h3>
-                               <p>{!!$topic->topicContent->pre_requities!!}</p>
+                               <p>{!!$content->pre_requities!!}</p>
                                <br> 
                             @endif
-                            @if ($topic->topicContent->who_should_attend!=null)
+                            @if ($content->who_should_attend!=null)
                             <h3>Who Should Attend</h3>
-                            <p>{!!$topic->topicContent->who_should_attend!!}</p>
+                            <p>{!!$content->who_should_attend!!}</p>
                             <br> 
                          @endif
-                         @if ($topic->topicContent->what_will_you_learn!=null)
+                         @if ($content->what_will_you_learn!=null)
                          <h3>What Will You Learn</h3>
-                         <p>{!!$topic->topicContent->what_will_you_learn!!}</p>
+                         <p>{!!$content->what_will_you_learn!!}</p>
                          <br> 
                       @endif
                         </div>
@@ -346,17 +344,17 @@
                     <div class="explore-item"> 
                         <div class="numbers">
                             <img src="{{url('img/topic/topic-book.svg')}}" alt="topic-book">
-                            <p> {{$otherTopic->courses->count()}} 
+                            <p> {{$otherTopic->courses_count}} 
                                 <span>
-                                    @if($otherTopic->courses->count() == 1)
+                                    @if($otherTopic->courses_count == 1)
                                     Course
-                                    @elseif($otherTopic->courses->count() >1 )
+                                    @elseif($otherTopic->courses_count >1 )
                                     Courses
                                     @endif
                                 </span>
                             </p>
                         </div>
-                        <a href="{{ url('training-courses' . $otherTopic->reference) }}">{{$otherTopic->name}}</a>
+                        <a href="{{ $otherTopic->url }}">{{$otherTopic->name}}</a>
                     </div>
                 @endforeach
             </div>

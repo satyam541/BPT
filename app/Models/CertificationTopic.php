@@ -12,7 +12,7 @@ class CertificationTopic extends Model
 
     public function certification()
     {
-        return $this->hasOne('App\Models\Certification','id','certification_id');
+        return $this->belongsTo('App\Models\Certification');
     }
 
     public function courses()

@@ -67,6 +67,7 @@ Route::get("/country/get/schedule/locations","ScheduleController@getLocationsFor
 
 Route::get('/location','LocationController@list')->name('locationList');
 Route::post('/location','LocationController@filterList')->name('locationList');
+Route::post('/location/popular','LocationController@popular')->name('locationPopular');
 Route::get('/location/insert','LocationController@create')->name('createLocation');
 Route::post('/location/insert','LocationController@insert')->name('insertLocation');
 Route::get('/location/update/{location}','LocationController@edit')->name('editLocation');
@@ -85,6 +86,7 @@ Route::post('/venue/delete/{venue}','VenueController@delete')->name('deleteVenue
 
 Route::get('/category','CategoryController@list')->name('categoryList');
 Route::get('/category/insert','CategoryController@create')->name('createCategory');
+Route::post('/category/popular','CategoryController@popular')->name('categoryPopular');
 Route::post('/category/insert','CategoryController@insert')->name('insertCategory');
 Route::get('/category/update/{category}','CategoryController@edit')->name('editCategory');
 Route::post('/category/update/{category}','CategoryController@update')->name('updateCategory');
@@ -101,6 +103,7 @@ Route::post('/category/content/delete/{categoryDetail}','CategoryController@cont
 Route::get('/topic','TopicController@list')->name('topicList');
 Route::get('/topic/insert','TopicController@create')->name('createTopic');
 Route::post('/topic/insert','TopicController@insert')->name('insertTopic');
+Route::post('/topic/popular','TopicController@popular')->name('topicPopular');
 Route::get('/topic/update/{topic}','TopicController@edit')->name('editTopic');
 Route::post('/topic/update/{topic}','TopicController@update')->name('updateTopic');
 Route::post('/topic/delete/{topic}','TopicController@delete')->name('deleteTopic');
@@ -128,6 +131,7 @@ Route::post('/linkCategory/{id}','TopicController@linkCategory')->name('linkCate
 
 Route::get('/course','CourseController@list')->name('courseList');
 Route::get('/course/insert','CourseController@create')->name('createCourse');
+Route::post('/course/popular','CourseController@popular')->name('coursePopular');
 Route::post('/course/insert','CourseController@insert')->name('insertCourse');
 Route::get('/course/update/{course}','CourseController@edit')->name('editCourse');
 Route::post('/course/update/{course}','CourseController@update')->name('updateCourse');
@@ -248,7 +252,8 @@ Route::get('/schedule/onlineprice/addons/{online}',"ScheduleController@courseAdd
 Route::get('/popular/list',"PopularController@list")->name("popularItems");
 Route::post('/popular/delete/{popular}',"PopularController@delete")->name("deletePopular");
 Route::any('/popular/sort',"PopularController@sort")->name("sortPopular");
-Route::post('/popular/insert/{module}{name}','PopularController@insert')->name('insertPopular');
+Route::post('/popular/insert','PopularController@insert')->name('insertPopular');
+Route::post('/popular/module/data','PopularController@getModuleData')->name('getModuleData');
 
 
 Route::post('/purchase/store', ['as' => 'purchaseResponse', 'uses' => 'PurchaseController@storeDetails']);
@@ -264,6 +269,13 @@ Route::get('/country/select/{id}',function($id){
   return $country->toJson();
 });
 
+Route::get('/paymentdetail/list','PaymentDetailController@list')->name('paymentDetail');
+Route::get('/paymentdetail/insert','PaymentDetailController@create')->name('paymentDetailCreate');
+Route::post('/paymentdetail/insert','PaymentDetailController@insert')->name('paymentDetailInsert');
+Route::get('/paymentdetail/update/{id}','PaymentDetailController@edit')->name('paymentDetailEdit');
+Route::post('/paymentdetail/update/{id}','PaymentDetailController@update')->name('paymentDetailUpdate');
+Route::post('/paymentdetail/delete/{id}','PaymentDetailController@delete')->name('paymentDetailDelete');
+
 Route::get('/article/newslist','ArticleController@newsList')->name('newsList');
 Route::get('/article/create','ArticleController@create')->name('createNews');
 Route::post('/article/insert','ArticleController@insert')->name('insertArticle');
@@ -272,6 +284,7 @@ Route::post('/article/update/{article}','ArticleController@update')->name('updat
 Route::post('/article/delete/{article}','ArticleController@delete')->name('deleteArticle');
 Route::get('/article/bloglist','ArticleController@blogList')->name('blogList');
 Route::get('/article/auto-complete','ArticleController@loadTags')->name('tagAutoComplete');
+Route::post('/article/popular','ArticleController@popular')->name('articlePopular');
 Route::get('/tag/taglist','TagController@tagList')->name('tagList');
 Route::get('/tag/update/{tag}','TagController@edit')->name('editTag');
 Route::post('/tag/update/{tag}','TagController@update')->name('updateTag');

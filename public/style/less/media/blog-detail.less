@@ -13,7 +13,7 @@
             box-shadow: @shadowLight;
             background-color: @whiteColor;
             padding: 1rem;
-            transform: translateY(-50px);
+            transform: translateY(-36px);
             width: 90%;
             margin: auto;
         }
@@ -78,10 +78,18 @@
         .blog-navs{
             order: 3;
             margin-top: 0;
+            justify-content: flex-start;
             .next-nav{
                 .btn-blue{
                     min-width: 168px;
                 }
+            }
+        }
+        .previous-nav,.next-nav {
+            width: 30%;
+            height: auto;
+            p {
+                min-height: auto;
             }
         }
       
@@ -154,11 +162,6 @@
                 .next-nav,.previous-nav{
                     width: 26%;
                  }
-                 .buttons{
-                    .btn-blue{
-                        left: 30px;
-                    }
-                }
             }
         
      }

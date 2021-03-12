@@ -13,12 +13,14 @@
    @if(preg_match('/[A-Z]/',request()->url()))
       <meta name="robots" content="noindex" /> 
    @endif
+   <link rel="stylesheet" href="{{ url('style/country-select.css') }}">
     <link rel="stylesheet" href="{{url('style/main.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('style/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">  
     <link rel="stylesheet" href="{{url('style/fontawesome.css')}}">
+   
    @yield('header')
 </head>
 <body>
@@ -132,8 +134,8 @@
                                 <input type="text" name="email" id="email" placeholder="Email*" autocomplete="off">
                             </div>
                             <div class="input-container">
-                                <span><img src="{{url('img/contactus/email.svg')}}" alt="email" class="black">
-                                <img src="{{url('img/contactus/email-red.svg')}}" alt="email-red" class="red"></span>
+                                <span><img src="{{url('img/master/house-black.svg')}}" alt="email" class="black">
+                                <img src="{{url('img/master/house-red.svg')}}" alt="email-red" class="red"></span>
                                 <input type="text" name="company name" id="company" placeholder="Company Name" autocomplete="off">
                             </div>
                             <div class="input-container message">
@@ -227,7 +229,11 @@
 <script src="{{url('script/count.js')}}"></script>
 <script src="{{url('script/search.js')}}"></script>
 <script>
-    
+    //country selectbox 
+    $("#country-list li.country").on('click',function(){
+        var countryCode = $(this).data('country-code');
+        window.location.href =  location.origin+'/'+countryCode+'/home';
+    });
     var formValidationUrl = '{{ route("validateEnquiry") }}';
     var formSubmitUrl = '{{ route("sendEnquiry") }}';
     var ajaxTime= new Date().getTime();

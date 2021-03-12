@@ -24,7 +24,7 @@
 <!-- Start Convenient Section -->
 <section class="flex-container convenient">
     <div class="container">
-    <div class="heading">
+    <div class="heading center-heading">
             <h2>Find The Most Convenient <span>Location For You</span></h2>
         </div>
         <div class="convenient-container">
@@ -36,7 +36,7 @@
                         <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
                     </span>
                     <div class="content">
-                        <h3>{{$popularLocation->name}}</h3>
+                        <a href={{route('locationDetail',['location'=>$popularLocation->reference])}}>{{$popularLocation->name}}</a>
                         <div class="buttons">
                             <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
@@ -85,9 +85,10 @@
 <!-- Start Popular Section -->
 <section class="flex-container popular">
     <div class="container">
+        @if(count($locations)>6)
         <div class="popular-container">
             <div class="popular-info">
-                <div class="heading">
+                <div class="heading center-heading">
                     <h2>Popular <span>Locations</span></h2>
                 </div>
                 <div class="search">
@@ -112,6 +113,7 @@
           
             </div>
         </div>
+        @endif
     </div>
 </section>
 <!-- End Popular Section -->

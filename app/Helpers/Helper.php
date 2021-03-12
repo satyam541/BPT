@@ -28,17 +28,14 @@ if(!function_exists('homepageData')){
     }
 }
 if(!function_exists('summernote_replace')){
-function summernote_replace($content){
-$content->tag_line=str_replace('<p><br></p>',null,$content->tag_line);
-$content->overview=str_replace('<p><br></p>',null,$content->overview);
-$content->detail=str_replace('<p><br></p>',null,$content->detail);
-$content->whats_included=str_replace('<p><br></p>',null,$content->whats_included);
-$content->pre_requities=str_replace('<p><br></p>',null,$content->pre_requities);
-$content->who_should_attend=str_replace('<p><br></p>',null,$content->who_should_attend);
-$content->what_will_you_learn=str_replace('<p><br></p>',null,$content->what_will_you_learn);
-$content->save();
-return $content;
-}
+    function summernote_replace($content){
+        foreach($content as $key=>$value)
+        {
+            $content->$key = str_replace('<p></p>',null,$value);
+            $content->$key = str_replace('<p><br></p>',null,$value);
+        }
+        return $content;
+    }
 }
 if (!function_exists('encodeUrlSlug')) {
     function encodeUrlSlug($string)
@@ -302,6 +299,9 @@ if (!function_exists('encodeUrlSlug')) {
                     $JWT->make_order_enquiry($input, 11);
                 else if (Str::contains($input['type'], "incomplete"))
                     $JWT->make_order_enquiry($input, 10);
+                else if (Str::contains($input['type'], "knowledgepass"))
+                $JWT->make_order_enquiry($input, 73);
+
                 else
                     $JWT->make_enquiry($input);
             }

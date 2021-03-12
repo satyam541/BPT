@@ -19,101 +19,109 @@
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
-        
-        <!-- /.content-header -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="card card-primary card-outline">
 
-                    <div class="card-header">
-                        <div class="card-title">
-                            Add To Popular
+            <!-- /.content-header -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-header">
+                            <div class="card-title">
+                                Add To Popular
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                            {{Form::open(['id'=>'form'])}}
+                        <div class="card-body">
+                            {{ Form::open(['id' => 'add-popular']) }}
+                            @csrf
                             <div class="form-group row">
                                 {{ Form::label('module', 'Module Type:', ['class' => 'col-sm-2 control-label']) }}
                                 <div class="col-sm-4">
-                                    {{ Form::select('module', $module,null, ['id' => 'inputModule', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                    {{ Form::select('module_type', $module, null, ['id' => 'module-type', 'class' => 'form-control selectJS', 'placeholder' => 'ALL', 'tabindex' => '-1']) }}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 {{ Form::label('name', 'Name:', ['class' => 'col-sm-2 control-label']) }}
                                 <div class="col-sm-4">
-                                    {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
+                                    <Select name="module_id" class="form-control selectJS" id="module-data">
+                                        <option value=""></option>
+
+                                    </Select>
+                                    {{-- {{ Form::select('name', $list, null, ['id' => 'inputName', 'class' => 'form-control selectJS', 'placeholder' => 'ALL','tabindex'=>'-1']) }} --}}
                                 </div>
                             </div>
-                            
-                            <div class="col-sm-12 text-right">
-                                <a href="" onclick="addToPopular('{{route('insertPopular',['module'=>  , 'name'=> ])}}')" class="btn btn-primary">Submit</a>
+
+                            <div class="col-sm-4 text-right">
+                                <button type="button" onclick="addToPopular(this)" class="btn btn-primary">Add
+                                    Popular</button>
                             </div>
-                            {{Form::close()}}
+                            {{ Form::close() }}
+
+                        </div>
 
                     </div>
-
                 </div>
             </div>
-        </div>
-        </div>
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
 
-                    <!-- left column -->
-                    <div class="container">
-                        <span class="message" id="success_type"></span>
-                        <span class="message" id="error_type"></span>
-                        <div class="tab">
-                            @foreach ($popularItems as $type => $items)
-                          
-                                <button onclick="openCity(event, '{{ $type }}')"  class="tablinks" id="first"  >{{ $type }}</button> <!-- header name -->
-                            @endforeach
-                        </div>
-                        @forelse ($popularItems as $type => $items)
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
 
-                            <div id={{ $type }} class="tabcontent">
-                                <table class="table table-hover">
-                                    <tbody class="sortable" data-module="{{ $type }}">
-                                        @foreach ($items as $item)
-                                            @if (empty($item->module))
-                                                @continue
-                                            @endif
-                                            <tr id="id_{{ $item['id'] }}">
-                                                <td class="sortable-handle">
-                                                    <span class="fa fa-sort"></span>
-                                                    @if (!empty($item->module->category))
-                                                        <span class="fa fa-tag"
-                                                            style="color:{{ $item->module->category->color_code }}"></span>
-                                                    @endif
-                                                </td>
-                                                <td>{{ $item->module->title ?? $item->module->name }}</td>
-                                                <td><a href="#"
-                                                        onclick="deleteItem('{{ route('deletePopular', ['popular' => $item->id]) }}')"><i
-                                                            class="fa fa-trash text-red"></i></a>
-                                                </td>
-                                            </tr> 
-                                      @endforeach
-                                  </tbody>
-                                </table>
+                <!-- left column -->
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body">
+
+                            <span class="message" id="success_type"></span>
+                            <span class="message" id="error_type"></span>
+                            <div class="tab">
+                                @foreach ($popularItems as $type => $items)
+
+                                    <button onclick="openCity(event, '{{ $type }}')" class="tablinks"
+                                        id="first">{{ $type }}</button> <!-- header name -->
+                                @endforeach
                             </div>
-                        @empty
-                            <marquee behavior='alternate' direction='right'>
-                                <h3>No Data Available</h3>
-                            </marquee>
-                        @endforelse
+                            
+                            @forelse ($popularItems as $type => $items)
+                                
+                                <div id={{ $type }} class="tabcontent">
+                                    <table class="table table-hover">
+                                        <tbody class="sortable" data-module="{{ $type }}">
+                                            @foreach ($items as $item)
+                                                @if (empty($item->module))
+                                                    @continue
+                                                @endif
+                                                <tr id="id_{{ $item['id'] }}">
+                                                    <td class="sortable-handle">
+                                                        <span class="fa fa-sort"></span>
+                                                        @if (!empty($item->module->category))
+                                                            <span class="fa fa-tag"
+                                                                style="color:{{ $item->module->category->color_code }}"></span>
+                                                        @endif
+                                                    </td>
+                                                    <td>{{ $item->module->title ?? $item->module->name }}</td>
+                                                    <td><a href="#"
+                                                            onclick="deleteItem('{{ route('deletePopular', ['popular' => $item->id]) }}')"><i
+                                                                class="fa fa-trash text-red"></i></a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @empty
+                                <marquee behavior='alternate' direction='right'>
+                                    <h3>No Data Available</h3>
+                                </marquee>
+                            @endforelse
 
-
+                        </div>
                     </div>
                     <!-- /.col -->
                 </div>
-                <!-- /.row -->
+            </div>
+            <!-- /.row -->
 
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+        </div><!-- /.container-fluid -->
+
     </div>
     <!-- /.content-wrapper -->
 
@@ -122,21 +130,66 @@
 <script>
     $("document").ready(function() {
         $("#first").click();
-    });
-        function addToPopular(path)
-        {
-            var module = $("#inputModule").val();
-            var name   = $("#inputName").val();
 
-            $.ajax({
-                type: "POST",
-                url: path,
-                data: "module=" + module + "&name=" + name,
-                success: function(data) {
-                    toastr.success('Operation Done');
-                }
-            });
-        }        
+        $("#module-type").change(function() {
+            type = $(this).val();
+
+            getModuleData(type);
+
+        });
+
+    });
+
+    function getModuleData(type) {
+
+        $.ajax({
+            url: '{{ route('getModuleData') }}',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                module: type
+            },
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                var moduleData = '<option value="">Select </option>';
+                console.log(data);
+                $.each(data, function(id, name) {
+                    // console.log(id, name);
+                    moduleData += '<option value="' + id + '">' + name +
+                        '</option>';
+                })
+                $('#module-data').html(moduleData);
+            },
+            error: function() {
+                error.fadeIn('slow', function() {
+                    error.delay(3000).fadeOut();
+                });
+            }
+        });
+    }
+
+    function addToPopular() {
+        var cartForm = $("#add-popular");
+        formData = cartForm.serialize();
+        $.ajax({
+            url: '{{ route('insertPopular') }}',
+            type: 'POST',
+            data: formData,
+            headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+                toastr.success('Successfully Added');
+                location.reload();
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+
 
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
@@ -149,13 +202,12 @@
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         document.getElementById(cityName).style.display = "block";
-        if(evt.currentTarget==undefined){
+        if (evt.currentTarget == undefined) {
             var el = document.getElementsByClassName('tablinks');
             var requiredElement = el[0]
             requiredElement.className += " active";
-        }        
-        else{
-        evt.currentTarget.className += " active";
+        } else {
+            evt.currentTarget.className += " active";
         }
     }
     var changePosition = function(requestData) {
@@ -184,24 +236,24 @@
             }
         });
     };
-    $(document).ready(function(){
-            var sortableTable = $('.sortable');
-            if (sortableTable.length > 0) {
-                sortableTable.sortable({
-                    handle: '.sortable-handle',
-                    axis: 'y',
-                    items : 'tr',
-                    update: function(event, ui){
-                        var serializeData = $(this).sortable("serialize");
-                        console.log(serializeData);
-                        serializeData += '&module='+$(this).data("module");
-                        changePosition({
-                            data : serializeData,
-                            module : $(this).data("module")
-                        });
-                    },
-                });
-            }
+    $(document).ready(function() {
+        var sortableTable = $('.sortable');
+        if (sortableTable.length > 0) {
+            sortableTable.sortable({
+                handle: '.sortable-handle',
+                axis: 'y',
+                items: 'tr',
+                update: function(event, ui) {
+                    var serializeData = $(this).sortable("serialize");
+                    console.log(serializeData);
+                    serializeData += '&module=' + $(this).data("module");
+                    changePosition({
+                        data: serializeData,
+                        module: $(this).data("module")
+                    });
+                },
+            });
+        }
     });
 
 </script>

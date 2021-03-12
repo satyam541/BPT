@@ -227,8 +227,8 @@ function circleProgress(){
     setProgress(86,$('.circle .second'),45);
     setProgress(92,$('.circle .third'),45);
     setProgress(94,$('.circle .fourth'),45);
-    setProgress(55,$('.circle .topic-first'),45);
-    setProgress(75,$('.circle .topic-second'),45);
+    setProgress(72,$('.circle .topic-first'),45);
+    setProgress(55,$('.circle .topic-second'),45);
 }
 function setProgress(percent, svg, radius) {
 var circumference = radius * 2 * Math.PI;
@@ -517,9 +517,14 @@ $('#scroll').click(function(){
             return false;
         }
         $("#aboutdropdown").removeClass('active');
-        $('#dropdown-menu').hide();
+        $('#dropdown-menu').slideUp();
     });
     
     $('.course-menu a').on('click', function(){
         window.location.href = $(this).attr('href');
-    })
+    });
+    $(".country-list .country").click(function() {
+ 
+        var conntrycode = $(this).data("country-code");
+        // alert(conntrycode); 
+    });

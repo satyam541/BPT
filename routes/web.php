@@ -55,7 +55,7 @@ Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoCom
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('homeRoute');
 
 
 Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
@@ -85,13 +85,13 @@ Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'Ca
 Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@customerData']);
 
 //certification
-Route::get('/certification-programmes','CertificationController@index');
-
-
+Route::get('/certification-programmes','CertificationController@index')->name('certification');
+Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
 Route::get('/offer', function () {
     return view('offer');
 });
+Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
 
 // Route::get('/certification', function () {
 //     return view('certification');
@@ -105,9 +105,9 @@ Route::get('/courses', function () {
 // });
 
 
-Route::get('/knowledge-pass',function(){
-    return view('knowledge-pass');
-});
+// Route::get('/knowledge-pass',function(){
+//     return view('knowledge-pass');
+// });
 
 // Route::get('/cart', function () {
 //     return view('cart');//this routes moves to 'cart/detail'
@@ -120,6 +120,105 @@ Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-an
 Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
 
 Route::get('/cookies','CommonPageController@index')->name('cookies');
+
+Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middleware' => 'country'], function () {
+    Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
+    Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
+    Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
+    Route::post('/filter-course','CourseController@filter')->name('courseFilterRoute');
+    Route::get('/contact-us', 'ContactController@index')->name('contactUs');
+    Route::get('/about-us', 'AboutController@index')->name('aboutUs');
+    Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+    Route::get('/training-locations', 'LocationController@index')->name('locations');
+    Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
+    Route::get('/onsite', 'OnsiteController@index')->name('onsite');
+    Route::get('/blog', 'BlogController@index')->name('blog');
+    Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
+    Route::any('/thanks','ThanksController@index')->name('thanks');
+    
+    
+    /*Enquiry Routes*/
+    
+    Route::post('/send/enquiry','EnquiryController@insertEnquiry')->name('sendEnquiry');
+    
+    Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('validateEnquiry');
+    
+    /*End Enquiry Routes*/
+    
+    
+    Route::get('search','SearchController@search')->name('SearchCourse');
+    Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseAutoComplete');
+    Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoComplete');
+    // Route::get('/welcome', function () {
+    //     return view('welcome');
+    // });
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('homeRoute');
+    
+    
+    Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+    Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
+    Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
+    Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
+    
+    Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
+    
+    Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
+    Route::get('/booking/classroom/{id}',['as'=>'classroomBooking','uses'=>"CartController@addToCart"]);
+    Route::get('/booking/virtual/{id}',['as'=>'virtualBooking','uses'=>"CartController@addToCart"]);
+    
+    //Cart Routes
+    Route::get('/cart', 'CartController@index')->name('cart');
+    Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
+    Route::get('/summary',['as'=>'summary','uses'=>'SummaryController@index']);
+    Route::post('/cart/checkout',['as'=>'cartCheckout', 'uses'=>"CheckoutController@index"]);
+    Route::post('/cart/content/clear',['as'=>'cartDestroyRoute','uses'=>'CartController@clearCart']);
+    
+    //ajax requests
+    Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
+    Route::get('/cart/remove/item',['as'=>'removeCartItem','uses'=>'CartController@removeItem']);
+    Route::get('/cart/customerDetail/submit',['as'=>'customerDetailSubmit','uses'=>'CartController@submitCustomerDetail']);
+    Route::get('/cart/delegateDetail/submit',['as'=>'delegateDetailSubmit','uses'=>'CartController@submitDelegateDetail']);
+    Route::get('/cart/billingDetail/submit',['as'=>'billingDetailSubmit','uses'=>'CartController@submitBillingDetail']);
+    Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@customerData']);
+    
+    //certification
+    Route::get('/certification-programmes','CertificationController@index')->name('certification');
+    Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
+    
+    Route::get('/offer', function () {
+        return view('offer');
+    });
+    
+    // Route::get('/certification', function () {
+    //     return view('certification');
+    // });
+    Route::get('/courses', function () {
+        return view('courses');
+    });
+    
+    // Route::get('/emptycart', function () {
+    //     return view('emptycart'); //this routes moves to "cart"
+    // });
+    
+    
+    Route::get('/knowledge-pass',function(){
+        return view('knowledge-pass');
+    });
+    
+    // Route::get('/cart', function () {
+    //     return view('cart');//this routes moves to 'cart/detail'
+    // });
+    
+    Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
+    
+    Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-and-conditions');
+    
+    Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
+    
+    Route::get('/cookies','CommonPageController@index')->name('cookies');
+
+});
 
 Route::fallback(function(){
     return  redirect()->route('404');

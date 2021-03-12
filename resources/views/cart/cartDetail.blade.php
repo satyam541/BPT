@@ -23,7 +23,6 @@
 
     <!-- Start Steps Section -->
     <section class="flex-container steps">
-
         <div class="container">
             <div class="steps-container">
                 <div class="heading center-heading">
@@ -90,7 +89,7 @@
                                     <input type="text" name="email_confirmation" id="email" placeholder="Confirm Email Address*" autocomplete="off"  class="inputemail">
                                 </div>
 
-                                <div class="input-container">
+                                <div class="input-container ">
                                     <span><img src="{{ url('img/master/phone-callblack.svg') }}" alt="phone-call"
                                             class="black">
                                         <img src="{{ url('img/master/phone-callred.svg') }}" alt="phonecall-red"
@@ -246,7 +245,7 @@
                                                     class="black">
                                                 <img src="{{ url('img/master/pin-red.svg') }}" alt="pin-red"
                                                     class="red"></span>
-                                            <select name="country" id="location">
+                                            <select name="country" id="location"  class="inputcountry">
                                                 <option value="">Select Country*</option>
                                                 @foreach ($countries as $code => $country)
                                                     <option value="{{$code}}">{{$country}}</option>
@@ -276,7 +275,7 @@
                             @csrf
                             <div class="card-detail">
                                 <p id="course-name">{{$cartItems->first()->name}}</p>
-                                <div class="input-container">
+                                <div class="booking-content">
                                     <p><strong id="method">Booking Type:</strong><span>
                                         @switch($cartItems->first()->options['method'] ?? '')
                                         @case('classroom')
@@ -419,7 +418,7 @@
                             {{ Form::open(array('route'=>'cartCheckout', 'id'=>'pay_form')) }}
                             <div class="form-consent">
                                 <input type="checkbox" name="agree" id="agree">
-                                <label for="readconsent">I have read and agree with the terms and conditions.</label>
+                                <label for="agree">I have read and agree with the terms and conditions.</label>
                             </div>
                             <div class="buttons">
                                 <button type="button" class="btn-white" onclick="cancelOrder()">
