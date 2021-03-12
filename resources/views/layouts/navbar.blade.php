@@ -12,7 +12,7 @@
             </a>
             <ul class="menu-list">
                 <li class="links-li course-link">
-                    <a href="{{route('catalouge')}}" class="link mobile"><i class="fa fa-book"></i>Courses</a>
+                    <a href="{{route('catalogue')}}" class="link mobile"><i class="fa fa-book"></i>Courses</a>
                     <a class="link desktop" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
@@ -145,7 +145,7 @@
                         @endforeach
                     </div>
                     <div class="buttons">
-                        <a href="{{route('catalouge')}}" class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
+                        <a href="{{route('catalogue')}}" class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
                     </div>
                 </div>
             </div>
