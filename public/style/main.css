@@ -12957,77 +12957,15 @@ select::-ms-expand {
     width: 46%;
   }
   .topic-courses .course-item {
-    position: relative;
-  }
-  .topic-courses .course-item::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-  .topic-courses .course-item::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    bottom: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item span {
-    position: relative;
-  }
-  .topic-courses .course-item span::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    top: -9px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item .course-name {
-    position: relative;
-  }
-  .topic-courses .course-item .course-name::before {
-    content: '';
-    position: absolute;
-    right: -9px;
-    top: -24px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
+    border: 2px solid transparent;
   }
   .topic-courses .course-item a {
     width: 93%;
     font-size: 15px;
     overflow: hidden;
   }
-  .topic-courses .course-item:hover::before,
-  .topic-courses .course-item:hover::after {
-    width: 97%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover span::before {
-    height: 130%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover .course-name::before {
-    height: 260%;
-    transition: 1s all;
+  .topic-courses .course-item:hover {
+    border: 2px solid #0064D8;
   }
   .topic-delivery {
     padding: 4rem 0rem;
