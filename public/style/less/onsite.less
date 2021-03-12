@@ -36,10 +36,14 @@
         background-repeat: no-repeat;
         height: 100%;
         .heading{
+            padding-top: 0;
             &::before{
                 content: none;
             }
         }
+    }
+    .trained-bg {
+        display: none;
     }
     .training-map{
         display: flex;
@@ -123,8 +127,6 @@
             margin-top: 2rem;
             span{
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 background: @blueGradient;
                 height: 50px;
                 width: 50px;
@@ -133,8 +135,8 @@
                 padding: .5rem;
                 position: relative;
                 &::before{
-                    position: absolute;
                     content: '';
+                    position: absolute;
                     height: 50px;
                     width: 50px;
                     top: 0;

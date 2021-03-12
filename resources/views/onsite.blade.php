@@ -38,6 +38,10 @@
                 <div class="heading center-heading">
                     <h2>{!!$pageDetail->main['heading']->page_tag_line!!}</h2>
                 </div>
+                <div class="trained-bg">
+                        <h3>75%</h3>
+                        <p>Trained Delegates Through Onsite Training</p>
+                    </div>
                 <div class="training-map">
                     <img src="{{$pageDetail->main['heading']->getImagePath()}}" alt="training-map">
                 </div>

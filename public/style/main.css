@@ -4985,8 +4985,14 @@ select::-ms-expand {
   background-repeat: no-repeat;
   height: 100%;
 }
+.onsite-training .delegate .heading {
+  padding-top: 0;
+}
 .onsite-training .delegate .heading::before {
   content: none;
+}
+.onsite-training .trained-bg {
+  display: none;
 }
 .onsite-training .training-map {
   display: flex;
@@ -5062,8 +5068,6 @@ select::-ms-expand {
 }
 .doorstep .info .item span {
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: linear-gradient(#0064D8, #1C2848);
   height: 50px;
   width: 50px;
@@ -5073,8 +5077,8 @@ select::-ms-expand {
   position: relative;
 }
 .doorstep .info .item span::before {
-  position: absolute;
   content: '';
+  position: absolute;
   height: 50px;
   width: 50px;
   top: 0;
@@ -5240,6 +5244,9 @@ select::-ms-expand {
     width: 48%;
     padding-right: 1.5rem;
   }
+  .choose .choose-item:nth-child(even) {
+    padding-right: 0;
+  }
   .solution {
     padding: 3rem 2rem;
     background-image: url(../img/onsite/solution-bg.png);
@@ -5288,7 +5295,7 @@ select::-ms-expand {
     text-align: left;
   }
   .onsite-training .delegate {
-    width: 47%;
+    width: 49%;
     margin-top: 0;
   }
   .onsite-training .training-map {
@@ -5318,6 +5325,16 @@ select::-ms-expand {
   .choose .choose-item {
     width: 33%;
   }
+  .choose .choose-item:nth-child(even) {
+    padding-right: 1.5rem;
+  }
+  .choose .choose-item:nth-child(3),
+  .choose .choose-item:nth-child(6) {
+    padding-right: 0;
+  }
+  .choose .choose-item:last-child {
+    padding-right: 0;
+  }
   .choose .choose-item p {
     min-height: 76px;
   }
@@ -5337,7 +5354,34 @@ select::-ms-expand {
     width: 48%;
   }
   .onsite-training .delegate {
-    width: 46%;
+    position: relative;
+  }
+  .onsite-training .delegate .heading {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 62%;
+  }
+  .onsite-training .delegate .heading h2 {
+    text-align: left;
+  }
+  .onsite-training .trained-bg {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/onsite/trained-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0.5rem 1rem;
+    width: 37%;
+    position: absolute;
+    right: 0;
+  }
+  .onsite-training .trained-bg h3,
+  .onsite-training .trained-bg p {
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .onsite-training .trained-bg h3 {
+    margin-bottom: 0.5rem;
   }
   .doorstep {
     padding: 4rem 0rem;
@@ -5378,6 +5422,13 @@ select::-ms-expand {
   }
   .choose .choose-item {
     width: 25%;
+  }
+  .choose .choose-item:nth-child(4) {
+    padding-right: 0;
+  }
+  .choose .choose-item:nth-child(3),
+  .choose .choose-item:nth-child(6) {
+    padding-right: 1.5rem;
   }
   .solution {
     padding: 4rem 0rem;
