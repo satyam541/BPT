@@ -17,6 +17,7 @@ Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic,
 Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
+Route::get('fetchapi/countryLocations','TestController@countryLocations'); /* To fetch only courses and related content*/ 
 
 Route::get('match/topic', 'TestController@matchTopic');
 
@@ -91,6 +92,7 @@ Route::get('/certification-programmes/{certification}','CertificationController@
 Route::get('/offer', function () {
     return view('offer');
 });
+Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
 
 // Route::get('/certification', function () {
 //     return view('certification');
@@ -104,9 +106,9 @@ Route::get('/courses', function () {
 // });
 
 
-Route::get('/knowledge-pass',function(){
-    return view('knowledge-pass');
-});
+// Route::get('/knowledge-pass',function(){
+//     return view('knowledge-pass');
+// });
 
 // Route::get('/cart', function () {
 //     return view('cart');//this routes moves to 'cart/detail'
