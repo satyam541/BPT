@@ -19,11 +19,11 @@ use Carbon\Carbon;
 if(!function_exists('homepageData')){
     function homepageData(){
         $data=[];
-        $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
+        $date=Carbon::today()->format('Y-m-d');        
         $data['countries']=Country::where('active',1)->count();
         $data['locations']=Location::withoutGlobalScopes()->count();
-        $data['courses']=Course::count();
-        $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date','>',$date)->count();
+        $data['courses']=Schedule::withoutGlobalScopes()->whereDate('response_date',$date)->select('response_course_id')->distinct()->get()->count();
+        $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date',$date)->count();
         return $data;
     }
 }

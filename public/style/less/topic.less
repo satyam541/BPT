@@ -233,7 +233,7 @@
         }
         .choose-progress{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-top: 2rem;
             width: 100%;
         }
@@ -243,17 +243,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 2rem;
             width: 140px;
            
             .circle{
-                width: 95px;
-                height: 95px;
-                border-radius: 50%;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
                 .progress-ring{
                     display: flex;
                     flex-direction: column;
@@ -332,9 +326,11 @@
             flex-direction: column;
             margin-top: 2rem;
             position: relative;
+            height: 100%;
             .choose-info{
                 height: auto;
                 position: relative;
+                height: 100%;
                 img{
                     width: 100%;
                     height: 100%;
@@ -425,6 +421,7 @@
         padding-top: 4rem;
         box-shadow: @shadowLight;
         border-radius: 10px;
+        border-bottom-left-radius: 0;
         position: relative;
         margin-top: 2rem;
         width: 100%;
@@ -439,6 +436,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-left: 1rem;
     }
 
     .numbers{

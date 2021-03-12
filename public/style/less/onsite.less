@@ -36,10 +36,14 @@
         background-repeat: no-repeat;
         height: 100%;
         .heading{
+            padding-top: 0;
             &::before{
                 content: none;
             }
         }
+    }
+    .trained-bg {
+        display: none;
     }
     .training-map{
         display: flex;
@@ -123,8 +127,6 @@
             margin-top: 2rem;
             span{
                 display: flex;
-                align-items: center;
-                justify-content: center;
                 background: @blueGradient;
                 height: 50px;
                 width: 50px;
@@ -133,8 +135,8 @@
                 padding: .5rem;
                 position: relative;
                 &::before{
-                    position: absolute;
                     content: '';
+                    position: absolute;
                     height: 50px;
                     width: 50px;
                     top: 0;
@@ -235,10 +237,12 @@
     .solution-container{
         display: flex;
         flex-direction: column;
+        .heading {
+            margin-bottom: 0;
+        }
     }
     .solution-list{
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
@@ -247,12 +251,9 @@
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
-        z-index: 1;
         width: 48%;
         span{
             display: flex;
-            align-items: center;
-            justify-content: center;
             height: 80px;
             width: 80px;
             padding: 1.2rem;

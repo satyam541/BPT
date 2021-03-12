@@ -33,7 +33,7 @@
                             <ul>
                                 @foreach ($items as $item)
                                     <li>
-                                        <a href="{{ url('training-courses' . $item->reference) }}">
+                                        <a href="{{$item->url }}">
                                             <img src="{{ url('img/master/open-book.svg') }}" alt="book">
                                             <p>
                                                 {{ $item['name'] }}
