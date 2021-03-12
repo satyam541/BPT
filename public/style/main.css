@@ -3780,7 +3780,6 @@ select::-ms-expand {
 .about-us .values-info {
   height: 100%;
   margin-top: 1rem;
-  display: flex;
 }
 .about-us .values-info img {
   width: 100%;
