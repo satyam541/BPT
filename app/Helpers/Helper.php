@@ -22,8 +22,8 @@ if(!function_exists('homepageData')){
         $date=Carbon::today()->format('Y-m-d');        
         $data['countries']=Country::where('active',1)->count();
         $data['locations']=Location::withoutGlobalScopes()->count();
-        $data['courses']=Schedule::whereDate('response_date',$date)->select('response_course_id')->distinct()->get()->count();
-        $data['schedules']=Schedule::whereDate('response_date',$date)->count();
+        $data['courses']=Schedule::withoutGlobalScopes()->whereDate('response_date',$date)->select('response_course_id')->distinct()->get()->count();
+        $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date',$date)->count();
         return $data;
     }
 }
