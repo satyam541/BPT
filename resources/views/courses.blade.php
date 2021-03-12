@@ -77,7 +77,7 @@
                     {{-- @endif --}}
 
                     @if (
-                    !empty($selectedCourse->summary) || !empty($selectedCourse->detail) ||
+                    !empty($selectedCourse->summary) ||
                     !empty($selectedCourse->pre_requities) || !empty($selectedCourse->who_should_attend) ||
                     !empty($selectedCourse->what_will_you_learn)
                     )
@@ -857,6 +857,7 @@
                 </div>
                 <div class="location-list">
                     @foreach ($popularLocations as $popularLocation)
+                    {{-- {{dd($popularLocation->url)}} --}}
                     <a href="{{$popularLocation->url}}" class="content">
                         <span class="image">
                             <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
