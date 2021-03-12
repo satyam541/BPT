@@ -240,7 +240,7 @@ if (!function_exists('encodeUrlSlug')) {
             } else {
                 if (empty($savedData[$data])) {
                     switch ($data) {
-                        case "location":
+                        case "countryname":
                             return country()->name;
                             break;
                         case "cc":
@@ -257,9 +257,9 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('replaceVar')) {
         function replaceVar($content)
         {
-            $location = storeVar('location');
+            $country_name = storeVar('countryname');
             $country_code = storeVar('cc');
-            $content = str_replace('{location}', $location, $content);
+            $content = str_replace('{countryname}', $country_name, $content);
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }
