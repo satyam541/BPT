@@ -21,12 +21,13 @@ if(!function_exists('homepageData')){
         $data=[];
         $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
         $data['countries']=Country::count();
-        $data['locations']=Location::count();
+        $data['locations']=Location::withoutGlobalScopes()->count();
         $data['courses']=Course::count();
-        $data['schedules']=Schedule::whereDate('response_date','>',$date)->count();
+        $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date','>',$date)->count();
         return $data;
     }
 }
+
 if(!function_exists('summernote_replace')){
     function summernote_replace($content){
         foreach($content as $key=>$value)
@@ -239,7 +240,7 @@ if (!function_exists('encodeUrlSlug')) {
             } else {
                 if (empty($savedData[$data])) {
                     switch ($data) {
-                        case "location":
+                        case "countryname":
                             return country()->name;
                             break;
                         case "cc":
@@ -256,9 +257,9 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('replaceVar')) {
         function replaceVar($content)
         {
-            $location = storeVar('location');
+            $country_name = storeVar('countryname');
             $country_code = storeVar('cc');
-            $content = str_replace('{location}', $location, $content);
+            $content = str_replace('{countryname}', $country_name, $content);
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }
@@ -299,6 +300,9 @@ if (!function_exists('encodeUrlSlug')) {
                     $JWT->make_order_enquiry($input, 11);
                 else if (Str::contains($input['type'], "incomplete"))
                     $JWT->make_order_enquiry($input, 10);
+                else if (Str::contains($input['type'], "knowledgepass"))
+                $JWT->make_order_enquiry($input, 73);
+
                 else
                     $JWT->make_enquiry($input);
             }

@@ -10,6 +10,7 @@ use App\Models\whatsIncluded;
 use App\Models\CategoryContent;
 use App\Http\Controllers\Controller;
 use App\Models\Bundle;
+use App\Models\Country;
 use App\Models\Course;
 use App\Models\CourseContent;
 use App\Models\Location;
@@ -327,6 +328,7 @@ class TestController extends Controller
 
     public function addLocations($data)
     {
+        
         $location                   = new Location();
         $location->id               = $data->venueId;
         $location->name             = $data->venueName;
@@ -419,6 +421,56 @@ class TestController extends Controller
         $bundle = Bundle::find($bundleId);
         $bundle->courses()->syncWithoutDetaching(['course_id'=> $courseId]);
 
+    }
+
+
+    public function countryLocations()
+    {
+        ini_set('max_execution_time',-1);
+        $countries = Country::all();
+        
+        foreach ($countries as $country) {
+            // dd($country->country_code);
+            $url = "http://127.0.0.1:8000/api/locations/".$country->country_code;
+            $data = file_get_contents($url);
+            $data = json_decode($data);
+            
+            if (empty($data)) {
+                continue;
+            }
+            
+            $this->saveCountryLocations($data);
+           
+        }
+    }
+
+    public function saveCountryLocations( $data)
+    {
+        foreach ($data as $location) {
+            // dd($location);
+            $display_order = Location::where('country_id', $location->country_id)->max('display_order');
+           
+            if(empty($display_order)){
+                $display_order  = 0;
+            }
+            Location::updateOrCreate(
+                ['country_id'=>$location->country_id,
+                'reference'=>$location->reference
+                 
+                 
+                ],
+                [
+                    'name'=>$location->name,
+                    'inherit_schedule'=>$location->inherit_schedule,
+                    'fetch_schedule'=>$location->fetch_schedule,
+                    'meta_title'=>$location->meta_title,
+                    'meta_description'=>$location->meta_description,
+                    'display_order'=>$display_order+1
+                ]
+            );
+        }
+        
+        
     }
 
 }

@@ -12,12 +12,12 @@
             </a>
             <ul class="menu-list">
                 <li class="links-li course-link">
-                    <a href="{{route('catalouge')}}" class="link mobile"><i class="fa fa-book"></i>Courses</a>
+                    <a href="{{route('catalogue')}}" class="link mobile"><i class="fa fa-book"></i>Courses</a>
                     <a class="link desktop" id="menucourses">Courses<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certification</a>
+                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certifications</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -88,7 +88,7 @@
         </div>
         <ul class="country-list country-select" id="country-list">                                        
             @foreach (countries() as $country)
-            <li class="country preferred @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
+            <li class="country preferred pointer @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
                 <div class="flag {{ strtolower($country->id) }}"></div>
                 <span class="country-names">{{ $country->name }}</span>
             </li>
@@ -145,7 +145,7 @@
                         @endforeach
                     </div>
                     <div class="buttons">
-                        <a href="{{route('catalouge')}}" class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
+                        <a href="{{route('catalogue')}}" class="btn-blue">View All Courses<img src="{{url('img/master/black-arrow.svg')}}" alt="black-arrow"></a>
                     </div>
                 </div>
             </div>

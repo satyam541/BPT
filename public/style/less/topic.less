@@ -4,7 +4,7 @@
     .topic-banner{
         background-image:@blueGradient;
         p,h2,h1,li{
-            color: @whiteColor!important;
+            color: @whiteColor;
         }
 
         .choose-list{
@@ -61,7 +61,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             padding: 1rem;
             box-shadow: @shadowLight;
             border-radius: 10px;
@@ -162,7 +162,8 @@
                flex-direction: column;
                margin-top: 2rem;
                align-items: center;
-                    width: 49%;
+                width: 49%;
+                font-weight: 500;
 
                span{
                    display: flex;
@@ -208,13 +209,25 @@
     .topic-choose{
         padding: @sectionPadding;
 
+        .choose-container{
+            display: flex;
+            flex-direction: column;
+        }
         .choose-content{
+            display: flex;
+            flex-direction: column;
             .heading{
                 display: flex;
                 justify-content: center;
 
                 h2{
                     text-align: center;
+                }
+            }
+            p{
+                text-align: center;
+                &:nth-child(3){
+                    margin-top: .5rem;
                 }
             }
         }
@@ -319,8 +332,9 @@
             flex-direction: column;
             margin-top: 2rem;
             position: relative;
-            span{
-                height: 100%;
+            .choose-info{
+                height: auto;
+                position: relative;
                 img{
                     width: 100%;
                     height: 100%;
@@ -333,10 +347,10 @@
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            width: 100%;
             background-image: @blueGradient;
-            width: 50%;
             position: absolute;
-            bottom: 16px;
+            bottom: 0;
             p,h3{
                 color: @whiteColor;
                 text-align: center;
@@ -352,6 +366,14 @@
 .experiences{
     padding: @sectionPadding;
     background-image: @blueGradient;
+    .experiences-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .experiences-list{
+        display: flex;
+        flex-direction: column;
+    }
     p,h3{
         color: @whiteColor;
         text-align: center;
@@ -364,8 +386,8 @@
         display: flex;
         padding: 1rem;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: 75px;
+        height: 75px;
         border: 2px dashed @whiteColor ;
 
         img{
@@ -392,6 +414,10 @@
 
 .explore{
     padding: @sectionPadding;
+    .explore-container{
+        display: flex;
+        flex-direction: column;
+    }
 
     .explore-item{
         display: flex;

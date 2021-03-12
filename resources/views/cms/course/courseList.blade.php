@@ -195,6 +195,7 @@
 
                         toastr.success('successfully '+data);
                         success.delay(3000).fadeOut(); 
+                        location.reload();
                     });
                 }
             
