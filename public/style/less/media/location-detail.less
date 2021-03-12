@@ -2,19 +2,7 @@
     // Start Location-Main Section
 .location-main {
     padding: @sectionPadding-md;
-    .location-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .location-content {
-        width: 40%;
-    }
     .location-contact {
-        width: 55%;
-        margin-top: 0;
-        align-self: flex-start;
-        position: sticky;
-        top: 80px;
         .content {
             padding: 1rem;
             width: 80%;
@@ -37,6 +25,11 @@
     .address {
         z-index: 1;
         transform: translate(-55px, 0px);
+    }
+    .contact-bottom {
+        span {
+            height: 100%;
+        }
     }
 }
 // End Location-Main Section
@@ -61,6 +54,10 @@
 @media @size-lg{
     // Start Location-Main Section
     .location-main {
+        .location-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
         .location-content {
             width: 58%;
             padding-right: 1rem;
@@ -68,6 +65,10 @@
         }
         .location-contact {
             width: 38%;
+            margin-top: 0;
+            position: sticky;
+            top: 80px;
+            align-self: flex-start;
         }
         .contact-bottom {
             span {
