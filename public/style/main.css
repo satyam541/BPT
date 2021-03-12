@@ -9597,6 +9597,9 @@ select::-ms-expand {
 .popular-location .popular-content p {
   text-align: center;
 }
+.popular-location .popular-content p {
+  margin-top: 0.5rem;
+}
 .popular-location .location-content {
   display: flex;
   flex-direction: column;
@@ -9639,10 +9642,6 @@ select::-ms-expand {
 .popular-location .content .image img {
   width: 100%;
   height: 100%;
-}
-.popular-location .location-name {
-  width: calc(100% - 100px);
-  font-size: 16px;
 }
 .popular-location .arrow {
   display: flex;
@@ -9978,8 +9977,8 @@ select::-ms-expand {
     background-image: url(../img/courses/polygon-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: -23px;
-    left: 23px;
+    top: -10px;
+    left: 20px;
     animation: rotate 15s linear infinite;
   }
   .popular-location .location-list {
@@ -9996,21 +9995,6 @@ select::-ms-expand {
   }
   .popular-location .content .arrow {
     transform: translateX(34px);
-  }
-}
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .training .date p::before {
-    left: -4px;
-    width: 95px;
-  }
-  .language {
-    padding: 3rem 2rem;
-  }
-  .language .language-list .content {
-    background-size: 21% 100%;
-  }
-  .popular-location .popular-content {
-    width: 50%;
   }
 }
 @media (min-width : 1024px) {
@@ -10371,8 +10355,8 @@ select::-ms-expand {
   }
   .popular-location .popular-content::before {
     width: 330px;
-    top: -23px;
-    left: 20px;
+    top: 0;
+    height: 370px;
   }
   .popular-location .location-content {
     margin-top: 0;
@@ -10403,7 +10387,7 @@ select::-ms-expand {
     right: initial;
   }
   .foundation #included .heading h2 {
-    text-align-last: left;
+    text-align: left;
   }
   .learn-more {
     padding: 4rem 0rem;
@@ -12424,7 +12408,7 @@ select::-ms-expand {
   border-radius: 10px;
   position: relative;
   margin-top: 2rem;
-  width: 272px;
+  width: 100%;
 }
 .explore .explore-item a {
   font-size: 18px;
@@ -12446,13 +12430,13 @@ select::-ms-expand {
   position: absolute;
   left: -15px;
   top: -15px;
+  width: 200px;
 }
 .explore .numbers img {
   width: 55px;
   height: 55px;
 }
 .explore .numbers p {
-  width: 33%;
   color: #FFFFFF;
   font-weight: bold;
   padding-left: 0.7rem;
@@ -12468,12 +12452,13 @@ select::-ms-expand {
   padding: 3rem 1.5rem;
   background-color: #F6F6F6;
 }
-.goals .goal-image {
+.goals .goals-container {
   display: flex;
   flex-direction: column;
 }
-.goals .goal-image p {
-  font-size: 13px;
+.goals .goal-image {
+  display: flex;
+  flex-direction: column;
 }
 .goals .goal-image .img {
   display: flex;
@@ -12486,8 +12471,11 @@ select::-ms-expand {
 }
 .goals .goals-list {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .goals .goal-item {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12687,8 +12675,14 @@ select::-ms-expand {
   }
   .explore .explore-list {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .explore .explore-item {
+    width: 45%;
+  }
+  .explore .explore-item a {
+    min-height: 48px;
   }
   .goals {
     padding: 3rem 2rem;
@@ -12708,20 +12702,21 @@ select::-ms-expand {
   }
   .goals .goal-item {
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
   }
   .goals .content {
     align-items: flex-start;
     width: 62%;
     margin-top: 0;
-    margin-left: 1.5rem;
+    width: calc(100% - 110px);
   }
   .goals .content p,
   .goals .content h3 {
     text-align: left;
   }
   .goals .goals-list {
-    width: 78%;
+    width: 85%%;
     margin: auto;
   }
 }
@@ -12762,11 +12757,6 @@ select::-ms-expand {
   }
   .topic-choose .choose-image {
     width: 45%;
-  }
-  .topic-choose .years {
-    width: 30%;
-    bottom: 150px;
-    left: -30px;
   }
   .topic-choose .count {
     width: 206px;
@@ -12819,8 +12809,10 @@ select::-ms-expand {
   .experiences h3 {
     min-height: auto;
   }
+  .explore .explore-item {
+    width: 30%;
+  }
   .goals .goals-container {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -12838,14 +12830,8 @@ select::-ms-expand {
     width: 85%;
     margin-top: 1rem;
   }
-  .goals .content {
-    width: 74%;
-  }
   .goals .content p {
     font-size: 12px;
-  }
-  .goals .goal-item {
-    padding: 2rem 1rem;
   }
   .goals .goal-item:nth-child(1) {
     margin-top: 0;
@@ -12959,10 +12945,6 @@ select::-ms-expand {
   .topic-choose {
     padding: 4rem 0rem;
   }
-  .topic-choose .years {
-    width: 23%;
-    bottom: 180px;
-  }
   .topic-choose .choose-progress {
     width: 80%;
   }
@@ -12983,7 +12965,6 @@ select::-ms-expand {
   }
   .goals {
     padding: 4rem 0rem;
-    padding-bottom: 1rem;
   }
   .goals .goals-list {
     width: 41%;
