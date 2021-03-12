@@ -21,6 +21,9 @@
     .about-content{
       width: 48%;
       .about-item{
+        &:last-child{
+          margin-bottom: 0;
+        }
         p{
           text-align: left;
         }
@@ -95,7 +98,6 @@
     &:last-child{
       width: 54%;
       margin: auto;
-      margin-top: 1rem;
     }
     }
     .contact-list{
@@ -113,7 +115,7 @@
   .skills-list{
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   
     p{
@@ -242,14 +244,20 @@ display: none;
 
   // Start difference section//
   .difference {
-    background-image: url(../img/aboutus/difference-bg.png);
-    background-size: 100% 50%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    padding-top: 2rem;
+ 
+    .difference-container{
+         background-image: url(../img/aboutus/difference-bg.png);
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+      background-color: transparent;
+       padding-top: 2rem;
+    }
     .difference-content{
       width: 70%;
       margin-left: auto;
+      padding-right: 1rem;
+      
+
       p{
         text-align: center;
         font-size: 12px;
@@ -268,10 +276,8 @@ display: none;
    
   
     .difference-list{
-    margin-top: 3rem;
-        .count{
-    width: 24%;
-        }
+    margin-top: 4rem;
+   
     }
   }
   // End differece section //
@@ -287,7 +293,7 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
 
   p{
     
-    min-height: 110px;
+    min-height: 132px;
   }
 
 }
@@ -299,6 +305,9 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
 .contact-form{
   background-image: url(../img/aboutus/contact-form.png);
   background-size: 100% 100%;
+  padding-bottom: 1rem  !important;
+  padding-top: 1rem  !important;
+
   .contact-container{
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -340,8 +349,12 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
 
 // Start skills section //
 .skills{
+  .skills-list{
+    width: 80%;
+    align-self:center;
+  }
   .skills-item{
-    width: 24%;
+    width: 30%;
   }
 }
 // End skills section //
@@ -353,7 +366,6 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
     .clients-container {
     box-shadow: none;
     background-color: @bgColor;
-    justify-content: space-around;
     }
     }
     // End Clients Section
@@ -388,11 +400,11 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
    // Start difference section//
    .difference {
    padding: @sectionPadding-xl;
-   background-size: 100% 53%;
-   padding-top: 3rem;
-   .difference-list{
-     margin-top: 5rem;
-   }
+.difference-container{
+  background-size: 100% 58%;
+
+}
+  
   }
   // End differece section //
 
@@ -402,7 +414,7 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
   padding: @sectionPadding-xl;
   .testimonial-item{
     p{
-      min-height: 90px;
+      min-height: 110px;
     }
   }
   }
@@ -430,6 +442,7 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
     padding: @sectionPadding-xl;
   .skills-list{
   width: 100%;
+  justify-content: space-around;
   }
   .skills-item{
   width: 20%;
@@ -483,13 +496,6 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
 
 @media @size-xlll{
 
-  .difference{
-    background-size: 100% 55%;
-    padding-top: 4rem;
-
-    .difference-list{
-      margin-top: 8rem;
-    }
-  }
+ 
 
 }

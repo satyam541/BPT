@@ -3758,6 +3758,7 @@ select::-ms-expand {
 .about-us .values-info {
   height: 100%;
   margin-top: 1rem;
+  display: flex;
 }
 .about-us .values-info img {
   width: 100%;
@@ -4015,7 +4016,6 @@ select::-ms-expand {
   background-image: linear-gradient(#0064D8, #00326C);
 }
 .contact-form .contact-info .heading {
-  margin-bottom: 0.5rem;
   padding-top: 0;
 }
 .contact-form .contact-info .heading::before {
@@ -4121,7 +4121,7 @@ select::-ms-expand {
 .clients .clients-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1rem;
@@ -4144,6 +4144,9 @@ select::-ms-expand {
   }
   .about-us .about-content {
     width: 48%;
+  }
+  .about-us .about-content .about-item:last-child {
+    margin-bottom: 0;
   }
   .about-us .about-content .about-item p {
     text-align: left;
@@ -4200,7 +4203,6 @@ select::-ms-expand {
   .contact-form .item:last-child {
     width: 54%;
     margin: auto;
-    margin-top: 1rem;
   }
   .contact-form .contact-list {
     flex-direction: row;
@@ -4213,7 +4215,7 @@ select::-ms-expand {
   .skills .skills-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .skills p {
     font-size: 12px;
@@ -4304,7 +4306,7 @@ select::-ms-expand {
   .about-us .about-image .heading h2::before {
     content: none;
   }
-  .difference {
+  .difference .difference-container {
     background-image: url(../img/aboutus/difference-bg.png);
     background-size: 100% 50%;
     background-repeat: no-repeat;
@@ -4314,6 +4316,7 @@ select::-ms-expand {
   .difference .difference-content {
     width: 70%;
     margin-left: auto;
+    padding-right: 1rem;
   }
   .difference .difference-content p {
     text-align: center;
@@ -4330,10 +4333,7 @@ select::-ms-expand {
     color: #FFFFFF;
   }
   .difference .difference-list {
-    margin-top: 3rem;
-  }
-  .difference .difference-list .count {
-    width: 24%;
+    margin-top: 4rem;
   }
   .reviews {
     background-image: url(../img/aboutus/testimonial-bg.png);
@@ -4344,11 +4344,13 @@ select::-ms-expand {
     background: linear-gradient(#00326C 54%, #FFFFFF 44%);
   }
   .reviews .testimonial-item p {
-    min-height: 110px;
+    min-height: 132px;
   }
   .contact-form {
     background-image: url(../img/aboutus/contact-form.png);
     background-size: 100% 100%;
+    padding-bottom: 1rem  !important;
+    padding-top: 1rem  !important;
   }
   .contact-form .contact-container {
     flex-direction: row-reverse;
@@ -4384,8 +4386,12 @@ select::-ms-expand {
   .contact-form .contact-info .contact-list .item {
     width: 100%;
   }
+  .skills .skills-list {
+    width: 80%;
+    align-self: center;
+  }
   .skills .skills-item {
-    width: 24%;
+    width: 30%;
   }
   .clients {
     padding-left: 0;
@@ -4394,7 +4400,6 @@ select::-ms-expand {
   .clients .clients-container {
     box-shadow: none;
     background-color: #F6F6F6;
-    justify-content: space-around;
   }
 }
 @media (min-width : 1366px) {
@@ -4409,17 +4414,15 @@ select::-ms-expand {
   }
   .difference {
     padding: 4rem 0rem;
-    background-size: 100% 53%;
-    padding-top: 3rem;
   }
-  .difference .difference-list {
-    margin-top: 5rem;
+  .difference .difference-container {
+    background-size: 100% 58%;
   }
   .reviews {
     padding: 4rem 0rem;
   }
   .reviews .testimonial-item p {
-    min-height: 90px;
+    min-height: 110px;
   }
   .contact-form {
     padding: 4rem 0rem;
@@ -4440,6 +4443,7 @@ select::-ms-expand {
   }
   .skills .skills-list {
     width: 100%;
+    justify-content: space-around;
   }
   .skills .skills-item {
     width: 20%;
@@ -4482,15 +4486,6 @@ select::-ms-expand {
     justify-content: space-around;
     background-color: transparent;
     padding: 0;
-  }
-}
-@media (min-width : 1600px) {
-  .difference {
-    background-size: 100% 55%;
-    padding-top: 4rem;
-  }
-  .difference .difference-list {
-    margin-top: 8rem;
   }
 }
 .testimonial-banner {
