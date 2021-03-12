@@ -424,7 +424,8 @@ select::-ms-expand {
   justify-content: center;
   background-color: #F6F6F6;
   height: 100%;
-  width: 50px;
+  width: 46px;
+  min-width: 46px;
   padding: 0.7rem;
 }
 .input-container span img {
@@ -1027,7 +1028,7 @@ select::-ms-expand {
   left: 0;
   overflow: auto;
   z-index: 88;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.92);
 }
 .enquiry-popup .popup-container {
   display: flex;
@@ -1664,6 +1665,7 @@ select::-ms-expand {
     width: 62px;
     height: 60px;
     right: -27px;
+    top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1738,6 +1740,7 @@ select::-ms-expand {
     width: 45px;
     height: 60px;
     right: -25px;
+    top: 0;
     background-image: url(../img/master/dropdown-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -12340,7 +12343,7 @@ select::-ms-expand {
 }
 .topic-choose .choose-progress {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
 }
@@ -12352,13 +12355,8 @@ select::-ms-expand {
   width: 140px;
 }
 .topic-choose .count .circle {
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .topic-choose .count .circle .progress-ring {
   display: flex;
@@ -12423,10 +12421,12 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
   position: relative;
+  height: 100%;
 }
 .topic-choose .choose-image .choose-info {
   height: auto;
   position: relative;
+  height: 100%;
 }
 .topic-choose .choose-image .choose-info img {
   width: 100%;
@@ -12501,6 +12501,7 @@ select::-ms-expand {
   padding-top: 4rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
+  border-bottom-left-radius: 0;
   position: relative;
   margin-top: 2rem;
   width: 100%;
@@ -12755,9 +12756,10 @@ select::-ms-expand {
   .topic-choose .count {
     flex-direction: row;
     margin-bottom: 0;
+    width: 165px;
   }
-  .topic-choose .count .txt-name {
-    margin-left: 0.7rem;
+  .topic-choose .circle {
+    margin-right: 0.7rem;
   }
   .topic-choose .choose-image {
     width: 48%;
@@ -12862,7 +12864,6 @@ select::-ms-expand {
   }
   .topic-choose .choose-progress {
     width: 90%;
-    justify-content: space-between;
   }
   .topic-delivery {
     background-image: url(../img/topic/delivey-bg.png);
@@ -13050,9 +13051,6 @@ select::-ms-expand {
   }
   .topic-choose .choose-progress {
     width: 80%;
-  }
-  .topic-choose .count {
-    margin-bottom: 0;
   }
   .experiences {
     padding: 4rem 0rem;
