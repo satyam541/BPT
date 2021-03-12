@@ -226,7 +226,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup" data-type="knowledgepass">
+                    <a class="btn-blue open-popup enquiryJS" data-type="knowledgepass">
                         <img src="{{url('../img/knowledge-pass/requirements.svg')}}" alt="requirements">
                         Send Us Your Requirement
                     </a>
@@ -445,9 +445,9 @@
                 <tr>
                     <td>
                     </td>
-                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
                 </tr>
             </table>
         </div>
