@@ -10,6 +10,9 @@
         flex-direction: column;
         p {
             margin-bottom: .5rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         ul {
             li {
@@ -17,9 +20,6 @@
                 z-index: 1;
                 padding-left: 1rem;
                 margin-bottom: .5rem;
-                &:last-child {
-                    margin-bottom: 0;
-                }
                 &::before {
                     content: '';
                     position: absolute;
@@ -58,7 +58,7 @@
         flex-direction: column;
         background: @blueGradient;
         color: @whiteColor;
-        padding: 2em;
+        padding: 2rem;
         align-items: center;
         margin-top: 2rem;
         border-radius: 20px 20px 0 20px;
@@ -73,19 +73,22 @@
         display: flex;
         h2, span {
             font-size: 32px;
+            font-weight: 600;
         }
         h2 {
             margin-right: 2px;
         }
     }
-    .address {
+    .address, .contact-bottom {
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
-        border-radius: 28px 28px 0 28px;
         background-color: @whiteColor;
         box-shadow: @shadowLight;
         margin-top: 2rem;
+        padding: 1.5rem;
+    }
+    .address {
+        border-radius: 28px 28px 0;
     }
     .info {
         display: flex;
@@ -113,16 +116,10 @@
         }
         a {
             display: flex;
-            width: calc(100% - 35px);
+            width: calc(100% - 25px);
         }
     }
     .contact-bottom {
-        display: flex;
-        flex-direction: column;
-        background-color: @whiteColor;
-        box-shadow: @shadowLight;
-        padding: 1rem;
-        margin-top: 2rem;
         position: relative;
         &::before, &::after {
             content: '';
@@ -149,7 +146,7 @@
         }
         span {
             display: flex;
-            height: 100%;
+            height: 122px;
             width: 100%;
             img {
                 width: 100%;
@@ -241,3 +238,9 @@
     }
 }
 // End Key Section
+
+// Start Form-Map Section
+.form-map {
+    padding-top: 3rem;
+}
+// End Form-Map Section

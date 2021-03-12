@@ -25,7 +25,7 @@
 <section class="flex-container convenient">
     <div class="container">
     <div class="heading center-heading">
-            <h2>Find The Most Convenient <span>Location For You</span></h2>
+            <h2>Popular Locations in <span>{countryname}</span></h2>
         </div>
         <div class="convenient-container">
             <div class="convenient-list">
@@ -89,7 +89,7 @@
         <div class="popular-container">
             <div class="popular-info">
                 <div class="heading center-heading">
-                    <h2>Popular <span>Locations</span></h2>
+                    <h2>Browse All <span>Locations</span></h2>
                 </div>
                 <div class="search">
                     <input type="text" name="filter" id="locationFilter" placeholder="Search location here....">

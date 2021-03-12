@@ -85,6 +85,13 @@ $('#chooseMode').on("click", function(){
 });
 //End choose modes
 
+// //Start filters
+// $('#filterTop').on("click", function(){
+//     $('.exclude').toggle();
+
+// });
+// //End filters
+
 
     //Start Testimonial//
     $('.topic-list').owlCarousel({

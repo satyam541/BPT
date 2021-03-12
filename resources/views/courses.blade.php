@@ -45,7 +45,7 @@
     <section class="flex-container course-intro">
         <div class="container">
             <div class="intro-container">
-                <div class="heading center-heading">
+                <div class="heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
                 <p class="intro-para">{!! $selectedCourse->detail !!}</p>
@@ -393,14 +393,14 @@
                             <div class="heading center-heading">
                                 <h2>{!! $selectedCourse->name !!}</h2>
                             </div>
-                            <p>Contact us for Date and Price</p>
+                            <p>Contact Us for Date and Price</p>
                             <div class="buttons">
                                 <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -757,10 +757,6 @@
                                 Enquire Now
                             </a>
                         </div>
-                   
-
-
-
                 </div>
             </div>
             <div class="language-content">
@@ -792,7 +788,7 @@
 <section class="flex-container skill">
     <div class="container">
         <div class="skill-container">
-            <div class="heading">
+            <div class="heading center-heading">
                 <h2>{!! heading_split($pageDetail->online_courses['heading']->heading) !!}</h2>
             </div>
             @php

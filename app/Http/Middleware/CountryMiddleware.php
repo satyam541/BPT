@@ -32,7 +32,7 @@ class CountryMiddleware
        // country not found by url
        if(empty($country))
        {
-           return abort('404','country not available');
+           return redirect()->route('404');
        }
 
        // default country will not be displayed in the url

@@ -288,7 +288,7 @@
         }
         &::before{
             left: 0;
-            right: 0;
+            right: 0; 
             margin: 0 auto;
         }
     }
@@ -874,9 +874,34 @@
         opacity: 1;
         z-index: 9999;
     }
- 
     //End navbar search
  
+    //Start cookie
+    
+    .cookie-div{
+        padding: @sectionPadding;
+        position: fixed;
+        bottom: 45px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+        width: 100%;
+        padding: 10px 10px;
+        border-radius: 35px 35px 0 0;
+        background: @blueGradient;
+        p{
+            color: @whiteColor;
+            text-align: center;
+            a{
+                cursor: pointer;
+                color: @whiteColor;
+                font-weight: bold;
+            }
+        }
+    }
+    //End cookie
+
     // Start banner//
     .banner {
         flex-direction: column;
