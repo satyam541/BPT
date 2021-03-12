@@ -20,7 +20,7 @@ if(!function_exists('homepageData')){
     function homepageData(){
         $data=[];
         $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
-        $data['countries']=Country::count();
+        $data['countries']=Country::where('active',1)->count();
         $data['locations']=Location::withoutGlobalScopes()->count();
         $data['courses']=Course::count();
         $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date','>',$date)->count();
