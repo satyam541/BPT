@@ -7247,7 +7247,7 @@ select::-ms-expand {
     padding: 3rem 2rem;
   }
   .location-main .location-contact .content {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 80%;
     margin-top: 0;
     margin-left: 1rem;
@@ -7322,20 +7322,8 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  .key .key-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .key .info {
-    width: 20%;
-    align-self: center;
-  }
-  .key .key-list {
-    width: 77%;
-  }
   .key .key-content {
     width: 23%;
-    margin-top: 0;
   }
 }
 @media (min-width : 1366px) {
@@ -7354,9 +7342,13 @@ select::-ms-expand {
   }
   .key .info {
     width: 17%;
+    align-self: center;
   }
   .key .key-list {
     width: 81%;
+  }
+  .key .key-content {
+    margin-top: 0;
   }
 }
 .offer-banner {

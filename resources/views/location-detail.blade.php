@@ -158,7 +158,7 @@
                         <input type="text" name="address" id="adress" placeholder="Address"
                             autocomplete="off">
                     </div>
-                    <div class="input-container">
+                    <div class="input-container message">
                         <span><img src="{{url('img/master/comment-black.svg')}}" alt="comment" class="black">
                         <img src="{{url('img/master/comment-red.svg')}}" alt="comment-red" class="red"></span>
                         <textarea placeholder="Message (Optional)" id="message" name="message"></textarea>
