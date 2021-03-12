@@ -247,7 +247,7 @@
         <div class="container">
             <div class="choose-container">
                 <div class="choose-content">
-                        <div class="heading">
+                        <div class="heading center-heading">
                            <h2>{!!heading_split($pageDetail->choose_content['heading']->heading)!!}</h2>  
                         </div>
                         <p>{!!$pageDetail->choose_content['heading']->content!!}</p>
@@ -280,13 +280,14 @@
                     </div>
                 </div>
                 <div class="choose-image">
-                    <div class="years">
+                    
+                    <div class="choose-info">
+                        <img src="{{$pageDetail->choose_content['years']->getImagePath()}}" alt="{{$pageDetail->choose_content['years']->image_alt}}">
+                        <div class="years">
                         <h3>{!!$pageDetail->choose_content['years']->heading!!}</h3>
                         <p>{!!$pageDetail->choose_content['years']->content!!}</p>
                     </div>
-                    <span>
-                        <img src="{{$pageDetail->choose_content['years']->getImagePath()}}" alt="{{$pageDetail->choose_content['years']->image_alt}}">
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
