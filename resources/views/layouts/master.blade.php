@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ metaData('title') }}</title>
     <meta name="description" content="{{ metaData('description') }} " />
