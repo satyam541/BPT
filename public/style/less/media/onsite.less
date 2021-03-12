@@ -60,11 +60,8 @@
         background-repeat: no-repeat;
         background-position: center;
         .solution-list{
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
             background-image: url(../img/onsite/bg-line.png);
-            background-size: 75% 35%;
+            background-size: 70% 35%;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -80,10 +77,9 @@
 @media @size-lg{
     // Start banner section
     .onsite-banner{
+        background-color: transparent;
         background-image: url(../img/onsite/banner-bg.png);
-        background-size: contain;
         background-repeat: no-repeat;
-        background-position: right;
         .banner-container{
             width: 48%;
         }
@@ -168,12 +164,9 @@
         }
     }
     // End choose section
-
     //Start solution section
     .solution{
-        .solution-list{
-            background-size: 70% 35%;
-        }
+        margin-bottom: 4rem;
 
     }
     // End solution section
@@ -264,9 +257,6 @@
     .choose {
         padding: @sectionPadding-xl;
         padding-top: 6rem;
-        .choose-list{
-            justify-content: space-between;
-        }
         .choose-item{
             width: 25%;
             &:nth-child(4) {
@@ -282,7 +272,6 @@
     //Start solution section
     .solution{
         padding: @sectionPadding-xl;
-        margin-bottom: 4rem;
     }
     // End solution section
 }

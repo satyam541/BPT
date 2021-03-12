@@ -237,10 +237,12 @@
     .solution-container{
         display: flex;
         flex-direction: column;
+        .heading {
+            margin-bottom: 0;
+        }
     }
     .solution-list{
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
@@ -249,12 +251,9 @@
         flex-direction: column;
         align-items: center;
         margin-top: 2rem;
-        z-index: 1;
         width: 48%;
         span{
             display: flex;
-            align-items: center;
-            justify-content: center;
             height: 80px;
             width: 80px;
             padding: 1.2rem;
