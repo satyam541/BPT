@@ -763,6 +763,28 @@ select::-ms-expand {
   opacity: 1;
   z-index: 9999;
 }
+.cookie-div {
+  padding: 3rem 1.5rem;
+  position: fixed;
+  bottom: 45px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 35px 35px 0 0;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.cookie-div p {
+  color: #FFFFFF;
+  text-align: center;
+}
+.cookie-div p a {
+  cursor: pointer;
+  color: #FFFFFF;
+  font-weight: bold;
+}
 .banner {
   flex-direction: column;
 }
@@ -1180,6 +1202,23 @@ select::-ms-expand {
   .buttons .btn-white {
     font-size: 16px;
   }
+  .cookie-div {
+    bottom: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  }
+  .cookie-div p {
+    width: 70%;
+    text-align: left;
+  }
+  .cookie-div .buttons {
+    width: 25%;
+    margin-top: 0;
+    justify-content: flex-end;
+  }
   .navbar {
     width: 100%;
     position: absolute;
@@ -1262,7 +1301,7 @@ select::-ms-expand {
   }
   .up-arrow {
     right: 32px;
-    bottom: 45px;
+    bottom: 68px;
   }
   .no-schedule {
     width: 70%;
@@ -5767,7 +5806,7 @@ select::-ms-expand {
     width: 100%;
   }
   .form-map .form-container .map {
-    height: 485px;
+    height: 483px;
   }
 }
 @media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -5874,15 +5913,20 @@ select::-ms-expand {
   }
   .form-map .form-container form::before {
     top: 0;
-    border-bottom: 16px solid #C0C0C0;
+    border-bottom: 13px solid #C0C0C0;
   }
   .form-map .form-container form::after {
     bottom: 0;
-    border-top: 16px solid #C0C0C0;
+    border-top: 13px solid #C0C0C0;
   }
   .form-map .form-container .map {
     width: 50%;
     margin-top: 0;
+  }
+}
+@media (min-width: 1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-map .form-container form::before {
+    top: 1px;
   }
 }
 @media (min-width : 1366px) {
@@ -5949,9 +5993,6 @@ select::-ms-expand {
   .form-map .form-container form::after {
     bottom: -1px;
     border-top: 14px solid #C0C0C0;
-  }
-  .form-map .form-container .map {
-    height: 500px;
   }
 }
 .blog-banner {
@@ -6977,14 +7018,14 @@ select::-ms-expand {
 .location-main .location-content p {
   margin-bottom: 0.5rem;
 }
+.location-main .location-content p:last-child {
+  margin-bottom: 0;
+}
 .location-main .location-content ul li {
   position: relative;
   z-index: 1;
   padding-left: 1rem;
   margin-bottom: 0.5rem;
-}
-.location-main .location-content ul li:last-child {
-  margin-bottom: 0;
 }
 .location-main .location-content ul li::before {
   content: '';
@@ -7021,7 +7062,7 @@ select::-ms-expand {
   flex-direction: column;
   background: linear-gradient(#0064D8, #1C2848);
   color: #FFFFFF;
-  padding: 2em;
+  padding: 2rem;
   align-items: center;
   margin-top: 2rem;
   border-radius: 20px 20px 0 20px;
@@ -7038,18 +7079,22 @@ select::-ms-expand {
 .location-main .count h2,
 .location-main .count span {
   font-size: 32px;
+  font-weight: 600;
 }
 .location-main .count h2 {
   margin-right: 2px;
 }
-.location-main .address {
+.location-main .address,
+.location-main .contact-bottom {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  border-radius: 28px 28px 0 28px;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 2rem;
+  padding: 1.5rem;
+}
+.location-main .address {
+  border-radius: 28px 28px 0;
 }
 .location-main .info {
   display: flex;
@@ -7078,15 +7123,9 @@ select::-ms-expand {
 }
 .location-main .reach a {
   display: flex;
-  width: calc(100% - 35px);
+  width: calc(100% - 25px);
 }
 .location-main .contact-bottom {
-  display: flex;
-  flex-direction: column;
-  background-color: #FFFFFF;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  padding: 1rem;
-  margin-top: 2rem;
   position: relative;
 }
 .location-main .contact-bottom::before,
@@ -7115,7 +7154,7 @@ select::-ms-expand {
 }
 .location-main .contact-bottom span {
   display: flex;
-  height: 100%;
+  height: 122px;
   width: 100%;
 }
 .location-main .contact-bottom span img {
@@ -7200,26 +7239,15 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.form-map {
+  padding-top: 3rem;
+}
 @media (min-width : 768px) {
   .location-main {
     padding: 3rem 2rem;
   }
-  .location-main .location-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .location-main .location-content {
-    width: 40%;
-  }
-  .location-main .location-contact {
-    width: 55%;
-    margin-top: 0;
-    align-self: flex-start;
-    position: sticky;
-    top: 80px;
-  }
   .location-main .location-contact .content {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 80%;
     margin-top: 0;
     margin-left: 1rem;
@@ -7240,6 +7268,9 @@ select::-ms-expand {
     z-index: 1;
     transform: translate(-55px, 0px);
   }
+  .location-main .contact-bottom span {
+    height: 100%;
+  }
   .key {
     padding: 3rem 2rem;
   }
@@ -7254,6 +7285,10 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
+  .location-main .location-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .location-main .location-content {
     width: 58%;
     padding-right: 1rem;
@@ -7261,6 +7296,10 @@ select::-ms-expand {
   }
   .location-main .location-contact {
     width: 38%;
+    margin-top: 0;
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
   }
   .location-main .contact-bottom span {
     position: relative;
@@ -7283,20 +7322,8 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
-  .key .key-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .key .info {
-    width: 20%;
-    align-self: center;
-  }
-  .key .key-list {
-    width: 77%;
-  }
   .key .key-content {
     width: 23%;
-    margin-top: 0;
   }
 }
 @media (min-width : 1366px) {
@@ -7315,9 +7342,13 @@ select::-ms-expand {
   }
   .key .info {
     width: 17%;
+    align-self: center;
   }
   .key .key-list {
     width: 81%;
+  }
+  .key .key-content {
+    margin-top: 0;
   }
 }
 .offer-banner {
@@ -10967,9 +10998,6 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .error-banner {
     background-image: url(../img/404/banner-bg.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 50% 100%;
   }
   .error-banner .banner-container {
     width: 50%;
@@ -10979,9 +11007,6 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1366px) {
-  .error-banner {
-    padding: 4rem 0rem;
-  }
   .error {
     padding: 4rem 0rem;
   }

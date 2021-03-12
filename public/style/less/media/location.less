@@ -181,7 +181,7 @@
                 }
             }
             .map {
-                height: 485px;
+                height: 483px;
             }
         }
         
@@ -320,11 +320,11 @@
                 }
                 &::before {
                     top: 0;
-                    border-bottom: 16px solid #C0C0C0;
+                    border-bottom: 13px solid #C0C0C0;
                 }
                 &::after {
                     bottom: 0;
-                    border-top: 16px solid #C0C0C0;
+                    border-top: 13px solid #C0C0C0;
                 }
             }
             .map {
@@ -335,6 +335,19 @@
     }
     // End Form-Map Section
     
+}
+@media (min-width:1024px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Form-Map Section
+    .form-map {
+        .form-container {
+            form {
+                &::before {
+                    top: 1px;
+                }
+            }
+        }
+    }
+    // End Form-Map Section
 }
 
 @media @size-xl {
@@ -420,9 +433,6 @@
                     bottom: -1px;
                     border-top: 14px solid #C0C0C0;
                 }
-            }
-            .map{
-                height: 500px;
             }
         }
       

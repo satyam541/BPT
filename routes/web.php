@@ -17,6 +17,7 @@ Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic,
 Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
+Route::get('fetchapi/countryLocations','TestController@countryLocations'); /* To fetch only courses and related content*/ 
 
 Route::get('match/topic', 'TestController@matchTopic');
 
@@ -36,7 +37,7 @@ Route::get('/training-locations/{location}', 'LocationController@detail')->name(
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
-Route::any('/thanks','ThanksController@index')->name('thanks');
+Route::any('/thank-you','ThanksController@index')->name('thanks');
 
 
 /*Enquiry Routes*/
@@ -134,7 +135,7 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/onsite', 'OnsiteController@index')->name('onsite');
     Route::get('/blog', 'BlogController@index')->name('blog');
     Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
-    Route::any('/thanks','ThanksController@index')->name('thanks');
+    Route::any('/thank-you','ThanksController@index')->name('thanks');
     
     
     /*Enquiry Routes*/
@@ -156,7 +157,7 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/home', 'HomeController@index')->name('homeRoute');
     
     
-    Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+    Route::get('/training-courses', 'CatalogueController@index')->name('catalogue');
     Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
     Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
     Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');

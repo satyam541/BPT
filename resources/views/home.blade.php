@@ -20,7 +20,7 @@
                             </button>
                     </form>
                     <div class="buttons">
-                        <a href="{{ route('catalouge') }}" class="btn-blue">
+                        <a href="{{ route('catalogue') }}" class="btn-blue">
                             <img src="{{ url('img/home/book.svg') }}" alt="book">
                             Course Catalogue
                         </a>
@@ -64,7 +64,8 @@
                 <div class="courses-list">
                     @foreach ($categories->take(9) as $category)
 
-                        <a href="{{ url('training-courses' . $category->reference) }}" class="course-name">
+                        {{-- <a href="{{ url('training-courses' . $category->reference) }}" class="course-name"> --}}
+                        <a href="{{ $category->url }}" class="course-name">
                             <span class="icon">
                                 <img src="{{ $category->getImagePath() }}" alt="management">
                                 <img src="{{ $category->getIconPath() }}" alt="management-white">
@@ -99,7 +100,7 @@
 
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue">
+                    <a href="{{route('catalogue')}}"  class="btn-blue">
                         <img src="{{ url('img/home/courses.svg') }}" alt="courses">
                         Explore All Courses
                     </a>
@@ -271,7 +272,7 @@
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['countries']}}" data-speed="3000">{{homepageData()['countries']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3><span>+</span>
                         </div>
                         <p>Countries</p>
                     </div>

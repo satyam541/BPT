@@ -13,7 +13,7 @@ class ErrorController extends Controller
     {
 
         $data['pageDetail'] = PageDetail::getContent('404');
-        return view('404',$data);
+        return view('errors.404',$data);
 
     }
 }
