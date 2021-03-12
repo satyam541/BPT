@@ -319,6 +319,11 @@ Route::get('/newsletter','NewsletterController@newsletterList')->name('newslette
 Route::get('/orders','OrderController@orderList')->name('orderList');
 Route::get('/orderdetail/{id}','OrderController@orderDetail')->name('orderDetail');
 
+Route::get('/roletrash','UserController@rolesTrashList')->name('roleTrashList');
+Route::get('/role/restore/{id}','UserController@restoreRole')->name('restoreRole');
+Route::get('/role/forcedelete/{id}','UserController@forceDeleteRole')->name('forceDeleteRole');
+
+
 Route::get('/tagtrash','TagController@tagtrashList')->name('tagTrashList');
 Route::get('/tag/restoretag/{id}','TagController@restoreTag')->name('restoreTag');
 Route::get('/tag/deletetag/{id}','TagController@forceDeleteTag')->name('forceDeleteTag');

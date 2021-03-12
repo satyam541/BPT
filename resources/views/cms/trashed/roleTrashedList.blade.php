@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Topic</h1>
+          <h1 class="m-0 text-dark">Role</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{route('topicList')}}">Topic</a></li>
+            <li class="breadcrumb-item"><a href="{{route('roleList')}}">Roles</a></li>
             <li class="breadcrumb-item active">Trash</li>
           </ol>
         </div><!-- /.col -->
@@ -35,7 +35,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Topic Trash
+                Role Trash
               </div>
             </div>
             <!-- /.card-header -->
@@ -43,29 +43,21 @@
               <table id="example1">
                 <thead>
                 <tr>
-                  <th>Topic Name</th>
+                  <th>Role Name</th>
                   <th>Date</th>
-                <th>
-                  @can('restore',new App\Models\topic())
-                    Actions
-                    @endcan
-                  </th>
+                  <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 
-                    @foreach ($trashedTopics as $trashedtopic)
+                    @foreach ($trashedRoles as $trashedRole)
                     <tr>
-                    <td>{{$trashedtopic->name}}</td>
-                    <td>{{$trashedtopic->created_at}}</td>
+                    <td>{{$trashedRole->name}}</td>
+                    <td>{{$trashedRole->created_at}}</td>
                     <td>
-                      @can('restore',$trashedtopic)
-                      <a href="{{ route('restoreTopic',['id'=>$trashedtopic->id]) }}" class="fa fa-sync fa-spin"></a>
-                      @endcan
+                      <a href="{{ route('restoreRole',['id'=>$trashedRole->id]) }}" class="fa fa-sync fa-spin"></a>
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                      @can('forceDelete',$trashedtopic)
-                     <a href="{{ route('forceDeleteTopic',['id'=>$trashedtopic->id])}}" class="fa fa-trash" style="color: red"></a>
-                     @endcan
+                      <a href="{{ route('forceDeleteRole',['id'=>$trashedRole->id]) }}" class="fa fa-trash" style="color: red"></a>
                     </td>
                 </tr>
                     @endforeach
@@ -94,7 +86,7 @@
         $(document).ready(function(){
             $('#example1').DataTable({
               "columns": [
-                        { "name": "Topic Name" },
+                        { "name": "Role Name" },
                         { "name": "Date",  searching:false },
                         { "name": "Actions", "sorting":false, searching:false  }
               ]                    
