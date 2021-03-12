@@ -272,7 +272,7 @@
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{homepageData()['countries']}}" data-speed="3000">{{homepageData()['countries']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3><span>+</span>
                         </div>
                         <p>Countries</p>
                     </div>
