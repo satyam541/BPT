@@ -417,9 +417,7 @@
                 width: 30px;
                 background: #c0c0c0;
                 border-radius: 20px;
-                transform: rotate(
-            45deg
-            );
+                transform: rotate(45deg);
                 animation: rotate 15s linear infinite;
                 transition: 1s all;
             }
@@ -654,7 +652,6 @@
         flex-direction: column;
         margin-top: 2rem;
         align-items: center;
-        width: 48%;
         img {
             height: 110px;
             width: 110px;
@@ -691,7 +688,7 @@
         align-items: center;
         background-image: url(../img/courses/top-arc.svg), url(../img/courses/bottom-arc.svg);
         background-repeat: no-repeat;
-        background-size: 37% 21%;
+        background-size: 33% 21%;
         background-position: top left, bottom right;
         h2 {
             margin-bottom: .5rem;
@@ -882,11 +879,10 @@
             
         }
     }
-
+   
     .course-content {
         display: flex;
         flex-direction: column;
-        margin: auto;
         margin-top: 2.5rem;
         background-color: @whiteColor;
         box-shadow: @shadowLight;
@@ -1162,7 +1158,6 @@
         background-color: @whiteColor;
         box-shadow: @shadowLight;
         align-items: center;
-        width: 100%;
     }
     .info {
         display: flex;
@@ -1204,7 +1199,6 @@
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
-        width: 100%;
     }
     .language-list {
         display: flex;
@@ -1213,7 +1207,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 2rem;
             padding: .3rem;
             background-position: left top;
             width: 272px;
@@ -1309,7 +1303,7 @@
         justify-content: space-between;
         background-color: @whiteColor;
         box-shadow: @shadowLight;
-        padding: .5rem 1rem;
+        padding: 1rem;
         margin-top: 1.5rem;
         align-items: center;
         border-radius: 10px;
@@ -1351,7 +1345,6 @@
         }
         .name {
             font-size: 16px;
-            font-weight: 600;
             width: calc(100% - 80px);
         }
     }
@@ -1375,8 +1368,8 @@
         h2, p {
             text-align: center;
         }
-        h2 {
-            margin-bottom: .6rem;
+        p{
+            margin-top: .5rem;
         }
     }
     .location-content {
@@ -1423,11 +1416,10 @@
         }
         
     }
-    .location-name {
-        width: calc(100% - 100px);
-        font-size: 18px;
-        font-weight: 600;
-    }
+    // .location-name {
+    //     width: calc(100% - 100px);
+    //     font-size: 16px;
+    // }
     .arrow {
         display: flex;
         justify-content: center;
