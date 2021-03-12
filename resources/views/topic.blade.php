@@ -421,13 +421,13 @@
                             </div>
                             <div class="location-list">
                                 @foreach ($locations as $location)
-                                <div class="content" onclick="location.href = '{{ url('training-locations/' . $location->reference) }}';">
+                                <div class="content" onclick="location.href = '{{ route('locationDetail',['location'=>$location->reference]) }}';">
                                     <span class="image">
                                         <img src="{{url('img/courses/travel.svg')}}" alt="travel">
                                     </span>
                                     <h3>{{$location->name}}</h3>
                                     <span class="arrow">
-                                        <a href="{{ url('training-locations/' . $location->reference) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
+                                        <a href="{{ route('locationDetail',['location'=>$location->reference]) }}"><img src="{{url('img/courses/dashed-arrow.svg')}}" alt="dashed-arrow"></a>
                                     </span>
                                 </div>                                    
                                 @endforeach
