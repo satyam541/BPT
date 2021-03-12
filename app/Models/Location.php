@@ -86,7 +86,7 @@ class Location extends Model
     public function getUrlAttribute()
     {
         $reference =  $this->reference;
-        $url = 'training-location/'.$reference;
+        $url = 'training-locations/'.$reference;
         if(country()->country_code != 'gb')
         {
             $url = country()->country_code."/".$url;
