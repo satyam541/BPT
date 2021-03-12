@@ -4865,7 +4865,7 @@ select::-ms-expand {
     box-shadow: 9px 10px 10px rgba(0, 0, 0, 0.098);
   }
   .customers .customers-content .content p {
-    min-height: 154px;
+    min-height: 176px;
   }
   .services {
     padding: 3rem 2rem;
@@ -4896,7 +4896,7 @@ select::-ms-expand {
     width: 30%;
   }
   .customers .customers-content .content p {
-    min-height: 176px;
+    min-height: 198px;
   }
   .services .services-container {
     flex-direction: row;
@@ -4956,7 +4956,7 @@ select::-ms-expand {
     content: '';
   }
   .customers .customers-content .content p {
-    min-height: 132px;
+    min-height: 154px;
   }
   .services {
     padding: 4rem 0rem;
