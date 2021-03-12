@@ -202,6 +202,14 @@
         <img src="{{url('../img/master/up-arrow.svg')}}" alt="up-arrow">
     </a>
     
+    <div class="cookie-div" id="footerCookie">
+        <p>To give you the best possible experience, this site uses cookies. Continuing to use this site means that you agree to our use of cookies. <a>Click here to see our cookie policy</a></p>
+        
+        <div class="buttons">
+            <button class="btn-white" onclick="storecookie()">Ok, I Accept</button>
+        </div>
+    </div>
+    
 
     <div class="pop-search" id="pop-mobile">
     <span class="search-close"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
