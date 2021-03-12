@@ -17,7 +17,7 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certification</a>
+                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certifications</a>
                     <span></span>
                 </li>
                 <li class="links-li">
@@ -88,7 +88,7 @@
         </div>
         <ul class="country-list country-select" id="country-list">                                        
             @foreach (countries() as $country)
-            <li class="country preferred @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
+            <li class="country preferred pointer @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
                 <div class="flag {{ strtolower($country->id) }}"></div>
                 <span class="country-names">{{ $country->name }}</span>
             </li>

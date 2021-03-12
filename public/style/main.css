@@ -763,6 +763,28 @@ select::-ms-expand {
   opacity: 1;
   z-index: 9999;
 }
+.cookie-div {
+  padding: 3rem 1.5rem;
+  position: fixed;
+  bottom: 45px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 35px 35px 0 0;
+  background: linear-gradient(#0064D8, #1C2848);
+}
+.cookie-div p {
+  color: #FFFFFF;
+  text-align: center;
+}
+.cookie-div p a {
+  cursor: pointer;
+  color: #FFFFFF;
+  font-weight: bold;
+}
 .banner {
   flex-direction: column;
 }
@@ -1180,6 +1202,23 @@ select::-ms-expand {
   .buttons .btn-white {
     font-size: 16px;
   }
+  .cookie-div {
+    bottom: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  }
+  .cookie-div p {
+    width: 70%;
+    text-align: left;
+  }
+  .cookie-div .buttons {
+    width: 25%;
+    margin-top: 0;
+    justify-content: flex-end;
+  }
   .navbar {
     width: 100%;
     position: absolute;
@@ -1262,7 +1301,7 @@ select::-ms-expand {
   }
   .up-arrow {
     right: 32px;
-    bottom: 45px;
+    bottom: 68px;
   }
   .no-schedule {
     width: 70%;
@@ -11001,9 +11040,6 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .error-banner {
     background-image: url(../img/404/banner-bg.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 50% 100%;
   }
   .error-banner .banner-container {
     width: 50%;
@@ -11013,9 +11049,6 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1366px) {
-  .error-banner {
-    padding: 4rem 0rem;
-  }
   .error {
     padding: 4rem 0rem;
   }
@@ -12088,7 +12121,7 @@ select::-ms-expand {
 .topic-banner h2,
 .topic-banner h1,
 .topic-banner li {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 .topic-banner .choose-list {
   margin-top: 2rem;
@@ -12133,7 +12166,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
@@ -12224,6 +12257,7 @@ select::-ms-expand {
   margin-top: 2rem;
   align-items: center;
   width: 49%;
+  font-weight: 500;
 }
 .topic-delivery .delivery-list .item span {
   display: flex;
@@ -12254,12 +12288,26 @@ select::-ms-expand {
 .topic-choose {
   padding: 3rem 1.5rem;
 }
+.topic-choose .choose-container {
+  display: flex;
+  flex-direction: column;
+}
+.topic-choose .choose-content {
+  display: flex;
+  flex-direction: column;
+}
 .topic-choose .choose-content .heading {
   display: flex;
   justify-content: center;
 }
 .topic-choose .choose-content .heading h2 {
   text-align: center;
+}
+.topic-choose .choose-content p {
+  text-align: center;
+}
+.topic-choose .choose-content p:nth-child(3) {
+  margin-top: 0.5rem;
 }
 .topic-choose .choose-progress {
   display: flex;
@@ -12348,10 +12396,11 @@ select::-ms-expand {
   margin-top: 2rem;
   position: relative;
 }
-.topic-choose .choose-image span {
-  height: 100%;
+.topic-choose .choose-image .choose-info {
+  height: auto;
+  position: relative;
 }
-.topic-choose .choose-image span img {
+.topic-choose .choose-image .choose-info img {
   width: 100%;
   height: 100%;
 }
@@ -12359,10 +12408,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  width: 100%;
   background-image: linear-gradient(#0064D8, #1C2848);
-  width: 50%;
   position: absolute;
-  bottom: 16px;
+  bottom: 0;
 }
 .topic-choose .years p,
 .topic-choose .years h3 {
@@ -12372,6 +12421,14 @@ select::-ms-expand {
 .experiences {
   padding: 3rem 1.5rem;
   background-image: linear-gradient(#0064D8, #1C2848);
+}
+.experiences .experiences-container {
+  display: flex;
+  flex-direction: column;
+}
+.experiences .experiences-list {
+  display: flex;
+  flex-direction: column;
 }
 .experiences p,
 .experiences h3 {
@@ -12386,8 +12443,8 @@ select::-ms-expand {
   display: flex;
   padding: 1rem;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   border: 2px dashed #FFFFFF;
 }
 .experiences span img {
@@ -12405,6 +12462,10 @@ select::-ms-expand {
 }
 .explore {
   padding: 3rem 1.5rem;
+}
+.explore .explore-container {
+  display: flex;
+  flex-direction: column;
 }
 .explore .explore-item {
   display: flex;
@@ -12570,6 +12631,7 @@ select::-ms-expand {
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
+    padding: 0.5rem 1rem;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
@@ -12582,7 +12644,7 @@ select::-ms-expand {
     margin-left: 1rem;
   }
   .topic-courses .course-name a {
-    width: 66%;
+    width: calc(100% - 95px);
     text-align: left;
     margin-bottom: 0;
     font-size: 16px;
@@ -12624,7 +12686,6 @@ select::-ms-expand {
     min-height: 50px;
   }
   .experiences .experiences-list {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -12632,23 +12693,22 @@ select::-ms-expand {
     width: 32%;
   }
   .topic-delivery {
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
   }
   .topic-delivery .delivery-list .item {
     width: 19%;
   }
   .topic-choose {
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
   }
   .topic-choose .choose-container {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
   }
   .topic-choose .choose-content {
     width: 50%;
     align-items: flex-start;
-    display: flex;
-    flex-direction: column;
   }
   .topic-choose .choose-content .heading {
     justify-content: flex-start;
@@ -12656,8 +12716,12 @@ select::-ms-expand {
   .topic-choose .choose-content .heading h2 {
     text-align: left;
   }
+  .topic-choose .choose-content p {
+    text-align: left;
+  }
   .topic-choose .count {
     flex-direction: row;
+    margin-bottom: 0;
   }
   .topic-choose .count .txt-name {
     margin-left: 0.7rem;
@@ -12665,11 +12729,9 @@ select::-ms-expand {
   .topic-choose .choose-image {
     width: 48%;
     margin-top: 0;
-    align-items: flex-start;
-    justify-content: flex-end;
-  }
-  .topic-choose .years {
-    width: 96%;
+    position: sticky;
+    height: fit-content;
+    top: 70px;
   }
   .explore {
     padding: 3rem 2rem;
@@ -12718,13 +12780,12 @@ select::-ms-expand {
   .topic-banner {
     background-image: url(../img/topic/banner-bg.png);
     padding-bottom: 4rem;
-    box-shadow: 0 0 10px 1px #000000;
   }
   .topic-banner p,
   .topic-banner h2,
   .topic-banner h1,
   .topic-banner li {
-    color: #000000 !important;
+    color: #000000;
   }
   .topic-banner .choose-list {
     width: 38%;
@@ -12934,6 +12995,9 @@ select::-ms-expand {
     height: 260%;
     transition: 1s all;
   }
+  .topic-delivery {
+    padding: 4rem 0rem;
+  }
   .topic-delivery .delivery-content {
     width: 45%;
   }
@@ -12952,6 +13016,9 @@ select::-ms-expand {
   }
   .topic-choose .choose-progress {
     width: 80%;
+  }
+  .topic-choose .count {
+    margin-bottom: 0;
   }
   .experiences {
     padding: 4rem 0rem;
