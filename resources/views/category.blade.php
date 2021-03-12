@@ -33,7 +33,7 @@
                 <div class="course-content">
                     <a href="javascript:void(0);">{{$topic->name}}</a>
                     <div class="buttons">
-                        <a href="{{ url('training-courses' . $topic->reference) }}" class="btn-blue" data-quote="{{$topic->name}}">
+                        <a href="{{ $topic->url }}" class="btn-blue" data-quote="{{$topic->name}}">
                             <img src="{{url('img/certification/detail.svg')}}" alt="detail">Topic Detail
                         </a>
                     </div>
