@@ -773,7 +773,6 @@ select::-ms-expand {
   z-index: 99;
   width: 100%;
   padding: 10px 10px;
-  border-radius: 35px 35px 0 0;
   background: linear-gradient(#0064D8, #1C2848);
 }
 .cookie-div p {
