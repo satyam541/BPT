@@ -1028,7 +1028,7 @@ select::-ms-expand {
   left: 0;
   overflow: auto;
   z-index: 88;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.92);
 }
 .enquiry-popup .popup-container {
   display: flex;
@@ -1665,6 +1665,7 @@ select::-ms-expand {
     width: 62px;
     height: 60px;
     right: -27px;
+    top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1739,6 +1740,7 @@ select::-ms-expand {
     width: 45px;
     height: 60px;
     right: -25px;
+    top: 0;
     background-image: url(../img/master/dropdown-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
