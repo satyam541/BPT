@@ -527,6 +527,9 @@ $('#scroll').click(function(){
         $('#dropdown-menu').slideUp();
     });
     
+    $('.about-link a').on('click', function(){
+        window.location.href = $(this).attr('href');
+    }); 
     $('.course-menu a').on('click', function(){
         window.location.href = $(this).attr('href');
     });
