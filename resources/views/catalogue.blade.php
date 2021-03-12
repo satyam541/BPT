@@ -26,8 +26,8 @@
                                 </span>
                                 <a href="javascript:void(0);" class="name">{{ $popularTopic->name }}</a>
                                 <div class="buttons">
-                                    <a href="{{ url('training-courses' . $popularTopic->reference) }}" class="btn-blue">
-                                        <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view" class="black">
+                                    <a href="{{$popularTopic->url}}" class="btn-blue">
+                                       <img src="{{ url('img/catalogue/view-black.svg') }}" alt="view" class="black">
                                         <img src="{{ url('img/catalogue/view-white.svg') }}" alt="view" class="white">View Detail
                                     </a>
                                 </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="category-list">
                     @foreach ($categories as $category)
-                        <div class="category-content" onclick="location.href = '{{ url('training-courses' . $category->reference) }}';">
+                        <div class="category-content" onclick="location.href = '{{$category->url }}';">
                             <span>
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="blue">
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="white">
@@ -130,7 +130,7 @@
                     </div>
                     <div class="popular-list">
                         @foreach ($popularCourses as $popularCourse)
-                            <a href="{{ url('training-courses' . $popularCourse->reference) }}" class="popular-item">
+                            <a href="{{$popularCourse->url }}" class="popular-item">
                                 <span>0{{ $loop->iteration }}</span>
                                 <h3>{{ $popularCourse->name }}</h3>
                             </a>
@@ -196,12 +196,12 @@
                                 <span>
                                     <img src="{{ url('img/catalogue/analytics.svg') }}" alt="analytics">
                                 </span>
-                                <a href="{{ url('training-courses' . $topic->reference) }}">{{ $topic->name }}</a>
+                                <a href="{{$topic->url }}">{{ $topic->name }}</a>
                             </div>
                             <ul>
                                 @foreach ($topic->courses as $course)
                                     <li><a
-                                            href="{{ url('training-courses' . $course->reference) }}">{{ $course->name }}</a>
+                                            href="{{$course->url }}">{{ $course->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
