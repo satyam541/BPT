@@ -239,29 +239,7 @@
                 $(this).removeClass('btn-primary');
                 $(this).addClass('btn-success');
             });
-            $('#submit').on('click', function() {
-                //    var country=$('#country').val();
-
-                $.ajax({
-                    url: "{{ route('categoryList') }}",
-                    data: {
-                        popular
-                    },
-                    type: 'post',
-                    global: false,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response == 'done') {
-                            location.reload();
-                        } else {
-                            alert('country code not available');
-                        }
-                    }
-                });
-
-            });
+            
 
         });
 
