@@ -21,12 +21,13 @@ if(!function_exists('homepageData')){
         $data=[];
         $date=Carbon::parse(Carbon::today())->format('Y-m-d');        
         $data['countries']=Country::count();
-        $data['locations']=Location::count();
+        $data['locations']=Location::withoutGlobalScopes()->count();
         $data['courses']=Course::count();
-        $data['schedules']=Schedule::whereDate('response_date','>',$date)->count();
+        $data['schedules']=Schedule::withoutGlobalScopes()->whereDate('response_date','>',$date)->count();
         return $data;
     }
 }
+
 if(!function_exists('summernote_replace')){
     function summernote_replace($content){
         foreach($content as $key=>$value)

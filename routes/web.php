@@ -157,7 +157,7 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/home', 'HomeController@index')->name('homeRoute');
     
     
-    Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+    Route::get('/training-courses', 'CatalogueController@index')->name('catalogue');
     Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
     Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
     Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
