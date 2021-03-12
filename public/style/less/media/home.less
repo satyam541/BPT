@@ -229,15 +229,15 @@
                 }
                 img{
                     transition: 1s all;
-                    width: 96px;
-                    height: 96px;
+                    width: 80px;
+                    height: 80px;
                 }
             }
         }
         
         .overlay{
             display: flex;
-            background:  linear-gradient(#000000,#575757);
+            background:  linear-gradient(@blackColor,#575757);
             opacity: .8;
             position: absolute;
             width: 100%;
@@ -423,6 +423,7 @@
 
     // Start whychoose section//
     .whychoose{
+        padding-bottom: 2rem;
         h3{
             min-height: auto;
         }
@@ -538,6 +539,7 @@
     .locations{
         .content{
             width: 61%;
+            padding-right: 3rem;
         }
         .location-name{
             width: 17%;
@@ -613,6 +615,7 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
+        padding-bottom: 0 !important;
         .partners-images{
             background-image: url(../img/home/partners-bg.png);
             background-repeat: no-repeat;
@@ -727,6 +730,7 @@
 
     // Start partners section//
     .partners{
+        padding: @sectionPadding-xl;
         .heading {
             width: 80%;
             margin: auto;

@@ -41,9 +41,6 @@
     </div>
 </section>
 <!-- End Banner Section -->
-@php
-$content = $selectedCourse->countryContent;
-@endphp
 <!-- Start course-intro section -->
     <section class="flex-container course-intro">
         <div class="container">
@@ -51,7 +48,7 @@ $content = $selectedCourse->countryContent;
                 <div class="heading center-heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
-                <p class="intro-para">{!! $selectedCourse->countryContent->detail !!}</p>
+                <p class="intro-para">{!! $selectedCourse->detail !!}</p>
             </div>
         </div>
     </section>
@@ -67,7 +64,7 @@ $content = $selectedCourse->countryContent;
             </div>
             <div class="tabs-container">
                 <ul class="tab-links">
-                    @if (!empty($content['overview']))
+                    {{-- @if (!empty($selectedCourse->overview)) --}}
                     <li class="tab-click" data-target="overview">
                         <span class="image">
                             <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -77,12 +74,12 @@ $content = $selectedCourse->countryContent;
                         </p>
                         <div class="number"></div>
                     </li>
-                    @endif
+                    {{-- @endif --}}
 
                     @if (
-                    !empty($content['summary']) || !empty($content['detail']) ||
-                    !empty($content['pre_requities']) || !empty($content['who_should_attend']) ||
-                    !empty($content['what_will_you_learn'])
+                    !empty($selectedCourse->summary) || !empty($selectedCourse->detail) ||
+                    !empty($selectedCourse->pre_requities) || !empty($selectedCourse->who_should_attend) ||
+                    !empty($selectedCourse->what_will_you_learn)
                     )
                     <li class="tab-click" data-target="course">
                         <span class="image">
@@ -120,12 +117,11 @@ $content = $selectedCourse->countryContent;
                     </li>
                     @endif
                 </ul>
-
-                @if (!empty($content['overview']))
+                @if (!empty($selectedCourse->overview))
                 <div class="tab-content tab-common" id="overview">
                     <div class="overview-content" id="overcontent">
                         <h2>Course Overview</h2>
-                        {!! $content->overview !!}
+                        {!! $selectedCourse->overview !!}
                     </div>
                     <div class="buttons">
                         <a href="#overcontent" class="btn-blue overcontent">
@@ -134,12 +130,12 @@ $content = $selectedCourse->countryContent;
                     </div>
                 </div>
                 @endif
-                @if (!empty($content['summary']))
+                @if (!empty($selectedCourse->summary))
                 <div class="tab-content tab-common" id="course">
                     <div class="overview-content" id="coursecontent">
                         <h2>Course Content</h2>
-                        @if (!empty($content['summary']))
-                        {!!$content->summary!!}
+                        @if (!empty($selectedCourse->summary))
+                        {!!$selectedCourse->summary!!}
                         @endif
 
                     </div>
@@ -203,30 +199,30 @@ $content = $selectedCourse->countryContent;
 <!-- End Foundation Section -->
 
 <!-- Start learn-more section -->
-@if(!empty($content['pre_requities']) || !empty($content['who_should_attend']) || !empty($content['what_will_you_learn']))
+@if(!empty($selectedCourse->pre_requities) || !empty($selectedCourse->who_should_attend) || !empty($selectedCourse->what_will_you_learn))
     <section class="flex-container learn-more">
             <div class="container">
                 <div class="more-container">
                     <div class="more-content">
-                        @if(!empty($content['pre_requities']))
+                        @if(!empty($selectedCourse->pre_requities))
                         <div class="heading">
                             <h2>Prerequisites</h2>
                         </div>
-                        {!!$content->pre_requities!!}
+                        {!!$selectedCourse->pre_requities!!}
                         @endif
-                        @if(!empty($content['who_should_attend']))
+                        @if(!empty($selectedCourse->who_should_attend))
                         <div class="heading">
                             <h2>Target <span>Audience</span></h2>
                         </div>
-                        {!!$content->who_should_attend!!}
+                        {!!$selectedCourse->who_should_attend!!}
                         @endif
                     </div>
-                    @if(!empty($content['what_will_you_learn']))
+                    @if(!empty($selectedCourse->what_will_you_learn))
                     <div class="more-list">
                         <div class="heading">
                             <h2>Delegates Will <span>Learn How To</span></h2>
                         </div>
-                        {!!$content->what_will_you_learn!!}
+                        {!!$selectedCourse->what_will_you_learn!!}
                     </div>
                     @endif
                 </div>
