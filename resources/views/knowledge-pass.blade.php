@@ -74,13 +74,16 @@
                    <h3>Total</h3>
                </div>
                <div class="course-list">
-                    <div class="course-content">
-                        <div class="course-name">
+                  
+                   @foreach($topics  as $topic)
+                    <div class="course-content panelJS">
+                        <div class="course-name panel-titleJS">
                                 <p>
-                                    Business Skills (17 courses (s))
+                                    {{-- Business Skills (17 courses (s)) --}}
+                                    {{$topic->name ."(" .$topic->courses->count(). " courses (s))" }}
                                 </p>
-                                <span>0</span>
-                                <span>0</span>
+                                <span class="amount" data-amount="0" data-course="0">0</span>
+                                <span class="ks2" data-price="0">0</span>
                                 <span class="image">
                                 <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
                                 <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
@@ -89,11 +92,11 @@
                         <div class="description">
                         <div class="course-detail bold">
                                 <p>
-                                Popular Business Skill courses
+                                Popular Courses
                                 </p> 
                                 <p>delegates</p>  
                                 <p>
-                                    <span>
+                                    <span >
                                         price
                                     </span>
                                     <span>
@@ -102,120 +105,43 @@
                                 </p>
 
                         </div>
-                        <div class="course-detail">
+                     
+                        @foreach($topic->courses as $course)
+                        <div class="course-detail  coursedataJS">
                                 <p>
-                                Popular Business Skill courses
+                                  {{$course->name}}
                                 </p> 
                                 <span class="select">
-                                <select name="" id="">
-                                    <option value="">1</option>
+                                <select name="" class="quantityJS">
+                                    @for($i = 0;$i<=100;$i++)
+                                    <option value="{{$i}}">{{$i}}</option>
+                                    @endfor
                                 </select>
                                 </span>
                                 <p>
-                                    <span>
-                                        price
+                                    @php
+                                        $price = $course->schedule->max('event_price');
+                                    @endphp
+                                    <span  class="price" data-price="{{$price}}">
+                                        £ {{$price}}
                                     </span>
-                                    <span>
-                                        Total
-                                    </span>
-                                </p>
-
-                        </div>
-                        <div class="course-detail">
-                                <p>
-                                Popular Business Skill courses
-                                </p> 
-                                <span class="select">
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                </select>
-                                </span>
-                                <p>
-                                    <span>
-                                        price
-                                    </span>
-                                    <span>
-                                        Total
+                                    <span   class="total" data-price="0">
+                                        £ 0
                                     </span>
                                 </p>
 
                         </div>
-                        <div class="course-detail">
-                                <p>
-                                Popular Business Skill courses
-                                </p> 
-                                <span class="select">
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                </select>
-                                </span>
-                                <p>
-                                    <span>
-                                        price
-                                    </span>
-                                    <span>
-                                        Total
-                                    </span>
-                                </p>
-
-                        </div>
+                        @endforeach
+             
                         </div>
 
                     </div>
-                    <div class="course-content">
-                        <div class="course-name">
-                                <p>
-                                    Business Skills (17 courses (s))
-                                </p>
-                                <span>0</span>
-                                <span>0</span>
-                                <span class="image">
-                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
-                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
-                                </span>
-                        </div>
-                        <div class="description">
-                        <div class="course-detail bold">
-                                <p>
-                                Popular Business Skill courses
-                                </p> 
-                                <p>delegates</p>  
-                                <p>
-                                    <span>
-                                        price
-                                    </span>
-                                    <span>
-                                        Total
-                                    </span>
-                                </p>
-
-                        </div>
-                        <div class="course-detail">
-                                <p>
-                                Popular Business Skill courses
-                                </p> 
-                                <span class="select">
-                                <select name="" id="">
-                                    <option value="">1</option>
-                                </select>
-                                </span>
-                                <p>
-                                    <span>
-                                        price
-                                    </span>
-                                    <span>
-                                        Total
-                                    </span>
-                                </p>
-
-                        </div>
-                        </div>
-
-                    </div>
+                    @endforeach
+               
                </div>
-               <div class="summary">
+               <div class="summary panel-footerJS">
                    <p>Summary</p>
-                   <p>1 course selected</p>
+                   <p ><span class="totalAmountJS">0 </span> course selected</p>
                </div>
 
            </div>
@@ -229,78 +155,78 @@
         <div class="container">
             <div class="spending-container">
                 <div class="heading center-heading">
-                    <h2>Currently spending <span>£7,770</span></h2>
+                    <h2>Currently spending <span id="totalPriceJS">£ 0</span></h2>
                 </div>
                 <div class="spending-list">
-                    <div class="item">
-                        <h3>Spend £2,230 more to be eligible for Bronze discount of 10%</h3>
+                    <div class="item  BronzePassJS">
+                        <h3  class="spendMoreJS" data-price="£2,230">Spend £2,230 more to be eligible for Bronze discount of 10%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize normalPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize passPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize savingPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize remainingPriceJS">£7,770</p>
                             </li>
                         </ul>
                     </div>
-                    <div class="item">
-                        <h3>Spend £14,820 more to be eligible for Silver discount of 25%</h3>
+                    <div class="item SilverPassJS">
+                        <h3  class="spendMoreJS" data-price="£14,820">Spend £14,820 more to be eligible for Silver discount of 25%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize normalPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize passPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize savingPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize remainingPriceJS">£7,770</p>
                             </li>
                         </ul>
                     </div>
-                    <div class="item">
-                        <h3>Spend £44,820 more to be eligible for Gold discount of 50%</h3>
+                    <div class="item GoldPassJS">
+                        <h3  class="spendMoreJS" data-price="£44,820">Spend £44,820 more to be eligible for Gold discount of 50%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize normalPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize passPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize savingPriceJS">£7,770</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize">£7,770</p>
+                                <p class="prize remainingPriceJS">£7,770</p>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue">
+                    <a class="btn-blue open-popup" data-type="knowledgepass">
                         <img src="{{url('../img/knowledge-pass/requirements.svg')}}" alt="requirements">
                         Send Us Your Requirement
                     </a>
@@ -519,9 +445,9 @@
                 <tr>
                     <td>
                     </td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
                 </tr>
             </table>
         </div>
@@ -607,4 +533,128 @@
 
 
 
+@endsection
+@section('footerScripts')
+<script>
+var symbol = '£';
+		$(".quantityJS").on("change",function(){
+			var courseRow = $(this).closest(".coursedataJS");
+			var price = courseRow.find(".price").data("price");
+            console.log(price);
+			var quantity = $(this).val();
+            console.log(quantity);
+			var total = price*quantity;
+			courseRow.find(".total").html(symbol+total).data('price',total);
+			changeTotalValue(courseRow.closest('.panelJS'));
+		});
+
+		function changeTotalValue(panel)
+		{
+			var amount = 0;
+			var price = 0;
+			var course = 0;
+			panel.find(".coursedataJS").each(function(){
+				quantity = $(this).find(".quantityJS").val();
+				if(quantity > 0)
+				{
+					course++;
+					amount += +quantity;
+				}
+				price += $(this).find(".total").data("price");
+			});
+			panel.find(".panel-titleJS").find(".amount").html(amount).data("amount",amount).data("course",course);
+			panel.find(".panel-titleJS").find(".ks2").html(symbol+price).data("price",price);
+			changeFinalValue();
+		}
+
+		function changeFinalValue()
+		{
+			var course = 0;
+			var price = 0;
+			$(".panelJS .panel-titleJS").each(function(){
+				course += $(this).find(".amount").data('course');
+				price += $(this).find(".ks2").data("price");
+			});
+
+			$(".panel-footerJS .totalAmountJS").html(course);
+			$("#totalPriceJS").html(symbol+price);
+
+			updateDiscountCards(price);
+		}
+
+
+        function updateDiscountCards(price)
+		{
+			var bronze = $(".BronzePassJS");
+			var silver = $(".SilverPassJS");
+			var gold = $(".GoldPassJS");
+
+			// change spend more text(price) for all
+
+			bronze.find('.spendMoreJS').data(symbol+(2230-price));
+			silver.find('.spendMoreJS').data(symbol+(14820-price));
+			gold.find('.spendMoreJS').data(symbol+(44820-price));
+
+			// change all four amount
+			var passPrice = price-(price/10);
+         
+			passPrice = passPrice.toFixed(2);
+			
+			bronze.find('.passPriceJS').html(symbol+passPrice);
+			bronze.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
+			bronze.find('.remainingPriceJS').html(symbol+(2230-passPrice).toFixed(2));
+
+			passPrice = price-(price/4);
+			passPrice = passPrice.toFixed(2);
+			silver.find('.normalPriceJS').html(symbol+price);
+			silver.find('.passPriceJS').html(symbol+passPrice);
+			silver.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
+			silver.find('.remainingPriceJS').html(symbol+(14820-passPrice).toFixed(2));
+
+			passPrice = price-(price/2);
+			passPrice = passPrice.toFixed(2);
+			gold.find('.normalPriceJS').html(symbol+price);
+			gold.find('.passPriceJS').html(symbol+passPrice);
+			gold.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
+			gold.find('.remainingPriceJS').html(symbol+(44820-passPrice).toFixed(2));
+
+			if(price < 2230)
+			{
+				// show spend more text for all
+				// opacity reset all
+
+				bronze.css("opacity",'1').find('.spendMoreJS').show();
+				silver.css("opacity",'1').find('.spendMoreJS').show();
+				gold.css("opacity",'1').find('.spendMoreJS').show();
+			}
+			else if(price < 14820)
+			{
+				// hide spend more text for bronze but rest show
+				// opacity for bronze
+
+				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
+				silver.css("opacity",'1').find('.spendMoreJS').show();
+				gold.css("opacity",'1').find('.spendMoreJS').show();
+			}
+			else if(price < 44820)
+			{
+				// hide spend more text all but gold
+				// opacity for all but gold
+
+				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
+				silver.css("opacity",'.5').find('.spendMoreJS').hide();
+				gold.css("opacity",'1').find('.spendMoreJS').show();
+			}
+			else {
+				// hide spend more text for all
+				// opacity for all
+
+				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
+				silver.css("opacity",'.5').find('.spendMoreJS').hide();
+				gold.css("opacity",'1').find('.spendMoreJS').hide();
+			}
+			// spen more (h3 span)
+			// normalPriceJS,passPriceJS, savingPriceJS, remainingPriceJS
+		}
+</script>
 @endsection

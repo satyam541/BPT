@@ -302,6 +302,9 @@ if (!function_exists('encodeUrlSlug')) {
                     $JWT->make_order_enquiry($input, 11);
                 else if (Str::contains($input['type'], "incomplete"))
                     $JWT->make_order_enquiry($input, 10);
+                else if (Str::contains($input['type'], "knowledgepass"))
+                $JWT->make_order_enquiry($input, 73);
+
                 else
                     $JWT->make_enquiry($input);
             }
