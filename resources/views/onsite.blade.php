@@ -101,7 +101,7 @@
                     <div class="input-container">
                         <span><img src="{{url('img/master/position-white.svg')}}" alt="position" class="black">
                             <img src="{{url('img/master/position-red.svg')}}" alt="position-red" class="red"></span>
-                        <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
+                        <input type="number" name="delegate" id="delegate" placeholder="Number of Delegates*"
                             autocomplete="off">
                     </div>
                     <div class="input-container message">
