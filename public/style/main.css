@@ -424,7 +424,8 @@ select::-ms-expand {
   justify-content: center;
   background-color: #F6F6F6;
   height: 100%;
-  width: 50px;
+  width: 46px;
+  min-width: 46px;
   padding: 0.7rem;
 }
 .input-container span img {
