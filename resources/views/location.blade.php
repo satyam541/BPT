@@ -25,7 +25,7 @@
 <section class="flex-container convenient">
     <div class="container">
     <div class="heading center-heading">
-            <h2>Popular Locations in <span>{countryname}</span></h2>
+            <h2>Popular Locations in <span>{{ replaceVar('{countryname}')}}</span></h2>
         </div>
         <div class="convenient-container">
             <div class="convenient-list">
