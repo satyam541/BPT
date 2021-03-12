@@ -765,7 +765,6 @@ select::-ms-expand {
 }
 .cookie-div {
   padding: 3rem 1.5rem;
-  background-image: linear-gradient(0deg, #1C2848 25%, #0064D8 110%);
   position: fixed;
   bottom: 45px;
   left: 0;
@@ -774,17 +773,16 @@ select::-ms-expand {
   z-index: 99;
   width: 100%;
   padding: 10px 10px;
-  border-top: 1px solid #1C2848;
+  border-radius: 35px 35px 0 0;
+  background: linear-gradient(#0064D8, #1C2848);
 }
 .cookie-div p {
-  font-size: 12px;
   color: #FFFFFF;
   text-align: center;
 }
 .cookie-div p a {
-  font-size: 13px;
   cursor: pointer;
-  color: #F2F2F2;
+  color: #FFFFFF;
   font-weight: bold;
 }
 .banner {
@@ -1210,6 +1208,7 @@ select::-ms-expand {
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem;
+    align-items: center;
   }
   .cookie-div p {
     width: 70%;
