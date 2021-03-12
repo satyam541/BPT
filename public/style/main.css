@@ -551,6 +551,7 @@ select::-ms-expand {
 .navbar .menu-list .links-li:last-child a {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 35px;
   height: 35px;
   padding: 6px;
@@ -773,7 +774,6 @@ select::-ms-expand {
   z-index: 99;
   width: 100%;
   padding: 10px 10px;
-  border-radius: 35px 35px 0 0;
   background: linear-gradient(#0064D8, #1C2848);
 }
 .cookie-div p {
@@ -1406,6 +1406,24 @@ select::-ms-expand {
     transform: rotate(360deg);
     transition: 0.6s ease;
   }
+  .navbar .menu-list .links-li .cart {
+    position: relative;
+  }
+  .navbar .menu-list .links-li .cart p {
+    position: absolute;
+    color: #1C2848;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -7px;
+    font-weight: 800;
+    right: -7px;
+    width: 17px;
+    background-color: white;
+    font-size: 14px;
+    height: 17px;
+    border-radius: 2px;
+  }
   .navbar .menu-list .links-li span {
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 49%, rgb(23 50 97) 49%, #056ab9 57%, #ffffff 57%, #ffffff 69%, rgb(23 50 97) 69%, rgb(23 50 97) 77%, #ffffff 77%, #ffffff 88%, rgb(23 50 97) 88%, #ffffff 88%);
     width: 0;
@@ -1571,6 +1589,7 @@ select::-ms-expand {
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
   }
   .dropdown-menu h3 {
     color: #000000;
@@ -1742,7 +1761,7 @@ select::-ms-expand {
     width: 100%;
   }
   .dropdown-menu .course-menu .menu-info a {
-    width: 50%;
+    width: 100%;
     padding: 7px;
     font-size: 14px;
     font-weight: bold;

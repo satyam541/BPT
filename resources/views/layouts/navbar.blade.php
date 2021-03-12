@@ -49,7 +49,7 @@
                     </a>
                     <a class="cart" href="{{route('cart')}}">
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
-                        {{Cart::count()}}
+                       <p>{{Cart::count()}}</p>
                     </a>
                     <a class="cart country-select" id="flag">
                     <div class="flag {{ strtolower(country()->country_code) }}"></div>
