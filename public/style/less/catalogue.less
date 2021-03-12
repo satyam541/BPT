@@ -138,17 +138,13 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
+        padding: 2rem 1rem;
         box-shadow: @shadowLight;
         background: @whiteColor;
-        cursor: pointer;
         align-items: center;
     }
     .form {
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        margin-top: 1rem;
         background-color: transparent;
         box-shadow: none;
         padding: 0;
@@ -156,6 +152,9 @@
     .select-dropdown {
         padding-bottom: 1.5rem;
         width: 100%;
+        &:nth-last-child(2) {
+            padding-bottom: 1rem;
+        }
         p {
             font-weight: 800;
             padding-bottom: 0.5rem;
@@ -182,6 +181,11 @@
         background-size: 18% 24%;
         background-position: center right;
     }
+    .buttons {
+        .btn-blue {
+            cursor: pointer;
+        }
+    }
 }
 // End Banner Section
 
@@ -204,6 +208,8 @@
         box-shadow: @shadowLight;
         padding: 2rem;
         align-items: center;
+        width: 272px;
+        align-self: center;
         margin-top: 2rem;
         border-radius: 10px;
         position: relative;
@@ -242,6 +248,7 @@
         }
         h3 {
             text-align: center;
+            margin-top: .5rem;
         }
         &:hover {
             h3 {
@@ -292,6 +299,9 @@
 // Start Popular-Courses Section
 .popular-courses {
     padding: @sectionPadding;
+    .heading {
+        margin-bottom: 0;
+    }
     .popular-container {
         display: flex;
         flex-direction: column;
@@ -317,9 +327,7 @@
         align-items: center;
         padding: 1rem;
         margin-top: 2rem;
-        width: 272px;
-        align-self: center;
-        background: linear-gradient(90deg, @darkblueColor 59px, @whiteColor 59px);
+        background: linear-gradient(90deg, @darkblueColor 65px, @whiteColor 59px);
         span {
             display: flex;
             justify-content: center;
@@ -338,7 +346,7 @@
                 border-top: 10px solid transparent;
                 border-left: 10px solid @darkblueColor;
                 border-bottom: 10px solid transparent;
-                right: -13px;
+                right: -19px;
                 top: 9px;
             }
         }
@@ -493,7 +501,6 @@
         margin-top: 1rem;
         border-radius: 10px;
         li {
-            font-size: 14px;
             padding-left: 1.4rem;
             position: relative;
             z-index: 1;
@@ -536,8 +543,6 @@
             display: flex;
             height: 100px;
             width: 100px;
-            justify-content: center;
-            align-items: center;
             padding: 1.5rem;
             background-color: @whiteColor;
             border-radius: 50%;
@@ -573,6 +578,7 @@
 .catalogue-banner {
     select {
         background-size: 6% 24%;
+        background-position-x: right 10px;
     }
 }
 // End Banner Section

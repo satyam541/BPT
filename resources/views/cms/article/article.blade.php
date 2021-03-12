@@ -50,7 +50,7 @@
           </div>
             <!-- /.card-header -->
             <div class="card-body">
-              
+              <span class="message" id="success_type"></span>
               <table id="example1">
                 <thead>
                 <tr>
@@ -70,7 +70,8 @@
                     <tr>
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
-                    <td class=" text-center"><input type="checkbox" name="is_popular"></td>
+                    <td class=" text-center">
+                    <input type="checkbox" class="popularArticle" value="{{$item->id}}" @if ($item->popular->exists) checked @endif name="is_popular"></td>
                     <td>
                     @can('update',$item)
                     <a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
@@ -106,6 +107,7 @@
 @endsection
 @section('footer')
     <script>
+      success = $('#success_type');
         $(document).ready(function(){
           $('#myonoffswitch').change(function(){
               $('#submit').click();
@@ -117,6 +119,34 @@
                         { "name": "Popular", "sorting":false, searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
+            });
+            $('tbody').on('click','.popularArticle',function(){
+              var id=$(this).val();
+              var checked=$(this).attr('checked');
+              var that = this;
+              $.ajax({
+                url:'{{route('articlePopular')}}',
+                data:{articleId:id,checked:checked},
+                type:'post',
+                headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+              if(data=='removed'){
+                $(that).attr('checked',false);
+              }
+              else{
+                $(that).attr("checked", true);
+              }
+                    success.fadeIn('slow', function(){
+
+                        toastr.success('successfully '+data);
+                        success.delay(3000).fadeOut(); 
+                        location.reload();
+                    });
+                }
+            
+              });
             });
         });
     </script>

@@ -21,8 +21,8 @@ class CertificationController extends Controller
         $data['pageDetail'] = PageDetail::getContent('certification');
         return view('certification',$data);
     }
-    public function certificationDetail($method,$certification){
-        $slug='/'.$method.'/'.$certification;
+    public function certificationDetail($certification){
+       
         $pageDetail = PageDetail::where(['page_name'=>'certification_details','section'=>'metas'])->get();
         if($pageDetail->isNotEmpty())
         {
@@ -31,7 +31,7 @@ class CertificationController extends Controller
             $meta['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($meta);
         }
-        $data['certification']=Certification::with('topic.courses')->where('slug',$slug)->first();
+        $data['certification']=Certification::with('topic.courses')->where('slug',$certification)->first();
         $data['pageDetail'] = PageDetail::getContent('certification_details');
         return view('certificationDetail',$data);
     }

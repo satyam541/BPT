@@ -23,7 +23,6 @@
 
     <!-- Start Steps Section -->
     <section class="flex-container steps">
-
         <div class="container">
             <div class="steps-container">
                 <div class="heading center-heading">
@@ -276,7 +275,7 @@
                             @csrf
                             <div class="card-detail">
                                 <p id="course-name">{{$cartItems->first()->name}}</p>
-                                <div class="input-container">
+                                <div class="booking-content">
                                     <p><strong id="method">Booking Type:</strong><span>
                                         @switch($cartItems->first()->options['method'] ?? '')
                                         @case('classroom')
@@ -419,7 +418,7 @@
                             {{ Form::open(array('route'=>'cartCheckout', 'id'=>'pay_form')) }}
                             <div class="form-consent">
                                 <input type="checkbox" name="agree" id="agree">
-                                <label for="readconsent">I have read and agree with the terms and conditions.</label>
+                                <label for="agree">I have read and agree with the terms and conditions.</label>
                             </div>
                             <div class="buttons">
                                 <button type="button" class="btn-white" onclick="cancelOrder()">

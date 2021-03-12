@@ -22,7 +22,15 @@ class ArticleController extends Controller
         // $this->Image_prefix = "articleImage";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-
+    public function popular(Request $request){
+        $article=Article::find($request->articleId);
+        if($request->checked=='checked'){
+            $article->popular->delete();    
+            return 'removed';
+        }
+        $article->popular->save();
+        return 'added';
+    }
     public function newsList(Request $request)
     {
         $this->authorize('view', Article::firstOrNew(['type'=>'news']));

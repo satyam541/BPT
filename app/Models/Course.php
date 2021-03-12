@@ -67,11 +67,16 @@ class Course extends Model
     // {
     //     return $this->morphOne('App\Models\Popular', 'module');
     // }
-    
+
+    // public function __isset($key)
+    // {
+    //     dd($key, $this->getAttribute($key));
+    //     // return isset();
+    // }
     public function loadContent()
     {
         $object = $this;
-        $content = $object->content->where('country_id',country()->id);
+        $content = $object->content->where('country_id',country()->country_code);
         if($content->isEmpty())
         {
             $content = $object->content;
@@ -82,7 +87,7 @@ class Course extends Model
         }
         $attributes = $content->first()->getAttributes();
         $original = $object->getAttributes();
-        $object->combinedAttributes = array_merge($attributes, $original);
+        $object->attributes = array_merge($attributes, $original);
     }
 
     public function delete()
@@ -217,6 +222,10 @@ class Course extends Model
     {
         $reference =  $this->reference;
         $url = 'training-courses'.$reference;
+        if(country()->country_code != 'gb')
+        {
+            $url = country()->country_code."/".$url;
+        }
         return url($url);
     }
    

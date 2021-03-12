@@ -17,19 +17,19 @@
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a data-href="#overview" class="link"><i class="fa fa-money"></i>Certification</a>
+                    <a href="{{route('certification')}}" class="link"><i class="fa fa-money"></i>Certification</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('onsite')}}" data-href="#choose" class="link"><i class="fa fa-building"></i>Onsite</a>
+                    <a href="{{route('onsite')}}" class="link"><i class="fa fa-building"></i>Onsite</a>
                     <span></span>
                 </li>
                 <li class="links-li">
-                    <a href="{{route('locations')}}" data-href="#azure-other" class="link"><i class="fa fa-map"></i>Locations</a>
+                    <a href="{{route('locations')}}" class="link"><i class="fa fa-map"></i>Locations</a>
                     <span></span>
                 </li>
                 <li class="links-li about-link" id="aboutdropdown" >
-                    <a href="" data-href="#faq" class="link mobile"><i class="fa fa-address-card"></i>About Us</a>
+                    <a href="{{route('aboutUs')}}" class="link mobile"><i class="fa fa-address-card"></i>About Us</a>
                     <a class="link desktop">About<img src="{{url('img/master/upward-arrow.svg')}}" alt="upward-arrow"></a>
                     <span></span>
                     <ul>
@@ -39,7 +39,7 @@
                     </ul>   
                 </li>
                 <li class="links-li">
-                    <a href="{{route('contactUs')}}" data-href="#blog" class="link"><i class="fa fa-address-book"></i>Contact Us</a>
+                    <a href="{{route('contactUs')}}" class="link"><i class="fa fa-address-book"></i>Contact Us</a>
                     <span></span> 
                 </li>
                 
@@ -47,10 +47,11 @@
                     <a class="search" id="search">
                         <img src="{{url('img/master/search.svg')}}" alt="search">
                     </a>
-                    <a class="cart">
+                    <a class="cart" href="{{route('cart')}}">
                         <img src="{{url('img/master/cart.svg')}}" alt="cart">
+                        {{Cart::count()}}
                     </a>
-                    <a class="cart" id="flag">
+                    <a class="cart country-select" id="flag">
                     <div class="flag {{ strtolower(country()->country_code) }}"></div>
                         <!-- <img src="{{url('img/flag/uk.svg')}}" alt="cart" class="flag"> -->
                     </a>
@@ -87,44 +88,12 @@
         </div>
         <ul class="country-list country-select" id="country-list">                                        
             @foreach (countries() as $country)
-            <li class="country preferred @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
+            <li class="country preferred pointer @if($country->id == country()->id) active @endif " data-country-code="{{$country->id}}">
                 <div class="flag {{ strtolower($country->id) }}"></div>
                 <span class="country-names">{{ $country->name }}</span>
             </li>
             @endforeach
         </ul>
-        <!-- <ul class="country-list" id="country-list">
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void:(0);">
-                    <img src="{{url('img/flag/uk.svg')}}" alt="flag">
-                    <p>London</p>
-                </a>
-            </li>
-        </ul> -->
         <div class="dropdown-menu" id="dropdown-menu">
             @php
             $menu_data = menu_data();
