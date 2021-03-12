@@ -4983,6 +4983,7 @@ select::-ms-expand {
   background-image: url(../img/onsite/map-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
+  height: 100%;
 }
 .onsite-training .delegate .heading::before {
   content: none;
@@ -4990,6 +4991,7 @@ select::-ms-expand {
 .onsite-training .training-map {
   display: flex;
   margin-top: 1rem;
+  height: 100%;
 }
 .onsite-training .training-map img {
   width: 100%;
@@ -5846,7 +5848,7 @@ select::-ms-expand {
     margin: 0;
   }
   .convenient .heading h2 {
-    text-align-last: left;
+    text-align: left;
   }
   .convenient .convenient-container {
     display: flex;
@@ -5961,7 +5963,7 @@ select::-ms-expand {
   .popular {
     padding: 4rem 0rem;
   }
-  .popular .popular-content::before {
+  q .popular .popular-content::before {
     left: -13px;
   }
   .popular .popular-content .img {
@@ -5976,7 +5978,7 @@ select::-ms-expand {
   .buy {
     padding: 4rem 0rem;
     padding-top: 2rem;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
   }
   .form-map {
     padding: 4rem 0rem;
@@ -7283,6 +7285,9 @@ select::-ms-expand {
     width: 48%;
     align-self: inherit;
   }
+  .key .buttons {
+    display: none;
+  }
 }
 @media (min-width : 1024px) {
   .location-main .location-container {
@@ -7325,6 +7330,9 @@ select::-ms-expand {
   .key .key-content {
     width: 23%;
   }
+  .key .info h2 {
+    font-size: 26px;
+  }
 }
 @media (min-width : 1366px) {
   .location-main {
@@ -7349,6 +7357,9 @@ select::-ms-expand {
   }
   .key .key-content {
     margin-top: 0;
+  }
+  .key .buttons {
+    display: flex;
   }
 }
 .offer-banner {
