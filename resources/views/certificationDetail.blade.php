@@ -34,7 +34,7 @@
                     <a href="javascript:void(0);">{{$course->name}}</a>
                     <div class="buttons">
                         <a href="{{ $course->url }}" class="btn-blue" data-quote="{{$course->name}}">
-                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">course Detail
+                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">Course Detail
                         </a>
                     </div>
                 </div>    

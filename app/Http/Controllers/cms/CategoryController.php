@@ -178,6 +178,7 @@ class CategoryController extends Controller
         $data['result']         = new BulletPoint;
         $data['type']           = 'category';
         $data['module_id']      = $request->module;
+        $data['module']         = Category::find($data['module_id']);
         $data['submitRoute']    = ['categoryInsertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }

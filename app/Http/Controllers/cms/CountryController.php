@@ -20,18 +20,25 @@ class CountryController extends Controller
     {
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-    public function selectedCountry(Request $request){
+    public function selectedCountry(Request $request)
+    {
         $country = Country::find($request->country_id);
         Country::setActiveCountry($country);
         return 'done';
     }
 
-    public function list()
+    public function list(Request $request)
     {
         
         $this->authorize('view', new Country());
         $countries= Country::all();
-        return view('cms.country.countryList',compact('countries'));
+        $checked = null;
+        // dd($request->all());
+        if(isset($request->popular)){
+            $topics = Topic::whereHas('popular')->get();
+            $checked='checked';
+        }
+        return view('cms.country.countryList',compact('countries','checked'));
     }
     
     public function create()

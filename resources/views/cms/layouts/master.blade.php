@@ -8,7 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
+  {{-- <script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script> --}}
 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
@@ -134,8 +134,7 @@
           <li class="nav-header">CMS By Country</li>
           <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
-              {{-- <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"> --}}
-
+  
               {{ Form::select('country_id', countries()->pluck('name','country_code')->toArray(), country()->country_code, ['tabindex' => '-1', 'class' => 'form-control selectJS' ,'id'=>'country']) }}
               
             </div>
@@ -663,7 +662,9 @@
                                                       'categoryTrashList',
                                                       'topicTrashList',
                                                       'courseTrashList',
-                                                      'onlineCourseTrash'
+                                                      'onlineCourseTrash',
+                                                      'roleTrashList',
+                                                      'addonTrashList'
                                                       ]))
           class="nav-item has-treeview menu-open"
           @else
@@ -677,6 +678,22 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                @can('view', new App\Models\Country())
+                  <a href="{{Route('addonTrashList')}}" @if(Route::currentRouteName()=='addonTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Addon List</p>
+                  </a>
+                  @endcan
+                </li>
+              <li class="nav-item">
+                @can('view', new App\Models\Country())
+                  <a href="{{Route('roleTrashList')}}" @if(Route::currentRouteName()=='roleTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Role List</p>
+                  </a>
+                  @endcan
+                </li>
               <li class="nav-item">
               @can('view', new App\Models\Country())
                 <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>
@@ -806,6 +823,14 @@
           <li class="nav-header">Extra Resource</li>
           <li class="nav-item">
             @can('view', new App\Models\PageDetail())
+             <a href="{{Route('moduleList')}}" @if(in_array(Route::currentRouteName(),['moduleList','moduleCreate','moduleEdit']))class="nav-link active" @else class="nav-link" @endif>
+               <i class="nav-icon far fa-circle text-grey"></i>
+               <p class="text">Module List</p>
+             </a>
+             @endcan
+           </li>
+          <li class="nav-item">
+            @can('view', new App\Models\PageDetail())
              <a href="{{Route('paymentDetail')}}" @if(in_array(Route::currentRouteName(),['paymentDetail','paymentDetailCreate','paymentDetailEdit']))class="nav-link active" @else class="nav-link" @endif>
                <i class="nav-icon far fa-circle text-danger"></i>
                <p class="text">Payment Detail</p>
@@ -908,7 +933,7 @@
 
 
 <!-- jQuery -->
-<script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
+{{-- <script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script> --}}
 <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{url('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -942,7 +967,7 @@ $.widget.bridge('uibutton', $.ui.button)
 @yield('footer')
 <script>
   var selectedcountry = '{{ route("selectedcountry") }}';
-  // $(".toast").toast();
+  $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
       toastr.success('{{$message}}');
