@@ -452,7 +452,11 @@ $('#scroll').click(function(){
         }
          event.stopPropagation();
     });
-
+    //Start filters
+    $('#filterTop').on("click", function(){
+        $('.exclude').toggleClass('modes-active');
+    });
+    //End filters
     $(document).ready(function() {
         $(".category-menu a").click(function() {
             var target = $(this).data('target');
@@ -474,6 +478,7 @@ $('#scroll').click(function(){
             $(this).addClass("course-active");
         });
         $(".category-menu a").first().trigger('click');
+       
     });
 
     $('#flag').click(function() {
