@@ -420,7 +420,7 @@ $.ajax({
             data: formData,
             type: "post",
             beforeSend: function() {
-                $(formElement).find(".error").removeClass('error');
+                $(formElement).find(".input-error").removeClass('input-error');
                 $(formElement).find("input,button").prop('disabled', true);
             },
             complete: function() {
@@ -446,8 +446,10 @@ $.ajax({
                 $(formElement).find("button,input").attr('disabled', false);
                 errors = err.responseJSON.errors;
                 $.each(errors, function(index, value) {
-                    $(formElement).find("input[name='" + index + "']").addClass('error').attr(
-                        'title', value[0]);
+
+                   $(formElement).find("input[name='" + index + "']").closest('.input-container').addClass('input-error');
+                   $(formElement).find("input[name='" + index + "']").attr('placeholder',value);
+
                 });
             }
         });
