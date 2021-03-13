@@ -14002,7 +14002,6 @@ select::-ms-expand {
 }
 .form-success .success-content a {
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 .form-success .success-content a:last-child {
   margin-bottom: 0;
