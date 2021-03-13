@@ -339,4 +339,22 @@ class UserController extends Controller
                return redirect()->back();
         } 
     }
+    public function rolesTrashList()
+    {
+        $data['trashedRoles']   =   Role::onlyTrashed()->get();
+
+        return view('cms.trashed.roleTrashedList',$data);
+    }
+    public function restoreRole($id)
+    {
+        Role::onlyTrashed()->find($id)->restore();
+
+        return back()->with('success','Successfully Restored');
+    }
+    public function forceDeleteRole($id)
+    {
+        Role::onlyTrashed()->find($id)->forceDelete();
+
+        return back()->with('success','Permanently Deleted!');
+    }
 }

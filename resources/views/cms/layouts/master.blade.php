@@ -942,7 +942,7 @@ $.widget.bridge('uibutton', $.ui.button)
 @yield('footer')
 <script>
   var selectedcountry = '{{ route("selectedcountry") }}';
-  $(".toast").toast();
+  // $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
       toastr.success('{{$message}}');

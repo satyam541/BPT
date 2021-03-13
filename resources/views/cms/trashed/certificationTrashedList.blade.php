@@ -15,7 +15,8 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item">Certification</li>
+                            <li class="breadcrumb-item"><a href="{{ route('certificationList') }}">Certification</a></li>
+                            <li class="breadcrumb-item">Trash</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
