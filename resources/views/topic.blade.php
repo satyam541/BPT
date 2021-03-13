@@ -47,8 +47,8 @@
                         <div class="heading">
                             <h2>{!!heading_split($pageDetail->popular_courses['heading']->heading)!!}</h2>
                         </div>
+                        <div class="courses-list">
                         @foreach ($topic->courses as $course)
-
                         <div class="course-item" onclick="location.href = '{{ $course->url }}';">
                             <span>
                                 <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
@@ -60,6 +60,7 @@
                             </div>
                         </div>
                         @endforeach
+                        </div>
 
                     </div>
                     <div class="courses-info">
