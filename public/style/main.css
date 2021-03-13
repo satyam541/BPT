@@ -407,7 +407,7 @@ select::-ms-expand {
 }
 .form .consent-error p,
 .form .consent-error-other p {
-  color: red;
+  color: red!important;
   line-height: 1.4;
   font-size: 12px;
 }
@@ -5043,10 +5043,7 @@ select::-ms-expand {
 }
 .doorstep .form-consent p a {
   color: #FFFFFF;
-  font-size: 12   px;
-}
-.doorstep .consent-error p {
-  color: red;
+  font-size: 12px;
 }
 .doorstep .input-container {
   background-color: #4B5773;
@@ -5061,10 +5058,6 @@ select::-ms-expand {
   background-color: #6B7996;
 }
 .doorstep .input-container ::placeholder {
-  color: #FFFFFF;
-}
-.doorstep .input-container input,
-.doorstep .input-container textarea {
   color: #FFFFFF;
 }
 .doorstep .info {
