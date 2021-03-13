@@ -59,7 +59,7 @@
             <form class="form" onsubmit="submitEnquiry(this)" id="contact-us">
                 @csrf
                 <div class="heading center-heading white-heading">
-                    <h2>World Class Training At Your Doorstep</h2>
+                    <h2>Enquire for the Training At Your Doorstep</h2>
                 </div>
                 <div class="form-input">
                     <input type="hidden" name="type" value="onsite">
