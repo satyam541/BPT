@@ -43,7 +43,8 @@
         box-shadow: @shadowLight;
         margin-top: 1.5rem;
         border-radius: 25px;
-        align-items: center;
+        width: 272px;
+        align-self: center;
     }
     a {
         text-align: center;
@@ -92,8 +93,8 @@
     }
     span {
         display: flex;
-        height: 93px;
-        width: 93px;
+        height: 95px;
+        width: 95px;
         background-color: @whiteColor;
         border-radius: 50%;
         padding: 1.6rem;
@@ -192,6 +193,9 @@
                 width: 100%;
             }
         }
+        p {
+            width: calc(100% - 45px);
+        }
         
     }
     .enquiry-img {
@@ -213,7 +217,7 @@
             background-image: url(../img/certification/enquiry-lines.svg);
             height: 28px;
             width: 40px;
-            animation: rotate 12s linear infinite;
+            animation: rotate 10s linear infinite;
         }
         &::after {
             bottom: 13%;

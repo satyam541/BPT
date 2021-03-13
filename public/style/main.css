@@ -7968,7 +7968,8 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
   border-radius: 25px;
-  align-items: center;
+  width: 272px;
+  align-self: center;
 }
 .certification-course a {
   text-align: center;
@@ -8013,8 +8014,8 @@ select::-ms-expand {
 }
 .method span {
   display: flex;
-  height: 93px;
-  width: 93px;
+  height: 95px;
+  width: 95px;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 1.6rem;
@@ -8111,6 +8112,9 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.enquiry .content p {
+  width: calc(100% - 45px);
+}
 .enquiry .enquiry-img {
   display: flex;
   height: 100%;
@@ -8132,7 +8136,7 @@ select::-ms-expand {
   background-image: url(../img/certification/enquiry-lines.svg);
   height: 28px;
   width: 40px;
-  animation: rotate 12s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 .enquiry .enquiry-img::after {
   bottom: 13%;
@@ -8163,6 +8167,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
@@ -8196,7 +8201,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgb(255 249 12.45%);
     background: #1C2848;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 70%;
     text-align: left;
   }
@@ -8204,9 +8209,6 @@ select::-ms-expand {
     width: 28%;
     margin-top: 0;
     justify-content: flex-end;
-  }
-  .certification-course a {
-    text-align: left;
   }
   .method {
     padding: 3rem 2rem;
@@ -8253,21 +8255,17 @@ select::-ms-expand {
   .enquiry .contact-content:nth-child(2) {
     background: none;
   }
+  .enquiry .enquiry-img {
+    width: 60%;
+    align-self: center;
+  }
   .enquiry .enquiry-img::before {
-    top: 33%;
-    left: 13%;
     height: 31px;
     width: 45px;
   }
   .enquiry .enquiry-img::after {
-    bottom: 13%;
-    right: -2%;
     height: 90px;
-    width: 175px;
-  }
-  .enquiry .enquiry-img img {
-    height: 100%;
-    width: 100%;
+    width: 120px;
   }
 }
 @media (min-width : 1024px) {
@@ -8309,14 +8307,14 @@ select::-ms-expand {
   .certification-course .course-content:nth-child(even) {
     margin-right: 0;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 61%;
   }
   .certification-course .buttons {
     width: 37%;
   }
-  .certification-course a {
-    width: 60%;
+  .method p {
+    font-size: 16px;
   }
   .enquiry .enquiry-container {
     flex-direction: row;
@@ -8385,16 +8383,6 @@ select::-ms-expand {
   }
   .certification-course {
     padding: 4rem 0rem;
-  }
-  .certification-course .course-content {
-    width: 48%;
-    margin-right: 2.5rem;
-  }
-  .certification-course h3 {
-    width: 61%;
-  }
-  .certification-course .buttons {
-    width: 39%;
   }
   .method {
     padding: 4rem 0rem;
