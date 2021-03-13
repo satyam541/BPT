@@ -662,7 +662,8 @@
                                                       'categoryTrashList',
                                                       'topicTrashList',
                                                       'courseTrashList',
-                                                      'onlineCourseTrash'
+                                                      'onlineCourseTrash',
+                                                      'roleTrashList'
                                                       ]))
           class="nav-item has-treeview menu-open"
           @else
@@ -676,6 +677,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                @can('view', new App\Models\Country())
+                  <a href="{{Route('roleTrashList')}}" @if(Route::currentRouteName()=='roleTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Role List</p>
+                  </a>
+                  @endcan
+                </li>
               <li class="nav-item">
               @can('view', new App\Models\Country())
                 <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>
@@ -941,7 +950,7 @@ $.widget.bridge('uibutton', $.ui.button)
 @yield('footer')
 <script>
   var selectedcountry = '{{ route("selectedcountry") }}';
-  // $(".toast").toast();
+  $(".toast").toast();
   $(function () {
       @if($message = Session::get('success'))
       toastr.success('{{$message}}');
