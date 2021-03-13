@@ -83,6 +83,7 @@
             $("#reference").val(slug);
 
         }
+    });
         
 
     </script>
