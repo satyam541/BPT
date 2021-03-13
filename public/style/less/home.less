@@ -3,6 +3,7 @@
     .banner-container{
         box-shadow: @shadowLight;
         .banner-content{
+            align-items: flex-start;
             p{
                 color: @textColor;
                 margin-bottom: 1rem;
@@ -118,6 +119,9 @@
 // Start courses section//
 .courses{
     padding: @sectionPadding;
+    .heading{
+        margin-bottom: 0;
+    }
     .courses-container{
         display: flex;
         flex-direction: column;
@@ -224,8 +228,8 @@
         align-items: center;
         text-align: center;
         img{
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
         }
         p{
             color: @whiteColor;

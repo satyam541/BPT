@@ -1974,6 +1974,9 @@ select::-ms-expand {
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
+.home-banner .banner-container .banner-content {
+  align-items: flex-start;
+}
 .home-banner .banner-container .banner-content p {
   color: #181818;
   margin-bottom: 1rem;
@@ -2063,6 +2066,9 @@ select::-ms-expand {
 }
 .courses {
   padding: 3rem 1.5rem;
+}
+.courses .heading {
+  margin-bottom: 0;
 }
 .courses .courses-container {
   display: flex;
@@ -2162,8 +2168,8 @@ select::-ms-expand {
   text-align: center;
 }
 .effective .content img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 .effective .content p {
   color: #FFFFFF;
@@ -2584,13 +2590,16 @@ select::-ms-expand {
   .courses .courses-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .courses .course-name {
-    width: 48%;
+    width: 46%;
   }
   .courses .course-name .icon {
     display: flex;
+  }
+  .courses .course-name .name h3 {
+    min-height: 42px;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2622,9 +2631,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .effective .content img {
-    width: 80px;
-    height: 80px;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     transform: translate(10px, -30px);
   }
   .effective .buttons {
@@ -2661,10 +2668,10 @@ select::-ms-expand {
     align-items: center;
   }
   .ways .ways-content {
-    width: 52%;
+    width: 48%;
   }
   .ways .ways-image {
-    width: 40%;
+    width: 48%;
     margin-top: 0;
   }
   .ways .item::before {
@@ -2831,6 +2838,7 @@ select::-ms-expand {
   .looking {
     padding: 3rem 2rem;
     position: relative;
+    z-index: 1;
   }
   .looking::before {
     content: '';
@@ -2844,6 +2852,7 @@ select::-ms-expand {
     right: 0;
     z-index: 0;
     top: 62px;
+    z-index: -1;
   }
   .looking .looking-container {
     flex-direction: row;
@@ -2979,7 +2988,10 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 24%;
-    height: 320px;
+    height: 340px;
+  }
+  .delivery .item p {
+    min-height: 132px;
   }
   .facts .facts-container {
     flex-direction: row;
@@ -3046,7 +3058,6 @@ select::-ms-expand {
   .looking .clients-reviews {
     width: 50%;
     padding: 0 1rem;
-    margin-top: 3rem;
   }
   .looking .reviews-outer {
     position: relative;
@@ -3068,6 +3079,7 @@ select::-ms-expand {
     background-size: contain;
     background-position: right;
     padding-bottom: 0 !important;
+    padding-top: 1rem  !important;
   }
   .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
@@ -3110,7 +3122,10 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 22%;
-    height: 290px;
+    height: 320px;
+  }
+  .delivery .item p {
+    min-height: 110px;
   }
   .delivery h3 {
     font-size: 18px;
