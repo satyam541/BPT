@@ -33,6 +33,13 @@ Route::post('/role/assign','UserController@assignRoles')->name('assignRole'); //
 Route::post('/permission/assign','UserController@assignPermission')->name('assignPermission');
 Route::get('/module/auto-complete','UserController@loadModules')->name('moduleAutoComplete');// autocomplete module
 
+Route::get('/module','ModuleController@list')->name('moduleList');
+Route::get('/module/insert','ModuleController@create')->name('moduleCreate');
+Route::post('/module/insert','ModuleController@insert')->name('moduleInsert');
+Route::get('/module/edit/{id}','ModuleController@edit')->name('moduleEdit');
+Route::post('/module/update/{id}','ModuleController@update')->name('moduleUpdate');
+Route::post('/module/delete/{id}','ModuleController@delete')->name('moduleDelete');
+
 Route::get('/certification','CertificationController@index')->name('certificationList');
 Route::get('/certification/insert','CertificationController@create')->name('createCertification');
 Route::post('/certification/insert','CertificationController@insert')->name('insertCertification');
@@ -55,7 +62,7 @@ Route::get('/certification/topics/{topic_id}/assignCourse','CertificationControl
 Route::post('/certification/topics/{topic_id}/assignCourse','CertificationController@assignCourses')->name('assignCoursesRoute');
 // country routes
 Route::get('/country','CountryController@list')->name('countryList');
-Route::post('/country','CountryController@filterList')->name('countryList');
+// Route::post('/country','CountryController@filterList')->name('countryList');
 Route::get('/country/insert','CountryController@create')->name('createCountry');
 Route::post('/country/insert','CountryController@insert')->name('insertCountry');
 Route::get('/country/update/{country_code}','CountryController@edit')->name('editCountry');
@@ -190,7 +197,7 @@ Route::post('/whatsincluded/delete/{whatsincluded}','WhatsIncludedController@del
 // Online Course
 Route::get('/online-course','OnlineCourseController@list')->name('onlinecourseList');
 Route::get('/courseassignAddon/{course}','OnlineCourseController@courseAddonsList')->name('courseAddonsList');
-
+Route::get('/online-course/delete/{course}','OnlineCourseController@delete')->name('deleteOnlineCourse');
 
 // Addon Routes
 Route::get('/course/addon','AddonController@index')->name('AddonList');
@@ -406,9 +413,9 @@ Route::get('/bundletrash','BundleController@trashList')->name('bundleTrashList')
 Route::get('/bundle/restoreBundle/{id}','BundleController@restore')->name('restoreBundleRoute');
 Route::get('/bundle/forceDeleteBundle/{id}','BundleController@forceDelete')->name('forceDeleteBundle');
 
-Route::get('/onlinecourse/trashList','OnlineCourseController@trashList')->name('onlineCourseTrash');
-Route::get('/onlinecourse/restore/{id}','OnlineCourseController@restore')->name('restoreOnlineCourse');
-Route::get('/onlinecourse/forceDelete/{id}','OnlineCourseController@forceDelete')->name('forceDeleteOnlineCourse');
+// Route::get('/onlinecourse/trashList','OnlineCourseController@trashList')->name('onlineCourseTrash');
+// Route::get('/onlinecourse/restore/{id}','OnlineCourseController@restore')->name('restoreOnlineCourse');
+// Route::get('/onlinecourse/forceDelete/{id}','OnlineCourseController@forceDelete')->name('forceDeleteOnlineCourse');
 
 Route::get('/urlredirect','RedirectController@UrlRedirectList')->name('urlRedirectList');
 Route::get('/urlredirect/create','RedirectController@create')->name('createUrlRedirect');

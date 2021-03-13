@@ -106,6 +106,7 @@ class TopicController extends Controller
         $data['result']         = new BulletPoint;
         $data['type']           = 'topic';
         $data['module_id']      = $request->module;
+        $data['module']         = Topic::find($request->module);
         $data['submitRoute']    = ['topicInsertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -130,6 +131,7 @@ class TopicController extends Controller
         $data['result']         = BulletPoint::find($id);
         $data['type']           = 'topic';
         $data['module_id']      = $data['result']->module_id;
+        $data['module']         = Topic::find($data['module_id']);
         $data['submitRoute']    = ['topicUpdateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -171,7 +173,7 @@ class TopicController extends Controller
          $data['headings'] =whatsIncludedHeaders::all()->pluck('name','id')->toArray();
          $data['whatsincluded'] = new whatsincluded();
          $data['submitRoute'] = 'topicInsertWhatsincluded';
-      
+         
         return view('cms.whatsincluded.whatsIncludedForm',$data);
     }
  
