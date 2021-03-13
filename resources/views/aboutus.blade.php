@@ -31,7 +31,7 @@
             <div class="about-content">
                 @foreach ($pageDetail->intro as $item)
                 <div class="about-item">
-                    <div class="heading">
+                    <div class="heading center-heading">
                         {{-- <h2>Who We <span> Are</span></h2> --}}
                         <h2>{!!$item->heading!!}</h2>
                     </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="about-image">
                 <div class="values-content">
-                <div class="heading">
+                <div class="heading center-heading">
                     {{-- <h2>Our <span>Values</span> </h2> --}}
                     <h2>{!!$pageDetail->intro_right['our_values']->heading!!}</h2>
                 </div>

@@ -3763,21 +3763,13 @@ select::-ms-expand {
 .about-us p {
   text-align: center;
 }
-.about-us .heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.about-us .heading h2 {
-  text-align: center;
-}
 .about-us .values-info {
-  height: 100%;
   margin-top: 1rem;
+  display: flex;
 }
 .about-us .values-info img {
   width: 100%;
+  height: 100%;
 }
 .difference {
   padding: 3rem 1.5rem;
@@ -4184,6 +4176,13 @@ select::-ms-expand {
   }
   .about-us .heading {
     align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  .about-us .heading::before {
+    margin: 0;
+  }
+  .about-us .heading h2 {
+    text-align: left;
   }
   .reviews {
     padding: 3rem 2rem;
@@ -4214,7 +4213,7 @@ select::-ms-expand {
     text-align: center;
   }
   .contact-form .item {
-    width: 48%;
+    width: 49%;
   }
   .contact-form .item:last-child {
     width: 54%;
@@ -4374,7 +4373,7 @@ select::-ms-expand {
     align-items: center;
   }
   .contact-form .form {
-    width: 63%;
+    width: 60%;
     align-self: flex-start;
     padding: 4rem;
     box-shadow: none;
@@ -4387,7 +4386,7 @@ select::-ms-expand {
     padding-top: 0;
   }
   .contact-form .contact-info {
-    width: 37%;
+    width: 38%;
     background: none;
     margin-top: 0;
   }
