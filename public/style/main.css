@@ -4514,6 +4514,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.customers .heading h2 {
+  margin-bottom: 0.5rem;
+}
 .customers .heading p {
   font-weight: bold;
   width: 100%;
@@ -4554,8 +4557,8 @@ select::-ms-expand {
 }
 .customers .info span {
   display: flex;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin-right: 0.5rem;
 }
 .customers .info span img {
@@ -4588,10 +4591,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
 }
 .services .heading h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 .services .heading p {
   text-align: center;
@@ -4772,6 +4776,7 @@ select::-ms-expand {
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
+    box-shadow: none;
   }
   .testimonial-banner::before {
     content: none;
@@ -4805,30 +4810,6 @@ select::-ms-expand {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-  .customers .customers-list::before,
-  .customers .customers-list::after {
-    content: none;
-    position: absolute;
-    z-index: -1;
-    background-image: url(../img/testimonial/curve.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-  .customers .customers-list::before {
-    height: 167px;
-    width: 161px;
-    top: 291px;
-    right: -80px;
-  }
-  .customers .customers-list::after {
-    height: 296px;
-    width: 232px;
-    bottom: 40px;
-    left: -143px;
-    transform: rotate(354deg);
   }
   .customers .customers-content {
     width: 46%;
@@ -4897,7 +4878,6 @@ select::-ms-expand {
   .services .heading {
     width: 66%;
     align-items: flex-start;
-    margin-bottom: 0;
   }
   .services .heading h2 {
     margin-bottom: 0.5rem;
@@ -4908,8 +4888,7 @@ select::-ms-expand {
   }
   .services .buttons {
     width: 16%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
     margin-top: 0;
   }
   .testimonial .testimonial-info {
@@ -4922,10 +4901,10 @@ select::-ms-expand {
     background-size: 100% 100%;
   }
   .fact .heading p {
-    width: 65%;
+    width: 75%;
   }
   .fact .fact-content {
-    width: 30%;
+    width: 29%;
     margin-right: 2rem;
   }
   .fact .fact-content:last-child(2) {
@@ -4939,15 +4918,38 @@ select::-ms-expand {
   .customers p {
     width: 63%;
   }
+  .customers .customers-list {
+    position: relative;
+    z-index: 1;
+  }
   .customers .customers-list::before,
   .customers .customers-list::after {
     content: '';
+    position: absolute;
+    z-index: -1;
+    background-image: url(../img/testimonial/curve.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .customers .customers-list::before {
+    height: 167px;
+    width: 161px;
+    top: 291px;
+    right: -80px;
+  }
+  .customers .customers-list::after {
+    height: 296px;
+    width: 232px;
+    bottom: 40px;
+    left: -143px;
+    transform: rotate(354deg);
   }
   .customers .customers-content .content p {
     min-height: 154px;
   }
   .services {
     padding: 4rem 0rem;
+    padding: 2.5rem 0;
   }
   .testimonial {
     padding: 4rem 0rem;
@@ -4957,6 +4959,11 @@ select::-ms-expand {
   }
   .fact {
     padding: 4rem 0rem;
+  }
+}
+@media (min-width: 1366px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .customers .customers-content::after {
+    bottom: 19px;
   }
 }
 .onsite-banner {
