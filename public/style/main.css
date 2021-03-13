@@ -8469,11 +8469,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.course-intro .intro-para {
-  font-weight: bold;
-}
 .course-intro p {
   margin-bottom: 1rem;
+}
+.course-intro p:last-child {
+  margin-bottom: 0;
 }
 .course-intro ul li {
   padding-left: 1.5rem;
@@ -8572,6 +8572,9 @@ select::-ms-expand {
 }
 .foundation .tab-links .active {
   border-bottom: 4px solid #0064D8;
+}
+.foundation .tab-links .active .number {
+  color: #c5d1ee;
 }
 .foundation .tab-links .active::before {
   border-bottom: 20px solid #0064D8;
@@ -8751,8 +8754,8 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
 }
-.foundation #included .heading {
-  margin-bottom: 2rem;
+.foundation #included h2 {
+  text-align: center;
 }
 .foundation .included-list {
   display: flex;
@@ -8836,7 +8839,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .learn-more ul li {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   margin-top: 0.8rem;
   position: relative;
   z-index: 1;
@@ -8851,7 +8854,7 @@ select::-ms-expand {
   width: 15px;
   height: 15px;
   left: 0;
-  top: 4px;
+  top: 2px;
   background-repeat: no-repeat;
 }
 .learn-more .more-content ul li:last-child {
@@ -8996,6 +8999,8 @@ select::-ms-expand {
   display: none;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 272px;
+  align-self: center;
 }
 .training .modes-active {
   display: flex;
@@ -9066,6 +9071,8 @@ select::-ms-expand {
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  width: 272px;
+  align-self: center;
 }
 .training .add-ons h2 {
   position: absolute;
@@ -9081,7 +9088,7 @@ select::-ms-expand {
 .training .add-ons .item {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 .training .add-ons .item .offer {
   display: flex;
@@ -9095,6 +9102,9 @@ select::-ms-expand {
   text-align: left;
   padding-left: 1.6rem;
   font-size: 13px;
+}
+.training .add-ons .item:last-child {
+  margin-top: 1rem;
 }
 .training .add-ons:nth-child(2) {
   background-color: black;
@@ -9131,7 +9141,7 @@ select::-ms-expand {
 .training .add-foundation .image {
   display: flex;
   border-bottom: 1px dashed #C0C0C0;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0;
   padding-bottom: 0.5rem;
   width: 85%;
   align-self: center;
@@ -9148,6 +9158,7 @@ select::-ms-expand {
 }
 .training .add-foundation ul {
   padding: 1rem;
+  padding-bottom: 0;
 }
 .training .add-foundation ul li {
   display: flex;
@@ -9195,6 +9206,11 @@ select::-ms-expand {
   background-color: #1C2848;
   flex-direction: column;
   padding: 2rem;
+  margin-top: 0;
+  display: flex;
+}
+.training .onsite-block .onsite-form .heading {
+  padding-top: 0;
 }
 .training .onsite-block .onsite-form .heading p {
   text-align: center;
@@ -9224,6 +9240,7 @@ select::-ms-expand {
 .training .course-content {
   display: flex;
   flex-direction: column;
+  margin: auto;
   margin-top: 2.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -9244,6 +9261,7 @@ select::-ms-expand {
 }
 .training .course-name {
   display: flex;
+  justify-content: center;
   font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
@@ -9305,7 +9323,7 @@ select::-ms-expand {
   justify-content: space-around;
 }
 .training .date p {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0.8rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   text-align: center;
@@ -9782,6 +9800,9 @@ select::-ms-expand {
   .foundation .tab-links .tab-click:first-child {
     margin-top: 3rem;
   }
+  .foundation #included h2 {
+    text-align: left;
+  }
   .foundation .included-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -9865,11 +9886,21 @@ select::-ms-expand {
   .training select {
     padding: 15px;
   }
+  .training .modes .heading {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .training .modes .heading img {
+    display: none;
+  }
   .training .modes-list {
     display: flex;
+    width: 100%;
   }
   .training .key-point {
-    display: flex;
     width: 40%;
     align-self: center;
   }
@@ -9944,6 +9975,7 @@ select::-ms-expand {
     position: sticky;
     top: 170px;
     height: auto;
+    align-self: flex-start;
   }
   .training .add-foundation {
     width: 48%;
@@ -10172,21 +10204,14 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
   }
-  .foundation #included .heading {
-    display: flex;
-    align-items: flex-start;
-  }
-  .foundation #included .heading::before {
-    right: initial;
-  }
-  .foundation #included .heading h2 {
-    text-align-last: left;
+  .foundation .tab-common .overview-content {
+    margin-top: 0;
   }
   .learn-more .more-list {
     width: 49%;
   }
   .learn-more .more-container {
-    padding: 3rem 2rem;
+    padding: 2rem;
   }
   .unable p {
     width: 60%;

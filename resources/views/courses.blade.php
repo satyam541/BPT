@@ -48,7 +48,7 @@
                 <div class="heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
-                <p class="intro-para">{!! $selectedCourse->detail !!}</p>
+                <div class="intro-para">{!! $selectedCourse->detail !!}</div>
             </div>
         </div>
     </section>
@@ -174,9 +174,7 @@
 
                 @if ($selectedCourse->whatsIncluded->isNotEmpty())
                 <div class="tab-content" id="included">
-                    <div class="heading center-heading">
-                        <h2>What's Included <span>Us</span></h2>
-                    </div>
+                        <h2>What's Included Us</h2>
                     <div class="included-list">
 
                         @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
@@ -502,11 +500,11 @@
                                     </span>
                                     <ul>
                                         <li>
-                                            <p>Course price</p>
+                                            <p>Course Price</p>
                                             <p>£{!! formatPrice(floor($onlineSchedules->onlinePrice->price)) !!}</p>
                                         </li>
                                         <li>
-                                            <p>add-ons price</p>
+                                            <p>add-ons Price</p>
                                             <p>£<span class="addons-price">0</span></p>
                                         </li>
                                         <li>
