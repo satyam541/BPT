@@ -588,7 +588,7 @@
                                         <span class="prefix"></span>
                                         <input type="number" class="telephone" placeholder="Phone Number*">
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                            <input type="text" name="Phone" class="phonenumber">
+                                            <input type="text" name="phone" class="phonenumber">
                                         </div>
                                     </div>
                                 </div>
@@ -860,7 +860,8 @@
                         <span class="image">
                             <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
                         </span>
-                        <div class="location-name">{!! $popularLocation->name !!}</div>
+                        <h3>{!! $popularLocation->name !!}</h3>
+
                         <span class="arrow">
                             <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
                         </span>

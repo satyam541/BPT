@@ -9,15 +9,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Bullet Point Form</h1>
+          <h1 class="m-0 text-dark">Module Form</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{route($type.'List')}}">{{ucfirst($type)}}</a></li>
-            <li class="breadcrumb-item"><a href="{{route($type.'BulletPointList', ['module' => $module_id])}}">Bullet Points</a></li>
+            <li class="breadcrumb-item"><a href="{{route('moduleList')}}">Module</a></li>
             <li class="breadcrumb-item active">Form</li>
-            
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -35,23 +33,22 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">{{$module->name}}</h3>
+                <h3 class="card-title">Module Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{Form::model($result,['route'=>$submitRoute,"files"=>"true"])}}
-              {{Form::hidden('id',null)}}
+              {{Form::model($module,['route'=>$submitRoute])}}
                 <div class="card-body">
-                    
+                    {{Form::hidden('id',null)}}
                   <div class="form-group">
-                    {{Form::label('bullet_point_text','Bullet Point')}}
-                    {{Form::text('bullet_point_text',null,['class'=>'form-control'])}}
+                    {{Form::label('name','Name')}}
+                    {{Form::text('name',null,['class'=>'form-control'])}}
                   </div>
-
+                  
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">   
+                <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 {{Form::close()}}
