@@ -37,8 +37,9 @@
                 Order
               </div>
             </div>
-            <div class="card-body">
-              <table id="example1">
+           <div class="card">
+              <div class="table-responsive" style="background-color: white">
+                  <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Order No</th>
