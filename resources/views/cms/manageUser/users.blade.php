@@ -114,6 +114,10 @@
                         <a id="add" href="{{route('createUser')  }}" class="btn btn-success" style="">Add new record</a>
                         @endcan
                         </div>
+                        <div class="col-md-6">
+                            <div class="float-sm-right">{{ $users->links() }}</div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -131,6 +135,8 @@
     
     $(document).ready(function(){
         $('#example1').DataTable({
+            "paging":   false,
+            
           "columns": [
                         { "name": "Name",searching:false},
                         { "name": "Email",searching:false },
