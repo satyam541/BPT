@@ -330,6 +330,9 @@ Route::get('/roletrash','UserController@rolesTrashList')->name('roleTrashList');
 Route::get('/role/restore/{id}','UserController@restoreRole')->name('restoreRole');
 Route::get('/role/forcedelete/{id}','UserController@forceDeleteRole')->name('forceDeleteRole');
 
+Route::get('/addontrash','AddonController@trashList')->name('addonTrashList');
+Route::get('/addon/restore/{id}','AddonController@restore')->name('restoreAddon');
+Route::get('/addon/forceDelete/{id}','AddonController@forceDelete')->name('forceDeleteAddon');
 
 Route::get('/tagtrash','TagController@tagtrashList')->name('tagTrashList');
 Route::get('/tag/restoretag/{id}','TagController@restoreTag')->name('restoreTag');
