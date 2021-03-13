@@ -66,7 +66,7 @@
       background-position: center;
       background-color: transparent;
       z-index: 4;
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
       box-shadow: @shadowLight;
       .banner-container {
         padding: 0;
@@ -84,6 +84,7 @@
       .terms{
         width: 80%;
         text-align: center;
+        padding-bottom: 1rem;
       }
       .footer-content{
           flex-direction: row;
@@ -171,7 +172,7 @@
 @media @size-lg {
   //Start banner
   .banner{    
-    padding-top: 10rem !important;
+    padding-top: 11rem !important;
   }
   //End banner
 
@@ -439,6 +440,8 @@
             border-bottom: 1px solid @greyColor;
             &:last-child {
               margin-bottom: 0;
+              padding-bottom: 0;
+              border-bottom: none;
             }
             a {
               display: flex;
@@ -690,18 +693,6 @@
 
     //End navbar //
 
-    // Start sticky{
-      .navbar.sticky{
-          .links-li{
-            .mobile{
-              display: flex;
-            }
-            .desktop{
-              display: none;
-            }
-          }
-      }
-    //End sticky 
     
 
     //Start banner //
@@ -803,9 +794,6 @@
       }
       .logo-image {
         width: 260px;
-      }
-      .terms{
-        padding: 1rem 0;
       }
       .footer-content{
           padding-top: 6rem;

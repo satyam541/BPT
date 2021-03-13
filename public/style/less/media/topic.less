@@ -34,11 +34,16 @@
                 }
             }
         }
-
+        
+        .courses-list{
+            height: 515px;
+            overflow: scroll;
+        }
         .course-item{
             flex-direction: row;
             padding-left: 0;
             padding: .5rem 1rem;
+            width: 90%;
            
             
             span{
@@ -54,7 +59,7 @@
                 margin-left: 1rem;
               
             a{
-                width: calc(100% - 95px);
+                width: calc(100% - 90px);
                 text-align: left;
                 margin-bottom: 0;
                 font-size: 16px;
@@ -425,82 +430,14 @@
             width: 46%;
         }
         .course-item{
-            position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                left: 10px;
-                top: 7px;
-                margin: auto;
-                height: 2%;
-                width: 0;
-                background-color:@lightblueColor;
-                transition: 1s all;
-                border-top-right-radius: 10px;
-                border-top-left-radius: 10px;
-            }
-            &::after{
-                content: '';
-                position: absolute;
-                right: 8px;
-                bottom: 7px;
-                margin: auto;
-                height: 2%;
-                width: 0;
-                background-color:@lightblueColor;
-                transition: 1s all;
-            }
-            span{
-                position: relative;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    left: 9px;
-                    top: -9px;
-                    margin: auto;
-                    height: 0%;
-                    width: 2px;
-                    background-color:@lightblueColor;
-                    transition: 1s all;
-                }
-            }
-            .course-name{
-                position: relative;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    right: -9px;
-                    top: -24px;
-                    margin: auto;
-                    height: 0%;
-                    width: 2px;
-                    background-color:@lightblueColor;
-                    transition: 1s all;
-                }
-            }
+            border: 2px solid transparent;
             a{
                 width: 93%;
                 font-size: 15px;
                 overflow: hidden;
             }
             &:hover{
-                &::before,&::after{
-                    width: 97%;
-                    transition: 1s all;
-                }
-
-                span{
-                    &::before{
-                        height: 130%;
-                        transition: 1s all;
-                    }
-                }
-                .course-name{
-                    &::before{
-                        height: 260%;
-                    transition: 1s all;
-                    }
-                }
+                border: 2px solid @lightblueColor;
             }
         }
     }

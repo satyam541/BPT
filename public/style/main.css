@@ -120,7 +120,7 @@ select::-ms-expand {
 }
 .sticky .dropdown-menu {
   display: none;
-  visibility: hidden;
+  top: 69px;
 }
 .sticky .country-list {
   top: 60px!important;
@@ -404,10 +404,11 @@ select::-ms-expand {
 .form .consent-error,
 .form .consent-error-other {
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 .form .consent-error p,
 .form .consent-error-other p {
-  color: red;
+  color: red!important;
   line-height: 1.4;
   font-size: 12px;
 }
@@ -849,7 +850,7 @@ select::-ms-expand {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 4rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1241,7 +1242,7 @@ select::-ms-expand {
     background-position: center;
     background-color: transparent;
     z-index: 4;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
   .banner .banner-container {
@@ -1257,6 +1258,7 @@ select::-ms-expand {
   .footer .terms {
     width: 80%;
     text-align: center;
+    padding-bottom: 1rem;
   }
   .footer .footer-content {
     flex-direction: row;
@@ -1315,7 +1317,7 @@ select::-ms-expand {
 }
 @media (min-width : 1024px) {
   .banner {
-    padding-top: 10rem !important;
+    padding-top: 11rem !important;
   }
   .black-breadcrums li {
     color: #181818;
@@ -1554,6 +1556,8 @@ select::-ms-expand {
   }
   .navbar .country-list li:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
   }
   .navbar .country-list li a {
     display: flex;
@@ -1794,12 +1798,6 @@ select::-ms-expand {
     margin-right: 0;
     margin-left: 5px;
   }
-  .navbar.sticky .links-li .mobile {
-    display: flex;
-  }
-  .navbar.sticky .links-li .desktop {
-    display: none;
-  }
   .banner::before {
     height: 56%;
   }
@@ -1868,9 +1866,6 @@ select::-ms-expand {
   }
   .footer .logo-image {
     width: 260px;
-  }
-  .footer .terms {
-    padding: 1rem 0;
   }
   .footer .footer-content {
     padding-top: 6rem;
@@ -1982,6 +1977,9 @@ select::-ms-expand {
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
+.home-banner .banner-container .banner-content {
+  align-items: flex-start;
+}
 .home-banner .banner-container .banner-content p {
   color: #181818;
   margin-bottom: 1rem;
@@ -2071,6 +2069,9 @@ select::-ms-expand {
 }
 .courses {
   padding: 3rem 1.5rem;
+}
+.courses .heading {
+  margin-bottom: 0;
 }
 .courses .courses-container {
   display: flex;
@@ -2170,8 +2171,8 @@ select::-ms-expand {
   text-align: center;
 }
 .effective .content img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 .effective .content p {
   color: #FFFFFF;
@@ -2400,6 +2401,7 @@ select::-ms-expand {
 .locations .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .locations .location-name {
   display: flex;
@@ -2592,13 +2594,16 @@ select::-ms-expand {
   .courses .courses-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .courses .course-name {
-    width: 48%;
+    width: 46%;
   }
   .courses .course-name .icon {
     display: flex;
+  }
+  .courses .course-name .name h3 {
+    min-height: 42px;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2630,9 +2635,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .effective .content img {
-    width: 80px;
-    height: 80px;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     transform: translate(10px, -30px);
   }
   .effective .buttons {
@@ -2669,10 +2672,10 @@ select::-ms-expand {
     align-items: center;
   }
   .ways .ways-content {
-    width: 52%;
+    width: 48%;
   }
   .ways .ways-image {
-    width: 40%;
+    width: 48%;
     margin-top: 0;
   }
   .ways .item::before {
@@ -2717,6 +2720,7 @@ select::-ms-expand {
     background-color: transparent;
     background-size: cover;
     position: relative;
+    align-items: center;
     z-index: 1;
     align-items: center;
   }
@@ -2843,6 +2847,7 @@ select::-ms-expand {
   .looking {
     padding: 3rem 2rem;
     position: relative;
+    z-index: 1;
   }
   .looking::before {
     content: '';
@@ -2856,6 +2861,7 @@ select::-ms-expand {
     right: 0;
     z-index: 0;
     top: 62px;
+    z-index: -1;
   }
   .looking .looking-container {
     flex-direction: row;
@@ -2885,9 +2891,6 @@ select::-ms-expand {
   }
 }
 @media (min-width : 1024px) {
-  .home-banner {
-    padding-top: 11rem !important;
-  }
   .home-banner .banner-container .topic-list {
     width: 40%;
   }
@@ -2991,7 +2994,6 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 24%;
-    height: 320px;
   }
   .facts .facts-container {
     flex-direction: row;
@@ -3058,7 +3060,6 @@ select::-ms-expand {
   .looking .clients-reviews {
     width: 50%;
     padding: 0 1rem;
-    margin-top: 3rem;
   }
   .looking .reviews-outer {
     position: relative;
@@ -3080,6 +3081,7 @@ select::-ms-expand {
     background-size: contain;
     background-position: right;
     padding-bottom: 0 !important;
+    padding-top: 1rem  !important;
   }
   .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
@@ -3122,7 +3124,6 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 22%;
-    height: 290px;
   }
   .delivery h3 {
     font-size: 18px;
@@ -3145,9 +3146,6 @@ select::-ms-expand {
   }
   .facts .facts-list {
     width: 62%;
-  }
-  .facts .item p {
-    min-height: auto;
   }
   .locations {
     padding: 4rem 0rem;
@@ -3772,22 +3770,13 @@ select::-ms-expand {
 .about-us p {
   text-align: center;
 }
-.about-us .heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.about-us .heading h2 {
-  text-align: center;
-}
 .about-us .values-info {
-  height: 100%;
   margin-top: 1rem;
   display: flex;
 }
 .about-us .values-info img {
   width: 100%;
+  height: 100%;
 }
 .difference {
   padding: 3rem 1.5rem;
@@ -4194,6 +4183,13 @@ select::-ms-expand {
   }
   .about-us .heading {
     align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  .about-us .heading::before {
+    margin: 0;
+  }
+  .about-us .heading h2 {
+    text-align: left;
   }
   .reviews {
     padding: 3rem 2rem;
@@ -4224,7 +4220,7 @@ select::-ms-expand {
     text-align: center;
   }
   .contact-form .item {
-    width: 48%;
+    width: 49%;
   }
   .contact-form .item:last-child {
     width: 54%;
@@ -4384,7 +4380,7 @@ select::-ms-expand {
     align-items: center;
   }
   .contact-form .form {
-    width: 63%;
+    width: 60%;
     align-self: flex-start;
     padding: 4rem;
     box-shadow: none;
@@ -4397,7 +4393,7 @@ select::-ms-expand {
     padding-top: 0;
   }
   .contact-form .contact-info {
-    width: 37%;
+    width: 38%;
     background: none;
     margin-top: 0;
   }
@@ -4528,6 +4524,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.customers .heading h2 {
+  margin-bottom: 0.5rem;
+}
 .customers .heading p {
   font-weight: bold;
   width: 100%;
@@ -4568,8 +4567,8 @@ select::-ms-expand {
 }
 .customers .info span {
   display: flex;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin-right: 0.5rem;
 }
 .customers .info span img {
@@ -4602,10 +4601,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
 }
 .services .heading h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 .services .heading p {
   text-align: center;
@@ -4786,6 +4786,7 @@ select::-ms-expand {
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
+    box-shadow: none;
   }
   .testimonial-banner::before {
     content: none;
@@ -4819,30 +4820,6 @@ select::-ms-expand {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-  .customers .customers-list::before,
-  .customers .customers-list::after {
-    content: none;
-    position: absolute;
-    z-index: -1;
-    background-image: url(../img/testimonial/curve.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-  .customers .customers-list::before {
-    height: 167px;
-    width: 161px;
-    top: 291px;
-    right: -80px;
-  }
-  .customers .customers-list::after {
-    height: 296px;
-    width: 232px;
-    bottom: 40px;
-    left: -143px;
-    transform: rotate(354deg);
   }
   .customers .customers-content {
     width: 46%;
@@ -4911,7 +4888,6 @@ select::-ms-expand {
   .services .heading {
     width: 66%;
     align-items: flex-start;
-    margin-bottom: 0;
   }
   .services .heading h2 {
     margin-bottom: 0.5rem;
@@ -4922,8 +4898,7 @@ select::-ms-expand {
   }
   .services .buttons {
     width: 16%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
     margin-top: 0;
   }
   .testimonial .testimonial-info {
@@ -4936,10 +4911,10 @@ select::-ms-expand {
     background-size: 100% 100%;
   }
   .fact .heading p {
-    width: 65%;
+    width: 75%;
   }
   .fact .fact-content {
-    width: 30%;
+    width: 29%;
     margin-right: 2rem;
   }
   .fact .fact-content:last-child(2) {
@@ -4953,15 +4928,38 @@ select::-ms-expand {
   .customers p {
     width: 63%;
   }
+  .customers .customers-list {
+    position: relative;
+    z-index: 1;
+  }
   .customers .customers-list::before,
   .customers .customers-list::after {
     content: '';
+    position: absolute;
+    z-index: -1;
+    background-image: url(../img/testimonial/curve.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .customers .customers-list::before {
+    height: 167px;
+    width: 161px;
+    top: 291px;
+    right: -80px;
+  }
+  .customers .customers-list::after {
+    height: 296px;
+    width: 232px;
+    bottom: 40px;
+    left: -143px;
+    transform: rotate(354deg);
   }
   .customers .customers-content .content p {
     min-height: 154px;
   }
   .services {
     padding: 4rem 0rem;
+    padding: 2.5rem 0;
   }
   .testimonial {
     padding: 4rem 0rem;
@@ -4971,6 +4969,11 @@ select::-ms-expand {
   }
   .fact {
     padding: 4rem 0rem;
+  }
+}
+@media (min-width: 1366px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .customers .customers-content::after {
+    bottom: 19px;
   }
 }
 .onsite-banner {
@@ -5050,10 +5053,7 @@ select::-ms-expand {
 }
 .doorstep .form-consent p a {
   color: #FFFFFF;
-  font-size: 12   px;
-}
-.doorstep .consent-error p {
-  color: red;
+  font-size: 12px;
 }
 .doorstep .input-container {
   background-color: #4B5773;
@@ -5068,7 +5068,7 @@ select::-ms-expand {
   background-color: #6B7996;
 }
 .doorstep .input-container ::placeholder {
-  color: #FFFFFF;
+  color: #dadada;
 }
 .doorstep .input-container input,
 .doorstep .input-container textarea {
@@ -5259,13 +5259,11 @@ select::-ms-expand {
   .choose .choose-list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .choose .choose-item {
     width: 48%;
     padding-right: 1.5rem;
-  }
-  .choose .choose-item:nth-child(even) {
-    padding-right: 0;
   }
   .solution {
     padding: 3rem 2rem;
@@ -5289,6 +5287,7 @@ select::-ms-expand {
     background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .onsite-banner .banner-container {
     width: 48%;
@@ -5341,16 +5340,6 @@ select::-ms-expand {
   .choose .choose-item {
     width: 33%;
   }
-  .choose .choose-item:nth-child(even) {
-    padding-right: 1.5rem;
-  }
-  .choose .choose-item:nth-child(3),
-  .choose .choose-item:nth-child(6) {
-    padding-right: 0;
-  }
-  .choose .choose-item:last-child {
-    padding-right: 0;
-  }
   .choose .choose-item p {
     min-height: 76px;
   }
@@ -5401,33 +5390,31 @@ select::-ms-expand {
   }
   .doorstep {
     padding: 4rem 0rem;
-    padding-top: 6rem;
+    padding: 2rem 0rem;
+    padding-top: 2rem;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
     background-position: right bottom;
-  }
-  .doorstep .container {
-    width: 100%;
+    box-shadow: 0px 0px 10px #dddddd;
+    margin-top: 6rem;
   }
   .doorstep .doorstep-container {
     position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1.5rem;
+    padding-top: 0;
   }
   .doorstep .form {
-    width: 51%;
     position: absolute;
-    left: 120px;
-    top: -47px;
+    left: 0px;
+    top: -70px;
   }
   .doorstep .info {
     box-shadow: none;
     padding: 0;
-    padding-left: 5rem;
     background-image: none;
     margin-left: auto;
-    width: 41%;
+    width: 45%;
   }
   .choose {
     padding: 4rem 0rem;
@@ -5436,33 +5423,8 @@ select::-ms-expand {
   .choose .choose-item {
     width: 25%;
   }
-  .choose .choose-item:nth-child(4) {
-    padding-right: 0;
-  }
-  .choose .choose-item:nth-child(3),
-  .choose .choose-item:nth-child(6) {
-    padding-right: 1.5rem;
-  }
   .solution {
     padding: 4rem 0rem;
-  }
-}
-@media (min-width : 1500px) {
-  .doorstep .container {
-    width: 1200px;
-  }
-  .doorstep .doorstep-container {
-    box-shadow: none;
-    padding-bottom: 4.3rem;
-  }
-  .doorstep .form {
-    left: 0px;
-  }
-  .doorstep .info {
-    width: 49%;
-  }
-  .choose {
-    padding-top: 4rem;
   }
 }
 .location-banner {
@@ -7975,7 +7937,8 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
   border-radius: 25px;
-  align-items: center;
+  width: 272px;
+  align-self: center;
 }
 .certification-course a {
   text-align: center;
@@ -8020,8 +7983,8 @@ select::-ms-expand {
 }
 .method span {
   display: flex;
-  height: 93px;
-  width: 93px;
+  height: 95px;
+  width: 95px;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 1.6rem;
@@ -8118,6 +8081,9 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.enquiry .content p {
+  width: calc(100% - 45px);
+}
 .enquiry .enquiry-img {
   display: flex;
   height: 100%;
@@ -8139,7 +8105,7 @@ select::-ms-expand {
   background-image: url(../img/certification/enquiry-lines.svg);
   height: 28px;
   width: 40px;
-  animation: rotate 12s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 .enquiry .enquiry-img::after {
   bottom: 13%;
@@ -8170,6 +8136,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
@@ -8203,7 +8170,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgb(255 249 12.45%);
     background: #1C2848;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 70%;
     text-align: left;
   }
@@ -8211,9 +8178,6 @@ select::-ms-expand {
     width: 28%;
     margin-top: 0;
     justify-content: flex-end;
-  }
-  .certification-course a {
-    text-align: left;
   }
   .method {
     padding: 3rem 2rem;
@@ -8260,21 +8224,17 @@ select::-ms-expand {
   .enquiry .contact-content:nth-child(2) {
     background: none;
   }
+  .enquiry .enquiry-img {
+    width: 60%;
+    align-self: center;
+  }
   .enquiry .enquiry-img::before {
-    top: 33%;
-    left: 13%;
     height: 31px;
     width: 45px;
   }
   .enquiry .enquiry-img::after {
-    bottom: 13%;
-    right: -2%;
     height: 90px;
-    width: 175px;
-  }
-  .enquiry .enquiry-img img {
-    height: 100%;
-    width: 100%;
+    width: 120px;
   }
 }
 @media (min-width : 1024px) {
@@ -8316,14 +8276,14 @@ select::-ms-expand {
   .certification-course .course-content:nth-child(even) {
     margin-right: 0;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 61%;
   }
   .certification-course .buttons {
     width: 37%;
   }
-  .certification-course a {
-    width: 60%;
+  .method p {
+    font-size: 16px;
   }
   .enquiry .enquiry-container {
     flex-direction: row;
@@ -8392,16 +8352,6 @@ select::-ms-expand {
   }
   .certification-course {
     padding: 4rem 0rem;
-  }
-  .certification-course .course-content {
-    width: 48%;
-    margin-right: 2.5rem;
-  }
-  .certification-course h3 {
-    width: 61%;
-  }
-  .certification-course .buttons {
-    width: 39%;
   }
   .method {
     padding: 4rem 0rem;
@@ -8483,11 +8433,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.course-intro .intro-para {
-  font-weight: bold;
-}
 .course-intro p {
   margin-bottom: 1rem;
+}
+.course-intro p:last-child {
+  margin-bottom: 0;
 }
 .course-intro ul li {
   padding-left: 1.5rem;
@@ -8586,6 +8536,9 @@ select::-ms-expand {
 }
 .foundation .tab-links .active {
   border-bottom: 4px solid #0064D8;
+}
+.foundation .tab-links .active .number {
+  color: #c5d1ee;
 }
 .foundation .tab-links .active::before {
   border-bottom: 20px solid #0064D8;
@@ -8765,8 +8718,8 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
 }
-.foundation #included .heading {
-  margin-bottom: 2rem;
+.foundation #included h2 {
+  text-align: center;
 }
 .foundation .included-list {
   display: flex;
@@ -8850,7 +8803,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .learn-more ul li {
-  padding-left: 1.5rem;
+  padding-left: 1.4rem;
   margin-top: 0.8rem;
   position: relative;
   z-index: 1;
@@ -8865,7 +8818,7 @@ select::-ms-expand {
   width: 15px;
   height: 15px;
   left: 0;
-  top: 4px;
+  top: 2px;
   background-repeat: no-repeat;
 }
 .learn-more .more-content ul li:last-child {
@@ -8916,6 +8869,7 @@ select::-ms-expand {
   padding: 1rem;
   box-shadow: 0 0 17px #c1c1c1;
   background: #FFFFFF;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   border-radius: 5px;
   cursor: pointer;
@@ -9009,7 +8963,9 @@ select::-ms-expand {
 .training .modes-list {
   display: none;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 272px;
+  align-self: center;
 }
 .training .modes-active {
   display: flex;
@@ -9068,18 +9024,21 @@ select::-ms-expand {
 .training .calender-right {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 .training .add-ons {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
   background-image: url(../img/courses/add-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  width: 272px;
+  align-self: center;
+  margin-top: 1rem;
 }
 .training .add-ons h2 {
   position: absolute;
@@ -9095,7 +9054,7 @@ select::-ms-expand {
 .training .add-ons .item {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 .training .add-ons .item .offer {
   display: flex;
@@ -9109,6 +9068,9 @@ select::-ms-expand {
   text-align: left;
   padding-left: 1.6rem;
   font-size: 13px;
+}
+.training .add-ons .item:last-child {
+  margin-top: 1rem;
 }
 .training .add-ons:nth-child(2) {
   background-color: black;
@@ -9145,7 +9107,7 @@ select::-ms-expand {
 .training .add-foundation .image {
   display: flex;
   border-bottom: 1px dashed #C0C0C0;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0;
   padding-bottom: 0.5rem;
   width: 85%;
   align-self: center;
@@ -9162,6 +9124,7 @@ select::-ms-expand {
 }
 .training .add-foundation ul {
   padding: 1rem;
+  padding-bottom: 0;
 }
 .training .add-foundation ul li {
   display: flex;
@@ -9203,12 +9166,16 @@ select::-ms-expand {
 .training .onsite-block {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .training .onsite-block .onsite-form {
   background-color: #1C2848;
   flex-direction: column;
   padding: 2rem;
+  margin-top: 0;
+  display: flex;
+}
+.training .onsite-block .onsite-form .heading {
+  padding-top: 0;
 }
 .training .onsite-block .onsite-form .heading p {
   text-align: center;
@@ -9238,11 +9205,15 @@ select::-ms-expand {
 .training .course-content {
   display: flex;
   flex-direction: column;
+  margin: auto;
   margin-top: 2.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   width: 272px;
   align-self: center;
+}
+.training .course-content:first-child {
+  margin-top: 0;
 }
 .training .name {
   display: flex;
@@ -9258,10 +9229,11 @@ select::-ms-expand {
 }
 .training .course-name {
   display: flex;
+  justify-content: center;
+  text-align: center;
   font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
-  text-align: center;
 }
 .training .detail {
   display: flex;
@@ -9304,6 +9276,7 @@ select::-ms-expand {
 .training .detail .content .sub-content {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 .training .detail .content .sub-content h3,
 .training .detail .content .sub-content p {
@@ -9319,7 +9292,7 @@ select::-ms-expand {
   justify-content: space-around;
 }
 .training .date p {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0.8rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   text-align: center;
@@ -9352,7 +9325,6 @@ select::-ms-expand {
   display: none;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  margin-top: 2rem;
   background-color: #FFFFFF;
 }
 .training .no-schedule p {
@@ -9460,7 +9432,7 @@ select::-ms-expand {
   color: #FFFFFF;
 }
 .work .work-list h3 {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 .work .content {
   display: flex;
@@ -9491,7 +9463,6 @@ select::-ms-expand {
 .language .language-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 .language .language-img {
   display: flex;
@@ -9554,7 +9525,7 @@ select::-ms-expand {
   margin-top: 2rem;
   padding: 0.3rem;
   background-position: left top;
-  width: 272px;
+  width: 100%;
   align-self: center;
 }
 .language .language-list .content span {
@@ -9616,6 +9587,9 @@ select::-ms-expand {
   width: 272px;
   align-self: center;
 }
+.skill .skill-content:first-child {
+  margin-top: 1rem;
+}
 .skill .skill-content h3 {
   margin-bottom: 1rem;
   text-align: center;
@@ -9630,6 +9604,9 @@ select::-ms-expand {
 .related .related-container {
   display: flex;
   flex-direction: column;
+}
+.related .heading {
+  margin-bottom: 0;
 }
 .related .related-list {
   display: flex;
@@ -9710,6 +9687,9 @@ select::-ms-expand {
   flex-direction: column;
   padding: 0;
   margin-top: 2rem;
+}
+.popular-location .location-content .heading {
+  margin-bottom: 0;
 }
 .popular-location .location-list {
   display: flex;
@@ -9796,6 +9776,9 @@ select::-ms-expand {
   .foundation .tab-links .tab-click:first-child {
     margin-top: 3rem;
   }
+  .foundation #included h2 {
+    text-align: left;
+  }
   .foundation .included-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -9843,15 +9826,19 @@ select::-ms-expand {
     background-position: bottom;
     background-color: transparent;
   }
+  .training .no-schedule {
+    margin-top: 0;
+  }
   .training .filter-top {
-    top: 5rem;
-    z-index: 12;
+    top: 4.5rem;
+    z-index: 2;
     background-color: #e5e5e5;
     padding: 0.5rem;
     flex-direction: row;
     width: 100%;
     border-radius: 0;
     box-shadow: none;
+    margin-top: 0;
   }
   .training .filter-top .heading {
     display: none;
@@ -9879,11 +9866,24 @@ select::-ms-expand {
   .training select {
     padding: 15px;
   }
+  .training .modes .heading {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .training .modes .heading h2 {
+    text-align: center;
+  }
+  .training .modes .heading img {
+    display: none;
+  }
   .training .modes-list {
     display: flex;
+    width: 100%;
   }
   .training .key-point {
-    display: flex;
     width: 40%;
     align-self: center;
   }
@@ -9912,6 +9912,8 @@ select::-ms-expand {
   }
   .training .course-name {
     width: 50%;
+    justify-content: flex-start;
+    text-align: left;
   }
   .training .detail {
     flex-direction: row;
@@ -9958,9 +9960,13 @@ select::-ms-expand {
     position: sticky;
     top: 170px;
     height: auto;
+    align-self: flex-start;
   }
   .training .add-foundation {
     width: 48%;
+  }
+  .training .add-foundation .foundation-content {
+    margin-top: 0;
   }
   .training .add-foundation .buttons {
     flex-direction: row;
@@ -10010,10 +10016,6 @@ select::-ms-expand {
   .language {
     padding: 3rem 2rem;
   }
-  .language .language-container {
-    display: flex;
-    flex-direction: column;
-  }
   .language .language-img {
     width: 55%;
     align-self: center;
@@ -10045,6 +10047,10 @@ select::-ms-expand {
   }
   .skill .skill-content {
     width: 46%;
+    margin-top: 1rem;
+  }
+  .skill .skill-content p {
+    min-height: 66px;
   }
   .related {
     padding: 3rem 2rem;
@@ -10169,7 +10175,7 @@ select::-ms-expand {
     justify-content: center;
     width: 27%;
     align-self: flex-start;
-    margin-right: 3rem;
+    margin-right: 2rem;
   }
   .foundation .tab-links .tab-click {
     width: 100%;
@@ -10186,21 +10192,14 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
   }
-  .foundation #included .heading {
-    display: flex;
-    align-items: flex-start;
-  }
-  .foundation #included .heading::before {
-    right: initial;
-  }
-  .foundation #included .heading h2 {
-    text-align-last: left;
+  .foundation .tab-common .overview-content {
+    margin-top: 0;
   }
   .learn-more .more-list {
     width: 49%;
   }
   .learn-more .more-container {
-    padding: 3rem 2rem;
+    padding: 2rem;
   }
   .unable p {
     width: 60%;
@@ -10212,13 +10211,13 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-top: 1.5rem;
   }
   .training .calender-left {
-    width: 30%;
+    width: 32%;
     order: 2;
     position: sticky;
     top: 143px;
-    margin-top: 3rem;
   }
   .training .calender-left .heading {
     background-color: transparent;
@@ -10240,6 +10239,7 @@ select::-ms-expand {
   .training .calender-right {
     width: 65%;
     order: 1;
+    margin-top: 0;
   }
   .training .course-content {
     margin-top: 4rem;
@@ -10247,6 +10247,9 @@ select::-ms-expand {
   .training .key-point {
     width: 100%;
     background-size: 31% 20%;
+  }
+  .training .add-foundation .foundation-content {
+    margin-top: 0;
   }
   .training .course-name {
     width: 37%;
@@ -10418,6 +10421,7 @@ select::-ms-expand {
   .skill .skill-content {
     width: 25%;
     align-items: flex-start;
+    align-self: flex-start;
   }
   .skill .skill-content h3 {
     min-height: 50px;
@@ -10425,7 +10429,7 @@ select::-ms-expand {
   }
   .skill .skill-content p {
     text-align: left;
-    min-height: 66px;
+    min-height: 88px;
   }
   .related {
     background: none;
@@ -10503,10 +10507,10 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .training .calender-left {
-    width: 22%;
+    width: 27%;
   }
   .training .calender-right {
-    width: 73%;
+    width: 70%;
   }
   .training .key-point {
     background-size: 34% 20%;
@@ -10574,10 +10578,6 @@ select::-ms-expand {
   .language {
     padding: 4rem 0rem;
   }
-  .language .language-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .language .language-img {
     width: 32%;
   }
@@ -10593,11 +10593,8 @@ select::-ms-expand {
   .skill .skill-content {
     width: 22%;
   }
-  .skill .skill-content h3 {
-    min-height: auto;
-  }
   .skill .skill-content p {
-    min-height: 66px;
+    min-height: 88px;
   }
   .related {
     padding: 4rem 0rem;
@@ -12193,6 +12190,10 @@ select::-ms-expand {
 .topic-courses .explore-courses .heading h2 {
   text-align: center;
 }
+.topic-courses .courses-list {
+  display: flex;
+  flex-direction: column;
+}
 .topic-courses .course-item {
   display: flex;
   flex-direction: column;
@@ -12661,10 +12662,15 @@ select::-ms-expand {
   .topic-courses .explore-courses .heading h2 {
     text-align: left;
   }
+  .topic-courses .courses-list {
+    height: 515px;
+    overflow: scroll;
+  }
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
     padding: 0.5rem 1rem;
+    width: 90%;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
@@ -12677,7 +12683,7 @@ select::-ms-expand {
     margin-left: 1rem;
   }
   .topic-courses .course-name a {
-    width: calc(100% - 95px);
+    width: calc(100% - 90px);
     text-align: left;
     margin-bottom: 0;
     font-size: 16px;
@@ -12961,77 +12967,15 @@ select::-ms-expand {
     width: 46%;
   }
   .topic-courses .course-item {
-    position: relative;
-  }
-  .topic-courses .course-item::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-  .topic-courses .course-item::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    bottom: 7px;
-    margin: auto;
-    height: 2%;
-    width: 0;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item span {
-    position: relative;
-  }
-  .topic-courses .course-item span::before {
-    content: '';
-    position: absolute;
-    left: 9px;
-    top: -9px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
-  }
-  .topic-courses .course-item .course-name {
-    position: relative;
-  }
-  .topic-courses .course-item .course-name::before {
-    content: '';
-    position: absolute;
-    right: -9px;
-    top: -24px;
-    margin: auto;
-    height: 0%;
-    width: 2px;
-    background-color: #0064D8;
-    transition: 1s all;
+    border: 2px solid transparent;
   }
   .topic-courses .course-item a {
     width: 93%;
     font-size: 15px;
     overflow: hidden;
   }
-  .topic-courses .course-item:hover::before,
-  .topic-courses .course-item:hover::after {
-    width: 97%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover span::before {
-    height: 130%;
-    transition: 1s all;
-  }
-  .topic-courses .course-item:hover .course-name::before {
-    height: 260%;
-    transition: 1s all;
+  .topic-courses .course-item:hover {
+    border: 2px solid #0064D8;
   }
   .topic-delivery {
     padding: 4rem 0rem;
@@ -14078,7 +14022,6 @@ select::-ms-expand {
 }
 .form-success .success-content a {
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 .form-success .success-content a:last-child {
   margin-bottom: 0;

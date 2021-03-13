@@ -35,7 +35,7 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <div class="card-title">
-                Bullet Points List
+                {{$module->name}}
               </div>
             </div>
 
@@ -49,7 +49,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                
                     @foreach ($module->BulletPoint as $bulletpoint)
                     <tr>
                     <td>{{$bulletpoint->bullet_point_text}}</td>

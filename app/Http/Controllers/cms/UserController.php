@@ -72,7 +72,7 @@ class UserController extends Controller
                 $q->where('name',$filter['roleName']);
             });
         }
-        $users = $query->paginate(11);
+        $users = $query->paginate(10);
         $list['name']   = User::all()->pluck('name','name')->toArray();
         $list['email']  = User::all()->pluck('email','email')->toArray();
         $list['role']   = Role::All()->pluck('name','name')->toArray();
@@ -92,11 +92,13 @@ class UserController extends Controller
     {
         $this->authorize('create', new User());
         $data = $request->all();
+        $rawPassword = $data['password'];
         $user = User::create([
             'name'      => $data['name'],
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
+        $user['rawPassword'] = $rawPassword;
         Event(new CreateUser($user));
         
         return redirect()->route('userList')->with('success', 'User Created!');
@@ -338,5 +340,23 @@ class UserController extends Controller
               \Session::flash('failure','Please enter correct current password');
                return redirect()->back();
         } 
+    }
+    public function rolesTrashList()
+    {
+        $data['trashedRoles']   =   Role::onlyTrashed()->get();
+
+        return view('cms.trashed.roleTrashedList',$data);
+    }
+    public function restoreRole($id)
+    {
+        Role::onlyTrashed()->find($id)->restore();
+
+        return back()->with('success','Successfully Restored');
+    }
+    public function forceDeleteRole($id)
+    {
+        Role::onlyTrashed()->find($id)->forceDelete();
+
+        return back()->with('success','Permanently Deleted!');
     }
 }

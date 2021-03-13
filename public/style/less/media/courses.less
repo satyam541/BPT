@@ -45,6 +45,11 @@
                 }
             }
         }
+        #included {
+            h2{
+                text-align: left;
+            }
+        }
         .included-list {
             flex-direction: row;
             flex-wrap: wrap;
@@ -101,15 +106,19 @@
         background-size: 100% 93%;
         background-position: bottom;
         background-color: transparent;
+        .no-schedule{
+            margin-top: 0;
+        }
         .filter-top {
-            top: 5rem;
-            z-index: 12;
+            top: 4.5rem;
+            z-index: 2;
             background-color: #e5e5e5;
             padding: 0.5rem;
             flex-direction: row;
             width: 100%;
             border-radius: 0;
             box-shadow: none;
+            margin-top: 0;
             .heading {
                 display: none;
             }
@@ -137,11 +146,26 @@
         select {
             padding: 15px;
         }
+        .modes{
+            .heading{
+                padding: 0; 
+                box-shadow: none; 
+                background: transparent; 
+                border-radius: 0; 
+                cursor: pointer;
+                h2{
+                    text-align: center;
+                }
+                img{
+                    display: none;
+                }
+            }
+        }
         .modes-list {
             display: flex;
+            width: 100%;
         }
         .key-point {
-            display: flex;
             width: 40%;
             align-self: center;
         }
@@ -170,6 +194,8 @@
         }
         .course-name {
             width: 50%;
+            justify-content: flex-start;
+            text-align: left;
         }
         .detail {
             flex-direction: row;
@@ -218,9 +244,13 @@
             position: sticky;
             top: 170px;
             height: auto;
+            align-self: flex-start;
         }
         .add-foundation{
             width: 48%;
+            .foundation-content{
+                margin-top: 0;
+            }
             .buttons{
                 flex-direction: row;
                 justify-content: space-between;
@@ -284,10 +314,6 @@
     // Start Language Section
     .language {
         padding: @sectionPadding-md;
-        .language-container {
-            display: flex;
-            flex-direction: column;
-        }
         .language-img {
             width: 55%;
             align-self: center;
@@ -322,6 +348,10 @@
         }
         .skill-content {
             width: 46%;
+            margin-top: 1rem;
+            p{
+                min-height: 66px;
+            }
         }
     }
     // End Skill Section
@@ -462,7 +492,7 @@
             justify-content: center;
             width: 27%;
             align-self: flex-start;
-            margin-right: 3rem;
+            margin-right: 2rem;
             .tab-click {
                 width: 100%;
                 &:first-child {
@@ -478,17 +508,9 @@
             background-color: @whiteColor;
             box-shadow: @shadowLight;
             padding: 1rem 2rem;
-        }
-        #included {
-            .heading {
-                display: flex;
-                align-items: flex-start;
-                &::before {
-                    right: initial;
-                }
-                h2 {
-                    text-align-last: left;
-                }
+
+            .overview-content{
+                margin-top: 0;
             }
         }
     }
@@ -500,7 +522,7 @@
             width: 49%;
         }
         .more-container{
-            padding: 3rem 2rem;
+            padding:2rem;
         }
     }
 // End learn-more section //
@@ -520,13 +542,13 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
+            margin-top: 1.5rem;
         }
         .calender-left {
-            width: 30%;
+            width: 32%;
             order: 2;
             position: sticky;
             top: 143px;
-            margin-top: 3rem;
         
             .heading {
                 background-color: transparent;
@@ -549,6 +571,7 @@
         .calender-right {
             width: 65%;
             order: 1;
+            margin-top: 0;
         }
         .course-content {
             margin-top: 4rem;
@@ -557,6 +580,11 @@
             width: 100%;
             background-size: 31% 20%;
 
+        }
+        .add-foundation{
+            .foundation-content{
+                margin-top: 0;
+            }
         }
         .course-name {
             width: 37%;
@@ -753,13 +781,14 @@
         .skill-content {
             width: 25%;
             align-items: flex-start;
+            align-self: flex-start;
             h3 {
                 min-height: 50px;
                 text-align: left;
             }
             p {
                 text-align: left;
-                min-height: 66px;
+                min-height: 88px;
             }
         }
     }
@@ -866,10 +895,10 @@
     .training {
         padding: @sectionPadding-xl;
         .calender-left {
-            width: 22%;
+            width: 27%;
         }
         .calender-right {
-            width: 73%;
+            width: 70%;
         }
         .key-point {
             background-size: 34% 20%;
@@ -950,10 +979,6 @@
     // Start Language Section
     .language {
         padding: @sectionPadding-xl;
-        .language-container {
-            flex-direction: row;
-            justify-content: space-between;
-        }
         .language-img {
             width: 32%;
         }
@@ -974,10 +999,10 @@
         .skill-content {
             width: 22%;
             h3 {
-                min-height: auto;
+                // min-height: auto;
             }
             p {
-                min-height: 66px;
+                min-height: 88px;
             }
         }
     }

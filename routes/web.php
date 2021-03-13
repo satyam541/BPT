@@ -25,18 +25,29 @@ Route::get('match/topic', 'TestController@matchTopic');
 Auth::routes(['register'=>false]);
 /* these routes is for login */
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('homeRoute');
+
+/* Filter Routes */
 Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
 Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
 Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
 Route::post('/filter-course','CourseController@filter')->name('courseFilterRoute');
+
 Route::get('/contact-us', 'ContactController@index')->name('contactUs');
 Route::get('/about-us', 'AboutController@index')->name('aboutUs');
 Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+
+/* Location Routes */
 Route::get('/training-locations', 'LocationController@index')->name('locations');
 Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
+
 Route::get('/onsite', 'OnsiteController@index')->name('onsite');
+
+/* Blog Routes */
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
+
 Route::any('/thank-you','ThanksController@index')->name('thanks');
 
 
@@ -52,14 +63,9 @@ Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('vali
 Route::get('search','SearchController@search')->name('SearchCourse');
 Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseAutoComplete');
 Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoComplete');
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('homeRoute');
 
 
-Route::get('/training-courses', 'CatalogueController@index')->name('catalouge');
+Route::get('/training-courses', 'CatalogueController@index')->name('catalogue');
 Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
 Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
 Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
@@ -89,30 +95,10 @@ Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@cu
 Route::get('/certification-programmes','CertificationController@index')->name('certification');
 Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
-Route::get('/offer', function () {
-    return view('offer');
-});
+// Route::get('/offer', function () {
+//     return view('offer');
+// });
 Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
-
-// Route::get('/certification', function () {
-//     return view('certification');
-// });
-Route::get('/courses', function () {
-    return view('courses');
-});
-
-// Route::get('/emptycart', function () {
-//     return view('emptycart'); //this routes moves to "cart"
-// });
-
-
-// Route::get('/knowledge-pass',function(){
-//     return view('knowledge-pass');
-// });
-
-// Route::get('/cart', function () {
-//     return view('cart');//this routes moves to 'cart/detail'
-// });
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
 
@@ -123,25 +109,37 @@ Route::get('/third-party-trademarks','CommonPageController@index')->name('third-
 Route::get('/cookies','CommonPageController@index')->name('cookies');
 
 Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middleware' => 'country'], function () {
+    
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('homeRoute');
+    
     Route::post('filter/global',"FilterController@commonFilter")->name("commonFilter");
     Route::post('/filter/topic', 'FilterController@getTopics')->name('filterTopic');
     Route::post('/filter/course', 'FilterController@getCourses')->name('filterCourse');
     Route::post('/filter-course','CourseController@filter')->name('courseFilterRoute');
+
     Route::get('/contact-us', 'ContactController@index')->name('contactUs');
     Route::get('/about-us', 'AboutController@index')->name('aboutUs');
     Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+
+    /* Location Route */
     Route::get('/training-locations', 'LocationController@index')->name('locations');
     Route::get('/training-locations/{location}', 'LocationController@detail')->name('locationDetail');
+
     Route::get('/onsite', 'OnsiteController@index')->name('onsite');
+
+    /* Blog Route */
     Route::get('/blog', 'BlogController@index')->name('blog');
     Route::get('/blog/{blog}', 'BlogController@detail')->name('blogDetail');
+
+    Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
+
     Route::any('/thank-you','ThanksController@index')->name('thanks');
     
     
     /*Enquiry Routes*/
     
-    Route::post('/send/enquiry','EnquiryController@insertEnquiry')->name('sendEnquiry');
-    
+    Route::post('/send/enquiry','EnquiryController@insertEnquiry')->name('sendEnquiry');  
     Route::post('/enquiry/validate',"EnquiryController@validateEnquiry")->name('validateEnquiry');
     
     /*End Enquiry Routes*/
@@ -149,21 +147,12 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     
     Route::get('search','SearchController@search')->name('SearchCourse');
     Route::get('/autocomplete/course','SearchController@loadCourses')->name('courseAutoComplete');
-    Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoComplete');
-    // Route::get('/welcome', function () {
-    //     return view('welcome');
-    // });
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/home', 'HomeController@index')->name('homeRoute');
-    
-    
+    Route::get('/autocomplete/blog','SearchController@loadBlogs')->name('blogAutoComplete'); 
     Route::get('/training-courses', 'CatalogueController@index')->name('catalogue');
     Route::get('/training-courses/{category}', 'CategoryController@index')->name('categoryPage');
     Route::get('/training-courses/{category}/{topic}', 'TopicController@index')->name('topicPage');
     Route::get('/training-courses/{category}/{topic}/{course}/{location?}', 'CourseController@index')->name('coursePage');
-    
-    Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);
-    
+    Route::get('booking/detail/{id}',['as'=>"BookingDetail","uses"=>"cms\PurchaseController@bookingDetail"]);   
     Route::get('/booking/online/{id}',['as'=>'onlineBooking','uses'=>"CartController@addToCart"]);
     Route::get('/booking/classroom/{id}',['as'=>'classroomBooking','uses'=>"CartController@addToCart"]);
     Route::get('/booking/virtual/{id}',['as'=>'virtualBooking','uses'=>"CartController@addToCart"]);
@@ -187,36 +176,13 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/certification-programmes','CertificationController@index')->name('certification');
     Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
     
-    Route::get('/offer', function () {
-        return view('offer');
-    });
-    
-    // Route::get('/certification', function () {
-    //     return view('certification');
-    // });
-    Route::get('/courses', function () {
-        return view('courses');
-    });
-    
-    // Route::get('/emptycart', function () {
-    //     return view('emptycart'); //this routes moves to "cart"
-    // });
-    
-    
-    Route::get('/knowledge-pass',function(){
-        return view('knowledge-pass');
-    });
-    
-    // Route::get('/cart', function () {
-    //     return view('cart');//this routes moves to 'cart/detail'
+    // Route::get('/offer', function () {
+    //     return view('offer');
     // });
     
     Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
-    
     Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-and-conditions');
-    
     Route::get('/third-party-trademarks','CommonPageController@index')->name('third-party');
-    
     Route::get('/cookies','CommonPageController@index')->name('cookies');
 
 });

@@ -194,17 +194,20 @@
                             <h2>{!! heading_split($pageDetail->faq['heading']->heading) !!}</h2>
                         </div>
                         <div class="faq-list">
-                            @php unset($pageDetail->faq['heading'])@endphp
+                            @php  
+                                $experience_us = $pageDetail->faq['experience_us'];
+                                unset($pageDetail->faq['heading'], $pageDetail->faq['experience_us']);
+                            @endphp
                             @foreach ($pageDetail->faq as $faq)
                             <div class="faq-item">
                                 <div class="ques">
-                                    <h3>{{$faq->heading}}</h3>
+                                    <h3>{!! $faq->heading !!}</h3>
                                     <span>
                                     <img src="{{url('img/contactus/arrow.svg')}}" alt="arrow">
                                     </span>
                                 </div>
                                 <div class="ans">
-                                    <p>{{$faq->content}}</p>
+                                    <p>{!! $faq->content !!}</p>
                                 </div>
                             </div> 
                             @endforeach
@@ -213,7 +216,7 @@
                     </div>
                     <div class="experience">
                         <div class="experience-info">
-                            <h2>{{$pageDetail->faq['experience_us']->heading}}</h2>
+                            <h2>{{$experience_us->heading}}</h2>
                         </div>
                         <div class="platforms">
                             @foreach ($socialmedias as $socialmedia)

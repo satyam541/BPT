@@ -45,8 +45,9 @@
                 <tr>
                   <th>S No</th>
                   <th>Author</th>
-                  <th>Date</th>
                   <th>Location</th>
+                  <th>Date</th>
+
                   <th>
                     @can('restore',new App\Models\Testimonial())
                     Actions
@@ -60,8 +61,8 @@
                     <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$testimonial->author}}</td>
-                    <td>{{$testimonial->post_date}}</td>
                     <td>{{$testimonial->location}}</td>
+                    <td>{{$testimonial->post_date}}</td>
                     @can('update',$testimonial)
                     <td><a href="{{ route('editTestimonial',$testimonial->id) }}" class="fa fa-edit"></a>
                       @endcan
@@ -101,8 +102,8 @@
               "columns": [
                 { "name": "S No"},
                 { "name": "Author"},
-                { "name": "Date", "sorting":false, searching:false  },
                 { "name": "Location"},
+                { "name": "Date", "sorting":false, searching:false  },
                 { "name": "Actions", "sorting":false, searching:false  }
               ]
             });

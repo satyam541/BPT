@@ -106,7 +106,7 @@
                 </div>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
-                        <img src="{{$pageDetail->enquiry_content['content']->getImagePath()}}" alt="{{$pageDetail->enquiry_content['content']->image_alt}}">Enquire Now
+                        <img src="{{url('img/certification/enquire.svg')}}" alt="enquire">Enquire Now
                     </a>
                 </div>
             </div>

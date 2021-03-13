@@ -47,8 +47,8 @@
                         <div class="heading">
                             <h2>{!!heading_split($pageDetail->popular_courses['heading']->heading)!!}</h2>
                         </div>
+                        <div class="courses-list">
                         @foreach ($topic->courses as $course)
-
                         <div class="course-item" onclick="location.href = '{{ $course->url }}';">
                             <span>
                                 <img src="{{url('img/topic/book-black.svg')}}" alt="book-black" class="book-black">
@@ -60,6 +60,7 @@
                             </div>
                         </div>
                         @endforeach
+                        </div>
 
                     </div>
                     <div class="courses-info">
@@ -82,9 +83,10 @@
                 </div>
                 <div class="tabs-container">
                     <ul class="tab-links">
-                        
-                    @if ($topic->topicContent!=null)
-                        @php $content=summernote_replace($topic->topicContent)@endphp
+                        {{-- {{dd($topic)}} --}}
+                    @if (!empty($topic))
+                   
+                        @php $content=summernote_replace($topic)@endphp
                         @if ($content->overview!=null)
                         <li class="tab-click" data-target="overview">
                             <span class="image">

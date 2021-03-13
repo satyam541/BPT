@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ metaData('title') }}</title>
     <meta name="description" content="{{ metaData('description') }} " />
@@ -14,6 +13,7 @@
     @if (preg_match('/[A-Z]/', request()->url()))
         <meta name="robots" content="noindex" />
     @endif
+    <meta name="token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ url('style/country-select.css') }}">
     <link rel="stylesheet" href="{{ url('style/main.css') }}">
     <link rel="stylesheet" href="{{ url('style/owl.carousel.min.css') }}">
@@ -301,7 +301,7 @@ function checkCookie() {
    var username = getCookie("cookie");
    if (username != "") {
       $("#footerCookie").hide();
-      $(".footer").css("padding-bottom", "0px");
+    //   $(".footer").css("padding-bottom", "0px");
    }
 }
 
@@ -380,27 +380,31 @@ function checkCookie() {
         }
     }
 
+ 
     function processEnquiry(formData) {
 
-        $.ajax({
-            url: formSubmitUrl,
-            data: formData,
-            type: "post",
-            timeout: 90000,
-            global: false,
-            success: function(response) {
-                if (response == 'done') {
-                    var totalTime = new Date().getTime() - ajaxTime;
-                    var input = '{{ csrf_field() }}';
-                    var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-                        '{{ url('thanks') }}').html(input);
-                    $('body').append(form);
-                    $('#thank-you').submit();
-                }
+$.ajax({
+    url: formSubmitUrl,
+    data: formData,
+    type: "post",
+    headers: {
+              'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+          },
+    timeout: 90000,
+    global: false,
+    success: function(response) {
+        if (response == 'done') {
 
-            }
-        });
+            var input = '{{ csrf_field() }}';
+            var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
+                '{{ url('thank-you') }}').html(input);
+            $('body').append(form);
+            $('#thank-you').submit();
+        }
+
     }
+});
+}
 
     function submitEnquiry(formElement) {
         button = $(formElement).find('button').first();
@@ -416,7 +420,7 @@ function checkCookie() {
             data: formData,
             type: "post",
             beforeSend: function() {
-                $(formElement).find(".error").removeClass('error');
+                $(formElement).find(".input-error").removeClass('input-error');
                 $(formElement).find("input,button").prop('disabled', true);
             },
             complete: function() {
@@ -442,8 +446,10 @@ function checkCookie() {
                 $(formElement).find("button,input").attr('disabled', false);
                 errors = err.responseJSON.errors;
                 $.each(errors, function(index, value) {
-                    $(formElement).find("input[name='" + index + "']").addClass('error').attr(
-                        'title', value[0]);
+
+                   $(formElement).find("input[name='" + index + "']").closest('.input-container').addClass('input-error');
+                   $(formElement).find("input[name='" + index + "']").attr('placeholder',value);
+
                 });
             }
         });

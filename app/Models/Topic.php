@@ -100,7 +100,7 @@ class Topic extends Model
     public function loadContent()
     {
         $object = $this;
-        $content = $object->content->where('country_id',country()->id);
+        $content = $object->content->where('country_id',country()->country_code);
         if($content->isEmpty())
         {
             $content = $object->content;

@@ -15,7 +15,8 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Whats Included</li>
+            <li class="breadcrumb-item"><a href="{{route('whatsincludedListRoute')}}">Whats Included</a></li>
+            <li class="breadcrumb-item active">Trash</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
