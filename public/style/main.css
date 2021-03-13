@@ -2398,6 +2398,7 @@ select::-ms-expand {
 .locations .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .locations .location-name {
   display: flex;
@@ -7976,7 +7977,8 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
   border-radius: 25px;
-  align-items: center;
+  width: 272px;
+  align-self: center;
 }
 .certification-course a {
   text-align: center;
@@ -8021,8 +8023,8 @@ select::-ms-expand {
 }
 .method span {
   display: flex;
-  height: 93px;
-  width: 93px;
+  height: 95px;
+  width: 95px;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 1.6rem;
@@ -8119,6 +8121,9 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.enquiry .content p {
+  width: calc(100% - 45px);
+}
 .enquiry .enquiry-img {
   display: flex;
   height: 100%;
@@ -8140,7 +8145,7 @@ select::-ms-expand {
   background-image: url(../img/certification/enquiry-lines.svg);
   height: 28px;
   width: 40px;
-  animation: rotate 12s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 .enquiry .enquiry-img::after {
   bottom: 13%;
@@ -8171,6 +8176,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
@@ -8204,7 +8210,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgb(255 249 12.45%);
     background: #1C2848;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 70%;
     text-align: left;
   }
@@ -8212,9 +8218,6 @@ select::-ms-expand {
     width: 28%;
     margin-top: 0;
     justify-content: flex-end;
-  }
-  .certification-course a {
-    text-align: left;
   }
   .method {
     padding: 3rem 2rem;
@@ -8261,21 +8264,17 @@ select::-ms-expand {
   .enquiry .contact-content:nth-child(2) {
     background: none;
   }
+  .enquiry .enquiry-img {
+    width: 60%;
+    align-self: center;
+  }
   .enquiry .enquiry-img::before {
-    top: 33%;
-    left: 13%;
     height: 31px;
     width: 45px;
   }
   .enquiry .enquiry-img::after {
-    bottom: 13%;
-    right: -2%;
     height: 90px;
-    width: 175px;
-  }
-  .enquiry .enquiry-img img {
-    height: 100%;
-    width: 100%;
+    width: 120px;
   }
 }
 @media (min-width : 1024px) {
@@ -8317,14 +8316,14 @@ select::-ms-expand {
   .certification-course .course-content:nth-child(even) {
     margin-right: 0;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 61%;
   }
   .certification-course .buttons {
     width: 37%;
   }
-  .certification-course a {
-    width: 60%;
+  .method p {
+    font-size: 16px;
   }
   .enquiry .enquiry-container {
     flex-direction: row;
@@ -8393,16 +8392,6 @@ select::-ms-expand {
   }
   .certification-course {
     padding: 4rem 0rem;
-  }
-  .certification-course .course-content {
-    width: 48%;
-    margin-right: 2.5rem;
-  }
-  .certification-course h3 {
-    width: 61%;
-  }
-  .certification-course .buttons {
-    width: 39%;
   }
   .method {
     padding: 4rem 0rem;
@@ -8484,11 +8473,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.course-intro .intro-para {
-  font-weight: bold;
-}
 .course-intro p {
   margin-bottom: 1rem;
+}
+.course-intro p:last-child {
+  margin-bottom: 0;
 }
 .course-intro ul li {
   padding-left: 1.5rem;
@@ -8587,6 +8576,9 @@ select::-ms-expand {
 }
 .foundation .tab-links .active {
   border-bottom: 4px solid #0064D8;
+}
+.foundation .tab-links .active .number {
+  color: #c5d1ee;
 }
 .foundation .tab-links .active::before {
   border-bottom: 20px solid #0064D8;
@@ -8766,8 +8758,8 @@ select::-ms-expand {
   flex-direction: column;
   margin-top: 2rem;
 }
-.foundation #included .heading {
-  margin-bottom: 2rem;
+.foundation #included h2 {
+  text-align: center;
 }
 .foundation .included-list {
   display: flex;
@@ -8851,7 +8843,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .learn-more ul li {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   margin-top: 0.8rem;
   position: relative;
   z-index: 1;
@@ -8866,7 +8858,7 @@ select::-ms-expand {
   width: 15px;
   height: 15px;
   left: 0;
-  top: 4px;
+  top: 2px;
   background-repeat: no-repeat;
 }
 .learn-more .more-content ul li:last-child {
@@ -9011,6 +9003,8 @@ select::-ms-expand {
   display: none;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 272px;
+  align-self: center;
 }
 .training .modes-active {
   display: flex;
@@ -9081,6 +9075,8 @@ select::-ms-expand {
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  width: 272px;
+  align-self: center;
 }
 .training .add-ons h2 {
   position: absolute;
@@ -9096,7 +9092,7 @@ select::-ms-expand {
 .training .add-ons .item {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 .training .add-ons .item .offer {
   display: flex;
@@ -9110,6 +9106,9 @@ select::-ms-expand {
   text-align: left;
   padding-left: 1.6rem;
   font-size: 13px;
+}
+.training .add-ons .item:last-child {
+  margin-top: 1rem;
 }
 .training .add-ons:nth-child(2) {
   background-color: black;
@@ -9146,7 +9145,7 @@ select::-ms-expand {
 .training .add-foundation .image {
   display: flex;
   border-bottom: 1px dashed #C0C0C0;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0;
   padding-bottom: 0.5rem;
   width: 85%;
   align-self: center;
@@ -9163,6 +9162,7 @@ select::-ms-expand {
 }
 .training .add-foundation ul {
   padding: 1rem;
+  padding-bottom: 0;
 }
 .training .add-foundation ul li {
   display: flex;
@@ -9210,6 +9210,11 @@ select::-ms-expand {
   background-color: #1C2848;
   flex-direction: column;
   padding: 2rem;
+  margin-top: 0;
+  display: flex;
+}
+.training .onsite-block .onsite-form .heading {
+  padding-top: 0;
 }
 .training .onsite-block .onsite-form .heading p {
   text-align: center;
@@ -9239,6 +9244,7 @@ select::-ms-expand {
 .training .course-content {
   display: flex;
   flex-direction: column;
+  margin: auto;
   margin-top: 2.5rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
@@ -9259,6 +9265,7 @@ select::-ms-expand {
 }
 .training .course-name {
   display: flex;
+  justify-content: center;
   font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
@@ -9320,7 +9327,7 @@ select::-ms-expand {
   justify-content: space-around;
 }
 .training .date p {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0.8rem;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   text-align: center;
@@ -9797,6 +9804,9 @@ select::-ms-expand {
   .foundation .tab-links .tab-click:first-child {
     margin-top: 3rem;
   }
+  .foundation #included h2 {
+    text-align: left;
+  }
   .foundation .included-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -9880,11 +9890,21 @@ select::-ms-expand {
   .training select {
     padding: 15px;
   }
+  .training .modes .heading {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .training .modes .heading img {
+    display: none;
+  }
   .training .modes-list {
     display: flex;
+    width: 100%;
   }
   .training .key-point {
-    display: flex;
     width: 40%;
     align-self: center;
   }
@@ -9959,6 +9979,7 @@ select::-ms-expand {
     position: sticky;
     top: 170px;
     height: auto;
+    align-self: flex-start;
   }
   .training .add-foundation {
     width: 48%;
@@ -10187,21 +10208,14 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1rem 2rem;
   }
-  .foundation #included .heading {
-    display: flex;
-    align-items: flex-start;
-  }
-  .foundation #included .heading::before {
-    right: initial;
-  }
-  .foundation #included .heading h2 {
-    text-align-last: left;
+  .foundation .tab-common .overview-content {
+    margin-top: 0;
   }
   .learn-more .more-list {
     width: 49%;
   }
   .learn-more .more-container {
-    padding: 3rem 2rem;
+    padding: 2rem;
   }
   .unable p {
     width: 60%;
