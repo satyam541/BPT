@@ -9,7 +9,7 @@
     <div style="width:100%;">
        
         <div>
-           Your are successfully regsitered  to cms in Bestpracticetraining.
+           Your are successfully regsitered  to cms in <a href="bestpracticetraining.com">Best Practice Training</a>.
         </div>
 
 

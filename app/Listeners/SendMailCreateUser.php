@@ -9,6 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Mail;
 use App\User;
 use App\Models\Role;
+use App\Mail\RegisterMail;
 
 class SendMailCreateUser
 {
@@ -38,8 +39,9 @@ class SendMailCreateUser
         $data['user'] = $event->user;
         Mail::send('emails.UserCreated',$data, function($message) use($adminUsers)
         {
-            $message->subject('Create Info');
+            $message->subject('Alert: User Create On Best Practice Training');
             $message->to($adminUsers);
         });
+        Mail::to($data['user']->email)->send(new RegisterMail($data['user']));
     }
 }
