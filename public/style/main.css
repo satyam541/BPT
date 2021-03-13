@@ -4996,6 +4996,7 @@ select::-ms-expand {
 .onsite-training .training-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .onsite-training .training-info {
   display: flex;
@@ -5014,6 +5015,7 @@ select::-ms-expand {
   background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
+  width: 100%;
 }
 .onsite-training .delegate .heading {
   padding-top: 0;
@@ -5385,6 +5387,7 @@ select::-ms-expand {
     width: 37%;
     position: absolute;
     right: 0;
+    top: 22px;
   }
   .onsite-training .trained-bg h3,
   .onsite-training .trained-bg p {
