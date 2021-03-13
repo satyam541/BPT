@@ -45,6 +45,11 @@
                 }
             }
         }
+        #included {
+            h2{
+                text-align: left;
+            }
+        }
         .included-list {
             flex-direction: row;
             flex-wrap: wrap;
@@ -137,11 +142,23 @@
         select {
             padding: 15px;
         }
+        .modes{
+            .heading{
+                padding: 0; 
+                box-shadow: none; 
+                background: transparent; 
+                border-radius: 0; 
+                cursor: pointer;
+                img{
+                    display: none;
+                }
+            }
+        }
         .modes-list {
             display: flex;
+            width: 100%;
         }
         .key-point {
-            display: flex;
             width: 40%;
             align-self: center;
         }
@@ -218,6 +235,7 @@
             position: sticky;
             top: 170px;
             height: auto;
+            align-self: flex-start;
         }
         .add-foundation{
             width: 48%;
@@ -478,17 +496,9 @@
             background-color: @whiteColor;
             box-shadow: @shadowLight;
             padding: 1rem 2rem;
-        }
-        #included {
-            .heading {
-                display: flex;
-                align-items: flex-start;
-                &::before {
-                    right: initial;
-                }
-                h2 {
-                    text-align-last: left;
-                }
+
+            .overview-content{
+                margin-top: 0;
             }
         }
     }
@@ -500,7 +510,7 @@
             width: 49%;
         }
         .more-container{
-            padding: 3rem 2rem;
+            padding:2rem;
         }
     }
 // End learn-more section //

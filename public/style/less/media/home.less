@@ -34,14 +34,17 @@
         .courses-list{
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
         }
         .course-name{
-            width: 48%;
+            width: 46%;
             .icon{
                 display: flex;
             }
             .name{
+                h3{
+                    min-height: 42px;
+                }
                 h3, p{
                         text-align: left;
                 }
@@ -75,9 +78,8 @@
                 margin-top: 0;
             }
             img {
-                width: 80px;
-                height: 80px;
-                margin-right: 2rem;
+           
+                margin-right: 1.5rem;
                 transform: translate(10px, -30px);
             }
         }
@@ -124,10 +126,10 @@
             align-items: center;
         }
         .ways-content{
-            width: 52%;
+            width: 48%;
         }
         .ways-image{
-            width: 40%;
+            width: 48%;
             margin-top: 0;
 
         }
@@ -321,6 +323,7 @@
     .looking{
         padding: @sectionPadding-md;
         position: relative;
+        z-index: 1;
         &::before{
             content: '';
             position: absolute;
@@ -333,7 +336,7 @@
             right: 0;
             z-index: 0;
             top: 62px;
-
+            z-index: -1;
         }
         .looking-container{
             flex-direction: row;
@@ -393,6 +396,7 @@
 
     // Start courses section //
     .courses{
+
         .course-name{
             width: 31%;
         }
@@ -508,7 +512,10 @@
         }
         .item{
             width: 24%;
-            height: 320px;
+            height: 340px;
+            p{
+                min-height: 132px;
+            }
         }
     } 
     // End delivey section
@@ -589,7 +596,6 @@
         .clients-reviews{
             width: 50%;
             padding: 0 1rem;
-            margin-top: 3rem;
         }
         .reviews-outer{
             position: relative;
@@ -616,6 +622,7 @@
         background-size: contain;
         background-position: right;
         padding-bottom: 0 !important;
+        padding-top: 1rem  !important;
         .partners-images{
             background-image: url(../img/home/partners-bg.png);
             background-repeat: no-repeat;
@@ -677,7 +684,10 @@
         padding: @sectionPadding-xl;
         .item{
             width: 22%;
-            height: 290px;
+            height: 320px;
+            p{
+                min-height: 110px;
+            }
         }
         h3{
             font-size: 18px;

@@ -4,6 +4,7 @@
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
+    box-shadow: none;
     &::before {
         content: none;
     }
@@ -39,33 +40,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            position: relative;
-            z-index: 1;
-            &::before,
-            &::after {
-                content: none;
-                position: absolute;
-                z-index: -1;
-                background-image: url(../img/testimonial/curve.png);
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
-            }
-            &::before {
-                height: 167px;
-                width: 161px;
-                top: 291px;
-                right: -80px;
             
-            }
-            &::after {   
-                height: 296px;
-                width: 232px;
-                bottom: 40px;
-                left: -143px;
-                transform: rotate(
-            354deg
-            );
-            }
         }
         .customers-content {
             width: 46%;
@@ -158,7 +133,6 @@
         .heading {
             width: 66%;
             align-items: flex-start;
-            margin-bottom: 0;
             h2 {
                 margin-bottom: .5rem;
             }
@@ -168,8 +142,7 @@
         }
         .buttons {
             width: 16%;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: flex-end;
             margin-top: 0;
         }
     }
@@ -191,11 +164,11 @@
         background-size: 100% 100%;
         .heading {
             p {
-                width: 65%;
+                width: 75%;
             }
         }
         .fact-content {
-            width: 30%;
+            width: 29%;
             margin-right: 2rem;
             &:last-child(2) {
                 margin-right: 0rem;
@@ -214,9 +187,30 @@
             width: 63%;
         }
         .customers-list {
+            position: relative;
+            z-index: 1;
             &::before,
             &::after {
                 content: '';
+                position: absolute;
+                z-index: -1;
+                background-image: url(../img/testimonial/curve.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            &::before {
+                height: 167px;
+                width: 161px;
+                top: 291px;
+                right: -80px;
+            
+            }
+            &::after {   
+                height: 296px;
+                width: 232px;
+                bottom: 40px;
+                left: -143px;
+                transform: rotate(354deg);
             }
 
         }
@@ -233,6 +227,7 @@
     // Start Services Section
     .services {
         padding: @sectionPadding-xl;
+        padding: 2.5rem 0;
     }
     // End Services Section
 
@@ -250,6 +245,17 @@
         padding: @sectionPadding-xl;
     }
     // End Facts Section
-
     
+}
+
+@media (min-width:1366px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Start Customers Section
+    .customers {
+        .customers-content {
+            &::after {
+                bottom: 19px;
+            }
+        }
+    }
+    // End Customers Section
 }
