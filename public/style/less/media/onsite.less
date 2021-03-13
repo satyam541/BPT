@@ -40,14 +40,13 @@
         padding: @sectionPadding-md;
         .choose-list{
             flex-direction: row;
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
+            justify-content: space-around;
         }
         .choose-item{
             width: 48%;
             padding-right: 1.5rem;
-            &:nth-child(even) {
-                padding-right: 0;
-            }
+         
         }
     }
     // End choose section
@@ -149,15 +148,9 @@
     .choose {
         .choose-item{
             width: 33%;
-            &:nth-child(even) {
-                padding-right: 1.5rem;
-            }
-            &:nth-child(3), &:nth-child(6) {
-                padding-right: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-            }
+          
+          
+         
             p {
                 min-height: 76px;
             }
@@ -223,32 +216,31 @@
     // Start doorstep section
     .doorstep{
         padding: @sectionPadding-xl;
-        padding-top: 6rem;
-        background-image: url(../img/onsite/information-bg.png);
-        background-size: auto;
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        .container{
-            width: 100%;
-        }
+      padding: 2rem 0rem;
+	padding-top: 2rem;
+	background-image: url(../img/onsite/information-bg.png);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+    box-shadow: 0px 0px 10px #dddddd;
+	margin-top: 6rem;
+    
         .doorstep-container{
             position: relative;
-            box-shadow: @shadowLight;
             padding: 1.5rem;
+            padding-top: 0;
         }
         .form{
-            width: 51%;
             position: absolute;
-            left: 120px;
-            top: -47px;
+            left: 0px;
+            top: -70px;
         }
         .info{
             box-shadow: none;
             padding: 0;
-            padding-left: 5rem;
             background-image: none;
             margin-left: auto;
-            width: 41%;
+            width: 45%;
         }
     }
     // End doorstep section
@@ -259,12 +251,7 @@
         padding-top: 6rem;
         .choose-item{
             width: 25%;
-            &:nth-child(4) {
-                padding-right: 0;
-            }
-            &:nth-child(3), &:nth-child(6) {
-                padding-right: 1.5rem;
-            }
+        
         }
     }
     // End choose section
@@ -277,29 +264,5 @@
 }
 
 @media @size-xll {
-
-    // Start doorstep section
-    .doorstep{
-        .container{
-            width: 1200px;
-        }
-        .doorstep-container{
-            box-shadow: none;
-            padding-bottom: 4.3rem;
-        }
-        .form{
-            left: 0px;
-        }
-        .info{
-            width: 49%;
-        }
-    }
-    // End doorstep section
-
-    // Start choose section
-    .choose {
-        padding-top: 4rem;
-    }
-    // End choose section
     
 }
