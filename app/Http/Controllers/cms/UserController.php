@@ -92,11 +92,13 @@ class UserController extends Controller
     {
         $this->authorize('create', new User());
         $data = $request->all();
+        $rawPassword = $data['password'];
         $user = User::create([
             'name'      => $data['name'],
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
+        $user['rawPassword'] = $rawPassword;
         Event(new CreateUser($user));
         
         return redirect()->route('userList')->with('success', 'User Created!');
