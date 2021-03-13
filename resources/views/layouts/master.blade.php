@@ -301,7 +301,7 @@ function checkCookie() {
    var username = getCookie("cookie");
    if (username != "") {
       $("#footerCookie").hide();
-      $(".footer").css("padding-bottom", "0px");
+    //   $(".footer").css("padding-bottom", "0px");
    }
 }
 

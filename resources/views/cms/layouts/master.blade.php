@@ -8,7 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  
+  <script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"> --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> --}}
   <link rel="stylesheet" href="{{url('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="{{url('adminlte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{url('adminlte/dist/css/adminlte.min.css')}}">
-  {{-- <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}"> --}}
+  <link rel="stylesheet" href="{{url('adminlte/dist/css/select2.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Date Picker -->
@@ -43,7 +43,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url('adminlte/DataTables/datatables.min.css')}}"/>
-   <link rel="stylesheet" href="{{ url('adminlte/plugins/select2/css/select2.min.css')}}"/>
+   {{-- <link rel="stylesheet" href="{{ url('adminlte/plugins/select2/css/select2.min.css')}}"/> --}}
 
    @yield('headerLinks')
 </head>
@@ -51,6 +51,10 @@
   .select2-container--default .select2-selection--single .select2-selection__rendered{
   line-height: 19px;
   
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+  color: black;
+  padding-left: 30px;
 }
 
 </style>
@@ -904,6 +908,7 @@
 
 
 <!-- jQuery -->
+<script src="{{url('ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')}}"></script>
 <script src="{{url('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{url('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -911,7 +916,7 @@
 <script>
 $.widget.bridge('uibutton', $.ui.button)
 </script>
-{{-- <script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script> --}}
+<script src="{{ url('adminlte/plugins/select2/js/select2.full.min.js')}}"></script>
 
 <!-- Bootstrap 4 -->
 <script src="{{url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -926,7 +931,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="{{url('adminlte/dist/js/adminlte.js')}}"></script>
 <script src="{{url('adminlte/bootstrap-toggle-master/js/bootstrap-toggle.min.js')}}"></script>
 <!-- AdminLTE select 2 -->
-<script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script>
+{{-- <script type="text/javascript" src="{{url('adminlte/dist/js/select2.min.js')}}"></script> --}}
 <script src="{{url('adminlte/cms/summernote-cleaner.js')}}"></script>
 {{-- Data Tables --}}
 <script type="text/javascript" src="{{url('adminlte/DataTables/datatables.min.js')}}"></script>

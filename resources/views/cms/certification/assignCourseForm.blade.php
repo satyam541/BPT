@@ -44,7 +44,7 @@
                                 
                                 <div class="form-group">
                                     {{ Form::label('courses[]', 'Courses') }}
-                                    {{ Form::select('courses[]', $courses,null,['class' => 'form-control multipleSelect', 'multiple' => 'multiple', 'title'=>'Select Course']) }}
+                                    {{ Form::select('courses[]', $courses,null,['class' => 'form-control selectJS', 'multiple' => 'multiple', 'title'=>'Select Course']) }}
                                 </div>
 
                             </div>
@@ -71,16 +71,11 @@
 
 @endsection
 @section('footer')
-
     <script>
         $(document).ready(function() {
             $("#name").on('input', function() {
                 updateSlug();
             });
-
-            $(".multipleSelect").select2();
-        });
-
         function updateSlug() {
             var location = $("#name").val();
             var slug = '/' + convertUrl(location);
