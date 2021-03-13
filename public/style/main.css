@@ -5264,7 +5264,7 @@ select::-ms-expand {
   .choose .choose-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
   .choose .choose-item {
     width: 48%;
