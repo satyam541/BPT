@@ -407,7 +407,7 @@ select::-ms-expand {
 }
 .form .consent-error p,
 .form .consent-error-other p {
-  color: red;
+  color: red!important;
   line-height: 1.4;
   font-size: 12px;
 }
@@ -1974,6 +1974,9 @@ select::-ms-expand {
 .home-banner .banner-container {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
+.home-banner .banner-container .banner-content {
+  align-items: flex-start;
+}
 .home-banner .banner-container .banner-content p {
   color: #181818;
   margin-bottom: 1rem;
@@ -2063,6 +2066,9 @@ select::-ms-expand {
 }
 .courses {
   padding: 3rem 1.5rem;
+}
+.courses .heading {
+  margin-bottom: 0;
 }
 .courses .courses-container {
   display: flex;
@@ -2162,8 +2168,8 @@ select::-ms-expand {
   text-align: center;
 }
 .effective .content img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 .effective .content p {
   color: #FFFFFF;
@@ -2584,13 +2590,16 @@ select::-ms-expand {
   .courses .courses-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .courses .course-name {
-    width: 48%;
+    width: 46%;
   }
   .courses .course-name .icon {
     display: flex;
+  }
+  .courses .course-name .name h3 {
+    min-height: 42px;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2622,9 +2631,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .effective .content img {
-    width: 80px;
-    height: 80px;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     transform: translate(10px, -30px);
   }
   .effective .buttons {
@@ -2661,10 +2668,10 @@ select::-ms-expand {
     align-items: center;
   }
   .ways .ways-content {
-    width: 52%;
+    width: 48%;
   }
   .ways .ways-image {
-    width: 40%;
+    width: 48%;
     margin-top: 0;
   }
   .ways .item::before {
@@ -2831,6 +2838,7 @@ select::-ms-expand {
   .looking {
     padding: 3rem 2rem;
     position: relative;
+    z-index: 1;
   }
   .looking::before {
     content: '';
@@ -2844,6 +2852,7 @@ select::-ms-expand {
     right: 0;
     z-index: 0;
     top: 62px;
+    z-index: -1;
   }
   .looking .looking-container {
     flex-direction: row;
@@ -2979,7 +2988,10 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 24%;
-    height: 320px;
+    height: 340px;
+  }
+  .delivery .item p {
+    min-height: 132px;
   }
   .facts .facts-container {
     flex-direction: row;
@@ -3046,7 +3058,6 @@ select::-ms-expand {
   .looking .clients-reviews {
     width: 50%;
     padding: 0 1rem;
-    margin-top: 3rem;
   }
   .looking .reviews-outer {
     position: relative;
@@ -3068,6 +3079,7 @@ select::-ms-expand {
     background-size: contain;
     background-position: right;
     padding-bottom: 0 !important;
+    padding-top: 1rem  !important;
   }
   .partners .partners-images {
     background-image: url(../img/home/partners-bg.png);
@@ -3110,7 +3122,10 @@ select::-ms-expand {
   }
   .delivery .item {
     width: 22%;
-    height: 290px;
+    height: 320px;
+  }
+  .delivery .item p {
+    min-height: 110px;
   }
   .delivery h3 {
     font-size: 18px;
@@ -4514,6 +4529,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.customers .heading h2 {
+  margin-bottom: 0.5rem;
+}
 .customers .heading p {
   font-weight: bold;
   width: 100%;
@@ -4554,8 +4572,8 @@ select::-ms-expand {
 }
 .customers .info span {
   display: flex;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin-right: 0.5rem;
 }
 .customers .info span img {
@@ -4588,10 +4606,11 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
 }
 .services .heading h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 .services .heading p {
   text-align: center;
@@ -4772,6 +4791,7 @@ select::-ms-expand {
     background: none;
     background-image: url(../img/testimonial/banner-bg.png);
     background-size: 100% 100%;
+    box-shadow: none;
   }
   .testimonial-banner::before {
     content: none;
@@ -4805,30 +4825,6 @@ select::-ms-expand {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-  .customers .customers-list::before,
-  .customers .customers-list::after {
-    content: none;
-    position: absolute;
-    z-index: -1;
-    background-image: url(../img/testimonial/curve.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-  .customers .customers-list::before {
-    height: 167px;
-    width: 161px;
-    top: 291px;
-    right: -80px;
-  }
-  .customers .customers-list::after {
-    height: 296px;
-    width: 232px;
-    bottom: 40px;
-    left: -143px;
-    transform: rotate(354deg);
   }
   .customers .customers-content {
     width: 46%;
@@ -4897,7 +4893,6 @@ select::-ms-expand {
   .services .heading {
     width: 66%;
     align-items: flex-start;
-    margin-bottom: 0;
   }
   .services .heading h2 {
     margin-bottom: 0.5rem;
@@ -4908,8 +4903,7 @@ select::-ms-expand {
   }
   .services .buttons {
     width: 16%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
     margin-top: 0;
   }
   .testimonial .testimonial-info {
@@ -4922,10 +4916,10 @@ select::-ms-expand {
     background-size: 100% 100%;
   }
   .fact .heading p {
-    width: 65%;
+    width: 75%;
   }
   .fact .fact-content {
-    width: 30%;
+    width: 29%;
     margin-right: 2rem;
   }
   .fact .fact-content:last-child(2) {
@@ -4939,15 +4933,38 @@ select::-ms-expand {
   .customers p {
     width: 63%;
   }
+  .customers .customers-list {
+    position: relative;
+    z-index: 1;
+  }
   .customers .customers-list::before,
   .customers .customers-list::after {
     content: '';
+    position: absolute;
+    z-index: -1;
+    background-image: url(../img/testimonial/curve.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .customers .customers-list::before {
+    height: 167px;
+    width: 161px;
+    top: 291px;
+    right: -80px;
+  }
+  .customers .customers-list::after {
+    height: 296px;
+    width: 232px;
+    bottom: 40px;
+    left: -143px;
+    transform: rotate(354deg);
   }
   .customers .customers-content .content p {
     min-height: 154px;
   }
   .services {
     padding: 4rem 0rem;
+    padding: 2.5rem 0;
   }
   .testimonial {
     padding: 4rem 0rem;
@@ -4957,6 +4974,11 @@ select::-ms-expand {
   }
   .fact {
     padding: 4rem 0rem;
+  }
+}
+@media (min-width: 1366px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .customers .customers-content::after {
+    bottom: 19px;
   }
 }
 .onsite-banner {
@@ -5036,10 +5058,7 @@ select::-ms-expand {
 }
 .doorstep .form-consent p a {
   color: #FFFFFF;
-  font-size: 12   px;
-}
-.doorstep .consent-error p {
-  color: red;
+  font-size: 12px;
 }
 .doorstep .input-container {
   background-color: #4B5773;
@@ -5054,10 +5073,6 @@ select::-ms-expand {
   background-color: #6B7996;
 }
 .doorstep .input-container ::placeholder {
-  color: #FFFFFF;
-}
-.doorstep .input-container input,
-.doorstep .input-container textarea {
   color: #FFFFFF;
 }
 .doorstep .info {
@@ -7961,7 +7976,8 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
   border-radius: 25px;
-  align-items: center;
+  width: 272px;
+  align-self: center;
 }
 .certification-course a {
   text-align: center;
@@ -8006,8 +8022,8 @@ select::-ms-expand {
 }
 .method span {
   display: flex;
-  height: 93px;
-  width: 93px;
+  height: 95px;
+  width: 95px;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 1.6rem;
@@ -8104,6 +8120,9 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
+.enquiry .content p {
+  width: calc(100% - 45px);
+}
 .enquiry .enquiry-img {
   display: flex;
   height: 100%;
@@ -8125,7 +8144,7 @@ select::-ms-expand {
   background-image: url(../img/certification/enquiry-lines.svg);
   height: 28px;
   width: 40px;
-  animation: rotate 12s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 .enquiry .enquiry-img::after {
   bottom: 13%;
@@ -8156,6 +8175,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
@@ -8189,7 +8209,7 @@ select::-ms-expand {
     box-shadow: 0px 0px 10px rgb(255 249 12.45%);
     background: #1C2848;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 70%;
     text-align: left;
   }
@@ -8197,9 +8217,6 @@ select::-ms-expand {
     width: 28%;
     margin-top: 0;
     justify-content: flex-end;
-  }
-  .certification-course a {
-    text-align: left;
   }
   .method {
     padding: 3rem 2rem;
@@ -8246,21 +8263,17 @@ select::-ms-expand {
   .enquiry .contact-content:nth-child(2) {
     background: none;
   }
+  .enquiry .enquiry-img {
+    width: 60%;
+    align-self: center;
+  }
   .enquiry .enquiry-img::before {
-    top: 33%;
-    left: 13%;
     height: 31px;
     width: 45px;
   }
   .enquiry .enquiry-img::after {
-    bottom: 13%;
-    right: -2%;
     height: 90px;
-    width: 175px;
-  }
-  .enquiry .enquiry-img img {
-    height: 100%;
-    width: 100%;
+    width: 120px;
   }
 }
 @media (min-width : 1024px) {
@@ -8302,14 +8315,14 @@ select::-ms-expand {
   .certification-course .course-content:nth-child(even) {
     margin-right: 0;
   }
-  .certification-course h3 {
+  .certification-course a {
     width: 61%;
   }
   .certification-course .buttons {
     width: 37%;
   }
-  .certification-course a {
-    width: 60%;
+  .method p {
+    font-size: 16px;
   }
   .enquiry .enquiry-container {
     flex-direction: row;
@@ -8378,16 +8391,6 @@ select::-ms-expand {
   }
   .certification-course {
     padding: 4rem 0rem;
-  }
-  .certification-course .course-content {
-    width: 48%;
-    margin-right: 2.5rem;
-  }
-  .certification-course h3 {
-    width: 61%;
-  }
-  .certification-course .buttons {
-    width: 39%;
   }
   .method {
     padding: 4rem 0rem;
@@ -14027,7 +14030,6 @@ select::-ms-expand {
 }
 .form-success .success-content a {
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 .form-success .success-content a:last-child {
   margin-bottom: 0;
