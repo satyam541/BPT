@@ -8868,8 +8868,8 @@ select::-ms-expand {
 }
 .training .filter-top {
   position: sticky;
-  top: 0;
-  z-index: 1;
+  top: 75px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -9664,6 +9664,7 @@ select::-ms-expand {
 }
 .related .related-content .name {
   font-size: 16px;
+  font-weight: 600;
   width: calc(100% - 80px);
 }
 .popular-location {
