@@ -12172,6 +12172,10 @@ select::-ms-expand {
 .topic-courses .explore-courses .heading h2 {
   text-align: center;
 }
+.topic-courses .courses-list {
+  display: flex;
+  flex-direction: column;
+}
 .topic-courses .course-item {
   display: flex;
   flex-direction: column;
@@ -12640,10 +12644,15 @@ select::-ms-expand {
   .topic-courses .explore-courses .heading h2 {
     text-align: left;
   }
+  .topic-courses .courses-list {
+    height: 515px;
+    overflow: scroll;
+  }
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
     padding: 0.5rem 1rem;
+    width: 90%;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
@@ -12656,7 +12665,7 @@ select::-ms-expand {
     margin-left: 1rem;
   }
   .topic-courses .course-name a {
-    width: calc(100% - 95px);
+    width: calc(100% - 90px);
     text-align: left;
     margin-bottom: 0;
     font-size: 16px;

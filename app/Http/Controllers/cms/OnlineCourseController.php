@@ -34,5 +34,14 @@ class OnlineCourseController extends Controller
         
         return view('cms.addon.courseAddonsList', $data);
     }
+    public function delete($course)
+    {
+        $onlineCourse = Course::find($course);
+        $onlineCourse->is_online = 0;
+        $onlineCourse->save();
+        OnlinePrice::where('course_id',$course)->delete();
+        
+        return back()->with('success','Online Course Deleted');
+    }
    
 }
