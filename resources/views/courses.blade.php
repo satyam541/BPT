@@ -860,7 +860,8 @@
                         <span class="image">
                             <img src="{{ url('img/courses/travel.svg') }}" alt="travel">
                         </span>
-                        <div class="location-name">{!! $popularLocation->name !!}</div>
+                        <h3>{!! $popularLocation->name !!}</h3>
+
                         <span class="arrow">
                             <img src="{{ url('img/courses/dashed-arrow.svg') }}" alt="dashed-arrow">
                         </span>

@@ -8842,7 +8842,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .learn-more ul li {
-  padding-left: 1.2rem;
+  padding-left: 1.4rem;
   margin-top: 0.8rem;
   position: relative;
   z-index: 1;
@@ -8908,6 +8908,7 @@ select::-ms-expand {
   padding: 1rem;
   box-shadow: 0 0 17px #c1c1c1;
   background: #FFFFFF;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   border-radius: 5px;
   cursor: pointer;
@@ -9001,7 +9002,7 @@ select::-ms-expand {
 .training .modes-list {
   display: none;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 272px;
   align-self: center;
 }
@@ -9062,12 +9063,12 @@ select::-ms-expand {
 .training .calender-right {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 .training .add-ons {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
   background-image: url(../img/courses/add-bg.png);
@@ -9076,6 +9077,7 @@ select::-ms-expand {
   position: relative;
   width: 272px;
   align-self: center;
+  margin-top: 1rem;
 }
 .training .add-ons h2 {
   position: absolute;
@@ -9203,7 +9205,6 @@ select::-ms-expand {
 .training .onsite-block {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .training .onsite-block .onsite-form {
   background-color: #1C2848;
@@ -9250,6 +9251,9 @@ select::-ms-expand {
   width: 272px;
   align-self: center;
 }
+.training .course-content:first-child {
+  margin-top: 0;
+}
 .training .name {
   display: flex;
   flex-direction: column;
@@ -9265,10 +9269,10 @@ select::-ms-expand {
 .training .course-name {
   display: flex;
   justify-content: center;
+  text-align: center;
   font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
-  text-align: center;
 }
 .training .detail {
   display: flex;
@@ -9311,6 +9315,7 @@ select::-ms-expand {
 .training .detail .content .sub-content {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 .training .detail .content .sub-content h3,
 .training .detail .content .sub-content p {
@@ -9359,7 +9364,6 @@ select::-ms-expand {
   display: none;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  margin-top: 2rem;
   background-color: #FFFFFF;
 }
 .training .no-schedule p {
@@ -9467,7 +9471,7 @@ select::-ms-expand {
   color: #FFFFFF;
 }
 .work .work-list h3 {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 .work .content {
   display: flex;
@@ -9498,7 +9502,6 @@ select::-ms-expand {
 .language .language-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 .language .language-img {
   display: flex;
@@ -9561,7 +9564,7 @@ select::-ms-expand {
   margin-top: 2rem;
   padding: 0.3rem;
   background-position: left top;
-  width: 272px;
+  width: 100%;
   align-self: center;
 }
 .language .language-list .content span {
@@ -9623,6 +9626,9 @@ select::-ms-expand {
   width: 272px;
   align-self: center;
 }
+.skill .skill-content:first-child {
+  margin-top: 1rem;
+}
 .skill .skill-content h3 {
   margin-bottom: 1rem;
   text-align: center;
@@ -9637,6 +9643,9 @@ select::-ms-expand {
 .related .related-container {
   display: flex;
   flex-direction: column;
+}
+.related .heading {
+  margin-bottom: 0;
 }
 .related .related-list {
   display: flex;
@@ -9717,6 +9726,9 @@ select::-ms-expand {
   flex-direction: column;
   padding: 0;
   margin-top: 2rem;
+}
+.popular-location .location-content .heading {
+  margin-bottom: 0;
 }
 .popular-location .location-list {
   display: flex;
@@ -9853,15 +9865,19 @@ select::-ms-expand {
     background-position: bottom;
     background-color: transparent;
   }
+  .training .no-schedule {
+    margin-top: 0;
+  }
   .training .filter-top {
-    top: 5rem;
-    z-index: 12;
+    top: 4.5rem;
+    z-index: 2;
     background-color: #e5e5e5;
     padding: 0.5rem;
     flex-direction: row;
     width: 100%;
     border-radius: 0;
     box-shadow: none;
+    margin-top: 0;
   }
   .training .filter-top .heading {
     display: none;
@@ -9895,6 +9911,9 @@ select::-ms-expand {
     background: transparent;
     border-radius: 0;
     cursor: pointer;
+  }
+  .training .modes .heading h2 {
+    text-align: center;
   }
   .training .modes .heading img {
     display: none;
@@ -9932,6 +9951,8 @@ select::-ms-expand {
   }
   .training .course-name {
     width: 50%;
+    justify-content: flex-start;
+    text-align: left;
   }
   .training .detail {
     flex-direction: row;
@@ -9983,6 +10004,9 @@ select::-ms-expand {
   .training .add-foundation {
     width: 48%;
   }
+  .training .add-foundation .foundation-content {
+    margin-top: 0;
+  }
   .training .add-foundation .buttons {
     flex-direction: row;
     justify-content: space-between;
@@ -10031,10 +10055,6 @@ select::-ms-expand {
   .language {
     padding: 3rem 2rem;
   }
-  .language .language-container {
-    display: flex;
-    flex-direction: column;
-  }
   .language .language-img {
     width: 55%;
     align-self: center;
@@ -10066,6 +10086,10 @@ select::-ms-expand {
   }
   .skill .skill-content {
     width: 46%;
+    margin-top: 1rem;
+  }
+  .skill .skill-content p {
+    min-height: 66px;
   }
   .related {
     padding: 3rem 2rem;
@@ -10190,7 +10214,7 @@ select::-ms-expand {
     justify-content: center;
     width: 27%;
     align-self: flex-start;
-    margin-right: 3rem;
+    margin-right: 2rem;
   }
   .foundation .tab-links .tab-click {
     width: 100%;
@@ -10226,13 +10250,13 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-top: 1.5rem;
   }
   .training .calender-left {
-    width: 30%;
+    width: 32%;
     order: 2;
     position: sticky;
     top: 143px;
-    margin-top: 3rem;
   }
   .training .calender-left .heading {
     background-color: transparent;
@@ -10254,6 +10278,7 @@ select::-ms-expand {
   .training .calender-right {
     width: 65%;
     order: 1;
+    margin-top: 0;
   }
   .training .course-content {
     margin-top: 4rem;
@@ -10261,6 +10286,9 @@ select::-ms-expand {
   .training .key-point {
     width: 100%;
     background-size: 31% 20%;
+  }
+  .training .add-foundation .foundation-content {
+    margin-top: 0;
   }
   .training .course-name {
     width: 37%;
@@ -10432,6 +10460,7 @@ select::-ms-expand {
   .skill .skill-content {
     width: 25%;
     align-items: flex-start;
+    align-self: flex-start;
   }
   .skill .skill-content h3 {
     min-height: 50px;
@@ -10439,7 +10468,7 @@ select::-ms-expand {
   }
   .skill .skill-content p {
     text-align: left;
-    min-height: 66px;
+    min-height: 88px;
   }
   .related {
     background: none;
@@ -10517,10 +10546,10 @@ select::-ms-expand {
     padding: 4rem 0rem;
   }
   .training .calender-left {
-    width: 22%;
+    width: 27%;
   }
   .training .calender-right {
-    width: 73%;
+    width: 70%;
   }
   .training .key-point {
     background-size: 34% 20%;
@@ -10588,10 +10617,6 @@ select::-ms-expand {
   .language {
     padding: 4rem 0rem;
   }
-  .language .language-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .language .language-img {
     width: 32%;
   }
@@ -10607,11 +10632,8 @@ select::-ms-expand {
   .skill .skill-content {
     width: 22%;
   }
-  .skill .skill-content h3 {
-    min-height: auto;
-  }
   .skill .skill-content p {
-    min-height: 66px;
+    min-height: 88px;
   }
   .related {
     padding: 4rem 0rem;
