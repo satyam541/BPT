@@ -849,7 +849,7 @@ select::-ms-expand {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 4rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1257,6 +1257,7 @@ select::-ms-expand {
   .footer .terms {
     width: 80%;
     text-align: center;
+    padding-bottom: 1rem;
   }
   .footer .footer-content {
     flex-direction: row;
@@ -1862,9 +1863,6 @@ select::-ms-expand {
   }
   .footer .logo-image {
     width: 260px;
-  }
-  .footer .terms {
-    padding: 1rem 0;
   }
   .footer .footer-content {
     padding-top: 6rem;
