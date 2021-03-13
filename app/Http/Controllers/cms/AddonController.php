@@ -93,7 +93,24 @@ class AddonController extends Controller
      */
     public function delete(Request $request, CourseAddon $courseAddon)
     {
-        // dd($courseAddon);
         $courseAddon->delete();
+    }
+
+    public function trashList()
+    {
+        $data['trashAddons']  = CourseAddon::onlyTrashed()->get();
+        return view('cms.trashed.addonTrashList',$data);
+    }
+
+    public function restore($id)
+    {
+        CourseAddon::onlyTrashed()->find($id)->restore();
+        return back()->with('success','Successfully Restored');
+    }
+    
+    public function forceDelete($id)
+    {
+        CourseAddon::onlyTrashed()->find($id)->forceDelete();
+        return back()->with('success','Permanently Deleted');
     }
 }

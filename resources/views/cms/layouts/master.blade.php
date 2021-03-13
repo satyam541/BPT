@@ -663,7 +663,8 @@
                                                       'topicTrashList',
                                                       'courseTrashList',
                                                       'onlineCourseTrash',
-                                                      'roleTrashList'
+                                                      'roleTrashList',
+                                                      'addonTrashList'
                                                       ]))
           class="nav-item has-treeview menu-open"
           @else
@@ -677,6 +678,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                @can('view', new App\Models\Country())
+                  <a href="{{Route('addonTrashList')}}" @if(Route::currentRouteName()=='addonTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Addon List</p>
+                  </a>
+                  @endcan
+                </li>
               <li class="nav-item">
                 @can('view', new App\Models\Country())
                   <a href="{{Route('roleTrashList')}}" @if(Route::currentRouteName()=='roleTrashList')class="nav-link active" @else class="nav-link" @endif>
@@ -812,6 +821,14 @@
           </li>
           @endif
           <li class="nav-header">Extra Resource</li>
+          <li class="nav-item">
+            @can('view', new App\Models\PageDetail())
+             <a href="{{Route('moduleList')}}" @if(in_array(Route::currentRouteName(),['moduleList','moduleCreate','moduleEdit']))class="nav-link active" @else class="nav-link" @endif>
+               <i class="nav-icon far fa-circle text-grey"></i>
+               <p class="text">Module List</p>
+             </a>
+             @endcan
+           </li>
           <li class="nav-item">
             @can('view', new App\Models\PageDetail())
              <a href="{{Route('paymentDetail')}}" @if(in_array(Route::currentRouteName(),['paymentDetail','paymentDetailCreate','paymentDetailEdit']))class="nav-link active" @else class="nav-link" @endif>
