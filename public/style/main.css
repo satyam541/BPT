@@ -5076,7 +5076,8 @@ select::-ms-expand {
 .doorstep .input-container ::placeholder {
   color: #dadada;
 }
-.doorstep .input-container input {
+.doorstep .input-container input,
+.doorstep .input-container textarea {
   color: #FFFFFF;
 }
 .doorstep .info {
@@ -5292,6 +5293,7 @@ select::-ms-expand {
     background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
     background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .onsite-banner .banner-container {
     width: 48%;
