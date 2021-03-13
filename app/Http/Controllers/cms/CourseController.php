@@ -113,6 +113,7 @@ class CourseController extends Controller
         $data['result']         = new BulletPoint;
         $data['type']           = 'course';
         $data['module_id']      = $request->module;
+        $data['module']         = Course::find($request->module);
         $data['submitRoute']    = ['insertBulletPoint','module'=>$request->module];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }
@@ -135,6 +136,7 @@ class CourseController extends Controller
         $data['result']         = BulletPoint::find($id);
         $data['type']           = 'course';
         $data['module_id']      = $data['result']->module_id;
+        $data['module']         = Course::find($data['module_id']);
         $data['submitRoute']    = ['updateBulletPoint','module'=> $data['result']->module_id];
         return view('cms.bulletPoints.bulletPointForm',$data);
     }

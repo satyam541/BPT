@@ -5074,6 +5074,9 @@ select::-ms-expand {
   background-color: #6B7996;
 }
 .doorstep .input-container ::placeholder {
+  color: #dadada;
+}
+.doorstep .input-container input {
   color: #FFFFFF;
 }
 .doorstep .info {
@@ -5261,13 +5264,11 @@ select::-ms-expand {
   .choose .choose-list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .choose .choose-item {
     width: 48%;
     padding-right: 1.5rem;
-  }
-  .choose .choose-item:nth-child(even) {
-    padding-right: 0;
   }
   .solution {
     padding: 3rem 2rem;
@@ -5343,16 +5344,6 @@ select::-ms-expand {
   .choose .choose-item {
     width: 33%;
   }
-  .choose .choose-item:nth-child(even) {
-    padding-right: 1.5rem;
-  }
-  .choose .choose-item:nth-child(3),
-  .choose .choose-item:nth-child(6) {
-    padding-right: 0;
-  }
-  .choose .choose-item:last-child {
-    padding-right: 0;
-  }
   .choose .choose-item p {
     min-height: 76px;
   }
@@ -5403,33 +5394,31 @@ select::-ms-expand {
   }
   .doorstep {
     padding: 4rem 0rem;
-    padding-top: 6rem;
+    padding: 2rem 0rem;
+    padding-top: 2rem;
     background-image: url(../img/onsite/information-bg.png);
     background-size: auto;
     background-repeat: no-repeat;
     background-position: right bottom;
-  }
-  .doorstep .container {
-    width: 100%;
+    box-shadow: 0px 0px 10px #dddddd;
+    margin-top: 6rem;
   }
   .doorstep .doorstep-container {
     position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     padding: 1.5rem;
+    padding-top: 0;
   }
   .doorstep .form {
-    width: 51%;
     position: absolute;
-    left: 120px;
-    top: -47px;
+    left: 0px;
+    top: -70px;
   }
   .doorstep .info {
     box-shadow: none;
     padding: 0;
-    padding-left: 5rem;
     background-image: none;
     margin-left: auto;
-    width: 41%;
+    width: 45%;
   }
   .choose {
     padding: 4rem 0rem;
@@ -5438,33 +5427,8 @@ select::-ms-expand {
   .choose .choose-item {
     width: 25%;
   }
-  .choose .choose-item:nth-child(4) {
-    padding-right: 0;
-  }
-  .choose .choose-item:nth-child(3),
-  .choose .choose-item:nth-child(6) {
-    padding-right: 1.5rem;
-  }
   .solution {
     padding: 4rem 0rem;
-  }
-}
-@media (min-width : 1500px) {
-  .doorstep .container {
-    width: 1200px;
-  }
-  .doorstep .doorstep-container {
-    box-shadow: none;
-    padding-bottom: 4.3rem;
-  }
-  .doorstep .form {
-    left: 0px;
-  }
-  .doorstep .info {
-    width: 49%;
-  }
-  .choose {
-    padding-top: 4rem;
   }
 }
 .location-banner {
