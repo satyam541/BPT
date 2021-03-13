@@ -12182,6 +12182,10 @@ select::-ms-expand {
 .topic-courses {
   padding: 3rem 1.5rem;
 }
+.topic-courses .course-container {
+  display: flex;
+  flex-direction: column;
+}
 .topic-courses .explore-courses {
   display: flex;
   flex-direction: column;
@@ -12270,6 +12274,10 @@ select::-ms-expand {
   padding: 3rem 1.5rem;
   background-image: linear-gradient(#0064D8, #1C2848);
 }
+.topic-delivery .delivery-container {
+  display: flex;
+  flex-direction: column;
+}
 .topic-delivery p,
 .topic-delivery a {
   color: #FFFFFF;
@@ -12277,6 +12285,10 @@ select::-ms-expand {
 .topic-delivery p,
 .topic-delivery h2 {
   text-align: center;
+}
+.topic-delivery .delivery-content {
+  display: flex;
+  flex-direction: column;
 }
 .topic-delivery .delivery-content .heading::before {
   content: none;
@@ -12331,10 +12343,6 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.topic-choose .choose-content .heading {
-  display: flex;
-  justify-content: center;
-}
 .topic-choose .choose-content .heading h2 {
   text-align: center;
 }
@@ -12353,7 +12361,6 @@ select::-ms-expand {
 .topic-choose .count {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 140px;
 }
@@ -12408,8 +12415,8 @@ select::-ms-expand {
 .topic-choose .count .txt-name {
   font-size: 14px;
   color: #000000;
-  text-align: center;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 .topic-choose .count:nth-child(1) .fill {
   background-color: #0064D8;
@@ -12427,7 +12434,6 @@ select::-ms-expand {
   height: 100%;
 }
 .topic-choose .choose-image .choose-info {
-  height: auto;
   position: relative;
   height: 100%;
 }
@@ -12662,6 +12668,9 @@ select::-ms-expand {
   .topic-courses .explore-courses .heading {
     justify-content: flex-start;
   }
+  .topic-courses .explore-courses .heading::before {
+    margin: 0;
+  }
   .topic-courses .explore-courses .heading h2 {
     text-align: left;
   }
@@ -12699,7 +12708,7 @@ select::-ms-expand {
     height: fit-content;
   }
   .topic-courses .courses-container {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   .experiences {
@@ -12781,11 +12790,14 @@ select::-ms-expand {
   }
   .explore .explore-list {
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
   .explore .explore-item {
-    width: 45%;
+    width: 47%;
+    margin-right: 2rem;
+  }
+  .explore .explore-item:nth-child(even) {
+    margin-right: 0;
   }
   .explore .explore-item a {
     min-height: 48px;
@@ -12883,25 +12895,21 @@ select::-ms-expand {
     text-align: left;
   }
   .topic-delivery .delivery-container {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   .topic-delivery .delivery-content {
-    display: flex;
-    flex-direction: column;
     width: 37%;
   }
   .topic-delivery .delivery-content .heading {
     align-items: flex-start;
   }
   .topic-delivery .delivery-list {
-    justify-content: space-between;
     width: 61%;
     align-items: center;
   }
   .topic-delivery .delivery-list .item {
     width: 24%;
-    justify-content: center;
     margin-top: 0;
     padding-left: 0.3rem;
     border-left: 1px solid #C0C0C0;
@@ -12915,7 +12923,17 @@ select::-ms-expand {
     min-height: auto;
   }
   .explore .explore-item {
-    width: 30%;
+    width: 31%;
+  }
+  .explore .explore-item:nth-child(even) {
+    margin-right: 2rem;
+  }
+  .explore .explore-item:last-child {
+    margin-right: 0;
+  }
+  .explore .explore-item:nth-child(3),
+  .explore .explore-item:nth-child(6) {
+    margin-right: 0;
   }
   .goals {
     background-color: transparent;
