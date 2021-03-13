@@ -252,7 +252,7 @@
             <div class="heading center-heading">
                 <h2>{!! $selectedCourse->name !!} <span>Training Calender</span></h2>
             </div>
-            <div class="filter-top">
+            <div class="filter-top" id="filterTop">
                 <div class="heading">
                     <h2>Filters</h2>
                     <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
