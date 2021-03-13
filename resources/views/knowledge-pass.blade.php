@@ -159,68 +159,68 @@
                 </div>
                 <div class="spending-list">
                     <div class="item  BronzePassJS">
-                        <h3  class="spendMoreJS" data-price="£2,230">Spend £2,230 more to be eligible for Bronze discount of 10%</h3>
+                        <h3  class="spendMoreJS" data-price="£10,000">Spend £10,000 more to be eligible for Bronze discount of 10%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize normalPriceJS">£7,770</p>
+                                <p class="prize normalPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize passPriceJS">£7,770</p>
+                                <p class="prize passPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize savingPriceJS">£7,770</p>
+                                <p class="prize savingPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize remainingPriceJS">£7,770</p>
+                                <p class="prize remainingPriceJS">£0</p>
                             </li>
                         </ul>
                     </div>
                     <div class="item SilverPassJS">
-                        <h3  class="spendMoreJS" data-price="£14,820">Spend £14,820 more to be eligible for Silver discount of 25%</h3>
+                        <h3  class="spendMoreJS" data-price="£20,000">Spend £20,000 more to be eligible for Silver discount of 25%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize normalPriceJS">£7,770</p>
+                                <p class="prize normalPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize passPriceJS">£7,770</p>
+                                <p class="prize passPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize savingPriceJS">£7,770</p>
+                                <p class="prize savingPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize remainingPriceJS">£7,770</p>
+                                <p class="prize remainingPriceJS">£0</p>
                             </li>
                         </ul>
                     </div>
                     <div class="item GoldPassJS">
-                        <h3  class="spendMoreJS" data-price="£44,820">Spend £44,820 more to be eligible for Gold discount of 50%</h3>
+                        <h3  class="spendMoreJS" data-price="£50000">Spend £50,000 more to be eligible for Gold discount of 50%</h3>
 
                         <ul>
                             <li>
                                 <p class="title">Normal price:</p>
-                                <p class="prize normalPriceJS">£7,770</p>
+                                <p class="prize normalPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Knowledge Pass price:</p>
-                                <p class="prize passPriceJS">£7,770</p>
+                                <p class="prize passPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Saving:</p>
-                                <p class="prize savingPriceJS">£7,770</p>
+                                <p class="prize savingPriceJS">£0</p>
                             </li>
                             <li>
                                 <p class="title">Remaining Spend:</p>
-                                <p class="prize remainingPriceJS">£7,770</p>
+                                <p class="prize remainingPriceJS">£0</p>
                             </li>
                         </ul>
                     </div>
@@ -591,9 +591,9 @@ var symbol = '£';
 
 			// change spend more text(price) for all
 
-			bronze.find('.spendMoreJS').data(symbol+(2230-price));
-			silver.find('.spendMoreJS').data(symbol+(14820-price));
-			gold.find('.spendMoreJS').data(symbol+(44820-price));
+			bronze.find('.spendMoreJS').data(symbol+(10000-price));
+			silver.find('.spendMoreJS').data(symbol+(20000-price));
+			gold.find('.spendMoreJS').data(symbol+(50000-price));
 
 			// change all four amount
 			var passPrice = price-(price/10);
@@ -602,23 +602,23 @@ var symbol = '£';
 			
 			bronze.find('.passPriceJS').html(symbol+passPrice);
 			bronze.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			bronze.find('.remainingPriceJS').html(symbol+(2230-passPrice).toFixed(2));
+			bronze.find('.remainingPriceJS').html(symbol+(10000-passPrice).toFixed(2));
 
 			passPrice = price-(price/4);
 			passPrice = passPrice.toFixed(2);
 			silver.find('.normalPriceJS').html(symbol+price);
 			silver.find('.passPriceJS').html(symbol+passPrice);
 			silver.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			silver.find('.remainingPriceJS').html(symbol+(14820-passPrice).toFixed(2));
+			silver.find('.remainingPriceJS').html(symbol+(20000-passPrice).toFixed(2));
 
 			passPrice = price-(price/2);
 			passPrice = passPrice.toFixed(2);
 			gold.find('.normalPriceJS').html(symbol+price);
 			gold.find('.passPriceJS').html(symbol+passPrice);
 			gold.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			gold.find('.remainingPriceJS').html(symbol+(44820-passPrice).toFixed(2));
+			gold.find('.remainingPriceJS').html(symbol+(50000-passPrice).toFixed(2));
 
-			if(price < 2230)
+			if(price < 10000)
 			{
 				// show spend more text for all
 				// opacity reset all
@@ -627,7 +627,7 @@ var symbol = '£';
 				silver.css("opacity",'1').find('.spendMoreJS').show();
 				gold.css("opacity",'1').find('.spendMoreJS').show();
 			}
-			else if(price < 14820)
+			else if(price < 20000)
 			{
 				// hide spend more text for bronze but rest show
 				// opacity for bronze
@@ -636,7 +636,7 @@ var symbol = '£';
 				silver.css("opacity",'1').find('.spendMoreJS').show();
 				gold.css("opacity",'1').find('.spendMoreJS').show();
 			}
-			else if(price < 44820)
+			else if(price < 50000)
 			{
 				// hide spend more text all but gold
 				// opacity for all but gold
