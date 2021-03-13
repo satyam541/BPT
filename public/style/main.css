@@ -120,7 +120,6 @@ select::-ms-expand {
 }
 .sticky .dropdown-menu {
   display: none;
-  visibility: hidden;
   top: 69px;
 }
 .sticky .country-list {
