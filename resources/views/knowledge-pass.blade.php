@@ -393,10 +393,15 @@
             <table>
                 <tr>
                     <th>Features</th>
-                    <th>Bronze</th>
-                    <th>Silver</th>
-                    <th>Gold</th>
-                </tr>
+                    <th><p>Gold</p>
+                    <span>£50,000+</span>
+                    </th>
+                    <th><p>Silver</p>
+                    <span>£20,000+</span>
+                    </th>
+                    <th><p>Bronze</p>
+                    <span>£10,000+</span>
+                    </th>
                 <tr>
                     <td>
                     <p>Dedicated account manager</p>
