@@ -70,11 +70,11 @@
             display: flex;
             flex-direction: column;
         }
-        .intro-para{
-            font-weight: bold;
-        }
         p{
             margin-bottom: 1rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
         ul{
 
@@ -180,6 +180,9 @@
         
         .active {
             border-bottom: 4px solid @lightblueColor;
+           .number{
+               color: #c5d1ee;
+           }
             &::before {
                 border-bottom: 20px solid @lightblueColor;
             }
@@ -376,8 +379,8 @@
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
-        .heading {
-            margin-bottom: 2rem;
+        h2{
+          text-align: center;
         }
     }
     .included-list {
@@ -469,7 +472,7 @@
         }
         ul{
             li{
-                padding-left: 1.5rem;
+                padding-left: 1.2rem;
                 margin-top: 0.8rem;
                 position: relative;
                 z-index: 1;
@@ -483,7 +486,7 @@
                     width: 15px;
                     height: 15px;
                     left: 0;
-                    top: 4px;
+                    top: 2px;
                     background-repeat: no-repeat;
 
                 }
@@ -643,6 +646,8 @@
         display: none;
         flex-wrap: wrap;
         justify-content: space-between;
+        width: 272px;
+        align-self: center;
     }
     .modes-active{
         display: flex;
@@ -715,6 +720,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
+        width: 272px;
+        align-self: center;
         h2{
             position: absolute;
             background-image: url(../img/courses/add-layer.png);
@@ -729,7 +736,7 @@
         .item{
             display: flex;
             flex-direction: column;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             .offer{
                 display: flex;
                 align-items: flex-start;
@@ -743,6 +750,9 @@
                 text-align: left;
                  padding-left: 1.6rem;
                  font-size: 13px;
+            }
+            &:last-child{
+                margin-top: 1rem;
             }
         }
         &:nth-child(2){
@@ -782,7 +792,7 @@
         .image{
             display: flex;
             border-bottom: 1px dashed #C0C0C0;
-            padding: 1.5rem 0 1rem 0;
+            padding: 1rem 0;
             padding-bottom: 0.5rem;
             width: 85%;
             align-self: center;
@@ -799,6 +809,7 @@
         }
         ul{
             padding: 1rem;
+            padding-bottom: 0;  
             li{
                 display: flex;
                 justify-content: space-between;
@@ -848,7 +859,10 @@
             background-color: @darkblueColor;
             flex-direction: column;
             padding: 2rem;
+            margin-top: 0;
+            display: flex;
             .heading{
+                padding-top: 0;
                 p{
                     text-align: center;
                     margin-top: .5rem;
@@ -883,11 +897,13 @@
     .course-content {
         display: flex;
         flex-direction: column;
+        margin: auto;
         margin-top: 2.5rem;
         background-color: @whiteColor;
         box-shadow: @shadowLight;
         width: 272px;
         align-self: center;
+
     }
     .name {
         display: flex;
@@ -903,6 +919,7 @@
     }
     .course-name {
         display: flex;
+        justify-content: center;
         font-size: 18px;
         font-weight: bold;
         color: @whiteColor;
@@ -962,7 +979,7 @@
         flex-wrap: wrap;
         justify-content: space-around;
         p {
-            padding: 1rem .5rem;
+            padding: 1rem 0.5rem 0.8rem;
             background-color: @whiteColor;
             box-shadow: @shadowLight;
             text-align: center;
