@@ -525,7 +525,7 @@ select::-ms-expand {
 }
 .navbar {
   display: flex;
-  z-index: 2;
+  z-index: 5;
 }
 .navbar .menu-list {
   list-style-type: none;
@@ -3499,7 +3499,7 @@ select::-ms-expand {
     margin-top: 0;
   }
   .contact .item {
-    width: 48%;
+    width: 49%;
   }
   .contact .item:last-child {
     width: 54%;
@@ -3516,7 +3516,7 @@ select::-ms-expand {
   }
   .information {
     padding: 3rem 2rem;
-    background-image: linear-gradient(#1C2848 57.2%, #FFFFFF 45%);
+    background-image: linear-gradient(#1C2848 54.5%, #FFFFFF 45%);
   }
   .information .heading::before {
     background-color: #FFFFFF;
@@ -3532,6 +3532,9 @@ select::-ms-expand {
   .information .info-content {
     width: 32%;
     margin-top: 0!important;
+  }
+  .information .info-content p {
+    min-height: 140px;
   }
   .locate {
     padding: 3rem 2rem;
@@ -8865,8 +8868,8 @@ select::-ms-expand {
 }
 .training .filter-top {
   position: sticky;
-  top: 0;
-  z-index: 1;
+  top: 75px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -9661,6 +9664,7 @@ select::-ms-expand {
 }
 .related .related-content .name {
   font-size: 16px;
+  font-weight: 600;
   width: calc(100% - 80px);
 }
 .popular-location {
