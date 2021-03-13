@@ -2398,6 +2398,7 @@ select::-ms-expand {
 .locations .content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .locations .location-name {
   display: flex;
