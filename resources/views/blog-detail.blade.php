@@ -12,10 +12,12 @@
             <div class="breadcrums">
                 <ul>
                     <li><a href="{{route('home')}}">Home</a></li>
+                    <li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                     <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                    </li>
                     <li><a href="{{route('blog')}}">Blog</a></li>
-                    <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white"></li>
                     <li><a href="">{{$blog->title}}</a></li>
 
                 </ul>
