@@ -53,11 +53,15 @@
         .included-list {
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: flex-start;
         }
         .included-content {
             width: 20%;
             margin-bottom: 0;
+            margin-right: 1.5rem;
+            &:last-child{
+                margin-right: 0;
+            }
         }
     }
     // End Foundation Section
@@ -510,7 +514,7 @@
                 }
             }
         }
-        .tab-content {
+        .tab-overview {
             width: 69%;
             margin-top: 0 !important;
         }
@@ -522,6 +526,9 @@
             .overview-content{
                 margin-top: 0;
             }
+        }
+        #included{
+            margin-top: 0;
         }
     }
     // End Foundation Section
@@ -870,7 +877,7 @@
         .tab-links {
             width: 22%;
         }
-        .tab-content {
+        .tab-overview {
             width: 74%;
         }
         #included {

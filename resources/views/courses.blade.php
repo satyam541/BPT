@@ -11,11 +11,15 @@
                 <div class="breadcrums">
                     <ul>
                         <li><a href="{{ Route('home') }}">Home</a></li>
+                        <li>
                         <img src="{{ url('img/master/breadcrum-arrow.svg') }}" alt="breadcrums" class="white">
                         <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="breadcrums" class="black">
+                        </li>
                         <li><a href="{{ $selectedCourse->topic->url }}">{{ $selectedCourse->topic->name }}</a></li>
+                        <li>
                         <img src="{{ url('img/master/breadcrum-arrow.svg') }}" alt="breadcrums" class="white">
                         <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="breadcrums" class="black">
+                        </li>
                         <li><a href="javascript:void(0)">{{ $selectedCourse->name }}</a></li>
                     </ul>
                 </div>
@@ -117,79 +121,81 @@
                     </li>
                     @endif
                 </ul>
+               <div class="tab-overview" id="tab-overview">
                 @if (!empty($selectedCourse->overview))
-                <div class="tab-content tab-common" id="overview">
-                    <div class="overview-content" id="overcontent">
-                        <h2>Course Overview</h2>
-                        {!! $selectedCourse->overview !!}
+                    <div class="tab-content tab-common" id="overview">
+                        <div class="overview-content" id="overcontent">
+                            <h2>Course Overview</h2>
+                            {!! $selectedCourse->overview !!}
+                        </div>
+                        <div class="buttons">
+                            <a href="#overcontent" class="btn-blue overcontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="buttons">
-                        <a href="#overcontent" class="btn-blue overcontent">
-                            <span class="text">Show More</span>
-                        </a>
-                    </div>
-                </div>
-                @endif
-                @if (!empty($selectedCourse->summary))
-                <div class="tab-content tab-common" id="course">
-                    <div class="overview-content" id="coursecontent">
-                        <h2>Course Content</h2>
-                        @if (!empty($selectedCourse->summary))
-                        {!!$selectedCourse->summary!!}
-                        @endif
+                    @endif
+                    @if (!empty($selectedCourse->summary))
+                    <div class="tab-content tab-common" id="course">
+                        <div class="overview-content" id="coursecontent">
+                            <h2>Course Content</h2>
+                            @if (!empty($selectedCourse->summary))
+                            {!!$selectedCourse->summary!!}
+                            @endif
+
+                        </div>
+                        <div class="buttons">
+                            <a href="#coursecontent" class="btn-blue coursecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
 
                     </div>
-                    <div class="buttons">
-                        <a href="#coursecontent" class="btn-blue coursecontent">
-                            <span class="text">Show More</span>
-                        </a>
+                    @endif
+                    {{-- @if ($selectedCourse->faqs->isNotEmpty())
+                    <div class="tab-content" id="faq">
+                        <div class="heading">
+                            <h2>Frequently Asked <span>Questions</span></h2>
+                        </div>
+                        <div class="faq-list">
+
+                            @foreach ($selectedCourse->faqs as $faq)
+                            <div class="faq-item">
+
+                                <div class="ques">
+                                    <h3>{!! $faq->question !!} </h3>
+                                    <span>
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>{!! $faq->answer !!}.</p>
+                                </div>
+                            </div>
+                            @endforeach
+
+                        </div>
                     </div>
+                    @endif --}}
 
-                </div>
-                @endif
-                {{-- @if ($selectedCourse->faqs->isNotEmpty())
-                <div class="tab-content" id="faq">
-                    <div class="heading">
-                        <h2>Frequently Asked <span>Questions</span></h2>
-                    </div>
-                    <div class="faq-list">
+                    @if ($selectedCourse->whatsIncluded->isNotEmpty())
+                    <div class="tab-content" id="included">
+                            <h2>What's Included Us</h2>
+                        <div class="included-list">
 
-                        @foreach ($selectedCourse->faqs as $faq)
-                        <div class="faq-item">
-
-                            <div class="ques">
-                                <h3>{!! $faq->question !!} </h3>
+                            @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            <div class="included-content">
                                 <span>
+                                    {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
+                                    <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{{ $whatsInclude->name }}">
                                 </span>
+                                <h3>{!! $whatsInclude->name !!}</h3>
                             </div>
-                            <div class="ans">
-                                <p>{!! $faq->answer !!}.</p>
-                            </div>
+                            @endforeach
+
                         </div>
-                        @endforeach
-
                     </div>
+                    @endif
                 </div>
-                @endif --}}
-
-                @if ($selectedCourse->whatsIncluded->isNotEmpty())
-                <div class="tab-content" id="included">
-                        <h2>What's Included Us</h2>
-                    <div class="included-list">
-
-                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
-                        <div class="included-content">
-                            <span>
-                                {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
-                                <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{{ $whatsInclude->name }}">
-                            </span>
-                            <h3>{!! $whatsInclude->name !!}</h3>
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
-                @endif
             </div>
         </div>
     </div>
@@ -237,7 +243,7 @@
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
                 <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
-                    <img src="{{ url('img/master/arrow.svg') }}" alt="arrow">Have a Question?
+                    <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>
         </div>
@@ -246,14 +252,14 @@
 <!-- End Unable Section -->
 
 <!-- Start Training Section -->
-<section class="flex-container training" id="datesprices">
+<section class="flex-container training" >
     <div class="container">
         <div class="training-container">
             <div class="heading center-heading">
                 <h2>{!! $selectedCourse->name !!} <span>Training Calender</span></h2>
             </div>
-            <div class="filter-top" id="filterTop">
-                <div class="heading">
+            <div class="filter-top" >
+                <div class="heading" id="filterTop">
                     <h2>Filters</h2>
                     <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
                 </div>
@@ -344,7 +350,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="calender-right">
+                <div class="calender-right" id="datesprices">
                     <div id="classroom-block">
                         @if (!$schedules->isEmpty())
                         @foreach ($schedules as $schedule)
@@ -937,18 +943,30 @@
         }
     }
 
-    function scrollToSpecificDiv(selector) {
-        if ($(selector).length > 0) {
-            var selectorTop = $(selector).offset().top;
-            console.log(selectorTop);
-            $('html,body').animate({
-                scrollTop: selectorTop
-            }, 1000);
-        } else {
-            console.log('scrolltop not found');
+function scrollToSpecificDiv(selector) {
+    if ($(selector).length > 0) {
+        var selectorTop = $(selector).offset().top;
+        var navbarHeight =  $(".navbar.sticky").height();
+        var filterHeight = $("#filterTop").outerHeight(true);
+        // navbar is not sticky on page reload before scroll.
+        console.log("navbar height before : "+ navbarHeight);
+        if(navbarHeight == undefined)
+        {
+            if(selector == "#datesprices"){
+                navbarHeight = 64;
+            }
+            else{
+                navbarHeight = 0;
+            }
         }
+        selectorTop -=  (navbarHeight + filterHeight);
+        $('html,body').animate({
+            scrollTop: selectorTop
+        }, 1000);
+    } else {
+        console.log('scrolltop not found');
     }
-
+}
 
 </script>
 

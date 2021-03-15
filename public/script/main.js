@@ -75,6 +75,7 @@
       $("#" + target).css("display", "flex");
       $(".tab-click").removeClass('active');
       $(this).addClass("active");
+      scrollToSpecificDiv("#tab-overview");
    });
  //End Delivery method script//
     
@@ -454,7 +455,8 @@ $('#scroll').click(function(){
     });
     //Start filters
     $('#filterTop').on("click", function(){
-        $('.exclude').toggleClass('modes-active');
+        $('.exclude').toggle();
+        $(this).toggleClass("active");
     });
     //End filters
     $(document).ready(function() {
