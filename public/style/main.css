@@ -8444,6 +8444,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.course-intro .intro-container p a {
+  color: #0064D8;
+  font-weight: 600;
+}
 .course-intro p {
   margin-bottom: 1rem;
 }
@@ -8612,6 +8616,7 @@ select::-ms-expand {
 }
 .foundation .tab-common ul li {
   display: flex;
+  flex-direction: column;
   padding-left: 1.4rem;
   position: relative;
   z-index: 1;
@@ -8987,6 +8992,13 @@ select::-ms-expand {
 .training .modes {
   display: flex;
   flex-direction: column;
+}
+.training .modes .heading .mode-icon {
+  transition: 0.6s all;
+}
+.training .modes .active .mode-icon {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .modes-list {
   display: none;

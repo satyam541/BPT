@@ -81,6 +81,7 @@
     
 //choose modes
 $('#chooseMode').on("click", function(){
+     $(this).toggleClass("active");
     $('.modes-list').toggleClass('modes-active');
 
 });
