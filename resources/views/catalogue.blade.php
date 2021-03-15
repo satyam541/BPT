@@ -138,7 +138,7 @@
 
                     </div>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Find Out More">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Find Out More" data-type="other">
                             <img src="{{ url('img/catalogue/find.svg') }}" alt="find">Find Out More
                         </a>
                     </div>
