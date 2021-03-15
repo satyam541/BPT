@@ -37,7 +37,7 @@
                         <p class="tagline"> Join leading brands in the new & best way to train...</p>  
 
                         <div class="buttons">
-                            <a class="btn-blue">
+                            <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass">
                                 <img src="{{url('img/knowledge-pass/pass-message.svg')}}" alt="pass-message">
                                 Tell Us More
                             </a>
@@ -94,10 +94,10 @@
                                 <p>
                                 Popular Courses
                                 </p> 
-                                <p>delegates</p>  
+                                <p>Delegates</p>  
                                 <p>
                                     <span >
-                                        price
+                                        Price
                                     </span>
                                     <span>
                                         Total
@@ -155,7 +155,7 @@
         <div class="container">
             <div class="spending-container">
                 <div class="heading center-heading">
-                    <h2>Currently spending <span id="totalPriceJS">£ 0</span></h2>
+                    <h2>Currently Spending <span id="totalPriceJS">£ 0</span></h2>
                 </div>
                 <div class="spending-list">
                     <div class="item  BronzePassJS">
@@ -474,7 +474,7 @@
                     <p>The quality of training provided has been good with very good feedback from delegates. </p>
                     <p>They use good quality venues and think about meeting our needs in their selection. " The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection.</p>
                     <div class="buttons">
-                    <a class="btn-blue"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
+                    <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
                     </div>
             </div>
             <div class="booking-list">

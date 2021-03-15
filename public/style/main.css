@@ -5053,6 +5053,9 @@ select::-ms-expand {
 .doorstep .form label {
   color: #FFFFFF;
 }
+.doorstep .form label {
+  cursor: pointer;
+}
 .doorstep .form .heading {
   padding-top: 0;
 }
@@ -13161,6 +13164,7 @@ select::-ms-expand {
 }
 .pass-clients {
   padding: 3rem 1.5rem;
+  padding-bottom: 0;
 }
 .pass-clients .pass-container {
   display: flex;
@@ -13381,7 +13385,6 @@ select::-ms-expand {
 .knowledge .booking-list {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .knowledge .booking-info {
   display: flex;
@@ -13390,10 +13393,7 @@ select::-ms-expand {
   padding: 1rem;
   width: 272px;
   align-self: center;
-  margin-bottom: 1rem;
-}
-.knowledge .booking-info:last-child {
-  margin-top: 0;
+  margin-top: 1.8rem;
 }
 .knowledge .booking-info:nth-child(even) {
   background-color: #F6F6F6;
@@ -13415,6 +13415,7 @@ select::-ms-expand {
 }
 .study {
   padding: 3rem 1.5rem;
+  padding-top: 1rem!important;
 }
 .study .study-container {
   display: flex;
@@ -13436,7 +13437,7 @@ select::-ms-expand {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   border-bottom: 5px solid #1C2848;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -13642,7 +13643,9 @@ select::-ms-expand {
     width: 25%;
   }
   .requirement .course-detail .select select {
-    width: 43px;
+    width: 45px;
+    padding-left: 5px;
+    height: 24px;
     border: 2px solid #1C2848;
     border-radius: 10px;
     background: url(../img/knowledge-pass/select-bg.png);
@@ -13812,7 +13815,7 @@ select::-ms-expand {
   }
   .knowledge {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
+    padding-top: 0rem!important;
   }
   .knowledge .booking-list {
     flex-direction: row;
@@ -13828,7 +13831,6 @@ select::-ms-expand {
   }
   .study {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
   }
   .study .study-list {
     flex-direction: row;
@@ -13842,7 +13844,7 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 45% 100%;
+    background-size: 100% 100%;
     background-position: right;
   }
   .knowledge-banner p,
@@ -13918,9 +13920,6 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
-  .why-right .right-list {
-    justify-content: space-between;
-  }
   .why-right .right-item {
     width: 32%;
     align-items: flex-start;
@@ -13965,7 +13964,7 @@ select::-ms-expand {
   .knowledge .booking-info {
     align-self: flex-start;
     width: 50%;
-    margin-bottom: 0;
+    margin-top: 0;
   }
   .study .study-content::before {
     height: 60px;
@@ -13976,7 +13975,7 @@ select::-ms-expand {
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
-    background-size: 40% 100%;
+    background-size: 80% 100%;
     padding-bottom: 6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
