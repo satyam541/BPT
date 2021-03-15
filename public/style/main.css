@@ -2721,6 +2721,7 @@ select::-ms-expand {
     position: relative;
     align-items: center;
     z-index: 1;
+    align-items: center;
   }
   .delivery .item::before,
   .delivery .item::after {
@@ -2770,7 +2771,6 @@ select::-ms-expand {
     overflow: inherit;
   }
   .delivery .item:hover img {
-    transition: 1s all;
     width: 80px;
     height: 80px;
   }
@@ -8504,7 +8504,7 @@ select::-ms-expand {
 .foundation .tab-links .tab-click::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 20px;
   width: 0;
   height: 0;
@@ -9038,7 +9038,7 @@ select::-ms-expand {
 .training .calender-right {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 .training .add-ons {
   padding: 1rem 2rem;
@@ -10245,7 +10245,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
   .training .calender-left {
     width: 32%;
@@ -10564,7 +10564,7 @@ select::-ms-expand {
   }
   .training .add-ons {
     width: 46%;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     padding-bottom: 2rem;
   }
   .training .add-ons h2 {
@@ -12211,7 +12211,7 @@ select::-ms-expand {
 .topic-courses {
   padding: 3rem 1.5rem;
 }
-.topic-courses .course-container {
+.topic-courses .courses-container {
   display: flex;
   flex-direction: column;
 }
@@ -12299,6 +12299,12 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
+.foundation {
+  padding-top: 0;
+}
+.foundation .tab-common {
+  border-radius: 7px;
+}
 .topic-delivery {
   padding: 3rem 1.5rem;
   background-image: linear-gradient(#0064D8, #1C2848);
@@ -12318,6 +12324,9 @@ select::-ms-expand {
 .topic-delivery .delivery-content {
   display: flex;
   flex-direction: column;
+}
+.topic-delivery .delivery-content .heading {
+  padding-top: 0;
 }
 .topic-delivery .delivery-content .heading::before {
   content: none;
@@ -12371,9 +12380,6 @@ select::-ms-expand {
 .topic-choose .choose-content {
   display: flex;
   flex-direction: column;
-}
-.topic-choose .choose-content .heading h2 {
-  text-align: center;
 }
 .topic-choose .choose-content p {
   text-align: center;
@@ -12551,7 +12557,6 @@ select::-ms-expand {
 .explore .explore-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-left: 1rem;
 }
 .explore .numbers {
@@ -12590,15 +12595,18 @@ select::-ms-expand {
 .goals .goals-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .goals .goal-image {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .goals .goal-image .img {
   display: flex;
-  margin-top: 1rem;
   height: 100%;
+  margin-top: 2rem;
 }
 .goals .goal-image .img img {
   width: 100%;
@@ -12608,9 +12616,9 @@ select::-ms-expand {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .goals .goal-item {
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12621,6 +12629,9 @@ select::-ms-expand {
   position: relative;
   z-index: 1;
   background-color: #FFFFFF;
+}
+.goals .goal-item:first-child {
+  margin-top: 0;
 }
 .goals .goal-item::before {
   content: '';
@@ -12710,18 +12721,25 @@ select::-ms-expand {
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
-    padding: 0.5rem 1rem;
     width: 90%;
+    align-self: center;
+    position: relative;
+    padding: 1.5rem 1rem;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -8px;
   }
   .topic-courses .course-name {
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
   .topic-courses .course-name a {
     width: calc(100% - 90px);
@@ -12739,6 +12757,9 @@ select::-ms-expand {
   .topic-courses .courses-container {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .foundation {
+    padding-top: 0;
   }
   .experiences {
     padding: 3rem 2rem;
@@ -12793,6 +12814,9 @@ select::-ms-expand {
   .topic-choose .choose-content .heading {
     justify-content: flex-start;
   }
+  .topic-choose .choose-content .heading::before {
+    margin: 0;
+  }
   .topic-choose .choose-content .heading h2 {
     text-align: left;
   }
@@ -12844,17 +12868,18 @@ select::-ms-expand {
   }
   .goals .goal-image .img {
     width: 80%;
-    margin: auto;
-    margin-top: 1rem;
+    align-self: center;
   }
   .goals .goal-item {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  .goals .goal-item:first-child {
+    margin-top: 2rem;
   }
   .goals .content {
-    align-items: flex-start;
-    width: 62%;
     margin-top: 0;
     width: calc(100% - 110px);
   }
@@ -12865,6 +12890,9 @@ select::-ms-expand {
   .goals .goals-list {
     width: 85%;
     margin: auto;
+  }
+  .popular-location .popular-content {
+    width: 417px;
   }
 }
 @media (min-width : 1024px) {
@@ -12893,8 +12921,18 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-position: bottom;
   }
+  .topic-courses .course-item {
+    padding: 1.5rem 2rem;
+  }
   .topic-courses .course-name {
     width: 100%;
+    margin-left: 2.5rem;
+  }
+  .foundation {
+    padding-top: 3rem;
+    background-image: url(../img/topic/foundation-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .topic-choose {
     background-image: url(../img/topic/choose-bg.png);
@@ -12966,7 +13004,7 @@ select::-ms-expand {
   }
   .goals {
     background-color: transparent;
-    background: linear-gradient(180deg, #FFFFFF, #F6F6F6), url(../img/topic/goal-bg.png);
+    background: linear-gradient(180deg, #F6F6F6, #FFFFFF), url(../img/topic/goal-bg.png);
     background-position: top,bottom;
     background-repeat: no-repeat;
     background-size: 100% 50%, 100% 50%;
@@ -12976,7 +13014,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .goals .goal-image {
-    width: 42%;
+    width: 48%;
   }
   .goals .goal-image .heading {
     justify-content: flex-start;
@@ -12986,18 +13024,17 @@ select::-ms-expand {
     text-align: left;
   }
   .goals .goal-image .img {
-    width: 85%;
-    margin-top: 1rem;
+    width: 100%;
   }
   .goals .content p {
     font-size: 12px;
   }
-  .goals .goal-item:nth-child(1) {
-    margin-top: 0;
-  }
   .goals .goals-list {
-    width: 54%;
+    width: 48%;
     margin: 0;
+  }
+  .popular-location .popular-content {
+    width: 385px;
   }
 }
 @media (min-width : 1366px) {
@@ -13054,9 +13091,6 @@ select::-ms-expand {
   .explore {
     padding: 4rem 0rem;
   }
-  .explore .explore-list {
-    justify-content: space-between;
-  }
   .goals {
     padding: 4rem 0rem;
   }
@@ -13065,6 +13099,9 @@ select::-ms-expand {
   }
   .goals .goal-image {
     width: 53%;
+  }
+  .popular-location .popular-content {
+    width: 404px;
   }
 }
 @media (min-width : 1600px) {
