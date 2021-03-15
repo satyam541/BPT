@@ -109,6 +109,7 @@
         background-color: @bgColor;
         border-bottom: 2px solid transparent;
         padding: 1rem;
+        cursor: pointer;
         .image{
             position: absolute; 
             right: 10px;
@@ -310,8 +311,15 @@
             display: flex;
             flex-direction: column;
         }
+        tbody{
+            border-collapse: collapse;
+        }
         tr{
             text-align: left;
+            border-bottom: 2px solid #E4E4E4;
+            &:last-child,&:nth-last-child(2){
+                border-bottom: 0;
+            }
             &:last-child{
                 td{
                     background-color: transparent;
@@ -326,15 +334,22 @@
                 color: @whiteColor;
                 text-align: left;
                 width: 52%;
+                border-top: 2px solid @lightblueColor;
             }
             &:nth-child(2){
                 background-color: #F9EDE7;
+                border-top: 2px solid   #BF4C17;
+            ;
             }
             &:nth-child(3){
                 background-color: #F7F7F7;
+                border-top: 2px solid #C0C0C0;
+            ;
             }
             &:nth-child(4){
                 background-color: #FBF6E8;
+                 border-top: 2px solid  #DAA520;
+
             }
 
         }
@@ -422,7 +437,7 @@
     // Start knowledge banner section //
         .knowledge-banner{
             background-image: url(../img/knowledge-pass/banner-bg.png);
-            background-size: 80% 100%;
+            background-size: 100% 100%;
             background-position: right;
 
             p,h1{
@@ -584,6 +599,12 @@
                 align-self: flex-start;
                 width: 50%;
                 margin-top: 0;
+                &:nth-child(3){
+                    background-color: @bgColor;
+                }
+                &:nth-child(4){
+                    background-color: @whiteColor;
+                }
             }
 
         }
@@ -692,7 +713,7 @@
 
 @media @size-xlll{
     .knowledge-banner{
-background-size: 70% 100%;
+        background-size: 79% 100%;
 
     }
 }
