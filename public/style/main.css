@@ -13155,16 +13155,29 @@ select::-ms-expand {
   font-size: 20px;
   margin-top: 0.5rem;
 }
-.policy p {
+.policy h2,
+.policy h4 {
   margin-top: 0.5rem;
 }
-.policy ul li {
+.policy p {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.policy ul,
+.policy ol {
+  padding: 0;
+}
+.policy ul li,
+.policy ol li {
   padding-left: 1.2rem;
   position: relative;
   margin-top: 0.5rem;
   z-index: 1;
 }
-.policy ul li::before {
+.policy ul li::before,
+.policy ol li::before {
   content: '';
   position: absolute;
   background-image: url(../img/privacy-policy/circle.svg);
@@ -13175,6 +13188,10 @@ select::-ms-expand {
   left: 0;
   top: 3px;
   z-index: -1;
+}
+.policy a {
+  color: #1C2848;
+  font-weight: 600;
 }
 @media (min-width : 768px) {
   .privacy-banner .search {
