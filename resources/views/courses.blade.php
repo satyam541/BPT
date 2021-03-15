@@ -121,79 +121,81 @@
                     </li>
                     @endif
                 </ul>
+               <div class="tab-overview" id="tab-overview">
                 @if (!empty($selectedCourse->overview))
-                <div class="tab-content tab-common" id="overview">
-                    <div class="overview-content" id="overcontent">
-                        <h2>Course Overview</h2>
-                        {!! $selectedCourse->overview !!}
+                    <div class="tab-content tab-common" id="overview">
+                        <div class="overview-content" id="overcontent">
+                            <h2>Course Overview</h2>
+                            {!! $selectedCourse->overview !!}
+                        </div>
+                        <div class="buttons">
+                            <a href="#overcontent" class="btn-blue overcontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="buttons">
-                        <a href="#overcontent" class="btn-blue overcontent">
-                            <span class="text">Show More</span>
-                        </a>
-                    </div>
-                </div>
-                @endif
-                @if (!empty($selectedCourse->summary))
-                <div class="tab-content tab-common" id="course">
-                    <div class="overview-content" id="coursecontent">
-                        <h2>Course Content</h2>
-                        @if (!empty($selectedCourse->summary))
-                        {!!$selectedCourse->summary!!}
-                        @endif
+                    @endif
+                    @if (!empty($selectedCourse->summary))
+                    <div class="tab-content tab-common" id="course">
+                        <div class="overview-content" id="coursecontent">
+                            <h2>Course Content</h2>
+                            @if (!empty($selectedCourse->summary))
+                            {!!$selectedCourse->summary!!}
+                            @endif
+
+                        </div>
+                        <div class="buttons">
+                            <a href="#coursecontent" class="btn-blue coursecontent">
+                                <span class="text">Show More</span>
+                            </a>
+                        </div>
 
                     </div>
-                    <div class="buttons">
-                        <a href="#coursecontent" class="btn-blue coursecontent">
-                            <span class="text">Show More</span>
-                        </a>
+                    @endif
+                    {{-- @if ($selectedCourse->faqs->isNotEmpty())
+                    <div class="tab-content" id="faq">
+                        <div class="heading">
+                            <h2>Frequently Asked <span>Questions</span></h2>
+                        </div>
+                        <div class="faq-list">
+
+                            @foreach ($selectedCourse->faqs as $faq)
+                            <div class="faq-item">
+
+                                <div class="ques">
+                                    <h3>{!! $faq->question !!} </h3>
+                                    <span>
+                                    </span>
+                                </div>
+                                <div class="ans">
+                                    <p>{!! $faq->answer !!}.</p>
+                                </div>
+                            </div>
+                            @endforeach
+
+                        </div>
                     </div>
+                    @endif --}}
 
-                </div>
-                @endif
-                {{-- @if ($selectedCourse->faqs->isNotEmpty())
-                <div class="tab-content" id="faq">
-                    <div class="heading">
-                        <h2>Frequently Asked <span>Questions</span></h2>
-                    </div>
-                    <div class="faq-list">
+                    @if ($selectedCourse->whatsIncluded->isNotEmpty())
+                    <div class="tab-content" id="included">
+                            <h2>What's Included Us</h2>
+                        <div class="included-list">
 
-                        @foreach ($selectedCourse->faqs as $faq)
-                        <div class="faq-item">
-
-                            <div class="ques">
-                                <h3>{!! $faq->question !!} </h3>
+                            @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            <div class="included-content">
                                 <span>
+                                    {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
+                                    <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{{ $whatsInclude->name }}">
                                 </span>
+                                <h3>{!! $whatsInclude->name !!}</h3>
                             </div>
-                            <div class="ans">
-                                <p>{!! $faq->answer !!}.</p>
-                            </div>
+                            @endforeach
+
                         </div>
-                        @endforeach
-
                     </div>
+                    @endif
                 </div>
-                @endif --}}
-
-                @if ($selectedCourse->whatsIncluded->isNotEmpty())
-                <div class="tab-content" id="included">
-                        <h2>What's Included Us</h2>
-                    <div class="included-list">
-
-                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
-                        <div class="included-content">
-                            <span>
-                                {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
-                                <img src="{{ url('images/' . $whatsInclude->icon) }}" alt="{{ $whatsInclude->name }}">
-                            </span>
-                            <h3>{!! $whatsInclude->name !!}</h3>
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
-                @endif
             </div>
         </div>
     </div>
@@ -307,7 +309,7 @@
                     <div class="modes">
                         <div class="heading" id="chooseMode">
                             <h2>Choose Mode <span>of Training</span></h2>
-                            <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
+                            <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow" class="mode-icon">
                         </div>
                         <div class="modes-list" id="scheduleLinks">
                             <a href="#classroom-booking" class="methods" id="classroom" data-target="classroom">
@@ -572,7 +574,7 @@
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                                         <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                                    <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                    <input type="text" name="name" id="f-name" placeholder="First Name*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container">
@@ -945,7 +947,7 @@ function scrollToSpecificDiv(selector) {
     if ($(selector).length > 0) {
         var selectorTop = $(selector).offset().top;
         var navbarHeight =  $(".navbar.sticky").height();
-        var filterHeight = $("#filterTop").outerHeight(true);
+        var filterHeight = $(".filter-top").outerHeight(true);
         // navbar is not sticky on page reload before scroll.
         console.log("navbar height before : "+ navbarHeight);
         if(navbarHeight == undefined)

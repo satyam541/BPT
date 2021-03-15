@@ -397,7 +397,7 @@ $.ajax({
 
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-                '{{ url('thank-you') }}').html(input);
+                '{{ route('thanks') }}').html(input);
             $('body').append(form);
             $('#thank-you').submit();
         }

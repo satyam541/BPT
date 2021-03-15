@@ -51,7 +51,7 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-type="other">
                     <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
                     </a>
                 </div>
@@ -146,7 +146,7 @@
                     <div class="input-container">
                         <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
                         <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                        <input type="text" name="f-name" id="f-name" placeholder="Name*"
+                        <input type="text" name="name" id="f-name" placeholder="Name*"
                             autocomplete="off">
                     </div>
                     <input type="hidden" name="type" value="other"> 
