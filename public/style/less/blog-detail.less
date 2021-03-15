@@ -41,7 +41,7 @@
                 margin-bottom: 0;
             }
             img{
-                width: 30px;
+                width: 30px!important;
                 margin-right: .5rem;
             }
         }
@@ -55,9 +55,6 @@
             img{
                 height: 100%;
                 width: 100%;
-            }
-            &:last-child{
-                margin-bottom: 0;
             }
         }
 
@@ -153,8 +150,8 @@
     }
     }
 
-    h3{
-        margin: 1rem 0;
+    h3,h2{
+        margin-top: 1rem;
     }
 
     .content-right{
@@ -307,7 +304,7 @@
         }
         .email{
             margin-top: 0.5rem;
-            font-size: 11px;
+            font-size: 12px;
             &::before {
                 content: none;
             }
@@ -322,6 +319,7 @@
         flex-direction: column;
         padding: 1rem;
         font-size: 15px;
+        justify-content: space-between;
         text-align: center;
         font-weight: bold;
         width: 48%;
@@ -373,7 +371,6 @@
     .blog-navs{
         display: flex;
         justify-content: space-between;
-        order: 2;
         margin-top: 2rem;
     }
 
