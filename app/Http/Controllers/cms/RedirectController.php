@@ -83,14 +83,6 @@ class RedirectController extends Controller
         $data['submitRoute'] = array('updateUrlRedirect',$url->id);
         return view("cms.urlredirect.urlRedirectForm",$data);
     }
-
-    public function delete(UrlRedirect $url)
-    {
-        $this->authorize('delete',$url);
-        $url->delete();
-
-    }
-
     
     public function update(UrlRedirect $url,RedirectRequest $request)
     {
@@ -107,5 +99,29 @@ class RedirectController extends Controller
         $url->save();
         return redirect()->route('urlRedirectList')->with('success','URL Updated');
         
+    }
+
+    public function delete(UrlRedirect $url)
+    {
+        $this->authorize('delete',$url);
+        $url->delete();
+
+    }
+
+    public function trashList()
+    {
+        $data['trashedUrls'] = UrlRedirect::onlyTrashed()->get();
+        return view('cms.trashed.urlRedirectTrashList',$data);
+    }
+    public function restore($id)
+    {
+        UrlRedirect::onlyTrashed()->find($id)->restore();
+        return back()->with('success','Successfully Restored');
+    }
+
+    public function forceDelete($id)
+    {
+        UrlRedirect::onlyTrashed()->find($id)->forceDelete();
+        return back()->with('success','Permanently Deleted');
     }
 }
