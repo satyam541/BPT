@@ -70,6 +70,12 @@
         .intro-container{
             display: flex;
             flex-direction: column;
+            p{
+                a{
+                    color: @lightblueColor;
+                    font-weight: 600;
+                }
+            }
         }
         p{
             margin-bottom: 1rem;
@@ -248,6 +254,7 @@
         ul {
             li {
                 display: flex;
+                flex-direction: column;
                 padding-left: 1.4rem;
                 position: relative;
                 z-index: 1;
@@ -663,8 +670,19 @@
     .modes {
         display: flex;
         flex-direction: column;
-       
+        .heading{
+            .mode-icon{
+            transition: 0.6s all;
+           }
+        }
+       .active{
+        .mode-icon{
+                transform:rotate(-90deg);
+                transition: 0.6s all;
+            }
     }
+    }
+   
     .modes-list {
         display: none;
         flex-wrap: wrap;
