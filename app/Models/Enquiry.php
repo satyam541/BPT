@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Traits\Encryptable;
+// use App\Traits\Encryptable;
 
 class Enquiry extends Model
 {
     use SoftDeletes;
-    use Encryptable;
+    // use Encryptable;
     protected   $table='enquiry';
     protected $primaryKey = "id";
     protected $encryptable = [

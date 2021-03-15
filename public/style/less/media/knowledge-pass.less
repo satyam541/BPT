@@ -12,6 +12,7 @@
     .benefit-info{
         width: 26%;
         margin-top: 0;
+        align-self: flex-start;
     }
 }
 // End benefit section
@@ -108,6 +109,7 @@
         background-color: @bgColor;
         border-bottom: 2px solid transparent;
         padding: 1rem;
+        cursor: pointer;
         .image{
             position: absolute; 
             right: 10px;
@@ -191,7 +193,9 @@
             justify-content: center;
             width: 25%;
             select{ 
-                width: 43px;
+                width: 45px;
+                padding-left: 3px;
+                height: 24px;
                 border: 2px solid @darkblueColor;
                 border-radius: 10px;
                 background: url(../img/knowledge-pass/select-bg.png); 
@@ -200,7 +204,6 @@
             -webkit-appearance: none;
             background-repeat: no-repeat;
             outline: none;
-            padding-left: 7px;
            
             }
             option{
@@ -308,8 +311,15 @@
             display: flex;
             flex-direction: column;
         }
+        tbody{
+            border-collapse: collapse;
+        }
         tr{
             text-align: left;
+            border-bottom: 2px solid #E4E4E4;
+            &:last-child,&:nth-last-child(2){
+                border-bottom: 0;
+            }
             &:last-child{
                 td{
                     background-color: transparent;
@@ -324,15 +334,22 @@
                 color: @whiteColor;
                 text-align: left;
                 width: 52%;
+                border-top: 2px solid @lightblueColor;
             }
             &:nth-child(2){
                 background-color: #F9EDE7;
+                border-top: 2px solid   #BF4C17;
+            ;
             }
             &:nth-child(3){
                 background-color: #F7F7F7;
+                border-top: 2px solid #C0C0C0;
+            ;
             }
             &:nth-child(4){
                 background-color: #FBF6E8;
+                 border-top: 2px solid  #DAA520;
+
             }
 
         }
@@ -383,7 +400,7 @@
     // Start knowledge section
     .knowledge{
         padding: @sectionPadding-md;
-        padding-top: 1rem!important;
+        padding-top: 0rem!important;
         .booking-list{
             flex-direction: row;
             flex-wrap: wrap;
@@ -402,7 +419,6 @@
     // Start study section
     .study{
         padding: @sectionPadding-md;
-        padding-top: 1rem!important;
         .study-list{
             flex-direction: row;
             justify-content: space-between;
@@ -421,7 +437,7 @@
     // Start knowledge banner section //
         .knowledge-banner{
             background-image: url(../img/knowledge-pass/banner-bg.png);
-            background-size: 45% 100%;
+            background-size: 100% 100%;
             background-position: right;
 
             p,h1{
@@ -526,9 +542,6 @@
 // Start right section //
 .why-right{
 
-    .right-list{
-        justify-content: space-between;
-    }
     .right-item{
          width: 32%;
          align-items: flex-start;
@@ -585,7 +598,13 @@
             .booking-info{
                 align-self: flex-start;
                 width: 50%;
-                margin-bottom: 0;
+                margin-top: 0;
+                &:nth-child(3){
+                    background-color: @bgColor;
+                }
+                &:nth-child(4){
+                    background-color: @whiteColor;
+                }
             }
 
         }
@@ -612,7 +631,6 @@
     // Start knowledge-banner section //
 
     .knowledge-banner {
-        background-size: 40% 100%;
         padding-bottom: 6rem;
         box-shadow: @shadowLight;
         .banner-container{
@@ -694,5 +712,8 @@
 }
 
 @media @size-xlll{
+    .knowledge-banner{
+        background-size: 79% 100%;
 
+    }
 }

@@ -219,7 +219,7 @@ select::-ms-expand {
   margin-bottom: 1rem;
   width: 100%;
   position: relative;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .heading::before {
   content: '';
@@ -508,7 +508,6 @@ select::-ms-expand {
 }
 .breadcrums ul {
   display: flex;
-  align-items: center;
 }
 .breadcrums li {
   color: #FFFFFF;
@@ -518,7 +517,7 @@ select::-ms-expand {
 .breadcrums .black {
   width: 8px;
   height: 8px;
-  margin: 0 0.4rem;
+  margin: 0.4rem 0.4rem 0;
 }
 .breadcrums .black {
   display: none;
@@ -1236,7 +1235,6 @@ select::-ms-expand {
   .banner {
     padding: 3rem 2rem;
     padding-top: 6rem !important;
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2720,8 +2718,8 @@ select::-ms-expand {
     background-color: transparent;
     background-size: cover;
     position: relative;
-    align-items: center;
     z-index: 1;
+    align-items: center;
   }
   .delivery .item::before,
   .delivery .item::after {
@@ -2771,7 +2769,6 @@ select::-ms-expand {
     overflow: inherit;
   }
   .delivery .item:hover img {
-    transition: 1s all;
     width: 80px;
     height: 80px;
   }
@@ -3255,7 +3252,7 @@ select::-ms-expand {
 .contact .contact-list .item .item-info {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 83%;
 }
 .contact .social {
   display: flex;
@@ -3533,7 +3530,7 @@ select::-ms-expand {
     width: 32%;
     margin-top: 0!important;
   }
-  .information .info-content p {
+  .information p {
     min-height: 140px;
   }
   .locate {
@@ -3634,7 +3631,7 @@ select::-ms-expand {
     padding-top: 0;
   }
   .information {
-    background-image: linear-gradient(#1c2848 59.5%, #fff 45%);
+    background-image: linear-gradient(#1c2848 56.3%, #fff 45%);
   }
   .information .info-list {
     justify-content: space-around;
@@ -3644,6 +3641,9 @@ select::-ms-expand {
   }
   .information .info-text {
     padding: 2rem;
+  }
+  .information p {
+    min-height: 118px ;
   }
   .faq .faq-content {
     width: 56%;
@@ -3689,12 +3689,13 @@ select::-ms-expand {
   }
   .information {
     padding: 4rem 0rem;
+    background-image: linear-gradient(#1c2848 58%, #fff 45%);
   }
   .information .info-content {
     width: 28%;
   }
   .information p {
-    min-height: 88px;
+    min-height: 104px;
   }
   .locate {
     padding: 4rem 0rem;
@@ -5049,6 +5050,9 @@ select::-ms-expand {
 .doorstep .form label {
   color: #FFFFFF;
 }
+.doorstep .form label {
+  cursor: pointer;
+}
 .doorstep .form .heading {
   padding-top: 0;
 }
@@ -6209,6 +6213,7 @@ select::-ms-expand {
 }
 .our-blog .our-info .designation {
   width: 45%;
+  text-align: right;
 }
 .our-blog .dates {
   display: none;
@@ -6447,10 +6452,12 @@ select::-ms-expand {
   .ideal .ideal-container {
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
   }
   .ideal .clients-inner {
     width: 47%;
     position: relative;
+    height: 300px;
   }
   .ideal .image {
     width: 90px;
@@ -6596,7 +6603,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .blog-intro .detail p img {
-  width: 30px;
+  width: 30px!important;
   margin-right: 0.5rem;
 }
 .blog-intro .intro-detail {
@@ -6609,9 +6616,6 @@ select::-ms-expand {
 .blog-intro .intro-detail p img {
   height: 100%;
   width: 100%;
-}
-.blog-intro .intro-detail p:last-child {
-  margin-bottom: 0;
 }
 .blog-intro .img-content {
   display: flex;
@@ -6697,8 +6701,9 @@ select::-ms-expand {
   right: -15px;
   transform: rotateY(180deg);
 }
-.blog-intro h3 {
-  margin: 1rem 0;
+.blog-intro h3,
+.blog-intro h2 {
+  margin-top: 1rem;
 }
 .blog-intro .content-right {
   display: flex;
@@ -6848,7 +6853,7 @@ select::-ms-expand {
 }
 .blog-intro .blog-question .email {
   margin-top: 0.5rem;
-  font-size: 11px;
+  font-size: 12px;
 }
 .blog-intro .blog-question .email::before {
   content: none;
@@ -6862,6 +6867,7 @@ select::-ms-expand {
   flex-direction: column;
   padding: 1rem;
   font-size: 15px;
+  justify-content: space-between;
   text-align: center;
   font-weight: bold;
   width: 48%;
@@ -6905,7 +6911,6 @@ select::-ms-expand {
 .blog-intro .blog-navs {
   display: flex;
   justify-content: space-between;
-  order: 2;
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
@@ -6924,9 +6929,6 @@ select::-ms-expand {
   }
   .blog-intro .content-left {
     width: 58%;
-  }
-  .blog-intro .content-left span {
-    display: flex;
   }
   .blog-intro .content-left span img {
     height: auto;
@@ -6975,16 +6977,13 @@ select::-ms-expand {
     justify-content: center;
   }
   .blog-intro .blog-navs {
-    order: 3;
     margin-top: 0;
-    justify-content: flex-start;
-  }
-  .blog-intro .blog-navs .next-nav .btn-blue {
-    min-width: 168px;
+    width: 80%;
+    margin: auto;
   }
   .blog-intro .previous-nav,
   .blog-intro .next-nav {
-    width: 30%;
+    width: 48%;
     height: auto;
   }
   .blog-intro .previous-nav p,
@@ -7003,7 +7002,7 @@ select::-ms-expand {
     width: 75%;
   }
   .blog-intro .blog-navs {
-    width: 63%;
+    width: 100%;
     justify-content: center;
   }
   .blog-intro .blog-navs .previous-nav,
@@ -7668,9 +7667,6 @@ select::-ms-expand {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .offer-banner {
-    padding-top: 1rem!important;
-  }
   .bundle {
     padding: 3rem 2rem;
   }
@@ -8425,6 +8421,7 @@ select::-ms-expand {
 }
 .courses-banner .breadcrums {
   margin-bottom: 1rem;
+  width: 100%;
 }
 .courses-banner .breadcrums .black {
   display: none;
@@ -8502,7 +8499,7 @@ select::-ms-expand {
 .foundation .tab-links .tab-click::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 20px;
   width: 0;
   height: 0;
@@ -8904,6 +8901,9 @@ select::-ms-expand {
   width: 15px;
   transform: rotate(88deg);
 }
+.training .filter-top .buttons {
+  margin-top: 0;
+}
 .training .form {
   display: none;
   flex-direction: column;
@@ -8918,7 +8918,7 @@ select::-ms-expand {
   padding: 0;
 }
 .training .select-dropdown {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   width: 100%;
 }
 .training select {
@@ -8999,7 +8999,6 @@ select::-ms-expand {
 .training .methods p {
   font-size: 18px;
   font-weight: bold;
-  margin-top: 0.5rem;
   text-align: center;
 }
 .training .active .blue {
@@ -9034,7 +9033,7 @@ select::-ms-expand {
 .training .calender-right {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 .training .add-ons {
   padding: 1rem 2rem;
@@ -9092,6 +9091,7 @@ select::-ms-expand {
 .training .online-block .exclude {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .training .add-foundation {
   display: flex;
@@ -9300,6 +9300,7 @@ select::-ms-expand {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
 }
 .training .date p {
   padding: 1rem 0.5rem 0.8rem;
@@ -9368,8 +9369,6 @@ select::-ms-expand {
   padding: 1.5rem;
   margin-top: 1.5rem;
   border-radius: 30px 30px 0px 30px;
-  width: 272px;
-  align-self: center;
 }
 .virtual .virtual-content:first-child {
   margin-top: 0;
@@ -9381,15 +9380,18 @@ select::-ms-expand {
 }
 .virtual .virtual-content .content span {
   display: flex;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 .virtual .virtual-content .content span img {
   width: 100%;
   height: 100%;
 }
 .virtual .virtual-content .content h2 {
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 .virtual .virtual-img {
   display: flex;
@@ -9532,7 +9534,7 @@ select::-ms-expand {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.3rem;
   background-position: left top;
   width: 100%;
@@ -9590,22 +9592,31 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5em;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
-  width: 272px;
-  align-self: center;
 }
 .skill .skill-content:first-child {
   margin-top: 1rem;
 }
 .skill .skill-content h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 .skill .skill-content p {
   text-align: center;
+}
+.skill .skill-content:hover {
+  background-image: linear-gradient(#0064D8, #1C2848);
+}
+.skill .skill-content:hover h3,
+.skill .skill-content:hover p {
+  color: #FFFFFF;
+}
+.skill .skill-content:hover .buttons .btn-blue:hover::before,
+.skill .skill-content:hover .buttons .btn-blue:hover::after {
+  content: none;
 }
 .related {
   padding: 3rem 1.5rem;
@@ -9871,7 +9882,6 @@ select::-ms-expand {
   }
   .training .select-dropdown {
     width: 40%;
-    margin-bottom: 0;
     padding-bottom: 0;
   }
   .training select {
@@ -9915,14 +9925,14 @@ select::-ms-expand {
   .training .name .buttons {
     flex-direction: row;
     margin-top: 0;
-    width: 50%;
+    width: 330px;
   }
   .training .name .buttons .btn-blue {
     margin-top: 0;
     margin-left: 1rem;
   }
   .training .course-name {
-    width: 50%;
+    width: calc(100% - 336px);
     justify-content: flex-start;
     text-align: left;
   }
@@ -9956,7 +9966,7 @@ select::-ms-expand {
     width: 27%;
   }
   .training .rate {
-    width: 16%;
+    width: 17%;
   }
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
@@ -10004,10 +10014,13 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .virtual .virtual-content {
-    width: 43%;
+    width: 47%;
   }
   .virtual .virtual-content:nth-child(2) {
     margin-top: 0;
+  }
+  .virtual .virtual-content p {
+    min-height: 88px;
   }
   .virtual .virtual-img {
     width: 55%;
@@ -10057,7 +10070,7 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .skill .skill-content {
-    width: 46%;
+    width: 47%;
     margin-top: 1rem;
   }
   .skill .skill-content p {
@@ -10116,6 +10129,11 @@ select::-ms-expand {
   }
   .popular-location .content .arrow {
     transform: translateX(34px);
+  }
+}
+@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .training .add-ons {
+    top: 0;
   }
 }
 @media (min-width : 1024px) {
@@ -10222,7 +10240,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
   .training .calender-left {
     width: 32%;
@@ -10262,9 +10280,6 @@ select::-ms-expand {
   .training .add-foundation .foundation-content {
     margin-top: 0;
   }
-  .training .course-name {
-    width: 37%;
-  }
   .training .name {
     transform: translate(0px, -22px);
     width: 95%;
@@ -10291,9 +10306,6 @@ select::-ms-expand {
   .training .name::after {
     border-right: 17px solid transparent;
     right: -17px;
-  }
-  .training .name .buttons {
-    width: 54%;
   }
   .training .modes {
     background-color: #FFFFFF;
@@ -10343,6 +10355,10 @@ select::-ms-expand {
   }
   .virtual .virtual-content .content h2 {
     width: calc(100% - 60px);
+    min-height: 52px;
+  }
+  .virtual .virtual-content p {
+    min-height: 110px;
   }
   .virtual .virtual-img {
     width: 35%;
@@ -10469,7 +10485,7 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .popular-location .popular-content {
-    width: 40%;
+    width: 42%;
     align-self: flex-start;
   }
   .popular-location .popular-content::before {
@@ -10479,7 +10495,7 @@ select::-ms-expand {
   }
   .popular-location .location-content {
     margin-top: 0;
-    width: 60%;
+    width: 58%;
   }
 }
 @media (min-width : 1366px) {
@@ -10529,12 +10545,6 @@ select::-ms-expand {
   .training .name {
     width: 90%;
   }
-  .training .name .buttons {
-    width: 42%;
-  }
-  .training .course-name {
-    width: 50%;
-  }
   .training .date {
     width: 350px;
   }
@@ -10542,14 +10552,14 @@ select::-ms-expand {
     margin-top: 2rem;
   }
   .training .rate {
-    width: 13%;
+    width: 14%;
   }
   .training .online-block {
     align-items: flex-start;
   }
   .training .add-ons {
     width: 46%;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     padding-bottom: 2rem;
   }
   .training .add-ons h2 {
@@ -10573,6 +10583,12 @@ select::-ms-expand {
   }
   .virtual .virtual-list {
     width: 68%;
+  }
+  .virtual .virtual-content .content h2 {
+    min-height: auto;
+  }
+  .virtual .virtual-content p {
+    min-height: 66px;
   }
   .virtual .virtual-img {
     width: 30%;
@@ -12190,7 +12206,7 @@ select::-ms-expand {
 .topic-courses {
   padding: 3rem 1.5rem;
 }
-.topic-courses .course-container {
+.topic-courses .courses-container {
   display: flex;
   flex-direction: column;
 }
@@ -12278,6 +12294,12 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
+.foundation {
+  padding-top: 0;
+}
+.foundation .tab-common {
+  border-radius: 7px;
+}
 .topic-delivery {
   padding: 3rem 1.5rem;
   background-image: linear-gradient(#0064D8, #1C2848);
@@ -12297,6 +12319,9 @@ select::-ms-expand {
 .topic-delivery .delivery-content {
   display: flex;
   flex-direction: column;
+}
+.topic-delivery .delivery-content .heading {
+  padding-top: 0;
 }
 .topic-delivery .delivery-content .heading::before {
   content: none;
@@ -12350,9 +12375,6 @@ select::-ms-expand {
 .topic-choose .choose-content {
   display: flex;
   flex-direction: column;
-}
-.topic-choose .choose-content .heading h2 {
-  text-align: center;
 }
 .topic-choose .choose-content p {
   text-align: center;
@@ -12530,7 +12552,6 @@ select::-ms-expand {
 .explore .explore-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-left: 1rem;
 }
 .explore .numbers {
@@ -12569,15 +12590,18 @@ select::-ms-expand {
 .goals .goals-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .goals .goal-image {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .goals .goal-image .img {
   display: flex;
-  margin-top: 1rem;
   height: 100%;
+  margin-top: 2rem;
 }
 .goals .goal-image .img img {
   width: 100%;
@@ -12587,9 +12611,9 @@ select::-ms-expand {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .goals .goal-item {
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12600,6 +12624,9 @@ select::-ms-expand {
   position: relative;
   z-index: 1;
   background-color: #FFFFFF;
+}
+.goals .goal-item:first-child {
+  margin-top: 0;
 }
 .goals .goal-item::before {
   content: '';
@@ -12689,18 +12716,25 @@ select::-ms-expand {
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
-    padding: 0.5rem 1rem;
     width: 90%;
+    align-self: center;
+    position: relative;
+    padding: 1.5rem 1rem;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -2px;
   }
   .topic-courses .course-name {
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
   .topic-courses .course-name a {
     width: calc(100% - 90px);
@@ -12718,6 +12752,9 @@ select::-ms-expand {
   .topic-courses .courses-container {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .foundation {
+    padding-top: 0;
   }
   .experiences {
     padding: 3rem 2rem;
@@ -12772,6 +12809,9 @@ select::-ms-expand {
   .topic-choose .choose-content .heading {
     justify-content: flex-start;
   }
+  .topic-choose .choose-content .heading::before {
+    margin: 0;
+  }
   .topic-choose .choose-content .heading h2 {
     text-align: left;
   }
@@ -12823,17 +12863,18 @@ select::-ms-expand {
   }
   .goals .goal-image .img {
     width: 80%;
-    margin: auto;
-    margin-top: 1rem;
+    align-self: center;
   }
   .goals .goal-item {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  .goals .goal-item:first-child {
+    margin-top: 2rem;
   }
   .goals .content {
-    align-items: flex-start;
-    width: 62%;
     margin-top: 0;
     width: calc(100% - 110px);
   }
@@ -12844,6 +12885,9 @@ select::-ms-expand {
   .goals .goals-list {
     width: 85%;
     margin: auto;
+  }
+  .popular-location .popular-content {
+    width: 417px;
   }
 }
 @media (min-width : 1024px) {
@@ -12872,8 +12916,18 @@ select::-ms-expand {
     background-repeat: no-repeat;
     background-position: bottom;
   }
+  .topic-courses .course-item {
+    padding: 1.5rem 2rem;
+  }
   .topic-courses .course-name {
     width: 100%;
+    margin-left: 2.5rem;
+  }
+  .foundation {
+    padding-top: 3rem;
+    background-image: url(../img/topic/foundation-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .topic-choose {
     background-image: url(../img/topic/choose-bg.png);
@@ -12945,7 +12999,7 @@ select::-ms-expand {
   }
   .goals {
     background-color: transparent;
-    background: linear-gradient(180deg, #FFFFFF, #F6F6F6), url(../img/topic/goal-bg.png);
+    background: linear-gradient(180deg, #F6F6F6, #FFFFFF), url(../img/topic/goal-bg.png);
     background-position: top,bottom;
     background-repeat: no-repeat;
     background-size: 100% 50%, 100% 50%;
@@ -12955,7 +13009,7 @@ select::-ms-expand {
     justify-content: space-between;
   }
   .goals .goal-image {
-    width: 42%;
+    width: 48%;
   }
   .goals .goal-image .heading {
     justify-content: flex-start;
@@ -12965,18 +13019,17 @@ select::-ms-expand {
     text-align: left;
   }
   .goals .goal-image .img {
-    width: 85%;
-    margin-top: 1rem;
+    width: 100%;
   }
   .goals .content p {
     font-size: 12px;
   }
-  .goals .goal-item:nth-child(1) {
-    margin-top: 0;
-  }
   .goals .goals-list {
-    width: 54%;
+    width: 48%;
     margin: 0;
+  }
+  .popular-location .popular-content {
+    width: 385px;
   }
 }
 @media (min-width : 1366px) {
@@ -13033,9 +13086,6 @@ select::-ms-expand {
   .explore {
     padding: 4rem 0rem;
   }
-  .explore .explore-list {
-    justify-content: space-between;
-  }
   .goals {
     padding: 4rem 0rem;
   }
@@ -13044,6 +13094,9 @@ select::-ms-expand {
   }
   .goals .goal-image {
     width: 53%;
+  }
+  .popular-location .popular-content {
+    width: 404px;
   }
 }
 @media (min-width : 1600px) {
@@ -13157,6 +13210,7 @@ select::-ms-expand {
 }
 .pass-clients {
   padding: 3rem 1.5rem;
+  padding-bottom: 0;
 }
 .pass-clients .pass-container {
   display: flex;
@@ -13285,6 +13339,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  width: 100%;
 }
 .why-right .content h2,
 .why-right .content p {
@@ -13377,7 +13432,6 @@ select::-ms-expand {
 .knowledge .booking-list {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .knowledge .booking-info {
   display: flex;
@@ -13386,10 +13440,7 @@ select::-ms-expand {
   padding: 1rem;
   width: 272px;
   align-self: center;
-  margin-bottom: 1rem;
-}
-.knowledge .booking-info:last-child {
-  margin-top: 0;
+  margin-top: 1.8rem;
 }
 .knowledge .booking-info:nth-child(even) {
   background-color: #F6F6F6;
@@ -13409,8 +13460,12 @@ select::-ms-expand {
 .knowledge .booking-info p {
   margin-top: 0.5rem;
 }
+.knowledge .booking-info h3 {
+  font-size: 18px;
+}
 .study {
   padding: 3rem 1.5rem;
+  padding-top: 1rem!important;
 }
 .study .study-container {
   display: flex;
@@ -13432,7 +13487,7 @@ select::-ms-expand {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   border-bottom: 5px solid #1C2848;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -13477,6 +13532,7 @@ select::-ms-expand {
   .benefit .benefit-info {
     width: 26%;
     margin-top: 0;
+    align-self: flex-start;
   }
   .pass-clients {
     padding: 3rem 2rem;
@@ -13556,6 +13612,7 @@ select::-ms-expand {
     background-color: #F6F6F6;
     border-bottom: 2px solid transparent;
     padding: 1rem;
+    cursor: pointer;
   }
   .requirement .course-name .image {
     position: absolute;
@@ -13638,7 +13695,9 @@ select::-ms-expand {
     width: 25%;
   }
   .requirement .course-detail .select select {
-    width: 43px;
+    width: 45px;
+    padding-left: 3px;
+    height: 24px;
     border: 2px solid #1C2848;
     border-radius: 10px;
     background: url(../img/knowledge-pass/select-bg.png);
@@ -13647,7 +13706,6 @@ select::-ms-expand {
     -webkit-appearance: none;
     background-repeat: no-repeat;
     outline: none;
-    padding-left: 7px;
   }
   .requirement .course-detail .select option {
     color: #000000;
@@ -13738,8 +13796,16 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
   }
+  .budget tbody {
+    border-collapse: collapse;
+  }
   .budget tr {
     text-align: left;
+    border-bottom: 2px solid #E4E4E4;
+  }
+  .budget tr:last-child,
+  .budget tr:nth-last-child(2) {
+    border-bottom: 0;
   }
   .budget tr:last-child td {
     background-color: transparent;
@@ -13753,15 +13819,19 @@ select::-ms-expand {
     color: #FFFFFF;
     text-align: left;
     width: 52%;
+    border-top: 2px solid #0064D8;
   }
   .budget th:nth-child(2) {
     background-color: #F9EDE7;
+    border-top: 2px solid #BF4C17;
   }
   .budget th:nth-child(3) {
     background-color: #F7F7F7;
+    border-top: 2px solid #C0C0C0;
   }
   .budget th:nth-child(4) {
     background-color: #FBF6E8;
+    border-top: 2px solid #DAA520;
   }
   .budget td {
     padding: 1rem;
@@ -13808,7 +13878,7 @@ select::-ms-expand {
   }
   .knowledge {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
+    padding-top: 0rem!important;
   }
   .knowledge .booking-list {
     flex-direction: row;
@@ -13824,7 +13894,6 @@ select::-ms-expand {
   }
   .study {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
   }
   .study .study-list {
     flex-direction: row;
@@ -13838,7 +13907,7 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 45% 100%;
+    background-size: 100% 100%;
     background-position: right;
   }
   .knowledge-banner p,
@@ -13914,9 +13983,6 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
-  .why-right .right-list {
-    justify-content: space-between;
-  }
   .why-right .right-item {
     width: 32%;
     align-items: flex-start;
@@ -13961,7 +14027,13 @@ select::-ms-expand {
   .knowledge .booking-info {
     align-self: flex-start;
     width: 50%;
-    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .knowledge .booking-info:nth-child(3) {
+    background-color: #F6F6F6;
+  }
+  .knowledge .booking-info:nth-child(4) {
+    background-color: #FFFFFF;
   }
   .study .study-content::before {
     height: 60px;
@@ -13972,7 +14044,6 @@ select::-ms-expand {
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
-    background-size: 40% 100%;
     padding-bottom: 6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
@@ -14021,6 +14092,11 @@ select::-ms-expand {
   }
   .study {
     padding: 4rem 0rem;
+  }
+}
+@media (min-width : 1600px) {
+  .knowledge-banner {
+    background-size: 79% 100%;
   }
 }
 .thanks-banner {

@@ -95,9 +95,9 @@ Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@cu
 Route::get('/certification-programmes','CertificationController@index')->name('certification');
 Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
-// Route::get('/offer', function () {
-//     return view('offer');
-// });
+Route::get('/offer', function () {
+    return view('offer');
+});
 Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
