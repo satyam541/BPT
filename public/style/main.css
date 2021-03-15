@@ -2721,6 +2721,7 @@ select::-ms-expand {
     position: relative;
     align-items: center;
     z-index: 1;
+    align-items: center;
   }
   .delivery .item::before,
   .delivery .item::after {
@@ -2770,7 +2771,6 @@ select::-ms-expand {
     overflow: inherit;
   }
   .delivery .item:hover img {
-    transition: 1s all;
     width: 80px;
     height: 80px;
   }
@@ -13663,7 +13663,7 @@ select::-ms-expand {
   }
   .requirement .course-detail .select select {
     width: 45px;
-    padding-left: 5px;
+    padding-left: 3px;
     height: 24px;
     border: 2px solid #1C2848;
     border-radius: 10px;
@@ -13673,7 +13673,6 @@ select::-ms-expand {
     -webkit-appearance: none;
     background-repeat: no-repeat;
     outline: none;
-    padding-left: 7px;
   }
   .requirement .course-detail .select option {
     color: #000000;
@@ -13863,7 +13862,7 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 100% 100%;
+    background-size: 80% 100%;
     background-position: right;
   }
   .knowledge-banner p,
@@ -14042,6 +14041,11 @@ select::-ms-expand {
   }
   .study {
     padding: 4rem 0rem;
+  }
+}
+@media (min-width : 1600px) {
+  .knowledge-banner {
+    background-size: 70% 100%;
   }
 }
 .thanks-banner {
