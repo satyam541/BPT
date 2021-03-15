@@ -75,7 +75,7 @@
 <!-- End topic-courses section -->
 
 <!-- Start Foundation Section -->
-<section class="flex-container foundation">
+<section class="flex-container foundation topic-foundation">
     <div class="container">
         <div class="foundation-container">
             <div class="heading">
