@@ -1235,7 +1235,6 @@ select::-ms-expand {
   .banner {
     padding: 3rem 2rem;
     padding-top: 6rem !important;
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2719,7 +2718,6 @@ select::-ms-expand {
     background-color: transparent;
     background-size: cover;
     position: relative;
-    align-items: center;
     z-index: 1;
     align-items: center;
   }
@@ -7669,9 +7667,6 @@ select::-ms-expand {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .offer-banner {
-    padding-top: 1rem!important;
-  }
   .bundle {
     padding: 3rem 2rem;
   }
