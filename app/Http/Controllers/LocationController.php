@@ -23,7 +23,7 @@ class LocationController extends Controller
         $country = country();
         $countryId = country()->id;
         $locations = $country->locations;
-        $popular = Popular::locations()->where('country_id', $countryId)->take('6');
+        $popular = Location::has('popular')->where('country_id', $countryId)->limit('6')->get();
         $data['popularLocations'] = $popular;
         $data['locations'] = $locations;
         return view('location',$data);

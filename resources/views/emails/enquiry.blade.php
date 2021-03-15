@@ -5,375 +5,150 @@
 </head>
 <body>
     <div style="width:100%">
-        <div>
-            Dear {{ $DELEGATENAME }},
-        </div>
+        <h4>
+            Dear {{ $enquiry->name }},
+        </h4>
         <br/>
-        <div>
-            {{ $MAILMESSAGE }}
-        </div>
+       
+       
        
         <div style="margin-top:10px;">
-            <div style="background-color: #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
-                Course
+            <div style="background-color: #FBDA84 ;padding: 6px; color: #47484a; font-size: 20px;width:100% ">
+               Enquiry Details
             </div>
 
             <table style="width:100%">
-                @unless(empty($ORDERNO))
+                @if(!empty($enquiry->course))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Order No:
+                      Course
                     </td>
                     <td style="width:70%">
-                        {{ $ORDERNO }}
+                        {{ $enquiry->course}}
                     </td>
                 </tr>
-                @endunless
+                @endif
+                @if(!empty($enquiry->name))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Website Country:
+                       Name
                     </td>
                     <td style="width:70%">
-                       {{ $WEBSITECOUNTRY }}
+                       {{ $enquiry->name }}
                     </td>
                 </tr>
+                @endif
+                @if(!empty($enquiry->email))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Course Name:
+                        Email
                     </td>
                     <td style="width:70%">
-                        {{ $PRODUCTNAME }}
+                        {{ $enquiry->email }}
                     </td>
                 </tr>
-
-                 @if(isset($PACKAGE) and $PACKAGE == 'Online')
-                    <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                        <td style="width:30%;float:left">
-                            Booking Type :
-                        </td>
-                        <td style="width:70%">
-                            Online
-                        </td>
-                    </tr>
-                    @if(!empty($basePrice))
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Base Price :
-                                </td>
-                                <td style="width:70%">
-                                    £ {{round($basePrice)}}
-                                </td>
-                            </tr>
-                    @endif
-					@if(!empty($addOns) && !$addOns->isEmpty())
-                    <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                        <td style="width:30%;float:left">
-                           Add-Ons Opted :
-                        </td>
-                        <td style="width:70%">
-                            @foreach($addOns as $addOn)
-                                {{ $addOn['name'] }} (£{{ round($addOn['price']) }})<br>
-                            @endforeach
-                        </td>
-                    </tr>
-					@endif
-                @else
-                     @if($LOCATION == 'Virtual')
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Booking Type :
-                                </td>
-                                <td style="width:70%">
-                                    Virtual
-                                </td>
-                            </tr>
-                     @else
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Booking Type :
-                                </td>
-                                <td style="width:70%">
-                                    Classroom
-                                </td>
-                            </tr>
-							@if(!empty($LOCATION))
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Location:
-                                </td>
-                                <td style="width:70%">
-                                    {{ $LOCATION }}
-                                </td>
-                            </tr>
-							@endif
-                     @endif
-					@if(!empty($DATE))
-					<tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-						<td style="width:30%;float:left">
-							Chosen Date:
-						</td>
-						<td style="width:70%">
-							{{ $DATE }}
-						</td>
-					</tr>
-					@endif
-					@if(!empty($DURATION))
-					<tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-						<td style="width:30%;float:left">
-							Duration:
-						</td>
-						<td style="width:70%">
-							{{ $DURATION }}
-						</td>
-					</tr>
-					@endif
+                @endif
+                @if(!empty($enquiry->phone))
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                        Booking Type :
+                    </td>
+                    <td style="width:70%">
+                        {{ $enquiry->phone }}
+                    </td>
+                </tr>
+                @endif
+                @if(!empty($enquiry->message))
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                       Message
+                    </td>
+                    <td style="width:70%">
+                        {{ $enquiry->message }}
+                    </td>
+                </tr>
+                @endif
+                @if(!empty($enquiry->company))
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                       Company
+                    </td>
+                    <td style="width:70%">
+                        {{ $enquiry->company }}
+                    </td>
+                </tr>
                 @endif
 
+                @if(!empty($enquiry->address))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Course Fee:
+                        Enquiry:
                     </td>
                     <td style="width:70%">
-                        £ {{ round($COURSEFEE) }}
+                        {{ $enquiry->address }}
                     </td>
                 </tr>
-
-                    @if(!empty($SUMAMOUNT) && $COURSEFEE != $SUMAMOUNT)
-                <tr style="background-color:#EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Total exe. VAT:
-                    </td>
-                    <td style="width:70%">
-                        £ {{ round($SUMAMOUNT) }}
-                    </td>
-                </tr>
-                    @endif
-
-                @unless(empty($VAT))
+                @endif
+                @if(!empty($enquiry->city))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        VAT:
+                       City
                     </td>
                     <td style="width:70%">
-                       £ {{ round($VAT) }}
+                         {{ $enquiry->city }}
                     </td>
                 </tr>
-                @endunless
-
-                @unless(empty($CARDFEE))
+                @endif
+                @if(!empty($enquiry->date))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Card Fees:
+                        Date
                     </td>
                     <td style="width:70%">
-                        £ {{ round($CARDFEE) }}
+                        {{$enquiry->date}}
                     </td>
                 </tr>
-                @endunless
+                @endif
 
-                @unless(empty($TOTALFEE))
+                @if(!empty($enquiry->delegate ))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Total Fees:
+                        Delegate
                     </td>
                     <td style="width:70%">
-                        £ {{ round($TOTALFEE) }}
+                       {{$enquiry->delegate}}
                     </td>
                 </tr>
-                @endunless
+                @endif
 
-                @unless(empty($PONUMBER))
+                @if(!empty($enquiry->location ))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        PO Number:
+                       Location
                     </td>
                     <td style="width:70%">
-                        {{ $PONUMBER }}
+                         {{$enquiry->location}}
                     </td>
                 </tr>
-                @endunless
+                @endif
+
+            
             </table>
         </div>
 
-        <div style="margin-top:30px;float:left;width:100%">
-            <div style="background-color:  #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
-                Your Details
-            </div>
-
-            <table style="width:100%">
-
-                @unless(empty($YOURNAME))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Name:
-                    </td>
-                    <td style="width:70%">
-                        {{ $YOURNAME }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($TELEPHONE))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Telephone:
-                    </td>
-                    <td style="width:70%">
-                        {{ $TELEPHONE }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($MOBILE))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Mobile:
-                    </td>
-                    <td style="width:70%">
-                        {{ $MOBILE }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($EMAIL))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Email:
-                    </td>
-                    <td style="width:70%">
-                        {{ $EMAIL }}
-                    </td>
-                </tr>
-                @endunless
-
-                    @unless(empty($COMPANY))
-                        <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                            <td style="width:30%;float:left">
-                                Company:
-                            </td>
-                            <td style="width:70%">
-                                {{ $COMPANY }}
-                            </td>
-                        </tr>
-                    @endunless
-
-                @unless(empty($prefferedContactMethod))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                         Preferred Method Chosen:
-                    </td>
-                    <td style="width:70%">
-                     {{ $prefferedContactMethod }}
-                    </td>
-                </tr>
-                @endunless
-
-            </table>
-
-        </div>
-
-        @unless(empty($BILLINGNAME))
-        <div style="margin-top:30px;float:left;width:100%">
-            <div style="background-color:  #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
-                Billing Details
-            </div>
-
-            <table style="width:100%">
-
-                @unless(empty($BILLINGNAME))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Name:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGNAME }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($BILLINGADDRESS1))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        Address 1:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGADDRESS1 }}
-                    </td>
-                </tr>
-                 @endunless
-
-                @unless(empty($BILLINGADDRESS2))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                       Address 2:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGADDRESS2 }}
-                    </td>
-                </tr>
-                @endunless
-
-                 @unless(empty($BILLINGCITY))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                       City:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGCITY }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($BILLINGPOSTCODE))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                       Post Code:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGPOSTCODE }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($BILLINGPROVINCE))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                       Province:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGPROVINCE }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($BILLINGCOUNTRY))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                       Country:
-                    </td>
-                    <td style="width:70%">
-                        {{ $BILLINGCOUNTRY }}
-                    </td>
-                </tr>
-                @endunless
-
-            </table>
-
-        </div>
-        @endunless
 
 
         <div style="margin-top:30px;float:left;width:100%">
-            <div style="color:  #0063d8; padding: 6px; font-size: 20px; width: 100%; font-weight: bold; border-bottom: 2px solid #17365d;">
+            <div style="color:  #FBDA84 ; padding: 6px; font-size: 20px; width: 100%; font-weight: bold; border-bottom: 2px solid #17365d;">
                 What's Next?
             </div>
             <div>
                             
                 <p>
-                    Thank you for contacting Best Pratice Training - a learning advisor will be contacting you shortly.
+                    Thank you for contacting sixsigma.co.uk - a learning advisor will be contacting you shortly.
                 </p>
                 <p>
-                    If you would like to speak to a learning advisor more urgently please contact <b>023 8000 1008</b> or alternatively email <a href="mailto:enquiries@bestpracticetraining.com">enquiries@bestpracticetraining.com</a>
+                    If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #FBDA84;">{{ websiteDetail()->contact_email }}</a>
                 </p>
             </div>
         </div>

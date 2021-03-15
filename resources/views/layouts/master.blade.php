@@ -150,7 +150,7 @@
                     <div class="input-container">
                         <span><img src="{{ url('img/master/house-black.svg') }}" alt="email" class="black">
                             <img src="{{ url('img/master/house-red.svg') }}" alt="email-red" class="red"></span>
-                        <input type="text" name="company name" id="company" placeholder="Company Name"
+                        <input type="text" name="company" id="company" placeholder="Company Name"
                             autocomplete="off">
                     </div>
                     <div class="input-container message">
@@ -397,7 +397,7 @@ $.ajax({
 
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-                '{{ url('thank-you') }}').html(input);
+                '{{ route('thanks') }}').html(input);
             $('body').append(form);
             $('#thank-you').submit();
         }

@@ -28,8 +28,8 @@
 </section>
 <!-- End Banner Section -->
 
-<!-- Start search section-->
-<section class="most-search">
+<!-- Start most-search section-->
+<section class="flex-container most-search">
     <div class="container">
         <div class="search-container">
             <div class="heading">
@@ -55,15 +55,15 @@
         </div>
     </div>
 </section>
-<!-- End search section -->
+<!-- End most-search section -->
 
 <!-- Start result section -->
-<section class="result">
+<section class="flex-container result">
     <div class="container">
         <div class="result-container">
             <div class="heading">
                 @if($result->count() != 0 && $query !="")
-                <h2>{{$result->count()}} results found for "{{$query}}"</h2>
+                <h2>{{$result->count()}} Results Found for "{{$query}}"</h2>
                 @endif
             </div>
             <div class="result-content">
@@ -110,8 +110,6 @@
     </div>
 </section>
 <!-- End result section -->
-
-
 
 @endsection
  

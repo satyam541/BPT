@@ -77,6 +77,9 @@
     .management-container{
         display: flex;
         flex-direction: column;
+        .heading{
+            margin-bottom: 0;
+        }
 
     }
     .management-bundles{
@@ -91,13 +94,14 @@
         box-shadow: 0 0 10px grey;
         padding: 1rem;
     span{
-        width: 45%;
+        width: 48%;
         text-align: center;
         font-weight: bold;
     }
     }
     h3{
-        width: 42%;
+        width: 48%;
+        font-size: 18px;
     }
     ul{
         width: 100%;
@@ -168,7 +172,7 @@
 //Start new-bundle section
 .new-bundle{
     padding: @sectionPadding;
-    .new-bundle-container{
+    .new-container{
         display: flex;
         flex-direction: column;
     }
@@ -185,11 +189,11 @@
             font-weight: bold;
             font-size: 16px;
         }
-        .inform-list{
+        .info-list{
             display: flex;
             flex-direction: column;
         }
-        .inform-item{
+        .info-list{
             display: flex;
             margin-top: .7rem;
             span{
@@ -213,7 +217,7 @@
             flex-direction: column;
         }
     }
-    .inform-content{
+    .info-content{
         display: flex;
         flex-direction: column;
         width: 100%;

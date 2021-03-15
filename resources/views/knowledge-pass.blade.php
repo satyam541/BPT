@@ -7,7 +7,10 @@
         <div class="container">
             @include("layouts.navbar")
             <div class="banner-container">
-                <h1>Knowledge Pass</h1>
+
+              <div class="banner-content">
+
+              <h1>Knowledge Pass</h1>
                 <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
                 <div class="breadcrums">
                             <ul>
@@ -17,8 +20,16 @@
                                 <li><a href="">Knowledge Pass</a></li>
                             </ul>
                      </div>
+                   
+
+              </div>
+              <div class="banner-info">
+                     <img src="{{url('img/knowledge-pass/banner-info.png')}}" alt="banner-info">
+                     </div>
+
             </div>
-        </div>
+
+    
     </section>
 <!-- End Banner Section -->
 
@@ -37,7 +48,7 @@
                         <p class="tagline"> Join leading brands in the new & best way to train...</p>  
 
                         <div class="buttons">
-                            <a class="btn-blue">
+                            <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass">
                                 <img src="{{url('img/knowledge-pass/pass-message.svg')}}" alt="pass-message">
                                 Tell Us More
                             </a>
@@ -58,7 +69,7 @@
 
 
 <!-- Start requirement section -->
-<section class="flex-container requirement">
+<!-- <section class="flex-container requirement">
     <div class="container">
         <div class="requirement-container">
             <div class="heading center-heading white-heading">
@@ -94,10 +105,10 @@
                                 <p>
                                 Popular Courses
                                 </p> 
-                                <p>delegates</p>  
+                                <p>Delegates</p>  
                                 <p>
                                     <span >
-                                        price
+                                        Price
                                     </span>
                                     <span>
                                         Total
@@ -147,15 +158,15 @@
            </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End requirement section -->
 
 <!-- Start spending section -->
-    <section class="flex-contanier spending">
+    <!-- <section class="flex-contanier spending">
         <div class="container">
             <div class="spending-container">
                 <div class="heading center-heading">
-                    <h2>Currently spending <span id="totalPriceJS">£ 0</span></h2>
+                    <h2>Currently Spending <span id="totalPriceJS">£ 0</span></h2>
                 </div>
                 <div class="spending-list">
                     <div class="item  BronzePassJS">
@@ -233,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 <!-- End spending section -->
 
 <!-- Start right section -->
@@ -393,13 +404,13 @@
             <table>
                 <tr>
                     <th>Features</th>
-                    <th><p>Gold</p>
+                    <th><h3>Gold</h3>
                     <span>£50,000+</span>
                     </th>
-                    <th><p>Silver</p>
+                    <th><h3>Silver</h3>
                     <span>£20,000+</span>
                     </th>
-                    <th><p>Bronze</p>
+                    <th><h3>Bronze</h3>
                     <span>£10,000+</span>
                     </th>
                 <tr>
@@ -474,7 +485,7 @@
                     <p>The quality of training provided has been good with very good feedback from delegates. </p>
                     <p>They use good quality venues and think about meeting our needs in their selection. " The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection.</p>
                     <div class="buttons">
-                    <a class="btn-blue"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
+                    <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
                     </div>
             </div>
             <div class="booking-list">
@@ -515,7 +526,7 @@
 <!-- End knowledge section -->
 
 <!-- Start study section -->
-<section class="flex-container study">
+<!-- <section class="flex-container study">
     <div class="container">
         <div class="study-container">
             <div class="heading center-heading">
@@ -533,7 +544,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End study section -->
 
 
@@ -542,124 +553,6 @@
 @section('footerScripts')
 <script>
 var symbol = '£';
-		$(".quantityJS").on("change",function(){
-			var courseRow = $(this).closest(".coursedataJS");
-			var price = courseRow.find(".price").data("price");
-            console.log(price);
-			var quantity = $(this).val();
-            console.log(quantity);
-			var total = price*quantity;
-			courseRow.find(".total").html(symbol+total).data('price',total);
-			changeTotalValue(courseRow.closest('.panelJS'));
-		});
-
-		function changeTotalValue(panel)
-		{
-			var amount = 0;
-			var price = 0;
-			var course = 0;
-			panel.find(".coursedataJS").each(function(){
-				quantity = $(this).find(".quantityJS").val();
-				if(quantity > 0)
-				{
-					course++;
-					amount += +quantity;
-				}
-				price += $(this).find(".total").data("price");
-			});
-			panel.find(".panel-titleJS").find(".amount").html(amount).data("amount",amount).data("course",course);
-			panel.find(".panel-titleJS").find(".ks2").html(symbol+price).data("price",price);
-			changeFinalValue();
-		}
-
-		function changeFinalValue()
-		{
-			var course = 0;
-			var price = 0;
-			$(".panelJS .panel-titleJS").each(function(){
-				course += $(this).find(".amount").data('course');
-				price += $(this).find(".ks2").data("price");
-			});
-
-			$(".panel-footerJS .totalAmountJS").html(course);
-			$("#totalPriceJS").html(symbol+price);
-
-			updateDiscountCards(price);
-		}
-
-
-        function updateDiscountCards(price)
-		{
-			var bronze = $(".BronzePassJS");
-			var silver = $(".SilverPassJS");
-			var gold = $(".GoldPassJS");
-
-			// change spend more text(price) for all
-
-			bronze.find('.spendMoreJS').data(symbol+(10000-price));
-			silver.find('.spendMoreJS').data(symbol+(20000-price));
-			gold.find('.spendMoreJS').data(symbol+(50000-price));
-
-			// change all four amount
-			var passPrice = price-(price/10);
-         
-			passPrice = passPrice.toFixed(2);
-			
-			bronze.find('.passPriceJS').html(symbol+passPrice);
-			bronze.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			bronze.find('.remainingPriceJS').html(symbol+(10000-passPrice).toFixed(2));
-
-			passPrice = price-(price/4);
-			passPrice = passPrice.toFixed(2);
-			silver.find('.normalPriceJS').html(symbol+price);
-			silver.find('.passPriceJS').html(symbol+passPrice);
-			silver.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			silver.find('.remainingPriceJS').html(symbol+(20000-passPrice).toFixed(2));
-
-			passPrice = price-(price/2);
-			passPrice = passPrice.toFixed(2);
-			gold.find('.normalPriceJS').html(symbol+price);
-			gold.find('.passPriceJS').html(symbol+passPrice);
-			gold.find('.savingPriceJS').html(symbol+(price-passPrice).toFixed(2));
-			gold.find('.remainingPriceJS').html(symbol+(50000-passPrice).toFixed(2));
-
-			if(price < 10000)
-			{
-				// show spend more text for all
-				// opacity reset all
-
-				bronze.css("opacity",'1').find('.spendMoreJS').show();
-				silver.css("opacity",'1').find('.spendMoreJS').show();
-				gold.css("opacity",'1').find('.spendMoreJS').show();
-			}
-			else if(price < 20000)
-			{
-				// hide spend more text for bronze but rest show
-				// opacity for bronze
-
-				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
-				silver.css("opacity",'1').find('.spendMoreJS').show();
-				gold.css("opacity",'1').find('.spendMoreJS').show();
-			}
-			else if(price < 50000)
-			{
-				// hide spend more text all but gold
-				// opacity for all but gold
-
-				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
-				silver.css("opacity",'.5').find('.spendMoreJS').hide();
-				gold.css("opacity",'1').find('.spendMoreJS').show();
-			}
-			else {
-				// hide spend more text for all
-				// opacity for all
-
-				bronze.css("opacity",'.5').find('.spendMoreJS').hide();
-				silver.css("opacity",'.5').find('.spendMoreJS').hide();
-				gold.css("opacity",'1').find('.spendMoreJS').hide();
-			}
-			// spen more (h3 span)
-			// normalPriceJS,passPriceJS, savingPriceJS, remainingPriceJS
-		}
 </script>
+<script src="url('scripts/knowledgepass.js')"></script>
 @endsection

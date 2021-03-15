@@ -18,6 +18,7 @@ Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic
 Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
 Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
 Route::get('fetchapi/countryLocations','TestController@countryLocations'); /* To fetch only courses and related content*/ 
+Route::get('fetchapi/country','TestController@Country'); /* To fetch only courses and related content*/ 
 
 Route::get('match/topic', 'TestController@matchTopic');
 
@@ -95,9 +96,9 @@ Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@cu
 Route::get('/certification-programmes','CertificationController@index')->name('certification');
 Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
-// Route::get('/offer', function () {
-//     return view('offer');
-// });
+Route::get('/bundle-offer', function () {
+    return view('offer');
+});
 Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
@@ -176,9 +177,9 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/certification-programmes','CertificationController@index')->name('certification');
     Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
     
-    // Route::get('/offer', function () {
-    //     return view('offer');
-    // });
+    Route::get('/bundle-offer', function () {
+        return view('offer');
+    });
     
     Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
     Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-and-conditions');

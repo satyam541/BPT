@@ -16,24 +16,24 @@
     //End Fixed header 
     
 
-      //Start Smoothscroll
-        $('.smoothscroll').on('click', function (e) {
-            e.preventDefault();
-            var hash = $(this).data('href');
-            if (hash !== "") {
-                event.preventDefault();
-                var top = $(hash).offset().top;
-                var newtop = (top - 80);
-                window.location.hash = hash;
-                $('html, body').animate({
-                    scrollTop: newtop
-                }, 1200);
-            }
-        });
+    //Start Smoothscroll
+    $('.smoothscroll').on('click', function (e) {
+        e.preventDefault();
+        var hash = $(this).data('href');
+        if (hash !== "") {
+            event.preventDefault();
+            var top = $(hash).offset().top;
+            var newtop = (top - 80);
+            window.location.hash = hash;
+            $('html, body').animate({
+                scrollTop: newtop
+            }, 1200);
+        }
+    });
     //End Smoothscroll
     
-     //Start Toggle menu//
-     function toggleMenu() {
+    //Start Toggle menu//
+    function toggleMenu() {
         event.stopPropagation();
         $("#menuToggle").toggleClass('active');
     }
@@ -75,11 +75,13 @@
       $("#" + target).css("display", "flex");
       $(".tab-click").removeClass('active');
       $(this).addClass("active");
+      scrollToSpecificDiv("#tab-overview");
    });
  //End Delivery method script//
     
 //choose modes
 $('#chooseMode').on("click", function(){
+     $(this).toggleClass("active");
     $('.modes-list').toggleClass('modes-active');
 
 });
@@ -454,7 +456,8 @@ $('#scroll').click(function(){
     });
     //Start filters
     $('#filterTop').on("click", function(){
-        $('.exclude').toggleClass('modes-active');
+        $('.exclude').toggle();
+        $(this).toggleClass("active");
     });
     //End filters
     $(document).ready(function() {

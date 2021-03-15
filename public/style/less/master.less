@@ -122,18 +122,6 @@
         -moz-appearance: textfield;
     }
 
-    /* Chrome, Safari, Edge, Opera */
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    // end hide select arrow on IE
-    select::-ms-expand {
-        display: none;
-      }
-    // end hide select arrow on IE
-
     //Start header sticky 
     .sticky{
         position: fixed !important;
@@ -257,7 +245,7 @@
         margin-bottom: 1rem;
         width: 100%;
         position: relative;
-        padding-top: 1rem;
+        padding-top: .5rem;
         &::before{
             content: '';
             position: absolute;
@@ -401,6 +389,19 @@
         box-shadow: @shadowLight;
         background-color: @whiteColor;
         padding: 1.5rem;
+        
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        // end hide select arrow on IE
+        select::-ms-expand {
+            display: none;
+        }
+        // end hide select arrow on IE
         .heading{
             &::before{
                 content: none;
@@ -586,8 +587,6 @@
         margin-top: 1rem;
         ul {
             display: flex;
-            align-items: center;
-        
         }
         li {
             color: @whiteColor;
@@ -597,7 +596,7 @@
         .white,.black {
             width: 8px;
             height: 8px;
-            margin: 0 .4rem;
+            margin: .4rem .4rem 0;
         }
         .black {
             display: none;

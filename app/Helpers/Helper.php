@@ -301,7 +301,7 @@ if (!function_exists('encodeUrlSlug')) {
                 else if (Str::contains($input['type'], "incomplete"))
                     $JWT->make_order_enquiry($input, 10);
                 else if (Str::contains($input['type'], "knowledgepass"))
-                $JWT->make_order_enquiry($input, 73);
+                $JWT->make_enquiry($input, 73);
 
                 else
                     $JWT->make_enquiry($input);
@@ -355,5 +355,14 @@ if (!function_exists('unlinkedCertificationTopic')) {
     {
         $unlinkedCourse = CertificationTopic::whereDoesntHave('certification')->count();
         return $unlinkedCourse;
+    }
+}
+
+if (!function_exists('convertPrice')) {
+    function convertPrice($price)
+    {
+        $exchangerate = country()->exchange_rate;
+        $price = $price * $exchangerate;
+        return ceil(number_format($price,2,'.',''));
     }
 }

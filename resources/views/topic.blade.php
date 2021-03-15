@@ -64,9 +64,7 @@
 
             </div>
             <div class="courses-info">
-                <div class="heading">
                 <h2>{{$pageDetail->popular_courses['heading']->content}}</h2>
-                </div>
                 <span>
                     <img src="{{$pageDetail->popular_courses['heading']->getImagePath()}}" alt="{{$pageDetail->popular_courses['heading']->image_alt}}">
                 </span>
@@ -77,7 +75,7 @@
 <!-- End topic-courses section -->
 
 <!-- Start Foundation Section -->
-<section class="flex-container foundation">
+<section class="flex-container foundation topic-foundation">
     <div class="container">
         <div class="foundation-container">
             <div class="heading">
@@ -128,14 +126,14 @@
                 
                 <div class="tab-content tab-common" id="overview">
                     @if ($content->overview!=null)                        
-                    <div class="overview-content" id="showmorecontent">
+                    <div class="overview-content" id="overcontent">
                         <h2>Course Overview</h2>
                         
                         {!!$content->overview!!}
                         
                     </div>
                     <div class="buttons">
-                        <a href="#showmorecontent" class="btn-blue showmorecontent">
+                        <a href="#overcontent" class="btn-blue overcontent">
                             <span class="text">Show More</span>
                         </a>
                     </div>
@@ -143,7 +141,7 @@
                 </div>
                 <div class="tab-content tab-common" id="course">
                         @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                        
-                    <div class="overview-content" id="showmorecontent">
+                    <div class="overview-content" id="coursecontent">
                         <h2>Topic Content</h2>
                         <br>
                         @if ($content->summary!=null)
@@ -178,7 +176,7 @@
                     @endif
                     </div>
                     <div class="buttons">
-                        <a href="#showmorecontent" class="btn-blue showmorecontent">
+                        <a href="#coursecontent" class="btn-blue coursecontent">
                             <span class="text">Show More</span>
                         </a>
                     </div>
@@ -410,7 +408,7 @@
                         
                         <p>{!!$pageDetail->popular_location['popular']->content!!}</p>
                         <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-type="topic" data-course="{{$topic->name}}">
                             <img src="{{url('img/courses/learn.svg')}}" alt="learn">
                             Learn More
                         </a>
