@@ -2719,7 +2719,6 @@ select::-ms-expand {
     background-color: transparent;
     background-size: cover;
     position: relative;
-    align-items: center;
     z-index: 1;
     align-items: center;
   }
@@ -12734,7 +12733,7 @@ select::-ms-expand {
     top: 0;
     bottom: 0;
     margin: auto;
-    left: -8px;
+    left: -2px;
   }
   .topic-courses .course-name {
     flex-direction: row;
