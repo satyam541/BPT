@@ -9096,6 +9096,7 @@ select::-ms-expand {
 .training .online-block .exclude {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .training .add-foundation {
   display: flex;
@@ -9929,14 +9930,14 @@ select::-ms-expand {
   .training .name .buttons {
     flex-direction: row;
     margin-top: 0;
-    width: 48%;
+    width: 330px;
   }
   .training .name .buttons .btn-blue {
     margin-top: 0;
     margin-left: 1rem;
   }
   .training .course-name {
-    width: 50%;
+    width: calc(100% - 336px);
     justify-content: flex-start;
     text-align: left;
   }
@@ -10284,9 +10285,6 @@ select::-ms-expand {
   .training .add-foundation .foundation-content {
     margin-top: 0;
   }
-  .training .course-name {
-    width: 37%;
-  }
   .training .name {
     transform: translate(0px, -22px);
     width: 95%;
@@ -10313,9 +10311,6 @@ select::-ms-expand {
   .training .name::after {
     border-right: 17px solid transparent;
     right: -17px;
-  }
-  .training .name .buttons {
-    width: 54%;
   }
   .training .modes {
     background-color: #FFFFFF;
@@ -10554,12 +10549,6 @@ select::-ms-expand {
   }
   .training .name {
     width: 90%;
-  }
-  .training .name .buttons {
-    width: 42%;
-  }
-  .training .course-name {
-    width: 50%;
   }
   .training .date {
     width: 350px;
