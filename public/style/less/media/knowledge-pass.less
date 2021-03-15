@@ -112,7 +112,7 @@
         cursor: pointer;
         .image{
             position: absolute; 
-            right: 10px;
+            right: 20px;
             width: 28px;
             height: 28px;
             top: 0;
@@ -437,8 +437,8 @@
     // Start knowledge banner section //
         .knowledge-banner{
             background-image: url(../img/knowledge-pass/banner-left.png),url(../img/knowledge-pass/banner-right.png),@blueGradient;
-            background-size: 40%, 40% ,18%;
-            background-position: left,right, right;
+            background-size: contain , 50% 45%, 20% 100%;
+            background-position: left,center right 38%, right;
             background-repeat: no-repeat;
             p,h1{
                 color: @textColor;
@@ -723,7 +723,7 @@
 
 @media @size-xlll{
  .knowledge-banner{
-    background-size: 40%, 40% ,27%;
+    background-size: contain , 32% 70%, 26% 100%;
 
  }
 }
