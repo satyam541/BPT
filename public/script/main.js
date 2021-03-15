@@ -454,7 +454,8 @@ $('#scroll').click(function(){
     });
     //Start filters
     $('#filterTop').on("click", function(){
-        $('.exclude').toggleClass('modes-active');
+        $('.exclude').toggle();
+        $(this).toggleClass("active");
     });
     //End filters
     $(document).ready(function() {

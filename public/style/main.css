@@ -1235,7 +1235,6 @@ select::-ms-expand {
   .banner {
     padding: 3rem 2rem;
     padding-top: 6rem !important;
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7468,6 +7467,9 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.management .management-container .heading {
+  margin-bottom: 0;
+}
 .management .management-bundles {
   display: flex;
   flex-direction: column;
@@ -7481,12 +7483,13 @@ select::-ms-expand {
   padding: 1rem;
 }
 .management .bundle-info span {
-  width: 45%;
+  width: 48%;
   text-align: center;
   font-weight: bold;
 }
 .management h3 {
-  width: 42%;
+  width: 48%;
+  font-size: 18px;
 }
 .management ul {
   width: 100%;
@@ -7548,7 +7551,7 @@ select::-ms-expand {
 .new-bundle {
   padding: 3rem 1.5rem;
 }
-.new-bundle .new-bundle-container {
+.new-bundle .new-container {
   display: flex;
   flex-direction: column;
 }
@@ -7566,15 +7569,15 @@ select::-ms-expand {
   font-weight: bold;
   font-size: 16px;
 }
-.new-bundle .inform-us .inform-list {
+.new-bundle .inform-us .info-list {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .inform-us .inform-item {
+.new-bundle .inform-us .info-list {
   display: flex;
   margin-top: 0.7rem;
 }
-.new-bundle .inform-us .inform-item span {
+.new-bundle .inform-us .info-list span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7585,7 +7588,7 @@ select::-ms-expand {
   padding: 0.6rem;
   margin-right: 0.5rem;
 }
-.new-bundle .inform-us .inform-item span img {
+.new-bundle .inform-us .info-list span img {
   width: 100%;
   height: 100%;
 }
@@ -7593,7 +7596,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .inform-content {
+.new-bundle .info-content {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -7668,9 +7671,6 @@ select::-ms-expand {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .offer-banner {
-    padding-top: 1rem!important;
-  }
   .bundle {
     padding: 3rem 2rem;
   }
@@ -7733,7 +7733,7 @@ select::-ms-expand {
     margin: auto;
     margin-top: 2rem;
   }
-  .new-bundle .inform-us .inform-content {
+  .new-bundle .inform-us .info-content {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     background-color: #FFFFFF;
     position: absolute;
@@ -7743,7 +7743,7 @@ select::-ms-expand {
     padding: 1.5rem;
     width: 89%;
   }
-  .new-bundle .inform-us .inform-list {
+  .new-bundle .inform-us .info-list {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -7842,7 +7842,7 @@ select::-ms-expand {
     align-items: flex-end;
     margin-top: 0;
   }
-  .new-bundle .new-bundle-container {
+  .new-bundle .new-container {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -7851,7 +7851,7 @@ select::-ms-expand {
     width: 52%;
     margin: 0;
   }
-  .new-bundle .inform-us .inform-content {
+  .new-bundle .inform-us .info-content {
     width: 85%;
   }
   .new-bundle .latest-bundles {
@@ -8904,6 +8904,11 @@ select::-ms-expand {
   height: 15px;
   width: 15px;
   transform: rotate(88deg);
+  transition: 0.6s all;
+}
+.training .filter-top .active img {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .filter-top .buttons {
   margin-top: 0;
@@ -13144,16 +13149,29 @@ select::-ms-expand {
   font-size: 20px;
   margin-top: 0.5rem;
 }
-.policy p {
+.policy h2,
+.policy h4 {
   margin-top: 0.5rem;
 }
-.policy ul li {
+.policy p {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.policy ul,
+.policy ol {
+  padding: 0;
+}
+.policy ul li,
+.policy ol li {
   padding-left: 1.2rem;
   position: relative;
   margin-top: 0.5rem;
   z-index: 1;
 }
-.policy ul li::before {
+.policy ul li::before,
+.policy ol li::before {
   content: '';
   position: absolute;
   background-image: url(../img/privacy-policy/circle.svg);
@@ -13164,6 +13182,10 @@ select::-ms-expand {
   left: 0;
   top: 3px;
   z-index: -1;
+}
+.policy a {
+  color: #1C2848;
+  font-weight: 600;
 }
 @media (min-width : 768px) {
   .privacy-banner .search {
