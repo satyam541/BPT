@@ -41,7 +41,7 @@
                         </span>
                         <div class="designation">
                             <h3>{!!$testimonial->author!!}</h3>
-                            <p>{!!$testimonial->designation!!}</p>
+                            <!-- <p>{!!$testimonial->designation!!}</p> -->
                         </div>
                     </div>
                 </div>
