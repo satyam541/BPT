@@ -219,7 +219,7 @@ select::-ms-expand {
   margin-bottom: 1rem;
   width: 100%;
   position: relative;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .heading::before {
   content: '';
@@ -508,7 +508,6 @@ select::-ms-expand {
 }
 .breadcrums ul {
   display: flex;
-  align-items: center;
 }
 .breadcrums li {
   color: #FFFFFF;
@@ -518,7 +517,7 @@ select::-ms-expand {
 .breadcrums .black {
   width: 8px;
   height: 8px;
-  margin: 0 0.4rem;
+  margin: 0.4rem 0.4rem 0;
 }
 .breadcrums .black {
   display: none;
@@ -6452,10 +6451,12 @@ select::-ms-expand {
   .ideal .ideal-container {
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
   }
   .ideal .clients-inner {
     width: 47%;
     position: relative;
+    height: 300px;
   }
   .ideal .image {
     width: 90px;
@@ -6703,7 +6704,7 @@ select::-ms-expand {
   transform: rotateY(180deg);
 }
 .blog-intro h3 {
-  margin: 1rem 0;
+  margin-top: 1rem;
 }
 .blog-intro .content-right {
   display: flex;
@@ -6853,7 +6854,7 @@ select::-ms-expand {
 }
 .blog-intro .blog-question .email {
   margin-top: 0.5rem;
-  font-size: 11px;
+  font-size: 12px;
 }
 .blog-intro .blog-question .email::before {
   content: none;
