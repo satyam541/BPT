@@ -8900,6 +8900,11 @@ select::-ms-expand {
   height: 15px;
   width: 15px;
   transform: rotate(88deg);
+  transition: 0.6s all;
+}
+.training .filter-top .active img {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .filter-top .buttons {
   margin-top: 0;
