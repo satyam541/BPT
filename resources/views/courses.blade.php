@@ -237,7 +237,7 @@
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
                 <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
-                    <img src="{{ url('img/master/arrow.svg') }}" alt="arrow">Have a Question?
+                    <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>
         </div>
@@ -252,8 +252,8 @@
             <div class="heading center-heading">
                 <h2>{!! $selectedCourse->name !!} <span>Training Calender</span></h2>
             </div>
-            <div class="filter-top" id="filterTop">
-                <div class="heading">
+            <div class="filter-top" >
+                <div class="heading" id="filterTop">
                     <h2>Filters</h2>
                     <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
                 </div>
