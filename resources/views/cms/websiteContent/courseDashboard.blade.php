@@ -196,7 +196,7 @@
                                                             dates="{{ $date->toJson() }}" loc="{{ $key }}"
                                                             onclick="displaydates(this);" data-target="#modal-info"><i
                                                                 class="far fa-eye"></i></td>
-                                                    <td>{{ $course->onlinePrice->price ?? '' }}</td>
+                                                    <td>{{ optional($course->onlinePrice)->price }}</td>
                                                     <td> </td>
 
 

@@ -97,15 +97,6 @@ input[type="checkbox"] {
 input[type=number] {
   -moz-appearance: textfield;
 }
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-select::-ms-expand {
-  display: none;
-}
 .sticky {
   position: fixed !important;
   top: 0 !important;
@@ -345,6 +336,15 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
   padding: 1.5rem;
+  /* Chrome, Safari, Edge, Opera */
+}
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form select::-ms-expand {
+  display: none;
 }
 .form .heading::before {
   content: none;
@@ -8444,6 +8444,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.course-intro .intro-container p a {
+  color: #0064D8;
+  font-weight: 600;
+}
 .course-intro p {
   margin-bottom: 1rem;
 }
@@ -8612,6 +8616,7 @@ select::-ms-expand {
 }
 .foundation .tab-common ul li {
   display: flex;
+  flex-direction: column;
   padding-left: 1.4rem;
   position: relative;
   z-index: 1;
@@ -8987,6 +8992,13 @@ select::-ms-expand {
 .training .modes {
   display: flex;
   flex-direction: column;
+}
+.training .modes .heading .mode-icon {
+  transition: 0.6s all;
+}
+.training .modes .active .mode-icon {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .modes-list {
   display: none;
@@ -11151,7 +11163,7 @@ select::-ms-expand {
   background-color: #FFFFFF;
   border-radius: 100px;
   justify-content: space-between;
-  border: 2px solid white;
+  border: 2px solid #FFFFFF;
   padding: 0;
   margin-top: 1rem;
 }
@@ -11192,7 +11204,6 @@ select::-ms-expand {
 }
 .most-search .search-info span {
   display: flex;
-  align-items: center;
   color: #C0C0C0;
   font-size: 13px;
 }
@@ -11271,8 +11282,6 @@ select::-ms-expand {
   margin-bottom: 0.2rem;
 }
 .result .filter li {
-  display: flex;
-  align-items: center;
   margin-top: 0.5rem;
 }
 .result .filter input {
@@ -12326,7 +12335,10 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
-.foundation .tab-common {
+.topic-foundation {
+  padding-top: 0;
+}
+.topic-foundation .tab-common {
   border-radius: 7px;
 }
 .topic-delivery {
@@ -12782,6 +12794,9 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
   }
+  .topic-foundation {
+    padding-top: 0;
+  }
   .experiences {
     padding: 3rem 2rem;
     background-image: url(../img/topic/experience-bg.png);
@@ -12948,6 +12963,12 @@ select::-ms-expand {
   .topic-courses .course-name {
     width: 100%;
     margin-left: 2.5rem;
+  }
+  .topic-foundation {
+    padding-top: 3rem;
+    background-image: url(../img/topic/foundation-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .topic-choose {
     background-image: url(../img/topic/choose-bg.png);

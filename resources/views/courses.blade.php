@@ -309,7 +309,7 @@
                     <div class="modes">
                         <div class="heading" id="chooseMode">
                             <h2>Choose Mode <span>of Training</span></h2>
-                            <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow">
+                            <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="arrow" class="mode-icon">
                         </div>
                         <div class="modes-list" id="scheduleLinks">
                             <a href="#classroom-booking" class="methods" id="classroom" data-target="classroom">
@@ -574,7 +574,7 @@
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                                         <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                                    <input type="text" name="f-name" id="f-name" placeholder="First Name*"
+                                    <input type="text" name="name" id="f-name" placeholder="First Name*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container">
@@ -947,7 +947,7 @@ function scrollToSpecificDiv(selector) {
     if ($(selector).length > 0) {
         var selectorTop = $(selector).offset().top;
         var navbarHeight =  $(".navbar.sticky").height();
-        var filterHeight = $("#filterTop").outerHeight(true);
+        var filterHeight = $(".filter-top").outerHeight(true);
         // navbar is not sticky on page reload before scroll.
         console.log("navbar height before : "+ navbarHeight);
         if(navbarHeight == undefined)
