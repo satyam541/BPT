@@ -183,6 +183,7 @@
             background-color: transparent;
             background-size: cover;
             position: relative;
+            align-items: center;
             z-index: 1;
             &::before, &::after{
                 content: '';
@@ -220,14 +221,20 @@
                 background-image: url(../img/home/onsite-bg.png);
 
             }
+            p{
+                text-align: center;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
             &:hover{
-                align-items: center;
                 .overlay{
                     background: @blueGradient;
                 }
                 p{
-                    text-align: center;
-                    transition: 1s all;
+                    -webkit-line-clamp: inherit;
+                    overflow: inherit;
                 }
                 img{
                     transition: 1s all;
@@ -511,10 +518,6 @@
         }
         .item{
             width: 24%;
-            height: 340px;
-            p{
-                min-height: 132px;
-            }
         }
     } 
     // End delivey section
@@ -683,10 +686,6 @@
         padding: @sectionPadding-xl;
         .item{
             width: 22%;
-            height: 320px;
-            p{
-                min-height: 110px;
-            }
         }
         h3{
             font-size: 18px;
@@ -713,11 +712,6 @@
         .facts-list{
             width: 62%;
 
-        }
-        .item{
-            p{
-                min-height: auto;
-            }
         }
     } 
     // End facts section //

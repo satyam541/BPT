@@ -32,10 +32,9 @@ class CountryController extends Controller
         
         $this->authorize('view', new Country());
         $countries= Country::all();
-        $checked = null;
-        // dd($request->all());
-        if(isset($request->popular)){
-            $topics = Topic::whereHas('popular')->get();
+        $checked=null;
+        if(isset($request->active)){
+            $countries = Country::where('active',1)->get();
             $checked='checked';
         }
         return view('cms.country.countryList',compact('countries','checked'));

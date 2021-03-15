@@ -12,6 +12,7 @@ class Location extends Model
     use SoftDeletes;
     protected $table   = 'location';
     protected $guarded = array('id');
+    public $image_path = "/uploads/location/";
     protected $appends = ['url'];
     
     protected static function boot()
@@ -92,5 +93,15 @@ class Location extends Model
             $url = country()->country_code."/".$url;
         }
         return url($url);
+    }
+
+    public function getImagePath()
+    {// check file exist then return default image.
+        $imageLink = url($this->image_path.$this->image);
+        if (file_exists(public_path($this->image_path.$this->image))) {
+            return $imageLink;
+        } else {
+            return url('images/default.png');
+        }  
     }
 }
