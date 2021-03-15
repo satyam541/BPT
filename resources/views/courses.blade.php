@@ -246,7 +246,7 @@
 <!-- End Unable Section -->
 
 <!-- Start Training Section -->
-<section class="flex-container training" id="datesprices">
+<section class="flex-container training" >
     <div class="container">
         <div class="training-container">
             <div class="heading center-heading">
@@ -344,7 +344,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="calender-right">
+                <div class="calender-right" id="datesprices">
                     <div id="classroom-block">
                         @if (!$schedules->isEmpty())
                         @foreach ($schedules as $schedule)
@@ -937,18 +937,30 @@
         }
     }
 
-    function scrollToSpecificDiv(selector) {
-        if ($(selector).length > 0) {
-            var selectorTop = $(selector).offset().top;
-            console.log(selectorTop);
-            $('html,body').animate({
-                scrollTop: selectorTop
-            }, 1000);
-        } else {
-            console.log('scrolltop not found');
+function scrollToSpecificDiv(selector) {
+    if ($(selector).length > 0) {
+        var selectorTop = $(selector).offset().top;
+        var navbarHeight =  $(".navbar.sticky").height();
+        var filterHeight = $("#filterTop").outerHeight(true);
+        // navbar is not sticky on page reload before scroll.
+        console.log("navbar height before : "+ navbarHeight);
+        if(navbarHeight == undefined)
+        {
+            if(selector == "#datesprices"){
+                navbarHeight = 64;
+            }
+            else{
+                navbarHeight = 0;
+            }
         }
+        selectorTop -=  (navbarHeight + filterHeight);
+        $('html,body').animate({
+            scrollTop: selectorTop
+        }, 1000);
+    } else {
+        console.log('scrolltop not found');
     }
-
+}
 
 </script>
 
