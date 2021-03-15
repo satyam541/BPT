@@ -21,7 +21,6 @@
     // End topic-banner section //
 
     // Start topic-courses section //
-
     .topic-courses{
         padding: @sectionPadding-md;
 
@@ -29,6 +28,9 @@
             width: 53%;
             .heading{
                 justify-content: flex-start;
+                &::before {
+                    margin: 0;
+                }
                 h2{
                     text-align: left;
                 }
@@ -74,11 +76,11 @@
               height: fit-content;
         }
         .courses-container{
-            display: flex;
+            flex-direction: row;
             justify-content: space-between;
         }
     }
-// End topic-courses section //
+    // End topic-courses section //
 
     // Start experiences section //
     .experiences{
@@ -127,7 +129,6 @@
     }
     // End topic-delivery section //
 
-
     // Start topic-choose section //
     .topic-choose{
         padding: @sectionPadding-md;
@@ -171,26 +172,26 @@
     }
     // End topic-choose section //
 
-
     // Start explore section //
     .explore{
         padding: @sectionPadding-md;
 
         .explore-list{
             flex-direction: row;
-            justify-content: space-between;
             flex-wrap: wrap;
         }
         .explore-item{
-            width: 45%;
+            width: 47%;
+            margin-right: 2rem;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
             a{
                 min-height: 48px;
             }
         }
     }
     // End explore section //
-
-
 
     // Start goals section //
     .goals{
@@ -266,7 +267,6 @@
     // end topic-banner section //
 
     // Start topic-courses section //
-
     .topic-courses{
         background-image: url(../img/topic/courses-bg.png);
         background-size: 100% 30%;
@@ -276,7 +276,7 @@
               width: 100%;
         }
     }
-// End topic-courses section //
+    // End topic-courses section //
 
     // Start topic-choose section //
     .topic-choose{
@@ -299,36 +299,31 @@
     }
     // End topic-choose section //
 
-
     // Start topic-delivery section //
-        .topic-delivery{
-            background-image: url(../img/topic/delivey-bg.png);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+    .topic-delivery{
+        background-image: url(../img/topic/delivey-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
 
-                p,h2{
-                    text-align: left;
+            p,h2{
+                text-align: left;
+            }
+
+        .delivery-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .delivery-content{
+                width: 37%;
+                .heading{
+                    align-items: flex-start;
                 }
-
-            .delivery-container{
-                display: flex;
-                justify-content: space-between;
-            }
-            .delivery-content{
-                display: flex;
-                flex-direction: column;
-                 width: 37%;
-                 .heading{
-                     align-items: flex-start;
-                 }
-            }
-            .delivery-list{
-                justify-content: space-between;
-                    width: 61%;
-                    align-items: center;
-                .item{
+        }
+        .delivery-list{
+            width: 61%;
+            align-items: center;
+            .item{
                 width: 24%;
-                justify-content: center;
                 margin-top: 0;
                 padding-left: 0.3rem;
                 border-left: 1px solid #C0C0C0;
@@ -337,9 +332,9 @@
                     border-left: none;
                     padding-left: 0;
                 }
-                }
             }
         }
+    }
     // End topic-delivery section//
 
     // Start experiences section //
@@ -353,11 +348,19 @@
     // Start explore section
     .explore{
         .explore-item{
-            width: 30%;
+            width: 31%;
+            &:nth-child(even) {
+                margin-right: 2rem;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:nth-child(3), &:nth-child(6) {
+                margin-right: 0;
+            }
         }
     }
     // End explore section
-
 
     // Start goal section //
     .goals{
@@ -419,9 +422,8 @@
     }
     // End .topic-banner section //
 
-       // Start topic-courses section //
-
-       .topic-courses{
+    // Start topic-courses section //
+    .topic-courses{
            padding: @sectionPadding-xl;
         .explore-courses{
             width: 49%;
@@ -441,21 +443,21 @@
             }
         }
     }
-// End topic-courses section //
+    // End topic-courses section //
 
     // Start topic-delivery section//
-        .topic-delivery{
-            padding: @sectionPadding-xl;
-            .delivery-content{
-                width: 45%;
-                p{
-                    font-size: 13px;
-                }
-            }
-            .delivery-list{
-                width: 55%;
+    .topic-delivery{
+        padding: @sectionPadding-xl;
+        .delivery-content{
+            width: 45%;
+            p{
+                font-size: 13px;
             }
         }
+        .delivery-list{
+            width: 55%;
+        }
+    }
     // End topic-delivery section//
 
     // Start topic-choose section //

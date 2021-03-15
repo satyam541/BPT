@@ -38,18 +38,19 @@
                 <div class="popular">
                   Only Active
                 </div>
-              <form action="{{Route('countryList')}}" method="get">
+                <form action="{{Route('countryList')}}" method="get">
                                         
-                <div class="onoffswitch">
-                <input type="checkbox" name="active" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="is-active" tabindex="0">
-                <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                </label>
-                </div>
-            
-              <input type="submit" name="submit" id="submit" style="visibility: hidden">
-            </form>
+                  <div class="onoffswitch">
+                  <input type="checkbox" name="active" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  
+                  </label>
+                  
+              </div>
+                <input type="submit" name="submit" id="submit" style="visibility: hidden">
+              </form>
               </div>
             </div>
 
@@ -114,7 +115,7 @@
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
-            $('#is-active').change(function(){
+            $('#myonoffswitch').change(function(){
               $('#submit').click();
             });    
 

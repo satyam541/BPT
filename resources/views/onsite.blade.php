@@ -68,7 +68,7 @@
                     <div class="input-container">
                         <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                             <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                        <input type="text" name="f-name" id="f-name" placeholder="Name*" autocomplete="off">
+                        <input type="text" name="name" id="f-name" placeholder="Name*" autocomplete="off">
                     </div>
                     <div class="input-container">
                         <span><img src="{{url('img/master/email-white.svg')}}" alt="email" class="black">
@@ -84,7 +84,7 @@
                             <span class="prefix"></span>
                             <input type="number" class="telephone" placeholder="Phone Number*">
                             <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                <input type="number" name="Phone" class="phonenumber">
+                                <input type="number" name="phone" class="phonenumber">
                             </div>
                         </div>
                     </div>
