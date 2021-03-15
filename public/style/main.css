@@ -11128,7 +11128,7 @@ select::-ms-expand {
   background-color: #FFFFFF;
   border-radius: 100px;
   justify-content: space-between;
-  border: 2px solid white;
+  border: 2px solid #FFFFFF;
   padding: 0;
   margin-top: 1rem;
 }
@@ -11169,7 +11169,6 @@ select::-ms-expand {
 }
 .most-search .search-info span {
   display: flex;
-  align-items: center;
   color: #C0C0C0;
   font-size: 13px;
 }
@@ -11248,8 +11247,6 @@ select::-ms-expand {
   margin-bottom: 0.2rem;
 }
 .result .filter li {
-  display: flex;
-  align-items: center;
   margin-top: 0.5rem;
 }
 .result .filter input {
@@ -12303,7 +12300,10 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
-.foundation .tab-common {
+.topic-foundation {
+  padding-top: 0;
+}
+.topic-foundation .tab-common {
   border-radius: 7px;
 }
 .topic-delivery {
@@ -12759,6 +12759,9 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
   }
+  .topic-foundation {
+    padding-top: 0;
+  }
   .experiences {
     padding: 3rem 2rem;
     background-image: url(../img/topic/experience-bg.png);
@@ -12926,7 +12929,7 @@ select::-ms-expand {
     width: 100%;
     margin-left: 2.5rem;
   }
-  .foundation {
+  .topic-foundation {
     padding-top: 3rem;
     background-image: url(../img/topic/foundation-bg.png);
     background-repeat: no-repeat;
