@@ -84,7 +84,7 @@
                             <span class="prefix"></span>
                             <input type="number" class="telephone" placeholder="Phone Number*">
                             <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                <input type="number" name="phone" class="phonenumber">
+                                <input type="text" name="phone" class="phonenumber" tabindex="-1">
                             </div>
                         </div>
                     </div>
