@@ -292,7 +292,7 @@
                     </div>
                     <div class="select-dropdown">
                         <select name="deliveryMethod">
-                            <option value="">Select a delivery format:</option>
+                            <option value="">Select a Delivery Format:</option>
                             <option value="#virtual-booking">Virtual</option>
                             <option value="#classroom-booking">Classroom</option>
                             <option value="#online-booking">Online</option>
@@ -912,6 +912,7 @@
 
     function openSpecificDeliveryMethod(method) {
         method = method.replace(/(?![a-z0-9-])./gi, "");
+        $("#scheduleLinks").addClass("modes-active");
         switch (method) {
             case 'classroom-booking':
                 displaySchedules('classroom');
