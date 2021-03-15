@@ -72,7 +72,7 @@
                         </a>
                     </div>  
                 </div>
-            </div>
+            </div>  
 
             </div>
             <div class="content-right">
