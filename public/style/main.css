@@ -219,7 +219,7 @@ select::-ms-expand {
   margin-bottom: 1rem;
   width: 100%;
   position: relative;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .heading::before {
   content: '';
@@ -508,7 +508,6 @@ select::-ms-expand {
 }
 .breadcrums ul {
   display: flex;
-  align-items: center;
 }
 .breadcrums li {
   color: #FFFFFF;
@@ -518,7 +517,7 @@ select::-ms-expand {
 .breadcrums .black {
   width: 8px;
   height: 8px;
-  margin: 0 0.4rem;
+  margin: 0.4rem 0.4rem 0;
 }
 .breadcrums .black {
   display: none;
@@ -6216,6 +6215,7 @@ select::-ms-expand {
 }
 .our-blog .our-info .designation {
   width: 45%;
+  text-align: right;
 }
 .our-blog .dates {
   display: none;
@@ -6454,10 +6454,12 @@ select::-ms-expand {
   .ideal .ideal-container {
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
   }
   .ideal .clients-inner {
     width: 47%;
     position: relative;
+    height: 300px;
   }
   .ideal .image {
     width: 90px;
@@ -6603,7 +6605,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .blog-intro .detail p img {
-  width: 30px;
+  width: 30px!important;
   margin-right: 0.5rem;
 }
 .blog-intro .intro-detail {
@@ -6705,7 +6707,7 @@ select::-ms-expand {
   transform: rotateY(180deg);
 }
 .blog-intro h3 {
-  margin: 1rem 0;
+  margin-top: 1rem;
 }
 .blog-intro .content-right {
   display: flex;
@@ -6855,7 +6857,7 @@ select::-ms-expand {
 }
 .blog-intro .blog-question .email {
   margin-top: 0.5rem;
-  font-size: 11px;
+  font-size: 12px;
 }
 .blog-intro .blog-question .email::before {
   content: none;
@@ -6869,6 +6871,7 @@ select::-ms-expand {
   flex-direction: column;
   padding: 1rem;
   font-size: 15px;
+  justify-content: space-between;
   text-align: center;
   font-weight: bold;
   width: 48%;
@@ -6931,9 +6934,6 @@ select::-ms-expand {
   }
   .blog-intro .content-left {
     width: 58%;
-  }
-  .blog-intro .content-left span {
-    display: flex;
   }
   .blog-intro .content-left span img {
     height: auto;
@@ -8432,6 +8432,7 @@ select::-ms-expand {
 }
 .courses-banner .breadcrums {
   margin-bottom: 1rem;
+  width: 100%;
 }
 .courses-banner .breadcrums .black {
   display: none;
@@ -8911,6 +8912,9 @@ select::-ms-expand {
   width: 15px;
   transform: rotate(88deg);
 }
+.training .filter-top .buttons {
+  margin-top: 0;
+}
 .training .form {
   display: none;
   flex-direction: column;
@@ -8925,7 +8929,7 @@ select::-ms-expand {
   padding: 0;
 }
 .training .select-dropdown {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   width: 100%;
 }
 .training select {
@@ -9597,12 +9601,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5em;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1.5rem;
-  width: 272px;
-  align-self: center;
 }
 .skill .skill-content:first-child {
   margin-top: 1rem;
@@ -9613,6 +9615,17 @@ select::-ms-expand {
 }
 .skill .skill-content p {
   text-align: center;
+}
+.skill .skill-content:hover {
+  background-image: linear-gradient(#0064D8, #1C2848);
+}
+.skill .skill-content:hover h3,
+.skill .skill-content:hover p {
+  color: #FFFFFF;
+}
+.skill .skill-content:hover .buttons .btn-blue:hover::before,
+.skill .skill-content:hover .buttons .btn-blue:hover::after {
+  content: none;
 }
 .related {
   padding: 3rem 1.5rem;
@@ -9878,7 +9891,6 @@ select::-ms-expand {
   }
   .training .select-dropdown {
     width: 40%;
-    margin-bottom: 0;
     padding-bottom: 0;
   }
   .training select {
@@ -9922,7 +9934,7 @@ select::-ms-expand {
   .training .name .buttons {
     flex-direction: row;
     margin-top: 0;
-    width: 50%;
+    width: 48%;
   }
   .training .name .buttons .btn-blue {
     margin-top: 0;
@@ -9963,7 +9975,7 @@ select::-ms-expand {
     width: 27%;
   }
   .training .rate {
-    width: 16%;
+    width: 17%;
   }
   .training .rate h3 {
     margin: 0rem 0 0.5rem;
@@ -10064,7 +10076,7 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .skill .skill-content {
-    width: 46%;
+    width: 47%;
     margin-top: 1rem;
   }
   .skill .skill-content p {
@@ -10476,7 +10488,7 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .popular-location .popular-content {
-    width: 40%;
+    width: 42%;
     align-self: flex-start;
   }
   .popular-location .popular-content::before {
@@ -10486,7 +10498,7 @@ select::-ms-expand {
   }
   .popular-location .location-content {
     margin-top: 0;
-    width: 60%;
+    width: 58%;
   }
 }
 @media (min-width : 1366px) {
@@ -10549,7 +10561,7 @@ select::-ms-expand {
     margin-top: 2rem;
   }
   .training .rate {
-    width: 13%;
+    width: 14%;
   }
   .training .online-block {
     align-items: flex-start;
