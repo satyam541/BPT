@@ -357,3 +357,12 @@ if (!function_exists('unlinkedCertificationTopic')) {
         return $unlinkedCourse;
     }
 }
+
+if (!function_exists('convertPrice')) {
+    function convertPrice($price)
+    {
+        $exchangerate = country()->exchange_rate;
+        $price = $price * $exchangerate;
+        return ceil(number_format($price,2,'.',''));
+    }
+}
