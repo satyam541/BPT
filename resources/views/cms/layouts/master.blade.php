@@ -664,7 +664,8 @@
                                                       'courseTrashList',
                                                       'onlineCourseTrash',
                                                       'roleTrashList',
-                                                      'addonTrashList'
+                                                      'addonTrashList',
+                                                      'urlredirectTrash'
                                                       ]))
           class="nav-item has-treeview menu-open"
           @else
@@ -694,6 +695,14 @@
                   </a>
                   @endcan
                 </li>
+                <li class="nav-item">
+                  @can('view', new App\Models\Country())
+                    <a href="{{Route('urlredirectTrash')}}" @if(Route::currentRouteName()=='urlredirectTrash')class="nav-link active" @else class="nav-link" @endif>
+                      <i class="nav-icon far fa-circle "></i>
+                      <p>Url Redirect List</p>
+                    </a>
+                    @endcan
+                  </li>
               <li class="nav-item">
               @can('view', new App\Models\Country())
                 <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>

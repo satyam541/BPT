@@ -158,10 +158,11 @@
 
                     <div class="form-group">
                         {{Form::label('courseId','Course')}}
-                        <select class="form-control selectJS" id="coursesSelect" tabindex="-1" name="courseId" required="true" title="Please Select Course">
+                        <select class="form-control selectJS" id="coursesSelect" tabindex="-1" name="courseId" required="true">
                                 
                         @foreach($courses as $course)
                         
+                            <option value=""></option>
                             <option value="{{$course->id}}">{{$course->name}}</option>
                         @endforeach
                         </select>
@@ -169,9 +170,10 @@
 
                     <div class="form-group">
                         {{Form::label('country','Country')}}
-                        <select class="form-control selectJS" id="countrySelect" tabindex="-1" name="country" required="true" title="Please Select Country">
+                        <select class="form-control selectJS" id="countrySelect" tabindex="-1" name="country" required="true">
                             
                         @foreach($countries as $country)
+                        <option value=""></option>
                         <option value="{{ $country->id }}">{{$country->name}}</option>
                         @endforeach
                         </select>
@@ -184,7 +186,7 @@
 
                     <div class="form-group" id="events" style="display: none;">
                         {{Form::label('events','Events')}}
-                        <select class="form-control" id="eventsGet" name="events" >
+                        <select class="form-control selectJS" id="eventsGet" name="events" >
                         </select>
                     </div>
 
@@ -201,7 +203,8 @@
                     <div class="form-group" >
                         {{Form::label('currency','Currency')}}
                         
-                        <select class="form-control" name="currency" required="true" id="currency">
+                        <select class="form-control selectJS" name="currency" required="true" id="currency">
+                            <option value=""></option>
                             <option value="GBP">GBP</option>
                             <option value="AED">AED</option>
                             <option value="USD">USD</option>
@@ -448,25 +451,25 @@ function updateVatAmount()
 
 function getSchedule(locationName , countryId , courseId ) {
 
-    if( (courseId == '' ) || (courseId == undefined) ) {
+    // if( (courseId == '' ) || (courseId == undefined) ) {
         
-        alert('Please Select Course');
-        return false;
+    //     alert('Please Select Course');
+    //     return false;
             
-    }
-    else if( (countryId == '' ) || (countryId == undefined) ) {
+    // }
+    // else if( (countryId == '' ) || (countryId == undefined) ) {
         
-        alert('Please Select Country');
-        return false;
+    //     alert('Please Select Country');
+    //     return false;
             
-    } 
-    else if( (locationName == '') || (locationName == undefined) ) {
+    // } 
+    // else if( (locationName == '') || (locationName == undefined) ) {
         
-        alert('Please Select Location');
-        return false;
+    //     alert('Please Select Location');
+    //     return false;
         
-    }
-    else {
+    // }
+    // else {
         
         $.ajax({
             method: "POST",
@@ -511,7 +514,7 @@ function getSchedule(locationName , countryId , courseId ) {
             }
         });
         
-    }
+    // }
 
 }
 

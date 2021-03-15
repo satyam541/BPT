@@ -16,24 +16,24 @@
     //End Fixed header 
     
 
-      //Start Smoothscroll
-        $('.smoothscroll').on('click', function (e) {
-            e.preventDefault();
-            var hash = $(this).data('href');
-            if (hash !== "") {
-                event.preventDefault();
-                var top = $(hash).offset().top;
-                var newtop = (top - 80);
-                window.location.hash = hash;
-                $('html, body').animate({
-                    scrollTop: newtop
-                }, 1200);
-            }
-        });
+    //Start Smoothscroll
+    $('.smoothscroll').on('click', function (e) {
+        e.preventDefault();
+        var hash = $(this).data('href');
+        if (hash !== "") {
+            event.preventDefault();
+            var top = $(hash).offset().top;
+            var newtop = (top - 80);
+            window.location.hash = hash;
+            $('html, body').animate({
+                scrollTop: newtop
+            }, 1200);
+        }
+    });
     //End Smoothscroll
     
-     //Start Toggle menu//
-     function toggleMenu() {
+    //Start Toggle menu//
+    function toggleMenu() {
         event.stopPropagation();
         $("#menuToggle").toggleClass('active');
     }
