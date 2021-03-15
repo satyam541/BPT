@@ -1235,7 +1235,6 @@ select::-ms-expand {
   .banner {
     padding: 3rem 2rem;
     padding-top: 6rem !important;
-    position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7668,9 +7667,6 @@ select::-ms-expand {
   height: 100%;
 }
 @media (min-width : 768px) {
-  .offer-banner {
-    padding-top: 1rem!important;
-  }
   .bundle {
     padding: 3rem 2rem;
   }
@@ -12733,7 +12729,7 @@ select::-ms-expand {
     top: 0;
     bottom: 0;
     margin: auto;
-    left: -8px;
+    left: -2px;
   }
   .topic-courses .course-name {
     flex-direction: row;
