@@ -3255,7 +3255,7 @@ select::-ms-expand {
 .contact .contact-list .item .item-info {
   display: flex;
   flex-direction: column;
-  width: 82%;
+  width: 83%;
 }
 .contact .social {
   display: flex;
@@ -3698,7 +3698,7 @@ select::-ms-expand {
     width: 28%;
   }
   .information p {
-    min-height: 105px;
+    min-height: 104px;
   }
   .locate {
     padding: 4rem 0rem;
