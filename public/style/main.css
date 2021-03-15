@@ -13683,7 +13683,7 @@ input[type=number] {
   }
   .requirement .course-name .image {
     position: absolute;
-    right: 10px;
+    right: 20px;
     width: 28px;
     height: 28px;
     top: 0;
@@ -13974,8 +13974,8 @@ input[type=number] {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-left.png), url(../img/knowledge-pass/banner-right.png), linear-gradient(#0064D8, #1C2848);
-    background-size: 40%, 40% ,18%;
-    background-position: left,right, right;
+    background-size: contain , 50% 45%, 20% 100%;
+    background-position: left,center right 38%, right;
     background-repeat: no-repeat;
   }
   .knowledge-banner p,
@@ -14172,7 +14172,7 @@ input[type=number] {
 }
 @media (min-width : 1600px) {
   .knowledge-banner {
-    background-size: 40%, 40% ,27%;
+    background-size: contain , 32% 70%, 26% 100%;
   }
 }
 .thanks-banner {

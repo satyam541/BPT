@@ -9,7 +9,7 @@
             <div class="banner-container">
 
               <div class="banner-content">
-                  
+
               <h1>Knowledge Pass</h1>
                 <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
                 <div class="breadcrums">
@@ -69,7 +69,7 @@
 
 
 <!-- Start requirement section -->
-<section class="flex-container requirement">
+<!-- <section class="flex-container requirement">
     <div class="container">
         <div class="requirement-container">
             <div class="heading center-heading white-heading">
@@ -158,11 +158,11 @@
            </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End requirement section -->
 
 <!-- Start spending section -->
-    <section class="flex-contanier spending">
+    <!-- <section class="flex-contanier spending">
         <div class="container">
             <div class="spending-container">
                 <div class="heading center-heading">
@@ -244,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 <!-- End spending section -->
 
 <!-- Start right section -->
@@ -526,7 +526,7 @@
 <!-- End knowledge section -->
 
 <!-- Start study section -->
-<section class="flex-container study">
+<!-- <section class="flex-container study">
     <div class="container">
         <div class="study-container">
             <div class="heading center-heading">
@@ -544,7 +544,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End study section -->
 
 
