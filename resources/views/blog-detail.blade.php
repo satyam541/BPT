@@ -12,10 +12,12 @@
             <div class="breadcrums">
                 <ul>
                     <li><a href="{{route('home')}}">Home</a></li>
+                    <li>
                     <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                     <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                    </li>
                     <li><a href="{{route('blog')}}">Blog</a></li>
-                    <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
+                    <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white"></li>
                     <li><a href="">{{$blog->title}}</a></li>
 
                 </ul>
@@ -48,6 +50,28 @@
                     </div>
                     <h3>{{$blog->title}}</h3>
                     {!!$blog->content!!}
+                </div>
+            <div class="blog-navs">
+                <div class="previous-nav">
+                    <img src="{{url($prevBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
+               <p> {{$prevBlog->title}}</p>
+                    <div class="buttons">
+                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$prevBlog->reference])}}">
+                        <img src="{{url('img/blog-detail/prev-nav.svg')}}" alt="prev-nav">
+                            Previous Post
+                        </a>
+                    </div>  
+                </div>
+                <div class="next-nav">
+                <img src="{{url($nextBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
+                     <p>{{$nextBlog->title}}</p>
+                     <div class="buttons">
+                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$nextBlog->reference])}}">
+                            Next Post
+                            <img src="{{url('img/blog-detail/next-nav.svg')}}" alt="next-nav">
+                        </a>
+                    </div>  
+                </div>
             </div>
 
             </div>
@@ -83,28 +107,6 @@
                     <a href="enquiries@bestpracticetraining.com" class="email">{{websiteDetail()->contact_email}}</a>
                 </div>
                
-            </div>
-            <div class="blog-navs">
-                <div class="previous-nav">
-                    <img src="{{url($prevBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
-               <p> {{$prevBlog->title}}</p>
-                    <div class="buttons">
-                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$prevBlog->reference])}}">
-                        <img src="{{url('img/blog-detail/prev-nav.svg')}}" alt="prev-nav">
-                            Previous Post
-                        </a>
-                    </div>  
-                </div>
-                <div class="next-nav">
-                <img src="{{url($nextBlog->getImagePath())}}" alt="navs-bg" class="bg-img">
-                     <p>{{$nextBlog->title}}</p>
-                     <div class="buttons">
-                        <a class="btn-blue" href="{{route('blogDetail',['blog'=>$nextBlog->reference])}}">
-                            Next Post
-                            <img src="{{url('img/blog-detail/next-nav.svg')}}" alt="next-nav">
-                        </a>
-                    </div>  
-                </div>
             </div>
         </div>
     </div>
