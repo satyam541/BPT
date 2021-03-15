@@ -66,7 +66,7 @@ class ArticleController extends Controller
         $article->title                = $request->title;
         $article->content              = $request->content;
         $article->post_date            = $request->post_date;
-        $article->type                 = $request->type;
+        $article->type                 = 'blog';
         $article->author               = $request->author;
         $article->meta_title           =$request->meta_title;
         $article->meta_description     =$request->meta_description;
@@ -79,7 +79,7 @@ class ArticleController extends Controller
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            if($request->type == 'blog')
+            if($article->type == 'blog')
             {
                 $imageName = 'blogthumbnail'.$imageName;
             }
@@ -128,11 +128,11 @@ class ArticleController extends Controller
 
     public function update(Article $article,ArticleRequest $request)
     {
-        $this->authorize('update', new Article());
+        $this->authorize('update',$article);
         $article->title                 = $request->title;
         $article->content               = $request->content;
         $article->post_date             = $request->post_date;
-        $article->type                  = $request->type;
+        $article->type                  = 'blog';
         $article->author                = $request->author;
         $article->meta_title            = $request->meta_title;
         $article->meta_description      = $request->meta_description;
@@ -142,7 +142,7 @@ class ArticleController extends Controller
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-            if($request->type == 'blog')
+            if($article->type == 'blog')
             {
                 $imageName = 'blogthumbnail'.$imageName;
             }

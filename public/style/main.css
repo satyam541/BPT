@@ -13616,6 +13616,7 @@ select::-ms-expand {
     background-color: #F6F6F6;
     border-bottom: 2px solid transparent;
     padding: 1rem;
+    cursor: pointer;
   }
   .requirement .course-name .image {
     position: absolute;
@@ -13799,8 +13800,16 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
   }
+  .budget tbody {
+    border-collapse: collapse;
+  }
   .budget tr {
     text-align: left;
+    border-bottom: 2px solid #E4E4E4;
+  }
+  .budget tr:last-child,
+  .budget tr:nth-last-child(2) {
+    border-bottom: 0;
   }
   .budget tr:last-child td {
     background-color: transparent;
@@ -13814,15 +13823,19 @@ select::-ms-expand {
     color: #FFFFFF;
     text-align: left;
     width: 52%;
+    border-top: 2px solid #0064D8;
   }
   .budget th:nth-child(2) {
     background-color: #F9EDE7;
+    border-top: 2px solid #BF4C17;
   }
   .budget th:nth-child(3) {
     background-color: #F7F7F7;
+    border-top: 2px solid #C0C0C0;
   }
   .budget th:nth-child(4) {
     background-color: #FBF6E8;
+    border-top: 2px solid #DAA520;
   }
   .budget td {
     padding: 1rem;
@@ -13898,7 +13911,7 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 80% 100%;
+    background-size: 100% 100%;
     background-position: right;
   }
   .knowledge-banner p,
@@ -14020,6 +14033,12 @@ select::-ms-expand {
     width: 50%;
     margin-top: 0;
   }
+  .knowledge .booking-info:nth-child(3) {
+    background-color: #F6F6F6;
+  }
+  .knowledge .booking-info:nth-child(4) {
+    background-color: #FFFFFF;
+  }
   .study .study-content::before {
     height: 60px;
   }
@@ -14081,7 +14100,7 @@ select::-ms-expand {
 }
 @media (min-width : 1600px) {
   .knowledge-banner {
-    background-size: 70% 100%;
+    background-size: 79% 100%;
   }
 }
 .thanks-banner {
