@@ -39,58 +39,56 @@
             margin-top: 0;
         }
     }
-    // End result section
-
-    
+    // End result section   
     
 }
     
-    @media @size-lg{
+@media @size-lg{
     
-        // Start cart-banner section
-        .search-banner{
-            background-color: transparent;
-            background-image: url(../img/search/banner-bg.png);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            
-        .search{
-            width: 50%;
-        }
-        }
-        // End cart-banner section
-    
-        // Start search section
-        .most-search{
-            .search-info{
-                width: 23%;
-            }
-        }
-        // End search section
-
+    // Start cart-banner section
+    .search-banner{
+        background-color: transparent;
+        background-image: url(../img/search/banner-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        
+    .search{
+        width: 50%;
     }
-    
-    @media @size-xl{
-    
-        // Start search section
-        .most-search{
-            padding: @sectionPadding-xl;
-            .search-list{
-                justify-content: space-between;
-            }
-        }
-        // End search section
-
-        // Start result section
-        .result{
-            padding: @sectionPadding-xl;
-            .result-list{
-                width:70%;
-            }
-            .filter{
-                width: 24%;
-            }
-        }
-        // End result section
-    
     }
+    // End cart-banner section
+
+    // Start search section
+    .most-search{
+        .search-info{
+            width: 23%;
+        }
+    }
+    // End search section
+
+}
+    
+@media @size-xl{
+
+    // Start search section
+    .most-search{
+        padding: @sectionPadding-xl;
+        .search-list{
+            justify-content: space-between;
+        }
+    }
+    // End search section
+
+    // Start result section
+    .result{
+        padding: @sectionPadding-xl;
+        .result-list{
+            width:70%;
+        }
+        .filter{
+            width: 24%;
+        }
+    }
+    // End result section
+
+}
