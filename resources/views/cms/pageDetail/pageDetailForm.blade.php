@@ -59,10 +59,11 @@
                     {{Form::label('heading','Heading')}}
                     {{Form::text('heading',null,['class'=>'form-control'])}}
                   </div>
+                  <label for="content">Content</label>
                   <button  id="change">summernote</button>
                   <div id="content" class="form-group">
                     <br>
-                    {{Form::textarea('content',null,['id'=>'contentData','class'=>'form-control'])}}
+                    {{Form::textarea('content',null,['id'=>'contentData','class'=>'form-control', 'placeholder'=>'Write content here..'])}}
                   </div>
                   <div id="summernote" class="form-group" style="display: none">
                     <br>

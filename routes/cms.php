@@ -416,9 +416,9 @@ Route::get('/bundletrash','BundleController@trashList')->name('bundleTrashList')
 Route::get('/bundle/restoreBundle/{id}','BundleController@restore')->name('restoreBundleRoute');
 Route::get('/bundle/forceDeleteBundle/{id}','BundleController@forceDelete')->name('forceDeleteBundle');
 
-// Route::get('/onlinecourse/trashList','OnlineCourseController@trashList')->name('onlineCourseTrash');
-// Route::get('/onlinecourse/restore/{id}','OnlineCourseController@restore')->name('restoreOnlineCourse');
-// Route::get('/onlinecourse/forceDelete/{id}','OnlineCourseController@forceDelete')->name('forceDeleteOnlineCourse');
+Route::get('/urlredirect/trashList','RedirectController@trashList')->name('urlredirectTrash');
+Route::get('/urlredirect/restore/{id}','RedirectController@restore')->name('restoreUrlRedirect');
+Route::get('/urlredirect/forceDelete/{id}','RedirectController@forceDelete')->name('forceDeleteUrlRedirect');
 
 Route::get('/urlredirect','RedirectController@UrlRedirectList')->name('urlRedirectList');
 Route::get('/urlredirect/create','RedirectController@create')->name('createUrlRedirect');

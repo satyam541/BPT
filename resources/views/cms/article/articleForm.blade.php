@@ -90,11 +90,6 @@
                   </div>
 
                   <div class="form-group">
-                    {{Form::label('type','ArticleType')}}
-                    {!! Form::select('type', array('news' => 'news', 'blog' => 'blog'), null,['tabindex'=>'-1','id'=>'type','class'=>'form-control selectJS', 'placeholder'=>'Choose one']); !!}
-                  </div>
-
-                  <div class="form-group">
                     {{Form::label('reference','Reference')}}
                     {{Form::text('reference',null,['id'=>'reference','class'=>'form-control colorInputJs'])}}
                   </div>
