@@ -7,7 +7,10 @@
         <div class="container">
             @include("layouts.navbar")
             <div class="banner-container">
-                <h1>Knowledge Pass</h1>
+
+              <div class="banner-content">
+                  
+              <h1>Knowledge Pass</h1>
                 <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
                 <div class="breadcrums">
                             <ul>
@@ -17,8 +20,16 @@
                                 <li><a href="">Knowledge Pass</a></li>
                             </ul>
                      </div>
+                   
+
+              </div>
+              <div class="banner-info">
+                     <img src="{{url('img/knowledge-pass/banner-info.png')}}" alt="banner-info">
+                     </div>
+
             </div>
-        </div>
+
+    
     </section>
 <!-- End Banner Section -->
 
