@@ -63,7 +63,7 @@
                         <div class="our-info">
                             <p class="name">
                                 <img src="{{ url('img/blog/author.svg') }}" alt="author">
-                                by - {{$blog->author}}
+                                By - {{$blog->author}}
                             </p>
                             <p class="designation">
                                 Web Development
