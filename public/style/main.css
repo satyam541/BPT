@@ -13299,6 +13299,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  width: 100%;
 }
 .why-right .content h2,
 .why-right .content p {
@@ -13419,6 +13420,9 @@ select::-ms-expand {
 .knowledge .booking-info p {
   margin-top: 0.5rem;
 }
+.knowledge .booking-info h3 {
+  font-size: 18px;
+}
 .study {
   padding: 3rem 1.5rem;
   padding-top: 1rem!important;
@@ -13488,6 +13492,7 @@ select::-ms-expand {
   .benefit .benefit-info {
     width: 26%;
     margin-top: 0;
+    align-self: flex-start;
   }
   .pass-clients {
     padding: 3rem 2rem;
@@ -13981,7 +13986,6 @@ select::-ms-expand {
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
-    background-size: 80% 100%;
     padding-bottom: 6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
