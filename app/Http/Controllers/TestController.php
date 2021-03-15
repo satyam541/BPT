@@ -461,10 +461,18 @@ class TestController extends Controller
                 ],
                 [
                     'name'=>$location->name,
+                    'phone'=>$location->venue->phone,
+                    'email'=>$location->venue->email,
+                    'image'=>$location->venue->image,
+                    'longitude'=>$location->venue->longitude,
+                    'latitude'=>$location->venue->latitude,
+                    'intro'=>$location->venue->introduction,
+                    'description'=>$location->venue->description,
                     'inherit_schedule'=>$location->inherit_schedule,
                     'fetch_schedule'=>$location->fetch_schedule,
-                    'meta_title'=>$location->meta_title,
-                    'meta_description'=>$location->meta_description,
+                    'meta_title'=>$location->venue->meta_title,
+                    'meta_description'=>$location->venue->meta_description,
+                    'meta_keywords'=>$location->meta_keywords,
                     'display_order'=>$display_order+1
                 ]
             );
