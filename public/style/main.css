@@ -5052,6 +5052,9 @@ select::-ms-expand {
 .doorstep .form label {
   color: #FFFFFF;
 }
+.doorstep .form label {
+  cursor: pointer;
+}
 .doorstep .form .heading {
   padding-top: 0;
 }
@@ -6616,9 +6619,6 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
-.blog-intro .intro-detail p:last-child {
-  margin-bottom: 0;
-}
 .blog-intro .img-content {
   display: flex;
   flex-direction: column;
@@ -6703,7 +6703,8 @@ select::-ms-expand {
   right: -15px;
   transform: rotateY(180deg);
 }
-.blog-intro h3 {
+.blog-intro h3,
+.blog-intro h2 {
   margin-top: 1rem;
 }
 .blog-intro .content-right {
@@ -6912,7 +6913,6 @@ select::-ms-expand {
 .blog-intro .blog-navs {
   display: flex;
   justify-content: space-between;
-  order: 2;
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
@@ -6979,16 +6979,13 @@ select::-ms-expand {
     justify-content: center;
   }
   .blog-intro .blog-navs {
-    order: 3;
     margin-top: 0;
-    justify-content: flex-start;
-  }
-  .blog-intro .blog-navs .next-nav .btn-blue {
-    min-width: 168px;
+    width: 80%;
+    margin: auto;
   }
   .blog-intro .previous-nav,
   .blog-intro .next-nav {
-    width: 30%;
+    width: 48%;
     height: auto;
   }
   .blog-intro .previous-nav p,
@@ -7007,7 +7004,7 @@ select::-ms-expand {
     width: 75%;
   }
   .blog-intro .blog-navs {
-    width: 63%;
+    width: 100%;
     justify-content: center;
   }
   .blog-intro .blog-navs .previous-nav,
@@ -9007,7 +9004,6 @@ select::-ms-expand {
 .training .methods p {
   font-size: 18px;
   font-weight: bold;
-  margin-top: 0.5rem;
   text-align: center;
 }
 .training .active .blue {
@@ -9308,6 +9304,7 @@ select::-ms-expand {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
 }
 .training .date p {
   padding: 1rem 0.5rem 0.8rem;
@@ -9376,8 +9373,6 @@ select::-ms-expand {
   padding: 1.5rem;
   margin-top: 1.5rem;
   border-radius: 30px 30px 0px 30px;
-  width: 272px;
-  align-self: center;
 }
 .virtual .virtual-content:first-child {
   margin-top: 0;
@@ -9389,15 +9384,18 @@ select::-ms-expand {
 }
 .virtual .virtual-content .content span {
   display: flex;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 .virtual .virtual-content .content span img {
   width: 100%;
   height: 100%;
 }
 .virtual .virtual-content .content h2 {
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 .virtual .virtual-img {
   display: flex;
@@ -9540,7 +9538,7 @@ select::-ms-expand {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.3rem;
   background-position: left top;
   width: 100%;
@@ -9607,7 +9605,7 @@ select::-ms-expand {
   margin-top: 1rem;
 }
 .skill .skill-content h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 .skill .skill-content p {
@@ -10020,10 +10018,13 @@ select::-ms-expand {
     justify-content: space-around;
   }
   .virtual .virtual-content {
-    width: 43%;
+    width: 47%;
   }
   .virtual .virtual-content:nth-child(2) {
     margin-top: 0;
+  }
+  .virtual .virtual-content p {
+    min-height: 88px;
   }
   .virtual .virtual-img {
     width: 55%;
@@ -10132,6 +10133,11 @@ select::-ms-expand {
   }
   .popular-location .content .arrow {
     transform: translateX(34px);
+  }
+}
+@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .training .add-ons {
+    top: 0;
   }
 }
 @media (min-width : 1024px) {
@@ -10359,6 +10365,10 @@ select::-ms-expand {
   }
   .virtual .virtual-content .content h2 {
     width: calc(100% - 60px);
+    min-height: 52px;
+  }
+  .virtual .virtual-content p {
+    min-height: 110px;
   }
   .virtual .virtual-img {
     width: 35%;
@@ -10589,6 +10599,12 @@ select::-ms-expand {
   }
   .virtual .virtual-list {
     width: 68%;
+  }
+  .virtual .virtual-content .content h2 {
+    min-height: auto;
+  }
+  .virtual .virtual-content p {
+    min-height: 66px;
   }
   .virtual .virtual-img {
     width: 30%;
@@ -13173,6 +13189,7 @@ select::-ms-expand {
 }
 .pass-clients {
   padding: 3rem 1.5rem;
+  padding-bottom: 0;
 }
 .pass-clients .pass-container {
   display: flex;
@@ -13301,6 +13318,7 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  width: 100%;
 }
 .why-right .content h2,
 .why-right .content p {
@@ -13393,7 +13411,6 @@ select::-ms-expand {
 .knowledge .booking-list {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 .knowledge .booking-info {
   display: flex;
@@ -13402,10 +13419,7 @@ select::-ms-expand {
   padding: 1rem;
   width: 272px;
   align-self: center;
-  margin-bottom: 1rem;
-}
-.knowledge .booking-info:last-child {
-  margin-top: 0;
+  margin-top: 1.8rem;
 }
 .knowledge .booking-info:nth-child(even) {
   background-color: #F6F6F6;
@@ -13425,8 +13439,12 @@ select::-ms-expand {
 .knowledge .booking-info p {
   margin-top: 0.5rem;
 }
+.knowledge .booking-info h3 {
+  font-size: 18px;
+}
 .study {
   padding: 3rem 1.5rem;
+  padding-top: 1rem!important;
 }
 .study .study-container {
   display: flex;
@@ -13448,7 +13466,7 @@ select::-ms-expand {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   border-bottom: 5px solid #1C2848;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
 }
@@ -13493,6 +13511,7 @@ select::-ms-expand {
   .benefit .benefit-info {
     width: 26%;
     margin-top: 0;
+    align-self: flex-start;
   }
   .pass-clients {
     padding: 3rem 2rem;
@@ -13654,7 +13673,9 @@ select::-ms-expand {
     width: 25%;
   }
   .requirement .course-detail .select select {
-    width: 43px;
+    width: 45px;
+    padding-left: 5px;
+    height: 24px;
     border: 2px solid #1C2848;
     border-radius: 10px;
     background: url(../img/knowledge-pass/select-bg.png);
@@ -13824,7 +13845,7 @@ select::-ms-expand {
   }
   .knowledge {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
+    padding-top: 0rem!important;
   }
   .knowledge .booking-list {
     flex-direction: row;
@@ -13840,7 +13861,6 @@ select::-ms-expand {
   }
   .study {
     padding: 3rem 2rem;
-    padding-top: 1rem!important;
   }
   .study .study-list {
     flex-direction: row;
@@ -13854,7 +13874,7 @@ select::-ms-expand {
 @media (min-width : 1024px) {
   .knowledge-banner {
     background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 45% 100%;
+    background-size: 100% 100%;
     background-position: right;
   }
   .knowledge-banner p,
@@ -13930,9 +13950,6 @@ select::-ms-expand {
   .spending h3 {
     word-break: break-all;
   }
-  .why-right .right-list {
-    justify-content: space-between;
-  }
   .why-right .right-item {
     width: 32%;
     align-items: flex-start;
@@ -13977,7 +13994,7 @@ select::-ms-expand {
   .knowledge .booking-info {
     align-self: flex-start;
     width: 50%;
-    margin-bottom: 0;
+    margin-top: 0;
   }
   .study .study-content::before {
     height: 60px;
@@ -13988,7 +14005,6 @@ select::-ms-expand {
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
-    background-size: 40% 100%;
     padding-bottom: 6rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
