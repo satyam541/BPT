@@ -164,13 +164,13 @@
 <!-- Start new-bundle section -->
 <section class="flex-container new-bundle">
     <div class="container">
-        <div class="new-bundle-container">
+        <div class="new-container">
     <div class="inform-us">
     <img src="{{url('img/offer/inform-bg.png')}}" alt="inform-bg">
-            <div class="inform-content">
+            <div class="info-content">
                 <p>Need more information on Bundles? We're a click away</p>
-                <div class="inform-list">
-                    <div class="inform-item">
+                <div class="info-list">
+                    <div class="info-list">
                     <span>
                         <img src="{{url('img/offer/telephone.svg')}}" alt="call us">
                     </span>
@@ -179,7 +179,7 @@
                         <a>023 8000 1008</a>
                     </div>
                     </div>
-                <div class="inform-item">
+                <div class="info-list">
                     <span>
                         <img src="{{url('img/offer/mail.svg')}}" alt="mail">
                     </span>
