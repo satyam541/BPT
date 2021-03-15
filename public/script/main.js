@@ -75,6 +75,7 @@
       $("#" + target).css("display", "flex");
       $(".tab-click").removeClass('active');
       $(this).addClass("active");
+      scrollToSpecificDiv("#tab-overview");
    });
  //End Delivery method script//
     
