@@ -184,7 +184,7 @@
             .buttons {
                 flex-direction: row;
                 margin-top: 0;
-                width: 48%;
+                width: 330px;
                 .btn-blue {
                     margin-top: 0;
                     margin-left: 1rem;
@@ -192,7 +192,7 @@
             }
         }
         .course-name {
-            width: 50%;
+            width: calc(100% - 336px);
             justify-content: flex-start;
             text-align: left;
         }
@@ -284,9 +284,12 @@
             justify-content: space-around;
         }
         .virtual-content {
-            width: 43%;
+            width: 47%;
             &:nth-child(2) {
                 margin-top: 0;
+            }
+            p{
+                min-height: 88px;
             }
         }
         .virtual-img {
@@ -416,6 +419,14 @@
     // End Popular-Location Section
 }
 
+
+@media (min-width:768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .training {
+        .add-ons{
+            top: 0;
+        }
+    }
+}
 @media @size-lg{
 
     // Start Banner section //
@@ -585,9 +596,6 @@
                 margin-top: 0;
             }
         }
-        .course-name {
-            width: 37%;
-        }
         .name {
             transform: translate(0px, -22px);
             width: 95%;
@@ -612,9 +620,6 @@
             &::after {
                 border-right: 17px solid transparent;
                 right: -17px;
-            }
-            .buttons {
-                width: 54%;
             }
         }
         .modes {
@@ -674,7 +679,12 @@
                 }
                 h2 {
                     width: calc(100% - 60px);
+                    min-height: 52px;
                 }
+            }
+            
+            p{
+                min-height: 110px;
             }
         }
         .virtual-img {
@@ -904,12 +914,6 @@
         }
         .name {
             width: 90%;
-            .buttons {
-                width: 42%;
-            }
-        }
-        .course-name {
-            width: 50%;
         }
         .date {
             width: 350px;
@@ -956,6 +960,16 @@
         padding: @sectionPadding-xl;
         .virtual-list {
             width: 68%;
+        }
+        .virtual-content{
+            .content{
+                h2{
+                    min-height: auto;
+                }
+            }
+            p{
+                min-height: 66px;
+            }      
         }
         .virtual-img {
             width: 30%;
