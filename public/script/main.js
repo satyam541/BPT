@@ -455,6 +455,7 @@ $('#scroll').click(function(){
     //Start filters
     $('#filterTop').on("click", function(){
         $('.exclude').toggle();
+        $(this).toggleClass("active");
     });
     //End filters
     $(document).ready(function() {
