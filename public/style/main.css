@@ -6209,6 +6209,7 @@ select::-ms-expand {
 }
 .our-blog .our-info .designation {
   width: 45%;
+  text-align: right;
 }
 .our-blog .dates {
   display: none;
@@ -6596,7 +6597,7 @@ select::-ms-expand {
   margin-bottom: 0;
 }
 .blog-intro .detail p img {
-  width: 30px;
+  width: 30px!important;
   margin-right: 0.5rem;
 }
 .blog-intro .intro-detail {
@@ -6862,6 +6863,7 @@ select::-ms-expand {
   flex-direction: column;
   padding: 1rem;
   font-size: 15px;
+  justify-content: space-between;
   text-align: center;
   font-weight: bold;
   width: 48%;
@@ -6924,9 +6926,6 @@ select::-ms-expand {
   }
   .blog-intro .content-left {
     width: 58%;
-  }
-  .blog-intro .content-left span {
-    display: flex;
   }
   .blog-intro .content-left span img {
     height: auto;
