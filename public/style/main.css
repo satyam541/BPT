@@ -2719,7 +2719,6 @@ select::-ms-expand {
     background-color: transparent;
     background-size: cover;
     position: relative;
-    align-items: center;
     z-index: 1;
     align-items: center;
   }
