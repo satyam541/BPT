@@ -393,13 +393,13 @@
             <table>
                 <tr>
                     <th>Features</th>
-                    <th><p>Gold</p>
+                    <th><h3>Gold</h3>
                     <span>£50,000+</span>
                     </th>
-                    <th><p>Silver</p>
+                    <th><h3>Silver</h3>
                     <span>£20,000+</span>
                     </th>
-                    <th><p>Bronze</p>
+                    <th><h3>Bronze</h3>
                     <span>£10,000+</span>
                     </th>
                 <tr>
