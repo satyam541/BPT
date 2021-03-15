@@ -12949,11 +12949,6 @@ select::-ms-expand {
     width: 100%;
     margin-left: 2.5rem;
   }
-  .foundation {
-    background-image: url(../img/topic/foundation-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
   .topic-choose {
     background-image: url(../img/topic/choose-bg.png);
     background-size: 30% 50%;
