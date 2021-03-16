@@ -35,7 +35,7 @@
                     @endforeach
                 </ul>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -179,10 +179,14 @@
 
                     @if ($selectedCourse->whatsIncluded->isNotEmpty())
                     <div class="tab-content" id="included">
-                            <h2>What's Included Us</h2>
-                        <div class="included-list">
-
-                            @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            <h2>What's Included</h2>
+                            @php
+                                $i=0;   
+                            @endphp
+                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            @if($i==0)
+                                <div class="included-list">
+                            @endif
                             <div class="included-content">
                                 <span>
                                     {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
@@ -190,9 +194,16 @@
                                 </span>
                                 <h3>{!! $whatsInclude->name !!}</h3>
                             </div>
-                            @endforeach
-
-                        </div>
+                            @php
+                                $i++;    
+                            @endphp
+                            @if($i==4)
+                                </div>
+                                @php
+                                    $i=0;
+                                @endphp
+                            @endif
+                        @endforeach
                     </div>
                     @endif
                 </div>
@@ -242,7 +253,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>

@@ -26,7 +26,7 @@
     <div class="container">
         <div class="course-container">
             <div class="heading center-heading">
-                <h2>Certifications</h2>
+                <h2>Our Popular Certifications</h2>
             </div>
             
             <div class="course-list">
@@ -36,7 +36,7 @@
                     {{-- {{ dd($certification->slug)}} --}}
                     <div class="buttons">
                         <a href="{{route('certificationDetail', ['certification'=>$certification->slug])}}" class="btn-blue" >
-                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">Certification
+                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">View
                         </a>
                     </div>
                 </div>

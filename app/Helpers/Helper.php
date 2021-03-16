@@ -68,7 +68,7 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('socialmedialinks')) {
         function socialmedialinks()
         {
-            return   SocialMedia::all();
+            return SocialMedia::all();
         }
     }
     if (!function_exists('websiteDetail')) {
@@ -131,7 +131,13 @@ if (!function_exists('encodeUrlSlug')) {
     }
     if (!function_exists('footer')){
         function footer(){
-            return PageDetail::getContent('home');
+
+            $selectedDetail = PageDetail::$selected;
+            if (empty($selectedDetail)) {
+                $selectedDetail = PageDetail::getContent('home');
+                PageDetail::$selected = $selectedDetail;
+            }
+            return $selectedDetail;
         }
     }
     if (!function_exists('cart')) {

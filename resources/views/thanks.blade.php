@@ -58,16 +58,19 @@
                 </div>
                 <div class="social-media">
                     <h2>Follow Us</h2>
-                    <a href="{{ socialmedialinks()->where('website','Facebook')->first()->link ?? ''}}">
+                    @php
+                    $socialmedialinks = socialmedialinks();
+                    @endphp
+                    <a href="{{ $socialmedialinks->where('website','Facebook')->first()->link ?? ''}}">
                         <img src="{{url('img/master/facebook.svg')}}" alt="facebook">
                     </a>
-                    <a href="{{ socialmedialinks()->where('website','Twitter')->first()->link ?? ''}}">
+                    <a href="{{ $socialmedialinks->where('website','Twitter')->first()->link ?? ''}}">
                         <img src="{{url('img/master/twitter.svg')}}" alt="twitter">
                     </a>
-                    <a href="{{ socialmedialinks()->where('website','Google')->first()->link ?? ''}}">
+                    <a href="{{ $socialmedialinks->where('website','Google')->first()->link ?? ''}}">
                         <img src="{{url('img/master/google-plus.svg')}}" alt="google-plus">
                     </a>
-                    <a href="{{ socialmedialinks()->where('website','Linkedin')->first()->link ?? ''}}">
+                    <a href="{{ $socialmedialinks->where('website','Linkedin')->first()->link ?? ''}}">
                         <img src="{{url('img/master/linked-in.svg')}}" alt="linked-in">
                     </a>
                 </div>

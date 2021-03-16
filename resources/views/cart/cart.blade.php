@@ -7,8 +7,7 @@
             @include("layouts.navbar")
             <div class="banner-container">
                 <h1>Cart</h1>
-                <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses
-                    around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
+                <p>Check what is in your cart here. Fetch all the information about every item, including its date, delivery method, number of delegates, and cost of each course. </p>
                 <div class="breadcrums">
                     <ul>
                         <li><a href="{{route('home')}}">Home</a></li>
@@ -27,8 +26,8 @@
                 <div class="empty-container">
                     <div class="empty-content">
                         <span><img src="{{ url('img/emptycart/cart-img.svg') }}" alt="cart-img"></span>
-                        <h3>Your Cart Is Empty</h3>
-                        <p>Fill it with some training courses - take a look at our catalogue.</p>
+                        <h3>Your Cart is Empty</h3>
+                        <p>Add training courses to fill it now – click on the below button to check our course catalogue.</p>
                         <div class="buttons">
                             <a href="{{route('catalogue')}}" class="btn-blue">Have a Look<img src="{{ url('img/emptycart/right-arrow.svg') }}"
                                     alt="right-arrow"></a>
@@ -109,7 +108,7 @@
                                                             <li>
                                                                 <p>{{ $addon->name }}:</p>
                                                                 <span>{!! country()->currency_symbol !!}
-                                                                    {{ country()->convertPrice($addon->price) }} </span>
+                                                                    {{ convertPrice($addon->price) }} </span>
                                                             </li>
                                                         @endforeach
                                                     @endif

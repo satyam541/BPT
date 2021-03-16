@@ -37,16 +37,19 @@
                         <p>{{ footer()->footer['heading']->content }}</p>
                         <div class="social-media">
                             <p>Follow Us On:</p>
-                            <a href="{{ socialmedialinks()->where('website', 'Facebook')->first()->link ?? '' }}">
+                            @php
+                                $socialmedia = socialmedialinks();
+                            @endphp
+                            <a href="{{ $socialmedia->where('website', 'Facebook')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/facebook.svg') }}" alt="facebook">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Twitter')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Twitter')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/twitter.svg') }}" alt="twitter">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Google')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Google')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/google-plus.svg') }}" alt="google-plus">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Linkedin')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Linkedin')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/linked-in.svg') }}" alt="linked-in">
                             </a>
                         </div>
@@ -194,7 +197,7 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-                <a href="{mailto:{{ websiteDetail()->contact_number }}" class="email">
+                <a href="mailto:{{ websiteDetail()->contact_number }}" class="email">
                     <img src="{{ url('img/master/email-white.png') }}" alt="mail">
                 </a>
                 <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
@@ -245,6 +248,62 @@
             </div>
         </form>
     </div>
+    <div class="scene">
+  <svg 
+  version="1.1" 
+  id="dc-spinner" 
+  xmlns="http://www.w3.org/2000/svg" 
+  x="0px" y="0px"
+  width:"38"
+  height:"38"
+  viewBox="0 0 38 38" 
+  preserveAspectRatio="xMinYMin meet"
+  >
+  <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="#c0c0c0">LOADING
+     <animate 
+       attributeName="opacity"
+       values="0;1;0" dur="1.8s"
+       repeatCount="indefinite"/>
+  </text>
+  <path fill="#181818" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
+    C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
+    C34.797,11.841,28.159,5.203,20,5.203z">
+  </path>
+
+  <path fill="#181818" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20
+    S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922
+    S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">
+  </path>
+
+  <path fill="#2AA198" stroke="#0064D8" stroke-width="0.6027" stroke-miterlimit="10" d="M5.203,20
+			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
+  <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 20 20"
+        to="360 20 20"
+        calcMode="spline"
+        keySplines="0.4, 0, 0.2, 1"
+        keyTimes="0;1"
+        dur="2s"
+        repeatCount="indefinite" />      
+   </path>
+
+  <path fill="#859900" stroke="#1C2848" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20
+  c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203
+  C12.875,32.922,7.078,27.125,7.078,20z">
+   <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 20 20"
+      to="360 20 20"
+      dur="1.8s"  
+      repeatCount="indefinite" />
+    </path>
+  </svg>
+</div>
+
+
 </body>
 <!--enquiry submit script start-->
 
@@ -258,7 +317,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{ url('script/main.js') }}"></script>
 <script src="{{ url('script/count.js') }}"></script>
-<script>var searchUrl = '{{route('SearchCourse')}}'</script>
+<script>var searchUrl = '{{route('SearchCourse')}}';</script>
 <script src="{{ url('script/search.js') }}"></script>
 <script>
     //country selectbox 
@@ -388,20 +447,27 @@ $.ajax({
     data: formData,
     type: "post",
     headers: {
-              'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-          },
+            'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+        },
     timeout: 90000,
     global: false,
-    success: function(response) {
-        if (response == 'done') {
-
+    beforeSend: function(){
+        if($('form#thank-you').length < 0)
+        {
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
                 '{{ route('thanks') }}').html(input);
             $('body').append(form);
+        }
+        $('div.scene').show();
+    },
+    success: function(response) {
+        if (response == 'done') {
             $('#thank-you').submit();
         }
-
+    },
+    complete:function(){
+        $('div.scene').hide();
     }
 });
 }

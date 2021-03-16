@@ -81,7 +81,7 @@ class EnquiryController extends Controller
         $enquiry->save();
         $data['enquiry']                =   $enquiry;
         $view                           =   \View::make('emails.enquiry',$data);
-         $enquiry['emailsent']             =   $view->render();
+        $enquiry['emailsent']             =   $view->render();
         
         $enquiry                        =   $enquiry->toArray();
         $enquiry['Url']                 =   $input['Url'] ?? null;
@@ -90,7 +90,6 @@ class EnquiryController extends Controller
         if(config('app.env') != "local")
         {
             MakeJWTEnquiry($enquiry);
-           
         }
         Mail::to($enquiry['email'])->send(new EnquiryMail($data['enquiry']));
         // Mail::to($email)->cc(config('mail.from.address'))->send(new EnquiryMail($enquiry));
@@ -99,7 +98,6 @@ class EnquiryController extends Controller
         if($request->ajax())
         {
             return "done";
-            
         }
         \Session::flash('message', 'Thank You for Enquiry');
         return redirect()->back();

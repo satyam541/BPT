@@ -2,9 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
-    <div style="width:100%">
+    <div style="width:100%;font-family: 'Roboto';">
         <h4>
             Dear {{ $customerDetail->firstname }} {{ $customerDetail->lastname }},
         </h4>
@@ -28,14 +29,14 @@
        
        
         <div style="margin-top:10px;">
-            <div style="background-color: #0063d8 ;padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color: #1C2848 ;padding: 6px; color: #ffffff; font-size: 20px;width:100% ">
                 Course
             </div>
 
             <table style="width:100%">
                 @if(isset($orderDetail))
                 @unless(empty($orderDetail->gateway_order_id ))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Order No:
                     </td>
@@ -44,7 +45,7 @@
                     </td>
                 </tr>
                 @endunless
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Website Country:
                     </td>
@@ -53,7 +54,7 @@
                     </td>
                 </tr>
                 @foreach($orderDetail->lineItems as $item)
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Course Name:
                     </td>
@@ -61,7 +62,7 @@
                         {{ $item->course_name }}
                     </td>
                 </tr>
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Booking Type :
                     </td>
@@ -69,7 +70,7 @@
                         {{ $item->delivery_method }}
                     </td>
                 </tr>
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Location:
                     </td>
@@ -78,7 +79,7 @@
                     </td>
                 </tr>
                 @unless(empty( $item->schedule_date))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Chosen Date:
                     </td>
@@ -89,7 +90,7 @@
                 @endunless
 
                 @unless(empty($item->course_duration))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Duration:
                     </td>
@@ -99,7 +100,7 @@
                 </tr>
                 @endunless
 
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Course Fee:
                     </td>
@@ -108,7 +109,7 @@
                     </td>
                 </tr>
                 @endforeach
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Total exe. VAT:
                     </td>
@@ -118,7 +119,7 @@
                 </tr>
 
                 @unless(empty($orderDetail->vat_amount))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         VAT:
                     </td>
@@ -129,7 +130,7 @@
                 @endunless
 
                 @unless(empty($orderDetail->card_fee_amount))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Card Fees:
                     </td>
@@ -140,7 +141,7 @@
                 @endunless
 
                 @unless(empty($orderDetail->grand_total))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Total Fees:
                     </td>
@@ -153,14 +154,14 @@
         </div>
 @endif
         <div style="margin-top:30px;float:left;width:100%">
-            <div style="background-color:#0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color:#1C2848;padding: 6px; color: #fff; font-size: 20px;width:100% ">
                 Your Details
             </div>
 
             <table style="width:100%">
 
                 @unless(empty($customerDetail))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Name:
                     </td>
@@ -171,7 +172,7 @@
                 @endunless
 
                 @unless(empty($TELEPHONE))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Telephone:
                     </td>
@@ -182,7 +183,7 @@
                 @endunless
 
                 @unless(empty($customerDetail->mobile))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Mobile:
                     </td>
@@ -193,7 +194,7 @@
                 @endunless
 
                 @unless(empty($customerDetail->email))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Email:
                     </td>
@@ -209,14 +210,14 @@
 
         @unless(empty($billingDetail))
         <div style="margin-top:30px;float:left;width:100%">
-            <div style="background-color:  #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color: #1C2848;color:#ffffff;padding: 6px; font-size: 20px;width:100% ">
                 Billing Details
             </div>
 
             <table style="width:100%">
 
                 @unless(empty($billingDetail->firstname))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #1C2848;color:#ffffff; padding: 6px; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Name:
                     </td>
@@ -227,7 +228,7 @@
                 @endunless
 
                 @unless(empty($billingDetail->address1))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Address 1:
                     </td>
@@ -238,7 +239,7 @@
                  @endunless
 
                 @unless(empty($billingDetail->address2))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Address 2:
                     </td>
@@ -249,7 +250,7 @@
                 @endunless
 
                  @unless(empty($billingDetail->city))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                 <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        City:
                     </td>
@@ -260,7 +261,7 @@
                 @endunless
 
                 @unless(empty($billingDetail->postcode))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                 <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Post Code:
                     </td>
@@ -271,7 +272,7 @@
                 @endunless
 
                 @unless(empty($billingDetail->province))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Province:
                     </td>
@@ -282,7 +283,7 @@
                 @endunless
 
                 @unless(empty($billingDetail->country->name))
-                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                 <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Country:
                     </td>
@@ -293,7 +294,7 @@
                 @endunless
 
                     @unless(empty($customerDetail->preffered_contact_method))
-                    <tr style="background-color: #e4f2f5; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <tr style="background-color: #c0c0c0; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                         <td style="width:30%;float: left">
                             Preferred Contact Method:
                         </td>
@@ -312,7 +313,7 @@
 
 
         <div style="margin-top:30px;float:left;width:100%">
-            <div style="color:  #0063d8; padding: 6px; font-size: 20px; width: 100%; font-weight: bold; border-bottom: 2px solid #17365d;">
+            <div style="color:  #1C2848; padding: 6px; font-size: 20px; width: 100%; font-weight: bold; border-bottom: 2px solid #1C2848;">
                 What's Next?
             </div>
             <div>
@@ -321,7 +322,7 @@
                     Thank you for contacting  Best Pratice Training  - a learning advisor will be contacting you shortly.
                 </p>
                 <p>
-                    If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #FBDA84;">{{ websiteDetail()->contact_email }}</a>
+                    If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #1C2848;">{{ websiteDetail()->contact_email }}</a>
                 </p>
             </div>
         </div>
