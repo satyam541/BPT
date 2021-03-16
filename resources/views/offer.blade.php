@@ -48,7 +48,7 @@
                     <h3>Our IT Security Bundles</h3>
                 </div>
                 </div>
-                <div class="buttons open-popup enquiryJS" data-quote="Need Help" data-heading="Need Help">
+                <div class="buttons open-popup enquiryJS"  data-type="bundle" data-quote="Need Help" data-heading="Need Help">
                     <a class="btn-blue"><img src="{{url('img/offer/enquire.svg')}}" alt="enquire">Need Help</a>
                 </div>
                 </div>
@@ -83,7 +83,7 @@
                         <li>AgilePM® Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="PRINCE2® & Agile Bundle" data-heading="PRINCE2® & Agile Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="PRINCE2® & Agile Bundle" data-heading="PRINCE2® & Agile Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -100,7 +100,7 @@
                         <li>MSP Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Project & Programme Bundle" data-heading="Project & Programme Bundle">
+                        <a class="btn-blue open-popup enquiryJS" data-quote="Project & Programme Bundle"  data-type="bundle" data-heading="Project & Programme Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -117,7 +117,7 @@
                         <li>Change Management Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Programme and Change Bundle" data-heading="Programme and Change Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Programme and Change Bundle" data-heading="Programme and Change Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -134,7 +134,7 @@
                         <li>Praxis Bridging</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Gold Government Standard Bundle" data-heading="Gold Government Standard Bundle">
+                        <a class="btn-blue open-popup enquiryJS" data-quote="Gold Government Standard Bundle"   data-type="bundle" data-heading="Gold Government Standard Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -151,7 +151,7 @@
                         <li>Praxis Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Platinum Government Standard Bundle" data-heading="Platinum Government Standard Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Platinum Government Standard Bundle" data-heading="Platinum Government Standard Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -171,7 +171,7 @@
                         <li>Change Management Foundation</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="The Complete Project Manager Starter Bundle" data-heading="The Complete Project Manager Starter Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Starter Bundle" data-heading="The Complete Project Manager Starter Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -192,7 +192,7 @@
                         <li>Agile Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -211,7 +211,7 @@
                         <li>PMP Certification</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Professional Project Manager" data-heading="Professional Project Manager">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Professional Project Manager" data-heading="Professional Project Manager">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -228,7 +228,7 @@
                         <li>APM PMQ</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Project Manager Career Starter Bundle" data-heading="Project Manager Career Starter Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Project Manager Career Starter Bundle" data-heading="Project Manager Career Starter Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -245,7 +245,7 @@
                         <li>Praxis Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Project Manager Career Building Bundle" data-heading="Project Manager Career Building Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Project Manager Career Building Bundle" data-heading="Project Manager Career Building Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -260,7 +260,7 @@
                         <li>Courses included</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Create your own Project Management Bundle" data-heading="Create your own Project Management Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Create your own Project Management Bundle" data-heading="Create your own Project Management Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -287,7 +287,7 @@
                         </ul>
                         <a href="javascript:void(0);">Plus one of the four listed below</a>
                         <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis Diploma Bundle" data-heading="Business Analysis Diploma Bundle">
+                            <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Business Analysis Diploma Bundle" data-heading="Business Analysis Diploma Bundle">
                                     <img src="{{url('img/offer/email.svg')}}" alt="email">
                                     Get a Quote
                             </a>
@@ -312,7 +312,7 @@
                         <li>PRINCE2® Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis & PRINCE2® Bundle" data-heading="Business Analysis & PRINCE2® Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Business Analysis & PRINCE2® Bundle" data-heading="Business Analysis & PRINCE2® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -329,7 +329,7 @@
                         <li>Change Management Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis & Change Bundle" data-heading="Business Analysis & Change Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Business Analysis & Change Bundle" data-heading="Business Analysis & Change Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -346,7 +346,7 @@
                         <li>P3O Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis & PM Bundle" data-heading="Business Analysis & PM Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Business Analysis & PM Bundle" data-heading="Business Analysis & PM Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -363,7 +363,7 @@
                         <li>Lean Six Sigma Green Belt</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis & Improvement Bundle" data-heading="Business Analysis & Improvement Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Business Analysis & Improvement Bundle" data-heading="Business Analysis & Improvement Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -380,7 +380,7 @@
                         <li>Praxis Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Business Analysis & Praxis Bundle" data-heading="Business Analysis & Praxis Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Business Analysis & Praxis Bundle" data-heading="Business Analysis & Praxis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -392,7 +392,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -419,7 +419,7 @@
                         <a href="javascript:void(0);">ITIL Service Lifecycle Path</a>
                         <a href="javascript:void(0);">ITIL Service Capability Path</a>
                         <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="ITIL Expert Bundle" data-heading="ITIL Expert Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL Expert Bundle" data-heading="ITIL Expert Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -453,7 +453,7 @@
                         <li>PRINCE2® Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="ITIL & PRINCE2® Bundle" data-heading="ITIL & PRINCE2® Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL & PRINCE2® Bundle" data-heading="ITIL & PRINCE2® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -470,7 +470,7 @@
                         <li>TOGAF® 9 Training Course: Combined (level 1 & 2)</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="ITIL & TOGAF® Bundle" data-heading="ITIL & TOGAF® Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL & TOGAF® Bundle" data-heading="ITIL & TOGAF® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -487,7 +487,7 @@
                         <li>ISTQB Software Testing Foundation</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="ITIL & Software Testing Bundle" data-heading="ITIL & Software Testing Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="ITIL & Software Testing Bundle" data-heading="ITIL & Software Testing Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -504,7 +504,7 @@
                         <li>MSP Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="TIL & MSP Bundle" data-heading="TIL & MSP Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="TIL & MSP Bundle" data-heading="TIL & MSP Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -521,7 +521,7 @@
                         <li>Praxis Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="ITIL & Praxis Bundle" data-heading="ITIL & Praxis Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="ITIL & Praxis Bundle" data-heading="ITIL & Praxis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -533,7 +533,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -558,7 +558,7 @@
                         <li>CISA Certified Information Systems Auditor</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Cyber Security Professional Bundle" data-heading="Cyber Security Professional Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Cyber Security Professional Bundle" data-heading="Cyber Security Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -575,7 +575,7 @@
                         <li>CISM Certified Information Security Manager</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Information Security Professional Bundle" data-heading="Information Security Professional Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Information Security Professional Bundle" data-heading="Information Security Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -592,7 +592,7 @@
                         <li>EU GDPR General Data Protection Regulation Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -609,7 +609,7 @@
                         <li>EU GDPR General Data Protection Regulation Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Get a Quote
                         </a>
@@ -633,7 +633,7 @@
                 <p>Get personalised course recommendations and courses with reminders to get the latest information about the courses and offers. Do you know the courses you want but not when or where you want to take them? We will help you.</p>
                 <input type="text" name="email" id="email" placeholder="Your Email Address" autocomplete="off">
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-heading="Enquire Now"><img src="{{url('img/offer/email.svg')}}" alt="email">
+                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Enquire Now" data-heading="Enquire Now"><img src="{{url('img/offer/email.svg')}}" alt="email">
                     Enquire Now</a>
                 </div>
             </div>
@@ -680,7 +680,7 @@
         <p>By filling out the Enquiry form, you will be the first one to grab our opportunity. Wanted to buy several courses in a single package? We offer an in-hand developed bundle of trending courses to provide you with the best way to gain the necessary knowledge and skills to succeed in your career. We value your precious time and money.</p>
         <p>Our bundles give you a discounted price for purchasing multiple courses at once – you could save up to 50%. Our new course bundles provide the best way to get the most value for your money. Each bundle features a range of professional training courses designed to provide you with the skills to succeed.</p>
             <div class="buttons">
-        <a class="btn-blue open-popup enquiryJS" data-quote="Have any Question?" data-heading="Have any Question?"><img src="{{url('img/offer/question.svg')}}" alt="question">Have any Question?</a>
+        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Have any Question?" data-heading="Have any Question?"><img src="{{url('img/offer/question.svg')}}" alt="question">Have any Question?</a>
             </div>
     </div>
         </div>
@@ -703,7 +703,7 @@
                     </div>
                     <p>FlexiPass is a pre-paid training voucher that enables you to book and attend the training programmes anywhere within 6 months. Having agreed with your training provider on the financial issues involved, you will be provided with an account to book your course. Besides, you will also come to know about the performance of others through various reports you receive.</p>
                     <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire For The FlexiPass" data-heading="Enquire For The FlexiPass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The FlexiPass</a>
+                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire For The FlexiPass" data-heading="Enquire For The FlexiPass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The FlexiPass</a>
                     </div>
                 </div>
                 <div class="pass-content">
@@ -713,7 +713,7 @@
                     </div>
                     <p>Knowledge Pass is also a pre-paid training voucher that helps you maintain your training budget more effectively. After setting a budget, you can book any course in your preferred location within 12 months. This pass is best suited for the audience who have flexible requirements for the business. To get the knowledge pass, you can contact one of our specialist learning consultant to set up your account so that you can book courses throughout the year.</p>
                     <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire For The Knowledge Pass" data-heading="Enquire For The Knowledge Pass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The Knowledge Pass</a>
+                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire For The Knowledge Pass" data-heading="Enquire For The Knowledge Pass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The Knowledge Pass</a>
                     </div>
                 </div>
             </div>
