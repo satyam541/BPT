@@ -8575,6 +8575,7 @@ input[type=number] {
   font-size: 20px;
   font-weight: bold;
   align-self: flex-end;
+  line-height: 1.2;
 }
 .foundation .tab-common {
   display: flex;
@@ -11382,6 +11383,7 @@ input[type=number] {
 }
 .catalogue-banner {
   background: linear-gradient(#0064D8, #1C2848);
+  box-shadow: none;
 }
 .catalogue-banner .banner-text {
   display: flex;

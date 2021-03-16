@@ -270,7 +270,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-type="topic" data-quote="{{$topic->name}}" data-course="{{$topic->name}}">
+                    <a class="btn-blue open-popup enquiryJS" data-type="topic" data-quote="{{$topic->name}}" data-course="{{$topic->name}}" data-heading="{{$topic->name}}">
                         <img src="{{url('img/topic/topic-email.svg')}}" alt="topic-email">
                         Enquire Now
                     </a>
@@ -408,7 +408,7 @@
                         
                         <p>{!!$pageDetail->popular_location['popular']->content!!}</p>
                         <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-type="topic" data-course="{{$topic->name}}">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-type="topic" data-course="{{$topic->name}}" data-heading="Learn More">
                             <img src="{{url('img/courses/learn.svg')}}" alt="learn">
                             Learn More
                         </a>
