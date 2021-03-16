@@ -119,7 +119,7 @@
             <form class="form bestpracticetraining.com-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
                 @csrf
 
-                <div class="heading center-heading white-heading">
+                <div class="heading center-heading">
                     <h2 id="quote">Get A Quote</h2>
                 </div>
                 <div class="form-input">
@@ -397,7 +397,7 @@ $.ajax({
 
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-                '{{ url('thank-you') }}').html(input);
+                '{{ route('thanks') }}').html(input);
             $('body').append(form);
             $('#thank-you').submit();
         }
