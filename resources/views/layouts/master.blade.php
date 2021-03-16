@@ -194,7 +194,7 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-                <a href="{mailto:{{ websiteDetail()->contact_number }}" class="email">
+                <a href="mailto:{{ websiteDetail()->contact_number }}" class="email">
                     <img src="{{ url('img/master/email-white.png') }}" alt="mail">
                 </a>
                 <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
@@ -444,18 +444,19 @@ $.ajax({
     data: formData,
     type: "post",
     headers: {
-              'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-          },
+            'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+        },
     timeout: 90000,
     global: false,
+    beforeSend: function(){
+        var input = '{{ csrf_field() }}';
+        var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
+            '{{ route('thanks') }}').html(input);
+        $('body').append(form);
+    },
     success: function(response) {
         if (response == 'done') {
-
-            var input = '{{ csrf_field() }}';
-            var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-                '{{ route('thanks') }}').html(input);
-            $('body').append(form);
-            $('#thank-you').submit();
+            // $('#thank-you').submit();
         }
 
     }
