@@ -8614,6 +8614,10 @@ input[type=number] {
   overflow: hidden;
   width: 100%;
 }
+.foundation .tab-common .overview-content p a {
+  color: #0064D8;
+  font-weight: 600;
+}
 .foundation .tab-common .toggle {
   max-height: 100% !important;
   transition: all 0.3s ease-in, color 0s ease-in-out;
