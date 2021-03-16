@@ -33,7 +33,7 @@
                     <div class="detail-container">
                         <div class="detail blue-active" id="one">
                             <p>Customer Details</p>
-                            <span class="number">
+                            <span class="number">   
                                 <p>1</p>
                                 <img src="{{ url('img/cart/green-tick.svg') }}" alt="tick">
                             </span>
