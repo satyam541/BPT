@@ -17,7 +17,7 @@
                 </div>
                 <!-- /.container-fluid -->
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="card card-primary card-outline">
 
@@ -65,7 +65,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- /.card-header -->
 
                 <div class="card card-primary card-outline">
@@ -82,8 +82,9 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Active</th>
+                                        
                                         <th>Role</th>
+                                        <th>Active</th>
                                         @can('update',new App\User())
                                         <th>Edit</th>
                                         @endcan
@@ -94,8 +95,9 @@
                                         <tr>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->active }}</td>
+                                            
                                             <td>{{ $user->roles->implode('name', ', ') }}</td>
+                                            <td>{{ $user->active }}</td>
                                             <td>
                                             @can('update',$user)
                                             <a href="{{ route('editUser', ['user' => $user->id]) }}" class="href"><i class="fa fa-edit"></a></td>
@@ -115,7 +117,7 @@
                         @endcan
                         </div>
                         <div class="col-md-6">
-                            <div class="float-sm-right">{{ $users->links() }}</div>
+                            {{-- <div class="float-sm-right">{{ $users->links() }}</div> --}}
 
                         </div>
                     </div>
@@ -131,22 +133,65 @@
 
 @section('footer')
 <script>
-    $('.select').select2();
-    
-    $(document).ready(function(){
-        $('#example1').DataTable({
-            "paging":   false,
-            
-          "columns": [
-                        { "name": "Name",searching:false},
-                        { "name": "Email",searching:false },
-                        { "name": "Active",searching:false },
-                        { "name": "Role",searching:false },
-                        { "name": "Edit", "sorting":false, searching:false }
-          ],
-                          
+    $(".selectJS").select2({
+            tags: true,
+            theme: "classic",
+            width: '400px',
+            tokenSeparators: [',', ' ']
         });
-    });
+        $(document).ready(function() {
+
+            $('#example1').DataTable({
+                ordering: false,
+                
+                columns: [{
+                        "name": "Name"
+                    },
+                    {
+                        "name": "Email"
+                    },
+                    {
+                        "name": "Role"
+                    },
+                    {
+                        "name": "Active"
+                    },
+                    {
+                        "name": "edit",
+                        sorting: false,
+                        searching: false
+                    },
+                    
+                ],
+
+                initComplete: function() {
+                    var data = this;
+                    this.api().columns([0,1,2,3]).every(function() {
+                        var column = this;
+                        var columnName = $(column.header()).text();
+                        var select = $('<select class="selectJS" data-placeholder="Select ' +
+                                columnName + '"><option value=""></option></select>')
+                            .appendTo($(column.header()).empty())
+                            .on('change', function() {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+                                if (val == "all") {
+                                    val = "";
+                                }
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, true)
+                                    .draw();
+                            });
+                        select.append('<option value="all">All</option>')
+                        column.data().unique().each(function(d, j) {
+                            select.append('<option value="' + d + '">' + d +
+                                '</option>')
+                        });
+                    });
+                }
+            });
+        });
     
 </script>
     

@@ -8594,6 +8594,7 @@ input[type=number] {
   font-size: 20px;
   font-weight: bold;
   align-self: flex-end;
+  line-height: 1.2;
 }
 .foundation .tab-common {
   display: flex;
@@ -8631,6 +8632,10 @@ input[type=number] {
   max-height: 400px;
   overflow: hidden;
   width: 100%;
+}
+.foundation .tab-common .overview-content p a {
+  color: #0064D8;
+  font-weight: 600;
 }
 .foundation .tab-common .toggle {
   max-height: 100% !important;
@@ -9258,6 +9263,9 @@ input[type=number] {
 }
 .training .onsite-block .onsite-form input {
   color: #FFFFFF;
+}
+.training .onsite-block .onsite-form input::before {
+  color: #000000;
 }
 .training .onsite-block .onsite-form p,
 .training .onsite-block .onsite-form label {
@@ -11394,6 +11402,7 @@ input[type=number] {
 }
 .catalogue-banner {
   background: linear-gradient(#0064D8, #1C2848);
+  box-shadow: none;
 }
 .catalogue-banner .banner-text {
   display: flex;

@@ -179,10 +179,14 @@
 
                     @if ($selectedCourse->whatsIncluded->isNotEmpty())
                     <div class="tab-content" id="included">
-                            <h2>What's Included Us</h2>
-                        <div class="included-list">
-
-                            @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            <h2>What's Included</h2>
+                            @php
+                                $i=0;   
+                            @endphp
+                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            @if($i==0)
+                                <div class="included-list">
+                            @endif
                             <div class="included-content">
                                 <span>
                                     {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
@@ -190,9 +194,16 @@
                                 </span>
                                 <h3>{!! $whatsInclude->name !!}</h3>
                             </div>
-                            @endforeach
-
-                        </div>
+                            @php
+                                $i++;    
+                            @endphp
+                            @if($i==4)
+                                </div>
+                                @php
+                                    $i=0;
+                                @endphp
+                            @endif
+                        @endforeach
                     </div>
                     @endif
                 </div>
@@ -404,7 +415,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach Us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <strong class="pointer">{{websiteDetail()->contact_number}}</strong> or <strong class="pointer">{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -574,7 +585,7 @@
                                 <div class="input-container">
                                     <span><img src="{{url('img/master/name-white.svg')}}" alt="name" class="black">
                                         <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                                    <input type="text" name="name" id="f-name" placeholder="First Name*"
+                                    <input type="text" name="name" id="f-name" placeholder="Name*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container">
@@ -616,7 +627,7 @@
                                             class="black">
                                         <img src="{{url('img/master/position-red.svg')}}" alt="position-red"
                                             class="red"></span>
-                                    <input type="text" name="delegate" id="delegate" placeholder="Number of Delegates*"
+                                    <input type="text" name="delegates" id="delegate" placeholder="Number of Delegates*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container message">
@@ -644,7 +655,7 @@
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
-                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                                <label class="pointer" for="checkConsent">By submitting this enquiry I agree to be contacted in the most
                                     suitable manner (by phone or email) in order to respond to my enquiry.</label>
                             </div>
                             <div class="consent-error" style="display: none;">
@@ -653,7 +664,7 @@
                             </div>
                             <div class="form-consent">
                                 <input type="checkbox" name="marketing_consent" id="allowconsent">
-                                <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                                <label class="pointer" for="allowconsent">Click here to sign up to our email marketing, offers and
                                     discounts</label>
                             </div>
                             <div class="buttons">

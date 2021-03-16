@@ -123,7 +123,7 @@ class CartController extends Controller
         $cart['name'] = $onlineCourse->name;
         $cart['qty'] = 1;
         $cart['weight'] = 1;
-        $totalprice = country()->convertPrice($onlineCourse->onlinePrice->price + $addonPrice);
+        $totalprice = convertPrice($onlineCourse->onlinePrice->price + $addonPrice);
         $cart['price'] =  $totalprice;
 
         $options = array();
@@ -281,7 +281,7 @@ class CartController extends Controller
                         [
                              'line_id'   =>$orderLineItem->id,
                              'name'     =>$addon->name,
-                             'price'    => country()->convertPrice($addon->price) ]
+                             'price'    =>convertPrice($addon->price) ]
                         );
                 }
             }
