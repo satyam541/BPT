@@ -19,7 +19,7 @@ class ExchangeRateController extends Controller
             }
         }
     }
-    
+
     /**
      * All Functions Below Are for Currency Conversion
      * account on apilayer
@@ -32,8 +32,8 @@ class ExchangeRateController extends Controller
      * url: https://api.exchangerate-api.com/v6/latest
      */
 
-    public $vender_name    = null;
-    public $exchangeRate    = null;
+    private $vender_name    = null;
+    private $exchangeRate    = null;
 
     private function fetchApi($url){
         $api_result = file_get_contents($url,false);
@@ -41,7 +41,7 @@ class ExchangeRateController extends Controller
     }
     private function fetchFromApiLayer1()
     {
-        $api_url ="http://apilayer.net/api/live?access_key=bdbc0a4ce87d3d510f37cbf314e7fd59";
+        $api_url ="http://api.currencylayer.com/live?access_key=bdbc0a4ce87d3d510f37cbf314e7fd59";
         $this->vender_name = "apilayer";
         $api_data = $this->fetchAPI($api_url);
         if($api_data->success == false)
