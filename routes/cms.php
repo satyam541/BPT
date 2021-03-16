@@ -63,6 +63,7 @@ Route::post('/certification/topics/{topic_id}/assignCourse','CertificationContro
 // country routes
 Route::get('/country','CountryController@list')->name('countryList');
 // Route::post('/country','CountryController@filterList')->name('countryList');
+Route::post('/country/popular','CountryController@active')->name('countryActive');
 Route::get('/country/insert','CountryController@create')->name('createCountry');
 Route::post('/country/insert','CountryController@insert')->name('insertCountry');
 Route::get('/country/update/{country_code}','CountryController@edit')->name('editCountry');

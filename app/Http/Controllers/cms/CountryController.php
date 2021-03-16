@@ -39,7 +39,17 @@ class CountryController extends Controller
         }
         return view('cms.country.countryList',compact('countries','checked'));
     }
-    
+    public function active(Request $request){
+        $country=Country::find($request->country_id);
+        if($request->checked=='checked'){
+            $country->active=0;
+            $country->save();    
+            return 'removed';
+        }
+        $country->active=1;
+            $country->save(); 
+        return 'added';
+    }
     public function create()
     {
         
