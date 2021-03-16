@@ -452,10 +452,13 @@ $.ajax({
     timeout: 90000,
     global: false,
     beforeSend: function(){
-        var input = '{{ csrf_field() }}';
-        var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
-            '{{ route('thanks') }}').html(input);
-        $('body').append(form);
+        if($('#thank-you').length > 0)
+        {
+            var input = '{{ csrf_field() }}';
+            var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
+                '{{ route('thanks') }}').html(input);
+            $('body').append(form);
+        }
         $('div.scene').show();
     },
     success: function(response) {
