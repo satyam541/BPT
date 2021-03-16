@@ -150,6 +150,7 @@ input[type=number] {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 .buttons .btn-blue::before,
 .buttons .btn-white::before {
@@ -1028,7 +1029,7 @@ input[type=number] {
   left: 0;
   overflow: auto;
   z-index: 88;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(255, 255, 255, 0.92);
 }
 .enquiry-popup .popup-container {
   display: flex;
@@ -1037,26 +1038,14 @@ input[type=number] {
 .enquiry-popup .enquire-popup {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  box-shadow: 0 0 40px #dfdfdf;
   position: relative;
   z-index: 1;
   padding: 1.5rem;
   background-color: #FFFFFF;
   border-radius: 28px;
-  border-bottom: 2px solid #1C2848;
-}
-.enquiry-popup .enquire-popup::before {
-  content: '';
-  position: absolute;
-  background-image: url(../img/master/heading-bg.png);
-  background-size: 100% 100%;
-  height: 70px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: -22px;
-  width: 230px;
-  background-repeat: no-repeat;
+  border-bottom: 4px solid #0064D8;
+  border-top: 4px solid #0064D8;
 }
 .enquiry-popup .enquire-popup .cross {
   display: flex;
@@ -1070,7 +1059,8 @@ input[type=number] {
   border: 4px solid #1C2848;
   position: absolute;
   right: 15px;
-  top: 36px;
+  top: 20px;
+  cursor: pointer;
 }
 .enquiry-popup .enquire-popup .cross img {
   width: 100%;
@@ -1083,11 +1073,14 @@ input[type=number] {
 }
 .enquiry-popup .form .heading {
   padding-top: 0;
-  margin-top: -2rem;
 }
 .enquiry-popup .form .form-input {
   justify-content: center;
-  padding-top: 3rem;
+  padding-top: 1rem;
+}
+.enquiry-popup .form .form-input .buttons {
+  margin: 0 auto;
+  margin-top: 1rem;
 }
 .tooltips {
   display: none;
@@ -1273,7 +1266,7 @@ input[type=number] {
     padding: 3rem 2rem;
   }
   .enquiry-popup .enquire-popup {
-    width: 355px;
+    width: 560px;
     margin: auto;
   }
   .enquiry-popup .enquire-popup .cross:after {
@@ -1293,12 +1286,25 @@ input[type=number] {
     padding: 0;
   }
   .enquiry-popup .form .heading {
-    padding-top: 0;
-    margin-top: -2rem;
+    width: 90%;
   }
   .enquiry-popup .form .form-input {
-    justify-content: center;
-    padding-top: 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .enquiry-popup .form .input-container {
+    width: 48%;
+  }
+  .enquiry-popup .form .message {
+    width: 100%;
+  }
+  .enquiry-popup .form .message span {
+    height: auto;
+  }
+  .enquiry-popup .form label {
+    cursor: pointer;
   }
   .up-arrow {
     right: 32px;
@@ -7476,13 +7482,19 @@ input[type=number] {
 }
 .management .bundle-info {
   display: flex;
+  flex-direction: column;
+}
+.management .bundle-content,
+.management .bundle-click {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
   box-shadow: 0 0 10px grey;
   padding: 1rem;
 }
-.management .bundle-info span {
+.management .bundle-content span,
+.management .bundle-click span {
   width: 48%;
   text-align: center;
   font-weight: bold;
@@ -7696,11 +7708,16 @@ input[type=number] {
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .management .bundle-info {
+  .management .bundle-info,
+  .management .bundle-click {
     width: 48%;
+  }
+  .management h3 {
+    min-height: 72px;
   }
   .management ul {
     width: 100%;
+    min-height: 171px;
   }
   .recommend {
     padding: 3rem 2rem;
@@ -7811,14 +7828,21 @@ input[type=number] {
   }
   .management .bundle-info {
     width: 48%;
+  }
+  .management .bundle-click {
+    width: 54%;
+  }
+  .management .bundle-content,
+  .management .bundle-click {
     background-image: url(../img/offer/bundle-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
     box-shadow: none;
     position: relative;
   }
-  .management .bundle-info span {
+  .management .bundle-content span,
+  .management .bundle-click span {
     position: absolute;
     background-image: url(../img/offer/offer-bg.png);
     background-repeat: no-repeat;
@@ -7832,15 +7856,15 @@ input[type=number] {
   }
   .management h3 {
     width: 62%;
+    min-height: 48px;
   }
   .management ul {
-    width: 55%;
+    min-height: auto;
   }
   .management .buttons {
-    width: 42%;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 0;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .new-bundle .new-container {
     flex-direction: row;
@@ -7887,7 +7911,8 @@ input[type=number] {
   .management {
     padding: 4rem 0rem;
   }
-  .management .bundle-info {
+  .management .bundle-content,
+  .management .bundle-click {
     padding-left: 4rem;
   }
   .new-bundle {
@@ -11752,6 +11777,7 @@ input[type=number] {
   border-radius: 10px;
 }
 .popular-courses .building {
+  height: 370px;
   margin-top: 2rem;
 }
 .popular-courses .new-users {
@@ -12154,6 +12180,10 @@ input[type=number] {
   }
   .popular-courses .total-text {
     width: calc(100% - 48px);
+  }
+  .popular-courses .building,
+  .popular-courses .caller {
+    height: 270px;
   }
   .library .library-content {
     width: 31%;
