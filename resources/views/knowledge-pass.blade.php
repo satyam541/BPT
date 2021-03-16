@@ -10,8 +10,8 @@
 
               <div class="banner-content">
 
-              <h1>Knowledge Pass</h1>
-                <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
+              <h1>Best Practice Training Knowledge Pass</h1>
+                <p>Best Practice Training was founded with a vision to deliver the highest standard of training. Our Knowledge Pass is beneficial, as it allows you to do as many courses as you want over a time span of 12 months.</p>
                 <div class="breadcrums">
                             <ul>
                                 <li><a href="">Home</a></li>
@@ -43,7 +43,7 @@
                             <p> Save time, maximise budget, train more people</p>
                         </div>
                         <h3>What is a Knowledge Pass?</h3>
-                        <p>A KnowledgePass is pre-paid training voucher which allows you to book any number of training courses you wish over a period of 12 months. It gives you full control of your budget and your chosen courses can be delivered in any location or online, virtually or onsite. You’ll also receive different levels of discount depending on how much you spend and what courses you purchase.
+                        <p>A Knowledge Pass is a pre-paid training voucher, which offers you to book multiple training courses over a long period of 12 months. It provides you full control of your budget, and your chosen courses will be delivered to you at any location, online, virtually or onsite. You will also receive different discounts depending on how much you spend and what courses you buy
                         </p>
                         <p class="tagline"> Join leading brands in the new & best way to train...</p>  
 
@@ -252,7 +252,7 @@
         <div class="container">
             <div class="right-container">
                 <div class="heading center-heading">
-                    <h2>Why a Knowledge Pass is right <span>for you</span></h2>
+                    <h2>Why a Knowledge Pass is right <span>for you?</span></h2>
                     <p>Receive these exclusive benefits depending on your chosen budget.</p>
                 </div>
                 <div class="right-list">
@@ -263,7 +263,7 @@
                         </span>
                         <div class="content">
                             <h2>Saving Money</h2>
-                            <p>Purchasing courses together lets you save money and get the most out of your budget.</p>
+                            <p>Buying courses together lets you save money and get the most out of your budget.</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -272,7 +272,7 @@
                             <img src="{{url('img/knowledge-pass/time.svg')}}" alt="time">
                         </span>
                         <div class="content">
-                            <h2>Saving time</h2>
+                            <h2>Saving Time</h2>
                             <p>Keep a record with your personalised dashboard of spends and utilisation.</p>
                         </div>
                     </div>
@@ -282,8 +282,8 @@
                             <img src="{{url('img/knowledge-pass/budget.svg')}}" alt="budget">
                         </span>
                         <div class="content">
-                            <h2>12 month annualised budget</h2>
-                            <p>Your courses can be booked at your convenience over a period of 12 months and can be split between .</p>
+                            <h2>12 Months Annualised Budget</h2>
+                            <p>Your courses can be booked at your convenience for over 12 months and can be split between departments.</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -292,8 +292,8 @@
                             <img src="{{url('img/knowledge-pass/invoicing.svg')}}" alt="invoicing">
                         </span>
                         <div class="content">
-                            <h2>Invoicing & administration reduced</h2>
-                            <p>Through the use of Avenoire you can easily manage training requests,</p>
+                            <h2>Invoicing and Administration Reduced</h2>
+                            <p>We'll book and handle everything for you</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -302,8 +302,8 @@
                             <img src="{{url('img/knowledge-pass/analysis.svg')}}" alt="analysis">
                         </span>
                         <div class="content">
-                            <h2>Training needs analysis</h2>
-                            <p>Your KnowledgePass includes exclusive access to our Avenoire training needs analysis tool</p>
+                            <h2>Training Needs Analysis</h2>
+                            <p>Your Knowledge Pass includes exclusive access to our Avenoire training needs analysis tool</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -312,8 +312,8 @@
                             <img src="{{url('img/knowledge-pass/progress.svg')}}" alt="progress">
                         </span>
                         <div class="content">
-                            <h2>Track progress & feedback</h2>
-                            <p>While using Avenoire, your personalised dashboard lets you keep track of spend and utilisation </p>
+                            <h2>Track Progress and Feedback</h2>
+                            <p>While using Avenoire, your personalised dashboard lets you keep track of spend and utilisation</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -322,8 +322,8 @@
                             <img src="{{url('img/knowledge-pass/manage.svg')}}" alt="manage">
                         </span>
                         <div class="content">
-                            <h2>Easily manage training requests</h2>
-                            <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating</p>
+                            <h2>Easily Manage Training Requests</h2>
+                            <p>By using Avenoire, you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -333,7 +333,7 @@
                         </span>
                         <div class="content">
                             <h2>Full Transparency</h2>
-                            <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating</p>
+                            <p>Know exactly where you're spending your money</p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -342,8 +342,8 @@
                             <img src="{{url('img/knowledge-pass/alerts.svg')}}" alt="alerts">
                         </span>
                         <div class="content">
-                            <h2>Alerts & Notifications</h2>
-                            <p>Monthly spend reports, budget utilisation notifications, booking request alerts, feedback report</p>
+                            <h2>Alerts and Notifications</h2>
+                            <p>Monthly spend reports, budget utilisation notifications, booking request alerts, feedback report notifications</p>
                         </div>
                     </div>
                 </div>
@@ -358,33 +358,33 @@
         <div class="container">
             <div class="benefit-container">
                 <div class="heading center-heading white-heading">
-                    <h2>The Benefits</h2>
+                    <h2>Knowledge Pass Platform Features</h2>
                 </div>
                 <div class="benefit-list">
                     <div class="benefit-info">
                         <span><img src="{{url('img/knowledge-pass/save-money.svg')}}" alt="save-money"></span>
-                        <h3>Saving Money</h3>
+                        <h3>Determining Training Requirements</h3>
                     </div>
                     <div class="benefit-info">
                         <span><img src="{{url('img/knowledge-pass/saving-time.svg')}}" alt="saving-time"></span>
-                        <h3>Saving Time</h3>
+                        <h3>Managing Budgets</h3>
                     </div>
                     <div class="benefit-info">
                         <span><img src="{{url('img/knowledge-pass/12-month.svg')}}" alt="saving-time"></span>
-                        <h3>12 Month Budget</h3>
+                        <h3>Booking Training</h3>
                     </div>
                     <div class="benefit-info">
                         <span><img src="{{url('img/knowledge-pass/reduced-admin.svg')}}" alt="reduced-admin"></span>
-                        <h3>Reduced Invoicing and Administration</h3>
+                        <h3>Tracking ROIs</h3>
                     </div>
-                    <div class="benefit-info">  
+                    <!-- <div class="benefit-info">  
                         <span><img src="{{url('img/knowledge-pass/training-analysis.svg')}}" alt="training-analyis"></span>
                         <h3>Training Needs Analysis</h3>
                     </div>
                     <div class="benefit-info">  
                         <span><img src="{{url('img/knowledge-pass/discount-percentages.svg')}}" alt="discount-discounts"></span>
                         <h3>Higher Discount Percentages</h3>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -480,10 +480,13 @@
                 <div class="heading">
                     <h2>Your guide to booking a Knowledge Pass</h2>
                 </div>
-                <p>"The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection."
+                <p>Best Practice Training provides high-quality training that helps you to enhance your skillset. We provide numerous services for our valuable customers. One of them is “Knowledge Pass”. If you aren't sure about the course and date, a Knowledge Pass will be the best option as it enables you to book any course, at any time in the upcoming 12 months. Our learning services are specially designed to keep your goals and requirements at the forefront. For booking your Knowledge Pass, you need to follow the given below steps:
                     </p>
-                    <p>The quality of training provided has been good with very good feedback from delegates. </p>
-                    <p>They use good quality venues and think about meeting our needs in their selection. " The quality of training provided has been good with very good feedback from delegates. They use good quality venues and think about meeting our needs in their selection.</p>
+                    <p><strong>Confirm the Amount:</strong> Confirm the budget amount alongside the list of features depending on the budget level.</p>
+                    <p><strong>Your Online Platform is Live:</strong> You can now access your platform.</p>
+                    <p><strong>Start Booking your Courses:</strong> Book your courses quickly and easily</p>
+                    <p><strong>Sign the Booking form:</strong> Once you've confirmed your training requirements, sign the booking form.</p>
+                    <p><strong>Your Dedicated Account is Opened:</strong> Knowledge Pass account has been opened by us.</p>
                     <div class="buttons">
                     <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
                     </div>
@@ -535,11 +538,11 @@
             <div class="study-list">
                 <div class="study-content">
                     <h2>Consistent Quality</h2>
-                    <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
+                    <p>Best Practice Training has a rolling contract of 2-3 years providing training for PRINCE2 to Management candidates each Summer as part of their degree. We deliver PRINCE2 training to those individuals paying for Master degrees, and it shows that we are a respected and established provider. Furthermore, the essential benefits of the PRINCE2 course is an integral part of the Master candidate's training, and we expect that 'The City University of London' would continue to procure more courses year by year. Moreover, Best Practice Training also provides Business Analysis courses and Agile Training courses for this university.</p>
                 </div>
                 <div class="study-content">
-                    <h2>Consistent Quality</h2>
-                    <p>The Knowledge Academy is in year 2 of a 3-year rolling contract, where PRINCE2 training is delivered for 60 Masters students in Management each Summer as part of their degree. The fact that The Knowledge Academy is trusted as a supplier of PRINCE2 training to those paying for Masters degrees is proof in itself that we are a respected and established supplier. More importantly, it is proof of the substantial benefits of the course that it is considered an essential part of the training of Masters students, and that City University of London should continue to procure large numbers of courses year upon year.</p>
+                    <h2>We Take Feedback Seriously</h2>
+                    <p>Obtaining feedback from onsite training of project management course indicating that individuals have passed the exam successfully. On the other hand, some didn't get that much clarification and real-life examples and methodologies they can implement in their day-to-day life or in a job role. Having this feedback, we arranged a phone call with a trainer prior to the next planned session and striking the right balance between real-world implementation and exam preparation of the course. This process is used for all upcoming sessions. Since 2014, The University of St. Andrews purchases courses from us due to the quality and positive impact of these project management courses.</p>
                 </div>
             </div>
         </div>
