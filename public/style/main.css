@@ -11266,8 +11266,7 @@ select::-ms-expand {
 }
 .result .filter p {
   font-weight: bold;
-  margin: 1rem 0;
-  margin-bottom: 0.2rem;
+  margin-top: 1rem;
 }
 .result .filter li {
   margin-top: 0.5rem;
@@ -11302,6 +11301,12 @@ select::-ms-expand {
   }
   .result .buttons {
     flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .result .btn-blue,
+  .result .btn-white {
+    width: 41%;
   }
   .result .btn-blue {
     margin-bottom: 0;
@@ -11309,7 +11314,6 @@ select::-ms-expand {
   }
   .result .filter {
     width: 32%;
-    align-self: flex-start;
     position: sticky;
     top: 70px;
     height: fit-content;
@@ -11328,6 +11332,10 @@ select::-ms-expand {
   }
   .most-search .search-info {
     width: 23%;
+  }
+  .result .btn-blue,
+  .result .btn-white {
+    width: 22%;
   }
 }
 @media (min-width : 1366px) {
