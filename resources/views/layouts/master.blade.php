@@ -314,7 +314,7 @@
 <script src="{{ url('jqueryautocomplete/jquery-ui.min.js') }}"></script>
 <script src="{{ url('script/main.js') }}"></script>
 <script src="{{ url('script/count.js') }}"></script>
-<script>var searchUrl = '{{route('SearchCourse')}}'</script>
+<script>var searchUrl = '{{route('SearchCourse')}}';</script>
 <script src="{{ url('script/search.js') }}"></script>
 <script>
     //country selectbox 
