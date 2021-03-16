@@ -8575,6 +8575,7 @@ input[type=number] {
   font-size: 20px;
   font-weight: bold;
   align-self: flex-end;
+  line-height: 1.2;
 }
 .foundation .tab-common {
   display: flex;
@@ -8612,6 +8613,10 @@ input[type=number] {
   max-height: 400px;
   overflow: hidden;
   width: 100%;
+}
+.foundation .tab-common .overview-content p a {
+  color: #0064D8;
+  font-weight: 600;
 }
 .foundation .tab-common .toggle {
   max-height: 100% !important;
