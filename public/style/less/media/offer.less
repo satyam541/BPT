@@ -28,11 +28,15 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
             }
-            .bundle-info{
+            .bundle-info, .bundle-click{
                 width: 48%;
+            }
+            h3 {
+                min-height: 72px;
             }
             ul{
                 width: 100%;
+                min-height: 171px;
             }
         }
         // End management section
@@ -48,7 +52,7 @@
                 align-items: center;
             }
             p{
-                width: 38%;
+                width: 70%;
             }
             input{
                 width: 35%;
@@ -169,12 +173,18 @@
     
     // Start management section
     .management{
-        .bundle-info{
+        .bundle-info {
             width: 48%;
+        }
+        .bundle-click {
+            width: 54%;
+        }
+        .bundle-content, .bundle-click{
+            
             background-image: url(../img/offer/bundle-bg.png);
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            padding: 4rem 3rem;
+            padding: 5rem 3rem;
             box-shadow: none;
             position: relative;
             span{
@@ -192,15 +202,15 @@
         }
         h3{
             width: 62%;
+            min-height: 48px;
         }
         ul{
-            width: 55%;
+            min-height: auto;
         }
         .buttons{
-            width: 42%;
-            justify-content: flex-end;
-            align-items: flex-end;
-            margin-top: 0;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
         
         }
     }
@@ -272,7 +282,7 @@
     // Start management section
     .management{
         padding: @sectionPadding-xl;
-        .bundle-info{
+        .bundle-content, .bundle-click{
             padding-left: 4rem;
         }
     } 

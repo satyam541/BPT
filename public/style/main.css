@@ -850,7 +850,7 @@ input[type=number] {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1310,7 +1310,7 @@ input[type=number] {
   .footer .terms {
     width: 80%;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
   }
   .footer .footer-content {
     flex-direction: row;
@@ -7546,13 +7546,19 @@ input[type=number] {
 }
 .management .bundle-info {
   display: flex;
+  flex-direction: column;
+}
+.management .bundle-content,
+.management .bundle-click {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
   box-shadow: 0 0 10px grey;
   padding: 1rem;
 }
-.management .bundle-info span {
+.management .bundle-content span,
+.management .bundle-click span {
   width: 48%;
   text-align: center;
   font-weight: bold;
@@ -7766,11 +7772,16 @@ input[type=number] {
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .management .bundle-info {
+  .management .bundle-info,
+  .management .bundle-click {
     width: 48%;
+  }
+  .management h3 {
+    min-height: 72px;
   }
   .management ul {
     width: 100%;
+    min-height: 171px;
   }
   .recommend {
     padding: 3rem 2rem;
@@ -7783,7 +7794,7 @@ input[type=number] {
     align-items: center;
   }
   .recommend p {
-    width: 38%;
+    width: 70%;
   }
   .recommend input {
     width: 35%;
@@ -7881,14 +7892,21 @@ input[type=number] {
   }
   .management .bundle-info {
     width: 48%;
+  }
+  .management .bundle-click {
+    width: 54%;
+  }
+  .management .bundle-content,
+  .management .bundle-click {
     background-image: url(../img/offer/bundle-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
     box-shadow: none;
     position: relative;
   }
-  .management .bundle-info span {
+  .management .bundle-content span,
+  .management .bundle-click span {
     position: absolute;
     background-image: url(../img/offer/offer-bg.png);
     background-repeat: no-repeat;
@@ -7902,15 +7920,15 @@ input[type=number] {
   }
   .management h3 {
     width: 62%;
+    min-height: 48px;
   }
   .management ul {
-    width: 55%;
+    min-height: auto;
   }
   .management .buttons {
-    width: 42%;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 0;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .new-bundle .new-container {
     flex-direction: row;
@@ -7957,7 +7975,8 @@ input[type=number] {
   .management {
     padding: 4rem 0rem;
   }
-  .management .bundle-info {
+  .management .bundle-content,
+  .management .bundle-click {
     padding-left: 4rem;
   }
   .new-bundle {

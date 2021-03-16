@@ -37,16 +37,19 @@
                         <p>{{ footer()->footer['heading']->content }}</p>
                         <div class="social-media">
                             <p>Follow Us On:</p>
-                            <a href="{{ socialmedialinks()->where('website', 'Facebook')->first()->link ?? '' }}">
+                            @php
+                                $socialmedia = socialmedialinks();
+                            @endphp
+                            <a href="{{ $socialmedia->where('website', 'Facebook')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/facebook.svg') }}" alt="facebook">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Twitter')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Twitter')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/twitter.svg') }}" alt="twitter">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Google')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Google')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/google-plus.svg') }}" alt="google-plus">
                             </a>
-                            <a href="{{ socialmedialinks()->where('website', 'Linkedin')->first()->link ?? '' }}">
+                            <a href="{{ $socialmedia->where('website', 'Linkedin')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/linked-in.svg') }}" alt="linked-in">
                             </a>
                         </div>
@@ -194,7 +197,7 @@
     <section class="flex-container bottom-bar">
         <div class="container">
             <div class="bottom-list">
-                <a href="{mailto:{{ websiteDetail()->contact_number }}" class="email">
+                <a href="mailto:{{ websiteDetail()->contact_number }}" class="email">
                     <img src="{{ url('img/master/email-white.png') }}" alt="mail">
                 </a>
                 <a href="javascript:void(0);" class="search-btn search" id="mobile-search">
@@ -444,20 +447,27 @@ $.ajax({
     data: formData,
     type: "post",
     headers: {
-              'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
-          },
+            'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+        },
     timeout: 90000,
     global: false,
-    success: function(response) {
-        if (response == 'done') {
-
+    beforeSend: function(){
+        if($('form#thank-you').length < 0)
+        {
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
                 '{{ route('thanks') }}').html(input);
             $('body').append(form);
+        }
+        $('div.scene').show();
+    },
+    success: function(response) {
+        if (response == 'done') {
             $('#thank-you').submit();
         }
-
+    },
+    complete:function(){
+        $('div.scene').hide();
     }
 });
 }
