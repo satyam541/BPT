@@ -109,7 +109,7 @@
                                                             <li>
                                                                 <p>{{ $addon->name }}:</p>
                                                                 <span>{!! country()->currency_symbol !!}
-                                                                    {{ country()->convertPrice($addon->price) }} </span>
+                                                                    {{ convertPrice($addon->price) }} </span>
                                                             </li>
                                                         @endforeach
                                                     @endif

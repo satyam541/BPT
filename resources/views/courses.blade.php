@@ -35,7 +35,7 @@
                     @endforeach
                 </ul>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -253,7 +253,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>

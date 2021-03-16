@@ -1191,6 +1191,67 @@ input[type=number] {
 ::-webkit-scrollbar-thumb:hover {
   background: #0064D8;
 }
+.scene {
+  width: 100%;
+  height: 100%;
+  perspective: 600;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.scene svg {
+  width: 240px;
+  height: 240px;
+}
+.dc-logo {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.dc-logo:hover svg {
+  transform-origin: 50% 50%;
+  animation: arrow-spin 2.5s 0s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+.dc-logo:hover:hover:before {
+  content: '\2764';
+  padding: 6px;
+  font: 10px/1 Monaco, sans-serif;
+  font-size: 10px;
+  color: #00fffe;
+  text-transform: uppercase;
+  position: absolute;
+  left: -70px;
+  top: -30px;
+  white-space: nowrap;
+  z-index: 20px;
+  box-shadow: 0px 0px 4px #222;
+  background: rgba(0, 0, 0, 0.4);
+}
+.dc-logo:hover:hover:after {
+  content: 'Digital Craft';
+  padding: 6px;
+  font: 10px/1 Monaco, sans-serif;
+  font-size: 10px;
+  color: #6E6F71;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  white-space: nowrap;
+  z-index: 20px;
+  box-shadow: 0px 0px 4px #222;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: none;
+}
+@keyframes arrow-spin {
+  50% {
+    transform: rotateY(360deg);
+  }
+}
 @media (min-width : 768px) {
   .buttons .btn-blue,
   .buttons .btn-white {
@@ -7482,13 +7543,19 @@ input[type=number] {
 }
 .management .bundle-info {
   display: flex;
+  flex-direction: column;
+}
+.management .bundle-content,
+.management .bundle-click {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
   box-shadow: 0 0 10px grey;
   padding: 1rem;
 }
-.management .bundle-info span {
+.management .bundle-content span,
+.management .bundle-click span {
   width: 48%;
   text-align: center;
   font-weight: bold;
@@ -7702,11 +7769,16 @@ input[type=number] {
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .management .bundle-info {
+  .management .bundle-info,
+  .management .bundle-click {
     width: 48%;
+  }
+  .management h3 {
+    min-height: 72px;
   }
   .management ul {
     width: 100%;
+    min-height: 171px;
   }
   .recommend {
     padding: 3rem 2rem;
@@ -7817,14 +7889,21 @@ input[type=number] {
   }
   .management .bundle-info {
     width: 48%;
+  }
+  .management .bundle-click {
+    width: 54%;
+  }
+  .management .bundle-content,
+  .management .bundle-click {
     background-image: url(../img/offer/bundle-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
     box-shadow: none;
     position: relative;
   }
-  .management .bundle-info span {
+  .management .bundle-content span,
+  .management .bundle-click span {
     position: absolute;
     background-image: url(../img/offer/offer-bg.png);
     background-repeat: no-repeat;
@@ -7838,15 +7917,15 @@ input[type=number] {
   }
   .management h3 {
     width: 62%;
+    min-height: 48px;
   }
   .management ul {
-    width: 55%;
+    min-height: auto;
   }
   .management .buttons {
-    width: 42%;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 0;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .new-bundle .new-container {
     flex-direction: row;
@@ -7893,7 +7972,8 @@ input[type=number] {
   .management {
     padding: 4rem 0rem;
   }
-  .management .bundle-info {
+  .management .bundle-content,
+  .management .bundle-click {
     padding-left: 4rem;
   }
   .new-bundle {
