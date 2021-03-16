@@ -404,7 +404,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach Us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <strong class="pointer">{{websiteDetail()->contact_number}}</strong> or <strong class="pointer">{{websiteDetail()->contact_email}}</strong> for more information.
                             </p>
                         </div>
                         @endif
@@ -644,7 +644,7 @@
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
-                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                                <label class="pointer" for="checkConsent">By submitting this enquiry I agree to be contacted in the most
                                     suitable manner (by phone or email) in order to respond to my enquiry.</label>
                             </div>
                             <div class="consent-error" style="display: none;">
@@ -653,7 +653,7 @@
                             </div>
                             <div class="form-consent">
                                 <input type="checkbox" name="marketing_consent" id="allowconsent">
-                                <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                                <label class="pointer" for="allowconsent">Click here to sign up to our email marketing, offers and
                                     discounts</label>
                             </div>
                             <div class="buttons">
