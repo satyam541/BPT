@@ -9234,6 +9234,9 @@ input[type=number] {
 .training .onsite-block .onsite-form input {
   color: #FFFFFF;
 }
+.training .onsite-block .onsite-form input::before {
+  color: #000000;
+}
 .training .onsite-block .onsite-form p,
 .training .onsite-block .onsite-form label {
   color: #FFFFFF;
