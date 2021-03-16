@@ -452,7 +452,7 @@ $.ajax({
     timeout: 90000,
     global: false,
     beforeSend: function(){
-        if($('#thank-you').length < 0)
+        if($('form#thank-you').length < 0)
         {
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
