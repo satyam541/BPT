@@ -165,7 +165,7 @@
 <section class="flex-container new-bundle">
     <div class="container">
         <div class="new-container">
-    <div class="inform-us">
+    <div class="info-us">
     <img src="{{url('img/offer/inform-bg.png')}}" alt="inform-bg">
             <div class="info-content">
                 <p>Need more information on Bundles? We're a click away</p>

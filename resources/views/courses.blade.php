@@ -292,7 +292,7 @@
                     </div>
                     <div class="select-dropdown">
                         <select name="deliveryMethod">
-                            <option value="">Select a delivery format:</option>
+                            <option value="">Select a Delivery Format:</option>
                             <option value="#virtual-booking">Virtual</option>
                             <option value="#classroom-booking">Classroom</option>
                             <option value="#online-booking">Online</option>
@@ -358,7 +358,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$schedule->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" data-type="course" data-price="{{$schedule->event_price}}" data-quote="{{$schedule->course->name}}" data-course="{{$schedule->course->name}}" data-date="{{$schedule->response_date->format('j M Y')}}" data-location="{{$schedule->response_location}}" data-deliveryType="Classroom" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-type="course" data-price="{{convertPrice($schedule->event_price)}}" data-quote="{{$schedule->course->name}}" data-course="{{$schedule->course->name}}" data-date="{{$schedule->response_date->format('j M Y')}}" data-location="{{$schedule->response_location}}" data-deliveryType="Classroom" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
@@ -385,7 +385,7 @@
                                     <p>{{ $schedule->response_date->isoFormat('YYYY') }}</p>
                                 </div>
                                 <div class="rate">
-                                    <h3>£{{ceil($schedule->event_price) }}</h3>
+                                    <h3>{!! country()->currency_symbol !!}{{convertPrice($schedule->event_price) }}</h3>
                                     <p><strong>Duration: </strong>2 Days</p>
                                 </div>
                             </div>
@@ -416,7 +416,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{$virtual->event_price}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{convertPrice($virtual->event_price)}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now" data-course="{{$selectedCourse->name}}" data-date="{{$virtual->response_date}}" data-price="{{$virtual->event_price}}" data-location="{{$virtual->response_location}}" data-deliveryType="virtual">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
@@ -445,7 +445,7 @@
                                     <p>{{ $virtual->response_date->isoFormat('YYYY') }}</p>
                                 </div>
                                 <div class="rate">
-                                    <h3>£{{ceil($virtual->event_price) }}</h3>
+                                    <h3>{!! country()->currency_symbol !!}{{convertPrice($virtual->event_price) }}</h3>
                                     <p><strong>Duration: </strong>2 Days</p>
                                 </div>
                             </div>
@@ -480,7 +480,7 @@
                                     <div class="item">
                                         <div class="offer feature-tickbox">
                                             <input type="checkbox" name="addon[]" data-price="{{floor($addon->price)}}" value="{{$addon->id}}">
-                                            <h3>{!! $addon->name !!} - £{!! formatPrice(floor($addon->price)) !!}</h3>
+                                            <h3>{!! $addon->name !!} - {!! country()->currency_symbol !!}{!! convertPrice($addon->price) !!}</h3>
                                         </div>
                                         <p>{!! $addon->description !!}</p>
                                     </div>
@@ -507,20 +507,20 @@
                                     <ul>
                                         <li>
                                             <p>Course Price</p>
-                                            <p>£{!! formatPrice(floor($onlineSchedules->onlinePrice->price)) !!}</p>
+                                            <p>{!! country()->currency_symbol !!} {!! convertPrice($onlineSchedules->onlinePrice->price) !!}</p>
                                         </li>
                                         <li>
                                             <p>add-ons Price</p>
-                                            <p>£<span class="addons-price">0</span></p>
+                                            <p><span class="addons-price">{!! country()->currency_symbol !!} 0</span></p>
                                         </li>
                                         <li>
                                             <p>Sub-Total</p>
-                                            <p>£<span class="total-price" data-onlineprice="{{floor($onlineSchedules->onlinePrice->price)}}">{{floor($onlineSchedules->onlinePrice->price)}}</span></p>
+                                            <p><span class="total-price" data-onlineprice="{{convertPrice($onlineSchedules->onlinePrice->price)}}">{!! country()->currency_symbol !!} {{convertPrice($onlineSchedules->onlinePrice->price)}}</span></p>
                                         </li>
                                     </ul>
 
                                     <div class="buttons">
-                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->name}}"data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
+                                        <a data-price="{{convertPrice($onlineSchedules->onlinePrice->price)}}" data-quote="{{$onlineSchedules->name}}" data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>
@@ -744,8 +744,8 @@
                 </div>
                 <div class="price">
                     @if (!empty($onlineSchedules))
-                        <span class="prize">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price}}</span>
-                        <span class="offer">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->offer_price}}</span>
+                        <span class="prize">{!! country()->currency_symbol !!} {{ convertPrice($onlineSchedules->onlinePrice->price)}}</span>
+                        <span class="offer">{!! country()->currency_symbol !!} {{ convertPrice($onlineSchedules->onlinePrice->offer_price)}}</span>
                     @endif
                    
                     {{-- <div class="buy">
@@ -912,6 +912,7 @@
 
     function openSpecificDeliveryMethod(method) {
         method = method.replace(/(?![a-z0-9-])./gi, "");
+        $("#scheduleLinks").addClass("modes-active");
         switch (method) {
             case 'classroom-booking':
                 displaySchedules('classroom');
