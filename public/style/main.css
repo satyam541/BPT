@@ -2032,6 +2032,7 @@ input[type=number] {
     -ms-transform: translate(123px, 0);
     -o-transform: translate(123px, 0);
     transform: translate(123px, 0);
+    margin-left: 1rem;
   }
   .tooltips li:hover img {
     transform: rotate(360deg);
