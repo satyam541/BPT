@@ -11287,8 +11287,7 @@ input[type=number] {
 }
 .result .filter p {
   font-weight: bold;
-  margin: 1rem 0;
-  margin-bottom: 0.2rem;
+  margin-top: 1rem;
 }
 .result .filter li {
   margin-top: 0.5rem;
@@ -11323,6 +11322,12 @@ input[type=number] {
   }
   .result .buttons {
     flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .result .btn-blue,
+  .result .btn-white {
+    width: 41%;
   }
   .result .btn-blue {
     margin-bottom: 0;
@@ -11330,7 +11335,6 @@ input[type=number] {
   }
   .result .filter {
     width: 32%;
-    align-self: flex-start;
     position: sticky;
     top: 70px;
     height: fit-content;
@@ -11349,6 +11353,10 @@ input[type=number] {
   }
   .most-search .search-info {
     width: 23%;
+  }
+  .result .btn-blue,
+  .result .btn-white {
+    width: 22%;
   }
 }
 @media (min-width : 1366px) {

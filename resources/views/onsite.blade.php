@@ -31,7 +31,7 @@
                 </div>
                 <p>{!!$pageDetail->main['heading']->content!!}</p>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Need More Information">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Need More Information" data-heading="Need More Information">
                         <img src="{{url('img/onsite/information.svg')}}" alt="information">Need More Information</a>
                 </div>
             </div>
