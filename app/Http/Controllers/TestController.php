@@ -482,4 +482,45 @@ class TestController extends Controller
         
     }
 
+    public function country()
+    {
+        ini_set('max_execution_time',-1);
+        $countries = Country::where('country_code', '<>' ,'gb')->get();
+        
+        foreach ($countries as $country) {
+            dd($country->country_code);
+            $url = "http://127.0.0.1:8000/api/locations/".$country->country_code;
+            $data = file_get_contents($url);
+            $data = json_decode($data);
+            
+            if (empty($data)) {
+                continue;
+            }
+            
+            $this->saveCountry($data);
+           
+        }
+    }
+
+    public function saveCountry($data)
+    {
+        foreach ($data as $country) {
+            // dd($country);
+           
+            $main = Country::find($country->country_code);
+                                
+            $main->currency =   $country->currency;  
+            $main->currency_symbol =   $country->currency_symbol;  
+            $main->currency_symbol_html =   $country->currency_symbol_html;  
+            $main->currency_title =   $country->currency_title;  
+            $main->charge_vat =   $country->charge_vat;  
+            $main->sales_tax_label =   $country->sales_tax_label;  
+            $main->sales_ratio =   $country->sales_ratio;  
+            $main->vat_percentage =   $country->vat_percentage;  
+            $main->update();
+
+            
+        }
+    }
+
 }

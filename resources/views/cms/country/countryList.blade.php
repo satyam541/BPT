@@ -38,10 +38,10 @@
                 <div class="popular">
                   Only Active
                 </div>
-                <form action="{{Route('countryList')}}" method="get">
+                <form >
                                         
                   <div class="onoffswitch">
-                  <input type="checkbox" name="active" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                  <input type="checkbox" name="active"  class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                   <label class="onoffswitch-label" for="myonoffswitch">
                       <span class="onoffswitch-inner"></span>
                       <span class="onoffswitch-switch"></span>
@@ -49,17 +49,18 @@
                   </label>
                   
               </div>
-                <input type="submit" name="submit" id="submit" style="visibility: hidden">
               </form>
               </div>
             </div>
 
               <!-- /.card-header -->
               <div class="card-body">
+                <span class="message" id="success_type"></span>
               <table id="example1">
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Active</th>
                     <th>
                       @can('update',new App\Models\Country())
                       Actions
@@ -72,6 +73,7 @@
                     @foreach ($countries as $country)
                     <tr>
                       <td>{{$country->name}}</td>
+                      <td class=" text-center"><input type="checkbox" value="{{$country->country_code}}" @if ($country->active==1) checked @endif class="activeCountry" name="is_active"></td>
                       <td>
                       @can('update',$country)
                       <a href="{{route('editCountry',['country_code'=>$country->country_code])}}" class="fa fa-edit"></a>
@@ -108,16 +110,46 @@
 @endsection
 @section('footer')
     <script>
+      success = $('#success_type');
         $(document).ready(function(){
-            $('#example1').DataTable({
+           var table= $('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
+                        { "name": "Active", "sorting":false, searching:false },
                         { "name": "Actions", "sorting":false, searching:false }
               ]                    
             });
             $('#myonoffswitch').change(function(){
-              $('#submit').click();
+            console.log(table);
             });    
+            $('tbody').on('click','.activeCountry',function(){
+              var id=$(this).val();
+              var checked=$(this).attr('checked');
+              var that = this;
+              $.ajax({
+                url:'{{route('countryActive')}}',
+                data:{country_id:id,checked:checked},
+                type:'post',
+                headers: {
+                'X-CSRF-TOKEN': $("meta[name='token']").attr('content')
+            },
+            success: function(data) {
+              if(data=='removed'){
+                $(that).attr('checked',false);
+              }
+              else{
+                $(that).attr("checked", true);
+              }
+                    success.fadeIn('slow', function(){
+
+                        toastr.success('successfully '+data);
+                        success.delay(3000).fadeOut(); 
+                        location.reload();
+                    });
+                }
+            
+              });
+            });
 
         });
         

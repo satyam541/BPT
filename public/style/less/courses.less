@@ -70,6 +70,12 @@
         .intro-container{
             display: flex;
             flex-direction: column;
+            p{
+                a{
+                    color: @lightblueColor;
+                    font-weight: 600;
+                }
+            }
         }
         p{
             margin-bottom: 1rem;
@@ -129,6 +135,7 @@
             width: 100%;
             position: relative;
             z-index: 1;
+            cursor: pointer;
             &:first-child {
                 margin-top: 2rem;
             }
@@ -189,6 +196,11 @@
             }
         }
     }
+    .tab-overview{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     .tab {
         display: flex;
         font-size: 20px;
@@ -242,6 +254,7 @@
         ul {
             li {
                 display: flex;
+                flex-direction: column;
                 padding-left: 1.4rem;
                 position: relative;
                 z-index: 1;
@@ -466,12 +479,16 @@
         background-image: linear-gradient(@bgColor , @bgColor , @whiteColor , @whiteColor);
 
         p{
-            margin-top: 1rem;
+            margin-bottom: 1rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
         .heading{
-            margin-bottom: 0;
+            // margin-bottom: 0;
         }
         ul{
+            margin-bottom: 1rem;
             li{
                 padding-left: 1.4rem;
                 margin-top: 0.8rem;
@@ -574,8 +591,16 @@
                 height: 15px;
                 width: 15px;
                 transform: rotate(88deg);
+                transition: 0.6s all;
             }
+           
         }
+        .active{
+            img{
+                transform: rotate(-90deg);
+                transition: 0.6s all;
+            }
+    }
         .buttons{
             margin-top: 0;
         }
@@ -645,8 +670,19 @@
     .modes {
         display: flex;
         flex-direction: column;
-       
+        .heading{
+            .mode-icon{
+            transition: 0.6s all;
+           }
+        }
+       .active{
+        .mode-icon{
+                transform:rotate(-90deg);
+                transition: 0.6s all;
+            }
     }
+    }
+   
     .modes-list {
         display: none;
         flex-wrap: wrap;
@@ -887,6 +923,12 @@
                 color: @whiteColor;
             }
             p,label{
+                color: @whiteColor;
+            }
+            ::placeholder{
+                color:#dadada;
+            }
+            input,textarea{
                 color: @whiteColor;
             }
             .form-consent{

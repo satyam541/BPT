@@ -97,15 +97,6 @@ input[type="checkbox"] {
 input[type=number] {
   -moz-appearance: textfield;
 }
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-select::-ms-expand {
-  display: none;
-}
 .sticky {
   position: fixed !important;
   top: 0 !important;
@@ -345,6 +336,15 @@ select::-ms-expand {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
   padding: 1.5rem;
+  /* Chrome, Safari, Edge, Opera */
+}
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form select::-ms-expand {
+  display: none;
 }
 .form .heading::before {
   content: none;
@@ -8444,6 +8444,10 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
 }
+.course-intro .intro-container p a {
+  color: #0064D8;
+  font-weight: 600;
+}
 .course-intro p {
   margin-bottom: 1rem;
 }
@@ -8496,6 +8500,7 @@ select::-ms-expand {
   width: 100%;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 .foundation .tab-links .tab-click:first-child {
   margin-top: 2rem;
@@ -8554,6 +8559,11 @@ select::-ms-expand {
 .foundation .tab-links .active::before {
   border-bottom: 20px solid #0064D8;
 }
+.foundation .tab-overview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .foundation .tab {
   display: flex;
   font-size: 20px;
@@ -8606,6 +8616,7 @@ select::-ms-expand {
 }
 .foundation .tab-common ul li {
   display: flex;
+  flex-direction: column;
   padding-left: 1.4rem;
   position: relative;
   z-index: 1;
@@ -8808,10 +8819,13 @@ select::-ms-expand {
   background-image: linear-gradient(#F6F6F6, #F6F6F6, #FFFFFF, #FFFFFF);
 }
 .learn-more p {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
-.learn-more .heading {
+.learn-more p:last-child {
   margin-bottom: 0;
+}
+.learn-more ul {
+  margin-bottom: 1rem;
 }
 .learn-more ul li {
   padding-left: 1.4rem;
@@ -8904,6 +8918,11 @@ select::-ms-expand {
   height: 15px;
   width: 15px;
   transform: rotate(88deg);
+  transition: 0.6s all;
+}
+.training .filter-top .active img {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .filter-top .buttons {
   margin-top: 0;
@@ -8973,6 +8992,13 @@ select::-ms-expand {
 .training .modes {
   display: flex;
   flex-direction: column;
+}
+.training .modes .heading .mode-icon {
+  transition: 0.6s all;
+}
+.training .modes .active .mode-icon {
+  transform: rotate(-90deg);
+  transition: 0.6s all;
 }
 .training .modes-list {
   display: none;
@@ -9210,6 +9236,13 @@ select::-ms-expand {
 }
 .training .onsite-block .onsite-form p,
 .training .onsite-block .onsite-form label {
+  color: #FFFFFF;
+}
+.training .onsite-block .onsite-form ::placeholder {
+  color: #dadada;
+}
+.training .onsite-block .onsite-form input,
+.training .onsite-block .onsite-form textarea {
   color: #FFFFFF;
 }
 .training .onsite-block .onsite-form .form-consent input {
@@ -9808,11 +9841,15 @@ select::-ms-expand {
   .foundation .included-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .foundation .included-content {
     width: 20%;
     margin-bottom: 0;
+    margin-right: 1.5rem;
+  }
+  .foundation .included-content:last-child {
+    margin-right: 0;
   }
   .learn-more {
     padding: 3rem 2rem;
@@ -10216,7 +10253,7 @@ select::-ms-expand {
   .foundation .tab-links .tab-click:first-child {
     margin-top: 0;
   }
-  .foundation .tab-content {
+  .foundation .tab-overview {
     width: 69%;
     margin-top: 0 !important;
   }
@@ -10226,6 +10263,9 @@ select::-ms-expand {
     padding: 1rem 2rem;
   }
   .foundation .tab-common .overview-content {
+    margin-top: 0;
+  }
+  .foundation #included {
     margin-top: 0;
   }
   .learn-more .more-list {
@@ -10515,7 +10555,7 @@ select::-ms-expand {
   .foundation .tab-links {
     width: 22%;
   }
-  .foundation .tab-content {
+  .foundation .tab-overview {
     width: 74%;
   }
   .foundation #included .heading {
@@ -11123,7 +11163,7 @@ select::-ms-expand {
   background-color: #FFFFFF;
   border-radius: 100px;
   justify-content: space-between;
-  border: 2px solid white;
+  border: 2px solid #FFFFFF;
   padding: 0;
   margin-top: 1rem;
 }
@@ -11164,7 +11204,6 @@ select::-ms-expand {
 }
 .most-search .search-info span {
   display: flex;
-  align-items: center;
   color: #C0C0C0;
   font-size: 13px;
 }
@@ -11243,8 +11282,6 @@ select::-ms-expand {
   margin-bottom: 0.2rem;
 }
 .result .filter li {
-  display: flex;
-  align-items: center;
   margin-top: 0.5rem;
 }
 .result .filter input {
@@ -12298,10 +12335,10 @@ select::-ms-expand {
   width: 100%;
   height: 100%;
 }
-.foundation {
+.topic-foundation {
   padding-top: 0;
 }
-.foundation .tab-common {
+.topic-foundation .tab-common {
   border-radius: 7px;
 }
 .topic-delivery {
@@ -12757,7 +12794,7 @@ select::-ms-expand {
     flex-direction: row;
     justify-content: space-between;
   }
-  .foundation {
+  .topic-foundation {
     padding-top: 0;
   }
   .experiences {
@@ -12927,7 +12964,7 @@ select::-ms-expand {
     width: 100%;
     margin-left: 2.5rem;
   }
-  .foundation {
+  .topic-foundation {
     padding-top: 3rem;
     background-image: url(../img/topic/foundation-bg.png);
     background-repeat: no-repeat;
@@ -13228,6 +13265,15 @@ select::-ms-expand {
 .knowledge-banner h1,
 .knowledge-banner p {
   color: #FFFFFF;
+}
+.knowledge-banner .banner-info {
+  display: none;
+  height: 100%;
+  margin-top: 2rem;
+}
+.knowledge-banner .banner-info img {
+  width: 100%;
+  height: 100%;
 }
 .pass-clients {
   padding: 3rem 1.5rem;
@@ -13637,7 +13683,7 @@ select::-ms-expand {
   }
   .requirement .course-name .image {
     position: absolute;
-    right: 10px;
+    right: 20px;
     width: 28px;
     height: 28px;
     top: 0;
@@ -13927,16 +13973,28 @@ select::-ms-expand {
 }
 @media (min-width : 1024px) {
   .knowledge-banner {
-    background-image: url(../img/knowledge-pass/banner-bg.png);
-    background-size: 100% 100%;
-    background-position: right;
+    background-image: url(../img/knowledge-pass/banner-left.png), url(../img/knowledge-pass/banner-right.png), linear-gradient(#0064D8, #1C2848);
+    background-size: contain , 50% 45%, 20% 100%;
+    background-position: left,center right 38%, right;
+    background-repeat: no-repeat;
   }
   .knowledge-banner p,
   .knowledge-banner h1 {
     color: #181818;
   }
   .knowledge-banner .banner-container {
-    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .knowledge-banner .banner-container .banner-content {
+    width: 48%;
+  }
+  .knowledge-banner .banner-container .banner-info {
+    display: flex;
+    width: 42%;
+    border: 4px solid #FFFFFF;
+    margin-top: 0;
   }
   .knowledge-banner .banner-container .breadcrums li {
     color: #181818;
@@ -14065,11 +14123,8 @@ select::-ms-expand {
 }
 @media (min-width : 1366px) {
   .knowledge-banner {
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  }
-  .knowledge-banner .banner-container {
-    width: 49%;
   }
   .benefit {
     padding: 4rem 0rem;
@@ -14117,7 +14172,7 @@ select::-ms-expand {
 }
 @media (min-width : 1600px) {
   .knowledge-banner {
-    background-size: 79% 100%;
+    background-size: contain , 32% 70%, 26% 100%;
   }
 }
 .thanks-banner {

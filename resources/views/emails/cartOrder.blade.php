@@ -5,27 +5,42 @@
 </head>
 <body>
     <div style="width:100%">
-        <div>
-            Dear {{ $DELEGATENAME }},
-        </div>
+        <h4>
+            Dear {{ $customerDetail->firstname }} {{ $customerDetail->lastname }},
+        </h4>
         <br/>
-        <div>
-            {{ $MAILMESSAGE }}
-        </div>
+        @if($type=="booking")
+        <p>
+            Purshase order
+            The following booking was started on {{ \Carbon\Carbon::now() }}
+        </p>
+        @elseif($type=="success")
+        <h4>
+            Payment Successfull
+        </h4>
+        @elseif($type=="declined")
+        <h4>Payment Declined</h4>
+        @elseif($type=="Order Generated")
+        <h4>Order Generated</h4>
+        @else
+        <h4>Ecom Incomplete</h4>
+        @endif
+       
        
         <div style="margin-top:10px;">
-            <div style="background-color: #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color: #0063d8 ;padding: 6px; color: #fff; font-size: 20px;width:100% ">
                 Course
             </div>
 
             <table style="width:100%">
-                @unless(empty($ORDERNO))
+                @if(isset($orderDetail))
+                @unless(empty($orderDetail->gateway_order_id ))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Order No:
                     </td>
                     <td style="width:70%">
-                        {{ $ORDERNO }}
+                        {{ $orderDetail->gateway_order_id }}
                     </td>
                 </tr>
                 @endunless
@@ -34,181 +49,123 @@
                         Website Country:
                     </td>
                     <td style="width:70%">
-                       {{ $WEBSITECOUNTRY }}
+                       {{ country()->name }}
                     </td>
                 </tr>
+                @foreach($orderDetail->lineItems as $item)
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Course Name:
                     </td>
                     <td style="width:70%">
-                        {{ $PRODUCTNAME }}
+                        {{ $item->course_name }}
                     </td>
                 </tr>
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                        Booking Type :
+                    </td>
+                    <td style="width:70%">
+                        {{ $item->delivery_method }}
+                    </td>
+                </tr>
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                        Location:
+                    </td>
+                    <td style="width:70%">
+                        {{ $item->venue }}
+                    </td>
+                </tr>
+                @unless(empty( $item->schedule_date))
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                        Chosen Date:
+                    </td>
+                    <td style="width:70%">
+                        {{ $item->schedule_date }}
+                    </td>
+                </tr>
+                @endunless
 
-                 @if(isset($PACKAGE) and $PACKAGE == 'Online')
-                    <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                        <td style="width:30%;float:left">
-                            Booking Type :
-                        </td>
-                        <td style="width:70%">
-                            Online
-                        </td>
-                    </tr>
-                    @if(!empty($basePrice))
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Base Price :
-                                </td>
-                                <td style="width:70%">
-                                    £ {{round($basePrice)}}
-                                </td>
-                            </tr>
-                    @endif
-					@if(!empty($addOns) && !$addOns->isEmpty())
-                    <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                        <td style="width:30%;float:left">
-                           Add-Ons Opted :
-                        </td>
-                        <td style="width:70%">
-                            @foreach($addOns as $addOn)
-                                {{ $addOn['name'] }} (£{{ round($addOn['price']) }})<br>
-                            @endforeach
-                        </td>
-                    </tr>
-					@endif
-                @else
-                     @if($LOCATION == 'Virtual')
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Booking Type :
-                                </td>
-                                <td style="width:70%">
-                                    Virtual
-                                </td>
-                            </tr>
-                     @else
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Booking Type :
-                                </td>
-                                <td style="width:70%">
-                                    Classroom
-                                </td>
-                            </tr>
-							@if(!empty($LOCATION))
-                            <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                                <td style="width:30%;float:left">
-                                    Location:
-                                </td>
-                                <td style="width:70%">
-                                    {{ $LOCATION }}
-                                </td>
-                            </tr>
-							@endif
-                     @endif
-					@if(!empty($DATE))
-					<tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-						<td style="width:30%;float:left">
-							Chosen Date:
-						</td>
-						<td style="width:70%">
-							{{ $DATE }}
-						</td>
-					</tr>
-					@endif
-					@if(!empty($DURATION))
-					<tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-						<td style="width:30%;float:left">
-							Duration:
-						</td>
-						<td style="width:70%">
-							{{ $DURATION }}
-						</td>
-					</tr>
-					@endif
-                @endif
+                @unless(empty($item->course_duration))
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                    <td style="width:30%;float:left">
+                        Duration:
+                    </td>
+                    <td style="width:70%">
+                        {{ $item->course_duration }}
+                    </td>
+                </tr>
+                @endunless
 
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Course Fee:
                     </td>
                     <td style="width:70%">
-                        £ {{ round($COURSEFEE) }}
+                        {!! $orderDetail->country->currency_symbol !!} {{ $item->price }}
                     </td>
                 </tr>
-
-                    @if(!empty($SUMAMOUNT) && $COURSEFEE != $SUMAMOUNT)
-                <tr style="background-color:#EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                @endforeach
+                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Total exe. VAT:
                     </td>
                     <td style="width:70%">
-                        £ {{ round($SUMAMOUNT) }}
+                        {!! $orderDetail->country->currency_symbol !!} {{ round($orderDetail->sub_total) }}
                     </td>
                 </tr>
-                    @endif
 
-                @unless(empty($VAT))
+                @unless(empty($orderDetail->vat_amount))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         VAT:
                     </td>
                     <td style="width:70%">
-                       £ {{ round($VAT) }}
+                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->vat_amount }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($CARDFEE))
+                @unless(empty($orderDetail->card_fee_amount))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Card Fees:
                     </td>
                     <td style="width:70%">
-                        £ {{ round($CARDFEE) }}
+                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->card_fee_amount }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($TOTALFEE))
+                @unless(empty($orderDetail->grand_total))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Total Fees:
                     </td>
                     <td style="width:70%">
-                        £ {{ round($TOTALFEE) }}
-                    </td>
-                </tr>
-                @endunless
-
-                @unless(empty($PONUMBER))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                        PO Number:
-                    </td>
-                    <td style="width:70%">
-                        {{ $PONUMBER }}
+                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->grand_total }}
                     </td>
                 </tr>
                 @endunless
             </table>
         </div>
-
+@endif
         <div style="margin-top:30px;float:left;width:100%">
-            <div style="background-color:  #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
+            <div style="background-color:#0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
                 Your Details
             </div>
 
             <table style="width:100%">
 
-                @unless(empty($YOURNAME))
+                @unless(empty($customerDetail))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Name:
                     </td>
                     <td style="width:70%">
-                        {{ $YOURNAME }}
+                        {{ $customerDetail->firstname }} {{ $customerDetail->lastname }}
                     </td>
                 </tr>
                 @endunless
@@ -224,46 +181,24 @@
                 </tr>
                 @endunless
 
-                @unless(empty($MOBILE))
+                @unless(empty($customerDetail->mobile))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Mobile:
                     </td>
                     <td style="width:70%">
-                        {{ $MOBILE }}
+                        {{ $customerDetail->mobile }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($EMAIL))
+                @unless(empty($customerDetail->email))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Email:
                     </td>
                     <td style="width:70%">
-                        {{ $EMAIL }}
-                    </td>
-                </tr>
-                @endunless
-
-                    @unless(empty($COMPANY))
-                        <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                            <td style="width:30%;float:left">
-                                Company:
-                            </td>
-                            <td style="width:70%">
-                                {{ $COMPANY }}
-                            </td>
-                        </tr>
-                    @endunless
-
-                @unless(empty($prefferedContactMethod))
-                <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
-                    <td style="width:30%;float:left">
-                         Preferred Method Chosen:
-                    </td>
-                    <td style="width:70%">
-                     {{ $prefferedContactMethod }}
+                        {{ $customerDetail->email }}
                     </td>
                 </tr>
                 @endunless
@@ -272,7 +207,7 @@
 
         </div>
 
-        @unless(empty($BILLINGNAME))
+        @unless(empty($billingDetail))
         <div style="margin-top:30px;float:left;width:100%">
             <div style="background-color:  #0063d8;padding: 6px; color: #fff; font-size: 20px;width:100% ">
                 Billing Details
@@ -280,82 +215,95 @@
 
             <table style="width:100%">
 
-                @unless(empty($BILLINGNAME))
+                @unless(empty($billingDetail->firstname))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Name:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGNAME }}
+                        {{ $billingDetail->firstname }} {{ $billingDetail->lastname }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($BILLINGADDRESS1))
+                @unless(empty($billingDetail->address1))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Address 1:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGADDRESS1 }}
+                        {{ $billingDetail->address1 }}
                     </td>
                 </tr>
                  @endunless
 
-                @unless(empty($BILLINGADDRESS2))
+                @unless(empty($billingDetail->address2))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Address 2:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGADDRESS2 }}
+                        {{ $billingDetail->address2 }}
                     </td>
                 </tr>
                 @endunless
 
-                 @unless(empty($BILLINGCITY))
+                 @unless(empty($billingDetail->city))
                  <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        City:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGCITY }}
+                        {{ $billingDetail->city }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($BILLINGPOSTCODE))
+                @unless(empty($billingDetail->postcode))
                  <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Post Code:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGPOSTCODE }}
+                        {{ $billingDetail->postcode }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($BILLINGPROVINCE))
+                @unless(empty($billingDetail->province))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Province:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGPROVINCE }}
+                        {{ $billingDetail->province }}
                     </td>
                 </tr>
                 @endunless
 
-                @unless(empty($BILLINGCOUNTRY))
+                @unless(empty($billingDetail->country->name))
                  <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                        Country:
                     </td>
                     <td style="width:70%">
-                        {{ $BILLINGCOUNTRY }}
+                        {{ $billingDetail->country->name }}
                     </td>
                 </tr>
                 @endunless
+
+                    @unless(empty($customerDetail->preffered_contact_method))
+                    <tr style="background-color: #e4f2f5; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
+                        <td style="width:30%;float: left">
+                            Preferred Contact Method:
+                        </td>
+                        <td style="width:70%">
+                            {{ $customerDetail->preffered_contact_method }}
+                        </td>
+                    </tr>
+                    @endunless
+
+
 
             </table>
 
@@ -370,10 +318,10 @@
             <div>
                             
                 <p>
-                    Thank you for contacting Best Pratice Training - a learning advisor will be contacting you shortly.
+                    Thank you for contacting  Best Pratice Training  - a learning advisor will be contacting you shortly.
                 </p>
                 <p>
-                    If you would like to speak to a learning advisor more urgently please contact <b>023 8000 1008</b> or alternatively email <a href="mailto:enquiries@bestpracticetraining.com">enquiries@bestpracticetraining.com</a>
+                    If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #FBDA84;">{{ websiteDetail()->contact_email }}</a>
                 </p>
             </div>
         </div>
