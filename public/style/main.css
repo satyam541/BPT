@@ -850,7 +850,7 @@ input[type=number] {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1310,7 +1310,7 @@ input[type=number] {
   .footer .terms {
     width: 80%;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
   }
   .footer .footer-content {
     flex-direction: row;
