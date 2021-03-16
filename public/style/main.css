@@ -3211,6 +3211,9 @@ input[type=number] {
   .facts .facts-list {
     width: 62%;
   }
+  .facts .item p {
+    min-height: auto;
+  }
   .locations {
     padding: 4rem 0rem;
   }
@@ -9459,8 +9462,9 @@ input[type=number] {
   margin-top: 0.5rem;
   font-weight: 500;
 }
-.training .no-schedule p strong {
+.training .no-schedule p a {
   color: #0064D8;
+  font-weight: 900;
 }
 .training .no-schedule .btn-blue img {
   margin-right: 0;
