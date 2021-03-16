@@ -85,7 +85,7 @@
           </g>
         </g>
         <g id="Group_7706" data-name="Group 7706" transform="translate(0 9.443)">
-          <text id="Sale" transform="matrix(0.017, -1, 1, 0.017, -0.227, 163.38)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">Sale</tspan></text>
+          <text id="Sale" transform="matrix(0.017, -1, 1, 0.017, -0.227, 163.38)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="21">Sale</tspan></text>
           <g id="Group_7704" data-name="Group 7704" transform="translate(38.226 0)">
             <text id="_10_" data-name="10%" transform="translate(0.008 244.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">10%</tspan></text>
             <text id="_20_" data-name="20%" transform="translate(0.008 200.388)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">20%</tspan></text>
@@ -105,9 +105,9 @@ Programme" transform="translate(120.121 11.244)" fill="#181818" font-size="14" f
             <text id="Programme_Change" data-name="Programme 
 &amp; Change" transform="translate(216.121 12.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-38.592" y="0">Programme </tspan><tspan x="-30.078" y="15">&amp; Change</tspan></text>
             <text id="Professional_Project_Manager" data-name="Professional 
-Project Manager" transform="translate(326.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-41.163" y="0">Professional </tspan><tspan x="-51.823" y="16">Project Manager</tspan></text>
+Project Manager" transform="translate(326.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-41.245" y="0">Professional </tspan><tspan x="-51.823" y="16">Project Manager</tspan></text>
             <text id="ITIL_PRINCE2_" data-name="ITIL &amp; 
-PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-19.848" y="0">ITIL &amp; </tspan><tspan x="-33.776" y="16">PRINCE2®</tspan></text>
+PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-19.947" y="0">ITIL &amp; </tspan><tspan x="-33.776" y="16">PRINCE2®</tspan></text>
           </g>
         </g>
       </g>
@@ -123,11 +123,11 @@ PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" f
           </g>
           <g id="Group_7711" data-name="Group 7711" transform="translate(13.203 24.6)">
             <g id="Group_7710-2" data-name="Group 7710" transform="translate(0 0.469)">
-              <text id="_34_152" data-name="£34,152" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">£34,15</tspan></text>
-              <text id="Total_Revenue" data-name="Total Revenue" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Total Revenue</tspan></text>
+              <text id="_600K_" data-name="600K+" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="21">600K+</tspan></text>
+              <text id="Total_Customers_" data-name="Total Customers " transform="translate(-4 30.852)" fill="#a0a0a0" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="15">Total Customers </tspan></text>
             </g>
-            <g id="statistics_2_" data-name="statistics (2)" transform="translate(108.563 8.469)">
-              <path id="Path_29115" data-name="Path 29115" d="M44.788,179.919H43.346V151.352A1.351,1.351,0,0,0,41.994,150H36.587a1.351,1.351,0,0,0-1.352,1.352v28.567h-2.7V159.462a1.351,1.351,0,0,0-1.352-1.352H25.773a1.351,1.351,0,0,0-1.352,1.352v20.456h-2.7v-9.642a1.351,1.351,0,0,0-1.352-1.352H14.959a1.351,1.351,0,0,0-1.352,1.352v9.642H10.9V164.869a1.351,1.351,0,0,0-1.352-1.352H4.145a1.351,1.351,0,0,0-1.352,1.352v15.049H1.352a1.352,1.352,0,0,0,0,2.7H44.788a1.352,1.352,0,1,0,0-2.7Zm0,0" transform="translate(0 -150)" fill="#005cff"/>
+            <g id="statistics_2_" data-name="statistics (2)" transform="translate(115.56 9.469)">
+              <path id="Path_29115" data-name="Path 29115" d="M37.025,174.733H35.833V151.117A1.117,1.117,0,0,0,34.716,150h-4.47a1.117,1.117,0,0,0-1.117,1.117v23.616H26.894V157.822a1.117,1.117,0,0,0-1.117-1.117h-4.47a1.117,1.117,0,0,0-1.117,1.117v16.911H17.954v-7.971a1.117,1.117,0,0,0-1.117-1.117h-4.47a1.117,1.117,0,0,0-1.117,1.117v7.971H9.014V162.292A1.117,1.117,0,0,0,7.9,161.175H3.427a1.117,1.117,0,0,0-1.117,1.117v12.441H1.117a1.117,1.117,0,0,0,0,2.235H37.025a1.117,1.117,0,1,0,0-2.235Zm0,0" transform="translate(0 -150)" fill="#005cff"/>
             </g>
           </g>
         </g>
@@ -142,8 +142,8 @@ PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" f
           </g>
           <g id="Group_7711-2" data-name="Group 7711" transform="translate(12.626 25.017)">
             <g id="Group_7710-4" data-name="Group 7710" transform="translate(0 0)">
-              <text id="_5_643" data-name="5,643" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">5,643</tspan></text>
-              <text id="Orders" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Order</tspan></text>
+              <text id="_62_" data-name="62%" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="21">62%</tspan></text>
+              <text id="With_Bundle_" data-name="With Bundle " transform="translate(-4 30.852)" fill="#a0a0a0" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="15">With Bundle </tspan></text>
             </g>
           </g>
           <g id="Group_6778" data-name="Group 6778" transform="translate(121.13 27.518)">
@@ -162,10 +162,10 @@ PRINCE2®" transform="translate(431.121 11.244)" fill="#181818" font-size="14" f
           </g>
           <g id="Group_7711-3" data-name="Group 7711" transform="translate(13.257 25.017)">
             <g id="Group_7710-6" data-name="Group 7710" transform="translate(0 0)">
-              <text id="_45_254" data-name="45,254" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="19">45,254</tspan></text>
-              <text id="Customers" transform="translate(-4 30.852)" fill="#181818" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15">Customers</tspan></text>
+              <text id="_38_" data-name="38%" transform="translate(-4)" fill="#181818" font-size="20" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="21">38%</tspan></text>
+              <text id="Without_Bundle_" data-name="Without Bundle " transform="translate(-4 30.852)" fill="#a0a0a0" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="15">Without Bundle </tspan></text>
             </g>
-            <path id="Path_29117" data-name="Path 29117" d="M913.344,510c-3.4,0-3.113-18.379-6.987-18.379s-3.631,12.138-6.952,12.138-3.509-6.133-7.02-6.133-3.544,7.937-6.985,7.937-3.886,14.358-6.985,14.358-3.346-12.966-6.987-12.966-3.978,5.392-6.985,5.392-3.145,3.688-6.987,3.688H852.75V522.3h62.122V510.023Z" transform="translate(-761.196 -482.448)" fill="#78bd41"/>
+            <path id="Path_29117" data-name="Path 29117" d="M901.07,506.276c-2.714,0-2.482-14.656-5.572-14.656s-2.9,9.679-5.544,9.679-2.8-4.89-5.6-4.89-2.826,6.329-5.57,6.329-3.1,11.449-5.57,11.449-2.668-10.339-5.572-10.339-3.172,4.3-5.57,4.3-2.508,2.941-5.572,2.941H852.75v5h49.539V506.3Z" transform="translate(-748.613 -483.448)" fill="#78bd41"/>
           </g>
         </g>
       </g>

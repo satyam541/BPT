@@ -125,7 +125,7 @@
                     </a>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-heading="Enquire Now">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
                         <img src="{{ url('img/master/quote.svg') }}" alt="quote">
                         Enquire Now
                     </a>
@@ -218,14 +218,14 @@
                 <div class="delivery-list">
                     @php unset($pageDetail->delivery_list['heading']) @endphp
                     @foreach ($pageDetail->delivery_list as $delivery)
-                        <div class="item">
+                        <a class="item" class="open-popup enquiryJS">
                             <div class="overlay">
                             </div>
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
                             <h3>{!! $delivery->heading !!}</h3>
                             <p>{!! $delivery->content !!}</p>
-                            <a class="btn-blue open-popup enquiryJS " href="">Enquire Now</a>
-                        </div>
+                            <button class="btn-blue open-popup enquiryJS " href="">Enquire Now</button>
+                        </a>
                     @endforeach
 
 
@@ -293,27 +293,80 @@
                     </div>
                     <p> {!! $pageDetail->locations['heading']->content !!} </p>
                 </div>
-                @foreach ($locations as $location)
                     <div class="location-name">
-
                         <span>
-                            0{{ $loop->iteration }}
+                            01
                         </span>
                         <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
                         <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
                         <p>
-                            {!! $location->name !!}</a>
+                            United Kingdom
                         </p>
                     </div>
-                @endforeach
-
-
-
-
+                    <div class="location-name">
+                        <span>
+                            02
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                            United States
+                        </p>
+                    </div>
+                    <div class="location-name">
+                        <span>
+                            03
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                            Canada
+                        </p>
+                    </div>
+                    <div class="location-name">
+                        <span>
+                            04
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                             Australia
+                        </p>
+                    </div>
+                    <div class="location-name">
+                        <span>
+                            05
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                        Europe
+                        </p>
+                    </div>
+                    <div class="location-name">
+                        <span>
+                            06
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                        Middle East
+                        </p>
+                    </div>
+                    <div class="location-name">
+                        <span>
+                            07
+                        </span>
+                        <img src="{{ url('img/home/location.svg') }}" alt="location" class="blue">
+                        <img src="{{ url('img/home/location-white.svg') }}" alt="location" class="white">
+                        <p>
+                        Germany 
+                        </p>
+                    </div>
                 <div class="buttons">
-                    <a href="{{ route('locations') }}" class="btn-blue">
+                    <a  class="btn-blue open-popup enquiryJS" data-quote="Get More Information" data-heading="Get More Information">
                         <img src="{{ url('img/home/location-white.svg') }}" alt="call">
-                        View All Locations
+                            Get More Information
                     </a>
                 </div>
             </div>
@@ -353,9 +406,9 @@
                                     <h3>
                                         {!! $testimonial->author !!}
                                     </h3>
-                                    <span>
+                                    <!-- <span>
                                         {!! $testimonial->designation !!}
-                                    </span>
+                                    </span> -->
                                     <img src="{{ url('img/home/stars.svg') }}" alt="stars">
                                 </div>
                             </div>

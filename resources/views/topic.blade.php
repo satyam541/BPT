@@ -11,11 +11,13 @@
             {{-- {{dd($topic)}} --}}
             <h1>{{$topic->name}}</h1>
                 <p>{!!$topic->tag_line!!}</p>
-                <div class="breadcrums">
+                <div class="breadcrums  black-breadcrums">
                     <ul>
                         <li><a href="{{route('home')}}">Home</a></li>
+                        <li>
                         <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                         <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
+                        </li>
                         <li><a href="#">{{$topic->name}}</a></li>
                     </ul>
             </div>

@@ -196,7 +196,7 @@ class CartController extends Controller
             return redirect()->route('cart');
         }
         $data['cartItems']    = Cart::content();
-        $data['countries']    = Country::pluck( 'name','country_code');
+        $data['countries']    = Country::orderBy('name')->pluck( 'name','country_code');
         $data['paymentCards'] = OrderCardType::all();
 
 
@@ -544,7 +544,7 @@ class CartController extends Controller
 
         if ($result == "00")
         {
-            $mailType = 'Confirmed';
+           
             $data['title'] = "Thank you for your payment";
             $data["message"] = '<br/><br/>
             To continue browsing please <a href="'.url('/').'"><b><u>click here</u></b></a>
@@ -555,7 +555,7 @@ class CartController extends Controller
         }
         else
         {
-            $mailType = 'Declined';
+           
             $data['title'] = "Payment declined";
             $data['message'] = '<br/><br/>
             We are sorry, your payment was declined.<br/><br/> 
