@@ -8569,6 +8569,7 @@ input[type=number] {
   font-size: 20px;
   font-weight: bold;
   align-self: flex-end;
+  line-height: 1.2;
 }
 .foundation .tab-common {
   display: flex;
