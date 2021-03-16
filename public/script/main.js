@@ -527,7 +527,7 @@ $('#scroll').click(function(){
     $('body').on('click',function(event){
         var element = event.target;
         
-        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup").length > 0)
+        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup, .enquiry-popup").length > 0)
         { 
             return false;
         }
