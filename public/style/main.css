@@ -680,7 +680,8 @@ input[type=number] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -722,9 +723,6 @@ input[type=number] {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 1.5rem;
-}
-.pop-search .search-form h2 span {
-  color: #0064D8;
 }
 .pop-search .search-form .search {
   width: 600px;
@@ -1202,10 +1200,15 @@ input[type=number] {
   display: none;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
 }
 .scene svg {
-  width: 240px;
-  height: 240px;
+  width: 130px;
+  height: 130px;
 }
 .dc-logo {
   position: fixed;
@@ -1998,7 +2001,7 @@ input[type=number] {
     display: flex;
     position: fixed;
     bottom: 40%;
-    left: -125px;
+    left: -150px;
     z-index: 5;
   }
   .tooltips ul {
@@ -2011,7 +2014,7 @@ input[type=number] {
     color: #fff;
     background-color: #1C2848;
     font-size: 14px;
-    padding: 14px 12px;
+    padding: 14px 20px;
     width: 100%;
     box-shadow: 0 0 4px #FFFFFF;
     margin-bottom: 0.5rem;
@@ -2029,6 +2032,7 @@ input[type=number] {
     -ms-transform: translate(123px, 0);
     -o-transform: translate(123px, 0);
     transform: translate(123px, 0);
+    margin-left: 1rem;
   }
   .tooltips li:hover img {
     transform: rotate(360deg);
@@ -8250,6 +8254,7 @@ input[type=number] {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
+    z-index: 1;
   }
   .certification-course .course-content::after {
     content: '';
@@ -8260,6 +8265,7 @@ input[type=number] {
     width: 4px;
     background-color: #0064D8;
     transition: 1s ease-in-out;
+    z-index: -1;
   }
   .certification-course .course-content:hover::after {
     height: 100%;
@@ -8267,10 +8273,6 @@ input[type=number] {
     top: 0;
     left: 0;
     border-radius: 25px;
-  }
-  .certification-course .course-content:hover a,
-  .certification-course .course-content:hover .buttons {
-    z-index: 1;
   }
   .certification-course .course-content:hover a {
     color: #FFFFFF;

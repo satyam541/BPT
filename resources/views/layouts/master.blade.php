@@ -123,7 +123,7 @@
                 @csrf
 
                 <div class="heading center-heading">
-                    <h2 id="quote">Get A Quote</h2>
+                    <h2 id="quote"></h2>
                 </div>
                 <div class="form-input">
                     <div class="input-container">
@@ -216,8 +216,8 @@
         <ul>
             <li><a href="tel:{{ websiteDetail()->contact_number }}">{{ websiteDetail()->contact_number }}<img
                         src="{{ url('img/master/phone-ringing.svg') }}" alt="phone-ringing"></a></li>
-            <li><a class="open-popup enquiryJS">Enquiry<img src="{{ url('img/master/mail.svg') }}" alt="mail"></a></li>
-            <li><a class="open-popup enquiryJS">Request Callback</a><img
+            <li><a class="open-popup enquiryJS" data-quote="Enquire Us" data-heading="Enquire Us">Enquire Us<img src="{{ url('img/master/mail.svg') }}" alt="mail"></a></li>
+            <li><a class="open-popup enquiryJS" data-quote="Request a Call Back" data-heading="Request a Call Back">Request a Call Back</a><img
                     src="{{ url('img/master/phone-contact.svg') }}" alt="phone-contact"></li>
         </ul>
     </nav>
@@ -238,7 +238,7 @@
     <div class="pop-search" id="pop-mobile">
         <span class="search-close"><img src="{{ url('img/master/cross.svg') }}" alt="name"></span>
         <form class="search-form" onsubmit="getquery(this)">
-            <h2>Search <span>our</span> courses and <span>solutions</span></h2>
+            <h2>Search our courses and solutions</h2>
             <div class="search">
                 <input type="text" placeholder="Search your course here...." autocomplete="off"
                     class="auto-complete-course auto-redirect">
@@ -259,7 +259,7 @@
   viewBox="0 0 38 38" 
   preserveAspectRatio="xMinYMin meet"
   >
-  <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="#c0c0c0">LOADING
+  <text x="10" y="21" font-family="Monaco" font-size="4px" style="letter-spacing:0.6" fill="#000000">LOADING
      <animate 
        attributeName="opacity"
        values="0;1;0" dur="1.8s"
