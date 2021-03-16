@@ -96,9 +96,8 @@ Route::get('cart/customer/data',['as'=>'customerData','uses'=>'CartController@cu
 Route::get('/certification-programmes','CertificationController@index')->name('certification');
 Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
 
-Route::get('/bundle-offer', function () {
-    return view('offer');
-});
+Route::get('/bundle-offer','BundleOfferController@index')->name('bundleOffer');
+
 Route::get('knowledgepass','KnowledgepassController@index')->name('knowledgepass');
 
 Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
@@ -177,9 +176,7 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/certification-programmes','CertificationController@index')->name('certification');
     Route::get('/certification-programmes/{certification}','CertificationController@certificationDetail')->name('certificationDetail');
     
-    Route::get('/bundle-offer', function () {
-        return view('offer');
-    });
+    Route::get('/bundle-offer','BundleOfferController@index')->name('bundleOffer');
     
     Route::get('/privacy-policy','CommonPageController@index')->name('privacy-policy');
     Route::get('/terms-and-conditions','CommonPageController@index')->name('terms-and-conditions');
