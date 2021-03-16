@@ -5785,7 +5785,6 @@ input[type=number] {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0;
     padding-left: 2rem;
   }
   .convenient .convenient-content {
@@ -5991,7 +5990,6 @@ input[type=number] {
   }
   .convenient .convenient-list {
     width: 60%;
-    padding-right: 0;
   }
   .convenient .convenient-content {
     width: 45%;
