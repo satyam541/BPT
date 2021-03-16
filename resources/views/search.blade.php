@@ -67,25 +67,23 @@
                 @endif
             </div>
             <div class="result-content">
-            <div class="result-list">
-                @foreach ($result as $course)
-                {{$course->loadContent()}}
-                <div class="result-info">
-                    <div class="heading">
-                        <h2>{{$course->name}} - <span>{{$course->topic->name}}</span></h2>
+                <div class="result-list">
+                    @foreach ($result as $course)
+                    {{$course->loadContent()}}
+                    <div class="result-info">
+                        <div class="heading">
+                            <h2>{{$course->name}} - <span>{{$course->topic->name}}</span></h2>
+                        </div>
+                        <p>{!!$course->detail!!}</p>
+                        <div class="buttons">
+                            <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
+                            <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
+                        </div>
                     </div>
-                    <p>{!!$course->detail!!}</p>
-                    <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                        <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
-                    </div>
+                    @endforeach
+                    {{$result->links()}}
                 </div>
-                @endforeach
-                {{$result->links()}}
-            </div>
-
-            <div class="filter">
-                <div class="filter-info">
+                <div class="filter">
                     <h2>Filter</h2>
                     <div class="search-catagories">
                         <p>Courses</p>
@@ -104,7 +102,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>

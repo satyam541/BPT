@@ -680,13 +680,121 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                @can('view', new App\Models\Accreditation())
+                <a href="{{Route('accreditationTrashList')}}" @if(Route::currentRouteName()=='accreditationTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Accreditation List</p>
+                </a>
+                @endcan
+              </li>
+              <li class="nav-item">
                 @can('view', new App\Models\Country())
                   <a href="{{Route('addonTrashList')}}" @if(Route::currentRouteName()=='addonTrashList')class="nav-link active" @else class="nav-link" @endif>
                     <i class="nav-icon far fa-circle "></i>
                     <p>Addon List</p>
                   </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                @can('view', new App\Models\Article())
+                  <a href="{{Route('articleTrashList')}}" @if(Route::currentRouteName()=='articleTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Article List</p>
+                  </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                @can('view', new App\Models\Category())
+                  <a href="{{Route('categoryTrashList')}}" @if(Route::currentRouteName()=='categoryTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Category List</p>
+                  </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('categoryContentTrashList')}}" @if(Route::currentRouteName()=='categoryContentTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Category Content List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('certificationTrashList')}}" @if(Route::currentRouteName()=='certificationTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Certification List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{Route('certificationTopicTrash')}}" @if(Route::currentRouteName()=='certificationTopicTrash')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Certification Topic</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                @can('view', new App\Models\Country())
+                  <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Country List</p>
+                  </a>
                   @endcan
                 </li>
+                    <li class="nav-item">
+                      @can('view', new App\Models\Course())
+                        <a href="{{Route('courseTrashList')}}" @if(Route::currentRouteName()=='courseTrashList')class="nav-link active" @else class="nav-link" @endif>
+                          <i class="nav-icon far fa-circle "></i>
+                          <p>Course List</p>
+                        </a>
+                        @endcan
+                      </li>
+                      <li class="nav-item">
+                          <a href="{{Route('courseContentTrashList')}}" @if(Route::currentRouteName()=='courseContentTrashList')class="nav-link active" @else class="nav-link" @endif>
+                            <i class="nav-icon far fa-circle "></i>
+                            <p>Course Content List</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          @can('view', new App\Models\Location())
+                            <a href="{{Route('locationTrashList')}}" @if(Route::currentRouteName()=='locationTrashList')class="nav-link active" @else class="nav-link" @endif>
+                              <i class="nav-icon far fa-circle "></i>
+                              <p>Location List</p>
+                            </a>
+                            @endcan
+                          </li>
+              
+              
+              
+              
+              
+                  <li class="nav-item">
+                    @can('view', new App\Models\Testimonial())
+                      <a href="{{Route('testimonialTrashList')}}" @if(Route::currentRouteName()=='testimonialTrashList')class="nav-link active" @else class="nav-link" @endif>
+                        <i class="nav-icon far fa-circle "></i>
+                        <p>Testimonial List</p>
+                      </a>
+                      @endcan
+                    </li>
+              <li class="nav-item">
+              @can('view', new App\Models\Topic())
+                <a href="{{Route('topicTrashList')}}" @if(Route::currentRouteName()=='topicTrashList')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Topic List</p>
+                </a>
+                @endcan
+              </li>
+              <li class="nav-item">
+                  <a href="{{Route('topicContentTrashList')}}" @if(Route::currentRouteName()=='topicContentTrashList')class="nav-link active" @else class="nav-link" @endif>
+                    <i class="nav-icon far fa-circle "></i>
+                    <p>Topic Content List</p>
+                  </a>
+                </li>
+              
+              <li class="nav-item">
+               @can('view', new App\Models\Resource())
+                <a href="{{Route('resourceTrash')}}" @if(Route::currentRouteName()=='resourceTrash')class="nav-link active" @else class="nav-link" @endif>
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>Resource List</p>
+                </a>
+                @endcan
+              </li>
               <li class="nav-item">
                 @can('view', new App\Models\Country())
                   <a href="{{Route('roleTrashList')}}" @if(Route::currentRouteName()=='roleTrashList')class="nav-link active" @else class="nav-link" @endif>
@@ -703,128 +811,30 @@
                     </a>
                     @endcan
                   </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Country())
-                <a href="{{Route('countryTrashList')}}" @if(Route::currentRouteName()=='countryTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Country List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-                <a href="{{Route('certificationTopicTrash')}}" @if(Route::currentRouteName()=='certificationTopicTrash')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Certification Topic</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Location())
-                <a href="{{Route('locationTrashList')}}" @if(Route::currentRouteName()=='locationTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Location List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-                <a href="{{Route('certificationTrashList')}}" @if(Route::currentRouteName()=='certificationTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Certification List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Category())
-                <a href="{{Route('categoryTrashList')}}" @if(Route::currentRouteName()=='categoryTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Category List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-                  <a href="{{Route('categoryContentTrashList')}}" @if(Route::currentRouteName()=='categoryContentTrashList')class="nav-link active" @else class="nav-link" @endif>
-                    <i class="nav-icon far fa-circle "></i>
-                    <p>Category Content List</p>
-                  </a>
-                </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Topic())
-                <a href="{{Route('topicTrashList')}}" @if(Route::currentRouteName()=='topicTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Topic List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-                  <a href="{{Route('topicContentTrashList')}}" @if(Route::currentRouteName()=='topicContentTrashList')class="nav-link active" @else class="nav-link" @endif>
-                    <i class="nav-icon far fa-circle "></i>
-                    <p>Topic Content List</p>
-                  </a>
-                </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Course())
-                <a href="{{Route('courseTrashList')}}" @if(Route::currentRouteName()=='courseTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Course List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-                  <a href="{{Route('courseContentTrashList')}}" @if(Route::currentRouteName()=='courseContentTrashList')class="nav-link active" @else class="nav-link" @endif>
-                    <i class="nav-icon far fa-circle "></i>
-                    <p>Course Content List</p>
-                  </a>
-                </li>
-              <li class="nav-item">
-               @can('view', new App\Models\Resource())
-                <a href="{{Route('resourceTrash')}}" @if(Route::currentRouteName()=='resourceTrash')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Resource List</p>
-                </a>
-                @endcan
-              </li>
-              {{-- <li class="nav-item">
-                <a href="{{Route('tagTrashList')}}" @if(Route::currentRouteName()=='tagTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Tag List</p>
-                </a>
-              </li> --}}
-              <li class="nav-item">
-              @can('view', new App\Models\Article())
-                <a href="{{Route('articleTrashList')}}" @if(Route::currentRouteName()=='articleTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Article List</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-              @can('view', new App\Models\Testimonial())
-                <a href="{{Route('testimonialTrashList')}}" @if(Route::currentRouteName()=='testimonialTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Testimonial List</p>
-                </a>
-                @endcan
-              </li>
+                  <li class="nav-item">
+                    @can('view', new App\Models\WebsiteDetail())
+                      <a href="{{Route('websiteDetailTrashList')}}" @if(Route::currentRouteName()=='websiteDetailTrashList')class="nav-link active" @else class="nav-link" @endif>
+                        <i class="nav-icon far fa-circle "></i>
+                        <p>Website Detail List</p>
+                      </a>
+                      @endcan
+                    </li>
+              
               <li class="nav-item">
                 <a href="{{Route('WhatsIncludedTrashList')}}" @if(Route::currentRouteName()=='WhatsIncludedTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
                   <p>Whats Included List</p>
                 </a>
               </li>
-              <li class="nav-item">
-                @can('view', new App\Models\Accreditation())
-                <a href="{{Route('accreditationTrashList')}}" @if(Route::currentRouteName()=='accreditationTrashList')class="nav-link active" @else class="nav-link" @endif>
+              
+              {{-- <li class="nav-item">
+                <a href="{{Route('tagTrashList')}}" @if(Route::currentRouteName()=='tagTrashList')class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle "></i>
-                  <p>Accreditation List</p>
+                  <p>Tag List</p>
                 </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-              @can('view', new App\Models\WebsiteDetail())
-                <a href="{{Route('websiteDetailTrashList')}}" @if(Route::currentRouteName()=='websiteDetailTrashList')class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle "></i>
-                  <p>Website Detail List</p>
-                </a>
-                @endcan
-              </li>
+              </li> --}}
+              
+              
 
             </ul>
           </li>

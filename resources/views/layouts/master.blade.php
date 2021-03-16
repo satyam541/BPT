@@ -119,7 +119,7 @@
             <form class="form bestpracticetraining.com-hubspot" onsubmit="submitEnquiry(this)" id="contact-us">
                 @csrf
 
-                <div class="heading center-heading white-heading">
+                <div class="heading center-heading">
                     <h2 id="quote">Get A Quote</h2>
                 </div>
                 <div class="form-input">
