@@ -109,6 +109,8 @@ Route::get('/third-party-trademarks','CommonPageController@index')->name('third-
 
 Route::get('/cookies','CommonPageController@index')->name('cookies');
 
+Route::get('/exchangerate/update', 'ExchangeRateController@updateExchangeRate');
+
 Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middleware' => 'country'], function () {
     
     Route::get('/', 'HomeController@index')->name('home');

@@ -179,7 +179,7 @@ class ScheduleApi extends Controller
                 /**
                  * save online price and addons for selected course
                  */
-                if (isset($courselocations['onlinePrice'])) {
+                if (!empty($courselocations['onlinePrice'])) {
                     $addons = $courselocations['onlinePrice']['addons'] ?? array();
                     $this->updateApiProcess('second', 'onlinePrice', 1, 1);
                     $this->saveOnlineCoursePrice(
