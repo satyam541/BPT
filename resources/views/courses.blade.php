@@ -411,11 +411,11 @@
                             <p>Contact Us for Date and Price</p>
                             <div class="buttons">
                                 <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
-                                    Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
+                                    Enquire Now<img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach Us at <strong class="pointer">{{websiteDetail()->contact_number}}</strong> or <strong class="pointer">{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
                             </p>
                         </div>
                         @endif
@@ -476,7 +476,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
                             </p>
                         </div>
                         @endif
@@ -563,7 +563,7 @@
                                 </div>
                             </div>
                             <p>---- OR ----</p>
-                            <p>Reach us at <strong>{{websiteDetail()->contact_number}}</strong> or <strong>{{websiteDetail()->contact_email}}</strong> for more information.
+                            <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
                             </p>
                         </div>
                         @endif
