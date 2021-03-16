@@ -7539,7 +7539,7 @@ input[type=number] {
   background-color: transparent;
   border: none;
   margin-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.6rem;
   color: #FFFFFF;
   outline: none;
   border-bottom: 2px solid #FFFFFF;
@@ -7555,29 +7555,29 @@ input[type=number] {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .inform-us {
+.new-bundle .info-us {
   display: flex;
   flex-direction: column;
   order: 2;
   margin-top: 2rem;
 }
-.new-bundle .inform-us img {
+.new-bundle .info-us img {
   width: 100%;
   height: 100%;
 }
-.new-bundle .inform-us p {
+.new-bundle .info-us p {
   font-weight: bold;
   font-size: 16px;
 }
-.new-bundle .inform-us .info-list {
+.new-bundle .info-us .info-list {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .inform-us .info-list {
+.new-bundle .info-us .info-list {
   display: flex;
   margin-top: 0.7rem;
 }
-.new-bundle .inform-us .info-list span {
+.new-bundle .info-us .info-list span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7588,11 +7588,11 @@ input[type=number] {
   padding: 0.6rem;
   margin-right: 0.5rem;
 }
-.new-bundle .inform-us .info-list span img {
+.new-bundle .info-us .info-list span img {
   width: 100%;
   height: 100%;
 }
-.new-bundle .inform-us .info {
+.new-bundle .info-us .info {
   display: flex;
   flex-direction: column;
 }
@@ -7727,13 +7727,13 @@ input[type=number] {
   .new-bundle {
     padding: 3rem 2rem;
   }
-  .new-bundle .inform-us {
+  .new-bundle .info-us {
     width: 69%;
     position: relative;
     margin: auto;
     margin-top: 2rem;
   }
-  .new-bundle .inform-us .info-content {
+  .new-bundle .info-us .info-content {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
     background-color: #FFFFFF;
     position: absolute;
@@ -7743,7 +7743,7 @@ input[type=number] {
     padding: 1.5rem;
     width: 89%;
   }
-  .new-bundle .inform-us .info-list {
+  .new-bundle .info-us .info-list {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -7846,12 +7846,12 @@ input[type=number] {
     flex-direction: row;
     justify-content: space-between;
   }
-  .new-bundle .inform-us {
+  .new-bundle .info-us {
     order: 1;
     width: 52%;
     margin: 0;
   }
-  .new-bundle .inform-us .info-content {
+  .new-bundle .info-us .info-content {
     width: 85%;
   }
   .new-bundle .latest-bundles {
@@ -7893,7 +7893,7 @@ input[type=number] {
   .new-bundle {
     padding: 4rem 0rem;
   }
-  .new-bundle .inform-us {
+  .new-bundle .info-us {
     width: 42%;
   }
   .new-bundle .latest-bundles {
