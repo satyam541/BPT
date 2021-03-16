@@ -129,7 +129,7 @@
                         <img src="{{$testimonial->getImagePath()}}" alt="clients" />
                     </span>
                     <h3>{!!$testimonial->author!!}</h3>
-                    <p class="designation">{!!$testimonial->designation!!}</p>
+                    <!-- <p class="designation">{!!$testimonial->designation!!}</p> -->
                     <img src="{{url('img/aboutus/stars.svg')}}" alt="stars" class="stars">
                 </div>
                 @endforeach
