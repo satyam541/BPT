@@ -631,7 +631,7 @@
             </div>
             <div class="recommend-info">
                 <p>Get personalised course recommendations and courses with reminders to get the latest information about the courses and offers. Do you know the courses you want but not when or where you want to take them? We will help you.</p>
-                <input type="text" name="email" id="email" placeholder="Your Email Address" autocomplete="off">
+                <!-- <input type="text" name="email" id="email" placeholder="Your Email Address" autocomplete="off"> -->
                 <div class="buttons">
                     <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Enquire Now" data-heading="Enquire Now"><img src="{{url('img/offer/email.svg')}}" alt="email">
                     Enquire Now</a>
