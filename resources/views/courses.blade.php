@@ -179,10 +179,14 @@
 
                     @if ($selectedCourse->whatsIncluded->isNotEmpty())
                     <div class="tab-content" id="included">
-                            <h2>What's Included Us</h2>
-                        <div class="included-list">
-
-                            @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            <h2>What's Included</h2>
+                            @php
+                                $i=0;   
+                            @endphp
+                        @foreach ($selectedCourse->whatsIncluded as $whatsInclude)
+                            @if($i==0)
+                                <div class="included-list">
+                            @endif
                             <div class="included-content">
                                 <span>
                                     {{-- <img src="{{url('img/master/call.svg')}}" alt="quote"> --}}
@@ -190,9 +194,16 @@
                                 </span>
                                 <h3>{!! $whatsInclude->name !!}</h3>
                             </div>
-                            @endforeach
-
-                        </div>
+                            @php
+                                $i++;    
+                            @endphp
+                            @if($i==4)
+                                </div>
+                                @php
+                                    $i=0;
+                                @endphp
+                            @endif
+                        @endforeach
                     </div>
                     @endif
                 </div>
