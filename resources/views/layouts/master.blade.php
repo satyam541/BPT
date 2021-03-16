@@ -456,7 +456,7 @@ $.ajax({
         var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
             '{{ route('thanks') }}').html(input);
         $('body').append(form);
-        $('div.scene').toggle();
+        $('div.scene').show();
     },
     success: function(response) {
         if (response == 'done') {
@@ -464,7 +464,7 @@ $.ajax({
         }
     },
     complete:function(){
-        $('div.scene').toggle();
+        $('div.scene').hide();
     }
 });
 }
