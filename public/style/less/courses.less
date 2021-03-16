@@ -206,6 +206,7 @@
         font-size: 20px;
         font-weight: bold;
         align-self: flex-end;
+        line-height: 1.2;
     }
     .tab-common {
         display: flex;
@@ -241,6 +242,13 @@
             max-height: 400px;
             overflow: hidden;
             width: 100%;
+            
+            p{
+                a{
+                    color: @lightblueColor;
+                    font-weight: 600;
+                }
+            }
         }
         .toggle {
             max-height: 100% !important;
@@ -921,6 +929,9 @@
             }
             input{
                 color: @whiteColor;
+                &::before{
+                    color: @blackColor;
+                }
             }
             p,label{
                 color: @whiteColor;
