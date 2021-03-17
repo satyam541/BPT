@@ -46,12 +46,8 @@ class CategoryController extends Controller
     {
         $this->authorize('view', new Category());      
         $categories = Category::All();
-        $checked=null;
-        if(isset($request->popular)){
-            $categories = Category::whereHas('popular')->get();
-            $checked='checked';
-        }
-        return view('cms.category.categoryList',compact('categories','checked'));    
+        
+        return view('cms.category.categoryList',compact('categories'));    
              
     }
 

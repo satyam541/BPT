@@ -38,20 +38,17 @@
                 Course List
                 <div class="popular">
                   Popular
+                </div>
+                           <br>             
+                  <div class="onoffswitch">
+                  <input type="checkbox" name="active"  class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  
+                  </label>
+                  
               </div>
-              <form action="{{Route('courseList')}}" method="get">
-                                        
-                <div class="onoffswitch">
-                <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
-                <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                
-                </label>
-                
-            </div>
-              <input type="submit" name="submit" id="submit" style="visibility: hidden">
-            </form>
           </div>  
         </div>
 
@@ -98,7 +95,7 @@
                     <tr>
                       <td>{{$course->name}}</td>
                       <td>{{$course->topic->name ?? null}}</td>
-                      <td class=" text-center"><input type="checkbox" value="{{$course->id}}" @if ($course->popular->exists) checked @endif class="popularCourse" name="is_popular"></td>
+                      <td class=" text-center">@if ($course->popular->exists)&nbsp; @endif<input type="checkbox" value="{{$course->id}}" @if ($course->popular->exists) checked @endif class="popularCourse" name="is_popular"></td>
                       <td class=" text-center">
                         @can('update',$course)
                         <a href="{{ route('courseContentList',['course'=>$course->id]) }}" class="fa fa-list"></a>
@@ -159,7 +156,7 @@
     <script>
         $(document).ready(function(){
           success = $('#success_type');
-            $('#example1').DataTable({
+            var table=$('#example1').DataTable({
               
               "columns": [
                         { "name": "Name" },
@@ -201,13 +198,22 @@
             
               });
             });
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+            $('#myonoffswitch').on('change',function(){
+         
+      
+         if($(this).is(':checked')){
+             $.fn.dataTable.ext.search.push(
+                 function(settings, data, dataIndex) {  
+
+  return data[2] 
+     }
+         )
+              }
+              else {
+$.fn.dataTable.ext.search.pop()
+}
+table.draw()
+     });
         });
     </script>
 @endsection
