@@ -72,7 +72,7 @@
                 
                     @foreach ($countries as $country)
                     <tr>
-                      <td>{{$country->name}}</td>
+                      <td>{{$country->name}}</td> 
                       <td class="text-center">@if ($country->active==1). @endif<input type="checkbox" value="{{$country->country_code}}" @if ($country->active==1) checked @endif class="activeCountry" name="is_active"></td>
                       <td>
                       @can('update',$country)
