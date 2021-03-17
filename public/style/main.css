@@ -7253,7 +7253,8 @@ input[type=number] {
   height: 100%;
   width: 100%;
 }
-.location-main .reach a {
+.location-main .reach a,
+.location-main .reach p {
   display: flex;
   width: calc(100% - 25px);
 }
