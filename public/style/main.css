@@ -996,7 +996,7 @@ input[type=number] {
 }
 .bottom-bar {
   background: #1C2848;
-  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.09803922);
+  box-shadow: 0 -10px 15px rgba(195, 195, 195, 0.098);
   width: 100%;
   padding: 10px;
   position: fixed;
@@ -1312,7 +1312,7 @@ input[type=number] {
   }
   .footer {
     padding: 3rem 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 4rem;
   }
   .footer .terms {
     width: 80%;
@@ -1326,9 +1326,6 @@ input[type=number] {
   }
   .footer .content {
     width: 48%;
-  }
-  .bottom-bar {
-    display: none;
   }
   .enquiry-popup {
     padding: 3rem 2rem;
@@ -1390,6 +1387,9 @@ input[type=number] {
 @media (min-width : 1024px) {
   .banner {
     padding-top: 11rem !important;
+  }
+  .bottom-bar {
+    display: none;
   }
   .black-breadcrums li {
     color: #181818;
@@ -2573,7 +2573,7 @@ input[type=number] {
 .looking .reviews-inner {
   display: flex;
   flex-direction: column;
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
 }
 .looking .reviews-inner p {
   color: #FFFFFF;
@@ -9858,9 +9858,6 @@ input[type=number] {
 .popular-location .popular-content p {
   text-align: center;
 }
-.popular-location .popular-content p {
-  margin-top: 0.5rem;
-}
 .popular-location .location-content {
   display: flex;
   flex-direction: column;
@@ -9991,7 +9988,9 @@ input[type=number] {
     background: none;
     background-image: url(../img/courses/unable-bg.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: auto 100%;
+    background-position: right top;
+    background-color: #15171f;
   }
   .unable p {
     width: 70%;
@@ -10275,8 +10274,8 @@ input[type=number] {
     background-image: url(../img/courses/polygon-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: -10px;
-    left: 20px;
+    top: -24px;
+    left: 22px;
     animation: rotate 15s linear infinite;
   }
   .popular-location .location-list {
@@ -10654,7 +10653,6 @@ input[type=number] {
   }
   .popular-location .popular-content::before {
     width: 330px;
-    top: 0;
     height: 370px;
   }
   .popular-location .location-content {
@@ -11325,7 +11323,7 @@ input[type=number] {
 .most-search .search-info span {
   display: flex;
   color: #C0C0C0;
-  font-size: 13px;
+  font-size: 14px;
 }
 .most-search .search-info span img {
   height: 18px;
@@ -13203,6 +13201,7 @@ input[type=number] {
   }
   .goals .goal-image .img {
     width: 100%;
+    align-self: flex-start;
   }
   .goals .content p {
     font-size: 12px;
@@ -13282,7 +13281,7 @@ input[type=number] {
     width: 53%;
   }
   .goals .goal-image .img {
-    width: 80%;
+    width: 72%;
   }
   .goals .goal-item {
     padding: 2rem 1.5rem;
@@ -13441,7 +13440,7 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 .pass-clients .tagline {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .pass-clients .pass-content {
   display: flex;
@@ -13536,7 +13535,6 @@ input[type=number] {
 }
 .why-right {
   padding: 3rem 1.5rem;
-  padding-top: 1rem !important;
 }
 .why-right .right-container {
   display: flex;
@@ -13748,7 +13746,7 @@ input[type=number] {
     justify-content: space-between;
   }
   .benefit .benefit-info {
-    width: 26%;
+    width: 24%;
     margin-top: 0;
     align-self: flex-start;
   }
@@ -14156,9 +14154,6 @@ input[type=number] {
   .knowledge-banner .banner-container .breadcrums .black {
     display: flex;
   }
-  .benefit .benefit-info {
-    width: 30%;
-  }
   .pass-clients .pass-content {
     width: 56%;
   }
@@ -14279,9 +14274,6 @@ input[type=number] {
   }
   .benefit {
     padding: 4rem 0rem;
-  }
-  .benefit .benefit-info {
-    width: 14%;
   }
   .pass-clients {
     padding: 4rem 0rem;

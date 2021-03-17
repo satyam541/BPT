@@ -371,6 +371,14 @@ $(".enquiryJS").click(function(){
     var quote = $(this).data('quote');
       $("#quote").html(quote);     
 });
+$(".enquiry-popup").click(function(event){
+    var element = event.target;
+    if($(element).closest(".enquire-popup").length > 0)
+    { 
+        return false;
+    }
+    $(this).hide();
+});
 // End pop-up//
 
     //start Load more // 
