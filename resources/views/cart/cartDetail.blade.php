@@ -107,6 +107,24 @@
                                     </div>
                                 </div>
 
+                                <div class="input-container ">
+                                    <span><img src="{{ url('img/master/phone-callblack.svg') }}" alt="phone-call"
+                                            class="black">
+                                        <img src="{{ url('img/master/phone-callred.svg') }}" alt="phonecall-red"
+                                            class="red"></span>
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
+                                    <div class="phonecode-field field-black">
+                                        <select class="country-code"></select>
+                                        <span class="prefix"></span>
+                                        <input type="number" class="telephone" placeholder="Telephone Number">
+                                        <div style="z-index:-1;width:0;height:0;pointer-events: none;">
+                                            <input type="text" name="phone" class="phonenumber">
+                                            <input type="text" name="phonecode" class="phonecode">
+                                            <input type="text" name="m_code" class="countrycode" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/house-black.svg') }}" alt="house" class="black">
                                         <img src="{{ url('img/master/house-red.svg') }}" alt="house-red" class="red"></span>
@@ -116,31 +134,24 @@
                             </div>
                             <div class="form-consent">
                                 <input name="othersConsent" type="checkbox" id="offerConsent">
-                                <label for="offerConsent">Click here to sign up to our email marketing, offers and
-                                    discounts</label>
+                                <label for="offerConsent">I am buying this course for someone else and I have their consent to provide this personal data</label>
                             </div>
                             <div class="form-consent">
-                                <p>The information you provide shall be processed by Best Practice Training Limited – a
-                                    professional training organisation. Your data shall be used by a member of staff to
-                                    contact you regarding your enquiry.
-                                </p>
+                                <p>In purchasing this course with Best Practice Training Limited, you are entering into a service agreement where your data shall be processed for the purpose of delivering the service. If appropriate, your contact details shall be given to the relevant Examination Institute or Lab provider to fulfil the contract.</p>
                             </div>
                             <div class="form-consent">
                                 <p>Please click <a>here</a> for privacy policy. </p>
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
-                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
-                                    suitable manner (by phone or email) in order to respond to my enquiry.</label>
+                                <label for="checkConsent">By clicking next, I consent to my data being stored & processes within the delivery of the service, including processing my booking and ordering exams (if applicable) with third parties*</label>
                             </div>
                             <div class="consent-error" style="display: none;">
-                                <p>We cannot process your enquiry without contacting you, please tick to confirm you
-                                    consent to us contacting you about your enquiry</p>
+                                <p>We cannot process your enquiry without contacting you, please tick to confirm you consent to us contacting you about your enquiry</p>
                             </div>
                             <div class="form-consent">
                                 <input type="checkbox" name="marketingConsent" id="allowconsent">
-                                <label for="allowconsent">Click here to sign up to our email marketing, offers and
-                                    discounts</label>
+                                <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
                             </div>
                             <div class="buttons">
                                 <button class="btn-blue" type="button" onclick="cartFormSubmit('customer',this)">
@@ -151,7 +162,7 @@
                         </form>
                         <form class="form-inner" id="stepTwo">
                             <div class="card-detail">
-                                <p>Please Select Your Payment Options And Complete The Details Below</p>
+                                <p>Please Select Your Payment Options And Complete The Details Below:</p>
                                 <div class="input-container input-card">
                                     <span><img src="{{ url('img/master/credit-black.svg') }}" alt="credit-black"
                                             class="black">

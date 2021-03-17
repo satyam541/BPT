@@ -63,9 +63,9 @@
                                     <span>
                                         <img src="{{url('img/location-detail/pin.svg')}}" alt="pin">
                                     </span>
-                                    <a href="javascript:void(0);">
+                                    <p>
                                   {{$location->address}}
-                                </a>
+                                </p>
                             </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                     <div class="input-container">
                         <span><img src="{{url('img/master/name-black.svg')}}" alt="name" class="black">
                         <img src="{{url('img/master/name-red.svg')}}" alt="name-red" class="red"></span>
-                        <input type="text" name="f-name" id="f-name" placeholder="Name*"
+                        <input type="text" name="name" id="f-name" placeholder="Name*"
                             autocomplete="off">
                     </div>
                     <input type="hidden" name="type" value="other"> 
