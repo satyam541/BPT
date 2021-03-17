@@ -2573,7 +2573,7 @@ input[type=number] {
 .looking .reviews-inner {
   display: flex;
   flex-direction: column;
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
 }
 .looking .reviews-inner p {
   color: #FFFFFF;
