@@ -8,7 +8,7 @@
         <div class="banner-container">
             <h1>{{$pageDetail->banner['header']->heading}}</h1>
             <p>{{$pageDetail->banner['header']->content}}</p>
-            <form class="search-form">
+            <form class="search-form exclude">
             <div class="search">
                             <input type="text" class="auto-complete-course auto-redirect" value="{{$query}}" placeholder="Search your course here...." name="q" >
                             <button>
@@ -62,8 +62,8 @@
     <div class="container">
         <div class="result-container">
             <div class="heading">
-                @if($result->count() != 0 && $query !="")
-                <h2>{{$result->count()}} Results Found for "{{$query}}"</h2>
+                @if($resultCount != 0 && $query !="")
+                <h2>{{$resultCount}} Results Found for "{{$query}}"</h2>
                 @endif
             </div>
             <div class="result-content">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     @endforeach
-                    {{$result->links()}}
+                    {{$result->appends(request()->query())->links()}}
                 </div>
                 <div class="filter">
                     <h2>Filter</h2>
@@ -89,7 +89,7 @@
                         <p>Courses</p>
                         <ul>
                             @foreach ($popularCourses->take(5) as $popularCourse)
-                                <li><a href="{{url('/training-courses'.$popularCourse->reference)}}">{{$popularCourse->name}}</a> </li>
+                                <li><a href="{{$popularCourse->url}}">{{$popularCourse->name}}</a> </li>
                             @endforeach
                         </ul>
                     </div>
@@ -97,7 +97,7 @@
                         <p>Locations</p>
                         <ul>
                             @foreach ($popularLocations->take(5) as $popularLocation)
-                                <li><a href="{{url('/training-locations/'.$popularLocation->reference)}}">{{$popularLocation->name}}</a> </li>
+                                <li><a href="{{$popularLocation->url}}">{{$popularLocation->name}}</a> </li>
                             @endforeach
                         </ul>
                     </div>
