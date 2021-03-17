@@ -79,7 +79,7 @@
                 </li>
 
                 <li class="buttons">
-                    <a data-type="top" class="btn-blue open-popup enquiryJS">
+                    <a data-type="top" class="btn-blue open-popup enquiryJS" data-heading="Get a Quote" data-quote="Get a Quote">
                         <img src="{{url('img/master/quote.svg')}}" alt="quote">
                         Get a Quote
                     </a>
@@ -156,7 +156,7 @@
 <div class="pop-search" id="pop-search">
     <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form" onsubmit="getquery(this)">
-    <h2>Search <span>our</span> courses and <span>solutions</span></h2>
+    <h2>Search our courses and solutions</h2>
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
                 <button  onclick="getquery(this)">
