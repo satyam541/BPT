@@ -428,7 +428,7 @@ input[type=number] {
   height: 100%;
   width: 46px;
   min-width: 46px;
-  padding: 0.7rem;
+  padding: 0.8rem;
 }
 .input-container span img {
   width: 20px;
@@ -918,7 +918,7 @@ input[type=number] {
   border: 2px solid #0097D8;
 }
 .footer .social-media a:nth-child(4) {
-  border: 2px solid #FF1B1B;
+  border: 2px solid #c84e4d;
 }
 .footer .social-media a:nth-child(5) {
   border: 2px solid #1856FF;
@@ -1044,6 +1044,7 @@ input[type=number] {
   border-radius: 28px;
   border-bottom: 4px solid #0064D8;
   border-top: 4px solid #0064D8;
+  height: max-content;
 }
 .enquiry-popup .enquire-popup .cross {
   display: flex;
@@ -1072,6 +1073,7 @@ input[type=number] {
 }
 .enquiry-popup .form .heading {
   padding-top: 0;
+  width: 80%;
 }
 .enquiry-popup .form .form-input {
   justify-content: center;
@@ -1310,6 +1312,7 @@ input[type=number] {
   }
   .footer {
     padding: 3rem 2rem;
+    padding-bottom: 1rem;
   }
   .footer .terms {
     width: 80%;
@@ -1878,7 +1881,8 @@ input[type=number] {
   }
   .footer {
     background: linear-gradient(0deg, #1C2848 80%, #FFFFFF 48%);
-    padding-top: 0;
+    padding: 0;
+    padding-bottom: 1rem;
   }
   .footer .content {
     width: 25%;
@@ -1926,9 +1930,6 @@ input[type=number] {
   .banner {
     padding-left: 0;
     padding-right: 0;
-  }
-  .footer {
-    padding: 0;
   }
   .footer h2 {
     font-size: 26px;
@@ -2490,7 +2491,7 @@ input[type=number] {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   margin-top: 1rem;
   align-items: center;
-  background-image: linear-gradient(143deg, #ffffff 0%, #ffffff 77%, #d6d6d6 77%);
+  background-image: linear-gradient(135deg, #ffffff 0%, #ffffff 86%, #d6d6d6 77%);
   border-radius: 10px;
   width: 48%;
   flex-wrap: wrap;
@@ -2503,7 +2504,7 @@ input[type=number] {
 .locations .location-name img {
   width: 30px;
   height: 30px;
-  margin: 0 0.5rem;
+  margin-left: auto;
 }
 .locations .location-name .blue {
   display: flex;
@@ -2512,7 +2513,7 @@ input[type=number] {
   display: none;
 }
 .locations .location-name p {
-  width: 63%;
+  width: 82%;
   font-weight: 700;
 }
 .locations .location-name p a {
