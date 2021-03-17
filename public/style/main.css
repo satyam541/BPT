@@ -3560,6 +3560,7 @@ input[type=number] {
   border-left: 3px solid #1C2848;
   margin-bottom: 1.2rem;
   padding: 0.7rem;
+  cursor: pointer;
 }
 .faq .faq-item:last-child {
   margin-bottom: 0;
@@ -7317,7 +7318,8 @@ input[type=number] {
   height: 100%;
   width: 100%;
 }
-.location-main .reach a {
+.location-main .reach a,
+.location-main .reach p {
   display: flex;
   width: calc(100% - 25px);
 }
@@ -10957,7 +10959,7 @@ input[type=number] {
   background-image: url(../img/emptycart/bg.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100% 38%;
+  background-size: 100% 42%;
 }
 .order .order-heading {
   position: relative;
@@ -14687,6 +14689,21 @@ input[type=number] {
   display: none;
   flex-direction: column;
 }
+.steps .form-inner .input-container {
+  width: 97%;
+}
+.steps .form-inner .input-container:first-child {
+  margin-top: 0.1rem;
+}
+.steps .form-inner .input-container:last-child {
+  margin-bottom: 0.1rem;
+}
+.steps .form-inner select {
+  outline: none;
+  border: none;
+  background-color: #FFFFFF;
+  width: 100%;
+}
 .steps .group-input {
   display: flex;
   flex-direction: column;
@@ -14925,7 +14942,7 @@ input[type=number] {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -29px;
+    top: -35px;
     right: 0;
     left: 0;
     margin: auto;
@@ -14992,6 +15009,9 @@ input[type=number] {
   }
   .steps .order-container {
     width: 70%;
+  }
+  .steps .order-container #stepOne .form-input .input-container:last-child {
+    width: 100%;
   }
   .steps .form {
     padding: 1.5rem 4rem;

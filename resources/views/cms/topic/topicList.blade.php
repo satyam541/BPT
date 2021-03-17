@@ -38,10 +38,10 @@
                 <div class="popular">
                   Popular
                 </div>
-              <form action="{{Route('topicList')}}" method="get">
+              <br>
                                         
                 <div class="onoffswitch">
-                <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                <input type="checkbox" name="popular" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                 <label class="onoffswitch-label" for="myonoffswitch">
                     <span class="onoffswitch-inner"></span>
                     <span class="onoffswitch-switch"></span>
@@ -49,8 +49,7 @@
                 </label>
                 </div>
             
-              <input type="submit" name="submit" id="submit" style="visibility: hidden">
-            </form>
+              
           </div>  
             </div>
         
@@ -78,7 +77,7 @@
                     <tr>
                       <td>{{$topic->name}}</td>
                       <td>{{$topic->category->name ?? ''}}</td>
-                      <td class=" text-center"><input type="checkbox" value="{{$topic->id}}" @if ($topic->popular->exists) checked @endif class="popularTopic" name="is_popular"></td>
+                      <td class=" text-center">@if ($topic->popular->exists)&nbsp; @endif<input type="checkbox" value="{{$topic->id}}" @if ($topic->popular->exists) checked @endif class="popularTopic" name="is_popular"></td>
                       <td class=" text-center">
                         @can('update',$topic)
                         <a href="{{ route('topicContentList',['topic'=>$topic->id]) }}" class="fa fa-list"></a>
@@ -138,7 +137,7 @@
     <script>
       success = $('#success_type');
         $(document).ready(function(){
-            $('#example1').DataTable({
+            var table=$('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
                         { "name": "Category" },
@@ -178,13 +177,23 @@
             
               });
             });
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+            $('#myonoffswitch').on('change',function(){
+         
+      
+         if($(this).is(':checked')){
+             $.fn.dataTable.ext.search.push(
+                 function(settings, data, dataIndex) {  
+
+  return data[2] 
+     }
+         )
+              }
+              else {
+$.fn.dataTable.ext.search.pop()
+}
+table.draw()
+     });
+            
         });
     </script>
 @endsection

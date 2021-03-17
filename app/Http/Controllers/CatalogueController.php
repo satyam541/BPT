@@ -22,7 +22,7 @@ class CatalogueController extends Controller
         }
         $data['pageDetail'] = PageDetail::getContent('catalogue');
 
-        $categories                 = Category::with('topics')->where('published', 1)->get();
+        $categories                 = Category::with('topics')->where('published', 1)->orderBy('display_order')->get();
         $data['categoriesList']     = $categories->pluck('name', 'id')->toArray();
         $data['categories']         = $categories; 
         $data['popularTopics']      = Topic::has('popular')->get();

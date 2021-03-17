@@ -36,16 +36,15 @@
               Popular
               
             </div>
-                <form action="{{Route($submitRoute)}}" method="get">
+                <br>
                 <div class="onoffswitch">
-                  <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                  <input type="checkbox" name="popular" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                   <label class="onoffswitch-label" for="myonoffswitch">
                       <span class="onoffswitch-inner"></span>
                       <span class="onoffswitch-switch"></span>
                   </label>
               </div>
-                <input type="submit" name="submit" id="submit" style="visibility: hidden">
-              </form>
+                
             </div>  
           </div>
             <!-- /.card-header -->
@@ -71,7 +70,7 @@
                     <td>{{$item->title}}</td>
                     <td>{{$item->post_date}}</td>
                     <td class=" text-center">
-                    <input type="checkbox" class="popularArticle" value="{{$item->id}}" @if ($item->popular->exists) checked @endif name="is_popular"></td>
+                      @if ($item->popular->exists)<span style="display: none">.</span> @endif<input type="checkbox" class="popularArticle" value="{{$item->id}}" @if ($item->popular->exists) checked @endif name="is_popular"></td>
                     <td>
                     @can('update',$item)
                     <a href="{{ route('editArticle',['article'=>$item->id]) }}" class="fa fa-edit"></a>
@@ -109,10 +108,8 @@
     <script>
       success = $('#success_type');
         $(document).ready(function(){
-          $('#myonoffswitch').change(function(){
-              $('#submit').click();
-                });
-            $('#example1').DataTable({
+          
+           var table= $('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
                         { "name": "Date", searching:false },
@@ -148,6 +145,22 @@
             
               });
             });
+            $('#myonoffswitch').on('change',function(){
+         
+      
+         if($(this).is(':checked')){
+             $.fn.dataTable.ext.search.push(
+                 function(settings, data, dataIndex) {  
+
+  return data[2] 
+     }
+         )
+              }
+              else {
+$.fn.dataTable.ext.search.pop()
+}
+table.draw()
+     });
         });
     </script>
 @endsection

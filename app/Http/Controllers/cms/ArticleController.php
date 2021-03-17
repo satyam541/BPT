@@ -37,11 +37,7 @@ class ArticleController extends Controller
         $data['data']=Article::where('type','news')->get();
         $data['type']='News';
         $data['submitRoute']='newsList';
-        $data['checked']=null;
-        if(isset($request->popular)){
-            $data['data'] = Article::whereHas('popular')->where('type','news')->get();
-            $data['checked']='checked';
-        }
+        
        return view('cms.article.article',$data);
     }
 
@@ -191,11 +187,6 @@ class ArticleController extends Controller
          $data['data']=Article::where('type','blog')->get();
          $data['type']='Blog';
          $data['submitRoute']='blogList';
-         $data['checked']=null;
-        if(isset($request->popular)){
-            $data['data'] = Article::whereHas('popular')->where('type','blog')->get();
-            $data['checked']='checked';
-        }
         return view('cms.article.article',$data);
     }
 
