@@ -224,7 +224,7 @@
                 @php
                     unset($pageDetail->figures_list['heading']);
                 @endphp
-                  @php $homepage=homepageData()  @endphp
+                  @php $statsdata=statsData()  @endphp
                   <div class="figures-list">
                       
                       <div class="figures-content">
@@ -232,7 +232,7 @@
                               <img src="{{url('uploads/page/catalogue_image_1614332950.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
-                              <h3 class="count-number" data-to="{{$homepage['courses']}}" data-speed="3000">{{$homepage['courses']}}</h3>
+                              <h3 class="count-number" data-to="{{$statsdata->stats['course_running_daily']->content}}" data-speed="3000">{!!$statsdata->stats['course_running_daily']->content!!}</h3>
                               <span>+</span>
                           </div>
                           <p>Courses Running Daily</p>
@@ -243,7 +243,7 @@
                               <img src="{{url('uploads/page/catalogue_image_1614333026.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
-                              <h3 class="count-number" data-to="{{$homepage['locations']}}" data-speed="3000">{{$homepage['locations']}}</h3>
+                              <h3 class="count-number" data-to="{{$statsdata->stats['locations_world_wide']->content}}" data-speed="3000">{!!$statsdata->stats['locations_world_wide']->content!!}</h3>
                               <span>+</span>
                           </div>
                           <p>Locations Worldwide</p>
@@ -254,7 +254,7 @@
                               <img src="{{url('uploads/page/catalogue_image_1615444428.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
-                              <h3 class="count-number" data-to="500" data-speed="3000">500</h3>
+                              <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3>
                               <span>+</span>
                           </div>
                           <p>Trainers</p>
@@ -265,7 +265,7 @@
                               <img src="{{url('uploads/page/catalogue_image_1614333297.svg')}}" alt="">
                           </span>
                           <div class="facts-count">
-                              <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3>
+                              <h3 class="count-number" data-to="{{$statsdata->stats['countries']->content}}" data-speed="3000">{{$statsdata->stats['countries']->content}}</h3>
                               <span>+</span>
                           </div>
                           <p>Countries</p>
