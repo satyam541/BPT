@@ -1930,6 +1930,10 @@ input[type=number] {
   .banner {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 13rem!important;
+  }
+  .navbar {
+    top: 25px;
   }
   .footer h2 {
     font-size: 26px;
@@ -2686,6 +2690,8 @@ input[type=number] {
   }
   .courses .course-name .name h3 {
     min-height: 42px;
+    display: flex;
+    align-items: center;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2972,6 +2978,9 @@ input[type=number] {
   }
 }
 @media (min-width : 1024px) {
+  .home-banner::before {
+    height: 70%;
+  }
   .home-banner .banner-container .topic-list {
     width: 40%;
   }
