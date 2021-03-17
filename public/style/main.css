@@ -9336,6 +9336,9 @@ input[type=number] {
 .training .onsite-block .onsite-form .input-container {
   background-color: #424E6E;
 }
+.training .onsite-block .onsite-form .input-error ::placeholder {
+  color: red;
+}
 .training .onsite-block .onsite-form span {
   background-color: #687494;
 }
