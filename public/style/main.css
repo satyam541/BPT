@@ -1068,6 +1068,7 @@ input[type=number] {
   box-shadow: none;
   width: 100%;
   padding: 0;
+  height: auto;
 }
 .enquiry-popup .form .heading {
   padding-top: 0;
@@ -4261,7 +4262,7 @@ input[type=number] {
   .about-us .about-image {
     width: 48%;
     position: sticky;
-    top: 55px;
+    top: 70px;
     height: fit-content;
   }
   .about-us .about-image .values-content p {
@@ -9335,6 +9336,9 @@ input[type=number] {
 }
 .training .onsite-block .onsite-form .input-container {
   background-color: #424E6E;
+}
+.training .onsite-block .onsite-form .input-error ::placeholder {
+  color: red;
 }
 .training .onsite-block .onsite-form span {
   background-color: #687494;

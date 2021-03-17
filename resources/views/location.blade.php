@@ -51,8 +51,8 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-heading="Learn More" data-type="other">
-                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
+                    <a class="btn-blue open-popup enquiryJS" data-quote="View More" data-heading="View More" data-type="other">
+                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> View More
                     </a>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <p>{{$pageDetail->find['find_container']->content}}</p>
             </div>
             <div class="buttons">
-                <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-quote="Enquire Now" data-type="other">
+                <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-heading="Enquire Now" data-type="other">
                     <img src="{{url('img/location/enquire.svg')}}" alt="enquire"> Enquire Now
                 </a>
             </div>
