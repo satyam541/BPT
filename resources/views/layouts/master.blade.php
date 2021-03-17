@@ -46,8 +46,8 @@
                             <a href="{{ $socialmedia->where('website', 'Twitter')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/twitter.svg') }}" alt="twitter">
                             </a>
-                            <a href="{{ $socialmedia->where('website', 'Google')->first()->link ?? '' }}">
-                                <img src="{{ url('img/master/google-plus.svg') }}" alt="google-plus">
+                            <a href="{{ $socialmedia->where('website', 'instagram')->first()->link ?? '' }}">
+                                <img src="{{ url('img/master/insta.svg') }}" alt="instagram">
                             </a>
                             <a href="{{ $socialmedia->where('website', 'Linkedin')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/linked-in.svg') }}" alt="linked-in">
