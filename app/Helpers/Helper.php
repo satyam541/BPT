@@ -91,7 +91,8 @@ if (!function_exists('encodeUrlSlug')) {
                                                     ->get();
             // dd($data['categories']);
             $category_ids           =   $data['categories']->pluck('id')->toArray();
-            $data['topics']         =   Topic::has('courses')->has('popular')
+            $data['topics']         =   Topic::has('courses')
+                                                    //->has('popular')
                                                     ->select('id', 'name','category_id', 'display_order', 'published')
                                                     ->whereIn('category_id', $category_ids)
                                                     ->where('published', 1)

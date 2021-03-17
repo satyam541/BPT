@@ -36,10 +36,10 @@
                                     <div class="popular">
                                         Popular
                                     </div>
-                                    <form action="{{ Route('categoryList') }}" method="get">
+                                    <br>
 
                                         <div class="onoffswitch">
-                                            <input type="checkbox" name="popular" @if ($checked != null) checked @endif
+                                            <input type="checkbox" name="popular" 
                                                 class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                                             <label class="onoffswitch-label" for="myonoffswitch">
                                                 <span class="onoffswitch-inner"></span>
@@ -48,8 +48,7 @@
                                             </label>
 
                                         </div>
-                                        <input type="submit" name="submit" id="submit" style="visibility: hidden">
-                                    </form>
+                                      
 
                                 </div>
                             </div>
@@ -98,7 +97,7 @@
                                             @foreach ($categories as $category)
                                                 <tr>
                                                     <td>{{ $category->name }}</td>
-                                                    <td class=" text-center"><input type="checkbox" value="{{$category->id}}" @if ($category->popular->exists) checked @endif class="popularCategory" name="is_popular"></td>
+                                                    <td class=" text-center">@if ($category->popular->exists)&nbsp; @endif<input type="checkbox" value="{{$category->id}}" @if ($category->popular->exists) checked @endif class="popularCategory" name="is_popular"></td>
                                                     <td class=" text-center">
                                                         @can('update', $category)
                                                             <a href="{{ route('categoryContentList', ['category' => $category->id]) }}"
@@ -165,10 +164,11 @@
 @section('footer')
     <script>
         success = $('#success_type');
+        var table;
         $(document).ready(function() {
 
 
-            $('#example1').DataTable({
+            table=$('#example1').DataTable({
                 "columns": [{
                         "name": "Name"
                     },
@@ -234,7 +234,22 @@
             
               });
             });
+            $('#myonoffswitch').on('change',function(){
          
+      
+         if($(this).is(':checked')){
+             $.fn.dataTable.ext.search.push(
+                 function(settings, data, dataIndex) {  
+
+  return data[1] 
+     }
+         )
+              }
+              else {
+$.fn.dataTable.ext.search.pop()
+}
+table.draw()
+     });
             
 
         
