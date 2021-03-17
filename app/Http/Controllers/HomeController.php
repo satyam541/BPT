@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['categories'] = Category::has('popular')->select('id', 'name', 'reference', 'display_order', 'reference', 'image', 'icon')->withCount('topics')->with('topics')->get();
+        $data['categories'] = Category::has('popular')->select('id', 'name', 'reference', 'display_order', 'reference', 'image', 'icon')->withCount('topics')->with('topics')->orderBy('display_order')->get();
         $data['topics']     = Topic::has('popular')->select('id', 'name', 'reference')->get();
         $data['locations']  = Location::has('popular')->select('id', 'name', 'reference','display_order','tier')->limit(7)->get();
         $data['testimonials'] = Testimonial::select('author', 'content', 'image', 'designation')->get();

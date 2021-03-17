@@ -10,9 +10,9 @@
                     <p>{!! $pageDetail->banner['header']->content !!}</p>
                     <div class="breadcrums">
                         <ul>
-                            <li><a href="javascript:void(0);">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <img src="{{ url('img/master/breadcrum-arrow.svg') }}" alt="breadcrums" class="white">
-                            <li><a href="">Category</a></li>
+                            <li><a href="">Catalogue</a></li>
                         </ul>
                     </div>
                 </div>

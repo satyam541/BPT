@@ -63,9 +63,9 @@
                                     <span>
                                         <img src="{{url('img/location-detail/pin.svg')}}" alt="pin">
                                     </span>
-                                    <a href="javascript:void(0);">
+                                    <p>
                                   {{$location->address}}
-                                </a>
+                                </p>
                             </div>
                             </div>
                         </div>

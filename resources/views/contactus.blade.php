@@ -13,7 +13,7 @@
                             <ul>
                                 <li><a href="{{route('home')}}">Home</a></li>
                                 <li><img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="arrow" class="white"></li>
-                                <li><a href="{{route('contactUs')}}">Contact</a></li>
+                                <li><a href="{{route('contactUs')}}">Contact Us</a></li>
                             </ul>
                         </div>
                 </div>
