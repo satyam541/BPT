@@ -996,7 +996,7 @@ input[type=number] {
 }
 .bottom-bar {
   background: #1C2848;
-  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.09803922);
+  box-shadow: 0 -10px 15px rgba(195, 195, 195, 0.098);
   width: 100%;
   padding: 10px;
   position: fixed;
@@ -1312,7 +1312,7 @@ input[type=number] {
   }
   .footer {
     padding: 3rem 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 4rem;
   }
   .footer .terms {
     width: 80%;
@@ -1326,9 +1326,6 @@ input[type=number] {
   }
   .footer .content {
     width: 48%;
-  }
-  .bottom-bar {
-    display: none;
   }
   .enquiry-popup {
     padding: 3rem 2rem;
@@ -1390,6 +1387,9 @@ input[type=number] {
 @media (min-width : 1024px) {
   .banner {
     padding-top: 11rem !important;
+  }
+  .bottom-bar {
+    display: none;
   }
   .black-breadcrums li {
     color: #181818;

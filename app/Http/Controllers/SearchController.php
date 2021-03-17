@@ -15,9 +15,12 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $query                     = request()->q;
-        $courses                   = Course::with('topic')->where('name','like','%'.$query.'%')->paginate(20);
+        $resultQuery               = Course::with('topic')->where('name','like','%'.$query.'%');
+        $resultCount               = $resultQuery->count();
+        $courses                   = $resultQuery->paginate(20);
         $data['query']             = $query;
         $data['result']            = $courses;
+        $data['resultCount']       = $resultCount;
         $data['pageDetail']        = PageDetail::getContent('search');
         $data['popularTopics']     = Topic::has('popular')->with('courses')->get();
         $data['popularCourses']    = Course::has('popular')->get();

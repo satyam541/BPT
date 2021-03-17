@@ -69,8 +69,11 @@
                  UrlRedirect List
               </div>
             </div>
-                        <div class="card-body">
-                            <table id="example1">
+            <div class="card">
+
+              <div class="table-responsive" style="background-color: white">
+
+                  <table class="table table-hover">
                               <p class="no-margin small">Total : {{ $urls->total() }}</p>
                                     <thead>
                                         <tr>
@@ -103,20 +106,25 @@
     
                                     </tfoot>
                                 </table>
+                                <div class="card-footer">
+                                  <div class="row">
+                                      <div class="col-md-6">
                              @can('create',new App\Models\UrlRedirect())
                             <a id="add" href="{{ route('createUrlRedirect')}}" class="btn btn-success">add new Record</a>
                             @endcan
-                            
-                        </div>
-                        <!-- /.card-body -->
+                                      </div>
+                            <div class="col-md-6">
+                              <div class="float-sm-right">{{ $urls->links() }}</div>
+
+                            </div>
+                          </div>
+
                       </div>
-                      <!-- /.card --> 
-                    </div>
-                    <!-- /.col -->
                   </div>
-                  <!-- /.row -->
-            
-                </div><!-- /.container-fluid -->
+
+
+              </div>
+          </div>
               </section>
         </section>
             </div>
@@ -124,16 +132,7 @@
 
 @section('footer')
 <script>
-    $(document).ready(function(){
-        $('#example1').DataTable({
-          "columns": [
-                        { "name": "Source Url",searching:false},
-                        { "name": "Destination Url",searching:false },
-                        { "name": "Actions", "sorting":false, searching:false }
-          ],
-                          
-        });
-    });
-    
+  
+     
 </script>
 @endsection
