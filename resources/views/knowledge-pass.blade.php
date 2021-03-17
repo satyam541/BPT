@@ -48,7 +48,7 @@
                         <p class="tagline"> Join leading brands in the new & best way to train...</p>  
 
                         <div class="buttons">
-                            <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass">
+                            <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass" data-quote="Tell Us More" data-heading="Tell Us More">
                                 <img src="{{url('img/knowledge-pass/pass-message.svg')}}" alt="pass-message">
                                 Tell Us More
                             </a>
@@ -237,7 +237,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-type="knowledgepass">
+                    <a class="btn-blue open-popup enquiryJS" data-type="knowledgepass" data-quote="Send Us Your Requirement" data-heading="Send Us Your Requirement">
                         <img src="{{url('../img/knowledge-pass/requirements.svg')}}" alt="requirements">
                         Send Us Your Requirement
                     </a>
@@ -248,147 +248,147 @@
 <!-- End spending section -->
 
 <!-- Start right section -->
-    <section class="flex-container why-right">
-        <div class="container">
-            <div class="right-container">
-                <div class="heading center-heading">
-                    <h2>Why a Knowledge Pass is right <span>for you?</span></h2>
-                    <p>Receive these exclusive benefits depending on your chosen budget.</p>
+<section class="flex-container why-right">
+    <div class="container">
+        <div class="right-container">
+            <div class="heading center-heading">
+                <h2>Why a Knowledge Pass is Right <span>for you?</span></h2>
+                <p>Receive these exclusive benefits depending on your chosen budget.</p>
+            </div>
+            <div class="right-list">
+                <div class="right-item">
+                    <span>
+                        <h3>01</h3>
+                        <img src="{{url('img/knowledge-pass/saving.svg')}}" alt="saving">
+                    </span>
+                    <div class="content">
+                        <h2>Saving Money</h2>
+                        <p>Buying courses together lets you save money and get the most out of your budget.</p>
+                    </div>
                 </div>
-                <div class="right-list">
-                    <div class="right-item">
-                        <span>
-                            <h3>01</h3>
-                            <img src="{{url('img/knowledge-pass/saving.svg')}}" alt="saving">
-                        </span>
-                        <div class="content">
-                            <h2>Saving Money</h2>
-                            <p>Buying courses together lets you save money and get the most out of your budget.</p>
-                        </div>
+                <div class="right-item">
+                    <span>
+                        <h3>02</h3>
+                        <img src="{{url('img/knowledge-pass/time.svg')}}" alt="time">
+                    </span>
+                    <div class="content">
+                        <h2>Saving Time</h2>
+                        <p>Keep a record with your personalised dashboard of spends and utilisation.</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>02</h3>
-                            <img src="{{url('img/knowledge-pass/time.svg')}}" alt="time">
-                        </span>
-                        <div class="content">
-                            <h2>Saving Time</h2>
-                            <p>Keep a record with your personalised dashboard of spends and utilisation.</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>03</h3>
+                        <img src="{{url('img/knowledge-pass/budget.svg')}}" alt="budget">
+                    </span>
+                    <div class="content">
+                        <h2>12 Months Annualised Budget</h2>
+                        <p>Your courses can be booked at your convenience for over 12 months and can be split between departments.</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>03</h3>
-                            <img src="{{url('img/knowledge-pass/budget.svg')}}" alt="budget">
-                        </span>
-                        <div class="content">
-                            <h2>12 Months Annualised Budget</h2>
-                            <p>Your courses can be booked at your convenience for over 12 months and can be split between departments.</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>04</h3>
+                        <img src="{{url('img/knowledge-pass/invoicing.svg')}}" alt="invoicing">
+                    </span>
+                    <div class="content">
+                        <h2>Invoicing and Administration Reduced</h2>
+                        <p>We'll book and handle everything for you</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>04</h3>
-                            <img src="{{url('img/knowledge-pass/invoicing.svg')}}" alt="invoicing">
-                        </span>
-                        <div class="content">
-                            <h2>Invoicing and Administration Reduced</h2>
-                            <p>We'll book and handle everything for you</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>05</h3>
+                        <img src="{{url('img/knowledge-pass/analysis.svg')}}" alt="analysis">
+                    </span>
+                    <div class="content">
+                        <h2>Training Needs Analysis</h2>
+                        <p>Your Knowledge Pass includes exclusive access to our Avenoire training needs analysis tool</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>05</h3>
-                            <img src="{{url('img/knowledge-pass/analysis.svg')}}" alt="analysis">
-                        </span>
-                        <div class="content">
-                            <h2>Training Needs Analysis</h2>
-                            <p>Your Knowledge Pass includes exclusive access to our Avenoire training needs analysis tool</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>06</h3>
+                        <img src="{{url('img/knowledge-pass/progress.svg')}}" alt="progress">
+                    </span>
+                    <div class="content">
+                        <h2>Track Progress and Feedback</h2>
+                        <p>While using Avenoire, your personalised dashboard lets you keep track of spend and utilisation</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>06</h3>
-                            <img src="{{url('img/knowledge-pass/progress.svg')}}" alt="progress">
-                        </span>
-                        <div class="content">
-                            <h2>Track Progress and Feedback</h2>
-                            <p>While using Avenoire, your personalised dashboard lets you keep track of spend and utilisation</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>07</h3>
+                        <img src="{{url('img/knowledge-pass/manage.svg')}}" alt="manage">
+                    </span>
+                    <div class="content">
+                        <h2>Easily Manage Training Requests</h2>
+                        <p>By using Avenoire, you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>07</h3>
-                            <img src="{{url('img/knowledge-pass/manage.svg')}}" alt="manage">
-                        </span>
-                        <div class="content">
-                            <h2>Easily Manage Training Requests</h2>
-                            <p>By using Avenoire, you can easily manage training requests, eliminating the need for collating spreadsheets</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>08</h3>
+                        <img src="{{url('img/knowledge-pass/transparency.svg')}}" alt="transparency">
+                    </span>
+                    <div class="content">
+                        <h2>Full Transparency</h2>
+                        <p>Know exactly where you're spending your money</p>
                     </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>08</h3>
-                            <img src="{{url('img/knowledge-pass/transparency.svg')}}" alt="transparency">
-                        </span>
-                        <div class="content">
-                            <h2>Full Transparency</h2>
-                            <p>Know exactly where you're spending your money</p>
-                        </div>
-                    </div>
-                    <div class="right-item">
-                        <span>
-                            <h3>09</h3>
-                            <img src="{{url('img/knowledge-pass/alerts.svg')}}" alt="alerts">
-                        </span>
-                        <div class="content">
-                            <h2>Alerts and Notifications</h2>
-                            <p>Monthly spend reports, budget utilisation notifications, booking request alerts, feedback report notifications</p>
-                        </div>
+                </div>
+                <div class="right-item">
+                    <span>
+                        <h3>09</h3>
+                        <img src="{{url('img/knowledge-pass/alerts.svg')}}" alt="alerts">
+                    </span>
+                    <div class="content">
+                        <h2>Alerts and Notifications</h2>
+                        <p>Monthly spend reports, budget utilisation notifications, booking request alerts, feedback report notifications</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <!-- End right section -->
 
 
 <!-- Start benefits section -->
-    <section class="flex-container benefit">
-        <div class="container">
-            <div class="benefit-container">
-                <div class="heading center-heading white-heading">
-                    <h2>Knowledge Pass Platform Features</h2>
+<section class="flex-container benefit">
+    <div class="container">
+        <div class="benefit-container">
+            <div class="heading center-heading white-heading">
+                <h2>Knowledge Pass Platform Features</h2>
+            </div>
+            <div class="benefit-list">
+                <div class="benefit-info">
+                    <span><img src="{{url('img/knowledge-pass/training.svg')}}" alt="training"></span>
+                    <h3>Determining Training Requirements</h3>
                 </div>
-                <div class="benefit-list">
-                    <div class="benefit-info">
-                        <span><img src="{{url('img/knowledge-pass/save-money.svg')}}" alt="save-money"></span>
-                        <h3>Determining Training Requirements</h3>
-                    </div>
-                    <div class="benefit-info">
-                        <span><img src="{{url('img/knowledge-pass/saving-time.svg')}}" alt="saving-time"></span>
-                        <h3>Managing Budgets</h3>
-                    </div>
-                    <div class="benefit-info">
-                        <span><img src="{{url('img/knowledge-pass/12-month.svg')}}" alt="saving-time"></span>
-                        <h3>Booking Training</h3>
-                    </div>
-                    <div class="benefit-info">
-                        <span><img src="{{url('img/knowledge-pass/reduced-admin.svg')}}" alt="reduced-admin"></span>
-                        <h3>Tracking ROIs</h3>
-                    </div>
-                    <!-- <div class="benefit-info">  
-                        <span><img src="{{url('img/knowledge-pass/training-analysis.svg')}}" alt="training-analyis"></span>
-                        <h3>Training Needs Analysis</h3>
-                    </div>
-                    <div class="benefit-info">  
-                        <span><img src="{{url('img/knowledge-pass/discount-percentages.svg')}}" alt="discount-discounts"></span>
-                        <h3>Higher Discount Percentages</h3>
-                    </div> -->
+                <div class="benefit-info">
+                    <span><img src="{{url('img/knowledge-pass/managing.svg')}}" alt="managing"></span>
+                    <h3>Managing Budgets</h3>
                 </div>
+                <div class="benefit-info">
+                    <span><img src="{{url('img/knowledge-pass/booking.svg')}}" alt="booking"></span>
+                    <h3>Booking Training</h3>
+                </div>
+                <div class="benefit-info">
+                    <span><img src="{{url('img/knowledge-pass/tracking.svg')}}" alt="tracking"></span>
+                    <h3>Tracking ROIs</h3>
+                </div>
+                <!-- <div class="benefit-info">  
+                    <span><img src="{{url('img/knowledge-pass/training-analysis.svg')}}" alt="training-analyis"></span>
+                    <h3>Training Needs Analysis</h3>
+                </div>
+                <div class="benefit-info">  
+                    <span><img src="{{url('img/knowledge-pass/discount-percentages.svg')}}" alt="discount-discounts"></span>
+                    <h3>Higher Discount Percentages</h3>
+                </div> -->
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <!-- End benefits section -->
 
 
@@ -461,9 +461,16 @@
                 <tr>
                     <td>
                     </td>
-                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
-                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td>
+                        <div class="buttons">
+                            <a class="btn-blue open-popup enquiryJS" data-type="knowledgepass" data-quote="Enquire Now" data-heading="Enquire Now">
+                                <img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">
+                                Enquire Now
+                            </a>
+                        </div>
+                    </td>
+                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass" data-quote="Enquire Now" data-heading="Enquire Now"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
+                    <td><div class="buttons"><a class="btn-blue open-popup enquiryJS" data-type="knowledgepass" data-quote="Enquire Now" data-heading="Enquire Now"><img src="{{url('img/knowledge-pass/call-us.svg')}}" alt="call-us">Enquire Now</a></div></td>
                 </tr>
             </table>
         </div>
@@ -478,7 +485,7 @@
         <div class="knowledge-container">
             <div class="pass-info">
                 <div class="heading">
-                    <h2>Your guide to booking a Knowledge Pass</h2>
+                    <h2>Your Guide to Booking a Knowledge Pass</h2>
                 </div>
                 <p>Best Practice Training provides high-quality training that helps you to enhance your skillset. We provide numerous services for our valuable customers. One of them is “Knowledge Pass”. If you aren't sure about the course and date, a Knowledge Pass will be the best option as it enables you to book any course, at any time in the upcoming 12 months. Our learning services are specially designed to keep your goals and requirements at the forefront. For booking your Knowledge Pass, you need to follow the given below steps:
                     </p>
@@ -488,38 +495,38 @@
                     <p><strong>Sign the Booking form:</strong> Once you've confirmed your training requirements, sign the booking form.</p>
                     <p><strong>Your Dedicated Account is Opened:</strong> Knowledge Pass account has been opened by us.</p>
                     <div class="buttons">
-                    <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
+                    <a class="btn-blue  open-popup enquiryJS" data-type="knowledgepass" data-quote="Need More Info" data-heading="Need More Info"><img src="{{url('img/knowledge-pass/message.svg')}}" alt="arrow">Need More Info</a>
                     </div>
             </div>
             <div class="booking-list">
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/hand.svg')}}" alt="hand"></span>
-                        <h3>Confirm the amount</h3>
+                        <h3>Confirm the Amount</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/platform.svg')}}" alt="platform"></span>
-                        <h3>Your Online platform is live</h3>
+                        <h3>Your Online Platform is Live</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/online-booking.svg')}}" alt="online-booking"></span>
-                        <h3>Start booking your courses</h3>
+                        <h3>Start Booking your Courses</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/form.svg')}}" alt="form"></span>
-                        <h3>Sign the booking form</h3>
+                        <h3>Sign the Booking Form</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/data.svg')}}" alt="data"></span>
-                        <h3>Your dedicated account is opened</h3>
+                        <h3>Your Dedicated Account is Opened</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
                     <div class="booking-info">
                         <span><img src="{{url('img/knowledge-pass/conversation.svg')}}" alt="conversation"></span>
-                        <h3>Caroline, cornwall Council</h3>
+                        <h3>Caroline, Cornwall Council</h3>
                         <p>Through the use of Avenoire you can easily manage training requests, eliminating the need for collating spreadsheets</p>
                     </div>
             </div>
