@@ -96,7 +96,7 @@
                             <p>{!!$testimonial->content!!}</p>
 
                             <h3 class="author">{!!$testimonial->author!!}</h3>
-                            <p>{!!$testimonial->designation!!}</p>
+                            <!-- <p>{!!$testimonial->designation!!}</p> -->
                     </div>
                     @endforeach
                     

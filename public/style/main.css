@@ -4261,7 +4261,7 @@ input[type=number] {
   .about-us .about-image {
     width: 48%;
     position: sticky;
-    top: 55px;
+    top: 70px;
     height: fit-content;
   }
   .about-us .about-image .values-content p {
@@ -6146,7 +6146,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   width: 272px;
-  height: 250px;
+  height: 170px;
   position: relative;
   z-index: 1;
   margin-top: 2rem;
@@ -6253,7 +6253,7 @@ input[type=number] {
 }
 .our-blog .our-item img {
   width: 100%;
-  height: 145px;
+  height: 160px;
   border-radius: 10px;
   border: 1px solid #e5e5e5;
 }
@@ -6355,6 +6355,7 @@ input[type=number] {
   .popular-blog .popular-item {
     width: 50%;
     margin-top: 0;
+    height: 220px;
   }
   .popular-blog .popular-list {
     flex-direction: row;
@@ -6890,7 +6891,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   padding-top: 10rem;
   background-image: url(../img/blog-detail/question-bg.png);
   background-size: 100% 100%;
@@ -7009,6 +7010,7 @@ input[type=number] {
     transform: translateY(-36px);
     width: 90%;
     margin: auto;
+    margin-top: 2rem;
   }
   .blog-intro .content-left {
     width: 58%;
@@ -9333,6 +9335,9 @@ input[type=number] {
 }
 .training .onsite-block .onsite-form .input-container {
   background-color: #424E6E;
+}
+.training .onsite-block .onsite-form .input-error ::placeholder {
+  color: red;
 }
 .training .onsite-block .onsite-form span {
   background-color: #687494;

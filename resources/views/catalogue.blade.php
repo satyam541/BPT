@@ -87,7 +87,7 @@
                 </div>
                 <div class="category-list">
                     @foreach ($categories as $category)
-                        <div class="category-content" onclick="location.href = '{{$category->url }}';">
+                        <div class="category-content pointer" onclick="location.href = '{{$category->url }}';">
                             <span>
                                 <img src="{{ $category->getImagePath() }}" alt="{{ $category->name }}" class="blue">
                                 <img src="{{ $category->getIconPath() }}" alt="{{ $category->name }}" class="white">
