@@ -171,8 +171,8 @@
                         <p>Please click <a>here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" id="checkConsent" name="contactConsent">
-                        <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                        <input type="checkbox" id="popupConsent" name="contactConsent">
+                        <label for="popupConsent">By submitting this enquiry I agree to be contacted in the most
                             suitable manner (by phone or email) in order to respond to my enquiry.</label>
                     </div>
                     <div class="consent-error" style="display: none;">
