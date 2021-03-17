@@ -44,10 +44,15 @@
         .course-item{
             flex-direction: row;
             padding-left: 0;
-            width: 90%;
-            align-self: center;
+            width: 98%;
             position: relative;
             padding: 1.5rem 1rem;
+            &:first-child {
+                margin-top: 0.5rem;
+            }
+            &:last-child {
+                margin-bottom: 0.5rem;
+            }
             span{
                 margin-bottom: 0;
                 border-top-left-radius: 0;
@@ -210,8 +215,6 @@
     // Start goals section //
     .goals{
         padding: @sectionPadding-md;
-
-       
         .goal-image{
             .heading{
                 display: flex;
@@ -226,13 +229,11 @@
                 align-self: center;
             }
         }
-
-       
         .goal-item{
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem;
             &:first-child {
                 margin-top: 2rem;
             }
@@ -409,6 +410,11 @@
             flex-direction: row;
             justify-content: space-between;
         }
+        .goal-item {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
         .goal-image{
             width: 48%;
             .heading{
@@ -467,6 +473,9 @@
         }
         .courses-info{
             width: 46%;
+            position: static;
+            top: 0;
+            align-self: flex-end;
         }
         .course-item{
             border: 2px solid transparent;
@@ -530,6 +539,12 @@
         }
         .goal-image{
             width: 53%;
+            .img {
+                width: 80%;
+            }
+        }
+        .goal-item {
+            padding: 2rem 1.5rem;
         }
     }
     // End goals section //
