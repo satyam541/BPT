@@ -51,12 +51,8 @@ class LocationController extends Controller
     {
         $this->authorize('view', new Location());
         $locations       = Location::where('country_id',country()->country_code)->get();
-        $checked=null;
-        if(isset($request->popular)){
-            $locations = Location::where('country_id',country()->country_code)->whereHas('popular')->get();
-            $checked='checked';
-        }
-        return view('cms.location.locationList',compact('locations','checked'));
+        
+        return view('cms.location.locationList',compact('locations'));
     }
 
     // public function filterList(Request $request)

@@ -54,13 +54,8 @@ class CourseController extends Controller
     {
         $this->authorize('view', new Course());
         $courses = Course::with('popular')->get();
-        $checked=null;
-        if(isset($request->popular)){
-            $courses = Course::whereHas('popular')->get();
-            $checked='checked';
-        }
-        // dd(session()->all()['selectedcountry']);
-        return view('cms.course.courseList',compact('courses','checked'));
+        
+        return view('cms.course.courseList',compact('courses'));
     }
 
     public function unlinkedCourseList()
