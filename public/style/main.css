@@ -680,7 +680,8 @@ input[type=number] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -722,9 +723,6 @@ input[type=number] {
   color: #FFFFFF;
   text-align: center;
   margin-bottom: 1.5rem;
-}
-.pop-search .search-form h2 span {
-  color: #0064D8;
 }
 .pop-search .search-form .search {
   width: 600px;
@@ -1202,10 +1200,15 @@ input[type=number] {
   display: none;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
 }
 .scene svg {
-  width: 240px;
-  height: 240px;
+  width: 130px;
+  height: 130px;
 }
 .dc-logo {
   position: fixed;
@@ -1998,7 +2001,7 @@ input[type=number] {
     display: flex;
     position: fixed;
     bottom: 40%;
-    left: -125px;
+    left: -150px;
     z-index: 5;
   }
   .tooltips ul {
@@ -2011,7 +2014,7 @@ input[type=number] {
     color: #fff;
     background-color: #1C2848;
     font-size: 14px;
-    padding: 14px 12px;
+    padding: 14px 20px;
     width: 100%;
     box-shadow: 0 0 4px #FFFFFF;
     margin-bottom: 0.5rem;
@@ -2029,6 +2032,7 @@ input[type=number] {
     -ms-transform: translate(123px, 0);
     -o-transform: translate(123px, 0);
     transform: translate(123px, 0);
+    margin-left: 1rem;
   }
   .tooltips li:hover img {
     transform: rotate(360deg);
@@ -2367,11 +2371,22 @@ input[type=number] {
   color: #FFFFFF;
   padding: 1rem;
   align-items: flex-start;
+  text-decoration: none;
 }
 .delivery .item img {
   width: 48px;
   height: 48px;
   transition: 1s all;
+}
+.delivery .item button {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #FFFFFF;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 16px;
+  margin-top: 0.5rem;
 }
 .delivery .overlay {
   display: none;
@@ -3210,6 +3225,9 @@ input[type=number] {
   }
   .facts .facts-list {
     width: 62%;
+  }
+  .facts .item p {
+    min-height: auto;
   }
   .locations {
     padding: 4rem 0rem;
@@ -5767,7 +5785,6 @@ input[type=number] {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0;
     padding-left: 2rem;
   }
   .convenient .convenient-content {
@@ -5973,7 +5990,6 @@ input[type=number] {
   }
   .convenient .convenient-list {
     width: 60%;
-    padding-right: 0;
   }
   .convenient .convenient-content {
     width: 45%;
@@ -8238,6 +8254,7 @@ input[type=number] {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 5px 0 0 0 rgba(192, 192, 192, 0.67);
     width: 100%;
     position: relative;
+    z-index: 1;
   }
   .certification-course .course-content::after {
     content: '';
@@ -8248,6 +8265,7 @@ input[type=number] {
     width: 4px;
     background-color: #0064D8;
     transition: 1s ease-in-out;
+    z-index: -1;
   }
   .certification-course .course-content:hover::after {
     height: 100%;
@@ -8255,10 +8273,6 @@ input[type=number] {
     top: 0;
     left: 0;
     border-radius: 25px;
-  }
-  .certification-course .course-content:hover a,
-  .certification-course .course-content:hover .buttons {
-    z-index: 1;
   }
   .certification-course .course-content:hover a {
     color: #FFFFFF;
@@ -8700,6 +8714,10 @@ input[type=number] {
   color: #0064D8;
   font-weight: 600;
 }
+.foundation .tab-common .overview-content h2,
+.foundation .tab-common .overview-content h4 {
+  margin-bottom: 1rem;
+}
 .foundation .tab-common .toggle {
   max-height: 100% !important;
   transition: all 0.3s ease-in, color 0s ease-in-out;
@@ -8713,7 +8731,7 @@ input[type=number] {
   padding-left: 1.4rem;
   position: relative;
   z-index: 1;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .foundation .tab-common ul li::before {
   content: '';
@@ -9476,8 +9494,9 @@ input[type=number] {
   margin-top: 0.5rem;
   font-weight: 500;
 }
-.training .no-schedule p strong {
+.training .no-schedule p a {
   color: #0064D8;
+  font-weight: 900;
 }
 .training .no-schedule .btn-blue img {
   margin-right: 0;
@@ -9940,7 +9959,7 @@ input[type=number] {
     justify-content: flex-start;
   }
   .foundation .included-content {
-    width: 20%;
+    width: 22%;
     margin-bottom: 0;
     margin-right: 1.5rem;
   }
