@@ -57,7 +57,7 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('countries')) {
         function countries()
         {
-            return   Country::where('active', '1')->get();
+            return   Country::where('active', '1')->orderBy('name')->get();
         }
     }
     if (!function_exists('socialmedialinks')) {
