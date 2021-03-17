@@ -35,7 +35,7 @@
                     @endforeach
                 </ul>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -253,7 +253,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>
@@ -410,7 +410,7 @@
                             </div>
                             <p>Contact Us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-course="{{$selectedCourse->name}}" data-type="course">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="classroom" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire Now<img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
@@ -471,7 +471,7 @@
                             </div>
                             <p>Contact us for Date and Price</p>
                             <div class="buttons">
-                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="virtual" data-course="{{$selectedCourse->name}}" data-type="course">
+                                <div class="btn-blue open-popup enquiryJS" data-deliveryType="virtual" data-quote="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                                     Enquire <img src="{{url('../img/master/mail.svg')}}" alt="up-arrow">
                                 </div>
                             </div>
@@ -767,7 +767,7 @@
                     </div> --}}
                         <div class="buttons">
                             <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS"
-                                data-quote="Buy Now" data-type="course" data-course="{{$selectedCourse->name}}" data-price=@if(!empty($onlineSchedules)){{ optional($onlineSchedules->onlinePrice)->offer_price}} @endif>
+                                data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}" data-price=@if(!empty($onlineSchedules)){{ optional($onlineSchedules->onlinePrice)->offer_price}} @endif>
                                 <img src="{{ url('img/courses/email.svg') }}" alt="email">
                                 Enquire Now
                             </a>
@@ -815,7 +815,7 @@
                     <h3>{!! $item->heading !!}</h3>
                     <p>{!! $item->content !!}</p>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
+                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
                             <img src="{{ url('img/courses/email.svg') }}" alt="email">
                             Enquire Now
                         </a>
@@ -860,7 +860,7 @@
                 <h2>{!! $pageDetail->largest_location['heading']->heading !!}</h2>
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
                         Learn More
                     </a>
