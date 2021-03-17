@@ -53,12 +53,12 @@
 
                   <div class="form-group">
                     {{Form::label('tag_line','Heading')}}
-                    {{Form::textarea('tag_line',null,['class'=>'form-control summernote'])}}
+                    {{Form::textarea('tag_line',null,['class'=>'form-control '])}}
                   </div>
 
                   <div class="form-group">
                     {{Form::label('summary','Summary')}}
-                    {{Form::textarea('summary',null,['class'=>'form-control '])}}
+                    {{Form::textarea('summary',null,['class'=>'form-control summernote'])}}
                   </div>
 
                   <div class="form-group">
