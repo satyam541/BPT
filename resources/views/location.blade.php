@@ -36,9 +36,9 @@
                         <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
                     </span>
                     <div class="content">
-                        <a href={{route('locationDetail',['location'=>$popularLocation->reference])}}>{{$popularLocation->name}}</a>
+                        <a href={{$popularLocation->url}}>{{$popularLocation->name}}</a>
                         <div class="buttons">
-                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue">
+                            <a href={{$popularLocation->url}} class="btn-blue">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
@@ -99,7 +99,7 @@
             <div class="popular-list">
                 @foreach($locations as $location)
                 <div class="item" >
-                <a href="{{route('locationDetail',['location'=>$location->reference])}}" class="popular-content">
+                <a href="{{$location->url}}" class="popular-content">
                     <span class="img">
                         <img src="{{url('img/location/around.svg')}}" alt="around">
                     </span>

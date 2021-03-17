@@ -12892,10 +12892,15 @@ input[type=number] {
   .topic-courses .course-item {
     flex-direction: row;
     padding-left: 0;
-    width: 90%;
-    align-self: center;
+    width: 98%;
     position: relative;
     padding: 1.5rem 1rem;
+  }
+  .topic-courses .course-item:first-child {
+    margin-top: 0.5rem;
+  }
+  .topic-courses .course-item:last-child {
+    margin-bottom: 0.5rem;
   }
   .topic-courses .course-item span {
     margin-bottom: 0;
@@ -13045,7 +13050,7 @@ input[type=number] {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
   }
   .goals .goal-item:first-child {
     margin-top: 2rem;
@@ -13184,6 +13189,9 @@ input[type=number] {
     flex-direction: row;
     justify-content: space-between;
   }
+  .goals .goal-item:first-child {
+    margin-top: 0;
+  }
   .goals .goal-image {
     width: 48%;
   }
@@ -13223,6 +13231,9 @@ input[type=number] {
   }
   .topic-courses .courses-info {
     width: 46%;
+    position: static;
+    top: 0;
+    align-self: flex-end;
   }
   .topic-courses .course-item {
     border: 2px solid transparent;
@@ -13270,6 +13281,12 @@ input[type=number] {
   }
   .goals .goal-image {
     width: 53%;
+  }
+  .goals .goal-image .img {
+    width: 80%;
+  }
+  .goals .goal-item {
+    padding: 2rem 1.5rem;
   }
   .popular-location .popular-content {
     width: 404px;
