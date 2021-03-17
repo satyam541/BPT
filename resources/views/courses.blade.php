@@ -871,7 +871,7 @@
                     <h2>{!! heading_split($pageDetail->location['heading']->heading) !!}</h2>
                 </div>
                 <div class="location-list">
-                    @foreach ($popularLocations as $popularLocation)
+                    @foreach ($popularLocations->take(6) as $popularLocation)
                     {{-- {{dd($popularLocation->url)}} --}}
                     <a href="{{$popularLocation->url}}" class="content">
                         <span class="image">
