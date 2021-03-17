@@ -9858,9 +9858,6 @@ input[type=number] {
 .popular-location .popular-content p {
   text-align: center;
 }
-.popular-location .popular-content p {
-  margin-top: 0.5rem;
-}
 .popular-location .location-content {
   display: flex;
   flex-direction: column;
@@ -10277,8 +10274,8 @@ input[type=number] {
     background-image: url(../img/courses/polygon-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: -10px;
-    left: 20px;
+    top: -24px;
+    left: 22px;
     animation: rotate 15s linear infinite;
   }
   .popular-location .location-list {
@@ -10656,7 +10653,6 @@ input[type=number] {
   }
   .popular-location .popular-content::before {
     width: 330px;
-    top: 0;
     height: 370px;
   }
   .popular-location .location-content {
@@ -13205,6 +13201,7 @@ input[type=number] {
   }
   .goals .goal-image .img {
     width: 100%;
+    align-self: flex-start;
   }
   .goals .content p {
     font-size: 12px;
@@ -13284,7 +13281,7 @@ input[type=number] {
     width: 53%;
   }
   .goals .goal-image .img {
-    width: 80%;
+    width: 72%;
   }
   .goals .goal-item {
     padding: 2rem 1.5rem;

@@ -857,12 +857,11 @@
     <div class="container">
         <div class="popular-container">
             <div class="popular-content">
-                <h2>{!! $pageDetail->largest_location['heading']->heading !!}</h2>
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="{{$selectedCourse->name}}" data-type="course" data-course="{{$selectedCourse->name}}">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
-                        Learn More
+                            View More 
                     </a>
                 </div>
             </div>
