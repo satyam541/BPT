@@ -18,6 +18,11 @@
                         <img src="{{url('img/master/breadcrum-arrow.svg')}}" alt="breadcrums" class="white">
                         <img src="{{url('img/master/breadcrum-black.svg')}}" alt="breadcrums" class="black">
                         </li>
+                        <li><a href="{{ $topic->category->url }}">{{ $topic->category->name }}</a></li>
+                        <li>
+                        <img src="{{ url('img/master/breadcrum-arrow.svg') }}" alt="breadcrums" class="white">
+                        <img src="{{ url('img/master/breadcrum-black.svg') }}" alt="breadcrums" class="black">
+                        </li>
                         <li><a href="#">{{$topic->name}}</a></li>
                     </ul>
             </div>
