@@ -205,6 +205,7 @@
                 ]
 
             });
+        });
             $('tbody').on('click','.popularCategory',function(){
               var id=$(this).val();
               var checked=$(this).attr('checked');
@@ -233,16 +234,10 @@
             
               });
             });
-            $('#add').hover(function() {
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            }, function() {
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+         
             
 
-        });
+        
 
     </script>
 @endsection

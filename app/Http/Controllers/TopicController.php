@@ -23,7 +23,10 @@ class TopicController extends Controller
         $data['pageDetail'] = PageDetail::getContent('topic');
         $data['topic'] = $topic;
         
-        $data['otherTopics']= Topic::with('courses')->select('id', 'name', 'reference')
+        $data['otherTopics']= Topic::with('courses')
+                                ->where('category_id', $topic->category_id)
+                                ->where('id', '<>', $topic->id)
+                                ->select('id', 'name', 'reference')
                                 ->limit(8)->withCount('courses')->get();
         $data['locations']  = Location::has('popular')->limit(6)->get();
 

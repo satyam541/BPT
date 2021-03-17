@@ -50,10 +50,10 @@ class LocationController extends Controller
     public function list(Request $request)
     {
         $this->authorize('view', new Location());
-        $locations       = Location::all();
+        $locations       = Location::where('country_id',country()->country_code)->get();
         $checked=null;
         if(isset($request->popular)){
-            $locations = Location::whereHas('popular')->get();
+            $locations = Location::where('country_id',country()->country_code)->whereHas('popular')->get();
             $checked='checked';
         }
         return view('cms.location.locationList',compact('locations','checked'));

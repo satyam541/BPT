@@ -87,7 +87,14 @@ class Location extends Model
     public function getUrlAttribute()
     {
         $reference =  $this->reference;
-        $url = 'training-locations/'.$reference;
+        $prefix = 'training-locations';
+        if(Str::contains($reference, '/'))
+        {
+            $url = $prefix.$reference;
+        }
+        else{
+            $url = $prefix."/".$reference;
+        }
         if(country()->country_code != 'gb')
         {
             $url = country()->country_code."/".$url;

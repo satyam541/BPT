@@ -218,13 +218,13 @@
                 <div class="delivery-list">
                     @php unset($pageDetail->delivery_list['heading']) @endphp
                     @foreach ($pageDetail->delivery_list as $delivery)
-                        <a class="item" class="open-popup enquiryJS">
+                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now"> 
                             <div class="overlay">
                             </div>
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
                             <h3>{!! $delivery->heading !!}</h3>
                             <p>{!! $delivery->content !!}</p>
-                            <button class="btn-blue open-popup enquiryJS " href="">Enquire Now</button>
+                            <button class="btn-blue open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now">Enquire Now</button>
                         </a>
                     @endforeach
 
@@ -242,7 +242,7 @@
         <div class="container">
             <div class="facts-container">
                 <div class="fact-content">
-                    @php $homepage=homepageData()  @endphp
+                    @php $statsdata=statsData()  @endphp
                     <h2>Statics, We're Proud Of</h2>
                     <p>Best Practice Training is a globally accredited and renowned organisation providing specially designed training courses based on industry best practices.
                     </p>
@@ -251,28 +251,30 @@
                     <div class="item">
                         <img src="{{ url('img/home/running.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$homepage['courses']}}" data-speed="3000">{{$homepage['courses']}}</h3><span>+</span>
+                            {{-- {{dd($statsdata->stats['course_running_daily']->content)}} --}}
+                            <h3 class="count-number" data-to="{{$statsdata->stats['course_running_daily']->content}}" data-speed="3000">{!!$statsdata->stats['course_running_daily']->content!!}</h3><span>+</span>
                         </div>
                         <p>Courses Running Daily</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/locations.svg') }}" alt="running">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$homepage['locations']}}" data-speed="3000">{{$homepage['locations']}}</h3><span>+</span>
+                            
+                            <h3 class="count-number" data-to="{{$statsdata->stats['locations_world_wide']->content}}" data-speed="3000">{!!$statsdata->stats['locations_world_wide']->content!!}</h3><span>+</span>
                         </div>
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/event.svg') }}" alt="event">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$homepage['schedules']}}" data-speed="3000">{{$homepage['schedules']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$statsdata->stats['events']->content}}" data-speed="3000">{!!$statsdata->stats['events']->content!!}</h3><span>+</span>
                         </div>
                         <p>Events</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$homepage['countries']}}" data-speed="3000">{{$homepage['countries']}}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$statsdata->stats['countries']->content}}" data-speed="3000">{!!$statsdata->stats['countries']->content!!}</h3><span>+</span>
                         </div>
                         <p>Countries</p>
                     </div>
