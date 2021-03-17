@@ -11325,7 +11325,7 @@ input[type=number] {
 .most-search .search-info span {
   display: flex;
   color: #C0C0C0;
-  font-size: 13px;
+  font-size: 14px;
 }
 .most-search .search-info span img {
   height: 18px;
@@ -13441,7 +13441,7 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 .pass-clients .tagline {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .pass-clients .pass-content {
   display: flex;
@@ -13536,7 +13536,6 @@ input[type=number] {
 }
 .why-right {
   padding: 3rem 1.5rem;
-  padding-top: 1rem !important;
 }
 .why-right .right-container {
   display: flex;
@@ -13748,7 +13747,7 @@ input[type=number] {
     justify-content: space-between;
   }
   .benefit .benefit-info {
-    width: 26%;
+    width: 24%;
     margin-top: 0;
     align-self: flex-start;
   }
@@ -14156,9 +14155,6 @@ input[type=number] {
   .knowledge-banner .banner-container .breadcrums .black {
     display: flex;
   }
-  .benefit .benefit-info {
-    width: 30%;
-  }
   .pass-clients .pass-content {
     width: 56%;
   }
@@ -14279,9 +14275,6 @@ input[type=number] {
   }
   .benefit {
     padding: 4rem 0rem;
-  }
-  .benefit .benefit-info {
-    width: 14%;
   }
   .pass-clients {
     padding: 4rem 0rem;
