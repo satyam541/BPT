@@ -675,6 +675,7 @@ input[type=number] {
   display: none;
 }
 .pop-search {
+  display: flex;
   position: fixed;
   top: 0px;
   left: 0;
@@ -1279,6 +1280,69 @@ input[type=number] {
     width: 25%;
     margin-top: 0;
     justify-content: flex-end;
+  }
+  .pop-search .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 50%;
+    margin: auto;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+  }
+  .pop-search .search-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../img/master/top-search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: -1;
+  }
+  .pop-search .search-form::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/master/bottom-search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 45px;
+    z-index: -1;
+  }
+  .pop-search .search-form h2 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .pop-search .search-form .search {
+    width: 600px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    border-radius: 50px;
+  }
+  .pop-search .search-form input {
+    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  .pop-search .search-form button {
+    width: 150px;
+    padding: 0.5rem;
+    background-color: #1C2848;
+    border-radius: 50px;
+    outline: none;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
   }
   .navbar {
     width: 100%;
@@ -5819,12 +5883,10 @@ input[type=number] {
     padding: 4rem 1.5rem;
     align-self: center;
     position: relative;
-    z-index: 1;
     margin-top: 6rem;
   }
   .convenient .largest::before {
     content: '';
-    z-index: -1;
     position: absolute;
     height: 430px;
     width: 430px;
@@ -5986,20 +6048,6 @@ input[type=number] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-  .convenient .convenient-container::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    background-image: url(../img/location/dotted-circle.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 423px;
-    width: 413px;
-    right: -19px;
-    top: 0;
   }
   .convenient .convenient-list {
     width: 60%;
@@ -6010,6 +6058,19 @@ input[type=number] {
   .convenient .largest {
     width: 36%;
     margin-top: 0;
+    position: relative;
+  }
+  .convenient .largest::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background-image: url(../img/location/dotted-circle.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    right: -19px;
+    top: 0;
   }
   .convenient .largest::before {
     content: none;
@@ -6066,12 +6127,6 @@ input[type=number] {
   .convenient {
     padding: 4rem 0rem;
   }
-  .convenient .convenient-container::before {
-    height: 497px;
-    width: 446px;
-    right: -68px;
-    top: -32px;
-  }
   .convenient .convenient-list {
     width: 55%;
   }
@@ -6080,6 +6135,12 @@ input[type=number] {
     height: 350px;
     padding: 3.5rem;
     margin-right: 4rem;
+  }
+  .convenient .largest::after {
+    height: 460px;
+    width: 460px;
+    right: -135px;
+    top: -70px;
   }
   .convenient .largest::before {
     content: '';
