@@ -48,12 +48,8 @@ class TopicController extends Controller
     {
         $this->authorize('view', new Topic());
         $topics=Topic::all();
-        $checked=null;
-        if(isset($request->popular)){
-            $topics = Topic::whereHas('popular')->get();
-            $checked='checked';
-        }
-        return view('cms.topic.topicList',compact('topics','checked'));
+        
+        return view('cms.topic.topicList',compact('topics'));
     }
 
     public function unlinkedTopicList()

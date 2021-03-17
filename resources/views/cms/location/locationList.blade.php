@@ -39,10 +39,10 @@
                 <div class="popular">
                   Popular
               </div>
-              <form action="{{Route('locationList')}}" method="get">
+              <br>
                                         
                 <div class="onoffswitch">
-                <input type="checkbox" name="popular" @if($checked!=null) checked @endif class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                <input type="checkbox" name="popular" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                 <label class="onoffswitch-label" for="myonoffswitch">
                     <span class="onoffswitch-inner"></span>
                     <span class="onoffswitch-switch"></span>
@@ -50,8 +50,7 @@
                 </label>
                 
             </div>
-              <input type="submit" name="submit" id="submit" style="visibility: hidden">
-            </form>
+              
           </div>  
         </div>
               <!-- /.card-header -->
@@ -76,7 +75,7 @@
                     <tr>
                       <td>{{$location->name}}</td>
                       <td>{{$location->country->name ?? ''}}</td>
-                      <td><input type="checkbox" value="{{$location->id}}" @if ($location->popular->exists) checked @endif class="popularLocation"  name="is_popular"></td>
+                      <td>@if ($location->popular->exists)<span style="display: none">.</span> @endif<input type="checkbox" value="{{$location->id}}" @if ($location->popular->exists) checked @endif class="popularLocation"  name="is_popular"></td>
                       <td>
                         @can('update',$location)
                         <a href="{{route('editLocation',['location'=>$location->id])}}" class="fa fa-edit"></a>
@@ -115,7 +114,7 @@
     <script>
       success = $('#success_type');
         $(document).ready(function(){
-             $('#example1').DataTable({
+             var table=$('#example1').DataTable({
               "columns": [
                         { "name": "Name" },
                         { "name": "Country" },
@@ -151,13 +150,22 @@
             
               });
             });
-            $('#add').hover(function(){
-                $(this).removeClass('btn-success');
-                $(this).addClass('btn-primary');
-            },function(){
-                $(this).removeClass('btn-primary');
-                $(this).addClass('btn-success');
-            });
+            $('#myonoffswitch').on('change',function(){
+         
+      
+         if($(this).is(':checked')){
+             $.fn.dataTable.ext.search.push(
+                 function(settings, data, dataIndex) {  
+
+  return data[2] 
+     }
+         )
+              }
+              else {
+$.fn.dataTable.ext.search.pop()
+}
+table.draw()
+     }); 
         });
         
     </script>

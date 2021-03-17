@@ -38,8 +38,7 @@
                 <div class="popular">
                   Only Active
                 </div>
-                <form >
-                                        
+                           <br>             
                   <div class="onoffswitch">
                   <input type="checkbox" name="active"  class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
                   <label class="onoffswitch-label" for="myonoffswitch">
@@ -49,7 +48,6 @@
                   </label>
                   
               </div>
-              </form>
               </div>
             </div>
 
@@ -73,7 +71,7 @@
                     @foreach ($countries as $country)
                     <tr>
                       <td>{{$country->name}}</td> 
-                      <td class="text-center">@if ($country->active==1). @endif<input type="checkbox" value="{{$country->country_code}}" @if ($country->active==1) checked @endif class="activeCountry" name="is_active"></td>
+                      <td  class="text-center">@if ($country->active==1)&nbsp; @endif<input type="checkbox" value="{{$country->country_code}}" @if ($country->active==1) checked  @endif class="activeCountry" name="is_active"></td>
                       <td>
                       @can('update',$country)
                       <a href="{{route('editCountry',['country_code'=>$country->country_code])}}" class="fa fa-edit"></a>
@@ -120,10 +118,13 @@
               ]                    
             });
             $('#myonoffswitch').on('change',function(){
+         
+      
                 if($(this).is(':checked')){
                     $.fn.dataTable.ext.search.push(
                         function(settings, data, dataIndex) {  
-         console.log(data[1]);
+                          console.log(data);
+
          return data[1] 
             }
                 )

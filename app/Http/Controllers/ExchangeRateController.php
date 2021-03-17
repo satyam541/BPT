@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class ExchangeRateController extends Controller
@@ -10,12 +11,12 @@ class ExchangeRateController extends Controller
     public function updateExchangeRate()
     {
         $exchangeRate = $this->getExchangeRate();
-        $countries = self::all();
+        $countries = Country::all();
         foreach($countries as $country)
         {
             if(!empty($exchangeRate[$country->currency]))
             {
-                self::where('country_code',$country->country_code)->update(['exchange_rate'=>$exchangeRate[$country->currency]]);
+                Country::where('country_code',$country->country_code)->update(['exchange_rate'=>$exchangeRate[$country->currency]]);
             }
         }
     }
@@ -79,7 +80,7 @@ class ExchangeRateController extends Controller
     {
         $rawData = $this->fetchFromApiLayer1();
         // $this->exchangeRate->put('vender',$this->vender_name);
-        $currencies  = self::all()->pluck('currency');
+        $currencies  = Country::all()->pluck('currency');
         $this->exchangeRate = collect();
         switch($this->vender_name)
         {

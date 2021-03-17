@@ -155,7 +155,7 @@
                     <div class="input-container">
                         <span><img src="{{url('img/contactus/name.svg')}}" alt="name" class="black">
                             <img src="{{url('img/contactus/name-red.svg')}}" alt="name-red" class="red"></span>
-                        <input type="text" name="name" id="f-name" placeholder="First Name*" autocomplete="off">
+                        <input type="text" name="name" id="f-name" placeholder="Name*" autocomplete="off">
 
                     </div>
                     <div class="input-container">

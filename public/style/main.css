@@ -456,7 +456,7 @@ input[type=number] {
   display: flex;
 }
 .input-container .phonecode-field select {
-  width: 40px;
+  width: 45px;
   border: none;
   margin: 0.5rem 0;
   outline: 0;
@@ -1930,6 +1930,10 @@ input[type=number] {
   .banner {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 12rem!important;
+  }
+  .navbar {
+    top: 25px;
   }
   .footer h2 {
     font-size: 26px;
@@ -2686,6 +2690,8 @@ input[type=number] {
   }
   .courses .course-name .name h3 {
     min-height: 42px;
+    display: flex;
+    align-items: center;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2972,6 +2978,9 @@ input[type=number] {
   }
 }
 @media (min-width : 1024px) {
+  .home-banner::before {
+    height: 70%;
+  }
   .home-banner .banner-container .topic-list {
     width: 40%;
   }
@@ -8359,7 +8368,6 @@ input[type=number] {
   .certification-banner .banner-container {
     background: linear-gradient(125deg, #FFFFFF 71%, transparent 29%);
     padding: 2rem;
-    margin-top: 2rem;
     width: 72%;
   }
   .certification-banner .banner-container p {
@@ -9858,9 +9866,6 @@ input[type=number] {
 .popular-location .popular-content p {
   text-align: center;
 }
-.popular-location .popular-content p {
-  margin-top: 0.5rem;
-}
 .popular-location .location-content {
   display: flex;
   flex-direction: column;
@@ -10277,8 +10282,8 @@ input[type=number] {
     background-image: url(../img/courses/polygon-blue.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    top: -10px;
-    left: 20px;
+    top: -24px;
+    left: 22px;
     animation: rotate 15s linear infinite;
   }
   .popular-location .location-list {
@@ -10656,7 +10661,6 @@ input[type=number] {
   }
   .popular-location .popular-content::before {
     width: 330px;
-    top: 0;
     height: 370px;
   }
   .popular-location .location-content {
@@ -13205,6 +13209,7 @@ input[type=number] {
   }
   .goals .goal-image .img {
     width: 100%;
+    align-self: flex-start;
   }
   .goals .content p {
     font-size: 12px;
@@ -13284,7 +13289,7 @@ input[type=number] {
     width: 53%;
   }
   .goals .goal-image .img {
-    width: 80%;
+    width: 72%;
   }
   .goals .goal-item {
     padding: 2rem 1.5rem;
