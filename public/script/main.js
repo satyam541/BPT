@@ -367,6 +367,10 @@ $(".open-popup").on("click", function(){
 $(".cross").on("click", function(){
     $(".enquiry-popup").css("display","none");
 });
+$(".enquiryJS").click(function(){
+    var quote = $(this).data('quote');
+      $("#quote").html(quote);     
+});
 // End pop-up//
 
     //start Load more // 

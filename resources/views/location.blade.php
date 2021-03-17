@@ -36,9 +36,9 @@
                         <img src="{{url('img/location/globe-white.svg')}}" alt="globe" class="white">
                     </span>
                     <div class="content">
-                        <a href={{route('locationDetail',['location'=>$popularLocation->reference])}}>{{$popularLocation->name}}</a>
+                        <a href={{$popularLocation->url}}>{{$popularLocation->name}}</a>
                         <div class="buttons">
-                            <a href={{route('locationDetail',['location'=>$popularLocation->reference])}} class="btn-blue">
+                            <a href={{$popularLocation->url}} class="btn-blue">
                                 View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
@@ -51,8 +51,8 @@
                 <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-heading="Learn More" data-type="other">
-                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> Learn More
+                    <a class="btn-blue open-popup enquiryJS" data-quote="View More" data-heading="View More" data-type="other">
+                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> View More
                     </a>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <p>{{$pageDetail->find['find_container']->content}}</p>
             </div>
             <div class="buttons">
-                <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-quote="Enquire Now" data-type="other">
+                <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-heading="Enquire Now" data-type="other">
                     <img src="{{url('img/location/enquire.svg')}}" alt="enquire"> Enquire Now
                 </a>
             </div>
@@ -99,7 +99,7 @@
             <div class="popular-list">
                 @foreach($locations as $location)
                 <div class="item" >
-                <a href="{{route('locationDetail',['location'=>$location->reference])}}" class="popular-content">
+                <a href="{{$location->url}}" class="popular-content">
                     <span class="img">
                         <img src="{{url('img/location/around.svg')}}" alt="around">
                     </span>
