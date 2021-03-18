@@ -7980,6 +7980,9 @@ input[type=number] {
     margin-top: 0;
     width: 45%;
   }
+  .bundle .top-bundles img {
+    width: 85%;
+  }
   .management .bundle-info {
     width: 48%;
   }
@@ -8055,9 +8058,13 @@ input[type=number] {
   }
   .bundle .bundle-list {
     width: 76%;
+    margin-top: 1rem;
   }
   .bundle .top-bundles {
     width: 40%;
+  }
+  .bundle .buttons {
+    margin-top: 2rem;
   }
   .recommend {
     padding: 4rem 0rem;
