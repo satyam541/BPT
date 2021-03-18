@@ -65,9 +65,9 @@
                                 <img src="{{ url('img/blog/author.svg') }}" alt="author">
                                 By - {{$blog->author}}
                             </p>
-                            <p class="designation">
+                            {{-- <p class="designation">
                                 Web Development
-                            </p>
+                            </p> --}}
                         </div>
                         <h3 >{{$blog->title}}</h3>
                         <p class="item-text">{!!$blog->summary!!}</p>

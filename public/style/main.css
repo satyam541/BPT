@@ -1286,8 +1286,8 @@ input[type=number] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 65%;
-    height: 50%;
+    width: 55%;
+    height: 22%;
     margin: auto;
     background-color: #FFFFFF;
     position: relative;
@@ -1804,7 +1804,7 @@ input[type=number] {
     position: absolute;
     width: 62px;
     height: 60px;
-    right: -27px;
+    right: -24px;
     top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
@@ -1905,7 +1905,7 @@ input[type=number] {
   }
   .dropdown-menu .course-menu .menu-info a {
     width: 100%;
-    padding: 7px;
+    padding: 0.8rem;
     font-size: 14px;
     font-weight: bold;
     position: relative;
@@ -5164,6 +5164,11 @@ input[type=number] {
 }
 .onsite-training p {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.onsite-training p span {
+  margin-top: 0.5rem;
 }
 .onsite-training .delegate {
   display: flex;
@@ -5457,8 +5462,6 @@ input[type=number] {
   .onsite-banner {
     background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
   .onsite-banner .banner-container {
     width: 48%;
@@ -11431,17 +11434,38 @@ input[type=number] {
 .result .result-info {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  align-items: flex-start;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  background-color: #FFFFFF;
-  margin-top: 2rem;
 }
 .result .result-info:first-child {
   margin-top: 0;
 }
 .result .result-info .heading::before {
   content: none;
+}
+.result .result-info .result-fold {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+}
+.result .result-info .not-found {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  border: 4px solid #F2F2F2;
+}
+.result .result-info .not-found p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.result .result-info .not-found p a {
+  color: #0064D8;
+  font-weight: 900;
 }
 .result .buttons {
   flex-direction: column;
@@ -11525,6 +11549,9 @@ input[type=number] {
     top: 70px;
     height: fit-content;
     margin-top: 0;
+  }
+  .result .not-found .buttons {
+    justify-content: center;
   }
 }
 @media (min-width : 1024px) {
