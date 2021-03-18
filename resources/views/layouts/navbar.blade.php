@@ -42,6 +42,10 @@
                     <a href="{{route('contactUs')}}" class="link"><i class="fa fa-address-book"></i>Contact Us</a>
                     <span></span> 
                 </li>
+                <li class="links-li">
+                    <a href="{{route('bundleOffer')}}" class="link"><i class="fa fa-address-book"></i>Offers</a>
+                    <span></span> 
+                </li>
                 
                 <li class="links-li">
                     <a class="search" id="search">
