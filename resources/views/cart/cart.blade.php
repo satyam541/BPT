@@ -114,8 +114,13 @@
                                                     @endif
                                                 @else
                                                     <li>
-                                                        <p>Date: {{ $cartItem->options->date }}</p>
+                                                        <p>Date: {{ $cartItem->options->date }}
+                                                           Duration: {{ $cartItem->options->duration }}
+                                                        </p>
+                                                        
                                                         <p class="loaction">Location: {{ $cartItem->options->location }}</p>
+                                                        
+
                                                     </li>
                                                 @endif
                                                     
