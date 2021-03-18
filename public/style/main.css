@@ -4948,16 +4948,10 @@ input[type=number] {
 }
 @media (min-width : 768px) {
   .testimonial-banner {
-    background: none;
-    background-image: url(../img/testimonial/banner-bg.png);
-    background-size: 100% 100%;
     box-shadow: none;
   }
   .testimonial-banner::before {
     content: none;
-  }
-  .testimonial-banner .banner-container {
-    width: 60%;
   }
   .customers {
     padding: 3rem 2rem;
@@ -5036,6 +5030,16 @@ input[type=number] {
   }
 }
 @media (min-width : 1024px) {
+  .testimonial-banner {
+    background: none;
+    background-image: url(../img/testimonial/banner-bg.png);
+    background-position: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  .testimonial-banner .banner-container {
+    width: 60%;
+  }
   .customers .customers-content {
     width: 30%;
   }
