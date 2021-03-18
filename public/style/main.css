@@ -11142,7 +11142,6 @@ input[type=number] {
 }
 .order .order-main .course-info .detail li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -11150,7 +11149,7 @@ input[type=number] {
   width: 78%;
 }
 .order .order-main .course-info .detail li span {
-  width: 21%;
+  width: auto;
   font-weight: 900;
   text-align: right;
 }
