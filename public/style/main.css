@@ -1286,8 +1286,8 @@ input[type=number] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 65%;
-    height: 50%;
+    width: 55%;
+    height: 22%;
     margin: auto;
     background-color: #FFFFFF;
     position: relative;
@@ -1804,7 +1804,7 @@ input[type=number] {
     position: absolute;
     width: 62px;
     height: 60px;
-    right: -27px;
+    right: -24px;
     top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
@@ -1905,7 +1905,7 @@ input[type=number] {
   }
   .dropdown-menu .course-menu .menu-info a {
     width: 100%;
-    padding: 7px;
+    padding: 0.8rem;
     font-size: 14px;
     font-weight: bold;
     position: relative;
@@ -3493,7 +3493,7 @@ input[type=number] {
   content: '01';
   font-weight: bold;
   position: absolute;
-  right: 0;
+  right: 10px;
   bottom: 0;
   color: #f6f6f6;
   font-size: 50px;
@@ -3763,14 +3763,14 @@ input[type=number] {
   }
   .contact .contact-container {
     flex-direction: row-reverse;
+    align-items: flex-start;
   }
   .contact .form {
     width: 60%;
-    align-self: flex-start;
     padding: 2rem;
   }
   .contact .contact-info {
-    width: 36%;
+    width: 43%;
     background-image: url(../img/contactus/phone-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3838,13 +3838,13 @@ input[type=number] {
     align-items: center;
   }
   .contact .contact-container .contact-info {
-    width: 30%;
+    width: 34%;
     position: absolute;
     left: 0;
-    top: -40px;
+    top: -20px;
   }
   .contact .contact-container .form {
-    width: 75%;
+    width: 73%;
     padding-left: 5rem;
     align-self: center;
   }
@@ -5164,6 +5164,11 @@ input[type=number] {
 }
 .onsite-training p {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.onsite-training p span {
+  margin-top: 0.5rem;
 }
 .onsite-training .delegate {
   display: flex;
@@ -5457,8 +5462,6 @@ input[type=number] {
   .onsite-banner {
     background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
   .onsite-banner .banner-container {
     width: 48%;
@@ -6742,23 +6745,16 @@ input[type=number] {
 }
 .blog-intro .detail {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .blog-intro .detail p {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 30%;
 }
 .blog-intro .detail p:nth-child(1) {
-  width: 100%;
+  width: 50%;
   justify-content: center;
-}
-.blog-intro .detail p:nth-child(3) {
-  justify-content: flex-end;
-  margin-bottom: 0;
-}
-.blog-intro .detail p:nth-child(2) {
-  margin-bottom: 0;
 }
 .blog-intro .detail p img {
   width: 30px!important;
@@ -7114,7 +7110,7 @@ input[type=number] {
     order: 2;
   }
   .blog-intro .detail {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .blog-intro .detail p {
     margin-top: 0.5rem;
@@ -7130,7 +7126,6 @@ input[type=number] {
   .blog-intro .detail p:nth-child(2) {
     justify-content: center;
     border-left: 1px solid #C0C0C0;
-    border-right: 1px solid #C0C0C0;
   }
   .blog-intro .detail p:nth-child(3) {
     justify-content: center;
@@ -7186,7 +7181,13 @@ input[type=number] {
     padding: 4rem 0rem;
   }
   .blog-intro .detail {
-    width: 60%;
+    width: 30%;
+  }
+  .blog-intro .detail p {
+    width: 42%;
+  }
+  .blog-intro .detail p:nth-child(1) {
+    width: 55%;
   }
   .blog-intro .content-right {
     width: 24%;
@@ -11457,17 +11458,38 @@ input[type=number] {
 .result .result-info {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  align-items: flex-start;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  background-color: #FFFFFF;
-  margin-top: 2rem;
 }
 .result .result-info:first-child {
   margin-top: 0;
 }
 .result .result-info .heading::before {
   content: none;
+}
+.result .result-info .result-fold {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+}
+.result .not-found {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  border: 4px solid #F2F2F2;
+}
+.result .not-found p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.result .not-found p a {
+  color: #0064D8;
+  font-weight: 900;
 }
 .result .buttons {
   flex-direction: column;
@@ -11551,6 +11573,9 @@ input[type=number] {
     top: 70px;
     height: fit-content;
     margin-top: 0;
+  }
+  .result .not-found .buttons {
+    justify-content: center;
   }
 }
 @media (min-width : 1024px) {

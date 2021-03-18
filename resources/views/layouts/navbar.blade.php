@@ -158,8 +158,8 @@
 </div>
 
 <div class="pop-search" id="pop-search">
-    <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <form class="search-form" onsubmit="getquery(this)">
+    <span class="search-cross"><img src="{{url('img/master/cross.svg')}}" alt="name"></span>
     <h2>Search our courses and solutions</h2>
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">

@@ -515,12 +515,11 @@ $.ajax({
 
                    $(formElement).find("input[name='" + index + "']").closest('.input-container').addClass('input-error');
                    $(formElement).find("input[name='" + index + "']").attr('placeholder',value);
-
+                 
                 });
             }
         });
     }
-
 </script>
 @yield('footerScripts')
 <script>
