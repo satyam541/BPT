@@ -186,7 +186,7 @@
                     </p>
                 </div>
                 <div class="form-consent">
-                    <p>Please click <a>here</a> for privacy policy. </p>
+                    <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                 </div>
                 <div class="form-consent">
                     <input name="contactConsent" type="checkbox" id="checkConsent">

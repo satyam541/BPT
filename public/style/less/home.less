@@ -505,7 +505,6 @@
         margin-top: 1rem;
         align-items: center;
         background-image: linear-gradient(135deg, #ffffff 0%, #ffffff 86%, #d6d6d6 77%);
-        // background-image: linear-gradient(143deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 77%, #d6d6d6 77%);
         border-radius: 10px;
          width: 48%;
         flex-wrap: wrap;
@@ -513,6 +512,7 @@
             width: 20%;
             font-weight: 700;
             color: @greyColor;
+            animation: glow 5s linear infinite;
         }
         img{
             width: 30px;
@@ -532,20 +532,6 @@
                 font-size: 18px;
                 font-weight: bold;
             }
-        }
-        &:hover{
-            background: linear-gradient(143deg , rgba(0,100,216,1) 0%, rgba(0,100,216,1) 77%, rgba(32,71,175,1) 78%);
-            span, p{
-                color: @whiteColor;
-            }
-            .blue{
-                display: none;
-            }
-            .white{
-                display: flex;
-            }
-            
-
         }
     }
     .buttons{

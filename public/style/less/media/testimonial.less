@@ -1,15 +1,9 @@
 @media @size-md{
     // Start Banner section //
     .testimonial-banner {
-    background: none;
-    background-image: url(../img/testimonial/banner-bg.png);
-    background-size: 100% 100%;
     box-shadow: none;
     &::before {
         content: none;
-    }
-    .banner-container {
-        width: 60%;
     }
     }
     // End Banner section //
@@ -106,6 +100,18 @@
 }
 
 @media @size-lg{
+
+    // Start testimonial banner
+    .testimonial-banner{
+        background:none;
+        background-image: url(../img/testimonial/banner-bg.png);
+        background-position: center;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        .banner-container{
+            width: 60%;
+        }
+    }
 
     // Start Customers Section
     .customers {

@@ -46,9 +46,9 @@
                             <a href="{{ $socialmedia->where('website', 'Twitter')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/twitter.svg') }}" alt="twitter">
                             </a>
-                            <a href="{{ $socialmedia->where('website', 'instagram')->first()->link ?? '' }}">
+                            <!-- <a href="{{ $socialmedia->where('website', 'instagram')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/insta.svg') }}" alt="instagram">
-                            </a>
+                            </a> -->
                             <a href="{{ $socialmedia->where('website', 'Linkedin')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/linked-in.svg') }}" alt="linked-in">
                             </a>
@@ -168,7 +168,7 @@
                         </p>
                     </div>
                     <div class="form-consent">
-                        <p>Please click <a>here</a> for privacy policy. </p>
+                        <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
                         <input type="checkbox" id="checkConsent" name="contactConsent">
@@ -234,18 +234,25 @@
         </div>
     </div>
 
-
     <div class="pop-search" id="pop-mobile">
         <form class="search-form" onsubmit="getquery(this)">
         <span class="search-close"><img src="{{ url('img/master/cross.svg') }}" alt="name"></span>
             <h2>Search our courses and solutions</h2>
             <div class="search">
-                <input type="text" placeholder="Search your course here...." autocomplete="off"
+                <input type="text" placeholder="Search your course..." autocomplete="off"
                     class="auto-complete-course auto-redirect">
                 <button onclick="getquery(this)">
-                    Search
+                    Search<img src="{{ url('img/master/search-icon.svg') }}" alt="search-icon">
                 </button>
             </div>
+            <p>Or select from our popular topics</p>
+            <ul>
+                <li><a>PRINCE2®</a></li> 
+                <li><a>ITIL®</a></li>
+                <li><a>Lean Six Sigma</a></li>
+                <li><a>Agile<a></li>
+                <li><a>Scrum</a></li>
+            </ul>
         </form>
     </div>
     <div class="scene">

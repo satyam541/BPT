@@ -16,3 +16,4 @@ package-lock.json
 /composer.lock
 /public/style/*.css
 /India Server.session.sql
+.vscode

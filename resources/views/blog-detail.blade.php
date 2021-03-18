@@ -73,7 +73,7 @@
 
             </div>
             <div class="content-right">
-                <div class="search-bar">
+                <!-- <div class="search-bar">
                     <div class="heading center-heading">
                         <h2>Search</h2>
                     </div>
@@ -83,7 +83,7 @@
                        <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
                        </div>
                     </span>
-                </div>
+                </div> -->
                 <div class="blog-review owl-carousel">
                     @foreach ($testimonials as $testimonial)
                     <div class="review-inner">
@@ -120,11 +120,12 @@
                 <p>{!!$pageDetail->center_heading['heading']->content!!}</p>
             </div>
             <div class="clients-inner">
-                @foreach ($pageDetail->partners as $image)
+                <img src="{{url('img/blog/clients.png')}}" alt="clients">
+                <!-- @foreach ($pageDetail->partners as $image)
                     <span class="image">
                         <img src="{{ url($image->getImagePath()) }}" alt="{{$image->image_alt}}">
                     </span>
-                @endforeach
+                @endforeach -->
             </div>
         </div>
     </div>
@@ -136,5 +137,5 @@
 <script>
     var blogURL = "{{route('blogAutoComplete')}}";
  </script>
- <script src="{{ url("script/blog.js") }}"></script>
+ <script src="{{url('script/blog.js')}}"></script>
 @endsection

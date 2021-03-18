@@ -64,8 +64,8 @@
                                     <span>{!! country()->currency_symbol ?? '£' !!} {{ floor($cartTotal) }}</span>
                                 </li> --}}
                                 <li>
-                                    <p>Total:</p>
-                                    <span>{!! country()->currency_symbol ?? '£' !!}</span><span id="grandTotalJS"> {{ floor($cartTotal) }}</span>
+                                    <p>Sub Total exc. VAT:</p>
+                                    <span id="grandTotalJS">{!!country()->currency_symbol ,floor($cartTotal) !!}</span>
                                 </li>
                             </ul>
                             <div class="cards">
@@ -114,13 +114,18 @@
                                                     @endif
                                                 @else
                                                     <li>
-                                                        <p>Date: {{ $cartItem->options->date }}</p>
+                                                        <p>Date: {{ $cartItem->options->date }}
+                                                           Duration: {{ $cartItem->options->duration }}
+                                                        </p>
+                                                        
                                                         <p class="loaction">Location: {{ $cartItem->options->location }}</p>
+                                                        
+
                                                     </li>
                                                 @endif
                                                     
                                                 <li>
-                                                    <p>Sub Total:</p>
+                                                    <p>Total:</p>
                                                     <span>{!! country()->currency_symbol ?? '£'!!}</span> &nbsp;<span  class="subTotalJS">{{ $cartItem->price * $cartItem->qty }}</span>
                                                 </li>
 

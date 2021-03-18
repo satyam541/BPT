@@ -103,12 +103,13 @@
                     <p>{!! $pageDetail->training_needs['heading']->content !!}</p>
                 </div>
                 <div class="clients-inner">
-                    
-                    @foreach ($pageDetail->partners as $image)
+                                
+                        <img src="{{url('img/blog/clients.png')}}" alt="clients">
+                    <!-- @foreach ($pageDetail->partners as $image)
                         <span class="image">
                             <img src="{{ url($image->getImagePath()) }}" alt="{{$image->image_alt}}">
                         </span>
-                    @endforeach
+                     @endforeach                 -->
                     
                 </div>
             </div>

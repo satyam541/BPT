@@ -191,6 +191,10 @@
         }
         .form {
             padding: 1.5rem 4rem;
+            .cart-heading{
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
         .form-input {
             flex-direction: row;
@@ -204,7 +208,7 @@
             top: 15px;
         }
         .card-detail{
-            width: 90%;
+            width: 94%;
             .input-container {
                 &:last-child {
                     width: 48%;
@@ -213,14 +217,15 @@
         }
         .billing-details{
             .form-consent{
+                align-items: center;
+                width: 66%;
                 justify-content: flex-end;
-                position: absolute;
-                right: 0;
-                top: 30px;
-
                 label{
-                    width: 40%;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    width: auto;
                 }
+            
             }
             .input-container{
                 width: 48%;

@@ -52,7 +52,7 @@
                 <div class="heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
-                <div class="intro-para">{!! $selectedCourse->detail !!}</div>
+                <div class="intro-para">{!! replaceVar($selectedCourse->detail) !!}</div>
             </div>
         </div>
     </section>
@@ -369,7 +369,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$schedule->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" data-type="course" data-price="{{convertPrice($schedule->event_price)}}" data-quote="{{$schedule->course->name}}" data-course="{{$schedule->course->name}}" data-date="{{$schedule->response_date->format('j M Y')}}" data-location="{{$schedule->response_location}}" data-deliveryType="Classroom" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-type="course" data-price="{{$schedule->event_price}}" data-quote="{{$schedule->course->name}}" data-course="{{$schedule->course->name}}" data-date="{{$schedule->response_date->format('j M Y')}}" data-location="{{$schedule->response_location}}" data-deliveryType="Classroom" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
@@ -396,7 +396,8 @@
                                     <p>{{ $schedule->response_date->isoFormat('YYYY') }}</p>
                                 </div>
                                 <div class="rate">
-                                    <h3>{!! country()->currency_symbol !!}{{convertPrice($schedule->event_price) }}</h3>
+                                    
+                                    <h3>{!! country()->currency_symbol !!}{{$schedule->event_price }}</h3>
                                     <p><strong>Duration: </strong>2 Days</p>
                                 </div>
                             </div>
@@ -427,7 +428,7 @@
                             <div class="name">
                                 <a href="javascript:void(0);" class="course-name">{{$virtual->course->name}}</a>
                                 <div class="buttons">
-                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{convertPrice($virtual->event_price)}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
+                                    <a href="javascript:void(0);" data-deliveryType="Virtual" data-type="course" data-course="{{$virtual->course->name}}" data-quote="{{$virtual->course->name}}" data-price="{{$virtual->event_price}}" data-date="{{$virtual->response_date->format('j M Y')}}" data-location="{{$virtual->response_location}}" class="btn-white open-popup enquiryJS"
                                         data-quote="Enquire Now" data-course="{{$selectedCourse->name}}" data-date="{{$virtual->response_date}}" data-price="{{$virtual->event_price}}" data-location="{{$virtual->response_location}}" data-deliveryType="virtual">
                                         <img src="{{ url('img/courses/email-black.svg') }}" alt="email">Enquire Now
                                     </a>
@@ -456,7 +457,7 @@
                                     <p>{{ $virtual->response_date->isoFormat('YYYY') }}</p>
                                 </div>
                                 <div class="rate">
-                                    <h3>{!! country()->currency_symbol !!}{{convertPrice($virtual->event_price) }}</h3>
+                                    <h3>{!! country()->currency_symbol !!}{{$virtual->event_price}}</h3>
                                     <p><strong>Duration: </strong>2 Days</p>
                                 </div>
                             </div>
@@ -651,7 +652,7 @@
                                 </p>
                             </div>
                             <div class="form-consent">
-                                <p>Please click <a>here</a> for privacy policy. </p>
+                                <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
@@ -815,7 +816,7 @@
                     <h3>{!! $item->heading !!}</h3>
                     <p>{!! $item->content !!}</p>
                     <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
+                        <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="course">
                             <img src="{{ url('img/courses/email.svg') }}" alt="email">
                             Enquire Now
                         </a>
@@ -859,7 +860,7 @@
             <div class="popular-content">
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
+                    <a href="{{route('locations')}}" class="btn-blue" data-quote="Get a Quote" data-type="course">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
                             View More 
                     </a>

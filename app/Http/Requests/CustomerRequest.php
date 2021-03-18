@@ -28,7 +28,7 @@ class CustomerRequest extends FormRequest
         
         return [
             'firstname'     => 'required',
-            'lastname'      => 'required',
+            //'lastname'      => 'required',
             'phone'         => 'required|min:4',
             // 'CTelephone'    => 'numeric|digits_between:11,12',
             'email'         => ['required','email','confirmed',new DomainMXRecord]
@@ -48,7 +48,7 @@ class CustomerRequest extends FormRequest
     {
         return [
             'firstname' => 'First Name',
-            'lastname' => 'Last Name',
+            //'lastname' => 'Last Name',
             'phone' => 'Phone Number',
             'company' => 'Company name',
             'email' => 'email address',
