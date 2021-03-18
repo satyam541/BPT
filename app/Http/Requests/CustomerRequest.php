@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\DomainMXRecord;
 
 class CustomerRequest extends FormRequest
 {
@@ -23,12 +24,14 @@ class CustomerRequest extends FormRequest
      */
     public function rules()
     {
+
+        
         return [
             'firstname'     => 'required',
             'lastname'      => 'required',
-            'phone'         => 'required|numeric',
+            'phone'         => 'required|min:4',
             // 'CTelephone'    => 'numeric|digits_between:11,12',
-            'email'         => 'required|email|confirmed'
+            'email'         => ['required','email','confirmed',new DomainMXRecord]
             
         ];
     }
@@ -37,6 +40,7 @@ class CustomerRequest extends FormRequest
     {
         return [
             'email.required' => ':attribute is required',
+            'phone.min' =>':attribute is required'
         ];
     }
     
