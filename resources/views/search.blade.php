@@ -33,6 +33,7 @@
     <div class="container">
         <div class="search-container">
             <div class="heading">
+                {{-- {{dd($result)}} --}}
                 <h2>Most Searched <span>Topics</span></h2>
             </div>
             <div class="search-list">
@@ -88,6 +89,7 @@
                     {{$result->appends(request()->query())->links()}}
                        
                     </div>
+                    @if(!empty($query))
                     <div class="not-found">
                             <div class="heading center-heading">
                                 <h2>Result Not Found</h2>
@@ -102,7 +104,7 @@
                             <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
                             </p>
                         </div>
-                  
+                  @endif
                 </div>
                 <div class="filter">
                     <h2>Filter</h2>
