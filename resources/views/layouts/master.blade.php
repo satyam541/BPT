@@ -234,7 +234,6 @@
         </div>
     </div>
 
-
     <div class="pop-search" id="pop-mobile">
         <form class="search-form" onsubmit="getquery(this)">
         <span class="search-close"><img src="{{ url('img/master/cross.svg') }}" alt="name"></span>
