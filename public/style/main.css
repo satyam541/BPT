@@ -11134,7 +11134,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
 }
 .order .order-main .course-info .delivery-method {
@@ -11177,10 +11177,13 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 .order .order-main .course-info .detail li p {
-  width: 78%;
+  width: 44%;
+}
+.order .order-main .course-info .detail li .subTotalJS {
+  width: auto;
 }
 .order .order-main .course-info .detail li span {
-  width: auto;
+  width: 65%;
   font-weight: 900;
   text-align: right;
 }
@@ -11249,6 +11252,10 @@ input[type=number] {
   .order .inner-content .order-main {
     width: 58%;
   }
+  .order .inner-content .order-main .order-courses {
+    align-self: center;
+    width: 100%;
+  }
   .order .inner-content .order-main .order-courses:first-child {
     margin-top: 0;
   }
@@ -11273,7 +11280,6 @@ input[type=number] {
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
-    box-shadow: none;
   }
   .order .order-main .course-info .detail {
     width: 38%;
@@ -11283,9 +11289,6 @@ input[type=number] {
   }
   .order .order-main .course-info .detail p {
     font-size: 13px;
-  }
-  .order .order-main .course-info .detail .loaction {
-    text-align: right;
   }
   .order .order-main .course-info .detail li:last-child {
     margin-bottom: 0;
