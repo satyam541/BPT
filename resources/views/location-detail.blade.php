@@ -190,7 +190,8 @@
                 </div>
             </form>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13633.525907762536!2d75.58587720000001!3d31.320836250000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1613628596038!5m2!1sen!2sin" width="400" height="270" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+             <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;q={{$location->latitude}},{{$location->longitude}}&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+            
             </div>
         </div>
     </div>
