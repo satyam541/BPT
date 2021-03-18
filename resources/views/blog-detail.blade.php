@@ -44,9 +44,6 @@
                         <p>
                             {{$blog->publish_date->format('d M, Y')}}
                         </p>
-                        <p>
-                            Web Developer
-                        </p>
                     </div>
                     <h3>{{$blog->title}}</h3>
                     {!!$blog->content!!}
