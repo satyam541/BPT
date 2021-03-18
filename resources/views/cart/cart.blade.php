@@ -64,7 +64,7 @@
                                     <span>{!! country()->currency_symbol ?? '£' !!} {{ floor($cartTotal) }}</span>
                                 </li> --}}
                                 <li>
-                                    <p>Total:</p>
+                                    <p>Sub Total exc. VAT:</p>
                                     <span id="grandTotalJS">{!!country()->currency_symbol ,floor($cartTotal) !!}</span>
                                 </li>
                             </ul>
@@ -125,7 +125,7 @@
                                                 @endif
                                                     
                                                 <li>
-                                                    <p>Sub Total:</p>
+                                                    <p>Total:</p>
                                                     <span>{!! country()->currency_symbol ?? '£'!!}</span> &nbsp;<span  class="subTotalJS">{{ $cartItem->price * $cartItem->qty }}</span>
                                                 </li>
 

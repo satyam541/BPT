@@ -2618,6 +2618,7 @@ input[type=number] {
   width: 20%;
   font-weight: 700;
   color: #F2F2F2;
+  animation: glow 5s linear infinite;
 }
 .locations .location-name img {
   width: 30px;
@@ -2637,19 +2638,6 @@ input[type=number] {
 .locations .location-name p a {
   font-size: 18px;
   font-weight: bold;
-}
-.locations .location-name:hover {
-  background: linear-gradient(143deg, #0064d8 0%, #0064d8 77%, #2047af 78%);
-}
-.locations .location-name:hover span,
-.locations .location-name:hover p {
-  color: #FFFFFF;
-}
-.locations .location-name:hover .blue {
-  display: none;
-}
-.locations .location-name:hover .white {
-  display: flex;
 }
 .locations .buttons {
   width: 100%;
@@ -11249,7 +11237,7 @@ input[type=number] {
     margin-bottom: 0rem;
   }
   .order .inner-content {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -14781,6 +14769,11 @@ input[type=number] {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
+.steps .form .cart-heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
@@ -15113,6 +15106,10 @@ input[type=number] {
   .steps .form {
     padding: 1.5rem 4rem;
   }
+  .steps .form .cart-heading {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .steps .form-input {
     flex-direction: row;
     flex-wrap: wrap;
@@ -15131,13 +15128,14 @@ input[type=number] {
     width: 48%;
   }
   .steps .billing-details .form-consent {
+    align-items: center;
+    width: 66%;
     justify-content: flex-end;
-    position: absolute;
-    right: 0;
-    top: 30px;
   }
   .steps .billing-details .form-consent label {
-    width: 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: auto;
   }
   .steps .billing-details .input-container {
     width: 48%;

@@ -122,7 +122,7 @@
                         <h3>Topic</h3>
                         @foreach ($topicData as $category_id=>$topics) 
                         <div class="course" id="category_{{$category_id}}">
-                            @foreach ($topics as $topic)
+                            @foreach ($topics->take(8) as $topic)
                             <a data-target="topic_{{$topic->id}}">
                                 <span>
                                     <img src="{{url('img/master/test.svg')}}" alt="test" class="blue">
