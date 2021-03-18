@@ -6415,17 +6415,7 @@ input[type=number] {
   width: 272px;
   margin: auto;
 }
-.ideal .image {
-  display: flex;
-  width: 70px;
-  height: 70px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  padding: 0.8rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-  background-color: #FFFFFF;
-}
-.ideal .image img {
+.ideal .clients-inner img {
   width: 100%;
   height: 100%;
 }
@@ -6515,8 +6505,7 @@ input[type=number] {
     padding-top: 0;
   }
   .ideal .clients-inner {
-    width: 100%;
-    margin: 0;
+    width: 63%;
   }
 }
 @media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -6604,6 +6593,7 @@ input[type=number] {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .ideal .heading {
     width: 28%;
@@ -6624,8 +6614,7 @@ input[type=number] {
   }
   .ideal .clients-inner {
     width: 47%;
-    position: relative;
-    height: 300px;
+    margin: 0;
   }
   .ideal .image {
     width: 90px;
@@ -11149,7 +11138,6 @@ input[type=number] {
 }
 .order .order-main .course-info .detail li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -11157,7 +11145,7 @@ input[type=number] {
   width: 78%;
 }
 .order .order-main .course-info .detail li span {
-  width: 21%;
+  width: auto;
   font-weight: 900;
   text-align: right;
 }
