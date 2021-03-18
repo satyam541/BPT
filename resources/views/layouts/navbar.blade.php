@@ -110,8 +110,8 @@
                     <h3>Categories</h3>
                     @foreach($categories as $category)
                     <a data-target="category_{{$category->id}}">
-                        <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
-                            <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue">
+                        <span><img src="{{$category->getIconPath()}}" alt="analytics" class="white">
+                            <img src="{{$category->getImagePath()}}" alt="analytics-blue" class="blue">
                         </span>
                         <p>{{$category->name}}</p>
                     </a>
