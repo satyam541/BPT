@@ -1286,8 +1286,8 @@ input[type=number] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 65%;
-    height: 50%;
+    width: 55%;
+    height: 22%;
     margin: auto;
     background-color: #FFFFFF;
     position: relative;
@@ -1804,7 +1804,7 @@ input[type=number] {
     position: absolute;
     width: 62px;
     height: 60px;
-    right: -27px;
+    right: -24px;
     top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
@@ -1905,7 +1905,7 @@ input[type=number] {
   }
   .dropdown-menu .course-menu .menu-info a {
     width: 100%;
-    padding: 7px;
+    padding: 0.8rem;
     font-size: 14px;
     font-weight: bold;
     position: relative;
