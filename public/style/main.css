@@ -10905,7 +10905,7 @@ input[type=number] {
     padding: 4rem 0rem;
   }
   .work .work-content {
-    width: 26%;
+    width: 37%;
   }
   .work .work-list {
     width: 63%;
@@ -14804,7 +14804,7 @@ input[type=number] {
   max-height: 238px;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
 }
 .steps .card-detail {
@@ -14844,7 +14844,7 @@ input[type=number] {
   background-repeat: no-repeat;
   background-size: 16% 16%;
   background-position: center right;
-  padding-right: 1.5rem;
+  padding-right: 2rem;
 }
 .steps .billing-details {
   position: relative;
@@ -15122,7 +15122,7 @@ input[type=number] {
     top: 15px;
   }
   .steps .card-detail {
-    width: 90%;
+    width: 94%;
   }
   .steps .card-detail .input-container:last-child {
     width: 48%;
