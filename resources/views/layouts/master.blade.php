@@ -46,9 +46,9 @@
                             <a href="{{ $socialmedia->where('website', 'Twitter')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/twitter.svg') }}" alt="twitter">
                             </a>
-                            <a href="{{ $socialmedia->where('website', 'instagram')->first()->link ?? '' }}">
+                            <!-- <a href="{{ $socialmedia->where('website', 'instagram')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/insta.svg') }}" alt="instagram">
-                            </a>
+                            </a> -->
                             <a href="{{ $socialmedia->where('website', 'Linkedin')->first()->link ?? '' }}">
                                 <img src="{{ url('img/master/linked-in.svg') }}" alt="linked-in">
                             </a>
@@ -168,7 +168,7 @@
                         </p>
                     </div>
                     <div class="form-consent">
-                        <p>Please click <a>here</a> for privacy policy. </p>
+                        <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
                         <input type="checkbox" id="checkConsent" name="contactConsent">
