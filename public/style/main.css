@@ -330,6 +330,23 @@ input[type=number] {
   z-index: 9999;
   width: 230px;
 }
+.input-error ::-webkit-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error :-ms-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error span .black {
+  display: none;
+}
+.input-error span .red {
+  display: flex !important;
+}
+.input-error select option:first-child::selection {
+  color: red;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -355,20 +372,6 @@ input[type=number] {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-}
-.form .form-input .input-error ::-webkit-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error :-ms-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error span .black {
-  display: none;
-}
-.form .form-input .input-error span .red {
-  display: flex;
 }
 .form .form-consent {
   display: flex;

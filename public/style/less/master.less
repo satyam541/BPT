@@ -382,6 +382,38 @@
         width: 230px;
       }
     //End global search
+
+    //Start input error
+    
+    .input-error {
+        ::-webkit-input-placeholder {
+            /* Edge */
+            color:red !important;
+        }
+        :-ms-input-placeholder {
+            /* Edge */
+            color:red !important;
+        }
+            span{
+                .black{
+                    display: none;
+                }
+                .red{
+                    display: flex !important;
+                }
+            }
+            select{
+                option{
+                    &:first-child{
+                        &::selection{
+                            color: red;
+                        }
+                    }
+                }
+            }
+    }
+    //End input error
+
     //Start inputfields
     .form {
         display: flex;
@@ -390,7 +422,6 @@
         box-shadow: @shadowLight;
         background-color: @whiteColor;
         padding: 1.5rem;
-        
 
         /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
@@ -414,26 +445,6 @@
             justify-content: space-between;
             width: 100%;
 
-            .input-error {
-
-                ::-webkit-input-placeholder {
-                    /* Edge */
-                    color:red;
-                }
-                :-ms-input-placeholder {
-                    /* Edge */
-                    color:red;
-                }
-                    span{
-                        .black{
-                            display: none;
-                        }
-                        .red{
-                            display: flex;
-                        }
-                    }
-                
-            }
         }
 
         .form-consent {
