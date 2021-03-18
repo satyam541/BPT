@@ -337,7 +337,7 @@ function setCookie(cname, cvalue, exdays) {
    var expires = "expires="+ d.toUTCString();
    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
    $("#footerCookie").hide();
-   $(".footer").css("padding-bottom", "0px");
+   $(".footer").css("padding-bottom", "1rem");
 }
 
 function getCookie(cname) {
