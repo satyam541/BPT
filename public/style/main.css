@@ -10521,6 +10521,9 @@ input[type=number] {
   .foundation .tab-common .overview-content {
     margin-top: 0;
   }
+  .foundation .topic-intro {
+    min-height: 400px;
+  }
   .foundation #included {
     margin-top: 0;
   }
