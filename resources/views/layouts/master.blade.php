@@ -234,7 +234,6 @@
         </div>
     </div>
 
-
     <div class="pop-search" id="pop-mobile">
         <form class="search-form" onsubmit="getquery(this)">
         <span class="search-close"><img src="{{ url('img/master/cross.svg') }}" alt="name"></span>
@@ -337,7 +336,7 @@ function setCookie(cname, cvalue, exdays) {
    var expires = "expires="+ d.toUTCString();
    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
    $("#footerCookie").hide();
-   $(".footer").css("padding-bottom", "0px");
+   $(".footer").css("padding-bottom", "1rem");
 }
 
 function getCookie(cname) {
@@ -515,12 +514,11 @@ $.ajax({
 
                    $(formElement).find("input[name='" + index + "']").closest('.input-container').addClass('input-error');
                    $(formElement).find("input[name='" + index + "']").attr('placeholder',value);
-
+                 
                 });
             }
         });
     }
-
 </script>
 @yield('footerScripts')
 <script>

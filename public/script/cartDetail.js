@@ -1,3 +1,4 @@
+var URL = window.location.origin;
 
 function prev() {
     $('#stepOne').addClass('step-active');
@@ -245,14 +246,14 @@ function switchPaymentMethod(value)
 
     function cancelOrder(csrfToken) {
         $.ajax({
-            url: "{{ route('cartDestroyRoute') }}",
-            type: "post",
+            url: URL+"/cart/content/clear",
+            type: "get",
             data:{
                 _token: csrfToken
             },
-            success: function(data)
+            success: function(response)
             {
-                window.location.href = '{{ route("cart") }}';
+                window.location.href = URL+"/cart";
             }
         })
     }

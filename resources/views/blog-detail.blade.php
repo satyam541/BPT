@@ -44,9 +44,6 @@
                         <p>
                             {{$blog->publish_date->format('d M, Y')}}
                         </p>
-                        {{-- <p>
-                            Web Developer
-                        </p> --}}
                     </div>
                     <h3>{{$blog->title}}</h3>
                     {!!$blog->content!!}
@@ -76,7 +73,7 @@
 
             </div>
             <div class="content-right">
-                <div class="search-bar">
+                <!-- <div class="search-bar">
                     <div class="heading center-heading">
                         <h2>Search</h2>
                     </div>
@@ -86,7 +83,7 @@
                        <img src="{{url('img/blog-detail/find.svg')}}" alt="find">
                        </div>
                     </span>
-                </div>
+                </div> -->
                 <div class="blog-review owl-carousel">
                     @foreach ($testimonials as $testimonial)
                     <div class="review-inner">
@@ -104,7 +101,7 @@
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
                     <a href="tel:{{websiteDetail()->contact_number}}">Call: {{websiteDetail()->contact_number}}</a>
-                    <a href="mailto:{{websiteDetail()->contact_email}}" class="email">{{websiteDetail()->contact_email}}</a>
+                    <a href="enquiries@bestpracticetraining.com" class="email">{{websiteDetail()->contact_email}}</a>
                 </div>
                
             </div>
@@ -139,5 +136,5 @@
 <script>
     var blogURL = "{{route('blogAutoComplete')}}";
  </script>
- <script src="{{ url("script/blog.js") }}"></script>
+ <script src="{{url('script/blog.js')}}"></script>
 @endsection

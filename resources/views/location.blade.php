@@ -207,7 +207,7 @@
                 </div>
             </form>
             <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.470825758302!2d-1.3537326847136424!3d50.97048735763841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487472fdaa4f0855%3A0xc4bce2c7a80e1796!2sWessex%20House!5e0!3m2!1sen!2sin!4v1615202510481!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;q={{$location->latitude}},{{$location->longitude}}&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
         </div>
     </div>
