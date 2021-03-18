@@ -140,7 +140,7 @@
                                 <p>In purchasing this course with Best Practice Training Limited, you are entering into a service agreement where your data shall be processed for the purpose of delivering the service. If appropriate, your contact details shall be given to the relevant Examination Institute or Lab provider to fulfil the contract.</p>
                             </div>
                             <div class="form-consent">
-                                <p>Please click <a>here</a> for privacy policy. </p>
+                                <p>Please click <a href="{{route("privacy-policy")}}">here</a> for privacy policy. </p>
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
