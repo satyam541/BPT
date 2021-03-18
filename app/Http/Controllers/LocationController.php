@@ -26,6 +26,8 @@ class LocationController extends Controller
         $popular = Location::has('popular')->where('country_id', $countryId)->limit('6')->get();
         $data['popularLocations'] = $popular;
         $data['locations'] = $locations;
+        $data['location']=$country->locations->where('name','london')->first();
+    
         return view('location',$data);
 
     }
