@@ -84,9 +84,11 @@
                             </div>
                  
                         </div>
-                        @endforeach
+                                   @endforeach
                     {{$result->appends(request()->query())->links()}}
-                        <div class="not-found">
+                       
+                    </div>
+                    <div class="not-found">
                             <div class="heading center-heading">
                                 <h2>Result Not Found</h2>
                             </div>
@@ -100,7 +102,6 @@
                             <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
                             </p>
                         </div>
-                    </div>
                   
                 </div>
                 <div class="filter">
