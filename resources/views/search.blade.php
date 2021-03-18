@@ -68,20 +68,40 @@
             </div>
             <div class="result-content">
                 <div class="result-list">
+                  
+                    <div class="result-info">
                     @foreach ($result as $course)
                     {{$course->loadContent()}}
-                    <div class="result-info">
-                        <div class="heading">
-                            <h2>{{$course->name}} - <span>{{$course->topic->name}}</span></h2>
+                        <div class="result-fold">
+                      
+                            <div class="heading">
+                                <h2>{{$course->name}} - <span>{{$course->topic->name}}</span></h2>
+                            </div>
+                            <p>{!!$course->detail!!}</p>
+                            <div class="buttons">
+                                <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
+                                <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
+                            </div>
+                 
                         </div>
-                        <p>{!!$course->detail!!}</p>
-                        <div class="buttons">
-                            <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                            <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
+                        @endforeach
+                    {{$result->appends(request()->query())->links()}}
+                        <div class="not-found">
+                            <div class="heading center-heading">
+                                <h2>Result Not Found</h2>
+                            </div>
+                                <p>Enquire Us and we will get back to you.</p>
+                            <div class="buttons">
+                                <div class="btn-blue open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now" >
+                                <img src="{{url('../img/master/mail.svg')}}" alt="mail">Enquire Now
+                                </div>
+                            </div>
+                            <p>---- OR ----</p>
+                            <p>Reach Us at <a href="tel:{{websiteDetail()->contact_number}}" class="pointer">{{websiteDetail()->contact_number}}</a> or <a href="mailto:{{websiteDetail()->contact_email}}" class="pointer">{{websiteDetail()->contact_email}}</a> for more information.
+                            </p>
                         </div>
                     </div>
-                    @endforeach
-                    {{$result->appends(request()->query())->links()}}
+                  
                 </div>
                 <div class="filter">
                     <h2>Filter</h2>
