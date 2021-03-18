@@ -65,7 +65,7 @@
                                 </li> --}}
                                 <li>
                                     <p>Total:</p>
-                                    <span>{!! country()->currency_symbol ?? '£' !!}</span><span id="grandTotalJS"> {{ floor($cartTotal) }}</span>
+                                    <span id="grandTotalJS">{!!country()->currency_symbol ,floor($cartTotal) !!}</span>
                                 </li>
                             </ul>
                             <div class="cards">
