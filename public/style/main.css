@@ -14700,14 +14700,13 @@ input[type=number] {
 .steps .form-inner .input-container:first-child {
   margin-top: 0.1rem;
 }
-.steps .form-inner .input-container:last-child {
-  margin-bottom: 0.1rem;
+.steps .form-inner .input-container .inputcountry {
+  width: 100%;
 }
 .steps .form-inner select {
   outline: none;
   border: none;
   background-color: #FFFFFF;
-  width: 100%;
 }
 .steps .group-input {
   display: flex;
