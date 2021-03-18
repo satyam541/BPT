@@ -14792,6 +14792,9 @@ input[type=number] {
 .steps .form-inner .input-container .inputcountry {
   width: 100%;
 }
+.steps .form-inner .input-container .inputpurchase {
+  padding-left: 3rem;
+}
 .steps .form-inner select {
   outline: none;
   border: none;
