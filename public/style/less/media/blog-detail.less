@@ -54,7 +54,7 @@
         }
 
         .detail{
-            justify-content: space-between;
+             justify-content: flex-start;
             p{ 
                 margin-top: 0.5rem;
                  width: 29%;
@@ -68,7 +68,6 @@
                 &:nth-child(2){
                     justify-content: center;
                     border-left: 1px solid #C0C0C0;
-                    border-right: 1px solid #C0C0C0;
                 }
                 &:nth-child(3){
                     justify-content: center;
@@ -145,7 +144,13 @@
          padding: @sectionPadding-xl;
 
          .detail{
-            width: 60%;
+            width: 30%;
+            p{
+                width: 42%;
+                &:nth-child(1){
+                    width: 55%;
+                }
+            }
          }
          .content-right{
              width: 24%;
