@@ -6898,7 +6898,6 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
   background-image: url(../img/blog-detail/blog-review.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
