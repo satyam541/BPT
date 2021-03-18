@@ -330,6 +330,23 @@ input[type=number] {
   z-index: 9999;
   width: 230px;
 }
+.input-error ::-webkit-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error :-ms-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error span .black {
+  display: none;
+}
+.input-error span .red {
+  display: flex !important;
+}
+.input-error select option:first-child::selection {
+  color: red;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -355,20 +372,6 @@ input[type=number] {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-}
-.form .form-input .input-error ::-webkit-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error :-ms-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error span .black {
-  display: none;
-}
-.form .form-input .input-error span .red {
-  display: flex;
 }
 .form .form-consent {
   display: flex;
@@ -2615,6 +2618,7 @@ input[type=number] {
   width: 20%;
   font-weight: 700;
   color: #F2F2F2;
+  animation: glow 5s linear infinite;
 }
 .locations .location-name img {
   width: 30px;
@@ -2634,19 +2638,6 @@ input[type=number] {
 .locations .location-name p a {
   font-size: 18px;
   font-weight: bold;
-}
-.locations .location-name:hover {
-  background: linear-gradient(143deg, #0064d8 0%, #0064d8 77%, #2047af 78%);
-}
-.locations .location-name:hover span,
-.locations .location-name:hover p {
-  color: #FFFFFF;
-}
-.locations .location-name:hover .blue {
-  display: none;
-}
-.locations .location-name:hover .white {
-  display: flex;
 }
 .locations .buttons {
   width: 100%;
@@ -11143,7 +11134,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
 }
 .order .order-main .course-info .delivery-method {
@@ -11186,10 +11177,13 @@ input[type=number] {
   margin-bottom: 1rem;
 }
 .order .order-main .course-info .detail li p {
-  width: 78%;
+  width: 44%;
+}
+.order .order-main .course-info .detail li .subTotalJS {
+  width: auto;
 }
 .order .order-main .course-info .detail li span {
-  width: auto;
+  width: 65%;
   font-weight: 900;
   text-align: right;
 }
@@ -11246,7 +11240,7 @@ input[type=number] {
     margin-bottom: 0rem;
   }
   .order .inner-content {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -11257,6 +11251,10 @@ input[type=number] {
   }
   .order .inner-content .order-main {
     width: 58%;
+  }
+  .order .inner-content .order-main .order-courses {
+    align-self: center;
+    width: 100%;
   }
   .order .inner-content .order-main .order-courses:first-child {
     margin-top: 0;
@@ -11282,7 +11280,6 @@ input[type=number] {
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
-    box-shadow: none;
   }
   .order .order-main .course-info .detail {
     width: 38%;
@@ -11292,9 +11289,6 @@ input[type=number] {
   }
   .order .order-main .course-info .detail p {
     font-size: 13px;
-  }
-  .order .order-main .course-info .detail .loaction {
-    text-align: right;
   }
   .order .order-main .course-info .detail li:last-child {
     margin-bottom: 0;
@@ -14774,6 +14768,11 @@ input[type=number] {
 .steps .form h2 {
   margin-bottom: 2rem;
 }
+.steps .form .cart-heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .steps .form-inner {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 1.5rem 1rem;
@@ -15106,6 +15105,10 @@ input[type=number] {
   .steps .form {
     padding: 1.5rem 4rem;
   }
+  .steps .form .cart-heading {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .steps .form-input {
     flex-direction: row;
     flex-wrap: wrap;
@@ -15124,13 +15127,14 @@ input[type=number] {
     width: 48%;
   }
   .steps .billing-details .form-consent {
+    align-items: center;
+    width: 66%;
     justify-content: flex-end;
-    position: absolute;
-    right: 0;
-    top: 30px;
   }
   .steps .billing-details .form-consent label {
-    width: 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: auto;
   }
   .steps .billing-details .input-container {
     width: 48%;
