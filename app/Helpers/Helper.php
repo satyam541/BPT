@@ -41,6 +41,7 @@ if (!function_exists('encodeUrlSlug')) {
         $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
         return $stringname;
     }
+}
     if (!function_exists('country')) {
         function country()
         {
@@ -312,7 +313,7 @@ if (!function_exists('encodeUrlSlug')) {
             }
         }
     }
-}
+
 
 
 if(!function_exists('heading_split'))
