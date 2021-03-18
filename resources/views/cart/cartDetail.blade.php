@@ -187,10 +187,12 @@
                                 </div>
                             </div>
                             <div class="form billing-details">
-                                <h2>Billing Details</h2>
-                                <div class="form-consent">
-                                    <input name="contactConsent" type="checkbox" id="billingConsent" onclick="sameBilling(this)">
-                                    <label for="billingConsent">Use the same details for billing details</label>
+                                <div class="cart-heading">
+                                    <h2>Billing Details</h2>
+                                    <div class="form-consent">
+                                        <input name="contactConsent" type="checkbox" id="billingConsent" onclick="sameBilling(this)">
+                                        <label for="billingConsent">Use the same details for billing details</label>
+                                    </div>
                                 </div>
 
                                 <div class="group-input">
