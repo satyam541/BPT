@@ -6903,7 +6903,6 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
   background-image: url(../img/blog-detail/blog-review.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -14759,14 +14758,13 @@ input[type=number] {
 .steps .form-inner .input-container:first-child {
   margin-top: 0.1rem;
 }
-.steps .form-inner .input-container:last-child {
-  margin-bottom: 0.1rem;
+.steps .form-inner .input-container .inputcountry {
+  width: 100%;
 }
 .steps .form-inner select {
   outline: none;
   border: none;
   background-color: #FFFFFF;
-  width: 100%;
 }
 .steps .group-input {
   display: flex;
