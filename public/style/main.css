@@ -2030,6 +2030,7 @@ input[type=number] {
   }
   .pop-search .search-form {
     height: 280px;
+    width: 34%;
   }
   .pop-search .search-form button {
     width: 100px;
