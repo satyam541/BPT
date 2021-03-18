@@ -125,7 +125,7 @@
                 @if (!empty($selectedCourse->overview))
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="overcontent">
-                            <h2>Course Overview</h2>
+                            <!-- <h2>Course Overview</h2> -->
                             {!! $selectedCourse->overview !!}
                         </div>
                         <div class="buttons">

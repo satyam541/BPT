@@ -94,6 +94,17 @@
                 @if (!empty($topic))
                 
                     @php $content=summernote_replace($topic)@endphp
+                    @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)
+                    <li class="tab-click" data-target="course">
+                        <span class="image">
+                            <img src="{{url('img/courses/content.svg')}}" alt="content">
+                        </span>
+                        <p class="tab">
+                        Topic Introduction
+                        </p>
+                        <div class="number"></div>
+                    </li>
+                    @endif
                     @if ($content->overview!=null)
                     <li class="tab-click" data-target="overview">
                         <span class="image">
@@ -105,17 +116,7 @@
                         <div class="number"></div>
                     </li>
                     @endif
-                    @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)
-                    <li class="tab-click" data-target="course">
-                        <span class="image">
-                            <img src="{{url('img/courses/content.svg')}}" alt="content">
-                        </span>
-                        <p class="tab">
-                        Topic Content
-                        </p>
-                        <div class="number"></div>
-                    </li>
-                    @endif
+                  
                     @if ($topic->faqs->isnotEmpty())
 
                     <li class="tab-click" data-target="faq">
@@ -130,22 +131,6 @@
                     @endif
                 @endif
                 </ul>
-                
-                <div class="tab-content tab-common" id="overview">
-                    @if ($content->overview!=null)                        
-                    <div class="overview-content" id="overcontent">
-                        <h2>Course Overview</h2>
-                        
-                        {!!$content->overview!!}
-                        
-                    </div>
-                    <div class="buttons">
-                        <a href="#overcontent" class="btn-blue overcontent">
-                            <span class="text">Show More</span>
-                        </a>
-                    </div>
-                    @endif
-                </div>
                 <div class="tab-content tab-common" id="course">
                         @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                        
                     <div class="overview-content" id="coursecontent">
@@ -189,6 +174,22 @@
                     </div>
                     @endif
                 </div>
+                <div class="tab-content tab-common" id="overview">
+                    @if ($content->overview!=null)                        
+                    <div class="overview-content" id="overcontent">
+                        <!-- <h2>Course Overview</h2> -->
+                        
+                        {!!$content->overview!!}
+                        
+                    </div>
+                    <div class="buttons">
+                        <a href="#overcontent" class="btn-blue overcontent">
+                            <span class="text">Show More</span>
+                        </a>
+                    </div>
+                    @endif
+                </div>
+              
                 
                 <div class="tab-content" id="faq">
                     <div class="heading">
