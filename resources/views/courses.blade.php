@@ -652,7 +652,7 @@
                                 </p>
                             </div>
                             <div class="form-consent">
-                                <p>Please click <a>here</a> for privacy policy. </p>
+                                <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
@@ -816,7 +816,7 @@
                     <h3>{!! $item->heading !!}</h3>
                     <p>{!! $item->content !!}</p>
                     <div class="buttons">
-                        <a href="{{route('locations')}}" class="btn-blue  enquiryJS" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
+                        <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="course">
                             <img src="{{ url('img/courses/email.svg') }}" alt="email">
                             Enquire Now
                         </a>
@@ -860,7 +860,7 @@
             <div class="popular-content">
                 <p>{!! $pageDetail->largest_location['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="{{route('locations')}}" class="btn-blue open-popup" data-quote="Get a Quote" data-type="course" data-course="{{$selectedCourse->name}}">
+                    <a href="{{route('locations')}}" class="btn-blue" data-quote="Get a Quote" data-type="course">
                         <img src="{{ url('img/courses/learn.svg') }}" alt="learn">
                             View More 
                     </a>

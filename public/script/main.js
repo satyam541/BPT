@@ -484,7 +484,7 @@ $('#scroll').click(function(){
         });
         
 
-        $(".course a").click(function() {
+        $(".course a").mouseover(function() {
             var target = $(this).data('target');
             $(".menu-info").hide();
             $("#"+target).css("display", "flex");
