@@ -199,15 +199,11 @@
         background-repeat: no-repeat;
         background-size: 100% 40%;
         background-position: bottom left;
+        .category-list{
+            justify-content: space-between;
+        }
         .category-content {
             width: 22%;
-            margin-right: 2rem;
-            &:nth-child(4n) {
-                margin-right: 0;
-            }
-            &:last-child {
-                margin-right: 0;
-            }
             h3 {
                 min-height: 100px;
             }
@@ -320,9 +316,7 @@
     .category {
         padding: @sectionPadding-xl;
         .category-content {
-            h3 {
-                min-height: 50px;
-            }
+            width: 18%;
         }
     }
     // End Category Section
