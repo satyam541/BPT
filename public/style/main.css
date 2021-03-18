@@ -2618,6 +2618,7 @@ input[type=number] {
   width: 20%;
   font-weight: 700;
   color: #F2F2F2;
+  animation: glow 5s linear infinite;
 }
 .locations .location-name img {
   width: 30px;
@@ -2637,19 +2638,6 @@ input[type=number] {
 .locations .location-name p a {
   font-size: 18px;
   font-weight: bold;
-}
-.locations .location-name:hover {
-  background: linear-gradient(143deg, #0064d8 0%, #0064d8 77%, #2047af 78%);
-}
-.locations .location-name:hover span,
-.locations .location-name:hover p {
-  color: #FFFFFF;
-}
-.locations .location-name:hover .blue {
-  display: none;
-}
-.locations .location-name:hover .white {
-  display: flex;
 }
 .locations .buttons {
   width: 100%;
