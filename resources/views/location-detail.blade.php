@@ -93,8 +93,8 @@
                 Highlights of Our Locations
                 </h2>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Enquire Now" data-type="other" data-location="{{$location->name}}">
-                    <img src="{{url('img/location-detail/call.svg')}}" alt="call">Enquire Now
+                    <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Need Help?" data-heading="Need Help?" data-type="other" data-location="{{$location->name}}">
+                    <img src="{{url('img/location-detail/call.svg')}}" alt="call">Need Help?
                     </a>
                 </div>
             </div>

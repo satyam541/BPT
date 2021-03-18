@@ -1286,8 +1286,8 @@ input[type=number] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 65%;
-    height: 50%;
+    width: 55%;
+    height: 22%;
     margin: auto;
     background-color: #FFFFFF;
     position: relative;
@@ -1804,7 +1804,7 @@ input[type=number] {
     position: absolute;
     width: 62px;
     height: 60px;
-    right: -27px;
+    right: -24px;
     top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
@@ -1905,7 +1905,7 @@ input[type=number] {
   }
   .dropdown-menu .course-menu .menu-info a {
     width: 100%;
-    padding: 7px;
+    padding: 0.8rem;
     font-size: 14px;
     font-weight: bold;
     position: relative;
@@ -3493,7 +3493,7 @@ input[type=number] {
   content: '01';
   font-weight: bold;
   position: absolute;
-  right: 0;
+  right: 10px;
   bottom: 0;
   color: #f6f6f6;
   font-size: 50px;
@@ -3763,14 +3763,14 @@ input[type=number] {
   }
   .contact .contact-container {
     flex-direction: row-reverse;
+    align-items: flex-start;
   }
   .contact .form {
     width: 60%;
-    align-self: flex-start;
     padding: 2rem;
   }
   .contact .contact-info {
-    width: 36%;
+    width: 43%;
     background-image: url(../img/contactus/phone-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3838,13 +3838,13 @@ input[type=number] {
     align-items: center;
   }
   .contact .contact-container .contact-info {
-    width: 30%;
+    width: 34%;
     position: absolute;
     left: 0;
-    top: -40px;
+    top: -20px;
   }
   .contact .contact-container .form {
-    width: 75%;
+    width: 73%;
     padding-left: 5rem;
     align-self: center;
   }
@@ -7983,6 +7983,9 @@ input[type=number] {
     margin-top: 0;
     width: 45%;
   }
+  .bundle .top-bundles img {
+    width: 85%;
+  }
   .management .bundle-info {
     width: 48%;
   }
@@ -8058,9 +8061,13 @@ input[type=number] {
   }
   .bundle .bundle-list {
     width: 76%;
+    margin-top: 1rem;
   }
   .bundle .top-bundles {
     width: 40%;
+  }
+  .bundle .buttons {
+    margin-top: 2rem;
   }
   .recommend {
     padding: 4rem 0rem;

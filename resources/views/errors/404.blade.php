@@ -30,7 +30,7 @@
                 </div>
                 <p>{!!$pageDetail->error['heading']->content !!}</p>
                 <div class="buttons">
-                    <a href="{{route('home')}}" class="btn-blue"><img src="{{url('img/404/home.svg')}}" alt="home">Back To Home</a>
+                    <a href="{{route('home')}}" class="btn-blue"><img src="{{url('img/404/home.svg')}}" alt="home">Browse More</a>
                 </div>
             </div>
             <div class="error-image">
