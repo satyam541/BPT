@@ -55,10 +55,10 @@
                     {{Form::label('address','Address')}}
                     {{Form::textarea('address',null,['class'=>'form-control ', 'rows'=>'4'])}}
                   </div>
-
+                  
                   <div class="form-group">
                     {{Form::label('contact_number','Contact Number')}}
-                    {{Form::number('contact_number',null,['class'=>'form-control','min'=>'0'])}}
+                    {{Form::text('contact_number',null,['class'=>'form-control'])}}
                   </div>
                   
                   <div class="form-group">
