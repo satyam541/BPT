@@ -26,7 +26,7 @@
     <div class="container">
     <div class="heading center-heading">
             <h2>Popular Locations in <span>{{ replaceVar('{countryname}')}}</span></h2>
-        </div>
+    </div>
         <div class="convenient-container">
             <div class="convenient-list">
                 @foreach($popularLocations as $popularLocation)
@@ -39,7 +39,7 @@
                         <a href={{$popularLocation->url}}>{{$popularLocation->name}}</a>
                         <div class="buttons">
                             <a href={{$popularLocation->url}} class="btn-blue">
-                                View Details<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
+                                View detail<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
                     </div>
@@ -48,11 +48,11 @@
            
             </div>
             <div class="largest">
-                <h2>{{$pageDetail->convenient['largest']->heading}}</h2>
+                <!-- <h2>{{$pageDetail->convenient['largest']->heading}}</h2> -->
                 <p>{{$pageDetail->convenient['largest']->content}}</p>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="View More" data-heading="View More" data-type="other">
-                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> View More
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Get More Info" data-heading="Get More Info" data-type="other">
+                    <img src="{{url('img/location/learn.svg')}}" alt="learn"> Get More Info
                     </a>
                 </div>
             </div>

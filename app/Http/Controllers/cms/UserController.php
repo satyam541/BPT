@@ -45,23 +45,7 @@ class UserController extends Controller
     {
         $this->authorize('view', new User());
         $filter = $request->all();
-        $data['selectedName']        =   null;
-        $data['selectedEmail']       =   null;
-        $data['selectedRole']        =   null;
-        $data['active']              =   null;
-        if(!empty($filter['name'])){
-            $data['selectedName']    =   $filter['name'];
-        }
-        if(!empty($filter['email'])){
-            $data['selectedEmail']   =   $filter['email'];
-        }
-        if(!empty($filter['roleName'])){
-            $data['selectedRole']    =   $filter['roleName'];
-        }
-        if(isset($filter['active'])){
-            $data['active']          =   1;
-        }
-            $query                   =   User::query();
+        $query                   =   User::query();
         if(!empty($filter))
         {
 

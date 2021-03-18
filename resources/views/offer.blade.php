@@ -85,7 +85,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="PRINCE2® & Agile Bundle" data-heading="PRINCE2® & Agile Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -102,7 +102,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS" data-quote="Project & Programme Bundle"  data-type="bundle" data-heading="Project & Programme Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -119,7 +119,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Programme and Change Bundle" data-heading="Programme and Change Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -136,7 +136,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS" data-quote="Gold Government Standard Bundle"   data-type="bundle" data-heading="Gold Government Standard Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -153,7 +153,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Platinum Government Standard Bundle" data-heading="Platinum Government Standard Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -173,7 +173,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Starter Bundle" data-heading="The Complete Project Manager Starter Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -194,7 +194,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -213,7 +213,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Professional Project Manager" data-heading="Professional Project Manager">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -230,7 +230,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Project Manager Career Starter Bundle" data-heading="Project Manager Career Starter Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -247,7 +247,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Project Manager Career Building Bundle" data-heading="Project Manager Career Building Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -262,7 +262,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Create your own Project Management Bundle" data-heading="Create your own Project Management Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -289,7 +289,7 @@
                         <div class="buttons">
                             <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Business Analysis Diploma Bundle" data-heading="Business Analysis Diploma Bundle">
                                     <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                    Get a Quote
+                                    Enquire Now
                             </a>
                         </div>
                     </div>
@@ -314,7 +314,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Business Analysis & PRINCE2® Bundle" data-heading="Business Analysis & PRINCE2® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -331,7 +331,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Business Analysis & Change Bundle" data-heading="Business Analysis & Change Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -348,7 +348,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Business Analysis & PM Bundle" data-heading="Business Analysis & PM Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -365,7 +365,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Business Analysis & Improvement Bundle" data-heading="Business Analysis & Improvement Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -382,7 +382,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Business Analysis & Praxis Bundle" data-heading="Business Analysis & Praxis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -394,7 +394,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -421,7 +421,7 @@
                         <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL Expert Bundle" data-heading="ITIL Expert Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -455,7 +455,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL & PRINCE2® Bundle" data-heading="ITIL & PRINCE2® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -472,7 +472,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL & TOGAF® Bundle" data-heading="ITIL & TOGAF® Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -489,7 +489,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="ITIL & Software Testing Bundle" data-heading="ITIL & Software Testing Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -506,7 +506,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="TIL & MSP Bundle" data-heading="TIL & MSP Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -523,7 +523,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="ITIL & Praxis Bundle" data-heading="ITIL & Praxis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -535,7 +535,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -560,7 +560,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Cyber Security Professional Bundle" data-heading="Cyber Security Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -577,7 +577,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle" data-quote="Information Security Professional Bundle" data-heading="Information Security Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                     </div>
@@ -594,7 +594,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>
@@ -611,7 +611,7 @@
                     <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Get a Quote
+                                Enquire Now
                         </a>
                     </div>
                    </div>

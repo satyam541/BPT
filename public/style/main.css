@@ -456,7 +456,7 @@ input[type=number] {
   display: flex;
 }
 .input-container .phonecode-field select {
-  width: 40px;
+  width: 45px;
   border: none;
   margin: 0.5rem 0;
   outline: 0;
@@ -675,6 +675,7 @@ input[type=number] {
   display: none;
 }
 .pop-search {
+  display: flex;
   position: fixed;
   top: 0px;
   left: 0;
@@ -1280,6 +1281,69 @@ input[type=number] {
     margin-top: 0;
     justify-content: flex-end;
   }
+  .pop-search .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    height: 22%;
+    margin: auto;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+  }
+  .pop-search .search-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../img/master/top-search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: -1;
+  }
+  .pop-search .search-form::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/master/bottom-search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 45px;
+    z-index: -1;
+  }
+  .pop-search .search-form h2 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .pop-search .search-form .search {
+    width: 600px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+    border-radius: 50px;
+  }
+  .pop-search .search-form input {
+    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  .pop-search .search-form button {
+    width: 150px;
+    padding: 0.5rem;
+    background-color: #1C2848;
+    border-radius: 50px;
+    outline: none;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+  }
   .navbar {
     width: 100%;
     position: absolute;
@@ -1740,7 +1804,7 @@ input[type=number] {
     position: absolute;
     width: 62px;
     height: 60px;
-    right: -27px;
+    right: -24px;
     top: 0;
     background-image: url('../img/master/arrow-grey.png');
     background-repeat: no-repeat;
@@ -1841,7 +1905,7 @@ input[type=number] {
   }
   .dropdown-menu .course-menu .menu-info a {
     width: 100%;
-    padding: 7px;
+    padding: 0.8rem;
     font-size: 14px;
     font-weight: bold;
     position: relative;
@@ -1930,6 +1994,10 @@ input[type=number] {
   .banner {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 12rem!important;
+  }
+  .navbar {
+    top: 25px;
   }
   .footer h2 {
     font-size: 26px;
@@ -2686,6 +2754,8 @@ input[type=number] {
   }
   .courses .course-name .name h3 {
     min-height: 42px;
+    display: flex;
+    align-items: center;
   }
   .courses .course-name .name h3,
   .courses .course-name .name p {
@@ -2972,6 +3042,9 @@ input[type=number] {
   }
 }
 @media (min-width : 1024px) {
+  .home-banner::before {
+    height: 70%;
+  }
   .home-banner .banner-container .topic-list {
     width: 40%;
   }
@@ -3420,7 +3493,7 @@ input[type=number] {
   content: '01';
   font-weight: bold;
   position: absolute;
-  right: 0;
+  right: 10px;
   bottom: 0;
   color: #f6f6f6;
   font-size: 50px;
@@ -3487,6 +3560,7 @@ input[type=number] {
   border-left: 3px solid #1C2848;
   margin-bottom: 1.2rem;
   padding: 0.7rem;
+  cursor: pointer;
 }
 .faq .faq-item:last-child {
   margin-bottom: 0;
@@ -3689,14 +3763,14 @@ input[type=number] {
   }
   .contact .contact-container {
     flex-direction: row-reverse;
+    align-items: flex-start;
   }
   .contact .form {
     width: 60%;
-    align-self: flex-start;
     padding: 2rem;
   }
   .contact .contact-info {
-    width: 36%;
+    width: 43%;
     background-image: url(../img/contactus/phone-bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3764,13 +3838,13 @@ input[type=number] {
     align-items: center;
   }
   .contact .contact-container .contact-info {
-    width: 30%;
+    width: 34%;
     position: absolute;
     left: 0;
-    top: -40px;
+    top: -20px;
   }
   .contact .contact-container .form {
-    width: 75%;
+    width: 73%;
     padding-left: 5rem;
     align-self: center;
   }
@@ -5086,9 +5160,15 @@ input[type=number] {
 .onsite-training .training-info {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .onsite-training p {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.onsite-training p span {
+  margin-top: 0.5rem;
 }
 .onsite-training .delegate {
   display: flex;
@@ -5382,8 +5462,6 @@ input[type=number] {
   .onsite-banner {
     background-color: transparent;
     background-image: url(../img/onsite/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
   .onsite-banner .banner-container {
     width: 48%;
@@ -5808,12 +5886,10 @@ input[type=number] {
     padding: 4rem 1.5rem;
     align-self: center;
     position: relative;
-    z-index: 1;
     margin-top: 6rem;
   }
   .convenient .largest::before {
     content: '';
-    z-index: -1;
     position: absolute;
     height: 430px;
     width: 430px;
@@ -5975,20 +6051,6 @@ input[type=number] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
-    z-index: 1;
-  }
-  .convenient .convenient-container::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    background-image: url(../img/location/dotted-circle.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 423px;
-    width: 413px;
-    right: -19px;
-    top: 0;
   }
   .convenient .convenient-list {
     width: 60%;
@@ -5999,6 +6061,19 @@ input[type=number] {
   .convenient .largest {
     width: 36%;
     margin-top: 0;
+    position: relative;
+  }
+  .convenient .largest::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background-image: url(../img/location/dotted-circle.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    right: -19px;
+    top: 0;
   }
   .convenient .largest::before {
     content: none;
@@ -6055,12 +6130,6 @@ input[type=number] {
   .convenient {
     padding: 4rem 0rem;
   }
-  .convenient .convenient-container::before {
-    height: 497px;
-    width: 446px;
-    right: -68px;
-    top: -32px;
-  }
   .convenient .convenient-list {
     width: 55%;
   }
@@ -6069,6 +6138,12 @@ input[type=number] {
     height: 350px;
     padding: 3.5rem;
     margin-right: 4rem;
+  }
+  .convenient .largest::after {
+    height: 460px;
+    width: 460px;
+    right: -135px;
+    top: -70px;
   }
   .convenient .largest::before {
     content: '';
@@ -7244,7 +7319,8 @@ input[type=number] {
   height: 100%;
   width: 100%;
 }
-.location-main .reach a {
+.location-main .reach a,
+.location-main .reach p {
   display: flex;
   width: calc(100% - 25px);
 }
@@ -7907,6 +7983,9 @@ input[type=number] {
     margin-top: 0;
     width: 45%;
   }
+  .bundle .top-bundles img {
+    width: 85%;
+  }
   .management .bundle-info {
     width: 48%;
   }
@@ -7982,9 +8061,13 @@ input[type=number] {
   }
   .bundle .bundle-list {
     width: 76%;
+    margin-top: 1rem;
   }
   .bundle .top-bundles {
     width: 40%;
+  }
+  .bundle .buttons {
+    margin-top: 2rem;
   }
   .recommend {
     padding: 4rem 0rem;
@@ -8359,7 +8442,6 @@ input[type=number] {
   .certification-banner .banner-container {
     background: linear-gradient(125deg, #FFFFFF 71%, transparent 29%);
     padding: 2rem;
-    margin-top: 2rem;
     width: 72%;
   }
   .certification-banner .banner-container p {
@@ -10885,7 +10967,7 @@ input[type=number] {
   background-image: url(../img/emptycart/bg.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100% 38%;
+  background-size: 100% 42%;
 }
 .order .order-heading {
   position: relative;
@@ -11354,17 +11436,38 @@ input[type=number] {
 .result .result-info {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  align-items: flex-start;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  background-color: #FFFFFF;
-  margin-top: 2rem;
 }
 .result .result-info:first-child {
   margin-top: 0;
 }
 .result .result-info .heading::before {
   content: none;
+}
+.result .result-info .result-fold {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: flex-start;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  margin-top: 2rem;
+}
+.result .result-info .not-found {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  background-color: #FFFFFF;
+  border: 4px solid #F2F2F2;
+}
+.result .result-info .not-found p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.result .result-info .not-found p a {
+  color: #0064D8;
+  font-weight: 900;
 }
 .result .buttons {
   flex-direction: column;
@@ -11448,6 +11551,9 @@ input[type=number] {
     top: 70px;
     height: fit-content;
     margin-top: 0;
+  }
+  .result .not-found .buttons {
+    justify-content: center;
   }
 }
 @media (min-width : 1024px) {
@@ -14615,6 +14721,21 @@ input[type=number] {
   display: none;
   flex-direction: column;
 }
+.steps .form-inner .input-container {
+  width: 97%;
+}
+.steps .form-inner .input-container:first-child {
+  margin-top: 0.1rem;
+}
+.steps .form-inner .input-container:last-child {
+  margin-bottom: 0.1rem;
+}
+.steps .form-inner select {
+  outline: none;
+  border: none;
+  background-color: #FFFFFF;
+  width: 100%;
+}
 .steps .group-input {
   display: flex;
   flex-direction: column;
@@ -14853,7 +14974,7 @@ input[type=number] {
     justify-content: space-between;
     flex-wrap: wrap;
     position: absolute;
-    top: -29px;
+    top: -35px;
     right: 0;
     left: 0;
     margin: auto;
@@ -14920,6 +15041,9 @@ input[type=number] {
   }
   .steps .order-container {
     width: 70%;
+  }
+  .steps .order-container #stepOne .form-input .input-container:last-child {
+    width: 100%;
   }
   .steps .form {
     padding: 1.5rem 4rem;

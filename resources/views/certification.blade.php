@@ -36,7 +36,7 @@
                     {{-- {{ dd($certification->slug)}} --}}
                     <div class="buttons">
                         <a href="{{route('certificationDetail', ['certification'=>$certification->slug])}}" class="btn-blue" >
-                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">View
+                            <img src="{{url('img/certification/detail.svg')}}" alt="detail">View Detail
                         </a>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other" data-heading="Enquire Now">
-                        <img src="{{url('img/certification/enquire.svg')}}" alt="enquire">Enquire Now
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Hurry Up" data-type="other" data-heading="Hurry Up">
+                        <img src="{{url('img/certification/hurry-up.svg')}}" alt="hurryup">Hurry Up
                     </a>
                 </div>
             </div>

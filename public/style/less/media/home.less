@@ -44,6 +44,8 @@
             .name{
                 h3{
                     min-height: 42px;
+                    display: flex;
+                    align-items: center;
                 }
                 h3, p{
                         text-align: left;
@@ -385,6 +387,9 @@
     
     // Start banner section //
     .home-banner{
+        &::before {
+            height: 70%;
+        }
         .banner-container{
             .topic-list{
               width: 40%;

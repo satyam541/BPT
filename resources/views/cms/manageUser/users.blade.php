@@ -17,55 +17,6 @@
                 </div>
                 <!-- /.container-fluid -->
 
-                {{-- <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="card card-primary card-outline">
-
-                            <div class="card-header">
-                                <div class="card-title">
-                                    Filter content
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <form action="" class="form-horizontal">
-                                    <div class="form-group row">
-                                        {{ Form::label('inputName', 'Name', ['class' => 'col-sm-2 control-label']) }}
-                                        <div class="col-sm-4">
-                                            {{ Form::select('name', $list['name'], $selectedName, ['id' => 'inputName', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        {{ Form::label('inputEmail', 'Email', ['class' => 'col-sm-2 control-label']) }}
-                                        <div class="col-sm-4">
-                                            {{ Form::select('email', $list['email'], $selectedEmail, ['id' => 'inputEmail', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        {{ Form::label('inputRole', 'Role', ['class' => 'col-sm-2 control-label']) }}
-                                        <div class="col-sm-4">
-                                            {{ Form::select('roleName', $list['role'], $selectedRole, ['id' => 'inputRole', 'class' => 'form-control select', 'placeholder' => 'ALL','tabindex'=>'-1']) }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-4">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="active" value='1' @if ($active != null) checked @endif>
-                                                    Active only
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 text-right">
-                                        <button class="btn btn-primary">Search</button>
-                                    </div>
-
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div> --}}
                 <!-- /.card-header -->
 
                 <div class="card card-primary card-outline">

@@ -56,7 +56,7 @@ class EnquiryRequest extends FormRequest
             'phone'=> 'Phone',
             'fname'=> 'First Name',
             'lname'=> 'Last Name',
-            'email'=> 'Email Address',
+            'email'=> 'Email',
             'delegates' => 'Number of Delegates',
             'course'=>'Course',
             'time'=> 'Preferred Time'

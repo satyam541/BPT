@@ -77,7 +77,7 @@
         <div class="enquiry-container">
             <div class="enquiry-content">
                 <div class="heading">
-                    <h2>{!!heading_split($certification->name.' Enquiry')!!}</h2>
+                    <h2>Enquire for Certifications</h2>
                 </div>
                 <p>{!!$pageDetail->enquiry['heading']->content!!}</p>
                 <div class="contact-list">
@@ -101,8 +101,8 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other" data-course="{!!$certification->name!!}">
-                        <img src="{{url('img/certification/enquire.svg')}}" alt="enquire">Enquire Now
+                    <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Hurry Up" data-type="other" data-heading="Hurry Up">
+                        <img src="{{url('img/certification/hurry-up.svg')}}" alt="hurryup">Hurry Up
                     </a>
                 </div>
             </div>

@@ -890,7 +890,7 @@
     </div>
 </section>
 <!-- End Popular-Location Section -->
-
+                        
 @endsection
 @section('footerScripts')
 <script>
