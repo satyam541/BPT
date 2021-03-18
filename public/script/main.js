@@ -373,11 +373,10 @@ $(".enquiryJS").click(function(){
 });
 $(".enquiry-popup").click(function(event){
     var element = event.target;
-    if($(element).closest(".enquire-popup").length > 0)
+    if($(element).closest(".enquire-popup").length == 0)
     { 
-        return false;
+        $(this).hide();
     }
-    $(this).hide();
 });
 // End pop-up//
 
@@ -539,12 +538,11 @@ $('#scroll').click(function(){
     $('body').on('click',function(event){
         var element = event.target;
         
-        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup, .enquiry-popup").length > 0)
+        if($(element).closest("#dropdown-menu , #aboutdropdown, .popup, .open-popup, .enquiry-popup").length == 0)
         { 
-            return false;
+            $("#aboutdropdown").removeClass('active');
+            $('#dropdown-menu').slideUp();
         }
-        $("#aboutdropdown").removeClass('active');
-        $('#dropdown-menu').slideUp();
     });
     
     $('.about-link a').on('click', function(){
