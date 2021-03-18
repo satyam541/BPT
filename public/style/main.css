@@ -1265,7 +1265,6 @@ input[type=number] {
     font-size: 16px;
   }
   .cookie-div {
-    bottom: 0px;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 2rem;
@@ -1934,6 +1933,9 @@ input[type=number] {
     margin-right: 0;
     margin-left: 5px;
   }
+  .cookie-div {
+    bottom: 0;
+  }
   .banner::before {
     height: 56%;
   }
@@ -1946,7 +1948,7 @@ input[type=number] {
   .footer {
     background: linear-gradient(0deg, #1C2848 80%, #FFFFFF 48%);
     padding: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
   }
   .footer .content {
     width: 25%;
