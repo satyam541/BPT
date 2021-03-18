@@ -7626,6 +7626,10 @@ input[type=number] {
 .management .management-container {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+}
+.management .management-container:first-child {
+  margin-top: 0;
 }
 .management .management-container .heading {
   margin-bottom: 0;
@@ -7641,6 +7645,7 @@ input[type=number] {
 .management .bundle-content,
 .management .bundle-click {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
@@ -7649,12 +7654,17 @@ input[type=number] {
 }
 .management .bundle-content span,
 .management .bundle-click span {
-  width: 48%;
-  text-align: center;
+  width: 100%;
+  color: #0064D8;
   font-weight: bold;
 }
+.management .bundle-content .buttons,
+.management .bundle-click .buttons {
+  justify-content: flex-start;
+}
 .management h3 {
-  width: 48%;
+  width: 100%;
+  margin-bottom: 0.5rem;
   font-size: 18px;
 }
 .management ul {
@@ -7679,11 +7689,12 @@ input[type=number] {
   content: '';
   position: absolute;
   background-image: url(../img/offer/star.svg);
+  background-repeat: no-repeat;
   background-size: contain;
   height: 15px;
   width: 15px;
   left: 0;
-  top: 2px;
+  top: 0.5px;
 }
 .recommend {
   padding: 3rem 1.5rem;
@@ -7866,8 +7877,17 @@ input[type=number] {
   .management .bundle-click {
     width: 48%;
   }
+  .management .bundle-content {
+    flex-direction: row;
+  }
+  .management .bundle-content span {
+    width: 48%;
+    text-align: right;
+  }
   .management h3 {
     min-height: 72px;
+    width: 48%;
+    margin-bottom: 0;
   }
   .management ul {
     width: 100%;
@@ -7884,7 +7904,7 @@ input[type=number] {
     align-items: center;
   }
   .recommend p {
-    width: 70%;
+    width: 65%;
   }
   .recommend input {
     width: 35%;
@@ -7892,7 +7912,7 @@ input[type=number] {
   }
   .recommend .buttons {
     margin-top: 0;
-    width: 24%;
+    width: 40%;
     justify-content: flex-end;
   }
   .new-bundle {
@@ -7912,7 +7932,7 @@ input[type=number] {
     right: 0px;
     border-radius: 15px;
     padding: 1.5rem;
-    width: 89%;
+    width: 92%;
   }
   .new-bundle .info-us .info-list {
     flex-direction: row;
@@ -7941,7 +7961,7 @@ input[type=number] {
     margin-bottom: 0;
   }
   .pass .pass-content:last-child .btn-blue {
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 18px;
   }
   .pass .pass-content::before {
@@ -7957,7 +7977,7 @@ input[type=number] {
     z-index: -1;
   }
   .pass p {
-    min-height: 220px;
+    min-height: 242px;
   }
 }
 @media (min-width : 1024px) {
@@ -7979,9 +7999,6 @@ input[type=number] {
   .bundle .top-bundles {
     margin-top: 0;
     width: 45%;
-  }
-  .bundle .top-bundles img {
-    width: 85%;
   }
   .management .bundle-info {
     width: 48%;
@@ -8010,6 +8027,7 @@ input[type=number] {
     padding: 1rem 1.5rem;
     right: 0;
     top: 0;
+    text-align: center;
   }
   .management h3 {
     width: 62%;
@@ -8033,7 +8051,7 @@ input[type=number] {
     margin: 0;
   }
   .new-bundle .info-us .info-content {
-    width: 85%;
+    width: 88%;
   }
   .new-bundle .latest-bundles {
     order: 2;
@@ -8062,6 +8080,12 @@ input[type=number] {
   }
   .bundle .top-bundles {
     width: 40%;
+  }
+  .bundle .top-bundles img {
+    width: 85%;
+  }
+  .bundle .bundles-info {
+    justify-content: center;
   }
   .bundle .buttons {
     margin-top: 2rem;
