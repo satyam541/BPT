@@ -159,7 +159,7 @@ class CartController extends Controller
         Cart::update($rowId,$quantity);
         $result['quantity'] = $quantity;
         $result['price']    = $cartItem->price;
-        $result['total']    = Cart::subtotal(0,'','');
+        $result['total']    = country()->currency_symbol.Cart::subtotal(0,'','');
 
         return json_encode($result);
     }

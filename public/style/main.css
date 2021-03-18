@@ -330,6 +330,23 @@ input[type=number] {
   z-index: 9999;
   width: 230px;
 }
+.input-error ::-webkit-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error :-ms-input-placeholder {
+  /* Edge */
+  color: red !important;
+}
+.input-error span .black {
+  display: none;
+}
+.input-error span .red {
+  display: flex !important;
+}
+.input-error select option:first-child::selection {
+  color: red;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -355,20 +372,6 @@ input[type=number] {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-}
-.form .form-input .input-error ::-webkit-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error :-ms-input-placeholder {
-  /* Edge */
-  color: red;
-}
-.form .form-input .input-error span .black {
-  display: none;
-}
-.form .form-input .input-error span .red {
-  display: flex;
 }
 .form .form-consent {
   display: flex;
@@ -2615,6 +2618,7 @@ input[type=number] {
   width: 20%;
   font-weight: 700;
   color: #F2F2F2;
+  animation: glow 5s linear infinite;
 }
 .locations .location-name img {
   width: 30px;
@@ -2634,19 +2638,6 @@ input[type=number] {
 .locations .location-name p a {
   font-size: 18px;
   font-weight: bold;
-}
-.locations .location-name:hover {
-  background: linear-gradient(143deg, #0064d8 0%, #0064d8 77%, #2047af 78%);
-}
-.locations .location-name:hover span,
-.locations .location-name:hover p {
-  color: #FFFFFF;
-}
-.locations .location-name:hover .blue {
-  display: none;
-}
-.locations .location-name:hover .white {
-  display: flex;
 }
 .locations .buttons {
   width: 100%;
