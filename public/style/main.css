@@ -11452,7 +11452,7 @@ input[type=number] {
   background-color: #FFFFFF;
   margin-top: 2rem;
 }
-.result .result-info .not-found {
+.result .not-found {
   padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -11460,12 +11460,12 @@ input[type=number] {
   background-color: #FFFFFF;
   border: 4px solid #F2F2F2;
 }
-.result .result-info .not-found p {
+.result .not-found p {
   text-align: center;
   margin-top: 0.5rem;
   font-weight: 500;
 }
-.result .result-info .not-found p a {
+.result .not-found p a {
   color: #0064D8;
   font-weight: 900;
 }
