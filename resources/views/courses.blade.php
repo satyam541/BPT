@@ -52,7 +52,7 @@
                 <div class="heading">
                     <h2>Course <span>Introduction</span></h2>
                 </div>
-                <div class="intro-para">{!! $selectedCourse->detail !!}</div>
+                <div class="intro-para">{!! replaceVar($selectedCourse->detail) !!}</div>
             </div>
         </div>
     </section>
