@@ -84,7 +84,7 @@ if (!function_exists('encodeUrlSlug')) {
         function menu_data()
         {
             $data['categories']     =   Category::has('popular')->has('topics.courses')
-                                                    ->select('id', 'name', 'display_order', 'published')
+                                                    ->select('id', 'name','image','icon', 'display_order', 'published')
                                                     ->where('published', 1)
                                                     ->orderBy('display_order')
                                                     ->limit(8)

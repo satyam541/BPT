@@ -239,12 +239,20 @@
         <span class="search-close"><img src="{{ url('img/master/cross.svg') }}" alt="name"></span>
             <h2>Search our courses and solutions</h2>
             <div class="search">
-                <input type="text" placeholder="Search your course here...." autocomplete="off"
+                <input type="text" placeholder="Search your course..." autocomplete="off"
                     class="auto-complete-course auto-redirect">
                 <button onclick="getquery(this)">
-                    Search
+                    Search<img src="{{ url('img/master/search-icon.svg') }}" alt="search-icon">
                 </button>
             </div>
+            <p>Or select from our popular topics</p>
+            <ul>
+                <li><a>PRINCE2®</a></li> 
+                <li><a>ITIL®</a></li>
+                <li><a>Lean Six Sigma</a></li>
+                <li><a>Agile<a></li>
+                <li><a>Scrum</a></li>
+            </ul>
         </form>
     </div>
     <div class="scene">

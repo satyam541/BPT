@@ -110,8 +110,8 @@
                     <h3>Categories</h3>
                     @foreach($categories as $category)
                     <a data-target="category_{{$category->id}}">
-                        <span><img src="{{url('img/master/analytics.svg')}}" alt="analytics" class="white">
-                            <img src="{{url('img/master/analytics-blue.svg')}}" alt="analytics-blue" class="blue">
+                        <span><img src="{{$category->getIconPath()}}" alt="analytics" class="white">
+                            <img src="{{$category->getImagePath()}}" alt="analytics-blue" class="blue">
                         </span>
                         <p>{{$category->name}}</p>
                     </a>
@@ -164,8 +164,16 @@
             <div class="search">
                 <input type="text" placeholder="Search your course here...."  autocomplete="off" class="auto-complete-course auto-redirect">
                 <button  onclick="getquery(this)">
-                    Search
+                    Search<img src="{{ url('img/master/search-icon.svg') }}" alt="search-icon">
                 </button>
-            </div>     
+            </div>
+            <p>Or select from our popular topics</p>
+            <ul>
+                <li><a>PRINCE2®</a></li> 
+                <li><a>ITIL®</a></li>
+                <li><a>Lean Six Sigma</a></li>
+                <li><a>Agile<a></li>
+                <li><a>Scrum</a></li>
+            </ul>     
     </form>
 </div>
