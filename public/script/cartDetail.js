@@ -54,6 +54,11 @@ function submitCustomerForm()
                
                 $.each(errors,function(index,value){
                 
+               
+                    if(index=="phone")
+                    {  
+                        cartForm.find(".telephone").attr('title',value).closest('.input-container').addClass('input-error');
+                    }
                 
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
@@ -94,7 +99,7 @@ function submitBillingForm()
             {
                 var response = error.responseJSON;
                 var errors = response.errors;
-                console.log(errors,response);
+                // console.log(errors,response);
                 $.each(errors,function(index,value){
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
@@ -167,6 +172,11 @@ function submitDelegateForm()
                 var response = error.responseJSON;
                 var errors = response.errors;
                 $.each(errors,function(index,value){
+       
+                    if(index=="phone")
+                    { 
+                        cartForm.find(".telephone").closest('.input-container').addClass('input-error');
+                    }
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });
             }

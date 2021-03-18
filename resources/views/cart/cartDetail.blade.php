@@ -177,7 +177,7 @@
                                 <div class="input-container input-card">
                                     <span><img src="{{ url('img/master/name-black.svg') }}" alt="name" class="black">
                                         <img src="{{ url('img/master/name-red.svg') }}" alt="name-red" class="red"></span>
-                                    <select name="cardtype" id="debit-card" class="inputcard_fees_in_percent">
+                                    <select name="cardtype" id="debit-card" class="inputcard_fees_in_percent  inputcardtype">
                                         <option value=""> Choose your card type * </option>
                                         @foreach($paymentCards as $paymentCard)
                                         <option value="{{ $paymentCard->id }}">{{ $paymentCard->card }}</option>
@@ -251,7 +251,7 @@
                                                 <img src="{{ url('img/master/province-red.svg') }}" alt="province-red"
                                                     class="red"></span>
                                             <input type="text" name="province" id="province" placeholder="Province*"
-                                                autocomplete="off">
+                                                autocomplete="off" class="inputprovince">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/pin-black.svg') }}" alt="pin-black"

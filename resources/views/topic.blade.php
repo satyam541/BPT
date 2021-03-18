@@ -132,10 +132,12 @@
                 @endif
                 </ul>
                 <div class="tab-content tab-common" id="course">
-                        @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                        
+                        {{-- @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                         --}}
                     <div class="overview-content" id="coursecontent">
-                        <h2>Topic Content</h2>
-                        <br>
+
+                    {!! $topic->detail !!}
+                        {{-- <h2>Topic Content</h2> --}}
+                        {{-- <br>
                         @if ($content->summary!=null)
                             <h3>Summary</h3>
                             <p>{!!$content->summary!!}</p>
@@ -164,15 +166,15 @@
                         @if ($content->what_will_you_learn!=null)
                         <h3>What Will You Learn</h3>
                         <p>{!!$content->what_will_you_learn!!}</p>
-                        <br> 
-                    @endif
+                        <br>  --}}
+                    {{-- @endif --}}
                     </div>
-                    <div class="buttons">
+                    {{-- <div class="buttons">
                         <a href="#coursecontent" class="btn-blue coursecontent">
                             <span class="text">Show More</span>
                         </a>
-                    </div>
-                    @endif
+                    </div> --}}
+                    {{-- @endif --}}
                 </div>
                 <div class="tab-content tab-common" id="overview">
                     @if ($content->overview!=null)                        
