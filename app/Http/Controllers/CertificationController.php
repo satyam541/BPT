@@ -17,7 +17,7 @@ class CertificationController extends Controller
             $meta['keyword'] = $pageDetail->where('sub_section','keywords')->first()->heading; 
             metaData($meta);
         }
-        $data['certifications']=Certification::with('topic')->get();
+        $data['certifications']=Certification::with('topics')->get();
         $data['pageDetail'] = PageDetail::getContent('certification');
         return view('certification',$data);
     }

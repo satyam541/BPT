@@ -64,7 +64,7 @@ class CertificationController extends Controller
         $certification = new Certification();
         $certification['name']          = $input['name'];
         $certification['tka_name']      = $input['tka_name'];
-        $certification['slug']          = '/certification-programmes'.'/'.encodeUrlSlug($input['slug']);
+        $certification['slug']          = encodeUrlSlug($input['slug']);
         $certification['is_published']  = isset($input['is_published']) ? 1: 0;
         
         $count = Certification::count();
@@ -100,7 +100,7 @@ class CertificationController extends Controller
         $certification      = Certification::find($request->id);
         $certification['name']          = $input['name'];
         $certification['tka_name']      = $input['tka_name'];
-        $certification['slug']          = '/certification-programmes'.'/'.encodeUrlSlug($input['slug']);
+        $certification['slug']          = encodeUrlSlug($input['slug']);
         $certification['is_published']  = isset($input['is_published']) ? 1: 0;
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
