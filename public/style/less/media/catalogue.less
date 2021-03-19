@@ -80,7 +80,7 @@
         .category-content {
             width: 46%;
             &:first-child {
-                margin-top: 2rem;
+                margin-top: 1.5rem;
             }
             h3 {
                 min-height: 50px;
@@ -200,11 +200,15 @@
         background-size: 100% 40%;
         background-position: bottom left;
         .category-list{
-            justify-content: space-between;
+            justify-content: center;
         }
         .category-content {
             padding: 1.5rem;
+            margin-right: 2rem;
             width: 22%;
+            &:nth-child(4n),&:last-child{
+                margin-right: 0;
+            }
             h3 {
                 min-height: 78px;
             }
@@ -282,6 +286,7 @@
             width: calc(100% - 48px);
         }
         .building,.caller{
+            width: auto;
             height: 270px;
         }
     }
@@ -316,8 +321,18 @@
     // Start Category Section
     .category {
         padding: @sectionPadding-xl;
+        .category-list{
+           
+           
+        }
         .category-content {
-            width: 18%;
+            width: 17%;
+            &:nth-child(4n){
+                margin-right: 2rem;
+            }
+            &:nth-child(5n){
+                margin-right: 0;
+            }
         }
     }
     // End Category Section
