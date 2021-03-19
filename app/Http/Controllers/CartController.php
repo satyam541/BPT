@@ -369,17 +369,17 @@ class CartController extends Controller
         $result['rowId'] = $rowId; 
         $result['rowIds'] = $rowIds;
 
-        // $customerDetail                     = $billingDetail->customer;
-        // $mailData['orderDetail']            = $order->load('lineItems','country');
-        // $mailData['billingDetail']          = $billingDetail->load('country');
-        // $mailData['customerDetail']         = $customerDetail;
-        // $mailData['type']                   = "booking";        
-        // $data['enquiry']    = $mailData;
-        // $view               = \View::make('email.cartOrder',$mailData);
-        // $mailData['emailsent'] = $view->render();
-        // MakeJWTEnquiry($mailData);
+        $customerDetail                     = $billingDetail->customer;
+        $mailData['orderDetail']            = $order->load('lineItems','country');
+        $mailData['billingDetail']          = $billingDetail->load('country');
+        $mailData['customerDetail']         = $customerDetail;
+        $mailData['type']                   = "booking";        
+        $data['enquiry']    = $mailData;
+        $view               = \View::make('emails.cartOrder',$mailData);
+        $mailData['emailsent'] = $view->render();
+        MakeJWTEnquiry($mailData);
 
-        // Mail::to($customerDetail->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));
+        Mail::to($customerDetail->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));
 
         return json_encode($result);
     }
@@ -581,8 +581,8 @@ class CartController extends Controller
         $mailData['orderDetail'] = $order;
         //Mail::to($customer->email)->cc("dheeraj.arora@theknowledgeacademy.com")->send(new OrderMail($mailData));
         if(config('app.env') != "local"){
-        Mail::to($customer->email)->cc(config('mail.from.address'))->bcc("enquiries@theknowledgeacademy.com")->send(new OrderMail($mailData));
-        MakeJWTEnquiry($mailData);
+            Mail::to("enquiries@bestpracticetraining.com")->bcc("bpt@theknowledgeacademy.com")->cc($customer->email)->send(new OrderMail($mailData));
+            MakeJWTEnquiry($mailData);
         }
         
         return view('cart.response',$data);

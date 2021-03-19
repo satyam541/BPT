@@ -48,16 +48,16 @@
 
                                 <div class="form-group">
                                     {{ Form::label('topic_id', 'Topic') }}
-                                    {{ Form::select('topic_id', $list['topics'], $course->topic_id, ['tabindex' => '-1', 'class' => 'form-control selectJS', 'id' => 'topicName', 'placeholder' => 'Choose one']) }}
-
+                                    {{ Form::select('topic_id', $list['topics'], $course->topic_id, ['tabindex' => '-1', 'class' => 'form-control selectJS topicName', 'placeholder' => 'Choose one']) }}
+                                    
                                 </div>
                                 <div class="form-group ">
                                     <label for=>Category Slug</label> / 
                                     <label for=>Topic Slug</label> / 
                                     <label for=>Course Slug</label>
                                     <br>
-                                    <input type="text" name="category_slug" value= "{{$slugs[0]}}" style="width: 21%"> / 
-                                    <input type="text" name="topic_slug" value= "{{$slugs[1]}}" style="width: 21%"> / 
+                                    <input type="text" name="category_slug" value= "{{$slugs[0]}}" id="category" style="width: 21%"> / 
+                                    <input type="text" name="topic_slug" value= "{{$slugs[1]}}" id="topic" style="width: 21%"> / 
                                     <input type="text" name="course_slug" value= "{{$slugs[2]}}" style="width: 21%">
                                 </div>
                                 
@@ -179,6 +179,9 @@
 
     <script>
         $(document).ready(function() {
+            @if(!$course->id)
+            $('.topicName').attr('id','topicName');
+            @endif
             $('#onlinePrice').hide();
             $('.is_online').change(function() {
                 if ($(this).is(':checked')) $('#onlinePrice').show();
@@ -197,7 +200,26 @@
              $('#removeimage').hide();
             @endif
  
+            $('#topicName').on('change',function(){
+            categorySlug();
         });
+        });
+        
+        function categorySlug(){
+            topic=$('#topicName').val();
+            $.ajax({
+                url:"{{route('categoryName')}}",
+                type:'post',
+                data:{topic_id:topic},
+                headers: {
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                  },
+                success:function(response){
+                    $('#category').val(response[0]);
+                    $('#topic').val(response[1]);
+                }
+            });
+        }
         function removeImage()
         {
             $('#removeimagetxt').val('removed');

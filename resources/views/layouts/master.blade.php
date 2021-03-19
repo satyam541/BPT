@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('style/fontawesome.css') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
 
     @yield('header')
 </head>
