@@ -8,7 +8,7 @@ use App\Models\PageDetail;
 class CategoryController extends Controller
 {
     public function index(Request $request){
-        $category=Category::with('categoryContent','topics')->where('reference','/'.$request->category)->first();
+        $category=Category::with('categoryContent','topics')->where('reference',$request->category)->first();
         $category->loadContent();
         if(!empty($category))
         {
