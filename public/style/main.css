@@ -333,6 +333,9 @@ input[type=number] {
   z-index: 9999;
   width: 230px;
 }
+.input-error {
+  border: 1px solid red !important;
+}
 .input-error ::-webkit-input-placeholder {
   /* Edge */
   color: red !important;
@@ -425,6 +428,7 @@ input[type=number] {
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   width: 100%;
+  border: 1px solid #F6F6F6;
 }
 .input-container span {
   display: flex;
@@ -5259,6 +5263,7 @@ input[type=number] {
 }
 .doorstep .input-container {
   background-color: #4B5773;
+  border: 1px solid #15213a;
 }
 .doorstep .input-container .phonecode-field span {
   background-color: transparent;
@@ -9458,6 +9463,7 @@ input[type=number] {
 }
 .training .onsite-block .onsite-form .input-container {
   background-color: #424E6E;
+  border: 1px solid #1C2848;
 }
 .training .onsite-block .onsite-form .input-error ::placeholder {
   color: red;
