@@ -43,7 +43,7 @@ function submitCustomerForm()
             $('#stepOne').hide().removeClass('step-active'); 
             $('#one').addClass('number-active').removeClass('blue-active');  
             $('#two').addClass('blue-active');  
-          
+            $('#change').text("test");          
         },
         error: function(error){
            
