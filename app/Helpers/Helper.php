@@ -269,6 +269,10 @@ if (!function_exists('encodeUrlSlug')) {
             $country_name = country()->name;
             $country_code = country()->country_code;
             $content = str_replace('{countryname}', $country_name, $content);
+            if($country_code == Country::getDefault())
+            {
+                $content = str_replace('/{cc}/', '/', $content);    
+            }
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }
