@@ -233,7 +233,7 @@
             @php unset($pageDetail->delivery_methods['delivery_content']) @endphp
             <div class="delivery-list">
                 @foreach ($pageDetail->delivery_methods as $deliveryMethods)
-                    <a href="javascript:void(0);" class="item open-popup enquiryJS">
+                    <a href="javascript:void(0);" class="item open-popup enquiryJS" data-quote="Enquire for - {{$deliveryMethods->heading}}">
                         <span>
                         <img src="{{$deliveryMethods->getImagePath()}}" alt="{{$deliveryMethods->image_alt}}" class="black-icon">
                         <img src="{{$deliveryMethods->getIconPath()}}" alt="{{$deliveryMethods->icon_alt}}" class="white-icon">

@@ -139,16 +139,8 @@
 
 <script>
  $(document).ready( function() {
-        $("#title").on('input',function(){
-        updateSlug();
-        });
-        function updateSlug()
-{
-    var article = $("#title").val();
-    var slug = convertUrl(article);
-    $("#reference").val(slug);
-    
-}
+
+
 $('#undoremoveimage').hide();
             @if($article['image'] == null)
              $('#removeimage').hide();

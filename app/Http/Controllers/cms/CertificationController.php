@@ -9,9 +9,18 @@ use App\Models\Course;
 use App\Models\CertificationTopic;
 use App\Http\Requests\cms\CertificationRequest;
 use App\Http\Requests\cms\CertificationTopicRequest;
-
+use Carbon\Carbon;
 class CertificationController extends Controller
 {
+    private $Image_prefix;
+    private $Icon_prefix;
+
+    public function __construct()
+    {
+        $this->Image_prefix = "certificationImage";
+        $this->Icon_prefix  = "certificationIcon";
+		// $this->middleware('access:role,insert')->only('insertRole');
+    }
     public function index()
     {
         $certifications = Certification::all();
@@ -55,12 +64,22 @@ class CertificationController extends Controller
         $certification = new Certification();
         $certification['name']          = $input['name'];
         $certification['tka_name']      = $input['tka_name'];
-        $certification['slug']          = $input['slug'];
+        $certification['slug']          = encodeUrlSlug($input['slug']);
         $certification['is_published']  = isset($input['is_published']) ? 1: 0;
         
         $count = Certification::count();
         $certification['position']      = $count + 1;
+        if($request->hasFile('image')){
+            $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($certification->image_path), $imageName);
+            $certification->image = $imageName;
+        }
 
+        if($request->hasFile('icon')){
+            $imageName = $this->Icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+            $request->file('icon')->move(public_path($certification->icon_path), $imageName);
+            $certification->icon = $imageName;
+        }
         $certification->save();
         return redirect()->route('certificationList')->with('success','Successfully Added');
     }
@@ -81,9 +100,19 @@ class CertificationController extends Controller
         $certification      = Certification::find($request->id);
         $certification['name']          = $input['name'];
         $certification['tka_name']      = $input['tka_name'];
-        $certification['slug']          = $input['slug'];
+        $certification['slug']          = encodeUrlSlug($input['slug']);
         $certification['is_published']  = isset($input['is_published']) ? 1: 0;
-        
+        if($request->hasFile('image')){
+            $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path($certification->image_path), $imageName);
+            $certification->image = $imageName;
+        }
+
+        if($request->hasFile('icon')){
+            $imageName = $this->Icon_prefix.Carbon::now()->timestamp.'.'.$request->file('icon')->getClientOriginalExtension();
+            $request->file('icon')->move(public_path($certification->icon_path), $imageName);
+            $certification->icon = $imageName;
+        }
         $certification->update();
         return redirect()->route('certificationList')->with('success','Successfully Updated');
     }

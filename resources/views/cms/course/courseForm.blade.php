@@ -178,9 +178,6 @@
                 if ($(this).is(':checked')) $('#onlinePrice').show();
                 else $('#onlinePrice').hide();
             }).change();
-            $("#name,#topicName").on('input', function() {
-                updateSlug();
-            });
 
             $(".js-example-basic-multiple").select2({
                 tags: true,
@@ -211,18 +208,7 @@
             $('#removeimage').show();
             $('#undoremoveimage').hide();
         }
-        function updateSlug() {
-            var location = $("#name").val();
-            var slug = '/' + convertUrl(location);
-            var selectedTopic = $('#topicName').select2("val");
-            var topics = <?php echo json_encode($list['slugs']); ?>;        if (selectedTopic in topics) {
-                topicslug = topics[selectedTopic];
-                slug = topicslug + slug;
-            }
-
-            $("#reference").val(slug);
-
-        }
+        
 
     </script>
 

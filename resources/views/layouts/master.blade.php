@@ -85,7 +85,7 @@
                                         href="{{ route('blogDetail', ['blog' => $blog->reference]) }}">{{ $blog->title }}</a>
                                     <span>
                                         <img src="{{ url('img/master/time.svg') }}" alt="time">
-                                        <p class="date">{{ $blog->post_date }}</p>
+                                        <p class="date">{{ $blog->publish_date->format('d M, Y') }}</p>
                                     </span>
                                 </li>
                             @endforeach
@@ -247,11 +247,9 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                <li><a>PRINCE2®</a></li> 
-                <li><a>ITIL®</a></li>
-                <li><a>Lean Six Sigma</a></li>
-                <li><a>Agile<a></li>
-                <li><a>Scrum</a></li>
+                @foreach (topicPopular()->take(5) as $popularTopic)
+                        <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
+                @endforeach
             </ul>
         </form>
     </div>
@@ -459,13 +457,12 @@ $.ajax({
     timeout: 90000,
     global: false,
     beforeSend: function(){
-        if($('form#thank-you').length < 0)
-        {
+       
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
                 '{{ route('thanks') }}').html(input);
             $('body').append(form);
-        }
+        
         $('div.scene').show();
     },
     success: function(response) {

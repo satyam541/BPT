@@ -36,7 +36,8 @@ class EnquiryRequest extends FormRequest
             // 'email'         =>  ['required','email:rfc'],
             'course'        =>  'sometimes|required',
             'delegates'     =>  'sometimes|required',        
-            'time'          =>  'sometimes|required'
+            'time'          =>  'sometimes|required',
+            'company'       =>  'sometimes|required', 
         ];
  
    
@@ -62,7 +63,8 @@ class EnquiryRequest extends FormRequest
             'email'=> 'Email',
             'delegates' => 'Number of Delegates',
             'course'=>'Course',
-            'time'=> 'Preferred Time'
+            'time'=> 'Preferred Time',
+            'company'=> 'Company',
             
         ];
     }
