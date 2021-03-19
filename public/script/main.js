@@ -363,9 +363,12 @@ $('.blog-review').owlCarousel({
 //Start pop-up//
 $(".open-popup").on("click", function(){
     $(".enquiry-popup").css("display","flex");
+    $("body").addClass("overflow"); 
+    
 });
 $(".cross").on("click", function(){
     $(".enquiry-popup").css("display","none");
+    $("body").removeClass("overflow"); 
 });
 $(".enquiryJS").click(function(){
     var quote = $(this).data('quote');

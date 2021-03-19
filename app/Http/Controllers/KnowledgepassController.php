@@ -25,7 +25,7 @@ class KnowledgepassController extends Controller
         // // ->get();
       
         
-        return view('knowledge-pass',$data);
+        return view('knowledge-pass');
 
     }
 }

@@ -29,7 +29,6 @@ class BillingRequest extends FormRequest
             'firstname'     => 'required',
             'address1'      => 'required',
             'city'          => 'required',
-            'province'      => 'required',
             'country'       => 'required',
             'paymentmethod' => 'required',
             'postcode'      => 'required',
