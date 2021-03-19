@@ -3081,10 +3081,12 @@ input[type=number] {
     width: 70%;
     line-height: 1.4;
   }
+  .courses .courses-list {
+    justify-content: center;
+  }
   .courses .course-name {
     width: 31%;
     margin-right: 2rem;
-    justify-content: center;
   }
   .courses .course-name:nth-child(3n),
   .courses .course-name:last-child {
