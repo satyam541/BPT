@@ -247,11 +247,9 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                <li><a>PRINCE2®</a></li> 
-                <li><a>ITIL®</a></li>
-                <li><a>Lean Six Sigma</a></li>
-                <li><a>Agile<a></li>
-                <li><a>Scrum</a></li>
+                @foreach (topicPopular()->take(5) as $popularTopic)
+                        <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
+                @endforeach
             </ul>
         </form>
     </div>
@@ -560,8 +558,8 @@ $.ajax({
                     var li;
 
                     if (item.topic.name != currentTopic) {
-                        ul.append("<li class='ui-autocomplete-category'>" + item.topic
-                            .name + "</li>");
+                        ul.append("<li class='ui-autocomplete-category'><a class='ui-autocomplete-category' href="+item.topic.url+">" + item.topic
+                            .name + "</a></li>");
                         currentTopic = item.topic.name;
                     }
                     li = that._renderItemData(ul, item);

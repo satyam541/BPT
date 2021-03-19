@@ -12351,10 +12351,11 @@ input[type=number] {
     justify-content: space-between;
   }
   .category .category-content {
+    padding: 1.5rem;
     width: 22%;
   }
   .category .category-content h3 {
-    min-height: 100px;
+    min-height: 78px;
   }
   .category-enquire {
     background: url(../img/catalogue/have-bg.png), linear-gradient(#0064D8, #1C2848);
