@@ -614,7 +614,7 @@
                                     <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
                                         <img src="{{url('img/master/house-red.svg')}}" alt="house-red"
                                             class="red"></span>
-                                    <input type="text" name="company" id="address" placeholder="Company"
+                                    <input type="text" name="company" id="address" placeholder="Company Name*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container">
