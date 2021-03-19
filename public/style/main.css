@@ -510,9 +510,6 @@ input[type=number] {
   /* Edge */
   color: #C0C0C0;
 }
-.input-container:focus {
-  border: 1px solid #002353;
-}
 .message span {
   align-items: flex-start;
 }
@@ -2144,6 +2141,13 @@ input[type=number] {
   .tooltips li:hover img {
     transform: rotate(360deg);
     transition: all 1s;
+  }
+  .tooltips li:hover:last-child {
+    -webkit-transform: translate(134px, 0);
+    -moz-transform: translate(134px, 0);
+    -ms-transform: translate(134px, 0);
+    -o-transform: translate(134px, 0);
+    transform: translate(134px, 0);
   }
   .tooltips a {
     display: flex;
