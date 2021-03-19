@@ -131,6 +131,10 @@
                     @endif
                 @endif
                 </ul>
+
+                <div  class="tab-overview" id="tab-overview">
+
+
                 <div class="tab-content tab-common topic-intro" id="course">
                         {{-- @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                         --}}
                     <div class="overview-content" id="coursecontent">
@@ -213,6 +217,7 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
                 </div>
             </div>
         </div>
