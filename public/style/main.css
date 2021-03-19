@@ -510,6 +510,9 @@ input[type=number] {
   /* Edge */
   color: #C0C0C0;
 }
+.input-container:focus {
+  border: 1px solid #002353;
+}
 .message span {
   align-items: flex-start;
 }
@@ -3180,6 +3183,7 @@ input[type=number] {
   .facts .facts-container {
     flex-direction: row;
     justify-content: space-between;
+    align-content: center;
   }
   .facts .fact-content {
     width: 30%;
