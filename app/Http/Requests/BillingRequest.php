@@ -27,7 +27,6 @@ class BillingRequest extends FormRequest
     {
            return[
             'firstname'     => 'required',
-            'lastname'      => 'required',
             'address1'      => 'required',
             'city'          => 'required',
             'province'      => 'required',

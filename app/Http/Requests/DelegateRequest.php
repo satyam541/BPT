@@ -25,24 +25,23 @@ class DelegateRequest extends FormRequest
     {
         return [
             'firstname'     => 'required',
-            'lastname'     => 'required',
-            'phone'     => 'required|numeric',
-            'telephone'     => 'sometimes|numeric',
+            'phone'     => 'required|min:4',
             'email'     => 'required|email',
             'postcode'  => 'sometimes'
         ];
     }
-
     public function messages()
     {
-        return [];
+        return [
+            'email.required' => ':attribute is required',
+            'phone.min' =>':attribute is required'
+        ];
     }
 
     public function attributes()
     {
         return [
             'firstname' => 'First Name',
-            'lastname' => 'Last Name',
             'phone' => 'Phone Number',
             'email' => 'email address',
             'postcode' => 'Postal Code'

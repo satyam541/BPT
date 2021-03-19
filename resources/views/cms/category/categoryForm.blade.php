@@ -125,10 +125,7 @@
 @section('footer')
     <script>
         $(document).ready(function() {
-            $("#name").on('input', function() {
-                updateSlug();
-                
-            });
+            
             $('#undoremoveimage').hide();
                 @if($category['image'] == null)
                 $('#removeimage').hide();
@@ -139,12 +136,7 @@
                 $('#removeicon').hide();
                 @endif
             
-            function updateSlug() {
-                var location = $("#name").val();
-                var slug = '/' + convertUrl(location);
-                $("#reference").val(slug);
-
-            }
+            
         });
         function removeImage()
             {

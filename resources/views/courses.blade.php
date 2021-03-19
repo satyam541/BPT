@@ -35,7 +35,7 @@
                     @endforeach
                 </ul>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                         <img src="{{ url('img/courses/email.svg') }}" alt="email">Enquire Now
                     </a>
                 </div>
@@ -126,7 +126,7 @@
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="overcontent">
                             <!-- <h2>Course Overview</h2> -->
-                            {!! $selectedCourse->overview !!}
+                            {!! replaceVar($selectedCourse->overview) !!}
                         </div>
                         <div class="buttons">
                             <a href="#overcontent" class="btn-blue overcontent">
@@ -140,7 +140,7 @@
                         <div class="overview-content" id="coursecontent">
                             <h2>Course Content</h2>
                             @if (!empty($selectedCourse->summary))
-                            {!!$selectedCourse->summary!!}
+                            {!! replaceVar($selectedCourse->summary) !!}
                             @endif
 
                         </div>
@@ -253,7 +253,7 @@
             <h2>{!! $pageDetail->overlay['heading']->heading !!}</h2>
             <p>{!! $pageDetail->overlay['heading']->content !!}</p>
             <div class="buttons">
-                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Get a Quote" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
+                <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Have a Question" data-heading="{{$selectedCourse->name}}" data-course="{{$selectedCourse->name}}" data-type="course">
                     <img src="{{ url('img/courses/question.svg') }}" alt="question">Have a Question?
                 </a>
             </div>
