@@ -534,19 +534,22 @@ $('#scroll').click(function(){
         $("#aboutdropdown").removeClass('active');
     });
 
-      //Start open search
-    
-      $('#search').click(function(){
+    //Start open search
+    $('#search').click(function(){
         $('#pop-search').addClass('open');
+        $("body").addClass("overflow");
     });
     $('#mobile-search').click(function(){
         $('#pop-mobile').addClass('open');
+        $("body").addClass("overflow");
     });
     $(".search-close").on("click", function(){
         $('#pop-mobile').removeClass('open');
+        $("body").removeClass("overflow");
     });
     $(".search-cross").on("click", function(){
         $('#pop-search').removeClass('open');
+        $("body").removeClass("overflow");
     });
     //End open search
 
