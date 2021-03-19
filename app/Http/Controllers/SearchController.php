@@ -85,7 +85,7 @@ class SearchController extends Controller
     {
         $term = $request->input('term');
 		$terms      = explode(" ",$term);
-        $courses    = Course::with('topic')->select('name as value','reference','topic_id','display_order')
+        $courses    = Course::with('topic:id,name,reference,name as value')->select('name as value','reference','topic_id','display_order')
                         ->orderBy('topic_id')
                         ->where(function($query)use($terms){
                             foreach($terms as $word)
