@@ -45,12 +45,14 @@ class CheckoutController extends Controller
         if($orderData->payment_method == 'Purchase Order') {
             // send purchase order email
             // customer detail, billing detail, order detail and type
-            $mailData['type'] = 'booking';
+            $mailData['type'] = 'incomplete';
             $mailData['customerDetail'] = $customer;
             $mailData['billingDetail'] = $billingDetail;
             $mailData['orderDetail'] = $orderData;
 
             //Mail::to($customer->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));
+            
+            Mail::to("enquiries@bestpracticetraining.com")->bcc("bpt@theknowledgeacademy.com")->cc($customer->email)->send(new OrderMail($mailData));
             
             $view               = \View::make('emails.cartOrder',$mailData);
             $mailData['emailsent'] =  $view->render();
