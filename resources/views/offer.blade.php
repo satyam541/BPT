@@ -416,8 +416,8 @@
                             <li>ITIL Continual Service Improvement</li>
                             <li>ITIL Managing Across the Lifecycle</li>
                         </ul>
-                        <a href="javascript:void(0);">ITIL Service Lifecycle Path</a>
-                        <a href="javascript:void(0);">ITIL Service Capability Path</a>
+                        <!-- <a href="javascript:void(0);">ITIL Service Lifecycle Path</a>
+                        <a href="javascript:void(0);">ITIL Service Capability Path</a> -->
                         <div class="buttons">
                         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL Expert Bundle" data-heading="ITIL Expert Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
@@ -651,26 +651,26 @@
             <div class="info-content">
                 <p>Need more information on Bundles? We're a click away</p>
                 <div class="info-list">
-                    <div class="info-list">
-                    <span>
-                        <img src="{{url('img/offer/telephone.svg')}}" alt="call us">
-                    </span>
-                    <div class="info">
-                        <p>Call Us:</p>
-                        <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
+                    <div class="info-item">
+                        <span>
+                            <img src="{{url('img/offer/telephone.svg')}}" alt="call us">
+                        </span>
+                        <div class="info">
+                            <p>Call Us:</p>
+                            <a href="tel:{{websiteDetail()->contact_number}}">{{websiteDetail()->contact_number}}</a>
+                        </div>
                     </div>
-                    </div>
-                <div class="info-list">
-                    <span>
-                        <img src="{{url('img/offer/mail.svg')}}" alt="mail">
-                    </span>
-                    <div class="info">
-                        <p>Email Us:</p>
-                        <a href="mailto:{{websiteDetail()->contact_email}}">{{websiteDetail()->contact_email}}</a>
-                    </div>
+                    <div class="info-item">
+                        <span>
+                            <img src="{{url('img/offer/mail.svg')}}" alt="mail">
+                        </span>
+                        <div class="info">
+                            <p>Email Us:</p>
+                            <a href="mailto:{{websiteDetail()->contact_email}}">{{websiteDetail()->contact_email}}</a>
+                        </div>
+                        </div>
                     </div>
                 </div>
-                    </div>
     </div>
     <div class="latest-bundles">
         <div class="heading">
