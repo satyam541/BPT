@@ -11008,7 +11008,7 @@ input[type=number] {
   background-image: url(../img/emptycart/bg.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100% 42%;
+  background-size: 100% 45%;
 }
 .order .order-heading {
   position: relative;
@@ -11103,8 +11103,8 @@ input[type=number] {
 }
 .order .order-main .course-name a {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   padding: 0.5rem;
   top: -12px;
   right: -12px;
@@ -11231,7 +11231,7 @@ input[type=number] {
     align-items: flex-start;
   }
   .order .inner-content .total-main {
-    width: 40%;
+    width: 38%;
     position: sticky;
     top: 85px;
   }
@@ -14663,6 +14663,9 @@ input[type=number] {
 .steps {
   padding: 3rem 1.5rem;
 }
+.steps label {
+  cursor: pointer;
+}
 .steps .steps-container {
   display: flex;
   flex-direction: column;
@@ -15050,6 +15053,9 @@ input[type=number] {
     background-color: #FFFFFF;
     padding: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .steps .payment-detail .form-consent {
+    align-items: center;
   }
   .steps .payment-detail .buttons {
     flex-direction: row;

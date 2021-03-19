@@ -29,12 +29,12 @@ class BillingRequest extends FormRequest
             'firstname'     => 'required',
             'address1'      => 'required',
             'city'          => 'required',
-            'province'      => 'required',
             'country'       => 'required',
             'paymentmethod' => 'required',
             'postcode'      => 'required',
             'cardtype'      => 'required_if:paymentmethod,card',
             'purchase'      => 'required_if:paymentmethod,purchase order',
+            'address2'      => 'required'
            ];  
     }
     public function messages()
