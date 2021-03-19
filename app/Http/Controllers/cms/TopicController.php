@@ -221,6 +221,7 @@ class TopicController extends Controller
         $this->authorize('create', new Topic());
         $data['topic']          = new Topic();
         $data['submitRoute']    = 'insertTopic';
+        $data['slugs']          = [0=>null,1=>null];
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list']           = $list;
@@ -232,10 +233,8 @@ class TopicController extends Controller
         $this->authorize('create', new Topic());
         $inputs                     = $request->except("_token");
         $topic                      = new Topic();
-        $category                   = Category::find($inputs['category_id'])->reference;
-        
-        
-        $topic->reference           = 'training-courses'.'/'.encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
+
+        $topic->reference           = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
         
         $topic->name                = $inputs['name'];
         $topic->tag_line            = $inputs['tag_line'];
@@ -275,6 +274,8 @@ class TopicController extends Controller
     {
         $this->authorize('update', new Topic());
         $data['topic']          = Topic::with('faqs','Popular')->find($topic);
+        $data['slugs']            = explode('/',$data['topic']->reference);
+
         $data['submitRoute']    = array('updateTopic',$data['topic']->id);
         $data['categories']     = Category::all()->pluck('name','id')->toArray();
 
@@ -301,7 +302,6 @@ class TopicController extends Controller
         $inputs                     = $request->all();
         // dd($inputs);
         $topic->name                = $inputs['name'];
-        $category                   = Category::find($inputs['category_id'])->reference;
         $topic->reference           = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
