@@ -135,7 +135,7 @@
                         {{-- @if ($content->detail||$content->summary||$content->whats_included||$content->pre_requities||$content->who_should_attend||$content->what_will_you_learn!=null)                         --}}
                     <div class="overview-content" id="coursecontent">
 
-                    {!! $topic->detail !!}
+                    {!! replaceVar($topic->detail) !!}
                         {{-- <h2>Topic Content</h2> --}}
                         {{-- <br>
                         @if ($content->summary!=null)
@@ -181,7 +181,7 @@
                     <div class="overview-content" id="overcontent">
                         <!-- <h2>Course Overview</h2> -->
                         
-                        {!!$content->overview!!}
+                        {!! replaceVar($content->overview) !!}
                         
                     </div>
                     <div class="buttons">

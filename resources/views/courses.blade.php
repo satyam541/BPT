@@ -126,7 +126,7 @@
                     <div class="tab-content tab-common" id="overview">
                         <div class="overview-content" id="overcontent">
                             <!-- <h2>Course Overview</h2> -->
-                            {!! $selectedCourse->overview !!}
+                            {!! replaceVar($selectedCourse->overview) !!}
                         </div>
                         <div class="buttons">
                             <a href="#overcontent" class="btn-blue overcontent">
@@ -140,7 +140,7 @@
                         <div class="overview-content" id="coursecontent">
                             <h2>Course Content</h2>
                             @if (!empty($selectedCourse->summary))
-                            {!!$selectedCourse->summary!!}
+                            {!! replaceVar($selectedCourse->summary) !!}
                             @endif
 
                         </div>
