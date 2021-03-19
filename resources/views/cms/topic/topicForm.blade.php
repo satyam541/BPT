@@ -48,12 +48,12 @@
 
                                 <div class="form-group">
                                     {{ Form::label('category_id', 'Category') }}
-                                    {{ Form::select('category_id', $categories, null, ['tabindex' => '-1', 'id' => 'categoryName', 'class' => 'form-control selectJS', 'placeholder' => 'Choose one']) }}
+                                    {{ Form::select('category_id', $categories, null, ['tabindex' => '-1', 'class' => 'form-control selectJS categoryName', 'placeholder' => 'Choose one']) }}
 
                                 </div>
                                 <div class="form-group ">
                                     <label for=>Category Slug</label>
-                                    <input type="text" name="category_slug" value="{{$slugs[0]}}" style="width: 21%">
+                                    <input type="text" name="category_slug" value="{{$slugs[0]}}" id="category" style="width: 21%">
                                     <label for=>Topic Slug</label>
                                     <input type="text" name="topic_slug" value="{{$slugs[1]}}" style="width: 21%">
                                 </div>
@@ -130,12 +130,31 @@
 
     <script>
         $(document).ready(function() {
-            
+            @if(!$topic->id)
+            $('.categoryName').attr('id','categoryName');
+            @endif
             $('#undoremoveimage').hide();
                 @if($topic['image'] == null)
                 $('#removeimage').hide();
                 @endif
+                $('#categoryName').on('change',function(){
+            categorySlug();
+                });
         });
+        function categorySlug(){
+            category=$('#categoryName').val();
+            $.ajax({
+                url:"{{route('categoryName')}}",
+                type:'post',
+                data:{category_id:category},
+                headers: {
+                      'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+                  },
+                success:function(response){
+                    $('#category').val(response);
+                }
+            });
+        }
         function removeImage()
             {
                 $('#removeimagetxt').val('removed');

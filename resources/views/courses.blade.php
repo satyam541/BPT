@@ -304,10 +304,10 @@
                     <div class="select-dropdown">
                         <select name="deliveryMethod">
                             <option value="">Select a Delivery Format:</option>
-                            <option value="#virtual-booking">Virtual</option>
+                            <option value="#virtual-booking">Online Instructor-led</option>
                             <option value="#classroom-booking">Classroom</option>
                             <option value="#online-booking">Online</option>
-                            <option value="#onsite-booking">Onsite</option>
+                            <option value="#onsite-booking">Online Self-paced</option>
                         </select>
                     </div>
                     <div class="buttons explore-btn">
@@ -336,12 +336,12 @@
                             <a href="#virtual-booking" class="methods" id="virtual" data-target="virtual">
                                 <img src="{{ url('img/courses/virtual-blue.svg') }}" alt="virtual" class="blue">
                                 <img src="{{ url('img/courses/virtual-gray.svg') }}" alt="virtual" class="gray">
-                                <p>Virtual</p>
+                                <p>Online Instructor-led</p>
                             </a>
                             <a href="#onsite-booking" class="methods" id="onsite" data-target="onsite">
                                 <img src="{{ url('img/courses/onsite-blue.svg') }}" alt="onsite" class="blue">
                                 <img src="{{ url('img/courses/onsite-gray.svg') }}" alt="onsite" class="gray">
-                                <p>Onsite</p>
+                                <p>Online Self-paced</p>
                             </a>
                         </div>
                     </div>

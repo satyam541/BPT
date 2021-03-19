@@ -35,10 +35,11 @@ class CheckoutController extends Controller
             $secret   	        =   "secret";
             $account            =   "GPINTGBP";
         }else{
+          
             $data['paymentUrl'] =   "https://hpp.globaliris.com/pay";
-            $merchantId         =   "knowledgeacademy";
-            $secret   	        =   "27v8GoTKLI";
-            $account            =   "PentagonWeb";
+            $merchantId         =   "bestpracticetraining";
+            $secret             =   "VYHeI2MQtS";
+            $account            =   "internet";
         }
 
          (new CartController)->clearCart($request);
