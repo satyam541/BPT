@@ -459,4 +459,5 @@ Route::post('/bundle/delete/{id}', 'BundleController@delete')->name('deleteBundl
 Route::post('/selectedcountry','CountryController@selectedCountry')->name('selectedcountry');
 
 // Course Form ajax 
-Route::post('/selected/topic','CourseController@categoryName')->name('categoryName');
+Route::post('/selected/category','TopicController@topicName')->name('categoryName');
+Route::post('/selected/topic','CourseController@categoryTopicName')->name('categoryTopicName');

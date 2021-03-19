@@ -208,7 +208,7 @@
         function categorySlug(){
             topic=$('#topicName').val();
             $.ajax({
-                url:"{{route('categoryName')}}",
+                url:"{{route('categoryTopicName')}}",
                 type:'post',
                 data:{topic_id:topic},
                 headers: {

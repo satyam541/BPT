@@ -68,7 +68,11 @@ class TopicController extends Controller
         $topic->update();
         return back()->with('success','Category linked');
     }
+    public function topicName(Request $request){
+        $category=Category::find($request->category_id)->reference;
 
+        return $category;
+    }
     public function contentList(Request $request)
     {
         $this->authorize('view', new Topic());
