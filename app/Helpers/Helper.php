@@ -232,6 +232,7 @@ if (!function_exists('encodeUrlSlug')) {
         }
     }
 
+    // function not being used anywhere
     if (!function_exists('storeVar')) {
         function storeVar($data)
         {
@@ -243,14 +244,7 @@ if (!function_exists('encodeUrlSlug')) {
                 return $savedData;
             } else {
                 if (empty($savedData[$data])) {
-                    switch ($data) {
-                        case "countryname":
-                            return country()->name;
-                            break;
-                        case "cc":
-                            return country()->country_code;
-                            break;
-                    }
+                    return NULL;
                 } else {
                     return $savedData[$data];
                 }
@@ -261,8 +255,8 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('replaceVar')) {
         function replaceVar($content)
         {
-            $country_name = storeVar('countryname');
-            $country_code = storeVar('cc');
+            $country_name = country()->name;
+            $country_code = country()->country_code;
             $content = str_replace('{countryname}', $country_name, $content);
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
