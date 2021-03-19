@@ -182,21 +182,13 @@
                 $obj.init( $(this) );
             });
         }
-        $("#name").on('input',function(){
-        updateSlug();
-    });
+    
     $('#undoremoveimage').hide();
           @if($location['image'] == null)
             $('#removeimage').hide();
           @endif
 
-    function updateSlug()
-{
-    var location = $("#name").val();
-    var slug = '/'+convertUrl(location);
-    $("#reference").val(slug);
-    
-}
+
     });
     $(document).bind("location_changed", function(event, object) {
         console.log("changed: " + $(object).attr('id') );

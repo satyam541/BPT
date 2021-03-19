@@ -48,13 +48,16 @@
 
                                 <div class="form-group">
                                     {{ Form::label('category_id', 'Category') }}
-                                    {{ Form::select('category_id', $categories, null, ['tabindex' => '-1', 'id' => 'categoryName', 'class' => 'form-control selectJS', 'onchange' => 'updateSlug()', 'placeholder' => 'Choose one']) }}
+                                    {{ Form::select('category_id', $categories, null, ['tabindex' => '-1', 'id' => 'categoryName', 'class' => 'form-control selectJS', 'placeholder' => 'Choose one']) }}
 
                                 </div>
-                                <div class="form-group">
-                                    {{ Form::label('reference', 'Reference') }}
-                                    {{ Form::text('reference', null, ['id' => 'reference', 'class' => 'form-control ']) }}
+                                <div class="form-group ">
+                                    <label for=>Category Slug</label>
+                                    <input type="text" name="category_slug" class="form-control" style="width: 21%">
+                                    <label for=>Topic Slug</label>
+                                    <input type="text" name="topic_slug" class="form-control" style="width: 21%">
                                 </div>
+                        
 
                                 <div class="form-group">
                                     {{ Form::label('tag_line', 'Tag Line') }}
@@ -127,9 +130,7 @@
 
     <script>
         $(document).ready(function() {
-            $("#name").on('input', function() {
-                updateSlug();
-            });
+            
             $('#undoremoveimage').hide();
                 @if($topic['image'] == null)
                 $('#removeimage').hide();
@@ -150,18 +151,7 @@
                 $('#undoremoveimage').hide();
             }
 
-        function updateSlug() {
-            var location = $("#name").val();
-            var slug = '/' + convertUrl(location);
-            var selectedCategory = $('#categoryName').select2("val");
-            var categories = <?php echo json_encode($categorySlugs); ?>;        if (selectedCategory in categories) {
-                categoryslug = categories[selectedCategory];
-                slug = categoryslug + slug;
-            }
-
-            $("#reference").val(slug);
-
-        }
+        
 
     </script>
 

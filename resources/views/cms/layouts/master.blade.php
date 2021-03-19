@@ -910,10 +910,10 @@
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         @php
-         
+
          if(Str::contains($error, ['has'])){
           $data = explode('The', $error );
-          $data = explode('has', $data[1]);
+          $data = explode('has', $data[0]);
          }
          elseif(Str::contains($error, ['may'])){
           $data = explode('The', $error );
