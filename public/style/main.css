@@ -12745,7 +12745,7 @@ input[type=number] {
 }
 .topic-choose .choose-progress {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 2rem;
   width: 100%;
 }
@@ -12999,12 +12999,12 @@ input[type=number] {
   margin: auto;
   width: 3px;
   height: 50%;
+  transition: 1s all;
   background-color: #0064D8;
 }
 .goals .goal-item:hover::before {
   width: 100%;
   height: 100%;
-  transition: 1s all;
   border-radius: 20px;
 }
 .goals .goal-item:hover .image {
@@ -13312,6 +13312,7 @@ input[type=number] {
   }
   .topic-choose .choose-progress {
     width: 90%;
+    justify-content: space-between;
   }
   .topic-delivery {
     background-image: url(../img/topic/delivey-bg.png);
