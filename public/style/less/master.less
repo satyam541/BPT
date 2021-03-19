@@ -361,7 +361,7 @@
       #ui-id-1 {
         max-height: 50vh;
         overflow: scroll;
-        width: 85%;
+        width: 230px;
       }
       #ui-id-2 {
         max-height: 50vh;
@@ -372,7 +372,7 @@
       #ui-id-3 {
         max-height: 50vh;
         overflow: scroll;
-        z-index: 9999;
+        z-index: 99999;
         width: 230px;
       }
       #ui-id-4 {
@@ -811,6 +811,7 @@
         -ms-transform: translate(0,-100%) scale(0,0);
         transform: translate(0,-100%) scale(0,0);
         opacity: 0;
+        z-index: 99999;
         .search-cross,.search-close{
             display: flex;
             width: 34px;
@@ -831,7 +832,7 @@
             align-items: center;
             background-color: @whiteColor;
             width: 90%;
-            height: 72%;
+            padding: 2rem 1rem;
             margin: auto;
             position: relative;
             z-index: 1;
@@ -863,7 +864,7 @@
            }
             h2{
                 color: @blackColor;
-                margin-top: 2rem;
+                margin-top: 1rem;
                 text-align: center;
                 margin-bottom: 1.5rem;
               
@@ -879,14 +880,14 @@
             }
             p{
                 margin-top: 1.5rem;
-                padding-left: 2.5rem;
                 font-weight: bold;
                 font-size: 16px;
+                text-align: center;
             }
             ul{
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: center;
                 li{
                     display: flex;
                     align-items: center;
@@ -894,8 +895,8 @@
                     background-color: @whiteColor;
                     box-shadow: @shadowLight;
                     padding: .5rem;
-                    width: 30%;
                     margin-top: 1rem;
+                    margin-right: 1rem;
                     text-align: center;
                     a{
                     font-size: 12px;
@@ -931,13 +932,11 @@
     #pop-mobile{
         .search-form{
             .search{
-                width: 85%;
+                width: 100%;
                 padding: 0.5rem;
             }
             input{
-                
             width: 60%;
- 
             }
             button {
                 width: 85px;
@@ -952,7 +951,7 @@
         -ms-transform: translate(0,0) scale(1,1);
         transform: translate(0,0) scale(1,1);
         opacity: 1;
-        z-index: 9999;
+      
     }
     //End navbar search
  
