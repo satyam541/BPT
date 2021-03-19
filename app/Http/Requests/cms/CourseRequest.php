@@ -3,7 +3,7 @@
 namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\Rules\CourseSlugRule;
 class CourseRequest extends FormRequest
 {
     /**
@@ -23,17 +23,14 @@ class CourseRequest extends FormRequest
      */
     public function rules()
     {
-        $course=request()->route('course',0);
         
-          $id = 0;
-          if(!empty($course)){
-              $id = $course->id;
-          }
           
         return [
             'name'                  => 'required|string|max:100',
             'topic_id'              => 'required',
-            'reference'             => 'required|unique:course,reference,'.$id.',id',
+            'category_slug'           => 'required',
+            'topic_slug'           => 'required',
+            'course_slug'           => ['required',new CourseSlugRule],
             'tag_line'              => 'required',
             'tka_name'              => 'required',
             'duration'              => 'required',

@@ -53,9 +53,9 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for=>Category Slug</label>
-                                    <input type="text" name="category_slug" class="form-control" style="width: 21%">
+                                    <input type="text" name="category_slug" value="{{$slugs[0]}}" style="width: 21%">
                                     <label for=>Topic Slug</label>
-                                    <input type="text" name="topic_slug" class="form-control" style="width: 21%">
+                                    <input type="text" name="topic_slug" value="{{$slugs[1]}}" style="width: 21%">
                                 </div>
                         
 

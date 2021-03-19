@@ -147,6 +147,7 @@ class CourseController extends Controller
         $this->authorize('create', new Course());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
+        $data['slugs']            = [0=>null,1=>null,2=>null];
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['course'] = new Course();
@@ -244,6 +245,7 @@ class CourseController extends Controller
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['submitRoute'] = array('updateCourse',$course->id);
+        $data['slugs']            = explode('/',$course->reference);
         $data['course'] = $course;
         return view("cms.course.courseForm",$data);
     }
