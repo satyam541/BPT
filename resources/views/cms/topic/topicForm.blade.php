@@ -38,7 +38,7 @@
                             <!-- /.card-header -->
                             <!-- form start -->
                             {{ Form::model($topic, ['route' => $submitRoute, 'files' => 'true']) }}
-                            {{-- <input type="hidden" name="id" value={{$topic->id}}/> --}}
+                            <input type="hidden" name="id" value="{{$topic->id}}"/>
                             <div class="card-body">
 
                                 <div class="form-group">

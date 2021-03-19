@@ -27,6 +27,9 @@ class TopicSlugRule implements Rule
     {
         $reference=encodeurlSlug(request()->category_slug).'/'.encodeUrlSlug(request()->topic_slug);
         $topic=Topic::where('reference',$reference)->first();
+        if(request()->id && $topic!=null){
+            return true;
+        }
         if($topic==null){
             return true;
         }
