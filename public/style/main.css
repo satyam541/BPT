@@ -10620,6 +10620,9 @@ input[type=number] {
     padding: 2.5rem 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   }
+  .training .methods {
+    width: 48%;
+  }
   .training .methods:nth-child(1),
   .training .methods:nth-child(2) {
     margin-top: 0;
