@@ -52,7 +52,7 @@ class CheckoutController extends Controller
 
             //Mail::to($customer->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));
             
-            $view               = \View::make('email.cartOrder',$mailData);
+            $view               = \View::make('emails.cartOrder',$mailData);
             $mailData['emailsent'] =  $view->render();
             MakeJWTEnquiry($mailData);
             
