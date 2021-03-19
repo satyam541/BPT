@@ -302,7 +302,7 @@ class TopicController extends Controller
         // dd($inputs);
         $topic->name                = $inputs['name'];
         $category                   = Category::find($inputs['category_id'])->reference;
-        $topic->reference           = '/'.encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
+        $topic->reference           = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
         $topic->tag_line            = $inputs['tag_line'];
         $topic->accreditation_id    = $inputs['accreditation_id'];
         $topic->accredited          = isset($inputs['accredited']) ? 1:0;

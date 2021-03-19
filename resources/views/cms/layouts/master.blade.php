@@ -904,9 +904,12 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+  
   @if ($errors->any())
+  
   <div id="toastsContainerTopRight" class="toasts-top-right fixed p-2">
     @foreach ($errors->all() as $key => $error)
+
     <div class="toast bg-yellow  fade show" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         @php
@@ -921,7 +924,9 @@
          }
          else{
           $data = explode('The ', $error);
+          if(!empty($data[1])){
           $data = explode('field ', $data[1]);
+          }
          }
         
         @endphp
