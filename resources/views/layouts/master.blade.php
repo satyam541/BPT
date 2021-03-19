@@ -85,7 +85,7 @@
                                         href="{{ route('blogDetail', ['blog' => $blog->reference]) }}">{{ $blog->title }}</a>
                                     <span>
                                         <img src="{{ url('img/master/time.svg') }}" alt="time">
-                                        <p class="date">{{ $blog->post_date }}</p>
+                                        <p class="date">{{ $blog->publish_date->format('d M, Y') }}</p>
                                     </span>
                                 </li>
                             @endforeach
