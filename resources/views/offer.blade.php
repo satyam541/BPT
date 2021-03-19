@@ -285,7 +285,7 @@
                             <li>Business Analysis Modelling Business Processes</li>
                             <li>BCS Oral Exam Workshop</li>
                         </ul>
-                        <a href="javascript:void(0);">Plus one of the four listed below</a>
+                        <!-- <a href="javascript:void(0);">Plus one of the four listed below</a> -->
                         <div class="buttons">
                             <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Business Analysis Diploma Bundle" data-heading="Business Analysis Diploma Bundle">
                                     <img src="{{url('img/offer/email.svg')}}" alt="email">
