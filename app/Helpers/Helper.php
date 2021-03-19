@@ -116,6 +116,9 @@ if (!function_exists('encodeUrlSlug')) {
             
         }
     }
+
+    // ucwords php method can be used instead
+    // this function is not being used
     if (!function_exists('capitalizeName')) {
         function capitalizeName($string)
         {
@@ -173,6 +176,8 @@ if (!function_exists('encodeUrlSlug')) {
             return $blogs;
         }
     }
+    
+    // this function is not being used
     if (!function_exists('courses')) {
         function courses()
         {
@@ -180,6 +185,9 @@ if (!function_exists('encodeUrlSlug')) {
             return $courses;
         }
     }
+
+    // number format method can directly be used
+    // this function is not being used
     if (!function_exists('formatPrice')) {
         function formatPrice($price, $decimals = 0, $decimalSeparator = null, $thousandSeparator = null)
         {
@@ -187,6 +195,7 @@ if (!function_exists('encodeUrlSlug')) {
         }
     }
 
+    // this function is not being used
     if (!function_exists('storeSelected')) {
         function storeSelected($data)
         {
@@ -194,6 +203,8 @@ if (!function_exists('encodeUrlSlug')) {
             return $string;
         }
     }
+    
+    // this function is not being used
     if (!function_exists('storeFilterData')) {
         function storeFilterData($data)
         {
