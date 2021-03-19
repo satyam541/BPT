@@ -183,8 +183,8 @@ class CourseController extends Controller
         ,$inputs);
 
         $course['is_online'] = isset($inputs['is_online']);
-        $topic=Topic::find($inputs['topic_id'])->reference;
-        $course['reference'] = $topic.'/'.encodeUrlSlug($inputs['reference']);
+        
+        $course['reference'] = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']).'/'.encodeUrlSlug($inputs['course_slug']);
 
         $online = new OnlinePrice();
 
@@ -270,8 +270,7 @@ class CourseController extends Controller
         $inputs['accredited'] = isset($inputs['accredited']);
         $inputs['published']  = isset($inputs['published']);
         $inputs['is_online']  = isset($inputs['is_online']);
-        $topic=Topic::find($inputs['topic_id'])->reference;
-        $inputs['reference']  = $topic.'/'.encodeUrlSlug($inputs['reference']);
+        $inputs['reference']  = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']).'/'.encodeUrlSlug($inputs['course_slug']);
         $course->update($inputs);
         $online = array();
 

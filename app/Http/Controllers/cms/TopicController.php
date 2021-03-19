@@ -234,7 +234,7 @@ class TopicController extends Controller
         $inputs                     = $request->except("_token");
         $topic                      = new Topic();
 
-        $topic->reference           = 'training-courses'.'/'.encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
+        $topic->reference           = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']);
         
         $topic->name                = $inputs['name'];
         $topic->tag_line            = $inputs['tag_line'];
