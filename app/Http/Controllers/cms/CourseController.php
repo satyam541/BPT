@@ -36,11 +36,13 @@ class CourseController extends Controller
         $this->Logo_prefix = "Logo";
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
-    public function selectedCountry(Request $request){
-        session(['selectedcountry'=>$request->all()]);
-        session()->save();
-        return 'done';
+    
+    public function categoryName(Request $request){
+        $topic=Topic::find($request->topic_id)->reference;
+        $slug=explode('/',$topic);
+        return $slug;
     }
+    
     public function popular(Request $request){
         $course=Course::find($request->courseId);
         if($request->checked=='checked'){
