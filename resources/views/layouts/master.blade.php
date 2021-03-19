@@ -153,7 +153,7 @@
                     <div class="input-container">
                         <span><img src="{{ url('img/master/house-black.svg') }}" alt="email" class="black">
                             <img src="{{ url('img/master/house-red.svg') }}" alt="email-red" class="red"></span>
-                        <input type="text" name="company" id="company" placeholder="Company Name"
+                        <input type="text" name="company" id="company" placeholder="Company Name *"
                             autocomplete="off">
                     </div>
                     <div class="input-container message">
@@ -171,8 +171,8 @@
                         <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" id="checkConsent" name="contactConsent">
-                        <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                        <input type="checkbox" id="popcheckConsent" name="contactConsent">
+                        <label for="popcheckConsent">By submitting this enquiry I agree to be contacted in the most
                             suitable manner (by phone or email) in order to respond to my enquiry.</label>
                     </div>
                     <div class="consent-error" style="display: none;">
@@ -180,8 +180,8 @@
                             consent to us contacting you about your enquiry</p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" name="marketing_consent" id="allowconsent">
-                        <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                        <input type="checkbox" name="marketing_consent" id="popallowconsent">
+                        <label for="popallowconsent">Click here to sign up to our email marketing, offers and
                             discounts</label>
                     </div>
                     <div id="hiddenFields">
@@ -227,7 +227,7 @@
 
     <div class="cookie-div" id="footerCookie">
         <p>To give you the best possible experience, this site uses cookies. Continuing to use this site means that you
-            agree to our use of cookies. <a>Click here to see our cookie policy</a></p>
+            agree to our use of cookies. <a href="{{ route('cookies') }}">Click here to see our cookie policy</a></p>
 
         <div class="buttons">
             <button class="btn-white" onclick="storecookie()">Ok, I Accept</button>
@@ -247,7 +247,7 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                @foreach (topicPopular()->take(5) as $popularTopic)
+                @foreach (topicPopular()->take(10) as $popularTopic)
                         <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
                 @endforeach
             </ul>

@@ -196,7 +196,7 @@ class Topic extends Model
     public function getUrlAttribute()
     {
         $reference =  $this->reference;
-        $url = 'training-courses'.'/'.$reference;
+        $url = 'training-courses/'.$reference;
         if(country()->country_code != 'gb')
         {
             $url = country()->country_code."/".$url;

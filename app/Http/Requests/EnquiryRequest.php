@@ -49,7 +49,8 @@ class EnquiryRequest extends FormRequest
     {
         return [
            
-            'phone.min' =>':attribute is required'
+            'phone.min' =>':attribute is required',
+            'company.required'   =>':attribute is required',
         ];
     }
 

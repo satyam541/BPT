@@ -62,11 +62,13 @@
 <section class="flex-container result">
     <div class="container">
         <div class="result-container">
+            @if(empty($query))
             <div class="heading">
                 @if($resultCount != 0 && $query !="")
                 <h2>{{$resultCount}} Results Found for "{{$query}}"</h2>
                 @endif
             </div>
+            @endif
             <div class="result-content">
                 <div class="result-list">
                   
@@ -107,9 +109,9 @@
                   @endif
                 </div>
                 <div class="filter">
-                    <h2>Filter</h2>
+                    <!-- <h2>Filter</h2> -->
                     <div class="search-catagories">
-                        <p>Courses</p>
+                        <p>Popular Courses</p>
                         <ul>
                             @foreach ($popularCourses->take(5) as $popularCourse)
                                 <li><a href="{{$popularCourse->url}}">{{$popularCourse->name}}</a> </li>
@@ -117,7 +119,7 @@
                         </ul>
                     </div>
                     <div class="search-catagories">
-                        <p>Locations</p>
+                        <p>Popular Locations</p>
                         <ul>
                             @foreach ($popularLocations->take(5) as $popularLocation)
                                 <li><a href="{{$popularLocation->url}}">{{$popularLocation->name}}</a> </li>
