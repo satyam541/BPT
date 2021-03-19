@@ -560,8 +560,8 @@ $.ajax({
                     var li;
 
                     if (item.topic.name != currentTopic) {
-                        ul.append("<li class='ui-autocomplete-category'>" + item.topic
-                            .name + "</li>");
+                        ul.append("<li class='ui-autocomplete-category'><a class='ui-autocomplete-category' href="+item.topic.url+">" + item.topic
+                            .name + "</a></li>");
                         currentTopic = item.topic.name;
                     }
                     li = that._renderItemData(ul, item);
