@@ -124,13 +124,13 @@ class JWTEnquiryController extends JWT
 		//return false;
 		if(in_array($this->data['email'],config('mail.testing_email')))
 		{
-			dd($this->data);
+		
 			return false;
 		}
 		
 	
 		$this->data['iss']    = isset($_SERVER['HTTP_HOST'])?$_SERVER['HTTP_HOST']:"";
-		$this->data['source'] = "Best Practice Training";
+		$this->data['source'] = "BestPracticeTraining";
 		$this->data['sub']    = "Enquiry";
 		$this->data['aud']    = "theknowledgeacademy.com";
 		$this->data['iat']    = time();

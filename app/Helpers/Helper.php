@@ -39,6 +39,7 @@ if (!function_exists('encodeUrlSlug')) {
         $name = str_replace("&", " and", "$string");
         $name = str_replace("+", " plus", "$name");
         $name = str_replace("/", "", "$name");
+        $name = str_replace("-", " ", "$name");
         $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
         return $stringname;
     }
@@ -275,6 +276,10 @@ if (!function_exists('encodeUrlSlug')) {
             $country_name = country()->name;
             $country_code = country()->country_code;
             $content = str_replace('{countryname}', $country_name, $content);
+            if($country_code == Country::getDefault())
+            {
+                $content = str_replace('/{cc}/', '/', $content);    
+            }
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }

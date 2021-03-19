@@ -3,7 +3,7 @@
 namespace App\Http\Requests\cms;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use App\Rules\TopicSlugRule;
 class TopicRequest extends FormRequest
 {
     /**
@@ -23,17 +23,13 @@ class TopicRequest extends FormRequest
      */
     public function rules()
     {
-        $topic=request()->route('topic',0);
         
-          $id = 0;
-          if(!empty($topic)){
-              $id = $topic->id;
-          }
         
         return [
             'name'                  => 'required|string|max:100',
             'category_id'           => 'required',
-            'reference'             => 'required|unique:topic,reference,'.$id.',id',
+            'category_slug'           => 'required',
+            'topic_slug'           => ['required',new TopicSlugRule],
             'image'                 => 'mimes:jpeg,png,jpg,svg|max:500',
         ];
     }

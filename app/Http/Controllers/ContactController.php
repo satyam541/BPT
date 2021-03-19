@@ -19,6 +19,7 @@ class ContactController extends Controller
         $data['socialmedias']=SocialMedia::all();
         $data['websiteDetail']=websiteDetail();
         $data['pageDetail'] = PageDetail::getContent('contact_us');
+        $data['location']= country()->locations->first();
         return view('contactus',$data);
     }
 }

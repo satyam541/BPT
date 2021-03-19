@@ -85,7 +85,7 @@
                                         href="{{ route('blogDetail', ['blog' => $blog->reference]) }}">{{ $blog->title }}</a>
                                     <span>
                                         <img src="{{ url('img/master/time.svg') }}" alt="time">
-                                        <p class="date">{{ $blog->post_date }}</p>
+                                        <p class="date">{{ $blog->publish_date->format('d M, Y') }}</p>
                                     </span>
                                 </li>
                             @endforeach
@@ -457,13 +457,12 @@ $.ajax({
     timeout: 90000,
     global: false,
     beforeSend: function(){
-        if($('form#thank-you').length < 0)
-        {
+       
             var input = '{{ csrf_field() }}';
             var form = $('<form>').attr('id', 'thank-you').attr('method', 'post').attr('action',
                 '{{ route('thanks') }}').html(input);
             $('body').append(form);
-        }
+        
         $('div.scene').show();
     },
     success: function(response) {

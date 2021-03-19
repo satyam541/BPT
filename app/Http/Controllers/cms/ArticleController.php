@@ -71,7 +71,7 @@ class ArticleController extends Controller
         
    
        
-        $article->reference      = $request->reference;
+        $article->reference      = encodeUrlSlug($request->reference);
        
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
@@ -134,7 +134,7 @@ class ArticleController extends Controller
         $article->meta_description      = $request->meta_description;
         $article->meta_keywords         = $request->meta_keywords;
         $article->summary               = $request->summary;
-        $article->reference             = $request->reference;
+        $article->reference             = encodeUrlSlug($request->reference);
         
         if($request->hasFile('image')){
             $imageName = $this->Image_prefix.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
