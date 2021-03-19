@@ -177,9 +177,11 @@
                 <h2>{!! heading_split($pageDetail->reach_us['heading']->heading)!!}</h2>
                 <p>{!!$pageDetail->reach_us['heading']->content!!}</p>
             </div>
+            @if(!empty($location->latitude) && !empty($location->longitude))
             <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3022.127368522814!2d-73.9710478674591!3d40.75922327013592!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258e4af7dd635%3A0x430076ce7541fbb3!2s601%20Lexington%20Avenue!5e0!3m2!1sen!2sin!4v1614319478813!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;q={{$location->latitude}},{{$location->longitude}}&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
+            @endif
         </div>
     </div>
 </section>

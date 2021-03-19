@@ -9,6 +9,7 @@ class CertificationTopic extends Model
 {
     use SoftDeletes;
     protected $table = 'certification_topic';
+    protected $withCount = ['courses'];
 
     public function certification()
     {
