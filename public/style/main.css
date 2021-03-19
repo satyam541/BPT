@@ -7764,11 +7764,11 @@ input[type=number] {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .info-us .info-list {
+.new-bundle .info-us .info-item {
   display: flex;
   margin-top: 0.7rem;
 }
-.new-bundle .info-us .info-list span {
+.new-bundle .info-us .info-item span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7779,7 +7779,7 @@ input[type=number] {
   padding: 0.6rem;
   margin-right: 0.5rem;
 }
-.new-bundle .info-us .info-list span img {
+.new-bundle .info-us .info-item span img {
   width: 100%;
   height: 100%;
 }
@@ -7899,7 +7899,7 @@ input[type=number] {
     text-align: right;
   }
   .management h3 {
-    min-height: 72px;
+    min-height: 98px;
     width: 48%;
     margin-bottom: 0;
   }
