@@ -147,6 +147,7 @@ class CourseController extends Controller
         $this->authorize('create', new Course());
         $list['topics'] = Topic::all()->pluck('name','id')->toArray();
         $list['slugs'] = Topic::all()->pluck('reference','id')->toArray();
+        $data['slugs']            = [0=>null,1=>null,2=>null];
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['course'] = new Course();
@@ -182,8 +183,8 @@ class CourseController extends Controller
         ,$inputs);
 
         $course['is_online'] = isset($inputs['is_online']);
-        $topic=Topic::find($inputs['topic_id'])->reference;
-        $course['reference'] = $topic.'/'.encodeUrlSlug($inputs['reference']);
+        
+        $course['reference'] = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']).'/'.encodeUrlSlug($inputs['course_slug']);
 
         $online = new OnlinePrice();
 
@@ -244,6 +245,7 @@ class CourseController extends Controller
         $list['accreditations'] = Accreditation::all()->pluck('name','id')->toArray();
         $data['list'] = $list;
         $data['submitRoute'] = array('updateCourse',$course->id);
+        $data['slugs']            = explode('/',$course->reference);
         $data['course'] = $course;
         return view("cms.course.courseForm",$data);
     }
@@ -268,8 +270,7 @@ class CourseController extends Controller
         $inputs['accredited'] = isset($inputs['accredited']);
         $inputs['published']  = isset($inputs['published']);
         $inputs['is_online']  = isset($inputs['is_online']);
-        $topic=Topic::find($inputs['topic_id'])->reference;
-        $inputs['reference']  = $topic.'/'.encodeUrlSlug($inputs['reference']);
+        $inputs['reference']  = encodeUrlSlug($inputs['category_slug']).'/'.encodeUrlSlug($inputs['topic_slug']).'/'.encodeUrlSlug($inputs['course_slug']);
         $course->update($inputs);
         $online = array();
 

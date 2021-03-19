@@ -48,13 +48,19 @@
 
                                 <div class="form-group">
                                     {{ Form::label('topic_id', 'Topic') }}
-                                    {{ Form::select('topic_id', $list['topics'], $course->topic_id, ['tabindex' => '-1', 'class' => 'form-control selectJS', 'id' => 'topicName', 'placeholder' => 'Choose one', 'onchange' => 'updateSlug()']) }}
+                                    {{ Form::select('topic_id', $list['topics'], $course->topic_id, ['tabindex' => '-1', 'class' => 'form-control selectJS', 'id' => 'topicName', 'placeholder' => 'Choose one']) }}
 
                                 </div>
-                                <div class="form-group">
-                                    {{ Form::label('reference', 'Reference') }}
-                                    {{ Form::text('reference', null, ['id' => 'reference', 'class' => 'form-control ']) }}
+                                <div class="form-group ">
+                                    <label for=>Category Slug</label> / 
+                                    <label for=>Topic Slug</label> / 
+                                    <label for=>Course Slug</label>
+                                    <br>
+                                    <input type="text" name="category_slug" value= "{{$slugs[0]}}" style="width: 21%"> / 
+                                    <input type="text" name="topic_slug" value= "{{$slugs[1]}}" style="width: 21%"> / 
+                                    <input type="text" name="course_slug" value= "{{$slugs[2]}}" style="width: 21%">
                                 </div>
+                                
 
                                 <div class="form-group">
                                     {{ Form::label('tag_line', 'Tag Line') }}
