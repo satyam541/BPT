@@ -296,6 +296,9 @@ input[type=number] {
 .pointer {
   cursor: pointer;
 }
+.overflow {
+  overflow: hidden;
+}
 .ui-autocomplete .ui-autocomplete-category {
   color: #1C2848;
   font-weight: 700;
@@ -310,7 +313,7 @@ input[type=number] {
 #ui-id-1 {
   max-height: 50vh;
   overflow: scroll;
-  width: 85%;
+  width: 230px;
 }
 #ui-id-2 {
   max-height: 50vh;
@@ -321,7 +324,7 @@ input[type=number] {
 #ui-id-3 {
   max-height: 50vh;
   overflow: scroll;
-  z-index: 9999;
+  z-index: 99999;
   width: 230px;
 }
 #ui-id-4 {
@@ -697,6 +700,7 @@ input[type=number] {
   -ms-transform: translate(0, -100%) scale(0, 0);
   transform: translate(0, -100%) scale(0, 0);
   opacity: 0;
+  z-index: 99999;
 }
 .pop-search .search-cross,
 .pop-search .search-close {
@@ -720,7 +724,7 @@ input[type=number] {
   align-items: center;
   background-color: #FFFFFF;
   width: 90%;
-  height: 72%;
+  padding: 2rem 1rem;
   margin: auto;
   position: relative;
   z-index: 1;
@@ -751,7 +755,7 @@ input[type=number] {
 }
 .pop-search .search-form h2 {
   color: #000000;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -766,14 +770,14 @@ input[type=number] {
 }
 .pop-search .search-form p {
   margin-top: 1.5rem;
-  padding-left: 2.5rem;
   font-weight: bold;
   font-size: 16px;
+  text-align: center;
 }
 .pop-search .search-form ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 .pop-search .search-form ul li {
   display: flex;
@@ -782,8 +786,8 @@ input[type=number] {
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   padding: 0.5rem;
-  width: 30%;
   margin-top: 1rem;
+  margin-right: 1rem;
   text-align: center;
 }
 .pop-search .search-form ul li a {
@@ -814,7 +818,7 @@ input[type=number] {
   margin-left: 0.3rem;
 }
 #pop-mobile .search-form .search {
-  width: 85%;
+  width: 100%;
   padding: 0.5rem;
 }
 #pop-mobile .search-form input {
@@ -830,7 +834,6 @@ input[type=number] {
   -ms-transform: translate(0, 0) scale(1, 1);
   transform: translate(0, 0) scale(1, 1);
   opacity: 1;
-  z-index: 9999;
 }
 .cookie-div {
   padding: 3rem 1.5rem;
@@ -1348,25 +1351,10 @@ input[type=number] {
     justify-content: flex-end;
   }
   .pop-search .search-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    height: 55%;
-    margin: auto;
-    background-color: #FFFFFF;
-  }
-  .pop-search .search-form h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    width: 550px;
   }
   .pop-search .search-form ul {
     width: 100%;
-    padding: 0 2.5rem;
-    justify-content: space-between;
-  }
-  .pop-search .search-form ul li {
-    width: 18%;
   }
   .pop-search .search-form .search {
     width: 75%!important;
@@ -1493,10 +1481,6 @@ input[type=number] {
   }
   .black-breadcrums .white {
     display: none;
-  }
-  .pop-search .search-form {
-    height: 290px;
-    width: 50%;
   }
   .pop-search .search-form input {
     padding: 0;
@@ -2030,10 +2014,6 @@ input[type=number] {
   }
   .heading span {
     font-size: 32px;
-  }
-  .pop-search .search-form {
-    height: 280px;
-    width: 34%;
   }
   .pop-search .search-form button {
     width: 100px;
@@ -3287,6 +3267,9 @@ input[type=number] {
   }
 }
 @media (min-width : 1366px) {
+  .home-banner h1 {
+    font-size: 32px;
+  }
   .courses {
     padding: 4rem 0rem;
   }
@@ -11025,7 +11008,7 @@ input[type=number] {
   background-image: url(../img/emptycart/bg.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100% 42%;
+  background-size: 100% 45%;
 }
 .order .order-heading {
   position: relative;
@@ -11120,8 +11103,8 @@ input[type=number] {
 }
 .order .order-main .course-name a {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   padding: 0.5rem;
   top: -12px;
   right: -12px;
@@ -11248,7 +11231,7 @@ input[type=number] {
     align-items: flex-start;
   }
   .order .inner-content .total-main {
-    width: 40%;
+    width: 38%;
     position: sticky;
     top: 85px;
   }
@@ -12368,10 +12351,11 @@ input[type=number] {
     justify-content: space-between;
   }
   .category .category-content {
+    padding: 1.5rem;
     width: 22%;
   }
   .category .category-content h3 {
-    min-height: 100px;
+    min-height: 78px;
   }
   .category-enquire {
     background: url(../img/catalogue/have-bg.png), linear-gradient(#0064D8, #1C2848);
@@ -14680,6 +14664,9 @@ input[type=number] {
 .steps {
   padding: 3rem 1.5rem;
 }
+.steps label {
+  cursor: pointer;
+}
 .steps .steps-container {
   display: flex;
   flex-direction: column;
@@ -15067,6 +15054,9 @@ input[type=number] {
     background-color: #FFFFFF;
     padding: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .steps .payment-detail .form-consent {
+    align-items: center;
   }
   .steps .payment-detail .buttons {
     flex-direction: row;

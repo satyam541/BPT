@@ -11,7 +11,7 @@ class TopicController extends Controller
 {
     public function index(Request $request){
         $topic      = Topic::with('topicContent','faqs','Bulletpoint','courses')
-                                ->where('reference','/'.$request->category.'/'.$request->topic)->first();
+                                ->where('reference',$request->category.'/'.$request->topic)->first();
         $topic->loadContent();                       
         if(!empty($topic))
         {

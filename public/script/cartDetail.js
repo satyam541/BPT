@@ -43,7 +43,7 @@ function submitCustomerForm()
             $('#stepOne').hide().removeClass('step-active'); 
             $('#one').addClass('number-active').removeClass('blue-active');  
             $('#two').addClass('blue-active');  
-          
+            $('#change').text("Please select your payment option and complete the details below.");          
         },
         error: function(error){
            
@@ -57,7 +57,7 @@ function submitCustomerForm()
                
                     if(index=="phone")
                     {  
-                        cartForm.find(".telephone").attr('title',value).closest('.input-container').addClass('input-error');
+                        cartForm.find(".mobile").attr('title',value).closest('.input-container').addClass('input-error');
                     }
                 
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
@@ -93,6 +93,7 @@ function submitBillingForm()
             $('#stepTwo').hide().removeClass('step-active');
             $('#two').addClass('number-active').removeClass('blue-active');  
             $('#three').addClass('blue-active');  
+            $('#change').text("Fill in the following details and move to the next step."); 
         },
         error: function(error){
             if(error.status == '422')
@@ -162,6 +163,7 @@ function submitDelegateForm()
                         $('#three').addClass('number-active').removeClass('blue-active');  
                         $('#four').addClass('blue-active'); 
                         $('#stepFour').find('.group-input').html(result);
+                        $('#change').text("Review the items and details in your cart."); 
                     }
                 });
             }
@@ -175,7 +177,7 @@ function submitDelegateForm()
        
                     if(index=="phone")
                     { 
-                        cartForm.find(".telephone").closest('.input-container').addClass('input-error');
+                        cartForm.find(".mobile").closest('.input-container').addClass('input-error');
                     }
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });

@@ -116,6 +116,9 @@ if (!function_exists('encodeUrlSlug')) {
             
         }
     }
+
+    // ucwords php method can be used instead
+    // this function is not being used
     if (!function_exists('capitalizeName')) {
         function capitalizeName($string)
         {
@@ -173,6 +176,14 @@ if (!function_exists('encodeUrlSlug')) {
             return $blogs;
         }
     }
+    if (!function_exists('topicPopular')) {
+        function topicPopular()
+        {
+            $topicPopular = Topic::has('popular')->get();
+            return $topicPopular;
+        }
+    }
+    // this function is not being used
     if (!function_exists('courses')) {
         function courses()
         {
@@ -180,6 +191,9 @@ if (!function_exists('encodeUrlSlug')) {
             return $courses;
         }
     }
+
+    // number format method can directly be used
+    // this function is not being used
     if (!function_exists('formatPrice')) {
         function formatPrice($price, $decimals = 0, $decimalSeparator = null, $thousandSeparator = null)
         {
@@ -187,6 +201,7 @@ if (!function_exists('encodeUrlSlug')) {
         }
     }
 
+    // this function is not being used
     if (!function_exists('storeSelected')) {
         function storeSelected($data)
         {
@@ -194,6 +209,8 @@ if (!function_exists('encodeUrlSlug')) {
             return $string;
         }
     }
+    
+    // this function is not being used
     if (!function_exists('storeFilterData')) {
         function storeFilterData($data)
         {
@@ -232,6 +249,7 @@ if (!function_exists('encodeUrlSlug')) {
         }
     }
 
+    // function not being used anywhere
     if (!function_exists('storeVar')) {
         function storeVar($data)
         {
@@ -243,14 +261,7 @@ if (!function_exists('encodeUrlSlug')) {
                 return $savedData;
             } else {
                 if (empty($savedData[$data])) {
-                    switch ($data) {
-                        case "countryname":
-                            return country()->name;
-                            break;
-                        case "cc":
-                            return country()->country_code;
-                            break;
-                    }
+                    return NULL;
                 } else {
                     return $savedData[$data];
                 }
@@ -261,8 +272,8 @@ if (!function_exists('encodeUrlSlug')) {
     if (!function_exists('replaceVar')) {
         function replaceVar($content)
         {
-            $country_name = storeVar('countryname');
-            $country_code = storeVar('cc');
+            $country_name = country()->name;
+            $country_code = country()->country_code;
             $content = str_replace('{countryname}', $country_name, $content);
             $content = str_replace('{cc}', $country_code, $content);
             return $content;

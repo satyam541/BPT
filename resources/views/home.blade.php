@@ -97,7 +97,41 @@
                         </a>
 
                     @endforeach
+                    @foreach ($certifications->take(9) as $certification)
 
+                    {{-- <a href="{{ url('training-courses' . $category->reference) }}" class="course-name"> --}}
+                    <a href="{{ $certification->url }}" class="course-name">
+                        <span class="icon">
+                            <img src="{{ $certification->getImagePath() }}" alt="management">
+                            <img src="{{ $certification->getIconPath() }}" alt="management-white">
+                        </span>
+                        <div class="name">
+                            <h3>
+                                {{ $certification->name }}
+                            </h3>
+                            @if ($certification->topics_count < 2)
+                                <p>{{ $certification->topics_count }} Topic</p>
+                            @else
+                                <p>{{ $certification->topics_count }} Topics</p>
+                            @endif
+                            @foreach ($certification->topics as $topic)
+                            @if($loop->first)
+                            @php $totalCourses=0 @endphp
+                            @endif
+                            @php $totalCourses+=$topic->courses_count @endphp
+                            @endforeach
+                            @if ($totalCourses < 2)
+                                <p> {{ $totalCourses }} Course </p>
+                            @else
+                                <p> {{ $totalCourses }} Courses </p>
+                            @endif
+                        </div>
+                        <span class="arrow">
+                            <img src="{{ url('img/home/arrow.svg') }}" alt="arrow">
+                        </span>
+                    </a>
+
+                @endforeach
                 </div>
                 <div class="buttons">
                     <a href="{{route('catalogue')}}"  class="btn-blue">
@@ -218,7 +252,7 @@
                 <div class="delivery-list">
                     @php unset($pageDetail->delivery_list['heading']) @endphp
                     @foreach ($pageDetail->delivery_list as $delivery)
-                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now"> 
+                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now-{{$delivery->heading}}"> 
                             <div class="overlay">
                             </div>
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
@@ -265,11 +299,11 @@
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
-                        <img src=" {{ url('img/home/trainer.svg') }}" alt="trainers">
+                        <img src=" {{ url('img/home/event.svg') }}" alt="events">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$statsdata->stats['events']->content}}" data-speed="3000">{!!$statsdata->stats['events']->content!!}</h3><span>+</span>
                         </div>
-                        <p>Trainers</p>
+                        <p>Events</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">

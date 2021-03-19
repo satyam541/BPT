@@ -27,7 +27,7 @@
             <div class="steps-container">
                 <div class="heading center-heading">
                     <h2>Payment <span>Steps</span></h2>
-                    <p>Fill It With Some Training Courses - Take A Look At Our Catalogue.</p>
+                    <p id="change">Fill out the details given below and click on the Next button. </p>
                 </div>
                 <div class="payment-container">
                     <div class="detail-container">
@@ -94,11 +94,11 @@
                                             class="black">
                                         <img src="{{ url('img/master/phone-callred.svg') }}" alt="phonecall-red"
                                             class="red"></span>
-                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number" autocomplete="off"> -->
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                     <div class="phonecode-field field-black">
                                         <select class="country-code"></select>
                                         <span class="prefix"></span>
-                                        <input type="number" class="telephone" placeholder="Phone Number">
+                                        <input type="number" class="telephone mobile" placeholder="Phone Number*">
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                             <input type="text" name="phone" class="phonenumber">
                                             <input type="text" name="phonecode" class="phonecode">
@@ -112,15 +112,16 @@
                                             class="black">
                                         <img src="{{ url('img/master/phone-callred.svg') }}" alt="phonecall-red"
                                             class="red"></span>
-                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number" autocomplete="off"> -->
+                                    <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                     <div class="phonecode-field field-black">
                                         <select class="country-code"></select>
                                         <span class="prefix"></span>
                                         <input type="number" class="telephone" placeholder="Telephone Number">
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                            <input type="text" name="phone" class="phonenumber">
-                                            <input type="text" name="phonecode" class="phonecode">
-                                            <input type="text" name="m_code" class="countrycode" autocomplete="off">
+                                            <input type="text" name="telephone" class="phonenumber">
+                                            <input type="text" name="cphonecode" class="phonecode">
+                                            <input type="text" name="t_code" class="countrycode" autocomplete="off">
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +141,7 @@
                                 <p>In purchasing this course with Best Practice Training Limited, you are entering into a service agreement where your data shall be processed for the purpose of delivering the service. If appropriate, your contact details shall be given to the relevant Examination Institute or Lab provider to fulfil the contract.</p>
                             </div>
                             <div class="form-consent">
-                                <p>Please click <a>here</a> for privacy policy. </p>
+                                <p>Please click <a href="{{route("privacy-policy")}}">here</a> for privacy policy. </p>
                             </div>
                             <div class="form-consent">
                                 <input name="contactConsent" type="checkbox" id="checkConsent">
@@ -177,7 +178,7 @@
                                 <div class="input-container input-card">
                                     <span><img src="{{ url('img/master/name-black.svg') }}" alt="name" class="black">
                                         <img src="{{ url('img/master/name-red.svg') }}" alt="name-red" class="red"></span>
-                                    <select name="cardtype" id="debit-card" class="inputcard_fees_in_percent  inputcardtype">
+                                    <select name="cardtype" id="debit-card" class="inputcard_fees_in_percent">
                                         <option value=""> Choose your card type * </option>
                                         @foreach($paymentCards as $paymentCard)
                                         <option value="{{ $paymentCard->id }}">{{ $paymentCard->card }}</option>
@@ -251,7 +252,7 @@
                                                 <img src="{{ url('img/master/province-red.svg') }}" alt="province-red"
                                                     class="red"></span>
                                             <input type="text" name="province" id="province" placeholder="Province*"
-                                                autocomplete="off" class="inputprovince">
+                                                autocomplete="off">
                                         </div>
                                         <div class="input-container">
                                             <span><img src="{{ url('img/master/pin-black.svg') }}" alt="pin-black"
@@ -363,11 +364,11 @@
                                                     class="black">
                                                 <img src="{{ url('img/contactus/phone-callred.svg') }}" alt="phonecall-red"
                                                     class="red"></span>
-                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number" autocomplete="off"> -->
+                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                             <div class="phonecode-field field-black">
                                                 <select class="country-code c_code"></select>
                                                 <span class="prefix code"></span>
-                                                <input type="number" class="telephone tel" placeholder="Phone Number" min=0 autocomplete="off">
+                                                <input type="number" class="telephone tel mobile" placeholder="Phone Number*" min=0 autocomplete="off">
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                                     <input type="text" name="phone" class="phonenumber" tabindex="-1" autocomplete="off">
                                                     <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
@@ -379,14 +380,16 @@
                                                     class="black">
                                                 <img src="{{ url('img/contactus/phone-callred.svg') }}" alt="phonecall-red"
                                                     class="red"></span>
-                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number" autocomplete="off"> -->
+                                            <!-- <input type="number" name="phone" id="phone" placeholder="Phone Number*" autocomplete="off"> -->
                                             <div class="phonecode-field field-black">
                                                 <select class="country-code mcode"></select>
                                                 <span class="prefix  "></span>
-                                                <input type="number" class="telephone " placeholder="Telephone Number" min=0>
+                                                <input type="number" class="telephone " placeholder="Telephone Number*" min=0>
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                                    <input type="text" name="telephone" class="phonenumber" tabindex="-1" autocomplete="off">
-                                                    <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
+                                                   
+                                                     <input type="text" name="telephone" class="phonenumber">
+                                                    <input type="text" name="cphonecode" class="phonecode">
+                                                    <input type="text" name="t_code" class="countrycode" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>

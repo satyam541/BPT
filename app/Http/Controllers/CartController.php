@@ -216,6 +216,7 @@ class CartController extends Controller
         $customer->firstname                    = $input['firstname'];
         $customer->lastname                     = $input['lastname'];
         $customer->mobile                       = $input['phone'];
+        $customer->telephone                    = $input['telephone'];
         $customer->email                        = $input['email'];
         $customer->company                      = $input['company'];
         $customer->preffered_contact_method     = 'Phone and Email';

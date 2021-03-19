@@ -25,9 +25,7 @@ class DelegateRequest extends FormRequest
     {
         return [
             'firstname'     => 'required',
-            'lastname'     => 'required',
             'phone'     => 'required|min:4',
-            'telephone'     => 'sometimes|numeric',
             'email'     => 'required|email',
             'postcode'  => 'sometimes'
         ];
@@ -44,7 +42,6 @@ class DelegateRequest extends FormRequest
     {
         return [
             'firstname' => 'First Name',
-            'lastname' => 'Last Name',
             'phone' => 'Phone Number',
             'email' => 'email address',
             'postcode' => 'Postal Code'

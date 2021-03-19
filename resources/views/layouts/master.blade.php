@@ -217,7 +217,7 @@
             <li><a href="tel:{{ websiteDetail()->contact_number }}">{{ websiteDetail()->contact_number }}<img
                         src="{{ url('img/master/phone-ringing.svg') }}" alt="phone-ringing"></a></li>
             <li><a class="open-popup enquiryJS" data-quote="Enquire Us" data-heading="Enquire Us">Enquire Us<img src="{{ url('img/master/mail.svg') }}" alt="mail"></a></li>
-            <li><a class="open-popup enquiryJS" data-quote="Request a Call Back" data-heading="Request a Call Back">Request a Call Back</a><img
+            <li><a class="open-popup enquiryJS" data-quote="Request a Callback" data-heading="Request a Call Back">Request a Callback</a><img
                     src="{{ url('img/master/phone-contact.svg') }}" alt="phone-contact"></li>
         </ul>
     </nav>
@@ -247,11 +247,9 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                <li><a>PRINCE2®</a></li> 
-                <li><a>ITIL®</a></li>
-                <li><a>Lean Six Sigma</a></li>
-                <li><a>Agile<a></li>
-                <li><a>Scrum</a></li>
+                @foreach (topicPopular()->take(5) as $popularTopic)
+                        <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
+                @endforeach
             </ul>
         </form>
     </div>
@@ -560,8 +558,8 @@ $.ajax({
                     var li;
 
                     if (item.topic.name != currentTopic) {
-                        ul.append("<li class='ui-autocomplete-category'>" + item.topic
-                            .name + "</li>");
+                        ul.append("<li class='ui-autocomplete-category'><a class='ui-autocomplete-category' href="+item.topic.url+">" + item.topic
+                            .name + "</a></li>");
                         currentTopic = item.topic.name;
                     }
                     li = that._renderItemData(ul, item);
