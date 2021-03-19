@@ -2766,15 +2766,10 @@ input[type=number] {
   .courses .courses-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
   .courses .course-name {
     width: 46%;
-    margin-right: 2rem;
-  }
-  .courses .course-name:nth-child(3n),
-  .courses .course-name:last-child {
-    margin-right: 0;
   }
   .courses .course-name .icon {
     display: flex;
@@ -3081,6 +3076,12 @@ input[type=number] {
   }
   .courses .course-name {
     width: 31%;
+    margin-right: 2rem;
+    justify-content: center;
+  }
+  .courses .course-name:nth-child(3n),
+  .courses .course-name:last-child {
+    margin-right: 0;
   }
   .effective .effective-container {
     width: 90%;
