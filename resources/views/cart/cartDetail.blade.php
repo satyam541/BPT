@@ -27,7 +27,7 @@
             <div class="steps-container">
                 <div class="heading center-heading">
                     <h2>Payment <span>Steps</span></h2>
-                    <p>Fill It With Some Training Courses - Take A Look At Our Catalogue.</p>
+                    <p id="change">Fill out the details given below and click on the Next button. </p>
                 </div>
                 <div class="payment-container">
                     <div class="detail-container">
