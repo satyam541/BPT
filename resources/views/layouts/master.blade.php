@@ -247,7 +247,7 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                @foreach (topicPopular()->take(5) as $popularTopic)
+                @foreach (topicPopular()->take(10) as $popularTopic)
                         <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
                 @endforeach
             </ul>
