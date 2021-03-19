@@ -124,7 +124,7 @@ class JWTEnquiryController extends JWT
 		//return false;
 		if(in_array($this->data['email'],config('mail.testing_email')))
 		{
-			dd($this->data);
+		
 			return false;
 		}
 		
