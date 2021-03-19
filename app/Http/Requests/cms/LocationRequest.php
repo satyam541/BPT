@@ -36,7 +36,7 @@ class LocationRequest extends FormRequest
             'tier'                  => 'required',
             'reference'             => 'required|unique:location,reference,' . $id . ',id',
             'phone'                 => 'required',
-            'email'                 => 'required|string|max:255|regex:/^[a-zA-Z0-9.]+@[a-zA-Z]+[.]{1}[a-z]+$/',
+            // 'email'                 => 'required|string|max:255|regex:/^[a-zA-Z0-9.]+@[a-zA-Z]+[.]{1}[a-z]+$/',
         ];
     }
     public function attributes()

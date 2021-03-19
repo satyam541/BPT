@@ -37,7 +37,7 @@ class CourseController extends Controller
 		// $this->middleware('access:role,insert')->only('insertRole');
     }
     
-    public function categoryName(Request $request){
+    public function categoryTopicName(Request $request){
         $topic=Topic::find($request->topic_id)->reference;
         $slug=explode('/',$topic);
         return $slug;

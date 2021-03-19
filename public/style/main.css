@@ -8811,7 +8811,7 @@ input[type=number] {
 }
 .foundation .tab {
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   align-self: flex-end;
   line-height: 1.2;
@@ -10482,6 +10482,9 @@ input[type=number] {
   }
   .courses-banner .breadcrums .white {
     display: none;
+  }
+  .foundation .tab {
+    font-size: 18px;
   }
   .foundation .tabs-container {
     flex-direction: row;
