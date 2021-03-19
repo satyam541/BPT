@@ -57,7 +57,7 @@ function submitCustomerForm()
                
                     if(index=="phone")
                     {  
-                        cartForm.find(".telephone").attr('title',value).closest('.input-container').addClass('input-error');
+                        cartForm.find(".mobile").attr('title',value).closest('.input-container').addClass('input-error');
                     }
                 
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
@@ -175,7 +175,7 @@ function submitDelegateForm()
        
                     if(index=="phone")
                     { 
-                        cartForm.find(".telephone").closest('.input-container').addClass('input-error');
+                        cartForm.find(".mobile").closest('.input-container').addClass('input-error');
                     }
                     cartForm.find(".input"+index).attr('title',value).closest('.input-container').addClass('input-error');
                 });

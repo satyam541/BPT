@@ -229,7 +229,7 @@
                       
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="{{url('uploads/page/catalogue_image_1614332950.svg')}}" alt="">
+                              <img src="{{url('img/catalogue/daily.svg')}}" alt="running">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$statsdata->stats['course_running_daily']->content}}" data-speed="3000">{!!$statsdata->stats['course_running_daily']->content!!}</h3>
@@ -240,7 +240,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="{{url('uploads/page/catalogue_image_1614333026.svg')}}" alt="">
+                              <img src="{{url('img/catalogue/worldwide.svg')}}" alt="worldwide">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$statsdata->stats['locations_world_wide']->content}}" data-speed="3000">{!!$statsdata->stats['locations_world_wide']->content!!}</h3>
@@ -251,7 +251,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="{{url('uploads/page/catalogue_image_1615444428.svg')}}" alt="">
+                              <img src="{{url('img/catalogue/trainer-icon.svg')}}" alt="trainers">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3>
@@ -262,7 +262,7 @@
                   
                       <div class="figures-content">
                           <span class="figures-image">
-                              <img src="{{url('uploads/page/catalogue_image_1614333297.svg')}}" alt="">
+                              <img src="{{url('img/catalogue/countries.svg')}}" alt="countries">
                           </span>
                           <div class="facts-count">
                               <h3 class="count-number" data-to="{{$statsdata->stats['countries']->content}}" data-speed="3000">{{$statsdata->stats['countries']->content}}</h3>
