@@ -34,6 +34,7 @@ class BillingRequest extends FormRequest
             'postcode'      => 'required',
             'cardtype'      => 'required_if:paymentmethod,card',
             'purchase'      => 'required_if:paymentmethod,purchase order',
+            'address2'      => 'required'
            ];  
     }
     public function messages()
