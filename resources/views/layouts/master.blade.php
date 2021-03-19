@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('style/fontawesome.css') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
 
     @yield('header')
 </head>
@@ -153,7 +154,7 @@
                     <div class="input-container">
                         <span><img src="{{ url('img/master/house-black.svg') }}" alt="email" class="black">
                             <img src="{{ url('img/master/house-red.svg') }}" alt="email-red" class="red"></span>
-                        <input type="text" name="company" id="company" placeholder="Company Name"
+                        <input type="text" name="company" id="company" placeholder="Company Name *"
                             autocomplete="off">
                     </div>
                     <div class="input-container message">
@@ -171,8 +172,8 @@
                         <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" id="checkConsent" name="contactConsent">
-                        <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                        <input type="checkbox" id="popcheckConsent" name="contactConsent">
+                        <label for="popcheckConsent">By submitting this enquiry I agree to be contacted in the most
                             suitable manner (by phone or email) in order to respond to my enquiry.</label>
                     </div>
                     <div class="consent-error" style="display: none;">
@@ -180,8 +181,8 @@
                             consent to us contacting you about your enquiry</p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" name="marketing_consent" id="allowconsent">
-                        <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                        <input type="checkbox" name="marketing_consent" id="popallowconsent">
+                        <label for="popallowconsent">Click here to sign up to our email marketing, offers and
                             discounts</label>
                     </div>
                     <div id="hiddenFields">
@@ -247,7 +248,7 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                @foreach (topicPopular()->take(5) as $popularTopic)
+                @foreach (topicPopular()->take(10) as $popularTopic)
                         <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
                 @endforeach
             </ul>

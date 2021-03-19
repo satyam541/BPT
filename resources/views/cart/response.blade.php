@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('header')
+@section('content')
 
 <meta name="robots" content="noindex, nofollow" /> 
 @endsection

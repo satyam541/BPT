@@ -34,14 +34,11 @@
         .courses-list{
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
         }
         .course-name{
             width: 46%;
-            margin-right: 2rem;
-            &:nth-child(3n),&:last-child{
-                margin-right: 0;
-            }
+          
             // &:nth-child(3),&:nth-child(6),&:nth-child(9),&:nth-child(12){
                
             // }
@@ -417,6 +414,11 @@
 
         .course-name{
             width: 31%;
+            margin-right: 2rem;
+            justify-content: center;
+            &:nth-child(3n),&:last-child{
+                margin-right: 0;
+            }
         }
     }
     // end courses section //

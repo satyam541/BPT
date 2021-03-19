@@ -79,6 +79,30 @@
    });
  //End Delivery method script//
     
+ function scrollToSpecificDiv(selector) {
+    if ($(selector).length > 0) {
+        var selectorTop = $(selector).offset().top;
+        var navbarHeight =  $(".navbar.sticky").height();
+        var filterHeight = $(".filter-top").outerHeight(true);
+        // navbar is not sticky on page reload before scroll.
+        if(navbarHeight == undefined)
+        {
+            if(selector == "#datesprices"){
+                navbarHeight = 64;
+            }
+            else{
+                navbarHeight = 0;
+            }
+        }
+        selectorTop -=  (navbarHeight + filterHeight);
+
+        $('html,body').animate({
+            scrollTop: selectorTop
+        }, 1000);
+    } else {
+        console.log('scrolltop not found');
+    }
+}
 //choose modes
 $('#chooseMode').on("click", function(){
      $(this).toggleClass("active");
