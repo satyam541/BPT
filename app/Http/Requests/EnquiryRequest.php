@@ -31,7 +31,7 @@ class EnquiryRequest extends FormRequest
             'name'          =>  'sometimes|required',
             'fname'         =>  'sometimes|required',
             'lname'         =>  'sometimes|required',
-            'phone'         =>  'numeric|sometimes',
+            'phone'         =>  'required|min:4',
             'email'         =>  ['required','email',new DomainMXRecord],
             // 'email'         =>  ['required','email:rfc'],
             'course'        =>  'sometimes|required',
@@ -46,7 +46,10 @@ class EnquiryRequest extends FormRequest
 
     public function messages()
     {
-        return [];
+        return [
+           
+            'phone.min' =>':attribute is required'
+        ];
     }
 
     public function attributes()
