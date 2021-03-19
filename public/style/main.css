@@ -989,9 +989,6 @@ input[type=number] {
   border: 2px solid #0097D8;
 }
 .footer .social-media a:nth-child(4) {
-  border: 2px solid #c84e4d;
-}
-.footer .social-media a:nth-child(5) {
   border: 2px solid #1856FF;
 }
 .footer .social-media img {
@@ -1040,7 +1037,6 @@ input[type=number] {
   color: #FFFFFF;
   font-size: 14px;
   width: 88%;
-  word-break: break-all;
 }
 .footer ul li:last-child {
   margin-bottom: 0;
@@ -2101,7 +2097,7 @@ input[type=number] {
     display: flex;
     position: fixed;
     bottom: 40%;
-    left: -150px;
+    left: -158px;
     z-index: 5;
   }
   .tooltips ul {
@@ -2124,7 +2120,7 @@ input[type=number] {
   .tooltips li img {
     width: 25px;
     height: 25px;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
   .tooltips li:hover {
     -webkit-transform: translate(123px, 0);
@@ -2762,10 +2758,15 @@ input[type=number] {
   .courses .courses-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
   .courses .course-name {
     width: 46%;
+    margin-right: 2rem;
+  }
+  .courses .course-name:nth-child(3n),
+  .courses .course-name:last-child {
+    margin-right: 0;
   }
   .courses .course-name .icon {
     display: flex;
@@ -2930,7 +2931,7 @@ input[type=number] {
     text-align: center;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
   .delivery .item:hover .overlay {
@@ -7764,11 +7765,11 @@ input[type=number] {
   display: flex;
   flex-direction: column;
 }
-.new-bundle .info-us .info-list {
+.new-bundle .info-us .info-item {
   display: flex;
   margin-top: 0.7rem;
 }
-.new-bundle .info-us .info-list span {
+.new-bundle .info-us .info-item span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7779,7 +7780,7 @@ input[type=number] {
   padding: 0.6rem;
   margin-right: 0.5rem;
 }
-.new-bundle .info-us .info-list span img {
+.new-bundle .info-us .info-item span img {
   width: 100%;
   height: 100%;
 }
@@ -7899,7 +7900,7 @@ input[type=number] {
     text-align: right;
   }
   .management h3 {
-    min-height: 72px;
+    min-height: 98px;
     width: 48%;
     margin-bottom: 0;
   }
@@ -11763,6 +11764,11 @@ input[type=number] {
   background: #FFFFFF;
   align-items: center;
 }
+.catalogue-banner .filter-top .buttons {
+  width: 100%;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
 .catalogue-banner .form {
   width: 100%;
   background-color: transparent;
@@ -11803,6 +11809,7 @@ input[type=number] {
   background-repeat: no-repeat;
   background-size: 18% 24%;
   background-position: center right;
+  padding-right: 2.5rem;
 }
 .catalogue-banner .buttons .btn-blue {
   cursor: pointer;
@@ -11995,7 +12002,7 @@ input[type=number] {
 .popular-courses .total-text {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 120px);
+  width: calc(100% - 78px);
 }
 .popular-courses .total-text p,
 .popular-courses .total-text h3 {
@@ -12011,7 +12018,8 @@ input[type=number] {
 .popular-courses .caller {
   display: flex;
   height: auto;
-  width: 100%;
+  width: 272px;
+  align-self: center;
 }
 .popular-courses .building img,
 .popular-courses .caller img {
@@ -12163,7 +12171,8 @@ input[type=number] {
 }
 .figures .facts-count {
   display: flex;
-  margin: 2rem 0 1rem;
+  margin: 1.5rem 0.5rem;
+  margin-bottom: 0.2rem;
 }
 .figures .facts-count h3,
 .figures .facts-count span {
@@ -12259,7 +12268,7 @@ input[type=number] {
     width: 46%;
   }
   .category .category-content:first-child {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   .category .category-content h3 {
     min-height: 50px;
@@ -12348,11 +12357,16 @@ input[type=number] {
     background-position: bottom left;
   }
   .category .category-list {
-    justify-content: space-between;
+    justify-content: center;
   }
   .category .category-content {
     padding: 1.5rem;
+    margin-right: 2rem;
     width: 22%;
+  }
+  .category .category-content:nth-child(4n),
+  .category .category-content:last-child {
+    margin-right: 0;
   }
   .category .category-content h3 {
     min-height: 78px;
@@ -12423,6 +12437,7 @@ input[type=number] {
   }
   .popular-courses .building,
   .popular-courses .caller {
+    width: auto;
     height: 270px;
   }
   .library .library-content {
@@ -12440,7 +12455,13 @@ input[type=number] {
     padding: 4rem 0rem;
   }
   .category .category-content {
-    width: 18%;
+    width: 17%;
+  }
+  .category .category-content:nth-child(4n) {
+    margin-right: 2rem;
+  }
+  .category .category-content:nth-child(5n) {
+    margin-right: 0;
   }
   .category-enquire {
     padding: 4rem 0rem;

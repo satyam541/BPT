@@ -96,7 +96,7 @@ if (!function_exists('encodeUrlSlug')) {
             $category_ids           =   $data['categories']->pluck('id')->toArray();
             $data['topics']         =   Topic::has('courses')
                                                     //->has('popular')
-                                                    ->select('id', 'name','category_id', 'display_order', 'published')
+                                                    ->select('id', 'name','category_id', 'display_order', 'published','reference')
                                                     ->whereIn('category_id', $category_ids)
                                                     ->where('published', 1)
                                                     ->orderBy('display_order')
@@ -276,6 +276,10 @@ if (!function_exists('encodeUrlSlug')) {
             $country_name = country()->name;
             $country_code = country()->country_code;
             $content = str_replace('{countryname}', $country_name, $content);
+            if($country_code == Country::getDefault())
+            {
+                $content = str_replace('/{cc}/', '/', $content);    
+            }
             $content = str_replace('{cc}', $country_code, $content);
             return $content;
         }

@@ -143,6 +143,11 @@
         box-shadow: @shadowLight;
         background: @whiteColor;
         align-items: center;
+        .buttons{
+            width: 100%;
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
     }
     .form {
         width: 100%;
@@ -161,6 +166,7 @@
             padding-bottom: 0.5rem;
             color: #1E1E1E;
         }
+      
     }
     select {
         background:@whiteColor;
@@ -181,6 +187,7 @@
         background-repeat: no-repeat;
         background-size: 18% 24%;
         background-position: center right;
+        padding-right: 2.5rem;
     }
     .buttons {
         .btn-blue {
@@ -387,7 +394,7 @@
     .total-text {
         display: flex;
         flex-direction: column;
-        width: calc(100% - 120px);
+        width: calc(100% - 78px);
         p, h3 {
             font-weight: bold;
             color: @whiteColor;
@@ -401,7 +408,9 @@
     .building, .caller {
         display: flex;
         height: auto;
-        width: 100%;
+        width: 272px;
+        align-self: center;
+        
         img {
             height: 100%;
             width: 100%;
@@ -557,7 +566,8 @@
     }
     .facts-count {
         display: flex;
-        margin: 2rem 0 1rem;
+        margin: 1.5rem 0.5rem;
+        margin-bottom: 0.2rem;
         h3,
         span {
             font-weight: 700;

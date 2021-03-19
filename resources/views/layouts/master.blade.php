@@ -227,7 +227,7 @@
 
     <div class="cookie-div" id="footerCookie">
         <p>To give you the best possible experience, this site uses cookies. Continuing to use this site means that you
-            agree to our use of cookies. <a>Click here to see our cookie policy</a></p>
+            agree to our use of cookies. <a href="{{ route('cookies') }}">Click here to see our cookie policy</a></p>
 
         <div class="buttons">
             <button class="btn-white" onclick="storecookie()">Ok, I Accept</button>
