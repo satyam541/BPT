@@ -27,7 +27,7 @@ class CourseController extends Controller
             return redirect($this->redirectRoute);
         }
 
-        $course         = Course::with('topic:name,id,reference','countryContent','faqs','whatsIncluded')->where('reference','/'.$request->category.'/'.$request->topic.'/'.$request->course)->first();
+        $course         = Course::with('topic:name,id,reference','countryContent','faqs','whatsIncluded')->where('reference',$request->category.'/'.$request->topic.'/'.$request->course)->first();
         $course->loadContent(); 
         if(!empty($course))
         {
