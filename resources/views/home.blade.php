@@ -265,7 +265,7 @@
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
-                        <img src=" {{url('uploads/page/catalogue_image_1615444428.svg')}}" alt="trainers">
+                        <img src=" {{ url('img/home/trainer.svg') }}" alt="trainers">
                         <div class="fact-count">
                             <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3><span>+</span>
                         </div>
