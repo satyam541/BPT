@@ -296,6 +296,9 @@ input[type=number] {
 .pointer {
   cursor: pointer;
 }
+.overflow {
+  overflow: hidden;
+}
 .ui-autocomplete .ui-autocomplete-category {
   color: #1C2848;
   font-weight: 700;

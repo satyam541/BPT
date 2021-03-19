@@ -76,7 +76,7 @@
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/name-black.svg') }}" alt="name" class="black">
                                         <img src="{{ url('img/master/name-red.svg') }}" alt="name-red" class="red"></span>
-                                    <input type="text" name="lastname" id="lastname" placeholder="Last Name*" autocomplete="off" class="inputlastname">
+                                    <input type="text" name="lastname" id="lastname" placeholder="Last Name" autocomplete="off" class="inputlastname">
                                 </div>
                                 <div class="input-container">
                                     <span><img src="{{ url('img/master/email-black.svg') }}" alt="email" class="black">
@@ -211,7 +211,7 @@
                                                     class="black">
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
-                                            <input type="text" name="lastname" id="l-name" placeholder="Last Name*"
+                                            <input type="text" name="lastname" id="l-name" placeholder="Last Name"
                                                 autocomplete="off"  class="lastname inputlastname">
                                         </div>
                                         <div class="input-container">
@@ -356,7 +356,7 @@
                                                     class="black">
                                                 <img src="{{ url('img/master/name-red.svg') }}" alt="name-red"
                                                     class="red"></span>
-                                            <input type="text" name="lastname" id="l-name" placeholder="Last Name*"
+                                            <input type="text" name="lastname" id="l-name" placeholder="Last Name"
                                                 autocomplete="off"  class="firstname inputlastname">
                                         </div>
                                         <div class="input-container">
