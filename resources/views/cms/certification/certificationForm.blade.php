@@ -83,23 +83,3 @@
     <!-- /.content-wrapper -->
 
 @endsection
-@section('footer')
-
-    <script>
-        $(document).ready(function() {
-            $("#name").on('input', function() {
-                updateSlug();
-            });
-        });
-
-        function updateSlug() {
-            var location = $("#name").val();
-            var slug = '/certification-programmes/' + convertUrl(location);
-
-            $("#reference").val(slug);
-
-        }
-
-    </script>
-
-@endsection

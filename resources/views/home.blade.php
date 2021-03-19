@@ -97,7 +97,41 @@
                         </a>
 
                     @endforeach
+                    @foreach ($certifications->take(9) as $certification)
 
+                    {{-- <a href="{{ url('training-courses' . $category->reference) }}" class="course-name"> --}}
+                    <a href="{{ $certification->url }}" class="course-name">
+                        <span class="icon">
+                            <img src="{{ $certification->getImagePath() }}" alt="management">
+                            <img src="{{ $certification->getIconPath() }}" alt="management-white">
+                        </span>
+                        <div class="name">
+                            <h3>
+                                {{ $certification->name }}
+                            </h3>
+                            @if ($certification->topics_count < 2)
+                                <p>{{ $certification->topics_count }} Topic</p>
+                            @else
+                                <p>{{ $certification->topics_count }} Topics</p>
+                            @endif
+                            @foreach ($certification->topics as $topic)
+                            @if($loop->first)
+                            @php $totalCourses=0 @endphp
+                            @endif
+                            @php $totalCourses+=$topic->courses_count @endphp
+                            @endforeach
+                            @if ($totalCourses < 2)
+                                <p> {{ $totalCourses }} Course </p>
+                            @else
+                                <p> {{ $totalCourses }} Courses </p>
+                            @endif
+                        </div>
+                        <span class="arrow">
+                            <img src="{{ url('img/home/arrow.svg') }}" alt="arrow">
+                        </span>
+                    </a>
+
+                @endforeach
                 </div>
                 <div class="buttons">
                     <a href="{{route('catalogue')}}"  class="btn-blue">

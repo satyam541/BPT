@@ -39,6 +39,7 @@ if (!function_exists('encodeUrlSlug')) {
         $name = str_replace("&", " and", "$string");
         $name = str_replace("+", " plus", "$name");
         $name = str_replace("/", "", "$name");
+        $name = str_replace("-", " ", "$name");
         $stringname = strtolower(preg_replace('/[^a-zA-Z0-9]+/', '-', $name));
         return $stringname;
     }
