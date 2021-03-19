@@ -176,7 +176,13 @@ if (!function_exists('encodeUrlSlug')) {
             return $blogs;
         }
     }
-    
+    if (!function_exists('topicPopular')) {
+        function topicPopular()
+        {
+            $topicPopular = Topic::has('popular')->get();
+            return $topicPopular;
+        }
+    }
     // this function is not being used
     if (!function_exists('courses')) {
         function courses()

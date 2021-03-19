@@ -123,7 +123,7 @@
                         @foreach ($topicData as $category_id=>$topics) 
                         <div class="course" id="category_{{$category_id}}">
                             @foreach ($topics->take(8) as $topic)
-                            <a href="{{$topic->url }}"data-target="topic_{{$topic->id}}">
+                            <a data-target="topic_{{$topic->id}}">
                                 <span>
                                     <img src="{{url('img/master/test.svg')}}" alt="test" class="blue">
                                     <img src="{{url('img/master/test-white.svg')}}" alt="test-white" class="white">
@@ -169,11 +169,10 @@
             </div>
             <p>Or select from our popular topics</p>
             <ul>
-                <li><a>PRINCE2®</a></li> 
-                <li><a>ITIL®</a></li>
-                <li><a>Lean Six Sigma</a></li>
-                <li><a>Agile<a></li>
-                <li><a>Scrum</a></li>
+                @foreach (topicPopular()->take(5) as $popularTopic)
+                            <li><a href="{{$popularTopic->url}}">{{$popularTopic->name}}</a> </li>
+                 @endforeach
+                
             </ul>     
     </form>
 </div>
