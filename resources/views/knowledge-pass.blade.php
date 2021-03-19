@@ -86,18 +86,18 @@
                </div>
                <div class="course-list">
                   
-                   @foreach($topics  as $topic)
+                   {{-- @foreach($topics  as $topic) --}}
                     <div class="course-content panelJS">
                         <div class="course-name panel-titleJS">
                                 <p>
                                     {{-- Business Skills (17 courses (s)) --}}
-                                    {{$topic->name ."(" .$topic->courses->count(). " courses (s))" }}
+                                    {{-- {{$topic->name ."(" .$topic->courses->count(). " courses (s))" }} --}}
                                 </p>
                                 <span class="amount" data-amount="0" data-course="0">0</span>
                                 <span class="ks2" data-price="0">0</span>
                                 <span class="image">
-                                <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow">
-                                <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow">
+                                {{-- <img src="{{url('../img/knowledge-pass/blue-arrow.svg')}}" class="blue" alt="blue-arrow"> --}}
+                                {{-- <img src="{{url('../img/knowledge-pass/white-arrow.svg')}}" class="white" alt="blue-arrow"> --}}
                                 </span>
                         </div>
                         <div class="description">
@@ -117,7 +117,7 @@
 
                         </div>
                      
-                        @foreach($topic->courses as $course)
+                        {{-- @foreach($topic->courses as $course)
                         <div class="course-detail  coursedataJS">
                                 <p>
                                   {{$course->name}}
@@ -147,7 +147,7 @@
                         </div>
 
                     </div>
-                    @endforeach
+                    @endforeach --}}
                
                </div>
                <div class="summary panel-footerJS">
@@ -238,7 +238,7 @@
                 </div>
                 <div class="buttons">
                     <a class="btn-blue open-popup enquiryJS" data-type="knowledgepass" data-quote="Send Us Your Requirement" data-heading="Send Us Your Requirement">
-                        <img src="{{url('../img/knowledge-pass/requirements.svg')}}" alt="requirements">
+                        {{-- <img src="{{url('../img/knowledge-pass/requirements.svg')}}" alt="requirements"> --}}
                         Send Us Your Requirement
                     </a>
                 </div>
