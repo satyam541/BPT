@@ -8811,7 +8811,7 @@ input[type=number] {
 }
 .foundation .tab {
   display: flex;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   align-self: flex-end;
   line-height: 1.2;
