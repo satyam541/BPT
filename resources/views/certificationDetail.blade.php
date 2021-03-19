@@ -23,7 +23,7 @@
 <!-- Start Certification-Course Section -->
 <section class="flex-container certification-course">
     <div class="container">
-        @foreach ($certification->topic as $topic)
+        @foreach ($certification->topics as $topic)
         <div class="course-container course-detail">
             <div class="heading center-heading">
                 <h2>{!!$topic->name!!}</h2>

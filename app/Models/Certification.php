@@ -21,7 +21,7 @@ class Certification extends Model
 
     public function getUrlAttribute()
     {
-        $reference =  $this->reference;
+        $reference =  $this->slug;
         $url = 'certification-programmes/'.$reference;
         if(country()->country_code != 'gb')
         {

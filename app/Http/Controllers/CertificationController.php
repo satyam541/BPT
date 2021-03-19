@@ -34,7 +34,7 @@ class CertificationController extends Controller
             metaData($meta);
         }
        
-        $data['certification']=Certification::with('topic.courses')->where('slug',$certification)->first();
+        $data['certification']=Certification::with('topics.courses')->where('slug',$certification)->first();
         $data['pageDetail'] = PageDetail::getContent('certification_details');
         return view('certificationDetail',$data);
     }
