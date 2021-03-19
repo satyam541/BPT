@@ -1107,6 +1107,7 @@ input[type=number] {
 .enquiry-popup .enquire-popup {
   display: flex;
   flex-direction: column;
+  width: 100%;
   box-shadow: 0 0 40px #dfdfdf;
   position: relative;
   z-index: 1;
@@ -1135,6 +1136,9 @@ input[type=number] {
 .enquiry-popup .enquire-popup .cross img {
   width: 100%;
   height: 100%;
+}
+.enquiry-popup .enquire-popup .buttons {
+  width: 100%;
 }
 .enquiry-popup .form {
   box-shadow: none;
@@ -1799,8 +1803,8 @@ input[type=number] {
     display: none;
   }
   .dropdown-menu .category-menu a span img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
   .dropdown-menu .category-menu a p {
     color: #FFFFFF;

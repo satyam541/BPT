@@ -614,7 +614,7 @@
                                     <span><img src="{{url('img/master/house-white.svg')}}" alt="house" class="black">
                                         <img src="{{url('img/master/house-red.svg')}}" alt="house-red"
                                             class="red"></span>
-                                    <input type="text" name="company" id="address" placeholder="Company"
+                                    <input type="text" name="company" id="address" placeholder="Company Name*"
                                         autocomplete="off">
                                 </div>
                                 <div class="input-container">
@@ -954,31 +954,6 @@
                 break;
         }
     }
-
-function scrollToSpecificDiv(selector) {
-    if ($(selector).length > 0) {
-        var selectorTop = $(selector).offset().top;
-        var navbarHeight =  $(".navbar.sticky").height();
-        var filterHeight = $(".filter-top").outerHeight(true);
-        // navbar is not sticky on page reload before scroll.
-        console.log("navbar height before : "+ navbarHeight);
-        if(navbarHeight == undefined)
-        {
-            if(selector == "#datesprices"){
-                navbarHeight = 64;
-            }
-            else{
-                navbarHeight = 0;
-            }
-        }
-        selectorTop -=  (navbarHeight + filterHeight);
-        $('html,body').animate({
-            scrollTop: selectorTop
-        }, 1000);
-    } else {
-        console.log('scrolltop not found');
-    }
-}
 
 </script>
 
