@@ -171,8 +171,8 @@
                         <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" id="checkConsent" name="contactConsent">
-                        <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most
+                        <input type="checkbox" id="popcheckConsent" name="contactConsent">
+                        <label for="popcheckConsent">By submitting this enquiry I agree to be contacted in the most
                             suitable manner (by phone or email) in order to respond to my enquiry.</label>
                     </div>
                     <div class="consent-error" style="display: none;">
@@ -180,8 +180,8 @@
                             consent to us contacting you about your enquiry</p>
                     </div>
                     <div class="form-consent">
-                        <input type="checkbox" name="marketing_consent" id="allowconsent">
-                        <label for="allowconsent">Click here to sign up to our email marketing, offers and
+                        <input type="checkbox" name="marketing_consent" id="popallowconsent">
+                        <label for="popallowconsent">Click here to sign up to our email marketing, offers and
                             discounts</label>
                     </div>
                     <div id="hiddenFields">
