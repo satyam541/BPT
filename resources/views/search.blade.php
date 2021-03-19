@@ -62,11 +62,13 @@
 <section class="flex-container result">
     <div class="container">
         <div class="result-container">
+            @if(empty($query))
             <div class="heading">
                 @if($resultCount != 0 && $query !="")
                 <h2>{{$resultCount}} Results Found for "{{$query}}"</h2>
                 @endif
             </div>
+            @endif
             <div class="result-content">
                 <div class="result-list">
                   
