@@ -39,7 +39,7 @@
                         <a href={{$popularLocation->url}}>{{$popularLocation->name}}</a>
                         <div class="buttons">
                             <a href={{$popularLocation->url}} class="btn-blue">
-                                View detail<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
+                                View Detail<img src="{{url('img/location/btn-arrow.svg')}}" alt="btn-arrow">
                             </a>
                         </div>
                     </div>

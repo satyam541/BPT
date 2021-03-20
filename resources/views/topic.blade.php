@@ -421,7 +421,7 @@
                     <div class="popular-content">
                         <p>{!!$pageDetail->popular_location['popular']->content!!}</p>
                         <div class="buttons">
-                        <a href="javascript:void(0);" class="btn-blue open-popup enquiryJS" data-quote="Learn More" data-type="topic" data-course="{{$topic->name}}" data-heading="Learn More">
+                        <a href="{{route('locations')}}" class="btn-blue">
                             <img src="{{url('img/courses/learn.svg')}}" alt="learn">
                             View More
                         </a>
