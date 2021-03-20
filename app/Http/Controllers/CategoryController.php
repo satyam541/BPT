@@ -9,6 +9,10 @@ class CategoryController extends Controller
 {
     public function index(Request $request){
         $category=Category::with('categoryContent','topics')->where('reference',$request->category)->first();
+        if(empty($category))
+        {
+            return redirect()->route('catalogue');
+        }
         $category->loadContent();
         if(!empty($category))
         {
