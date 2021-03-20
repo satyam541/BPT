@@ -16,7 +16,8 @@ class OnlinePrice extends Model
     }
     public function addons()
     {
-        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
+        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id')
+        ->where('country_id', country()->country_code);
     }
 
     public function getOfferPriceAttribute($price)
