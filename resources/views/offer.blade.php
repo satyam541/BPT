@@ -599,23 +599,6 @@
                     </div>
                    </div>
                 </div>
-                <div class="bundle-info">
-                   <div class="bundle-content">
-                   <h3>Data Protection Professional Bundle</h3>
-                    <span>Up to 15% off with this bundle</span>
-                    <ul>
-                        <li>Courses included</li>
-                        <li>CISSP Certified Information Systems Security Professional</li>
-                        <li>EU GDPR General Data Protection Regulation Foundation & Practitioner</li>
-                    </ul>
-                    <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="Data Protection Professional Bundle" data-heading="Data Protection Professional Bundle">
-                                <img src="{{url('img/offer/email.svg')}}" alt="email">
-                                Enquire Now
-                        </a>
-                    </div>
-                   </div>
-                </div>
             </div>
         </div>
     </div>

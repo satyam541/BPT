@@ -222,23 +222,37 @@
     
 <script>
  
-    $("#locationFilter").on('keyup',function(){
+  
+ $("#locationFilter").on('keyup',function(){
        
        var input = $(this).val();
        var locations = $(".popular-list .item");
-       locations.hide();
+       locations.addClass('hide');
 
        $.each(locations, function( index, location ) {
+
            location = $(location);
+          
            var locationName = location.find('.text-name').text().trim();
-           console.log(locationName);
+           
            regex = new RegExp('^(' + input + ')', 'i');
+           
            if (regex.test(locationName)) 
            {
-               location.show();
+            
+               location.removeClass('hide');
+            
+            
            }
-       });
+  
+     
+        });
  
+       if($('.popular-list .item').not('.hide').length== '0')
+       {
+
+           $('.popular-list').html('<p>"No Result Found"</p>');
+       }
    }).on('keypress',function(e){
        // prevent form submit on enter key
        if(e.keyCode === 13 || e.which === 13)
@@ -247,6 +261,6 @@
            return false;
        }
    });
-    </script>
+ </script>
 
 @endsection
