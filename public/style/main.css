@@ -13671,7 +13671,7 @@ input[type=number] {
   display: flex;
   width: 46%;
   height: 80px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 0.7rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   background-color: #FFFFFF;
