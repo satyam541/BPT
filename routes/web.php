@@ -12,15 +12,19 @@
 */
 /*this is created to fetch data from old msp please dont remove or hit this route*/
 
-Route::get('fetchapi/locations', 'TestController@locations');
-Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
-Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
-Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
-Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
-Route::get('fetchapi/countryLocations','TestController@countryLocations'); /* To fetch only courses and related content*/ 
-Route::get('fetchapi/country','TestController@Country'); /* To fetch only courses and related content*/ 
+// Route::get('fetchapi/locations', 'TestController@locations');
+// Route::get('fetchapi/course','TestController@index'); /* To fetch course, topic, category and related content*/ 
+// Route::get('fetchapi/bundle','TestController@bundle'); /* To fetch course, topic, category and related content*/ 
+// Route::get('fetchapi/popular','TestController@popular'); /* To fetch course, topic, category and related content*/ 
+// Route::get('fetchapi/only-courses','TestController@onlyCourses'); /* To fetch only courses and related content*/ 
+// Route::get('fetchapi/countryLocations','TestController@countryLocations'); /* To fetch only courses and related content*/ 
+// Route::get('fetchapi/country','TestController@Country'); /* To fetch only courses and related content*/ 
+// Route::get('dump','TestController@dump'); /* To fetch only courses and related content*/ 
+// Route::get('missing','TestController@missingCourse'); /* To fetch only courses and related content*/ 
+// Route::get('missing/content','TestController@missingContent'); /* To fetch only courses and related content*/ 
+Route::get('reference/match','TestController@refernceMatch'); /* To fetch only courses and related content*/ 
 
-Route::get('match/topic', 'TestController@matchTopic');
+// Route::get('match/topic', 'TestController@matchTopic');
 
 
 Auth::routes(['register'=>false]);

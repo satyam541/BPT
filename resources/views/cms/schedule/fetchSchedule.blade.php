@@ -76,7 +76,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-xs-12">
                                                 <p class="text-center">
-                                                    Status : <strong id="api-progress-status">Idle</strong>
+                                                    Status : <strong id="api-progress-status">Idle<span id="api-progress-status-month"></span></strong>
                                                 </p>
                                             <div class="progress-group" id="first-progress-bar">
                                                 <span class="progress-text">No data</span>
@@ -123,6 +123,7 @@
 @section('footer')
 <script>
     var progressTitle = $("#api-progress-status")
+    var progressTitleMonth = $("#api-progress-status-month")
     var progress1 = $("#first-progress-bar");
     var progress2 = $("#second-progress-bar");
     var progress3 = $("#last-progress-bar");
@@ -194,7 +195,8 @@
    {
         //console.log(data);
        // progress1,progress2,progress3,progressTitle
-       progressTitle.html(data.status);
+       progressTitle.html(data.status, data.mo);
+       progressTitleMonth.html('Month'+data.month);
        if(timer=="true")
       {
          

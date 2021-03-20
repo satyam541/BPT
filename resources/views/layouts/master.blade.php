@@ -32,8 +32,13 @@
         })(window,document,'script','dataLayer','GTM-TN35HD8');</script>
         <!-- End Google Tag Manager -->
 </head>
-
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN35HD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<meta itemprop="name" content="{{ websiteDetail()->name }}">
+<meta itemprop="url" content="{{ url('') }}">
     @yield("content")
     <footer class="flex-container footer">
         <div class="container">
