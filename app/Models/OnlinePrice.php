@@ -14,10 +14,6 @@ class OnlinePrice extends Model
     public function course() {
         return $this->belongsTo('App\Models\Course');
     }
-    public function addons()
-    {
-        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
-    }
 
     public function getOfferPriceAttribute($price)
     {
