@@ -22,12 +22,13 @@ class CourseController extends Controller
             $data['selectedMonth']=$month;
          }
        
-        if(!empty($this->redirectRoute))
-        {
-            return redirect($this->redirectRoute);
-        }
 
         $course         = Course::with('topic:name,id,reference','countryContent','faqs','whatsIncluded')->where('reference',$request->category.'/'.$request->topic.'/'.$request->course)->first();
+        
+        if(empty($course))
+        {
+            return redirect()->route('catalogue');
+        }
         $course->loadContent(); 
         if(!empty($course))
         {
@@ -42,7 +43,7 @@ class CourseController extends Controller
 
         if($request->course)
         {
-            $schedule = $schedule->where('response_course_name',$course->name)->where('response_date','>',Carbon::today());
+            $schedule = $schedule->where('response_course_name',$course->tka_name)->where('response_date','>',Carbon::today());
         }
         if($request->location)
         {
@@ -60,6 +61,7 @@ class CourseController extends Controller
         $locationOrderString        = '"'.implode('","',$locationNames).'"';
         $data['schedules']          = $schedule->where('country_id', country()->id)
                                         ->where('response_location','!=','Virtual')->where('course_id', $course_id)
+                                        ->whereDate('response_date','>=',Carbon::today())
                                         ->orderBy('response_date')
                                         ->orderByRaw("Field(response_location,".$locationOrderString.")")
                                         ->paginate(5,['*'],'classroom-page');
@@ -67,10 +69,10 @@ class CourseController extends Controller
         $data['virtualSchedules']   = Schedule::where('country_id', country()->id)
                                         ->where('response_location','Virtual')
                                         ->where('course_id',$course_id)
-                                        ->where('response_date','>',Carbon::today())->orderBy('response_date')
+                                        ->whereDate('response_date','>=',Carbon::today())->orderBy('response_date')
                                         ->paginate(5,['*'],'virtual-page');
 
-        $topicCourses               = $course->topic->courses()->get()->pluck('id')->toArray();
+        $topicCourses               = $course->topic->courses->pluck('id')->toArray();
         $onlineCourses              = Course::whereNotIn('id',$topicCourses)->get()->pluck('course_id')->toArray();
         $onlineCourses              = '"'.implode('","',$onlineCourses).'"';
         $topicCourses               = '"'.implode('","',$topicCourses).'"';

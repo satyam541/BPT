@@ -12,6 +12,10 @@ class TopicController extends Controller
     public function index(Request $request){
         $topic      = Topic::with('topicContent','faqs','Bulletpoint','courses')
                                 ->where('reference',$request->category.'/'.$request->topic)->first();
+        if(empty($topic))
+        {
+            return redirect()->route('catalogue');
+        }
         $topic->loadContent();                       
         if(!empty($topic))
         {
@@ -24,6 +28,7 @@ class TopicController extends Controller
         $data['topic'] = $topic;
         
         $data['otherTopics']= Topic::with('courses')
+                                ->has('courses')
                                 ->where('category_id', $topic->category_id)
                                 ->where('id', '<>', $topic->id)
                                 ->select('id', 'name', 'reference')

@@ -306,8 +306,8 @@
                             <option value="">Select a Delivery Format:</option>
                             <option value="#virtual-booking">Online Instructor-led</option>
                             <option value="#classroom-booking">Classroom</option>
-                            <option value="#online-booking">Online</option>
-                            <option value="#onsite-booking">Online Self-paced</option>
+                            <option value="#online-booking">Online self-paced</option>
+                            <option value="#onsite-booking">Onsite</option>
                         </select>
                     </div>
                     <div class="buttons explore-btn">
@@ -331,7 +331,7 @@
                             <a href="#online-booking" class="methods" id="online" data-target="online">
                                 <img src="{{ url('img/courses/online-blue.svg') }}" alt="online" class="blue">
                                 <img src="{{ url('img/courses/online-gray.svg') }}" alt="online" class="gray">
-                                <p>Online</p>
+                                <p>Online self-paced</p>
                             </a>
                             <a href="#virtual-booking" class="methods" id="virtual" data-target="virtual">
                                 <img src="{{ url('img/courses/virtual-blue.svg') }}" alt="virtual" class="blue">
@@ -341,7 +341,7 @@
                             <a href="#onsite-booking" class="methods" id="onsite" data-target="onsite">
                                 <img src="{{ url('img/courses/onsite-blue.svg') }}" alt="onsite" class="blue">
                                 <img src="{{ url('img/courses/onsite-gray.svg') }}" alt="onsite" class="gray">
-                                <p>Online Self-paced</p>
+                                <p>Onsite</p>
                             </a>
                         </div>
                     </div>
