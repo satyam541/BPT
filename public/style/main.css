@@ -299,10 +299,10 @@ input[type=number] {
 .overflow {
   overflow: hidden;
 }
-.show {
+.location-show {
   display: flex;
 }
-.hide {
+.location-hide {
   display: none !important;
 }
 .ui-autocomplete .ui-autocomplete-category {
