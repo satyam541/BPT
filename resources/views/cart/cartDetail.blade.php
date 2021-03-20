@@ -425,7 +425,6 @@
 
                         </form>
                         <div class="payment-detail" id="stepFour">
-                            <h2>Summary Detail</h2>
                             <div class="group-input">
                                 
                                 

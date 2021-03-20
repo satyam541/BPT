@@ -533,9 +533,13 @@ $('#scroll').click(function(){
 
     //Start open search
     $('#search').click(function(){
+        
         $('#pop-search').addClass('open');
         $("body").addClass("overflow");
+        
     });
+    
+    
     $('#mobile-search').click(function(){
         $('#pop-mobile').addClass('open');
         $("body").addClass("overflow");
@@ -547,6 +551,7 @@ $('#scroll').click(function(){
     $(".search-cross").on("click", function(){
         $('#pop-search').removeClass('open');
         $("body").removeClass("overflow");
+
     });
     //End open search
 
@@ -566,6 +571,12 @@ $('#scroll').click(function(){
     });
     //End about dropdown
 
+    $('.enquiry-popup').click(function(){
+        if($('body').hasClass('overflow'))
+        {
+            $('body').removeClass('overflow');
+        }
+    })
 
     $('body').on('click',function(event){
         var element = event.target;
@@ -581,7 +592,7 @@ $('#scroll').click(function(){
         window.location.href = $(this).attr('href');
     }); 
     $('.course-menu a').on('click', function(){
-        window.location.href = $(this).attr('href');
+        window.location.href = $(this).attr('href');6
     });
     $(".country-list .country").click(function() {
  
