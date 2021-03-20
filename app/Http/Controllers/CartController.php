@@ -438,6 +438,7 @@ class CartController extends Controller
         $cartItems = Cart::content();
         $quantity = $cartItem->qty;
 
+
         if($quantity > $delegate)
         {
             $delegate++;
@@ -446,15 +447,27 @@ class CartController extends Controller
         else if($cartItems->last()->rowId != $cartItem->rowId)
         {
             $delegate = 1;
-            $iterator = $cartItems->getIterator();
-
-            $next = current($iterator);
-       
-            while($next->rowId != $cartItem->rowId)
+            $keyMap = array_keys($cartItems->toArray());
+            foreach($keyMap as $key => $loopRowId)
             {
-                $next = next($iterator);
+                if($cartItem->rowId != $loopRowId)
+                {
+                    continue;
+                }
+                $nextItem = $key+1;
+                $nextItemRowId = $keyMap[$nextItem];
+                $cartItem = $cartItems[$nextItemRowId];
+                break;
             }
-            $cartItem = next($iterator);
+            // $iterator = $cartItems->getIterator();
+
+            // $next = current($iterator);
+       
+            // while($next->rowId != $cartItem->rowId)
+            // {
+            //     $next = next($iterator);
+            // }
+            // $cartItem = next($iterator);
             
             $rowId = $cartItem->rowId;
         }

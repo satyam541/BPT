@@ -1071,6 +1071,9 @@ input[type=number] {
   position: fixed;
   right: 30px;
 }
+.footer-cookie {
+  padding-bottom: 14rem;
+}
 .bottom-bar {
   background: #1C2848;
   box-shadow: 0 -10px 15px rgba(195, 195, 195, 0.098);
@@ -1418,6 +1421,9 @@ input[type=number] {
   }
   .footer .content {
     width: 48%;
+  }
+  .footer-cookie {
+    padding-bottom: 9rem;
   }
   .enquiry-popup {
     padding: 3rem 2rem;
@@ -2009,6 +2015,9 @@ input[type=number] {
   .footer .blog {
     width: 27%;
   }
+  .footer-cookie {
+    padding-bottom: 5rem;
+  }
 }
 @media (min-width : 1366px) {
   .container {
@@ -2106,6 +2115,9 @@ input[type=number] {
   }
   .footer .contact-us h2 {
     text-align: center;
+  }
+  .footer-cookie {
+    padding-bottom: 5rem;
   }
   .tooltips {
     display: flex;
@@ -5841,6 +5853,12 @@ input[type=number] {
 .popular .popular-list {
   display: flex;
   flex-direction: column;
+}
+.popular .popular-list p {
+  text-align: center;
+  font-size: 18px;
+  color: #1C2848;
+  font-weight: 600;
 }
 .popular .item {
   display: flex;
