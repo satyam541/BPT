@@ -8432,6 +8432,7 @@ input[type=number] {
   .certification-course a {
     width: 70%;
     text-align: left;
+    transition: 2s ease-in-out;
   }
   .certification-course .buttons {
     width: 28%;
