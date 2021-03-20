@@ -60,7 +60,7 @@
 <meta itemprop="name" content="{{ websiteDetail()->name }}">
 <meta itemprop="url" content="{{ url('') }}">
     @yield("content")
-    <footer class="flex-container footer">
+    <footer class="flex-container footer footer-cookie">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-content">
@@ -375,7 +375,7 @@ function setCookie(cname, cvalue, exdays) {
    var expires = "expires="+ d.toUTCString();
    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
    $("#footerCookie").hide();
-   $(".footer").css("padding-bottom", "1rem");
+   $(".footer").removeClass("footer-cookie");
 }
 
 function getCookie(cname) {
@@ -398,7 +398,9 @@ function checkCookie() {
    var username = getCookie("cookie");
    if (username != "") {
       $("#footerCookie").hide();
-    //   $(".footer").css("padding-bottom", "0px");
+      if($(".footer").hasClass("footer-cookie")){
+        $(".footer").removeClass("footer-cookie");
+      }
    }
 }
 
