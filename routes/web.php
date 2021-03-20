@@ -9,7 +9,11 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+
 */
+
+\Debugbar::disable();
 /*this is created to fetch data from old msp please dont remove or hit this route*/
 
 // Route::get('fetchapi/locations', 'TestController@locations');
