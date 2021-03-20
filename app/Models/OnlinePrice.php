@@ -17,7 +17,7 @@ class OnlinePrice extends Model
 
     public function getOfferPriceAttribute($price)
     {
-        return $this->price -50 ;
+        return $this->price - convertPrice(50) ;
         
     }
 }
