@@ -227,7 +227,7 @@
        
        var input = $(this).val();
        var locations = $(".popular-list .item");
-       locations.addClass('hide');
+       locations.addClass('location-hide');
 
        $.each(locations, function( index, location ) {
 
@@ -240,7 +240,7 @@
            if (regex.test(locationName)) 
            {
             
-               location.removeClass('hide');
+               location.removeClass('location-hide');
             
             
            }
@@ -248,7 +248,7 @@
      
         });
  
-       if($('.popular-list .item').not('.hide').length== '0')
+       if($('.popular-list .item').not('.location-hide').length== '0')
        {
 
            $('.popular-list').html('<p>"No Result Found"</p>');
