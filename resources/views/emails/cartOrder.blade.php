@@ -319,7 +319,7 @@
             <div>
                             
                 <p>
-                    Thank you for contacting  Best Pratice Training  - a learning advisor will be contacting you shortly.
+                    Thank you for contacting  {{ websiteDetail()->name }}  - a learning advisor will be contacting you shortly.
                 </p>
                 <p>
                     If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #1C2848;">{{ websiteDetail()->contact_email }}</a>
