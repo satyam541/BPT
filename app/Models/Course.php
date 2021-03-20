@@ -24,9 +24,9 @@ class Course extends Model
             $builder->orderBy('display_order');
         });
         if (request()->route()->action['prefix'] != 'cms') {
-            static::addGlobalScope('published', function (Builder $builder) {
-                $builder->where("published", 1);
-            });
+            // static::addGlobalScope('published', function (Builder $builder) {
+            //     $builder->where("published", 1);
+            // });
         }
     }
 

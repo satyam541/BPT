@@ -7,8 +7,7 @@
             @include("layouts.navbar")
             <div class="banner-container">
                 <h1>Cart</h1>
-                <p>BPT was founded over 20 years ago with one simple mission: Finding the most trusted training courses
-                    around, at the most competitive prices. We recognise that the training marketplace is crowded.</p>
+                <p>Check what is in your cart here. Fetch all the information about every item, including its date, delivery method, number of delegates, and cost of each course.</p>
                 <div class="breadcrums">
                     <ul>
                         <li><a href="javascript:void(0);">Home</a></li>
