@@ -302,10 +302,11 @@ class ScheduleApi extends Controller
         }
         $courseid = $course->id;
         
-        $onlinePrice = OnlinePrice::firstOrNew(['course_id' => $courseid]);
+        $onlinePrice = OnlinePrice::firstOrNew(['course_id' => $courseid, 'country_id'=>$this->country]);
         $percentage = 10;
         $new_incrementedAmount = ($percentage / 100) * $price;
         $onlinePrice['price'] =  round($price + $new_incrementedAmount);
+        $onlinePrice['country_id'] = $this->country;
         $onlinePrice['type']  =  'Online';
         $onlinePrice['component'] =  'Basic';
         $onlinePrice['course_id'] = $courseid;
@@ -344,7 +345,8 @@ class ScheduleApi extends Controller
                 $courseAddon =  CourseAddon::updateOrCreate(
                     [
                         'name'        =>  $responseData['name'],
-                        'addon_type' => $addonType
+                        'addon_type' => $addonType,
+                        'country_id' => $this->country
                     ],
                     [
                         'description' => $responseData['description'],

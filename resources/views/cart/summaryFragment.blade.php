@@ -1,11 +1,3 @@
-
-<div class="payment">
-    <h2>Payment Details</h2>
-    <div class="payment-content">
-        <p><strong>Payment Method: </strong> {{$orderData->payment_method}}</p>
-        <p><strong>Payment Detail: </strong> {{ $orderData->payment_detail}}</p>
-    </div>
-</div>
 <div class="payment">
     <h2>Summary Detail</h2>
     <div class="payment-content">
@@ -15,6 +7,14 @@
         <p><strong>Total: </strong> {!! country()->currency_symbol !!} {{ $orderData->grand_total }}</p>
     </div>
 </div>
+<div class="payment">
+    <h2>Payment Details</h2>
+    <div class="payment-content">
+        <p><strong>Payment Method: </strong> {{$orderData->payment_method}}</p>
+        <p><strong>Payment Detail: </strong> {{ $orderData->payment_detail}}</p>
+    </div>
+</div>
+
 <div class="payment">
     <h2>Customer Detail</h2>
     <div class="payment-content">
