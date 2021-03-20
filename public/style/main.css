@@ -299,6 +299,12 @@ input[type=number] {
 .overflow {
   overflow: hidden;
 }
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}
 .ui-autocomplete .ui-autocomplete-category {
   color: #1C2848;
   font-weight: 700;
