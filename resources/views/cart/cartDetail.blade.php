@@ -369,7 +369,7 @@
                                                 <span class="prefix code"></span>
                                                 <input type="number" class="telephone tel mobile" placeholder="Phone Number*" min=0 autocomplete="off">
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                                    <input type="text" name="phone" class="phonenumber" tabindex="-1" autocomplete="off">
+                                                    <input type="text" name="phone" class="phonenumber mobilenumber" tabindex="-1" autocomplete="off">
                                                     <input type="text" name="phonecode" class="phonecode" tabindex="-1" autocomplete="off">
                                                 </div>
                                             </div>

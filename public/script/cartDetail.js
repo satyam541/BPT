@@ -289,6 +289,7 @@ function switchPaymentMethod(value)
                         $('.c_code').val(response.countrycode);
                         $('.code').text(response.phonecode);
                         $('.inputemail').val(response.customer.email);
+                        $('.mobilenumber').val(response.customer.mobile);
 
                        
                       
