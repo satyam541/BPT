@@ -299,11 +299,11 @@
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
-                        <img src=" {{ url('img/home/event.svg') }}" alt="events">
+                        <img src=" {{ url('img/home/trainer.svg') }}" alt="trainer">
                         <div class="fact-count">
-                            <h3 class="count-number" data-to="{{$statsdata->stats['events']->content}}" data-speed="3000">{!!$statsdata->stats['events']->content!!}</h3><span>+</span>
+                            <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3><span>+</span>
                         </div>
-                        <p>Events</p>
+                        <p>Trainers</p>
                     </div>
                     <div class="item">
                         <img src="{{ url('img/home/countries.svg') }}" alt="countries">
