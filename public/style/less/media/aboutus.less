@@ -202,52 +202,52 @@ display: none;
     }
     //End banner section//
 
-// Start about-us section //
-.about-us{
-    .about-content{
-      padding-left: 2rem;
-      position: relative;
-      z-index: 1;
-      &::after{
-        content: '';
-        position: absolute;
-        z-index: -1;
-        left: 11px;
-        top: 7px;
-        width: 5px;
-        height: 480px;
-        border-left: 2px dashed @blackColor;
+  // Start about-us section //
+  .about-us{
+      .about-content{
+        padding-left: 2rem;
+        position: relative;
+        z-index: 1;
+        &::after{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 11px;
+          top: 7px;
+          width: 5px;
+          height: 480px;
+          border-left: 2px dashed @blackColor;
+        }
       }
-    }
-     h2{
-      position: relative;
-      z-index: 1;
-      &::before{
-        content: '';
-        position: absolute;
-        z-index: -1;
-        left: -31px;
-        top: 8px;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        border: 5px solid @lightblueColor;
-        background-color: @whiteColor;
-     }
+      h2{
+        position: relative;
+        z-index: 1;
+        &::before{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: -31px;
+          top: 8px;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          border: 5px solid @lightblueColor;
+          background-color: @whiteColor;
       }
+        }
 
-      .about-image{
-          .heading{
-              h2{
-                  &::before{
-                      content: none;
-                  }
-              }
-          }
-      }
-  
-  }
-// End about-us section //
+        .about-image{
+            .heading{
+                h2{
+                    &::before{
+                        content: none;
+                    }
+                }
+            }
+        }
+    
+    }
+  // End about-us section //
 
 
   // Start difference section//
@@ -291,81 +291,87 @@ display: none;
   // End differece section //
   
   
-// Start reviews section//
-.reviews{
-background-image: url(../img/aboutus/testimonial-bg.png);
-background-size: 100% 95%;
-background-repeat: no-repeat;
-.testimonial-item{
-background: linear-gradient(#00326C 54% , @whiteColor 44%);
+  // Start reviews section//
+  .reviews{
+  background-image: url(../img/aboutus/testimonial-bg.png);
+  background-size: 100% 95%;
+  background-repeat: no-repeat;
+  .testimonial-item{
+  background: linear-gradient(#00326C 54% , @whiteColor 44%);
 
-  p{
-    
-    min-height: 132px;
+    p{
+      
+      min-height: 132px;
+    }
+
   }
-
-}
-}
-// End reviews section//
-
-
-// Start Footer Section
-.contact-form{
-  background-image: url(../img/aboutus/contact-form.png);
-  background-size: 100% 100%;
-  padding-bottom: 1rem  !important;
-  padding-top: 1rem  !important;
-
-  .contact-container{
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
   }
-  .form{
-    width: 60%;
-    align-self: flex-start;
-    padding: 4rem;
-    box-shadow: none;
-    background-image: url(../img/aboutus/form-bg.png);
+  // End reviews section//
+
+  // Start Footer Section
+  .contact-form{
+    background-image: url(../img/aboutus/contact-form.png);
     background-size: 100% 100%;
-    background-color: transparent;
-    background-repeat: no-repeat;
+    padding-bottom: 1rem  !important;
+    padding-top: 1rem  !important;
 
-    .heading{
-      padding-top: 0;
+    .contact-container{
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .form{
+      width: 60%;
+      align-self: flex-start;
+      padding: 4rem;
+      box-shadow: none;
+      background-image: url(../img/aboutus/form-bg.png);
+      background-size: 100% 100%;
+      background-color: transparent;
+      background-repeat: no-repeat;
+
+      .heading{
+        padding-top: 0;
+      }
+    }
+    .contact-info{
+      width: 38%;
+        background: none;
+        margin-top: 0;
+        .heading{
+          h2,p{
+            text-align: left;
+          }
+        }
+        .contact-list{
+          width: 100%;
+          align-self: center;
+          .item{
+            width: 100%;
+          }
+        }
+    }
+    }
+  // End Footer Section
+
+  // Start skills section //
+  .skills{
+    .skills-list{
+      width: 80%;
+      align-self:center;
+    }
+    .skills-item{
+      width: 30%;
     }
   }
-  .contact-info{
-    width: 38%;
-      background: none;
-      margin-top: 0;
-      .heading{
-        h2,p{
-          text-align: left;
-        }
-      }
-      .contact-list{
-        width: 100%;
-        align-self: center;
-        .item{
-          width: 100%;
-        }
-      }
-  }
-  }
-// End Footer Section
+  // End skills section //
 
-// Start skills section //
-.skills{
-  .skills-list{
-    width: 80%;
-    align-self:center;
+  // Start difference section//
+  .difference {
+    background-color: transparent;
+
   }
-  .skills-item{
-    width: 30%;
-  }
-}
-// End skills section //
+  // End differece section //
 
   // Start Clients Section
   .clients {
@@ -375,8 +381,8 @@ background: linear-gradient(#00326C 54% , @whiteColor 44%);
     box-shadow: none;
     background-color: @bgColor;
     }
-    }
-    // End Clients Section
+  }
+  // End Clients Section
 }
 
 
