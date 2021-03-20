@@ -922,6 +922,7 @@ input[type=number] {
 .footer {
   background-color: #1C2848;
   padding: 3rem 1.5rem;
+  padding-bottom: 3.5rem;
 }
 .footer .polygon-img {
   width: 18px;
@@ -929,7 +930,6 @@ input[type=number] {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 3rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1983,7 +1983,7 @@ input[type=number] {
   .footer {
     background: linear-gradient(0deg, #1C2848 80%, #FFFFFF 48%);
     padding: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
   }
   .footer .content {
     width: 25%;
