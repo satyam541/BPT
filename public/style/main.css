@@ -2142,18 +2142,17 @@ input[type=number] {
     -ms-transform: translate(123px, 0);
     -o-transform: translate(123px, 0);
     transform: translate(123px, 0);
-    margin-left: 1rem;
   }
   .tooltips li:hover img {
     transform: rotate(360deg);
     transition: all 1s;
   }
   .tooltips li:hover:last-child {
-    -webkit-transform: translate(134px, 0);
-    -moz-transform: translate(134px, 0);
-    -ms-transform: translate(134px, 0);
-    -o-transform: translate(134px, 0);
-    transform: translate(134px, 0);
+    -webkit-transform: translate(155px, 0);
+    -moz-transform: translate(155px, 0);
+    -ms-transform: translate(155px, 0);
+    -o-transform: translate(155px, 0);
+    transform: translate(155px, 0);
   }
   .tooltips a {
     display: flex;
@@ -8318,8 +8317,7 @@ input[type=number] {
   background-repeat: no-repeat;
   padding: 1rem;
   margin-top: 1rem;
-  width: 272px;
-  align-self: center;
+  width: 100%;
 }
 .enquiry .contact-content p {
   font-size: 16px;
@@ -8495,6 +8493,7 @@ input[type=number] {
     box-shadow: none;
     margin-top: 0;
     padding: 0;
+    width: 272px;
   }
   .enquiry .contact-content:nth-child(1) {
     background-color: transparent;
@@ -13388,7 +13387,7 @@ input[type=number] {
     min-height: auto;
   }
   .explore .explore-item {
-    width: 31%;
+    width: 30%;
   }
   .explore .explore-item:nth-child(even) {
     margin-right: 2.5rem;

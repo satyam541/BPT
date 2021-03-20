@@ -150,7 +150,7 @@ class Course extends Model
     }
 
     public function courseAddon(){
-        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id');
+        return $this->belongsToMany('App\Models\CourseAddon','course_addon','course_id','addon_id')->where('country_id',country()->country_code);
     }
 
     public function getLogoPath()
@@ -182,7 +182,7 @@ class Course extends Model
     }
     public function onlinePrice()
     {
-        return $this->hasOne('App\Models\OnlinePrice','course_id');
+        return $this->hasOne('App\Models\OnlinePrice','course_id')->where('country_id', country()->country_code);
     }
 
     public function topic()

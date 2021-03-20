@@ -101,7 +101,7 @@
                 <div class="blog-question">
                     <h2>Have Any Question? Call Us Today</h2>
                     <a href="tel:{{websiteDetail()->contact_number}}">Call: {{websiteDetail()->contact_number}}</a>
-                    <a href="enquiries@bestpracticetraining.com" class="email">{{websiteDetail()->contact_email}}</a>
+                    <a href="mailto:{{websiteDetail()->contact_email}}" class="email">{{websiteDetail()->contact_email}}</a>
                 </div>
                
             </div>

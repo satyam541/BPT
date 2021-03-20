@@ -252,7 +252,7 @@
                 <div class="delivery-list">
                     @php unset($pageDetail->delivery_list['heading']) @endphp
                     @foreach ($pageDetail->delivery_list as $delivery)
-                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire Now-{{$delivery->heading}}"> 
+                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire For-{{$delivery->heading}}"> 
                             <div class="overlay">
                             </div>
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
@@ -299,7 +299,7 @@
                         <p>Locations Worldwide</p>
                     </div>
                     <div class="item">
-                        <img src=" {{ url('img/home/trainer.svg') }}" alt="trainer">
+                        <img src=" {{ url('img/home/trainer-home.svg') }}" alt="trainer">
                         <div class="fact-count">
                             <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3><span>+</span>
                         </div>
