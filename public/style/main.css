@@ -13870,7 +13870,7 @@ input[type=number] {
   padding: 1rem;
   width: 272px;
   align-self: center;
-  margin-top: 1.8rem;
+  margin-top: 1.5rem;
 }
 .knowledge .booking-info:nth-child(even) {
   background-color: #F6F6F6;
@@ -14181,6 +14181,7 @@ input[type=number] {
   }
   .why-right {
     padding: 3rem 2rem;
+    padding-top: 0!important;
   }
   .why-right .right-list {
     flex-direction: row;
@@ -14316,7 +14317,7 @@ input[type=number] {
     justify-content: space-between;
   }
   .knowledge .booking-info {
-    width: 31%;
+    width: 32%;
   }
   .knowledge h3 {
     min-height: 50px;
