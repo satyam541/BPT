@@ -5842,6 +5842,12 @@ input[type=number] {
   display: flex;
   flex-direction: column;
 }
+.popular .popular-list p {
+  text-align: center;
+  font-size: 18px;
+  color: #1C2848;
+  font-weight: 600;
+}
 .popular .item {
   display: flex;
   width: 272px;
