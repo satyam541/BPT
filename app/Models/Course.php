@@ -182,7 +182,7 @@ class Course extends Model
     }
     public function onlinePrice()
     {
-        return $this->hasOne('App\Models\OnlinePrice','course_id');
+        return $this->hasOne('App\Models\OnlinePrice','course_id')->where('country_id', country()->country_code);
     }
 
     public function topic()
