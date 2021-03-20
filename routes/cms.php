@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-\Debugbar::disable();
+Debugbar::disable();
 
 Route::get('/','DashboardController@list')->name('CmsIndex');
 Route::get('/dashboard','DashboardController@list')->name('dashboard');

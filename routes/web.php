@@ -13,7 +13,7 @@
 
 */
 
-\Debugbar::disable();
+Debugbar::disable();
 /*this is created to fetch data from old msp please dont remove or hit this route*/
 
 // Route::get('fetchapi/locations', 'TestController@locations');
