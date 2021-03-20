@@ -56,8 +56,8 @@ return [
     */
     'testing_email' => ["arshdeep.singh@themsptraining.com","konica.arora@themsptraining.com","navdeep.dhami@themsptraining.com", "satyam.suri@themsptraining.com", "paramjot.saini@themsptrainig.com"],
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'enquiries@bestpracticetraining.com',
+        'name' => 'Best Practice Training',
     ],
 
     /*
