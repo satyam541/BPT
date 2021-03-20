@@ -400,7 +400,7 @@
                         </p>
                     </div>
                 <div class="buttons">
-                    <a  class="btn-blue open-popup enquiryJS" data-quote="Get More Information" data-heading="Get More Information">
+                    <a  class="btn-blue open-popup enquiryJS" data-quote="Get More Information" data-type="other" data-heading="Get More Information">
                         <img src="{{ url('img/home/location-white.svg') }}" alt="call">
                             Get More Information
                     </a>
