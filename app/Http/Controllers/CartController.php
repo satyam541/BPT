@@ -448,9 +448,9 @@ class CartController extends Controller
         {
             $delegate = 1;
             $keyMap = array_keys($cartItems->toArray());
-            foreach($keyMap as $key => $rowId)
+            foreach($keyMap as $key => $loopRowId)
             {
-                if($cartItem->rowId != $rowId)
+                if($cartItem->rowId != $loopRowId)
                 {
                     continue;
                 }
