@@ -48,13 +48,13 @@
                     </td>
                 </tr>
                 @endif
-                @if(!empty($enquiry->phone))
+                @if(!empty($enquiry->type))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Booking Type :
                     </td>
                     <td style="width:70%">
-                        {{ $enquiry->phone }}
+                        {{ $enquiry->type }}
                     </td>
                 </tr>
                 @endif
