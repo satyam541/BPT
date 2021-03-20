@@ -23,6 +23,11 @@ class Course extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderBy('display_order');
         });
+        if (request()->route()->action['prefix'] != 'cms') {
+            // static::addGlobalScope('published', function (Builder $builder) {
+            //     $builder->where("published", 1);
+            // });
+        }
     }
 
     public function __get($attribute)
