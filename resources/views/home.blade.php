@@ -159,7 +159,7 @@
                     </a>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
                         <img src="{{ url('img/master/quote.svg') }}" alt="quote">
                         Enquire Now
                     </a>
