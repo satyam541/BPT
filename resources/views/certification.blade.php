@@ -60,7 +60,7 @@
             <div class="method-list">
                 @php unset($pageDetail->delivery_methods['heading'])  @endphp
                 @foreach ($pageDetail->delivery_methods as $deliverymethod)
-                <a class="method-content open-popup enquiryJS" data-quote="Enquire for - {{$deliverymethod->heading}}">
+                <a class="method-content open-popup enquiryJS" data-quote="Enquire for - {{$deliverymethod->heading}}" data-type="{{$deliverymethod->heading}}">
                     <span>
                         <img src="{{$deliverymethod->getImagePath()}}" alt="{{$deliverymethod->image_alt}}">
                     </span>
