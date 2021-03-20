@@ -7,7 +7,11 @@
         @include("layouts.navbar")
         <div class="banner-container">
             <div class="banner-content">
-                <h1>{{ $selectedCourse->name }}</h1>
+                <h1>{{ $selectedCourse->name }}
+                    @if (!empty($selectedlocation))
+                        in {{ucfirst($selectedlocation)}}
+                    @endif
+                </h1>
                 <div class="breadcrums">
                     <ul>
                         <li><a href="{{ Route('home') }}">Home</a></li>
