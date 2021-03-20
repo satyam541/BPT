@@ -45,7 +45,7 @@
                                 <h2 class="count-number" data-to="{{websiteDetail()->locations}}" data-speed="3000"></h2>
                                 <span>+</span>
                             </div>
-                            <p>Number of Locations</p>
+                            <p>LOCATIONS WORLDWIDE</p>
                         </div>
                         <div class="address">
                             <div class="info">
