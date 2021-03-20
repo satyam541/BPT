@@ -251,7 +251,7 @@
                                                     alt="province-black" class="black">
                                                 <img src="{{ url('img/master/province-red.svg') }}" alt="province-red"
                                                     class="red"></span>
-                                            <input type="text" name="province" id="province" placeholder="Province*"
+                                            <input type="text" name="province" id="province" placeholder="Province"
                                                 autocomplete="off">
                                         </div>
                                         <div class="input-container">
