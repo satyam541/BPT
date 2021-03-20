@@ -252,7 +252,7 @@
                 <div class="delivery-list">
                     @php unset($pageDetail->delivery_list['heading']) @endphp
                     @foreach ($pageDetail->delivery_list as $delivery)
-                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire For-{{$delivery->heading}}"> 
+                        <a class="item open-popup enquiryJS" data-heading="Enquire Now" data-quote="Enquire For-{{$delivery->heading}}" data-type= "other"> 
                             <div class="overlay">
                             </div>
                             <img src="{{ $delivery->getImagePath() }}" alt="{{ $delivery->image_alt }}">
