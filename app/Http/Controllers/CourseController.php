@@ -79,7 +79,6 @@ class CourseController extends Controller
         $finalCourseOrder           = $topicCourses.",".$onlineCourses;
         $data['onlineSchedules']    = Course::has('onlinePrice')->with('onlinePrice', 'courseAddon')
                                         ->where('id',$course_id)
-                                        ->where('country_id', country()->country_code)
                                         ->orderByRaw("Field(id,".$finalCourseOrder.")")->first();
         
         return view('courses', $data);
