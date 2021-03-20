@@ -56,7 +56,7 @@
             @php unset($pageDetail->method_list['heading']) @endphp
             <div class="method-list">
                 @foreach ($pageDetail->method_list as $method)
-                <a class="method-content open-popup enquiryJS" data-quote="Enquire for - {{$method->heading}}">
+                <a class="method-content open-popup enquiryJS" data-quote="Enquire for - {{$method->heading}}" data-type="other">
                     <span>
                         <img src="{{$method->getImagePath()}}" alt="{{$method->image_alt}}">
                     </span>
