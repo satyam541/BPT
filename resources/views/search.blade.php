@@ -108,8 +108,10 @@
                         </div>
                   @endif
                 </div>
+                @if ($popularCourses->isNotEmpty() || $popularLocations->isNotEmpty())
                 <div class="filter">
                     <!-- <h2>Filter</h2> -->
+                    @if ($popularCourses->isNotEmpty())
                     <div class="search-catagories">
                         <p>Popular Courses</p>
                         <ul>
@@ -118,6 +120,8 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif
+                    @if ($popularLocations->isNotEmpty())
                     <div class="search-catagories">
                         <p>Popular Locations</p>
                         <ul>
@@ -126,7 +130,10 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif
+                    
                 </div>
+                @endif
             </div>
         </div>
     </div>
