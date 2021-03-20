@@ -159,7 +159,7 @@
                     </a>
                 </div>
                 <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now">
+                    <a class="btn-blue open-popup enquiryJS" data-quote="Enquire Now" data-type="other">
                         <img src="{{ url('img/master/quote.svg') }}" alt="quote">
                         Enquire Now
                     </a>
@@ -400,7 +400,7 @@
                         </p>
                     </div>
                 <div class="buttons">
-                    <a  class="btn-blue open-popup enquiryJS" data-quote="Get More Information" data-heading="Get More Information">
+                    <a  class="btn-blue open-popup enquiryJS" data-quote="Get More Information" data-type="other" data-heading="Get More Information">
                         <img src="{{ url('img/home/location-white.svg') }}" alt="call">
                             Get More Information
                     </a>
