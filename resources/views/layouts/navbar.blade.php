@@ -43,7 +43,7 @@
                     <span></span> 
                 </li>
                 <li class="links-li">
-                    <a href="{{route('bundleOffer')}}" class="link"><i class="fa fa-address-book"></i>Offers</a>
+                    <a href="{{route('bundleOffer')}}" class="link"><i class="fa fa-magic"></i>Offers</a>
                     <span></span> 
                 </li>
                 
