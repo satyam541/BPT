@@ -13446,7 +13446,6 @@ input[type=number] {
     width: 46%;
     position: static;
     top: 0;
-    align-self: flex-end;
   }
   .topic-courses .course-item {
     border: 2px solid transparent;
