@@ -392,7 +392,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Create your own Business Analysis Bundle" data-heading="Create your own Business Analysis Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Enquire Now
                         </a>
@@ -533,7 +533,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="Create your own Business Analysis Bundle" data-heading="Create your own Business Analysis Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Enquire Now
                         </a>
@@ -703,7 +703,7 @@
                     </div>
                     <p>FlexiPass is a pre-paid training voucher that enables you to book and attend the training programmes anywhere within 6 months. Having agreed with your training provider on the financial issues involved, you will be provided with an account to book your course. Besides, you will also come to know about the performance of others through various reports you receive.</p>
                     <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire for The FlexiPass" data-heading="Enquire for The FlexiPass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire for The FlexiPass</a>
+                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire For the FlexiPass" data-heading="Enquire For the FlexiPass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The FlexiPass</a>
                     </div>
                 </div>
                 <div class="pass-content">
@@ -713,7 +713,7 @@
                     </div>
                     <p>Knowledge Pass is also a pre-paid training voucher that helps you maintain your training budget more effectively. After setting a budget, you can book any course in your preferred location within 12 months. This pass is best suited for the audience who have flexible requirements for the business. To get the knowledge pass, you can contact one of our specialist learning consultant to set up your account so that you can book courses throughout the year.</p>
                     <div class="buttons">
-                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire for The Knowledge Pass" data-heading="Enquire For The Knowledge Pass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire for The Knowledge Pass</a>
+                    <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Enquire For the Knowledge Pass" data-heading="Enquire For the Knowledge Pass"><img src="{{url('img/offer/quote.svg')}}" alt="quote">Enquire For The Knowledge Pass</a>
                     </div>
                 </div>
             </div>
