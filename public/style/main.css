@@ -10026,6 +10026,7 @@ input[type=number] {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-top: 1.5rem;
   align-items: center;
+  cursor: pointer;
 }
 .popular-location .content::before {
   content: '';
@@ -12604,6 +12605,7 @@ input[type=number] {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 .topic-courses .course-item span {
   display: flex;
@@ -12652,9 +12654,11 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+  height: 100%;
 }
 .topic-courses .courses-info h2 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 .topic-courses .courses-info span {
   display: flex;
