@@ -59,11 +59,13 @@ class CheckoutController extends Controller
             $mailData['emailsent'] =  $view->render();
             MakeJWTEnquiry($mailData);
             
-            $data['title'] = "Thank you for your payment";
-            $data["message"] = '<br/><br/>
-            To continue browsing please <a href="'.url('/').'"><b><u>click here</u></b></a>
-            <br/><br/>';
-            return view('cart.response',$data);
+            // $data['title'] = "Thank you for your payment";
+            // $data["message"] = '<br/><br/>
+            // To continue browsing please <a href="'.url('/').'"><b><u>click here</u></b></a>
+            // <br/><br/>';
+            // return view('cart.response',$data);
+            $thanksConstroller =  new ThanksController();
+            return $thanksConstroller->index();
             // return "purchase order";
         }
 
