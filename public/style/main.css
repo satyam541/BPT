@@ -6057,8 +6057,6 @@ input[type=number] {
     height: 483px;
   }
 }
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-}
 @media (min-width : 1024px) {
   .location-banner {
     background: none;
@@ -6128,7 +6126,7 @@ input[type=number] {
     content: none;
   }
   .find .find-container {
-    width: 74%;
+    width: 75%;
     margin: 0 auto;
   }
   .popular .item {
@@ -6167,6 +6165,7 @@ input[type=number] {
   }
   .form-map .form-container .map {
     width: 50%;
+    height: 490px;
     margin-top: 0;
   }
 }
@@ -6234,11 +6233,11 @@ input[type=number] {
   }
   .form-map .form-container form::before {
     top: -1px;
-    border-bottom: 14px solid #C0C0C0;
+    border-bottom: 19px solid #C0C0C0;
   }
   .form-map .form-container form::after {
     bottom: -1px;
-    border-top: 14px solid #C0C0C0;
+    border-top: 19px solid #C0C0C0;
   }
 }
 .blog-banner {
@@ -7388,7 +7387,7 @@ input[type=number] {
 }
 .location-main .contact-bottom span {
   display: flex;
-  height: 122px;
+  height: 150px;
   width: 100%;
 }
 .location-main .contact-bottom span img {
@@ -7565,6 +7564,9 @@ input[type=number] {
   .key .info h2 {
     font-size: 26px;
   }
+  .form-map .form-container .map {
+    height: 487px;
+  }
 }
 @media (min-width : 1366px) {
   .location-main {
@@ -7592,6 +7594,9 @@ input[type=number] {
   }
   .key .buttons {
     display: flex;
+  }
+  .form-map .form-container .map {
+    height: 474px;
   }
 }
 .offer-banner {
