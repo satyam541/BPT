@@ -24,6 +24,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
 
     @yield('header')
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ url('') }}",
+        "potentialAction": 
+                {
+            "@type": "SearchAction",
+            "target": "{{ url('search/?q={search_term_string}') }}",
+            "query-input": "required name=search_term_string"
+            }
+        }
+        { 
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "{{ websiteDetail()->name }}",
+        "url" : "{{ url('') }}",
+        "sameAs" : [ @if(!empty(socialmedialinks()->facebook))"{{ socialmedialinks()->facebook }}", @endif @if(socialmedialinks()->twitter]))"{{ socialmedialinks()->twitter }}", @endif @if(!empty(socialmedialinks()google))"{{ socialmedialinks()->google }}", @endif @if(!empty(socialmedialinks()->linkedin))"{{ socialmedialinks()->linkedin }}"] @endif
+        }
+        </script>
      <!-- Google Tag Manager -->
      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,8 +52,13 @@
         })(window,document,'script','dataLayer','GTM-TN35HD8');</script>
         <!-- End Google Tag Manager -->
 </head>
-
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN35HD8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<meta itemprop="name" content="{{ websiteDetail()->name }}">
+<meta itemprop="url" content="{{ url('') }}">
     @yield("content")
     <footer class="flex-container footer">
         <div class="container">

@@ -21,6 +21,7 @@ use App\Models\Resource;
 use App\Models\Topic;
 use App\Models\TopicContent;
 use App\Models\whatsIncludedHeaders;
+use App\UrlIssue;
 
 class TestController extends Controller
 {
@@ -199,7 +200,8 @@ class TestController extends Controller
     public function courseContent($data, $course)
     {
         $courseContent = new CourseContent(); 
-        $courseContent->course_id               = $course->id; 
+        // $courseContent->course_id               = $course->id; 
+        $courseContent->course_id               = $course; 
         $courseContent->country_id             = 'gb'; 
         $courseContent->summary                = $data->courseContent; 
         $courseContent->detail                 = $data->courseIntro; 
@@ -522,5 +524,161 @@ class TestController extends Controller
             
         }
     }
+
+    public function dump()
+    {
+        $data = file_get_contents('http://127.0.0.1:8010/api/dump');
+        $data = json_decode($data);
+        // dd($data);
+        $changedSlug = array();
+        $changedParent = array();
+        $missing = array();
+        foreach ($data->course as $course) {
+            $cat = Course::find($course->id);
+            if(empty($cat))
+            {
+                $missing[] = $course->id;
+                continue;
+            }
+            if($course->topic_id != $cat->topic_id)
+            {
+                $changedParent[$course->id] = ['old'=>$cat->topic_id,'new'=>$course->topic_id];
+                $cat->topic_id = $course->topic_id;
+                $cat->update();
+            }
+            if($course->reference != $cat->reference)
+            {
+                $changedSlug[$course->id] = ['old'=>$cat->reference,'new'=>$course->reference];
+                $cat->reference = $course->reference;
+                $cat->update();
+            }
+        }
+        print_r($changedSlug);
+        print_r($changedParent);
+        print_r($missing);
+        dd($changedSlug);
+    }
+
+
+
+    public function missingCourse()
+    {
+        $courseData= file_get_contents('http://127.0.0.1:8000/api/dump');
+        $courseData = json_decode($courseData);
+        foreach($courseData as $data)
+        {
+            $course                = new Course(); 
+            $course->id            = $data->courseId; 
+            $course->topic_id      = $data->parentCourseId; 
+            $course->name          = $data->courseDisplayName; 
+            $course->tka_name      = $data->courseName; 
+            $course->image         = $data->courseLogo; 
+            $course->tag_line      = $data->courseTagLine; 
+            $course->reference     = $data->slug; 
+            $course->display_order = $data->position; 
+            $course->published     = $data->isPublished; 
+            $course->save();
+        }
+        dd('done');
+    }
+
+    public function missingContent()
+    {
+        $courses = Course::doesNtHave('content')->get()->pluck('id')->toArray();
+        dd($courses);
+        // $contents = TopicContent::whereIn('topic_id', $courses)->get();
+        $contents= file_get_contents('http://127.0.0.1:8020/api/dump'); 
+        $contents = json_decode($contents);
+        
+        
+        foreach($contents as $content)
+        {
+            // dd($content, $courses);
+            if (in_array($content->courseId, $courses)) {
+                // $this->missingCourseContent($content,$content->courseId);
+                $this->courseContent($content,$content->courseId);
+            }
+            
+        }
+        
+    }
+    public function missingCourseContent($data, $course)
+    {
+        $courseContent = new CourseContent(); 
+        // $courseContent->course_id               = $course->id; 
+        $courseContent->course_id               = $course; 
+        $courseContent->country_id             = 'gb'; 
+        $courseContent->summary                = $data->summary; 
+        $courseContent->detail                 = $data->detail; 
+        $courseContent->overview               = $data->overview; 
+        $courseContent->whats_included         = $data->whats_included; 
+        $courseContent->pre_requities          = $data->pre_requities; 
+        $courseContent->who_should_attend      = $data->who_should_attend; 
+        $courseContent->what_will_you_learn    = $data->what_will_you_learn; 
+        $courseContent->meta_title             = $data->meta_title; 
+        $courseContent->meta_keywords          = $data->meta_keywords; 
+        $courseContent->meta_description       = $data->meta_description; 
+        $courseContent->save();
+    }
+
+
+    public function refernceMatch()
+    {
+        ini_set('max_execution_time',-1);
+        $categories = Category::pluck('reference','id')->toArray();
+        // dd($data);
+        foreach ($categories as $category => $reference) {
+            $categoriesData = file_get_contents('http://127.0.0.1:8020/api/dump/'.$category);
+            $categoriesData = json_decode($categoriesData);
+            // dd($categoriesData, $category,$reference);
+            $fullReference = 'training-courses/'.$reference;
+            if(empty($categoriesData)){
+                continue;
+            }
+            if($fullReference != $categoriesData->slug){
+                $url = new UrlIssue();
+                $url->old_url = $categoriesData->slug;
+                $url->new_url = $fullReference;
+                $url->type = 'category';
+                $url->save();
+            }
+
+        }
+        $topics = Topic::where('published',1)->pluck('reference','id')->toArray();
+        foreach ($topics as $topic => $reference) {
+            $topicsData = file_get_contents('http://127.0.0.1:8020/api/dump/'.$topic);
+            $topicsData = json_decode($topicsData);
+            $fullReference = 'training-courses/'.$reference;
+            if(empty($topicsData)){
+                continue;
+            }
+            if($fullReference != $topicsData->slug){
+                $url = new UrlIssue();
+                $url->old_url = $topicsData->slug;
+                $url->new_url = $fullReference;
+                $url->type = 'topic';
+                $url->save();
+            }
+        }
+        $courses = Course::where('published',1)->pluck('reference','id')->toArray();
+        foreach ($courses as $course => $reference) {
+            $coursesData = file_get_contents('http://127.0.0.1:8020/api/dump/'.$course);
+            $coursesData = json_decode($coursesData);
+            $fullReference = 'training-courses/'.$reference;
+            if(empty($coursesData)){
+                continue;
+            }
+            if($fullReference != $coursesData->slug){
+                $url = new UrlIssue();
+                $url->old_url = $coursesData->slug;
+                $url->new_url = $fullReference;
+                $url->type = 'course';
+                $url->save();
+            }
+        }
+        dd('done');
+         
+    }
+      
 
 }
