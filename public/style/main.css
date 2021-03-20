@@ -13624,6 +13624,9 @@ input[type=number] {
 .knowledge-banner {
   background-image: linear-gradient(#0064D8, #1C2848);
 }
+.knowledge-banner .container {
+  height: 100%;
+}
 .knowledge-banner h1,
 .knowledge-banner p {
   color: #FFFFFF;
@@ -13949,6 +13952,9 @@ input[type=number] {
   display: none;
 }
 @media (min-width : 768px) {
+  .knowledge-banner .banner-container .banner-content {
+    width: 100%;
+  }
   .benefit {
     padding: 3rem 2rem;
   }
