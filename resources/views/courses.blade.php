@@ -68,7 +68,7 @@
             </div>
             <div class="tabs-container">
                 <ul class="tab-links">
-                    {{-- @if (!empty($selectedCourse->overview)) --}}
+                    @if (!empty($selectedCourse->overview))
                     <li class="tab-click" data-target="overview">
                         <span class="image">
                             <img src="{{ url('img/courses/overview.svg') }}" alt="overview">
@@ -78,7 +78,7 @@
                         </p>
                         <div class="number"></div>
                     </li>
-                    {{-- @endif --}}
+                    @endif
 
                     @if (
                     !empty($selectedCourse->summary) ||
