@@ -82,7 +82,7 @@
                 @if(!empty($enquiry->address))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
-                        Enquiry:
+                        Address:
                     </td>
                     <td style="width:70%">
                         {{ $enquiry->address }}
@@ -110,13 +110,13 @@
                 </tr>
                 @endif
 
-                @if(!empty($enquiry->delegate ))
+                @if(!empty($enquiry->delegates ))
                 <tr style="background-color: #EFEDEE; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Delegate
                     </td>
                     <td style="width:70%">
-                       {{$enquiry->delegate}}
+                       {{$enquiry->delegates}}
                     </td>
                 </tr>
                 @endif
@@ -145,7 +145,7 @@
             <div>
                             
                 <p>
-                    Thank you for contacting sixsigma.co.uk - a learning advisor will be contacting you shortly.
+                    Thank you for contacting bestpracticetraining - a learning advisor will be contacting you shortly.
                 </p>
                 <p>
                     If you would like to speak to a learning advisor more urgently please contact <b>{{ websiteDetail()->contact_number }}</b> or alternatively email <a href="mailto:{{ websiteDetail()->contact_email }}" style="color: #FBDA84;">{{ websiteDetail()->contact_email }}</a>
