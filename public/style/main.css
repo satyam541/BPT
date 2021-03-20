@@ -13376,7 +13376,7 @@ input[type=number] {
     min-height: auto;
   }
   .explore .explore-item {
-    width: 31%;
+    width: 30%;
   }
   .explore .explore-item:nth-child(even) {
     margin-right: 2.5rem;
