@@ -251,7 +251,7 @@
                                                     alt="province-black" class="black">
                                                 <img src="{{ url('img/master/province-red.svg') }}" alt="province-red"
                                                     class="red"></span>
-                                            <input type="text" name="province" id="province" placeholder="Province*"
+                                            <input type="text" name="province" id="province" placeholder="Province"
                                                 autocomplete="off">
                                         </div>
                                         <div class="input-container">
@@ -384,7 +384,7 @@
                                             <div class="phonecode-field field-black">
                                                 <select class="country-code mcode"></select>
                                                 <span class="prefix  "></span>
-                                                <input type="number" class="telephone " placeholder="Telephone Number*" min=0>
+                                                <input type="number" class="telephone " placeholder="Telephone Number" min=0>
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                                    
                                                      <input type="text" name="telephone" class="phonenumber">

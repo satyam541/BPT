@@ -35,22 +35,25 @@ class CheckoutController extends Controller
             $secret   	        =   "secret";
             $account            =   "GPINTGBP";
         }else{
+          
             $data['paymentUrl'] =   "https://hpp.globaliris.com/pay";
-            $merchantId         =   "knowledgeacademy";
-            $secret   	        =   "27v8GoTKLI";
-            $account            =   "PentagonWeb";
+            $merchantId         =   "bestpracticetraining";
+            $secret             =   "VYHeI2MQtS";
+            $account            =   "internet";
         }
 
          (new CartController)->clearCart($request);
         if($orderData->payment_method == 'Purchase Order') {
             // send purchase order email
             // customer detail, billing detail, order detail and type
-            $mailData['type'] = 'booking';
+            $mailData['type'] = 'incomplete';
             $mailData['customerDetail'] = $customer;
             $mailData['billingDetail'] = $billingDetail;
             $mailData['orderDetail'] = $orderData;
 
             //Mail::to($customer->email)->cc(config('mail.from.address'))->send(new OrderMail($mailData));
+            
+            Mail::to("enquiries@bestpracticetraining.com")->bcc("bpt@theknowledgeacademy.com")->cc($customer->email)->send(new OrderMail($mailData));
             
             $view               = \View::make('emails.cartOrder',$mailData);
             $mailData['emailsent'] =  $view->render();

@@ -25,6 +25,10 @@ class FilterController extends Controller
         }
         else{
             $url = 'training-courses';
+            if(country()->country_code != 'gb')
+            {
+                $url = country()->country_code."/".$url;
+            }  
         }
         
         return redirect($url);

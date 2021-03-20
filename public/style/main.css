@@ -2142,6 +2142,13 @@ input[type=number] {
     transform: rotate(360deg);
     transition: all 1s;
   }
+  .tooltips li:hover:last-child {
+    -webkit-transform: translate(134px, 0);
+    -moz-transform: translate(134px, 0);
+    -ms-transform: translate(134px, 0);
+    -o-transform: translate(134px, 0);
+    transform: translate(134px, 0);
+  }
   .tooltips a {
     display: flex;
     align-items: center;
@@ -2205,7 +2212,7 @@ input[type=number] {
 .home-banner .banner-container .topic-list a p {
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 14px;
   padding-right: 1rem;
   border-right: 2px solid #FFFFFF;
   color: #FFFFFF;
@@ -3074,10 +3081,12 @@ input[type=number] {
     width: 70%;
     line-height: 1.4;
   }
+  .courses .courses-list {
+    justify-content: center;
+  }
   .courses .course-name {
     width: 31%;
     margin-right: 2rem;
-    justify-content: center;
   }
   .courses .course-name:nth-child(3n),
   .courses .course-name:last-child {
@@ -3180,6 +3189,7 @@ input[type=number] {
   .facts .facts-container {
     flex-direction: row;
     justify-content: space-between;
+    align-content: center;
   }
   .facts .fact-content {
     width: 30%;
@@ -3279,6 +3289,9 @@ input[type=number] {
 @media (min-width : 1366px) {
   .home-banner h1 {
     font-size: 32px;
+  }
+  .home-banner .banner-container .topic-list a p {
+    font-size: 16px;
   }
   .courses {
     padding: 4rem 0rem;
@@ -10474,6 +10487,9 @@ input[type=number] {
   .courses-banner .breadcrums .white {
     display: none;
   }
+  .foundation .tab {
+    font-size: 18px;
+  }
   .foundation .tabs-container {
     flex-direction: row;
     justify-content: flex-start;
@@ -10610,6 +10626,9 @@ input[type=number] {
     background-color: #FFFFFF;
     padding: 2.5rem 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
+  }
+  .training .methods {
+    width: 48%;
   }
   .training .methods:nth-child(1),
   .training .methods:nth-child(2) {
@@ -12736,7 +12755,7 @@ input[type=number] {
 }
 .topic-choose .choose-progress {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 2rem;
   width: 100%;
 }
@@ -12990,12 +13009,12 @@ input[type=number] {
   margin: auto;
   width: 3px;
   height: 50%;
+  transition: 1s all;
   background-color: #0064D8;
 }
 .goals .goal-item:hover::before {
   width: 100%;
   height: 100%;
-  transition: 1s all;
   border-radius: 20px;
 }
 .goals .goal-item:hover .image {
@@ -13303,6 +13322,7 @@ input[type=number] {
   }
   .topic-choose .choose-progress {
     width: 90%;
+    justify-content: space-between;
   }
   .topic-delivery {
     background-image: url(../img/topic/delivey-bg.png);
