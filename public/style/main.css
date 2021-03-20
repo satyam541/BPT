@@ -6416,7 +6416,7 @@ input[type=number] {
 .our-blog .our-info .name {
   display: flex;
   align-items: center;
-  width: 48%;
+  width: 50%;
   margin-top: 0;
   margin-right: auto;
 }
@@ -6461,6 +6461,7 @@ input[type=number] {
   justify-content: space-around;
   width: 272px;
   margin: auto;
+  height: 100%;
 }
 .ideal .clients-inner img {
   width: 100%;
@@ -6561,7 +6562,7 @@ input[type=number] {
     margin-right: 0;
   }
   .our-blog .our-list .our-item:nth-last-child(4) {
-    margin-right: auto;
+    margin-left: auto;
   }
   .our-blog .our-list .item-text {
     height: 150px;
@@ -6571,9 +6572,6 @@ input[type=number] {
   }
   .our-blog .our-list:nth-child(even) .date {
     left: -146px;
-  }
-  .our-blog .our-list:nth-child(odd) .date {
-    right: -145px;
   }
 }
 @media (min-width : 1024px) {
@@ -6645,6 +6643,7 @@ input[type=number] {
   .ideal .heading {
     width: 28%;
     align-items: flex-start;
+    margin-bottom: 0;
   }
   .ideal .heading::before {
     left: 0;
@@ -6737,9 +6736,6 @@ input[type=number] {
   }
   .ideal {
     padding: 4rem 0rem;
-  }
-  .ideal .heading {
-    width: 27%;
   }
   .ideal .clients-inner {
     width: 41%;
@@ -6982,7 +6978,6 @@ input[type=number] {
   display: flex;
   justify-content: space-between;
   align-self: center;
-  margin-top: 1rem;
   position: absolute;
   top: 80px;
 }
@@ -7110,6 +7105,9 @@ input[type=number] {
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
+  .blog-intro {
+    padding: 3rem 2rem;
+  }
   .blog-intro .intro-container {
     flex-direction: row;
     justify-content: space-between;
@@ -7122,7 +7120,7 @@ input[type=number] {
     transform: translateY(-36px);
     width: 90%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .blog-intro .content-left {
     width: 58%;
