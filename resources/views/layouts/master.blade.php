@@ -498,7 +498,7 @@ $.ajax({
                 '{{ route('thanks') }}').html(input);
             $('body').append(form);
         
-        $('div.scene').show();
+        $('div.scene').css("display", "flex");
     },
     success: function(response) {
         if (response == 'done') {

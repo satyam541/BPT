@@ -392,7 +392,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle" data-quote="Create your own Business Analysis Bundle" data-heading="Create your own Business Analysis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Enquire Now
                         </a>
@@ -504,7 +504,7 @@
                         <li>MSP Foundation & Practitioner</li>
                     </ul>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="TIL & MSP Bundle" data-heading="TIL & MSP Bundle">
+                        <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="ITIL & MSP Bundle" data-heading="ITIL & MSP Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Enquire Now
                         </a>
@@ -533,7 +533,7 @@
                     <h3>Create your own Business Analysis Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <div class="buttons">
-                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="The Complete Project Manager Bundle" data-heading="The Complete Project Manager Bundle">
+                        <a class="btn-blue open-popup enquiryJS"   data-type="bundle"  data-quote="Create your own Business Analysis Bundle" data-heading="Create your own Business Analysis Bundle">
                                 <img src="{{url('img/offer/email.svg')}}" alt="email">
                                 Enquire Now
                         </a>
