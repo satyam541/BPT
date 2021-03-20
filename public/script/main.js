@@ -511,11 +511,9 @@ $('#scroll').click(function(){
             $("#"+target).css("display", "flex");
             $(".category-menu a").removeClass('topic-active');
             $(this).addClass("topic-active");
-            console.log(target);
-            $("#"+target).find('a').first().trigger('click');
+            $("#"+target).find('a').first().trigger('mouseover');
         });
         
-
         $(".course a").mouseover(function() {
             var target = $(this).data('target');
             $(".menu-info").hide();
@@ -524,7 +522,6 @@ $('#scroll').click(function(){
             $(this).addClass("course-active");
         });
         $(".category-menu a").first().trigger('click');
-       
     });
 
     $('#flag').click(function() {
