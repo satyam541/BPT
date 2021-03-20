@@ -39,7 +39,7 @@
             <div class="search-list">
                 @foreach ($popularTopics->take(4) as $popularTopic)
                 {{$popularTopic->loadContent()}}
-                <a class="search-info" href="{{url('/training-courses'.$popularTopic->reference)}}">
+                <a class="search-info" href="{{$popularTopic->url}}">
                     <span><img src="{{url('img/search/course.svg')}}" alt="course">
                     {{$popularTopic->courses->count()}} 
                     @if ($popularTopic->courses->count() == 1)
@@ -62,11 +62,10 @@
 <section class="flex-container result">
     <div class="container">
         <div class="result-container">
-            @if(empty($query))
+            {{-- {{dd($query)}} --}}
+            @if($query !="")
             <div class="heading">
-                @if($resultCount != 0 && $query !="")
                 <h2>{{$resultCount}} Results Found for "{{$query}}"</h2>
-                @endif
             </div>
             @endif
             <div class="result-content">
@@ -83,7 +82,7 @@
                             <p>{!!$course->detail!!}</p>
                             <div class="buttons">
                                 <a class="btn-blue open-popup enquiryJS" data-quote="{{$course->name}}" data-course="{{$course->name}}" data-type="course"><img src="{{url('img/search/call-us.svg')}}" alt="call-us">Enquire Now</a>
-                                <a class="btn-white" href="{{url('/training-courses'.$course->reference)}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
+                                <a class="btn-white" href="{{$course->url}}"><img src="{{url('img/search/white-arrow.svg')}}" alt="white-arrow">Course Details</a>
                             </div>
                  
                         </div>
@@ -91,7 +90,8 @@
                     {{$result->appends(request()->query())->links()}}
                        
                     </div>
-                    @if(!empty($query))
+                  
+                    @if($resultCount == 0)
                     <div class="not-found">
                             <div class="heading center-heading">
                                 <h2>Result Not Found</h2>
@@ -108,8 +108,10 @@
                         </div>
                   @endif
                 </div>
+                @if ($popularCourses->isNotEmpty() || $popularLocations->isNotEmpty())
                 <div class="filter">
                     <!-- <h2>Filter</h2> -->
+                    @if ($popularCourses->isNotEmpty())
                     <div class="search-catagories">
                         <p>Popular Courses</p>
                         <ul>
@@ -118,6 +120,8 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif
+                    @if ($popularLocations->isNotEmpty())
                     <div class="search-catagories">
                         <p>Popular Locations</p>
                         <ul>
@@ -126,7 +130,10 @@
                             @endforeach
                         </ul>
                     </div>
+                    @endif
+                    
                 </div>
+                @endif
             </div>
         </div>
     </div>
