@@ -8315,8 +8315,7 @@ input[type=number] {
   background-repeat: no-repeat;
   padding: 1rem;
   margin-top: 1rem;
-  width: 272px;
-  align-self: center;
+  width: 100%;
 }
 .enquiry .contact-content p {
   font-size: 16px;
@@ -8492,6 +8491,7 @@ input[type=number] {
     box-shadow: none;
     margin-top: 0;
     padding: 0;
+    width: 272px;
   }
   .enquiry .contact-content:nth-child(1) {
     background-color: transparent;
