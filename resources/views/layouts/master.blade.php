@@ -24,6 +24,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
 
     @yield('header')
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "{{ url('') }}",
+        "potentialAction": 
+                {
+            "@type": "SearchAction",
+            "target": "{{ url('search/?q={search_term_string}') }}",
+            "query-input": "required name=search_term_string"
+            }
+        }
+        { 
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "{{ websiteDetail()->name }}",
+        "url" : "{{ url('') }}",
+        "sameAs" : [ @if(!empty(websiteDetail()->facebook))"{{ websiteDetail()->facebook }}", @endif @if(!empty(websiteDetail()->twitter))"{{ websiteDetail()->twitter }}", @endif @if(!empty(websiteDetail()->linkedin))"{{ websiteDetail()->linkedin }}"] @endif
+        }
+        </script>
      <!-- Google Tag Manager -->
      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

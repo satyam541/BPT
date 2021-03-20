@@ -303,7 +303,7 @@ input[type=number] {
   display: flex;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .ui-autocomplete .ui-autocomplete-category {
   color: #1C2848;

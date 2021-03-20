@@ -97,6 +97,7 @@
 
     //Start Delivery method script//
    $(".tab-content").hide();
+   $(".tab-click").first().addClass("active");
    $(".tab-content").first().css("display", "flex");
    $(".tab-click").click(function () {
       var target = $(this).data("target");
