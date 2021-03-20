@@ -444,7 +444,8 @@
                                         <img src="{{ url('../img/courses/course-virtual.svg') }}" alt="course-virtual">
                                     </span>
                                     <div class="sub-content">
-                                        <h3>{{$virtual->response_location}}</h3>
+                                        <h3>Online Instructor-led(Virtual)</h3>
+                                        {{-- <h3>{{"Online Instructor-led }}</h3> --}}
                                         {{-- <p>Best Selling Courses in <strong>{{$virtual->response_location}}</strong>
                                         </p> --}}
                                         <p>Best Selling Course</p>
