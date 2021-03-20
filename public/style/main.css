@@ -299,6 +299,12 @@ input[type=number] {
 .overflow {
   overflow: hidden;
 }
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}
 .ui-autocomplete .ui-autocomplete-category {
   color: #1C2848;
   font-weight: 700;
@@ -916,6 +922,7 @@ input[type=number] {
 .footer {
   background-color: #1C2848;
   padding: 3rem 1.5rem;
+  padding-bottom: 3.5rem;
 }
 .footer .polygon-img {
   width: 18px;
@@ -923,7 +930,6 @@ input[type=number] {
 }
 .footer .terms {
   padding-top: 1rem;
-  padding-bottom: 3rem;
   color: #FFFFFF;
 }
 .footer h2 {
@@ -1977,7 +1983,7 @@ input[type=number] {
   .footer {
     background: linear-gradient(0deg, #1C2848 80%, #FFFFFF 48%);
     padding: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
   }
   .footer .content {
     width: 25%;
@@ -6057,8 +6063,6 @@ input[type=number] {
     height: 483px;
   }
 }
-@media (min-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-}
 @media (min-width : 1024px) {
   .location-banner {
     background: none;
@@ -6128,7 +6132,7 @@ input[type=number] {
     content: none;
   }
   .find .find-container {
-    width: 74%;
+    width: 75%;
     margin: 0 auto;
   }
   .popular .item {
@@ -6167,6 +6171,7 @@ input[type=number] {
   }
   .form-map .form-container .map {
     width: 50%;
+    height: 490px;
     margin-top: 0;
   }
 }
@@ -6234,11 +6239,11 @@ input[type=number] {
   }
   .form-map .form-container form::before {
     top: -1px;
-    border-bottom: 14px solid #C0C0C0;
+    border-bottom: 19px solid #C0C0C0;
   }
   .form-map .form-container form::after {
     bottom: -1px;
-    border-top: 14px solid #C0C0C0;
+    border-top: 19px solid #C0C0C0;
   }
 }
 .blog-banner {
@@ -6411,7 +6416,7 @@ input[type=number] {
 .our-blog .our-info .name {
   display: flex;
   align-items: center;
-  width: 48%;
+  width: 50%;
   margin-top: 0;
   margin-right: auto;
 }
@@ -6456,6 +6461,7 @@ input[type=number] {
   justify-content: space-around;
   width: 272px;
   margin: auto;
+  height: 100%;
 }
 .ideal .clients-inner img {
   width: 100%;
@@ -6556,7 +6562,7 @@ input[type=number] {
     margin-right: 0;
   }
   .our-blog .our-list .our-item:nth-last-child(4) {
-    margin-right: auto;
+    margin-left: auto;
   }
   .our-blog .our-list .item-text {
     height: 150px;
@@ -6566,9 +6572,6 @@ input[type=number] {
   }
   .our-blog .our-list:nth-child(even) .date {
     left: -146px;
-  }
-  .our-blog .our-list:nth-child(odd) .date {
-    right: -145px;
   }
 }
 @media (min-width : 1024px) {
@@ -6640,6 +6643,7 @@ input[type=number] {
   .ideal .heading {
     width: 28%;
     align-items: flex-start;
+    margin-bottom: 0;
   }
   .ideal .heading::before {
     left: 0;
@@ -6732,9 +6736,6 @@ input[type=number] {
   }
   .ideal {
     padding: 4rem 0rem;
-  }
-  .ideal .heading {
-    width: 27%;
   }
   .ideal .clients-inner {
     width: 41%;
@@ -6977,7 +6978,6 @@ input[type=number] {
   display: flex;
   justify-content: space-between;
   align-self: center;
-  margin-top: 1rem;
   position: absolute;
   top: 80px;
 }
@@ -7105,6 +7105,9 @@ input[type=number] {
   margin-top: 2rem;
 }
 @media (min-width : 768px) {
+  .blog-intro {
+    padding: 3rem 2rem;
+  }
   .blog-intro .intro-container {
     flex-direction: row;
     justify-content: space-between;
@@ -7117,7 +7120,7 @@ input[type=number] {
     transform: translateY(-36px);
     width: 90%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .blog-intro .content-left {
     width: 58%;
@@ -7388,7 +7391,7 @@ input[type=number] {
 }
 .location-main .contact-bottom span {
   display: flex;
-  height: 122px;
+  height: 150px;
   width: 100%;
 }
 .location-main .contact-bottom span img {
@@ -7565,6 +7568,9 @@ input[type=number] {
   .key .info h2 {
     font-size: 26px;
   }
+  .form-map .form-container .map {
+    height: 487px;
+  }
 }
 @media (min-width : 1366px) {
   .location-main {
@@ -7592,6 +7598,9 @@ input[type=number] {
   }
   .key .buttons {
     display: flex;
+  }
+  .form-map .form-container .map {
+    height: 474px;
   }
 }
 .offer-banner {
@@ -8089,7 +8098,7 @@ input[type=number] {
     margin: 0;
   }
   .new-bundle .info-us .info-content {
-    width: 88%;
+    width: 90%;
   }
   .new-bundle .latest-bundles {
     order: 2;
@@ -10027,6 +10036,7 @@ input[type=number] {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-top: 1.5rem;
   align-items: center;
+  cursor: pointer;
 }
 .popular-location .content::before {
   content: '';
@@ -12605,6 +12615,7 @@ input[type=number] {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 .topic-courses .course-item span {
   display: flex;
@@ -12653,9 +12664,11 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+  height: 100%;
 }
 .topic-courses .courses-info h2 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 .topic-courses .courses-info span {
   display: flex;
@@ -12908,12 +12921,13 @@ input[type=number] {
 .explore .explore-item {
   display: flex;
   padding: 2rem 1.5rem;
-  padding-top: 4rem;
+  padding-top: 4.5rem;
+  padding-bottom: 1.5rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
   border-radius: 10px;
   border-bottom-left-radius: 0;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   width: 100%;
 }
 .explore .explore-item a {
@@ -13365,7 +13379,7 @@ input[type=number] {
     width: 31%;
   }
   .explore .explore-item:nth-child(even) {
-    margin-right: 2rem;
+    margin-right: 2.5rem;
   }
   .explore .explore-item:last-child {
     margin-right: 0;
@@ -13430,7 +13444,6 @@ input[type=number] {
     width: 46%;
     position: static;
     top: 0;
-    align-self: flex-end;
   }
   .topic-courses .course-item {
     border: 2px solid transparent;
@@ -13855,7 +13868,7 @@ input[type=number] {
   padding: 1rem;
   width: 272px;
   align-self: center;
-  margin-top: 1.8rem;
+  margin-top: 1.5rem;
 }
 .knowledge .booking-info:nth-child(even) {
   background-color: #F6F6F6;
@@ -14166,6 +14179,7 @@ input[type=number] {
   }
   .why-right {
     padding: 3rem 2rem;
+    padding-top: 0!important;
   }
   .why-right .right-list {
     flex-direction: row;
@@ -14301,7 +14315,7 @@ input[type=number] {
     justify-content: space-between;
   }
   .knowledge .booking-info {
-    width: 31%;
+    width: 32%;
   }
   .knowledge h3 {
     min-height: 50px;

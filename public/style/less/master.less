@@ -348,6 +348,12 @@
     .overflow{
         overflow: hidden;
     }
+    .show{
+        display: flex;
+    }
+    .hide{
+        display: none;
+    }
 
     //Start global search
     .ui-autocomplete .ui-autocomplete-category {
@@ -1049,13 +1055,14 @@
     .footer{
         background-color: @darkblueColor;
         padding: @sectionPadding;
+        padding-bottom: 3.5rem;
         .polygon-img{
             width: 18px;
             height: 18px;
         }
         .terms{
             padding-top: 1rem;
-            padding-bottom: 3rem;
+            // padding-bottom: 3rem;
             color: @whiteColor;
         }
         h2{
