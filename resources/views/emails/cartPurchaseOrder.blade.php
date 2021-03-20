@@ -301,7 +301,7 @@
         <div>
                         
             <p style="padding-top:10px;">
-                Thank you for contacting Best Pratice Training - a learning advisor will be contacting you shortly.
+                Thank you for contacting {{ websiteDetail()->name }} - a learning advisor will be contacting you shortly.
             </p>
             <p>
                 If you would like to speak to a learning advisor more urgently please contact <b>023 8000 1008</b> or alternatively email 
