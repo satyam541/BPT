@@ -496,7 +496,7 @@
                 </div>
                 <div class="bundle-info">
                    <div class="bundle-content">
-                   <h3>TIL & MSP Bundle</h3>
+                   <h3>ITIL & MSP Bundle</h3>
                     <span>Up to 15% off with this bundle</span>
                     <ul>
                         <li>Courses included</li>
