@@ -99,9 +99,9 @@
                                         <span class="prefix"></span>
                                         <input type="number" class="telephone mobile" placeholder="Phone Number*">
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                            <input type="text" name="phone" class="phonenumber">
-                                            <input type="text" name="phonecode" class="phonecode">
-                                            <input type="text" name="m_code" class="countrycode" autocomplete="off">
+                                            <input type="text" name="phone" class="phonenumber" tabindex="-1">
+                                            <input type="text" name="phonecode" class="phonecode" tabindex="-1">
+                                            <input type="text" name="m_code" class="countrycode" autocomplete="off" tabindex="-1">
                                         </div>
                                     </div>
                                 </div>
@@ -117,9 +117,9 @@
                                         <span class="prefix"></span>
                                         <input type="number" class="telephone" placeholder="Telephone Number">
                                         <div style="z-index:-1;width:0;height:0;pointer-events: none;">
-                                            <input type="text" name="telephone" class="phonenumber">
-                                            <input type="text" name="cphonecode" class="phonecode">
-                                            <input type="text" name="t_code" class="countrycode" autocomplete="off">
+                                            <input type="text" name="telephone" class="phonenumber" tabindex="-1">
+                                            <input type="text" name="cphonecode" class="phonecode" tabindex="-1">
+                                            <input type="text" name="t_code" class="countrycode" autocomplete="off" tabindex="-1">
                                           
                                         </div>
                                     </div>
