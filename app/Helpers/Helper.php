@@ -120,17 +120,17 @@ if (!function_exists('encodeUrlSlug')) {
 
     // ucwords php method can be used instead
     // this function is not being used
-    if (!function_exists('capitalizeName')) {
-        function capitalizeName($string)
-        {
-            $string = explode(" ", $string);
-            $newString = array();
-            foreach ($string as $str) {
-                $newString[] = Str::ucfirst($str);
-            }
-            return implode(" ", $newString);
-        }
-    }
+    // if (!function_exists('capitalizeName')) {
+    //     function capitalizeName($string)
+    //     {
+    //         $string = explode(" ", $string);
+    //         $newString = array();
+    //         foreach ($string as $str) {
+    //             $newString[] = Str::ucfirst($str);
+    //         }
+    //         return implode(" ", $newString);
+    //     }
+    // }
     if (!function_exists('footer')){
         function footer(){
 
@@ -185,13 +185,13 @@ if (!function_exists('encodeUrlSlug')) {
         }
     }
     // this function is not being used
-    if (!function_exists('courses')) {
-        function courses()
-        {
-            $courses = Course::all();
-            return $courses;
-        }
-    }
+    // if (!function_exists('courses')) {
+    //     function courses()
+    //     {
+    //         $courses = Course::all();
+    //         return $courses;
+    //     }
+    // }
 
     // number format method can directly be used
     // this function is not being used
@@ -203,72 +203,72 @@ if (!function_exists('encodeUrlSlug')) {
     }
 
     // this function is not being used
-    if (!function_exists('storeSelected')) {
-        function storeSelected($data)
-        {
-            $string = empty(json_decode(session('selectedFilter'))->$data) ? null : json_decode(session('selectedFilter'))->$data;
-            return $string;
-        }
-    }
+    // if (!function_exists('storeSelected')) {
+    //     function storeSelected($data)
+    //     {
+    //         $string = empty(json_decode(session('selectedFilter'))->$data) ? null : json_decode(session('selectedFilter'))->$data;
+    //         return $string;
+    //     }
+    // }
     
     // this function is not being used
-    if (!function_exists('storeFilterData')) {
-        function storeFilterData($data)
-        {
-            $courses = Course::orderBy('topic_id')->where('display_order', '!=', 99)->orderByRaw('display_order')->get();
-            $locations = Location::all();
-            static $savedData = [
-                "deliveryMethod" =>  [
-                    "Classroom" => '#classroom-booking',
-                    "Virtual" => '#virtual-booking',
-                    "Online" => '#online-booking',
-                    "Onsite" => '#onsite-booking'
-                ],
-            ];
-            if (empty($savedData[$data])) {
-                switch ($data) {
-                    case "courses":
-                        $savedData[$data] = $courses;
-                        return $courses;
-                        break;
-                    case "locations":
-                        $savedData[$data] = $locations;
-                        return $locations;
-                        break;
-                    case "deliveryMethod":
-                        return  [
-                            "Classroom" => '#classroom-booking',
-                            "Virtual" => '#virtual-booking',
-                            "Online" => '#online-booking',
-                            "Onsite" => '#onsite-booking'
-                        ];
-                        break;
-                }
-            } else {
-                return $savedData[$data];
-            }
-        }
-    }
+    // if (!function_exists('storeFilterData')) {
+    //     function storeFilterData($data)
+    //     {
+    //         $courses = Course::orderBy('topic_id')->where('display_order', '!=', 99)->orderByRaw('display_order')->get();
+    //         $locations = Location::all();
+    //         static $savedData = [
+    //             "deliveryMethod" =>  [
+    //                 "Classroom" => '#classroom-booking',
+    //                 "Virtual" => '#virtual-booking',
+    //                 "Online" => '#online-booking',
+    //                 "Onsite" => '#onsite-booking'
+    //             ],
+    //         ];
+    //         if (empty($savedData[$data])) {
+    //             switch ($data) {
+    //                 case "courses":
+    //                     $savedData[$data] = $courses;
+    //                     return $courses;
+    //                     break;
+    //                 case "locations":
+    //                     $savedData[$data] = $locations;
+    //                     return $locations;
+    //                     break;
+    //                 case "deliveryMethod":
+    //                     return  [
+    //                         "Classroom" => '#classroom-booking',
+    //                         "Virtual" => '#virtual-booking',
+    //                         "Online" => '#online-booking',
+    //                         "Onsite" => '#onsite-booking'
+    //                     ];
+    //                     break;
+    //             }
+    //         } else {
+    //             return $savedData[$data];
+    //         }
+    //     }
+    // }
 
     // function not being used anywhere
-    if (!function_exists('storeVar')) {
-        function storeVar($data)
-        {
-            static $savedData = array();
-            if (is_array($data)) {
-                foreach ($data as $key => $value) {
-                    $savedData[$key] = $value;
-                }
-                return $savedData;
-            } else {
-                if (empty($savedData[$data])) {
-                    return NULL;
-                } else {
-                    return $savedData[$data];
-                }
-            }
-        }
-    }
+    // if (!function_exists('storeVar')) {
+    //     function storeVar($data)
+    //     {
+    //         static $savedData = array();
+    //         if (is_array($data)) {
+    //             foreach ($data as $key => $value) {
+    //                 $savedData[$key] = $value;
+    //             }
+    //             return $savedData;
+    //         } else {
+    //             if (empty($savedData[$data])) {
+    //                 return NULL;
+    //             } else {
+    //                 return $savedData[$data];
+    //             }
+    //         }
+    //     }
+    // }
 
     if (!function_exists('replaceVar')) {
         function replaceVar($content)

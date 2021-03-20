@@ -10,9 +10,9 @@
                 <p>Check what is in your cart here. Fetch all the information about every item, including its date, delivery method, number of delegates, and cost of each course.</p>
                 <div class="breadcrums">
                     <ul>
-                        <li><a href="javascript:void(0);">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                         <li><img src="{{ url('img/master/breadcrum-arrow.svg') }}" alt="arrow" class="white"></li>
-                        <li><a href="javascript:void(0);">Cart</a></li>
+                        <li><a href="">Cart</a></li>
                     </ul>
                 </div>
             </div>

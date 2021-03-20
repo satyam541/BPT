@@ -398,7 +398,7 @@
                                 <div class="rate">
                                     
                                     <h3>{!! country()->currency_symbol !!}{{$schedule->event_price }}</h3>
-                                    <p><strong>Duration: </strong>2 Days</p>
+                                    <p><strong>Duration: </strong>{!! $schedule->duration !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@
                                 </div>
                                 <div class="rate">
                                     <h3>{!! country()->currency_symbol !!}{{$virtual->event_price}}</h3>
-                                    <p><strong>Duration: </strong>2 Days</p>
+                                    <p><strong>Duration: </strong>{!! $virtual->duration !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -493,7 +493,7 @@
                                     <div class="item">
                                         <div class="offer feature-tickbox">
                                             <input type="checkbox" name="addon[]" data-price="{{floor($addon->price)}}" value="{{$addon->id}}">
-                                            <h3>{!! $addon->name !!} - {!! country()->currency_symbol !!}{!! convertPrice($addon->price) !!}</h3>
+                                            <h3>{!! $addon->name !!} - {!! country()->currency_symbol !!}{!! $addon->price !!}</h3>
                                         </div>
                                         <p>{!! $addon->description !!}</p>
                                     </div>
@@ -520,7 +520,7 @@
                                     <ul>
                                         <li>
                                             <p>Course Price</p>
-                                            <p>{!! country()->currency_symbol !!} {!! convertPrice($onlineSchedules->onlinePrice->price) !!}</p>
+                                            <p>{!! country()->currency_symbol !!} {!! $onlineSchedules->onlinePrice->price !!}</p>
                                         </li>
                                         <li>
                                             <p>add-ons Price</p>
@@ -528,12 +528,12 @@
                                         </li>
                                         <li>
                                             <p>Sub-Total</p>
-                                            <p><span class="total-price" data-onlineprice="{{convertPrice($onlineSchedules->onlinePrice->price)}}">{!! country()->currency_symbol !!} {{convertPrice($onlineSchedules->onlinePrice->price)}}</span></p>
+                                            <p><span class="total-price" data-onlineprice="{{ $onlineSchedules->onlinePrice->price}}">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price }}</span></p>
                                         </li>
                                     </ul>
 
                                     <div class="buttons">
-                                        <a data-price="{{convertPrice($onlineSchedules->onlinePrice->price)}}" data-quote="{{$onlineSchedules->name}}" data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
+                                        <a data-price="{{$onlineSchedules->onlinePrice->price}}" data-quote="{{$onlineSchedules->name}}" data-type="course" data-course="{{$onlineSchedules->name}}" data-location="Online" data-deliveryType="Online" class="btn-blue open-popup enquiryJS">
                                             <img src="{{url('img/courses/foundation-call.svg')}}" alt="foundation-call">
                                             Enquire Now
                                         </a>
@@ -757,8 +757,8 @@
                 </div>
                 <div class="price">
                     @if (!empty($onlineSchedules))
-                        <span class="prize">{!! country()->currency_symbol !!} {{ convertPrice($onlineSchedules->onlinePrice->price)}}</span>
-                        <span class="offer">{!! country()->currency_symbol !!} {{ convertPrice($onlineSchedules->onlinePrice->offer_price)}}</span>
+                        <span class="prize">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price}}</span>
+                        <span class="offer">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->offer_price}}</span>
                     @endif
                    
                     {{-- <div class="buy">
