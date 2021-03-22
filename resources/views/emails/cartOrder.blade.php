@@ -171,13 +171,13 @@
                 </tr>
                 @endunless
 
-                @unless(empty($TELEPHONE))
+                @unless(empty($customerDetail->telephone))
                 <tr style="background-color: #ffffff; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
                     <td style="width:30%;float:left">
                         Telephone:
                     </td>
                     <td style="width:70%">
-                        {{ $TELEPHONE }}
+                        {{ $customerDetail->telephone }}
                     </td>
                 </tr>
                 @endunless
