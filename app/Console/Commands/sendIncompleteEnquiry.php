@@ -8,7 +8,6 @@ use App\Order;
 use Exception;
 use App\Mail\OrderMail;
 use Carbon\CarbonImmutable;
-use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 
 class sendIncompleteEnquiry extends Command
