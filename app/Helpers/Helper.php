@@ -15,7 +15,7 @@ use App\Models\SocialMedia;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Carbon\Carbon;
-
+use App\Models\CountryCms;
 if(!function_exists('statsData')){
     function statsData(){
         $data=PageDetail::getContent('stats');
@@ -55,6 +55,20 @@ if (!function_exists('encodeUrlSlug')) {
                 Country::setActiveCountry($activeCountry);
             }
             return Country::getActiveCountry();
+        }
+    }
+    if (!function_exists('Cmscountry')) {
+        function Cmscountry()
+        {
+
+            $activeCountry = CountryCms::getCMSActiveCountry();
+            if (empty($activeCountry)) {
+                $country_code = CountryCms::getCmsDefault();
+                $activeCountry = CountryCms::find($country_code);
+                // dd($activeCountry);
+                CountryCms::setCMSActiveCountry($activeCountry);
+            }
+            return CountryCms::getCMSActiveCountry();
         }
     }
     if (!function_exists('countries')) {

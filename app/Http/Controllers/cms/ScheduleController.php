@@ -194,7 +194,7 @@ class ScheduleController extends ScheduleApi
     {
       
       $this->authorize('update', new Schedule());
-      $selectedCountry    = $request->input('country', country()->country_code);
+      $selectedCountry    = $request->input('country', Cmscountry()->country_code);
       $selectedCourse     = $request->input('course',$courseId);    
       $list['courses']    = Course::pluck('name','id')->toArray();
       $list['countries']  = Country::pluck('name','country_code')->toArray();
@@ -226,7 +226,7 @@ class ScheduleController extends ScheduleApi
     public function onlinePrices()
     {
       $this->authorize('view', new Schedule());
-      $data['onlinePrices'] = OnlinePrice::where('country_id',country()->country_code)->whereHas('course')->with('course')->get();
+      $data['onlinePrices'] = OnlinePrice::where('country_id',Cmscountry()->country_code)->whereHas('course')->with('course')->get();
       return view('cms.schedule.onlinePrices',$data);
     }
 

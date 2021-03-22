@@ -50,8 +50,7 @@ class LocationController extends Controller
     public function list(Request $request)
     {
         $this->authorize('view', new Location());
-        $locations       = Location::where('country_id',country()->country_code)->get();
-        
+        $locations       = Location::where('country_id',Cmscountry()->country_code)->get();
         return view('cms.location.locationList',compact('locations'));
     }
 

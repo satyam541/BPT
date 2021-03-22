@@ -46,8 +46,13 @@ class CountryMiddleware
        $prev_country = Country::getActiveCountry();
        if($prev_country->id != $country->id)
        {
-           Session::flush();
-           $request->session()->regenerate();
+        $requiredSessionVar = array('cmsActiveCountry','_token');
+        foreach(session()->all() as $key => $value) {
+            if(!in_array($key, $requiredSessionVar)) {
+                session()->forget($key);
+            }
+        }
+        // session()->except($requiredSessionVar)->forget();
        }
        
        Country::setActiveCountry($country);

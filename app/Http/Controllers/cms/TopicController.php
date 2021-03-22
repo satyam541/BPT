@@ -81,7 +81,7 @@ class TopicController extends Controller
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query                  = TopicContent::query();
         $query                  = empty($filter['topic'])? $query : $query->where('topic_id',$filter['topic']);
-        $query                  = $query->where('country_id',country()->country_code);
+        $query                  = $query->where('country_id',Cmscountry()->country_code);
         $query->whereHas('topic');
         $result                 = $query->get();
         $list['topics']         = Topic::all()->pluck('name','id')->toArray();
@@ -386,7 +386,7 @@ class TopicController extends Controller
    {
        $data['topicContent'] = TopicContent::with(['topic'=>function($query){
         $query->withTrashed();
-       }])->onlyTrashed()->where('country_id',country()->country_code)->get();
+       }])->onlyTrashed()->where('country_id',Cmscountry()->country_code)->get();
       
        return view('cms.trashed.topicContentTrashList',$data);
    }
