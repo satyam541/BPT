@@ -5860,6 +5860,10 @@ input[type=number] {
   color: #1C2848;
   font-weight: 600;
 }
+.popular .popular-list .no-result {
+  color: #000000;
+  margin-top: 2rem;
+}
 .popular .item {
   display: flex;
   width: 272px;
@@ -6026,6 +6030,9 @@ input[type=number] {
   .popular .popular-list {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .popular .popular-list .no-result {
+    text-align: left;
   }
   .popular .item {
     width: 50%;
