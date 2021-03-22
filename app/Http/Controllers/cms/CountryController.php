@@ -23,6 +23,7 @@ class CountryController extends Controller
     public function selectedCountry(Request $request)
     {
         $country = Country::find($request->country_id);
+        
         Country::setActiveCountry($country);
         return 'done';
     }
@@ -32,12 +33,8 @@ class CountryController extends Controller
         
         $this->authorize('view', new Country());
         $countries= Country::all();
-        $checked=null;
-        if(isset($request->active)){
-            $countries = Country::where('active',1)->get();
-            $checked='checked';
-        }
-        return view('cms.country.countryList',compact('countries','checked'));
+        
+        return view('cms.country.countryList',compact('countries'));
     }
     public function active(Request $request){
         $country=Country::find($request->country_id);

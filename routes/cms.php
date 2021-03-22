@@ -3,8 +3,8 @@ use Illuminate\Support\Facades\Route;
 
 Debugbar::disable();
 
-Route::get('/','DashboardController@list')->name('CmsIndex');
-Route::get('/dashboard','DashboardController@list')->name('dashboard');
+// Route::get('/','DashboardController@list')->name('CmsIndex');
+// Route::get('/dashboard','DashboardController@list')->name('dashboard');
 Route::post('/summernoteimage/upload','DashboardController@ImageUpload')->name('ImageUpload');
 
 // Route::get('/course','CourseController@list')->name('courseList');
@@ -322,7 +322,8 @@ Route::get('/websitedetail/editdetail/{websitedetail}','SettingController@editWe
 Route::post('/websitedetail/updatedetail/{websitedetail}','SettingController@updateWebsiteDetail')->name('updateWebsiteDetail');
 Route::post('/websitedetail/delete/{websitedetail}','SettingController@deleteWebsiteDetail')->name('deleteWebsiteDetail');
 
-Route::get('/website/Dashboard','WebsiteDashboardController@index')->name('websiteDashboard');
+Route::get('/','WebsiteDashboardController@index')->name('CmsIndex');
+Route::get('/dashboard','WebsiteDashboardController@index')->name('dashboard');
 Route::get('/website/Dashboard/course/{course}','WebsiteDashboardController@courseDashboard')->name('courseDashboard');
 
 Route::get('/newsletter','NewsletterController@newsletterList')->name('newsletterList');

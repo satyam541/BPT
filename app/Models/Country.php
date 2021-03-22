@@ -15,8 +15,11 @@ class Country extends Model
     public $incrementing = false;
     protected $guarded = array();
     private static $defaultCountryCode = 'gb';
-    public $image_path = "storage/uploads/Country/";
     private static $activeCountry = null;
+    private static $defaultCmsCountryCode = 'gb';
+    private static $activeCmsCountry = null;
+    public $image_path = "storage/uploads/Country/";
+    
 
     // public static function findByName($countryName)
     // {
@@ -46,25 +49,41 @@ class Country extends Model
     }
 
     public static function getActiveCountry()
-    {
+    { 
+        if (request()->route()->action['prefix'] != 'cms') 
+        {
         if(empty(session('activeCountry')) && empty(self::$activeCountry))
         {
             return self::find(self::getDefault());
         }
-        // return session('activeCountry');
         return empty(self::$activeCountry) ? session('activeCountry') : self::$activeCountry;
+    }
+    if(empty(session('cmsActiveCountry')) && empty(self::$activeCmsCountry))
+        {
+            return self::find(self::getDefault());
+        }
+
+        return empty(self::$activeCmsCountry) ? session('cmsActiveCountry') : self::$activeCmsCountry;
     }
 
     public static function setActiveCountry(self $country)
     {
+        if (request()->route()->action['prefix'] != 'cms') {
         self::$activeCountry = $country;
         session()->put('activeCountry',$country);
-        session()->save();
+        return session()->save();
+        }
+        self::$activeCmsCountry = $country;
+        session()->put('cmsActiveCountry',$country);
+        return session()->save();
     }
 
     public static function getDefault()
     {
+        if (request()->route()->action['prefix'] != 'cms') {
         return self::$defaultCountryCode;
+        }
+        return self::$defaultCmsCountryCode;
     }
 
     // public function convertPrice($price)

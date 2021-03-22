@@ -601,14 +601,6 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
               @can('view', new App\Models\WebsiteDetail())
-                <a href="{{Route('websiteDashboard')}}" @if(in_array(Route::currentRouteName(),['websiteDashboard','courseDashboard']))class="nav-link active" @else class="nav-link" @endif>
-                  <i class="nav-icon far fa-circle text-danger"></i>
-                  <p>Webiste Dashboard</p>
-                </a>
-                @endcan
-              </li>
-              <li class="nav-item">
-              @can('view', new App\Models\WebsiteDetail())
                 <a href="{{Route('websiteDetailList')}}" @if(in_array(Route::currentRouteName(),['websiteDetailList','createwebsiteDetail','editWebsiteDetail']))class="nav-link active" @else class="nav-link" @endif>
                   <i class="nav-icon far fa-circle text-warning"></i>
                   <p>Website Detail List</p>
@@ -1047,6 +1039,7 @@ $.widget.bridge('uibutton', $.ui.button)
                 type: "post",
                 success: function(url) {
                   var imagetag = $('<img>').attr('src', url);
+                  console.log(imagetag);
                   $('.summernote').summernote("insertNode", imagetag[0]);
                 },
                 error: function(data) {
@@ -1077,7 +1070,9 @@ $.widget.bridge('uibutton', $.ui.button)
                   },
         success:function(response){
           if(response=='done'){
-          location.reload(); 
+            var base_url=window.location.origin;
+            
+          window.location=base_url+'/cms/dashboard';
           }
           else{
           alert('country code not available');

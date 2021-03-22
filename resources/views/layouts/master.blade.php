@@ -13,7 +13,9 @@
     @if (preg_match('/[A-Z]/', request()->url()))
         <meta name="robots" content="noindex" />
     @endif
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
     <meta name="token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="-BUwtvgvpUd5W2UCkpXY6XdaEUy39BiuaqftIyoBdRU" />
     <link rel="stylesheet" href="{{ url('style/country-select.css') }}">
     <link rel="stylesheet" href="{{ url('style/main.css') }}">
     <link rel="stylesheet" href="{{ url('style/owl.carousel.min.css') }}">
@@ -21,7 +23,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url('jqueryautocomplete/jquery-ui.min.css') }}">
     <link rel="stylesheet" href="{{ url('style/fontawesome.css') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/master/favicons.png') }}">
 
     @yield('header')
     <script type="application/ld+json">
@@ -632,5 +633,25 @@ $.ajax({
     });
 
 </script>
+<!-- Google Analytics -->
+{{-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-30303317-1', 'auto');
+  ga('send', 'pageview');
+
+</script> --}}
+<!-- Lucky Orange -->
+<script type='text/javascript' defer>
+    window.__lo_site_id = 81822;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+    
+    })();
+    </script>
 
 </html>

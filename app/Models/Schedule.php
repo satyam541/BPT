@@ -16,9 +16,11 @@ class Schedule extends Model
     public static function boot()
     {
         parent::boot();
+        if (request()->route()->action['prefix'] != 'cms') {
         static::addGlobalScope('country', function (Builder $builder) {
             $builder->where("country_id", country()->country_code);
         });
+    }
     }
     public function course()
     {

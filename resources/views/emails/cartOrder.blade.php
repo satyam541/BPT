@@ -67,7 +67,17 @@
                         Booking Type :
                     </td>
                     <td style="width:70%">
-                        {{ $item->delivery_method }}
+                        @switch($item->delivery_method)
+                        @case('classroom')
+                        Classroom  
+                        @break
+                        @case('online')
+                        Online self-paced
+                        @break
+                        @case('virtual')
+                        Online Instructor-led
+                        @break
+                        @endswitch
                     </td>
                 </tr>
                 <tr style="background-color: #F2F2F2; padding: 6px; color: black; font-size: 16px; float: left; width: 100%;">
@@ -105,7 +115,7 @@
                         Course Fee:
                     </td>
                     <td style="width:70%">
-                        {!! $orderDetail->country->currency_symbol !!} {{ $item->price }}
+                        {!! $orderDetail->country->currency_symbol !!}{{ ceil($item->price) }}
                     </td>
                 </tr>
                 @endforeach
@@ -114,7 +124,7 @@
                         Total exe. VAT:
                     </td>
                     <td style="width:70%">
-                        {!! $orderDetail->country->currency_symbol !!} {{ round($orderDetail->sub_total) }}
+                        {!! $orderDetail->country->currency_symbol !!}{{ round($orderDetail->sub_total) }}
                     </td>
                 </tr>
 
@@ -124,7 +134,7 @@
                         VAT:
                     </td>
                     <td style="width:70%">
-                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->vat_amount }}
+                        {!! $orderDetail->country->currency_symbol !!}{{ ceil($orderDetail->vat_amount) }}
                     </td>
                 </tr>
                 @endunless
@@ -135,7 +145,7 @@
                         Card Fees:
                     </td>
                     <td style="width:70%">
-                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->card_fee_amount }}
+                        {!! $orderDetail->country->currency_symbol !!}{{ ceil($orderDetail->card_fee_amount) }}
                     </td>
                 </tr>
                 @endunless
@@ -146,7 +156,7 @@
                         Total Fees:
                     </td>
                     <td style="width:70%">
-                        {!! $orderDetail->country->currency_symbol !!} {{ $orderDetail->grand_total }}
+                        {!! $orderDetail->country->currency_symbol !!}{{ ceil($orderDetail->grand_total) }}
                     </td>
                 </tr>
                 @endunless

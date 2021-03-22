@@ -87,16 +87,16 @@
                                     <div class="course-info">
                                         <div class="detail delivery-method">
                                             @if ($cartItem->options['method'] == 'online')
-                                                <p class="mode">Online Mode</p>
+                                                <p class="mode">Online self-paced</p>
                                                 <span class="icon"><img src="{{ url('img/emptycart/online.svg') }}"
                                                         alt="online"></span>
                                             @elseif($cartItem->options['method'] == 'virtual')
-                                                <p class="mode">Virtual</p>
-                                                <span class="icon"><img src="{{ url('img/emptycart/online.svg') }}"
+                                                <p class="mode">Online Instructor-led</p>
+                                                <span class="icon"><img src="{{ url('img/emptycart/virtual.svg') }}"
                                                         alt="virtual"></span>
                                             @elseif($cartItem->options['method'] == 'classroom')
                                                 <p class="mode">Classroom</p>
-                                                <span class="icon"><img src="{{ url('img/emptycart/online.svg') }}"
+                                                <span class="icon"><img src="{{ url('img/emptycart/classroom.svg') }}"
                                                         alt="classroom"></span>
                                             @endif
                                         </div>
@@ -104,12 +104,16 @@
                                             <ul>
                                                 @if ($cartItem->options['method'] == 'online')
                                                     @if (!empty($cartItem->options['addons']))
+                                                    {{-- {{dd($cartItem->options->coursePrice)}} --}}
                                                         @foreach ($cartItem->options['addons'] as $addon)
                                                             <li>
                                                                 <p>{{ $addon->name }}:</p>
-                                                                <span>{!! country()->currency_symbol !!}
-                                                                    {{ convertPrice($addon->price) }} </span>
+                                                                <span>{!! country()->currency_symbol !!}{{ ceil($addon->price) }} </span>
                                                             </li>
+                                                            <li>
+                                                                <p class="location">Course Price:</p> <span> {!! country()->currency_symbol !!}{{ ceil($cartItem->options->coursePrice) }}</span>
+                                                            </li>
+
                                                         @endforeach
                                                     @endif
                                                 @else
@@ -122,11 +126,14 @@
                                                     <li>
                                                         <p class="location">Location:</p> <span> {{ $cartItem->options->location }}</span>
                                                     </li>
+                                                    <li>
+                                                        <p class="location">Course Price:</p> <span> {!! country()->currency_symbol !!}{{ $cartItem->price }}</span>
+                                                    </li>
                                                 @endif
                                                     
                                                 <li>
-                                                    <p>Total:</p>
-                                                    <span>{!! country()->currency_symbol ?? '£'!!}</span> &nbsp;<span  class="subTotalJS">{{ $cartItem->price * $cartItem->qty }}</span>
+                                                    <p>Sub Total:</p>
+                                                    <span>{!! country()->currency_symbol!!}</span><span  class="subTotalJS">{{ $cartItem->price * $cartItem->qty }}</span>
                                                 </li>
 
 

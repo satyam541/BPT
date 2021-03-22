@@ -277,7 +277,7 @@ class CategoryController extends Controller
         $data['selectedCountry']    = empty($filter['country'])? NULL : $filter['country'];
         $query                      = CategoryContent::query();
         $query                      = empty($filter['category'])? $query : $query->where('category_id',$filter['category']);
-        $query                      = empty($filter['country'])? $query : $query->where('country_id',$filter['country']);
+        $query                      = $query->where('country_id',country()->country_code);
         $query->whereHas('category');
         $result                     = $query->get();
         $list['category']           = Category::all()->pluck('name','id')->toArray();

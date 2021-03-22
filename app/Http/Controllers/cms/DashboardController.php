@@ -25,9 +25,10 @@ class DashboardController extends Controller
      }
      public function  ImageUpload(Request $request)
      {
-         
+
+          ini_set('upload_max_filesize', '-1');
           $imageName = "UploadedImage".Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
           $request->file('image')->move(public_path('img\blog'),$imageName);
-           return '/img/blog/'.$imageName;
+          return '/img/blog/'.$imageName;
      }
 }

@@ -1,10 +1,10 @@
 <div class="payment">
     <h2>Summary Detail</h2>
     <div class="payment-content">
-        <p><strong>Total exe. VAT: </strong> {!!country()->currency_symbol!!}{{$orderData->sub_total}}</p>
-        <p><strong>VAT @ ({{ $orderData->vat_percentage }}%): </strong> {!! country()->currency_symbol !!} {{ $orderData->vat_amount }}</p>
-        <p><strong>Card Free Charges: </strong> {!! country()->currency_symbol !!} {{ $orderData->card_fees_amount }}</p>
-        <p><strong>Total: </strong> {!! country()->currency_symbol !!} {{ $orderData->grand_total }}</p>
+        <p><strong>Total exe. VAT: </strong> {!!country()->currency_symbol!!}{{ ceil($orderData->sub_total)}}</p>
+        <p><strong>VAT @ ({{ $orderData->vat_percentage }}%): </strong> {!! country()->currency_symbol !!}{{ ceil($orderData->vat_amount) }}</p>
+        <p><strong>Card Free Charges: </strong> {!! country()->currency_symbol !!}{{ ceil($orderData->card_fees_amount) }}</p>
+        <p><strong>Total: </strong> {!! country()->currency_symbol !!}{{ ceil($orderData->grand_total) }}</p>
     </div>
 </div>
 <div class="payment">
@@ -41,14 +41,26 @@
     <div class="payment-content">
         @foreach ($cartItems as $cartItem)
             <p><strong>Course Name: </strong> {{ $cartItem->name }}</p>
-            <p><strong>Booking Type: </strong> {{ $cartItem->options['method'] }}</p>
+            <p><strong>Booking Type: </strong> 
+                @switch($cartItem->options['method'])
+                    @case('classroom')
+                    Classroom  
+                    @break
+                    @case('online')
+                    Online self-paced
+                    @break
+                    @case('virtual')
+                    Online Instructor-led
+                    @break
+                @endswitch
+            </p>
 
             @if($cartItem->options['method'] == 'classroom' || $cartItem->options['method'] == 'virtual')
                 <p><strong>Location: </strong> {{ $cartItem->options['location'] }}</p>
                 <p><strong>Date: </strong> {{ $cartItem->options['date']}}</p>
 
             @elseif($cartItem->options['method'] == 'online' && !empty($cartItem->options['addons']))
-                <p><strong>Addons: </strong>
+                <p><strong>Addons </strong>
                     @foreach($cartItem->options['addons'] as $addon)
                         {{ $addon->name }}
                     @endforeach
