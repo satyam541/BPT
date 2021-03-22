@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use DB;
 use App\Models\Country;
-use App\Models\CountryCms;
 use App\Http\Requests\cms\CountryRequest;
 
 class CountryController extends Controller
@@ -23,9 +22,9 @@ class CountryController extends Controller
     }
     public function selectedCountry(Request $request)
     {
-        $country = CountryCms::find($request->country_id);
+        $country = Country::find($request->country_id);
         
-        CountryCms::setCMSActiveCountry($country);
+        Country::setActiveCountry($country);
         return 'done';
     }
 
@@ -51,7 +50,7 @@ class CountryController extends Controller
     public function create()
     {
         
-        $this->authorize('create', new CountryCms());
+        $this->authorize('create', new Country());
         $data['country'] = new Country();
         $data['submitRoute'] = "insertCountry";
         return view('cms.country.countryForm',$data);

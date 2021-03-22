@@ -85,7 +85,7 @@ class CourseController extends Controller
         $data['selectedCountry'] = empty($filter['country'])? NULL : $filter['country'];
         $query = CourseContent::query();
         $query = empty($filter['course'])? $query : $query->where('course_id',$filter['course']);
-        $query = $query->where('country_id',cmsCountry()->country_code);
+        $query = $query->where('country_id',country()->country_code);
         $query->whereHas('course');
         $result = $query->paginate(10);
         $data['contents'] = $result;
@@ -368,7 +368,7 @@ class CourseController extends Controller
    {
         $data['courseContent'] = CourseContent::with(['course'=>function($query){
             $query->withTrashed();
-        }])->onlyTrashed()->where('country_id',cmsCountry()->country_code)->get();
+        }])->onlyTrashed()->where('country_id',country()->country_code)->get();
 
        return view('cms.trashed.courseContentTrashList',$data);
    }

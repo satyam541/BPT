@@ -87,6 +87,10 @@ Route::get('/booking/virtual/{id}',['as'=>'virtualBooking','uses'=>"CartControll
 
 //Cart Routes
 Route::get('/cart', 'CartController@index')->name('cart');
+Route::get('/session/flash',function(){
+// Session::flush();
+dd(session()->all());
+});
 Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
 Route::get('/summary',['as'=>'summary','uses'=>'SummaryController@index']);
 Route::post('/cart/checkout',['as'=>'cartCheckout', 'uses'=>"CheckoutController@index"]);

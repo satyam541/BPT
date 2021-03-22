@@ -117,7 +117,7 @@
                                     @foreach($courses as $course)
                             <tr>
                                 <td>{{$course['course_data']->name}}</td>
-                            <td>{{cmscountry()->name}}</td>
+                            <td>{{country()->name}}</td>
                             <td>{{ $course['location_count']}}</td>
                             <td>{{ $course['schedule_count']}}</td>
                            <td><a href="{{ route('courseDashboard',$course['course_data']->id) }}"> <button type="button" class="btn btn-block btn-info">Info</button></a></td>

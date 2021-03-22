@@ -20,9 +20,9 @@ class WebsiteDashboardController extends Controller
        
         $courses                    =    Course::with('schedule:id,course_id,response_location')->select('id','name','display_order','topic_id', 'reference')->orderBy('display_order', 'desc')->orderBy('topic_id')->get();
         $data['total_courses']      =    $courses->count();
-        $data['total_enquiries']    =    Enquiry::where('country_id', cmsCountry()->country_code)->count();
-        $data['total_locations']    =    Location::where('country_id', cmsCountry()->country_code)->count();
-        $data['total_schedules']    =    Schedule::where('response_date', '>', Carbon::now())->where('country_id', cmsCountry()->country_code)->count();
+        $data['total_enquiries']    =    Enquiry::where('country_id', country()->country_code)->count();
+        $data['total_locations']    =    Location::where('country_id', country()->country_code)->count();
+        $data['total_schedules']    =    Schedule::where('response_date', '>', Carbon::now())->where('country_id', country()->country_code)->count();
         foreach ($courses as $course) {
             $course_schedule['course_data']    = $course;
             $course_schedule['schedule_count'] = $course->schedule->count();
