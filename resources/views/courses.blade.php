@@ -7,7 +7,11 @@
         @include("layouts.navbar")
         <div class="banner-container">
             <div class="banner-content">
-                <h1>{{ $selectedCourse->name }}</h1>
+                <h1>{{ $selectedCourse->name }}
+                    @if (!empty($selectedlocation))
+                        in {{ucfirst($selectedlocation)}}
+                    @endif
+                </h1>
                 <div class="breadcrums">
                     <ul>
                         <li><a href="{{ Route('home') }}">Home</a></li>
@@ -397,7 +401,7 @@
                                 </div>
                                 <div class="rate">
                                     
-                                    <h3>{!! country()->currency_symbol !!}{{$schedule->event_price }}</h3>
+                                    <h3>{!! country()->currency_symbol !!}{{ceil($schedule->event_price) }}</h3>
                                     <p><strong>Duration: </strong>{!! $schedule->duration !!}</p>
                                 </div>
                             </div>
@@ -458,7 +462,7 @@
                                     <p>{{ $virtual->response_date->isoFormat('YYYY') }}</p>
                                 </div>
                                 <div class="rate">
-                                    <h3>{!! country()->currency_symbol !!}{{$virtual->event_price}}</h3>
+                                    <h3>{!! country()->currency_symbol !!}{{ceil($virtual->event_price)}}</h3>
                                     <p><strong>Duration: </strong>{!! $virtual->duration !!}</p>
                                 </div>
                             </div>
@@ -492,8 +496,8 @@
                                     @foreach ($onlineSchedules->courseAddon as $addon)
                                     <div class="item">
                                         <div class="offer feature-tickbox">
-                                            <input type="checkbox" name="addon[]" data-price="{{floor($addon->price)}}" value="{{$addon->id}}">
-                                            <h3>{!! $addon->name !!} - {!! country()->currency_symbol !!}{!! $addon->price !!}</h3>
+                                            <input type="checkbox" name="addon[]" data-price="{{ceil($addon->price)}}" value="{{$addon->id}}">
+                                            <h3>{!! $addon->name !!} - {!! country()->currency_symbol !!}{!! ceil($addon->price) !!}</h3>
                                         </div>
                                         <p>{!! $addon->description !!}</p>
                                     </div>
@@ -520,15 +524,15 @@
                                     <ul>
                                         <li>
                                             <p>Course Price</p>
-                                            <p>{!! country()->currency_symbol !!} {!! $onlineSchedules->onlinePrice->price !!}</p>
+                                            <p>{!! country()->currency_symbol !!}{!! ceil($onlineSchedules->onlinePrice->price) !!}</p>
                                         </li>
                                         <li>
                                             <p>add-ons Price</p>
-                                            <p><span class="addons-price">{!! country()->currency_symbol !!} 0</span></p>
+                                            <p>{!! country()->currency_symbol !!}<span class="addons-price">0</span></p>
                                         </li>
                                         <li>
                                             <p>Sub-Total</p>
-                                            <p><span class="total-price" data-onlineprice="{{ $onlineSchedules->onlinePrice->price}}">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price }}</span></p>
+                                            <p>{!! country()->currency_symbol !!}<span class="total-price" data-onlineprice="{{ $onlineSchedules->onlinePrice->price}}">{{ ceil($onlineSchedules->onlinePrice->price) }}</span></p>
                                         </li>
                                     </ul>
 
@@ -757,8 +761,8 @@
                 </div>
                 <div class="price">
                     @if (!empty($onlineSchedules))
-                        <span class="prize">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->price}}</span>
-                        <span class="offer">{!! country()->currency_symbol !!} {{ $onlineSchedules->onlinePrice->offer_price}}</span>
+                        <span class="prize">{!! country()->currency_symbol !!} {{ ceil($onlineSchedules->onlinePrice->price)}}</span>
+                        <span class="offer">{!! country()->currency_symbol !!} {{ ceil($onlineSchedules->onlinePrice->offer_price)}}</span>
                     @endif
                    
                     {{-- <div class="buy">

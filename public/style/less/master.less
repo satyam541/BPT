@@ -301,6 +301,19 @@
             transform: rotate(360deg);
         }
     }
+    @keyframes rotate-x {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+    @keyframes arrow-spin {
+        50% {
+          transform: rotateY(360deg);
+        }
+      }
     @keyframes size {
         0% {
             transform: scale(0.7);
@@ -1542,8 +1555,3 @@
    }
   }
   
-  @keyframes arrow-spin {
-    50% {
-      transform: rotateY(360deg);
-    }
-  }

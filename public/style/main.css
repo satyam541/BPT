@@ -259,6 +259,19 @@ input[type=number] {
     transform: rotate(360deg);
   }
 }
+@keyframes rotate-x {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes arrow-spin {
+  50% {
+    transform: rotateY(360deg);
+  }
+}
 @keyframes size {
   0% {
     transform: scale(0.7);
@@ -1337,11 +1350,6 @@ input[type=number] {
   background: rgba(0, 0, 0, 0.4);
   background-image: none;
 }
-@keyframes arrow-spin {
-  50% {
-    transform: rotateY(360deg);
-  }
-}
 @media (min-width : 768px) {
   .buttons .btn-blue,
   .buttons .btn-white {
@@ -2101,9 +2109,10 @@ input[type=number] {
     height: 100%;
     top: 0px;
     right: 0 ;
+    animation: rotate 6s linear infinite;
   }
   .footer .contact-us::before {
-    right: 17px ;
+    animation: rotate-x 6s linear infinite;
   }
   .footer .contact-us ul {
     width: 70%;
@@ -2327,7 +2336,9 @@ input[type=number] {
   border-radius: 6px;
   position: absolute;
   right: -15px;
-  top: 30%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   box-shadow: 0 0 10px grey;
 }
 .courses .course-name .arrow img {
@@ -2398,12 +2409,6 @@ input[type=number] {
 .whychoose .item img {
   width: 70px;
   height: 70px;
-}
-.whychoose .item:hover {
-  transition: 0.5s ease-in-out;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
-  background-color: #FFFFFF;
 }
 .whychoose h3 {
   margin: 1rem 0 0.5rem 0;
@@ -2928,12 +2933,12 @@ input[type=number] {
     left: 0;
     right: 0;
     margin: 0 auto;
-    bottom: -55px;
+    bottom: -48px;
   }
   .delivery .item:before {
     width: 2px;
     background-color: #ebebeb;
-    height: 54px;
+    height: 48px;
   }
   .delivery .item::after {
     width: 12px;
@@ -3198,7 +3203,7 @@ input[type=number] {
     background-position: center;
   }
   .delivery .delivery-list::before {
-    width: 78%;
+    width: 76%;
   }
   .delivery .item {
     width: 24%;
@@ -3263,7 +3268,7 @@ input[type=number] {
     z-index: 0;
     width: 400px;
     height: 385px;
-    left: -16px;
+    left: -25px;
     top: -18px;
   }
   .looking .clients-reviews {
@@ -3313,6 +3318,15 @@ input[type=number] {
   .courses {
     padding: 4rem 0rem;
   }
+  .courses .courses-list:hover .course-name {
+    transform: scale(0.9);
+  }
+  .courses .courses-list:hover .course-name:hover {
+    transform: scale(1.1);
+  }
+  .courses .course-name {
+    transition: 1s all;
+  }
   .effective {
     padding: 4rem 0rem;
   }
@@ -3337,8 +3351,25 @@ input[type=number] {
   .delivery {
     padding: 4rem 0rem;
   }
+  .delivery .delivery-list::before {
+    width: 78%;
+  }
   .delivery .item {
     width: 22%;
+  }
+  .delivery .item::after {
+    animation: go 2s linear infinite;
+  }
+  @keyframes go {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-33px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
   .delivery h3 {
     font-size: 18px;
@@ -5860,6 +5891,10 @@ input[type=number] {
   color: #1C2848;
   font-weight: 600;
 }
+.popular .popular-list .no-result {
+  color: #000000;
+  margin-top: 2rem;
+}
 .popular .item {
   display: flex;
   width: 272px;
@@ -6026,6 +6061,9 @@ input[type=number] {
   .popular .popular-list {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .popular .popular-list .no-result {
+    text-align: left;
   }
   .popular .item {
     width: 50%;

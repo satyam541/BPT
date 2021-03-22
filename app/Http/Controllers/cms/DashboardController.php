@@ -27,7 +27,7 @@ class DashboardController extends Controller
      {
          
           $imageName = "UploadedImage".Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
-          $request->file('image')->move(public_path('img\blog'),$imageName);
-           return '/img/blog/'.$imageName;
+          $request->file('image')->move(public_path("/uploads/editor/"),$imageName);
+           return '/uploads/editor/'.$imageName;
      }
 }

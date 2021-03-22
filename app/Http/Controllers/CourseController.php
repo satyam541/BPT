@@ -107,6 +107,14 @@ class CourseController extends Controller
 
             $locationObj = Location::where("reference",$location)->first();
             $url = $courseobj->url.'/'.$locationObj->reference;
+            if($request->has("deliveryMethod"))
+            {
+                $hash = $request->deliveryMethod;
+            }
+            else{
+                $hash = '#classroom-booking';
+            }
+            
         }
         
         $url = $url.$hash;
