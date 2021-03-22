@@ -197,13 +197,13 @@
                 position: absolute;
                 left: 0;
                 right: 0;
-                margin: 0 auto;
-                bottom: -55px;
+                margin: 0 auto; 
+                bottom: -48px;
             }
             &:before{
                 width: 2px;
                 background-color: #ebebeb;
-                height: 54px;
+                height: 48px;
             }
             &::after{
                 width: 12px;
@@ -529,7 +529,7 @@
         background-position: center;
         .delivery-list{
             &::before{
-                width: 78%;
+                width: 76%;
             }
         }
         .item{
@@ -608,7 +608,7 @@
                 z-index: 0;
                 width: 400px;
                 height: 385px;
-                left: -16px;
+                left: -25px;
                 top: -18px;
             }
         }
@@ -681,6 +681,19 @@
     // Start courses section //
     .courses{
         padding: @sectionPadding-xl;
+        .courses-list{
+            &:hover{
+                .course-name {
+                    transform: scale(0.9);
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        .course-name{
+            transition: 1s all;
+        }
     }
     // End courses section //
 
@@ -719,8 +732,28 @@
     // start delivery section //
     .delivery{
         padding: @sectionPadding-xl;
+        .delivery-list{
+            &::before{
+                width: 78%;
+            }
+        }
         .item{
             width: 22%;
+            &::after{
+                animation: go 2s linear infinite;
+            }
+            @keyframes go {
+                0%{
+                    transform: translateY(0px);
+                }   
+                50%{
+                    transform: translateY(-33px);
+                }
+                100%{
+                    transform: translateY(0px);
+                }
+ 
+            }
         }
         h3{
             font-size: 18px;
