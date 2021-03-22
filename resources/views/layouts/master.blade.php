@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ metaData('title') }}</title>
     <meta name="description" content="{{ metaData('description') }} " />
-    <meta name="keyword" content="{{ metaData('keyword') }}" />
+    <meta name="keywords" content="{{ metaData('keyword') }}" />
     @if (request()->has('page') || request()->has('month'))
         <meta name="robots" content="noindex, nofollow" />
     @endif

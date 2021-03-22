@@ -14672,9 +14672,6 @@ input[type=number] {
   border: 2px solid #0097D8;
 }
 .form-success .social-media a:nth-child(4) {
-  border: 2px solid #FF1B1B;
-}
-.form-success .social-media a:nth-child(5) {
   border: 2px solid #1856FF;
 }
 .form-success .social-media img {
