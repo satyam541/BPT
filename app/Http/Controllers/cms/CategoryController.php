@@ -366,7 +366,7 @@ class CategoryController extends Controller
    {
         $data['categoryContent'] = CategoryContent::with(['category'=>function($query){
             $query->withTrashed();
-        }])->onlyTrashed()->where('country_id',Cmscountry()->country_code)->get();
+        }])->onlyTrashed()->where('country_id',cmsCountry()->country_code)->get();
 
        return view('cms.trashed.categoryContentTrashList',$data);
    }

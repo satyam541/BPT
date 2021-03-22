@@ -57,8 +57,8 @@ if (!function_exists('encodeUrlSlug')) {
             return Country::getActiveCountry();
         }
     }
-    if (!function_exists('Cmscountry')) {
-        function Cmscountry()
+    if (!function_exists('cmsCountry')) {
+        function cmsCountry()
         {
 
             $activeCountry = CountryCms::getCMSActiveCountry();

@@ -29,7 +29,7 @@ class PopularController extends Controller
     
     public function list(Request $request)
     {
-        $selectedCountry=Cmscountry()->country_code;
+        $selectedCountry=cmsCountry()->country_code;
         $popularItems = Popular::query();
         if($selectedCountry!='ALL'){
             $popularItems=$popularItems->where('country_id',$selectedCountry);
@@ -86,7 +86,7 @@ class PopularController extends Controller
         $popular->module_type   = $request->module_type;
         $popular->module_id     = $request->module_id;
         $popular->display_order = $display_order+1;
-        $popular->country_id    = Cmscountry()->country_code;
+        $popular->country_id    = cmsCountry()->country_code;
         $popular->save();
         
         return "done";
