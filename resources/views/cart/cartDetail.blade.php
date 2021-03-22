@@ -295,10 +295,10 @@
                                         Classroom  
                                         @break
                                         @case('online')
-                                        Online
+                                        Online self-paced
                                         @break
                                         @case('virtual')
-                                        Virtual
+                                        Online Instructor-led
                                         @break
                                         @endswitch
                                         </span>
@@ -331,7 +331,7 @@
                                             @endforeach
                                             </ul>
                                         @endif
-                                     @break;
+                                     @break
                                 @endswitch
                                 </p>
                                 <div class="form-consent">
@@ -386,9 +386,9 @@
                                                 <input type="number" class="telephone " placeholder="Telephone Number" min=0>
                                                 <div style="z-index:-1;width:0;height:0;pointer-events: none;">
                                                    
-                                                     <input type="text" name="telephone" class="phonenumber">
-                                                    <input type="text" name="cphonecode" class="phonecode">
-                                                    <input type="text" name="t_code" class="countrycode" autocomplete="off">
+                                                     <input type="text" name="telephone" class="phonenumber" tabindex="-1">
+                                                    <input type="text" name="cphonecode" class="phonecode" tabindex="-1">
+                                                    <input type="text" name="t_code" class="countrycode" autocomplete="off" tabindex="-1">
                                                 </div>
                                             </div>
                                         </div>
@@ -435,9 +435,9 @@
                                 <label for="agree">I have read and agree with the terms and conditions.</label>
                             </div>
                             <div class="buttons">
-                                <button type="button" class="btn-white" onclick="cancelOrder()">
+                                <a class="btn-white" href="{{route('orderCancel')}}">
                                     <img src="{{ url('img/cart/back-arrow.svg') }}" alt="back-arrow">Cancel Order
-                                </button>
+                                </a>
                                 <button type="button" class="btn-blue" onclick="checkAgree()">
                                     Confirm Payment<img src="{{ url('img/cart/next-arrow.svg') }}" alt="next-arrow">
                                 </button>
@@ -462,6 +462,7 @@
         var submitDelegateRoute   = '{{ route('delegateDetailSubmit') }}';
         var summaryPageRoute      = "{{ route('summary') }}";
         var customerData          = "{{route('customerData')}}";
+        var orderCancel           = "{{route('cartDestroyRoute')}}";
 
     </script>
     <script src="{{ url('script/cartDetail.js') }}"></script>
