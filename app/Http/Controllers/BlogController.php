@@ -30,7 +30,9 @@ class BlogController extends Controller
         $blog = $request->route('blog');
         
         $article       = Article::where('reference',$blog)->first();
-     
+        if(empty($article)){
+            return redirect()->route('blog');
+        }
         $data['testimonials'] = Testimonial::all();
         $data['pageDetail']   = PageDetail::getContent('blog_detail');
         $data['prevBlog']     = $article->previous();

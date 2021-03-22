@@ -212,7 +212,7 @@ class Course extends Model
     }
     public function schedule()
     {
-        return $this->hasMany('App\Models\Schedule');
+        return $this->hasMany('App\Models\Schedule')->where('country_id',Cmscountry()->country_code);
     }
     public function BulletPoint()
     {

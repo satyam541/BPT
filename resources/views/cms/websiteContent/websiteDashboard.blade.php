@@ -118,7 +118,7 @@
                             <tr>
                                 <td><a href="{{ url('/training-courses'.$course['course_data']->reference) }}">
                                     {{$course['course_data']->name}}</a></td>
-                            <td>United Kingdom</td>
+                            <td>{{cmscountry()->name}}</td>
                             <td>{{ $course['location_count']}}</td>
                             <td>{{ $course['schedule_count']}}</td>
                            <td><a href="{{ route('courseDashboard',$course['course_data']->id) }}"> <button type="button" class="btn btn-block btn-info">Info</button></a></td>
