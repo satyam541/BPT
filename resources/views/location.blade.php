@@ -251,7 +251,7 @@
        if($('.popular-list .item').not('.location-hide').length== '0')
        {
 
-           $('.popular-list').html('<p>"No Result Found"</p>');
+           $('.popular-list').html('<p class="no-result">"No Result Found"</p>');
        }
    }).on('keypress',function(e){
        // prevent form submit on enter key

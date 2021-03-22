@@ -24,6 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('sendIncompleteEnquiry')
+                 ->everyFifteenMinutes();
         // $schedule->call(function(){
         //     $curl = curl_init();
         //     curl_setopt ($curl, CURLOPT_URL, route('updateExchangeRate'));
