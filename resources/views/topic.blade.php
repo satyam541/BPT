@@ -272,7 +272,7 @@
                                 <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                             </svg>
                         </div>
-                            <p class="txt-name">Business strategy growth</p>
+                            <p class="txt-name">Business Strategy Growth</p>
                     </div>     
                     <div class="count">
                         <div class="circle">
@@ -281,7 +281,7 @@
                                 <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                             </svg>
                         </div>
-                        <p class="txt-name">Finance valuable ideas</p>
+                        <p class="txt-name">Finance Valuable Ideas</p>
                     </div>
                 </div>
                 <div class="buttons">

@@ -41,7 +41,7 @@
                 <form action="{{ route('commonFilter') }}" method='post' class="form exclude">
                     @csrf
                     <div class="select-dropdown">
-                        <p>Select A Category</p>
+                        <p>Select a Category</p>
                         <select name="category" id="categorySelect">
                             <option value="">Select Category</option>
                             @foreach ($categoriesList as $id => $name)
@@ -51,7 +51,7 @@
                         </select>
                     </div>
                     <div class="select-dropdown">
-                        <p>Select A Topic</p>
+                        <p>Select a Topic</p>
                         <select name="topic" id="topicSelect">
                             <option value="">Select Topic</option>
                             @foreach ($topics as $topicList)
@@ -60,7 +60,7 @@
                         </select>
                     </div>
                     <div class="select-dropdown">
-                        <p>Select A Course</p>
+                        <p>Select a Course</p>
                         <select name="course" id="courseSelect">
                             <option value="">Select Course</option>
 
@@ -257,7 +257,7 @@
                               <h3 class="count-number" data-to="{{$statsdata->stats['trainers']->content}}" data-speed="3000">{!!$statsdata->stats['trainers']->content!!}</h3>
                               <span>+</span>
                           </div>
-                          <p>Trainers</p>
+                          <p>Certified Trainers</p>
                       </div>
                   
                       <div class="figures-content">

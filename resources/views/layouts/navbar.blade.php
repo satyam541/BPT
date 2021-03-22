@@ -36,6 +36,7 @@
                         <li><a href="{{route('aboutUs')}}"><i class="fa fa-address-card"></i>About Us</a></li>
                         <li><a href="{{route('blog')}}"><i class="fa fa-clipboard"></i>Blogs</a></li>
                         <li><a href="{{route('testimonials')}}"><i class="fa fa-comments"></i>Testimonials</a></li>
+                        <li><a href="{{route('knowledgepass')}}"><i class="fa fa-ticket"></i>Knowlegde Pass</a></li>
                     </ul>   
                 </li>
                 <li class="links-li">
