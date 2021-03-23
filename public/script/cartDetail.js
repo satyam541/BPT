@@ -258,7 +258,7 @@ function switchPaymentMethod(value)
 
     function cancelOrder(csrfToken) {
         $.ajax({
-            url: URL+"/cart/content/clear",
+            url: orderCancel,
             type: "get",
             data:{
                 _token: csrfToken

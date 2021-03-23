@@ -95,6 +95,7 @@ Route::get('/cart/detail', 'CartController@cartDetail')->name('cartDetail');
 Route::get('/summary',['as'=>'summary','uses'=>'SummaryController@index']);
 Route::post('/cart/checkout',['as'=>'cartCheckout', 'uses'=>"CheckoutController@index"]);
 Route::get('/cart/content/clear',['as'=>'cartDestroyRoute','uses'=>'CartController@clearCart']);
+Route::get('/cart/content/clear/cancel',['as'=>'orderCancel','uses'=>'CartController@orderCancel']);
 
 //ajax requests
 Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax
@@ -177,6 +178,7 @@ Route::group(['prefix' => '{country?}','where'=>['country'=>'[a-z]{2}'],'middlew
     Route::get('/summary',['as'=>'summary','uses'=>'SummaryController@index']);
     Route::post('/cart/checkout',['as'=>'cartCheckout', 'uses'=>"CheckoutController@index"]);
     Route::get('/cart/content/clear',['as'=>'cartDestroyRoute','uses'=>'CartController@clearCart']);
+    Route::get('/cart/content/clear/cancel',['as'=>'orderCancel','uses'=>'CartController@orderCancel']);
     
     //ajax requests
     Route::get('/cart/update/qty',['as'=>'updateCartQuantity','uses'=>'CartController@updateQuantity']); // ajax

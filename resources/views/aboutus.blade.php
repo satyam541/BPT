@@ -77,7 +77,7 @@
                             <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                         </svg>
                     </div>
-                    <p class="txt-name">Industry average for pass rates for PRINCE2 Courses</p>
+                    <p class="txt-name">Industry average for pass rates for PRINCE2® Courses. </p>
                 </div>     
                 <div class="count">
                     <div class="circle">
@@ -86,7 +86,7 @@
                             <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                         </svg>
                     </div>
-                    <p class="txt-name">Industry standard for Agile Training Pass Rates </p>
+                    <p class="txt-name">Industry standard for Agile Training Pass Rates. </p>
                 </div>
                 <div class="count">
                     <div class="circle">
@@ -95,7 +95,7 @@
                             <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                         </svg>
                     </div>
-                    <p class="txt-name"> ITIL Foundation average pass rate in the training Industry.</p>
+                    <p class="txt-name"> ITIL® Foundation average pass rate in the training industry.</p>
                 </div>
                 <div class="count">
                     <div class="circle">
@@ -104,7 +104,7 @@
                             <circle class="progress-ring__circle" fill="transparent" r="43" cx="47.5" cy="47.5" />
                         </svg>
                     </div>
-                    <p class="txt-name">Lean Six Sigma training average pass rates in the industry.</p>
+                    <p class="txt-name">Lean Six Sigma training average pass rates in the industry. </p>
                 </div>
             </div>
         </div>
@@ -189,18 +189,15 @@
                     </div>
                 </div>
                 <div class="form-consent">
-                    <p>The information you provide shall be processed by Best Practice Training Limited – a professional
-                        training organisation. Your data shall be used by a member of staff to contact you regarding
-                        your enquiry.
+                    <p>The information you provide shall be processed by Best Practice Training Limited – a professional training organisation. Your data shall be used by a member of staff to contact you regarding your enquiry.
                     </p>
                 </div>
                 <div class="form-consent">
-                    <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policy. </p>
+                    <p>Please click <a href="{{route('privacy-policy')}}">here</a> for privacy policies. </p>
                 </div>
                 <div class="form-consent">
                     <input type="checkbox" id="checkConsent" name="contactConsent">
-                    <label for="checkConsent">By submitting this enquiry I agree to be contacted in the most suitable
-                        manner (by phone or email) in order to respond to my enquiry.</label>
+                    <label for="checkConsent">By submitting this enquiry, I agree to be contacted in the most suitable manner (by phone or email) in order to respond to my enquiry.</label>
                 </div>
                 <div class="consent-error" style="display: none;">
                     <p>We cannot process your enquiry without contacting you, please tick to confirm you
@@ -208,7 +205,7 @@
                 </div>
                 <div class="form-consent">
                     <input type="checkbox" name="marketing_consent" id="allowconsent">
-                    <label for="allowconsent">Click here to sign up to our email marketing, offers and discounts</label>
+                    <label for="allowconsent">Click here to sign up for our email marketing, offers and discounts. </label>
                 </div>
                 <div class="buttons">
                     <button class="btn-blue"  onclick="EnquiryFormSubmit('enquiry',this)">

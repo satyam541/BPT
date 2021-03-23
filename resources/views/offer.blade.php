@@ -6,8 +6,8 @@
     <div class="container">
         @include("layouts.navbar")
         <div class="banner-container">
-            <h1>Bundle Offer</h1>
-            <p>Best Practice Training provides different exciting training bundles, which will enhance your knowledge and add-on to your skills. We provide training bundles at a lower price in the marketplace.</p>
+            <h1>Exclusive Course Packages at The Best Practice Training</h1>
+            <p>Get ready to take your skills to the next level at the lowest market prices. </p>
             <div class="breadcrums">
                 <ul>
                     <li><a href="">Home</a></li>
@@ -28,24 +28,24 @@
                 <div class="heading">
                     <h2>We Offer a Wide Range <span>of Bundles</span></h2>
                 </div>
-                <p>Best Practice Training offers you the desired professional training courses in just a single package, which helps to build skills and grow more effectively in professional life. Our training bundle courses are specially designed by our highly experienced trainers who hold years of experience in their respected fields. Our highly demanded course bundles helped many individuals to get their desired job.</p>
-                <p>Our bundles also help individuals to gain new or upgrade their existing skills and knowledge. Our popular training bundles helps to take your skills to the next level. Following are the categories in which we mainly provide the bundles:</p>
+                <p>Best Practice Training offers your desired professional training courses in a single package, which will help you build skills, grow, and rise professionally. Our course bundles are specially designed and will be taught by highly experienced trainers who hold years of experience in their respected fields. Our course bundles have helped many individuals to get their desired skill, resulting in a good job.</p>
+                <p>Our bundles are created by industry experts after much research and due diligence to provide learners with new skills and knowledge and upgrade their existing skills. Our popular training bundles help learners take their skills to the next level by getting real improvements in their desired domain knowledge. Following are the bundles we provide:</p>
                 <div class="bundle-list">
                 <div class="project-bundle">
                     <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
-                    <h3>Our Project Management Bundles</h3>
+                    <h3>Project Management Bundles</h3>
                 </div>
                 <div class="project-bundle">
                     <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
-                    <h3>Our Business Analysis Bundles</h3>
+                    <h3>Business Analysis Bundles</h3>
                 </div>
                 <div class="project-bundle">
                     <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
-                    <h3>Our ITIL Bundles</h3>
+                    <h3>ITIL Bundles</h3>
                 </div>
                 <div class="project-bundle">
                     <span><img src="{{url('img/offer/project-bundle.svg')}}" alt="project-bundle"></span>
-                    <h3>Our IT Security Bundles</h3>
+                    <h3>IT Security Bundles</h3>
                 </div>
                 </div>
                 <div class="buttons open-popup enquiryJS"  data-type="bundle" data-quote="Need Help" data-heading="Need Help">
@@ -613,7 +613,7 @@
                 <h2>Stay in Touch</h2>
             </div>
             <div class="recommend-info">
-                <p>Get personalised course recommendations and courses with reminders to get the latest information about the courses and offers. Do you know the courses you want but not when or where you want to take them? We will help you.</p>
+                <p>Get personalised course recommendations to remain up to date with new advancement the technologies and get the latest information about the courses and new offers. Do you know the courses you want but not when or where you want to take them? We will help you.</p>
                 <!-- <input type="text" name="email" id="email" placeholder="Your Email Address" autocomplete="off"> -->
                 <div class="buttons">
                     <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Request More Information" data-heading="Request More Information"><img src="{{url('img/offer/email.svg')}}" alt="email">
@@ -657,11 +657,11 @@
     </div>
     <div class="latest-bundles">
         <div class="heading">
-        <h2>New Bundles To Begin 2021</h2>
+        <h2>New Bundles to Begin in 2021</h2>
         </div>
         <p>Enquire Now and Be the First to Grab the Opportunity</p>
-        <p>By filling out the Enquiry form, you will be the first one to grab our opportunity. Wanted to buy several courses in a single package? We offer an in-hand developed bundle of trending courses to provide you with the best way to gain the necessary knowledge and skills to succeed in your career. We value your precious time and money.</p>
-        <p>Our bundles give you a discounted price for purchasing multiple courses at once – you could save up to 50%. Our new course bundles provide the best way to get the most value for your money. Each bundle features a range of professional training courses designed to provide you with the skills to succeed.</p>
+        <p>By filling out the below enquiry form, you can be the first to get the bundle you Want. Looking to strengthen your core skills with several courses in a single package? We value your precious time and money. That's why we offer many custom-made bundles comprising trending courses to provide you with your necessary knowledge and skills to succeed in the job role. </p>
+        <p>Our bundles give you a discounted price for purchasing multiple courses at once – you could save up to 50%. Our course bundles provide the best way to get the most value for your money. Each bundle features a range of professional training courses designed to provide you with the skills to succeed.</p>
             <div class="buttons">
         <a class="btn-blue open-popup enquiryJS"  data-type="bundle"  data-quote="Have any Question?" data-heading="Have any Question?"><img src="{{url('img/offer/question.svg')}}" alt="question">Have any Question?</a>
             </div>

@@ -90,7 +90,7 @@
         <div class="key-container">
             <div class="info">
                 <h2>
-                Highlights of Our Locations
+                    Highlights of Our Venues
                 </h2>
                 <div class="buttons">
                     <a href="javascript:void(0);" class="btn-white open-popup enquiryJS" data-quote="Need Help?" data-heading="Need Help?" data-type="other" data-location="{{$location->name}}">

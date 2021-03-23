@@ -129,6 +129,7 @@ class CartController extends Controller
         $options = array();
         $options['addons'] = $addons;
         $options['method'] = "online";
+        $options['coursePrice'] = $onlineCourse->onlinePrice->price;
         $options['country'] = country()->id;
         $options['id']      = $onlineCourse->id; 
 
@@ -177,6 +178,7 @@ class CartController extends Controller
 
     public function clearCart(Request $request)
     {
+
         Cart::destroy();
         // if (session()->has('users')){}
             session()->forget([
@@ -613,6 +615,24 @@ class CartController extends Controller
         $data['phonecode']=$phonecode;
         $data['mobile']=$mobile;
         return json_encode($data);
+    }
+
+    public function orderCancel()
+    {
+        $order           = session('orderData');
+        $order->progress = 0;
+        $order->save();
+
+        Cart::destroy();
+        session()->forget([
+            'customer',
+            'orderData',
+            'billingData',
+            "currentCartItem",
+            "currentDelegate"
+        ]);
+
+        return redirect()->route('home');
     }
 
 }

@@ -198,7 +198,7 @@
     <div class="container">
         <div class="solution-container">
             <div class="heading center-heading">
-                {{-- <h2>Our High-Quality Tailor Made <span>Solutions Include</span></h2> --}}
+                {{-- <h2>Our High-Quality Tailor-Made <span>Solutions Include</span></h2> --}}
                 <h2>{!!$pageDetail->overlay['heading']->heading!!}</h2>
             </div>
             @php unset($pageDetail->overlay['heading'])@endphp

@@ -266,8 +266,8 @@ function circleProgress(){
     setProgress(86,$('.circle .second'),45);
     setProgress(92,$('.circle .third'),45);
     setProgress(94,$('.circle .fourth'),45);
-    setProgress(72,$('.circle .topic-first'),45);
-    setProgress(55,$('.circle .topic-second'),45);
+    setProgress(44,$('.circle .topic-first'),45);
+    setProgress(38,$('.circle .topic-second'),45);
 }
 function setProgress(percent, svg, radius) {
 var circumference = radius * 2 * Math.PI;

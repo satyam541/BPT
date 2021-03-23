@@ -615,7 +615,7 @@ input[type=number] {
   background-color: #FFFFFF;
   flex-direction: column;
   transition: 1s ease-in-out;
-  width: 142px;
+  width: 148px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.098);
 }
 .navbar .menu-list #aboutdropdown ul li {
@@ -13396,7 +13396,7 @@ input[type=number] {
     width: 45%;
   }
   .topic-choose .count {
-    width: 206px;
+    width: 212px;
   }
   .topic-choose .count .txt-name {
     text-align: left;
