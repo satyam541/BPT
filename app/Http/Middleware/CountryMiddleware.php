@@ -46,12 +46,11 @@ class CountryMiddleware
        $prev_country = Country::getActiveCountry();
        if($prev_country->id != $country->id)
        {
-        $requiredSessionVar = array('cmsActiveCountry','_token');
-        foreach(session()->all() as $key => $value) {
-            if(!in_array($key, $requiredSessionVar) && str_contains($key, 'login_web')!=true) {
-                session()->forget($key);
-            }
-        }
+        $session['cmsActiveCountry']=session()->get('cmsActiveCountry');
+        $session['_token']=session()->get('_token');
+        $session['login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d']=session()->get('login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d');
+        Session::flush();
+        session()->put(['cmsActiveCountry'=>$session['cmsActiveCountry'],'_token'=>$session['_token'],'login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d'=>$session['login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d']]);
        }
        
        Country::setActiveCountry($country);
